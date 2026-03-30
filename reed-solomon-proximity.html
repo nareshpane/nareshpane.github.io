@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preliminary Tests into the Reed–Solomon Proximity Gap Conjecture</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600&family=Source+Code+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f8f6f2;
+      --text: #1f1f1f;
+      --muted: #5d5d5d;
+      --accent: #1d4f91;
+      --line: #d8d2c7;
+      --card: #fffdf9;
+      --codebg: #f3efe8;
+      --codeborder: #d8cfc1;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Inter", sans-serif;
+      line-height: 1.75;
+    }
+
+    .page {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 36px 24px 56px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 34px 34px 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    h1, h2, h3 {
+      font-family: "Cormorant Garamond", serif;
+      line-height: 1.08;
+      letter-spacing: 0.2px;
+      margin-top: 0;
+      color: #151515;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 18px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-top: 34px;
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin-top: 24px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin: 0 0 16px;
+      font-size: 1.02rem;
+    }
+
+    ul {
+      margin: 0 0 16px 22px;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    .lead {
+      font-size: 1.08rem;
+    }
+
+    .note {
+      background: #f7f2ea;
+      border-left: 4px solid var(--accent);
+      padding: 14px 16px;
+      border-radius: 10px;
+      margin: 18px 0 20px;
+    }
+
+    .warn {
+      background: #fbf6ea;
+      border-left: 4px solid #b7791f;
+      padding: 14px 16px;
+      border-radius: 10px;
+      margin: 18px 0 20px;
+    }
+
+    .code-label {
+      font-size: 0.96rem;
+      font-weight: 600;
+      color: var(--muted);
+      margin: 14px 0 8px;
+    }
+
+    pre {
+      margin: 0 0 18px;
+      background: var(--codebg);
+      border: 1px solid var(--codeborder);
+      border-radius: 14px;
+      padding: 14px 16px;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    code, pre {
+      font-family: "Source Code Pro", monospace;
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0 20px;
+      font-size: 0.97rem;
+      background: #fcfaf6;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 12px 10px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+
+    th {
+      background: #f3ede3;
+      font-weight: 600;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    nav {
+      margin-top: 28px;
+      text-align: center;
+      font-size: 1.05rem;
+    }
+
+    nav a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    nav .sep {
+      color: #7a7a7a;
+      margin: 0 8px;
+    }
+
+    .footer-note {
+      margin-top: 18px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 800px) {
+      .card {
+        padding: 24px 20px;
+      }
+
+      h1 {
+        font-size: 2.35rem;
+      }
+
+      h2 {
+        font-size: 1.7rem;
+      }
+
+      table {
+        display: block;
+        overflow-x: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <section class="card">
+      <h1>Preliminary Tests into the Reed–Solomon Proximity Gap Conjecture</h1>
+
+      <p class="lead">
+        This page is an attempt to give a concrete flavor of why the Reed–Solomon proximity gap question
+        remains unresolved, and why it is not easy to settle even through direct computation.
+        The issue is not merely that formal proof is hard. Rather, once one gets near the relevant
+        boundary, the combinatorics themselves begin to work against naive intuition.
+      </p>
+
+      <p>
+        My interest in this problem came from a basic but important puzzle: if one wants to test whether
+        a received word has only a small number of nearby Reed–Solomon codewords, then why not simply
+        search for a counterexample computationally? In principle, a single counterexample would be enough
+        to refute the wrong conjectural statement. In practice, however, the difficulty is subtler.
+        Small finite cases can reveal the underlying obstruction, but they do not automatically settle an
+        asymptotic conjecture, and exhaustive testing becomes expensive much sooner than one might expect.
+      </p>
+
+      <div class="note">
+        The guiding idea throughout was to study the worst-case list size
+        <code>L_t = \max_r |\{c \in C : d(r,c) \le t\}|\)</code>
+        at and just beyond the Johnson radius, and to use small exhaustive experiments to see whether the
+        difficulty already appears locally.
+      </div>
+
+      <h2>1. Why this question is hard in the first place</h2>
+
+      <p>
+        Reed–Solomon codes are among the best understood codes in mathematics, so it is tempting to think
+        that their proximity behavior should also be well understood. But the relevant question is not just
+        ordinary unique decoding. Instead, the issue is what happens when one moves beyond the classical
+        unique-decoding radius and begins to ask whether the number of nearby low-degree explanations stays
+        controlled or can grow abruptly.
+      </p>
+
+      <p>
+        This is where the difficulty enters. At small radius, one usually has uniqueness or near-uniqueness.
+        Near the Johnson radius, the list size is often still modest. But one step beyond that threshold,
+        many different low-degree polynomials can suddenly become compatible with the same received word.
+        That is not simply a failure of computation. It reflects a real combinatorial crowding phenomenon.
+      </p>
+
+      <div class="warn">
+        A major lesson from the experiments is that the Johnson boundary is not just a decorative proof
+        artifact. In several small prime-field examples, it behaves like a genuine transition point.
+      </div>
+
+      <h2>2. The computational philosophy used here</h2>
+
+      <p>
+        Rather than beginning with sophisticated asymptotic machinery, the approach here was deliberately
+        concrete:
+      </p>
+
+      <ul>
+        <li>fix a small triple <code>(q,n,k)</code>,</li>
+        <li>generate all message polynomials of degree less than <code>k</code>,</li>
+        <li>evaluate them to obtain the full Reed–Solomon codebook,</li>
+        <li>generate all received words in <code>F_q^n</code>,</li>
+        <li>and measure, for each radius <code>t</code>, the maximum number of nearby codewords.</li>
+      </ul>
+
+      <p>
+        This is intentionally brute-force. The point was not to optimize immediately, but to make the
+        small cases fully transparent. If a local blow-up in list size appears even there, then the source
+        of difficulty is already visible in the combinatorics, not only in the weakness of the machine.
+      </p>
+
+      <div class="code-label">Basic workflow idea</div>
+      <pre><code># Generate every polynomial of degree &lt; k
+# Evaluate at n points to obtain all codewords
+# Enumerate all received words in F_q^n
+# For each radius t:
+#     compute the number of codewords within distance <= t
+# Record the worst-case list size L_t</code></pre>
+
+      <h2>3. Why computational testing becomes hard surprisingly quickly</h2>
+
+      <p>
+        The brute-force plan sounds modest when written at a high level, but the growth is severe.
+        There are <code>q^k</code> codewords and <code>q^n</code> received words. Even for small prime fields,
+        that means the search space expands quickly. So there are really two layers of difficulty:
+      </p>
+
+      <ul>
+        <li>the mathematical difficulty of understanding when lists stay small, and</li>
+        <li>the computational difficulty of scanning enough received words to identify genuine worst cases.</li>
+      </ul>
+
+      <p>
+        This is why small examples are informative but not decisive. They can reveal the mechanism of failure,
+        yet they do not automatically tell us what happens uniformly across broader parameter families.
+      </p>
+
+      <h2>4. The parameter meanings</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Symbol</th>
+            <th>Meaning</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>q</code></td>
+            <td>Field size</td>
+          </tr>
+          <tr>
+            <td><code>n</code></td>
+            <td>Block length</td>
+          </tr>
+          <tr>
+            <td><code>k</code></td>
+            <td>Dimension, equivalently degree bound &lt; <code>k</code></td>
+          </tr>
+          <tr>
+            <td><code>d</code></td>
+            <td>Minimum distance <code>n-k+1</code></td>
+          </tr>
+          <tr>
+            <td><code>J</code></td>
+            <td>Johnson radius, often written as <code>n - sqrt(n(k-1))</code></td>
+          </tr>
+          <tr>
+            <td><code>L_t</code></td>
+            <td>Worst-case list size within radius <code>t</code></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>5. What the small experiments suggested</h2>
+
+      <p>
+        The most striking pattern in the uploaded draft was the repeated jump in worst-case list size when
+        moving from the Johnson radius to one step beyond it. In several prime-field examples, the list size
+        at the Johnson point was still small, but the list size at <code>J+1</code> became dramatically larger. :contentReference[oaicite:1]{index=1}
+      </p>
+
+      <p>
+        Even more revealing, these jumps often matched simple interpolation counts. For instance, when
+        <code>k=2</code>, agreement on two coordinates can determine a degree-1 polynomial, so one naturally
+        sees counts like <code>C(5,2)=10</code>. When <code>k=3</code>, agreement on three coordinates can
+        determine a quadratic, and one sees counts like <code>C(6,3)=20</code>. That is a strong clue that
+        the obstruction is geometric, not accidental. :contentReference[oaicite:2]{index=2}
+      </p>
+
+      <div class="code-label">Representative interpretation pattern</div>
+      <pre><code>For k = 2 and n = 5:
+  agreement on 2 coordinates can determine a degree-1 polynomial
+  number of coordinate pairs = C(5,2) = 10
+
+For k = 3 and n = 6:
+  agreement on 3 coordinates can determine a degree-2 polynomial
+  number of coordinate triples = C(6,3) = 20</code></pre>
+
+      <p>
+        So the emerging picture is this: once the allowed radius is large enough that many different
+        <code>k</code>-point interpolation patterns become feasible, the list can grow for structural reasons.
+        This helps explain why the question is hard. One is not simply fighting runtime; one is fighting
+        real combinatorial multiplicity.
+      </p>
+
+      <h2>6. Why this still does not settle the conjecture</h2>
+
+      <p>
+        This is the subtle point. A local blow-up in finite examples can be highly informative and still fail
+        to disprove the exact formal statement one cares about. Many conjectures of this kind are asymptotic,
+        or involve particular ranges of rate, distance, or testing parameters. So a bad finite example may
+        illuminate the mechanism without closing the question.
+      </p>
+
+      <p>
+        That is why these tests are best understood as narrowing the intuition gap rather than the theorem gap.
+        They tell us why naive optimism is dangerous. They do not, by themselves, provide a full positive or
+        negative resolution.
+      </p>
+
+      <div class="code-label">Honest summary</div>
+      <pre><code>Small exhaustive tests can reveal the obstruction.
+They do not automatically settle the asymptotic conjecture.
+The wall is not only computational.
+The wall is also combinatorial.</code></pre>
+
+      <h2>7. Why prime-field tests mattered</h2>
+
+      <p>
+        One lesson that emerged in the earlier exploration was that it is better to test genuine finite-field
+        instances, especially over prime fields such as <code>q=7</code> or <code>q=13</code>, rather than to
+        rely too heavily on toy modular experiments. Prime-field cases carry more mathematical weight, and when
+        the same qualitative jump appears there as well, it becomes much harder to dismiss the behavior as an
+        artifact of an unnatural model.
+      </p>
+
+      <p>
+        This is precisely why the prime-field runs were especially interesting: they suggested that the
+        beyond-Johnson crowding phenomenon is not a fluke of one small setup, but reflects something more
+        persistent in the underlying interpolation geometry. :contentReference[oaicite:3]{index=3}
+      </p>
+
+      <h2>8. What makes this question interesting to me</h2>
+
+      <p>
+        What drew me to this problem was the gap between the simplicity of the initial question and the
+        difficulty of making real progress. At first glance, it seems that one should be able either to
+        prove a good bound or search for a counterexample. But once one tries to test the conjecture
+        computationally in a serious way, the problem becomes a meeting point of algebra, combinatorics,
+        asymptotic interpretation, and brute-force feasibility.
+      </p>
+
+      <p>
+        In that sense, this project is not only about Reed–Solomon codes. It is also about how mathematical
+        conjectures resist both proof and computation for different but related reasons.
+      </p>
+
+      <h2>9. Where I would take the experiments next</h2>
+
+      <p>
+        The most natural next steps are not simply “use a larger machine,” but to test more systematically
+        in true prime fields while keeping the experimental questions focused. Some especially natural directions are:
+      </p>
+
+      <ul>
+        <li>track <code>L_J</code> and <code>L_{J+1}</code> over additional prime-field examples,</li>
+        <li>hold the rate approximately fixed while increasing <code>n</code> modestly,</li>
+        <li>check when the observed list size keeps matching interpolation-count heuristics,</li>
+        <li>and try to distinguish what is truly asymptotic from what is merely local but dramatic.</li>
+      </ul>
+
+      <p>
+        That would not settle the conjecture immediately, but it would sharpen the boundary between
+        what seems computationally inaccessible and what seems combinatorially inevitable.
+      </p>
+    </section>
+
+    <nav>
+      <a href="index.html">Home</a><span class="sep">|</span>
+      <a href="research.html">Research</a>
+    </nav>
+
+    <div class="footer-note">
+      Built with GitHub Pages.
+    </div>
+  </div>
+</body>
+</html>
