@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Education | Naresh Neupane</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f8f6f2;
+      --text: #1f1f1f;
+      --muted: #5d5d5d;
+      --accent: #1d4f91;
+      --line: #d8d2c7;
+      --card: #fffdf9;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Inter", sans-serif;
+      line-height: 1.72;
+    }
+
+    .page {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 36px 24px 56px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 34px 34px 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    h1, h2 {
+      font-family: "Cormorant Garamond", serif;
+      line-height: 1.08;
+      letter-spacing: 0.2px;
+      color: #151515;
+      margin-top: 0;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 18px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-top: 30px;
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    p {
+      margin: 0 0 16px;
+      font-size: 1.02rem;
+    }
+
+    .lead {
+      font-size: 1.08rem;
+    }
+
+    .note {
+      background: #f7f2ea;
+      border-left: 4px solid var(--accent);
+      padding: 14px 16px;
+      border-radius: 10px;
+      margin: 18px 0 20px;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 18px;
+      font-size: 0.96rem;
+      background: #fcfaf6;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    th, td {
+      text-align: left;
+      vertical-align: top;
+      padding: 13px 11px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    th {
+      background: #f3ede3;
+      font-weight: 600;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .degree-title,
+    .course-title {
+      font-weight: 700;
+      color: #1a1a1a;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    nav {
+      margin-top: 28px;
+      text-align: center;
+      font-size: 1.05rem;
+    }
+
+    nav a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    nav .sep {
+      color: #7a7a7a;
+      margin: 0 8px;
+    }
+
+    .footer-note {
+      margin-top: 18px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 900px) {
+      .card {
+        padding: 24px 20px;
+      }
+
+      h1 {
+        font-size: 2.4rem;
+      }
+
+      h2 {
+        font-size: 1.7rem;
+      }
+
+      table {
+        display: block;
+        overflow-x: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <section class="card">
+      <h1>Education</h1>
+
+      <p class="lead">
+        This page summarizes my formal academic background and selected graduate coursework at the
+        University of Victoria.
+      </p>
+
+      <h2>Degrees</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Degree</th>
+            <th>University</th>
+            <th>Department</th>
+            <th>Time</th>
+            <th>GPA</th>
+            <th>Additional Information</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><div class="degree-title">Master of Science (MSc) in Statistics</div></td>
+            <td>University of Victoria</td>
+            <td>Department of Mathematics and Statistics</td>
+            <td>September 2022 – December 2024</td>
+            <td>8.25 / 9.00</td>
+            <td>Essay Title: <em>Optimal Designs for Quadratic, Cubic, Quartic and Quintic Polynomial Models in Balls</em></td>
+          </tr>
+
+          <tr>
+            <td><div class="degree-title">Master of Arts (MA) in Economics</div></td>
+            <td>University of Victoria</td>
+            <td>Department of Economics</td>
+            <td>September 2018 – August 2020</td>
+            <td>8.63 / 9.00</td>
+            <td>Essay Title: <em>Effects of a Speed Bump on NYSE American</em></td>
+          </tr>
+
+          <tr>
+            <td><div class="degree-title">Bachelor of Science in Finance</div></td>
+            <td>Southeastern Louisiana University</td>
+            <td>Department of Accounting and Finance</td>
+            <td>August 2012 – May 2016</td>
+            <td>3.98 / 4.00</td>
+            <td>Minor in Mathematics and Economics</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Selected Graduate Courses</h2>
+
+      <div class="note">
+        The course descriptions in the table below are reproduced <strong>verbatim</strong> from the
+        University of Victoria’s published course descriptions as shown in the screenshots provided.
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Course Title</th>
+            <th>University</th>
+            <th>Term</th>
+            <th>Unit Value</th>
+            <th>Grade</th>
+            <th>Grade Point</th>
+            <th>Comparative Mean</th>
+            <th>Class Size</th>
+            <th>Course Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><div class="course-title">ECON 500 – Microeconomic Analysis</div></td>
+            <td>University of Victoria</td>
+            <td>Sep – Dec 2018</td>
+            <td>1.5</td>
+            <td>96% (A+)</td>
+            <td>9</td>
+            <td>82%</td>
+            <td>13</td>
+            <td>An introduction to consumer demand, production and market organization. Topics covered generally include: consumer demand; duality; choice under uncertainty; intertemporal choice; measuring welfare change; the competitive firm; the two sector model; properties of competitive equilibrium; market structure and externalities.</td>
+          </tr>
+
+          <tr>
+            <td><div class="course-title">ECON 529 – Economics of Finance</div></td>
+            <td>University of Victoria</td>
+            <td>Sep – Dec 2018</td>
+            <td>1.5</td>
+            <td>88% (A)</td>
+            <td>8</td>
+            <td>88%</td>
+            <td>12</td>
+            <td>The basic theory of finance under uncertainty. Topics include expected utility maximization, state preference theory, analysis of capital asset pricing, and option pricing.</td>
+          </tr>
+
+          <tr>
+            <td><div class="course-title">ECON 545 – Econometric Analysis</div></td>
+            <td>University of Victoria</td>
+            <td>Sep – Dec 2018</td>
+            <td>1.5</td>
+            <td>90% (A+)</td>
+            <td>9</td>
+            <td>82%</td>
+            <td>13</td>
+            <td>The basics of estimation and hypothesis testing in the classical linear regression model, with empirical exercises using economic data. Topics typically include: testing and imposing linear restrictions; dummy variables; specification error; multicollinearity; measurement error; serial correlation; heteroskedasticity; and simultaneity.</td>
+          </tr>
+
+          <tr>
+            <td><div class="course-title">ECON 468 – Financial Econometrics</div></td>
+            <td>University of Victoria</td>
+            <td>Jan – Apr 2019</td>
+            <td>1.5</td>
+            <td>89% (A)</td>
+            <td>8</td>
+            <td>80%</td>
+            <td>27</td>
+            <td>An introduction to time series econometrics through the medium of financial applications, the lognormal model of asset returns and the random walk model of stock prices, variance ratio tests of the random walk/martingale hypothesis, stationary versus nonstationary stochastic processes, autocorrelations and tests for temporal dependence, trend stationary versus difference stationary models of nonstationarity, ARMA models for stationary variables, GARCH models of volatility clustering, unit root tests and cointegration.</td>
+          </tr>
+
+          <tr>
+            <td><div class="course-title">ECON 501 – Macroeconomic Analysis</div></td>
+            <td>University of Victoria</td>
+            <td>Jan – Apr 2019</td>
+            <td>1.5</td>
+            <td>93% (A+)</td>
+            <td>9</td>
+            <td>81%</td>
+            <td>12</td>
+            <td>An introduction to macroeconomic analysis of economic growth and business cycles including the role of macroeconomic policies.</td>
+          </tr>
+
+          <tr>
+            <td><div class="course-title">ECON 516 – Cost-Benefit Analysis</div></td>
+            <td>University of Victoria</td>
+            <td>Jan – Apr 2019</td>
+            <td>1.5</td>
+            <td>86% (A)</td>
+            <td>8</td>
+            <td>83%</td>
+            <td>12</td>
+            <td>Methods of cost-benefit analysis with applications to public policy. Develops a normative foundation for policy analysis, addressing issues of efficiency and wealth redistribution together with the techniques of cost-benefit analysis. Focuses on contemporary Canadian policy issues.</td>
+          </tr>
+
+          <tr>
+            <td><div class="course-title">ECON 406 – Monetary Economics</div></td>
+            <td>University of Victoria</td>
+            <td>May – Aug 2019</td>
+            <td>1.5</td>
+            <td>90% (A+)</td>
+            <td>9</td>
+            <td>72%</td>
+            <td>69</td>
+            <td>Advanced monetary economics with emphasis on general equilibrium analysis. Topics include money and business cycle, monetary models with flexible prices and nominal rigidities, role of central bank, conduct of monetary policies, effects of imperfections in the credit market and bank runs.</td>
+          </tr>
+
+          <tr>
+            <td><div class="course-title">ECON 546 – Themes in Econometrics</div></td>
+            <td>University of Victoria</td>
+            <td>Jan – Apr 2020</td>
+            <td>1.5</td>
+            <td>97% (A+)</td>
+            <td>9</td>
+            <td>Not shown</td>
+            <td>Not shown</td>
+            <td>A systematic presentation of the principal themes in econometric inference, such as Maximum Likelihood, Instrumental Variables, Method of Moments, Bayesian Inference, Likelihood Ratio, Wald, and Lagrange Multiplier tests. A discussion of Nonparametric and Semiparametric inference, asymptotic distribution theory and Monte Carlo simulation methods. Application of these methods in empirical projects.</td>
+          </tr>
+
+          <tr>
+            <td><div class="course-title">ECE 503 – Optimization for Machine Learning</div></td>
+            <td>University of Victoria</td>
+            <td>Sep – Dec 2022</td>
+            <td>1.5</td>
+            <td>89% (A)</td>
+            <td>8</td>
+            <td>87%</td>
+            <td>34</td>
+            <td>The steepest-descent, Newton, conjugate, and quasi-Newton algorithms for unconstrained optimization. Inexact line-search techniques. Application of optimization methods to classification, logistic regression, and support vector machines for signal processing and machine intelligence involving audio, image, video and other types of data. Introduction to constrained optimization. Students are required to complete a project.</td>
+          </tr>
+
+          <tr>
+            <td><div class="course-title">STAT 554 – Time Series Analysis</div></td>
+            <td>University of Victoria</td>
+            <td>Sep – Dec 2022</td>
+            <td>1.5</td>
+            <td>85% (A)</td>
+            <td>8</td>
+            <td>80%</td>
+            <td>6</td>
+            <td>Stationary time series; non-stationary time series; transformation; smoothing techniques; autoregressive moving average models; integrated models for non-stationary data; multiplicative seasonal ARIMA models; spectral analysis; linear filters.</td>
+          </tr>
+
+          <tr>
+            <td><div class="course-title">STAT 564 – Statistical Computing</div></td>
+            <td>University of Victoria</td>
+            <td>Sep – Dec 2022</td>
+            <td>1.5</td>
+            <td>88% (A)</td>
+            <td>8</td>
+            <td>88%</td>
+            <td>17</td>
+            <td>Computer representation of numbers, univariate optimization, multivariate optimization, combinatorial optimization, genetic algorithms, EM algorithm, random number generation, numerical integration, simulation and Monte Carlo integration, Gibbs sampling, Metropolis-Hastings algorithm, bootstrapping. Other topics may include: permutation tests, smoothing, reversible jump MCMC, importance sampling, hybrid Gibbs sampling.</td>
+          </tr>
+
+          <tr>
+            <td><div class="course-title">STAT 450 – Mathematical Statistics II</div></td>
+            <td>University of Victoria</td>
+            <td>Jan – Apr 2023</td>
+            <td>1.5</td>
+            <td>86% (A)</td>
+            <td>8</td>
+            <td>67%</td>
+            <td>38</td>
+            <td>Brief introduction to decision theory, point and interval estimation, hypothesis testing; regression and correlation, analysis of variance. Emphasis on the mathematics of statistics.</td>
+          </tr>
+
+          <tr>
+            <td><div class="course-title">STAT 558 – Design and Analysis of Experiments</div></td>
+            <td>University of Victoria</td>
+            <td>Jan – Apr 2023</td>
+            <td>1.5</td>
+            <td>87% (A)</td>
+            <td>8</td>
+            <td>87%</td>
+            <td>6</td>
+            <td>Basic principles of experimental design; factorial designs; block designs; fractional factorial designs; response surface designs; nested and split-plot designs; optimal designs; techniques of analysis of variance; fixed effects models; random effects models.</td>
+          </tr>
+
+          <tr>
+            <td><div class="course-title">STAT 553 – Multivariate Analysis</div></td>
+            <td>University of Victoria</td>
+            <td>Sep – Dec 2023</td>
+            <td>1.5</td>
+            <td>93% (A+)</td>
+            <td>9</td>
+            <td>81%</td>
+            <td>7</td>
+            <td>Multivariate normal distribution; tests on covariance matrices; multivariate analysis of variance; discriminant analysis; classification analysis; cluster analysis; principal component analysis; factor analysis; multivariate regression analysis; canonical correlation; graphical procedures.</td>
+          </tr>
+
+          <tr>
+            <td><div class="course-title">STAT 559 – Survival Analysis</div></td>
+            <td>University of Victoria</td>
+            <td>Jan – Apr 2024</td>
+            <td>1.5</td>
+            <td>85% (A)</td>
+            <td>8</td>
+            <td>87%</td>
+            <td>8</td>
+            <td>Theory and techniques for censored and truncated data; nonparametric estimation of survival and cumulative hazard functions and associated hypothesis tests; semiparametric proportional hazards regression; survival models; regression diagnostics; inference for parametric regression models.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="small">
+        The entries above are based on the screenshots provided, including transcript information and
+        the matching published course-description pages.
+      </p>
+    </section>
+
+    <nav>
+      <a href="index.html">Home</a><span class="sep">|</span>
+      <a href="education.html">Education</a><span class="sep">|</span>
+      <a href="research.html">Research</a><span class="sep">|</span>
+      <a href="teaching.html">Teaching</a><span class="sep">|</span>
+      <a href="#">Activities</a><span class="sep">|</span>
+      <a href="cv.html">CV</a><span class="sep">|</span>
+      <a href="#">Contact</a>
+    </nav>
+
+    <div class="footer-note">
+      Built with GitHub Pages.
+    </div>
+  </div>
+</body>
+</html>
