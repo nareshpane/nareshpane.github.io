@@ -7,16 +7,22 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600&family=Source+Code+Pro:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
       --bg: #f8f6f2;
       --text: #1f1f1f;
-      --muted: #555;
+      --muted: #5d5d5d;
       --accent: #1d4f91;
       --line: #d8d2c7;
       --card: #fffdf9;
+      --codebg: #f3efe8;
+      --codeborder: #d8cfc1;
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     body {
@@ -28,24 +34,107 @@
     }
 
     .page {
-      max-width: 1000px;
+      max-width: 1080px;
       margin: 0 auto;
-      padding: 36px 24px 48px;
+      padding: 36px 24px 56px;
     }
 
     .card {
       background: var(--card);
       border: 1px solid var(--line);
       border-radius: 22px;
-      padding: 32px;
+      padding: 34px 34px 30px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     }
 
-    h1 {
-      margin: 0 0 18px;
+    h1, h2, h3 {
       font-family: "Cormorant Garamond", serif;
-      font-size: 2.6rem;
       line-height: 1.08;
+      letter-spacing: 0.2px;
+      margin-top: 0;
+      color: #151515;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 18px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-top: 34px;
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin-top: 24px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin: 0 0 16px;
+      font-size: 1.02rem;
+    }
+
+    ul {
+      margin: 0 0 16px 22px;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    .lead {
+      font-size: 1.08rem;
+    }
+
+    .note {
+      background: #f7f2ea;
+      border-left: 4px solid var(--accent);
+      padding: 14px 16px;
+      border-radius: 10px;
+      margin: 18px 0 20px;
+    }
+
+    .code-label {
+      font-size: 0.96rem;
+      font-weight: 600;
+      color: var(--muted);
+      margin: 14px 0 8px;
+    }
+
+    pre {
+      margin: 0 0 18px;
+      background: var(--codebg);
+      border: 1px solid var(--codeborder);
+      border-radius: 14px;
+      padding: 14px 16px;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    code, pre {
+      font-family: "Source Code Pro", monospace;
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .section-gap {
+      margin-top: 28px;
     }
 
     nav {
@@ -68,6 +157,27 @@
       color: #7a7a7a;
       margin: 0 8px;
     }
+
+    .footer-note {
+      margin-top: 18px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 800px) {
+      .card {
+        padding: 24px 20px;
+      }
+
+      h1 {
+        font-size: 2.35rem;
+      }
+
+      h2 {
+        font-size: 1.7rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -75,21 +185,404 @@
     <section class="card">
       <h1>Testing the Limits of the nauty Package for Checking Ramsey Number (5,5)</h1>
 
-      <p>
-        This project studies the computational feasibility of using the nauty package and related
-        graph-generation workflows to explore candidates relevant to the Ramsey number \(R(5,5)\).
+      <p class="lead">
+        This project grew out of a sustained attempt to understand how far one can push the
+        <strong>nauty</strong> package, together with supporting scripts in Bash and Python,
+        in computational experiments related to the Ramsey number <strong>R(5,5)</strong>.
+        The focus here is not merely on generating graphs, but on identifying where the real
+        computational bottlenecks appear, which restrictions help, and which seemingly reasonable
+        ideas fail in practice.
       </p>
 
       <p>
-        My interest here is not only in brute-force generation, but in understanding how far one can
-        push practical computation through structural pruning, edge and degree restrictions,
-        non-isomorphic reduction, and post-generation testing.
+        In my own work on this question, the challenge was not simply “run a graph generator and test
+        everything.” The actual difficulty was much more structural: for graphs on 43 vertices, the
+        search space becomes enormous, and even when one narrows the edge range and imposes degree
+        restrictions, the number of candidates remains too large for naive brute force.
+        This forced a shift from simple generation toward <strong>screening, pruning, sampling,
+        non-isomorphic reduction, graph6 handling, and careful debugging of witness-testing code</strong>.
+      </p>
+
+      <div class="note">
+        <strong>Official nauty site:</strong>
+        <a href="https://pallini.di.uniroma1.it/" target="_blank" rel="noopener noreferrer">
+          https://pallini.di.uniroma1.it/
+        </a>
+      </div>
+
+      <h2>1. Why nauty is relevant here</h2>
+
+      <p>
+        The nauty package is one of the standard tools for generating and processing graphs up to
+        isomorphism. For Ramsey-type computation, this matters because many labelled graphs are merely
+        relabellings of the same underlying structure. If those duplicates are not removed, the search
+        becomes even more infeasible than it already is.
       </p>
 
       <p>
-        The broader goal is to examine where computational bottlenecks arise, what kinds of screening
-        criteria are most useful, and how graph-theoretic insight can reduce otherwise prohibitive
-        search spaces.
+        In the <strong>R(5,5)</strong> setting, one is interested in two-colourings of the edges of
+        a complete graph that avoid a monochromatic <strong>K<sub>5</sub></strong>. Equivalently,
+        one can represent one colour class as a graph <em>G</em> and the other as its complement.
+        Then a colouring is a witness against <strong>R(5,5) &le; n</strong> precisely when both
+        <em>G</em> and its complement avoid <strong>K<sub>5</sub></strong>.
+      </p>
+
+      <p>
+        That equivalence makes graph generation and graph testing natural. But it also reveals the real
+        problem: the ambient space is so large that one cannot hope to enumerate all candidates at the
+        relevant scale without very aggressive reduction.
+      </p>
+
+      <h2>2. What I was actually trying to do</h2>
+
+      <p>
+        The practical goal was to explore candidates around the 43-vertex regime, especially under
+        constraints such as edge ranges and degree windows, and to check whether those candidates could
+        serve as witnesses for the Ramsey problem. The broad plan involved:
+      </p>
+
+      <ul>
+        <li>generating graphs with <code>geng</code>, <code>gengL</code>, and <code>genrang</code>,</li>
+        <li>restricting edge counts and degree ranges where possible,</li>
+        <li>using <code>pickg</code> to post-filter by degree properties,</li>
+        <li>parsing graph6 output,</li>
+        <li>testing graphs and complements for the presence of a <code>K5</code>,</li>
+        <li>and trying to deduplicate non-isomorphic candidates before heavier checking.</li>
+      </ul>
+
+      <p>
+        This sounds straightforward in outline, but each step turned out to have technical complications.
+      </p>
+
+      <h2>3. First steps: how nauty is used at a basic level</h2>
+
+      <p>
+        At a beginner level, some of the most useful commands in nauty for this sort of work are
+        <code>geng</code>, <code>gengL</code>, <code>pickg</code>, and <code>listg</code>.
+      </p>
+
+      <div class="code-label">Example: generate non-isomorphic graphs with small size constraints</div>
+      <pre><code>./geng -q -d2 -D3 8 10</code></pre>
+
+      <p class="small">
+        This generates non-isomorphic graphs on 8 vertices with exactly 10 edges, minimum degree 2,
+        and maximum degree 3.
+      </p>
+
+      <div class="code-label">Example: a larger generation on 43 vertices with an exact edge count</div>
+      <pre><code>./gengL -q -d0 -D5 43 10</code></pre>
+
+      <p class="small">
+        The <code>L</code> version is designed to handle larger output streams more flexibly, though
+        “larger” quickly becomes relative once one moves toward dense 43-vertex cases.
+      </p>
+
+      <div class="code-label">Example: generate then post-filter by degree window</div>
+      <pre><code>./gengL -q -D10 43 10 | ./pickg -q -D6:10 > ~/Documents/graphs_43v_10e_maxdeg_6_to_10.g6</code></pre>
+
+      <p>
+        This kind of pipeline became important because some constraints are easier to impose directly
+        during generation, while others are more naturally enforced afterward.
+      </p>
+
+      <h2>4. The main difficulty: the search space explodes</h2>
+
+      <p>
+        The hardest issue was not syntax. It was scale. Once the target moved toward graphs on
+        <strong>43 vertices</strong> with edge counts in a range that might plausibly matter for
+        <strong>R(5,5)</strong>, the number of candidates became overwhelming.
+      </p>
+
+      <p>
+        One representative command was:
+      </p>
+
+      <div class="code-label">Dense search attempt with degree restrictions</div>
+      <pre><code>./gengL -q -d18 -D24 43 387:451</code></pre>
+
+      <p>
+        This is already highly restricted compared with the full space: it narrows the edge range and
+        imposes a fairly tight degree window. Yet in practice, even that is still too large to treat as
+        a routine laptop computation. This was one of the clearest lessons from the project:
+        <strong>plausible-looking restrictions are often nowhere near enough</strong>.
+      </p>
+
+      <p>
+        In other words, there is a large gap between “I have reduced the search space mathematically”
+        and “the remaining search is computationally manageable.”
+      </p>
+
+      <h2>5. Why edge and degree restrictions help, but not enough</h2>
+
+      <p>
+        It is natural to hope that if one restricts both the total number of edges and the degree range,
+        one will eliminate most bad candidates from the start. That hope is partially justified. Degree
+        windows do remove obvious extremes, and edge-range restrictions can focus attention on graphs
+        that look more plausible as witnesses.
+      </p>
+
+      <p>
+        But the experiments made clear that these constraints do not magically compress the problem into
+        something small. Even after discarding huge portions of the full graph space, what remains can
+        still be astronomically large. This is why the project gradually moved away from a naive
+        “generate all, then test all” mindset toward a more layered strategy.
+      </p>
+
+      <h2>6. A practical complication: <code>genrang</code> is useful, but limited</h2>
+
+      <p>
+        Because exhaustive generation became too expensive, another line of attack was to use random
+        generation by edge count. A typical pattern was:
+      </p>
+
+      <div class="code-label">Random generation over a range of exact edge counts</div>
+      <pre><code>for m in $(seq 387 451); do
+    ./genrang -q -g -e"$m" 43 100000
+done > raw_random_43v_387_451.g6</code></pre>
+
+      <p>
+        This is attractive because it lets one sample many candidates without insisting on complete
+        enumeration. But it introduces a new problem: <code>genrang</code> does not naturally enforce
+        all the structural restrictions one might want, especially tight degree windows of the kind
+        that seemed relevant here.
+      </p>
+
+      <p>
+        So although random generation helped with memory and time pressure, it did not remove the need
+        for downstream filtering. In practice, that meant shifting computational burden rather than
+        eliminating it.
+      </p>
+
+      <h2>7. Post-filtering with <code>pickg</code></h2>
+
+      <p>
+        Once direct generation under all desired constraints became difficult, the natural workaround
+        was to generate first and filter afterward. Commands of the following form were central:
+      </p>
+
+      <div class="code-label">Filter by maximum degree window</div>
+      <pre><code>./gengL -q -D8 43 44 | ./pickg -q -D8:8</code></pre>
+
+      <div class="code-label">Filter by maximum degree range</div>
+      <pre><code>./gengL -q -D10 43 10 | ./pickg -q -D6:10</code></pre>
+
+      <p>
+        This is a sensible tactic, but it creates a trade-off. The less restrictive the upstream
+        generator is, the more candidates flow into the filter. At that point, the pipeline may still
+        be expensive simply because the intermediate stream is too large.
+      </p>
+
+      <p>
+        So one of the recurring themes in this project was that a pipeline can be logically correct
+        and still be computationally poor.
+      </p>
+
+      <h2>8. Debugging the witness test: when “all graphs are witnesses” is suspicious</h2>
+
+      <p>
+        A particularly important difficulty arose after generating candidates and running Python checks
+        for whether a graph and its complement both avoided a <strong>K<sub>5</sub></strong>.
+        At one point, the program appeared to classify all or nearly all generated graphs as witnesses.
+        That looked wrong, and it <em>was</em> the kind of output that should trigger suspicion.
+      </p>
+
+      <p>
+        There are at least two reasons such a result can appear:
+      </p>
+
+      <ul>
+        <li>
+          the testing code has a bug, especially in graph6 parsing or in the logic that checks the
+          complement, or
+        </li>
+        <li>
+          the generated graphs are so sparse that they obviously cannot contain a <code>K5</code>,
+          and their complements become the real issue.
+        </li>
+      </ul>
+
+      <p>
+        This mattered because I was not working with toy examples only. I had to distinguish between
+        a genuine mathematical phenomenon and a programming error. That forced careful re-examination
+        of graph6 parsing, complement construction, and what the edge range itself implied.
+      </p>
+
+      <div class="code-label">Illustrative Python structure for a witness check</div>
+      <pre><code>import networkx as nx
+from itertools import combinations
+
+def has_k5(G):
+    nodes = list(G.nodes())
+    for subset in combinations(nodes, 5):
+        H = G.subgraph(subset)
+        if H.number_of_edges() == 10:
+            return True
+    return False
+
+def is_ramsey_55_witness(G):
+    comp = nx.complement(G)
+    return (not has_k5(G)) and (not has_k5(comp))</code></pre>
+
+      <p>
+        The logic is simple enough in principle, but in practice the real danger lies earlier:
+        did the graph get parsed correctly, are the vertices correct, was the graph6 header handled
+        properly, and did the complement get taken on the intended vertex set?
+      </p>
+
+      <h2>9. Graph6 handling was not a side issue</h2>
+
+      <p>
+        For this project, graph6 was not just a file format in the background. It was an operational
+        bottleneck. Once outputs were being piped through different tools, saved to files, read back
+        in Python, and re-tested, the exact encoding details mattered.
+      </p>
+
+      <p>
+        One practical point was that graph6 may include the optional header
+        <code>&gt;&gt;graph6&lt;&lt;</code>. Another was that for small enough graphs, the first character
+        encodes the order of the graph. If that is mishandled, every downstream conclusion becomes
+        unreliable.
+      </p>
+
+      <div class="code-label">Example of the sort of graph6 issues that required attention</div>
+      <pre><code>def strip_graph6_header(line):
+    line = line.strip()
+    if line.startswith(">>graph6<<"):
+        line = line[len(">>graph6<<"):]
+    return line</code></pre>
+
+      <p>
+        The broader lesson was that in combinatorial computation, apparently minor encoding details
+        can completely invalidate large batches of results.
+      </p>
+
+      <h2>10. Non-isomorphic reduction was not optional</h2>
+
+      <p>
+        Another major theme in the project was that storing or testing large labelled samples without
+        deduplication is wasteful. Once Python had generated random candidates, the next question was
+        not simply “which ones are witnesses?” but also “how many distinct structures are actually
+        represented here?”
+      </p>
+
+      <p>
+        This is exactly where nauty is powerful. It offers canonical-labelling and isomorphism tools
+        that can reduce repeated work. But again, there is a practical gap between theoretical
+        usefulness and operational ease. Once one has a large raw file of candidates, the workflow
+        for deduplicating and rechecking still has to be designed carefully.
+      </p>
+
+      <h2>11. Progress visibility and usability mattered</h2>
+
+      <p>
+        A small but real difficulty was that long-running nauty commands can feel opaque while they are
+        running. Even when a command is technically working, it is hard to know how far along it is or
+        whether the current pipeline is sensible. This matters a lot in exploratory work, because one
+        often wants feedback before committing hours to a poor setup.
+      </p>
+
+      <p>
+        That is one reason why timing wrappers and structured output became useful:
+      </p>
+
+      <div class="code-label">Timing a generation-and-filter pipeline</div>
+      <pre><code>time ./gengL -q -D10 43 10 | ./pickg -q -D6:10 > ~/Documents/graphs_43v_10e_maxdeg_6_to_10.g6</code></pre>
+
+      <p>
+        This does not solve the problem, but it gives at least some information about whether the chosen
+        approach is remotely practical.
+      </p>
+
+      <h2>12. Why this was harder than it first appeared</h2>
+
+      <p>
+        Looking back, the real computational difficulty was not just “Ramsey numbers are hard.”
+        More specifically, the hard part was trying to bridge four distinct layers at once:
+      </p>
+
+      <ul>
+        <li>the mathematical layer, where one wants plausible structural criteria;</li>
+        <li>the graph-generation layer, where nauty can impose some but not all constraints efficiently;</li>
+        <li>the data-handling layer, where graph6 files and pipelines must be managed correctly;</li>
+        <li>and the testing layer, where witness checks must be both logically correct and computationally cheap.</li>
+      </ul>
+
+      <p>
+        Each of those layers is manageable in isolation. The difficulty comes from having to make them
+        work together on genuinely large inputs.
+      </p>
+
+      <h2>13. A beginner-friendly way to start with nauty for problems like this</h2>
+
+      <p>
+        For someone approaching nauty with Ramsey-style questions in mind, a good workflow is:
+      </p>
+
+      <ul>
+        <li>start with very small graphs where outputs can be checked by hand,</li>
+        <li>learn the behaviour of <code>geng</code> and <code>pickg</code> on tiny examples,</li>
+        <li>save outputs in graph6,</li>
+        <li>write a small Python parser and verify it on known cases,</li>
+        <li>only then move to larger edge ranges and degree windows,</li>
+        <li>and treat every surprising large-scale result as something to be audited, not trusted immediately.</li>
+      </ul>
+
+      <p>
+        That gradual approach would have saved confusion in several places. On problems of this scale,
+        a bug discovered late can invalidate an enormous amount of work.
+      </p>
+
+      <h2>14. Representative commands from this project</h2>
+
+      <p>
+        The following commands capture the flavour of the actual computational exploration:
+      </p>
+
+      <div class="code-label">Small constrained generation</div>
+      <pre><code>./geng -q -d2 -D3 8 10</code></pre>
+
+      <div class="code-label">Larger exact-edge generation</div>
+      <pre><code>./gengL -q -d0 -D5 43 10</code></pre>
+
+      <div class="code-label">Save large output to file</div>
+      <pre><code>./gengL -q -d6 -D10 43 10 > ~/Documents/graphs_43v_10e_d6_D10.g6</code></pre>
+
+      <div class="code-label">Post-filter by degree window</div>
+      <pre><code>./gengL -q -D10 43 10 | ./pickg -q -D6:8 > ~/Documents/graphs_43v_10e_maxdeg_6_to_8.g6</code></pre>
+
+      <div class="code-label">Timed generation and filtering</div>
+      <pre><code>time ./gengL -q -D10 43 10 | ./pickg -q -D6:10 > ~/Documents/graphs_43v_10e_maxdeg_6_to_10.g6</code></pre>
+
+      <div class="code-label">Edge listing for inspection</div>
+      <pre><code>./gengL -q -d0 -D3 43 44 | ./listg -e > ~/Documents/Nodes_43_Graphs_R_5_5_Checks/43V_44E/graphs_43v_44e_d0_D3.g6</code></pre>
+
+      <div class="code-label">Dense regime attempt with degree restrictions</div>
+      <pre><code>./gengL -q -d18 -D24 43 387:451</code></pre>
+
+      <div class="code-label">Random generation over an edge range</div>
+      <pre><code>for m in $(seq 387 451); do
+    ./genrang -q -g -e"$m" 43 100000
+done > raw_random_43v_387_451.g6</code></pre>
+
+      <h2>15. What this project taught me</h2>
+
+      <p>
+        The main lesson was that computation near <strong>R(5,5)</strong> is not just a matter of
+        more CPU time. The real issue is that one needs a workflow that is mathematically selective,
+        computationally realistic, and carefully debugged at every stage.
+      </p>
+
+      <p>
+        nauty is extremely powerful, but power alone is not enough. Around this problem, one quickly
+        encounters the limits of direct generation, the limits of partial filtering, the limits of
+        random sampling, and the limits of trusting code that has not been validated on small cases.
+      </p>
+
+      <p>
+        That is why this project became, for me, not only a study of Ramsey candidates but also a
+        study of <strong>how combinatorial computation breaks down</strong>, where it can be repaired,
+        and what kinds of reductions are still needed before a laptop-level search becomes genuinely
+        persuasive.
       </p>
     </section>
 
@@ -97,6 +590,10 @@
       <a href="index.html">Home</a><span class="sep">|</span>
       <a href="research.html">Research</a>
     </nav>
+
+    <div class="footer-note">
+      Built with GitHub Pages.
+    </div>
   </div>
 </body>
 </html>
