@@ -7,16 +7,22 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600&family=Source+Code+Pro:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
       --bg: #f8f6f2;
       --text: #1f1f1f;
-      --muted: #555;
+      --muted: #5d5d5d;
       --accent: #1d4f91;
       --line: #d8d2c7;
       --card: #fffdf9;
+      --codebg: #f3efe8;
+      --codeborder: #d8cfc1;
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     body {
@@ -28,24 +34,138 @@
     }
 
     .page {
-      max-width: 1000px;
+      max-width: 1080px;
       margin: 0 auto;
-      padding: 36px 24px 48px;
+      padding: 36px 24px 56px;
     }
 
     .card {
       background: var(--card);
       border: 1px solid var(--line);
       border-radius: 22px;
-      padding: 32px;
+      padding: 34px 34px 30px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     }
 
-    h1 {
-      margin: 0 0 18px;
+    h1, h2, h3 {
       font-family: "Cormorant Garamond", serif;
-      font-size: 2.6rem;
       line-height: 1.08;
+      letter-spacing: 0.2px;
+      margin-top: 0;
+      color: #151515;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 18px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-top: 34px;
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin-top: 24px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin: 0 0 16px;
+      font-size: 1.02rem;
+    }
+
+    ul, ol {
+      margin: 0 0 16px 24px;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    .lead {
+      font-size: 1.08rem;
+    }
+
+    .note {
+      background: #f7f2ea;
+      border-left: 4px solid var(--accent);
+      padding: 14px 16px;
+      border-radius: 10px;
+      margin: 18px 0 20px;
+    }
+
+    .warn {
+      background: #fbf6ea;
+      border-left: 4px solid #b7791f;
+      padding: 14px 16px;
+      border-radius: 10px;
+      margin: 18px 0 20px;
+    }
+
+    .code-label {
+      font-size: 0.96rem;
+      font-weight: 600;
+      color: var(--muted);
+      margin: 14px 0 8px;
+    }
+
+    pre {
+      margin: 0 0 18px;
+      background: var(--codebg);
+      border: 1px solid var(--codeborder);
+      border-radius: 14px;
+      padding: 14px 16px;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    code, pre {
+      font-family: "Source Code Pro", monospace;
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0 20px;
+      font-size: 0.97rem;
+      background: #fcfaf6;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 12px 10px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+
+    th {
+      background: #f3ede3;
+      font-weight: 600;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
     }
 
     nav {
@@ -68,6 +188,32 @@
       color: #7a7a7a;
       margin: 0 8px;
     }
+
+    .footer-note {
+      margin-top: 18px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 800px) {
+      .card {
+        padding: 24px 20px;
+      }
+
+      h1 {
+        font-size: 2.35rem;
+      }
+
+      h2 {
+        font-size: 1.7rem;
+      }
+
+      table {
+        display: block;
+        overflow-x: auto;
+      }
+    }
   </style>
 </head>
 <body>
@@ -75,20 +221,294 @@
     <section class="card">
       <h1>Empirically Validating Evolution of Giant Components in Random Graphs</h1>
 
+      <p class="lead">
+        This page is a partial computational exploration inspired by the paper
+        <em>The Birth of the Giant Component</em>. It is not an attempt to reproduce the
+        full depth of the paper’s generating-function and asymptotic analysis. Instead,
+        it is meant to give a concrete feel for the underlying phenomenon: why the giant
+        component emerges near the critical regime, why intuitive simulations can be
+        misleading, and why even seemingly simple questions about the process turn out to
+        be subtler than they first appear.
+      </p>
+
+      <div class="warn">
+        The computational tests described here are <strong>only partial</strong> relative to the paper.
+        The paper proves asymptotic results about evolving random graphs and related multigraph models,
+        while the experiments here focus on finite simulations and repeated sampling to build intuition. :contentReference[oaicite:1]{index=1}
+      </div>
+
+      <div class="note">
+        <strong>Paper link:</strong>
+        <a href="https://arxiv.org/pdf/math/9310236" target="_blank" rel="noopener noreferrer">
+          Janson, Knuth, Łuczak, and Pittel, <em>The Birth of the Giant Component</em>
+        </a>
+      </div>
+
+      <h2>1. What drew me to this question</h2>
+
       <p>
-        This project examines the emergence and development of giant components in random graphs
-        through repeated simulation and computational observation.
+        What interested me here was not just the standard slogan that a “giant component”
+        appears near the critical point. The more interesting question was how that giant
+        actually emerges in a live evolving graph when edges are added one at a time.
+        A naive mental picture suggests a clean story: small components gradually merge,
+        then one component begins to dominate, and everything else is eventually absorbed.
+        But the paper shows that the true story is more delicate.
       </p>
 
       <p>
-        I am interested in how empirical behavior compares with the classical theoretical picture,
-        especially when one records graph evolution step by step, averages across many runs,
-        and studies the onset of large connected structures.
+        In fact, one of the motivations discussed in the paper was an early rumor from
+        simulation work suggesting that, throughout the evolution, there was never more
+        than one complex component at a time. The authors explain that this rumor was
+        false, though related high-probability statements are approximately true in certain
+        regimes. That subtle difference is exactly the kind of thing that makes the topic
+        mathematically interesting. :contentReference[oaicite:2]{index=2}
+      </p>
+
+      <h2>2. The basic phenomenon</h2>
+
+      <p>
+        Consider a random graph process on <code>n</code> vertices where edges are added
+        one by one. For sparse graphs, the components are mostly trees and small unicyclic
+        pieces. Near roughly <code>m ≈ n/2</code> edges, the process enters the critical
+        window. Around that point, component sizes and cyclic complexity begin to change
+        in a qualitatively different way, and shortly thereafter a unique giant component
+        emerges in the supercritical regime. :contentReference[oaicite:3]{index=3}
       </p>
 
       <p>
-        More broadly, this work reflects my interest in combining probability, graph theory,
-        and statistical computing to test limiting phenomena through carefully designed experiments.
+        The paper’s abstract and introduction emphasize that this transition is not just
+        about one large cluster suddenly appearing. It is also about how the graph’s
+        excess structure changes: trees, unicyclic components, bicyclic components, and
+        more complicated pieces evolve according to a much richer pattern than a first
+        simulation might suggest. :contentReference[oaicite:4]{index=4}
+      </p>
+
+      <h2>3. Why finite simulation can mislead</h2>
+
+      <p>
+        One reason I found this topic compelling is that simulation seems, at first glance,
+        like it ought to settle the matter quickly. After all, one can generate random
+        graphs, add edges one by one, and record the size of the largest component at each
+        step. But the paper shows why that is not enough.
+      </p>
+
+      <p>
+        A key issue is that reporting only at selected times can create a false impression.
+        The authors explain that the old rumor arose partly because graphs were examined at
+        <code>m = n/2</code> and certain other fixed times, rather than continuously at
+        each edge addition. More complicated configurations could arise only briefly and
+        then disappear, so a coarse sampling schedule could easily miss them. :contentReference[oaicite:5]{index=5}
+      </p>
+
+      <div class="code-label">The intuitive trap</div>
+      <pre><code>Sample only at a few times:
+  graph after 0.50 n edges
+  graph after 0.55 n edges
+  graph after 0.60 n edges
+
+This may miss short-lived configurations that occur
+between those observation points.</code></pre>
+
+      <p>
+        This mattered directly for my own thinking, because I was interested in tracking
+        the evolution edge by edge rather than relying on occasional snapshots. That is
+        exactly the kind of distinction that turns an apparently simple simulation into a
+        more careful computational experiment.
+      </p>
+
+      <h2>4. What I wanted to test computationally</h2>
+
+      <p>
+        The computational question I cared about was not only “does a giant component
+        appear?” That is classical. The more interesting test was:
+      </p>
+
+      <ol>
+        <li>simulate the graph process one edge at a time,</li>
+        <li>record the size of the largest connected component after each new edge,</li>
+        <li>repeat this many times,</li>
+        <li>and compare the observed growth against the limiting critical-window picture.</li>
+      </ol>
+
+      <p>
+        This makes the experiment more informative than a single run, but also more costly.
+        If one wants many replications, each tracked edge by edge, the data grows quickly.
+        And even then, one is still testing only a finite approximation to asymptotic theory.
+      </p>
+
+      <h2>5. A basic simulation outline</h2>
+
+      <p>
+        At a practical level, the experiment can be organized by starting with an empty
+        graph on <code>n</code> labelled vertices, shuffling all possible edges, then
+        adding them one at a time while recording the largest component size.
+      </p>
+
+      <div class="code-label">Simple Python outline</div>
+      <pre><code>import random
+import networkx as nx
+
+def giant_component_trajectory(n, seed=None):
+    if seed is not None:
+        random.seed(seed)
+
+    G = nx.Graph()
+    G.add_nodes_from(range(n))
+
+    edges = [(i, j) for i in range(n) for j in range(i + 1, n)]
+    random.shuffle(edges)
+
+    largest_sizes = []
+
+    for e in edges:
+        G.add_edge(*e)
+        largest = max((len(c) for c in nx.connected_components(G)), default=0)
+        largest_sizes.append(largest)
+
+    return largest_sizes</code></pre>
+
+      <p>
+        That is enough to visualize one trajectory. But one trajectory alone is not very
+        informative. The more meaningful object is the average trajectory over many runs,
+        together with a way of looking at variability across runs.
+      </p>
+
+      <h2>6. Repeated sampling matters</h2>
+
+      <p>
+        One of the issues I was especially concerned about earlier was whether an apparent
+        behavior in a single realization was genuinely typical, or just a quirk of that
+        sample. That naturally leads to repeated simulations and averaging.
+      </p>
+
+      <div class="code-label">Average over many runs</div>
+      <pre><code>def average_giant_trajectory(n, trials=100):
+    total = None
+
+    for t in range(trials):
+        traj = giant_component_trajectory(n, seed=t)
+
+        if total is None:
+            total = [0] * len(traj)
+
+        for i, value in enumerate(traj):
+            total[i] += value
+
+    return [x / trials for x in total]</code></pre>
+
+      <p>
+        This does not prove the limiting theorems, but it does help check whether the
+        qualitative picture from the paper is visible numerically: a long subcritical
+        period, a rapid transition near the critical region, and a clear supercritical
+        dominance of one component.
+      </p>
+
+      <h2>7. What the paper actually proves that a simulation does not</h2>
+
+      <p>
+        The paper is much deeper than a numerical study of largest-component size. It
+        develops a theory of evolving graphs and multigraphs using generating functions,
+        derives limiting distributions for sparse connected components near the critical
+        point, and analyzes the evolution of cyclic complexity and excess through a Markov
+        process description. The authors also prove that the probability the process never
+        has more than one complex component approaches <code>5π/18 ≈ 0.8727</code>, and
+        that at exactly <code>m = n/2</code> edges the probability of having at most one
+        such component is approximately <code>0.9957</code>. :contentReference[oaicite:6]{index=6}
+      </p>
+
+      <p>
+        Those are asymptotic statements. A simulation with moderate <code>n</code> can
+        illustrate them, but it does not replace the proof. This is why I wanted the page
+        to state clearly that the computational work is only partial.
+      </p>
+
+      <h2>8. Why I found the “momentary complexity” issue so interesting</h2>
+
+      <p>
+        The part of the paper I found especially thought-provoking is the explanation that
+        the false rumor arose because complex competing components can appear only briefly.
+        That means the graph process can look cleaner than it really is if one does not
+        inspect it continuously. For me, this sharpened the meaning of “test the theory.”
+      </p>
+
+      <p>
+        If the event of interest is short-lived, then it is not enough to sample only a few
+        times. One has to watch the process edge by edge. In other words, the computational
+        design has to reflect the mathematics of what might be missed.
+      </p>
+
+      <div class="code-label">Edge-by-edge recording idea</div>
+      <pre><code>for e in shuffled_edges:
+    G.add_edge(*e)
+
+    # record:
+    # 1. size of largest component
+    # 2. number of components with cycles
+    # 3. total excess = edges - vertices across complex pieces
+    # 4. whether more than one complex component exists now</code></pre>
+
+      <p>
+        That richer recording scheme is much closer in spirit to the subtlety emphasized
+        by the paper than a single coarse snapshot.
+      </p>
+
+      <h2>9. What I would want readers to take away</h2>
+
+      <p>
+        The main lesson is that the “birth of the giant component” is not just a dramatic
+        threshold picture about one large cluster suddenly emerging. It is also a lesson in
+        how misleading raw simulation intuition can be if one does not record the right
+        statistics at the right times.
+      </p>
+
+      <p>
+        For me, the point of the computational exploration is therefore twofold:
+      </p>
+
+      <ul>
+        <li>to see the giant component emerge numerically in repeated runs, and</li>
+        <li>to understand why the more refined structure near the critical point cannot be
+            captured by a simplistic visual story.</li>
+      </ul>
+
+      <h2>10. A simple experimental agenda</h2>
+
+      <p>
+        A reasonable computational program, still far simpler than the full paper, would be:
+      </p>
+
+      <ol>
+        <li>choose a moderate <code>n</code>,</li>
+        <li>simulate the graph process many times,</li>
+        <li>record the largest component after every edge addition,</li>
+        <li>record whether more than one complex component appears at any time,</li>
+        <li>average the trajectories across runs,</li>
+        <li>and compare the results against the critical-point heuristics from the paper.</li>
+      </ol>
+
+      <div class="code-label">Possible command-line style workflow</div>
+      <pre><code>python3 giant_component_sim.py --n 500 --trials 200 --record-every-edge
+python3 giant_component_sim.py --n 1000 --trials 200 --record-every-edge
+python3 giant_component_sim.py --n 2000 --trials 100 --record-every-edge --save-csv</code></pre>
+
+      <p>
+        Even this is already enough to raise meaningful questions about finite-size effects,
+        averaging, and how closely moderate simulations resemble the asymptotic claims.
+      </p>
+
+      <h2>11. Why this topic stayed with me</h2>
+
+      <p>
+        I was drawn to this problem because it sits right at the boundary between elegant
+        asymptotic theory and computational experiment. It looks easy to visualize, but hard
+        to understand correctly. It looks easy to simulate, but subtle to interpret. And it
+        is exactly that tension that makes it so appealing.
+      </p>
+
+      <p>
+        In that sense, this page is less about re-proving the paper and more about showing
+        why the paper matters: the graph process contains more structure, and more transient
+        behavior, than a casual glance would suggest.
       </p>
     </section>
 
@@ -96,6 +516,10 @@
       <a href="index.html">Home</a><span class="sep">|</span>
       <a href="research.html">Research</a>
     </nav>
+
+    <div class="footer-note">
+      Built with GitHub Pages.
+    </div>
   </div>
 </body>
 </html>
