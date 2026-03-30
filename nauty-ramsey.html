@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Testing the Limits of the nauty Package for Checking Ramsey Number (5,5)</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f8f6f2;
+      --text: #1f1f1f;
+      --muted: #555;
+      --accent: #1d4f91;
+      --line: #d8d2c7;
+      --card: #fffdf9;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Inter", sans-serif;
+      line-height: 1.75;
+    }
+
+    .page {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 36px 24px 48px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 32px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    h1 {
+      margin: 0 0 18px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2.6rem;
+      line-height: 1.08;
+    }
+
+    nav {
+      margin-top: 28px;
+      text-align: center;
+      font-size: 1.05rem;
+    }
+
+    nav a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    nav .sep {
+      color: #7a7a7a;
+      margin: 0 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <section class="card">
+      <h1>Testing the Limits of the nauty Package for Checking Ramsey Number (5,5)</h1>
+
+      <p>
+        This project studies the computational feasibility of using the nauty package and related
+        graph-generation workflows to explore candidates relevant to the Ramsey number \(R(5,5)\).
+      </p>
+
+      <p>
+        My interest here is not only in brute-force generation, but in understanding how far one can
+        push practical computation through structural pruning, edge and degree restrictions,
+        non-isomorphic reduction, and post-generation testing.
+      </p>
+
+      <p>
+        The broader goal is to examine where computational bottlenecks arise, what kinds of screening
+        criteria are most useful, and how graph-theoretic insight can reduce otherwise prohibitive
+        search spaces.
+      </p>
+    </section>
+
+    <nav>
+      <a href="index.html">Home</a><span class="sep">|</span>
+      <a href="research.html">Research</a>
+    </nav>
+  </div>
+</body>
+</html>
