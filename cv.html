@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV | Naresh Neupane</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f8f6f2;
+      --text: #1f1f1f;
+      --muted: #5d5d5d;
+      --accent: #1d4f91;
+      --line: #d8d2c7;
+      --card: #fffdf9;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Inter", sans-serif;
+      line-height: 1.7;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 36px 24px 56px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 34px 34px 28px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    h1, h2 {
+      font-family: "Cormorant Garamond", serif;
+      line-height: 1.08;
+      letter-spacing: 0.2px;
+      color: #151515;
+      margin-top: 0;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-top: 34px;
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    p {
+      margin: 0 0 12px;
+      font-size: 1rem;
+    }
+
+    .contact {
+      text-align: center;
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .section-item {
+      margin-bottom: 20px;
+    }
+
+    .entry-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin-bottom: 4px;
+    }
+
+    .entry-title {
+      font-weight: 700;
+      font-size: 1.02rem;
+    }
+
+    .entry-date {
+      color: var(--muted);
+      font-size: 0.96rem;
+      white-space: nowrap;
+    }
+
+    .entry-sub {
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    ul {
+      margin: 8px 0 0 22px;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 8px 16px;
+      margin-top: 8px;
+    }
+
+    .skills-grid div:nth-child(odd) {
+      font-weight: 600;
+    }
+
+    nav {
+      margin-top: 28px;
+      text-align: center;
+      font-size: 1.05rem;
+    }
+
+    nav a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    nav .sep {
+      color: #7a7a7a;
+      margin: 0 8px;
+    }
+
+    .footer-note {
+      margin-top: 18px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 800px) {
+      .card {
+        padding: 24px 20px;
+      }
+
+      h1 {
+        font-size: 2.4rem;
+      }
+
+      h2 {
+        font-size: 1.7rem;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <section class="card">
+      <h1>Naresh Neupane</h1>
+
+      <div class="contact">
+        3505 E 28th Avenue, Vancouver, British Columbia, Canada V5R 1T4<br>
+        (250) 532-1881 &#9674; nareshpane@hotmail.com
+      </div>
+
+      <h2>Education</h2>
+
+      <div class="section-item">
+        <div class="entry-head">
+          <div class="entry-title">University of Victoria, Victoria, British Columbia, Canada</div>
+          <div class="entry-date">September 2022 – December 2024</div>
+        </div>
+        <div class="entry-sub">
+          Master of Science (MSc) in Statistics &#9674; Cumulative GPA: 8.25/9.00
+        </div>
+        <p>Department of Mathematics and Statistics</p>
+        <p>Essay Title: <em>Optimal Designs for Quadratic, Cubic, Quartic and Quintic Polynomial Models in Balls</em></p>
+      </div>
+
+      <div class="section-item">
+        <div class="entry-head">
+          <div class="entry-title">University of Victoria, Victoria, British Columbia, Canada</div>
+          <div class="entry-date">September 2018 – August 2020</div>
+        </div>
+        <div class="entry-sub">
+          Master of Arts (MA) in Economics &#9674; Cumulative GPA: 8.63/9.00
+        </div>
+        <p>Department of Economics</p>
+        <p>Essay Title: <em>Effects of a Speed Bump on NYSE American</em></p>
+      </div>
+
+      <div class="section-item">
+        <div class="entry-head">
+          <div class="entry-title">Southeastern Louisiana University, Hammond, Louisiana, USA</div>
+          <div class="entry-date">August 2012 – May 2016</div>
+        </div>
+        <div class="entry-sub">
+          Bachelor of Science in Finance; Minor in Mathematics and Economics &#9674; Cumulative GPA: 3.98/4.00
+        </div>
+        <p>Department of Accounting and Finance</p>
+      </div>
+
+      <h2>Skills</h2>
+
+      <div class="skills-grid">
+        <div>Programming</div>
+        <div>
+          <strong>Advanced:</strong> R, MATLAB, SQL, Python, and LaTeX<br>
+          <strong>Intermediate:</strong> C++, GAMS, and Stata<br>
+          <strong>Basic:</strong> Rust, Power BI (DAX), and EViews
+        </div>
+
+        <div>Applied Statistics</div>
+        <div>Sampling techniques, statistical computing, optimization in machine learning, algorithmic efficiency, text processing, data scraping, and data wrangling</div>
+
+        <div>Economics</div>
+        <div>Collection, management, analysis, and interpretation of economic data; fluency in cutting-edge econometric techniques</div>
+
+        <div>Finance</div>
+        <div>Fluency in analyzing and interpreting business and financial documents of governmental agencies, central banks, and the corporate sector</div>
+
+        <div>Cryptography</div>
+        <div>Programming implementation of proof-of-work and proof-of-stake schemes in cryptocurrencies</div>
+
+        <div>Languages</div>
+        <div>Native or bilingual proficiency in English, Nepali, and Hindi</div>
+      </div>
+
+      <h2>Work Experience</h2>
+
+      <div class="section-item">
+        <div class="entry-head">
+          <div class="entry-title">BC Ministry of Health, Victoria, BC, Canada</div>
+          <div class="entry-date">September 2020 – August 2025 &#9674; Full Time</div>
+        </div>
+        <div class="entry-sub">Economist</div>
+        <ul>
+          <li>Performed User Acceptance Testing (UAT) of healthcare data in Oracle architecture and helped design the flow of raw data entered through web forms into a cube structure of facts and dimensions in Oracle data warehousing.</li>
+          <li>Identified issues in Extract, Transform, and Load (ETL) scripts for healthcare data and suggested changes for improvement.</li>
+          <li>Suggested the creation of Analytics Ready Objects (AROs) in the Oracle database by combining multiple source tables into standalone tables to expedite query runtimes.</li>
+          <li>Performed budget impact analyses of BC PharmaCare policies and evaluated the merits of competing policy options.</li>
+          <li>Evaluated multiple pharmaceutical policies, contracts, and drug plans for the Province of British Columbia.</li>
+          <li>Led projects using data extracted from PharmaNet, the pharmacy database of the BC Ministry of Health, and worked with several health databases related to the Medical Services Plan, Discharge Abstract Database (DAD), and National Ambulatory Care Reporting System (NACRS) to build cohorts and derived data products for analyzing comorbidities and system-wide cost utilization.</li>
+          <li>Built simulation models to capture the implications of policy changes related to BC PharmaCare.</li>
+        </ul>
+      </div>
+
+      <div class="section-item">
+        <div class="entry-head">
+          <div class="entry-title">University of Victoria, Victoria, BC, Canada</div>
+          <div class="entry-date">September 2018 – Fall 2024 &#9674; Part Time</div>
+        </div>
+        <div class="entry-sub">Teaching Assistant</div>
+        <ul>
+          <li>Matrix Algebra (with Dr. William Thompson, Fall 2024)</li>
+          <li>Sampling Techniques (with Prof. Julie Zhou, Spring 2023)</li>
+          <li>Applied Econometrics (with Prof. Felix Pretis, Fall 2019)</li>
+          <li>Applied Econometrics (with Prof. Alan Mehlenbacher, Spring 2019)</li>
+          <li>Mathematical Models in Economics I (with Prof. Alan Mehlenbacher, Fall 2018 and Summer 2019)</li>
+        </ul>
+      </div>
+
+      <h2>Academic Achievements</h2>
+
+      <ul>
+        <li>First place in the Integration Bee (2014) competition organized by the Mathematical Association of America (MAA-LA/MS Chapter) and held at Louisiana State University</li>
+        <li>First place in Best Essay for SET Magazine, St. Xavier’s College, Kathmandu, Nepal</li>
+      </ul>
+
+      <h2>References</h2>
+
+      <div class="section-item">
+        <p><strong>Dr. Julie Zhou</strong><br>
+        Department of Mathematics and Statistics, University of Victoria<br>
+        Professor of Statistics<br>
+        Email: jzhou@uvic.ca</p>
+      </div>
+
+      <div class="section-item">
+        <p><strong>Dr. Kenneth Stewart</strong><br>
+        Department of Economics, University of Victoria<br>
+        Professor of Economics<br>
+        Email: kstewart@uvic.ca</p>
+      </div>
+    </section>
+
+    <nav>
+      <a href="index.html">Home</a><span class="sep">|</span>
+      <a href="research.html">Research</a><span class="sep">|</span>
+      <a href="cv.html">CV</a>
+    </nav>
+
+    <div class="footer-note">
+      Built with GitHub Pages.
+    </div>
+  </div>
+</body>
+</html>
