@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conversion of Devnagari Language from scanned PDF into Editable Text or Word Document Using Tesserect</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700&family=Source+Code+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f7f4ee;
+      --card: #fffdf9;
+      --ink: #1b1b1b;
+      --muted: #666;
+      --line: #ddd5c7;
+      --accent: #1d4f91;
+      --note: #f5efe3;
+      --codebg: #f3efe8;
+      --codeborder: #d8cfc1;
+      --shadow: 0 14px 32px rgba(0,0,0,0.06);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Inter", sans-serif;
+      line-height: 1.72;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 34px 20px 56px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 34px 34px 30px;
+    }
+
+    h1, h2, h3 {
+      font-family: "Cormorant Garamond", serif;
+      line-height: 1.08;
+      margin: 0 0 12px;
+      color: #151515;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 14px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-top: 34px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    h3 {
+      font-size: 1.45rem;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin: 0 0 14px;
+      font-size: 1.02rem;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .lead {
+      font-size: 1.1rem;
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 16px 18px;
+      margin: 18px 0;
+      background: #fcfaf6;
+    }
+
+    .note {
+      background: var(--note);
+      border-left: 4px solid var(--accent);
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin: 18px 0 24px;
+    }
+
+    .mini-box {
+      background: #fcfaf6;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px 16px;
+    }
+
+    .mini-box .k {
+      font-size: 0.88rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 6px;
+      font-weight: 700;
+    }
+
+    .mini-box .v {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .step-block {
+      margin-top: 22px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fcfaf6;
+      overflow: hidden;
+    }
+
+    .step-head {
+      padding: 14px 18px;
+      background: #f3ede3;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .step-title {
+      font-size: 1.28rem;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .step-subtitle {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-top: 4px;
+    }
+
+    .step-body {
+      padding: 18px;
+    }
+
+    .code-card {
+      margin-top: 14px;
+      border: 1px solid var(--codeborder);
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--codebg);
+    }
+
+    .code-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      background: #ece5d8;
+      border-bottom: 1px solid var(--codeborder);
+    }
+
+    .code-title {
+      font-weight: 700;
+      font-size: 0.98rem;
+    }
+
+    .code-subtitle {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 2px;
+    }
+
+    .copy-btn {
+      border: 1px solid #b9ac95;
+      background: #fffaf0;
+      color: #222;
+      border-radius: 10px;
+      padding: 8px 12px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .copy-btn:hover {
+      background: #fff;
+    }
+
+    pre {
+      margin: 0;
+      padding: 16px 18px;
+      overflow-x: auto;
+      white-space: pre;
+      tab-size: 4;
+    }
+
+    code, pre {
+      font-family: "Source Code Pro", monospace;
+      font-size: 0.92rem;
+      line-height: 1.63;
+    }
+
+    .placeholder {
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .footer-nav {
+      margin-top: 22px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .footer-nav a {
+      font-weight: 600;
+    }
+
+    .sep {
+      margin: 0 8px;
+      color: #8a8a8a;
+    }
+
+    @media (max-width: 920px) {
+      .card {
+        padding: 24px 18px;
+      }
+
+      h1 {
+        font-size: 2.35rem;
+      }
+
+      h2 {
+        font-size: 1.65rem;
+      }
+
+      .mini-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .code-head {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <section class="card">
+      <h1>Conversion of Devnagari Language from scanned PDF into Editable Text or Word Document Using Tesserect</h1>
+
+      <p class="lead">
+        This page is meant to be a practical, sequential working note for converting scanned Devnagari documents into editable text. The emphasis here is on a Linux workflow, a clean step-by-step path, and code blocks that are easy to copy and test locally.
+      </p>
+
+      <div class="panel note">
+        <strong>Current page status.</strong>
+        This is a placeholder draft for now. The structure is already in place, and each section can later be expanded with real examples, sample files, OCR quality comparisons, preprocessing steps, and export into Word or plain text.
+      </div>
+
+      <p>
+        The main idea is simple: install the right OCR tools, make sure Devnagari language data is available, preprocess scanned pages if needed, run OCR, inspect the results, and finally export the output into a text or document workflow. For now, the descriptions below are deliberately lightweight placeholders so the page structure is ready.
+      </p>
+
+      <div class="mini-grid">
+        <div class="mini-box">
+          <div class="k">Goal</div>
+          <div class="v">Scanned PDF to editable Devnagari text</div>
+        </div>
+        <div class="mini-box">
+          <div class="k">Platform</div>
+          <div class="v">Linux-first workflow</div>
+        </div>
+        <div class="mini-box">
+          <div class="k">Current state</div>
+          <div class="v">Placeholder structure with copyable code</div>
+        </div>
+      </div>
+
+      <h2>Sequential Workflow</h2>
+
+      <div class="step-block">
+        <div class="step-head">
+          <p class="step-title">Step 1: Install Proper Tools in Linux</p>
+          <div class="step-subtitle">Basic OCR dependencies and document utilities</div>
+        </div>
+        <div class="step-body">
+          <p class="placeholder">
+            Placeholder description: this section will later explain why each package is needed, what Tesseract does, and how the Linux package manager setup fits into the overall OCR pipeline.
+          </p>
+
+          <div class="code-card">
+            <div class="code-head">
+              <div>
+                <div class="code-title">Linux installation</div>
+                <div class="code-subtitle">Basic OCR and PDF/image tooling</div>
+              </div>
+              <button class="copy-btn" onclick="copyCode('code-step-1', this)">Copy code</button>
+            </div>
+            <pre><code id="code-step-1">sudo apt update
+sudo apt install -y tesseract-ocr tesseract-ocr-script-deva poppler-utils imagemagick python3 python3-pip</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-block">
+        <div class="step-head">
+          <p class="step-title">Step 2: Verify Tesseract and Available Language Data</p>
+          <div class="step-subtitle">Check installation before running OCR</div>
+        </div>
+        <div class="step-body">
+          <p class="placeholder">
+            Placeholder description: this section will later show how to confirm that Tesseract is installed correctly and whether Devnagari-related language packs are visible to the OCR engine.
+          </p>
+
+          <div class="code-card">
+            <div class="code-head">
+              <div>
+                <div class="code-title">Verification commands</div>
+                <div class="code-subtitle">Confirm OCR engine and language files</div>
+              </div>
+              <button class="copy-btn" onclick="copyCode('code-step-2', this)">Copy code</button>
+            </div>
+            <pre><code id="code-step-2">tesseract --version
+tesseract --list-langs</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-block">
+        <div class="step-head">
+          <p class="step-title">Step 3: Convert PDF Pages into Images</p>
+          <div class="step-subtitle">A common intermediate step for scanned PDFs</div>
+        </div>
+        <div class="step-body">
+          <p class="placeholder">
+            Placeholder description: this section will later discuss why scanned PDFs often need page extraction into images first, especially when OCR quality depends heavily on image clarity and resolution.
+          </p>
+
+          <div class="code-card">
+            <div class="code-head">
+              <div>
+                <div class="code-title">PDF to PNG pages</div>
+                <div class="code-subtitle">Create per-page images for OCR</div>
+              </div>
+              <button class="copy-btn" onclick="copyCode('code-step-3', this)">Copy code</button>
+            </div>
+            <pre><code id="code-step-3">mkdir -p pages
+pdftoppm -png scanned-devnagari.pdf pages/page</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-block">
+        <div class="step-head">
+          <p class="step-title">Step 4: Run OCR on a Single Page First</p>
+          <div class="step-subtitle">Test quality before batch processing everything</div>
+        </div>
+        <div class="step-body">
+          <p class="placeholder">
+            Placeholder description: this section will later explain why testing one page first is usually better than processing an entire document blindly, especially when scans vary in darkness, skew, or noise.
+          </p>
+
+          <div class="code-card">
+            <div class="code-head">
+              <div>
+                <div class="code-title">Single-page OCR</div>
+                <div class="code-subtitle">Quick first-pass extraction</div>
+              </div>
+              <button class="copy-btn" onclick="copyCode('code-step-4', this)">Copy code</button>
+            </div>
+            <pre><code id="code-step-4">tesseract pages/page-1.png output_page_1 -l script/Devanagari
+cat output_page_1.txt</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-block">
+        <div class="step-head">
+          <p class="step-title">Step 5: Batch OCR for All Pages</p>
+          <div class="step-subtitle">Process the full document once the first test looks usable</div>
+        </div>
+        <div class="step-body">
+          <p class="placeholder">
+            Placeholder description: this section will later show how to batch-process many scanned pages into text files and keep the results organized cleanly.
+          </p>
+
+          <div class="code-card">
+            <div class="code-head">
+              <div>
+                <div class="code-title">Batch OCR loop</div>
+                <div class="code-subtitle">Run Tesseract across all page images</div>
+              </div>
+              <button class="copy-btn" onclick="copyCode('code-step-5', this)">Copy code</button>
+            </div>
+            <pre><code id="code-step-5">mkdir -p ocr_text
+for img in pages/*.png; do
+  base=$(basename "$img" .png)
+  tesseract "$img" "ocr_text/$base" -l script/Devanagari
+done</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-block">
+        <div class="step-head">
+          <p class="step-title">Step 6: Merge OCR Output into One Text File</p>
+          <div class="step-subtitle">Combine page-wise OCR into a single editable text file</div>
+        </div>
+        <div class="step-body">
+          <p class="placeholder">
+            Placeholder description: this section will later explain simple ways to merge and inspect OCR results before any cleanup or formatting stage.
+          </p>
+
+          <div class="code-card">
+            <div class="code-head">
+              <div>
+                <div class="code-title">Merge text files</div>
+                <div class="code-subtitle">Concatenate OCR results in page order</div>
+              </div>
+              <button class="copy-btn" onclick="copyCode('code-step-6', this)">Copy code</button>
+            </div>
+            <pre><code id="code-step-6">cat ocr_text/*.txt > devnagari_output.txt
+less devnagari_output.txt</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-block">
+        <div class="step-head">
+          <p class="step-title">Step 7: Optional Preprocessing for Cleaner OCR</p>
+          <div class="step-subtitle">Improve page quality before OCR if scans are rough</div>
+        </div>
+        <div class="step-body">
+          <p class="placeholder">
+            Placeholder description: this section will later cover denoising, thresholding, grayscale conversion, and image cleanup ideas that often matter for older scans.
+          </p>
+
+          <div class="code-card">
+            <div class="code-head">
+              <div>
+                <div class="code-title">Simple preprocessing example</div>
+                <div class="code-subtitle">Convert and sharpen one page</div>
+              </div>
+              <button class="copy-btn" onclick="copyCode('code-step-7', this)">Copy code</button>
+            </div>
+            <pre><code id="code-step-7">convert pages/page-1.png -colorspace Gray -threshold 60% cleaned-page-1.png
+tesseract cleaned-page-1.png cleaned_output -l script/Devanagari</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-block">
+        <div class="step-head">
+          <p class="step-title">Step 8: Convert Text into a Word-Friendly Workflow</p>
+          <div class="step-subtitle">Simple placeholder for editable document output</div>
+        </div>
+        <div class="step-body">
+          <p class="placeholder">
+            Placeholder description: this section will later show how to move from OCR text into a more polished editable document, whether by manual cleanup, Markdown, DOCX export, or another method.
+          </p>
+
+          <div class="code-card">
+            <div class="code-head">
+              <div>
+                <div class="code-title">Basic DOCX-friendly preparation</div>
+                <div class="code-subtitle">Placeholder export workflow</div>
+              </div>
+              <button class="copy-btn" onclick="copyCode('code-step-8', this)">Copy code</button>
+            </div>
+            <pre><code id="code-step-8">cp devnagari_output.txt final-devnagari-editable.txt
+echo "Placeholder: convert this cleaned text into DOCX later." >> final-devnagari-editable.txt</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <h2>What This Page Will Eventually Include</h2>
+
+      <p>
+        For now, this page is only a structural draft. Later, it can be expanded with a scanned sample, OCR screenshots, side-by-side output comparisons, error analysis on Devnagari characters, and a clearer path from raw OCR output into a final editable Word document.
+      </p>
+
+      <div class="panel note">
+        <strong>Future expansion placeholder.</strong>
+        This page can later include exact Linux commands, common OCR failure points for Devnagari text, PDF-specific workflows, and a cleaner end-to-end conversion pipeline.
+      </div>
+    </section>
+
+    <div class="footer-nav">
+      <a href="index.html">Home</a>
+      <span class="sep">|</span>
+      <a href="research.html">Research</a>
+    </div>
+  </div>
+
+  <script>
+    async function copyCode(id, button) {
+      const text = document.getElementById(id).innerText;
+      const old = button.textContent;
+      try {
+        await navigator.clipboard.writeText(text);
+        button.textContent = "Copied";
+        setTimeout(() => button.textContent = old, 1400);
+      } catch (err) {
+        button.textContent = "Copy failed";
+        setTimeout(() => button.textContent = old, 1600);
+      }
+    }
+  </script>
+</body>
+</html>
