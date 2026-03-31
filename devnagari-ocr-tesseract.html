@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Conversion of Devnagari Language from scanned PDF into Editable Text or Word Document Using Tesserect</title>
+  <title>Devnagari OCR with Tesseract</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,6 +18,7 @@
       --line: #ddd5c7;
       --accent: #1d4f91;
       --note: #f5efe3;
+      --warn: #fbf6ea;
       --codebg: #f3efe8;
       --codeborder: #d8cfc1;
       --shadow: 0 14px 32px rgba(0,0,0,0.06);
@@ -25,7 +26,6 @@
     }
 
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -70,7 +70,7 @@
     }
 
     h3 {
-      font-size: 1.45rem;
+      font-size: 1.4rem;
       margin-top: 0;
       margin-bottom: 10px;
     }
@@ -104,6 +104,11 @@
     .note {
       background: var(--note);
       border-left: 4px solid var(--accent);
+    }
+
+    .warn {
+      background: var(--warn);
+      border-left: 4px solid #b7791f;
     }
 
     .mini-grid {
@@ -149,7 +154,7 @@
     }
 
     .step-title {
-      font-size: 1.28rem;
+      font-size: 1.3rem;
       font-weight: 700;
       margin: 0;
     }
@@ -162,6 +167,15 @@
 
     .step-body {
       padding: 18px;
+    }
+
+    ul {
+      margin: 0 0 14px 22px;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 8px;
     }
 
     .code-card {
@@ -223,9 +237,26 @@
       line-height: 1.63;
     }
 
-    .placeholder {
+    .download-box {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin-top: 12px;
+    }
+
+    .download-btn {
+      display: inline-block;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: #fffaf0;
+      font-weight: 600;
+    }
+
+    .small {
+      font-size: 0.95rem;
       color: var(--muted);
-      font-style: italic;
     }
 
     .footer-nav {
@@ -271,33 +302,38 @@
 <body>
   <div class="page">
     <section class="card">
-      <h1>Conversion of Devnagari Language from scanned PDF into Editable Text or Word Document Using Tesserect</h1>
+      <h1>Conversion of Devnagari Language from scanned PDF into Editable Text or Word Document Using Tesseract</h1>
 
       <p class="lead">
-        This page is meant to be a practical, sequential working note for converting scanned Devnagari documents into editable text. The emphasis here is on a Linux workflow, a clean step-by-step path, and code blocks that are easy to copy and test locally.
+        This page walks through a Linux-first workflow for converting scanned Devnagari or Hindi PDF pages into editable text, and then into a Word document. The goal here is practical: install only what is needed, check that the Hindi OCR data is actually available, test on one image first, and then run the full PDF pipeline cleanly.
       </p>
 
       <div class="panel note">
-        <strong>Current page status.</strong>
-        This is a placeholder draft for now. The structure is already in place, and each section can later be expanded with real examples, sample files, OCR quality comparisons, preprocessing steps, and export into Word or plain text.
+        <strong>What this page is trying to do.</strong>
+        A lot of OCR guides are too vague. Here the point is more direct: use the commands that actually worked in terminal, trim redundant steps, and give a sequence that another Linux user can copy without guessing too much.
       </div>
 
-      <p>
-        The main idea is simple: install the right OCR tools, make sure Devnagari language data is available, preprocess scanned pages if needed, run OCR, inspect the results, and finally export the output into a text or document workflow. For now, the descriptions below are deliberately lightweight placeholders so the page structure is ready.
-      </p>
+      <div class="panel note">
+        <strong>Sample PDF for testing.</strong>
+        You can place a freely available and non-copyrighted sample PDF in the same folder as this page and link it below. Replace the filename when you upload the actual file.
+        <div class="download-box">
+          <a class="download-btn" href="BhupiSherchan_GhumneMechMathi.pdf" download>Download sample PDF</a>
+          <span class="small">Update this filename to match the actual PDF you upload to the site.</span>
+        </div>
+      </div>
 
       <div class="mini-grid">
         <div class="mini-box">
-          <div class="k">Goal</div>
-          <div class="v">Scanned PDF to editable Devnagari text</div>
-        </div>
-        <div class="mini-box">
           <div class="k">Platform</div>
-          <div class="v">Linux-first workflow</div>
+          <div class="v">Ubuntu / Linux terminal workflow</div>
         </div>
         <div class="mini-box">
-          <div class="k">Current state</div>
-          <div class="v">Placeholder structure with copyable code</div>
+          <div class="k">OCR engine</div>
+          <div class="v">Tesseract with Hindi / Devnagari data</div>
+        </div>
+        <div class="mini-box">
+          <div class="k">End goal</div>
+          <div class="v">Scanned PDF to TXT, then DOCX</div>
         </div>
       </div>
 
@@ -305,209 +341,292 @@
 
       <div class="step-block">
         <div class="step-head">
-          <p class="step-title">Step 1: Install Proper Tools in Linux</p>
-          <div class="step-subtitle">Basic OCR dependencies and document utilities</div>
+          <p class="step-title">Step 1: Install Tesseract and the Hindi OCR Language Pack</p>
+          <div class="step-subtitle">Start with the OCR engine first, and make sure Hindi support is included</div>
         </div>
         <div class="step-body">
-          <p class="placeholder">
-            Placeholder description: this section will later explain why each package is needed, what Tesseract does, and how the Linux package manager setup fits into the overall OCR pipeline.
+          <p>
+            The first thing is to have Tesseract itself installed, along with the Hindi language pack. This is the part that matters most. Without the Hindi OCR data, the command may run, but it will not properly recognize Devnagari text.
+          </p>
+
+          <p>
+            On Ubuntu, this is the clean starting point:
           </p>
 
           <div class="code-card">
             <div class="code-head">
               <div>
-                <div class="code-title">Linux installation</div>
-                <div class="code-subtitle">Basic OCR and PDF/image tooling</div>
+                <div class="code-title">Install Tesseract for Hindi / Devnagari OCR</div>
+                <div class="code-subtitle">Core packages only</div>
               </div>
               <button class="copy-btn" onclick="copyCode('code-step-1', this)">Copy code</button>
             </div>
             <pre><code id="code-step-1">sudo apt update
-sudo apt install -y tesseract-ocr tesseract-ocr-script-deva poppler-utils imagemagick python3 python3-pip</code></pre>
+sudo apt install tesseract-ocr
+sudo apt install tesseract-ocr-hin</code></pre>
           </div>
+
+          <p class="small">
+            If a user wants a single combined install line later, that is fine too, but splitting it like this makes it easier to see whether the Hindi package is the missing piece.
+          </p>
         </div>
       </div>
 
       <div class="step-block">
         <div class="step-head">
-          <p class="step-title">Step 2: Verify Tesseract and Available Language Data</p>
-          <div class="step-subtitle">Check installation before running OCR</div>
+          <p class="step-title">Step 2: Run Basic Checks Before Doing Any OCR</p>
+          <div class="step-subtitle">Confirm that Tesseract is installed and that Hindi appears in the language list</div>
         </div>
         <div class="step-body">
-          <p class="placeholder">
-            Placeholder description: this section will later show how to confirm that Tesseract is installed correctly and whether Devnagari-related language packs are visible to the OCR engine.
+          <p>
+            Before touching the PDF, do two quick checks. First, confirm the version. Second, list the available OCR languages. This is often where Linux configuration issues show up.
           </p>
 
           <div class="code-card">
             <div class="code-head">
               <div>
-                <div class="code-title">Verification commands</div>
-                <div class="code-subtitle">Confirm OCR engine and language files</div>
+                <div class="code-title">Version and language checks</div>
+                <div class="code-subtitle">Useful when troubleshooting setup issues</div>
               </div>
               <button class="copy-btn" onclick="copyCode('code-step-2', this)">Copy code</button>
             </div>
             <pre><code id="code-step-2">tesseract --version
 tesseract --list-langs</code></pre>
           </div>
+
+          <p>
+            What you want to see is that Tesseract is installed, and that <code>hin</code> appears in the language list. If <code>hin</code> is missing, install <code>tesseract-ocr-hin</code> again and check once more.
+          </p>
         </div>
       </div>
 
       <div class="step-block">
         <div class="step-head">
-          <p class="step-title">Step 3: Convert PDF Pages into Images</p>
-          <div class="step-subtitle">A common intermediate step for scanned PDFs</div>
+          <p class="step-title">Step 3: Do a Quick One-Image OCR Test First</p>
+          <div class="step-subtitle">This is a good sanity check before working on the full PDF</div>
         </div>
         <div class="step-body">
-          <p class="placeholder">
-            Placeholder description: this section will later discuss why scanned PDFs often need page extraction into images first, especially when OCR quality depends heavily on image clarity and resolution.
+          <p>
+            A quick test on one PNG image is worth doing. It tells you right away whether Hindi OCR is basically functioning on your machine. This is especially helpful before you bring in PDF conversion and batch processing.
           </p>
 
           <div class="code-card">
             <div class="code-head">
               <div>
-                <div class="code-title">PDF to PNG pages</div>
-                <div class="code-subtitle">Create per-page images for OCR</div>
+                <div class="code-title">Single-image Hindi OCR test</div>
+                <div class="code-subtitle">Replace the path with your own image path</div>
               </div>
               <button class="copy-btn" onclick="copyCode('code-step-3', this)">Copy code</button>
             </div>
-            <pre><code id="code-step-3">mkdir -p pages
-pdftoppm -png scanned-devnagari.pdf pages/page</code></pre>
+            <pre><code id="code-step-3">tesseract /home/naresh/Pictures/Screenshots/bhupi1.png output -l hin</code></pre>
           </div>
+
+          <p>
+            That creates a file named <code>output.txt</code> in the current directory. If that works, then the OCR engine and Hindi language data are basically in place.
+          </p>
         </div>
       </div>
 
       <div class="step-block">
         <div class="step-head">
-          <p class="step-title">Step 4: Run OCR on a Single Page First</p>
-          <div class="step-subtitle">Test quality before batch processing everything</div>
+          <p class="step-title">Step 4: Install the Extra PDF and DOCX Utilities</p>
+          <div class="step-subtitle">Use poppler for PDF page extraction and pandoc for DOCX conversion</div>
         </div>
         <div class="step-body">
-          <p class="placeholder">
-            Placeholder description: this section will later explain why testing one page first is usually better than processing an entire document blindly, especially when scans vary in darkness, skew, or noise.
+          <p>
+            Once the OCR engine itself is working, the next useful tools are:
           </p>
+
+          <ul>
+            <li><code>poppler-utils</code> for turning PDF pages into PNG images,</li>
+            <li><code>pandoc</code> for converting the final text output into a Word document.</li>
+          </ul>
 
           <div class="code-card">
             <div class="code-head">
               <div>
-                <div class="code-title">Single-page OCR</div>
-                <div class="code-subtitle">Quick first-pass extraction</div>
+                <div class="code-title">Install supporting tools</div>
+                <div class="code-subtitle">For PDF page extraction and DOCX output</div>
               </div>
               <button class="copy-btn" onclick="copyCode('code-step-4', this)">Copy code</button>
             </div>
-            <pre><code id="code-step-4">tesseract pages/page-1.png output_page_1 -l script/Devanagari
-cat output_page_1.txt</code></pre>
+            <pre><code id="code-step-4">sudo apt install tesseract-ocr tesseract-ocr-hin poppler-utils pandoc</code></pre>
           </div>
+
+          <p class="small">
+            This line is slightly redundant if the first packages are already installed, but it is still a clean “all required tools” command for other readers.
+          </p>
         </div>
       </div>
 
       <div class="step-block">
         <div class="step-head">
-          <p class="step-title">Step 5: Batch OCR for All Pages</p>
-          <div class="step-subtitle">Process the full document once the first test looks usable</div>
+          <p class="step-title">Step 5: Move Into the Working Directory and Extract the PDF into PNG Pages</p>
+          <div class="step-subtitle">This is the cleanest way to handle a scanned PDF before OCR</div>
         </div>
         <div class="step-body">
-          <p class="placeholder">
-            Placeholder description: this section will later show how to batch-process many scanned pages into text files and keep the results organized cleanly.
+          <p>
+            Once the PDF is ready, go to the folder where you want the output to live, create a pages folder, and convert the scanned PDF into one PNG file per page.
           </p>
 
           <div class="code-card">
             <div class="code-head">
               <div>
-                <div class="code-title">Batch OCR loop</div>
-                <div class="code-subtitle">Run Tesseract across all page images</div>
+                <div class="code-title">Create page images from the scanned PDF</div>
+                <div class="code-subtitle">Replace the PDF filename if yours differs</div>
               </div>
               <button class="copy-btn" onclick="copyCode('code-step-5', this)">Copy code</button>
             </div>
-            <pre><code id="code-step-5">mkdir -p ocr_text
-for img in pages/*.png; do
-  base=$(basename "$img" .png)
-  tesseract "$img" "ocr_text/$base" -l script/Devanagari
-done</code></pre>
+            <pre><code id="code-step-5">cd /home/naresh/Documents
+mkdir -p bhupi_pages
+pdftoppm -png BhupiSherchan_GhumneMechMathi.pdf bhupi_pages/page</code></pre>
           </div>
+
+          <p>
+            After that, the folder <code>bhupi_pages</code> should contain PNG files such as <code>page-1.png</code>, <code>page-2.png</code>, and so on.
+          </p>
         </div>
       </div>
 
       <div class="step-block">
         <div class="step-head">
-          <p class="step-title">Step 6: Merge OCR Output into One Text File</p>
-          <div class="step-subtitle">Combine page-wise OCR into a single editable text file</div>
+          <p class="step-title">Step 6: Run OCR Across All Extracted Pages</p>
+          <div class="step-subtitle">Process each page image and append the recognized text into one output file</div>
         </div>
         <div class="step-body">
-          <p class="placeholder">
-            Placeholder description: this section will later explain simple ways to merge and inspect OCR results before any cleanup or formatting stage.
+          <p>
+            This is the main batch OCR step. It loops through each page image, runs Hindi OCR, and appends the recognized text into a single text file, with a visible page break marker in between.
           </p>
 
           <div class="code-card">
             <div class="code-head">
               <div>
-                <div class="code-title">Merge text files</div>
-                <div class="code-subtitle">Concatenate OCR results in page order</div>
+                <div class="code-title">Batch OCR loop for all pages</div>
+                <div class="code-subtitle">This is the key working block</div>
               </div>
               <button class="copy-btn" onclick="copyCode('code-step-6', this)">Copy code</button>
             </div>
-            <pre><code id="code-step-6">cat ocr_text/*.txt > devnagari_output.txt
-less devnagari_output.txt</code></pre>
+            <pre><code id="code-step-6">cd /home/naresh/Documents
+rm -f bhupi_ocr.txt
+
+for f in bhupi_pages/*.png; do
+    echo "Processing: $f"
+    tesseract "$f" stdout -l hin --psm 6 >> bhupi_ocr.txt
+    printf "\n\n==== PAGE BREAK ====\n\n" >> bhupi_ocr.txt
+done</code></pre>
           </div>
+
+          <p>
+            The use of <code>stdout</code> is helpful here because it sends the OCR text directly into the combined output file. The option <code>--psm 6</code> is a useful starting page segmentation mode for scanned text blocks.
+          </p>
         </div>
       </div>
 
       <div class="step-block">
         <div class="step-head">
-          <p class="step-title">Step 7: Optional Preprocessing for Cleaner OCR</p>
-          <div class="step-subtitle">Improve page quality before OCR if scans are rough</div>
+          <p class="step-title">Step 7: Convert the OCR Text File into a Word Document</p>
+          <div class="step-subtitle">Once the text file exists, turn it into a DOCX file</div>
         </div>
         <div class="step-body">
-          <p class="placeholder">
-            Placeholder description: this section will later cover denoising, thresholding, grayscale conversion, and image cleanup ideas that often matter for older scans.
+          <p>
+            After the OCR text is collected in one file, the next step is straightforward. Use <code>pandoc</code> to convert the text file into a Word document.
           </p>
 
           <div class="code-card">
             <div class="code-head">
               <div>
-                <div class="code-title">Simple preprocessing example</div>
-                <div class="code-subtitle">Convert and sharpen one page</div>
+                <div class="code-title">TXT to DOCX conversion</div>
+                <div class="code-subtitle">Simple and direct final export</div>
               </div>
               <button class="copy-btn" onclick="copyCode('code-step-7', this)">Copy code</button>
             </div>
-            <pre><code id="code-step-7">convert pages/page-1.png -colorspace Gray -threshold 60% cleaned-page-1.png
-tesseract cleaned-page-1.png cleaned_output -l script/Devanagari</code></pre>
+            <pre><code id="code-step-7">pandoc bhupi_ocr.txt -o BhupiSherchan_GhumneMechmathi.docx</code></pre>
           </div>
+
+          <p>
+            At that point, you have both a plain text OCR output and a Word document version that can be edited further.
+          </p>
         </div>
       </div>
 
       <div class="step-block">
         <div class="step-head">
-          <p class="step-title">Step 8: Convert Text into a Word-Friendly Workflow</p>
-          <div class="step-subtitle">Simple placeholder for editable document output</div>
+          <p class="step-title">Step 8: Extra Checks if the OCR Looks Strange</p>
+          <div class="step-subtitle">Useful Linux-side checks when the setup works but the text output is poor</div>
         </div>
         <div class="step-body">
-          <p class="placeholder">
-            Placeholder description: this section will later show how to move from OCR text into a more polished editable document, whether by manual cleanup, Markdown, DOCX export, or another method.
+          <p>
+            A few extra checks can save time when the command runs but the output is still poor:
           </p>
+
+          <ul>
+            <li>Confirm again that <code>hin</code> is in <code>tesseract --list-langs</code>.</li>
+            <li>Make sure the PDF really is scanned-image based, not already text-based.</li>
+            <li>Inspect one extracted PNG page manually before processing the whole document.</li>
+            <li>If pages are tiny, blurred, cropped, or skewed, OCR quality can drop sharply.</li>
+          </ul>
 
           <div class="code-card">
             <div class="code-head">
               <div>
-                <div class="code-title">Basic DOCX-friendly preparation</div>
-                <div class="code-subtitle">Placeholder export workflow</div>
+                <div class="code-title">Quick re-check commands</div>
+                <div class="code-subtitle">Handy when another user’s Linux setup behaves differently</div>
               </div>
               <button class="copy-btn" onclick="copyCode('code-step-8', this)">Copy code</button>
             </div>
-            <pre><code id="code-step-8">cp devnagari_output.txt final-devnagari-editable.txt
-echo "Placeholder: convert this cleaned text into DOCX later." >> final-devnagari-editable.txt</code></pre>
+            <pre><code id="code-step-8">tesseract --version
+tesseract --list-langs
+ls bhupi_pages
+head -n 40 bhupi_ocr.txt</code></pre>
           </div>
         </div>
       </div>
 
-      <h2>What This Page Will Eventually Include</h2>
+      <h2>Common Pitfall</h2>
+
+      <div class="panel warn">
+        <strong>If you see errors like “Image too small to scale!!”</strong>, that usually points to a bad or unexpected input image rather than a Hindi language-pack issue by itself. It can happen if a page image is tiny, corrupted, empty, or not what the loop expects. In that case, check the extracted PNG pages directly before re-running the OCR loop.
+      </div>
+
+      <h2>Minimal End-to-End Command Set</h2>
 
       <p>
-        For now, this page is only a structural draft. Later, it can be expanded with a scanned sample, OCR screenshots, side-by-side output comparisons, error analysis on Devnagari characters, and a clearer path from raw OCR output into a final editable Word document.
+        For readers who want the whole workflow in one place, this is the compact version:
       </p>
 
-      <div class="panel note">
-        <strong>Future expansion placeholder.</strong>
-        This page can later include exact Linux commands, common OCR failure points for Devnagari text, PDF-specific workflows, and a cleaner end-to-end conversion pipeline.
+      <div class="code-card">
+        <div class="code-head">
+          <div>
+            <div class="code-title">Compact workflow</div>
+            <div class="code-subtitle">Install, extract, OCR, convert</div>
+          </div>
+          <button class="copy-btn" onclick="copyCode('code-step-9', this)">Copy code</button>
+        </div>
+        <pre><code id="code-step-9">sudo apt update
+sudo apt install tesseract-ocr tesseract-ocr-hin poppler-utils pandoc
+
+tesseract --version
+tesseract --list-langs
+
+cd /home/naresh/Documents
+mkdir -p bhupi_pages
+pdftoppm -png BhupiSherchan_GhumneMechMathi.pdf bhupi_pages/page
+
+rm -f bhupi_ocr.txt
+for f in bhupi_pages/*.png; do
+    echo "Processing: $f"
+    tesseract "$f" stdout -l hin --psm 6 >> bhupi_ocr.txt
+    printf "\n\n==== PAGE BREAK ====\n\n" >> bhupi_ocr.txt
+done
+
+pandoc bhupi_ocr.txt -o BhupiSherchan_GhumneMechmathi.docx</code></pre>
       </div>
+
+      <h2>What to Add Later</h2>
+
+      <p>
+        This page can later be extended with screenshots of intermediate outputs, examples of bad OCR versus cleaned OCR, optional preprocessing for difficult scans, and a note on when to use Hindi language data versus script-based Devnagari models.
+      </p>
     </section>
 
     <div class="footer-nav">
