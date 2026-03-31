@@ -3,84 +3,145 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Empirically Validating Evolution of Giant Components in Random Graphs</title>
+  <title>Preliminary Tests on Giant Components in Random Graphs</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600&family=Source+Code+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700&family=Source+Code+Pro:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg: #f8f6f2;
-      --text: #1f1f1f;
-      --muted: #5d5d5d;
-      --accent: #1d4f91;
-      --line: #d8d2c7;
+      --bg: #f7f4ee;
       --card: #fffdf9;
+      --ink: #1b1b1b;
+      --muted: #666;
+      --line: #ddd5c7;
+      --accent: #1d4f91;
+      --accent-soft: #edf3fb;
+      --note: #f5efe3;
+      --warn: #fbf6ea;
       --codebg: #f3efe8;
       --codeborder: #d8cfc1;
+      --shadow: 0 14px 32px rgba(0,0,0,0.06);
+      --radius: 22px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
       background: var(--bg);
-      color: var(--text);
+      color: var(--ink);
       font-family: "Inter", sans-serif;
-      line-height: 1.75;
+      line-height: 1.72;
     }
 
     .page {
-      max-width: 1080px;
+      max-width: 1120px;
       margin: 0 auto;
-      padding: 36px 24px 56px;
+      padding: 34px 20px 56px;
     }
 
     .card {
       background: var(--card);
       border: 1px solid var(--line);
-      border-radius: 22px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
       padding: 34px 34px 30px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     }
 
     h1, h2, h3 {
       font-family: "Cormorant Garamond", serif;
       line-height: 1.08;
-      letter-spacing: 0.2px;
-      margin-top: 0;
+      margin: 0 0 12px;
       color: #151515;
     }
 
     h1 {
-      font-size: 3rem;
-      margin-bottom: 18px;
+      font-size: 3.05rem;
+      margin-bottom: 14px;
     }
 
     h2 {
       font-size: 2rem;
-      margin-top: 34px;
-      margin-bottom: 12px;
-      padding-bottom: 6px;
+      margin-top: 32px;
+      padding-bottom: 8px;
       border-bottom: 1px solid var(--line);
     }
 
     h3 {
-      font-size: 1.5rem;
+      font-size: 1.45rem;
       margin-top: 24px;
-      margin-bottom: 10px;
     }
 
     p {
-      margin: 0 0 16px;
+      margin: 0 0 14px;
       font-size: 1.02rem;
     }
 
-    ul, ol {
-      margin: 0 0 16px 24px;
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .lead {
+      font-size: 1.1rem;
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 16px 18px;
+      margin: 18px 0;
+      background: #fcfaf6;
+    }
+
+    .note {
+      background: var(--note);
+      border-left: 4px solid var(--accent);
+    }
+
+    .warn {
+      background: var(--warn);
+      border-left: 4px solid #b7791f;
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 18px 0 22px;
+    }
+
+    .mini-box {
+      background: #fcfaf6;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px 16px;
+    }
+
+    .mini-box .k {
+      font-size: 0.88rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 6px;
+      font-weight: 700;
+    }
+
+    .mini-box .v {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    ul {
+      margin: 0 0 14px 20px;
       padding: 0;
     }
 
@@ -88,52 +149,88 @@
       margin-bottom: 8px;
     }
 
-    a {
-      color: var(--accent);
+    .tight-list li {
+      margin-bottom: 5px;
     }
 
-    .lead {
-      font-size: 1.08rem;
+    .media-wrap {
+      margin: 16px 0 6px;
+      padding: 14px;
+      background: #fcfaf6;
+      border: 1px solid var(--line);
+      border-radius: 18px;
     }
 
-    .note {
-      background: #f7f2ea;
-      border-left: 4px solid var(--accent);
-      padding: 14px 16px;
-      border-radius: 10px;
-      margin: 18px 0 20px;
+    video, img {
+      width: 100%;
+      border-radius: 14px;
+      display: block;
+      background: #eee8de;
     }
 
-    .warn {
-      background: #fbf6ea;
-      border-left: 4px solid #b7791f;
-      padding: 14px 16px;
-      border-radius: 10px;
-      margin: 18px 0 20px;
-    }
-
-    .code-label {
-      font-size: 0.96rem;
-      font-weight: 600;
+    .media-caption {
+      margin-top: 10px;
       color: var(--muted);
-      margin: 14px 0 8px;
+      font-size: 0.95rem;
+    }
+
+    .code-card {
+      margin-top: 18px;
+      border: 1px solid var(--codeborder);
+      border-radius: 18px;
+      overflow: hidden;
+      background: var(--codebg);
+    }
+
+    .code-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      background: #ece5d8;
+      border-bottom: 1px solid var(--codeborder);
+    }
+
+    .code-title {
+      font-weight: 700;
+      font-size: 0.98rem;
+    }
+
+    .code-subtitle {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 2px;
+    }
+
+    .copy-btn {
+      border: 1px solid #b9ac95;
+      background: #fffaf0;
+      color: #222;
+      border-radius: 10px;
+      padding: 8px 12px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .copy-btn:hover {
+      background: #fff;
     }
 
     pre {
-      margin: 0 0 18px;
-      background: var(--codebg);
-      border: 1px solid var(--codeborder);
-      border-radius: 14px;
-      padding: 14px 16px;
+      margin: 0;
+      padding: 16px 18px;
       overflow-x: auto;
-      white-space: pre-wrap;
-      word-break: break-word;
+      white-space: pre;
+      tab-size: 4;
     }
 
     code, pre {
       font-family: "Source Code Pro", monospace;
-      font-size: 0.95rem;
-      line-height: 1.65;
+      font-size: 0.93rem;
+      line-height: 1.63;
     }
 
     .small {
@@ -141,64 +238,25 @@
       font-size: 0.95rem;
     }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 14px 0 20px;
-      font-size: 0.97rem;
-      background: #fcfaf6;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      overflow: hidden;
-    }
-
-    th, td {
-      text-align: left;
-      padding: 12px 10px;
-      border-bottom: 1px solid var(--line);
-      vertical-align: top;
-    }
-
-    th {
-      background: #f3ede3;
-      font-weight: 600;
-    }
-
-    tr:last-child td {
-      border-bottom: none;
-    }
-
-    nav {
-      margin-top: 28px;
-      text-align: center;
-      font-size: 1.05rem;
-    }
-
-    nav a {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    nav .sep {
-      color: #7a7a7a;
-      margin: 0 8px;
-    }
-
-    .footer-note {
-      margin-top: 18px;
+    .footer-nav {
+      margin-top: 22px;
       text-align: center;
       color: var(--muted);
-      font-size: 0.95rem;
+      font-size: 0.98rem;
     }
 
-    @media (max-width: 800px) {
+    .footer-nav a {
+      font-weight: 600;
+    }
+
+    .sep {
+      margin: 0 8px;
+      color: #8a8a8a;
+    }
+
+    @media (max-width: 860px) {
       .card {
-        padding: 24px 20px;
+        padding: 24px 18px;
       }
 
       h1 {
@@ -206,12 +264,16 @@
       }
 
       h2 {
-        font-size: 1.7rem;
+        font-size: 1.65rem;
       }
 
-      table {
-        display: block;
-        overflow-x: auto;
+      .mini-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .code-head {
+        align-items: flex-start;
+        flex-direction: column;
       }
     }
   </style>
@@ -219,307 +281,796 @@
 <body>
   <div class="page">
     <section class="card">
-      <h1>Empirically Validating Evolution of Giant Components in Random Graphs</h1>
+      <h1>Preliminary Tests on Giant Components in Random Graphs</h1>
 
       <p class="lead">
-        This page is a partial computational exploration inspired by the paper
-        <em>The Birth of the Giant Component</em>. It is not an attempt to reproduce the
-        full depth of the paper’s generating-function and asymptotic analysis. Instead,
-        it is meant to give a concrete feel for the underlying phenomenon: why the giant
-        component emerges near the critical regime, why intuitive simulations can be
-        misleading, and why even seemingly simple questions about the process turn out to
-        be subtler than they first appear.
+        This page is a preliminary computational test of some results discussed in the paper
+        on sparse random graphs around the critical regime. I am not trying to re-prove the paper.
+        I am trying to see, in a concrete and sequential way, what the graph is doing near
+        <code>m \approx n/2</code>, and how far a direct simulation can go before the asymptotic theory
+        begins to ask for more than raw numerics.
       </p>
 
-      <div class="warn">
-        The computational tests described here are <strong>only partial</strong> relative to the paper.
-        The paper proves asymptotic results about evolving random graphs and related multigraph models,
-        while the experiments here focus on finite simulations and repeated sampling to build intuition. :contentReference[oaicite:1]{index=1}
-      </div>
-
-      <div class="note">
-        <strong>Paper link:</strong>
-        <a href="https://arxiv.org/pdf/math/9310236" target="_blank" rel="noopener noreferrer">
+      <div class="panel note">
+        <strong>Paper:</strong>
+        <a href="https://arxiv.org/abs/math/9310236" target="_blank" rel="noopener noreferrer">
           Janson, Knuth, Łuczak, and Pittel, <em>The Birth of the Giant Component</em>
         </a>
+        <br />
+        <span class="small">
+          The particular probabilities I am looking at here are the ones around the sparse critical regime,
+          including the event that all components are tree / unicyclic / bicyclic, and the event that there
+          is at most one “other” component.
+        </span>
       </div>
 
-      <h2>1. What drew me to this question</h2>
+      <div class="panel warn">
+        <strong>Scope.</strong>
+        This is only a preliminary test on the results of the paper. One script shows a single evolving sample path.
+        The other script runs many samples and compares empirical frequencies against the theoretical reference values.
+        That is useful, but it is still not the full asymptotic argument.
+      </div>
+
+      <h2>What I am trying to do</h2>
+
+      <ul class="tight-list">
+        <li>Start with an empty graph on <code>n</code> labelled vertices.</li>
+        <li>Add edges one at a time, so the evolution is visible rather than hidden in occasional snapshots.</li>
+        <li>Track whether the connected components are trees, unicyclic, bicyclic, or “other”.</li>
+        <li>Look especially at the regime <code>m = n/2</code>, since that is where the paper states sharp limiting behavior.</li>
+        <li>Use one animation for intuition and one large-run simulation for empirical comparison.</li>
+      </ul>
+
+      <div class="mini-grid">
+        <div class="mini-box">
+          <div class="k">Single-run object</div>
+          <div class="v">Edge-by-edge animation of one sample path</div>
+        </div>
+        <div class="mini-box">
+          <div class="k">Many-run object</div>
+          <div class="v">Empirical estimates at <code>report_edges = n // 2</code></div>
+        </div>
+      </div>
+
+      <h2>Why I separated the page into two scripts</h2>
 
       <p>
-        What interested me here was not just the standard slogan that a “giant component”
-        appears near the critical point. The more interesting question was how that giant
-        actually emerges in a live evolving graph when edges are added one at a time.
-        A naive mental picture suggests a clean story: small components gradually merge,
-        then one component begins to dominate, and everything else is eventually absorbed.
-        But the paper shows that the true story is more delicate.
+        I do not want one bloated script that tries to do everything at once. One task is visual and sequential.
+        The other is statistical and repetitive. Those are different jobs.
       </p>
+
+      <ul class="tight-list">
+        <li><strong>Animation script:</strong> useful for seeing one path evolve edge by edge.</li>
+        <li><strong>Simulation script:</strong> useful for seeing whether the abstract’s probabilities show up empirically when the number of runs is large.</li>
+      </ul>
+
+      <h2>1. Animation of one evolving graph</h2>
 
       <p>
-        In fact, one of the motivations discussed in the paper was an early rumor from
-        simulation work suggesting that, throughout the evolution, there was never more
-        than one complex component at a time. The authors explain that this rumor was
-        false, though related high-probability statements are approximately true in certain
-        regimes. That subtle difference is exactly the kind of thing that makes the topic
-        mathematically interesting. :contentReference[oaicite:2]{index=2}
+        This script follows a single run. It places the vertices in a circular layout, numbers them in small fonts,
+        adds one edge at a time, and shows the component counts at the bottom. Toward the end, it also reminds the viewer
+        that one animation is only one sample path, not an estimate of the limiting probabilities.
       </p>
 
-      <h2>2. The basic phenomenon</h2>
+      <div class="media-wrap">
+        <video controls preload="metadata">
+          <source src="critical_graph_evolution.mp4" type="video/mp4" />
+          <source src="critical_graph_evolution.gif" type="image/gif" />
+          Your browser does not support embedded video. Put the animation file in the same folder as this HTML page.
+        </video>
+        <div class="media-caption">
+          Suggested filename in the same GitHub Pages folder:
+          <code>critical_graph_evolution.mp4</code> or <code>critical_graph_evolution.gif</code>.
+        </div>
+      </div>
 
-      <p>
-        Consider a random graph process on <code>n</code> vertices where edges are added
-        one by one. For sparse graphs, the components are mostly trees and small unicyclic
-        pieces. Near roughly <code>m ≈ n/2</code> edges, the process enters the critical
-        window. Around that point, component sizes and cyclic complexity begin to change
-        in a qualitatively different way, and shortly thereafter a unique giant component
-        emerges in the supercritical regime. :contentReference[oaicite:3]{index=3}
-      </p>
+      <div class="code-card">
+        <div class="code-head">
+          <div>
+            <div class="code-title">giant_component_animation.py</div>
+            <div class="code-subtitle">Exact animation script for one run</div>
+          </div>
+          <button class="copy-btn" onclick="copyCode('code-animation', this)">Copy code</button>
+        </div>
+        <pre><code id="code-animation">#!/usr/bin/env python3
 
-      <p>
-        The paper’s abstract and introduction emphasize that this transition is not just
-        about one large cluster suddenly appearing. It is also about how the graph’s
-        excess structure changes: trees, unicyclic components, bicyclic components, and
-        more complicated pieces evolve according to a much richer pattern than a first
-        simulation might suggest. :contentReference[oaicite:4]{index=4}
-      </p>
+import random
+from dataclasses import dataclass
+from typing import Optional
 
-      <h2>3. Why finite simulation can mislead</h2>
-
-      <p>
-        One reason I found this topic compelling is that simulation seems, at first glance,
-        like it ought to settle the matter quickly. After all, one can generate random
-        graphs, add edges one by one, and record the size of the largest component at each
-        step. But the paper shows why that is not enough.
-      </p>
-
-      <p>
-        A key issue is that reporting only at selected times can create a false impression.
-        The authors explain that the old rumor arose partly because graphs were examined at
-        <code>m = n/2</code> and certain other fixed times, rather than continuously at
-        each edge addition. More complicated configurations could arise only briefly and
-        then disappear, so a coarse sampling schedule could easily miss them. :contentReference[oaicite:5]{index=5}
-      </p>
-
-      <div class="code-label">The intuitive trap</div>
-      <pre><code>Sample only at a few times:
-  graph after 0.50 n edges
-  graph after 0.55 n edges
-  graph after 0.60 n edges
-
-This may miss short-lived configurations that occur
-between those observation points.</code></pre>
-
-      <p>
-        This mattered directly for my own thinking, because I was interested in tracking
-        the evolution edge by edge rather than relying on occasional snapshots. That is
-        exactly the kind of distinction that turns an apparently simple simulation into a
-        more careful computational experiment.
-      </p>
-
-      <h2>4. What I wanted to test computationally</h2>
-
-      <p>
-        The computational question I cared about was not only “does a giant component
-        appear?” That is classical. The more interesting test was:
-      </p>
-
-      <ol>
-        <li>simulate the graph process one edge at a time,</li>
-        <li>record the size of the largest connected component after each new edge,</li>
-        <li>repeat this many times,</li>
-        <li>and compare the observed growth against the limiting critical-window picture.</li>
-      </ol>
-
-      <p>
-        This makes the experiment more informative than a single run, but also more costly.
-        If one wants many replications, each tracked edge by edge, the data grows quickly.
-        And even then, one is still testing only a finite approximation to asymptotic theory.
-      </p>
-
-      <h2>5. A basic simulation outline</h2>
-
-      <p>
-        At a practical level, the experiment can be organized by starting with an empty
-        graph on <code>n</code> labelled vertices, shuffling all possible edges, then
-        adding them one at a time while recording the largest component size.
-      </p>
-
-      <div class="code-label">Simple Python outline</div>
-      <pre><code>import random
+import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation
 import networkx as nx
+import pandas as pd
 
-def giant_component_trajectory(n, seed=None):
-    if seed is not None:
-        random.seed(seed)
+
+# ----------------------------
+# Component classification
+# ----------------------------
+
+def classify_component(subgraph: nx.Graph) -&gt; str:
+    v = subgraph.number_of_nodes()
+    e = subgraph.number_of_edges()
+
+    if e == v - 1:
+        return "tree"
+    elif e == v:
+        return "unicyclic"
+    elif e == v + 1:
+        return "bicyclic"
+    else:
+        return "other"
+
+
+def component_type_counts(G: nx.Graph) -&gt; dict:
+    comps = [G.subgraph(c).copy() for c in nx.connected_components(G)]
+
+    counts = {
+        "tree": 0,
+        "unicyclic": 0,
+        "bicyclic": 0,
+        "other": 0,
+    }
+
+    for comp in comps:
+        counts[classify_component(comp)] += 1
+
+    return counts
+
+
+def graph_stats(G: nx.Graph) -&gt; dict:
+    comps = [G.subgraph(c).copy() for c in nx.connected_components(G)]
+
+    largest_component_size = max((c.number_of_nodes() for c in comps), default=0)
+    isolated_vertices = sum(1 for _, d in G.degree() if d == 0)
+
+    type_counts = component_type_counts(G)
+
+    all_in_t_u_b = (type_counts["other"] == 0)
+    at_most_one_other = (type_counts["other"] &lt;= 1)
+
+    return {
+        "nodes": G.number_of_nodes(),
+        "edges": G.number_of_edges(),
+        "components": len(comps),
+        "largest_component": largest_component_size,
+        "isolated_vertices": isolated_vertices,
+        "trees": type_counts["tree"],
+        "unicyclic": type_counts["unicyclic"],
+        "bicyclic": type_counts["bicyclic"],
+        "other": type_counts["other"],
+        "all_tree_unicyclic_bicyclic": int(all_in_t_u_b),
+        "at_most_one_other_component": int(at_most_one_other),
+    }
+
+
+# ----------------------------
+# Random graph process
+# ----------------------------
+
+def build_edge_order(n: int, rng: random.Random):
+    all_edges = [(i, j) for i in range(n) for j in range(i + 1, n)]
+    rng.shuffle(all_edges)
+    return all_edges
+
+
+def run_one_process(
+    n: int,
+    max_edges: int,
+    seed: Optional[int] = None,
+    keep_edge_sequence: bool = True,
+) -&gt; pd.DataFrame:
+    rng = random.Random(seed)
 
     G = nx.Graph()
     G.add_nodes_from(range(n))
 
-    edges = [(i, j) for i in range(n) for j in range(i + 1, n)]
-    random.shuffle(edges)
+    edge_order = build_edge_order(n, rng)[:max_edges]
 
-    largest_sizes = []
+    rows = []
 
-    for e in edges:
-        G.add_edge(*e)
-        largest = max((len(c) for c in nx.connected_components(G)), default=0)
-        largest_sizes.append(largest)
+    rows.append({
+        "step": 0,
+        "added_u": None,
+        "added_v": None,
+        **graph_stats(G),
+    })
 
-    return largest_sizes</code></pre>
+    for step, (u, v) in enumerate(edge_order, start=1):
+        G.add_edge(u, v)
+        rows.append({
+            "step": step,
+            "added_u": u if keep_edge_sequence else None,
+            "added_v": v if keep_edge_sequence else None,
+            **graph_stats(G),
+        })
 
-      <p>
-        That is enough to visualize one trajectory. But one trajectory alone is not very
-        informative. The more meaningful object is the average trajectory over many runs,
-        together with a way of looking at variability across runs.
+    return pd.DataFrame(rows)
+
+
+# ----------------------------
+# Animation
+# ----------------------------
+
+def animate_one_process(
+    n: int = 50,
+    max_edges: Optional[int] = None,
+    seed: Optional[int] = 20260330,
+    interval_ms: int = 1000,
+    outfile: Optional[str] = "critical_graph_evolution.gif",
+    show_labels: bool = True,
+):
+    """
+    Animate a single random graph process with:
+    - circular node layout
+    - small numbered labels
+    - bottom stats panel
+    - theorem-reference panel near the end
+    """
+    import math
+
+    if max_edges is None:
+        max_edges = n // 2
+
+    history = run_one_process(
+        n=n,
+        max_edges=max_edges,
+        seed=seed,
+        keep_edge_sequence=True,
+    )
+
+    edge_sequence = []
+    for _, row in history.iloc[1:].iterrows():
+        edge_sequence.append((int(row["added_u"]), int(row["added_v"])))
+
+    # Circular layout
+    G0 = nx.Graph()
+    G0.add_nodes_from(range(n))
+    pos = nx.circular_layout(G0)
+
+    fig = plt.figure(figsize=(13, 8.5))
+    gs = fig.add_gridspec(2, 1, height_ratios=[4.8, 2.2])
+
+    ax_graph = fig.add_subplot(gs[0])
+    ax_info = fig.add_subplot(gs[1])
+
+    theory_tub = math.sqrt(2 / 3) * math.cosh(math.sqrt(5 / 18))   # about 0.9325
+    theory_one_other = 0.9957
+
+    def verdict_text(row, near_end: bool) -&gt; str:
+        tub_now = int(row["all_tree_unicyclic_bicyclic"])
+        one_other_now = int(row["at_most_one_other_component"])
+
+        verdict1 = (
+            "YES" if tub_now == 1 else "NO"
+        )
+        verdict2 = (
+            "YES" if one_other_now == 1 else "NO"
+        )
+
+        lines = []
+        lines.append("Interpretation relative to the abstract:")
+        lines.append(
+            f"- Entirely tree/unicyclic/bicyclic components right now? {verdict1}"
+        )
+        lines.append(
+            f"- Trees/unicyclic + at most one other component right now? {verdict2}"
+        )
+
+        if near_end:
+            lines.append("")
+            lines.append("Limiting reference values from the theorem:")
+            lines.append(
+                f"- P(all components are tree/unicyclic/bicyclic) ≈ {theory_tub:.4f}"
+            )
+            lines.append(
+                f"- P(trees/unicyclic + at most one other component) ≈ {theory_one_other:.4f}"
+            )
+            lines.append("")
+            lines.append(
+                "This animation is one sample path only, not an empirical estimate of those probabilities."
+            )
+
+        return "\n".join(lines)
+
+    def format_info(row, frame: int, total_frames: int) -&gt; str:
+        added_u = row["added_u"]
+        added_v = row["added_v"]
+
+        if pd.isna(added_u) or pd.isna(added_v):
+            edge_text = "Added edge: none"
+        else:
+            edge_text = f"Added edge: ({int(added_u)}, {int(added_v)})"
+
+        line1 = (
+            f"Step: {int(row['step'])}/{total_frames - 1}    "
+            f"Edges: {int(row['edges'])}    "
+            f"Components: {int(row['components'])}    "
+            f"Largest component: {int(row['largest_component'])}"
+        )
+
+        line2 = (
+            f"Isolated vertices: {int(row['isolated_vertices'])}    "
+            f"Trees: {int(row['trees'])}    "
+            f"Unicyclic: {int(row['unicyclic'])}    "
+            f"Bicyclic: {int(row['bicyclic'])}    "
+            f"Other: {int(row['other'])}"
+        )
+
+        line3 = (
+            f"All tree/unicyclic/bicyclic: {int(row['all_tree_unicyclic_bicyclic'])}    "
+            f"At most one other component: {int(row['at_most_one_other_component'])}"
+        )
+
+        near_end = frame &gt;= total_frames - 5
+        line4 = verdict_text(row, near_end=near_end)
+
+        return f"{edge_text}\n{line1}\n{line2}\n{line3}\n\n{line4}"
+
+    def update(frame: int):
+        ax_graph.clear()
+        ax_info.clear()
+
+        G = nx.Graph()
+        G.add_nodes_from(range(n))
+        G.add_edges_from(edge_sequence[:frame])
+
+        # Smaller dots; circular layout; numbered nodes
+        node_size = 70 if n &lt;= 80 else 35
+        font_size = 6 if n &lt;= 80 else 4
+
+        nx.draw_networkx_nodes(
+            G,
+            pos,
+            ax=ax_graph,
+            node_size=node_size,
+        )
+        nx.draw_networkx_edges(
+            G,
+            pos,
+            ax=ax_graph,
+            width=0.9,
+        )
+
+        if show_labels:
+            labels = {i: str(i) for i in range(n)}
+            nx.draw_networkx_labels(
+                G,
+                pos,
+                labels=labels,
+                ax=ax_graph,
+                font_size=font_size,
+                verticalalignment="center",
+                horizontalalignment="center",
+            )
+
+        ax_graph.set_title(f"Random graph evolution on n = {n}", fontsize=14)
+        ax_graph.set_axis_off()
+
+        row = history.iloc[frame]
+        info_text = format_info(row, frame=frame, total_frames=len(history))
+
+        ax_info.set_axis_off()
+        ax_info.text(
+            0.01,
+            0.98,
+            info_text,
+            ha="left",
+            va="top",
+            fontsize=10,
+            family="monospace",
+        )
+
+    anim = FuncAnimation(
+        fig,
+        update,
+        frames=len(history),
+        interval=interval_ms,
+        repeat=False
+    )
+
+    if outfile:
+        fps = max(1, round(1000 / interval_ms))
+
+        if outfile.lower().endswith(".gif"):
+            anim.save(outfile, writer="pillow", fps=fps)
+        elif outfile.lower().endswith(".mp4"):
+            try:
+                anim.save(outfile, writer="ffmpeg", fps=fps)
+            except Exception:
+                fallback = outfile[:-4] + ".gif"
+                print("ffmpeg unavailable; saving GIF instead.")
+                anim.save(fallback, writer="pillow", fps=fps)
+                print(f"Saved animation to: {fallback}")
+            else:
+                print(f"Saved animation to: {outfile}")
+        else:
+            raise ValueError("outfile must end with .gif or .mp4")
+
+    plt.tight_layout()
+    plt.show()
+
+
+if __name__ == "__main__":
+    animate_one_process(
+        n=50,                       # try 30, 50, or 80 first
+        max_edges=25,               # or n//2
+        seed=20260330,
+        interval_ms=1000,           # 1 second pause
+        outfile="critical_graph_evolution.mp4",
+        show_labels=False
+    )</code></pre>
+      </div>
+
+      <p class="small">
+        This script is the one to use when the point is: “show me the evolving graph, one edge at a time,
+        and tell me what kind of components exist right now.”
       </p>
 
-      <h2>6. Repeated sampling matters</h2>
+      <h2>2. Large-run simulation at <code>m = n/2</code></h2>
 
       <p>
-        One of the issues I was especially concerned about earlier was whether an apparent
-        behavior in a single realization was genuinely typical, or just a quirk of that
-        sample. That naturally leads to repeated simulations and averaging.
+        This script is the empirical side. It repeats the process many times, records the component structure,
+        and then reports the observed frequency of the two events that I care about:
       </p>
 
-      <div class="code-label">Average over many runs</div>
-      <pre><code>def average_giant_trajectory(n, trials=100):
-    total = None
-
-    for t in range(trials):
-        traj = giant_component_trajectory(n, seed=t)
-
-        if total is None:
-            total = [0] * len(traj)
-
-        for i, value in enumerate(traj):
-            total[i] += value
-
-    return [x / trials for x in total]</code></pre>
-
-      <p>
-        This does not prove the limiting theorems, but it does help check whether the
-        qualitative picture from the paper is visible numerically: a long subcritical
-        period, a rapid transition near the critical region, and a clear supercritical
-        dominance of one component.
-      </p>
-
-      <h2>7. What the paper actually proves that a simulation does not</h2>
-
-      <p>
-        The paper is much deeper than a numerical study of largest-component size. It
-        develops a theory of evolving graphs and multigraphs using generating functions,
-        derives limiting distributions for sparse connected components near the critical
-        point, and analyzes the evolution of cyclic complexity and excess through a Markov
-        process description. The authors also prove that the probability the process never
-        has more than one complex component approaches <code>5π/18 ≈ 0.8727</code>, and
-        that at exactly <code>m = n/2</code> edges the probability of having at most one
-        such component is approximately <code>0.9957</code>. :contentReference[oaicite:6]{index=6}
-      </p>
-
-      <p>
-        Those are asymptotic statements. A simulation with moderate <code>n</code> can
-        illustrate them, but it does not replace the proof. This is why I wanted the page
-        to state clearly that the computational work is only partial.
-      </p>
-
-      <h2>8. Why I found the “momentary complexity” issue so interesting</h2>
-
-      <p>
-        The part of the paper I found especially thought-provoking is the explanation that
-        the false rumor arose because complex competing components can appear only briefly.
-        That means the graph process can look cleaner than it really is if one does not
-        inspect it continuously. For me, this sharpened the meaning of “test the theory.”
-      </p>
-
-      <p>
-        If the event of interest is short-lived, then it is not enough to sample only a few
-        times. One has to watch the process edge by edge. In other words, the computational
-        design has to reflect the mathematics of what might be missed.
-      </p>
-
-      <div class="code-label">Edge-by-edge recording idea</div>
-      <pre><code>for e in shuffled_edges:
-    G.add_edge(*e)
-
-    # record:
-    # 1. size of largest component
-    # 2. number of components with cycles
-    # 3. total excess = edges - vertices across complex pieces
-    # 4. whether more than one complex component exists now</code></pre>
-
-      <p>
-        That richer recording scheme is much closer in spirit to the subtlety emphasized
-        by the paper than a single coarse snapshot.
-      </p>
-
-      <h2>9. What I would want readers to take away</h2>
-
-      <p>
-        The main lesson is that the “birth of the giant component” is not just a dramatic
-        threshold picture about one large cluster suddenly emerging. It is also a lesson in
-        how misleading raw simulation intuition can be if one does not record the right
-        statistics at the right times.
-      </p>
-
-      <p>
-        For me, the point of the computational exploration is therefore twofold:
-      </p>
-
-      <ul>
-        <li>to see the giant component emerge numerically in repeated runs, and</li>
-        <li>to understand why the more refined structure near the critical point cannot be
-            captured by a simplistic visual story.</li>
+      <ul class="tight-list">
+        <li>all components are tree / unicyclic / bicyclic,</li>
+        <li>trees / unicyclic plus at most one other component.</li>
       </ul>
 
-      <h2>10. A simple experimental agenda</h2>
-
       <p>
-        A reasonable computational program, still far simpler than the full paper, would be:
+        It also saves the outputs as CSV and Excel files, which is useful if I later want to plot finite-size behavior
+        for <code>n = 200, 500, 1000, ...</code> rather than stare only at terminal output.
       </p>
 
-      <ol>
-        <li>choose a moderate <code>n</code>,</li>
-        <li>simulate the graph process many times,</li>
-        <li>record the largest component after every edge addition,</li>
-        <li>record whether more than one complex component appears at any time,</li>
-        <li>average the trajectories across runs,</li>
-        <li>and compare the results against the critical-point heuristics from the paper.</li>
-      </ol>
+      <div class="code-card">
+        <div class="code-head">
+          <div>
+            <div class="code-title">giant_component.py</div>
+            <div class="code-subtitle">Exact large-run simulation script</div>
+          </div>
+          <button class="copy-btn" onclick="copyCode('code-sim', this)">Copy code</button>
+        </div>
+        <pre><code id="code-sim">import math
+import os
+import random
+from dataclasses import dataclass
+from typing import Optional
 
-      <div class="code-label">Possible command-line style workflow</div>
-      <pre><code>python3 giant_component_sim.py --n 500 --trials 200 --record-every-edge
-python3 giant_component_sim.py --n 1000 --trials 200 --record-every-edge
-python3 giant_component_sim.py --n 2000 --trials 100 --record-every-edge --save-csv</code></pre>
+import networkx as nx
+import pandas as pd
 
-      <p>
-        Even this is already enough to raise meaningful questions about finite-size effects,
-        averaging, and how closely moderate simulations resemble the asymptotic claims.
+
+# ----------------------------
+# Component classification
+# ----------------------------
+
+def classify_component(subgraph: nx.Graph) -&gt; str:
+    v = subgraph.number_of_nodes()
+    e = subgraph.number_of_edges()
+
+    if e == v - 1:
+        return "tree"
+    elif e == v:
+        return "unicyclic"
+    elif e == v + 1:
+        return "bicyclic"
+    else:
+        return "other"
+
+
+def component_type_counts(G: nx.Graph) -&gt; dict:
+    comps = [G.subgraph(c).copy() for c in nx.connected_components(G)]
+
+    counts = {
+        "tree": 0,
+        "unicyclic": 0,
+        "bicyclic": 0,
+        "other": 0,
+    }
+
+    for comp in comps:
+        counts[classify_component(comp)] += 1
+
+    return counts
+
+
+def graph_stats(G: nx.Graph) -&gt; dict:
+    comps = [G.subgraph(c).copy() for c in nx.connected_components(G)]
+
+    largest_component_size = max((c.number_of_nodes() for c in comps), default=0)
+    isolated_vertices = sum(1 for _, d in G.degree() if d == 0)
+
+    type_counts = component_type_counts(G)
+
+    all_in_t_u_b = (type_counts["other"] == 0)
+    at_most_one_other = (type_counts["other"] &lt;= 1)
+
+    return {
+        "nodes": G.number_of_nodes(),
+        "edges": G.number_of_edges(),
+        "components": len(comps),
+        "largest_component": largest_component_size,
+        "isolated_vertices": isolated_vertices,
+        "trees": type_counts["tree"],
+        "unicyclic": type_counts["unicyclic"],
+        "bicyclic": type_counts["bicyclic"],
+        "other": type_counts["other"],
+        "all_tree_unicyclic_bicyclic": int(all_in_t_u_b),
+        "at_most_one_other_component": int(at_most_one_other),
+    }
+
+
+# ----------------------------
+# Random graph process
+# ----------------------------
+
+def build_edge_order(n: int, rng: random.Random):
+    all_edges = [(i, j) for i in range(n) for j in range(i + 1, n)]
+    rng.shuffle(all_edges)
+    return all_edges
+
+
+def run_one_process(
+    n: int,
+    max_edges: int,
+    seed: Optional[int] = None,
+    keep_edge_sequence: bool = True,
+) -&gt; pd.DataFrame:
+    rng = random.Random(seed)
+
+    G = nx.Graph()
+    G.add_nodes_from(range(n))
+
+    edge_order = build_edge_order(n, rng)[:max_edges]
+
+    rows = []
+
+    # Step 0
+    rows.append({
+        "step": 0,
+        "added_u": None,
+        "added_v": None,
+        **graph_stats(G),
+    })
+
+    for step, (u, v) in enumerate(edge_order, start=1):
+        G.add_edge(u, v)
+        rows.append({
+            "step": step,
+            "added_u": u if keep_edge_sequence else None,
+            "added_v": v if keep_edge_sequence else None,
+            **graph_stats(G),
+        })
+
+    return pd.DataFrame(rows)
+
+
+@dataclass
+class SimulationResult:
+    raw_history: pd.DataFrame
+    averages_by_step: pd.DataFrame
+    report_step_rows: pd.DataFrame
+    summary: pd.DataFrame
+
+
+def run_many_processes(
+    n: int,
+    num_runs: int,
+    report_edges: Optional[int] = None,
+    record_full_history: bool = True,
+    base_seed: Optional[int] = None,
+    show_progress: bool = True,
+) -&gt; SimulationResult:
+    if report_edges is None:
+        report_edges = n // 2
+
+    max_edges = report_edges if not record_full_history else report_edges
+
+    master_rng = random.Random(base_seed)
+    all_runs = []
+
+    for run in range(1, num_runs + 1):
+        run_seed = master_rng.randint(0, 10**12)
+
+        df_run = run_one_process(
+            n=n,
+            max_edges=max_edges,
+            seed=run_seed,
+            keep_edge_sequence=True,
+        )
+        df_run.insert(0, "run", run)
+        df_run.insert(1, "run_seed", run_seed)
+        all_runs.append(df_run)
+
+        if show_progress and (run == 1 or run % max(1, num_runs // 20) == 0 or run == num_runs):
+            print(f"Completed run {run}/{num_runs}")
+
+    raw_history = pd.concat(all_runs, ignore_index=True)
+
+    # Step-by-step averages
+    avg_cols = [
+        "edges",
+        "components",
+        "largest_component",
+        "isolated_vertices",
+        "trees",
+        "unicyclic",
+        "bicyclic",
+        "other",
+        "all_tree_unicyclic_bicyclic",
+        "at_most_one_other_component",
+    ]
+
+    averages_by_step = (
+        raw_history.groupby("step", as_index=False)[avg_cols]
+        .mean()
+        .rename(columns={
+            "edges": "avg_edges",
+            "components": "avg_components",
+            "largest_component": "avg_largest_component",
+            "isolated_vertices": "avg_isolated_vertices",
+            "trees": "avg_trees",
+            "unicyclic": "avg_unicyclic",
+            "bicyclic": "avg_bicyclic",
+            "other": "avg_other",
+            "all_tree_unicyclic_bicyclic": "prob_all_tree_unicyclic_bicyclic",
+            "at_most_one_other_component": "prob_at_most_one_other_component",
+        })
+    )
+
+    report_step_rows = raw_history[raw_history["step"] == report_edges].copy()
+
+    p_hat_tub = report_step_rows["all_tree_unicyclic_bicyclic"].mean()
+    p_hat_one_other = report_step_rows["at_most_one_other_component"].mean()
+
+    theory_tub = math.sqrt(2 / 3) * math.cosh(math.sqrt(5 / 18))
+    theory_one_other = 0.9957  # abstract's rounded value
+
+    summary = pd.DataFrame([{
+        "n": n,
+        "num_runs": num_runs,
+        "report_edges": report_edges,
+        "empirical_prob_all_tree_unicyclic_bicyclic": p_hat_tub,
+        "theory_prob_all_tree_unicyclic_bicyclic": theory_tub,
+        "difference_all_tree_unicyclic_bicyclic": p_hat_tub - theory_tub,
+        "empirical_prob_at_most_one_other_component": p_hat_one_other,
+        "theory_prob_at_most_one_other_component": theory_one_other,
+        "difference_at_most_one_other_component": p_hat_one_other - theory_one_other,
+    }])
+
+    return SimulationResult(
+        raw_history=raw_history,
+        averages_by_step=averages_by_step,
+        report_step_rows=report_step_rows,
+        summary=summary,
+    )
+
+
+def save_outputs(result: SimulationResult, output_dir: str = "critical_graph_outputs"):
+    os.makedirs(output_dir, exist_ok=True)
+
+    raw_csv = os.path.join(output_dir, "raw_history_all_runs.csv")
+    avg_csv = os.path.join(output_dir, "averages_by_step.csv")
+    report_csv = os.path.join(output_dir, "report_step_rows.csv")
+    summary_csv = os.path.join(output_dir, "summary.csv")
+    xlsx_path = os.path.join(output_dir, "critical_graph_outputs.xlsx")
+
+    result.raw_history.to_csv(raw_csv, index=False)
+    result.averages_by_step.to_csv(avg_csv, index=False)
+    result.report_step_rows.to_csv(report_csv, index=False)
+    result.summary.to_csv(summary_csv, index=False)
+
+    with pd.ExcelWriter(xlsx_path, engine="openpyxl") as writer:
+        result.raw_history.to_excel(writer, sheet_name="raw_history", index=False)
+        result.averages_by_step.to_excel(writer, sheet_name="averages_by_step", index=False)
+        result.report_step_rows.to_excel(writer, sheet_name="report_step_rows", index=False)
+        result.summary.to_excel(writer, sheet_name="summary", index=False)
+
+    print(f"Saved files to: {output_dir}")
+
+
+if __name__ == "__main__":
+    # Choose n large enough to start seeing asymptotics.
+    # Try n = 200, 500, 1000, ... and compare.
+    n = 200
+    num_runs = 1000
+    report_edges = n // 2
+    base_seed = 20260330
+
+    result = run_many_processes(
+        n=n,
+        num_runs=num_runs,
+        report_edges=report_edges,
+        record_full_history=True,
+        base_seed=base_seed,
+        show_progress=True,
+    )
+
+    print("\nSummary:")
+    print(result.summary.to_string(index=False))
+
+    print("\nFirst few rows at the reporting step:")
+    print(result.report_step_rows.head(10).to_string(index=False))
+
+    save_outputs(result, output_dir="critical_graph_outputs")</code></pre>
+      </div>
+
+      <p class="small">
+        This is the script to run when the point is: “give me many samples, estimate the two probabilities,
+        and save the outputs so I can inspect the finite-<code>n</code> behavior.”
       </p>
 
-      <h2>11. Why this topic stayed with me</h2>
+      <h2>How I am reading the outputs</h2>
 
       <p>
-        I was drawn to this problem because it sits right at the boundary between elegant
-        asymptotic theory and computational experiment. It looks easy to visualize, but hard
-        to understand correctly. It looks easy to simulate, but subtle to interpret. And it
-        is exactly that tension that makes it so appealing.
+        I am reading the page in two passes.
       </p>
 
+      <ul class="tight-list">
+        <li><strong>Pass 1:</strong> the animation tells me what one realization actually looks like edge by edge.</li>
+        <li><strong>Pass 2:</strong> the repeated simulation tells me whether the paper’s reference values start showing up numerically when the number of runs is large.</li>
+      </ul>
+
       <p>
-        In that sense, this page is less about re-proving the paper and more about showing
-        why the paper matters: the graph process contains more structure, and more transient
-        behavior, than a casual glance would suggest.
+        That is the point of keeping both scripts here. One gives intuition. The other gives a rough empirical check.
+        Neither one, by itself, is the theorem.
       </p>
+
+      <h2>How to run the scripts</h2>
+
+      <div class="panel">
+        <strong>Install packages</strong>
+        <pre><code>pip install networkx pandas matplotlib pillow openpyxl</code></pre>
+      </div>
+
+      <div class="panel">
+        <strong>Run the animation</strong>
+        <pre><code>python3 giant_component_animation.py</code></pre>
+      </div>
+
+      <div class="panel">
+        <strong>Run the large simulation</strong>
+        <pre><code>python3 giant_component.py</code></pre>
+      </div>
+
+      <div class="panel note">
+        <strong>One practical note.</strong>
+        If MP4 export fails, install <code>ffmpeg</code>, or let the animation script fall back to GIF.
+        The GitHub page can embed either one as long as the file is placed beside the HTML page.
+      </div>
+
+      <h2>What I want to do next</h2>
+
+      <ul class="tight-list">
+        <li>Increase <code>n</code> and compare how stable the empirical probabilities become.</li>
+        <li>Plot the step-by-step averages from <code>averages_by_step.csv</code>.</li>
+        <li>Track whether the interesting behavior is really concentrated near <code>m = n/2</code> or spills slightly around it for finite <code>n</code>.</li>
+        <li>Keep the page honest: this is a preliminary test, not a proof.</li>
+      </ul>
     </section>
 
-    <nav>
-      <a href="index.html">Home</a><span class="sep">|</span>
+    <div class="footer-nav">
+      <a href="index.html">Home</a>
+      <span class="sep">|</span>
       <a href="research.html">Research</a>
-    </nav>
-
-    <div class="footer-note">
-      Built with GitHub Pages.
     </div>
   </div>
+
+  <script>
+    async function copyCode(id, button) {
+      const text = document.getElementById(id).innerText;
+      const old = button.textContent;
+      try {
+        await navigator.clipboard.writeText(text);
+        button.textContent = "Copied";
+        setTimeout(() => button.textContent = old, 1400);
+      } catch (err) {
+        button.textContent = "Copy failed";
+        setTimeout(() => button.textContent = old, 1600);
+      }
+    }
+  </script>
 </body>
 </html>
