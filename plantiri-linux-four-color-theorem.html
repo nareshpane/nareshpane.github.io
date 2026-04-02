@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plantiri in Linux for Testing Four-Color Theorem</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700&family=Source+Code+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f7f4ee;
+      --card: #fffdf9;
+      --ink: #1b1b1b;
+      --muted: #666;
+      --line: #ddd5c7;
+      --accent: #1d4f91;
+      --note: #f5efe3;
+      --warn: #fbf6ea;
+      --codebg: #f3efe8;
+      --codeborder: #d8cfc1;
+      --shadow: 0 14px 32px rgba(0,0,0,0.06);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Inter", sans-serif;
+      line-height: 1.72;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 34px 20px 56px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 34px 34px 30px;
+    }
+
+    h1, h2, h3 {
+      font-family: "Cormorant Garamond", serif;
+      line-height: 1.08;
+      margin: 0 0 12px;
+      color: #151515;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 14px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-top: 34px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    h3 {
+      font-size: 1.4rem;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin: 0 0 14px;
+      font-size: 1.02rem;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .lead {
+      font-size: 1.1rem;
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 16px 18px;
+      margin: 18px 0;
+      background: #fcfaf6;
+    }
+
+    .note {
+      background: var(--note);
+      border-left: 4px solid var(--accent);
+    }
+
+    .warn {
+      background: var(--warn);
+      border-left: 4px solid #b7791f;
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin: 18px 0 24px;
+    }
+
+    .mini-box {
+      background: #fcfaf6;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px 16px;
+    }
+
+    .mini-box .k {
+      font-size: 0.88rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 6px;
+      font-weight: 700;
+    }
+
+    .mini-box .v {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .step-block {
+      margin-top: 22px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fcfaf6;
+      overflow: hidden;
+    }
+
+    .step-head {
+      padding: 14px 18px;
+      background: #f3ede3;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .step-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .step-subtitle {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-top: 4px;
+    }
+
+    .step-body {
+      padding: 18px;
+    }
+
+    ul {
+      margin: 0 0 14px 22px;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .code-card {
+      margin-top: 14px;
+      border: 1px solid var(--codeborder);
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--codebg);
+    }
+
+    .code-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      background: #ece5d8;
+      border-bottom: 1px solid var(--codeborder);
+    }
+
+    .code-title {
+      font-weight: 700;
+      font-size: 0.98rem;
+    }
+
+    .code-subtitle {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 2px;
+    }
+
+    .copy-btn {
+      border: 1px solid #b9ac95;
+      background: #fffaf0;
+      color: #222;
+      border-radius: 10px;
+      padding: 8px 12px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .copy-btn:hover {
+      background: #fff;
+    }
+
+    pre {
+      margin: 0;
+      padding: 16px 18px;
+      overflow-x: auto;
+      white-space: pre;
+      tab-size: 4;
+    }
+
+    code, pre {
+      font-family: "Source Code Pro", monospace;
+      font-size: 0.92rem;
+      line-height: 1.63;
+    }
+
+    .download-box {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin-top: 12px;
+    }
+
+    .download-btn {
+      display: inline-block;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: #fffaf0;
+      font-weight: 600;
+    }
+
+    .small {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .hero-figure {
+      margin: 18px auto 8px;
+      max-width: 480px;
+      text-align: center;
+    }
+
+    .hero-figure img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fff;
+      padding: 8px;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.05);
+    }
+
+    .caption {
+      margin-top: 8px;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .footer-nav {
+      margin-top: 22px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .footer-nav a {
+      font-weight: 600;
+    }
+
+    .sep {
+      margin: 0 8px;
+      color: #8a8a8a;
+    }
+
+    @media (max-width: 920px) {
+      .card {
+        padding: 24px 18px;
+      }
+
+      h1 {
+        font-size: 2.35rem;
+      }
+
+      h2 {
+        font-size: 1.65rem;
+      }
+
+      .mini-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .code-head {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <section class="card">
+      <h1>Plantiri in Linux for Testing Four-Color Theorem</h1>
+
+      <p class="lead">
+        This page gives a Linux-first workflow for installing and using <strong>plantri</strong> to generate planar graphs, with a special focus on how small computational cases connect to the Four-Color Theorem. The structure follows a practical style: use the commands that actually appeared in terminal, explain what each one is doing, and keep the code blocks easy to copy.
+      </p>
+
+      <div class="panel note">
+        <strong>Official references.</strong>
+        If you want the source page and the paper at the very beginning, here they are separately.
+        <div class="download-box">
+          <a class="download-btn" href="https://users.cecs.anu.edu.au/~bdm/plantri/" target="_blank" rel="noopener">Official plantri site</a>
+          <a class="download-btn" href="https://users.cecs.anu.edu.au/~bdm/papers/plantri-full.pdf" target="_blank" rel="noopener">Fast generation of planar graphs (paper)</a>
+        </div>
+      </div>
+
+      <div class="panel note">
+        <strong>Figure and PDF placeholders.</strong>
+        Put <code>four-color.png</code> and <code>four-color-six-nodes.pdf</code> in the same folder as this HTML file on your GitHub Pages site. The image and download button below will then work automatically.
+      </div>
+
+      <div class="hero-figure">
+        <img src="four-color.png" alt="Illustration related to the Four-Color Theorem">
+        <div class="caption">Optional figure: <code>four-color.png</code></div>
+      </div>
+
+      <div class="download-box">
+        <a class="download-btn" href="four-color-six-nodes.pdf" download>Download PDF: four-color-six-nodes.pdf</a>
+      </div>
+
+      <div class="mini-grid">
+        <div class="mini-box">
+          <div class="k">Platform</div>
+          <div class="v">Ubuntu / Linux terminal workflow</div>
+        </div>
+        <div class="mini-box">
+          <div class="k">Program</div>
+          <div class="v">plantri for planar graph generation</div>
+        </div>
+        <div class="mini-box">
+          <div class="k">Case study</div>
+          <div class="v">6 vertices, 179 connected simple plane graphs</div>
+        </div>
+      </div>
+
+      <h2>Why planar graphs matter for the Four-Color Theorem</h2>
+
+      <p>
+        The Four-Color Theorem is naturally a theorem about planar maps, but those maps can be translated into planar graphs. In that translation, adjacent regions become adjacent vertices in a suitable graph model, and the coloring problem becomes a graph-coloring problem on planar structures.
+      </p>
+
+      <div class="panel note">
+        <strong>Main idea.</strong>
+        If every planar graph in the relevant class can be colored with at most four colors, then every planar map can be colored with at most four colors as well.
+      </div>
+
+      <p>
+        This is exactly why plantri is interesting here: it gives a fast way to enumerate many isomorphism classes of planar graphs without storing duplicates, so it becomes a useful experimental tool for small cases.
+      </p>
+
+      <h2>Why brute force does not prove the theorem in full generality</h2>
+
+      <p>
+        A brute-force strategy would try to check all planar graphs on 1 vertex, then 2 vertices, then 3 vertices, and so on forever. That is the obstacle: the theorem is universal, so a finite check of only small orders can never by itself settle all possible sizes.
+      </p>
+
+      <div class="panel warn">
+        <strong>Important limitation.</strong>
+        Even though complete enumeration is feasible for small numbers of vertices, the Four-Color Theorem concerns an infinite family. Small computations are excellent for building intuition and testing code, but they do not replace the deeper structural arguments used in the actual proof.
+      </div>
+
+      <h2>Sequential Workflow</h2>
+
+      <div class="step-block">
+        <div class="step-head">
+          <p class="step-title">Step 1: Download and unpack plantri</p>
+          <div class="step-subtitle">This reflects the terminal-style installation sequence you were using</div>
+        </div>
+        <div class="step-body">
+          <p>
+            Start in <code>~/Downloads</code>, fetch the archive, unpack it, and move into the extracted folder.
+          </p>
+
+          <div class="code-card">
+            <div class="code-head">
+              <div>
+                <div class="code-title">Download and extract</div>
+                <div class="code-subtitle">Matches the flow from your screenshots</div>
+              </div>
+              <button class="copy-btn" onclick="copyCode('code-step-1', this)">Copy code</button>
+            </div>
+            <pre><code id="code-step-1">cd ~/Downloads
+wget https://users.cecs.anu.edu.au/~bdm/plantri/plantri58.tar.gz
+tar -xzf plantri58.tar.gz
+cd plantri58</code></pre>
+          </div>
+
+          <p>
+            If you already extracted the folder earlier, the <code>wget</code> and <code>tar</code> steps do not need to be repeated.
+          </p>
+        </div>
+      </div>
+
+      <div class="step-block">
+        <div class="step-head">
+          <p class="step-title">Step 2: Build the program</p>
+          <div class="step-subtitle">Compile it once before trying to run <code>./plantri</code></div>
+        </div>
+        <div class="step-body">
+          <p>
+            The executable must exist before commands like <code>./plantri ...</code> can work. If you see <code>No such file or directory</code>, it usually means either you are in the wrong folder or the program has not yet been built.
+          </p>
+
+          <div class="code-card">
+            <div class="code-head">
+              <div>
+                <div class="code-title">Compile plantri</div>
+                <div class="code-subtitle">Usually needed once per extracted source tree</div>
+              </div>
+              <button class="copy-btn" onclick="copyCode('code-step-2', this)">Copy code</button>
+            </div>
+            <pre><code id="code-step-2">make</code></pre>
+          </div>
+
+          <p>
+            A quick check afterward is:
+          </p>
+
+          <div class="code-card">
+            <div class="code-head">
+              <div>
+                <div class="code-title">Check that the executable exists</div>
+                <div class="code-subtitle">Useful after compilation</div>
+              </div>
+              <button class="copy-btn" onclick="copyCode('code-step-2b', this)">Copy code</button>
+            </div>
+            <pre><code id="code-step-2b">ls -l plantri
+./plantri -help</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-block">
+        <div class="step-head">
+          <p class="step-title">Step 3: Read the local guide</p>
+          <div class="step-subtitle">You already used this in terminal, which is a good habit</div>
+        </div>
+        <div class="step-body">
+          <p>
+            The local guide is worth checking before experimenting with switches.
+          </p>
+
+          <div class="code-card">
+            <div class="code-head">
+              <div>
+                <div class="code-title">Open the local guide</div>
+                <div class="code-subtitle">Exactly in the style shown in your screenshots</div>
+              </div>
+              <button class="copy-btn" onclick="copyCode('code-step-3', this)">Copy code</button>
+            </div>
+            <pre><code id="code-step-3">less plantri-guide.txt</code></pre>
+          </div>
+
+          <p>
+            One useful thing to remember is that <code>-a</code> chooses ASCII output, which is much easier to inspect by eye than raw planar code.
+          </p>
+        </div>
+      </div>
+
+      <div class="step-block">
+        <div class="step-head">
+          <p class="step-title">Step 4: Generate the six-vertex case</p>
+          <div class="step-subtitle">This is the small case you were already testing directly in terminal</div>
+        </div>
+        <div class="step-body">
+          <p>
+            Once you are inside <code>~/Downloads/plantri58</code> and the executable exists, the following command generates connected simple plane graphs on 6 vertices in ASCII form.
+          </p>
+
+          <div class="code-card">
+            <div class="code-head">
+              <div>
+                <div class="code-title">Generate 6-vertex connected simple plane graphs</div>
+                <div class="code-subtitle">Human-readable ASCII output</div>
+              </div>
+              <button class="copy-btn" onclick="copyCode('code-step-4', this)">Copy code</button>
+            </div>
+            <pre><code id="code-step-4">./plantri -p -c1m1 -a 6</code></pre>
+          </div>
+
+          <p>
+            Here, <code>-p</code> selects general plane simple graphs, <code>-c1m1</code> asks for connectivity at least 1 and minimum degree at least 1, and <code>-a</code> switches the output to ASCII format.
+          </p>
+        </div>
+      </div>
+
+      <div class="step-block">
+        <div class="step-head">
+          <p class="step-title">Step 5: Count first, then list</p>
+          <div class="step-subtitle">A very useful habit when the class might be larger than expected</div>
+        </div>
+        <div class="step-body">
+          <p>
+            If you want the count without printing the full list first, use <code>-u</code>. Then, once the count looks right, rerun without <code>-u</code> to print the graphs themselves.
+          </p>
+
+          <div class="code-card">
+            <div class="code-head">
+              <div>
+                <div class="code-title">Count only</div>
+                <div class="code-subtitle">Good first diagnostic step</div>
+              </div>
+              <button class="copy-btn" onclick="copyCode('code-step-5', this)">Copy code</button>
+            </div>
+            <pre><code id="code-step-5">./plantri -u -p -c1m1 6</code></pre>
+          </div>
+
+          <p>
+            Then print the actual graphs:
+          </p>
+
+          <div class="code-card">
+            <div class="code-head">
+              <div>
+                <div class="code-title">List the graphs in ASCII form</div>
+                <div class="code-subtitle">Readable output after the count check</div>
+              </div>
+              <button class="copy-btn" onclick="copyCode('code-step-5b', this)">Copy code</button>
+            </div>
+            <pre><code id="code-step-5b">./plantri -p -c1m1 -a 6</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-block">
+        <div class="step-head">
+          <p class="step-title">Step 6: Save the output to a file</p>
+          <div class="step-subtitle">Convenient if you want to inspect the six-node case later or post-process it in Python</div>
+        </div>
+        <div class="step-body">
+          <p>
+            Redirect the ASCII output into a text file in the current folder.
+          </p>
+
+          <div class="code-card">
+            <div class="code-head">
+              <div>
+                <div class="code-title">Save ASCII output</div>
+                <div class="code-subtitle">Simple text export</div>
+              </div>
+              <button class="copy-btn" onclick="copyCode('code-step-6', this)">Copy code</button>
+            </div>
+            <pre><code id="code-step-6">./plantri -p -c1m1 -a 6 > six-node-planar-graphs.txt</code></pre>
+          </div>
+
+          <p>
+            If you later want a compact abstract graph format instead, you can experiment with graph6 output for simple graphs, but ASCII is the easiest place to start when learning the program.
+          </p>
+        </div>
+      </div>
+
+      <h2>Why 6 vertices give exactly 179 graphs</h2>
+
+      <p>
+        In this specific setting, the six-vertex command corresponds to connected simple plane graphs up to embedding-preserving isomorphism. That is exactly the kind of small exhaustive case where plantri is especially useful.
+      </p>
+
+      <div class="panel note">
+        <strong>Key small-case fact.</strong>
+        For 6 vertices, this class has exactly <strong>179</strong> graphs. That makes it small enough to inspect, draw, color, and place into a PDF atlas, while still being large enough to feel mathematically nontrivial.
+      </div>
+
+      <p>
+        This is a good bridge between theory and experiment: large enough to reveal real combinatorial variety, but still small enough to enumerate fully on a laptop.
+      </p>
+
+      <h2>Practical path mistake to avoid</h2>
+
+      <div class="panel warn">
+        <strong>Common issue from terminal.</strong>
+        If you run <code>./plantri ...</code> from your home directory, or from <code>~/Downloads</code> before entering the extracted folder, you can get <code>No such file or directory</code>. In your screenshots, the working folder was <code>~/Downloads/plantri58</code>, which is the correct place once the program has been unpacked and compiled.
+      </div>
+
+      <div class="code-card">
+        <div class="code-head">
+          <div>
+            <div class="code-title">Minimal working sequence</div>
+            <div class="code-subtitle">From downloads folder to six-node output</div>
+          </div>
+          <button class="copy-btn" onclick="copyCode('code-step-7', this)">Copy code</button>
+        </div>
+        <pre><code id="code-step-7">cd ~/Downloads
+cd plantri58
+make
+less plantri-guide.txt
+./plantri -u -p -c1m1 6
+./plantri -p -c1m1 -a 6</code></pre>
+      </div>
+
+      <h2>Using the generated graphs for Four-Color experiments</h2>
+
+      <p>
+        Once the graphs are generated, there are several natural follow-up experiments.
+      </p>
+
+      <ul>
+        <li>Draw all 179 graphs in a consistent style.</li>
+        <li>Test each graph with a coloring routine and store one valid 4-coloring.</li>
+        <li>Create a PDF catalogue, for example one graph or a few graphs per page.</li>
+        <li>Compare visual intuition against the theorem: none of these planar cases should require more than four colors.</li>
+      </ul>
+
+      <h2>Compact command block</h2>
+
+      <p>
+        For readers who want the shortest path from download to the six-node case, this is the compact version.
+      </p>
+
+      <div class="code-card">
+        <div class="code-head">
+          <div>
+            <div class="code-title">Compact workflow</div>
+            <div class="code-subtitle">Download, build, inspect, count, and list</div>
+          </div>
+          <button class="copy-btn" onclick="copyCode('code-step-8', this)">Copy code</button>
+        </div>
+        <pre><code id="code-step-8">cd ~/Downloads
+wget https://users.cecs.anu.edu.au/~bdm/plantri/plantri58.tar.gz
+tar -xzf plantri58.tar.gz
+cd plantri58
+make
+less plantri-guide.txt
+./plantri -u -p -c1m1 6
+./plantri -p -c1m1 -a 6 > six-node-planar-graphs.txt</code></pre>
+      </div>
+    </section>
+
+    <div class="footer-nav">
+      <a href="index.html">Home</a>
+      <span class="sep">|</span>
+      <a href="research.html">Research</a>
+    </div>
+  </div>
+
+  <script>
+    async function copyCode(id, button) {
+      const text = document.getElementById(id).innerText;
+      const old = button.textContent;
+      try {
+        await navigator.clipboard.writeText(text);
+        button.textContent = "Copied";
+        setTimeout(() => button.textContent = old, 1400);
+      } catch (err) {
+        button.textContent = "Copy failed";
+        setTimeout(() => button.textContent = old, 1600);
+      }
+    }
+  </script>
+</body>
+</html>
