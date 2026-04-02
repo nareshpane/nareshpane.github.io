@@ -1,1 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Computational Burden in Graph Generation as the Number of Nodes Increases</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700&family=Source+Code+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f7f4ee;
+      --card: #fffdf9;
+      --ink: #1b1b1b;
+      --muted: #666;
+      --line: #ddd5c7;
+      --accent: #1d4f91;
+      --note: #f5efe3;
+      --warn: #fbf6ea;
+      --codebg: #f3efe8;
+      --codeborder: #d8cfc1;
+      --shadow: 0 14px 32px rgba(0,0,0,0.06);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Inter", sans-serif;
+      line-height: 1.72;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 34px 20px 56px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 34px 34px 30px;
+    }
+
+    h1, h2, h3 {
+      font-family: "Cormorant Garamond", serif;
+      line-height: 1.08;
+      margin: 0 0 12px;
+      color: #151515;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 14px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-top: 34px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    h3 {
+      font-size: 1.4rem;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin: 0 0 14px;
+      font-size: 1.02rem;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .lead {
+      font-size: 1.1rem;
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 16px 18px;
+      margin: 18px 0;
+      background: #fcfaf6;
+    }
+
+    .note {
+      background: var(--note);
+      border-left: 4px solid var(--accent);
+    }
+
+    .warn {
+      background: var(--warn);
+      border-left: 4px solid #b7791f;
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin: 18px 0 24px;
+    }
+
+    .mini-box {
+      background: #fcfaf6;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px 16px;
+    }
+
+    .mini-box .k {
+      font-size: 0.88rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 6px;
+      font-weight: 700;
+    }
+
+    .mini-box .v {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .step-block {
+      margin-top: 22px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fcfaf6;
+      overflow: hidden;
+    }
+
+    .step-head {
+      padding: 14px 18px;
+      background: #f3ede3;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .step-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .step-subtitle {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-top: 4px;
+    }
+
+    .step-body {
+      padding: 18px;
+    }
+
+    ul {
+      margin: 0 0 14px 22px;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .code-card {
+      margin-top: 14px;
+      border: 1px solid var(--codeborder);
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--codebg);
+    }
+
+    .code-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      background: #ece5d8;
+      border-bottom: 1px solid var(--codeborder);
+    }
+
+    .code-title {
+      font-weight: 700;
+      font-size: 0.98rem;
+    }
+
+    .code-subtitle {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 2px;
+    }
+
+    .copy-btn {
+      border: 1px solid #b9ac95;
+      background: #fffaf0;
+      color: #222;
+      border-radius: 10px;
+      padding: 8px 12px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .copy-btn:hover {
+      background: #fff;
+    }
+
+    pre {
+      margin: 0;
+      padding: 16px 18px;
+      overflow-x: auto;
+      white-space: pre;
+      tab-size: 4;
+    }
+
+    code, pre {
+      font-family: "Source Code Pro", monospace;
+      font-size: 0.92rem;
+      line-height: 1.63;
+    }
+
+    .download-box {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin-top: 12px;
+    }
+
+    .download-btn {
+      display: inline-block;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: #fffaf0;
+      font-weight: 600;
+    }
+
+    .small {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .center-figure {
+      margin: 24px auto 22px;
+      text-align: center;
+    }
+
+    .center-figure img {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+      width: min(900px, 100%);
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      background: #fff;
+    }
+
+    .figcaption {
+      max-width: 880px;
+      margin: 12px auto 0;
+      font-size: 0.97rem;
+      color: var(--muted);
+    }
+
+    .footer-nav {
+      margin-top: 22px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .footer-nav a {
+      font-weight: 600;
+    }
+
+    .sep {
+      margin: 0 8px;
+      color: #8a8a8a;
+    }
+
+    @media (max-width: 920px) {
+      .card {
+        padding: 24px 18px;
+      }
+
+      h1 {
+        font-size: 2.35rem;
+      }
+
+      h2 {
+        font-size: 1.65rem;
+      }
+
+      .mini-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .code-head {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <section class="card">
+      <h1>Computational Burden in Graph Generation as the Number of Nodes Increases</h1>
+
+      <p class="lead">
+        This page is about a practical puzzle that appears quickly when working with graph generators such as <strong>geng</strong> in the nauty package: even when we ask for only <em>non-isomorphic</em> graphs, graph generation still becomes computationally expensive as the number of vertices grows. The point here is not merely theoretical. I later use my own machine and my own code to mimic the style of the documentation and see what the burden looks like in actual runs.
+      </p>
+
+      <div class="panel note">
+        <strong>Main idea.</strong>
+        Removing isomorphic duplicates helps a great deal, but it does <em>not</em> make the search space small. The number of genuinely different graphs still grows very rapidly with the number of nodes, and the internal work needed to certify non-isomorphism also becomes more demanding.
+      </div>
+
+      <div class="mini-grid">
+        <div class="mini-box">
+          <div class="k">Primary tool</div>
+          <div class="v">geng from the nauty package</div>
+        </div>
+        <div class="mini-box">
+          <div class="k">Core issue</div>
+          <div class="v">Combinatorial explosion as vertices increase</div>
+        </div>
+        <div class="mini-box">
+          <div class="k">Machine-side goal</div>
+          <div class="v">Recreate and compare the burden on my own hardware</div>
+        </div>
+      </div>
+
+      <h2>Documentation Figure from geng.c</h2>
+
+      <p>
+        The following figure can be placed in the same folder as this HTML file. It is intended to show the relevant documentation excerpt from <code>geng.c</code> in nauty, especially the portion that helps explain how graph counts and options scale as graph generation becomes more ambitious.
+      </p>
+
+      <div class="center-figure">
+        <img src="geng-documentation.png" alt="Documentation excerpt from geng.c in the nauty package">
+        <div class="figcaption">
+          <strong>Figure.</strong> Documentation excerpt from <code>geng.c</code> in the nauty package. This serves as the reference point for the discussion below: what the generator does, what it outputs, and why growth in the number of vertices rapidly turns graph generation into a serious computational task.
+        </div>
+      </div>
+
+      <h2>Why Graph Generation Gets Expensive</h2>
+
+      <div class="step-block">
+        <div class="step-head">
+          <p class="step-title">Reason 1: The search space grows explosively</p>
+          <div class="step-subtitle">Even before isomorphism is considered, the raw number of possible graphs is enormous</div>
+        </div>
+        <div class="step-body">
+          <p>
+            A simple graph on <code>n</code> vertices has one independent yes-or-no decision for every possible edge. Since there are <code>n(n-1)/2</code> possible edges, the number of all labeled simple graphs is
+            <code>2^(n(n-1)/2)</code>. That expression becomes enormous very quickly. Even moderate increases in <code>n</code> produce a dramatic jump in the total number of possibilities.
+          </p>
+
+          <p>
+            This is the first source of computational burden. The input universe itself is expanding at a rate that is far faster than linear or polynomial growth.
+          </p>
+        </div>
+      </div>
+
+      <div class="step-block">
+        <div class="step-head">
+          <p class="step-title">Reason 2: Keeping only non-isomorphic graphs still leaves a huge class</p>
+          <div class="step-subtitle">One representative per isomorphism class is much smaller than the labeled universe, but it is still extremely large</div>
+        </div>
+        <div class="step-body">
+          <p>
+            A common first thought is that if we keep only one graph from each isomorphism class, then the problem should become manageable. This is only partially true. It avoids massive duplication, but the number of unlabeled, or non-isomorphic, graphs still grows very fast with <code>n</code>. In other words, the quotient space is still enormous.
+          </p>
+
+          <p>
+            So even if one graph stands in for all of its relabelings, the list of genuinely different graphs can still be far too large to generate, store, or process comfortably on an ordinary machine once the number of nodes is large enough.
+          </p>
+        </div>
+      </div>
+
+      <div class="step-block">
+        <div class="step-head">
+          <p class="step-title">Reason 3: Non-isomorphic generation is itself computational work</p>
+          <div class="step-subtitle">It is not free to avoid duplicates</div>
+        </div>
+        <div class="step-body">
+          <p>
+            The generator must do more than simply print graphs. It must construct them in a way that avoids repeated isomorphic outputs. That means canonical tests, augmentation logic, rejection rules, orbit calculations, or related symmetry-handling steps are built into the generation process.
+          </p>
+
+          <p>
+            So the burden comes from two directions at once:
+          </p>
+
+          <ul>
+            <li>there are many candidate structures to consider, and</li>
+            <li>there is real computation required to certify that only one representative per isomorphism class is kept.</li>
+          </ul>
+
+          <p>
+            This is why “only non-isomorphic graphs” is a major improvement, but not a magic escape from combinatorial growth.
+          </p>
+        </div>
+      </div>
+
+      <div class="step-block">
+        <div class="step-head">
+          <p class="step-title">Reason 4: Storage, memory, and I/O become bottlenecks</p>
+          <div class="step-subtitle">Generation time is only one part of the story</div>
+        </div>
+        <div class="step-body">
+          <p>
+            Even when the generator itself is efficient, the resulting graph stream may be so large that writing it to disk becomes slow, processing it downstream becomes expensive, and memory use becomes a real limitation. This is especially noticeable when one attempts large edge ranges, broad degree ranges, or output pipelines that feed later filtering and analysis.
+          </p>
+
+          <p>
+            In practice, a machine may fail not because the mathematics is unclear, but because time, RAM, file size, and downstream parsing all pile up together.
+          </p>
+        </div>
+      </div>
+
+      <h2>Why a Single Representative per Isomorphism Class Is Still Not Enough</h2>
+
+      <p>
+        It is worth stressing the main conceptual point once more. Suppose an isomorphism class contains many labeled duplicates. Replacing that entire class with one representative is a very powerful compression step. However, as the number of vertices increases, the number of <em>distinct classes themselves</em> still becomes huge.
+      </p>
+
+      <div class="panel note">
+        <strong>The real bottleneck is not only duplication.</strong>
+        The deeper bottleneck is that the number of genuinely different graph shapes grows so rapidly that even deduplicated generation can still become expensive.
+      </div>
+
+      <p>
+        This is why one often turns to tighter constraints:
+      </p>
+
+      <ul>
+        <li>connected graphs only,</li>
+        <li>degree-restricted graphs,</li>
+        <li>triangle-free or cycle-free variants,</li>
+        <li>fixed edge counts,</li>
+        <li>sampling rather than full enumeration,</li>
+        <li>or splitting a job into modular subcases.</li>
+      </ul>
+
+      <p>
+        These restrictions do not change the underlying combinatorial reality, but they can make a specific experiment feasible on real hardware.
+      </p>
+
+      <h2>My Machine and My Own Mimic of the Documentation</h2>
+
+      <p>
+        After using the original documentation as a reference, I then run my own experiments to see how the burden looks on my own machine. The next figure is meant to hold a screenshot, plot, or table from that machine-side reproduction.
+      </p>
+
+      <div class="center-figure">
+        <img src="my-machine-geng.PNG" alt="My machine output reproducing or mimicking the geng documentation">
+        <div class="figcaption">
+          <strong>Figure.</strong> My own machine-side attempt to mimic the style or substance of the <code>geng</code> documentation. This is where the discussion becomes empirical rather than purely conceptual: how many graphs are produced, how long a run takes, where the slowdown begins, and which constraints matter most on the hardware I am actually using.
+        </div>
+      </div>
+
+      <h2>Code Option</h2>
+
+      <p>
+        The block below is deliberately set up as a place for code that reproduces, tests, or extends the documentation on a local Linux machine. You can leave it as-is for a simple nauty example, or replace it with your own Bash or Python script later.
+      </p>
+
+      <div class="code-card">
+        <div class="code-head">
+          <div>
+            <div class="code-title">Example geng commands</div>
+            <div class="code-subtitle">Starter block for local experiments and documentation-style comparisons</div>
+          </div>
+          <button class="copy-btn" onclick="copyCode('code-step-1', this)">Copy code</button>
+        </div>
+        <pre><code id="code-step-1"># Move into the nauty directory that contains geng
+cd /path/to/nauty
+
+# Show geng help
+./geng -help
+
+# Count all connected graphs on 8 vertices, without printing them
+./geng -u -c 8
+
+# Count connected graphs on 10 vertices with minimum degree 2
+./geng -u -c -d2 10
+
+# Generate connected graphs on 8 vertices with exactly 10 edges
+./geng -c 8 10
+
+# Example: restrict the degree range
+./geng -u -d2 -D4 10
+
+# Example: split generation into modular parts
+./geng -u res/mod 12</code></pre>
+      </div>
+
+      <div class="code-card">
+        <div class="code-head">
+          <div>
+            <div class="code-title">Optional Python placeholder</div>
+            <div class="code-subtitle">Replace this with your own script once you start benchmarking your machine</div>
+          </div>
+          <button class="copy-btn" onclick="copyCode('code-step-2', this)">Copy code</button>
+        </div>
+        <pre><code id="code-step-2">import time
+import subprocess
+
+commands = [
+    ["./geng", "-u", "-c", "8"],
+    ["./geng", "-u", "-c", "-d2", "10"],
+    ["./geng", "-u", "-d2", "-D4", "10"]
+]
+
+for cmd in commands:
+    start = time.time()
+    proc = subprocess.run(cmd, capture_output=True, text=True)
+    end = time.time()
+
+    print("=" * 70)
+    print("Command:", " ".join(cmd))
+    print("Elapsed seconds:", round(end - start, 4))
+    print(proc.stdout.strip())
+    if proc.stderr.strip():
+        print("stderr:")
+        print(proc.stderr.strip())</code></pre>
+      </div>
+
+      <h2>How I Intend to Use This Later</h2>
+
+      <p>
+        This page is meant to bridge documentation and experiment. The documentation figure gives the official reference point from <code>geng.c</code>. The machine-side figure shows what happens when I try to mimic, test, or extend that behavior on my own hardware. The interesting part is not only the raw count of graphs, but also how fast the burden appears as the number of nodes rises.
+      </p>
+
+      <div class="panel warn">
+        <strong>Practical warning.</strong>
+        Even a command that looks harmless can become unexpectedly expensive when the number of nodes or the admissible edge range increases. It is often wise to test with <code>-u</code>, narrow constraints, or smaller vertex counts first before attempting a full generation run.
+      </div>
+
+      <h2>Suggested Interpretation</h2>
+
+      <p>
+        When generation begins to slow down sharply, that does not mean the software is poorly designed. Quite often, it means the program is faithfully confronting the underlying combinatorial size of the problem. The nauty tools are efficient precisely because they make difficult graph-generation problems possible at all. The slowdown is often evidence of the mathematics of the search space, not merely a weakness of implementation.
+      </p>
+
+      <p>
+        That is what makes this topic interesting: graph generation is one of the clearest places where abstract combinatorics, algorithmic group action, and the hard limits of ordinary hardware all meet.
+      </p>
+    </section>
+
+    <div class="footer-nav">
+      <a href="index.html">Home</a>
+      <span class="sep">|</span>
+      <a href="research.html">Research</a>
+    </div>
+  </div>
+
+  <script>
+    async function copyCode(id, button) {
+      const text = document.getElementById(id).innerText;
+      const old = button.textContent;
+      try {
+        await navigator.clipboard.writeText(text);
+        button.textContent = "Copied";
+        setTimeout(() => button.textContent = old, 1400);
+      } catch (err) {
+        button.textContent = "Copy failed";
+        setTimeout(() => button.textContent = old, 1600);
+      }
+    }
+  </script>
+</body>
+</html>
