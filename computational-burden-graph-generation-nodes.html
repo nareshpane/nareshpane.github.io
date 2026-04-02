@@ -282,6 +282,46 @@
       color: var(--muted);
     }
 
+    .table-wrap {
+      margin-top: 18px;
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fcfaf6;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 760px;
+    }
+
+    th, td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      font-size: 0.98rem;
+    }
+
+    th {
+      background: #f3ede3;
+      text-align: left;
+      font-weight: 700;
+    }
+
+    td.num, th.num {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
+    tbody tr:nth-child(even) {
+      background: rgba(243, 237, 227, 0.35);
+    }
+
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+
     .footer-nav {
       margin-top: 22px;
       text-align: center;
@@ -467,6 +507,62 @@
       <p>
         These restrictions do not change the underlying combinatorial reality, but they can make a specific experiment feasible on real hardware.
       </p>
+
+      <h2>OEIS Benchmark for Unlabeled Graph Counts</h2>
+
+      <p>
+        OEIS stands for the <strong>On-Line Encyclopedia of Integer Sequences</strong>. It is a large reference database of integer sequences, and in this setting it provides a compact benchmark for how many <em>unlabeled simple graphs</em> exist on <code>n</code> vertices. That matters here because it gives a clean numerical picture of the computational burden after isomorphic duplicates have already been collapsed.
+      </p>
+
+      <p>
+        In other words, the OEIS sequence is not counting every labeled relabeling separately. It is already working at the level of genuinely different graph shapes. Even then, the numbers grow at a startling rate, which is precisely why graph generation becomes difficult so quickly.
+      </p>
+
+      <div class="center-figure">
+        <img src="oeis-number-of-graphs-by-nodes.png" alt="OEIS page showing the sequence for the number of unlabeled simple graphs on n nodes">
+        <div class="figcaption">
+          <strong>Figure.</strong> OEIS reference for the sequence giving the number of simple graphs on <code>n</code> unlabeled nodes. This is useful here as a benchmark table: it shows how fast the count of genuinely different graphs rises even after isomorphic duplicates are removed.
+        </div>
+      </div>
+
+      <div class="panel note">
+        <strong>Offset note.</strong>
+        The OEIS entry starts at <code>n = 0</code>, so the first term corresponds to the empty graph on zero vertices.
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="num">Vertices <code>n</code></th>
+              <th class="num">Number of unlabeled simple graphs</th>
+              <th>Approximate size</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="num">0</td><td class="num">1</td><td>1</td></tr>
+            <tr><td class="num">1</td><td class="num">1</td><td>1</td></tr>
+            <tr><td class="num">2</td><td class="num">2</td><td>2</td></tr>
+            <tr><td class="num">3</td><td class="num">4</td><td>4</td></tr>
+            <tr><td class="num">4</td><td class="num">11</td><td>11</td></tr>
+            <tr><td class="num">5</td><td class="num">34</td><td>34</td></tr>
+            <tr><td class="num">6</td><td class="num">156</td><td>156</td></tr>
+            <tr><td class="num">7</td><td class="num">1,044</td><td>~1.04 thousand</td></tr>
+            <tr><td class="num">8</td><td class="num">12,346</td><td>~12.3 thousand</td></tr>
+            <tr><td class="num">9</td><td class="num">274,668</td><td>~274.7 thousand</td></tr>
+            <tr><td class="num">10</td><td class="num">12,005,168</td><td>~12.0 million</td></tr>
+            <tr><td class="num">11</td><td class="num">1,018,997,864</td><td>~1.02 billion</td></tr>
+            <tr><td class="num">12</td><td class="num">165,091,172,592</td><td>~165.1 billion</td></tr>
+            <tr><td class="num">13</td><td class="num">50,502,031,367,952</td><td>~50.5 trillion</td></tr>
+            <tr><td class="num">14</td><td class="num">29,054,155,657,235,488</td><td>~29.1 quadrillion</td></tr>
+            <tr><td class="num">15</td><td class="num">31,426,485,969,804,308,768</td><td>~31.4 quintillion</td></tr>
+            <tr><td class="num">16</td><td class="num">64,001,015,704,527,557,894,928</td><td>~64.0 sextillion</td></tr>
+            <tr><td class="num">17</td><td class="num">245,935,864,153,532,932,683,719,776</td><td>~245.9 septillion</td></tr>
+            <tr><td class="num">18</td><td class="num">178,757,772,514,561,170,054,787,190,848</td><td>~178.8 octillion</td></tr>
+            <tr><td class="num">19</td><td class="num">2,463,780,925,312,500,452,438,307,491,432,768</td><td>~2.46 decillion</td></tr>
+          </tbody>
+        </table>
+      </div>
 
       <h2>My Machine and My Own Mimic of the Documentation</h2>
 
