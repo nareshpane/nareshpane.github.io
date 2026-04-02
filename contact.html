@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Naresh Neupane</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f8f6f2;
+      --text: #1f1f1f;
+      --muted: #5d5d5d;
+      --accent: #1d4f91;
+      --line: #d8d2c7;
+      --card: #fffdf9;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Inter", sans-serif;
+      line-height: 1.72;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 36px 24px 56px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 34px 34px 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    h1, h2 {
+      font-family: "Cormorant Garamond", serif;
+      line-height: 1.08;
+      letter-spacing: 0.2px;
+      color: #151515;
+      margin-top: 0;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 18px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-top: 30px;
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    p {
+      margin: 0 0 16px;
+      font-size: 1.02rem;
+    }
+
+    .lead {
+      font-size: 1.08rem;
+    }
+
+    .note {
+      background: #f7f2ea;
+      border-left: 4px solid var(--accent);
+      padding: 14px 16px;
+      border-radius: 10px;
+      margin: 18px 0 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 18px;
+      font-size: 0.98rem;
+      background: #fcfaf6;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    th, td {
+      text-align: left;
+      vertical-align: top;
+      padding: 14px 12px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    th {
+      background: #f3ede3;
+      font-weight: 600;
+      width: 22%;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    nav {
+      margin-top: 28px;
+      text-align: center;
+      font-size: 1.05rem;
+    }
+
+    nav a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    nav .sep {
+      color: #7a7a7a;
+      margin: 0 8px;
+    }
+
+    .footer-note {
+      margin-top: 18px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 900px) {
+      .card {
+        padding: 24px 20px;
+      }
+
+      h1 {
+        font-size: 2.4rem;
+      }
+
+      h2 {
+        font-size: 1.7rem;
+      }
+
+      table {
+        display: block;
+        overflow-x: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <section class="card">
+      <h1>Contact</h1>
+
+      <p class="lead">
+        Please feel free to get in touch regarding academic, research, or professional matters.
+      </p>
+
+      <p>
+        The contact information below provides the best way to reach me.
+      </p>
+
+      <div class="note">
+        I am based in Vancouver, British Columbia, Canada.
+      </div>
+
+      <h2>Contact Information</h2>
+
+      <table>
+        <tbody>
+          <tr>
+            <th>Email</th>
+            <td>
+              <a href="mailto:nareshpane@hotmail.com">nareshpane@hotmail.com</a>
+            </td>
+          </tr>
+          <tr>
+            <th>Address</th>
+            <td>Vancouver, British Columbia, Canada</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="small">
+        For professional correspondence, email is the preferred method of contact.
+      </p>
+    </section>
+
+    <nav>
+      <a href="index.html">Home</a><span class="sep">|</span>
+      <a href="education.html">Education</a><span class="sep">|</span>
+      <a href="research.html">Research</a><span class="sep">|</span>
+      <a href="teaching.html">Teaching</a><span class="sep">|</span>
+      <a href="activities.html">Activities</a><span class="sep">|</span>
+      <a href="cv.html">CV</a><span class="sep">|</span>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="footer-note">
+      Thanks for visiting this site. -Naresh
+    </div>
+  </div>
+</body>
+</html>
