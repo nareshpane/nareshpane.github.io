@@ -1,0 +1,1726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Computational Tests of Four Theorems from Erdős and Renyi (1959)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700&family=Source+Code+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+:root {
+      --bg: #f7f4ee;
+      --card: #fffdf9;
+      --ink: #1b1b1b;
+      --muted: #666;
+      --line: #ddd5c7;
+      --accent: #1d4f91;
+      --note: #f5efe3;
+      --warn: #fbf6ea;
+      --codebg: #f3efe8;
+      --codeborder: #d8cfc1;
+      --shadow: 0 14px 32px rgba(0,0,0,0.06);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Inter", sans-serif;
+      line-height: 1.72;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 34px 20px 56px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 34px 34px 30px;
+    }
+
+    h1, h2, h3 {
+      font-family: "Cormorant Garamond", serif;
+      line-height: 1.08;
+      margin: 0 0 12px;
+      color: #151515;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 14px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-top: 34px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    h3 {
+      font-size: 1.4rem;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin: 0 0 14px;
+      font-size: 1.02rem;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .lead {
+      font-size: 1.1rem;
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 16px 18px;
+      margin: 18px 0;
+      background: #fcfaf6;
+    }
+
+    .note {
+      background: var(--note);
+      border-left: 4px solid var(--accent);
+    }
+
+    .warn {
+      background: var(--warn);
+      border-left: 4px solid #b7791f;
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin: 18px 0 24px;
+    }
+
+    .mini-box {
+      background: #fcfaf6;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px 16px;
+    }
+
+    .mini-box .k {
+      font-size: 0.88rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 6px;
+      font-weight: 700;
+    }
+
+    .mini-box .v {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .step-block {
+      margin-top: 22px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fcfaf6;
+      overflow: hidden;
+    }
+
+    .step-head {
+      padding: 14px 18px;
+      background: #f3ede3;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .step-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .step-subtitle {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-top: 4px;
+    }
+
+    .step-body {
+      padding: 18px;
+    }
+
+    ul {
+      margin: 0 0 14px 22px;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .code-card {
+      margin-top: 14px;
+      border: 1px solid var(--codeborder);
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--codebg);
+    }
+
+    .code-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      background: #ece5d8;
+      border-bottom: 1px solid var(--codeborder);
+    }
+
+    .code-title {
+      font-weight: 700;
+      font-size: 0.98rem;
+    }
+
+    .code-subtitle {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 2px;
+    }
+
+    .copy-btn {
+      border: 1px solid #b9ac95;
+      background: #fffaf0;
+      color: #222;
+      border-radius: 10px;
+      padding: 8px 12px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .copy-btn:hover {
+      background: #fff;
+    }
+
+    pre {
+      margin: 0;
+      padding: 16px 18px;
+      overflow-x: auto;
+      white-space: pre;
+      tab-size: 4;
+    }
+
+    code, pre {
+      font-family: "Source Code Pro", monospace;
+      font-size: 0.92rem;
+      line-height: 1.63;
+    }
+
+    .download-box {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin-top: 12px;
+    }
+
+    .download-btn {
+      display: inline-block;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: #fffaf0;
+      font-weight: 600;
+    }
+
+    .small {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .center-figure {
+      margin: 24px auto 22px;
+      text-align: center;
+    }
+
+    .center-figure img {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+      width: min(900px, 100%);
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      background: #fff;
+    }
+
+    .figcaption {
+      max-width: 880px;
+      margin: 12px auto 0;
+      font-size: 0.97rem;
+      color: var(--muted);
+    }
+
+    .footer-nav {
+      margin-top: 22px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .footer-nav a {
+      font-weight: 600;
+    }
+
+    .sep {
+      margin: 0 8px;
+      color: #8a8a8a;
+    }
+
+    @media (max-width: 920px) {
+      .card {
+        padding: 24px 18px;
+      }
+
+      h1 {
+        font-size: 2.35rem;
+      }
+
+      h2 {
+        font-size: 1.65rem;
+      }
+
+      .mini-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .code-head {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+  <div class="page">
+    <section class="card">
+      <h1>Computational Tests of Four Theorems from Erdős and Renyi (1959)</h1>
+      <p class="lead">This page follows the visual format of my earlier graph-theory HTML notes, but it is devoted to Erdős and Renyi’s 1959 paper on random graphs. The paper is short, yet it already contains the threshold picture that later became central to random graph theory: once the edge count enters the critical window, connectivity and related quantities stop behaving vaguely and begin to obey precise limiting laws.</p>
+
+      <div class="panel note"><strong>Main idea.</strong> Near the edge scale $N_c = \left\lfloor \frac{1}{2} n \log n + cn \right\rfloor$, a random graph moves through a narrow threshold window. Connectivity changes rapidly, the defects near connectivity become countable, and several of those defects converge to Poisson-type laws with mean $e^{-2c}$.</div>
+
+      <div class="mini-grid">
+        <div class="mini-box"><div class="k">Original source</div><div class="v"><a href="https://snap.stanford.edu/class/cs224w-readings/erdos59random.pdf" target="_blank" rel="noopener">Erdős–Rényi (1959) PDF</a></div></div>
+        <div class="mini-box"><div class="k">Main model</div><div class="v">$G(n,m)$ near the connectivity threshold</div></div>
+        <div class="mini-box"><div class="k">Computational goal</div><div class="v">Empirically validate four asymptotic theorems</div></div>
+      </div>
+
+      <h2>Implication of the Paper</h2>
+      <p>The paper shows that random graphs are not just “coin-flip objects.” Near the threshold, there is very rigid structure. Connectivity has a limiting probability curve, the number of vertices outside the giant component becomes asymptotically Poisson, the number of connected components does the same, and even the random time at which connectivity first appears in a dynamic edge-exposure process has a clean asymptotic law.</p>
+      <p>In practical terms, this means that a computational experiment can be designed theorem by theorem. One does not need to stare at a single graph and guess. One can generate many graphs at carefully chosen edge scales, measure the relevant statistic, and compare the resulting empirical curve or distribution to the paper’s prediction.</p>
+      <div class="panel warn"><strong>Important note.</strong> A computer experiment does not formally prove an asymptotic theorem. What it does is give controlled numerical evidence in the same regime as the theorem, so one can see how quickly the limiting formulas begin to emerge for finite values such as $n=50,100,200,500$.</div>
+
+      <h2>Theorem 1: Connectivity at the Threshold</h2>
+      <div class="step-block"><div class="step-head"><p class="step-title">What the theorem is about</p><div class="step-subtitle">The probability of being connected converges to a specific curve</div></div><div class="step-body"><p>Theorem 1 studies the event that a graph in $G(n,N_c)$ is connected. The paper shows</p><div class="math-block">$$P_0(n,N_c) \to e^{-e^{-2c}}.$$</div><p>So $c$ tells us where we are in the connectivity threshold window. Negative $c$ means we are still on the sparse side, while positive $c$ moves us into the connected regime.</p></div></div>
+      <div class="step-block"><div class="step-head"><p class="step-title">What it means to test this computationally</p><div class="step-subtitle">Estimate a probability curve rather than inspect one graph</div></div><div class="step-body"><p>For each $(n,c)$ pair, sample many graphs with exactly $m=N_c$ edges, measure the fraction that are connected, and compare that fraction to the theorem curve $e^{-e^{-2c}}$.</p></div></div>
+      <div class="step-block"><div class="step-head"><p class="step-title">My computational strategy</p><div class="step-subtitle">Direct Monte Carlo in the fixed-edge model</div></div><div class="step-body"><ul><li>Work in $G(n,m)$ rather than $G(n,p)$.</li><li>Set $m=N_c=\left\lfloor \frac{1}{2}n\log n + cn \right\rfloor$.</li><li>Estimate connectivity probability for a grid of $c$ values.</li><li>Overlay empirical curves against the theorem and record absolute differences.</li></ul></div></div>
+
+      <div class="code-card">
+        <div class="code-head">
+          <div>
+            <div class="code-title">Python code for Theorem 1</div>
+            <div class="code-subtitle">Connectivity in $G(n,m)$ near the Erdős–Renyi threshold</div>
+          </div>
+          <button class="copy-btn" onclick="copyCode('code-theorem-1', this)">Copy code</button>
+        </div>
+        <pre><code id="code-theorem-1">from __future__ import annotations
+
+import argparse
+import math
+from dataclasses import dataclass
+from pathlib import Path
+from typing import Iterable
+
+import matplotlib.pyplot as plt
+import networkx as nx
+import numpy as np
+
+
+@dataclass(frozen=True)
+class ResultRow:
+    n: int
+    c: float
+    m: int
+    theory: float
+    empirical: float
+    abs_diff: float
+    trials: int
+
+
+def edge_count_n_c(n: int, c: float) -&gt; int:
+    &quot;&quot;&quot;Return N_c = floor(0.5 * n * log n + c n), clipped to [0, n choose 2].&quot;&quot;&quot;
+    m = math.floor(0.5 * n * math.log(n) + c * n)
+    max_edges = n * (n - 1) // 2
+    return max(0, min(m, max_edges))
+
+
+
+def theorem1_limit(c: float) -&gt; float:
+    &quot;&quot;&quot;Theorem 1 limit for connectivity in G(n, N_c).&quot;&quot;&quot;
+    return math.exp(-math.exp(-2.0 * c))
+
+
+
+def estimate_connectivity_probability(
+    n: int,
+    m: int,
+    trials: int,
+    rng: np.random.Generator,
+) -&gt; float:
+    &quot;&quot;&quot;Monte Carlo estimate of P[G(n,m) is connected].&quot;&quot;&quot;
+    connected = 0
+    for _ in range(trials):
+        seed = int(rng.integers(0, 2**32 - 1, dtype=np.uint32))
+        g = nx.gnm_random_graph(n, m, seed=seed)
+        if nx.is_connected(g):
+            connected += 1
+    return connected / trials
+
+
+
+def run_experiment(
+    n_values: Iterable[int],
+    c_values: Iterable[float],
+    trials: int,
+    seed: int,
+) -&gt; list[ResultRow]:
+    rng = np.random.default_rng(seed)
+    rows: list[ResultRow] = []
+    for n in n_values:
+        for c in c_values:
+            c_float = float(c)
+            m = edge_count_n_c(n, c_float)
+            empirical = estimate_connectivity_probability(n, m, trials, rng)
+            theory = theorem1_limit(c_float)
+            abs_diff = abs(theory - empirical)
+            rows.append(
+                ResultRow(
+                    n=n,
+                    c=c_float,
+                    m=m,
+                    theory=theory,
+                    empirical=empirical,
+                    abs_diff=abs_diff,
+                    trials=trials,
+                )
+            )
+    return rows
+
+
+
+def save_csv(rows: list[ResultRow], path: Path) -&gt; None:
+    with path.open(&quot;w&quot;, encoding=&quot;utf-8&quot;) as f:
+        f.write(&quot;n,c,m,theory,empirical,abs_diff,trials\n&quot;)
+        for row in rows:
+            f.write(
+                f&quot;{row.n},{row.c:.6f},{row.m},{row.theory:.10f},{row.empirical:.10f},{row.abs_diff:.10f},{row.trials}\n&quot;
+            )
+
+
+
+def plot_results(rows: list[ResultRow], output_path: Path) -&gt; None:
+    plt.figure(figsize=(10.5, 6.2))
+
+    c_curve = np.linspace(min(r.c for r in rows), max(r.c for r in rows), 400)
+    theory_curve = np.exp(-np.exp(-2.0 * c_curve))
+    plt.plot(
+        c_curve,
+        theory_curve,
+        linewidth=2.5,
+        label=r&quot;Theorem 1 limit $e^{-e^{-2c}}$&quot;,
+    )
+
+    markers = {50: &quot;o&quot;, 100: &quot;s&quot;, 200: &quot;^&quot;, 500: &quot;D&quot;}
+    for n in sorted({r.n for r in rows}):
+        subset = sorted((r for r in rows if r.n == n), key=lambda r: r.c)
+        x = [r.c for r in subset]
+        y = [r.empirical for r in subset]
+        labels = [str(r.m) for r in subset]
+        plt.plot(x, y, marker=markers.get(n, &quot;o&quot;), linewidth=1.4, label=fr&quot;Empirical, $n={n}$&quot;)
+
+        mid = min(range(len(subset)), key=lambda i: abs(subset[i].c))
+        plt.annotate(
+            fr&quot;$m={labels[mid]}$&quot;,
+            (x[mid], y[mid]),
+            textcoords=&quot;offset points&quot;,
+            xytext=(8, 8),
+            fontsize=8,
+        )
+
+    plt.xlabel(r&quot;$c$ in $N_c = \lfloor \frac{1}{2} n \log n + cn \rfloor$&quot;)
+    plt.ylabel(&quot;Connectivity probability&quot;)
+    plt.title(&quot;Erdős–Rényi (1959), Theorem 1: connectivity in $G(n,m)$&quot;)
+    plt.ylim(-0.02, 1.02)
+    plt.grid(alpha=0.3)
+    plt.legend()
+    plt.tight_layout()
+    plt.savefig(output_path, dpi=200)
+    plt.close()
+
+
+
+def print_summary(rows: list[ResultRow]) -&gt; None:
+    print(&quot;n      c        m       theory        empirical      abs_diff&quot;)
+    print(&quot;-&quot; * 72)
+    for row in rows:
+        print(
+            f&quot;{row.n:&lt;5d} {row.c:&gt;6.2f}   {row.m:&lt;5d}   {row.theory:&gt;10.6f}   {row.empirical:&gt;10.6f}   {row.abs_diff:&gt;10.6f}&quot;
+        )
+
+
+
+def parse_args() -&gt; argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description=(
+            &quot;Monte Carlo test of Erdős–Rényi (1959), Theorem 1, for G(n,m) with &quot;
+            &quot;m = floor(0.5*n*log(n) + c*n).&quot;
+        )
+    )
+    parser.add_argument(
+        &quot;--n-values&quot;,
+        type=int,
+        nargs=&quot;+&quot;,
+        default=[50, 100, 200, 500],
+        help=&quot;Vertex counts to test.&quot;,
+    )
+    parser.add_argument(
+        &quot;--c-min&quot;,
+        type=float,
+        default=-1.5,
+        help=&quot;Minimum c value.&quot;,
+    )
+    parser.add_argument(
+        &quot;--c-max&quot;,
+        type=float,
+        default=1.5,
+        help=&quot;Maximum c value.&quot;,
+    )
+    parser.add_argument(
+        &quot;--num-c&quot;,
+        type=int,
+        default=13,
+        help=&quot;Number of equally spaced c values.&quot;,
+    )
+    parser.add_argument(
+        &quot;--trials&quot;,
+        type=int,
+        default=300,
+        help=&quot;Monte Carlo trials per (n, c) pair.&quot;,
+    )
+    parser.add_argument(
+        &quot;--seed&quot;,
+        type=int,
+        default=12345,
+        help=&quot;Random seed.&quot;,
+    )
+    parser.add_argument(
+        &quot;--outdir&quot;,
+        type=Path,
+        default=Path(&quot;./erdos_renyi_theorem1_output_v2&quot;),
+        help=&quot;Directory for the CSV and PNG outputs.&quot;,
+    )
+    return parser.parse_args()
+
+
+
+def main() -&gt; None:
+    args = parse_args()
+    args.outdir.mkdir(parents=True, exist_ok=True)
+
+    c_values = np.linspace(args.c_min, args.c_max, args.num_c)
+    rows = run_experiment(
+        n_values=args.n_values,
+        c_values=c_values,
+        trials=args.trials,
+        seed=args.seed,
+    )
+
+    csv_path = args.outdir / &quot;theorem1_results.csv&quot;
+    png_path = args.outdir / &quot;theorem1_connectivity_plot.png&quot;
+
+    save_csv(rows, csv_path)
+    plot_results(rows, png_path)
+    print_summary(rows)
+    print(f&quot;\nSaved CSV to: {csv_path}&quot;)
+    print(f&quot;Saved plot to: {png_path}&quot;)
+
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+      </div>
+
+
+      <h2>Theorem 2: Vertices Outside the Largest Connected Component</h2>
+      <div class="step-block"><div class="step-head"><p class="step-title">What the theorem is about</p><div class="step-subtitle">The deficit outside the giant component becomes Poisson</div></div><div class="step-body"><p>Let $P_k(n,N_c)$ denote the probability that the largest connected component has exactly $n-k$ vertices. The theorem states</p><div class="math-block">$$P_k(n,N_c) \to \frac{(e^{-2c})^k e^{-e^{-2c}}}{k!}.$$</div><p>In plain language, the number of vertices left outside the largest connected component behaves asymptotically like a Poisson random variable with mean $e^{-2c}$.</p></div></div>
+      <div class="step-block"><div class="step-head"><p class="step-title">What it means to test this computationally</p><div class="step-subtitle">We now test a whole distribution rather than one event</div></div><div class="step-body"><p>The measured quantity is $$k = n - |C_{\max}|,$$ where $|C_{\max}|$ is the largest component size. Since the display window cannot be infinite, the code records $k=0,1,\dots,10$ explicitly and stores the remaining probability mass as a tail for $k&gt;10$.</p></div></div>
+      <div class="step-block"><div class="step-head"><p class="step-title">My computational strategy</p><div class="step-subtitle">Track the largest component directly and keep the omitted tail visible</div></div><div class="step-body"><ul><li>Generate random graphs at the threshold edge count $N_c$.</li><li>Compute the largest connected component for each graph.</li><li>Convert that to $k=n-|C_{\max}|$.</li><li>Estimate probabilities for $k=0$ through $10$ and record the tail probability beyond that range.</li></ul></div></div>
+
+      <div class="code-card">
+        <div class="code-head">
+          <div>
+            <div class="code-title">Python code for Theorem 2</div>
+            <div class="code-subtitle">Distribution of the number of vertices outside the largest connected component</div>
+          </div>
+          <button class="copy-btn" onclick="copyCode('code-theorem-2', this)">Copy code</button>
+        </div>
+        <pre><code id="code-theorem-2">from __future__ import annotations
+
+import argparse
+import math
+from dataclasses import dataclass
+from pathlib import Path
+from typing import Iterable
+
+import matplotlib.pyplot as plt
+import networkx as nx
+import numpy as np
+
+
+@dataclass(frozen=True)
+class ResultRow:
+    n: int
+    c: float
+    m: int
+    k: int
+    theory: float
+    empirical: float
+    abs_diff: float
+    trials: int
+
+
+@dataclass(frozen=True)
+class TailRow:
+    n: int
+    c: float
+    m: int
+    tail_prob: float
+    trials: int
+
+
+def edge_count_n_c(n: int, c: float) -&gt; int:
+    &quot;&quot;&quot;Return N_c = floor(0.5 * n * log n + c n), clipped to [0, n choose 2].&quot;&quot;&quot;
+    m = math.floor(0.5 * n * math.log(n) + c * n)
+    max_edges = n * (n - 1) // 2
+    return max(0, min(m, max_edges))
+
+
+
+def theorem2_limit(c: float, k: int) -&gt; float:
+    &quot;&quot;&quot;Theorem 2 limit for P_k(n, N_c): Poisson(e^{-2c}) at k.&quot;&quot;&quot;
+    lam = math.exp(-2.0 * c)
+    return math.exp(-lam) * (lam**k) / math.factorial(k)
+
+
+
+def estimate_deficit_distribution(
+    n: int,
+    m: int,
+    k_max: int,
+    trials: int,
+    rng: np.random.Generator,
+) -&gt; tuple[np.ndarray, float]:
+    &quot;&quot;&quot;
+    Estimate probabilities for k = 0, ..., k_max where
+    k = n - size_of_largest_connected_component.
+
+    Returns (probs, tail_prob), where probs has length k_max + 1 and
+    tail_prob is the fraction of trials with k &gt; k_max.
+    &quot;&quot;&quot;
+    counts = np.zeros(k_max + 1, dtype=np.int64)
+    tail = 0
+
+    for _ in range(trials):
+        seed = int(rng.integers(0, 2**32 - 1, dtype=np.uint32))
+        g = nx.gnm_random_graph(n, m, seed=seed)
+        largest_component = max((len(comp) for comp in nx.connected_components(g)), default=0)
+        deficit = n - largest_component
+        if 0 &lt;= deficit &lt;= k_max:
+            counts[deficit] += 1
+        else:
+            tail += 1
+
+    probs = counts / trials
+    tail_prob = tail / trials
+    return probs, tail_prob
+
+
+
+def run_experiment(
+    n_values: Iterable[int],
+    c_values: Iterable[float],
+    k_max: int,
+    trials: int,
+    seed: int,
+) -&gt; tuple[list[ResultRow], list[TailRow]]:
+    rng = np.random.default_rng(seed)
+    rows: list[ResultRow] = []
+    tail_rows: list[TailRow] = []
+
+    for n in n_values:
+        for c in c_values:
+            c_float = float(c)
+            m = edge_count_n_c(n, c_float)
+            empirical_probs, tail_prob = estimate_deficit_distribution(n, m, k_max, trials, rng)
+            tail_rows.append(TailRow(n=n, c=c_float, m=m, tail_prob=tail_prob, trials=trials))
+
+            for k in range(k_max + 1):
+                theory = theorem2_limit(c_float, k)
+                empirical = float(empirical_probs[k])
+                abs_diff = abs(theory - empirical)
+                rows.append(
+                    ResultRow(
+                        n=n,
+                        c=c_float,
+                        m=m,
+                        k=k,
+                        theory=theory,
+                        empirical=empirical,
+                        abs_diff=abs_diff,
+                        trials=trials,
+                    )
+                )
+
+    return rows, tail_rows
+
+
+
+def save_csv(rows: list[ResultRow], path: Path) -&gt; None:
+    with path.open(&quot;w&quot;, encoding=&quot;utf-8&quot;) as f:
+        f.write(&quot;n,c,m,k,theory,empirical,abs_diff,trials\n&quot;)
+        for row in rows:
+            f.write(
+                f&quot;{row.n},{row.c:.6f},{row.m},{row.k},{row.theory:.10f},{row.empirical:.10f},{row.abs_diff:.10f},{row.trials}\n&quot;
+            )
+
+
+
+def save_tail_csv(rows: list[TailRow], path: Path) -&gt; None:
+    with path.open(&quot;w&quot;, encoding=&quot;utf-8&quot;) as f:
+        f.write(&quot;n,c,m,tail_prob_gt_kmax,trials\n&quot;)
+        for row in rows:
+            f.write(f&quot;{row.n},{row.c:.6f},{row.m},{row.tail_prob:.10f},{row.trials}\n&quot;)
+
+
+
+def plot_results_by_k(rows: list[ResultRow], output_dir: Path) -&gt; None:
+    markers = {50: &quot;o&quot;, 100: &quot;s&quot;, 200: &quot;^&quot;, 500: &quot;D&quot;}
+    k_values = sorted({r.k for r in rows})
+    c_min = min(r.c for r in rows)
+    c_max = max(r.c for r in rows)
+
+    for k in k_values:
+        plt.figure(figsize=(10.5, 6.2))
+
+        c_curve = np.linspace(c_min, c_max, 400)
+        theory_curve = np.array([theorem2_limit(float(c), k) for c in c_curve])
+        plt.plot(
+            c_curve,
+            theory_curve,
+            linewidth=2.5,
+            label=fr&quot;Theorem 2 limit for $k={k}$&quot;,
+        )
+
+        for n in sorted({r.n for r in rows}):
+            subset = sorted((r for r in rows if r.n == n and r.k == k), key=lambda r: r.c)
+            x = [r.c for r in subset]
+            y = [r.empirical for r in subset]
+            m_labels = [str(r.m) for r in subset]
+
+            plt.plot(
+                x,
+                y,
+                marker=markers.get(n, &quot;o&quot;),
+                linewidth=1.4,
+                label=fr&quot;Empirical, $n={n}$&quot;,
+            )
+
+            if subset:
+                mid = min(range(len(subset)), key=lambda i: abs(subset[i].c))
+                plt.annotate(
+                    fr&quot;$m={m_labels[mid]}$&quot;,
+                    (x[mid], y[mid]),
+                    textcoords=&quot;offset points&quot;,
+                    xytext=(8, 8),
+                    fontsize=8,
+                )
+
+        plt.xlabel(r&quot;$c$ in $N_c = \lfloor \frac{1}{2} n \log n + cn \rfloor$&quot;)
+        plt.ylabel(fr&quot;Probability that $n-|C_\max| = {k}$&quot;)
+        plt.title(fr&quot;Erdős–Rényi (1959), Theorem 2 in $G(n,m)$: $P_k$ for $k={k}$&quot;)
+        plt.ylim(bottom=-0.02)
+        plt.grid(alpha=0.3)
+        plt.legend()
+        plt.tight_layout()
+        plt.savefig(output_dir / f&quot;theorem2_k{k:02d}_plot.png&quot;, dpi=200)
+        plt.close()
+
+
+
+def print_summary(rows: list[ResultRow], tail_rows: list[TailRow], k_max: int) -&gt; None:
+    print(&quot;n      c        m       k      theory        empirical      abs_diff&quot;)
+    print(&quot;-&quot; * 78)
+    tail_lookup = {(r.n, round(r.c, 6)): r for r in tail_rows}
+
+    current_group: tuple[int, float] | None = None
+    for row in rows:
+        group = (row.n, row.c)
+        if current_group is not None and group != current_group:
+            tail = tail_lookup[(current_group[0], round(current_group[1], 6))]
+            print(
+                f&quot;{&#x27;&#x27;:&lt;5} {&#x27;&#x27;:&gt;6}   {&#x27;&#x27;:&lt;5}   &gt;{k_max:&lt;2d}   {&#x27;&#x27;:&gt;10}   {tail.tail_prob:&gt;10.6f}   {&#x27;&#x27;:&gt;10}&quot;
+            )
+            print()
+        print(
+            f&quot;{row.n:&lt;5d} {row.c:&gt;6.2f}   {row.m:&lt;5d}   {row.k:&lt;2d}   {row.theory:&gt;10.6f}   {row.empirical:&gt;10.6f}   {row.abs_diff:&gt;10.6f}&quot;
+        )
+        current_group = group
+
+    if current_group is not None:
+        tail = tail_lookup[(current_group[0], round(current_group[1], 6))]
+        print(
+            f&quot;{&#x27;&#x27;:&lt;5} {&#x27;&#x27;:&gt;6}   {&#x27;&#x27;:&lt;5}   &gt;{k_max:&lt;2d}   {&#x27;&#x27;:&gt;10}   {tail.tail_prob:&gt;10.6f}   {&#x27;&#x27;:&gt;10}&quot;
+        )
+
+
+
+def parse_args() -&gt; argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description=(
+            &quot;Monte Carlo test of Erdős–Rényi (1959), Theorem 2, for G(n,m) with &quot;
+            &quot;m = floor(0.5*n*log(n) + c*n).&quot;
+        )
+    )
+    parser.add_argument(
+        &quot;--n-values&quot;,
+        type=int,
+        nargs=&quot;+&quot;,
+        default=[50, 100, 200, 500],
+        help=&quot;Vertex counts to test.&quot;,
+    )
+    parser.add_argument(
+        &quot;--c-min&quot;,
+        type=float,
+        default=-1.5,
+        help=&quot;Minimum c value.&quot;,
+    )
+    parser.add_argument(
+        &quot;--c-max&quot;,
+        type=float,
+        default=1.5,
+        help=&quot;Maximum c value.&quot;,
+    )
+    parser.add_argument(
+        &quot;--num-c&quot;,
+        type=int,
+        default=13,
+        help=&quot;Number of equally spaced c values.&quot;,
+    )
+    parser.add_argument(
+        &quot;--k-max&quot;,
+        type=int,
+        default=10,
+        help=&quot;Maximum k value to record explicitly.&quot;,
+    )
+    parser.add_argument(
+        &quot;--trials&quot;,
+        type=int,
+        default=300,
+        help=&quot;Monte Carlo trials per (n, c) pair.&quot;,
+    )
+    parser.add_argument(
+        &quot;--seed&quot;,
+        type=int,
+        default=12345,
+        help=&quot;Random seed.&quot;,
+    )
+    parser.add_argument(
+        &quot;--outdir&quot;,
+        type=Path,
+        default=Path(&quot;./erdos_renyi_theorem2_output&quot;),
+        help=&quot;Directory for the CSV and PNG outputs.&quot;,
+    )
+    return parser.parse_args()
+
+
+
+def main() -&gt; None:
+    args = parse_args()
+    args.outdir.mkdir(parents=True, exist_ok=True)
+
+    c_values = np.linspace(args.c_min, args.c_max, args.num_c)
+    rows, tail_rows = run_experiment(
+        n_values=args.n_values,
+        c_values=c_values,
+        k_max=args.k_max,
+        trials=args.trials,
+        seed=args.seed,
+    )
+
+    csv_path = args.outdir / &quot;theorem2_results.csv&quot;
+    tail_csv_path = args.outdir / &quot;theorem2_tail_probabilities.csv&quot;
+
+    save_csv(rows, csv_path)
+    save_tail_csv(tail_rows, tail_csv_path)
+    plot_results_by_k(rows, args.outdir)
+    print_summary(rows, tail_rows, args.k_max)
+    print(f&quot;\nSaved CSV to: {csv_path}&quot;)
+    print(f&quot;Saved tail-summary CSV to: {tail_csv_path}&quot;)
+    print(f&quot;Saved plots to: {args.outdir}&quot;)
+
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+      </div>
+
+
+      <h2>Theorem 3: Number of Connected Components Minus One</h2>
+      <div class="step-block"><div class="step-head"><p class="step-title">What the theorem is about</p><div class="step-subtitle">A second Poisson law, now for the total component count</div></div><div class="step-body"><p>Let $\Pi_k(n,N_c)$ denote the probability that the graph has exactly $k+1$ connected components. Then</p><div class="math-block">$$\Pi_k(n,N_c) \to \frac{(e^{-2c})^k e^{-e^{-2c}}}{k!}.$$</div><p>So the number of connected components minus one also converges to a Poisson law with mean $e^{-2c}$.</p></div></div>
+      <div class="step-block"><div class="step-head"><p class="step-title">What it means to test this computationally</p><div class="step-subtitle">Use the same threshold window, but measure a different statistic</div></div><div class="step-body"><p>Now the variable is $$k = \#\text{components} - 1.$$ This looks close to Theorem 2, but it is not the same quantity and deserves its own experiment and plots.</p></div></div>
+      <div class="step-block"><div class="step-head"><p class="step-title">My computational strategy</p><div class="step-subtitle">Count components directly and compare to the theorem’s Poisson limit</div></div><div class="step-body"><ul><li>Keep the same $(n,c)$ grid as in Theorem 2.</li><li>Count the exact number of connected components in each sampled graph.</li><li>Subtract one and tabulate $k=0,1,\dots,10$ plus a tail.</li></ul></div></div>
+
+      <div class="code-card">
+        <div class="code-head">
+          <div>
+            <div class="code-title">Python code for Theorem 3</div>
+            <div class="code-subtitle">Distribution of the number of connected components minus one</div>
+          </div>
+          <button class="copy-btn" onclick="copyCode('code-theorem-3', this)">Copy code</button>
+        </div>
+        <pre><code id="code-theorem-3">from __future__ import annotations
+
+import argparse
+import math
+from dataclasses import dataclass
+from pathlib import Path
+from typing import Iterable
+
+import matplotlib.pyplot as plt
+import networkx as nx
+import numpy as np
+
+
+@dataclass(frozen=True)
+class ResultRow:
+    n: int
+    c: float
+    m: int
+    k: int
+    theory: float
+    empirical: float
+    abs_diff: float
+    trials: int
+
+
+@dataclass(frozen=True)
+class TailRow:
+    n: int
+    c: float
+    m: int
+    tail_prob: float
+    trials: int
+
+
+def edge_count_n_c(n: int, c: float) -&gt; int:
+    &quot;&quot;&quot;Return N_c = floor(0.5 * n * log n + c n), clipped to [0, n choose 2].&quot;&quot;&quot;
+    m = math.floor(0.5 * n * math.log(n) + c * n)
+    max_edges = n * (n - 1) // 2
+    return max(0, min(m, max_edges))
+
+
+def theorem3_limit(c: float, k: int) -&gt; float:
+    &quot;&quot;&quot;
+    Theorem 3 limit for Π_k(n, N_c):
+    number of connected components minus one is asymptotically Poisson(e^{-2c}).
+    &quot;&quot;&quot;
+    lam = math.exp(-2.0 * c)
+    return math.exp(-lam) * (lam**k) / math.factorial(k)
+
+
+def estimate_component_count_distribution(
+    n: int,
+    m: int,
+    k_max: int,
+    trials: int,
+    rng: np.random.Generator,
+) -&gt; tuple[np.ndarray, float]:
+    &quot;&quot;&quot;
+    Estimate probabilities for k = 0, ..., k_max where
+    k = (# connected components) - 1.
+
+    Returns (probs, tail_prob), where probs has length k_max + 1 and
+    tail_prob is the fraction of trials with k &gt; k_max.
+    &quot;&quot;&quot;
+    counts = np.zeros(k_max + 1, dtype=np.int64)
+    tail = 0
+
+    for _ in range(trials):
+        seed = int(rng.integers(0, 2**32 - 1, dtype=np.uint32))
+        g = nx.gnm_random_graph(n, m, seed=seed)
+        k_val = nx.number_connected_components(g) - 1
+        if 0 &lt;= k_val &lt;= k_max:
+            counts[k_val] += 1
+        else:
+            tail += 1
+
+    probs = counts / trials
+    tail_prob = tail / trials
+    return probs, tail_prob
+
+
+def run_experiment(
+    n_values: Iterable[int],
+    c_values: Iterable[float],
+    k_max: int,
+    trials: int,
+    seed: int,
+) -&gt; tuple[list[ResultRow], list[TailRow]]:
+    rng = np.random.default_rng(seed)
+    rows: list[ResultRow] = []
+    tail_rows: list[TailRow] = []
+
+    for n in n_values:
+        for c in c_values:
+            c_float = float(c)
+            m = edge_count_n_c(n, c_float)
+            empirical_probs, tail_prob = estimate_component_count_distribution(
+                n, m, k_max, trials, rng
+            )
+            tail_rows.append(TailRow(n=n, c=c_float, m=m, tail_prob=tail_prob, trials=trials))
+
+            for k in range(k_max + 1):
+                theory = theorem3_limit(c_float, k)
+                empirical = float(empirical_probs[k])
+                abs_diff = abs(theory - empirical)
+                rows.append(
+                    ResultRow(
+                        n=n,
+                        c=c_float,
+                        m=m,
+                        k=k,
+                        theory=theory,
+                        empirical=empirical,
+                        abs_diff=abs_diff,
+                        trials=trials,
+                    )
+                )
+
+    return rows, tail_rows
+
+
+def save_csv(rows: list[ResultRow], path: Path) -&gt; None:
+    with path.open(&quot;w&quot;, encoding=&quot;utf-8&quot;) as f:
+        f.write(&quot;n,c,m,k,theory,empirical,abs_diff,trials\n&quot;)
+        for row in rows:
+            f.write(
+                f&quot;{row.n},{row.c:.6f},{row.m},{row.k},{row.theory:.10f},{row.empirical:.10f},{row.abs_diff:.10f},{row.trials}\n&quot;
+            )
+
+
+def save_tail_csv(rows: list[TailRow], path: Path) -&gt; None:
+    with path.open(&quot;w&quot;, encoding=&quot;utf-8&quot;) as f:
+        f.write(&quot;n,c,m,tail_prob_gt_kmax,trials\n&quot;)
+        for row in rows:
+            f.write(f&quot;{row.n},{row.c:.6f},{row.m},{row.tail_prob:.10f},{row.trials}\n&quot;)
+
+
+def plot_results_by_k(rows: list[ResultRow], output_dir: Path) -&gt; None:
+    markers = {50: &quot;o&quot;, 100: &quot;s&quot;, 200: &quot;^&quot;, 500: &quot;D&quot;}
+    k_values = sorted({r.k for r in rows})
+    c_min = min(r.c for r in rows)
+    c_max = max(r.c for r in rows)
+
+    for k in k_values:
+        plt.figure(figsize=(10.5, 6.2))
+
+        c_curve = np.linspace(c_min, c_max, 400)
+        theory_curve = np.array([theorem3_limit(float(c), k) for c in c_curve])
+        plt.plot(
+            c_curve,
+            theory_curve,
+            linewidth=2.5,
+            label=fr&quot;Theorem 3 limit for $k={k}$&quot;,
+        )
+
+        for n in sorted({r.n for r in rows}):
+            subset = sorted((r for r in rows if r.n == n and r.k == k), key=lambda r: r.c)
+            x = [r.c for r in subset]
+            y = [r.empirical for r in subset]
+            m_labels = [str(r.m) for r in subset]
+
+            plt.plot(
+                x,
+                y,
+                marker=markers.get(n, &quot;o&quot;),
+                linewidth=1.4,
+                label=fr&quot;Empirical, $n={n}$&quot;,
+            )
+
+            if subset:
+                mid = min(range(len(subset)), key=lambda i: abs(subset[i].c))
+                plt.annotate(
+                    fr&quot;$m={m_labels[mid]}$&quot;,
+                    (x[mid], y[mid]),
+                    textcoords=&quot;offset points&quot;,
+                    xytext=(8, 8),
+                    fontsize=8,
+                )
+
+        plt.xlabel(r&quot;$c$ in $N_c = \lfloor \frac{1}{2} n \log n + cn \rfloor$&quot;)
+        plt.ylabel(fr&quot;Probability that $\#\mathrm{{comp}} - 1 = {k}$&quot;)
+        plt.title(fr&quot;Erdős–Rényi (1959), Theorem 3 in $G(n,m)$: $\Pi_k$ for $k={k}$&quot;)
+        plt.ylim(bottom=-0.02)
+        plt.grid(alpha=0.3)
+        plt.legend()
+        plt.tight_layout()
+        plt.savefig(output_dir / f&quot;theorem3_k{k:02d}_plot.png&quot;, dpi=200)
+        plt.close()
+
+
+def print_summary(rows: list[ResultRow], tail_rows: list[TailRow], k_max: int) -&gt; None:
+    print(&quot;n      c        m       k      theory        empirical      abs_diff&quot;)
+    print(&quot;-&quot; * 78)
+    tail_lookup = {(r.n, round(r.c, 6)): r for r in tail_rows}
+
+    current_group: tuple[int, float] | None = None
+    for row in rows:
+        group = (row.n, row.c)
+        if current_group is not None and group != current_group:
+            tail = tail_lookup[(current_group[0], round(current_group[1], 6))]
+            print(
+                f&quot;{&#x27;&#x27;:&lt;5} {&#x27;&#x27;:&gt;6}   {&#x27;&#x27;:&lt;5}   &gt;{k_max:&lt;2d}   {&#x27;&#x27;:&gt;10}   {tail.tail_prob:&gt;10.6f}   {&#x27;&#x27;:&gt;10}&quot;
+            )
+            print()
+        print(
+            f&quot;{row.n:&lt;5d} {row.c:&gt;6.2f}   {row.m:&lt;5d}   {row.k:&lt;2d}   {row.theory:&gt;10.6f}   {row.empirical:&gt;10.6f}   {row.abs_diff:&gt;10.6f}&quot;
+        )
+        current_group = group
+
+    if current_group is not None:
+        tail = tail_lookup[(current_group[0], round(current_group[1], 6))]
+        print(
+            f&quot;{&#x27;&#x27;:&lt;5} {&#x27;&#x27;:&gt;6}   {&#x27;&#x27;:&lt;5}   &gt;{k_max:&lt;2d}   {&#x27;&#x27;:&gt;10}   {tail.tail_prob:&gt;10.6f}   {&#x27;&#x27;:&gt;10}&quot;
+        )
+
+
+def parse_args() -&gt; argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description=(
+            &quot;Monte Carlo test of Erdős–Rényi (1959), Theorem 3, for G(n,m) with &quot;
+            &quot;m = floor(0.5*n*log(n) + c*n).&quot;
+        )
+    )
+    parser.add_argument(
+        &quot;--n-values&quot;,
+        type=int,
+        nargs=&quot;+&quot;,
+        default=[50, 100, 200, 500],
+        help=&quot;Vertex counts to test.&quot;,
+    )
+    parser.add_argument(
+        &quot;--c-min&quot;,
+        type=float,
+        default=-1.5,
+        help=&quot;Minimum c value.&quot;,
+    )
+    parser.add_argument(
+        &quot;--c-max&quot;,
+        type=float,
+        default=1.5,
+        help=&quot;Maximum c value.&quot;,
+    )
+    parser.add_argument(
+        &quot;--num-c&quot;,
+        type=int,
+        default=13,
+        help=&quot;Number of equally spaced c values.&quot;,
+    )
+    parser.add_argument(
+        &quot;--k-max&quot;,
+        type=int,
+        default=10,
+        help=&quot;Maximum k value to record explicitly.&quot;,
+    )
+    parser.add_argument(
+        &quot;--trials&quot;,
+        type=int,
+        default=300,
+        help=&quot;Monte Carlo trials per (n, c) pair.&quot;,
+    )
+    parser.add_argument(
+        &quot;--seed&quot;,
+        type=int,
+        default=12345,
+        help=&quot;Random seed.&quot;,
+    )
+    parser.add_argument(
+        &quot;--outdir&quot;,
+        type=Path,
+        default=Path(&quot;./erdos_renyi_theorem3_output&quot;),
+        help=&quot;Directory for the CSV and PNG outputs.&quot;,
+    )
+    return parser.parse_args()
+
+
+def main() -&gt; None:
+    args = parse_args()
+    args.outdir.mkdir(parents=True, exist_ok=True)
+
+    c_values = np.linspace(args.c_min, args.c_max, args.num_c)
+    rows, tail_rows = run_experiment(
+        n_values=args.n_values,
+        c_values=c_values,
+        k_max=args.k_max,
+        trials=args.trials,
+        seed=args.seed,
+    )
+
+    csv_path = args.outdir / &quot;theorem3_results.csv&quot;
+    tail_csv_path = args.outdir / &quot;theorem3_tail_probabilities.csv&quot;
+
+    save_csv(rows, csv_path)
+    save_tail_csv(tail_rows, tail_csv_path)
+    plot_results_by_k(rows, args.outdir)
+    print_summary(rows, tail_rows, args.k_max)
+    print(f&quot;\nSaved CSV to: {csv_path}&quot;)
+    print(f&quot;Saved tail-summary CSV to: {tail_csv_path}&quot;)
+    print(f&quot;Saved plots to: {args.outdir}&quot;)
+
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+      </div>
+
+
+      <h2>Theorem 4: The Edge-Exposure Process and the Hitting Time of Connectivity</h2>
+      <div class="step-block"><div class="step-head"><p class="step-title">What the theorem is about</p><div class="step-subtitle">A dynamic process replaces the static graph model</div></div><div class="step-body"><p>Here the edges of $K_n$ are exposed one at a time, each next unused edge chosen uniformly at random, and the process stops the moment the graph first becomes connected. If $\nu_n$ is that stopping time in edge count, the paper gives both a local asymptotic and a limiting CDF:</p><div class="math-block">$$P\!\left(\nu_n = \left\lfloor \frac{1}{2}n\log n \right\rfloor + l\right) \sim \frac{2}{n} e^{-2l/n - e^{-2l/n}},$$ $$P\!\left(\frac{\nu_n - \frac{1}{2}n\log n}{n} &lt; x\right) \to e^{-e^{-2x}}.$$</div></div></div>
+      <div class="step-block"><div class="step-head"><p class="step-title">What it means to test this computationally</p><div class="step-subtitle">We must simulate the stopping-time process itself</div></div><div class="step-body"><p>This theorem is the most delicate one computationally. It is no longer enough to sample from $G(n,m)$. The code has to reveal edges one by one and stop exactly when the graph first becomes connected.</p></div></div>
+      <div class="step-block"><div class="step-head"><p class="step-title">My computational strategy</p><div class="step-subtitle">Test both the CDF statement and the local point-mass statement</div></div><div class="step-body"><ul><li>Simulate the random edge-exposure process directly.</li><li>Use a union-find structure to monitor connectivity efficiently.</li><li>Record $\nu_n$ for many trials.</li><li>Compare the empirical CDF to $e^{-e^{-2x}}$.</li><li>Compare the local probabilities to the asymptotic point-mass formula, including a scaled comparison that behaves better across different $n$.</li></ul></div></div>
+
+      <div class="code-card">
+        <div class="code-head">
+          <div>
+            <div class="code-title">Python code for Theorem 4</div>
+            <div class="code-subtitle">Connectivity hitting time in the random edge-exposure process</div>
+          </div>
+          <button class="copy-btn" onclick="copyCode('code-theorem-4', this)">Copy code</button>
+        </div>
+        <pre><code id="code-theorem-4">
+from __future__ import annotations
+
+import argparse
+import math
+from dataclasses import dataclass
+from itertools import combinations
+from pathlib import Path
+from typing import Iterable
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+
+# ---------------------------------------------------------
+# Erdős–Rényi (1959), Theorem 4
+#
+# Random process:
+# Choose edges of K_n successively, each next edge uniformly among the
+# edges not yet chosen, until the graph becomes connected.
+#
+# Let ν_n be the number of chosen edges when connectivity first appears.
+#
+# The theorem states, in the notation of the paper:
+#   P(ν_n = floor(0.5*n*log n) + l) ~ (2/n) * exp(-2l/n - exp(-2l/n))
+# for |l| = O(n),
+# and equivalently
+#   P((ν_n - 0.5*n*log n)/n &lt; x) -&gt; exp(-exp(-2x)).
+#
+# This script tests both:
+#   1) the CDF statement on an x-grid;
+#   2) the local point-mass statement on an l-grid induced by x-grid.
+#
+# The structure intentionally mirrors the earlier theorem scripts.
+# ---------------------------------------------------------
+
+
+@dataclass(frozen=True)
+class CDFRow:
+    n: int
+    x: float
+    threshold: int
+    theory: float
+    empirical: float
+    abs_diff: float
+    trials: int
+
+
+@dataclass(frozen=True)
+class LocalRow:
+    n: int
+    x: float
+    l: int
+    m: int
+    theory: float
+    empirical: float
+    abs_diff: float
+    scaled_theory: float
+    scaled_empirical: float
+    scaled_abs_diff: float
+    trials: int
+
+
+class UnionFind:
+    __slots__ = (&quot;parent&quot;, &quot;size&quot;, &quot;components&quot;)
+
+    def __init__(self, n: int) -&gt; None:
+        self.parent = list(range(n))
+        self.size = [1] * n
+        self.components = n
+
+    def find(self, x: int) -&gt; int:
+        parent = self.parent
+        while parent[x] != x:
+            parent[x] = parent[parent[x]]
+            x = parent[x]
+        return x
+
+    def union(self, a: int, b: int) -&gt; bool:
+        ra = self.find(a)
+        rb = self.find(b)
+        if ra == rb:
+            return False
+        if self.size[ra] &lt; self.size[rb]:
+            ra, rb = rb, ra
+        self.parent[rb] = ra
+        self.size[ra] += self.size[rb]
+        self.components -= 1
+        return True
+
+
+def theorem4_cdf_limit(x: float) -&gt; float:
+    &quot;&quot;&quot;Limit CDF in Theorem 4: exp(-exp(-2x)).&quot;&quot;&quot;
+    return math.exp(-math.exp(-2.0 * x))
+
+
+def theorem4_local_limit_raw(n: int, l: int) -&gt; float:
+    &quot;&quot;&quot;
+    Local mass approximation in Theorem 4:
+    P(ν_n = floor(0.5*n*log n) + l) ~ (2/n) exp(-2l/n - exp(-2l/n)).
+    &quot;&quot;&quot;
+    x = l / n
+    return (2.0 / n) * math.exp(-2.0 * x - math.exp(-2.0 * x))
+
+
+def theorem4_local_limit_scaled(x: float) -&gt; float:
+    &quot;&quot;&quot;
+    Scaled local mass:
+    (n/2) P(ν_n = floor(0.5*n*log n) + l) ~ exp(-2x - exp(-2x)),
+    where x = l/n.
+    &quot;&quot;&quot;
+    return math.exp(-2.0 * x - math.exp(-2.0 * x))
+
+
+def build_edge_array(n: int) -&gt; np.ndarray:
+    &quot;&quot;&quot;Return all edges of K_n as an array of shape (binom(n,2), 2).&quot;&quot;&quot;
+    return np.array(list(combinations(range(n), 2)), dtype=np.int32)
+
+
+def simulate_connectivity_hitting_time(
+    n: int,
+    edges: np.ndarray,
+    rng: np.random.Generator,
+) -&gt; int:
+    &quot;&quot;&quot;
+    Simulate ν_n:
+    reveal distinct edges uniformly without replacement until connected.
+    We implement this by rejection sampling edge indices; the accepted next
+    edge is uniform among the remaining unchosen edges.
+    &quot;&quot;&quot;
+    total_edges = len(edges)
+    seen: set[int] = set()
+    uf = UnionFind(n)
+    chosen = 0
+
+    while uf.components &gt; 1:
+        eid = int(rng.integers(0, total_edges))
+        if eid in seen:
+            continue
+        seen.add(eid)
+        u, v = edges[eid]
+        uf.union(int(u), int(v))
+        chosen += 1
+
+    return chosen
+
+
+def sample_hitting_times(
+    n: int,
+    trials: int,
+    rng: np.random.Generator,
+) -&gt; np.ndarray:
+    &quot;&quot;&quot;Return an array of ν_n samples of length trials.&quot;&quot;&quot;
+    edges = build_edge_array(n)
+    vals = np.empty(trials, dtype=np.int32)
+    for t in range(trials):
+        vals[t] = simulate_connectivity_hitting_time(n, edges, rng)
+    return vals
+
+
+def build_cdf_rows(
+    n: int,
+    samples: np.ndarray,
+    x_values: Iterable[float],
+    trials: int,
+) -&gt; list[CDFRow]:
+    rows: list[CDFRow] = []
+    center = 0.5 * n * math.log(n)
+
+    for x in x_values:
+        threshold = math.floor(center + x * n)
+        empirical = float(np.mean(samples &lt;= threshold))
+        theory = theorem4_cdf_limit(float(x))
+        rows.append(
+            CDFRow(
+                n=n,
+                x=float(x),
+                threshold=threshold,
+                theory=theory,
+                empirical=empirical,
+                abs_diff=abs(theory - empirical),
+                trials=trials,
+            )
+        )
+    return rows
+
+
+def build_local_rows(
+    n: int,
+    samples: np.ndarray,
+    x_values: Iterable[float],
+    trials: int,
+) -&gt; list[LocalRow]:
+    rows: list[LocalRow] = []
+    base = math.floor(0.5 * n * math.log(n))
+
+    for x in x_values:
+        l = int(round(float(x) * n))
+        m = base + l
+        empirical = float(np.mean(samples == m))
+        theory = theorem4_local_limit_raw(n, l)
+        scaled_theory = theorem4_local_limit_scaled(l / n)
+        scaled_empirical = 0.5 * n * empirical
+        rows.append(
+            LocalRow(
+                n=n,
+                x=l / n,
+                l=l,
+                m=m,
+                theory=theory,
+                empirical=empirical,
+                abs_diff=abs(theory - empirical),
+                scaled_theory=scaled_theory,
+                scaled_empirical=scaled_empirical,
+                scaled_abs_diff=abs(scaled_theory - scaled_empirical),
+                trials=trials,
+            )
+        )
+    return rows
+
+
+def save_cdf_csv(rows: list[CDFRow], path: Path) -&gt; None:
+    with path.open(&quot;w&quot;, encoding=&quot;utf-8&quot;) as f:
+        f.write(&quot;n,x,threshold,theory,empirical,abs_diff,trials\n&quot;)
+        for r in rows:
+            f.write(
+                f&quot;{r.n},{r.x:.6f},{r.threshold},{r.theory:.10f},&quot;
+                f&quot;{r.empirical:.10f},{r.abs_diff:.10f},{r.trials}\n&quot;
+            )
+
+
+def save_local_csv(rows: list[LocalRow], path: Path) -&gt; None:
+    with path.open(&quot;w&quot;, encoding=&quot;utf-8&quot;) as f:
+        f.write(
+            &quot;n,x,l,m,theory,empirical,abs_diff,&quot;
+            &quot;scaled_theory,scaled_empirical,scaled_abs_diff,trials\n&quot;
+        )
+        for r in rows:
+            f.write(
+                f&quot;{r.n},{r.x:.6f},{r.l},{r.m},{r.theory:.10f},{r.empirical:.10f},&quot;
+                f&quot;{r.abs_diff:.10f},{r.scaled_theory:.10f},{r.scaled_empirical:.10f},&quot;
+                f&quot;{r.scaled_abs_diff:.10f},{r.trials}\n&quot;
+            )
+
+
+def plot_cdf(rows: list[CDFRow], output_path: Path) -&gt; None:
+    plt.figure(figsize=(10.5, 6.2))
+    markers = {50: &quot;o&quot;, 100: &quot;s&quot;, 200: &quot;^&quot;, 500: &quot;D&quot;}
+
+    x_min = min(r.x for r in rows)
+    x_max = max(r.x for r in rows)
+    x_curve = np.linspace(x_min, x_max, 400)
+    theory_curve = np.array([theorem4_cdf_limit(float(x)) for x in x_curve])
+    plt.plot(x_curve, theory_curve, linewidth=2.5, label=r&quot;Theorem 4 limit $e^{-e^{-2x}}$&quot;)
+
+    for n in sorted({r.n for r in rows}):
+        subset = sorted((r for r in rows if r.n == n), key=lambda r: r.x)
+        x = [r.x for r in subset]
+        y = [r.empirical for r in subset]
+        t_labels = [str(r.threshold) for r in subset]
+
+        plt.plot(
+            x,
+            y,
+            marker=markers.get(n, &quot;o&quot;),
+            linewidth=1.4,
+            label=fr&quot;Empirical CDF, $n={n}$&quot;,
+        )
+
+        if subset:
+            mid = min(range(len(subset)), key=lambda i: abs(subset[i].x))
+            plt.annotate(
+                fr&quot;$m={t_labels[mid]}$&quot;,
+                (x[mid], y[mid]),
+                textcoords=&quot;offset points&quot;,
+                xytext=(8, 8),
+                fontsize=8,
+            )
+
+    plt.xlabel(r&quot;$x$ in $\left(\nu_n - \frac{1}{2}n\log n\right)/n$&quot;)
+    plt.ylabel(r&quot;Probability&quot;)
+    plt.title(r&quot;Erdős–Rényi (1959), Theorem 4: CDF of the connectivity hitting time&quot;)
+    plt.ylim(-0.02, 1.02)
+    plt.grid(alpha=0.3)
+    plt.legend()
+    plt.tight_layout()
+    plt.savefig(output_path, dpi=200)
+    plt.close()
+
+
+def plot_local_scaled(rows: list[LocalRow], output_path: Path) -&gt; None:
+    plt.figure(figsize=(10.5, 6.2))
+    markers = {50: &quot;o&quot;, 100: &quot;s&quot;, 200: &quot;^&quot;, 500: &quot;D&quot;}
+
+    x_min = min(r.x for r in rows)
+    x_max = max(r.x for r in rows)
+    x_curve = np.linspace(x_min, x_max, 400)
+    theory_curve = np.array([theorem4_local_limit_scaled(float(x)) for x in x_curve])
+    plt.plot(
+        x_curve,
+        theory_curve,
+        linewidth=2.5,
+        label=r&quot;Scaled local limit $e^{-2x-e^{-2x}}$&quot;,
+    )
+
+    for n in sorted({r.n for r in rows}):
+        subset = sorted((r for r in rows if r.n == n), key=lambda r: r.x)
+        x = [r.x for r in subset]
+        y = [r.scaled_empirical for r in subset]
+        m_labels = [str(r.m) for r in subset]
+
+        plt.plot(
+            x,
+            y,
+            marker=markers.get(n, &quot;o&quot;),
+            linewidth=1.4,
+            label=fr&quot;Empirical scaled mass, $n={n}$&quot;,
+        )
+
+        if subset:
+            mid = min(range(len(subset)), key=lambda i: abs(subset[i].x))
+            plt.annotate(
+                fr&quot;$m={m_labels[mid]}$&quot;,
+                (x[mid], y[mid]),
+                textcoords=&quot;offset points&quot;,
+                xytext=(8, 8),
+                fontsize=8,
+            )
+
+    plt.xlabel(r&quot;$x=l/n$ where $\nu_n = \lfloor \frac{1}{2}n\log n \rfloor + l$&quot;)
+    plt.ylabel(r&quot;Scaled probability $\frac{n}{2}\,P(\nu_n=\lfloor \frac{1}{2}n\log n \rfloor + l)$&quot;)
+    plt.title(r&quot;Erdős–Rényi (1959), Theorem 4: scaled local mass&quot;)
+    plt.ylim(bottom=-0.02)
+    plt.grid(alpha=0.3)
+    plt.legend()
+    plt.tight_layout()
+    plt.savefig(output_path, dpi=200)
+    plt.close()
+
+
+def print_cdf_summary(rows: list[CDFRow]) -&gt; None:
+    print(&quot;\n=== THEOREM 4: CDF CHECK ===&quot;)
+    print(&quot;n      x        threshold     theory        empirical      abs_diff&quot;)
+    print(&quot;-&quot; * 78)
+    for r in rows:
+        print(
+            f&quot;{r.n:&lt;5d} {r.x:&gt;6.2f}   {r.threshold:&lt;10d}   &quot;
+            f&quot;{r.theory:&gt;10.6f}   {r.empirical:&gt;10.6f}   {r.abs_diff:&gt;10.6f}&quot;
+        )
+
+
+def print_local_summary(rows: list[LocalRow]) -&gt; None:
+    print(&quot;\n=== THEOREM 4: LOCAL MASS CHECK ===&quot;)
+    print(
+        &quot;n      x        l        m        theory        empirical      abs_diff&quot;
+    )
+    print(&quot;-&quot; * 86)
+    for r in rows:
+        print(
+            f&quot;{r.n:&lt;5d} {r.x:&gt;6.2f}   {r.l:&lt;7d}  {r.m:&lt;7d}  &quot;
+            f&quot;{r.theory:&gt;10.6f}   {r.empirical:&gt;10.6f}   {r.abs_diff:&gt;10.6f}&quot;
+        )
+
+
+def parse_args() -&gt; argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description=(
+            &quot;Monte Carlo test of Erdős–Rényi (1959), Theorem 4. &quot;
+            &quot;Simulates the random edge process until first connectivity.&quot;
+        )
+    )
+    parser.add_argument(
+        &quot;--n-values&quot;,
+        type=int,
+        nargs=&quot;+&quot;,
+        default=[50, 100, 200, 500],
+        help=&quot;Vertex counts to test.&quot;,
+    )
+    parser.add_argument(
+        &quot;--x-min&quot;,
+        type=float,
+        default=-1.5,
+        help=&quot;Minimum x value.&quot;,
+    )
+    parser.add_argument(
+        &quot;--x-max&quot;,
+        type=float,
+        default=1.5,
+        help=&quot;Maximum x value.&quot;,
+    )
+    parser.add_argument(
+        &quot;--num-x&quot;,
+        type=int,
+        default=13,
+        help=&quot;Number of equally spaced x values.&quot;,
+    )
+    parser.add_argument(
+        &quot;--trials&quot;,
+        type=int,
+        default=1000,
+        help=&quot;Monte Carlo trials per n.&quot;,
+    )
+    parser.add_argument(
+        &quot;--seed&quot;,
+        type=int,
+        default=12345,
+        help=&quot;Random seed.&quot;,
+    )
+    parser.add_argument(
+        &quot;--outdir&quot;,
+        type=Path,
+        default=Path(&quot;./erdos_renyi_theorem4_output&quot;),
+        help=&quot;Directory for CSV and PNG outputs.&quot;,
+    )
+    return parser.parse_args()
+
+
+def main() -&gt; None:
+    args = parse_args()
+    args.outdir.mkdir(parents=True, exist_ok=True)
+
+    rng = np.random.default_rng(args.seed)
+    x_values = np.linspace(args.x_min, args.x_max, args.num_x)
+
+    cdf_rows: list[CDFRow] = []
+    local_rows: list[LocalRow] = []
+
+    for n in args.n_values:
+        print(f&quot;Simulating hitting times for n={n} with {args.trials} trials...&quot;)
+        samples = sample_hitting_times(n, args.trials, rng)
+        cdf_rows.extend(build_cdf_rows(n, samples, x_values, args.trials))
+        local_rows.extend(build_local_rows(n, samples, x_values, args.trials))
+
+    save_cdf_csv(cdf_rows, args.outdir / &quot;theorem4_cdf_results.csv&quot;)
+    save_local_csv(local_rows, args.outdir / &quot;theorem4_local_results.csv&quot;)
+    plot_cdf(cdf_rows, args.outdir / &quot;theorem4_cdf_plot.png&quot;)
+    plot_local_scaled(local_rows, args.outdir / &quot;theorem4_local_scaled_plot.png&quot;)
+    print_cdf_summary(cdf_rows)
+    print_local_summary(local_rows)
+
+    print(f&quot;\nSaved CDF CSV to: {args.outdir / &#x27;theorem4_cdf_results.csv&#x27;}&quot;)
+    print(f&quot;Saved local-mass CSV to: {args.outdir / &#x27;theorem4_local_results.csv&#x27;}&quot;)
+    print(f&quot;Saved CDF plot to: {args.outdir / &#x27;theorem4_cdf_plot.png&#x27;}&quot;)
+    print(f&quot;Saved scaled local plot to: {args.outdir / &#x27;theorem4_local_scaled_plot.png&#x27;}&quot;)
+
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+      </div>
+
+
+      <h2>Final Perspective</h2>
+      <p>The four theorems fit together naturally. Theorem 1 describes the connectivity threshold itself. Theorem 2 explains how many vertices remain outside the giant component near that threshold. Theorem 3 translates the same threshold picture into a statement about the number of connected components. Theorem 4 shifts to a dynamic exposure process and shows that the same threshold structure still governs the first moment of connectivity.</p>
+      <p>That is what makes this paper so attractive computationally: it is rigorous, asymptotic, and conceptually elegant, but it is also concrete enough that one can write transparent code and watch the limiting laws begin to emerge numerically.</p>
+    </section>
+    <div class="footer-nav">
+      <a href="index.html">Home</a>
+      <span class="sep">|</span>
+      <a href="research.html">Research</a>
+    </div>
+  </div>
+  <script>
+    async function copyCode(id, button) {
+      const text = document.getElementById(id).innerText;
+      const old = button.textContent;
+      try {
+        await navigator.clipboard.writeText(text);
+        button.textContent = "Copied";
+        setTimeout(() => button.textContent = old, 1400);
+      } catch (err) {
+        button.textContent = "Copy failed";
+        setTimeout(() => button.textContent = old, 1600);
+      }
+    }
+  </script>
+</body>
+</html>
