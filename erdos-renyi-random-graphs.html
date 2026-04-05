@@ -273,6 +273,36 @@
       background: #fff;
     }
 
+    .feature-intro {
+      margin: 18px 0 16px;
+      font-size: 1.06rem;
+    }
+
+    .video-shell {
+      margin: 20px auto 18px;
+      padding: 16px;
+      background: #fcfaf6;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .video-shell video {
+      display: block;
+      width: 100%;
+      max-width: 920px;
+      margin: 0 auto;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: #000;
+    }
+
+    .video-caption-link {
+      margin: 12px 4px 2px;
+      text-align: center;
+      font-size: 0.98rem;
+    }
+
     .figcaption {
       max-width: 880px;
       margin: 12px auto 0;
@@ -336,6 +366,17 @@
       <h1>Computational Tests of Four Theorems from Erdős and Renyi (1959)</h1>
       <p class="lead">This page follows the visual format of my earlier graph-theory HTML notes, but it is devoted to Erdős and Renyi’s 1959 paper on random graphs. The paper is short, yet it already contains the threshold picture that later became central to random graph theory: once the edge count enters the critical window, connectivity and related quantities stop behaving vaguely and begin to obey precise limiting laws.</p>
 
+
+      <div class="panel note feature-intro"><strong>Start with the video.</strong> Before looking at formulas, it helps to watch a random graph being built edge by edge. The video below shows a 20-node graph evolving in a partially circular layout with interior nodes, so the eye can follow both the global shape and the small local surprises. As the edge count grows, disconnected fragments begin to fuse, isolated vertices disappear, and the graph moves toward the threshold behavior that Erdős and Renyi made mathematically precise.</div>
+
+      <div class="video-shell">
+        <video controls preload="metadata">
+          <source src="random_graph_20_node_evolution.mp4" type="video/mp4">
+          Your browser does not support the video tag. You can still <a href="random_graph_20_node_evolution.mp4">download the MP4 video</a>.
+        </video>
+        <p class="video-caption-link">The python code for generating the above video is <a href="random_graph_evolution_video.py">here</a>.</p>
+      </div>
+
       <div class="panel note"><strong>Main idea.</strong> Near the edge scale $N_c = \left\lfloor \frac{1}{2} n \log n + cn \right\rfloor$, a random graph moves through a narrow threshold window. Connectivity changes rapidly, the defects near connectivity become countable, and several of those defects converge to Poisson-type laws with mean $e^{-2c}$.</div>
 
       <div class="mini-grid">
@@ -353,6 +394,14 @@
       <div class="step-block"><div class="step-head"><p class="step-title">What the theorem is about</p><div class="step-subtitle">The probability of being connected converges to a specific curve</div></div><div class="step-body"><p>Theorem 1 studies the event that a graph in $G(n,N_c)$ is connected. The paper shows</p><div class="math-block">$$P_0(n,N_c) \to e^{-e^{-2c}}.$$</div><p>So $c$ tells us where we are in the connectivity threshold window. Negative $c$ means we are still on the sparse side, while positive $c$ moves us into the connected regime.</p></div></div>
       <div class="step-block"><div class="step-head"><p class="step-title">What it means to test this computationally</p><div class="step-subtitle">Estimate a probability curve rather than inspect one graph</div></div><div class="step-body"><p>For each $(n,c)$ pair, sample many graphs with exactly $m=N_c$ edges, measure the fraction that are connected, and compare that fraction to the theorem curve $e^{-e^{-2c}}$.</p></div></div>
       <div class="step-block"><div class="step-head"><p class="step-title">My computational strategy</p><div class="step-subtitle">Direct Monte Carlo in the fixed-edge model</div></div><div class="step-body"><ul><li>Work in $G(n,m)$ rather than $G(n,p)$.</li><li>Set $m=N_c=\left\lfloor \frac{1}{2}n\log n + cn \right\rfloor$.</li><li>Estimate connectivity probability for a grid of $c$ values.</li><li>Overlay empirical curves against the theorem and record absolute differences.</li></ul></div></div>
+
+
+      <div class="center-figure">
+        <img src="erdos_renyi_1959_theorem1.png" alt="Connectivity behavior near the Erdős–Rényi threshold for Theorem 1">
+        <div class="figcaption">
+          <strong>Minimalist reading of the threshold picture.</strong> When $c$ is negative, the graph is usually still missing enough links that isolated vertices or tiny fragments survive. As $c$ moves through the narrow critical window, the connectivity probability rises sharply rather than gradually. Once $c$ becomes positive, those last defects are rapidly washed away, which is exactly why the limit curve $e^{-e^{-2c}}$ becomes the natural comparison target.
+        </div>
+      </div>
 
       <div class="code-card">
         <div class="code-head">
