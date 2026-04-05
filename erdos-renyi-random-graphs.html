@@ -395,7 +395,15 @@
       <div class="step-block"><div class="step-head"><p class="step-title">What it means to test this computationally</p><div class="step-subtitle">Estimate a probability curve rather than inspect one graph</div></div><div class="step-body"><p>For each $(n,c)$ pair, sample many graphs with exactly $m=N_c$ edges, measure the fraction that are connected, and compare that fraction to the theorem curve $e^{-e^{-2c}}$.</p></div></div>
       <div class="step-block"><div class="step-head"><p class="step-title">My computational strategy</p><div class="step-subtitle">Direct Monte Carlo in the fixed-edge model</div></div><div class="step-body"><ul><li>Work in $G(n,m)$ rather than $G(n,p)$.</li><li>Set $m=N_c=\left\lfloor \frac{1}{2}n\log n + cn \right\rfloor$.</li><li>Estimate connectivity probability for a grid of $c$ values.</li><li>Overlay empirical curves against the theorem and record absolute differences.</li></ul></div></div>
 
+<div class="video-shell">
+        <video controls preload="metadata">
+          <source src="erdos_renyi_thm1_n100_connected.mp4" type="video/mp4">
+          Your browser does not support the video tag. You can still <a href="rerdos_renyi_thm1_n100_connected.mp4">download the MP4 video</a>.
+        </video>
+        <p class="video-caption-link"><a href="The python code for generating the above video is erdos_renyi_thm1_n100_connected.py">here</a>.</p>
+      </div>
 
+      
       <div class="center-figure">
         <img src="erdos_renyi_1959_theorem1.png" alt="Connectivity behavior near the Erdős–Rényi threshold for Theorem 1">
         <div class="figcaption">
