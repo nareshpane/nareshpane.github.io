@@ -651,7 +651,13 @@ if __name__ == &quot;__main__&quot;:
       <div class="step-block"><div class="step-head"><p class="step-title">What the theorem is about</p><div class="step-subtitle">The deficit outside the giant component becomes Poisson</div></div><div class="step-body"><p>Let $P_k(n,N_c)$ denote the probability that the largest connected component has exactly $n-k$ vertices. The theorem states</p><div class="math-block">$$P_k(n,N_c) \to \frac{(e^{-2c})^k e^{-e^{-2c}}}{k!}.$$</div><p>In plain language, the number of vertices left outside the largest connected component behaves asymptotically like a Poisson random variable with mean $e^{-2c}$.</p></div></div>
       <div class="step-block"><div class="step-head"><p class="step-title">What it means to test this computationally</p><div class="step-subtitle">We now test a whole distribution rather than one event</div></div><div class="step-body"><p>The measured quantity is $$k = n - |C_{\max}|,$$ where $|C_{\max}|$ is the largest component size. Since the display window cannot be infinite, the code records $k=0,1,\dots,10$ explicitly and stores the remaining probability mass as a tail for $k&gt;10$.</p></div></div>
       <div class="step-block"><div class="step-head"><p class="step-title">My computational strategy</p><div class="step-subtitle">Track the largest component directly and keep the omitted tail visible</div></div><div class="step-body"><ul><li>Generate random graphs at the threshold edge count $N_c$.</li><li>Compute the largest connected component for each graph.</li><li>Convert that to $k=n-|C_{\max}|$.</li><li>Estimate probabilities for $k=0$ through $10$ and record the tail probability beyond that range.</li></ul></div></div>
-
+      <div class="video-shell">
+        <video controls preload="metadata">
+          <source src="erdos_renyi_1959_theorem2.mp4" type="video/mp4">
+          Your browser does not support the video tag. You can still <a href="erdos_renyi_1959_theorem2.mp4">download the MP4 video</a>.
+        </video>
+        <p class="video-caption-link">The <a href="rerdos_renyi_1959_theorem2.py">python code for generating the above video is here</a>.</p>
+      </div>
       <div class="code-card">
         <div class="code-head">
           <div>
