@@ -728,6 +728,18 @@ if __name__ == "__main__":
 
       <h2>2. Large-run simulation at <code>m = n/2</code></h2>
 
+      <div class="center-figure">
+  <img src="tree_unicyclic_bicyclic_probabilities.png" alt="Probability that a random graph consists entirely of trees, unicyclic components, and bicyclic components">
+  <div class="figcaption">
+    <strong>Convergence to the limiting probability.</strong>
+    As $n$ increases, the plotted values approach the limiting constant proposed by Knuth et al. (1993) for $n \to \infty$:
+    \[
+      \sqrt{\frac{2}{3}} \cosh\!\left(\sqrt{\frac{5}{18}}\right) \approx 0.9325,
+    \]
+    so the probability stabilizes near $0.93\ldots$ for large $n$.
+  </div>
+</div>
+
       <p>
         This script is the empirical side. It repeats the process many times, records the component structure,
         and then reports the observed frequency of the two events that I care about:
