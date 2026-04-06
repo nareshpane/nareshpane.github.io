@@ -292,7 +292,7 @@
       </div>
 
       <p class="lead">
-        Random graphs are an enigma to decipher. They show surprising patterns in different stages. I am trying to mimic the pattern studied 
+        Random graphs are an enigma to decipher. Observe the evolution in the above graph as edges are added incrementally but randomly. They show surprising patterns in different stages. I am trying to mimic the pattern studied 
         by Knuth et. al. (1993) paper here. This page is a preliminary computational test of some results discussed in the paper
         on sparse random graphs around the critical regime of number of edges equal to the half of the number of nodes. 
         I am not trying to re-prove the paper. I am trying to see, in a concrete and sequential way, what the graph is doing near
@@ -307,9 +307,9 @@
         </a>
         <br />
         <span class="small">
-          The particular probabilities I am looking at here are the ones around the sparse critical regime,
-          including the event that all components are tree / unicyclic / bicyclic, and the event that there
-          is at most one “other” component.
+          The particular probabilities I am looking at here are the ones around the sparse critical regime of m = n/2,
+          including the event that all components are either tree, unicyclic, or bicyclic, and the event that there
+          is at most one “other” component. 
         </span>
       </div>
 
@@ -329,6 +329,16 @@
         <li>Look especially at the regime <code>m = n/2</code>, since that is where the paper states sharp limiting behavior.</li>
         <li>Use one animation for intuition and one large-run simulation for empirical comparison.</li>
       </ul>
+
+      As a demonstration of my attempt, below is the test run of four random graphs:
+
+      <div class="video-shell">
+        <video controls preload="metadata">
+          <source src="giant_component_evolution_n100_4graphs.mp4" type="video/mp4">
+          Your browser does not support the video tag. You can still <a href="giant_component_evolution_n100_4graphs.mp4">download the MP4 video</a>.
+        </video>
+        <p class="video-caption-link"><a href="giant_component_evolution_n100_4graphs.py"> The python code for generating the above video ishere</a>.</p>
+      </div>
 
       <div class="mini-grid">
         <div class="mini-box">
