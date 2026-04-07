@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Five Phases in the Evolution of Random Graphs</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700&family=Source+Code+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f7f4ee;
+      --card: #fffdf9;
+      --ink: #1b1b1b;
+      --muted: #666;
+      --line: #ddd5c7;
+      --accent: #1d4f91;
+      --note: #f5efe3;
+      --soft: #fcfaf6;
+      --shadow: 0 14px 32px rgba(0,0,0,0.06);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Inter", sans-serif;
+      line-height: 1.72;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 34px 20px 56px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 34px 34px 30px;
+    }
+
+    h1, h2, h3 {
+      font-family: "Cormorant Garamond", serif;
+      line-height: 1.08;
+      margin: 0 0 12px;
+      color: #151515;
+    }
+
+    h1 {
+      font-size: 3.05rem;
+      margin-bottom: 14px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-top: 34px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    h3 {
+      font-size: 1.4rem;
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+
+    p {
+      margin: 0 0 14px;
+      font-size: 1.02rem;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .lead {
+      font-size: 1.1rem;
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 16px 18px;
+      margin: 18px 0;
+      background: var(--soft);
+    }
+
+    .note {
+      background: var(--note);
+      border-left: 4px solid var(--accent);
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 12px;
+      margin: 18px 0 24px;
+    }
+
+    .mini-box {
+      background: var(--soft);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px 14px 12px;
+      text-align: center;
+    }
+
+    .mini-box .k {
+      font-size: 0.84rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 5px;
+      font-weight: 700;
+    }
+
+    .mini-box .v {
+      font-size: 0.98rem;
+      font-weight: 600;
+    }
+
+    .phase-block {
+      margin-top: 26px;
+    }
+
+    .excerpt-box {
+      background: #fcfaf6;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px 20px;
+      margin: 18px 0 18px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.65);
+    }
+
+    .excerpt-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .phase-label {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: #edf3fb;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.92rem;
+      letter-spacing: 0.02em;
+    }
+
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin: 18px 0 4px;
+    }
+
+    .media-wrap {
+      padding: 14px;
+      background: var(--soft);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+    }
+
+    video, img {
+      width: 100%;
+      display: block;
+      border-radius: 14px;
+      background: #eee8de;
+    }
+
+    .media-caption {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .equation {
+      margin: 12px 0;
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: #fffdf9;
+      border: 1px solid #e6dece;
+      overflow-x: auto;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .footer-nav {
+      margin-top: 22px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .footer-nav a {
+      font-weight: 600;
+    }
+
+    .sep {
+      margin: 0 8px;
+      color: #8a8a8a;
+    }
+
+    @media (max-width: 960px) {
+      .mini-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .media-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .card {
+        padding: 24px 18px;
+      }
+
+      h1 {
+        font-size: 2.35rem;
+      }
+
+      h2 {
+        font-size: 1.65rem;
+      }
+    }
+  </style>
+
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="page">
+    <section class="card">
+      <h1>Five Phases in the Evolution of Random Graphs</h1>
+
+      <p class="lead">
+        This page follows the structure and visual style of my giant-components page, but reorganizes the discussion into five separate phases.
+        Each section contains a boxed verbatim-style excerpt based on the supplied screenshots, followed by placeholders for one video and one PNG figure.
+      </p>
+
+      <div class="panel note">
+        <strong>How to use this page.</strong>
+        Keep the HTML file in the same folder as the media files. For each phase, place the corresponding MP4 and PNG beside this page using the filenames shown below, such as <code>erdos_renyi_1960_phase_1.mp4</code> and <code>erdos_renyi_1960_phase_1.png</code>.
+      </div>
+
+      <div class="mini-grid">
+        <div class="mini-box">
+          <div class="k">Phase 1</div>
+          <div class="v">Trees only</div>
+        </div>
+        <div class="mini-box">
+          <div class="k">Phase 2</div>
+          <div class="v">Cycles appear</div>
+        </div>
+        <div class="mini-box">
+          <div class="k">Phase 3</div>
+          <div class="v">Giant component</div>
+        </div>
+        <div class="mini-box">
+          <div class="k">Phase 4</div>
+          <div class="v">Connectivity threshold</div>
+        </div>
+        <div class="mini-box">
+          <div class="k">Phase 5</div>
+          <div class="v">Asymptotic regularity</div>
+        </div>
+      </div>
+
+      <div class="phase-block">
+        <h2>1. Phase 1</h2>
+        <div class="excerpt-box">
+          <div class="phase-label">Verbatim phase excerpt</div>
+          <p><em>Phase 1.</em> corresponds to the range $N(n) = o(n)$. For this phase it is characteristic that $\Gamma_{n, N(n)}$ consists almost surely (i.e. with probability tending to $1$ for $n \to +\infty$) exclusively of components which are trees. Trees of order $k$ appear only when $N(n)$ reaches the order of magnitude $n^{\frac{k-2}{k-1}}$ $(k = 3, 4, \ldots)$.</p>
+          <p>If $N(n) \sim \rho n^{\frac{k-2}{k-1}}$ with $\rho &gt; 0$, then the probability distribution of the number of components of $\Gamma_{n, N(n)}$ which are trees of order $k$ tends for $n \to +\infty$ to the Poisson distribution with mean value</p>
+          <div class="equation">$$\lambda = \frac{(2\rho)^{k-1} k^{k-2}}{k!}.$$</div>
+          <p>If $\dfrac{N(n)}{n^{\frac{k-2}{k-1}}} \to +\infty$ then the distribution of the number of components which are trees of order $k$ is approximately normal with mean</p>
+          <div class="equation">$$M_n = n\,\frac{k^{k-2}}{k!}\left(\frac{2N(n)}{n}\right)^{k-1} e^{-\frac{2kN(n)}{n}},$$</div>
+          <p>and with variance also equal to $M_n$. This result holds also in the next two ranges, in fact it holds under the single condition that $M_n \to +\infty$ for $n \to +\infty$.</p>
+        </div>
+
+        <div class="media-grid">
+          <div class="media-wrap">
+            <video controls preload="metadata">
+              <source src="erdos_renyi_1960_phase_1.mp4" type="video/mp4">
+              Your browser does not support the video tag. You can still <a href="erdos_renyi_1960_phase_1.mp4">download the video here</a>.
+            </video>
+            <div class="media-caption">Placeholder video for Phase 1: <code>erdos_renyi_1960_phase_1.mp4</code></div>
+          </div>
+          <div class="media-wrap">
+            <img src="erdos_renyi_1960_phase_1.png" alt="Phase 1 figure placeholder">
+            <div class="media-caption">Placeholder figure for Phase 1: <code>erdos_renyi_1960_phase_1.png</code></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase-block">
+        <h2>2. Phase 2</h2>
+        <div class="excerpt-box">
+          <div class="phase-label">Verbatim phase excerpt</div>
+          <p><em>Phase 2.</em> corresponds to the range $N(n) \sim cn$ with $0 &lt; c &lt; 1/2$.</p>
+          <p>In this case $\Gamma_{n, N(n)}$ already contains cycles of any fixed order with probability tending to a positive limit: the distribution of the number of cycles of order $k$ in $\Gamma_{n, N(n)}$ is approximately a Poisson-distribution with mean value</p>
+          <div class="equation">$$\frac{(2c)^k}{2k}.$$</div>
+          <p>In this range almost surely all components of $\Gamma_{n, N(n)}$ are either trees or components consisting of an equal number of edges and vertices, i.e. components containing exactly one cycle.</p>
+          <p>The distribution of the number of components consisting of $k$ vertices and $k$ edges tends for $n \to +\infty$ to the Poisson distribution with mean value</p>
+          <div class="equation">$$\frac{(2ce^{-2c})^k}{k!}\left(1 + k + \frac{k^2}{2!} + \cdots + \frac{k^{k-3}}{(k-3)!}\right).$$</div>
+          <p>In this phase though not all, but still almost all (i.e. $n-o(n)$) vertices belong to components which are trees. The mean number of components is $n - N(n) + O(1)$, i.e. in this range by adding a new edge the number of components decreases by $1$, except for a finite number of steps.</p>
+        </div>
+
+        <div class="media-grid">
+          <div class="media-wrap">
+            <video controls preload="metadata">
+              <source src="erdos_renyi_1960_phase_2.mp4" type="video/mp4">
+              Your browser does not support the video tag. You can still <a href="erdos_renyi_1960_phase_2.mp4">download the video here</a>.
+            </video>
+            <div class="media-caption">Placeholder video for Phase 2: <code>erdos_renyi_1960_phase_2.mp4</code></div>
+          </div>
+          <div class="media-wrap">
+            <img src="erdos_renyi_1960_phase_2.png" alt="Phase 2 figure placeholder">
+            <div class="media-caption">Placeholder figure for Phase 2: <code>erdos_renyi_1960_phase_2.png</code></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase-block">
+        <h2>3. Phase 3</h2>
+        <div class="excerpt-box">
+          <div class="phase-label">Verbatim phase excerpt</div>
+          <p><em>Phase 3.</em> corresponds to the range $N(n) \sim cn$ with $c \geq 1/2$. When $N(n)$ passes the threshold $n/2$, the structure of $\Gamma_{n, N(n)}$ changes abruptly. As a matter of fact this sudden change of the structure of $\Gamma_{n, N(n)}$ is the most surprising fact discovered by the investigation of the evolution of random graphs.</p>
+          <p>While for $N(n) \sim cn$ with $c &lt; 1/2$ the greatest component of $\Gamma_{n, N(n)}$ is a tree and has (with probability tending to $1$ for $n \to +\infty$) approximately $\dfrac{1}{\alpha}\left(\log n - \dfrac{5}{2}\log\log n\right)$ vertices, where $\alpha = 2c - 1 - \log 2c$, for $N(n) \sim n/2$ the greatest component has (with probability tending to $1$ for $n \to +\infty$) approximately $n^{2/3}$ vertices and has a rather complex structure.</p>
+          <p>Moreover for $N(n) \sim cn$ with $c &gt; 1/2$ the greatest component of $\Gamma_{n, N(n)}$ has (with probability tending to $1$ for $n \to +\infty$) approximately $G(c)n$ vertices, where</p>
+          <div class="equation">$$G(c) = 1 - \frac{1}{2c}\sum_{k=1}^{+\infty} \frac{k^{k-1}}{k!}\left(2ce^{-2c}\right)^k.$$</div>
+          <p>(clearly $G(1/2)=0$ and $\lim_{c \to +\infty} G(c)=1$).</p>
+          <p>Except this “giant” component, the other components are all relatively small, most of them being trees, the total number of vertices belonging to components which are trees being almost surely $n(1-G(c)) + o(n)$ for $c \geq 1/2$.</p>
+          <p>As regards the mean number of components, this is for $N(n) \sim cn$ with $c &gt; 1/2$ asymptotically equal to</p>
+          <div class="equation">$$\frac{n}{2c}\left(X(c) - \frac{X^2(c)}{2}\right), \qquad X(c)=\sum_{k=1}^{+\infty} \frac{k^{k-1}}{k!}\left(2ce^{-2c}\right)^k = 2c(1-G(c)).$$</div>
+          <p>The evolution of $\Gamma_{n, N(n)}$ in Phase 3 may be characterized by that the small components (most of which are trees) melt, each after another, into the giant component, the smaller components having the larger chance of “survival”; the survival time of a tree of order $k$ which is present in $\Gamma_{n, N(n)}$ with $N(n) \sim cn$, $c &gt; 1/2$ is approximately exponentially distributed with mean value $n/2k$.</p>
+        </div>
+
+        <div class="media-grid">
+          <div class="media-wrap">
+            <video controls preload="metadata">
+              <source src="erdos_renyi_1960_phase_3.mp4" type="video/mp4">
+              Your browser does not support the video tag. You can still <a href="erdos_renyi_1960_phase_3.mp4">download the video here</a>.
+            </video>
+            <div class="media-caption">Placeholder video for Phase 3: <code>erdos_renyi_1960_phase_3.mp4</code></div>
+          </div>
+          <div class="media-wrap">
+            <img src="erdos_renyi_1960_phase_3.png" alt="Phase 3 figure placeholder">
+            <div class="media-caption">Placeholder figure for Phase 3: <code>erdos_renyi_1960_phase_3.png</code></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase-block">
+        <h2>4. Phase 4</h2>
+        <div class="excerpt-box">
+          <div class="phase-label">Verbatim phase excerpt</div>
+          <p><em>Phase 4.</em> corresponds to the range $N(n) \sim c n \log n$ with $c \leq 1/2$. In this phase the graph almost surely becomes connected. If</p>
+          <div class="equation">$$N(n)=\frac{n}{2k}\log n + \frac{k-1}{2k}n\log\log n + yn + o(n),$$</div>
+          <p>then there are with probability tending to $1$ for $n \to +\infty$ only trees of order $\leq k$ outside the giant component, the distribution of the number of trees of order $k$ having in the limit again a Poisson distribution with mean value</p>
+          <div class="equation">$$\frac{e^{-2ky}}{k\cdot k!}.$$</div>
+          <p>Thus for $k=1$, i.e. for</p>
+          <div class="equation">$$N(n)=\frac{n}{2}\log n + yn + o(n),$$</div>
+          <p>$\Gamma_{n, N(n)}$ consists, with probability tending to $1$ for $n \to +\infty$, only of a connected component containing $n-O(1)$ points and a few isolated points, the distribution of the number of these being approximately a Poisson distribution with mean value $e^{-2y}$. Thus in case (4) the probability that the whole graph $\Gamma_{n, N(n)}$ is connected tends to $e^{-e^{-2y}}$ for $n \to +\infty$ and thus this probability approaches $1$ as $y$ increases.</p>
+          <p>This last result has been obtained by us already in 1958. The probability of $\Gamma^{**}_{n,N}$ being connected has been investigated by E. N. Gilbert. It should be mentioned that the investigation of $\Gamma^{**}_{n,N}$ can be reduced to that of $\Gamma_{n,N}$ as follows. $\Gamma^{**}_{n,N}$ can be obtained by first choosing the value $k$ of a random variable $\xi$ having the binomial distribution</p>
+          <div class="equation">$$P(\xi=k)=\binom{\binom{n}{2}}{k}p^k(1-p)^{\binom{n}{2}-k}, \qquad p = \frac{N}{\binom{n}{2}},$$</div>
+          <p>and then choosing $\Gamma_{n,k}$. In this way one can show that the threshold and the threshold function for connectivity of $\Gamma^{**}_{n,N}$ are the same as that of $\Gamma_{n,N}$.</p>
+          <div class="panel" style="margin-top:14px; margin-bottom:0;">
+            <strong>Footnote continuation from the supplied screenshots.</strong>
+            <p class="small" style="margin-top:10px;">2) The mean number of components of $\Gamma^{**}_{n,N}$ has been investigated in [3]. Our results for $\Gamma_{n,N}$ are however more far reaching.</p>
+            <p class="small">3) This idea has been used by J. Hájek [5] in the theory of sampling from a finite population who has shown in this way that the Lindeberg-type conditions given by us [6] for the validity of the central limit theorem for samples from a finite population are not only sufficient but also necessary.</p>
+          </div>
+        </div>
+
+        <div class="media-grid">
+          <div class="media-wrap">
+            <video controls preload="metadata">
+              <source src="erdos_renyi_1960_phase_4.mp4" type="video/mp4">
+              Your browser does not support the video tag. You can still <a href="erdos_renyi_1960_phase_4.mp4">download the video here</a>.
+            </video>
+            <div class="media-caption">Placeholder video for Phase 4: <code>erdos_renyi_1960_phase_4.mp4</code></div>
+          </div>
+          <div class="media-wrap">
+            <img src="erdos_renyi_1960_phase_4.png" alt="Phase 4 figure placeholder">
+            <div class="media-caption">Placeholder figure for Phase 4: <code>erdos_renyi_1960_phase_4.png</code></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase-block">
+        <h2>5. Phase 5</h2>
+        <div class="excerpt-box">
+          <div class="phase-label">Verbatim phase excerpt</div>
+          <p><em>Phase 5.</em> consists of the range $N(n) \sim (n \log n)\,\omega(n)$ where $\omega(n) \to +\infty$. In this range the whole graph is not only almost surely connected, but the orders of all points are almost surely asymptotically equal. Thus the graph becomes in this phase “asymptotically regular”.</p>
+        </div>
+
+        <div class="media-grid">
+          <div class="media-wrap">
+            <video controls preload="metadata">
+              <source src="erdos_renyi_1960_phase_5.mp4" type="video/mp4">
+              Your browser does not support the video tag. You can still <a href="erdos_renyi_1960_phase_5.mp4">download the video here</a>.
+            </video>
+            <div class="media-caption">Placeholder video for Phase 5: <code>erdos_renyi_1960_phase_5.mp4</code></div>
+          </div>
+          <div class="media-wrap">
+            <img src="erdos_renyi_1960_phase_5.png" alt="Phase 5 figure placeholder">
+            <div class="media-caption">Placeholder figure for Phase 5: <code>erdos_renyi_1960_phase_5.png</code></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer-nav">
+      <a href="index.html">Home</a>
+      <span class="sep">|</span>
+      <a href="research.html">Research</a>
+    </div>
+  </div>
+</body>
+</html>
