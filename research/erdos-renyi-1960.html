@@ -164,8 +164,8 @@
 
     .media-grid {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 18px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
       margin: 18px 0 4px;
     }
 
@@ -188,6 +188,74 @@
       color: var(--muted);
       font-size: 0.95rem;
     }
+
+    .phase-subsection {
+      margin-top: 26px;
+      padding-top: 22px;
+      border-top: 1px dashed var(--line);
+    }
+
+    .subsection-kicker {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 5px 11px;
+      border-radius: 999px;
+      background: #f0ede7;
+      color: #5a4b36;
+      font-weight: 700;
+      font-size: 0.88rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .analysis-box {
+      margin-top: 16px;
+      padding: 18px 20px;
+      background: #fcfaf6;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+    }
+
+    .analysis-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .table-wrap {
+      margin: 14px 0 18px;
+      overflow-x: auto;
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 720px;
+      background: #fffdf9;
+      border: 1px solid var(--line);
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+      border: 1px solid var(--line);
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+      font-size: 0.96rem;
+    }
+
+    .comparison-table th {
+      background: #f2ede4;
+      font-weight: 700;
+    }
+
+    .sub-bullets {
+      margin: 0 0 14px 22px;
+      padding: 0;
+    }
+
+    .sub-bullets li {
+      margin-bottom: 8px;
+    }
+
 
     .equation {
       margin: 12px 0;
@@ -222,6 +290,10 @@
     @media (max-width: 960px) {
       .mini-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .media-grid {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -262,7 +334,7 @@
 
       <div class="panel note">
         <strong>How to use this page.</strong>
-        Keep the HTML file in the same folder as the media files. For each phase, place the corresponding MP4 and PNG beside this page using the filenames shown below, such as <code>erdos_renyi_1960_phase_1.mp4</code> and <code>erdos_renyi_1960_phase_1.png</code>.
+        Keep the HTML file in the same folder as the media files. Phases 2 to 5 still use one MP4 and one PNG each, while Phase 1 now uses subsection filenames such as <code>erdos_renyi_1960_phase1_1a.mp4</code>, <code>erdos_renyi_1960_phase1_1b.mp4</code>, and <code>erdos_renyi_1960_phase1_1.png</code>.
       </div>
 
       <div class="mini-grid">
@@ -288,6 +360,7 @@
         </div>
       </div>
 
+      
       <div class="phase-block">
         <h2>1. Phase 1</h2>
         <div class="excerpt-box">
@@ -300,25 +373,307 @@
           <p>and with variance also equal to $M_n$. This result holds also in the next two ranges, in fact it holds under the single condition that $M_n \to +\infty$ for $n \to +\infty$.</p>
         </div>
 
-        <div class="media-grid">
-          <div class="media-wrap">
-            <h3>Animation</h3>
-            <video controls preload="metadata">
-              <source src="erdos_renyi_1960_phase_1.mp4" type="video/mp4">
-              Your browser does not support the video tag. You can still <a href="erdos_renyi_1960_phase_1.mp4">download the video here</a>.
-            </video>
-            <div class="media-caption">Placeholder video for Phase 1: <code>erdos_renyi_1960_phase_1.mp4</code></div>
+        <div class="analysis-box">
+          <p><strong>How I am reading Phase 1 empirically.</strong> Phase 1 is the regime where the graph is still extremely sparse, so the overall picture should look like a forest rather than a cycle-rich network. For finite simulations, the cleanest way to see the theory is to compare the same construction at $n = 100$, $1000$, and $10{,}000$, and ask what changes as the graph gets larger while remaining in the sparse range $N(n)=o(n)$.</p>
+          <p>The four subsections below break the paragraph into smaller ideas: first the “forest” interpretation, then the threshold scale for seeing trees of a fixed size, then the Poisson counting regime right at threshold, and finally the approximately normal regime when the count of such trees becomes large.</p>
+        </div>
+
+        <div class="phase-subsection">
+          <div class="subsection-kicker">Phase 1.1</div>
+          <h3>Forest viewpoint: $N(n)=o(n)$ means the graph stays overwhelmingly tree-like</h3>
+
+          <div class="media-grid">
+            <div class="media-wrap">
+              <h3>Animation A</h3>
+              <video controls preload="metadata">
+                <source src="erdos_renyi_1960_phase1_1a.mp4" type="video/mp4">
+                Your browser does not support the video tag. You can still <a href="erdos_renyi_1960_phase1_1a.mp4">download the video here</a>.
+              </video>
+              <div class="media-caption">Placeholder video for Phase 1.1A: <code>erdos_renyi_1960_phase1_1a.mp4</code></div>
+            </div>
+            <div class="media-wrap">
+              <h3>Animation B</h3>
+              <video controls preload="metadata">
+                <source src="erdos_renyi_1960_phase1_1b.mp4" type="video/mp4">
+                Your browser does not support the video tag. You can still <a href="erdos_renyi_1960_phase1_1b.mp4">download the video here</a>.
+              </video>
+              <div class="media-caption">Placeholder video for Phase 1.1B: <code>erdos_renyi_1960_phase1_1b.mp4</code></div>
+            </div>
+            <div class="media-wrap">
+              <h3>Figure</h3>
+              <img src="erdos_renyi_1960_phase1_1.png" alt="Phase 1.1 figure placeholder">
+              <div class="media-caption">Placeholder figure for Phase 1.1: <code>erdos_renyi_1960_phase1_1.png</code></div>
+            </div>
           </div>
-          <div class="media-wrap">
-            <h3>Figure</h3>
-            <img src="erdos_renyi_1960_phase_1.png" alt="Phase 1 figure placeholder">
-            <div class="media-caption">Placeholder figure for Phase 1: <code>erdos_renyi_1960_phase_1.png</code></div>
+
+          <div class="analysis-box">
+            <p><strong>What is happening here.</strong> The sentence $N(n)=o(n)$ says that the number of edges grows more slowly than the number of vertices. Equivalently, the average degree $2N(n)/n$ goes to $0$. So most vertices should still be isolated, and most nontrivial connected components should be tiny trees rather than cycle-bearing pieces.</p>
+
+            <div class="table-wrap">
+              <table class="comparison-table">
+                <thead>
+                  <tr>
+                    <th>Example choice inside Phase 1</th>
+                    <th>$n=100$</th>
+                    <th>$n=1000$</th>
+                    <th>$n=10{,}000$</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Take $N(n)=\lfloor\sqrt{n}\rfloor$</td>
+                    <td>$N=10$</td>
+                    <td>$N=31$</td>
+                    <td>$N=100$</td>
+                  </tr>
+                  <tr>
+                    <td>Average degree $2N/n$</td>
+                    <td>$0.20$</td>
+                    <td>$0.062$</td>
+                    <td>$0.020$</td>
+                  </tr>
+                  <tr>
+                    <td>What the picture should look like</td>
+                    <td>Many isolates, a few edges and tiny paths, with finite-size noise still visible</td>
+                    <td>Even more dominated by isolates and tiny trees</td>
+                    <td>Extremely sparse forest-like picture, with almost no room for large connected pieces</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <ul class="sub-bullets">
+              <li>For $n=100$, you may still occasionally see a stray cycle in some runs, because finite-size randomness is noticeable.</li>
+              <li>For $n=1000$, the empirical picture should align much better with the claim that every component is a tree, or at least that non-tree behavior is very rare.</li>
+              <li>For $n=10{,}000$, the phrase “almost surely” should begin to feel concrete: repeated simulations should overwhelmingly look like random forests.</li>
+              <li>The theory is not saying every sample path is identical. It says the probability of seeing only tree components moves closer and closer to $1$ as $n$ becomes large.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="phase-subsection">
+          <div class="subsection-kicker">Phase 1.2</div>
+          <h3>Appearance thresholds: trees of order $k$ show up at scale $N(n)\asymp n^{\frac{k-2}{k-1}}$</h3>
+
+          <div class="media-grid">
+            <div class="media-wrap">
+              <h3>Animation A</h3>
+              <video controls preload="metadata">
+                <source src="erdos_renyi_1960_phase1_2a.mp4" type="video/mp4">
+                Your browser does not support the video tag. You can still <a href="erdos_renyi_1960_phase1_2a.mp4">download the video here</a>.
+              </video>
+              <div class="media-caption">Placeholder video for Phase 1.2A: <code>erdos_renyi_1960_phase1_2a.mp4</code></div>
+            </div>
+            <div class="media-wrap">
+              <h3>Animation B</h3>
+              <video controls preload="metadata">
+                <source src="erdos_renyi_1960_phase1_2b.mp4" type="video/mp4">
+                Your browser does not support the video tag. You can still <a href="erdos_renyi_1960_phase1_2b.mp4">download the video here</a>.
+              </video>
+              <div class="media-caption">Placeholder video for Phase 1.2B: <code>erdos_renyi_1960_phase1_2b.mp4</code></div>
+            </div>
+            <div class="media-wrap">
+              <h3>Figure</h3>
+              <img src="erdos_renyi_1960_phase1_2.png" alt="Phase 1.2 figure placeholder">
+              <div class="media-caption">Placeholder figure for Phase 1.2: <code>erdos_renyi_1960_phase1_2.png</code></div>
+            </div>
+          </div>
+
+          <div class="analysis-box">
+            <p><strong>What is happening here.</strong> The next sentence says that a tree-component on exactly $k$ vertices does not become visible at an arbitrary sparse scale. It begins to appear when the edge count reaches the order of magnitude $n^{\frac{k-2}{k-1}}$. So larger tree-components require denser graphs before they show up in noticeable numbers.</p>
+
+            <div class="table-wrap">
+              <table class="comparison-table">
+                <thead>
+                  <tr>
+                    <th>Threshold scale for fixed tree size</th>
+                    <th>$n=100$</th>
+                    <th>$n=1000$</th>
+                    <th>$n=10{,}000$</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>$k=3$ tree threshold: $n^{1/2}$</td>
+                    <td>$10$</td>
+                    <td>$31.6$</td>
+                    <td>$100$</td>
+                  </tr>
+                  <tr>
+                    <td>$k=4$ tree threshold: $n^{2/3}$</td>
+                    <td>$21.5$</td>
+                    <td>$100$</td>
+                    <td>$464.2$</td>
+                  </tr>
+                  <tr>
+                    <td>$k=5$ tree threshold: $n^{3/4}$</td>
+                    <td>$31.6$</td>
+                    <td>$177.8$</td>
+                    <td>$1000$</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <ul class="sub-bullets">
+              <li>If you are studying 3-vertex trees, the natural edge scales to compare are around $10$, $32$, and $100$ for $n=100$, $1000$, and $10{,}000$.</li>
+              <li>At those same edge counts, 4-vertex and 5-vertex trees are still less developed, because their thresholds are higher.</li>
+              <li>This is the empirical meaning of “trees of order $k$ appear only when $N(n)$ reaches the order of magnitude $n^{\frac{k-2}{k-1}}$.”</li>
+              <li>In animations, the visual effect should be that larger tree-components arrive later: first tiny edges and 3-vertex trees, then somewhat larger tree pieces, and only afterwards more elaborate acyclic components.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="phase-subsection">
+          <div class="subsection-kicker">Phase 1.3</div>
+          <h3>At threshold: the number of $k$-vertex trees should look Poisson</h3>
+
+          <div class="media-grid">
+            <div class="media-wrap">
+              <h3>Animation A</h3>
+              <video controls preload="metadata">
+                <source src="erdos_renyi_1960_phase1_3a.mp4" type="video/mp4">
+                Your browser does not support the video tag. You can still <a href="erdos_renyi_1960_phase1_3a.mp4">download the video here</a>.
+              </video>
+              <div class="media-caption">Placeholder video for Phase 1.3A: <code>erdos_renyi_1960_phase1_3a.mp4</code></div>
+            </div>
+            <div class="media-wrap">
+              <h3>Animation B</h3>
+              <video controls preload="metadata">
+                <source src="erdos_renyi_1960_phase1_3b.mp4" type="video/mp4">
+                Your browser does not support the video tag. You can still <a href="erdos_renyi_1960_phase1_3b.mp4">download the video here</a>.
+              </video>
+              <div class="media-caption">Placeholder video for Phase 1.3B: <code>erdos_renyi_1960_phase1_3b.mp4</code></div>
+            </div>
+            <div class="media-wrap">
+              <h3>Figure</h3>
+              <img src="erdos_renyi_1960_phase1_3.png" alt="Phase 1.3 figure placeholder">
+              <div class="media-caption">Placeholder figure for Phase 1.3: <code>erdos_renyi_1960_phase1_3.png</code></div>
+            </div>
+          </div>
+
+          <div class="analysis-box">
+            <p><strong>What is happening here.</strong> If $N(n) \sim \rho n^{\frac{k-2}{k-1}}$, then we are right in the window where trees of order $k$ are rare but visible. The count does not explode; instead it stabilizes into a Poisson-type random variable. That means many runs with $0$, many with $1$, fewer with $2$, and so on.</p>
+
+            <div class="table-wrap">
+              <table class="comparison-table">
+                <thead>
+                  <tr>
+                    <th>Example: choose $k=3$ and $\rho=1$</th>
+                    <th>$n=100$</th>
+                    <th>$n=1000$</th>
+                    <th>$n=10{,}000$</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Threshold-scale edge count $N(n)\approx n^{1/2}$</td>
+                    <td>$10$</td>
+                    <td>$31.6$</td>
+                    <td>$100$</td>
+                  </tr>
+                  <tr>
+                    <td>Poisson mean from the formula $\lambda=\dfrac{(2\rho)^{k-1}k^{k-2}}{k!}$</td>
+                    <td colspan="3">$\lambda = \dfrac{(2)^2\cdot 3}{3!}=2$ for all three graphs</td>
+                  </tr>
+                  <tr>
+                    <td>Empirical expectation over many runs</td>
+                    <td>Counts of 3-vertex trees should cluster around $0$, $1$, $2$, $3$</td>
+                    <td>Histogram should look more convincingly Poisson</td>
+                    <td>Very clean rare-event counting regime, with finite-size noise much reduced</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <ul class="sub-bullets">
+              <li>The formula for $\lambda$ gives the limiting average number of $k$-vertex tree-components, not the exact count in any one graph.</li>
+              <li>For $k=3$ and $\rho=1$, all three graph sizes are aiming at the same limiting mean $\lambda=2$, but the larger graphs should match it more cleanly.</li>
+              <li>This is where repeated simulation becomes especially informative: one sample graph is not enough, because the statement concerns the distribution of the count over many runs.</li>
+              <li>A good Phase 1.3 figure would therefore be a histogram or frequency table rather than a single network picture alone.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="phase-subsection">
+          <div class="subsection-kicker">Phase 1.4</div>
+          <h3>Above threshold: many $k$-vertex trees and an approximately normal count</h3>
+
+          <div class="media-grid">
+            <div class="media-wrap">
+              <h3>Animation A</h3>
+              <video controls preload="metadata">
+                <source src="erdos_renyi_1960_phase1_4a.mp4" type="video/mp4">
+                Your browser does not support the video tag. You can still <a href="erdos_renyi_1960_phase1_4a.mp4">download the video here</a>.
+              </video>
+              <div class="media-caption">Placeholder video for Phase 1.4A: <code>erdos_renyi_1960_phase1_4a.mp4</code></div>
+            </div>
+            <div class="media-wrap">
+              <h3>Animation B</h3>
+              <video controls preload="metadata">
+                <source src="erdos_renyi_1960_phase1_4b.mp4" type="video/mp4">
+                Your browser does not support the video tag. You can still <a href="erdos_renyi_1960_phase1_4b.mp4">download the video here</a>.
+              </video>
+              <div class="media-caption">Placeholder video for Phase 1.4B: <code>erdos_renyi_1960_phase1_4b.mp4</code></div>
+            </div>
+            <div class="media-wrap">
+              <h3>Figure</h3>
+              <img src="erdos_renyi_1960_phase1_4.png" alt="Phase 1.4 figure placeholder">
+              <div class="media-caption">Placeholder figure for Phase 1.4: <code>erdos_renyi_1960_phase1_4.png</code></div>
+            </div>
+          </div>
+
+          <div class="analysis-box">
+            <p><strong>What is happening here.</strong> Once $N(n)$ is much larger than $n^{\frac{k-2}{k-1}}$, the number of tree-components of order $k$ is no longer a small Poisson count. It becomes large enough that the fluctuations are approximately normal, with mean $M_n$ and variance also about $M_n$. In practice, the count should now wobble around a visible center with spread on the order of $\sqrt{M_n}$.</p>
+
+            <div class="table-wrap">
+              <table class="comparison-table">
+                <thead>
+                  <tr>
+                    <th>Example: choose $k=3$ and $N(n)=\lfloor n^{0.6}\rfloor$</th>
+                    <th>$n=100$</th>
+                    <th>$n=1000$</th>
+                    <th>$n=10{,}000$</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Edge count</td>
+                    <td>$15$</td>
+                    <td>$63$</td>
+                    <td>$251$</td>
+                  </tr>
+                  <tr>
+                    <td>Compared with the 3-tree threshold $n^{1/2}$</td>
+                    <td>Above threshold, but only modestly</td>
+                    <td>More clearly above threshold</td>
+                    <td>Decisively above threshold while still remaining in Phase 1</td>
+                  </tr>
+                  <tr>
+                    <td>What should happen to the count of 3-vertex trees</td>
+                    <td>It should be more common than in the Poisson window, though still noisy</td>
+                    <td>The count should concentrate around a visible mean</td>
+                    <td>A bell-shaped empirical histogram becomes much more plausible</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <ul class="sub-bullets">
+              <li>The formula
+                $$M_n = n\,\frac{k^{k-2}}{k!}\left(\frac{2N(n)}{n}\right)^{k-1} e^{-\frac{2kN(n)}{n}}$$
+                should be read as: number of possible places for a $k$-tree, times the chance the required edges exist, times the chance the tree stays isolated from the rest of the graph.</li>
+              <li>For $n=100$, the approximation may still look rough, because the sample size is not large enough for a clean bell curve.</li>
+              <li>For $n=1000$, the distinction between the Poisson window and the “many copies” window becomes easier to see in repeated simulations.</li>
+              <li>For $n=10{,}000$, the theory should translate most cleanly: the graph is still sparse overall, but the count of a fixed local structure can already behave in an approximately normal way.</li>
+            </ul>
           </div>
         </div>
       </div>
 
       <div class="phase-block">
         <h2>2. Phase 2</h2>
+
         <div class="excerpt-box">
           <div class="phase-label">Verbatim phase excerpt</div>
           <p><em>Phase 2.</em> corresponds to the range $N(n) \sim cn$ with $0 &lt; c &lt; 1/2$.</p>
@@ -332,7 +687,6 @@
 
         <div class="media-grid">
           <div class="media-wrap">
-            <h3>Animation</h3>
             <video controls preload="metadata">
               <source src="erdos_renyi_1960_phase_2.mp4" type="video/mp4">
               Your browser does not support the video tag. You can still <a href="erdos_renyi_1960_phase_2.mp4">download the video here</a>.
@@ -340,7 +694,6 @@
             <div class="media-caption">Placeholder video for Phase 2: <code>erdos_renyi_1960_phase_2.mp4</code></div>
           </div>
           <div class="media-wrap">
-            <h3>Figure</h3>
             <img src="erdos_renyi_1960_phase_2.png" alt="Phase 2 figure placeholder">
             <div class="media-caption">Placeholder figure for Phase 2: <code>erdos_renyi_1960_phase_2.png</code></div>
           </div>
@@ -364,7 +717,6 @@
 
         <div class="media-grid">
           <div class="media-wrap">
-            <h3>Animation</h3>
             <video controls preload="metadata">
               <source src="erdos_renyi_1960_phase_3.mp4" type="video/mp4">
               Your browser does not support the video tag. You can still <a href="erdos_renyi_1960_phase_3.mp4">download the video here</a>.
@@ -372,7 +724,6 @@
             <div class="media-caption">Placeholder video for Phase 3: <code>erdos_renyi_1960_phase_3.mp4</code></div>
           </div>
           <div class="media-wrap">
-            <h3>Figure</h3>
             <img src="erdos_renyi_1960_phase_3.png" alt="Phase 3 figure placeholder">
             <div class="media-caption">Placeholder figure for Phase 3: <code>erdos_renyi_1960_phase_3.png</code></div>
           </div>
@@ -402,7 +753,6 @@
 
         <div class="media-grid">
           <div class="media-wrap">
-            <h3>Animation</h3>
             <video controls preload="metadata">
               <source src="erdos_renyi_1960_phase_4.mp4" type="video/mp4">
               Your browser does not support the video tag. You can still <a href="erdos_renyi_1960_phase_4.mp4">download the video here</a>.
@@ -410,7 +760,6 @@
             <div class="media-caption">Placeholder video for Phase 4: <code>erdos_renyi_1960_phase_4.mp4</code></div>
           </div>
           <div class="media-wrap">
-            <h3>Figure</h3>
             <img src="erdos_renyi_1960_phase_4.png" alt="Phase 4 figure placeholder">
             <div class="media-caption">Placeholder figure for Phase 4: <code>erdos_renyi_1960_phase_4.png</code></div>
           </div>
@@ -426,7 +775,6 @@
 
         <div class="media-grid">
           <div class="media-wrap">
-            <h3>Animation</h3>
             <video controls preload="metadata">
               <source src="erdos_renyi_1960_phase_5.mp4" type="video/mp4">
               Your browser does not support the video tag. You can still <a href="erdos_renyi_1960_phase_5.mp4">download the video here</a>.
@@ -434,7 +782,6 @@
             <div class="media-caption">Placeholder video for Phase 5: <code>erdos_renyi_1960_phase_5.mp4</code></div>
           </div>
           <div class="media-wrap">
-            <h3>Figure</h3>
             <img src="erdos_renyi_1960_phase_5.png" alt="Phase 5 figure placeholder">
             <div class="media-caption">Placeholder figure for Phase 5: <code>erdos_renyi_1960_phase_5.png</code></div>
           </div>
