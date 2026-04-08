@@ -3,24 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>First Cycle Random Graph 1989</title>
+  <title>Empirically Validating First Cycles in an Evolving Graph</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700&family=Crimson+Text:wght@400;600;700&family=Source+Code+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700&family=Source+Code+Pro:wght@400;500;600&family=Crimson+Text:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg: #f6f2eb;
+      --bg: #f7f4ee;
       --card: #fffdf9;
-      --ink: #191919;
+      --ink: #1b1b1b;
       --muted: #666;
-      --line: #ddd4c7;
-      --accent: #264f7b;
+      --line: #ddd5c7;
+      --accent: #1d4f91;
+      --note: #f5efe3;
       --soft: #fcfaf6;
-      --note: #f4efe5;
-      --quote-bg: #eef1f6;
-      --quote-line: #9eb0c9;
+      --excerpt-bg: #eef4f0;
+      --excerpt-line: #c8d9cf;
+      --excerpt-chip: #d8ebe0;
       --shadow: 0 14px 32px rgba(0,0,0,0.06);
       --radius: 22px;
     }
@@ -58,19 +59,20 @@
     }
 
     h1 {
-      font-size: 3.1rem;
-      margin-bottom: 16px;
+      font-size: 3.05rem;
+      margin-bottom: 14px;
+      text-align: center;
     }
 
     h2 {
       font-size: 2rem;
-      margin-top: 36px;
+      margin-top: 34px;
       padding-bottom: 8px;
       border-bottom: 1px solid var(--line);
     }
 
     h3 {
-      font-size: 1.38rem;
+      font-size: 1.4rem;
       margin-top: 0;
       margin-bottom: 8px;
     }
@@ -89,61 +91,11 @@
       text-decoration: underline;
     }
 
-    code {
-      font-family: "Source Code Pro", monospace;
-      font-size: 0.93em;
-    }
-
     .lead {
-      font-size: 1.1rem;
-    }
-
-    .title-page {
-      min-height: 520px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
+      font-size: 1.08rem;
       text-align: center;
-      padding: 18px 12px 10px;
-      margin-bottom: 18px;
-    }
-
-    .title-page .paper-mark {
-      font-size: 0.92rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--muted);
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    .title-page .paper-title {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 4rem;
-      font-weight: 700;
-      line-height: 1.05;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      max-width: 860px;
-      margin: 0 auto;
-    }
-
-    .title-page .paper-subtitle {
-      margin-top: 16px;
-      font-size: 1.02rem;
-      color: var(--muted);
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-
-    .title-page .authors {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 1.55rem;
-      font-weight: 700;
-      line-height: 1.35;
-      letter-spacing: 0.02em;
-      margin-top: 36px;
+      max-width: 920px;
+      margin: 0 auto 14px;
     }
 
     .panel {
@@ -163,7 +115,7 @@
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 12px;
-      margin: 18px 0 26px;
+      margin: 18px 0 24px;
     }
 
     .mini-box {
@@ -188,35 +140,20 @@
       font-weight: 600;
     }
 
-    .section-block {
-      margin-top: 28px;
+    .phase-block {
+      margin-top: 26px;
     }
 
     .excerpt-box {
-      background: #fcfaf6;
-      border: 1px solid var(--line);
+      background: var(--excerpt-bg);
+      border: 1px solid var(--excerpt-line);
       border-radius: 18px;
       padding: 18px 20px;
       margin: 18px 0 18px;
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.65);
     }
 
-    .paper-quote {
-      background: var(--quote-bg);
-      border: 1px solid #c8d2df;
-      border-left: 6px solid var(--quote-line);
-      border-radius: 18px;
-      padding: 18px 20px;
-      margin: 18px 0 18px;
-      font-family: "Crimson Text", serif;
-      font-size: 1.14rem;
-      line-height: 1.7;
-      color: #243244;
-    }
-
-    .paper-quote p:last-child,
-    .excerpt-box p:last-child,
-    .analysis-box p:last-child {
+    .excerpt-box p:last-child {
       margin-bottom: 0;
     }
 
@@ -225,11 +162,28 @@
       margin-bottom: 10px;
       padding: 6px 12px;
       border-radius: 999px;
-      background: #edf3fb;
-      color: var(--accent);
+      background: var(--excerpt-chip);
+      color: #2e5943;
       font-weight: 700;
       font-size: 0.92rem;
       letter-spacing: 0.02em;
+    }
+
+    .verbatim-1989 {
+      font-family: "Crimson Text", serif;
+      font-size: 1.2rem;
+      line-height: 1.82;
+      color: #202820;
+    }
+
+    .dropcap-number {
+      font-weight: 700;
+      font-size: 1.28rem;
+      margin-right: 8px;
+    }
+
+    .blank-verbatim {
+      min-height: 150px;
     }
 
     .analysis-box {
@@ -240,7 +194,17 @@
       border-radius: 18px;
     }
 
-    .interpretation-title {
+    .analysis-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .phase-subsection {
+      margin-top: 26px;
+      padding-top: 22px;
+      border-top: 1px dashed var(--line);
+    }
+
+    .subsection-kicker {
       display: inline-block;
       margin-bottom: 10px;
       padding: 5px 11px;
@@ -253,11 +217,8 @@
       text-transform: uppercase;
     }
 
-    .media-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-      margin: 16px 0 10px;
+    .subsection-media-stack {
+      margin: 18px 0 4px;
     }
 
     .media-wrap {
@@ -265,21 +226,18 @@
       background: var(--soft);
       border: 1px solid var(--line);
       border-radius: 18px;
+      margin-bottom: 18px;
     }
 
-    .media-placeholder {
+    .subsection-media-stack .media-wrap:last-child {
+      margin-bottom: 0;
+    }
+
+    video, img {
       width: 100%;
-      min-height: 230px;
+      display: block;
       border-radius: 14px;
-      background: linear-gradient(145deg, #f0ece4, #e6dfd2);
-      border: 1px dashed #bea98b;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 18px;
-      color: #6d5e48;
-      font-weight: 600;
+      background: #eee8de;
     }
 
     .media-caption {
@@ -289,7 +247,7 @@
     }
 
     .sub-bullets {
-      margin: 6px 0 0 22px;
+      margin: 0 0 14px 22px;
       padding: 0;
     }
 
@@ -297,17 +255,13 @@
       margin-bottom: 8px;
     }
 
-    .equation {
-      margin: 12px 0;
-      padding: 12px 14px;
-      border-radius: 14px;
-      background: #fffdf9;
-      border: 1px solid #e6dece;
-      overflow-x: auto;
+    code {
+      font-family: "Source Code Pro", monospace;
+      font-size: 0.92em;
     }
 
     .footer-nav {
-      margin-top: 26px;
+      margin-top: 22px;
       text-align: center;
       color: var(--muted);
       font-size: 0.98rem;
@@ -322,14 +276,9 @@
       color: #8a8a8a;
     }
 
-    @media (max-width: 980px) {
-      .mini-grid,
-      .media-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .title-page .paper-title {
-        font-size: 3rem;
+    @media (max-width: 960px) {
+      .mini-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
 
@@ -346,12 +295,8 @@
         font-size: 1.65rem;
       }
 
-      .title-page {
-        min-height: 430px;
-      }
-
-      .title-page .paper-title {
-        font-size: 2.35rem;
+      .verbatim-1989 {
+        font-size: 1.08rem;
       }
     }
   </style>
@@ -369,230 +314,245 @@
 <body>
   <div class="page">
     <section class="card">
-      <div class="title-page">
-        <div>
-          <div class="paper-mark">Tailored page for a 1989 paper</div>
-          <div class="paper-title">The First Cycles in an Evolving Graph</div>
-          <div class="paper-subtitle">A formatted research-style HTML page for notes, media, and interpretation</div>
-        </div>
-
-        <div class="authors">
-          Philippe Flajolet<br>
-          Donald E. Knuth<br>
-          Boris Pittel<br>
-          <span style="font-size:1.1rem; color:#666; font-family:Inter, sans-serif; font-weight:600;">1989</span>
-        </div>
-      </div>
-
-      <h1>First-Cycle Random Graph Notes</h1>
+      <h1>Empirically Validating First Cycles in an Evolving Graph</h1>
 
       <p class="lead">
-        This page follows the overall visual language of your uploaded random-graph HTML template, but reshapes it for a 1989 first-cycles paper, with a title page closer to the scanned cover style and with dedicated interpretation areas for videos and figures.
+        This page is organized as an empirical reading of Philippe Flajolet, Donald E. Knuth, and Boris Pittel&rsquo;s 1989 paper <em>The First Cycles in an Evolving Graph</em>. The overall page structure follows the earlier random-graph HTML format, while the verbatim boxes are styled differently and, for now, only the first verbatim contains the full visible excerpt from the supplied screenshot.
       </p>
 
       <div class="panel note">
         <strong>How to use this page.</strong>
-        Keep this HTML file in the same folder as your future media files. Each interpretation block below already includes placeholder names for two MP4 files and one PNG file, together with bullet points you can later replace with your own observations.
+        Keep this HTML file in the same folder as the media files. Each interpretation section below includes placeholders for two MP4 files and one PNG file, named in a consistent style for easy replacement later.
       </div>
 
       <div class="mini-grid">
         <div class="mini-box">
           <div class="k">Section 1</div>
-          <div class="v">Paper framing</div>
+          <div class="v">Full first verbatim</div>
         </div>
         <div class="mini-box">
           <div class="k">Section 2</div>
-          <div class="v">Two models</div>
+          <div class="v">Blank verbatim</div>
         </div>
         <div class="mini-box">
           <div class="k">Section 3</div>
-          <div class="v">First cycles</div>
+          <div class="v">Blank verbatim</div>
         </div>
         <div class="mini-box">
           <div class="k">Section 4</div>
-          <div class="v">Computational reading</div>
+          <div class="v">Blank verbatim</div>
         </div>
       </div>
 
-      <div class="section-block">
-        <h2>1. Paper Orientation</h2>
-
+      <div class="phase-block">
+        <h2>1. Models of Graph Evolution</h2>
         <div class="excerpt-box">
-          <div class="phase-label">Context</div>
-          <p>
-            This section is a compact front matter for the 1989 paper setting. It is meant to preserve the scholarly look of the source while leaving space for your own notes, simulations, and later interpretation of when cycles first become visible in an evolving random graph.
-          </p>
-          <p>
-            You can replace this paragraph with a more specific abstract-style description once you decide which theorem, threshold, or simulation sequence you want to foreground.
-          </p>
-        </div>
+          <div class="phase-label">Verbatim excerpt from the supplied screenshot</div>
+          <div class="verbatim-1989">
+            <p><span class="dropcap-number">1.</span><strong>Models of graph evolution.</strong> We shall consider two related ways to enrich an initially empty graph on the vertices {1, 2, . . . , n}. The first procedure, called the <em>uniform model</em>, is the simplest: At each step we generate an ordered pair $(x, y)$, where $x$ and $y$ are uniformly distributed between $1$ and $n$, and all $n^2$ pairs are equally likely. The (undirected) edge $x$ &mdash; $y$ is then added to the graph. In this way we obtain a multigraph, which may have duplicate edges or self-loops $x$ &mdash; $x$. Interesting variants of this model can be obtained by imposing other distributions on the pairs $(x, y)$, but we shall not pursue such generalizations in the present paper.</p>
 
-        <div class="analysis-box">
-          <div class="interpretation-title">Interpretation</div>
-          <p>
-            Use this first section as a landing area: explain why the 1989 paper matters, what makes the first appearance of cycles mathematically interesting, and how your computational experiments connect with the paper's claims.
-          </p>
+            <p>Another way to generate a sequence of random edges may be called the <em>permutation model</em>; this model corresponds directly to random graphs as studied in the classic papers by Erdős and Rényi [ER59, ER60]. Here we consider all $\binom{n}{2}!$ permutations of the pairs $\{x, y\}$ with $1 \leq x &lt; y \leq n$ to be equally likely, and we generate new edges $x$ &mdash; $y$ by considering the pairs as they occur in such a permutation. The resulting graph contains no self-loops and no multiple edges; we are essentially sampling without replacement.</p>
 
-          <div class="media-grid">
-            <div class="media-wrap">
-              <div class="media-placeholder">Placeholder MP4<br><code>first_cycle_1989_section1_a.mp4</code></div>
-              <div class="media-caption">First video placeholder for opening interpretation.</div>
-            </div>
-            <div class="media-wrap">
-              <div class="media-placeholder">Placeholder MP4<br><code>first_cycle_1989_section1_b.mp4</code></div>
-              <div class="media-caption">Second video placeholder for alternate animation or zoomed sequence.</div>
-            </div>
-            <div class="media-wrap">
-              <div class="media-placeholder">Placeholder PNG<br><code>first_cycle_1989_section1.png</code></div>
-              <div class="media-caption">Static figure placeholder for cover-style visual, threshold chart, or summary diagram.</div>
-            </div>
-          </div>
-
-          <ul class="sub-bullets">
-            <li>Placeholder note on the historical position of the 1989 paper.</li>
-            <li>Placeholder note on why the first cycle threshold is visually interesting.</li>
-            <li>Placeholder note on how the opening animation should be read.</li>
-            <li>Placeholder note on what the PNG figure is intended to summarize.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="section-block">
-        <h2>2. Models of Graph Evolution</h2>
-
-        <div class="paper-quote">
-          <div class="phase-label" style="background:#dfe8f4; color:#23476b;">Styled paper excerpt</div>
-          <p>
-            <strong>Short quoted excerpt:</strong> “We shall consider two related ways to enrich an initially empty graph...”
-          </p>
-          <p>
-            <strong>Paraphrase of the longer passage:</strong> the paper contrasts two ways of adding edges to an initially empty graph on $\{1,2,\dots,n\}$. In one viewpoint, ordered pairs are sampled uniformly, which naturally allows loops and repeated edges, so the evolving object is a multigraph. In the other viewpoint, unordered pairs are taken in a random order without replacement, which yields the classical simple-graph evolution associated with Erdős–Rényi.
-          </p>
-        </div>
-
-        <div class="excerpt-box">
-          <div class="phase-label">Why this matters</div>
-          <p>
-            This is the structural doorway into the paper. Before talking about first cycles, the authors distinguish between a model that permits repeated edge attempts and a model that does not. That difference affects how one interprets the earliest moments at which genuine cycle structure emerges.
-          </p>
-          <div class="equation">
-            $$\text{Uniform model: ordered pairs }(x,y)\qquad\text{vs.}\qquad\text{Permutation model: distinct pairs sampled without replacement.}$$
+            <p>The permutation model can be derived from the uniform model if we generate $(x, y)$ uniformly but disregard any pairs with $x = y$ or pairs that duplicate a previous edge.</p>
           </div>
         </div>
 
         <div class="analysis-box">
-          <div class="interpretation-title">Interpretation</div>
-          <p>
-            This section is the best place to compare your two simulation styles. One video can show repeated edge-attempt dynamics, while the other can show simple-graph evolution. The PNG can then summarize the conceptual difference in one still image.
-          </p>
+          <p><strong>Interpretation.</strong> This opening section sets up two distinct ways of watching a graph evolve from an empty state. One allows repeated edges and self-loops, while the other produces the simple-graph process usually associated with classical Erdős&ndash;Rényi evolution.</p>
+          <p>Below are placeholders for two animations and one figure that can later be used to compare these constructions visually.</p>
+        </div>
 
-          <div class="media-grid">
+        <div class="phase-subsection">
+          <div class="subsection-kicker">Interpretation media</div>
+          <h3>Visual placeholders for the full setup</h3>
+
+          <div class="subsection-media-stack">
             <div class="media-wrap">
-              <div class="media-placeholder">Placeholder MP4<br><code>first_cycle_1989_section2_a.mp4</code></div>
-              <div class="media-caption">Suggested use: uniform-model animation with repeated attempts visible in the narration.</div>
+              <h3>Animation A</h3>
+              <video controls preload="metadata">
+                <source src="first_cycle_1989_section1_a.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div class="media-caption">Placeholder video: <code>first_cycle_1989_section1_a.mp4</code></div>
             </div>
+
             <div class="media-wrap">
-              <div class="media-placeholder">Placeholder MP4<br><code>first_cycle_1989_section2_b.mp4</code></div>
-              <div class="media-caption">Suggested use: permutation-model animation where each new edge is genuinely new.</div>
+              <h3>Animation B</h3>
+              <video controls preload="metadata">
+                <source src="first_cycle_1989_section1_b.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div class="media-caption">Placeholder video: <code>first_cycle_1989_section1_b.mp4</code></div>
             </div>
+
             <div class="media-wrap">
-              <div class="media-placeholder">Placeholder PNG<br><code>first_cycle_1989_section2.png</code></div>
-              <div class="media-caption">Suggested use: side-by-side conceptual diagram of the two models.</div>
+              <h3>Figure</h3>
+              <img src="first_cycle_1989_section1.png" alt="Placeholder figure for the opening section of The First Cycles in an Evolving Graph">
+              <div class="media-caption">Placeholder figure: <code>first_cycle_1989_section1.png</code></div>
             </div>
           </div>
 
-          <ul class="sub-bullets">
-            <li>Placeholder comparison between multigraph intuition and simple-graph intuition.</li>
-            <li>Placeholder comment on what changes when repeated edges are ignored.</li>
-            <li>Placeholder note on how this affects the timing of first-cycle events.</li>
-            <li>Placeholder note on what viewers should watch for in the videos.</li>
-          </ul>
+          <div class="analysis-box">
+            <ul class="sub-bullets">
+              <li>Placeholder bullet point: summarize what the first animation is meant to show.</li>
+              <li>Placeholder bullet point: explain which model is being visualized in the second animation.</li>
+              <li>Placeholder bullet point: describe what the PNG figure should compare or emphasize.</li>
+              <li>Placeholder bullet point: add a brief note on what readers should watch for near the first appearance of cycles.</li>
+            </ul>
+          </div>
         </div>
       </div>
 
-      <div class="section-block">
-        <h2>3. The First Appearance of Cycles</h2>
-
-        <div class="excerpt-box">
-          <div class="phase-label">Discussion frame</div>
-          <p>
-            The central mathematical curiosity is not merely that cycles eventually appear, but that their first appearance has a delicate probabilistic structure. Early in the process the graph looks like a forest, and then, at the right scale, the first closed loop becomes likely enough to observe systematically.
-          </p>
-          <p>
-            This section can later be expanded with a theorem statement, asymptotic window, or computational threshold picture once you decide exactly which result from the 1989 paper you want to emphasize.
-          </p>
+      <div class="phase-block">
+        <h2>2. The Uniform Model</h2>
+        <div class="excerpt-box blank-verbatim">
+          <div class="phase-label">Verbatim excerpt placeholder</div>
         </div>
 
         <div class="analysis-box">
-          <div class="interpretation-title">Interpretation</div>
-          <p>
-            Use the two videos here to separate global evolution from local inspection. One can show the whole graph evolving; the other can zoom in on the first cycle as soon as it appears. The PNG can serve as a threshold summary, a histogram of first-cycle times, or a snapshot gallery.
-          </p>
+          <p><strong>Interpretation.</strong> This section is reserved for empirical notes on the uniform model. The verbatim block above is intentionally left blank for now.</p>
+        </div>
 
-          <div class="media-grid">
+        <div class="phase-subsection">
+          <div class="subsection-kicker">Interpretation media</div>
+          <h3>Placeholders for uniform-model experiments</h3>
+
+          <div class="subsection-media-stack">
             <div class="media-wrap">
-              <div class="media-placeholder">Placeholder MP4<br><code>first_cycle_1989_section3_a.mp4</code></div>
-              <div class="media-caption">Suggested use: full graph evolution until the first visible cycle.</div>
+              <h3>Animation A</h3>
+              <video controls preload="metadata">
+                <source src="first_cycle_1989_uniform_a.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div class="media-caption">Placeholder video: <code>first_cycle_1989_uniform_a.mp4</code></div>
             </div>
+
             <div class="media-wrap">
-              <div class="media-placeholder">Placeholder MP4<br><code>first_cycle_1989_section3_b.mp4</code></div>
-              <div class="media-caption">Suggested use: focused replay of the first-cycle event or multiple trial comparison.</div>
+              <h3>Animation B</h3>
+              <video controls preload="metadata">
+                <source src="first_cycle_1989_uniform_b.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div class="media-caption">Placeholder video: <code>first_cycle_1989_uniform_b.mp4</code></div>
             </div>
+
             <div class="media-wrap">
-              <div class="media-placeholder">Placeholder PNG<br><code>first_cycle_1989_section3.png</code></div>
-              <div class="media-caption">Suggested use: threshold plot, frame montage, or empirical distribution figure.</div>
+              <h3>Figure</h3>
+              <img src="first_cycle_1989_uniform.png" alt="Placeholder figure for the uniform model">
+              <div class="media-caption">Placeholder figure: <code>first_cycle_1989_uniform.png</code></div>
             </div>
           </div>
 
-          <ul class="sub-bullets">
-            <li>Placeholder note on what counts as the first cycle in your setup.</li>
-            <li>Placeholder note on whether the graph is sampled with or without replacement.</li>
-            <li>Placeholder note on expected finite-size noise in small-$n$ runs.</li>
-            <li>Placeholder note on what the static figure should communicate in one glance.</li>
-          </ul>
+          <div class="analysis-box">
+            <ul class="sub-bullets">
+              <li>Placeholder bullet point: note how duplicate edges should be visualized or counted.</li>
+              <li>Placeholder bullet point: note whether self-loops are displayed or merely tracked in statistics.</li>
+              <li>Placeholder bullet point: add a sentence on how this model differs visually from simple-graph evolution.</li>
+              <li>Placeholder bullet point: mention where the first cycle is expected to appear in a sample run.</li>
+            </ul>
+          </div>
         </div>
       </div>
 
-      <div class="section-block">
-        <h2>4. Computational Reading and Notes</h2>
-
-        <div class="excerpt-box">
-          <div class="phase-label">Reading guide</div>
-          <p>
-            This final section is designed as a workspace for your own computational annotations. You can use it to explain simulation choices, graph sizes, random seeds, stopping criteria, or how you detect the first cycle in code.
-          </p>
-          <p>
-            It also works well as a bridge between the paper's formal language and the more intuitive language of animations, screenshots, and reproducible scripts.
-          </p>
+      <div class="phase-block">
+        <h2>3. The Permutation Model</h2>
+        <div class="excerpt-box blank-verbatim">
+          <div class="phase-label">Verbatim excerpt placeholder</div>
         </div>
 
         <div class="analysis-box">
-          <div class="interpretation-title">Interpretation</div>
-          <p>
-            Keep this section practical. It is the place where you can later tie the mathematics to script names, output folders, and empirical conclusions. The media placeholders below are meant for one implementation video, one results video, and one summary image.
-          </p>
+          <p><strong>Interpretation.</strong> This section is reserved for empirical notes on the permutation model. The verbatim block above is intentionally left blank for now.</p>
+        </div>
 
-          <div class="media-grid">
+        <div class="phase-subsection">
+          <div class="subsection-kicker">Interpretation media</div>
+          <h3>Placeholders for permutation-model experiments</h3>
+
+          <div class="subsection-media-stack">
             <div class="media-wrap">
-              <div class="media-placeholder">Placeholder MP4<br><code>first_cycle_1989_section4_a.mp4</code></div>
-              <div class="media-caption">Suggested use: implementation walk-through or algorithmic explanation.</div>
+              <h3>Animation A</h3>
+              <video controls preload="metadata">
+                <source src="first_cycle_1989_permutation_a.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div class="media-caption">Placeholder video: <code>first_cycle_1989_permutation_a.mp4</code></div>
             </div>
+
             <div class="media-wrap">
-              <div class="media-placeholder">Placeholder MP4<br><code>first_cycle_1989_section4_b.mp4</code></div>
-              <div class="media-caption">Suggested use: compiled experiment results or multi-run comparison.</div>
+              <h3>Animation B</h3>
+              <video controls preload="metadata">
+                <source src="first_cycle_1989_permutation_b.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div class="media-caption">Placeholder video: <code>first_cycle_1989_permutation_b.mp4</code></div>
             </div>
+
             <div class="media-wrap">
-              <div class="media-placeholder">Placeholder PNG<br><code>first_cycle_1989_section4.png</code></div>
-              <div class="media-caption">Suggested use: results table, threshold chart, or final takeaway graphic.</div>
+              <h3>Figure</h3>
+              <img src="first_cycle_1989_permutation.png" alt="Placeholder figure for the permutation model">
+              <div class="media-caption">Placeholder figure: <code>first_cycle_1989_permutation.png</code></div>
             </div>
           </div>
 
-          <ul class="sub-bullets">
-            <li>Placeholder note on simulation parameters.</li>
-            <li>Placeholder note on graph size choices and why they matter.</li>
-            <li>Placeholder note on what metric is being tracked in the videos.</li>
-            <li>Placeholder note on the main computational takeaway.</li>
-          </ul>
+          <div class="analysis-box">
+            <ul class="sub-bullets">
+              <li>Placeholder bullet point: explain why this model matches simple Erdős&ndash;Rényi graph growth.</li>
+              <li>Placeholder bullet point: note how the first cycle can be highlighted in the animation.</li>
+              <li>Placeholder bullet point: record what statistic or snapshot the PNG should preserve.</li>
+              <li>Placeholder bullet point: compare the first-cycle timing against the uniform model.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase-block">
+        <h2>4. Deriving One Model from the Other</h2>
+        <div class="excerpt-box blank-verbatim">
+          <div class="phase-label">Verbatim excerpt placeholder</div>
+        </div>
+
+        <div class="analysis-box">
+          <p><strong>Interpretation.</strong> This section is reserved for the derivation viewpoint connecting the two models. The verbatim block above is intentionally left blank for now.</p>
+        </div>
+
+        <div class="phase-subsection">
+          <div class="subsection-kicker">Interpretation media</div>
+          <h3>Placeholders for derivation-style comparisons</h3>
+
+          <div class="subsection-media-stack">
+            <div class="media-wrap">
+              <h3>Animation A</h3>
+              <video controls preload="metadata">
+                <source src="first_cycle_1989_derivation_a.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div class="media-caption">Placeholder video: <code>first_cycle_1989_derivation_a.mp4</code></div>
+            </div>
+
+            <div class="media-wrap">
+              <h3>Animation B</h3>
+              <video controls preload="metadata">
+                <source src="first_cycle_1989_derivation_b.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div class="media-caption">Placeholder video: <code>first_cycle_1989_derivation_b.mp4</code></div>
+            </div>
+
+            <div class="media-wrap">
+              <h3>Figure</h3>
+              <img src="first_cycle_1989_derivation.png" alt="Placeholder figure for deriving the permutation model from the uniform model">
+              <div class="media-caption">Placeholder figure: <code>first_cycle_1989_derivation.png</code></div>
+            </div>
+          </div>
+
+          <div class="analysis-box">
+            <ul class="sub-bullets">
+              <li>Placeholder bullet point: show how rejected loops and repeated edges alter the process.</li>
+              <li>Placeholder bullet point: indicate what equivalence is being illustrated.</li>
+              <li>Placeholder bullet point: describe what the PNG should preserve as a static comparison.</li>
+              <li>Placeholder bullet point: leave room for later empirical conclusions.</li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -600,8 +560,6 @@
         <a href="index.html">Home</a>
         <span class="sep">|</span>
         <a href="research.html">Research</a>
-        <span class="sep">|</span>
-        <a href="cv.html">CV</a>
       </div>
     </section>
   </div>
