@@ -255,9 +255,40 @@
       margin-bottom: 8px;
     }
 
-    code {
+    code, .inline-code {
       font-family: "Source Code Pro", monospace;
       font-size: 0.92em;
+    }
+
+    .equation {
+      margin: 12px 0 14px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.52);
+      border: 1px solid #dae5dd;
+      overflow-x: auto;
+    }
+
+    .centered-note {
+      text-align: center;
+      font-style: italic;
+      color: #3b453f;
+    }
+
+    .ascii-figure {
+      margin: 12px auto 14px;
+      padding: 14px 16px;
+      max-width: 680px;
+      background: rgba(255,255,255,0.48);
+      border: 1px solid #d7e2da;
+      border-radius: 14px;
+      font-family: "Source Code Pro", monospace;
+      font-size: 0.94rem;
+      line-height: 1.5;
+      white-space: pre;
+      overflow-x: auto;
+      text-align: center;
+      color: #1d2621;
     }
 
     .footer-nav {
@@ -298,6 +329,10 @@
       .verbatim-1989 {
         font-size: 1.08rem;
       }
+
+      .ascii-figure {
+        font-size: 0.84rem;
+      }
     }
   </style>
 
@@ -317,22 +352,22 @@
       <h1>Empirically Validating First Cycles in an Evolving Graph</h1>
 
       <p class="lead">
-        This page is organized as an empirical reading of Philippe Flajolet, Donald E. Knuth, and Boris Pittel&rsquo;s 1989 paper <em>The First Cycles in an Evolving Graph</em>. The overall page structure follows the earlier random-graph HTML format, while the verbatim boxes are styled differently and, for now, only the first verbatim contains the full visible excerpt from the supplied screenshot.
+        This page is organized as an empirical reading of Philippe Flajolet, Donald E. Knuth, and Boris Pittel&rsquo;s 1989 paper <em>The First Cycles in an Evolving Graph</em>. The overall page structure follows the earlier random-graph HTML format, while the verbatim boxes are styled differently and now include the opening model description together with a second longer excerpt on generating functions for stopping configurations.
       </p>
 
       <div class="panel note">
         <strong>How to use this page.</strong>
-        Keep this HTML file in the same folder as the media files. Each interpretation section below includes placeholders for two MP4 files and one PNG file, named in a consistent style for easy replacement later.
+        Keep this HTML file in the same folder structure as the media files. The opening interpretation section now uses a single comparison animation, and the later sections remain available for additional experiments and notes.
       </div>
 
       <div class="mini-grid">
         <div class="mini-box">
           <div class="k">Section 1</div>
-          <div class="v">Full first verbatim</div>
+          <div class="v">Models of graph evolution</div>
         </div>
         <div class="mini-box">
           <div class="k">Section 2</div>
-          <div class="v">Blank verbatim</div>
+          <div class="v">Stopping configurations</div>
         </div>
         <div class="mini-box">
           <div class="k">Section 3</div>
@@ -358,201 +393,152 @@
         </div>
 
         <div class="analysis-box">
-          <p><strong>Interpretation.</strong> This opening section sets up two distinct ways of watching a graph evolve from an empty state. One allows repeated edges and self-loops, while the other produces the simple-graph process usually associated with classical Erdős&ndash;Rényi evolution.</p>
-          <p>Below are placeholders for two animations and one figure that can later be used to compare these constructions visually.</p>
+          <p><strong>Interpretation.</strong> This opening section sets up the exact contrast that the animation below is meant to visualize. The uniform model allows repeated edges and self-loops, whereas the permutation model never revisits an already used simple edge.</p>
         </div>
 
         <div class="phase-subsection">
           <div class="subsection-kicker">Interpretation media</div>
-          <h3>Visual placeholders for the full setup</h3>
+          <h3>Uniform versus permutation model</h3>
 
           <div class="subsection-media-stack">
             <div class="media-wrap">
-              <h3>Animation A</h3>
+              <h3>Comparison animation</h3>
               <video controls preload="metadata">
-                <source src="first_cycle_1989_section1_a.mp4" type="video/mp4">
+                <source src="first-cycle-evolving-graph-1989/uniform_vs_permutation_20_nodes_all_edges.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
-              <div class="media-caption">Placeholder video: <code>first_cycle_1989_section1_a.mp4</code></div>
-            </div>
-
-            <div class="media-wrap">
-              <h3>Animation B</h3>
-              <video controls preload="metadata">
-                <source src="first_cycle_1989_section1_b.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-              <div class="media-caption">Placeholder video: <code>first_cycle_1989_section1_b.mp4</code></div>
-            </div>
-
-            <div class="media-wrap">
-              <h3>Figure</h3>
-              <img src="first_cycle_1989_section1.png" alt="Placeholder figure for the opening section of The First Cycles in an Evolving Graph">
-              <div class="media-caption">Placeholder figure: <code>first_cycle_1989_section1.png</code></div>
+              <div class="media-caption">Animation file: <code>first-cycle-evolving-graph-1989/uniform_vs_permutation_20_nodes_all_edges.mp4</code></div>
             </div>
           </div>
 
           <div class="analysis-box">
             <ul class="sub-bullets">
-              <li>Placeholder bullet point: summarize what the first animation is meant to show.</li>
-              <li>Placeholder bullet point: explain which model is being visualized in the second animation.</li>
-              <li>Placeholder bullet point: describe what the PNG figure should compare or emphasize.</li>
-              <li>Placeholder bullet point: add a brief note on what readers should watch for near the first appearance of cycles.</li>
+              <li>This single comparison animation is meant to show both models side by side instead of splitting them into separate placeholders.</li>
+              <li>In the uniform model, repeated edges can accumulate and self-loops can appear before all simple edges have been seen.</li>
+              <li>In the permutation model, the process keeps revealing new simple edges until the full simple-edge list is exhausted.</li>
+              <li>The contrast matters because the first cycle is forced to emerge through different mechanisms in the two models.</li>
             </ul>
           </div>
         </div>
       </div>
 
       <div class="phase-block">
-        <h2>2. The Uniform Model</h2>
-        <div class="excerpt-box blank-verbatim">
-          <div class="phase-label">Verbatim excerpt placeholder</div>
+        <h2>2. Generating Functions for Stopping Configurations</h2>
+        <div class="excerpt-box">
+          <div class="phase-label">Verbatim-style excerpt from the attached screenshots</div>
+          <div class="verbatim-1989">
+            <p><span class="dropcap-number">2.</span><strong>Generating functions for stopping configurations.</strong> Probabilities and expected values in such random models can be obtained from generating functions whose coefficients count the number of graphs with specified characteristics and specified weights.</p>
+
+            <p>In our case we wish to count graphs that have a single cycle. Such graphs can conveniently be regarded as an unordered set of unrooted trees (representing the acyclic components) together with an ordered sequence of rooted trees (representing the component that has a cycle). For example, the graph of Figure 1 contains 40 isolated vertices, 11 vertex pairs that are (unrooted) trees of size 2, and additional trees of respective sizes 4, 5, 6, and 16; these are the acyclic components. The cyclic component is represented by a sequence of $l$ rooted trees, where $l$ is the length of the cycle, and the roots are the vertices of the cycle. In Figure 1, this sequence is</p>
+
+            <div class="ascii-figure">58
+|
+53    51
+|     |
+82    05
+
+⟨ 55, 09, 82, 05 ⟩ .</div>
+
+            <p>If the final cycle-completing edge in the random model was $(x,y)$, we arrange the sequence of rooted trees so that the first root is $y$ and the last root is $x$. We shall say that a collection of unrooted and rooted trees as just described is a <em>stopping configuration</em>.</p>
+
+            <p>The enumeration of such labeled objects with exponential generating functions is a standard exercise in combinatorial analysis (see, for example, [CO70], [HP73], or [GJ83]), but it will be helpful to review the basic ideas briefly. If $F(z)$ is a power series, we write $[z^n]F(z)$ for the coefficient of $z^n$. We say that $F(z)$ is the <em>exponential generating function</em> (egf) for a collection $\mathcal{F}$ of labelled objects if $n![z^n]F(z)$ is the number $f_n$ of ways to attach labels to objects in $\mathcal{F}$ that have $n$ elements, i.e., if</p>
+
+            <div class="equation">$$F(z)=\sum_{n\ge 0} f_n\frac{z^n}{n!}=\sum_{A\in\mathcal{F}}\frac{z^{\|A\|}}{|A|!}. \qquad (2.2)$$</div>
+
+            <p>If $F_1(z),\ldots,F_k(z)$ are egfs for $\mathcal{F}_1,\ldots,\mathcal{F}_k$, respectively, then the product $F_1(z)\cdots F_k(z)$ is the egf for all ordered sequences $\langle A_1,\ldots,A_k\rangle$ where $A_j$ is an element of $\mathcal{F}_j$ with an appropriate relabeling. In particular, if $F_1(z)=\cdots=F_k(z)=F(z)$, then the functions</p>
+
+            <div class="equation">$$F(z)^k \qquad \text{and} \qquad F(z)^k/k!$$</div>
+
+            <p>exponentially generate <em>sequences</em> and <em>sets</em>, respectively, of $k$ objects from $\mathcal{F}$. Summing over $k$, the functions</p>
+
+            <div class="equation">$$\frac{1}{1-F(z)} \qquad \text{and} \qquad \exp F(z) \qquad (2.3)$$</div>
+
+            <p>are the respective egfs for sequences and sets of all lengths $k\ge 0$.</p>
+
+            <p>We can, for instance, use these ideas to discover the egf for labelled, rooted trees, which we shall call $T(z)$. Every such tree is an ordered pair $(A,B)$ where $A$ is the root node and $B$ is a set of rooted trees (the children of the root). The egf for $A$ is simply $z$, and the egf for $B$ is $\exp T(z)$ according to (2.3); hence we have the well-known relation</p>
+
+            <div class="equation">$$T(z)=z\,e^{T(z)}. \qquad (2.4)$$</div>
+
+            <p>Let $U(z)$ be the egf for labelled, unrooted trees. We can represent every rooted tree $T$ on the labels $\{1,\ldots,n\}$ as either an unrooted tree $U$ (if $1$ is the root of $T$) or as an unordered pair $\{A,B\}$ where $A$ and $B$ are rooted trees (if $1$ is not the root of $T$). In the latter case, either $A$ or $B$ contains the node $1$, say $A$ does; we add an edge from the root of $A$ to the root of $B$. This construction is reversible, hence we have another well-known relation:</p>
+
+            <div class="equation">$$T(z)=U(z)+\tfrac{1}{2}T(z)^2. \qquad (2.5)$$</div>
+
+            <p>We can now enumerate stopping configurations that contain $k$ unrooted trees in the acyclic components and $l$ rooted trees in the cyclic components: The egf is</p>
+
+            <div class="equation">$$T(z)^l\,U(z)^k/k!. \qquad (2.6)$$</div>
+
+            <p>Summing over $k$ and $l$, the total number of stopping configurations for cycles of length $\ge l$ has the egf</p>
+
+            <div class="equation">$$\frac{T(z)^l}{1-T(z)}\,e^{U(z)}. \qquad (2.7)$$</div>
+
+            <p>We get all stopping configurations for the uniform model when $l=1$, and for the permutation model when $l=3$.</p>
+
+            <p>For our purposes we need additional information provided by a <em>bivariate generating function</em> (bgf), which enumerates stopping configurations by the number of edges as well as the number of vertices. A bgf is a power series</p>
+
+            <div class="equation">$$F(w,z)=\sum_{m,n\ge 0} f_{m,n}\,w^m\frac{z^n}{n!}. \qquad (2.8)$$</div>
+
+            <p>in which $f_{m,n}$ is the number of stopping configurations with $m$ edges and $n$ vertices, weighted by some criterion. Notice that the coefficients are &ldquo;exponential&rdquo; in $n$ (i.e., they include a factor $1/n!$), but not in $m$; setting $w=1$ converts the bgf into an egf.</p>
+
+            <p>The bgf for unrooted trees is $U(wz)/w$, because every tree with $n$ vertices contains $n-1$ edges. Similarly, the bgf for rooted trees is $T(wz)/w$. The bgf for stopping configurations with $k$ unrooted trees and $l$ rooted trees, corresponding to (2.6), is</p>
+
+            <div class="equation">$$w^l\big(T(wz)/w\big)^l\big(U(wz)/w\big)^k/k! = T(wz)^l\big(U(wz)/w\big)^k/k!, \qquad (2.9)$$</div>
+
+            <p>because we implicitly associate $l$ additional edges with the edges of the rooted trees. (These are the edges of the cycle.) Summing over $k$ and $l$ gives us the bgf analogous to (2.7) for the set of all stopping configurations with cycle length $\ge l$:</p>
+
+            <div class="equation">$$S_l(w,z)=\frac{T(wz)^l}{1-T(wz)}\,e^{U(wz)/w}. \qquad (2.10)$$</div>
+
+            <p>When $l=1$, for example, we obtain the bgf for all configurations in which the uniform model can stop:</p>
+
+            <div class="equation">$$S_1(w,z)=wz + (w+2w^2)\,\frac{z^2}{1} + \left(\frac{w+5w^2+9w^3}{2}\right)z^3 + \left(\frac{w+9w^2+36w^3+64w^4}{6}\right)z^4 + \cdots. \qquad (2.11)$$</div>
+
+            <p>In particular, when there are $n=3$ vertices the coefficient of $z^n/n!$ is</p>
+
+            <div class="equation">$$3w+15w^2+27w^3; \qquad (2.12)$$</div>
+
+            <p>this means that there are $3$ stopping configurations in which the uniform model stops after $m=1$ steps, plus $15$ in which it stops after $m=2$ steps, plus $27$ in which it stops after $m=3$ steps. The $27$ with $m=3$ have the following forms:</p>
+
+            <div class="ascii-figure">6 cases         6 cases         6 cases         6 cases         3 cases
+
+⟨a,b,c⟩         a               b               a               a   b
+                |               |               |                \ /
+              ⟨b,c⟩           ⟨a,c⟩             b               ⟨c⟩
+                                                |
+                                               ⟨c⟩</div>
+
+            <p>The $15$ with $m=2$ include $6$ with a $2$-cycle and $9$ with a $1$-cycle.</p>
+
+            <p>Setting $l=3$ in (2.10) gives the bgf for all stopping configurations in the permutation model:</p>
+
+            <div class="equation">$$S_3(w,z)=w^3z^3 + (w^3+4w^4)z^4 + \left(\frac{w^3+9w^4+25w^5}{2}\right)z^5 + \cdots. \qquad (2.13)$$</div>
+
+            <p>In both models the process must stop after at most $n$ edges have appeared.</p>
+          </div>
         </div>
 
         <div class="analysis-box">
-          <p><strong>Interpretation.</strong> This section is reserved for empirical notes on the uniform model. The verbatim block above is intentionally left blank for now.</p>
-        </div>
-
-        <div class="phase-subsection">
-          <div class="subsection-kicker">Interpretation media</div>
-          <h3>Placeholders for uniform-model experiments</h3>
-
-          <div class="subsection-media-stack">
-            <div class="media-wrap">
-              <h3>Animation A</h3>
-              <video controls preload="metadata">
-                <source src="first_cycle_1989_uniform_a.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-              <div class="media-caption">Placeholder video: <code>first_cycle_1989_uniform_a.mp4</code></div>
-            </div>
-
-            <div class="media-wrap">
-              <h3>Animation B</h3>
-              <video controls preload="metadata">
-                <source src="first_cycle_1989_uniform_b.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-              <div class="media-caption">Placeholder video: <code>first_cycle_1989_uniform_b.mp4</code></div>
-            </div>
-
-            <div class="media-wrap">
-              <h3>Figure</h3>
-              <img src="first_cycle_1989_uniform.png" alt="Placeholder figure for the uniform model">
-              <div class="media-caption">Placeholder figure: <code>first_cycle_1989_uniform.png</code></div>
-            </div>
-          </div>
-
-          <div class="analysis-box">
-            <ul class="sub-bullets">
-              <li>Placeholder bullet point: note how duplicate edges should be visualized or counted.</li>
-              <li>Placeholder bullet point: note whether self-loops are displayed or merely tracked in statistics.</li>
-              <li>Placeholder bullet point: add a sentence on how this model differs visually from simple-graph evolution.</li>
-              <li>Placeholder bullet point: mention where the first cycle is expected to appear in a sample run.</li>
-            </ul>
-          </div>
+          <p><strong>Interpretation.</strong> This section is the combinatorial engine of the paper. The main idea is that the first-cycle stopping event can be encoded as a configuration of unrooted trees together with an ordered cyclic sequence of rooted trees, and then counted through generating functions rather than through direct case-by-case probability arguments.</p>
         </div>
       </div>
 
       <div class="phase-block">
-        <h2>3. The Permutation Model</h2>
+        <h2>3. The Uniform Model</h2>
         <div class="excerpt-box blank-verbatim">
           <div class="phase-label">Verbatim excerpt placeholder</div>
         </div>
 
         <div class="analysis-box">
-          <p><strong>Interpretation.</strong> This section is reserved for empirical notes on the permutation model. The verbatim block above is intentionally left blank for now.</p>
-        </div>
-
-        <div class="phase-subsection">
-          <div class="subsection-kicker">Interpretation media</div>
-          <h3>Placeholders for permutation-model experiments</h3>
-
-          <div class="subsection-media-stack">
-            <div class="media-wrap">
-              <h3>Animation A</h3>
-              <video controls preload="metadata">
-                <source src="first_cycle_1989_permutation_a.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-              <div class="media-caption">Placeholder video: <code>first_cycle_1989_permutation_a.mp4</code></div>
-            </div>
-
-            <div class="media-wrap">
-              <h3>Animation B</h3>
-              <video controls preload="metadata">
-                <source src="first_cycle_1989_permutation_b.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-              <div class="media-caption">Placeholder video: <code>first_cycle_1989_permutation_b.mp4</code></div>
-            </div>
-
-            <div class="media-wrap">
-              <h3>Figure</h3>
-              <img src="first_cycle_1989_permutation.png" alt="Placeholder figure for the permutation model">
-              <div class="media-caption">Placeholder figure: <code>first_cycle_1989_permutation.png</code></div>
-            </div>
-          </div>
-
-          <div class="analysis-box">
-            <ul class="sub-bullets">
-              <li>Placeholder bullet point: explain why this model matches simple Erdős&ndash;Rényi graph growth.</li>
-              <li>Placeholder bullet point: note how the first cycle can be highlighted in the animation.</li>
-              <li>Placeholder bullet point: record what statistic or snapshot the PNG should preserve.</li>
-              <li>Placeholder bullet point: compare the first-cycle timing against the uniform model.</li>
-            </ul>
-          </div>
+          <p><strong>Interpretation.</strong> This section is reserved for additional empirical notes on the uniform model. The verbatim block above is intentionally left blank for now.</p>
         </div>
       </div>
 
       <div class="phase-block">
-        <h2>4. Deriving One Model from the Other</h2>
+        <h2>4. The Permutation Model</h2>
         <div class="excerpt-box blank-verbatim">
           <div class="phase-label">Verbatim excerpt placeholder</div>
         </div>
 
         <div class="analysis-box">
-          <p><strong>Interpretation.</strong> This section is reserved for the derivation viewpoint connecting the two models. The verbatim block above is intentionally left blank for now.</p>
-        </div>
-
-        <div class="phase-subsection">
-          <div class="subsection-kicker">Interpretation media</div>
-          <h3>Placeholders for derivation-style comparisons</h3>
-
-          <div class="subsection-media-stack">
-            <div class="media-wrap">
-              <h3>Animation A</h3>
-              <video controls preload="metadata">
-                <source src="first_cycle_1989_derivation_a.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-              <div class="media-caption">Placeholder video: <code>first_cycle_1989_derivation_a.mp4</code></div>
-            </div>
-
-            <div class="media-wrap">
-              <h3>Animation B</h3>
-              <video controls preload="metadata">
-                <source src="first_cycle_1989_derivation_b.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-              <div class="media-caption">Placeholder video: <code>first_cycle_1989_derivation_b.mp4</code></div>
-            </div>
-
-            <div class="media-wrap">
-              <h3>Figure</h3>
-              <img src="first_cycle_1989_derivation.png" alt="Placeholder figure for deriving the permutation model from the uniform model">
-              <div class="media-caption">Placeholder figure: <code>first_cycle_1989_derivation.png</code></div>
-            </div>
-          </div>
-
-          <div class="analysis-box">
-            <ul class="sub-bullets">
-              <li>Placeholder bullet point: show how rejected loops and repeated edges alter the process.</li>
-              <li>Placeholder bullet point: indicate what equivalence is being illustrated.</li>
-              <li>Placeholder bullet point: describe what the PNG should preserve as a static comparison.</li>
-              <li>Placeholder bullet point: leave room for later empirical conclusions.</li>
-            </ul>
-          </div>
+          <p><strong>Interpretation.</strong> This section is reserved for additional empirical notes on the permutation model. The verbatim block above is intentionally left blank for now.</p>
         </div>
       </div>
 
