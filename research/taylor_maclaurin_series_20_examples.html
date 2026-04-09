@@ -1,15 +1,14 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Taylor and Maclaurin Series: Twenty Standard Examples</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700&family=Source+Code+Pro:wght@400;500;600&display=swap" rel="stylesheet">
-
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Taylor and Maclaurin Series: Twenty Standard Examples</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&amp;family=Inter:wght@400;500;600;700&amp;family=Source+Code+Pro:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
     :root {
       --bg: #f7f4ee;
       --card: #fffdf9;
@@ -171,6 +170,26 @@
       border-radius: 18px;
     }
 
+
+
+    .center-figure {
+      margin: 16px 0 18px;
+    }
+
+    .center-figure img {
+      width: 100%;
+      border-radius: 14px;
+      display: block;
+      background: #eee8de;
+      border: 1px solid var(--line);
+    }
+
+    .figcaption {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
     .media-wrap {
       margin: 16px 0 6px;
       padding: 14px;
@@ -260,8 +279,7 @@
       }
     }
   </style>
-
-  <script>
+<script>
     window.MathJax = {
       tex: {
         inlineMath: [['$', '$'], ['\\(', '\\)']],
@@ -272,54 +290,49 @@
       }
     };
   </script>
-  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
 <body>
-  <div class="page">
-    <section class="card" id="top">
-      <h1>Taylor and Maclaurin Series: Twenty Standard Examples</h1>
-
-      <p class="lead">
+<div class="page">
+<section class="card" id="top">
+<h1>Taylor and Maclaurin Series: Twenty Standard Examples</h1>
+<p class="lead">
         Taylor series let us replace a complicated function by a polynomial built from its derivatives at a chosen center $x=a$.
         This is powerful because polynomials are much easier to differentiate, integrate, graph, and approximate numerically.
         The Maclaurin series is simply the special case where the center is the origin, so it is Taylor series with $a=0$.
       </p>
-
-      <div class="panel note">
-        <strong>Generic Taylor form.</strong><br />
+<div class="panel note">
+<strong>Generic Taylor form.</strong><br/>
         $$f(x)=f(a)+f'(a)(x-a)+\frac{f''(a)}{2!}(x-a)^2+\frac{f'''(a)}{3!}(x-a)^3+\cdots
         =\sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!}(x-a)^n.$$
         The Maclaurin version is
         $$f(x)=\sum_{n=0}^\infty \frac{f^{(n)}(0)}{n!}x^n.$$
       </div>
-
-      <div class="panel warn">
-        <strong>Concrete example.</strong>
+<div class="panel warn">
+<strong>Concrete example.</strong>
         For $f(x)=e^x$, the Taylor series about $x=1$ is
         $$e^x=e\left(1+(x-1)+\frac{(x-1)^2}{2!}+\frac{(x-1)^3}{3!}+\cdots\right),$$
         while the Maclaurin series is
         $$e^x=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\cdots.$$
         The difference is not the function itself; the difference is the point around which the polynomial approximation is centered.
       </div>
-
-      <div class="mini-grid">
-        <div class="mini-box">
-          <div class="k">Notation used below</div>
-          <div class="v">To keep the formulas readable, each Taylor section uses $h=x-a$.</div>
-        </div>
-        <div class="mini-box">
-          <div class="k">Term-counting tip</div>
-          <div class="v">For odd or even functions, the first 3 nonzero terms can differ from the first 3 displayed powers because some coefficients vanish.</div>
-        </div>
-      </div>
-
-      <h2>How to read the examples</h2>
-      <p>
+<div class="mini-grid">
+<div class="mini-box">
+<div class="k">Notation used below</div>
+<div class="v">To keep the formulas readable, each Taylor section uses $h=x-a$.</div>
+</div>
+<div class="mini-box">
+<div class="k">Term-counting tip</div>
+<div class="v">For odd or even functions, the first 3 nonzero terms can differ from the first 3 displayed powers because some coefficients vanish.</div>
+</div>
+</div>
+<h2>How to read the examples</h2>
+<p>
         In each subsection below, the first formula is the Taylor expansion about a general center $x=a$, and the second formula is the corresponding Maclaurin expansion, when it exists.
         Each subsection now also reserves <strong>two</strong> PNG slots: one for a Taylor-series plot and one for a Maclaurin-series plot.
       </p>
-      <div class="panel note">
-        <strong>What “first 3 terms” means.</strong><br />
+<div class="panel note">
+<strong>What “first 3 terms” means.</strong><br/>
         Suppose $f(x)=e^x$. Then the Taylor expansion about $x=a$ begins
         $$e^x=e^a+e^a(x-a)+\frac{e^a}{2!}(x-a)^2+\frac{e^a}{3!}(x-a)^3+\cdots,$$
         so the <em>first 3 terms</em> are
@@ -330,23 +343,22 @@
         $$1+x+\frac{x^2}{2!}.$$
         Adding 4 terms, 5 terms, or 6 terms just means keeping one more polynomial term each time.
       </div>
-      <div class="panel warn">
-        <strong>What “first 3 nonzero terms” means.</strong><br />
+<div class="panel warn">
+<strong>What “first 3 nonzero terms” means.</strong><br/>
         Some series have zero coefficients. For example, the Maclaurin series of $\sin x$ is
         $$\sin x=x-\frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!}+\cdots.$$
         Here the coefficient of $x^0$, $x^2$, and $x^4$ is zero, so the <em>first 3 nonzero terms</em> are
         $$x-\frac{x^3}{3!}+\frac{x^5}{5!}.$$
         The same idea applies to Taylor series if any coefficients happen to vanish at the chosen center $a$.
       </div>
-      <ul class="tight-list">
-        <li>The first PNG placeholder in each subsection is for the Taylor plot about $x=a$.</li>
-        <li>The second PNG placeholder in each subsection is for the Maclaurin plot about $x=0$.</li>
-        <li>The filenames are written in folder form, such as <code>folder_name/file_name.png</code>, so you can drop the images into matching folders later.</li>
-      </ul>
-
-      <h2>Contents</h2>
-      <ul class="toc">
-        <li><a href="#sec01">1. Exponential Function</a></li>
+<ul class="tight-list">
+<li>The first PNG placeholder in each subsection is for the Taylor plot about $x=a$.</li>
+<li>The second PNG placeholder in each subsection is for the Maclaurin plot about $x=0$.</li>
+<li>The filenames are written in folder form, such as <code>folder_name/file_name.png</code>, so you can drop the images into matching folders later.</li>
+</ul>
+<h2>Contents</h2>
+<ul class="toc">
+<li><a href="#sec01">1. Exponential Function</a></li>
 <li><a href="#sec02">2. Sine Function</a></li>
 <li><a href="#sec03">3. Cosine Function</a></li>
 <li><a href="#sec04">4. Hyperbolic Sine</a></li>
@@ -366,550 +378,327 @@
 <li><a href="#sec18">18. Inverse Square Root of $1-x$</a></li>
 <li><a href="#sec19">19. Inverse Square Root of $1+x$</a></li>
 <li><a href="#sec20">20. Arctangent</a></li>
-      </ul>
-
-      <h2>Twenty standard examples</h2>
-      
-      <section id="sec01" class="example-card">
-        <h3>1. Exponential Function</h3>
-        <p class="small-intro"><strong>Function.</strong> $f(x)=e^x$</p>
-        <div class="panel note">
-          <strong>Taylor series about $x=a$</strong><br />
+</ul>
+<h2>Twenty standard examples</h2>
+<section class="example-card" id="sec01">
+<h3>1. Exponential Function</h3>
+<p class="small-intro"><strong>Function.</strong> $f(x)=e^x$</p>
+<div class="panel note">
+<strong>Taylor series about $x=a$</strong><br/>
           $$e^x=e^a\left(1+h+\frac{h^2}{2!}+\frac{h^3}{3!}+\frac{h^4}{4!}+\frac{h^5}{5!}+\frac{h^6}{6!}\right)+O(h^7).$$
         </div>
-        <div class="panel">
-          <strong>Maclaurin series (Taylor at $a=0$)</strong><br />
+<div class="panel">
+<strong>Maclaurin series (Taylor at $a=0$)</strong><br/>
           $$e^x=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\frac{x^4}{4!}+\frac{x^5}{5!}+\frac{x^6}{6!}+O(x^7).$$
         </div>
-        <p>Entire function; both series converge for every real $x$.</p>
-        <div class="media-wrap">
-          <div class="media-label">Taylor-series PNG placeholder</div>
-          <div class="img-placeholder">Primary path: <code>taylor_about_a_pngs/01_exponential_taylor.png</code><br />Alternative path: <code>taylor_about_a_pngs/01_exp_x_about_a.png</code></div>
-          <div class="media-caption">Use this upper slot for the Taylor approximation plot about $x=a$ for Exponential Function.</div>
-        </div>
-
-        <div class="media-wrap">
-          <div class="media-label">Maclaurin-series PNG placeholder</div>
-          <div class="img-placeholder">Primary path: <code>taylor_maclaurin_pngs/01_exponential_maclaurin.png</code><br />Alternative path: <code>taylor_maclaurin_pngs/01_exponential_function.png</code></div>
-          <div class="media-caption">Use this lower slot for the Maclaurin approximation plot about $x=0$ for Exponential Function.</div>
-        </div>
-
-      </section>
-    
-      <section id="sec02" class="example-card">
-        <h3>2. Sine Function</h3>
-        <p class="small-intro"><strong>Function.</strong> $f(x)=\sin x$</p>
-        <div class="panel note">
-          <strong>Taylor series about $x=a$</strong><br />
+<p>Entire function; both series converge for every real $x$.</p>
+<div class="center-figure"><img alt="Taylor series plot for 1. Exponential Function" data-fallback="taylor_about_a_pngs/01_exp_x_about_a.png" onerror="this.onerror=null;this.src=this.dataset.fallback;" src="taylor_about_a_pngs/01_exponential_taylor.png"/><div class="figcaption"><strong>Taylor-series plot</strong> the Taylor approximation plot about $x=a$ for Exponential Function. Primary file: taylor_about_a_pngs/01_exponential_taylor.png. Fallback file: taylor_about_a_pngs/01_exp_x_about_a.png.</div></div>
+<div class="center-figure"><img alt="Maclaurin series plot for 1. Exponential Function" data-fallback="taylor_maclaurin_pngs/01_exponential_function.png" onerror="this.onerror=null;this.src=this.dataset.fallback;" src="taylor_maclaurin_pngs/01_exponential_maclaurin.png"/><div class="figcaption"><strong>Maclaurin-series plot</strong> the Maclaurin approximation plot about $x=0$ for Exponential Function. Primary file: taylor_maclaurin_pngs/01_exponential_maclaurin.png. Fallback file: taylor_maclaurin_pngs/01_exponential_function.png.</div></div>
+</section>
+<section class="example-card" id="sec02">
+<h3>2. Sine Function</h3>
+<p class="small-intro"><strong>Function.</strong> $f(x)=\sin x$</p>
+<div class="panel note">
+<strong>Taylor series about $x=a$</strong><br/>
           $$\sin x=\sin a+\cos a\,h-\frac{\sin a}{2!}h^2-\frac{\cos a}{3!}h^3+\frac{\sin a}{4!}h^4+\frac{\cos a}{5!}h^5-\frac{\sin a}{6!}h^6+O(h^7).$$
         </div>
-        <div class="panel">
-          <strong>Maclaurin series (Taylor at $a=0$)</strong><br />
+<div class="panel">
+<strong>Maclaurin series (Taylor at $a=0$)</strong><br/>
           $$\sin x=x-\frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!}+\frac{x^9}{9!}-\frac{x^{11}}{11!}+\frac{x^{13}}{13!}+O(x^{15}).$$
         </div>
-        <p>Odd function; the Maclaurin series contains only odd powers.</p>
-        <div class="media-wrap">
-          <div class="media-label">Taylor-series PNG placeholder</div>
-          <div class="img-placeholder">Primary path: <code>taylor_about_a_pngs/02_sine_taylor.png</code><br />Alternative path: <code>taylor_about_a_pngs/02_sin_x_about_a.png</code></div>
-          <div class="media-caption">Use this upper slot for the Taylor approximation plot about $x=a$ for Sine Function.</div>
-        </div>
-
-        <div class="media-wrap">
-          <div class="media-label">Maclaurin-series PNG placeholder</div>
-          <div class="img-placeholder">Primary path: <code>taylor_maclaurin_pngs/02_sine_maclaurin.png</code><br />Alternative path: <code>taylor_maclaurin_pngs/02_sine_function.png</code></div>
-          <div class="media-caption">Use this lower slot for the Maclaurin approximation plot about $x=0$ for Sine Function.</div>
-        </div>
-
-      </section>
-    
-      <section id="sec03" class="example-card">
-        <h3>3. Cosine Function</h3>
-        <p class="small-intro"><strong>Function.</strong> $f(x)=\cos x$</p>
-        <div class="panel note">
-          <strong>Taylor series about $x=a$</strong><br />
+<p>Odd function; the Maclaurin series contains only odd powers.</p>
+<div class="center-figure"><img alt="Taylor series plot for 2. Sine Function" data-fallback="taylor_about_a_pngs/02_sin_x_about_a.png" onerror="this.onerror=null;this.src=this.dataset.fallback;" src="taylor_about_a_pngs/02_sine_taylor.png"/><div class="figcaption"><strong>Taylor-series plot</strong> the Taylor approximation plot about $x=a$ for Sine Function. Primary file: taylor_about_a_pngs/02_sine_taylor.png. Fallback file: taylor_about_a_pngs/02_sin_x_about_a.png.</div></div>
+<div class="center-figure"><img alt="Maclaurin series plot for 2. Sine Function" data-fallback="taylor_maclaurin_pngs/02_sine_function.png" onerror="this.onerror=null;this.src=this.dataset.fallback;" src="taylor_maclaurin_pngs/02_sine_maclaurin.png"/><div class="figcaption"><strong>Maclaurin-series plot</strong> the Maclaurin approximation plot about $x=0$ for Sine Function. Primary file: taylor_maclaurin_pngs/02_sine_maclaurin.png. Fallback file: taylor_maclaurin_pngs/02_sine_function.png.</div></div>
+</section>
+<section class="example-card" id="sec03">
+<h3>3. Cosine Function</h3>
+<p class="small-intro"><strong>Function.</strong> $f(x)=\cos x$</p>
+<div class="panel note">
+<strong>Taylor series about $x=a$</strong><br/>
           $$\cos x=\cos a-\sin a\,h-\frac{\cos a}{2!}h^2+\frac{\sin a}{3!}h^3+\frac{\cos a}{4!}h^4-\frac{\sin a}{5!}h^5-\frac{\cos a}{6!}h^6+O(h^7).$$
         </div>
-        <div class="panel">
-          <strong>Maclaurin series (Taylor at $a=0$)</strong><br />
+<div class="panel">
+<strong>Maclaurin series (Taylor at $a=0$)</strong><br/>
           $$\cos x=1-\frac{x^2}{2!}+\frac{x^4}{4!}-\frac{x^6}{6!}+\frac{x^8}{8!}-\frac{x^{10}}{10!}+\frac{x^{12}}{12!}+O(x^{14}).$$
         </div>
-        <p>Even function; the Maclaurin series contains only even powers.</p>
-        <div class="media-wrap">
-          <div class="media-label">Taylor-series PNG placeholder</div>
-          <div class="img-placeholder">Primary path: <code>taylor_about_a_pngs/03_cosine_taylor.png</code><br />Alternative path: <code>taylor_about_a_pngs/03_cos_x_about_a.png</code></div>
-          <div class="media-caption">Use this upper slot for the Taylor approximation plot about $x=a$ for Cosine Function.</div>
-        </div>
-
-        <div class="media-wrap">
-          <div class="media-label">Maclaurin-series PNG placeholder</div>
-          <div class="img-placeholder">Primary path: <code>taylor_maclaurin_pngs/03_cosine_maclaurin.png</code><br />Alternative path: <code>taylor_maclaurin_pngs/03_cosine_function.png</code></div>
-          <div class="media-caption">Use this lower slot for the Maclaurin approximation plot about $x=0$ for Cosine Function.</div>
-        </div>
-
-      </section>
-    
-      <section id="sec04" class="example-card">
-        <h3>4. Hyperbolic Sine</h3>
-        <p class="small-intro"><strong>Function.</strong> $f(x)=\sinh x$</p>
-        <div class="panel note">
-          <strong>Taylor series about $x=a$</strong><br />
+<p>Even function; the Maclaurin series contains only even powers.</p>
+<div class="center-figure"><img alt="Taylor series plot for 3. Cosine Function" data-fallback="taylor_about_a_pngs/03_cos_x_about_a.png" onerror="this.onerror=null;this.src=this.dataset.fallback;" src="taylor_about_a_pngs/03_cosine_taylor.png"/><div class="figcaption"><strong>Taylor-series plot</strong> the Taylor approximation plot about $x=a$ for Cosine Function. Primary file: taylor_about_a_pngs/03_cosine_taylor.png. Fallback file: taylor_about_a_pngs/03_cos_x_about_a.png.</div></div>
+<div class="center-figure"><img alt="Maclaurin series plot for 3. Cosine Function" data-fallback="taylor_maclaurin_pngs/03_cosine_function.png" onerror="this.onerror=null;this.src=this.dataset.fallback;" src="taylor_maclaurin_pngs/03_cosine_maclaurin.png"/><div class="figcaption"><strong>Maclaurin-series plot</strong> the Maclaurin approximation plot about $x=0$ for Cosine Function. Primary file: taylor_maclaurin_pngs/03_cosine_maclaurin.png. Fallback file: taylor_maclaurin_pngs/03_cosine_function.png.</div></div>
+</section>
+<section class="example-card" id="sec04">
+<h3>4. Hyperbolic Sine</h3>
+<p class="small-intro"><strong>Function.</strong> $f(x)=\sinh x$</p>
+<div class="panel note">
+<strong>Taylor series about $x=a$</strong><br/>
           $$\sinh x=\sinh a+\cosh a\,h+\frac{\sinh a}{2!}h^2+\frac{\cosh a}{3!}h^3+\frac{\sinh a}{4!}h^4+\frac{\cosh a}{5!}h^5+\frac{\sinh a}{6!}h^6+O(h^7).$$
         </div>
-        <div class="panel">
-          <strong>Maclaurin series (Taylor at $a=0$)</strong><br />
+<div class="panel">
+<strong>Maclaurin series (Taylor at $a=0$)</strong><br/>
           $$\sinh x=x+\frac{x^3}{3!}+\frac{x^5}{5!}+\frac{x^7}{7!}+\frac{x^9}{9!}+\frac{x^{11}}{11!}+\frac{x^{13}}{13!}+O(x^{15}).$$
         </div>
-        <p>Hyperbolic analogue of $\sin x$; only odd powers appear in the Maclaurin case.</p>
-        <div class="media-wrap">
-          <div class="media-label">Taylor-series PNG placeholder</div>
-          <div class="img-placeholder">Primary path: <code>taylor_about_a_pngs/04_sinh_taylor.png</code><br />Alternative path: <code>taylor_about_a_pngs/04_sinh_x_about_a.png</code></div>
-          <div class="media-caption">Use this upper slot for the Taylor approximation plot about $x=a$ for Hyperbolic Sine.</div>
-        </div>
-
-        <div class="media-wrap">
-          <div class="media-label">Maclaurin-series PNG placeholder</div>
-          <div class="img-placeholder">Primary path: <code>taylor_maclaurin_pngs/04_sinh_maclaurin.png</code><br />Alternative path: <code>taylor_maclaurin_pngs/04_hyperbolic_sine.png</code></div>
-          <div class="media-caption">Use this lower slot for the Maclaurin approximation plot about $x=0$ for Hyperbolic Sine.</div>
-        </div>
-
-      </section>
-    
-      <section id="sec05" class="example-card">
-        <h3>5. Hyperbolic Cosine</h3>
-        <p class="small-intro"><strong>Function.</strong> $f(x)=\cosh x$</p>
-        <div class="panel note">
-          <strong>Taylor series about $x=a$</strong><br />
+<p>Hyperbolic analogue of $\sin x$; only odd powers appear in the Maclaurin case.</p>
+<div class="center-figure"><img alt="Taylor series plot for 4. Hyperbolic Sine" data-fallback="taylor_about_a_pngs/04_sinh_x_about_a.png" onerror="this.onerror=null;this.src=this.dataset.fallback;" src="taylor_about_a_pngs/04_sinh_taylor.png"/><div class="figcaption"><strong>Taylor-series plot</strong> the Taylor approximation plot about $x=a$ for Hyperbolic Sine. Primary file: taylor_about_a_pngs/04_sinh_taylor.png. Fallback file: taylor_about_a_pngs/04_sinh_x_about_a.png.</div></div>
+<div class="center-figure"><img alt="Maclaurin series plot for 4. Hyperbolic Sine" data-fallback="taylor_maclaurin_pngs/04_hyperbolic_sine.png" onerror="this.onerror=null;this.src=this.dataset.fallback;" src="taylor_maclaurin_pngs/04_sinh_maclaurin.png"/><div class="figcaption"><strong>Maclaurin-series plot</strong> the Maclaurin approximation plot about $x=0$ for Hyperbolic Sine. Primary file: taylor_maclaurin_pngs/04_sinh_maclaurin.png. Fallback file: taylor_maclaurin_pngs/04_hyperbolic_sine.png.</div></div>
+</section>
+<section class="example-card" id="sec05">
+<h3>5. Hyperbolic Cosine</h3>
+<p class="small-intro"><strong>Function.</strong> $f(x)=\cosh x$</p>
+<div class="panel note">
+<strong>Taylor series about $x=a$</strong><br/>
           $$\cosh x=\cosh a+\sinh a\,h+\frac{\cosh a}{2!}h^2+\frac{\sinh a}{3!}h^3+\frac{\cosh a}{4!}h^4+\frac{\sinh a}{5!}h^5+\frac{\cosh a}{6!}h^6+O(h^7).$$
         </div>
-        <div class="panel">
-          <strong>Maclaurin series (Taylor at $a=0$)</strong><br />
+<div class="panel">
+<strong>Maclaurin series (Taylor at $a=0$)</strong><br/>
           $$\cosh x=1+\frac{x^2}{2!}+\frac{x^4}{4!}+\frac{x^6}{6!}+\frac{x^8}{8!}+\frac{x^{10}}{10!}+\frac{x^{12}}{12!}+O(x^{14}).$$
         </div>
-        <p>Hyperbolic analogue of $\cos x$; only even powers appear in the Maclaurin case.</p>
-        <div class="media-wrap">
-          <div class="media-label">Taylor-series PNG placeholder</div>
-          <div class="img-placeholder">Primary path: <code>taylor_about_a_pngs/05_cosh_taylor.png</code><br />Alternative path: <code>taylor_about_a_pngs/05_cosh_x_about_a.png</code></div>
-          <div class="media-caption">Use this upper slot for the Taylor approximation plot about $x=a$ for Hyperbolic Cosine.</div>
-        </div>
-
-        <div class="media-wrap">
-          <div class="media-label">Maclaurin-series PNG placeholder</div>
-          <div class="img-placeholder">Primary path: <code>taylor_maclaurin_pngs/05_cosh_maclaurin.png</code><br />Alternative path: <code>taylor_maclaurin_pngs/05_hyperbolic_cosine.png</code></div>
-          <div class="media-caption">Use this lower slot for the Maclaurin approximation plot about $x=0$ for Hyperbolic Cosine.</div>
-        </div>
-
-      </section>
-    
-      <section id="sec06" class="example-card">
-        <h3>6. Reciprocal Function</h3>
-        <p class="small-intro"><strong>Function.</strong> $f(x)=1/x$</p>
-        <div class="panel note">
-          <strong>Taylor series about $x=a$</strong><br />
+<p>Hyperbolic analogue of $\cos x$; only even powers appear in the Maclaurin case.</p>
+<div class="center-figure"><img alt="Taylor series plot for 5. Hyperbolic Cosine" data-fallback="taylor_about_a_pngs/05_cosh_x_about_a.png" onerror="this.onerror=null;this.src=this.dataset.fallback;" src="taylor_about_a_pngs/05_cosh_taylor.png"/><div class="figcaption"><strong>Taylor-series plot</strong> the Taylor approximation plot about $x=a$ for Hyperbolic Cosine. Primary file: taylor_about_a_pngs/05_cosh_taylor.png. Fallback file: taylor_about_a_pngs/05_cosh_x_about_a.png.</div></div>
+<div class="center-figure"><img alt="Maclaurin series plot for 5. Hyperbolic Cosine" data-fallback="taylor_maclaurin_pngs/05_hyperbolic_cosine.png" onerror="this.onerror=null;this.src=this.dataset.fallback;" src="taylor_maclaurin_pngs/05_cosh_maclaurin.png"/><div class="figcaption"><strong>Maclaurin-series plot</strong> the Maclaurin approximation plot about $x=0$ for Hyperbolic Cosine. Primary file: taylor_maclaurin_pngs/05_cosh_maclaurin.png. Fallback file: taylor_maclaurin_pngs/05_hyperbolic_cosine.png.</div></div>
+</section>
+<section class="example-card" id="sec06">
+<h3>6. Reciprocal Function</h3>
+<p class="small-intro"><strong>Function.</strong> $f(x)=1/x$</p>
+<div class="panel note">
+<strong>Taylor series about $x=a$</strong><br/>
           $$\frac{1}{x}=\frac{1}{a}-\frac{h}{a^2}+\frac{h^2}{a^3}-\frac{h^3}{a^4}+\frac{h^4}{a^5}-\frac{h^5}{a^6}+\frac{h^6}{a^7}+O(h^7),\qquad a\neq 0.$$
         </div>
-        <div class="panel">
-          <strong>Maclaurin series (Taylor at $a=0$)</strong><br />
+<div class="panel">
+<strong>Maclaurin series (Taylor at $a=0$)</strong><br/>
           $$\text{No Maclaurin series exists, because }1/x\text{ is not defined at }x=0.$$
         </div>
-        <p>A Taylor series exists around any nonzero center $a$, but not around the origin.</p>
-        <div class="media-wrap">
-          <div class="media-label">Taylor-series PNG placeholder</div>
-          <div class="img-placeholder">Primary path: <code>taylor_about_a_pngs/06_reciprocal_taylor.png</code><br />Alternative path: <code>taylor_about_a_pngs/06_one_over_x_about_a.png</code></div>
-          <div class="media-caption">Use this upper slot for the Taylor approximation plot about $x=a$ for Reciprocal Function.</div>
+<p>A Taylor series exists around any nonzero center $a$, but not around the origin.</p>
+<div class="center-figure"><img alt="Taylor series plot for 6. Reciprocal Function" data-fallback="taylor_about_a_pngs/06_one_over_x_about_a.png" onerror="this.onerror=null;this.src=this.dataset.fallback;" src="taylor_about_a_pngs/06_reciprocal_taylor.png"/><div class="figcaption"><strong>Taylor-series plot</strong> the Taylor approximation plot about $x=a$ for Reciprocal Function. Primary file: taylor_about_a_pngs/06_reciprocal_taylor.png. Fallback file: taylor_about_a_pngs/06_one_over_x_about_a.png.</div></div>
+<div class="center-figure"><img alt="Maclaurin series plot for 6. Reciprocal Function" data-fallback="taylor_maclaurin_pngs/06_reciprocal_function.png" onerror="this.onerror=null;this.src=this.dataset.fallback;" src="taylor_maclaurin_pngs/06_reciprocal_maclaurin.png"/><div class="figcaption"><strong>Maclaurin-series plot</strong> the Maclaurin approximation plot about $x=0$ for Reciprocal Function. Primary file: taylor_maclaurin_pngs/06_reciprocal_maclaurin.png. Fallback file: taylor_maclaurin_pngs/06_reciprocal_function.png.</div></div>
+</section>
+<section class="example-card" id="sec07">
+<h3>7. Natural Logarithm</h3>
+<p class="small-intro"><strong>Function.</strong> $f(x)=\ln x$</p>
+<div class="panel note">
+<strong>Taylor series about $x=a$</strong><br/>
+          $$\ln x=\ln a+\frac{h}{a}-\frac{h^2}{2a^2}+\frac{h^3}{3a^3}-\frac{h^4}{4a^4}+\frac{h^5}{5a^5}-\frac{h^6}{6a^6}+O(h^7),\qquad a&gt;0.$$
         </div>
-
-        <div class="media-wrap">
-          <div class="media-label">Maclaurin-series PNG placeholder</div>
-          <div class="img-placeholder">Primary path: <code>taylor_maclaurin_pngs/06_reciprocal_maclaurin.png</code><br />Alternative path: <code>taylor_maclaurin_pngs/06_reciprocal_function.png</code></div>
-          <div class="media-caption">Use this lower slot for the Maclaurin approximation plot about $x=0$ for Reciprocal Function.</div>
-        </div>
-
-      </section>
-    
-      <section id="sec07" class="example-card">
-        <h3>7. Natural Logarithm</h3>
-        <p class="small-intro"><strong>Function.</strong> $f(x)=\ln x$</p>
-        <div class="panel note">
-          <strong>Taylor series about $x=a$</strong><br />
-          $$\ln x=\ln a+\frac{h}{a}-\frac{h^2}{2a^2}+\frac{h^3}{3a^3}-\frac{h^4}{4a^4}+\frac{h^5}{5a^5}-\frac{h^6}{6a^6}+O(h^7),\qquad a>0.$$
-        </div>
-        <div class="panel">
-          <strong>Maclaurin series (Taylor at $a=0$)</strong><br />
+<div class="panel">
+<strong>Maclaurin series (Taylor at $a=0$)</strong><br/>
           $$\text{No Maclaurin series exists, because }\ln x\text{ is not defined at }x=0.$$
         </div>
-        <p>Another example showing that Maclaurin is more restrictive than general Taylor expansion.</p>
-        <div class="media-wrap">
-          <div class="media-label">Taylor-series PNG placeholder</div>
-          <div class="img-placeholder">Primary path: <code>taylor_about_a_pngs/07_logarithm_taylor.png</code><br />Alternative path: <code>taylor_about_a_pngs/07_ln_x_about_a.png</code></div>
-          <div class="media-caption">Use this upper slot for the Taylor approximation plot about $x=a$ for Natural Logarithm.</div>
-        </div>
-
-        <div class="media-wrap">
-          <div class="media-label">Maclaurin-series PNG placeholder</div>
-          <div class="img-placeholder">Primary path: <code>taylor_maclaurin_pngs/07_logarithm_maclaurin.png</code><br />Alternative path: <code>taylor_maclaurin_pngs/07_natural_logarithm.png</code></div>
-          <div class="media-caption">Use this lower slot for the Maclaurin approximation plot about $x=0$ for Natural Logarithm.</div>
-        </div>
-
-      </section>
-    
-      <section id="sec08" class="example-card">
-        <h3>8. Geometric Kernel</h3>
-        <p class="small-intro"><strong>Function.</strong> $f(x)=1/(1-x)$</p>
-        <div class="panel note">
-          <strong>Taylor series about $x=a$</strong><br />
+<p>Another example showing that Maclaurin is more restrictive than general Taylor expansion.</p>
+<div class="center-figure"><img alt="Taylor series plot for 7. Natural Logarithm" data-fallback="taylor_about_a_pngs/07_ln_x_about_a.png" onerror="this.onerror=null;this.src=this.dataset.fallback;" src="taylor_about_a_pngs/07_logarithm_taylor.png"/><div class="figcaption"><strong>Taylor-series plot</strong> the Taylor approximation plot about $x=a$ for Natural Logarithm. Primary file: taylor_about_a_pngs/07_logarithm_taylor.png. Fallback file: taylor_about_a_pngs/07_ln_x_about_a.png.</div></div>
+<div class="center-figure"><img alt="Maclaurin series plot for 7. Natural Logarithm" data-fallback="taylor_maclaurin_pngs/07_natural_logarithm.png" onerror="this.onerror=null;this.src=this.dataset.fallback;" src="taylor_maclaurin_pngs/07_logarithm_maclaurin.png"/><div class="figcaption"><strong>Maclaurin-series plot</strong> the Maclaurin approximation plot about $x=0$ for Natural Logarithm. Primary file: taylor_maclaurin_pngs/07_logarithm_maclaurin.png. Fallback file: taylor_maclaurin_pngs/07_natural_logarithm.png.</div></div>
+</section>
+<section class="example-card" id="sec08">
+<h3>8. Geometric Kernel</h3>
+<p class="small-intro"><strong>Function.</strong> $f(x)=1/(1-x)$</p>
+<div class="panel note">
+<strong>Taylor series about $x=a$</strong><br/>
           $$\frac{1}{1-x}=\frac{1}{1-a}+\frac{h}{(1-a)^2}+\frac{h^2}{(1-a)^3}+\frac{h^3}{(1-a)^4}+\frac{h^4}{(1-a)^5}+\frac{h^5}{(1-a)^6}+\frac{h^6}{(1-a)^7}+O(h^7).$$
         </div>
-        <div class="panel">
-          <strong>Maclaurin series (Taylor at $a=0$)</strong><br />
+<div class="panel">
+<strong>Maclaurin series (Taylor at $a=0$)</strong><br/>
           $$\frac{1}{1-x}=1+x+x^2+x^3+x^4+x^5+x^6+O(x^7).$$
         </div>
-        <p>This is the standard geometric-series prototype.</p>
-        <div class="media-wrap">
-          <div class="media-label">Taylor-series PNG placeholder</div>
-          <div class="img-placeholder">Primary path: <code>taylor_about_a_pngs/08_geometric_minus_taylor.png</code><br />Alternative path: <code>taylor_about_a_pngs/08_one_over_1_minus_x_about_a.png</code></div>
-          <div class="media-caption">Use this upper slot for the Taylor approximation plot about $x=a$ for Geometric Kernel.</div>
-        </div>
-
-        <div class="media-wrap">
-          <div class="media-label">Maclaurin-series PNG placeholder</div>
-          <div class="img-placeholder">Primary path: <code>taylor_maclaurin_pngs/08_geometric_minus_maclaurin.png</code><br />Alternative path: <code>taylor_maclaurin_pngs/08_geometric_kernel.png</code></div>
-          <div class="media-caption">Use this lower slot for the Maclaurin approximation plot about $x=0$ for Geometric Kernel.</div>
-        </div>
-
-      </section>
-    
-      <section id="sec09" class="example-card">
-        <h3>9. Alternating Geometric Kernel</h3>
-        <p class="small-intro"><strong>Function.</strong> $f(x)=1/(1+x)$</p>
-        <div class="panel note">
-          <strong>Taylor series about $x=a$</strong><br />
+<p>This is the standard geometric-series prototype.</p>
+<div class="center-figure"><img alt="Taylor series plot for 8. Geometric Kernel" data-fallback="taylor_about_a_pngs/08_one_over_1_minus_x_about_a.png" onerror="this.onerror=null;this.src=this.dataset.fallback;" src="taylor_about_a_pngs/08_geometric_minus_taylor.png"/><div class="figcaption"><strong>Taylor-series plot</strong> the Taylor approximation plot about $x=a$ for Geometric Kernel. Primary file: taylor_about_a_pngs/08_geometric_minus_taylor.png. Fallback file: taylor_about_a_pngs/08_one_over_1_minus_x_about_a.png.</div></div>
+<div class="center-figure"><img alt="Maclaurin series plot for 8. Geometric Kernel" data-fallback="taylor_maclaurin_pngs/08_geometric_kernel.png" onerror="this.onerror=null;this.src=this.dataset.fallback;" src="taylor_maclaurin_pngs/08_geometric_minus_maclaurin.png"/><div class="figcaption"><strong>Maclaurin-series plot</strong> the Maclaurin approximation plot about $x=0$ for Geometric Kernel. Primary file: taylor_maclaurin_pngs/08_geometric_minus_maclaurin.png. Fallback file: taylor_maclaurin_pngs/08_geometric_kernel.png.</div></div>
+</section>
+<section class="example-card" id="sec09">
+<h3>9. Alternating Geometric Kernel</h3>
+<p class="small-intro"><strong>Function.</strong> $f(x)=1/(1+x)$</p>
+<div class="panel note">
+<strong>Taylor series about $x=a$</strong><br/>
           $$\frac{1}{1+x}=\frac{1}{1+a}-\frac{h}{(1+a)^2}+\frac{h^2}{(1+a)^3}-\frac{h^3}{(1+a)^4}+\frac{h^4}{(1+a)^5}-\frac{h^5}{(1+a)^6}+\frac{h^6}{(1+a)^7}+O(h^7).$$
         </div>
-        <div class="panel">
-          <strong>Maclaurin series (Taylor at $a=0$)</strong><br />
+<div class="panel">
+<strong>Maclaurin series (Taylor at $a=0$)</strong><br/>
           $$\frac{1}{1+x}=1-x+x^2-x^3+x^4-x^5+x^6+O(x^7).$$
         </div>
-        <p>Alternating signs appear because the denominator is $1+x$ rather than $1-x$.</p>
-        <div class="media-wrap">
-          <div class="media-label">Taylor-series PNG placeholder</div>
-          <div class="img-placeholder">Primary path: <code>taylor_about_a_pngs/09_geometric_plus_taylor.png</code><br />Alternative path: <code>taylor_about_a_pngs/09_one_over_1_plus_x_about_a.png</code></div>
-          <div class="media-caption">Use this upper slot for the Taylor approximation plot about $x=a$ for Alternating Geometric Kernel.</div>
-        </div>
-
-        <div class="media-wrap">
-          <div class="media-label">Maclaurin-series PNG placeholder</div>
-          <div class="img-placeholder">Primary path: <code>taylor_maclaurin_pngs/09_geometric_plus_maclaurin.png</code><br />Alternative path: <code>taylor_maclaurin_pngs/09_alternating_geometric_kernel.png</code></div>
-          <div class="media-caption">Use this lower slot for the Maclaurin approximation plot about $x=0$ for Alternating Geometric Kernel.</div>
-        </div>
-
-      </section>
-    
-      <section id="sec10" class="example-card">
-        <h3>10. Squared Geometric Kernel</h3>
-        <p class="small-intro"><strong>Function.</strong> $f(x)=1/(1-x)^2$</p>
-        <div class="panel note">
-          <strong>Taylor series about $x=a$</strong><br />
+<p>Alternating signs appear because the denominator is $1+x$ rather than $1-x$.</p>
+<div class="center-figure"><img alt="Taylor series plot for 9. Alternating Geometric Kernel" data-fallback="taylor_about_a_pngs/09_one_over_1_plus_x_about_a.png" onerror="this.onerror=null;this.src=this.dataset.fallback;" src="taylor_about_a_pngs/09_geometric_plus_taylor.png"/><div class="figcaption"><strong>Taylor-series plot</strong> the Taylor approximation plot about $x=a$ for Alternating Geometric Kernel. Primary file: taylor_about_a_pngs/09_geometric_plus_taylor.png. Fallback file: taylor_about_a_pngs/09_one_over_1_plus_x_about_a.png.</div></div>
+<div class="center-figure"><img alt="Maclaurin series plot for 9. Alternating Geometric Kernel" data-fallback="taylor_maclaurin_pngs/09_alternating_geometric_kernel.png" onerror="this.onerror=null;this.src=this.dataset.fallback;" src="taylor_maclaurin_pngs/09_geometric_plus_maclaurin.png"/><div class="figcaption"><strong>Maclaurin-series plot</strong> the Maclaurin approximation plot about $x=0$ for Alternating Geometric Kernel. Primary file: taylor_maclaurin_pngs/09_geometric_plus_maclaurin.png. Fallback file: taylor_maclaurin_pngs/09_alternating_geometric_kernel.png.</div></div>
+</section>
+<section class="example-card" id="sec10">
+<h3>10. Squared Geometric Kernel</h3>
+<p class="small-intro"><strong>Function.</strong> $f(x)=1/(1-x)^2$</p>
+<div class="panel note">
+<strong>Taylor series about $x=a$</strong><br/>
           $$\frac{1}{(1-x)^2}=\frac{1}{(1-a)^2}+\frac{2h}{(1-a)^3}+\frac{3h^2}{(1-a)^4}+\frac{4h^3}{(1-a)^5}+\frac{5h^4}{(1-a)^6}+\frac{6h^5}{(1-a)^7}+\frac{7h^6}{(1-a)^8}+O(h^7).$$
         </div>
-        <div class="panel">
-          <strong>Maclaurin series (Taylor at $a=0$)</strong><br />
+<div class="panel">
+<strong>Maclaurin series (Taylor at $a=0$)</strong><br/>
           $$\frac{1}{(1-x)^2}=1+2x+3x^2+4x^3+5x^4+6x^5+7x^6+O(x^7).$$
         </div>
-        <p>Differentiating the geometric series produces the coefficients $1,2,3,\dots$.</p>
-        <div class="media-wrap">
-          <div class="media-label">Taylor-series PNG placeholder</div>
-          <div class="img-placeholder">Primary path: <code>taylor_about_a_pngs/10_squared_geometric_minus_taylor.png</code><br />Alternative path: <code>taylor_about_a_pngs/10_one_over_1_minus_x2_about_a.png</code></div>
-          <div class="media-caption">Use this upper slot for the Taylor approximation plot about $x=a$ for Squared Geometric Kernel.</div>
-        </div>
-
-        <div class="media-wrap">
-          <div class="media-label">Maclaurin-series PNG placeholder</div>
-          <div class="img-placeholder">Primary path: <code>taylor_maclaurin_pngs/10_squared_geometric_minus_maclaurin.png</code><br />Alternative path: <code>taylor_maclaurin_pngs/10_squared_geometric_kernel.png</code></div>
-          <div class="media-caption">Use this lower slot for the Maclaurin approximation plot about $x=0$ for Squared Geometric Kernel.</div>
-        </div>
-
-      </section>
-    
-      <section id="sec11" class="example-card">
-        <h3>11. Squared Alternating Kernel</h3>
-        <p class="small-intro"><strong>Function.</strong> $f(x)=1/(1+x)^2$</p>
-        <div class="panel note">
-          <strong>Taylor series about $x=a$</strong><br />
+<p>Differentiating the geometric series produces the coefficients $1,2,3,\dots$.</p>
+<div class="center-figure"><img alt="Taylor series plot for 10. Squared Geometric Kernel" data-fallback="taylor_about_a_pngs/10_one_over_1_minus_x2_about_a.png" onerror="this.onerror=null;this.src=this.dataset.fallback;" src="taylor_about_a_pngs/10_squared_geometric_minus_taylor.png"/><div class="figcaption"><strong>Taylor-series plot</strong> the Taylor approximation plot about $x=a$ for Squared Geometric Kernel. Primary file: taylor_about_a_pngs/10_squared_geometric_minus_taylor.png. Fallback file: taylor_about_a_pngs/10_one_over_1_minus_x2_about_a.png.</div></div>
+<div class="center-figure"><img alt="Maclaurin series plot for 10. Squared Geometric Kernel" data-fallback="taylor_maclaurin_pngs/10_squared_geometric_kernel.png" onerror="this.onerror=null;this.src=this.dataset.fallback;" src="taylor_maclaurin_pngs/10_squared_geometric_minus_maclaurin.png"/><div class="figcaption"><strong>Maclaurin-series plot</strong> the Maclaurin approximation plot about $x=0$ for Squared Geometric Kernel. Primary file: taylor_maclaurin_pngs/10_squared_geometric_minus_maclaurin.png. Fallback file: taylor_maclaurin_pngs/10_squared_geometric_kernel.png.</div></div>
+</section>
+<section class="example-card" id="sec11">
+<h3>11. Squared Alternating Kernel</h3>
+<p class="small-intro"><strong>Function.</strong> $f(x)=1/(1+x)^2$</p>
+<div class="panel note">
+<strong>Taylor series about $x=a$</strong><br/>
           $$\frac{1}{(1+x)^2}=\frac{1}{(1+a)^2}-\frac{2h}{(1+a)^3}+\frac{3h^2}{(1+a)^4}-\frac{4h^3}{(1+a)^5}+\frac{5h^4}{(1+a)^6}-\frac{6h^5}{(1+a)^7}+\frac{7h^6}{(1+a)^8}+O(h^7).$$
         </div>
-        <div class="panel">
-          <strong>Maclaurin series (Taylor at $a=0$)</strong><br />
+<div class="panel">
+<strong>Maclaurin series (Taylor at $a=0$)</strong><br/>
           $$\frac{1}{(1+x)^2}=1-2x+3x^2-4x^3+5x^4-6x^5+7x^6+O(x^7).$$
         </div>
-        <p>The same linear coefficient pattern appears, but with alternating signs.</p>
-        <div class="media-wrap">
-          <div class="media-label">Taylor-series PNG placeholder</div>
-          <div class="img-placeholder">Primary path: <code>taylor_about_a_pngs/11_squared_geometric_plus_taylor.png</code><br />Alternative path: <code>taylor_about_a_pngs/11_one_over_1_plus_x2_about_a.png</code></div>
-          <div class="media-caption">Use this upper slot for the Taylor approximation plot about $x=a$ for Squared Alternating Kernel.</div>
-        </div>
-
-        <div class="media-wrap">
-          <div class="media-label">Maclaurin-series PNG placeholder</div>
-          <div class="img-placeholder">Primary path: <code>taylor_maclaurin_pngs/11_squared_geometric_plus_maclaurin.png</code><br />Alternative path: <code>taylor_maclaurin_pngs/11_squared_alternating_kernel.png</code></div>
-          <div class="media-caption">Use this lower slot for the Maclaurin approximation plot about $x=0$ for Squared Alternating Kernel.</div>
-        </div>
-
-      </section>
-    
-      <section id="sec12" class="example-card">
-        <h3>12. Rational Function $x/(1-x)$</h3>
-        <p class="small-intro"><strong>Function.</strong> $f(x)=x/(1-x)$</p>
-        <div class="panel note">
-          <strong>Taylor series about $x=a$</strong><br />
+<p>The same linear coefficient pattern appears, but with alternating signs.</p>
+<div class="center-figure"><img alt="Taylor series plot for 11. Squared Alternating Kernel" data-fallback="taylor_about_a_pngs/11_one_over_1_plus_x2_about_a.png" onerror="this.onerror=null;this.src=this.dataset.fallback;" src="taylor_about_a_pngs/11_squared_geometric_plus_taylor.png"/><div class="figcaption"><strong>Taylor-series plot</strong> the Taylor approximation plot about $x=a$ for Squared Alternating Kernel. Primary file: taylor_about_a_pngs/11_squared_geometric_plus_taylor.png. Fallback file: taylor_about_a_pngs/11_one_over_1_plus_x2_about_a.png.</div></div>
+<div class="center-figure"><img alt="Maclaurin series plot for 11. Squared Alternating Kernel" data-fallback="taylor_maclaurin_pngs/11_squared_alternating_kernel.png" onerror="this.onerror=null;this.src=this.dataset.fallback;" src="taylor_maclaurin_pngs/11_squared_geometric_plus_maclaurin.png"/><div class="figcaption"><strong>Maclaurin-series plot</strong> the Maclaurin approximation plot about $x=0$ for Squared Alternating Kernel. Primary file: taylor_maclaurin_pngs/11_squared_geometric_plus_maclaurin.png. Fallback file: taylor_maclaurin_pngs/11_squared_alternating_kernel.png.</div></div>
+</section>
+<section class="example-card" id="sec12">
+<h3>12. Rational Function $x/(1-x)$</h3>
+<p class="small-intro"><strong>Function.</strong> $f(x)=x/(1-x)$</p>
+<div class="panel note">
+<strong>Taylor series about $x=a$</strong><br/>
           $$\frac{x}{1-x}=\frac{a}{1-a}+\frac{h}{(1-a)^2}+\frac{h^2}{(1-a)^3}+\frac{h^3}{(1-a)^4}+\frac{h^4}{(1-a)^5}+\frac{h^5}{(1-a)^6}+\frac{h^6}{(1-a)^7}+O(h^7).$$
         </div>
-        <div class="panel">
-          <strong>Maclaurin series (Taylor at $a=0$)</strong><br />
+<div class="panel">
+<strong>Maclaurin series (Taylor at $a=0$)</strong><br/>
           $$\frac{x}{1-x}=x+x^2+x^3+x^4+x^5+x^6+x^7+O(x^8).$$
         </div>
-        <p>This is just the geometric series with one factor of $x$ in front.</p>
-        <div class="media-wrap">
-          <div class="media-label">Taylor-series PNG placeholder</div>
-          <div class="img-placeholder">Primary path: <code>taylor_about_a_pngs/12_x_over_1_minus_x_taylor.png</code><br />Alternative path: <code>taylor_about_a_pngs/12_x_over_1_minus_x_about_a.png</code></div>
-          <div class="media-caption">Use this upper slot for the Taylor approximation plot about $x=a$ for Rational Function $x/(1-x)$.</div>
-        </div>
-
-        <div class="media-wrap">
-          <div class="media-label">Maclaurin-series PNG placeholder</div>
-          <div class="img-placeholder">Primary path: <code>taylor_maclaurin_pngs/12_x_over_1_minus_x_maclaurin.png</code><br />Alternative path: <code>taylor_maclaurin_pngs/12_x_over_1_minus_x.png</code></div>
-          <div class="media-caption">Use this lower slot for the Maclaurin approximation plot about $x=0$ for Rational Function $x/(1-x)$.</div>
-        </div>
-
-      </section>
-    
-      <section id="sec13" class="example-card">
-        <h3>13. Rational Function $x/(1+x)$</h3>
-        <p class="small-intro"><strong>Function.</strong> $f(x)=x/(1+x)$</p>
-        <div class="panel note">
-          <strong>Taylor series about $x=a$</strong><br />
+<p>This is just the geometric series with one factor of $x$ in front.</p>
+<div class="center-figure"><img alt="Taylor series plot for 12. Rational Function $x/(1-x)$" data-fallback="taylor_about_a_pngs/12_x_over_1_minus_x_about_a.png" onerror="this.onerror=null;this.src=this.dataset.fallback;" src="taylor_about_a_pngs/12_x_over_1_minus_x_taylor.png"/><div class="figcaption"><strong>Taylor-series plot</strong> the Taylor approximation plot about $x=a$ for Rational Function $x/(1-x)$. Primary file: taylor_about_a_pngs/12_x_over_1_minus_x_taylor.png. Fallback file: taylor_about_a_pngs/12_x_over_1_minus_x_about_a.png.</div></div>
+<div class="center-figure"><img alt="Maclaurin series plot for 12. Rational Function $x/(1-x)$" data-fallback="taylor_maclaurin_pngs/12_x_over_1_minus_x.png" onerror="this.onerror=null;this.src=this.dataset.fallback;" src="taylor_maclaurin_pngs/12_x_over_1_minus_x_maclaurin.png"/><div class="figcaption"><strong>Maclaurin-series plot</strong> the Maclaurin approximation plot about $x=0$ for Rational Function $x/(1-x)$. Primary file: taylor_maclaurin_pngs/12_x_over_1_minus_x_maclaurin.png. Fallback file: taylor_maclaurin_pngs/12_x_over_1_minus_x.png.</div></div>
+</section>
+<section class="example-card" id="sec13">
+<h3>13. Rational Function $x/(1+x)$</h3>
+<p class="small-intro"><strong>Function.</strong> $f(x)=x/(1+x)$</p>
+<div class="panel note">
+<strong>Taylor series about $x=a$</strong><br/>
           $$\frac{x}{1+x}=\frac{a}{1+a}+\frac{h}{(1+a)^2}-\frac{h^2}{(1+a)^3}+\frac{h^3}{(1+a)^4}-\frac{h^4}{(1+a)^5}+\frac{h^5}{(1+a)^6}-\frac{h^6}{(1+a)^7}+O(h^7).$$
         </div>
-        <div class="panel">
-          <strong>Maclaurin series (Taylor at $a=0$)</strong><br />
+<div class="panel">
+<strong>Maclaurin series (Taylor at $a=0$)</strong><br/>
           $$\frac{x}{1+x}=x-x^2+x^3-x^4+x^5-x^6+x^7+O(x^8).$$
         </div>
-        <p>Again, the sign pattern flips because the denominator is $1+x$.</p>
-        <div class="media-wrap">
-          <div class="media-label">Taylor-series PNG placeholder</div>
-          <div class="img-placeholder">Primary path: <code>taylor_about_a_pngs/13_x_over_1_plus_x_taylor.png</code><br />Alternative path: <code>taylor_about_a_pngs/13_x_over_1_plus_x_about_a.png</code></div>
-          <div class="media-caption">Use this upper slot for the Taylor approximation plot about $x=a$ for Rational Function $x/(1+x)$.</div>
-        </div>
-
-        <div class="media-wrap">
-          <div class="media-label">Maclaurin-series PNG placeholder</div>
-          <div class="img-placeholder">Primary path: <code>taylor_maclaurin_pngs/13_x_over_1_plus_x_maclaurin.png</code><br />Alternative path: <code>taylor_maclaurin_pngs/13_x_over_1_plus_x.png</code></div>
-          <div class="media-caption">Use this lower slot for the Maclaurin approximation plot about $x=0$ for Rational Function $x/(1+x)$.</div>
-        </div>
-
-      </section>
-    
-      <section id="sec14" class="example-card">
-        <h3>14. Logarithm of $1+x$</h3>
-        <p class="small-intro"><strong>Function.</strong> $f(x)=\ln(1+x)$</p>
-        <div class="panel note">
-          <strong>Taylor series about $x=a$</strong><br />
+<p>Again, the sign pattern flips because the denominator is $1+x$.</p>
+<div class="center-figure"><img alt="Taylor series plot for 13. Rational Function $x/(1+x)$" data-fallback="taylor_about_a_pngs/13_x_over_1_plus_x_about_a.png" onerror="this.onerror=null;this.src=this.dataset.fallback;" src="taylor_about_a_pngs/13_x_over_1_plus_x_taylor.png"/><div class="figcaption"><strong>Taylor-series plot</strong> the Taylor approximation plot about $x=a$ for Rational Function $x/(1+x)$. Primary file: taylor_about_a_pngs/13_x_over_1_plus_x_taylor.png. Fallback file: taylor_about_a_pngs/13_x_over_1_plus_x_about_a.png.</div></div>
+<div class="center-figure"><img alt="Maclaurin series plot for 13. Rational Function $x/(1+x)$" data-fallback="taylor_maclaurin_pngs/13_x_over_1_plus_x.png" onerror="this.onerror=null;this.src=this.dataset.fallback;" src="taylor_maclaurin_pngs/13_x_over_1_plus_x_maclaurin.png"/><div class="figcaption"><strong>Maclaurin-series plot</strong> the Maclaurin approximation plot about $x=0$ for Rational Function $x/(1+x)$. Primary file: taylor_maclaurin_pngs/13_x_over_1_plus_x_maclaurin.png. Fallback file: taylor_maclaurin_pngs/13_x_over_1_plus_x.png.</div></div>
+</section>
+<section class="example-card" id="sec14">
+<h3>14. Logarithm of $1+x$</h3>
+<p class="small-intro"><strong>Function.</strong> $f(x)=\ln(1+x)$</p>
+<div class="panel note">
+<strong>Taylor series about $x=a$</strong><br/>
           $$\ln(1+x)=\ln(1+a)+\frac{h}{1+a}-\frac{h^2}{2(1+a)^2}+\frac{h^3}{3(1+a)^3}-\frac{h^4}{4(1+a)^4}+\frac{h^5}{5(1+a)^5}-\frac{h^6}{6(1+a)^6}+O(h^7).$$
         </div>
-        <div class="panel">
-          <strong>Maclaurin series (Taylor at $a=0$)</strong><br />
+<div class="panel">
+<strong>Maclaurin series (Taylor at $a=0$)</strong><br/>
           $$\ln(1+x)=x-\frac{x^2}{2}+\frac{x^3}{3}-\frac{x^4}{4}+\frac{x^5}{5}-\frac{x^6}{6}+\frac{x^7}{7}+O(x^8).$$
         </div>
-        <p>This is one of the most commonly used alternating power series in calculus.</p>
-        <div class="media-wrap">
-          <div class="media-label">Taylor-series PNG placeholder</div>
-          <div class="img-placeholder">Primary path: <code>taylor_about_a_pngs/14_log_1_plus_x_taylor.png</code><br />Alternative path: <code>taylor_about_a_pngs/14_ln_1_plus_x_about_a.png</code></div>
-          <div class="media-caption">Use this upper slot for the Taylor approximation plot about $x=a$ for Logarithm of $1+x$.</div>
-        </div>
-
-        <div class="media-wrap">
-          <div class="media-label">Maclaurin-series PNG placeholder</div>
-          <div class="img-placeholder">Primary path: <code>taylor_maclaurin_pngs/14_log_1_plus_x_maclaurin.png</code><br />Alternative path: <code>taylor_maclaurin_pngs/14_log_1_plus_x.png</code></div>
-          <div class="media-caption">Use this lower slot for the Maclaurin approximation plot about $x=0$ for Logarithm of $1+x$.</div>
-        </div>
-
-      </section>
-    
-      <section id="sec15" class="example-card">
-        <h3>15. Logarithm of $1-x$</h3>
-        <p class="small-intro"><strong>Function.</strong> $f(x)=\ln(1-x)$</p>
-        <div class="panel note">
-          <strong>Taylor series about $x=a$</strong><br />
+<p>This is one of the most commonly used alternating power series in calculus.</p>
+<div class="center-figure"><img alt="Taylor series plot for 14. Logarithm of $1+x$" data-fallback="taylor_about_a_pngs/14_ln_1_plus_x_about_a.png" onerror="this.onerror=null;this.src=this.dataset.fallback;" src="taylor_about_a_pngs/14_log_1_plus_x_taylor.png"/><div class="figcaption"><strong>Taylor-series plot</strong> the Taylor approximation plot about $x=a$ for Logarithm of $1+x$. Primary file: taylor_about_a_pngs/14_log_1_plus_x_taylor.png. Fallback file: taylor_about_a_pngs/14_ln_1_plus_x_about_a.png.</div></div>
+<div class="center-figure"><img alt="Maclaurin series plot for 14. Logarithm of $1+x$" data-fallback="taylor_maclaurin_pngs/14_log_1_plus_x.png" onerror="this.onerror=null;this.src=this.dataset.fallback;" src="taylor_maclaurin_pngs/14_log_1_plus_x_maclaurin.png"/><div class="figcaption"><strong>Maclaurin-series plot</strong> the Maclaurin approximation plot about $x=0$ for Logarithm of $1+x$. Primary file: taylor_maclaurin_pngs/14_log_1_plus_x_maclaurin.png. Fallback file: taylor_maclaurin_pngs/14_log_1_plus_x.png.</div></div>
+</section>
+<section class="example-card" id="sec15">
+<h3>15. Logarithm of $1-x$</h3>
+<p class="small-intro"><strong>Function.</strong> $f(x)=\ln(1-x)$</p>
+<div class="panel note">
+<strong>Taylor series about $x=a$</strong><br/>
           $$\ln(1-x)=\ln(1-a)-\frac{h}{1-a}-\frac{h^2}{2(1-a)^2}-\frac{h^3}{3(1-a)^3}-\frac{h^4}{4(1-a)^4}-\frac{h^5}{5(1-a)^5}-\frac{h^6}{6(1-a)^6}+O(h^7).$$
         </div>
-        <div class="panel">
-          <strong>Maclaurin series (Taylor at $a=0$)</strong><br />
+<div class="panel">
+<strong>Maclaurin series (Taylor at $a=0$)</strong><br/>
           $$\ln(1-x)=-x-\frac{x^2}{2}-\frac{x^3}{3}-\frac{x^4}{4}-\frac{x^5}{5}-\frac{x^6}{6}-\frac{x^7}{7}+O(x^8).$$
         </div>
-        <p>Here every displayed Maclaurin term is negative.</p>
-        <div class="media-wrap">
-          <div class="media-label">Taylor-series PNG placeholder</div>
-          <div class="img-placeholder">Primary path: <code>taylor_about_a_pngs/15_log_1_minus_x_taylor.png</code><br />Alternative path: <code>taylor_about_a_pngs/15_ln_1_minus_x_about_a.png</code></div>
-          <div class="media-caption">Use this upper slot for the Taylor approximation plot about $x=a$ for Logarithm of $1-x$.</div>
-        </div>
-
-        <div class="media-wrap">
-          <div class="media-label">Maclaurin-series PNG placeholder</div>
-          <div class="img-placeholder">Primary path: <code>taylor_maclaurin_pngs/15_log_1_minus_x_maclaurin.png</code><br />Alternative path: <code>taylor_maclaurin_pngs/15_log_1_minus_x.png</code></div>
-          <div class="media-caption">Use this lower slot for the Maclaurin approximation plot about $x=0$ for Logarithm of $1-x$.</div>
-        </div>
-
-      </section>
-    
-      <section id="sec16" class="example-card">
-        <h3>16. General Binomial Function</h3>
-        <p class="small-intro"><strong>Function.</strong> $f(x)=(1+x)^\alpha$</p>
-        <div class="panel note">
-          <strong>Taylor series about $x=a$</strong><br />
+<p>Here every displayed Maclaurin term is negative.</p>
+<div class="center-figure"><img alt="Taylor series plot for 15. Logarithm of $1-x$" data-fallback="taylor_about_a_pngs/15_ln_1_minus_x_about_a.png" onerror="this.onerror=null;this.src=this.dataset.fallback;" src="taylor_about_a_pngs/15_log_1_minus_x_taylor.png"/><div class="figcaption"><strong>Taylor-series plot</strong> the Taylor approximation plot about $x=a$ for Logarithm of $1-x$. Primary file: taylor_about_a_pngs/15_log_1_minus_x_taylor.png. Fallback file: taylor_about_a_pngs/15_ln_1_minus_x_about_a.png.</div></div>
+<div class="center-figure"><img alt="Maclaurin series plot for 15. Logarithm of $1-x$" data-fallback="taylor_maclaurin_pngs/15_log_1_minus_x.png" onerror="this.onerror=null;this.src=this.dataset.fallback;" src="taylor_maclaurin_pngs/15_log_1_minus_x_maclaurin.png"/><div class="figcaption"><strong>Maclaurin-series plot</strong> the Maclaurin approximation plot about $x=0$ for Logarithm of $1-x$. Primary file: taylor_maclaurin_pngs/15_log_1_minus_x_maclaurin.png. Fallback file: taylor_maclaurin_pngs/15_log_1_minus_x.png.</div></div>
+</section>
+<section class="example-card" id="sec16">
+<h3>16. General Binomial Function</h3>
+<p class="small-intro"><strong>Function.</strong> $f(x)=(1+x)^\alpha$</p>
+<div class="panel note">
+<strong>Taylor series about $x=a$</strong><br/>
           $$\begin{aligned}
-(1+x)^\alpha=(1+a)^\alpha\Bigg[&1+\frac{\alpha h}{1+a}
+(1+x)^\alpha=(1+a)^\alpha\Bigg[&amp;1+\frac{\alpha h}{1+a}
 +\frac{\alpha(\alpha-1)}{2!}\frac{h^2}{(1+a)^2}
 +\frac{\alpha(\alpha-1)(\alpha-2)}{3!}\frac{h^3}{(1+a)^3}\\[2pt]
-&+\frac{\alpha(\alpha-1)(\alpha-2)(\alpha-3)}{4!}\frac{h^4}{(1+a)^4}
+&amp;+\frac{\alpha(\alpha-1)(\alpha-2)(\alpha-3)}{4!}\frac{h^4}{(1+a)^4}
 +\frac{\alpha(\alpha-1)(\alpha-2)(\alpha-3)(\alpha-4)}{5!}\frac{h^5}{(1+a)^5}\\[2pt]
-&+\frac{\alpha(\alpha-1)(\alpha-2)(\alpha-3)(\alpha-4)(\alpha-5)}{6!}\frac{h^6}{(1+a)^6}\Bigg]
+&amp;+\frac{\alpha(\alpha-1)(\alpha-2)(\alpha-3)(\alpha-4)(\alpha-5)}{6!}\frac{h^6}{(1+a)^6}\Bigg]
 +O(h^7).
 \end{aligned}$$
         </div>
-        <div class="panel">
-          <strong>Maclaurin series (Taylor at $a=0$)</strong><br />
+<div class="panel">
+<strong>Maclaurin series (Taylor at $a=0$)</strong><br/>
           $$\begin{aligned}
-(1+x)^\alpha={}&1+\alpha x+\frac{\alpha(\alpha-1)}{2!}x^2+\frac{\alpha(\alpha-1)(\alpha-2)}{3!}x^3\\[2pt]
-&+\frac{\alpha(\alpha-1)(\alpha-2)(\alpha-3)}{4!}x^4
+(1+x)^\alpha={}&amp;1+\alpha x+\frac{\alpha(\alpha-1)}{2!}x^2+\frac{\alpha(\alpha-1)(\alpha-2)}{3!}x^3\\[2pt]
+&amp;+\frac{\alpha(\alpha-1)(\alpha-2)(\alpha-3)}{4!}x^4
 +\frac{\alpha(\alpha-1)(\alpha-2)(\alpha-3)(\alpha-4)}{5!}x^5\\[2pt]
-&+\frac{\alpha(\alpha-1)(\alpha-2)(\alpha-3)(\alpha-4)(\alpha-5)}{6!}x^6+O(x^7).
+&amp;+\frac{\alpha(\alpha-1)(\alpha-2)(\alpha-3)(\alpha-4)(\alpha-5)}{6!}x^6+O(x^7).
 \end{aligned}$$
         </div>
-        <p>Many other standard series are special cases of this one, such as square roots and inverse square roots.</p>
-        <div class="media-wrap">
-          <div class="media-label">Taylor-series PNG placeholder</div>
-          <div class="img-placeholder">Primary path: <code>taylor_about_a_pngs/16_binomial_alpha_taylor.png</code><br />Alternative path: <code>taylor_about_a_pngs/16_one_plus_x_alpha_about_a.png</code></div>
-          <div class="media-caption">Use this upper slot for the Taylor approximation plot about $x=a$ for General Binomial Function.</div>
-        </div>
-
-        <div class="media-wrap">
-          <div class="media-label">Maclaurin-series PNG placeholder</div>
-          <div class="img-placeholder">Primary path: <code>taylor_maclaurin_pngs/16_binomial_alpha_maclaurin.png</code><br />Alternative path: <code>taylor_maclaurin_pngs/16_general_binomial_function.png</code></div>
-          <div class="media-caption">Use this lower slot for the Maclaurin approximation plot about $x=0$ for General Binomial Function.</div>
-        </div>
-
-      </section>
-    
-      <section id="sec17" class="example-card">
-        <h3>17. Square Root</h3>
-        <p class="small-intro"><strong>Function.</strong> $f(x)=\sqrt{1+x}$</p>
-        <div class="panel note">
-          <strong>Taylor series about $x=a$</strong><br />
+<p>Many other standard series are special cases of this one, such as square roots and inverse square roots.</p>
+<div class="center-figure"><img alt="Taylor series plot for 16. General Binomial Function" data-fallback="taylor_about_a_pngs/16_one_plus_x_alpha_about_a.png" onerror="this.onerror=null;this.src=this.dataset.fallback;" src="taylor_about_a_pngs/16_binomial_alpha_taylor.png"/><div class="figcaption"><strong>Taylor-series plot</strong> the Taylor approximation plot about $x=a$ for General Binomial Function. Primary file: taylor_about_a_pngs/16_binomial_alpha_taylor.png. Fallback file: taylor_about_a_pngs/16_one_plus_x_alpha_about_a.png.</div></div>
+<div class="center-figure"><img alt="Maclaurin series plot for 16. General Binomial Function" data-fallback="taylor_maclaurin_pngs/16_general_binomial_function.png" onerror="this.onerror=null;this.src=this.dataset.fallback;" src="taylor_maclaurin_pngs/16_binomial_alpha_maclaurin.png"/><div class="figcaption"><strong>Maclaurin-series plot</strong> the Maclaurin approximation plot about $x=0$ for General Binomial Function. Primary file: taylor_maclaurin_pngs/16_binomial_alpha_maclaurin.png. Fallback file: taylor_maclaurin_pngs/16_general_binomial_function.png.</div></div>
+</section>
+<section class="example-card" id="sec17">
+<h3>17. Square Root</h3>
+<p class="small-intro"><strong>Function.</strong> $f(x)=\sqrt{1+x}$</p>
+<div class="panel note">
+<strong>Taylor series about $x=a$</strong><br/>
           $$\sqrt{1+x}=\sqrt{1+a}\left(1+\frac{h}{2(1+a)}-\frac{h^2}{8(1+a)^2}+\frac{h^3}{16(1+a)^3}-\frac{5h^4}{128(1+a)^4}+\frac{7h^5}{256(1+a)^5}-\frac{21h^6}{1024(1+a)^6}\right)+O(h^7).$$
         </div>
-        <div class="panel">
-          <strong>Maclaurin series (Taylor at $a=0$)</strong><br />
+<div class="panel">
+<strong>Maclaurin series (Taylor at $a=0$)</strong><br/>
           $$\sqrt{1+x}=1+\frac{x}{2}-\frac{x^2}{8}+\frac{x^3}{16}-\frac{5x^4}{128}+\frac{7x^5}{256}-\frac{21x^6}{1024}+O(x^7).$$
         </div>
-        <p>This is the binomial series with $\alpha=\tfrac12$.</p>
-        <div class="media-wrap">
-          <div class="media-label">Taylor-series PNG placeholder</div>
-          <div class="img-placeholder">Primary path: <code>taylor_about_a_pngs/17_sqrt_1_plus_x_taylor.png</code><br />Alternative path: <code>taylor_about_a_pngs/17_sqrt_1_plus_x_about_a.png</code></div>
-          <div class="media-caption">Use this upper slot for the Taylor approximation plot about $x=a$ for Square Root.</div>
-        </div>
-
-        <div class="media-wrap">
-          <div class="media-label">Maclaurin-series PNG placeholder</div>
-          <div class="img-placeholder">Primary path: <code>taylor_maclaurin_pngs/17_sqrt_1_plus_x_maclaurin.png</code><br />Alternative path: <code>taylor_maclaurin_pngs/17_square_root.png</code></div>
-          <div class="media-caption">Use this lower slot for the Maclaurin approximation plot about $x=0$ for Square Root.</div>
-        </div>
-
-      </section>
-    
-      <section id="sec18" class="example-card">
-        <h3>18. Inverse Square Root of $1-x$</h3>
-        <p class="small-intro"><strong>Function.</strong> $f(x)=1/\sqrt{1-x}$</p>
-        <div class="panel note">
-          <strong>Taylor series about $x=a$</strong><br />
+<p>This is the binomial series with $\alpha=\tfrac12$.</p>
+<div class="center-figure"><img alt="Taylor series plot for 17. Square Root" data-fallback="taylor_about_a_pngs/17_sqrt_1_plus_x_about_a.png" onerror="this.onerror=null;this.src=this.dataset.fallback;" src="taylor_about_a_pngs/17_sqrt_1_plus_x_taylor.png"/><div class="figcaption"><strong>Taylor-series plot</strong> the Taylor approximation plot about $x=a$ for Square Root. Primary file: taylor_about_a_pngs/17_sqrt_1_plus_x_taylor.png. Fallback file: taylor_about_a_pngs/17_sqrt_1_plus_x_about_a.png.</div></div>
+<div class="center-figure"><img alt="Maclaurin series plot for 17. Square Root" data-fallback="taylor_maclaurin_pngs/17_square_root.png" onerror="this.onerror=null;this.src=this.dataset.fallback;" src="taylor_maclaurin_pngs/17_sqrt_1_plus_x_maclaurin.png"/><div class="figcaption"><strong>Maclaurin-series plot</strong> the Maclaurin approximation plot about $x=0$ for Square Root. Primary file: taylor_maclaurin_pngs/17_sqrt_1_plus_x_maclaurin.png. Fallback file: taylor_maclaurin_pngs/17_square_root.png.</div></div>
+</section>
+<section class="example-card" id="sec18">
+<h3>18. Inverse Square Root of $1-x$</h3>
+<p class="small-intro"><strong>Function.</strong> $f(x)=1/\sqrt{1-x}$</p>
+<div class="panel note">
+<strong>Taylor series about $x=a$</strong><br/>
           $$\frac{1}{\sqrt{1-x}}=\frac{1}{\sqrt{1-a}}\left(1+\frac{h}{2(1-a)}+\frac{3h^2}{8(1-a)^2}+\frac{5h^3}{16(1-a)^3}+\frac{35h^4}{128(1-a)^4}+\frac{63h^5}{256(1-a)^5}+\frac{231h^6}{1024(1-a)^6}\right)+O(h^7).$$
         </div>
-        <div class="panel">
-          <strong>Maclaurin series (Taylor at $a=0$)</strong><br />
+<div class="panel">
+<strong>Maclaurin series (Taylor at $a=0$)</strong><br/>
           $$\frac{1}{\sqrt{1-x}}=1+\frac{x}{2}+\frac{3x^2}{8}+\frac{5x^3}{16}+\frac{35x^4}{128}+\frac{63x^5}{256}+\frac{231x^6}{1024}+O(x^7).$$
         </div>
-        <p>This is the binomial series with exponent $-\tfrac12$ applied to $1-x$.</p>
-        <div class="media-wrap">
-          <div class="media-label">Taylor-series PNG placeholder</div>
-          <div class="img-placeholder">Primary path: <code>taylor_about_a_pngs/18_inv_sqrt_1_minus_x_taylor.png</code><br />Alternative path: <code>taylor_about_a_pngs/18_inv_sqrt_1_minus_x_about_a.png</code></div>
-          <div class="media-caption">Use this upper slot for the Taylor approximation plot about $x=a$ for Inverse Square Root of $1-x$.</div>
-        </div>
-
-        <div class="media-wrap">
-          <div class="media-label">Maclaurin-series PNG placeholder</div>
-          <div class="img-placeholder">Primary path: <code>taylor_maclaurin_pngs/18_inv_sqrt_1_minus_x_maclaurin.png</code><br />Alternative path: <code>taylor_maclaurin_pngs/18_inverse_sqrt_1_minus_x.png</code></div>
-          <div class="media-caption">Use this lower slot for the Maclaurin approximation plot about $x=0$ for Inverse Square Root of $1-x$.</div>
-        </div>
-
-      </section>
-    
-      <section id="sec19" class="example-card">
-        <h3>19. Inverse Square Root of $1+x$</h3>
-        <p class="small-intro"><strong>Function.</strong> $f(x)=1/\sqrt{1+x}$</p>
-        <div class="panel note">
-          <strong>Taylor series about $x=a$</strong><br />
+<p>This is the binomial series with exponent $-\tfrac12$ applied to $1-x$.</p>
+<div class="center-figure"><img alt="Taylor series plot for 18. Inverse Square Root of $1-x$" data-fallback="taylor_about_a_pngs/18_inv_sqrt_1_minus_x_about_a.png" onerror="this.onerror=null;this.src=this.dataset.fallback;" src="taylor_about_a_pngs/18_inv_sqrt_1_minus_x_taylor.png"/><div class="figcaption"><strong>Taylor-series plot</strong> the Taylor approximation plot about $x=a$ for Inverse Square Root of $1-x$. Primary file: taylor_about_a_pngs/18_inv_sqrt_1_minus_x_taylor.png. Fallback file: taylor_about_a_pngs/18_inv_sqrt_1_minus_x_about_a.png.</div></div>
+<div class="center-figure"><img alt="Maclaurin series plot for 18. Inverse Square Root of $1-x$" data-fallback="taylor_maclaurin_pngs/18_inverse_sqrt_1_minus_x.png" onerror="this.onerror=null;this.src=this.dataset.fallback;" src="taylor_maclaurin_pngs/18_inv_sqrt_1_minus_x_maclaurin.png"/><div class="figcaption"><strong>Maclaurin-series plot</strong> the Maclaurin approximation plot about $x=0$ for Inverse Square Root of $1-x$. Primary file: taylor_maclaurin_pngs/18_inv_sqrt_1_minus_x_maclaurin.png. Fallback file: taylor_maclaurin_pngs/18_inverse_sqrt_1_minus_x.png.</div></div>
+</section>
+<section class="example-card" id="sec19">
+<h3>19. Inverse Square Root of $1+x$</h3>
+<p class="small-intro"><strong>Function.</strong> $f(x)=1/\sqrt{1+x}$</p>
+<div class="panel note">
+<strong>Taylor series about $x=a$</strong><br/>
           $$\frac{1}{\sqrt{1+x}}=\frac{1}{\sqrt{1+a}}\left(1-\frac{h}{2(1+a)}+\frac{3h^2}{8(1+a)^2}-\frac{5h^3}{16(1+a)^3}+\frac{35h^4}{128(1+a)^4}-\frac{63h^5}{256(1+a)^5}+\frac{231h^6}{1024(1+a)^6}\right)+O(h^7).$$
         </div>
-        <div class="panel">
-          <strong>Maclaurin series (Taylor at $a=0$)</strong><br />
+<div class="panel">
+<strong>Maclaurin series (Taylor at $a=0$)</strong><br/>
           $$\frac{1}{\sqrt{1+x}}=1-\frac{x}{2}+\frac{3x^2}{8}-\frac{5x^3}{16}+\frac{35x^4}{128}-\frac{63x^5}{256}+\frac{231x^6}{1024}+O(x^7).$$
         </div>
-        <p>The coefficients match the previous example but alternate in sign.</p>
-        <div class="media-wrap">
-          <div class="media-label">Taylor-series PNG placeholder</div>
-          <div class="img-placeholder">Primary path: <code>taylor_about_a_pngs/19_inv_sqrt_1_plus_x_taylor.png</code><br />Alternative path: <code>taylor_about_a_pngs/19_inv_sqrt_1_plus_x_about_a.png</code></div>
-          <div class="media-caption">Use this upper slot for the Taylor approximation plot about $x=a$ for Inverse Square Root of $1+x$.</div>
-        </div>
-
-        <div class="media-wrap">
-          <div class="media-label">Maclaurin-series PNG placeholder</div>
-          <div class="img-placeholder">Primary path: <code>taylor_maclaurin_pngs/19_inv_sqrt_1_plus_x_maclaurin.png</code><br />Alternative path: <code>taylor_maclaurin_pngs/19_inverse_sqrt_1_plus_x.png</code></div>
-          <div class="media-caption">Use this lower slot for the Maclaurin approximation plot about $x=0$ for Inverse Square Root of $1+x$.</div>
-        </div>
-
-      </section>
-    
-      <section id="sec20" class="example-card">
-        <h3>20. Arctangent</h3>
-        <p class="small-intro"><strong>Function.</strong> $f(x)=\arctan x$</p>
-        <div class="panel note">
-          <strong>Taylor series about $x=a$</strong><br />
+<p>The coefficients match the previous example but alternate in sign.</p>
+<div class="center-figure"><img alt="Taylor series plot for 19. Inverse Square Root of $1+x$" data-fallback="taylor_about_a_pngs/19_inv_sqrt_1_plus_x_about_a.png" onerror="this.onerror=null;this.src=this.dataset.fallback;" src="taylor_about_a_pngs/19_inv_sqrt_1_plus_x_taylor.png"/><div class="figcaption"><strong>Taylor-series plot</strong> the Taylor approximation plot about $x=a$ for Inverse Square Root of $1+x$. Primary file: taylor_about_a_pngs/19_inv_sqrt_1_plus_x_taylor.png. Fallback file: taylor_about_a_pngs/19_inv_sqrt_1_plus_x_about_a.png.</div></div>
+<div class="center-figure"><img alt="Maclaurin series plot for 19. Inverse Square Root of $1+x$" data-fallback="taylor_maclaurin_pngs/19_inverse_sqrt_1_plus_x.png" onerror="this.onerror=null;this.src=this.dataset.fallback;" src="taylor_maclaurin_pngs/19_inv_sqrt_1_plus_x_maclaurin.png"/><div class="figcaption"><strong>Maclaurin-series plot</strong> the Maclaurin approximation plot about $x=0$ for Inverse Square Root of $1+x$. Primary file: taylor_maclaurin_pngs/19_inv_sqrt_1_plus_x_maclaurin.png. Fallback file: taylor_maclaurin_pngs/19_inverse_sqrt_1_plus_x.png.</div></div>
+</section>
+<section class="example-card" id="sec20">
+<h3>20. Arctangent</h3>
+<p class="small-intro"><strong>Function.</strong> $f(x)=\arctan x$</p>
+<div class="panel note">
+<strong>Taylor series about $x=a$</strong><br/>
           $$\arctan x=\arctan a+\frac{h}{1+a^2}-\frac{a\,h^2}{(1+a^2)^2}+\frac{(3a^2-1)h^3}{3(1+a^2)^3}-\frac{a(a^2-1)h^4}{(1+a^2)^4}+\frac{(5a^4-10a^2+1)h^5}{5(1+a^2)^5}-\frac{a(a^2-3)(3a^2-1)h^6}{3(1+a^2)^6}+O(h^7).$$
         </div>
-        <div class="panel">
-          <strong>Maclaurin series (Taylor at $a=0$)</strong><br />
+<div class="panel">
+<strong>Maclaurin series (Taylor at $a=0$)</strong><br/>
           $$\arctan x=x-\frac{x^3}{3}+\frac{x^5}{5}-\frac{x^7}{7}+\frac{x^9}{9}-\frac{x^{11}}{11}+\frac{x^{13}}{13}+O(x^{15}).$$
         </div>
-        <p>Its Maclaurin series is alternating and uses only odd powers.</p>
-        <div class="media-wrap">
-          <div class="media-label">Taylor-series PNG placeholder</div>
-          <div class="img-placeholder">Primary path: <code>taylor_about_a_pngs/20_arctan_taylor.png</code><br />Alternative path: <code>taylor_about_a_pngs/20_arctan_x_about_a.png</code></div>
-          <div class="media-caption">Use this upper slot for the Taylor approximation plot about $x=a$ for Arctangent.</div>
-        </div>
-
-        <div class="media-wrap">
-          <div class="media-label">Maclaurin-series PNG placeholder</div>
-          <div class="img-placeholder">Primary path: <code>taylor_maclaurin_pngs/20_arctan_maclaurin.png</code><br />Alternative path: <code>taylor_maclaurin_pngs/20_arctangent.png</code></div>
-          <div class="media-caption">Use this lower slot for the Maclaurin approximation plot about $x=0$ for Arctangent.</div>
-        </div>
-
-      </section>
-    
-    </section>
-
-    <div class="footer-nav">
-      <a href="index.html">Home</a>
-      <span class="sep">|</span>
-      <a href="#top" onclick="window.scrollTo({top:0, behavior:'smooth'}); return false;">Back to top</a>
-    </div>
-  </div>
+<p>Its Maclaurin series is alternating and uses only odd powers.</p>
+<div class="center-figure"><img alt="Taylor series plot for 20. Arctangent" data-fallback="taylor_about_a_pngs/20_arctan_x_about_a.png" onerror="this.onerror=null;this.src=this.dataset.fallback;" src="taylor_about_a_pngs/20_arctan_taylor.png"/><div class="figcaption"><strong>Taylor-series plot</strong> the Taylor approximation plot about $x=a$ for Arctangent. Primary file: taylor_about_a_pngs/20_arctan_taylor.png. Fallback file: taylor_about_a_pngs/20_arctan_x_about_a.png.</div></div>
+<div class="center-figure"><img alt="Maclaurin series plot for 20. Arctangent" data-fallback="taylor_maclaurin_pngs/20_arctangent.png" onerror="this.onerror=null;this.src=this.dataset.fallback;" src="taylor_maclaurin_pngs/20_arctan_maclaurin.png"/><div class="figcaption"><strong>Maclaurin-series plot</strong> the Maclaurin approximation plot about $x=0$ for Arctangent. Primary file: taylor_maclaurin_pngs/20_arctan_maclaurin.png. Fallback file: taylor_maclaurin_pngs/20_arctangent.png.</div></div>
+</section>
+</section>
+<div class="footer-nav">
+<a href="index.html">Home</a>
+<span class="sep">|</span>
+<a href="#top" onclick="window.scrollTo({top:0, behavior:'smooth'}); return false;">Back to top</a>
+</div>
+</div>
 </body>
 </html>
