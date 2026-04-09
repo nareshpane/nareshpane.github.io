@@ -179,19 +179,6 @@
       border-radius: 18px;
     }
 
-    .dual-media-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .media-item {
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 12px;
-      background: #fffaf2;
-    }
-
     .media-label {
       font-size: 0.9rem;
       font-weight: 700;
@@ -270,10 +257,6 @@
       .mini-grid, .toc {
         grid-template-columns: 1fr;
         columns: 1;
-      }
-
-      .dual-media-grid {
-        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -400,32 +383,17 @@
         </div>
         <p>Entire function; both series converge for every real $x$.</p>
         <div class="media-wrap">
-
-          <div class="dual-media-grid">
-
-            <div class="media-item">
-
-              <div class="media-label">Taylor-series PNG placeholder</div>
-
-              <div class="img-placeholder">PNG placeholder: <code>taylor_about_a_pngs/01_exponential_taylor.png</code></div>
-
-              <div class="media-caption">Use this slot for the Taylor approximation plot about $x=a$ for Exponential Function.</div>
-
-            </div>
-
-            <div class="media-item">
-
-              <div class="media-label">Maclaurin-series PNG placeholder</div>
-
-              <div class="img-placeholder">PNG placeholder: <code>taylor_maclaurin_pngs/01_exponential_maclaurin.png</code></div>
-
-              <div class="media-caption">Use this slot for the Maclaurin approximation plot about $x=0$ for Exponential Function.</div>
-
-            </div>
-
-          </div>
-
+          <div class="media-label">Taylor-series PNG placeholder</div>
+          <div class="img-placeholder">Primary path: <code>taylor_about_a_pngs/01_exponential_taylor.png</code><br />Alternative path: <code>taylor_about_a_pngs/01_exp_x_about_a.png</code></div>
+          <div class="media-caption">Use this upper slot for the Taylor approximation plot about $x=a$ for Exponential Function.</div>
         </div>
+
+        <div class="media-wrap">
+          <div class="media-label">Maclaurin-series PNG placeholder</div>
+          <div class="img-placeholder">Primary path: <code>taylor_maclaurin_pngs/01_exponential_maclaurin.png</code><br />Alternative path: <code>taylor_maclaurin_pngs/01_exponential_function.png</code></div>
+          <div class="media-caption">Use this lower slot for the Maclaurin approximation plot about $x=0$ for Exponential Function.</div>
+        </div>
+
       </section>
     
       <section id="sec02" class="example-card">
@@ -441,32 +409,17 @@
         </div>
         <p>Odd function; the Maclaurin series contains only odd powers.</p>
         <div class="media-wrap">
-
-          <div class="dual-media-grid">
-
-            <div class="media-item">
-
-              <div class="media-label">Taylor-series PNG placeholder</div>
-
-              <div class="img-placeholder">PNG placeholder: <code>taylor_about_a_pngs/02_sine_taylor.png</code></div>
-
-              <div class="media-caption">Use this slot for the Taylor approximation plot about $x=a$ for Sine Function.</div>
-
-            </div>
-
-            <div class="media-item">
-
-              <div class="media-label">Maclaurin-series PNG placeholder</div>
-
-              <div class="img-placeholder">PNG placeholder: <code>taylor_maclaurin_pngs/02_sine_maclaurin.png</code></div>
-
-              <div class="media-caption">Use this slot for the Maclaurin approximation plot about $x=0$ for Sine Function.</div>
-
-            </div>
-
-          </div>
-
+          <div class="media-label">Taylor-series PNG placeholder</div>
+          <div class="img-placeholder">Primary path: <code>taylor_about_a_pngs/02_sine_taylor.png</code><br />Alternative path: <code>taylor_about_a_pngs/02_sin_x_about_a.png</code></div>
+          <div class="media-caption">Use this upper slot for the Taylor approximation plot about $x=a$ for Sine Function.</div>
         </div>
+
+        <div class="media-wrap">
+          <div class="media-label">Maclaurin-series PNG placeholder</div>
+          <div class="img-placeholder">Primary path: <code>taylor_maclaurin_pngs/02_sine_maclaurin.png</code><br />Alternative path: <code>taylor_maclaurin_pngs/02_sine_function.png</code></div>
+          <div class="media-caption">Use this lower slot for the Maclaurin approximation plot about $x=0$ for Sine Function.</div>
+        </div>
+
       </section>
     
       <section id="sec03" class="example-card">
@@ -482,32 +435,17 @@
         </div>
         <p>Even function; the Maclaurin series contains only even powers.</p>
         <div class="media-wrap">
-
-          <div class="dual-media-grid">
-
-            <div class="media-item">
-
-              <div class="media-label">Taylor-series PNG placeholder</div>
-
-              <div class="img-placeholder">PNG placeholder: <code>taylor_about_a_pngs/03_cosine_taylor.png</code></div>
-
-              <div class="media-caption">Use this slot for the Taylor approximation plot about $x=a$ for Cosine Function.</div>
-
-            </div>
-
-            <div class="media-item">
-
-              <div class="media-label">Maclaurin-series PNG placeholder</div>
-
-              <div class="img-placeholder">PNG placeholder: <code>taylor_maclaurin_pngs/03_cosine_maclaurin.png</code></div>
-
-              <div class="media-caption">Use this slot for the Maclaurin approximation plot about $x=0$ for Cosine Function.</div>
-
-            </div>
-
-          </div>
-
+          <div class="media-label">Taylor-series PNG placeholder</div>
+          <div class="img-placeholder">Primary path: <code>taylor_about_a_pngs/03_cosine_taylor.png</code><br />Alternative path: <code>taylor_about_a_pngs/03_cos_x_about_a.png</code></div>
+          <div class="media-caption">Use this upper slot for the Taylor approximation plot about $x=a$ for Cosine Function.</div>
         </div>
+
+        <div class="media-wrap">
+          <div class="media-label">Maclaurin-series PNG placeholder</div>
+          <div class="img-placeholder">Primary path: <code>taylor_maclaurin_pngs/03_cosine_maclaurin.png</code><br />Alternative path: <code>taylor_maclaurin_pngs/03_cosine_function.png</code></div>
+          <div class="media-caption">Use this lower slot for the Maclaurin approximation plot about $x=0$ for Cosine Function.</div>
+        </div>
+
       </section>
     
       <section id="sec04" class="example-card">
@@ -523,32 +461,17 @@
         </div>
         <p>Hyperbolic analogue of $\sin x$; only odd powers appear in the Maclaurin case.</p>
         <div class="media-wrap">
-
-          <div class="dual-media-grid">
-
-            <div class="media-item">
-
-              <div class="media-label">Taylor-series PNG placeholder</div>
-
-              <div class="img-placeholder">PNG placeholder: <code>taylor_about_a_pngs/04_sinh_taylor.png</code></div>
-
-              <div class="media-caption">Use this slot for the Taylor approximation plot about $x=a$ for Hyperbolic Sine.</div>
-
-            </div>
-
-            <div class="media-item">
-
-              <div class="media-label">Maclaurin-series PNG placeholder</div>
-
-              <div class="img-placeholder">PNG placeholder: <code>taylor_maclaurin_pngs/04_sinh_maclaurin.png</code></div>
-
-              <div class="media-caption">Use this slot for the Maclaurin approximation plot about $x=0$ for Hyperbolic Sine.</div>
-
-            </div>
-
-          </div>
-
+          <div class="media-label">Taylor-series PNG placeholder</div>
+          <div class="img-placeholder">Primary path: <code>taylor_about_a_pngs/04_sinh_taylor.png</code><br />Alternative path: <code>taylor_about_a_pngs/04_sinh_x_about_a.png</code></div>
+          <div class="media-caption">Use this upper slot for the Taylor approximation plot about $x=a$ for Hyperbolic Sine.</div>
         </div>
+
+        <div class="media-wrap">
+          <div class="media-label">Maclaurin-series PNG placeholder</div>
+          <div class="img-placeholder">Primary path: <code>taylor_maclaurin_pngs/04_sinh_maclaurin.png</code><br />Alternative path: <code>taylor_maclaurin_pngs/04_hyperbolic_sine.png</code></div>
+          <div class="media-caption">Use this lower slot for the Maclaurin approximation plot about $x=0$ for Hyperbolic Sine.</div>
+        </div>
+
       </section>
     
       <section id="sec05" class="example-card">
@@ -564,32 +487,17 @@
         </div>
         <p>Hyperbolic analogue of $\cos x$; only even powers appear in the Maclaurin case.</p>
         <div class="media-wrap">
-
-          <div class="dual-media-grid">
-
-            <div class="media-item">
-
-              <div class="media-label">Taylor-series PNG placeholder</div>
-
-              <div class="img-placeholder">PNG placeholder: <code>taylor_about_a_pngs/05_cosh_taylor.png</code></div>
-
-              <div class="media-caption">Use this slot for the Taylor approximation plot about $x=a$ for Hyperbolic Cosine.</div>
-
-            </div>
-
-            <div class="media-item">
-
-              <div class="media-label">Maclaurin-series PNG placeholder</div>
-
-              <div class="img-placeholder">PNG placeholder: <code>taylor_maclaurin_pngs/05_cosh_maclaurin.png</code></div>
-
-              <div class="media-caption">Use this slot for the Maclaurin approximation plot about $x=0$ for Hyperbolic Cosine.</div>
-
-            </div>
-
-          </div>
-
+          <div class="media-label">Taylor-series PNG placeholder</div>
+          <div class="img-placeholder">Primary path: <code>taylor_about_a_pngs/05_cosh_taylor.png</code><br />Alternative path: <code>taylor_about_a_pngs/05_cosh_x_about_a.png</code></div>
+          <div class="media-caption">Use this upper slot for the Taylor approximation plot about $x=a$ for Hyperbolic Cosine.</div>
         </div>
+
+        <div class="media-wrap">
+          <div class="media-label">Maclaurin-series PNG placeholder</div>
+          <div class="img-placeholder">Primary path: <code>taylor_maclaurin_pngs/05_cosh_maclaurin.png</code><br />Alternative path: <code>taylor_maclaurin_pngs/05_hyperbolic_cosine.png</code></div>
+          <div class="media-caption">Use this lower slot for the Maclaurin approximation plot about $x=0$ for Hyperbolic Cosine.</div>
+        </div>
+
       </section>
     
       <section id="sec06" class="example-card">
@@ -605,32 +513,17 @@
         </div>
         <p>A Taylor series exists around any nonzero center $a$, but not around the origin.</p>
         <div class="media-wrap">
-
-          <div class="dual-media-grid">
-
-            <div class="media-item">
-
-              <div class="media-label">Taylor-series PNG placeholder</div>
-
-              <div class="img-placeholder">PNG placeholder: <code>taylor_about_a_pngs/06_reciprocal_taylor.png</code></div>
-
-              <div class="media-caption">Use this slot for the Taylor approximation plot about $x=a$ for Reciprocal Function.</div>
-
-            </div>
-
-            <div class="media-item">
-
-              <div class="media-label">Maclaurin-series PNG placeholder</div>
-
-              <div class="img-placeholder">PNG placeholder: <code>taylor_maclaurin_pngs/06_reciprocal_maclaurin.png</code></div>
-
-              <div class="media-caption">Use this slot for the Maclaurin approximation plot about $x=0$ for Reciprocal Function.</div>
-
-            </div>
-
-          </div>
-
+          <div class="media-label">Taylor-series PNG placeholder</div>
+          <div class="img-placeholder">Primary path: <code>taylor_about_a_pngs/06_reciprocal_taylor.png</code><br />Alternative path: <code>taylor_about_a_pngs/06_one_over_x_about_a.png</code></div>
+          <div class="media-caption">Use this upper slot for the Taylor approximation plot about $x=a$ for Reciprocal Function.</div>
         </div>
+
+        <div class="media-wrap">
+          <div class="media-label">Maclaurin-series PNG placeholder</div>
+          <div class="img-placeholder">Primary path: <code>taylor_maclaurin_pngs/06_reciprocal_maclaurin.png</code><br />Alternative path: <code>taylor_maclaurin_pngs/06_reciprocal_function.png</code></div>
+          <div class="media-caption">Use this lower slot for the Maclaurin approximation plot about $x=0$ for Reciprocal Function.</div>
+        </div>
+
       </section>
     
       <section id="sec07" class="example-card">
@@ -646,32 +539,17 @@
         </div>
         <p>Another example showing that Maclaurin is more restrictive than general Taylor expansion.</p>
         <div class="media-wrap">
-
-          <div class="dual-media-grid">
-
-            <div class="media-item">
-
-              <div class="media-label">Taylor-series PNG placeholder</div>
-
-              <div class="img-placeholder">PNG placeholder: <code>taylor_about_a_pngs/07_logarithm_taylor.png</code></div>
-
-              <div class="media-caption">Use this slot for the Taylor approximation plot about $x=a$ for Natural Logarithm.</div>
-
-            </div>
-
-            <div class="media-item">
-
-              <div class="media-label">Maclaurin-series PNG placeholder</div>
-
-              <div class="img-placeholder">PNG placeholder: <code>taylor_maclaurin_pngs/07_logarithm_maclaurin.png</code></div>
-
-              <div class="media-caption">Use this slot for the Maclaurin approximation plot about $x=0$ for Natural Logarithm.</div>
-
-            </div>
-
-          </div>
-
+          <div class="media-label">Taylor-series PNG placeholder</div>
+          <div class="img-placeholder">Primary path: <code>taylor_about_a_pngs/07_logarithm_taylor.png</code><br />Alternative path: <code>taylor_about_a_pngs/07_ln_x_about_a.png</code></div>
+          <div class="media-caption">Use this upper slot for the Taylor approximation plot about $x=a$ for Natural Logarithm.</div>
         </div>
+
+        <div class="media-wrap">
+          <div class="media-label">Maclaurin-series PNG placeholder</div>
+          <div class="img-placeholder">Primary path: <code>taylor_maclaurin_pngs/07_logarithm_maclaurin.png</code><br />Alternative path: <code>taylor_maclaurin_pngs/07_natural_logarithm.png</code></div>
+          <div class="media-caption">Use this lower slot for the Maclaurin approximation plot about $x=0$ for Natural Logarithm.</div>
+        </div>
+
       </section>
     
       <section id="sec08" class="example-card">
@@ -687,32 +565,17 @@
         </div>
         <p>This is the standard geometric-series prototype.</p>
         <div class="media-wrap">
-
-          <div class="dual-media-grid">
-
-            <div class="media-item">
-
-              <div class="media-label">Taylor-series PNG placeholder</div>
-
-              <div class="img-placeholder">PNG placeholder: <code>taylor_about_a_pngs/08_geometric_minus_taylor.png</code></div>
-
-              <div class="media-caption">Use this slot for the Taylor approximation plot about $x=a$ for Geometric Kernel.</div>
-
-            </div>
-
-            <div class="media-item">
-
-              <div class="media-label">Maclaurin-series PNG placeholder</div>
-
-              <div class="img-placeholder">PNG placeholder: <code>taylor_maclaurin_pngs/08_geometric_minus_maclaurin.png</code></div>
-
-              <div class="media-caption">Use this slot for the Maclaurin approximation plot about $x=0$ for Geometric Kernel.</div>
-
-            </div>
-
-          </div>
-
+          <div class="media-label">Taylor-series PNG placeholder</div>
+          <div class="img-placeholder">Primary path: <code>taylor_about_a_pngs/08_geometric_minus_taylor.png</code><br />Alternative path: <code>taylor_about_a_pngs/08_one_over_1_minus_x_about_a.png</code></div>
+          <div class="media-caption">Use this upper slot for the Taylor approximation plot about $x=a$ for Geometric Kernel.</div>
         </div>
+
+        <div class="media-wrap">
+          <div class="media-label">Maclaurin-series PNG placeholder</div>
+          <div class="img-placeholder">Primary path: <code>taylor_maclaurin_pngs/08_geometric_minus_maclaurin.png</code><br />Alternative path: <code>taylor_maclaurin_pngs/08_geometric_kernel.png</code></div>
+          <div class="media-caption">Use this lower slot for the Maclaurin approximation plot about $x=0$ for Geometric Kernel.</div>
+        </div>
+
       </section>
     
       <section id="sec09" class="example-card">
@@ -728,32 +591,17 @@
         </div>
         <p>Alternating signs appear because the denominator is $1+x$ rather than $1-x$.</p>
         <div class="media-wrap">
-
-          <div class="dual-media-grid">
-
-            <div class="media-item">
-
-              <div class="media-label">Taylor-series PNG placeholder</div>
-
-              <div class="img-placeholder">PNG placeholder: <code>taylor_about_a_pngs/09_geometric_plus_taylor.png</code></div>
-
-              <div class="media-caption">Use this slot for the Taylor approximation plot about $x=a$ for Alternating Geometric Kernel.</div>
-
-            </div>
-
-            <div class="media-item">
-
-              <div class="media-label">Maclaurin-series PNG placeholder</div>
-
-              <div class="img-placeholder">PNG placeholder: <code>taylor_maclaurin_pngs/09_geometric_plus_maclaurin.png</code></div>
-
-              <div class="media-caption">Use this slot for the Maclaurin approximation plot about $x=0$ for Alternating Geometric Kernel.</div>
-
-            </div>
-
-          </div>
-
+          <div class="media-label">Taylor-series PNG placeholder</div>
+          <div class="img-placeholder">Primary path: <code>taylor_about_a_pngs/09_geometric_plus_taylor.png</code><br />Alternative path: <code>taylor_about_a_pngs/09_one_over_1_plus_x_about_a.png</code></div>
+          <div class="media-caption">Use this upper slot for the Taylor approximation plot about $x=a$ for Alternating Geometric Kernel.</div>
         </div>
+
+        <div class="media-wrap">
+          <div class="media-label">Maclaurin-series PNG placeholder</div>
+          <div class="img-placeholder">Primary path: <code>taylor_maclaurin_pngs/09_geometric_plus_maclaurin.png</code><br />Alternative path: <code>taylor_maclaurin_pngs/09_alternating_geometric_kernel.png</code></div>
+          <div class="media-caption">Use this lower slot for the Maclaurin approximation plot about $x=0$ for Alternating Geometric Kernel.</div>
+        </div>
+
       </section>
     
       <section id="sec10" class="example-card">
@@ -769,32 +617,17 @@
         </div>
         <p>Differentiating the geometric series produces the coefficients $1,2,3,\dots$.</p>
         <div class="media-wrap">
-
-          <div class="dual-media-grid">
-
-            <div class="media-item">
-
-              <div class="media-label">Taylor-series PNG placeholder</div>
-
-              <div class="img-placeholder">PNG placeholder: <code>taylor_about_a_pngs/10_squared_geometric_minus_taylor.png</code></div>
-
-              <div class="media-caption">Use this slot for the Taylor approximation plot about $x=a$ for Squared Geometric Kernel.</div>
-
-            </div>
-
-            <div class="media-item">
-
-              <div class="media-label">Maclaurin-series PNG placeholder</div>
-
-              <div class="img-placeholder">PNG placeholder: <code>taylor_maclaurin_pngs/10_squared_geometric_minus_maclaurin.png</code></div>
-
-              <div class="media-caption">Use this slot for the Maclaurin approximation plot about $x=0$ for Squared Geometric Kernel.</div>
-
-            </div>
-
-          </div>
-
+          <div class="media-label">Taylor-series PNG placeholder</div>
+          <div class="img-placeholder">Primary path: <code>taylor_about_a_pngs/10_squared_geometric_minus_taylor.png</code><br />Alternative path: <code>taylor_about_a_pngs/10_one_over_1_minus_x2_about_a.png</code></div>
+          <div class="media-caption">Use this upper slot for the Taylor approximation plot about $x=a$ for Squared Geometric Kernel.</div>
         </div>
+
+        <div class="media-wrap">
+          <div class="media-label">Maclaurin-series PNG placeholder</div>
+          <div class="img-placeholder">Primary path: <code>taylor_maclaurin_pngs/10_squared_geometric_minus_maclaurin.png</code><br />Alternative path: <code>taylor_maclaurin_pngs/10_squared_geometric_kernel.png</code></div>
+          <div class="media-caption">Use this lower slot for the Maclaurin approximation plot about $x=0$ for Squared Geometric Kernel.</div>
+        </div>
+
       </section>
     
       <section id="sec11" class="example-card">
@@ -810,32 +643,17 @@
         </div>
         <p>The same linear coefficient pattern appears, but with alternating signs.</p>
         <div class="media-wrap">
-
-          <div class="dual-media-grid">
-
-            <div class="media-item">
-
-              <div class="media-label">Taylor-series PNG placeholder</div>
-
-              <div class="img-placeholder">PNG placeholder: <code>taylor_about_a_pngs/11_squared_geometric_plus_taylor.png</code></div>
-
-              <div class="media-caption">Use this slot for the Taylor approximation plot about $x=a$ for Squared Alternating Kernel.</div>
-
-            </div>
-
-            <div class="media-item">
-
-              <div class="media-label">Maclaurin-series PNG placeholder</div>
-
-              <div class="img-placeholder">PNG placeholder: <code>taylor_maclaurin_pngs/11_squared_geometric_plus_maclaurin.png</code></div>
-
-              <div class="media-caption">Use this slot for the Maclaurin approximation plot about $x=0$ for Squared Alternating Kernel.</div>
-
-            </div>
-
-          </div>
-
+          <div class="media-label">Taylor-series PNG placeholder</div>
+          <div class="img-placeholder">Primary path: <code>taylor_about_a_pngs/11_squared_geometric_plus_taylor.png</code><br />Alternative path: <code>taylor_about_a_pngs/11_one_over_1_plus_x2_about_a.png</code></div>
+          <div class="media-caption">Use this upper slot for the Taylor approximation plot about $x=a$ for Squared Alternating Kernel.</div>
         </div>
+
+        <div class="media-wrap">
+          <div class="media-label">Maclaurin-series PNG placeholder</div>
+          <div class="img-placeholder">Primary path: <code>taylor_maclaurin_pngs/11_squared_geometric_plus_maclaurin.png</code><br />Alternative path: <code>taylor_maclaurin_pngs/11_squared_alternating_kernel.png</code></div>
+          <div class="media-caption">Use this lower slot for the Maclaurin approximation plot about $x=0$ for Squared Alternating Kernel.</div>
+        </div>
+
       </section>
     
       <section id="sec12" class="example-card">
@@ -851,32 +669,17 @@
         </div>
         <p>This is just the geometric series with one factor of $x$ in front.</p>
         <div class="media-wrap">
-
-          <div class="dual-media-grid">
-
-            <div class="media-item">
-
-              <div class="media-label">Taylor-series PNG placeholder</div>
-
-              <div class="img-placeholder">PNG placeholder: <code>taylor_about_a_pngs/12_x_over_1_minus_x_taylor.png</code></div>
-
-              <div class="media-caption">Use this slot for the Taylor approximation plot about $x=a$ for Rational Function $x/(1-x)$.</div>
-
-            </div>
-
-            <div class="media-item">
-
-              <div class="media-label">Maclaurin-series PNG placeholder</div>
-
-              <div class="img-placeholder">PNG placeholder: <code>taylor_maclaurin_pngs/12_x_over_1_minus_x_maclaurin.png</code></div>
-
-              <div class="media-caption">Use this slot for the Maclaurin approximation plot about $x=0$ for Rational Function $x/(1-x)$.</div>
-
-            </div>
-
-          </div>
-
+          <div class="media-label">Taylor-series PNG placeholder</div>
+          <div class="img-placeholder">Primary path: <code>taylor_about_a_pngs/12_x_over_1_minus_x_taylor.png</code><br />Alternative path: <code>taylor_about_a_pngs/12_x_over_1_minus_x_about_a.png</code></div>
+          <div class="media-caption">Use this upper slot for the Taylor approximation plot about $x=a$ for Rational Function $x/(1-x)$.</div>
         </div>
+
+        <div class="media-wrap">
+          <div class="media-label">Maclaurin-series PNG placeholder</div>
+          <div class="img-placeholder">Primary path: <code>taylor_maclaurin_pngs/12_x_over_1_minus_x_maclaurin.png</code><br />Alternative path: <code>taylor_maclaurin_pngs/12_x_over_1_minus_x.png</code></div>
+          <div class="media-caption">Use this lower slot for the Maclaurin approximation plot about $x=0$ for Rational Function $x/(1-x)$.</div>
+        </div>
+
       </section>
     
       <section id="sec13" class="example-card">
@@ -892,32 +695,17 @@
         </div>
         <p>Again, the sign pattern flips because the denominator is $1+x$.</p>
         <div class="media-wrap">
-
-          <div class="dual-media-grid">
-
-            <div class="media-item">
-
-              <div class="media-label">Taylor-series PNG placeholder</div>
-
-              <div class="img-placeholder">PNG placeholder: <code>taylor_about_a_pngs/13_x_over_1_plus_x_taylor.png</code></div>
-
-              <div class="media-caption">Use this slot for the Taylor approximation plot about $x=a$ for Rational Function $x/(1+x)$.</div>
-
-            </div>
-
-            <div class="media-item">
-
-              <div class="media-label">Maclaurin-series PNG placeholder</div>
-
-              <div class="img-placeholder">PNG placeholder: <code>taylor_maclaurin_pngs/13_x_over_1_plus_x_maclaurin.png</code></div>
-
-              <div class="media-caption">Use this slot for the Maclaurin approximation plot about $x=0$ for Rational Function $x/(1+x)$.</div>
-
-            </div>
-
-          </div>
-
+          <div class="media-label">Taylor-series PNG placeholder</div>
+          <div class="img-placeholder">Primary path: <code>taylor_about_a_pngs/13_x_over_1_plus_x_taylor.png</code><br />Alternative path: <code>taylor_about_a_pngs/13_x_over_1_plus_x_about_a.png</code></div>
+          <div class="media-caption">Use this upper slot for the Taylor approximation plot about $x=a$ for Rational Function $x/(1+x)$.</div>
         </div>
+
+        <div class="media-wrap">
+          <div class="media-label">Maclaurin-series PNG placeholder</div>
+          <div class="img-placeholder">Primary path: <code>taylor_maclaurin_pngs/13_x_over_1_plus_x_maclaurin.png</code><br />Alternative path: <code>taylor_maclaurin_pngs/13_x_over_1_plus_x.png</code></div>
+          <div class="media-caption">Use this lower slot for the Maclaurin approximation plot about $x=0$ for Rational Function $x/(1+x)$.</div>
+        </div>
+
       </section>
     
       <section id="sec14" class="example-card">
@@ -933,32 +721,17 @@
         </div>
         <p>This is one of the most commonly used alternating power series in calculus.</p>
         <div class="media-wrap">
-
-          <div class="dual-media-grid">
-
-            <div class="media-item">
-
-              <div class="media-label">Taylor-series PNG placeholder</div>
-
-              <div class="img-placeholder">PNG placeholder: <code>taylor_about_a_pngs/14_log_1_plus_x_taylor.png</code></div>
-
-              <div class="media-caption">Use this slot for the Taylor approximation plot about $x=a$ for Logarithm of $1+x$.</div>
-
-            </div>
-
-            <div class="media-item">
-
-              <div class="media-label">Maclaurin-series PNG placeholder</div>
-
-              <div class="img-placeholder">PNG placeholder: <code>taylor_maclaurin_pngs/14_log_1_plus_x_maclaurin.png</code></div>
-
-              <div class="media-caption">Use this slot for the Maclaurin approximation plot about $x=0$ for Logarithm of $1+x$.</div>
-
-            </div>
-
-          </div>
-
+          <div class="media-label">Taylor-series PNG placeholder</div>
+          <div class="img-placeholder">Primary path: <code>taylor_about_a_pngs/14_log_1_plus_x_taylor.png</code><br />Alternative path: <code>taylor_about_a_pngs/14_ln_1_plus_x_about_a.png</code></div>
+          <div class="media-caption">Use this upper slot for the Taylor approximation plot about $x=a$ for Logarithm of $1+x$.</div>
         </div>
+
+        <div class="media-wrap">
+          <div class="media-label">Maclaurin-series PNG placeholder</div>
+          <div class="img-placeholder">Primary path: <code>taylor_maclaurin_pngs/14_log_1_plus_x_maclaurin.png</code><br />Alternative path: <code>taylor_maclaurin_pngs/14_log_1_plus_x.png</code></div>
+          <div class="media-caption">Use this lower slot for the Maclaurin approximation plot about $x=0$ for Logarithm of $1+x$.</div>
+        </div>
+
       </section>
     
       <section id="sec15" class="example-card">
@@ -974,32 +747,17 @@
         </div>
         <p>Here every displayed Maclaurin term is negative.</p>
         <div class="media-wrap">
-
-          <div class="dual-media-grid">
-
-            <div class="media-item">
-
-              <div class="media-label">Taylor-series PNG placeholder</div>
-
-              <div class="img-placeholder">PNG placeholder: <code>taylor_about_a_pngs/15_log_1_minus_x_taylor.png</code></div>
-
-              <div class="media-caption">Use this slot for the Taylor approximation plot about $x=a$ for Logarithm of $1-x$.</div>
-
-            </div>
-
-            <div class="media-item">
-
-              <div class="media-label">Maclaurin-series PNG placeholder</div>
-
-              <div class="img-placeholder">PNG placeholder: <code>taylor_maclaurin_pngs/15_log_1_minus_x_maclaurin.png</code></div>
-
-              <div class="media-caption">Use this slot for the Maclaurin approximation plot about $x=0$ for Logarithm of $1-x$.</div>
-
-            </div>
-
-          </div>
-
+          <div class="media-label">Taylor-series PNG placeholder</div>
+          <div class="img-placeholder">Primary path: <code>taylor_about_a_pngs/15_log_1_minus_x_taylor.png</code><br />Alternative path: <code>taylor_about_a_pngs/15_ln_1_minus_x_about_a.png</code></div>
+          <div class="media-caption">Use this upper slot for the Taylor approximation plot about $x=a$ for Logarithm of $1-x$.</div>
         </div>
+
+        <div class="media-wrap">
+          <div class="media-label">Maclaurin-series PNG placeholder</div>
+          <div class="img-placeholder">Primary path: <code>taylor_maclaurin_pngs/15_log_1_minus_x_maclaurin.png</code><br />Alternative path: <code>taylor_maclaurin_pngs/15_log_1_minus_x.png</code></div>
+          <div class="media-caption">Use this lower slot for the Maclaurin approximation plot about $x=0$ for Logarithm of $1-x$.</div>
+        </div>
+
       </section>
     
       <section id="sec16" class="example-card">
@@ -1028,32 +786,17 @@
         </div>
         <p>Many other standard series are special cases of this one, such as square roots and inverse square roots.</p>
         <div class="media-wrap">
-
-          <div class="dual-media-grid">
-
-            <div class="media-item">
-
-              <div class="media-label">Taylor-series PNG placeholder</div>
-
-              <div class="img-placeholder">PNG placeholder: <code>taylor_about_a_pngs/16_binomial_alpha_taylor.png</code></div>
-
-              <div class="media-caption">Use this slot for the Taylor approximation plot about $x=a$ for General Binomial Function.</div>
-
-            </div>
-
-            <div class="media-item">
-
-              <div class="media-label">Maclaurin-series PNG placeholder</div>
-
-              <div class="img-placeholder">PNG placeholder: <code>taylor_maclaurin_pngs/16_binomial_alpha_maclaurin.png</code></div>
-
-              <div class="media-caption">Use this slot for the Maclaurin approximation plot about $x=0$ for General Binomial Function.</div>
-
-            </div>
-
-          </div>
-
+          <div class="media-label">Taylor-series PNG placeholder</div>
+          <div class="img-placeholder">Primary path: <code>taylor_about_a_pngs/16_binomial_alpha_taylor.png</code><br />Alternative path: <code>taylor_about_a_pngs/16_one_plus_x_alpha_about_a.png</code></div>
+          <div class="media-caption">Use this upper slot for the Taylor approximation plot about $x=a$ for General Binomial Function.</div>
         </div>
+
+        <div class="media-wrap">
+          <div class="media-label">Maclaurin-series PNG placeholder</div>
+          <div class="img-placeholder">Primary path: <code>taylor_maclaurin_pngs/16_binomial_alpha_maclaurin.png</code><br />Alternative path: <code>taylor_maclaurin_pngs/16_general_binomial_function.png</code></div>
+          <div class="media-caption">Use this lower slot for the Maclaurin approximation plot about $x=0$ for General Binomial Function.</div>
+        </div>
+
       </section>
     
       <section id="sec17" class="example-card">
@@ -1069,32 +812,17 @@
         </div>
         <p>This is the binomial series with $\alpha=\tfrac12$.</p>
         <div class="media-wrap">
-
-          <div class="dual-media-grid">
-
-            <div class="media-item">
-
-              <div class="media-label">Taylor-series PNG placeholder</div>
-
-              <div class="img-placeholder">PNG placeholder: <code>taylor_about_a_pngs/17_sqrt_1_plus_x_taylor.png</code></div>
-
-              <div class="media-caption">Use this slot for the Taylor approximation plot about $x=a$ for Square Root.</div>
-
-            </div>
-
-            <div class="media-item">
-
-              <div class="media-label">Maclaurin-series PNG placeholder</div>
-
-              <div class="img-placeholder">PNG placeholder: <code>taylor_maclaurin_pngs/17_sqrt_1_plus_x_maclaurin.png</code></div>
-
-              <div class="media-caption">Use this slot for the Maclaurin approximation plot about $x=0$ for Square Root.</div>
-
-            </div>
-
-          </div>
-
+          <div class="media-label">Taylor-series PNG placeholder</div>
+          <div class="img-placeholder">Primary path: <code>taylor_about_a_pngs/17_sqrt_1_plus_x_taylor.png</code><br />Alternative path: <code>taylor_about_a_pngs/17_sqrt_1_plus_x_about_a.png</code></div>
+          <div class="media-caption">Use this upper slot for the Taylor approximation plot about $x=a$ for Square Root.</div>
         </div>
+
+        <div class="media-wrap">
+          <div class="media-label">Maclaurin-series PNG placeholder</div>
+          <div class="img-placeholder">Primary path: <code>taylor_maclaurin_pngs/17_sqrt_1_plus_x_maclaurin.png</code><br />Alternative path: <code>taylor_maclaurin_pngs/17_square_root.png</code></div>
+          <div class="media-caption">Use this lower slot for the Maclaurin approximation plot about $x=0$ for Square Root.</div>
+        </div>
+
       </section>
     
       <section id="sec18" class="example-card">
@@ -1110,32 +838,17 @@
         </div>
         <p>This is the binomial series with exponent $-\tfrac12$ applied to $1-x$.</p>
         <div class="media-wrap">
-
-          <div class="dual-media-grid">
-
-            <div class="media-item">
-
-              <div class="media-label">Taylor-series PNG placeholder</div>
-
-              <div class="img-placeholder">PNG placeholder: <code>taylor_about_a_pngs/18_inv_sqrt_1_minus_x_taylor.png</code></div>
-
-              <div class="media-caption">Use this slot for the Taylor approximation plot about $x=a$ for Inverse Square Root of $1-x$.</div>
-
-            </div>
-
-            <div class="media-item">
-
-              <div class="media-label">Maclaurin-series PNG placeholder</div>
-
-              <div class="img-placeholder">PNG placeholder: <code>taylor_maclaurin_pngs/18_inv_sqrt_1_minus_x_maclaurin.png</code></div>
-
-              <div class="media-caption">Use this slot for the Maclaurin approximation plot about $x=0$ for Inverse Square Root of $1-x$.</div>
-
-            </div>
-
-          </div>
-
+          <div class="media-label">Taylor-series PNG placeholder</div>
+          <div class="img-placeholder">Primary path: <code>taylor_about_a_pngs/18_inv_sqrt_1_minus_x_taylor.png</code><br />Alternative path: <code>taylor_about_a_pngs/18_inv_sqrt_1_minus_x_about_a.png</code></div>
+          <div class="media-caption">Use this upper slot for the Taylor approximation plot about $x=a$ for Inverse Square Root of $1-x$.</div>
         </div>
+
+        <div class="media-wrap">
+          <div class="media-label">Maclaurin-series PNG placeholder</div>
+          <div class="img-placeholder">Primary path: <code>taylor_maclaurin_pngs/18_inv_sqrt_1_minus_x_maclaurin.png</code><br />Alternative path: <code>taylor_maclaurin_pngs/18_inverse_sqrt_1_minus_x.png</code></div>
+          <div class="media-caption">Use this lower slot for the Maclaurin approximation plot about $x=0$ for Inverse Square Root of $1-x$.</div>
+        </div>
+
       </section>
     
       <section id="sec19" class="example-card">
@@ -1151,32 +864,17 @@
         </div>
         <p>The coefficients match the previous example but alternate in sign.</p>
         <div class="media-wrap">
-
-          <div class="dual-media-grid">
-
-            <div class="media-item">
-
-              <div class="media-label">Taylor-series PNG placeholder</div>
-
-              <div class="img-placeholder">PNG placeholder: <code>taylor_about_a_pngs/19_inv_sqrt_1_plus_x_taylor.png</code></div>
-
-              <div class="media-caption">Use this slot for the Taylor approximation plot about $x=a$ for Inverse Square Root of $1+x$.</div>
-
-            </div>
-
-            <div class="media-item">
-
-              <div class="media-label">Maclaurin-series PNG placeholder</div>
-
-              <div class="img-placeholder">PNG placeholder: <code>taylor_maclaurin_pngs/19_inv_sqrt_1_plus_x_maclaurin.png</code></div>
-
-              <div class="media-caption">Use this slot for the Maclaurin approximation plot about $x=0$ for Inverse Square Root of $1+x$.</div>
-
-            </div>
-
-          </div>
-
+          <div class="media-label">Taylor-series PNG placeholder</div>
+          <div class="img-placeholder">Primary path: <code>taylor_about_a_pngs/19_inv_sqrt_1_plus_x_taylor.png</code><br />Alternative path: <code>taylor_about_a_pngs/19_inv_sqrt_1_plus_x_about_a.png</code></div>
+          <div class="media-caption">Use this upper slot for the Taylor approximation plot about $x=a$ for Inverse Square Root of $1+x$.</div>
         </div>
+
+        <div class="media-wrap">
+          <div class="media-label">Maclaurin-series PNG placeholder</div>
+          <div class="img-placeholder">Primary path: <code>taylor_maclaurin_pngs/19_inv_sqrt_1_plus_x_maclaurin.png</code><br />Alternative path: <code>taylor_maclaurin_pngs/19_inverse_sqrt_1_plus_x.png</code></div>
+          <div class="media-caption">Use this lower slot for the Maclaurin approximation plot about $x=0$ for Inverse Square Root of $1+x$.</div>
+        </div>
+
       </section>
     
       <section id="sec20" class="example-card">
@@ -1192,32 +890,17 @@
         </div>
         <p>Its Maclaurin series is alternating and uses only odd powers.</p>
         <div class="media-wrap">
-
-          <div class="dual-media-grid">
-
-            <div class="media-item">
-
-              <div class="media-label">Taylor-series PNG placeholder</div>
-
-              <div class="img-placeholder">PNG placeholder: <code>taylor_about_a_pngs/20_arctan_taylor.png</code></div>
-
-              <div class="media-caption">Use this slot for the Taylor approximation plot about $x=a$ for Arctangent.</div>
-
-            </div>
-
-            <div class="media-item">
-
-              <div class="media-label">Maclaurin-series PNG placeholder</div>
-
-              <div class="img-placeholder">PNG placeholder: <code>taylor_maclaurin_pngs/20_arctan_maclaurin.png</code></div>
-
-              <div class="media-caption">Use this slot for the Maclaurin approximation plot about $x=0$ for Arctangent.</div>
-
-            </div>
-
-          </div>
-
+          <div class="media-label">Taylor-series PNG placeholder</div>
+          <div class="img-placeholder">Primary path: <code>taylor_about_a_pngs/20_arctan_taylor.png</code><br />Alternative path: <code>taylor_about_a_pngs/20_arctan_x_about_a.png</code></div>
+          <div class="media-caption">Use this upper slot for the Taylor approximation plot about $x=a$ for Arctangent.</div>
         </div>
+
+        <div class="media-wrap">
+          <div class="media-label">Maclaurin-series PNG placeholder</div>
+          <div class="img-placeholder">Primary path: <code>taylor_maclaurin_pngs/20_arctan_maclaurin.png</code><br />Alternative path: <code>taylor_maclaurin_pngs/20_arctangent.png</code></div>
+          <div class="media-caption">Use this lower slot for the Maclaurin approximation plot about $x=0$ for Arctangent.</div>
+        </div>
+
       </section>
     
     </section>
