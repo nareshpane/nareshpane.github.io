@@ -4,11 +4,18 @@ Generate one PNG for each of 20 standard functions, comparing the exact function
 with its Taylor polynomial approximations about x = a using the first 3, 4, 5,
 and 6 terms.
 
-This revised version is synchronized with the companion Maclaurin script:
-- identical filenames relative to the HTML placeholders,
-- identical x-ranges for each matching subsection,
-- identical figure size,
-- identical y-axis limits computed from the exact function on the shared domain.
+Revised per user request:
+- Taylor plots are centered at x = 1 whenever the function is analytic there.
+- The x-window is symmetric about the Taylor center.
+  Example: Maclaurin window [-2, 2] becomes Taylor window [-1, 3] when a = 1.
+- Folder names and output filenames are kept unchanged so the existing HTML
+  continues to work.
+
+Important exception:
+Some functions are not defined at x = 1, so a Taylor expansion about x = 1 is
+impossible. For these, the script keeps a safe non-singular center and states
+that clearly in the plot subtitle:
+    1/(1-x), 1/(1-x)^2, x/(1-x), ln(1-x), 1/sqrt(1-x)
 """
 
 from __future__ import annotations
@@ -34,38 +41,48 @@ class FunctionSpec:
     slug: str
     title: str
     expr: sp.Expr
+    mac_x_min: float
+    mac_x_max: float
     a_value: sp.Expr
-    x_min: float
-    x_max: float
     note: str = ""
 
 
+def symmetric_window_about(center: float, mac_x_min: float, mac_x_max: float) -> tuple[float, float]:
+    half_width = max(abs(mac_x_min), abs(mac_x_max))
+    return center - half_width, center + half_width
+
+
 FUNCTIONS: List[FunctionSpec] = [
-    FunctionSpec(1,  "exponential",               r"Exponential Function: $e^x$",                    sp.exp(x),                sp.Rational(1, 2), -2.0,  2.0),
-    FunctionSpec(2,  "sine",                      r"Sine Function: $\sin x$",                        sp.sin(x),                sp.Rational(1, 2), -3.0,  3.0),
-    FunctionSpec(3,  "cosine",                    r"Cosine Function: $\cos x$",                      sp.cos(x),                sp.Rational(1, 2), -3.0,  3.0),
-    FunctionSpec(4,  "sinh",                      r"Hyperbolic Sine: $\sinh x$",                     sp.sinh(x),               sp.Rational(1, 2), -2.0,  2.0),
-    FunctionSpec(5,  "cosh",                      r"Hyperbolic Cosine: $\cosh x$",                   sp.cosh(x),               sp.Rational(1, 2), -2.0,  2.0),
-    FunctionSpec(6,  "reciprocal",                r"Reciprocal Function: $1/x$",                      1 / x,                    sp.Integer(1),     0.35,  1.65),
-    FunctionSpec(7,  "logarithm",                 r"Natural Logarithm: $\ln x$",                      sp.log(x),                sp.Integer(1),     0.35,  1.65),
-    FunctionSpec(8,  "geometric_minus",           r"Geometric Kernel: $1/(1-x)$",                     1 / (1 - x),              sp.Rational(1, 2), -0.4,  0.75),
-    FunctionSpec(9,  "geometric_plus",            r"Alternating Geometric Kernel: $1/(1+x)$",         1 / (1 + x),              sp.Rational(1, 2), -0.75, 1.2),
-    FunctionSpec(10, "squared_geometric_minus",   r"Squared Geometric Kernel: $1/(1-x)^2$",           1 / (1 - x) ** 2,         sp.Rational(1, 2), -0.4,  0.75),
-    FunctionSpec(11, "squared_geometric_plus",    r"Squared Alternating Kernel: $1/(1+x)^2$",         1 / (1 + x) ** 2,         sp.Rational(1, 2), -0.75, 1.2),
-    FunctionSpec(12, "x_over_1_minus_x",          r"Rational Function: $x/(1-x)$",                    x / (1 - x),              sp.Rational(1, 2), -0.4,  0.75),
-    FunctionSpec(13, "x_over_1_plus_x",           r"Rational Function: $x/(1+x)$",                    x / (1 + x),              sp.Rational(1, 2), -0.75, 1.2),
-    FunctionSpec(14, "log_1_plus_x",              r"Logarithm of $1+x$: $\ln(1+x)$",                 sp.log(1 + x),            sp.Rational(1, 2), -0.75, 1.2),
-    FunctionSpec(15, "log_1_minus_x",             r"Logarithm of $1-x$: $\ln(1-x)$",                 sp.log(1 - x),            sp.Rational(1, 2), -0.4,  0.75),
-    FunctionSpec(16, "binomial_alpha",            rf"General Binomial Function: $(1+x)^{{{sp.latex(ALPHA)}}}$", (1 + x) ** ALPHA, sp.Rational(1, 2), -0.75, 1.2, rf"Using $\alpha={sp.latex(ALPHA)}$ for plotting"),
-    FunctionSpec(17, "sqrt_1_plus_x",             r"Square Root: $\sqrt{1+x}$",                       sp.sqrt(1 + x),           sp.Rational(1, 2), -0.75, 1.2),
-    FunctionSpec(18, "inv_sqrt_1_minus_x",        r"Inverse Square Root: $1/\sqrt{1-x}$",            1 / sp.sqrt(1 - x),       sp.Rational(1, 2), -0.4,  0.75),
-    FunctionSpec(19, "inv_sqrt_1_plus_x",         r"Inverse Square Root: $1/\sqrt{1+x}$",            1 / sp.sqrt(1 + x),       sp.Rational(1, 2), -0.75, 1.2),
-    FunctionSpec(20, "arctan",                    r"Arctangent: $\arctan x$",                         sp.atan(x),               sp.Rational(1, 2), -1.5,  1.5),
+    FunctionSpec(1,  "exponential",             r"Exponential Function: $e^x$",                    sp.exp(x),                -2.0,  2.0,  sp.Integer(1)),
+    FunctionSpec(2,  "sine",                    r"Sine Function: $\sin x$",                        sp.sin(x),                -3.0,  3.0,  sp.Integer(1)),
+    FunctionSpec(3,  "cosine",                  r"Cosine Function: $\cos x$",                      sp.cos(x),                -3.0,  3.0,  sp.Integer(1)),
+    FunctionSpec(4,  "sinh",                    r"Hyperbolic Sine: $\sinh x$",                     sp.sinh(x),               -2.0,  2.0,  sp.Integer(1)),
+    FunctionSpec(5,  "cosh",                    r"Hyperbolic Cosine: $\cosh x$",                   sp.cosh(x),               -2.0,  2.0,  sp.Integer(1)),
+    FunctionSpec(6,  "reciprocal",              r"Reciprocal Function: $1/x$",                     1 / x,                     0.35,  1.65, sp.Integer(1)),
+    FunctionSpec(7,  "logarithm",               r"Natural Logarithm: $\ln x$",                     sp.log(x),                 0.35,  1.65, sp.Integer(1)),
+    FunctionSpec(8,  "geometric_minus",         r"Geometric Kernel: $1/(1-x)$",                    1 / (1 - x),              -0.4,  0.75, sp.Rational(1, 2),
+                 r"$a=1$ is impossible here because the function is singular at $x=1$; using $a=\frac{1}{2}$ instead"),
+    FunctionSpec(9,  "geometric_plus",          r"Alternating Geometric Kernel: $1/(1+x)$",        1 / (1 + x),              -0.75, 1.2,  sp.Integer(1)),
+    FunctionSpec(10, "squared_geometric_minus", r"Squared Geometric Kernel: $1/(1-x)^2$",          1 / (1 - x) ** 2,         -0.4,  0.75, sp.Rational(1, 2),
+                 r"$a=1$ is impossible here because the function is singular at $x=1$; using $a=\frac{1}{2}$ instead"),
+    FunctionSpec(11, "squared_geometric_plus",  r"Squared Alternating Kernel: $1/(1+x)^2$",        1 / (1 + x) ** 2,         -0.75, 1.2,  sp.Integer(1)),
+    FunctionSpec(12, "x_over_1_minus_x",        r"Rational Function: $x/(1-x)$",                   x / (1 - x),              -0.4,  0.75, sp.Rational(1, 2),
+                 r"$a=1$ is impossible here because the function is singular at $x=1$; using $a=\frac{1}{2}$ instead"),
+    FunctionSpec(13, "x_over_1_plus_x",         r"Rational Function: $x/(1+x)$",                   x / (1 + x),              -0.75, 1.2,  sp.Integer(1)),
+    FunctionSpec(14, "log_1_plus_x",            r"Logarithm of $1+x$: $\ln(1+x)$",                 sp.log(1 + x),            -0.75, 1.2,  sp.Integer(1)),
+    FunctionSpec(15, "log_1_minus_x",           r"Logarithm of $1-x$: $\ln(1-x)$",                 sp.log(1 - x),            -0.4,  0.75, sp.Rational(1, 2),
+                 r"$a=1$ is impossible here because the function is singular at $x=1$; using $a=\frac{1}{2}$ instead"),
+    FunctionSpec(16, "binomial_alpha",          rf"General Binomial Function: $(1+x)^{{{sp.latex(ALPHA)}}}$", (1 + x) ** ALPHA, -0.75, 1.2, sp.Integer(1),
+                 rf"Using $\alpha={sp.latex(ALPHA)}$ for plotting"),
+    FunctionSpec(17, "sqrt_1_plus_x",           r"Square Root: $\sqrt{1+x}$",                      sp.sqrt(1 + x),           -0.75, 1.2,  sp.Integer(1)),
+    FunctionSpec(18, "inv_sqrt_1_minus_x",      r"Inverse Square Root: $1/\sqrt{1-x}$",            1 / sp.sqrt(1 - x),       -0.4,  0.75, sp.Rational(1, 2),
+                 r"$a=1$ is impossible here because the function is singular at $x=1$; using $a=\frac{1}{2}$ instead"),
+    FunctionSpec(19, "inv_sqrt_1_plus_x",       r"Inverse Square Root: $1/\sqrt{1+x}$",            1 / sp.sqrt(1 + x),       -0.75, 1.2,  sp.Integer(1)),
+    FunctionSpec(20, "arctan",                  r"Arctangent: $\arctan x$",                        sp.atan(x),               -1.5,  1.5,  sp.Integer(1)),
 ]
 
 
 def taylor_polynomial(expr: sp.Expr, a_value: sp.Expr, n_terms: int) -> sp.Expr:
-    """Return the Taylor polynomial using the first n terms from (x-a)^0 upward."""
     poly = sp.Integer(0)
     for k in range(n_terms):
         coeff = sp.simplify(sp.diff(expr, x, k).subs(x, a_value) / sp.factorial(k))
@@ -120,7 +137,16 @@ def clip_for_display(y: np.ndarray, y_limits: tuple[float, float]) -> np.ndarray
 
 
 def make_plot(spec: FunctionSpec, output_dir: Path) -> None:
-    xs = np.linspace(spec.x_min, spec.x_max, 1200)
+    center_float = float(sp.N(spec.a_value))
+    x_min, x_max = symmetric_window_about(center_float, spec.mac_x_min, spec.mac_x_max)
+
+    if spec.a_value == sp.Rational(1, 2) and spec.slug in {
+        "geometric_minus", "squared_geometric_minus", "x_over_1_minus_x",
+        "log_1_minus_x", "inv_sqrt_1_minus_x"
+    }:
+        x_min, x_max = 0.05, 0.95
+
+    xs = np.linspace(x_min, x_max, 1200)
     exact_y = safe_numeric_callable(spec.expr)(xs)
     y_limits = matched_y_limits(exact_y)
     exact_y = clip_for_display(exact_y, y_limits)
@@ -131,6 +157,7 @@ def make_plot(spec: FunctionSpec, output_dir: Path) -> None:
 
     fig, ax = plt.subplots(figsize=FIGSIZE)
     fig.suptitle(f"{spec.index}. {spec.title}", fontsize=14)
+
     subtitle = rf"Taylor approximation about $x=a$ with $a={sp.latex(spec.a_value)}$ using the first 3, 4, 5, and 6 terms"
     if spec.note:
         subtitle += f" | {spec.note}"
@@ -140,8 +167,8 @@ def make_plot(spec: FunctionSpec, output_dir: Path) -> None:
     for n, y_poly in zip(term_counts, y_polys):
         ax.plot(xs, y_poly, linewidth=1.8, linestyle="--", label=f"First {n} terms")
 
-    ax.axvline(float(sp.N(spec.a_value)), linestyle=":", linewidth=1.0, label=rf"Center $x={sp.latex(spec.a_value)}$")
-    ax.set_xlim(spec.x_min, spec.x_max)
+    ax.axvline(center_float, linestyle=":", linewidth=1.0, label=rf"Center $x={sp.latex(spec.a_value)}$")
+    ax.set_xlim(x_min, x_max)
     ax.set_ylim(*y_limits)
     ax.set_xlabel("x")
     ax.set_ylabel("y")
