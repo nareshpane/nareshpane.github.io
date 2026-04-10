@@ -138,17 +138,31 @@
     }
 
     .excerpt-box {
-      background: #fcfaf6;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 18px 20px;
-      margin: 18px 0 18px;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.65);
-    }
+  background: linear-gradient(180deg, #f2f7fd 0%, #eef4fb 100%);
+  border: 1px solid #d7e3f0;
+  border-left: 5px solid #7ea6d6;
+  border-radius: 18px;
+  padding: 18px 20px;
+  margin: 18px 0 18px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.78);
+}
 
-    .excerpt-box p:last-child {
-      margin-bottom: 0;
-    }
+.excerpt-box p,
+.excerpt-box li {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.12rem;
+  line-height: 1.64;
+  letter-spacing: 0.01em;
+}
+
+.excerpt-box .equation {
+  background: rgba(255,255,255,0.72);
+  border-color: #d6e2ef;
+}
+
+.excerpt-box p:last-child {
+  margin-bottom: 0;
+}
 
     .phase-label {
       display: inline-block;
@@ -1010,17 +1024,164 @@
           <p>The evolution of $\Gamma_{n, N(n)}$ in Phase 3 may be characterized by that the small components (most of which are trees) melt, each after another, into the giant component, the smaller components having the larger chance of “survival”; the survival time of a tree of order $k$ which is present in $\Gamma_{n, N(n)}$ with $N(n) \sim cn$, $c &gt; 1/2$ is approximately exponentially distributed with mean value $n/2k$.</p>
         </div>
 
-        <div class="media-grid">
-          <div class="media-wrap">
-            <video controls preload="metadata">
-              <source src="erdos_renyi_1960_phase_3.mp4" type="video/mp4">
-              Your browser does not support the video tag. You can still <a href="erdos_renyi_1960_phase_3.mp4">download the video here</a>.
-            </video>
-            <div class="media-caption">Placeholder video for Phase 3: <code>erdos_renyi_1960_phase_3.mp4</code></div>
+        <div class="analysis-box">
+          <p><strong>How I am reading Phase 3 empirically.</strong> This is the dramatic phase transition of the paper. The graph is no longer just a sparse collection of trees and unicyclic pieces. Around $N(n) \approx n/2$, the largest component changes scale abruptly: just below the threshold it is still small, at the threshold it becomes critically large, and above the threshold it takes over a positive fraction of all vertices.</p>
+          <p>The four subsections below unpack that transition into a practical simulation plan: first the regime just below the threshold, then the critical window itself, then the supercritical giant component, and finally the gradual absorption of small components into that giant piece.</p>
+        </div>
+
+        <div class="phase-subsection">
+          <div class="subsection-kicker">Phase 3.1</div>
+          <h3>Just below $n/2$: the largest component is still sublinear and usually tree-like</h3>
+
+          <div class="subsection-media-stack">
+            <div class="media-wrap">
+              <h3>Animation A</h3>
+              <video controls preload="metadata">
+                <source src="erdos-renyi-1960/erdos_renyi_1960_phase3_1a.mp4" type="video/mp4">
+                Your browser does not support the video tag. You can still <a href="erdos-renyi-1960/erdos_renyi_1960_phase3_1a.mp4">download the video here</a>.
+              </video>
+              <div class="media-caption">Placeholder video for Phase 3.1A: <code>erdos_renyi_1960_phase3_1a.mp4</code></div>
+            </div>
+            <div class="media-wrap">
+              <h3>Animation B</h3>
+              <video controls preload="metadata">
+                <source src="erdos-renyi-1960/erdos_renyi_1960_phase3_1b.mp4" type="video/mp4">
+                Your browser does not support the video tag. You can still <a href="erdos-renyi-1960/erdos_renyi_1960_phase3_1b.mp4">download the video here</a>.
+              </video>
+              <div class="media-caption">Placeholder video for Phase 3.1B: <code>erdos_renyi_1960_phase3_1b.mp4</code></div>
+            </div>
+            <div class="media-wrap">
+              <h3>Figure</h3>
+              <img src="erdos-renyi-1960/erdos_renyi_1960_phase3_1.png" alt="Phase 3.1 figure placeholder">
+              <div class="media-caption">Figure file: <code>erdos_renyi_1960_phase3_1.png</code></div>
+            </div>
           </div>
-          <div class="media-wrap">
-            <img src="erdos_renyi_1960_phase_3.png" alt="Phase 3 figure placeholder">
-            <div class="media-caption">Figure file: <code>erdos_renyi_1960_phase_3.png</code></div>
+
+          <div class="analysis-box">
+            <p><strong>What is happening here.</strong> The paper contrasts the near-critical picture with the earlier subcritical one. When $N(n) \sim cn$ with $c &lt; 1/2$, the largest component is still small compared with $n$, and it is still dominated by tree behavior. The formula involving $\alpha = 2c - 1 - \log(2c)$ tells us that the largest component grows only on the logarithmic scale.</p>
+            <ul class="sub-bullets">
+              <li>A natural experiment here is to compare values such as $c=0.40$, $0.45$, and $0.49$ while keeping the same vertex set size.</li>
+              <li>The largest component should look noticeably bigger than in Phase 2, but still nowhere near a fixed fraction of the whole graph.</li>
+              <li>For moderate $n$, this is the last regime where the network still feels like many separate sparse pieces rather than one dominant body.</li>
+              <li>A good figure here would track the size of the largest component against $n$ or against $c$ as the threshold is approached from below.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="phase-subsection">
+          <div class="subsection-kicker">Phase 3.2</div>
+          <h3>At the threshold $N(n) \sim n/2$: the largest component jumps to order $n^{2/3}$</h3>
+
+          <div class="subsection-media-stack">
+            <div class="media-wrap">
+              <h3>Animation A</h3>
+              <video controls preload="metadata">
+                <source src="erdos-renyi-1960/erdos_renyi_1960_phase3_2a.mp4" type="video/mp4">
+                Your browser does not support the video tag. You can still <a href="erdos-renyi-1960/erdos_renyi_1960_phase3_2a.mp4">download the video here</a>.
+              </video>
+              <div class="media-caption">Placeholder video for Phase 3.2A: <code>erdos_renyi_1960_phase3_2a.mp4</code></div>
+            </div>
+            <div class="media-wrap">
+              <h3>Animation B</h3>
+              <video controls preload="metadata">
+                <source src="erdos-renyi-1960/erdos_renyi_1960_phase3_2b.mp4" type="video/mp4">
+                Your browser does not support the video tag. You can still <a href="erdos-renyi-1960/erdos_renyi_1960_phase3_2b.mp4">download the video here</a>.
+              </video>
+              <div class="media-caption">Placeholder video for Phase 3.2B: <code>erdos_renyi_1960_phase3_2b.mp4</code></div>
+            </div>
+            <div class="media-wrap">
+              <h3>Figure</h3>
+              <img src="erdos-renyi-1960/erdos_renyi_1960_phase3_2.png" alt="Phase 3.2 figure placeholder">
+              <div class="media-caption">Figure file: <code>erdos_renyi_1960_phase3_2.png</code></div>
+            </div>
+          </div>
+
+          <div class="analysis-box">
+            <p><strong>What is happening here.</strong> Exactly at the critical scale, the largest component is no longer logarithmic, but it is not yet linear either. The paper says it has order $n^{2/3}$ and a rather complex structure. This is the sharp transition point where the component picture is neither purely sparse nor already dominated by a full giant.</p>
+            <ul class="sub-bullets">
+              <li>This is a good place for side-by-side simulations showing the same graph process slightly before, at, and slightly after $N=n/2$.</li>
+              <li>The largest component should become visually striking, but there should still be serious competition from other medium-sized components.</li>
+              <li>Compared with Phase 2, the network now develops large, irregular pieces rather than just a few isolated cycles.</li>
+              <li>A figure for this subsection could compare the empirical largest-component size with the reference scale $n^{2/3}$.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="phase-subsection">
+          <div class="subsection-kicker">Phase 3.3</div>
+          <h3>Above the threshold $c &gt; 1/2$: a giant component of size $G(c)n$ emerges</h3>
+
+          <div class="subsection-media-stack">
+            <div class="media-wrap">
+              <h3>Animation A</h3>
+              <video controls preload="metadata">
+                <source src="erdos-renyi-1960/erdos_renyi_1960_phase3_3a.mp4" type="video/mp4">
+                Your browser does not support the video tag. You can still <a href="erdos-renyi-1960/erdos_renyi_1960_phase3_3a.mp4">download the video here</a>.
+              </video>
+              <div class="media-caption">Placeholder video for Phase 3.3A: <code>erdos_renyi_1960_phase3_3a.mp4</code></div>
+            </div>
+            <div class="media-wrap">
+              <h3>Animation B</h3>
+              <video controls preload="metadata">
+                <source src="erdos-renyi-1960/erdos_renyi_1960_phase3_3b.mp4" type="video/mp4">
+                Your browser does not support the video tag. You can still <a href="erdos-renyi-1960/erdos_renyi_1960_phase3_3b.mp4">download the video here</a>.
+              </video>
+              <div class="media-caption">Placeholder video for Phase 3.3B: <code>erdos_renyi_1960_phase3_3b.mp4</code></div>
+            </div>
+            <div class="media-wrap">
+              <h3>Figure</h3>
+              <img src="erdos-renyi-1960/erdos_renyi_1960_phase3_3.png" alt="Phase 3.3 figure placeholder">
+              <div class="media-caption">Figure file: <code>erdos_renyi_1960_phase3_3.png</code></div>
+            </div>
+          </div>
+
+          <div class="analysis-box">
+            <p><strong>What is happening here.</strong> Once $c$ moves beyond $1/2$, the largest component takes a positive linear fraction of the graph. The function $G(c)$ is the asymptotic fraction of vertices captured by the giant component. The rest of the graph remains fragmented into relatively small pieces.</p>
+            <ul class="sub-bullets">
+              <li>A natural empirical comparison is to plot the largest-component fraction for choices such as $c=0.55$, $0.70$, and $1.00$.</li>
+              <li>The larger $c$ becomes, the closer the giant component should move toward containing almost all vertices.</li>
+              <li>The rest of the components should look tiny by comparison, even though many of them are still trees.</li>
+              <li>A useful figure here would compare the observed largest-component fraction with the theoretical curve $G(c)$.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="phase-subsection">
+          <div class="subsection-kicker">Phase 3.4</div>
+          <h3>Small components melt into the giant, with smaller trees surviving longer</h3>
+
+          <div class="subsection-media-stack">
+            <div class="media-wrap">
+              <h3>Animation A</h3>
+              <video controls preload="metadata">
+                <source src="erdos-renyi-1960/erdos_renyi_1960_phase3_4a.mp4" type="video/mp4">
+                Your browser does not support the video tag. You can still <a href="erdos-renyi-1960/erdos_renyi_1960_phase3_4a.mp4">download the video here</a>.
+              </video>
+              <div class="media-caption">Placeholder video for Phase 3.4A: <code>erdos_renyi_1960_phase3_4a.mp4</code></div>
+            </div>
+            <div class="media-wrap">
+              <h3>Animation B</h3>
+              <video controls preload="metadata">
+                <source src="erdos-renyi-1960/erdos_renyi_1960_phase3_4b.mp4" type="video/mp4">
+                Your browser does not support the video tag. You can still <a href="erdos-renyi-1960/erdos_renyi_1960_phase3_4b.mp4">download the video here</a>.
+              </video>
+              <div class="media-caption">Placeholder video for Phase 3.4B: <code>erdos_renyi_1960_phase3_4b.mp4</code></div>
+            </div>
+            <div class="media-wrap">
+              <h3>Figure</h3>
+              <img src="erdos-renyi-1960/erdos_renyi_1960_phase3_4.png" alt="Phase 3.4 figure placeholder">
+              <div class="media-caption">Figure file: <code>erdos_renyi_1960_phase3_4.png</code></div>
+            </div>
+          </div>
+
+          <div class="analysis-box">
+            <p><strong>What is happening here.</strong> The paper gives a vivid qualitative description: small components, especially trees, are gradually swallowed by the giant component. Smaller trees are more likely to remain outside the giant for longer, and the survival time of a tree of order $k$ is approximately exponential with mean $n/2k$.</p>
+            <ul class="sub-bullets">
+              <li>This suggests a simulation where one tracks tagged components over time after the giant first appears.</li>
+              <li>Tree components of size $1$, $2$, or $3$ should linger longer than larger sparse components.</li>
+              <li>The total number of vertices in tree components should decrease as the giant expands.</li>
+              <li>A good summary figure here would plot the decay of tree vertices or the survival times of fixed-size trees.</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -1046,17 +1207,164 @@
           </div>
         </div>
 
-        <div class="media-grid">
-          <div class="media-wrap">
-            <video controls preload="metadata">
-              <source src="erdos_renyi_1960_phase_4.mp4" type="video/mp4">
-              Your browser does not support the video tag. You can still <a href="erdos_renyi_1960_phase_4.mp4">download the video here</a>.
-            </video>
-            <div class="media-caption">Placeholder video for Phase 4: <code>erdos_renyi_1960_phase_4.mp4</code></div>
+        <div class="analysis-box">
+          <p><strong>How I am reading Phase 4 empirically.</strong> Phase 4 is the connectivity window. The giant component is already present, but the graph still fails to be connected because a few tiny tree remnants remain outside it. As the number of edges approaches the scale $(n/2)\log n$, the remaining obstructions collapse in an orderly way.</p>
+          <p>The four subsections below separate that story into increasingly fine claims: first the general connectivity window, then the refined $k$-tree statement, then the special role of isolated vertices, and finally the limiting probability of being fully connected.</p>
+        </div>
+
+        <div class="phase-subsection">
+          <div class="subsection-kicker">Phase 4.1</div>
+          <h3>Entering the connectivity window: one dominant component plus a few tiny tree remnants</h3>
+
+          <div class="subsection-media-stack">
+            <div class="media-wrap">
+              <h3>Animation A</h3>
+              <video controls preload="metadata">
+                <source src="erdos-renyi-1960/erdos_renyi_1960_phase4_1a.mp4" type="video/mp4">
+                Your browser does not support the video tag. You can still <a href="erdos-renyi-1960/erdos_renyi_1960_phase4_1a.mp4">download the video here</a>.
+              </video>
+              <div class="media-caption">Placeholder video for Phase 4.1A: <code>erdos_renyi_1960_phase4_1a.mp4</code></div>
+            </div>
+            <div class="media-wrap">
+              <h3>Animation B</h3>
+              <video controls preload="metadata">
+                <source src="erdos-renyi-1960/erdos_renyi_1960_phase4_1b.mp4" type="video/mp4">
+                Your browser does not support the video tag. You can still <a href="erdos-renyi-1960/erdos_renyi_1960_phase4_1b.mp4">download the video here</a>.
+              </video>
+              <div class="media-caption">Placeholder video for Phase 4.1B: <code>erdos_renyi_1960_phase4_1b.mp4</code></div>
+            </div>
+            <div class="media-wrap">
+              <h3>Figure</h3>
+              <img src="erdos-renyi-1960/erdos_renyi_1960_phase4_1.png" alt="Phase 4.1 figure placeholder">
+              <div class="media-caption">Figure file: <code>erdos_renyi_1960_phase4_1.png</code></div>
+            </div>
           </div>
-          <div class="media-wrap">
-            <img src="erdos_renyi_1960_phase_4.png" alt="Phase 4 figure placeholder">
-            <div class="media-caption">Figure file: <code>erdos_renyi_1960_phase_4.png</code></div>
+
+          <div class="analysis-box">
+            <p><strong>What is happening here.</strong> By the time the edge count reaches order $n\log n$, the graph has essentially one overwhelmingly large component. The only reason the graph may still fail to be connected is that a few tiny tree components remain outside it.</p>
+            <ul class="sub-bullets">
+              <li>This is the right place for visualizations that highlight the main component and separately color the leftover pieces.</li>
+              <li>Compared with Phase 3, the outside world is now extremely thin: just a few tree fragments rather than a broad cloud of small components.</li>
+              <li>A good empirical question is how quickly the count of outside vertices falls as the $c n\log n$ scale is crossed.</li>
+              <li>A simple figure here could track the number of vertices not in the giant component.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="phase-subsection">
+          <div class="subsection-kicker">Phase 4.2</div>
+          <h3>Refined window for fixed $k$: only trees of order at most $k$ remain outside the giant</h3>
+
+          <div class="subsection-media-stack">
+            <div class="media-wrap">
+              <h3>Animation A</h3>
+              <video controls preload="metadata">
+                <source src="erdos-renyi-1960/erdos_renyi_1960_phase4_2a.mp4" type="video/mp4">
+                Your browser does not support the video tag. You can still <a href="erdos-renyi-1960/erdos_renyi_1960_phase4_2a.mp4">download the video here</a>.
+              </video>
+              <div class="media-caption">Placeholder video for Phase 4.2A: <code>erdos_renyi_1960_phase4_2a.mp4</code></div>
+            </div>
+            <div class="media-wrap">
+              <h3>Animation B</h3>
+              <video controls preload="metadata">
+                <source src="erdos-renyi-1960/erdos_renyi_1960_phase4_2b.mp4" type="video/mp4">
+                Your browser does not support the video tag. You can still <a href="erdos-renyi-1960/erdos_renyi_1960_phase4_2b.mp4">download the video here</a>.
+              </video>
+              <div class="media-caption">Placeholder video for Phase 4.2B: <code>erdos_renyi_1960_phase4_2b.mp4</code></div>
+            </div>
+            <div class="media-wrap">
+              <h3>Figure</h3>
+              <img src="erdos-renyi-1960/erdos_renyi_1960_phase4_2.png" alt="Phase 4.2 figure placeholder">
+              <div class="media-caption">Figure file: <code>erdos_renyi_1960_phase4_2.png</code></div>
+            </div>
+          </div>
+
+          <div class="analysis-box">
+            <p><strong>What is happening here.</strong> The paper gives a more delicate scaling for the last leftover tree components. At the edge count $N(n)=\dfrac{n}{2k}\log n + \dfrac{k-1}{2k}n\log\log n + yn + o(n)$, the components outside the giant are almost surely only trees of order at most $k$.</p>
+            <ul class="sub-bullets">
+              <li>This suggests a family of experiments indexed by $k=1,2,3,\dots$.</li>
+              <li>For each fixed $k$, one can count how many $k$-vertex trees remain outside the giant component.</li>
+              <li>The limiting count should again follow a Poisson law with mean $\dfrac{e^{-2ky}}{k\cdot k!}$.</li>
+              <li>A clean figure here would compare empirical histograms for leftover $k$-trees with the corresponding Poisson prediction.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="phase-subsection">
+          <div class="subsection-kicker">Phase 4.3</div>
+          <h3>The special case $k=1$: isolated vertices are the last major obstruction to connectivity</h3>
+
+          <div class="subsection-media-stack">
+            <div class="media-wrap">
+              <h3>Animation A</h3>
+              <video controls preload="metadata">
+                <source src="erdos-renyi-1960/erdos_renyi_1960_phase4_3a.mp4" type="video/mp4">
+                Your browser does not support the video tag. You can still <a href="erdos-renyi-1960/erdos_renyi_1960_phase4_3a.mp4">download the video here</a>.
+              </video>
+              <div class="media-caption">Placeholder video for Phase 4.3A: <code>erdos_renyi_1960_phase4_3a.mp4</code></div>
+            </div>
+            <div class="media-wrap">
+              <h3>Animation B</h3>
+              <video controls preload="metadata">
+                <source src="erdos-renyi-1960/erdos_renyi_1960_phase4_3b.mp4" type="video/mp4">
+                Your browser does not support the video tag. You can still <a href="erdos-renyi-1960/erdos_renyi_1960_phase4_3b.mp4">download the video here</a>.
+              </video>
+              <div class="media-caption">Placeholder video for Phase 4.3B: <code>erdos_renyi_1960_phase4_3b.mp4</code></div>
+            </div>
+            <div class="media-wrap">
+              <h3>Figure</h3>
+              <img src="erdos-renyi-1960/erdos_renyi_1960_phase4_3.png" alt="Phase 4.3 figure placeholder">
+              <div class="media-caption">Figure file: <code>erdos_renyi_1960_phase4_3.png</code></div>
+            </div>
+          </div>
+
+          <div class="analysis-box">
+            <p><strong>What is happening here.</strong> The case $k=1$ is the most concrete version of the theory. Near $N(n)=\dfrac{n}{2}\log n + yn + o(n)$, the graph should look like one giant connected block plus only a few isolated vertices. The number of those isolates is approximately Poisson with mean $e^{-2y}$.</p>
+            <ul class="sub-bullets">
+              <li>This is a very natural simulation target because isolated vertices are easy to count and visualize.</li>
+              <li>For negative $y$, isolates should still be fairly common; for positive $y$, they should become rare.</li>
+              <li>The graph typically fails to be connected only because of those last isolated points.</li>
+              <li>A useful figure here would show the empirical distribution of isolated-vertex counts for several values of $y$.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="phase-subsection">
+          <div class="subsection-kicker">Phase 4.4</div>
+          <h3>The threshold function for full connectivity: probability tends to $e^{-e^{-2y}}$</h3>
+
+          <div class="subsection-media-stack">
+            <div class="media-wrap">
+              <h3>Animation A</h3>
+              <video controls preload="metadata">
+                <source src="erdos-renyi-1960/erdos_renyi_1960_phase4_4a.mp4" type="video/mp4">
+                Your browser does not support the video tag. You can still <a href="erdos-renyi-1960/erdos_renyi_1960_phase4_4a.mp4">download the video here</a>.
+              </video>
+              <div class="media-caption">Placeholder video for Phase 4.4A: <code>erdos_renyi_1960_phase4_4a.mp4</code></div>
+            </div>
+            <div class="media-wrap">
+              <h3>Animation B</h3>
+              <video controls preload="metadata">
+                <source src="erdos-renyi-1960/erdos_renyi_1960_phase4_4b.mp4" type="video/mp4">
+                Your browser does not support the video tag. You can still <a href="erdos-renyi-1960/erdos_renyi_1960_phase4_4b.mp4">download the video here</a>.
+              </video>
+              <div class="media-caption">Placeholder video for Phase 4.4B: <code>erdos_renyi_1960_phase4_4b.mp4</code></div>
+            </div>
+            <div class="media-wrap">
+              <h3>Figure</h3>
+              <img src="erdos-renyi-1960/erdos_renyi_1960_phase4_4.png" alt="Phase 4.4 figure placeholder">
+              <div class="media-caption">Figure file: <code>erdos_renyi_1960_phase4_4.png</code></div>
+            </div>
+          </div>
+
+          <div class="analysis-box">
+            <p><strong>What is happening here.</strong> The final statement of Phase 4 is a full threshold function: when the edge count is centered at the right scale, the probability of connectivity approaches $e^{-e^{-2y}}$. So the connectivity window is not only a yes-or-no threshold, but a precise limiting curve.</p>
+            <ul class="sub-bullets">
+              <li>This is ideal for repeated Monte Carlo runs over a grid of $y$ values.</li>
+              <li>The resulting empirical curve should steepen as $n$ grows, while approaching the theoretical limit.</li>
+              <li>The same threshold phenomenon also carries over to the closely related $G(n,p)$ model discussed in the excerpt.</li>
+              <li>A good figure here would place the empirical connectivity probability against the theoretical curve on the same axes.</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -1068,21 +1376,167 @@
           <p><em>Phase 5.</em> consists of the range $N(n) \sim (n \log n)\,\omega(n)$ where $\omega(n) \to +\infty$. In this range the whole graph is not only almost surely connected, but the orders of all points are almost surely asymptotically equal. Thus the graph becomes in this phase “asymptotically regular”.</p>
         </div>
 
-        <div class="media-grid">
-          <div class="media-wrap">
-            <video controls preload="metadata">
-              <source src="erdos_renyi_1960_phase_5.mp4" type="video/mp4">
-              Your browser does not support the video tag. You can still <a href="erdos_renyi_1960_phase_5.mp4">download the video here</a>.
-            </video>
-            <div class="media-caption">Placeholder video for Phase 5: <code>erdos_renyi_1960_phase_5.mp4</code></div>
+        <div class="analysis-box">
+          <p><strong>How I am reading Phase 5 empirically.</strong> Phase 5 is what happens well after connectivity has already been secured. The graph is now much denser than the Phase 4 threshold, though still very far from complete. What matters here is not merely that every vertex belongs to the same component, but that the degree profile becomes highly uniform across the whole graph.</p>
+          <p>The four subsections below turn that short excerpt into a practical simulation agenda: first robust connectivity, then the growth of the average degree, then concentration of the degree histogram, and finally a direct interpretation of asymptotic regularity.</p>
+        </div>
+
+        <div class="phase-subsection">
+          <div class="subsection-kicker">Phase 5.1</div>
+          <h3>Well beyond the connectivity threshold: connectivity becomes overwhelming and robust</h3>
+
+          <div class="subsection-media-stack">
+            <div class="media-wrap">
+              <h3>Animation A</h3>
+              <video controls preload="metadata">
+                <source src="erdos-renyi-1960/erdos_renyi_1960_phase5_1a.mp4" type="video/mp4">
+                Your browser does not support the video tag. You can still <a href="erdos-renyi-1960/erdos_renyi_1960_phase5_1a.mp4">download the video here</a>.
+              </video>
+              <div class="media-caption">Placeholder video for Phase 5.1A: <code>erdos_renyi_1960_phase5_1a.mp4</code></div>
+            </div>
+            <div class="media-wrap">
+              <h3>Animation B</h3>
+              <video controls preload="metadata">
+                <source src="erdos-renyi-1960/erdos_renyi_1960_phase5_1b.mp4" type="video/mp4">
+                Your browser does not support the video tag. You can still <a href="erdos-renyi-1960/erdos_renyi_1960_phase5_1b.mp4">download the video here</a>.
+              </video>
+              <div class="media-caption">Placeholder video for Phase 5.1B: <code>erdos_renyi_1960_phase5_1b.mp4</code></div>
+            </div>
+            <div class="media-wrap">
+              <h3>Figure</h3>
+              <img src="erdos-renyi-1960/erdos_renyi_1960_phase5_1.png" alt="Phase 5.1 figure placeholder">
+              <div class="media-caption">Figure file: <code>erdos_renyi_1960_phase5_1.png</code></div>
+            </div>
           </div>
-          <div class="media-wrap">
-            <img src="erdos_renyi_1960_phase_5.png" alt="Phase 5 figure placeholder">
-            <div class="media-caption">Figure file: <code>erdos_renyi_1960_phase_5.png</code></div>
+
+          <div class="analysis-box">
+            <p><strong>What is happening here.</strong> Once $N(n)$ is larger than the connectivity threshold by a diverging factor $\omega(n)$, the graph is no longer barely connected. It is connected with a substantial margin, so isolated vertices and tiny detached tree remnants disappear altogether in typical large samples.</p>
+            <ul class="sub-bullets">
+              <li>A useful experiment is to compare Phase 4-style threshold behavior with denser choices such as $N(n)=n\log n\cdot \log\log n$.</li>
+              <li>The network should now look like one unified object in essentially every run.</li>
+              <li>Failures of connectivity should become so rare that they disappear from moderate Monte Carlo experiments.</li>
+              <li>A figure here could compare the connectivity probability in Phase 4 and Phase 5 on the same scale.</li>
+            </ul>
           </div>
         </div>
-      </div>
-    </section>
+
+        <div class="phase-subsection">
+          <div class="subsection-kicker">Phase 5.2</div>
+          <h3>The average degree grows like $2\log n\,\omega(n)$, so low-degree anomalies fade away</h3>
+
+          <div class="subsection-media-stack">
+            <div class="media-wrap">
+              <h3>Animation A</h3>
+              <video controls preload="metadata">
+                <source src="erdos-renyi-1960/erdos_renyi_1960_phase5_2a.mp4" type="video/mp4">
+                Your browser does not support the video tag. You can still <a href="erdos-renyi-1960/erdos_renyi_1960_phase5_2a.mp4">download the video here</a>.
+              </video>
+              <div class="media-caption">Placeholder video for Phase 5.2A: <code>erdos_renyi_1960_phase5_2a.mp4</code></div>
+            </div>
+            <div class="media-wrap">
+              <h3>Animation B</h3>
+              <video controls preload="metadata">
+                <source src="erdos-renyi-1960/erdos_renyi_1960_phase5_2b.mp4" type="video/mp4">
+                Your browser does not support the video tag. You can still <a href="erdos-renyi-1960/erdos_renyi_1960_phase5_2b.mp4">download the video here</a>.
+              </video>
+              <div class="media-caption">Placeholder video for Phase 5.2B: <code>erdos_renyi_1960_phase5_2b.mp4</code></div>
+            </div>
+            <div class="media-wrap">
+              <h3>Figure</h3>
+              <img src="erdos-renyi-1960/erdos_renyi_1960_phase5_2.png" alt="Phase 5.2 figure placeholder">
+              <div class="media-caption">Figure file: <code>erdos_renyi_1960_phase5_2.png</code></div>
+            </div>
+          </div>
+
+          <div class="analysis-box">
+            <p><strong>What is happening here.</strong> Since the average degree is $2N(n)/n$, the Phase 5 scale means that the average degree grows faster than a constant multiple of $\log n$. Vertices of exceptionally small degree should become scarce, which is one reason the graph begins to look much more uniform.</p>
+            <ul class="sub-bullets">
+              <li>This subsection is naturally about degree summaries rather than component counts.</li>
+              <li>One can track the minimum degree, mean degree, and maximum degree as $n$ increases.</li>
+              <li>The visual gap between low-degree and typical-degree vertices should shrink relative to the central scale.</li>
+              <li>A good figure here would plot the degree summary statistics across several choices of $\omega(n)$.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="phase-subsection">
+          <div class="subsection-kicker">Phase 5.3</div>
+          <h3>The degree histogram tightens: most vertices cluster around the same degree scale</h3>
+
+          <div class="subsection-media-stack">
+            <div class="media-wrap">
+              <h3>Animation A</h3>
+              <video controls preload="metadata">
+                <source src="erdos-renyi-1960/erdos_renyi_1960_phase5_3a.mp4" type="video/mp4">
+                Your browser does not support the video tag. You can still <a href="erdos-renyi-1960/erdos_renyi_1960_phase5_3a.mp4">download the video here</a>.
+              </video>
+              <div class="media-caption">Placeholder video for Phase 5.3A: <code>erdos_renyi_1960_phase5_3a.mp4</code></div>
+            </div>
+            <div class="media-wrap">
+              <h3>Animation B</h3>
+              <video controls preload="metadata">
+                <source src="erdos-renyi-1960/erdos_renyi_1960_phase5_3b.mp4" type="video/mp4">
+                Your browser does not support the video tag. You can still <a href="erdos-renyi-1960/erdos_renyi_1960_phase5_3b.mp4">download the video here</a>.
+              </video>
+              <div class="media-caption">Placeholder video for Phase 5.3B: <code>erdos_renyi_1960_phase5_3b.mp4</code></div>
+            </div>
+            <div class="media-wrap">
+              <h3>Figure</h3>
+              <img src="erdos-renyi-1960/erdos_renyi_1960_phase5_3.png" alt="Phase 5.3 figure placeholder">
+              <div class="media-caption">Figure file: <code>erdos_renyi_1960_phase5_3.png</code></div>
+            </div>
+          </div>
+
+          <div class="analysis-box">
+            <p><strong>What is happening here.</strong> The paper’s phrase “the orders of all points are asymptotically equal” should be read as a concentration statement. Individual degrees still fluctuate, but relative to the common scale they become increasingly similar as $n$ grows.</p>
+            <ul class="sub-bullets">
+              <li>This is a natural place for histograms or normalized degree plots.</li>
+              <li>For larger $n$, the degree distribution should look narrower after centering and scaling by the typical degree.</li>
+              <li>The important effect is not perfect equality, but shrinking relative dispersion.</li>
+              <li>A strong figure here would show how the coefficient of variation of the degrees falls as the graph moves deeper into Phase 5.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="phase-subsection">
+          <div class="subsection-kicker">Phase 5.4</div>
+          <h3>Asymptotic regularity: minimum, average, and maximum degrees begin to move together</h3>
+
+          <div class="subsection-media-stack">
+            <div class="media-wrap">
+              <h3>Animation A</h3>
+              <video controls preload="metadata">
+                <source src="erdos-renyi-1960/erdos_renyi_1960_phase5_4a.mp4" type="video/mp4">
+                Your browser does not support the video tag. You can still <a href="erdos-renyi-1960/erdos_renyi_1960_phase5_4a.mp4">download the video here</a>.
+              </video>
+              <div class="media-caption">Placeholder video for Phase 5.4A: <code>erdos_renyi_1960_phase5_4a.mp4</code></div>
+            </div>
+            <div class="media-wrap">
+              <h3>Animation B</h3>
+              <video controls preload="metadata">
+                <source src="erdos-renyi-1960/erdos_renyi_1960_phase5_4b.mp4" type="video/mp4">
+                Your browser does not support the video tag. You can still <a href="erdos-renyi-1960/erdos_renyi_1960_phase5_4b.mp4">download the video here</a>.
+              </video>
+              <div class="media-caption">Placeholder video for Phase 5.4B: <code>erdos_renyi_1960_phase5_4b.mp4</code></div>
+            </div>
+            <div class="media-wrap">
+              <h3>Figure</h3>
+              <img src="erdos-renyi-1960/erdos_renyi_1960_phase5_4.png" alt="Phase 5.4 figure placeholder">
+              <div class="media-caption">Figure file: <code>erdos_renyi_1960_phase5_4.png</code></div>
+            </div>
+          </div>
+
+          <div class="analysis-box">
+            <p><strong>What is happening here.</strong> The most direct empirical interpretation of asymptotic regularity is that extremal degrees stop looking wildly different from the mean. As $n$ grows in this regime, the minimum degree, mean degree, and maximum degree should all live on nearly the same relative scale.</p>
+            <ul class="sub-bullets">
+              <li>This subsection is ideal for summary plots rather than network drawings alone.</li>
+              <li>One can track ratios such as $\delta(G)/\bar d$ and $\Delta(G)/\bar d$ across increasing $n$.</li>
+              <li>The more these ratios concentrate near $1$, the more convincing the asymptotic-regularity picture becomes.</li>
+              <li>A good final figure here would summarize Phase 5 as a movement from mere connectivity to global degree uniformity.</li>
+            </ul>
+          </div>
+        </div>
+      </div>    </section>
 
     <div class="footer-nav">
       <a href="index.html">Home</a>
