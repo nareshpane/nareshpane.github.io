@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hypergraph Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700&family=Source+Code+Pro:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #f7f4ee;
+      --card: #fffdf9;
+      --ink: #1b1b1b;
+      --muted: #666;
+      --line: #ddd5c7;
+      --accent: #1d4f91;
+      --note: #f5efe3;
+      --warn: #fbf6ea;
+      --shadow: 0 14px 32px rgba(0,0,0,0.06);
+      --radius: 22px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Inter", sans-serif; line-height: 1.72; }
+    .page { max-width: 1120px; margin: 0 auto; padding: 34px 20px 56px; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 34px 34px 30px; }
+    h1, h2, h3 { font-family: "Cormorant Garamond", serif; line-height: 1.08; margin: 0 0 12px; color: #151515; }
+    h1 { font-size: 3.05rem; margin-bottom: 14px; }
+    h2 { font-size: 2rem; margin-top: 34px; padding-bottom: 8px; border-bottom: 1px solid var(--line); }
+    h3 { font-size: 1.58rem; margin-top: 8px; }
+    p { margin: 0 0 14px; font-size: 1.02rem; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .lead { font-size: 1.1rem; }
+    .panel { border: 1px solid var(--line); border-radius: 16px; padding: 16px 18px; margin: 18px 0; background: #fcfaf6; }
+    .note { background: var(--note); border-left: 4px solid var(--accent); }
+    .warn { background: var(--warn); border-left: 4px solid #b7791f; }
+    .mini-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin: 18px 0 22px; }
+    .mini-box { background: #fcfaf6; border: 1px solid var(--line); border-radius: 16px; padding: 14px 16px; }
+    .mini-box .k { font-size: 0.88rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; font-weight: 700; }
+    .mini-box .v { font-size: 1rem; font-weight: 600; }
+    ul { margin: 0 0 14px 20px; padding: 0; }
+    li { margin-bottom: 8px; }
+    .tight-list li { margin-bottom: 5px; }
+    .toc { columns: 2; column-gap: 40px; margin-top: 10px; }
+    .toc li { break-inside: avoid; margin-bottom: 7px; }
+    .center-figure { margin: 16px 0 18px; }
+    .center-figure img { width: 100%; border-radius: 14px; display: block; background: #eee8de; border: 1px solid var(--line); }
+    .figcaption { margin-top: 10px; color: var(--muted); font-size: 0.95rem; }
+    .small, .small-intro { color: var(--muted); }
+    .example-card { margin-top: 28px; padding-top: 6px; }
+    code { font-family: "Source Code Pro", monospace; font-size: 0.92rem; background: #f3efe8; padding: 2px 6px; border-radius: 8px; }
+    .footer-nav { margin-top: 22px; text-align: center; color: var(--muted); font-size: 0.98rem; }
+    .footer-nav a { font-weight: 600; }
+    .sep { margin: 0 8px; color: #8a8a8a; }
+    @media (max-width: 860px) {
+      .card { padding: 24px 18px; }
+      h1 { font-size: 2.35rem; }
+      h2 { font-size: 1.65rem; }
+      .mini-grid, .toc { grid-template-columns: 1fr; columns: 1; }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\(', '\)']],
+        displayMath: [['$$', '$$'], ['\[', '\]']]
+      },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+  <div class="page">
+    <section class="card" id="top">
+      <h1>Hypergraph Demo</h1>
+      <p class="lead">
+        A hypergraph is a generalization of an ordinary graph. In a graph, every edge joins exactly two vertices.
+        In a hypergraph, a single hyperedge may join two vertices, three vertices, four vertices, or more.
+      </p>
+
+      <div class="panel note">
+        <strong>Analytical definition.</strong><br/>
+        A hypergraph is a pair $H=(X,E)$ where $X$ is a finite vertex set and $E$ is a family of subsets of $X$.
+        Each element of $E$ is called a <em>hyperedge</em>.
+        Thus ordinary graphs are the special case in which every hyperedge has size $2$.
+      </div>
+
+      <div class="panel warn">
+        <strong>Algebraic notation.</strong><br/>
+        If $X=\{v_1,v_2,v_3,v_4\}$ and $E=\{e_1,e_2\}$ with
+        $e_1=\{v_1,v_2,v_3\}$ and $e_2=\{v_3,v_4\}$, then the same hypergraph may also be written as
+        $$H=(X,E),\qquad X=\{v_1,v_2,v_3,v_4\},\qquad E=\{\{v_1,v_2,v_3\},\{v_3,v_4\}\}.$$
+      </div>
+
+      <div class="mini-grid">
+        <div class="mini-box">
+          <div class="k">How to read each PNG</div>
+          <div class="v">Each picture shows one hypergraph in four views, ending with a simple-graph translation.</div>
+        </div>
+        <div class="mini-box">
+          <div class="k">Simple-graph translation</div>
+          <div class="v">The last panel uses the 2-section: vertices are adjacent when they lie in a common hyperedge.</div>
+        </div>
+      </div>
+
+      <h2>How the examples are organized</h2>
+      <p>
+        The ten PNGs below are ordered from simpler to more structurally involved examples.
+        Early examples are graph-like, while later ones show larger hyperedges, overlaps, singleton edges, and isolated vertices.
+      </p>
+      <ul class="tight-list">
+        <li>The folder placeholder used throughout is <code>hypergraph_outputs/</code>.</li>
+        <li>Each example lists the hypergraph algebraically before showing the PNG path.</li>
+        <li>The captions are intentionally short so the page stays clean and easy to scan.</li>
+      </ul>
+
+      <h2>Contents</h2>
+      <ul class="toc">
+        <li><a href="#sec01">1. Single Pair</a></li>
+<li><a href="#sec02">2. Two-Pair Chain</a></li>
+<li><a href="#sec03">3. First True Hyperedge</a></li>
+<li><a href="#sec04">4. Overlap and Singleton</a></li>
+<li><a href="#sec05">5. Two Overlapping Triples</a></li>
+<li><a href="#sec06">6. A Size-Four Hyperedge</a></li>
+<li><a href="#sec07">7. Three-Way Overlap</a></li>
+<li><a href="#sec08">8. Mixed Sizes with an Isolated Vertex</a></li>
+<li><a href="#sec09">9. Dense Overlap</a></li>
+<li><a href="#sec10">10. Largest Mixed Example</a></li>
+      </ul>
+
+      <h2>Ten hypergraph examples</h2>
+      
+<section class="example-card" id="sec01">
+  <h3>1. Single Pair</h3>
+  <p class="small-intro"><strong>Algebraic example.</strong> $X=\{v1, v2, v3\}$ and $E=\{e1\}$, where $e1=\{v1, v2\}$.</p>
+  <div class="panel note">
+    <strong>Set-family form.</strong><br/>
+    $$H=(X,E), \qquad X=\{v1, v2, v3\}, \qquad E=\{\{v1, v2\}\}.$$
+  </div>
+  <p>One ordinary edge on three vertices.</p>
+  <div class="center-figure">
+    <img src="hypergraph_outputs/hypergraph_01_single_pair.png" alt="Single Pair hypergraph figure"/>
+    <div class="figcaption"><strong>PNG placeholder.</strong> One ordinary edge on three vertices. File path: <code>hypergraph_outputs/hypergraph_01_single_pair.png</code>.</div>
+  </div>
+</section>
+
+<section class="example-card" id="sec02">
+  <h3>2. Two-Pair Chain</h3>
+  <p class="small-intro"><strong>Algebraic example.</strong> $X=\{v1, v2, v3, v4\}$ and $E=\{e1, e2\}$, where $e1=\{v1, v2\};\; e2=\{v2, v3\}$.</p>
+  <div class="panel note">
+    <strong>Set-family form.</strong><br/>
+    $$H=(X,E), \qquad X=\{v1, v2, v3, v4\}, \qquad E=\{\{v1, v2\}, \{v2, v3\}\}.$$
+  </div>
+  <p>Two size-2 edges sharing one vertex.</p>
+  <div class="center-figure">
+    <img src="hypergraph_outputs/hypergraph_02_two_pairs_chain.png" alt="Two-Pair Chain hypergraph figure"/>
+    <div class="figcaption"><strong>PNG placeholder.</strong> Two size-2 edges sharing one vertex. File path: <code>hypergraph_outputs/hypergraph_02_two_pairs_chain.png</code>.</div>
+  </div>
+</section>
+
+<section class="example-card" id="sec03">
+  <h3>3. First True Hyperedge</h3>
+  <p class="small-intro"><strong>Algebraic example.</strong> $X=\{v1, v2, v3, v4\}$ and $E=\{e1, e2\}$, where $e1=\{v1, v2, v3\};\; e2=\{v3, v4\}$.</p>
+  <div class="panel note">
+    <strong>Set-family form.</strong><br/>
+    $$H=(X,E), \qquad X=\{v1, v2, v3, v4\}, \qquad E=\{\{v1, v2, v3\}, \{v3, v4\}\}.$$
+  </div>
+  <p>A three-vertex hyperedge appears for the first time.</p>
+  <div class="center-figure">
+    <img src="hypergraph_outputs/hypergraph_03_first_true_hyperedge.png" alt="First True Hyperedge hypergraph figure"/>
+    <div class="figcaption"><strong>PNG placeholder.</strong> A three-vertex hyperedge appears for the first time. File path: <code>hypergraph_outputs/hypergraph_03_first_true_hyperedge.png</code>.</div>
+  </div>
+</section>
+
+<section class="example-card" id="sec04">
+  <h3>4. Overlap and Singleton</h3>
+  <p class="small-intro"><strong>Algebraic example.</strong> $X=\{v1, v2, v3, v4, v5\}$ and $E=\{e1, e2, e3\}$, where $e1=\{v1, v2, v3\};\; e2=\{v3, v4\};\; e3=\{v5\}$.</p>
+  <div class="panel note">
+    <strong>Set-family form.</strong><br/>
+    $$H=(X,E), \qquad X=\{v1, v2, v3, v4, v5\}, \qquad E=\{\{v1, v2, v3\}, \{v3, v4\}, \{v5\}\}.$$
+  </div>
+  <p>One overlap at v3 and one singleton edge.</p>
+  <div class="center-figure">
+    <img src="hypergraph_outputs/hypergraph_04_overlap_and_singleton.png" alt="Overlap and Singleton hypergraph figure"/>
+    <div class="figcaption"><strong>PNG placeholder.</strong> One overlap at v3 and one singleton edge. File path: <code>hypergraph_outputs/hypergraph_04_overlap_and_singleton.png</code>.</div>
+  </div>
+</section>
+
+<section class="example-card" id="sec05">
+  <h3>5. Two Overlapping Triples</h3>
+  <p class="small-intro"><strong>Algebraic example.</strong> $X=\{v1, v2, v3, v4, v5\}$ and $E=\{e1, e2, e3\}$, where $e1=\{v1, v2, v3\};\; e2=\{v2, v3, v4\};\; e3=\{v4, v5\}$.</p>
+  <div class="panel note">
+    <strong>Set-family form.</strong><br/>
+    $$H=(X,E), \qquad X=\{v1, v2, v3, v4, v5\}, \qquad E=\{\{v1, v2, v3\}, \{v2, v3, v4\}, \{v4, v5\}\}.$$
+  </div>
+  <p>Two 3-edges overlap in two vertices.</p>
+  <div class="center-figure">
+    <img src="hypergraph_outputs/hypergraph_05_two_overlapping_triples.png" alt="Two Overlapping Triples hypergraph figure"/>
+    <div class="figcaption"><strong>PNG placeholder.</strong> Two 3-edges overlap in two vertices. File path: <code>hypergraph_outputs/hypergraph_05_two_overlapping_triples.png</code>.</div>
+  </div>
+</section>
+
+<section class="example-card" id="sec06">
+  <h3>6. A Size-Four Hyperedge</h3>
+  <p class="small-intro"><strong>Algebraic example.</strong> $X=\{v1, v2, v3, v4, v5, v6\}$ and $E=\{e1, e2, e3\}$, where $e1=\{v1, v2, v3, v4\};\; e2=\{v3, v5\};\; e3=\{v4, v6\}$.</p>
+  <div class="panel note">
+    <strong>Set-family form.</strong><br/>
+    $$H=(X,E), \qquad X=\{v1, v2, v3, v4, v5, v6\}, \qquad E=\{\{v1, v2, v3, v4\}, \{v3, v5\}, \{v4, v6\}\}.$$
+  </div>
+  <p>A 4-edge creates a larger clique in the simple-graph translation.</p>
+  <div class="center-figure">
+    <img src="hypergraph_outputs/hypergraph_06_size_four_edge.png" alt="A Size-Four Hyperedge hypergraph figure"/>
+    <div class="figcaption"><strong>PNG placeholder.</strong> A 4-edge creates a larger clique in the simple-graph translation. File path: <code>hypergraph_outputs/hypergraph_06_size_four_edge.png</code>.</div>
+  </div>
+</section>
+
+<section class="example-card" id="sec07">
+  <h3>7. Three-Way Overlap</h3>
+  <p class="small-intro"><strong>Algebraic example.</strong> $X=\{v1, v2, v3, v4, v5, v6\}$ and $E=\{e1, e2, e3\}$, where $e1=\{v1, v2, v3\};\; e2=\{v2, v3, v4\};\; e3=\{v3, v4, v5, v6\}$.</p>
+  <div class="panel note">
+    <strong>Set-family form.</strong><br/>
+    $$H=(X,E), \qquad X=\{v1, v2, v3, v4, v5, v6\}, \qquad E=\{\{v1, v2, v3\}, \{v2, v3, v4\}, \{v3, v4, v5, v6\}\}.$$
+  </div>
+  <p>Several edges meet around the same central vertices.</p>
+  <div class="center-figure">
+    <img src="hypergraph_outputs/hypergraph_07_three_way_overlap.png" alt="Three-Way Overlap hypergraph figure"/>
+    <div class="figcaption"><strong>PNG placeholder.</strong> Several edges meet around the same central vertices. File path: <code>hypergraph_outputs/hypergraph_07_three_way_overlap.png</code>.</div>
+  </div>
+</section>
+
+<section class="example-card" id="sec08">
+  <h3>8. Mixed Sizes with an Isolated Vertex</h3>
+  <p class="small-intro"><strong>Algebraic example.</strong> $X=\{v1, v2, v3, v4, v5, v6, v7\}$ and $E=\{e1, e2, e3, e4\}$, where $e1=\{v1, v2, v3\};\; e2=\{v2, v4, v5\};\; e3=\{v3, v5, v6\};\; e4=\{v4\}$.</p>
+  <div class="panel note">
+    <strong>Set-family form.</strong><br/>
+    $$H=(X,E), \qquad X=\{v1, v2, v3, v4, v5, v6, v7\}, \qquad E=\{\{v1, v2, v3\}, \{v2, v4, v5\}, \{v3, v5, v6\}, \{v4\}\}.$$
+  </div>
+  <p>Mixed edge sizes appear while v7 stays isolated.</p>
+  <div class="center-figure">
+    <img src="hypergraph_outputs/hypergraph_08_with_isolated_vertex.png" alt="Mixed Sizes with an Isolated Vertex hypergraph figure"/>
+    <div class="figcaption"><strong>PNG placeholder.</strong> Mixed edge sizes appear while v7 stays isolated. File path: <code>hypergraph_outputs/hypergraph_08_with_isolated_vertex.png</code>.</div>
+  </div>
+</section>
+
+<section class="example-card" id="sec09">
+  <h3>9. Dense Overlap</h3>
+  <p class="small-intro"><strong>Algebraic example.</strong> $X=\{v1, v2, v3, v4, v5, v6, v7\}$ and $E=\{e1, e2, e3, e4\}$, where $e1=\{v1, v2, v3, v4\};\; e2=\{v2, v3, v5\};\; e3=\{v3, v4, v6\};\; e4=\{v4, v5, v6, v7\}$.</p>
+  <div class="panel note">
+    <strong>Set-family form.</strong><br/>
+    $$H=(X,E), \qquad X=\{v1, v2, v3, v4, v5, v6, v7\}, \qquad E=\{\{v1, v2, v3, v4\}, \{v2, v3, v5\}, \{v3, v4, v6\}, \{v4, v5, v6, v7\}\}.$$
+  </div>
+  <p>Multiple medium and large edges now overlap heavily.</p>
+  <div class="center-figure">
+    <img src="hypergraph_outputs/hypergraph_09_dense_overlap.png" alt="Dense Overlap hypergraph figure"/>
+    <div class="figcaption"><strong>PNG placeholder.</strong> Multiple medium and large edges now overlap heavily. File path: <code>hypergraph_outputs/hypergraph_09_dense_overlap.png</code>.</div>
+  </div>
+</section>
+
+<section class="example-card" id="sec10">
+  <h3>10. Largest Mixed Example</h3>
+  <p class="small-intro"><strong>Algebraic example.</strong> $X=\{v1, v2, v3, v4, v5, v6, v7, v8\}$ and $E=\{e1, e2, e3, e4, e5\}$, where $e1=\{v1, v2, v3, v4\};\; e2=\{v2, v4, v5, v6\};\; e3=\{v3, v6, v7\};\; e4=\{v1, v7, v8\};\; e5=\{v5, v8\}$.</p>
+  <div class="panel note">
+    <strong>Set-family form.</strong><br/>
+    $$H=(X,E), \qquad X=\{v1, v2, v3, v4, v5, v6, v7, v8\}, \qquad E=\{\{v1, v2, v3, v4\}, \{v2, v4, v5, v6\}, \{v3, v6, v7\}, \{v1, v7, v8\}, \{v5, v8\}\}.$$
+  </div>
+  <p>The final example mixes several overlaps and edge sizes.</p>
+  <div class="center-figure">
+    <img src="hypergraph_outputs/hypergraph_10_largest_mixed_example.png" alt="Largest Mixed Example hypergraph figure"/>
+    <div class="figcaption"><strong>PNG placeholder.</strong> The final example mixes several overlaps and edge sizes. File path: <code>hypergraph_outputs/hypergraph_10_largest_mixed_example.png</code>.</div>
+  </div>
+</section>
+    </section>
+
+    <div class="footer-nav">
+      <a href="index.html">Home</a>
+      <span class="sep">|</span>
+      <a href="#top" onclick="window.scrollTo({top:0, behavior:'smooth'}); return false;">Back to top</a>
+    </div>
+  </div>
+</body>
+</html>
