@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Graph Automorphism with Actual Graph</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700&family=Source+Code+Pro:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #f7f4ee;
+      --card: #fffdf9;
+      --ink: #1b1b1b;
+      --muted: #666;
+      --line: #ddd5c7;
+      --accent: #1d4f91;
+      --quote-bg: #eef5ff;
+      --quote-border: #89aee0;
+      --note: #f5efe3;
+      --warn: #fbf6ea;
+      --codebg: #f3efe8;
+      --shadow: 0 14px 32px rgba(0,0,0,0.06);
+      --radius: 22px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Inter", sans-serif; line-height: 1.72; }
+    .page { max-width: 1180px; margin: 0 auto; padding: 34px 20px 56px; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 34px 34px 30px; }
+    h1, h2, h3 { font-family: "Cormorant Garamond", serif; line-height: 1.08; margin: 0 0 12px; color: #151515; }
+    h1 { font-size: 3.1rem; margin-bottom: 14px; }
+    h2 { font-size: 2rem; margin-top: 34px; padding-bottom: 8px; border-bottom: 1px solid var(--line); }
+    h3 { font-size: 1.56rem; margin-top: 8px; }
+    p { margin: 0 0 14px; font-size: 1.02rem; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .lead { font-size: 1.1rem; }
+    .panel { border: 1px solid var(--line); border-radius: 16px; padding: 16px 18px; margin: 18px 0; background: #fcfaf6; }
+    .note { background: var(--note); border-left: 4px solid var(--accent); }
+    .warn { background: var(--warn); border-left: 4px solid #b7791f; }
+    .quote-box { margin: 16px 0; padding: 16px 18px; background: var(--quote-bg); border: 1px solid var(--quote-border); border-left: 5px solid var(--accent); border-radius: 16px; color: #163d75; font-size: 1.02rem; font-weight: 600; }
+    .mini-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin: 18px 0 22px; }
+    .mini-box { background: #fcfaf6; border: 1px solid var(--line); border-radius: 16px; padding: 14px 16px; }
+    .mini-box .k { font-size: 0.88rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; font-weight: 700; }
+    .mini-box .v { font-size: 1rem; font-weight: 600; }
+    ul { margin: 0 0 14px 20px; padding: 0; }
+    li { margin-bottom: 8px; }
+    .tight-list li { margin-bottom: 5px; }
+    .toc { columns: 2; column-gap: 40px; margin-top: 10px; }
+    .toc li { break-inside: avoid; margin-bottom: 7px; }
+    .parallel-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 18px; align-items: start; }
+    .algebra-panel { margin-top: 0; }
+    .small-block { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--line); }
+    .media-wrap { margin: 0 0 14px; padding: 14px; background: #fcfaf6; border: 1px solid var(--line); border-radius: 18px; }
+    .media-label { font-size: 0.9rem; font-weight: 700; letter-spacing: 0.02em; margin-bottom: 10px; color: #3f3a34; }
+    .media-wrap img { width: 100%; border-radius: 14px; display: block; background: #eee8de; border: 1px solid var(--line); }
+    .media-caption { margin-top: 10px; color: var(--muted); font-size: 0.95rem; }
+    .example-card { margin-top: 28px; padding-top: 6px; }
+    code { font-family: "Source Code Pro", monospace; font-size: 0.92rem; background: var(--codebg); padding: 2px 6px; border-radius: 8px; }
+    .footer-nav { margin-top: 22px; text-align: center; color: var(--muted); font-size: 0.98rem; }
+    .footer-nav a { font-weight: 600; }
+    .sep { margin: 0 8px; color: #8a8a8a; }
+    @media (max-width: 950px) {
+      .card { padding: 24px 18px; }
+      h1 { font-size: 2.35rem; }
+      h2 { font-size: 1.65rem; }
+      .mini-grid, .parallel-grid, .toc { grid-template-columns: 1fr; columns: 1; }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+<div class="page">
+  <section class="card" id="top">
+    <h1>Graph Automorphism with Actual Graph</h1>
+    <p class="lead">
+      In this page, I use one fixed graph all the way through so that the notation in McKay and Piperno’s discussion of colourings,
+      group actions, automorphisms, and canonical forms never drifts too far from an actual picture. I write the page in my own working voice,
+      because I expect to revise the exposition later.
+    </p>
+
+    <div class="panel note">
+      <strong>My running graph from the beginning.</strong><br/>
+      I fix the prism graph
+      $$P=C_6\square K_2,\qquad V(P)=\{1,2,\dots,12\}.$$
+      I write the edge set explicitly as
+      $$E(P)=\{\{1,2\},\{2,3\},\{3,4\},\{4,5\},\{5,6\},\{6,1\},\{7,8\},\{8,9\},\{9,10\},\{10,11\},\{11,12\},\{12,7\},\{1,7\},\{2,8\},\{3,9\},\{4,10\},\{5,11\},\{6,12\}\}. $$
+      So the graph has $12$ vertices, $18$ edges, and degree sequence
+      $$ (3,3,3,3,3,3,3,3,3,3,3,3). $$
+    </div>
+
+    <div class="panel warn">
+      <strong>Extra algebraic structure I want in view from the start.</strong><br/>
+      I also keep the adjacency list nearby:
+      $$\begin{aligned}
+      1&: \{2,6,7\}, & 2&: \{1,3,8\}, & 3&: \{2,4,9\}, & 4&: \{3,5,10\},\\
+      5&: \{4,6,11\}, & 6&: \{1,5,12\}, & 7&: \{1,8,12\}, & 8&: \{2,7,9\},\\
+      9&: \{3,8,10\}, & 10&: \{4,9,11\}, & 11&: \{5,10,12\}, & 12&: \{6,7,11\}.
+      \end{aligned}$$
+      For the uncoloured graph I use the generators
+      $$\rho=(1\;2\;3\;4\;5\;6)(7\;8\;9\;10\;11\;12),$$
+      $$\tau=(2\;6)(3\;5)(8\;12)(9\;11),$$
+      $$\sigma=(1\;7)(2\;8)(3\;9)(4\;10)(5\;11)(6\;12),$$
+      so that
+      $$\mathrm{Aut}(P)=\langle \rho,\tau,\sigma\rangle,\qquad |\mathrm{Aut}(P)|=24.$$ 
+    </div>
+
+    <div class="mini-grid">
+      <div class="mini-box">
+        <div class="k">How I use the figures</div>
+        <div class="v">Every section keeps algebra and pictures side by side, because I want the formulas to stay visible while I read the figures.</div>
+      </div>
+      <div class="mini-box">
+        <div class="k">Folder placeholder</div>
+        <div class="v"><code>automorphism_demo_pngs/</code> stores the paired PNGs for each section.</div>
+      </div>
+    </div>
+
+    <h2>How I am reading the paper here</h2>
+    <p>
+      I treat each blue box as a short paper-guided sentence idea rather than as a long verbatim quotation.
+      Then I explain the idea using the same 12-vertex graph, with the algebraic form placed in parallel with the images.
+    </p>
+    <ul class="tight-list">
+      <li>The graph view PNG repeats the relevant algebra directly inside the figure.</li>
+      <li>The automorphism/partition PNG gathers the relevant symmetries or ordered cells into one place.</li>
+      <li>The repeated algebra is deliberate: I want the page to feel like a working notebook, not just a gallery.</li>
+    </ul>
+
+    <h2>Contents</h2>
+    <ul class="toc">
+      <li><a href="#s01">1. Formal definitions come first</a></li>
+<li><a href="#s02">2. Why the search tree matters</a></li>
+<li><a href="#s03">3. A self-contained strategy section</a></li>
+<li><a href="#s04">4. The ambient set of graphs</a></li>
+<li><a href="#s05">5. What a colouring is</a></li>
+<li><a href="#s06">6. The number of colours</a></li>
+<li><a href="#s07">7. What a cell is</a></li>
+<li><a href="#s08">8. Discrete colourings</a></li>
+<li><a href="#s09">9. Discrete colouring as a permutation</a></li>
+<li><a href="#s10">10. Finer than or equal to</a></li>
+<li><a href="#s11">11. Subset intuition for finer colourings</a></li>
+<li><a href="#s12">12. Why colourings are also partitions</a></li>
+<li><a href="#s13">13. Why colour order still matters</a></li>
+<li><a href="#s14">14. What a coloured graph is</a></li>
+<li><a href="#s15">15. The symmetric group</a></li>
+<li><a href="#s16">16. Exponent notation for actions</a></li>
+<li><a href="#s17">17. Image of a vertex under a permutation</a></li>
+<li><a href="#s18">18. Induced action on more complicated objects</a></li>
+<li><a href="#s19">19. Action on subsets</a></li>
+<li><a href="#s20">20. Action on graphs</a></li>
+<li><a href="#s21">21. Discrete colouring gives G^π</a></li>
+<li><a href="#s22">22. Action on colourings</a></li>
+<li><a href="#s23">23. Action on coloured graphs</a></li>
+<li><a href="#s24">24. Isomorphism of coloured graphs</a></li>
+<li><a href="#s25">25. What the isomorphism itself is</a></li>
+<li><a href="#s26">26. Automorphism group</a></li>
+<li><a href="#s27">27. Canonical form</a></li>
+<li><a href="#s28">28. Unique representative of the class</a></li>
+<li><a href="#s29">29. Why canonical forms solve comparison</a></li>
+    </ul>
+
+    <h2>Sentence-by-sentence working notes</h2>
+    
+<section class="example-card" id="s01">
+  <h3>1. Formal definitions come first</h3>
+  <div class="quote-box">"I begin by fixing colourings, invariants, and group actions before I discuss the main search machinery."</div>
+  <p>I start with one concrete graph so that every later definition has an actual object attached to it. My running graph is the 12-vertex prism graph, and I return to it in every section.</p>
+  <div class="parallel-grid">
+    <div class="algebra-panel panel note">
+      <strong>Algebraic form for this section.</strong><br/>
+      $$P=C_6 \square K_2,\qquad V=\{1,2,\dots,12\},\qquad E=\{\{1,2\},\{2,3\},\dots,\{6,12\}\}.$$
+      <div class="small-block">
+        <strong>Running graph reminder.</strong><br/>
+        $$P=C_6\square K_2,\qquad |V(P)|=12,\qquad |E(P)|=18,\qquad \deg(v)=3\text{ for all }v.$$ 
+      </div>
+    </div>
+    <div>
+      <div class="media-wrap">
+        <div class="media-label">Graph / algebra view</div>
+        <img src="automorphism_demo_pngs/01_graph_view.png" alt="Section 1 graph view"/>
+        <div class="media-caption">This PNG keeps the same 12-vertex prism graph and writes the section-specific algebra directly inside the figure.</div>
+      </div>
+      <div class="media-wrap">
+        <div class="media-label">Automorphism / partition view</div>
+        <img src="automorphism_demo_pngs/01_automorphism_or_partition_view.png" alt="Section 1 automorphism or partition view"/>
+        <div class="media-caption">This PNG lists the relevant automorphisms or partition data in a single panel so I can compare the symbolic and visual views side by side.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="example-card" id="s02">
+  <h3>2. Why the search tree matters</h3>
+  <div class="quote-box">"The search tree is the mechanism that drives most modern graph-isomorphism algorithms."</div>
+  <p>Here I picture the search tree as repeated refinement: I split one cell, refine, and keep going until the colouring becomes rigid enough to compare branches or record automorphisms.</p>
+  <div class="parallel-grid">
+    <div class="algebra-panel panel note">
+      <strong>Algebraic form for this section.</strong><br/>
+      $$\pi_0=(V),\qquad \pi_1=(\{1\},V\setminus\{1\}),\qquad \pi_{\mathrm{disc}}=(\{1\},\{2\},\dots,\{12\}).$$
+      <div class="small-block">
+        <strong>Running graph reminder.</strong><br/>
+        $$P=C_6\square K_2,\qquad |V(P)|=12,\qquad |E(P)|=18,\qquad \deg(v)=3\text{ for all }v.$$ 
+      </div>
+    </div>
+    <div>
+      <div class="media-wrap">
+        <div class="media-label">Graph / algebra view</div>
+        <img src="automorphism_demo_pngs/02_graph_view.png" alt="Section 2 graph view"/>
+        <div class="media-caption">This PNG keeps the same 12-vertex prism graph and writes the section-specific algebra directly inside the figure.</div>
+      </div>
+      <div class="media-wrap">
+        <div class="media-label">Automorphism / partition view</div>
+        <img src="automorphism_demo_pngs/02_automorphism_or_partition_view.png" alt="Section 2 automorphism or partition view"/>
+        <div class="media-caption">This PNG lists the relevant automorphisms or partition data in a single panel so I can compare the symbolic and visual views side by side.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="example-card" id="s03">
+  <h3>3. A self-contained strategy section</h3>
+  <div class="quote-box">"This section is best read as a self-contained roadmap for the overall method."</div>
+  <p>I read this part of the paper as a strategy map: start with a graph, impose an ordered colouring, refine it, and use the refined states to compute automorphisms and canonical forms.</p>
+  <div class="parallel-grid">
+    <div class="algebra-panel panel note">
+      <strong>Algebraic form for this section.</strong><br/>
+      $$G \longrightarrow (G,\pi) \longrightarrow \text{refinement/search tree} \longrightarrow \text{Aut}(G,\pi) \text{ and } C(G,\pi).$$
+      <div class="small-block">
+        <strong>Running graph reminder.</strong><br/>
+        $$P=C_6\square K_2,\qquad |V(P)|=12,\qquad |E(P)|=18,\qquad \deg(v)=3\text{ for all }v.$$ 
+      </div>
+    </div>
+    <div>
+      <div class="media-wrap">
+        <div class="media-label">Graph / algebra view</div>
+        <img src="automorphism_demo_pngs/03_graph_view.png" alt="Section 3 graph view"/>
+        <div class="media-caption">This PNG keeps the same 12-vertex prism graph and writes the section-specific algebra directly inside the figure.</div>
+      </div>
+      <div class="media-wrap">
+        <div class="media-label">Automorphism / partition view</div>
+        <img src="automorphism_demo_pngs/03_automorphism_or_partition_view.png" alt="Section 3 automorphism or partition view"/>
+        <div class="media-caption">This PNG lists the relevant automorphisms or partition data in a single panel so I can compare the symbolic and visual views side by side.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="example-card" id="s04">
+  <h3>4. The ambient set of graphs</h3>
+  <div class="quote-box">"I now fix the ambient set of graphs on a common vertex set."</div>
+  <p>The paper writes $\mathcal G_n$ for all graphs on $V=\{1,2,\dots,n\}$. In my example I keep $n=12$ fixed and work inside that universe throughout.</p>
+  <div class="parallel-grid">
+    <div class="algebra-panel panel note">
+      <strong>Algebraic form for this section.</strong><br/>
+      $$\mathcal G_{12}=\{G: V(G)=\{1,2,\dots,12\}\}.$$
+      <div class="small-block">
+        <strong>Running graph reminder.</strong><br/>
+        $$P=C_6\square K_2,\qquad |V(P)|=12,\qquad |E(P)|=18,\qquad \deg(v)=3\text{ for all }v.$$ 
+      </div>
+    </div>
+    <div>
+      <div class="media-wrap">
+        <div class="media-label">Graph / algebra view</div>
+        <img src="automorphism_demo_pngs/04_graph_view.png" alt="Section 4 graph view"/>
+        <div class="media-caption">This PNG keeps the same 12-vertex prism graph and writes the section-specific algebra directly inside the figure.</div>
+      </div>
+      <div class="media-wrap">
+        <div class="media-label">Automorphism / partition view</div>
+        <img src="automorphism_demo_pngs/04_automorphism_or_partition_view.png" alt="Section 4 automorphism or partition view"/>
+        <div class="media-caption">This PNG lists the relevant automorphisms or partition data in a single panel so I can compare the symbolic and visual views side by side.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="example-card" id="s05">
+  <h3>5. What a colouring is</h3>
+  <div class="quote-box">"A colouring is an onto map from the vertex set to an ordered set of colour labels."</div>
+  <p>I treat a colouring as an ordered partition. In the example below, vertices $1$ to $4$ form the first cell, vertices $5$ to $8$ the second, and vertices $9$ to $12$ the third.</p>
+  <div class="parallel-grid">
+    <div class="algebra-panel panel note">
+      <strong>Algebraic form for this section.</strong><br/>
+      $$\pi=(\{1,2,3,4\},\{5,6,7,8\},\{9,10,11,12\}),\qquad |\pi|=3.$$
+      <div class="small-block">
+        <strong>Running graph reminder.</strong><br/>
+        $$P=C_6\square K_2,\qquad |V(P)|=12,\qquad |E(P)|=18,\qquad \deg(v)=3\text{ for all }v.$$ 
+      </div>
+    </div>
+    <div>
+      <div class="media-wrap">
+        <div class="media-label">Graph / algebra view</div>
+        <img src="automorphism_demo_pngs/05_graph_view.png" alt="Section 5 graph view"/>
+        <div class="media-caption">This PNG keeps the same 12-vertex prism graph and writes the section-specific algebra directly inside the figure.</div>
+      </div>
+      <div class="media-wrap">
+        <div class="media-label">Automorphism / partition view</div>
+        <img src="automorphism_demo_pngs/05_automorphism_or_partition_view.png" alt="Section 5 automorphism or partition view"/>
+        <div class="media-caption">This PNG lists the relevant automorphisms or partition data in a single panel so I can compare the symbolic and visual views side by side.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="example-card" id="s06">
+  <h3>6. The number of colours</h3>
+  <div class="quote-box">"The quantity $|\pi|$ records how many ordered colour classes the colouring has."</div>
+  <p>For my running partition, the colouring has three cells, so $|\pi|=3$. The important point is that the colour classes are ordered, not merely collected as an unordered family.</p>
+  <div class="parallel-grid">
+    <div class="algebra-panel panel note">
+      <strong>Algebraic form for this section.</strong><br/>
+      $$|\pi|=3,\qquad \pi=(C_1,C_2,C_3).$$
+      <div class="small-block">
+        <strong>Running graph reminder.</strong><br/>
+        $$P=C_6\square K_2,\qquad |V(P)|=12,\qquad |E(P)|=18,\qquad \deg(v)=3\text{ for all }v.$$ 
+      </div>
+    </div>
+    <div>
+      <div class="media-wrap">
+        <div class="media-label">Graph / algebra view</div>
+        <img src="automorphism_demo_pngs/06_graph_view.png" alt="Section 6 graph view"/>
+        <div class="media-caption">This PNG keeps the same 12-vertex prism graph and writes the section-specific algebra directly inside the figure.</div>
+      </div>
+      <div class="media-wrap">
+        <div class="media-label">Automorphism / partition view</div>
+        <img src="automorphism_demo_pngs/06_automorphism_or_partition_view.png" alt="Section 6 automorphism or partition view"/>
+        <div class="media-caption">This PNG lists the relevant automorphisms or partition data in a single panel so I can compare the symbolic and visual views side by side.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="example-card" id="s07">
+  <h3>7. What a cell is</h3>
+  <div class="quote-box">"A cell is just one colour class of the colouring."</div>
+  <p>In my three-cell example, the middle cell is $C_2=\{5,6,7,8\}$. Thinking cell-by-cell makes refinement much easier to see.</p>
+  <div class="parallel-grid">
+    <div class="algebra-panel panel note">
+      <strong>Algebraic form for this section.</strong><br/>
+      $$C_1=\{1,2,3,4\},\quad C_2=\{5,6,7,8\},\quad C_3=\{9,10,11,12\}. $$
+      <div class="small-block">
+        <strong>Running graph reminder.</strong><br/>
+        $$P=C_6\square K_2,\qquad |V(P)|=12,\qquad |E(P)|=18,\qquad \deg(v)=3\text{ for all }v.$$ 
+      </div>
+    </div>
+    <div>
+      <div class="media-wrap">
+        <div class="media-label">Graph / algebra view</div>
+        <img src="automorphism_demo_pngs/07_graph_view.png" alt="Section 7 graph view"/>
+        <div class="media-caption">This PNG keeps the same 12-vertex prism graph and writes the section-specific algebra directly inside the figure.</div>
+      </div>
+      <div class="media-wrap">
+        <div class="media-label">Automorphism / partition view</div>
+        <img src="automorphism_demo_pngs/07_automorphism_or_partition_view.png" alt="Section 7 automorphism or partition view"/>
+        <div class="media-caption">This PNG lists the relevant automorphisms or partition data in a single panel so I can compare the symbolic and visual views side by side.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="example-card" id="s08">
+  <h3>8. Discrete colourings</h3>
+  <div class="quote-box">"A discrete colouring is one in which every cell is a singleton."</div>
+  <p>A discrete colouring removes all ambiguity by isolating every vertex. Once I reach this state, every vertex has its own position in the ordering.</p>
+  <div class="parallel-grid">
+    <div class="algebra-panel panel note">
+      <strong>Algebraic form for this section.</strong><br/>
+      $$\pi_{\mathrm{disc}}=(\{1\},\{2\},\dots,\{12\}),\qquad |\pi_{\mathrm{disc}}|=12.$$
+      <div class="small-block">
+        <strong>Running graph reminder.</strong><br/>
+        $$P=C_6\square K_2,\qquad |V(P)|=12,\qquad |E(P)|=18,\qquad \deg(v)=3\text{ for all }v.$$ 
+      </div>
+    </div>
+    <div>
+      <div class="media-wrap">
+        <div class="media-label">Graph / algebra view</div>
+        <img src="automorphism_demo_pngs/08_graph_view.png" alt="Section 8 graph view"/>
+        <div class="media-caption">This PNG keeps the same 12-vertex prism graph and writes the section-specific algebra directly inside the figure.</div>
+      </div>
+      <div class="media-wrap">
+        <div class="media-label">Automorphism / partition view</div>
+        <img src="automorphism_demo_pngs/08_automorphism_or_partition_view.png" alt="Section 8 automorphism or partition view"/>
+        <div class="media-caption">This PNG lists the relevant automorphisms or partition data in a single panel so I can compare the symbolic and visual views side by side.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="example-card" id="s09">
+  <h3>9. Discrete colouring as a permutation</h3>
+  <div class="quote-box">"A discrete colouring can be identified with an ordering, hence with a permutation of the vertices."</div>
+  <p>Because each cell is a singleton, I can read the discrete colouring as the ordered list $(1,2,\dots,12)$, or as any relabelled copy obtained by a permutation $g$.</p>
+  <div class="parallel-grid">
+    <div class="algebra-panel panel note">
+      <strong>Algebraic form for this section.</strong><br/>
+      $$g=(1\;4)(2\;5)(3\;6)(7\;10)(8\;11)(9\;12),\qquad G^g 	ext{ is the same graph with relabelled vertices.}$$
+      <div class="small-block">
+        <strong>Running graph reminder.</strong><br/>
+        $$P=C_6\square K_2,\qquad |V(P)|=12,\qquad |E(P)|=18,\qquad \deg(v)=3\text{ for all }v.$$ 
+      </div>
+    </div>
+    <div>
+      <div class="media-wrap">
+        <div class="media-label">Graph / algebra view</div>
+        <img src="automorphism_demo_pngs/09_graph_view.png" alt="Section 9 graph view"/>
+        <div class="media-caption">This PNG keeps the same 12-vertex prism graph and writes the section-specific algebra directly inside the figure.</div>
+      </div>
+      <div class="media-wrap">
+        <div class="media-label">Automorphism / partition view</div>
+        <img src="automorphism_demo_pngs/09_automorphism_or_partition_view.png" alt="Section 9 automorphism or partition view"/>
+        <div class="media-caption">This PNG lists the relevant automorphisms or partition data in a single panel so I can compare the symbolic and visual views side by side.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="example-card" id="s10">
+  <h3>10. Finer than or equal to</h3>
+  <div class="quote-box">"One colouring is finer than another when it splits cells but never mixes them."</div>
+  <p>I compare a coarse three-cell colouring with a finer five-cell colouring. Every finer cell sits inside one coarse cell, so the order relation is visible directly on the partition boxes.</p>
+  <div class="parallel-grid">
+    <div class="algebra-panel panel note">
+      <strong>Algebraic form for this section.</strong><br/>
+      $$\pi=(\{1,2,3,4\},\{5,6,7,8\},\{9,10,11,12\}),$$ $$\pi'=(\{1,2\},\{3,4\},\{5,6\},\{7,8\},\{9,10,11,12\}),\qquad \pi'\preceq \pi.$$
+      <div class="small-block">
+        <strong>Running graph reminder.</strong><br/>
+        $$P=C_6\square K_2,\qquad |V(P)|=12,\qquad |E(P)|=18,\qquad \deg(v)=3\text{ for all }v.$$ 
+      </div>
+    </div>
+    <div>
+      <div class="media-wrap">
+        <div class="media-label">Graph / algebra view</div>
+        <img src="automorphism_demo_pngs/10_graph_view.png" alt="Section 10 graph view"/>
+        <div class="media-caption">This PNG keeps the same 12-vertex prism graph and writes the section-specific algebra directly inside the figure.</div>
+      </div>
+      <div class="media-wrap">
+        <div class="media-label">Automorphism / partition view</div>
+        <img src="automorphism_demo_pngs/10_automorphism_or_partition_view.png" alt="Section 10 automorphism or partition view"/>
+        <div class="media-caption">This PNG lists the relevant automorphisms or partition data in a single panel so I can compare the symbolic and visual views side by side.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="example-card" id="s11">
+  <h3>11. Subset intuition for finer colourings</h3>
+  <div class="quote-box">"The key intuition is that every cell of the finer colouring lies inside a cell of the coarser one."</div>
+  <p>I use the same pair $(\pi',\pi)$ here, but now I stress the subset picture: no finer cell crosses a coarse-cell boundary.</p>
+  <div class="parallel-grid">
+    <div class="algebra-panel panel note">
+      <strong>Algebraic form for this section.</strong><br/>
+      $$\forall C'\in \pi'\;\exists C\in \pi\text{ such that }C'\subseteq C.$$
+      <div class="small-block">
+        <strong>Running graph reminder.</strong><br/>
+        $$P=C_6\square K_2,\qquad |V(P)|=12,\qquad |E(P)|=18,\qquad \deg(v)=3\text{ for all }v.$$ 
+      </div>
+    </div>
+    <div>
+      <div class="media-wrap">
+        <div class="media-label">Graph / algebra view</div>
+        <img src="automorphism_demo_pngs/11_graph_view.png" alt="Section 11 graph view"/>
+        <div class="media-caption">This PNG keeps the same 12-vertex prism graph and writes the section-specific algebra directly inside the figure.</div>
+      </div>
+      <div class="media-wrap">
+        <div class="media-label">Automorphism / partition view</div>
+        <img src="automorphism_demo_pngs/11_automorphism_or_partition_view.png" alt="Section 11 automorphism or partition view"/>
+        <div class="media-caption">This PNG lists the relevant automorphisms or partition data in a single panel so I can compare the symbolic and visual views side by side.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="example-card" id="s12">
+  <h3>12. Why colourings are also partitions</h3>
+  <div class="quote-box">"A colouring is frequently called a partition because it cuts the vertex set into cells."</div>
+  <p>I keep the partition language visible because it is exactly what I see in the figures. The only caveat is that the cells come with an order.</p>
+  <div class="parallel-grid">
+    <div class="algebra-panel panel note">
+      <strong>Algebraic form for this section.</strong><br/>
+      $$V=\bigsqcup_{i=1}^{|\pi|} C_i,\qquad \pi=(C_1,C_2,\dots,C_{|\pi|}).$$
+      <div class="small-block">
+        <strong>Running graph reminder.</strong><br/>
+        $$P=C_6\square K_2,\qquad |V(P)|=12,\qquad |E(P)|=18,\qquad \deg(v)=3\text{ for all }v.$$ 
+      </div>
+    </div>
+    <div>
+      <div class="media-wrap">
+        <div class="media-label">Graph / algebra view</div>
+        <img src="automorphism_demo_pngs/12_graph_view.png" alt="Section 12 graph view"/>
+        <div class="media-caption">This PNG keeps the same 12-vertex prism graph and writes the section-specific algebra directly inside the figure.</div>
+      </div>
+      <div class="media-wrap">
+        <div class="media-label">Automorphism / partition view</div>
+        <img src="automorphism_demo_pngs/12_automorphism_or_partition_view.png" alt="Section 12 automorphism or partition view"/>
+        <div class="media-caption">This PNG lists the relevant automorphisms or partition data in a single panel so I can compare the symbolic and visual views side by side.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="example-card" id="s13">
+  <h3>13. Why colour order still matters</h3>
+  <div class="quote-box">"The order of the colour classes matters, especially when I compare finer and coarser colourings."</div>
+  <p>Two ordered partitions can have the same underlying blocks and still count as different colourings if I swap the order of the blocks. I make that distinction explicit in the algebra box.</p>
+  <div class="parallel-grid">
+    <div class="algebra-panel panel note">
+      <strong>Algebraic form for this section.</strong><br/>
+      $$\pi=(A,B,C),\qquad \sigma=(B,A,C),\qquad \pi \neq \sigma 	ext{ as ordered colourings.}$$
+      <div class="small-block">
+        <strong>Running graph reminder.</strong><br/>
+        $$P=C_6\square K_2,\qquad |V(P)|=12,\qquad |E(P)|=18,\qquad \deg(v)=3\text{ for all }v.$$ 
+      </div>
+    </div>
+    <div>
+      <div class="media-wrap">
+        <div class="media-label">Graph / algebra view</div>
+        <img src="automorphism_demo_pngs/13_graph_view.png" alt="Section 13 graph view"/>
+        <div class="media-caption">This PNG keeps the same 12-vertex prism graph and writes the section-specific algebra directly inside the figure.</div>
+      </div>
+      <div class="media-wrap">
+        <div class="media-label">Automorphism / partition view</div>
+        <img src="automorphism_demo_pngs/13_automorphism_or_partition_view.png" alt="Section 13 automorphism or partition view"/>
+        <div class="media-caption">This PNG lists the relevant automorphisms or partition data in a single panel so I can compare the symbolic and visual views side by side.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="example-card" id="s14">
+  <h3>14. What a coloured graph is</h3>
+  <div class="quote-box">"A coloured graph is simply a graph together with a colouring."</div>
+  <p>From this point on, I frequently work with the pair $(P,\pi)$ rather than with $P$ alone, because the colouring changes which symmetries remain valid.</p>
+  <div class="parallel-grid">
+    <div class="algebra-panel panel note">
+      <strong>Algebraic form for this section.</strong><br/>
+      $$ (P,\pi),\qquad P=C_6\square K_2,\quad \pi=(\{1,2,3,4\},\{5,6,7,8\},\{9,10,11,12\}). $$
+      <div class="small-block">
+        <strong>Running graph reminder.</strong><br/>
+        $$P=C_6\square K_2,\qquad |V(P)|=12,\qquad |E(P)|=18,\qquad \deg(v)=3\text{ for all }v.$$ 
+      </div>
+    </div>
+    <div>
+      <div class="media-wrap">
+        <div class="media-label">Graph / algebra view</div>
+        <img src="automorphism_demo_pngs/14_graph_view.png" alt="Section 14 graph view"/>
+        <div class="media-caption">This PNG keeps the same 12-vertex prism graph and writes the section-specific algebra directly inside the figure.</div>
+      </div>
+      <div class="media-wrap">
+        <div class="media-label">Automorphism / partition view</div>
+        <img src="automorphism_demo_pngs/14_automorphism_or_partition_view.png" alt="Section 14 automorphism or partition view"/>
+        <div class="media-caption">This PNG lists the relevant automorphisms or partition data in a single panel so I can compare the symbolic and visual views side by side.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="example-card" id="s15">
+  <h3>15. The symmetric group</h3>
+  <div class="quote-box">"The symmetric group acts on the vertex set and therefore on every structure built from it."</div>
+  <p>The paper writes $S_n$ for all permutations of the vertex set. I use a specific permutation $\rho$ to make the action visible on the prism graph.</p>
+  <div class="parallel-grid">
+    <div class="algebra-panel panel note">
+      <strong>Algebraic form for this section.</strong><br/>
+      $$\rho=(1\;2\;3\;4\;5\;6)(7\;8\;9\;10\;11\;12)\in S_{12}. $$
+      <div class="small-block">
+        <strong>Running graph reminder.</strong><br/>
+        $$P=C_6\square K_2,\qquad |V(P)|=12,\qquad |E(P)|=18,\qquad \deg(v)=3\text{ for all }v.$$ 
+      </div>
+    </div>
+    <div>
+      <div class="media-wrap">
+        <div class="media-label">Graph / algebra view</div>
+        <img src="automorphism_demo_pngs/15_graph_view.png" alt="Section 15 graph view"/>
+        <div class="media-caption">This PNG keeps the same 12-vertex prism graph and writes the section-specific algebra directly inside the figure.</div>
+      </div>
+      <div class="media-wrap">
+        <div class="media-label">Automorphism / partition view</div>
+        <img src="automorphism_demo_pngs/15_automorphism_or_partition_view.png" alt="Section 15 automorphism or partition view"/>
+        <div class="media-caption">This PNG lists the relevant automorphisms or partition data in a single panel so I can compare the symbolic and visual views side by side.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="example-card" id="s16">
+  <h3>16. Exponent notation for actions</h3>
+  <div class="quote-box">"The action is written exponentially: $v^g$ is the image of the vertex $v$ under $g$."</div>
+  <p>I keep the exponent notation because it matches the paper. For instance, under the rotation $\rho^2$, the vertex $1$ moves to $3$ and the vertex $7$ moves to $9$.</p>
+  <div class="parallel-grid">
+    <div class="algebra-panel panel note">
+      <strong>Algebraic form for this section.</strong><br/>
+      $$1^{\rho^2}=3,\qquad 7^{\rho^2}=9.$$
+      <div class="small-block">
+        <strong>Running graph reminder.</strong><br/>
+        $$P=C_6\square K_2,\qquad |V(P)|=12,\qquad |E(P)|=18,\qquad \deg(v)=3\text{ for all }v.$$ 
+      </div>
+    </div>
+    <div>
+      <div class="media-wrap">
+        <div class="media-label">Graph / algebra view</div>
+        <img src="automorphism_demo_pngs/16_graph_view.png" alt="Section 16 graph view"/>
+        <div class="media-caption">This PNG keeps the same 12-vertex prism graph and writes the section-specific algebra directly inside the figure.</div>
+      </div>
+      <div class="media-wrap">
+        <div class="media-label">Automorphism / partition view</div>
+        <img src="automorphism_demo_pngs/16_automorphism_or_partition_view.png" alt="Section 16 automorphism or partition view"/>
+        <div class="media-caption">This PNG lists the relevant automorphisms or partition data in a single panel so I can compare the symbolic and visual views side by side.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="example-card" id="s17">
+  <h3>17. Image of a vertex under a permutation</h3>
+  <div class="quote-box">"I can track one vertex at a time under the group action."</div>
+  <p>To make the notation concrete, I highlight one vertex and its image. This is the smallest nontrivial example of the action.</p>
+  <div class="parallel-grid">
+    <div class="algebra-panel panel note">
+      <strong>Algebraic form for this section.</strong><br/>
+      $$g=\rho^3,\qquad 1^g=4.$$
+      <div class="small-block">
+        <strong>Running graph reminder.</strong><br/>
+        $$P=C_6\square K_2,\qquad |V(P)|=12,\qquad |E(P)|=18,\qquad \deg(v)=3\text{ for all }v.$$ 
+      </div>
+    </div>
+    <div>
+      <div class="media-wrap">
+        <div class="media-label">Graph / algebra view</div>
+        <img src="automorphism_demo_pngs/17_graph_view.png" alt="Section 17 graph view"/>
+        <div class="media-caption">This PNG keeps the same 12-vertex prism graph and writes the section-specific algebra directly inside the figure.</div>
+      </div>
+      <div class="media-wrap">
+        <div class="media-label">Automorphism / partition view</div>
+        <img src="automorphism_demo_pngs/17_automorphism_or_partition_view.png" alt="Section 17 automorphism or partition view"/>
+        <div class="media-caption">This PNG lists the relevant automorphisms or partition data in a single panel so I can compare the symbolic and visual views side by side.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="example-card" id="s18">
+  <h3>18. Induced action on more complicated objects</h3>
+  <div class="quote-box">"The same permutation acts on edges, subsets, sequences, and entire graphs."</div>
+  <p>Once the vertex action is fixed, everything else follows automatically. Here I show the induced action on a single edge.</p>
+  <div class="parallel-grid">
+    <div class="algebra-panel panel note">
+      <strong>Algebraic form for this section.</strong><br/>
+      $$g=\rho^3,\qquad \{1,2\}^g=\{4,5\}. $$
+      <div class="small-block">
+        <strong>Running graph reminder.</strong><br/>
+        $$P=C_6\square K_2,\qquad |V(P)|=12,\qquad |E(P)|=18,\qquad \deg(v)=3\text{ for all }v.$$ 
+      </div>
+    </div>
+    <div>
+      <div class="media-wrap">
+        <div class="media-label">Graph / algebra view</div>
+        <img src="automorphism_demo_pngs/18_graph_view.png" alt="Section 18 graph view"/>
+        <div class="media-caption">This PNG keeps the same 12-vertex prism graph and writes the section-specific algebra directly inside the figure.</div>
+      </div>
+      <div class="media-wrap">
+        <div class="media-label">Automorphism / partition view</div>
+        <img src="automorphism_demo_pngs/18_automorphism_or_partition_view.png" alt="Section 18 automorphism or partition view"/>
+        <div class="media-caption">This PNG lists the relevant automorphisms or partition data in a single panel so I can compare the symbolic and visual views side by side.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="example-card" id="s19">
+  <h3>19. Action on subsets</h3>
+  <div class="quote-box">"A subset moves by sending each of its vertices through the permutation."</div>
+  <p>I use the three-vertex set $W=\{1,2,3\}$ so that the image is easy to read in the figure and in the formula at the same time.</p>
+  <div class="parallel-grid">
+    <div class="algebra-panel panel note">
+      <strong>Algebraic form for this section.</strong><br/>
+      $$W=\{1,2,3\},\qquad W^g=\{4,5,6\} 	ext{ for } g=\rho^3.$$
+      <div class="small-block">
+        <strong>Running graph reminder.</strong><br/>
+        $$P=C_6\square K_2,\qquad |V(P)|=12,\qquad |E(P)|=18,\qquad \deg(v)=3\text{ for all }v.$$ 
+      </div>
+    </div>
+    <div>
+      <div class="media-wrap">
+        <div class="media-label">Graph / algebra view</div>
+        <img src="automorphism_demo_pngs/19_graph_view.png" alt="Section 19 graph view"/>
+        <div class="media-caption">This PNG keeps the same 12-vertex prism graph and writes the section-specific algebra directly inside the figure.</div>
+      </div>
+      <div class="media-wrap">
+        <div class="media-label">Automorphism / partition view</div>
+        <img src="automorphism_demo_pngs/19_automorphism_or_partition_view.png" alt="Section 19 automorphism or partition view"/>
+        <div class="media-caption">This PNG lists the relevant automorphisms or partition data in a single panel so I can compare the symbolic and visual views side by side.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="example-card" id="s20">
+  <h3>20. Action on graphs</h3>
+  <div class="quote-box">"A graph moves by relabelling the endpoints of every edge."</div>
+  <p>The figure on the right keeps the same geometry but changes the displayed labels. That is exactly the paper’s idea of $G^g$.</p>
+  <div class="parallel-grid">
+    <div class="algebra-panel panel note">
+      <strong>Algebraic form for this section.</strong><br/>
+      $$G^g=(V,E^g),\qquad E^g=\{\{u^g,v^g\}:\{u,v\}\in E\}. $$
+      <div class="small-block">
+        <strong>Running graph reminder.</strong><br/>
+        $$P=C_6\square K_2,\qquad |V(P)|=12,\qquad |E(P)|=18,\qquad \deg(v)=3\text{ for all }v.$$ 
+      </div>
+    </div>
+    <div>
+      <div class="media-wrap">
+        <div class="media-label">Graph / algebra view</div>
+        <img src="automorphism_demo_pngs/20_graph_view.png" alt="Section 20 graph view"/>
+        <div class="media-caption">This PNG keeps the same 12-vertex prism graph and writes the section-specific algebra directly inside the figure.</div>
+      </div>
+      <div class="media-wrap">
+        <div class="media-label">Automorphism / partition view</div>
+        <img src="automorphism_demo_pngs/20_automorphism_or_partition_view.png" alt="Section 20 automorphism or partition view"/>
+        <div class="media-caption">This PNG lists the relevant automorphisms or partition data in a single panel so I can compare the symbolic and visual views side by side.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="example-card" id="s21">
+  <h3>21. Discrete colouring gives G^π</h3>
+  <div class="quote-box">"A discrete colouring can be treated as a permutation, so the notation $G^\pi$ makes sense."</div>
+  <p>In the discrete case, the colouring itself encodes a vertex order. I use that to read the graph as a relabelled copy $G^\pi$.</p>
+  <div class="parallel-grid">
+    <div class="algebra-panel panel note">
+      <strong>Algebraic form for this section.</strong><br/>
+      $$\pi_{\mathrm{disc}}=(\{1\},\{2\},\dots,\{12\})\quad\leadsto\quad G^{\pi}. $$
+      <div class="small-block">
+        <strong>Running graph reminder.</strong><br/>
+        $$P=C_6\square K_2,\qquad |V(P)|=12,\qquad |E(P)|=18,\qquad \deg(v)=3\text{ for all }v.$$ 
+      </div>
+    </div>
+    <div>
+      <div class="media-wrap">
+        <div class="media-label">Graph / algebra view</div>
+        <img src="automorphism_demo_pngs/21_graph_view.png" alt="Section 21 graph view"/>
+        <div class="media-caption">This PNG keeps the same 12-vertex prism graph and writes the section-specific algebra directly inside the figure.</div>
+      </div>
+      <div class="media-wrap">
+        <div class="media-label">Automorphism / partition view</div>
+        <img src="automorphism_demo_pngs/21_automorphism_or_partition_view.png" alt="Section 21 automorphism or partition view"/>
+        <div class="media-caption">This PNG lists the relevant automorphisms or partition data in a single panel so I can compare the symbolic and visual views side by side.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="example-card" id="s22">
+  <h3>22. Action on colourings</h3>
+  <div class="quote-box">"A colouring moves by composition with the vertex permutation."</div>
+  <p>I keep the graph fixed and move only the colour labels through the action. This is where ordered cells become especially important.</p>
+  <div class="parallel-grid">
+    <div class="algebra-panel panel note">
+      <strong>Algebraic form for this section.</strong><br/>
+      $$\pi^g(v)=\pi(v^g).$$
+      <div class="small-block">
+        <strong>Running graph reminder.</strong><br/>
+        $$P=C_6\square K_2,\qquad |V(P)|=12,\qquad |E(P)|=18,\qquad \deg(v)=3\text{ for all }v.$$ 
+      </div>
+    </div>
+    <div>
+      <div class="media-wrap">
+        <div class="media-label">Graph / algebra view</div>
+        <img src="automorphism_demo_pngs/22_graph_view.png" alt="Section 22 graph view"/>
+        <div class="media-caption">This PNG keeps the same 12-vertex prism graph and writes the section-specific algebra directly inside the figure.</div>
+      </div>
+      <div class="media-wrap">
+        <div class="media-label">Automorphism / partition view</div>
+        <img src="automorphism_demo_pngs/22_automorphism_or_partition_view.png" alt="Section 22 automorphism or partition view"/>
+        <div class="media-caption">This PNG lists the relevant automorphisms or partition data in a single panel so I can compare the symbolic and visual views side by side.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="example-card" id="s23">
+  <h3>23. Action on coloured graphs</h3>
+  <div class="quote-box">"A coloured graph moves componentwise: the graph relabels and the colouring relabels with it."</div>
+  <p>The ordered pair notation makes this compact: the permutation acts simultaneously on the adjacency structure and on the colouring.</p>
+  <div class="parallel-grid">
+    <div class="algebra-panel panel note">
+      <strong>Algebraic form for this section.</strong><br/>
+      $$ (G,\pi)^g=(G^g,\pi^g). $$
+      <div class="small-block">
+        <strong>Running graph reminder.</strong><br/>
+        $$P=C_6\square K_2,\qquad |V(P)|=12,\qquad |E(P)|=18,\qquad \deg(v)=3\text{ for all }v.$$ 
+      </div>
+    </div>
+    <div>
+      <div class="media-wrap">
+        <div class="media-label">Graph / algebra view</div>
+        <img src="automorphism_demo_pngs/23_graph_view.png" alt="Section 23 graph view"/>
+        <div class="media-caption">This PNG keeps the same 12-vertex prism graph and writes the section-specific algebra directly inside the figure.</div>
+      </div>
+      <div class="media-wrap">
+        <div class="media-label">Automorphism / partition view</div>
+        <img src="automorphism_demo_pngs/23_automorphism_or_partition_view.png" alt="Section 23 automorphism or partition view"/>
+        <div class="media-caption">This PNG lists the relevant automorphisms or partition data in a single panel so I can compare the symbolic and visual views side by side.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="example-card" id="s24">
+  <h3>24. Isomorphism of coloured graphs</h3>
+  <div class="quote-box">"Two coloured graphs are isomorphic when some permutation sends one to the other."</div>
+  <p>In the figure pair I use the same prism graph with two differently displayed labelings. The algebra says that a suitable $g$ carries one coloured graph onto the other.</p>
+  <div class="parallel-grid">
+    <div class="algebra-panel panel note">
+      <strong>Algebraic form for this section.</strong><br/>
+      $$ (G,\pi)\cong (G',\pi') \iff \exists g\in S_{12} \text{ such that } (G',\pi')=(G,\pi)^g. $$
+      <div class="small-block">
+        <strong>Running graph reminder.</strong><br/>
+        $$P=C_6\square K_2,\qquad |V(P)|=12,\qquad |E(P)|=18,\qquad \deg(v)=3\text{ for all }v.$$ 
+      </div>
+    </div>
+    <div>
+      <div class="media-wrap">
+        <div class="media-label">Graph / algebra view</div>
+        <img src="automorphism_demo_pngs/24_graph_view.png" alt="Section 24 graph view"/>
+        <div class="media-caption">This PNG keeps the same 12-vertex prism graph and writes the section-specific algebra directly inside the figure.</div>
+      </div>
+      <div class="media-wrap">
+        <div class="media-label">Automorphism / partition view</div>
+        <img src="automorphism_demo_pngs/24_automorphism_or_partition_view.png" alt="Section 24 automorphism or partition view"/>
+        <div class="media-caption">This PNG lists the relevant automorphisms or partition data in a single panel so I can compare the symbolic and visual views side by side.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="example-card" id="s25">
+  <h3>25. What the isomorphism itself is</h3>
+  <div class="quote-box">"The witness permutation is the isomorphism itself."</div>
+  <p>I find it useful to keep the witness map visible, because the paper’s abstract statement is really about this concrete relabelling.</p>
+  <div class="parallel-grid">
+    <div class="algebra-panel panel note">
+      <strong>Algebraic form for this section.</strong><br/>
+      $$g:(G,\pi)\to(G',\pi'),\qquad g 	ext{ is the actual isomorphism.}$$
+      <div class="small-block">
+        <strong>Running graph reminder.</strong><br/>
+        $$P=C_6\square K_2,\qquad |V(P)|=12,\qquad |E(P)|=18,\qquad \deg(v)=3\text{ for all }v.$$ 
+      </div>
+    </div>
+    <div>
+      <div class="media-wrap">
+        <div class="media-label">Graph / algebra view</div>
+        <img src="automorphism_demo_pngs/25_graph_view.png" alt="Section 25 graph view"/>
+        <div class="media-caption">This PNG keeps the same 12-vertex prism graph and writes the section-specific algebra directly inside the figure.</div>
+      </div>
+      <div class="media-wrap">
+        <div class="media-label">Automorphism / partition view</div>
+        <img src="automorphism_demo_pngs/25_automorphism_or_partition_view.png" alt="Section 25 automorphism or partition view"/>
+        <div class="media-caption">This PNG lists the relevant automorphisms or partition data in a single panel so I can compare the symbolic and visual views side by side.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="example-card" id="s26">
+  <h3>26. Automorphism group</h3>
+  <div class="quote-box">"The automorphism group consists of all isomorphisms from a coloured graph to itself."</div>
+  <p>For the uncoloured prism graph, I recover 24 automorphisms. The thumbnails collect them into one place so the group feels concrete rather than symbolic.</p>
+  <div class="parallel-grid">
+    <div class="algebra-panel panel note">
+      <strong>Algebraic form for this section.</strong><br/>
+      $$\mathrm{Aut}(P)=\langle \rho,\tau,\sigma\rangle,\qquad |\mathrm{Aut}(P)|=24,$$ $$\rho^6=\tau^2=\sigma^2=1,\qquad \tau \rho \tau = \rho^{-1},\qquad [\sigma,\rho]=[\sigma,\tau]=1.$$
+      <div class="small-block">
+        <strong>Running graph reminder.</strong><br/>
+        $$P=C_6\square K_2,\qquad |V(P)|=12,\qquad |E(P)|=18,\qquad \deg(v)=3\text{ for all }v.$$ 
+      </div>
+    </div>
+    <div>
+      <div class="media-wrap">
+        <div class="media-label">Graph / algebra view</div>
+        <img src="automorphism_demo_pngs/26_graph_view.png" alt="Section 26 graph view"/>
+        <div class="media-caption">This PNG keeps the same 12-vertex prism graph and writes the section-specific algebra directly inside the figure.</div>
+      </div>
+      <div class="media-wrap">
+        <div class="media-label">Automorphism / partition view</div>
+        <img src="automorphism_demo_pngs/26_automorphism_or_partition_view.png" alt="Section 26 automorphism or partition view"/>
+        <div class="media-caption">This PNG lists the relevant automorphisms or partition data in a single panel so I can compare the symbolic and visual views side by side.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="example-card" id="s27">
+  <h3>27. Canonical form</h3>
+  <div class="quote-box">"A canonical form chooses one distinguished representative from the whole isomorphism class."</div>
+  <p>I present the canonical form as a selection rule. Among all relabelled copies of a coloured graph, I choose the one whose colour sequence is lexicographically smallest.</p>
+  <div class="parallel-grid">
+    <div class="algebra-panel panel note">
+      <strong>Algebraic form for this section.</strong><br/>
+      $$C(G,\pi)=\min_{g\in \mathrm{Aut}(P)} (G^g,\pi^g)\quad 	ext{under my chosen ordering rule.}$$
+      <div class="small-block">
+        <strong>Running graph reminder.</strong><br/>
+        $$P=C_6\square K_2,\qquad |V(P)|=12,\qquad |E(P)|=18,\qquad \deg(v)=3\text{ for all }v.$$ 
+      </div>
+    </div>
+    <div>
+      <div class="media-wrap">
+        <div class="media-label">Graph / algebra view</div>
+        <img src="automorphism_demo_pngs/27_graph_view.png" alt="Section 27 graph view"/>
+        <div class="media-caption">This PNG keeps the same 12-vertex prism graph and writes the section-specific algebra directly inside the figure.</div>
+      </div>
+      <div class="media-wrap">
+        <div class="media-label">Automorphism / partition view</div>
+        <img src="automorphism_demo_pngs/27_automorphism_or_partition_view.png" alt="Section 27 automorphism or partition view"/>
+        <div class="media-caption">This PNG lists the relevant automorphisms or partition data in a single panel so I can compare the symbolic and visual views side by side.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="example-card" id="s28">
+  <h3>28. Unique representative of the class</h3>
+  <div class="quote-box">"Every isomorphism class gets one unique representative under the canonical-form map."</div>
+  <p>The two figures start from two different copies, but the third figure shows the same canonical representative for both. This is the paper’s uniqueness idea in one glance.</p>
+  <div class="parallel-grid">
+    <div class="algebra-panel panel note">
+      <strong>Algebraic form for this section.</strong><br/>
+      $$C(G,\pi)=C(G',\pi') 	ext{ whenever } (G,\pi)\cong(G',\pi').$$
+      <div class="small-block">
+        <strong>Running graph reminder.</strong><br/>
+        $$P=C_6\square K_2,\qquad |V(P)|=12,\qquad |E(P)|=18,\qquad \deg(v)=3\text{ for all }v.$$ 
+      </div>
+    </div>
+    <div>
+      <div class="media-wrap">
+        <div class="media-label">Graph / algebra view</div>
+        <img src="automorphism_demo_pngs/28_graph_view.png" alt="Section 28 graph view"/>
+        <div class="media-caption">This PNG keeps the same 12-vertex prism graph and writes the section-specific algebra directly inside the figure.</div>
+      </div>
+      <div class="media-wrap">
+        <div class="media-label">Automorphism / partition view</div>
+        <img src="automorphism_demo_pngs/28_automorphism_or_partition_view.png" alt="Section 28 automorphism or partition view"/>
+        <div class="media-caption">This PNG lists the relevant automorphisms or partition data in a single panel so I can compare the symbolic and visual views side by side.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="example-card" id="s29">
+  <h3>29. Why canonical forms solve comparison</h3>
+  <div class="quote-box">"Canonical forms turn isomorphism testing into literal equality testing."</div>
+  <p>This is the pay-off. Once I can compute a canonical form, I can replace a search for some hidden isomorphism by a direct comparison of two outputs.</p>
+  <div class="parallel-grid">
+    <div class="algebra-panel panel note">
+      <strong>Algebraic form for this section.</strong><br/>
+      $$ (G,\pi)\cong(G',\pi') \iff C(G,\pi)=C(G',\pi'). $$
+      <div class="small-block">
+        <strong>Running graph reminder.</strong><br/>
+        $$P=C_6\square K_2,\qquad |V(P)|=12,\qquad |E(P)|=18,\qquad \deg(v)=3\text{ for all }v.$$ 
+      </div>
+    </div>
+    <div>
+      <div class="media-wrap">
+        <div class="media-label">Graph / algebra view</div>
+        <img src="automorphism_demo_pngs/29_graph_view.png" alt="Section 29 graph view"/>
+        <div class="media-caption">This PNG keeps the same 12-vertex prism graph and writes the section-specific algebra directly inside the figure.</div>
+      </div>
+      <div class="media-wrap">
+        <div class="media-label">Automorphism / partition view</div>
+        <img src="automorphism_demo_pngs/29_automorphism_or_partition_view.png" alt="Section 29 automorphism or partition view"/>
+        <div class="media-caption">This PNG lists the relevant automorphisms or partition data in a single panel so I can compare the symbolic and visual views side by side.</div>
+      </div>
+    </div>
+  </div>
+</section>
+  </section>
+
+  <div class="footer-nav">
+    <a href="index.html">Home</a>
+    <span class="sep">|</span>
+    <a href="#top" onclick="window.scrollTo({top:0, behavior:'smooth'}); return false;">Back to top</a>
+  </div>
+</div>
+</body>
+</html>
