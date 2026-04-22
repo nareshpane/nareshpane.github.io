@@ -1,0 +1,155 @@
+Automorphism demo: nauty-friendly data
+
+Base graph (all sections): prism graph P = C6 □ K2
+graph6: KhEKAC`CGO_p
+V = {1,...,12}
+E = {{1,2},{2,3},{3,4},{4,5},{5,6},{6,1},{7,8},{8,9},{9,10},{10,11},{11,12},{12,7},{1,7},{2,8},{3,9},{4,10},{5,11},{6,12}}
+Adjacency: 1:{2,6,7}; 2:{1,3,8}; 3:{2,4,9}; 4:{3,5,10}; 5:{4,6,11}; 6:{1,5,12}; 7:{1,8,12}; 8:{2,7,9}; 9:{3,8,10}; 10:{4,9,11}; 11:{5,10,12}; 12:{6,7,11}
+Degree sequence: (3,3,3,3,3,3,3,3,3,3,3,3)
+Generators: ρ=(1 2 3 4 5 6)(7 8 9 10 11 12), τ=(2 6)(3 5)(8 12)(9 11), σ=(1 7)(2 8)(3 9)(4 10)(5 11)(6 12)
+Total automorphisms: 24
+
+Section 01: Formal definitions come first
+  colouring: uncoloured
+  partition: π = ({1,2,3,4,5,6,7,8,9,10,11,12})
+  |Aut(P,π)| = 24
+
+Section 02: Why the search tree matters
+  colouring: uncoloured
+  partition: π = ({1,2,3,4,5,6,7,8,9,10,11,12})
+  |Aut(P,π)| = 24
+
+Section 03: A self-contained strategy section
+  colouring: uncoloured
+  partition: π = ({1,2,3,4,5,6,7,8,9,10,11,12})
+  |Aut(P,π)| = 24
+
+Section 04: The ambient set of graphs
+  colouring: uncoloured
+  partition: π = ({1,2,3,4,5,6,7,8,9,10,11,12})
+  |Aut(P,π)| = 24
+
+Section 05: What a colouring is
+  colouring: three ordered cells
+  partition: π = ({1,2,3,4}, {5,6,7,8}, {9,10,11,12})
+  |Aut(P,π)| = 1
+
+Section 06: The number of colours
+  colouring: three ordered cells
+  partition: π = ({1,2,3,4}, {5,6,7,8}, {9,10,11,12})
+  |Aut(P,π)| = 1
+
+Section 07: What a cell is
+  colouring: three ordered cells
+  partition: π = ({1,2,3,4}, {5,6,7,8}, {9,10,11,12})
+  |Aut(P,π)| = 1
+
+Section 08: Discrete colourings
+  colouring: discrete colouring
+  partition: π = ({1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {12})
+  |Aut(P,π)| = 1
+
+Section 09: Discrete colouring as a permutation
+  colouring: discrete colouring
+  partition: π = ({1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {12})
+  |Aut(P,π)| = 1
+
+Section 10: Finer than or equal to
+  colouring: finer ordered cells
+  partition: π = ({1,2}, {3,4}, {5,6}, {7,8}, {9,10,11,12})
+  |Aut(P,π)| = 1
+
+Section 11: Subset intuition for finer colourings
+  colouring: finer ordered cells
+  partition: π = ({1,2}, {3,4}, {5,6}, {7,8}, {9,10,11,12})
+  |Aut(P,π)| = 1
+
+Section 12: Why colourings are also partitions
+  colouring: three ordered cells
+  partition: π = ({1,2,3,4}, {5,6,7,8}, {9,10,11,12})
+  |Aut(P,π)| = 1
+
+Section 13: Why colour order still matters
+  colouring: three ordered cells
+  partition: π = ({1,2,3,4}, {5,6,7,8}, {9,10,11,12})
+  |Aut(P,π)| = 1
+
+Section 14: What a coloured graph is
+  colouring: three ordered cells
+  partition: π = ({1,2,3,4}, {5,6,7,8}, {9,10,11,12})
+  |Aut(P,π)| = 1
+
+Section 15: The symmetric group
+  colouring: uncoloured
+  partition: π = ({1,2,3,4,5,6,7,8,9,10,11,12})
+  |Aut(P,π)| = 24
+
+Section 16: Exponent notation for actions
+  colouring: uncoloured
+  partition: π = ({1,2,3,4,5,6,7,8,9,10,11,12})
+  |Aut(P,π)| = 24
+
+Section 17: Image of a vertex under a permutation
+  colouring: uncoloured
+  partition: π = ({1,2,3,4,5,6,7,8,9,10,11,12})
+  |Aut(P,π)| = 24
+
+Section 18: Induced action on more complicated objects
+  colouring: uncoloured
+  partition: π = ({1,2,3,4,5,6,7,8,9,10,11,12})
+  |Aut(P,π)| = 24
+
+Section 19: Action on subsets
+  colouring: uncoloured
+  partition: π = ({1,2,3,4,5,6,7,8,9,10,11,12})
+  |Aut(P,π)| = 24
+
+Section 20: Action on graphs
+  colouring: uncoloured
+  partition: π = ({1,2,3,4,5,6,7,8,9,10,11,12})
+  |Aut(P,π)| = 24
+
+Section 21: Discrete colouring gives G^π
+  colouring: discrete colouring
+  partition: π = ({1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10}, {11}, {12})
+  |Aut(P,π)| = 1
+
+Section 22: Action on colourings
+  colouring: three ordered cells
+  partition: π = ({1,2,3,4}, {5,6,7,8}, {9,10,11,12})
+  |Aut(P,π)| = 1
+
+Section 23: Action on coloured graphs
+  colouring: three ordered cells
+  partition: π = ({1,2,3,4}, {5,6,7,8}, {9,10,11,12})
+  |Aut(P,π)| = 1
+
+Section 24: Isomorphism of coloured graphs
+  colouring: three ordered cells
+  partition: π = ({1,2,3,4}, {5,6,7,8}, {9,10,11,12})
+  |Aut(P,π)| = 1
+
+Section 25: What the isomorphism itself is
+  colouring: three ordered cells
+  partition: π = ({1,2,3,4}, {5,6,7,8}, {9,10,11,12})
+  |Aut(P,π)| = 1
+
+Section 26: Automorphism group
+  colouring: uncoloured
+  partition: π = ({1,2,3,4,5,6,7,8,9,10,11,12})
+  |Aut(P,π)| = 24
+
+Section 27: Canonical form
+  colouring: asymmetric coloured graph
+  partition: π = ({2,3,5,6,7,9,10,11,12}, {1}, {4}, {8})
+  |Aut(P,π)| = 1
+
+Section 28: Unique representative of the class
+  colouring: asymmetric coloured graph
+  partition: π = ({2,3,5,6,7,9,10,11,12}, {1}, {4}, {8})
+  |Aut(P,π)| = 1
+
+Section 29: Why canonical forms solve comparison
+  colouring: asymmetric coloured graph
+  partition: π = ({2,3,5,6,7,9,10,11,12}, {1}, {4}, {8})
+  |Aut(P,π)| = 1
