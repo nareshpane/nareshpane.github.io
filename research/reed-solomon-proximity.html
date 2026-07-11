@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A Computational Laboratory for Reed–Solomon Proximity Gaps</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600&family=Source+Code+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$']],
+        displayMath: [['$$', '$$']]
+      },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+  <style>
+    :root {
+      --bg: #f8f6f2;
+      --text: #1f1f1f;
+      --muted: #5d5d5d;
+      --accent: #1d4f91;
+      --accent-soft: #eaf1fa;
+      --line: #d8d2c7;
+      --card: #fffdf9;
+      --codebg: #f3efe8;
+      --codeborder: #d8cfc1;
+      --good: #2f6f4e;
+      --good-soft: #edf7f0;
+      --warn: #9a6517;
+      --warn-soft: #fbf6ea;
+      --red: #9f3d37;
+      --red-soft: #fbefee;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Inter", sans-serif;
+      line-height: 1.75;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 36px 24px 56px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 34px 34px 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    h1, h2, h3, h4 {
+      font-family: "Cormorant Garamond", serif;
+      line-height: 1.08;
+      letter-spacing: 0.2px;
+      margin-top: 0;
+      color: #151515;
+    }
+
+    h1 { font-size: 3rem; margin-bottom: 18px; }
+
+    h2 {
+      font-size: 2rem;
+      margin-top: 42px;
+      margin-bottom: 14px;
+      padding-bottom: 7px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    h3 { font-size: 1.55rem; margin-top: 28px; margin-bottom: 10px; }
+    h4 { font-size: 1.25rem; margin-top: 22px; margin-bottom: 8px; }
+
+    p { margin: 0 0 16px; font-size: 1.01rem; }
+    ul, ol { margin: 0 0 18px 24px; padding: 0; }
+    li { margin-bottom: 8px; }
+    a { color: var(--accent); }
+
+    .lead { font-size: 1.09rem; }
+    .small { color: var(--muted); font-size: 0.94rem; }
+
+    .status, .note, .warn, .result, .caution {
+      padding: 15px 17px;
+      border-radius: 11px;
+      margin: 18px 0 20px;
+    }
+
+    .status { background: var(--red-soft); border-left: 4px solid var(--red); }
+    .note { background: #f7f2ea; border-left: 4px solid var(--accent); }
+    .warn { background: var(--warn-soft); border-left: 4px solid var(--warn); }
+    .result { background: var(--good-soft); border-left: 4px solid var(--good); }
+    .caution { background: #f5f3ef; border-left: 4px solid #6a655e; }
+
+    .toc {
+      background: #f7f3ec;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px 20px 10px;
+      margin: 24px 0 30px;
+      columns: 2;
+      column-gap: 36px;
+    }
+
+    .toc a { text-decoration: none; }
+    .toc a:hover { text-decoration: underline; }
+
+    .equation {
+      background: #fbfaf7;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      padding: 15px 18px;
+      margin: 16px 0 19px;
+      overflow-x: auto;
+      text-align: center;
+    }
+
+    .experiment {
+      border: 1px solid var(--line);
+      border-radius: 17px;
+      background: #fdfbf7;
+      padding: 20px;
+      margin: 20px 0 24px;
+    }
+
+    .tag {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 4px 10px;
+      margin: 0 6px 8px 0;
+      background: var(--accent-soft);
+      color: #173e70;
+      font-size: 0.84rem;
+      font-weight: 600;
+    }
+
+    .tag.exact { background: #e9f5ec; color: #245e41; }
+    .tag.sample { background: #fbf1db; color: #81520f; }
+    .tag.theorem { background: #eeeaf8; color: #5a3e83; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin: 16px 0 20px;
+    }
+
+    .mini-card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 15px 16px;
+      background: #fcfaf6;
+    }
+
+    .code-label {
+      font-size: 0.96rem;
+      font-weight: 600;
+      color: var(--muted);
+      margin: 14px 0 8px;
+    }
+
+    pre {
+      margin: 0 0 18px;
+      background: var(--codebg);
+      border: 1px solid var(--codeborder);
+      border-radius: 14px;
+      padding: 14px 16px;
+      overflow-x: auto;
+      white-space: pre;
+    }
+
+    code, pre {
+      font-family: "Source Code Pro", monospace;
+      font-size: 0.92rem;
+      line-height: 1.65;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0 22px;
+      font-size: 0.95rem;
+      background: #fcfaf6;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 11px 10px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+
+    th { background: #f3ede3; font-weight: 600; }
+    tr:last-child td { border-bottom: none; }
+
+    figure {
+      margin: 22px 0 26px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fff;
+      padding: 12px;
+    }
+
+    figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+    }
+
+    figcaption {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-top: 10px;
+      padding: 0 4px 3px;
+    }
+
+    .downloads {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 14px;
+      margin: 16px 0 20px;
+    }
+
+    .downloads a {
+      display: block;
+      text-decoration: none;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      background: #faf7f1;
+      padding: 10px 12px;
+      font-size: 0.93rem;
+      font-weight: 500;
+    }
+
+    .downloads a:hover { background: #f3ede4; }
+
+    details {
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      padding: 10px 14px;
+      margin: 13px 0 18px;
+      background: #fcfaf6;
+    }
+
+    summary { cursor: pointer; font-weight: 600; color: #343434; }
+
+    nav {
+      margin-top: 28px;
+      text-align: center;
+      font-size: 1.05rem;
+    }
+
+    nav a { color: var(--accent); text-decoration: none; font-weight: 600; }
+    nav a:hover { text-decoration: underline; }
+    nav .sep { color: #7a7a7a; margin: 0 8px; }
+
+    .footer-note {
+      margin-top: 18px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 800px) {
+      .card { padding: 24px 20px; }
+      h1 { font-size: 2.35rem; }
+      h2 { font-size: 1.7rem; }
+      .toc { columns: 1; }
+      .grid, .downloads { grid-template-columns: 1fr; }
+      table { display: block; overflow-x: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <section class="card">
+      <h1>A Computational Laboratory for Reed–Solomon Proximity Gaps</h1>
+
+      <p class="lead">
+        This page develops Reed–Solomon codes from the ground up and then turns the proximity-gap question
+        into a sequence of explicit experiments. Every stage has a concrete polynomial, a finite field,
+        a reproducible Python script, and a separate output file. The purpose is not to hide the difficulty
+        behind abstract notation, but to let the reader watch the difficulty appear.
+      </p>
+
+      <div class="status">
+        <strong>Current-status correction, July 11, 2026.</strong>
+        The phrase “the Reed–Solomon proximity-gap conjecture” no longer refers to one untouched yes-or-no
+        problem. Proximity gaps were proved in the Johnson-bound regime, while several stronger
+        up-to-capacity conjectures used in proof systems were disproved in late 2025. A 2026 construction
+        also established failures near capacity over prime fields. Modified conjectures and related
+        curve-decoding questions remain active. Therefore, the experiments below are presented as a
+        laboratory for the phenomenon—not as an attempted computational proof of a statement already known
+        to be false in its broadest form.
+      </div>
+
+      <div class="note">
+        <strong>Core distinction.</strong> The worst-case list size
+        $L_t=\max_r |\{c\in C:d_H(r,c)\le t\}|$ is a list-decoding quantity. A proximity gap concerns a
+        structured collection of words—such as an affine line $\{f+zg:z\in\mathbb F_q\}$—and asks whether
+        the fraction of line points close to the code can occupy a large intermediate range. The first
+        quantity is a useful warm-up; it is not the full conjecture.
+      </div>
+
+      <div class="toc">
+        <ol>
+          <li><a href="#question">What is being tested?</a></li>
+          <li><a href="#symbols">Symbols and parameters</a></li>
+          <li><a href="#field">Arithmetic in $\mathbb F_7$</a></li>
+          <li><a href="#evaluation">Polynomial evaluation</a></li>
+          <li><a href="#interpolation">Lagrange interpolation</a></li>
+          <li><a href="#codebook">Building the codebook</a></li>
+          <li><a href="#radii">Unique, Johnson, and capacity radii</a></li>
+          <li><a href="#lists">Exact list-size experiments</a></li>
+          <li><a href="#crowding">Interpolation crowding</a></li>
+          <li><a href="#lines">Affine lines and correlated agreement</a></li>
+          <li><a href="#constructed-line">A concrete line in $\mathbb F_7^6$</a></li>
+          <li><a href="#census">Exact census of 19,500 lines</a></li>
+          <li><a href="#random-search">Larger randomized searches</a></li>
+          <li><a href="#gf8">Why $q=8$ is different</a></li>
+          <li><a href="#scaling">Where computation explodes</a></li>
+          <li><a href="#run">How to run every script</a></li>
+          <li><a href="#limits">What the experiments prove</a></li>
+          <li><a href="#research-status">Research status and references</a></li>
+        </ol>
+      </div>
+
+      <h2 id="question">1. What exactly is being tested?</h2>
+
+      <p>
+        Choose a finite field $\mathbb F_q$, choose $n$ distinct evaluation points
+        $\alpha_1,\ldots,\alpha_n$, and choose a degree bound $k$. The ordinary Reed–Solomon code is
+      </p>
+
+      <div class="equation">
+        $$C=RS(\mathbb F_q,\{\alpha_1,\ldots,\alpha_n\},k)
+        =\{(p(\alpha_1),\ldots,p(\alpha_n)): \deg p&lt;k\}. $$
+      </div>
+
+      <p>
+        A message is not a sentence. It is the coefficient vector of a polynomial. For $k=3$, for example,
+        a message has the form $(a_0,a_1,a_2)$ and represents
+        $p(x)=a_0+a_1x+a_2x^2$. Since each coefficient has $q$ possibilities, the code contains exactly
+        $q^k$ codewords.
+      </p>
+
+      <div class="grid">
+        <div class="mini-card">
+          <span class="tag exact">Finite computation</span>
+          <h3>List-decoding experiment</h3>
+          <p>
+            Fix a received word $r$. Count all codewords within Hamming radius $t$. Then maximize that count
+            over every possible $r\in\mathbb F_q^n$.
+          </p>
+        </div>
+        <div class="mini-card">
+          <span class="tag theorem">Proximity-gap experiment</span>
+          <h3>Affine-line experiment</h3>
+          <p>
+            Fix two words $f,g$. Inspect every point $f+zg$ as $z$ runs through the field. Count how many
+            line points are close to $C$, then compare that with a shared polynomial-pair explanation.
+          </p>
+        </div>
+      </div>
+
+      <p>
+        These two experiments are connected because a line point can have several nearby polynomial
+        explanations. However, a proximity gap is a statement about the pattern across a whole structured
+        family, not merely about one large list around one received word.
+      </p>
+
+      <h2 id="symbols">2. Symbols used throughout</h2>
+
+      <table>
+        <thead><tr><th>Symbol</th><th>Meaning</th></tr></thead>
+        <tbody>
+          <tr><td>$q$</td><td>Number of elements in the field $\mathbb F_q$.</td></tr>
+          <tr><td>$n$</td><td>Block length: the number of evaluation coordinates.</td></tr>
+          <tr><td>$k$</td><td>Dimension: message polynomials satisfy $\deg p&lt;k$.</td></tr>
+          <tr><td>$d$</td><td>Minimum code distance, $d=n-k+1$.</td></tr>
+          <tr><td>$J$</td><td>Johnson radius in symbol errors, $J=n-\sqrt{n(k-1)}$.</td></tr>
+          <tr><td>$L_t$</td><td>Worst-case number of codewords within Hamming radius $t$.</td></tr>
+          <tr><td>$r$</td><td>A received word in $\mathbb F_q^n$.</td></tr>
+          <tr><td>$f,g$</td><td>Two words defining an affine line $f+zg$.</td></tr>
+          <tr><td>$z$</td><td>A scalar in $\mathbb F_q$ indexing a point on the line.</td></tr>
+          <tr><td>$\Delta(x,C)$</td><td>Relative distance from $x$ to the code: $d_H(x,C)/n$.</td></tr>
+          <tr><td>$C^2$</td><td>Pairs of codewords $(c_1,c_2)$, used for correlated agreement.</td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="field">3. Step zero: arithmetic in $\mathbb F_7$</h2>
+
+      <p>
+        The field $\mathbb F_7$ consists of $0,1,2,3,4,5,6$. Addition and multiplication are performed
+        normally and then reduced modulo $7$. For example,
+      </p>
+
+      <div class="equation">
+        $$5+6=11\equiv4\pmod 7,\qquad 4\cdot5=20\equiv6\pmod 7.$$
+      </div>
+
+      <p>
+        Division means multiplication by an inverse. Since $3\cdot5=15\equiv1\pmod7$, the inverse of $3$
+        is $5$. This matters in interpolation, where denominators such as $(x_j-x_m)$ must be inverted.
+      </p>
+
+      <div class="warn">
+        Ordinary modular arithmetic gives a field only when $q$ is prime. Thus arithmetic modulo $7$ is a
+        field, but arithmetic modulo $8$ is not. The later $GF(8)$ experiment constructs an extension field
+        rather than reducing integers modulo $8$.
+      </div>
+
+      <h2 id="evaluation">4. Experiment 1: evaluate one concrete polynomial</h2>
+
+      <div class="experiment">
+        <span class="tag exact">Exact arithmetic</span>
+        <span class="tag">Script 01</span>
+        <p>
+          Work over $\mathbb F_7$ with $n=6$, $k=3$, evaluation points
+          $0,1,2,3,4,5$, and
+        </p>
+        <div class="equation">$$p(x)=3+2x+4x^2.$$</div>
+      </div>
+
+      <table>
+        <thead><tr><th>$x$</th><th>Integer calculation</th><th>Value in $\mathbb F_7$</th></tr></thead>
+        <tbody>
+          <tr><td>0</td><td>$3+2(0)+4(0)^2=3$</td><td>3</td></tr>
+          <tr><td>1</td><td>$3+2+4=9$</td><td>$9\bmod7=2$</td></tr>
+          <tr><td>2</td><td>$3+4+16=23$</td><td>$23\bmod7=2$</td></tr>
+          <tr><td>3</td><td>$3+6+36=45$</td><td>$45\bmod7=3$</td></tr>
+          <tr><td>4</td><td>$3+8+64=75$</td><td>$75\bmod7=5$</td></tr>
+          <tr><td>5</td><td>$3+10+100=113$</td><td>$113\bmod7=1$</td></tr>
+        </tbody>
+      </table>
+
+      <div class="result">
+        The resulting Reed–Solomon word is $(3,2,2,3,5,1)$. Nothing mysterious has happened: the codeword
+        is simply a table of polynomial values.
+      </div>
+
+      <div class="code-label">The central evaluation loop</div>
+      <pre><code>def poly_eval(coefficients, x, q):
+    value = 0
+    for coefficient in reversed(coefficients):
+        value = (value * x + coefficient) % q
+    return value</code></pre>
+
+      <div class="downloads">
+        <a href="reed_solomon_experiments/01_polynomial_walkthrough.py">Python: polynomial walkthrough</a>
+        <a href="reed_solomon_experiments/outputs/01_polynomial_evaluation_q7.csv">CSV: all six evaluations</a>
+        <a href="reed_solomon_experiments/outputs/01_polynomial_walkthrough.txt">TXT: line-by-line arithmetic</a>
+      </div>
+
+      <h2 id="interpolation">5. Experiment 2: reconstruct the polynomial by interpolation</h2>
+
+      <p>
+        A degree-$2$ polynomial is determined by any three distinct points. From the codeword above, keep only
+        $(0,3)$, $(2,2)$, and $(5,1)$. Lagrange interpolation writes
+      </p>
+
+      <div class="equation">
+        $$p(x)=3L_0(x)+2L_1(x)+1L_2(x),$$
+        $$L_j(x)=\prod_{m\ne j}\frac{x-x_m}{x_j-x_m}.$$
+      </div>
+
+      <p>In coefficient-vector form over $\mathbb F_7$, the three contributions are</p>
+
+      <table>
+        <thead><tr><th>Point</th><th>Contribution coefficients $[a_0,a_1,a_2]$</th></tr></thead>
+        <tbody>
+          <tr><td>$(0,3)$</td><td>$[3,0,1]$</td></tr>
+          <tr><td>$(2,2)$</td><td>$[0,4,2]$</td></tr>
+          <tr><td>$(5,1)$</td><td>$[0,5,1]$</td></tr>
+        </tbody>
+      </table>
+
+      <p>
+        Adding coordinatewise modulo $7$ gives
+        $[3,0,1]+[0,4,2]+[0,5,1]=[3,9,4]\equiv[3,2,4]$, exactly recovering
+        $p(x)=3+2x+4x^2$.
+      </p>
+
+      <div class="note">
+        This simple fact drives both the power and the difficulty of Reed–Solomon codes. Any $k$ coordinates
+        determine one candidate degree-$&lt;k$ polynomial. When many different $k$-subsets produce different
+        candidates that all agree with a received word on their chosen coordinates, list sizes can grow
+        combinatorially.
+      </div>
+
+      <div class="downloads">
+        <a href="reed_solomon_experiments/02_lagrange_interpolation.py">Python: Lagrange reconstruction</a>
+        <a href="reed_solomon_experiments/outputs/02_lagrange_basis_terms.csv">CSV: basis terms and inverses</a>
+        <a href="reed_solomon_experiments/outputs/02_lagrange_interpolation.txt">TXT: reconstruction report</a>
+      </div>
+
+      <h2 id="codebook">6. Experiment 3: build all $343$ codewords</h2>
+
+      <p>
+        With $q=7$ and $k=3$, there are $7^3=343$ coefficient triples. Evaluating each polynomial at six
+        points creates the entire $RS(7,6,3)$ codebook. Its minimum distance is
+        $d=n-k+1=4$.
+      </p>
+
+      <div class="experiment">
+        <span class="tag exact">Full enumeration</span>
+        <span class="tag">Script 03</span>
+        <p>Start with the codeword for $p(x)=3+2x+4x^2$:</p>
+        <pre><code>sent     = [3, 2, 2, 3, 5, 1]
+received = [3, 3, 2, 3, 1, 1]  # coordinates 1 and 4 changed</code></pre>
+      </div>
+
+      <p>
+        The received word is distance $2$ from the original codeword, but it is also distance $2$ from the
+        codeword generated by $2+2x+6x^2$. Thus there are two nearest polynomial explanations.
+      </p>
+
+      <div class="result">
+        This does not contradict error correction. Since $d=4$, the guaranteed unique-decoding radius is only
+        $\lfloor(d-1)/2\rfloor=1$. At two errors, uniqueness is no longer guaranteed.
+      </div>
+
+      <div class="downloads">
+        <a href="reed_solomon_experiments/03_codebook_and_distance.py">Python: codebook and corruption</a>
+        <a href="reed_solomon_experiments/outputs/03_codebook_q7_n6_k3.csv">CSV: all 343 codewords</a>
+        <a href="reed_solomon_experiments/outputs/03_received_word_report.txt">TXT: nearest-codeword report</a>
+      </div>
+
+      <h2 id="radii">7. Three decoding radii that must not be confused</h2>
+
+      <table>
+        <thead><tr><th>Boundary</th><th>Formula</th><th>Interpretation</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Unique-decoding radius</td>
+            <td>$t_{\mathrm{unique}}=\lfloor(d-1)/2\rfloor$</td>
+            <td>Every received word has at most one codeword in this ball.</td>
+          </tr>
+          <tr>
+            <td>Johnson radius</td>
+            <td>$J=n-\sqrt{n(k-1)}$</td>
+            <td>Classical polynomial list-size control for Reed–Solomon codes.</td>
+          </tr>
+          <tr>
+            <td>Capacity boundary</td>
+            <td>$n-k=n(1-k/n)$</td>
+            <td>Information-theoretic boundary corresponding to relative radius $1-R$.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="caution">
+        $J$ is usually not an integer. The scripts report both the real number and
+        $\lfloor J\rfloor$. A statement proved for every relative radius strictly below a boundary should not
+        be casually replaced by a claim at the rounded integer endpoint.
+      </div>
+
+      <table>
+        <thead><tr><th>$(q,n,k)$</th><th>$d$</th><th>Unique radius</th><th>Real $J$</th><th>$\lfloor J\rfloor$</th><th>$n-k$</th></tr></thead>
+        <tbody>
+          <tr><td>$(5,4,2)$</td><td>3</td><td>1</td><td>2.000</td><td>2</td><td>2</td></tr>
+          <tr><td>$(7,5,2)$</td><td>4</td><td>1</td><td>2.764</td><td>2</td><td>3</td></tr>
+          <tr><td>$(7,6,3)$</td><td>4</td><td>1</td><td>2.536</td><td>2</td><td>3</td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="lists">8. Experiment 4: exact worst-case list sizes</h2>
+
+      <p>
+        For each small parameter triple, Script 04 enumerates all $q^n$ received words and all $q^k$
+        codewords. For every radius $t$, it computes
+      </p>
+
+      <div class="equation">
+        $$L_t=\max_{r\in\mathbb F_q^n}|\{c\in C:d_H(r,c)\le t\}|.$$
+      </div>
+
+      <table>
+        <thead><tr><th>$(q,n,k)$</th><th>Radius</th><th>Meaning</th><th>Exact $L_t$</th></tr></thead>
+        <tbody>
+          <tr><td>$(5,4,2)$</td><td>1</td><td>unique radius</td><td>1</td></tr>
+          <tr><td>$(5,4,2)$</td><td>2</td><td>Johnson and capacity boundary</td><td>6</td></tr>
+          <tr><td>$(7,5,2)$</td><td>1</td><td>unique radius</td><td>1</td></tr>
+          <tr><td>$(7,5,2)$</td><td>2</td><td>$\lfloor J\rfloor$</td><td>2</td></tr>
+          <tr><td>$(7,5,2)$</td><td>3</td><td>capacity boundary</td><td>10</td></tr>
+          <tr><td>$(7,6,3)$</td><td>1</td><td>unique radius</td><td>1</td></tr>
+          <tr><td>$(7,6,3)$</td><td>2</td><td>$\lfloor J\rfloor$</td><td>3</td></tr>
+          <tr><td>$(7,6,3)$</td><td>3</td><td>capacity boundary</td><td>20</td></tr>
+        </tbody>
+      </table>
+
+      <figure>
+        <img src="reed_solomon_experiments/outputs/04_worst_list_size_by_radius.png" alt="Exact worst-case list sizes by Hamming radius">
+        <figcaption>
+          Exact exhaustive values. The vertical scale is logarithmic because the list can expand quickly once
+          the allowed radius reaches the interpolation-crowding regime.
+        </figcaption>
+      </figure>
+
+      <div class="warn">
+        A jump in $L_t$ explains why nearby-polynomial ambiguity becomes severe. It does not by itself test a
+        proximity gap, because no affine line has yet been introduced.
+      </div>
+
+      <div class="downloads">
+        <a href="reed_solomon_experiments/04_exhaustive_list_sizes.py">Python: exhaustive list-size census</a>
+        <a href="reed_solomon_experiments/outputs/04_list_size_summary.csv">CSV: exact $L_t$ values</a>
+        <a href="reed_solomon_experiments/outputs/04_worst_received_words.csv">CSV: maximizing received words</a>
+        <a href="reed_solomon_experiments/outputs/04_list_size_histograms.csv">CSV: full list-size histograms</a>
+      </div>
+
+      <h2 id="crowding">9. Experiment 5: a clean interpolation-crowding construction</h2>
+
+      <p>
+        Let the code contain polynomials of degree less than $k$, but define the received word using the
+        degree-$k$ polynomial $r(x)=x^k$. Choose any subset $S$ of $k$ evaluation coordinates. There is one
+        degree-$&lt;k$ polynomial $p_S$ that interpolates $r$ on those coordinates.
+      </p>
+
+      <p>
+        The difference $x^k-p_S(x)$ is a nonzero polynomial of degree $k$ with the $k$ points in $S$ as roots.
+        It cannot have another distinct root. Therefore $p_S$ agrees with $r$ on exactly those $k$ coordinates,
+        and two different subsets give two different polynomials. Hence
+      </p>
+
+      <div class="equation">
+        $$|\{p:\deg p&lt;k,\ d_H(r,\operatorname{eval}(p))\le n-k\}|=\binom nk.$$
+      </div>
+
+      <table>
+        <thead><tr><th>$(q,n,k)$</th><th>Received polynomial</th><th>Radius $n-k$</th><th>Predicted $\binom nk$</th><th>Observed</th></tr></thead>
+        <tbody>
+          <tr><td>$(7,5,2)$</td><td>$x^2$</td><td>3</td><td>10</td><td>10</td></tr>
+          <tr><td>$(7,6,3)$</td><td>$x^3$</td><td>3</td><td>20</td><td>20</td></tr>
+          <tr><td>$(11,7,3)$</td><td>$x^3$</td><td>4</td><td>35</td><td>35</td></tr>
+          <tr><td>$(11,8,4)$</td><td>$x^4$</td><td>4</td><td>70</td><td>70</td></tr>
+        </tbody>
+      </table>
+
+      <figure>
+        <img src="reed_solomon_experiments/outputs/05_interpolation_crowding.png" alt="Predicted and observed interpolation crowding counts">
+        <figcaption>
+          The exact computation matches $\binom nk$ in every case because the construction has a short
+          algebraic proof. This is a good example of computation confirming a mechanism rather than merely
+          reporting an unexplained number.
+        </figcaption>
+      </figure>
+
+      <div class="downloads">
+        <a href="reed_solomon_experiments/05_interpolation_crowding.py">Python: interpolation crowding</a>
+        <a href="reed_solomon_experiments/outputs/05_interpolation_crowding_summary.csv">CSV: summary for four cases</a>
+        <a href="reed_solomon_experiments/outputs/05_interpolation_crowding_details.csv">CSV: every subset and interpolant</a>
+      </div>
+
+      <h2 id="lines">10. From list decoding to affine-line proximity</h2>
+
+      <p>
+        Now choose two arbitrary words $f,g\in\mathbb F_q^n$ with $g\ne0$. They define the affine line
+      </p>
+
+      <div class="equation">$$\ell(f,g)=\{f+zg:z\in\mathbb F_q\}.$$</div>
+
+      <p>
+        The line has $q$ points. For a symbol-error radius $t$, define the number of close points
+      </p>
+
+      <div class="equation">
+        $$N_t(f,g)=|\{z\in\mathbb F_q:d_H(f+zg,C)\le t\}|.$$
+      </div>
+
+      <p>
+        A proximity-gap statement says, roughly, that a structured set should not have an uncontrolled
+        medium-sized close portion: either every member is close, or only a small fraction is close. The exact
+        thresholds depend on the theorem or conjecture being studied.
+      </p>
+
+      <h3>Correlated agreement</h3>
+
+      <p>
+        A stronger structural explanation asks whether one polynomial $P$ explains $f$ and another polynomial
+        $Q$ explains $g$ on many of the same coordinates. Define
+      </p>
+
+      <div class="equation">
+        $$d_H([f,g],C^2)=
+        \min_{P,Q:\deg P,\deg Q&lt;k}
+        |\{i:(f_i,g_i)\ne(P(\alpha_i),Q(\alpha_i))\}|.$$
+      </div>
+
+      <p>
+        If $f$ and $g$ agree with $P$ and $Q$ on a common coordinate set $S$, then every line point
+        $f+zg$ agrees on $S$ with the code polynomial $P+zQ$. This is why correlated agreement can explain an
+        entire line at once.
+      </p>
+
+      <div class="caution">
+        The converse with <em>zero loss</em> is not automatic. Different values of $z$ may be close to entirely
+        different polynomials, with no single common coordinate set large enough to explain $f$ and $g$ at the
+        same radius.
+      </div>
+
+      <h2 id="constructed-line">11. Experiment 6: one explicit affine line in $\mathbb F_7^6$</h2>
+
+      <div class="experiment">
+        <span class="tag exact">Exact finite example</span>
+        <span class="tag">Script 06</span>
+        <div class="equation">
+          $$f=(1,0,0,1,1,2),\qquad g=(4,4,1,3,0,5).$$
+        </div>
+      </div>
+
+      <table>
+        <thead><tr><th>$z$</th><th>$f+zg$</th><th>Distance to $RS(7,6,3)$</th><th>One or more nearest polynomials</th></tr></thead>
+        <tbody>
+          <tr><td>0</td><td>$(1,0,0,1,1,2)$</td><td>2</td><td>$1+2x+4x^2$; $5+3x+6x^2$</td></tr>
+          <tr><td>1</td><td>$(5,4,1,4,1,0)$</td><td>2</td><td>$5+4x+4x^2$; $5+6x$; $6+2x+3x^2$</td></tr>
+          <tr><td>2</td><td>$(2,1,2,0,1,5)$</td><td>2</td><td>$1+x+5x^2$; $2+6x^2$</td></tr>
+          <tr><td>3</td><td>$(6,5,3,3,1,3)$</td><td>2</td><td>$5+5x+2x^2$; $6+x^2$</td></tr>
+          <tr><td>4</td><td>$(3,2,4,6,1,1)$</td><td>2</td><td>$2x$</td></tr>
+          <tr><td>5</td><td>$(0,6,5,2,1,6)$</td><td>2</td><td>$5x+4x^2$</td></tr>
+          <tr><td>6</td><td>$(4,3,6,5,1,4)$</td><td>2</td><td>$4+3x+3x^2$; $4+4x+2x^2$</td></tr>
+        </tbody>
+      </table>
+
+      <figure>
+        <img src="reed_solomon_experiments/outputs/06_affine_line_distances.png" alt="Distances of all seven affine line points to RS(7,6,3)">
+        <figcaption>Every point on this line has distance exactly $2$ from the code.</figcaption>
+      </figure>
+
+      <p>
+        Yet the best pair $(P,Q)$ explains $f$ and $g$ together on only three of the six coordinates, so
+      </p>
+
+      <div class="equation">$$d_H([f,g],C^2)=3.$$</div>
+
+      <div class="result">
+        The line satisfies the first proximity-gap alternative because <strong>all</strong> seven points are
+        close. Nevertheless, it disproves the naive finite implication
+        “all line points are $2$-close $\Rightarrow$ the pair $[f,g]$ is $2$-close to $C^2$.” This is a
+        demonstration of proximity loss, not a disproof of the formal Johnson-regime proximity-gap theorem.
+      </div>
+
+      <div class="downloads">
+        <a href="reed_solomon_experiments/06_constructed_affine_line.py">Python: explicit affine line</a>
+        <a href="reed_solomon_experiments/outputs/06_affine_line_profile.csv">CSV: all seven line points</a>
+        <a href="reed_solomon_experiments/outputs/06_affine_line_report.txt">TXT: correlated-agreement report</a>
+      </div>
+
+      <h2 id="census">12. Experiment 7: exact census of all affine lines in $\mathbb F_5^4$</h2>
+
+      <p>
+        A random search can miss rare behavior, so the smallest line experiment is exhaustive. A nonzero
+        direction has $q-1$ scalar representations, giving
+      </p>
+
+      <div class="equation">
+        $$\frac{q^n-1}{q-1}=\frac{5^4-1}{4}=156$$
+        distinct one-dimensional directions.
+      </div>
+
+      <p>
+        For each direction, the space splits into $q^{n-1}=5^3=125$ parallel affine lines. Therefore the exact
+        number of distinct affine lines is
+      </p>
+
+      <div class="equation">$$156\cdot125=19{,}500.$$</div>
+
+      <table>
+        <thead><tr><th>Radius $t$</th><th>All 5 points close</th><th>No points close</th><th>Intermediate number close</th><th>Maximum close points when pair distance $&gt;t$</th></tr></thead>
+        <tbody>
+          <tr><td>0</td><td>30</td><td>15,720</td><td>3,750</td><td>1</td></tr>
+          <tr><td>1</td><td>3,010</td><td>240</td><td>16,250</td><td>4</td></tr>
+          <tr><td>2</td><td>19,500</td><td>0</td><td>0</td><td>0</td></tr>
+        </tbody>
+      </table>
+
+      <p>
+        At radius $1$, many finite lines have an intermediate number of close points. This does not contradict
+        an asymptotic theorem that permits an error fraction depending on $n$ and $q$; it simply shows why one
+        must preserve the theorem’s actual quantitative parameters. At radius $2=n-k$, every word in
+        $\mathbb F_5^4$ is at most two errors from some degree-$1$ polynomial: choose any two coordinates and
+        interpolate a line. Thus every affine line is entirely close at the capacity boundary.
+      </p>
+
+      <figure>
+        <img src="reed_solomon_experiments/outputs/07_exact_line_census_t1.png" alt="Exact affine-line census at radius one">
+        <figcaption>
+          Each circle represents a pair consisting of correlated pair distance and number of close line points.
+          Circle area indicates how many of the 19,500 unique lines have that pair of values.
+        </figcaption>
+      </figure>
+
+      <div class="downloads">
+        <a href="reed_solomon_experiments/07_exact_small_line_census.py">Python: exact unique-line census</a>
+        <a href="reed_solomon_experiments/outputs/07_exact_unique_lines_q5_n4_k2.csv">CSV: all 19,500 lines</a>
+        <a href="reed_solomon_experiments/outputs/07_exact_line_census_summary.csv">CSV: census summary</a>
+        <a href="reed_solomon_experiments/outputs/07_exact_line_census_aggregate.csv">CSV: aggregated frequencies</a>
+      </div>
+
+      <h2 id="random-search">13. Experiment 8: sampled lines at larger parameters</h2>
+
+      <p>
+        Full affine-line enumeration grows like roughly $q^{2n}$. Script 08 therefore samples deterministic
+        pseudorandom lines using seed <code>20260711</code>. The last two radii are above the Johnson radius but
+        below $n-k$.
+      </p>
+
+      <table>
+        <thead><tr><th>$(q,n,k)$</th><th>Tested $t$</th><th>Real $J$</th><th>$n-k$</th><th>Lines sampled</th><th>Largest close count seen</th><th>Largest close count with pair distance $&gt;t$</th></tr></thead>
+        <tbody>
+          <tr><td>$(7,6,3)$</td><td>2</td><td>2.536</td><td>3</td><td>3,000</td><td>7 of 7</td><td>7 of 7</td></tr>
+          <tr><td>$(11,10,3)$</td><td>6</td><td>5.528</td><td>7</td><td>500</td><td>11 of 11</td><td>11 of 11</td></tr>
+          <tr><td>$(13,12,3)$</td><td>8</td><td>7.101</td><td>9</td><td>250</td><td>13 of 13</td><td>13 of 13</td></tr>
+        </tbody>
+      </table>
+
+      <figure>
+        <img src="reed_solomon_experiments/outputs/08_random_line_search_q11_n10_k3.png" alt="Random affine-line search over F_11">
+        <figcaption>
+          Sampled behavior for $q=11,n=10,k=3,t=6$. The dashed line marks pair distance $t$; points to its
+          right have no zero-loss correlated explanation at the tested radius.
+        </figcaption>
+      </figure>
+
+      <div class="warn">
+        These are not formal counterexamples to a named asymptotic conjecture. A valid counterexample must match
+        the exact field-size growth, rate, error probability, proximity loss, and “many $z$” threshold in the
+        statement. The random search is useful for discovering candidate geometry and for checking finite
+        implications, not for silently changing quantifiers.
+      </div>
+
+      <div class="downloads">
+        <a href="reed_solomon_experiments/08_random_line_search.py">Python: larger random-line search</a>
+        <a href="reed_solomon_experiments/outputs/08_random_line_search_summary.csv">CSV: parameter summary</a>
+        <a href="reed_solomon_experiments/outputs/08_random_line_search_top_candidates.csv">CSV: strongest sampled candidates</a>
+        <a href="reed_solomon_experiments/outputs/08_random_line_search_all_samples.csv">CSV: every sampled line</a>
+      </div>
+
+      <h2 id="gf8">14. Experiment 10: why $GF(8)$ is not arithmetic modulo $8$</h2>
+
+      <p>
+        The number $8=2^3$ is a prime power, so a field with eight elements exists. However, it is not
+        $\mathbb Z/8\mathbb Z$, because $2\cdot4\equiv0\pmod8$ even though neither factor is zero. Instead use
+      </p>
+
+      <div class="equation">$$GF(8)=\mathbb F_2[a]/(a^3+a+1).$$</div>
+
+      <p>
+        Each field element is a binary polynomial $b_0+b_1a+b_2a^2$. Addition is bitwise XOR, and multiplication
+        reduces $a^3$ using $a^3=a+1$. The script evaluates
+        $p(x)=1+ax+a^2x^2$ at all eight field elements and recovers the coefficients from three points.
+      </p>
+
+      <table>
+        <thead><tr><th>Integer representation</th><th>Field expression</th></tr></thead>
+        <tbody>
+          <tr><td>0</td><td>$0$</td></tr>
+          <tr><td>1</td><td>$1$</td></tr>
+          <tr><td>2</td><td>$a$</td></tr>
+          <tr><td>3</td><td>$a+1$</td></tr>
+          <tr><td>4</td><td>$a^2$</td></tr>
+          <tr><td>5</td><td>$a^2+1$</td></tr>
+          <tr><td>6</td><td>$a^2+a$</td></tr>
+          <tr><td>7</td><td>$a^2+a+1$</td></tr>
+        </tbody>
+      </table>
+
+      <div class="result">
+        The recovered coefficient vector is exactly $[1,2,4]$, and the full $k=3$ codebook contains
+        $8^3=512$ polynomials. This script makes the earlier $q=8$ experiments mathematically genuine rather
+        than treating composite-modulus arithmetic as a field.
+      </div>
+
+      <div class="downloads">
+        <a href="reed_solomon_experiments/10_gf8_extension_field.py">Python: complete $GF(8)$ implementation</a>
+        <a href="reed_solomon_experiments/outputs/10_gf8_multiplication_table.csv">CSV: multiplication table</a>
+        <a href="reed_solomon_experiments/outputs/10_gf8_polynomial_evaluation.csv">CSV: polynomial values</a>
+        <a href="reed_solomon_experiments/outputs/10_gf8_codebook_k3.csv">CSV: all 512 codewords</a>
+      </div>
+
+      <h2 id="scaling">15. Experiment 9: where exhaustive computation becomes impossible</h2>
+
+      <p>
+        An exact list-size census compares $q^n$ received words with $q^k$ codewords, producing $q^{n+k}$
+        word-codeword pairs. A naive parameterized affine-line search considers approximately $q^{2n}$ pairs
+        $(f,g)$ before even scanning the $q$ points on each line.
+      </p>
+
+      <table>
+        <thead><tr><th>$(q,n,k)$</th><th>$q^k$ codewords</th><th>$q^n$ words</th><th>$q^{n+k}$ distance pairs</th><th>Parameterized nonconstant lines</th></tr></thead>
+        <tbody>
+          <tr><td>$(5,4,2)$</td><td>25</td><td>625</td><td>15,625</td><td>$3.90\times10^5$</td></tr>
+          <tr><td>$(7,5,2)$</td><td>49</td><td>16,807</td><td>823,543</td><td>$2.82\times10^8$</td></tr>
+          <tr><td>$(7,6,3)$</td><td>343</td><td>117,649</td><td>40,353,607</td><td>$1.38\times10^{10}$</td></tr>
+          <tr><td>$(11,10,3)$</td><td>1,331</td><td>$2.59\times10^{10}$</td><td>$3.45\times10^{13}$</td><td>$6.73\times10^{20}$</td></tr>
+          <tr><td>$(13,12,3)$</td><td>2,197</td><td>$2.33\times10^{13}$</td><td>$5.12\times10^{16}$</td><td>$5.43\times10^{26}$</td></tr>
+          <tr><td>$(17,16,4)$</td><td>83,521</td><td>$4.87\times10^{19}$</td><td>$4.06\times10^{24}$</td><td>$2.37\times10^{39}$</td></tr>
+        </tbody>
+      </table>
+
+      <figure>
+        <img src="reed_solomon_experiments/outputs/09_scaling_growth.png" alt="Growth of exhaustive Reed-Solomon search spaces">
+        <figcaption>
+          Base-10 logarithms make the different growth rates visible. Exact line enumeration becomes impossible
+          far earlier than the notation $f+zg$ suggests.
+        </figcaption>
+      </figure>
+
+      <h3>Why smarter search is still mathematically difficult</h3>
+
+      <p>
+        Random sampling can find common behavior but may miss highly structured counterexamples. Symmetry
+        reduction removes duplicate lines but not the exponential core. Integer programming or SAT encodings
+        can enforce local agreement constraints, but the number of possible nearby polynomials also grows.
+        Algebraic constructions can bypass brute force, yet then the problem becomes proving that many scalar
+        values remain distinct and that no correlated explanation exists. This is precisely where coding theory,
+        additive combinatorics, and number theory enter.
+      </p>
+
+      <div class="downloads">
+        <a href="reed_solomon_experiments/09_scaling_estimates.py">Python: scaling calculations</a>
+        <a href="reed_solomon_experiments/outputs/09_scaling_estimates.csv">CSV: exact search-space counts</a>
+      </div>
+
+      <h2 id="run">16. Run the entire laboratory</h2>
+
+      <div class="code-label">Ubuntu terminal</div>
+      <pre><code>cd reed_solomon_proximity_project/reed_solomon_experiments
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+python run_all.py</code></pre>
+
+      <p>Run one experiment by naming its script:</p>
+
+      <pre><code>python 05_interpolation_crowding.py
+python 07_exact_small_line_census.py
+python 10_gf8_extension_field.py</code></pre>
+
+      <table>
+        <thead><tr><th>Script</th><th>Main question</th><th>Evidence type</th></tr></thead>
+        <tbody>
+          <tr><td><code>01_polynomial_walkthrough.py</code></td><td>How does evaluation work?</td><td>Exact arithmetic</td></tr>
+          <tr><td><code>02_lagrange_interpolation.py</code></td><td>How do $k$ points recover a polynomial?</td><td>Exact algebra</td></tr>
+          <tr><td><code>03_codebook_and_distance.py</code></td><td>How is the full codebook built?</td><td>Full finite enumeration</td></tr>
+          <tr><td><code>04_exhaustive_list_sizes.py</code></td><td>How large can $L_t$ become?</td><td>Full finite enumeration</td></tr>
+          <tr><td><code>05_interpolation_crowding.py</code></td><td>Why does $\binom nk$ appear?</td><td>Proof plus computation</td></tr>
+          <tr><td><code>06_constructed_affine_line.py</code></td><td>Can individual closeness fail to share one explanation?</td><td>Explicit finite construction</td></tr>
+          <tr><td><code>07_exact_small_line_census.py</code></td><td>What do all small affine lines do?</td><td>Exact unique-line census</td></tr>
+          <tr><td><code>08_random_line_search.py</code></td><td>What appears at larger parameters?</td><td>Seeded random sample</td></tr>
+          <tr><td><code>09_scaling_estimates.py</code></td><td>Why does brute force stop?</td><td>Exact combinatorial counts</td></tr>
+          <tr><td><code>10_gf8_extension_field.py</code></td><td>How does a non-prime field work?</td><td>Exact extension-field arithmetic</td></tr>
+        </tbody>
+      </table>
+
+      <div class="downloads">
+        <a href="reed_solomon_experiments/run_all.py">Python: run every experiment</a>
+        <a href="reed_solomon_experiments/rs_core.py">Python: shared Reed–Solomon utilities</a>
+        <a href="reed_solomon_experiments/requirements.txt">Requirements file</a>
+      </div>
+
+      <h2 id="limits">17. What these computations prove—and what they do not</h2>
+
+      <table>
+        <thead><tr><th>Observation</th><th>Legitimate conclusion</th><th>Illegitimate leap</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>The interpolation script finds exactly $\binom nk$ candidates.</td>
+            <td>The stated finite construction has that exact list size; there is also a direct proof.</td>
+            <td>Every worst-case received word must arise from the same construction.</td>
+          </tr>
+          <tr>
+            <td>All 19,500 lines in $\mathbb F_5^4$ were checked.</td>
+            <td>The reported census is exact for $q=5,n=4,k=2$ and the chosen radii.</td>
+            <td>The same fractions persist as $n$ grows or under another field-size regime.</td>
+          </tr>
+          <tr>
+            <td>A sampled line has all points close but pair distance larger than $t$.</td>
+            <td>Zero-loss correlated agreement fails for that exact finite line and radius.</td>
+            <td>A formal conjecture with proximity loss, error thresholds, or asymptotic quantifiers is refuted.</td>
+          </tr>
+          <tr>
+            <td>A random search finds no candidate.</td>
+            <td>No candidate appeared in that reproducible sample.</td>
+            <td>No counterexample exists.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="note">
+        The most productive computational objective is often not “settle the conjecture by brute force.” It is
+        “identify the exact finite mechanism that a theorem must control.” The scripts isolate three such
+        mechanisms: interpolation crowding, changing nearest polynomials along a line, and the explosive number
+        of affine-line parameterizations.
+      </div>
+
+      <h2 id="research-status">18. Research status and primary references</h2>
+
+      <p>
+        The 2020 work of Ben-Sasson, Carmon, Ishai, Kopparty, and Saraf proved proximity gaps for Reed–Solomon
+        codes below the Johnson/Guruswami–Sudan bound, with applications to proof systems and distributed
+        protocols. The journal version appeared in 2023.
+      </p>
+
+      <p>
+        Crites and Stewart’s November 2025 preprint disproved several stronger up-to-capacity conjectures,
+        including correlated agreement, mutual correlated agreement, and a list-decodability conjecture used in
+        analyses of FRI-family systems. They also proposed modified forms of the conjectures.
+      </p>
+
+      <p>
+        Kambiré’s April 2026 report gave an explicit family over prime fields where proximity gaps fail at radii
+        only $O(1/\log n)$ below capacity. Meanwhile, 2026 work on folded Reed–Solomon codes, subspace-design
+        codes, random evaluation points, and curve-decoding continues to map which code families retain strong
+        proximity behavior.
+      </p>
+
+      <ol>
+        <li>
+          E. Ben-Sasson, D. Carmon, Y. Ishai, S. Kopparty, and S. Saraf,
+          <a href="https://eccc.weizmann.ac.il/report/2020/083/">“Proximity Gaps for Reed–Solomon Codes”</a>,
+          ECCC TR20-083; Journal of the ACM 70(5), 2023.
+        </li>
+        <li>
+          E. Crites and A. Stewart,
+          <a href="https://eprint.iacr.org/2025/2046">“On Reed–Solomon Proximity Gaps Conjectures”</a>,
+          IACR ePrint 2025/2046.
+        </li>
+        <li>
+          A. Kambiré,
+          <a href="https://arxiv.org/abs/2604.09724">“Proximity Gaps Conjecture Fails Near Capacity over Prime Fields”</a>,
+          arXiv:2604.09724, 2026.
+        </li>
+        <li>
+          F. G. Jeronimo, L. Liu, and P. Rajpal,
+          <a href="https://arxiv.org/abs/2601.10047">“Optimal Proximity Gap for Folded Reed–Solomon Codes via Subspace Designs”</a>,
+          arXiv:2601.10047, 2026.
+        </li>
+        <li>
+          R. Goyal, V. Guruswami, Y. Sun, and M. Wootters,
+          <a href="https://arxiv.org/abs/2607.08516">“Locality of Curve-Decoding and Improved Proximity Gaps”</a>,
+          arXiv:2607.08516, July 9, 2026.
+        </li>
+      </ol>
+
+      <h3>A concrete next research sequence</h3>
+
+      <ol>
+        <li>Hold the rate $R=k/n$ approximately fixed while increasing $n$ over prime fields.</li>
+        <li>For each case, compute $L_{\lfloor J\rfloor}$ and the first integer radius above $J$.</li>
+        <li>Search affine lines by structured coordinate stitching, not only uniformly at random.</li>
+        <li>Canonicalize lines to remove scalar and base-point duplicates before enumeration.</li>
+        <li>Track both $N_t(f,g)$ and $d_H([f,g],C^2)$, including allowed proximity loss.</li>
+        <li>Separate standard evaluation sets from multiplicative-subgroup evaluation sets.</li>
+        <li>Compare prime fields with genuine extension fields such as $GF(8)$ and $GF(16)$.</li>
+        <li>Only after finite patterns stabilize, formulate the exact asymptotic statement being tested.</li>
+      </ol>
+
+      <div class="result">
+        The central computational lesson is now visible. A Reed–Solomon word is easy to generate, and any
+        $k$ points are easy to interpolate. The hard part is controlling how thousands or millions of different
+        local interpolations can align across a structured family without producing one global correlated
+        explanation. That is the real proximity-gap problem.
+      </div>
+    </section>
+
+    <nav>
+      <a href="index.html">Home</a><span class="sep">|</span>
+      <a href="research.html">Research</a>
+    </nav>
+
+    <div class="footer-note">Built with GitHub Pages. All experiments are reproducible from the linked Python files.</div>
+  </div>
+</body>
+</html>
