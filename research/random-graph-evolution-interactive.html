@@ -1,0 +1,2185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="An interactive, seeded random graph evolution laboratory for GitHub Pages." />
+  <title>Interactive Random Graph Evolution Laboratory</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600&family=Source+Code+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f8f6f2;
+      --text: #1f1f1f;
+      --muted: #5d5d5d;
+      --accent: #1d4f91;
+      --accent-soft: #eaf1fb;
+      --line: #d8d2c7;
+      --card: #fffdf9;
+      --codebg: #f3efe8;
+      --codeborder: #d8cfc1;
+      --gold: #d49b2f;
+      --green: #2f7d61;
+      --red: #a54444;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 8% 3%, rgba(29, 79, 145, 0.055), transparent 25rem),
+        var(--bg);
+      color: var(--text);
+      font-family: "Inter", sans-serif;
+      line-height: 1.75;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    .graph-stage:focus-visible {
+      outline: 3px solid rgba(29, 79, 145, 0.28);
+      outline-offset: 2px;
+    }
+
+    .page {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 36px 24px 56px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 34px 34px 30px;
+      box-shadow: var(--shadow);
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Cormorant Garamond", serif;
+      line-height: 1.08;
+      letter-spacing: 0.2px;
+      margin-top: 0;
+      color: #151515;
+    }
+
+    h1 {
+      font-size: clamp(2.45rem, 5vw, 3.5rem);
+      margin-bottom: 18px;
+      max-width: 920px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-top: 36px;
+      margin-bottom: 12px;
+      padding-bottom: 7px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    h3 {
+      font-size: 1.46rem;
+      margin: 0 0 8px;
+    }
+
+    p {
+      margin: 0 0 16px;
+      font-size: 1.02rem;
+    }
+
+    ul {
+      margin: 0 0 16px 22px;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    code {
+      font-family: "Source Code Pro", monospace;
+      font-size: 0.93em;
+      background: var(--codebg);
+      border: 1px solid var(--codeborder);
+      border-radius: 6px;
+      padding: 0.08em 0.35em;
+    }
+
+    .lead {
+      font-size: 1.1rem;
+      max-width: 980px;
+    }
+
+    .note,
+    .warn {
+      padding: 14px 16px;
+      border-radius: 10px;
+      margin: 18px 0 20px;
+    }
+
+    .note {
+      background: #f7f2ea;
+      border-left: 4px solid var(--accent);
+    }
+
+    .warn {
+      background: #fbf6ea;
+      border-left: 4px solid #b7791f;
+    }
+
+    .lab-shell {
+      margin-top: 28px;
+      border: 1px solid #cfc7ba;
+      border-radius: 20px;
+      overflow: hidden;
+      background: #fcfaf6;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    }
+
+    .controls {
+      padding: 20px;
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(135deg, rgba(29, 79, 145, 0.06), transparent 58%),
+        #f6f1e9;
+    }
+
+    .control-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(130px, 1fr));
+      gap: 14px;
+      align-items: end;
+    }
+
+    .field {
+      min-width: 0;
+    }
+
+    .field label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      font-size: 0.88rem;
+      color: #414141;
+    }
+
+    .field input,
+    .field select {
+      width: 100%;
+      height: 44px;
+      border: 1px solid #c8c0b3;
+      border-radius: 10px;
+      padding: 8px 10px;
+      color: var(--text);
+      background: #fffefa;
+    }
+
+    .field input[type="range"] {
+      padding: 0;
+      accent-color: var(--accent);
+    }
+
+    .field-help {
+      min-height: 20px;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 0.76rem;
+      line-height: 1.35;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 17px;
+    }
+
+    .button {
+      min-height: 42px;
+      border: 1px solid #b9b0a3;
+      border-radius: 10px;
+      padding: 8px 15px;
+      background: #fffdf8;
+      color: #242424;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
+    }
+
+    .button:hover:not(:disabled) {
+      transform: translateY(-1px);
+      box-shadow: 0 5px 13px rgba(0, 0, 0, 0.08);
+    }
+
+    .button:active:not(:disabled) {
+      transform: translateY(0);
+    }
+
+    .button.primary {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: white;
+    }
+
+    .button.secondary {
+      border-color: #947025;
+      background: #fff8e8;
+      color: #674b13;
+    }
+
+    .button:disabled {
+      opacity: 0.48;
+      cursor: not-allowed;
+    }
+
+    .status-strip {
+      display: grid;
+      grid-template-columns: minmax(180px, 1fr) minmax(220px, 2fr) auto;
+      gap: 14px;
+      align-items: center;
+      margin-top: 16px;
+      padding: 11px 13px;
+      border: 1px solid #d4ccbf;
+      border-radius: 12px;
+      background: rgba(255, 253, 249, 0.82);
+    }
+
+    .status-text {
+      font-size: 0.89rem;
+      font-weight: 600;
+      color: #444;
+    }
+
+    .progress-track {
+      height: 10px;
+      border-radius: 999px;
+      overflow: hidden;
+      background: #e4ded4;
+    }
+
+    .progress-fill {
+      width: 0;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--accent), #5f8ec8);
+      transition: width 180ms ease;
+    }
+
+    .seed-chip {
+      font-family: "Source Code Pro", monospace;
+      font-size: 0.79rem;
+      color: #4d4d4d;
+      white-space: nowrap;
+    }
+
+    .visual-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(250px, 1fr);
+      gap: 0;
+    }
+
+    .graph-panel {
+      padding: 18px;
+      border-right: 1px solid var(--line);
+      min-width: 0;
+    }
+
+    .graph-stage {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 10.5;
+      min-height: 390px;
+      overflow: hidden;
+      border: 1px solid #bfc4c9;
+      border-radius: 17px;
+      background:
+        linear-gradient(rgba(29, 79, 145, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(29, 79, 145, 0.035) 1px, transparent 1px),
+        radial-gradient(circle at 50% 42%, #ffffff 0%, #f7f9fb 62%, #eef2f5 100%);
+      background-size: 32px 32px, 32px 32px, auto;
+      box-shadow:
+        inset 0 0 0 6px rgba(255, 255, 255, 0.6),
+        inset 0 0 38px rgba(29, 79, 145, 0.07);
+      touch-action: none;
+    }
+
+    #graphSvg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .graph-caption {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 11px;
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 13px;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fffdf9;
+      font-size: 0.82rem;
+    }
+
+    .legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .legend-dot,
+    .legend-line {
+      flex: 0 0 auto;
+      display: inline-block;
+    }
+
+    .legend-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 999px;
+      border: 1px solid rgba(0, 0, 0, 0.17);
+    }
+
+    .legend-line {
+      width: 19px;
+      height: 3px;
+      border-radius: 3px;
+    }
+
+    .stats-panel {
+      padding: 18px;
+      background: #faf7f1;
+    }
+
+    .stats-title {
+      margin-bottom: 13px;
+      font-size: 1.32rem;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 9px;
+    }
+
+    .metric {
+      min-height: 78px;
+      padding: 10px;
+      border: 1px solid #d6cec1;
+      border-radius: 12px;
+      background: #fffdf9;
+    }
+
+    .metric-label {
+      color: var(--muted);
+      font-size: 0.73rem;
+      line-height: 1.35;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .metric-value {
+      margin-top: 3px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.65rem;
+      line-height: 1;
+      font-weight: 700;
+      color: #1c2e43;
+    }
+
+    .phase-card {
+      margin-top: 12px;
+      padding: 12px;
+      border: 1px solid #c7d5e5;
+      border-radius: 12px;
+      background: var(--accent-soft);
+    }
+
+    .phase-card strong {
+      display: block;
+      color: #173f72;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.28rem;
+      line-height: 1.2;
+    }
+
+    .phase-card span {
+      display: block;
+      margin-top: 4px;
+      color: #455d78;
+      font-size: 0.8rem;
+      line-height: 1.45;
+    }
+
+    .chart-wrap {
+      margin: 0 18px 18px;
+      padding: 15px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: #fffdf9;
+    }
+
+    .chart-heading {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 8px;
+      align-items: baseline;
+      margin-bottom: 8px;
+    }
+
+    .chart-heading strong {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.35rem;
+    }
+
+    .chart-heading span {
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    #historySvg {
+      display: block;
+      width: 100%;
+      height: 190px;
+      border-radius: 9px;
+      background: #fbfcfd;
+    }
+
+    .milestone-log {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+      min-height: 29px;
+    }
+
+    .milestone-chip {
+      border: 1px solid #d4c9b7;
+      border-radius: 999px;
+      padding: 4px 9px;
+      background: #fff9eb;
+      color: #70551e;
+      font-size: 0.75rem;
+    }
+
+    .final-section {
+      display: none;
+      margin-top: 28px;
+      scroll-margin-top: 18px;
+    }
+
+    .final-section.visible {
+      display: block;
+    }
+
+    .final-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 13px;
+      margin-top: 16px;
+    }
+
+    .highlight-card {
+      position: relative;
+      min-height: 175px;
+      overflow: hidden;
+      border: 1px solid #d4cbbc;
+      border-radius: 15px;
+      padding: 17px;
+      background: linear-gradient(145deg, #fffefb, #f7f3ec);
+    }
+
+    .highlight-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 4px;
+      background: var(--accent);
+    }
+
+    .highlight-card h3 {
+      font-size: 1.38rem;
+      color: #173f72;
+    }
+
+    .highlight-card p {
+      margin: 0;
+      color: #454545;
+      font-size: 0.9rem;
+      line-height: 1.58;
+    }
+
+    .summary-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 20px;
+      font-size: 0.94rem;
+      background: #fcfaf6;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .summary-table th,
+    .summary-table td {
+      text-align: left;
+      padding: 11px 10px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+
+    .summary-table th {
+      width: 31%;
+      background: #f3ede3;
+      font-weight: 600;
+    }
+
+    .summary-table tr:last-child th,
+    .summary-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .method-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin: 16px 0 6px;
+    }
+
+    .method-box {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px;
+      background: #fcfaf6;
+    }
+
+    .method-box h3 {
+      font-size: 1.35rem;
+    }
+
+    .method-box p {
+      margin: 0;
+      font-size: 0.93rem;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    nav {
+      margin-top: 28px;
+      text-align: center;
+      font-size: 1.05rem;
+    }
+
+    nav a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    nav .sep {
+      color: #7a7a7a;
+      margin: 0 8px;
+    }
+
+    .footer-note {
+      margin-top: 18px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .edge {
+      stroke-linecap: round;
+      transition: stroke 180ms ease, stroke-width 180ms ease, opacity 180ms ease;
+    }
+
+    .node {
+      cursor: grab;
+      transition: fill 220ms ease, stroke 220ms ease, r 180ms ease;
+    }
+
+    .node:active {
+      cursor: grabbing;
+    }
+
+    .node-label {
+      pointer-events: none;
+      font-family: "Inter", sans-serif;
+      font-weight: 600;
+      text-anchor: middle;
+      dominant-baseline: central;
+      paint-order: stroke;
+      stroke: rgba(255, 255, 255, 0.88);
+      stroke-width: 2.8px;
+      stroke-linejoin: round;
+    }
+
+    @media (max-width: 980px) {
+      .control-grid {
+        grid-template-columns: repeat(3, minmax(130px, 1fr));
+      }
+
+      .visual-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .graph-panel {
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .metric-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .final-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 700px) {
+      .page {
+        padding: 20px 12px 42px;
+      }
+
+      .card {
+        padding: 24px 16px;
+      }
+
+      h2 {
+        font-size: 1.72rem;
+      }
+
+      .control-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .status-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .graph-panel,
+      .stats-panel,
+      .controls {
+        padding: 13px;
+      }
+
+      .graph-stage {
+        min-height: 330px;
+      }
+
+      .metric-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .final-grid,
+      .method-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .chart-wrap {
+        margin: 0 13px 13px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.001ms !important;
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <section class="card">
+      <h1>Interactive Random Graph Evolution Laboratory</h1>
+
+      <p class="lead">
+        Choose the number of vertices and the final number of edges, then watch a simple graph grow one
+        randomly selected edge at a time. The page continuously identifies connected components, colors the
+        current largest component blue, records structural milestones, and produces a detailed report when
+        the target graph is complete.
+      </p>
+
+      <p>
+        The process samples edges without replacement from all <code>n(n-1)/2</code> possible undirected edges.
+        Consequently, the final graph is a uniform sample from the classical fixed-edge random graph model
+        <code>G(n,m)</code>. A seed makes the entire experiment reproducible.
+      </p>
+
+      <div class="note">
+        <strong>Color rule.</strong> Blue always denotes the current largest connected component. Gold denotes
+        the newest edge. Smaller nontrivial components receive separate muted colors, while isolated vertices
+        remain grey. Here “giant component” is used visually for the dominant component; the final commentary
+        distinguishes this finite observation from the formal asymptotic meaning.
+      </div>
+
+      <h2>1. Build and evolve a random graph</h2>
+
+      <div class="lab-shell" id="labShell">
+        <div class="controls">
+          <div class="control-grid">
+            <div class="field">
+              <label for="nodeInput">Number of vertices, n</label>
+              <input id="nodeInput" type="number" min="2" max="150" step="1" value="40" />
+              <div class="field-help">Allowed range: 2–150</div>
+            </div>
+
+            <div class="field">
+              <label for="edgeInput">Target edges, m</label>
+              <input id="edgeInput" type="number" min="0" max="780" step="1" value="60" />
+              <div class="field-help" id="edgeHelp">Maximum for n = 40: 780</div>
+            </div>
+
+            <div class="field">
+              <label for="seedInput">Random seed</label>
+              <input id="seedInput" type="text" value="20260712" maxlength="40" />
+              <div class="field-help">Text or integer; identical seed gives identical edges</div>
+            </div>
+
+            <div class="field">
+              <label for="speedInput">Animation speed: <span id="speedValue">5</span></label>
+              <input id="speedInput" type="range" min="1" max="10" step="1" value="5" />
+              <div class="field-help">Higher values add edges more rapidly</div>
+            </div>
+
+            <div class="field">
+              <label for="layoutSelect">Vertex layout</label>
+              <select id="layoutSelect">
+                <option value="force" selected>Force-directed</option>
+                <option value="disk">Filled circle (dispersed)</option>
+                <option value="circle">Circular ring</option>
+              </select>
+              <div class="field-help">Choose a natural cluster, filled disc, or outer ring; drag vertices at any time</div>
+            </div>
+          </div>
+
+          <div class="button-row">
+            <button class="button primary" id="startButton" type="button">Start evolution</button>
+            <button class="button" id="pauseButton" type="button" disabled>Pause</button>
+            <button class="button" id="stepButton" type="button">Add one edge</button>
+            <button class="button" id="resetButton" type="button">Reset same graph</button>
+            <button class="button secondary" id="newSeedButton" type="button">New random seed</button>
+          </div>
+
+          <div class="status-strip" aria-live="polite">
+            <div class="status-text" id="statusText">Ready: 0 of 60 edges added.</div>
+            <div class="progress-track" aria-label="Graph evolution progress">
+              <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="seed-chip" id="seedChip">seed: 20260712</div>
+          </div>
+        </div>
+
+        <div class="visual-grid">
+          <div class="graph-panel">
+            <div class="graph-stage" id="graphStage" tabindex="0" aria-label="Interactive random graph drawing">
+              <svg id="graphSvg" viewBox="0 0 900 590" role="img" aria-labelledby="graphTitle graphDescription">
+                <title id="graphTitle">Random graph evolution</title>
+                <desc id="graphDescription">An evolving undirected graph. The largest connected component is blue.</desc>
+                <defs>
+                  <filter id="blueGlow" x="-70%" y="-70%" width="240%" height="240%">
+                    <feGaussianBlur stdDeviation="4" result="blur" />
+                    <feMerge>
+                      <feMergeNode in="blur" />
+                      <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                  </filter>
+                  <filter id="goldGlow" x="-80%" y="-80%" width="260%" height="260%">
+                    <feGaussianBlur stdDeviation="3" result="blur" />
+                    <feMerge>
+                      <feMergeNode in="blur" />
+                      <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                  </filter>
+                </defs>
+                <g id="edgeLayer"></g>
+                <g id="nodeLayer"></g>
+                <g id="labelLayer"></g>
+              </svg>
+            </div>
+
+            <div class="graph-caption">
+              <span id="graphCaption">Uniform G(40, 60) process; drag vertices to adjust the view.</span>
+              <span id="newEdgeCaption">No edge added yet.</span>
+            </div>
+
+            <div class="legend" aria-label="Graph color legend">
+              <span class="legend-item"><span class="legend-dot" style="background:#1d4f91"></span>largest component</span>
+              <span class="legend-item"><span class="legend-dot" style="background:#7a8795"></span>isolated vertex</span>
+              <span class="legend-item"><span class="legend-dot" style="background:#4f8f74"></span>other component</span>
+              <span class="legend-item"><span class="legend-line" style="background:#d49b2f"></span>newest edge</span>
+              <span class="legend-item"><span class="legend-line" style="background:#8fa4bb"></span>older edge</span>
+            </div>
+          </div>
+
+          <aside class="stats-panel" aria-label="Live graph statistics">
+            <h3 class="stats-title">Live structure</h3>
+            <div class="metric-grid">
+              <div class="metric">
+                <div class="metric-label">Edges</div>
+                <div class="metric-value" id="metricEdges">0</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">Components</div>
+                <div class="metric-value" id="metricComponents">40</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">Largest size</div>
+                <div class="metric-value" id="metricLargest">1</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">Largest share</div>
+                <div class="metric-value" id="metricShare">2.5%</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">Average degree</div>
+                <div class="metric-value" id="metricDegree">0.00</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">Density</div>
+                <div class="metric-value" id="metricDensity">0.000</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">Isolated</div>
+                <div class="metric-value" id="metricIsolates">40</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">Cycle rank</div>
+                <div class="metric-value" id="metricCycles">0</div>
+              </div>
+            </div>
+
+            <div class="phase-card">
+              <strong id="phaseTitle">Isolated beginning</strong>
+              <span id="phaseText">Every vertex is currently its own connected component.</span>
+            </div>
+          </aside>
+        </div>
+
+        <div class="chart-wrap">
+          <div class="chart-heading">
+            <strong>Largest-component trajectory</strong>
+            <span>Vertical guides show the classical scales m ≈ n/2 and m ≈ (n log n)/2 when they lie in range.</span>
+          </div>
+          <svg id="historySvg" viewBox="0 0 920 190" role="img" aria-label="Largest component size against edges added"></svg>
+          <div class="milestone-log" id="milestoneLog" aria-live="polite"></div>
+        </div>
+      </div>
+
+      <section class="final-section" id="finalSection" aria-live="polite">
+        <h2>2. Final structural highlights</h2>
+        <p id="finalIntro"></p>
+        <div class="final-grid" id="finalGrid"></div>
+
+        <table class="summary-table" aria-label="Final graph summary">
+          <tbody id="summaryBody"></tbody>
+        </table>
+
+        <div class="warn" id="thresholdNote"></div>
+      </section>
+
+      <h2>3. What the animation is measuring</h2>
+
+      <div class="method-grid">
+        <div class="method-box">
+          <h3>Connected components</h3>
+          <p>
+            After each edge is added, a graph search partitions the vertices into connected components. The
+            largest is colored blue. When two components merge, all vertices in the newly dominant component
+            immediately inherit the blue encoding.
+          </p>
+        </div>
+
+        <div class="method-box">
+          <h3>Cycle rank</h3>
+          <p>
+            The live cycle statistic is <code>m - n + c</code>, where <code>c</code> is the number of connected
+            components. It counts the number of independent cycles: zero means the graph is a forest.
+          </p>
+        </div>
+
+        <div class="method-box">
+          <h3>Final diagnostics</h3>
+          <p>
+            At completion, the page computes component sizes, degree summaries, triangles, mean local
+            clustering, bipartiteness, bridges, articulation vertices, and a diameter for the whole graph or
+            its largest component.
+          </p>
+        </div>
+
+        <div class="method-box">
+          <h3>Randomness and reproducibility</h3>
+          <p>
+            All possible edges are shuffled by a deterministic seeded generator. Resetting preserves the edge
+            order; choosing a new seed produces another graph. No server, library, or stored user data is used.
+          </p>
+        </div>
+      </div>
+
+      <h2>4. Interpreting the familiar random-graph thresholds</h2>
+
+      <p>
+        In the classical Erdős–Rényi process, the scale <code>m ≈ n/2</code> is associated with the emergence
+        of a component containing a positive fraction of all vertices. Connectivity occurs later, around
+        <code>m ≈ (n log n)/2</code>. These are asymptotic guideposts rather than guarantees for a particular
+        finite sample, which is why the live experiment is useful: individual seeded realizations can cross
+        the same qualitative transitions earlier or later.
+      </p>
+
+      <p class="small">
+        Practical limit: the page permits up to 150 vertices. Dense graphs can contain thousands of SVG edges,
+        so force-directed motion is progressively reduced as density rises. The filled-circle and circular-ring
+        layouts are useful for large or dense examples because they keep vertex positions stable.
+      </p>
+    </section>
+
+    <nav>
+      <a href="index.html">Home</a><span class="sep">|</span>
+      <a href="research.html">Research</a>
+    </nav>
+
+    <div class="footer-note">Built as a self-contained GitHub Pages experiment.</div>
+  </div>
+
+  <script>
+    "use strict";
+
+    const SVG_NS = "http://www.w3.org/2000/svg";
+    const WIDTH = 900;
+    const HEIGHT = 590;
+    const PAD = 36;
+
+    const COLORS = {
+      giant: "#1d4f91",
+      giantEdge: "#6f91b7",
+      isolated: "#7a8795",
+      isolatedStroke: "#4e5964",
+      newest: "#d49b2f",
+      componentPalette: [
+        "#4f8f74",
+        "#9a6f9b",
+        "#b16c4d",
+        "#5f879a",
+        "#8b8b4a",
+        "#866955",
+        "#6f7f52",
+        "#a15f73"
+      ]
+    };
+
+    const els = {
+      nodeInput: document.getElementById("nodeInput"),
+      edgeInput: document.getElementById("edgeInput"),
+      seedInput: document.getElementById("seedInput"),
+      speedInput: document.getElementById("speedInput"),
+      speedValue: document.getElementById("speedValue"),
+      layoutSelect: document.getElementById("layoutSelect"),
+      edgeHelp: document.getElementById("edgeHelp"),
+      startButton: document.getElementById("startButton"),
+      pauseButton: document.getElementById("pauseButton"),
+      stepButton: document.getElementById("stepButton"),
+      resetButton: document.getElementById("resetButton"),
+      newSeedButton: document.getElementById("newSeedButton"),
+      statusText: document.getElementById("statusText"),
+      progressFill: document.getElementById("progressFill"),
+      seedChip: document.getElementById("seedChip"),
+      graphCaption: document.getElementById("graphCaption"),
+      newEdgeCaption: document.getElementById("newEdgeCaption"),
+      graphStage: document.getElementById("graphStage"),
+      graphSvg: document.getElementById("graphSvg"),
+      edgeLayer: document.getElementById("edgeLayer"),
+      nodeLayer: document.getElementById("nodeLayer"),
+      labelLayer: document.getElementById("labelLayer"),
+      historySvg: document.getElementById("historySvg"),
+      milestoneLog: document.getElementById("milestoneLog"),
+      finalSection: document.getElementById("finalSection"),
+      finalIntro: document.getElementById("finalIntro"),
+      finalGrid: document.getElementById("finalGrid"),
+      summaryBody: document.getElementById("summaryBody"),
+      thresholdNote: document.getElementById("thresholdNote"),
+      metrics: {
+        edges: document.getElementById("metricEdges"),
+        components: document.getElementById("metricComponents"),
+        largest: document.getElementById("metricLargest"),
+        share: document.getElementById("metricShare"),
+        degree: document.getElementById("metricDegree"),
+        density: document.getElementById("metricDensity"),
+        isolates: document.getElementById("metricIsolates"),
+        cycles: document.getElementById("metricCycles")
+      },
+      phaseTitle: document.getElementById("phaseTitle"),
+      phaseText: document.getElementById("phaseText")
+    };
+
+    const state = {
+      n: 40,
+      targetM: 60,
+      seed: "20260712",
+      edgeOrder: [],
+      edges: [],
+      adj: [],
+      positions: [],
+      velocities: [],
+      edgeIndex: 0,
+      playing: false,
+      timer: null,
+      lastAdded: null,
+      components: [],
+      compOf: [],
+      history: [],
+      milestones: [],
+      milestoneKeys: new Set(),
+      dragging: null,
+      pointerId: null,
+      physicsFrames: 0,
+      physicsRequest: null,
+      generation: 0
+    };
+
+    function clamp(value, min, max) {
+      return Math.max(min, Math.min(max, value));
+    }
+
+    function createSvgElement(tag, attributes = {}) {
+      const el = document.createElementNS(SVG_NS, tag);
+      for (const [key, value] of Object.entries(attributes)) {
+        el.setAttribute(key, String(value));
+      }
+      return el;
+    }
+
+    function hashSeed(text) {
+      let h = 2166136261 >>> 0;
+      const value = String(text);
+      for (let i = 0; i < value.length; i += 1) {
+        h ^= value.charCodeAt(i);
+        h = Math.imul(h, 16777619);
+      }
+      return h >>> 0;
+    }
+
+    function mulberry32(seed) {
+      let a = seed >>> 0;
+      return function random() {
+        a |= 0;
+        a = (a + 0x6D2B79F5) | 0;
+        let t = Math.imul(a ^ (a >>> 15), 1 | a);
+        t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+        return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+      };
+    }
+
+    function shuffledEdges(n, seedText) {
+      const all = [];
+      for (let i = 0; i < n; i += 1) {
+        for (let j = i + 1; j < n; j += 1) {
+          all.push([i, j]);
+        }
+      }
+      const random = mulberry32(hashSeed(seedText));
+      for (let i = all.length - 1; i > 0; i -= 1) {
+        const j = Math.floor(random() * (i + 1));
+        [all[i], all[j]] = [all[j], all[i]];
+      }
+      return all;
+    }
+
+    function maximumEdges(n) {
+      return (n * (n - 1)) / 2;
+    }
+
+    function validateInputs() {
+      const n = clamp(Math.trunc(Number(els.nodeInput.value) || 2), 2, 150);
+      els.nodeInput.value = String(n);
+      const maxM = maximumEdges(n);
+      els.edgeInput.max = String(maxM);
+      const targetM = clamp(Math.trunc(Number(els.edgeInput.value) || 0), 0, maxM);
+      els.edgeInput.value = String(targetM);
+      const seed = els.seedInput.value.trim() || "0";
+      els.seedInput.value = seed;
+      els.edgeHelp.textContent = `Maximum for n = ${n}: ${maxM.toLocaleString()}`;
+      return { n, targetM, seed };
+    }
+
+    function initialPositions(n, seedText) {
+      const random = mulberry32(hashSeed(`${seedText}:layout`));
+      const positions = [];
+      const radius = Math.min(WIDTH, HEIGHT) * 0.39;
+      const cx = WIDTH / 2;
+      const cy = HEIGHT / 2;
+      const layout = els.layoutSelect.value;
+
+      if (layout === "disk") {
+        // A seeded sunflower distribution fills a disc without crowding the centre
+        // or forcing every vertex onto the outer circumference.
+        const goldenAngle = Math.PI * (3 - Math.sqrt(5));
+        const rotation = random() * 2 * Math.PI;
+        for (let i = 0; i < n; i += 1) {
+          const radialFraction = Math.sqrt((i + 0.45) / n);
+          const radialJitter = 0.97 + (random() - 0.5) * 0.06;
+          const angularJitter = (random() - 0.5) * 0.12;
+          const r = radius * radialFraction * radialJitter;
+          const angle = rotation + i * goldenAngle + angularJitter;
+          positions.push({
+            x: cx + Math.cos(angle) * r,
+            y: cy + Math.sin(angle) * r,
+            pinned: false
+          });
+        }
+        return positions;
+      }
+
+      for (let i = 0; i < n; i += 1) {
+        const angle = -Math.PI / 2 + (2 * Math.PI * i) / n;
+        const ringScale = layout === "force" && n > 80 && i % 3 === 0 ? 0.77 : 1;
+        const jitter = layout === "force" ? (random() - 0.5) * 18 : 0;
+        positions.push({
+          x: cx + Math.cos(angle) * (radius * ringScale + jitter),
+          y: cy + Math.sin(angle) * (radius * ringScale + jitter),
+          pinned: false
+        });
+      }
+      return positions;
+    }
+
+    function rebuildGraph() {
+      stopEvolution();
+      const { n, targetM, seed } = validateInputs();
+      state.generation += 1;
+      state.n = n;
+      state.targetM = targetM;
+      state.seed = seed;
+      state.edgeOrder = shuffledEdges(n, seed).slice(0, targetM);
+      state.edges = [];
+      state.edgeIndex = 0;
+      state.adj = Array.from({ length: n }, () => new Set());
+      state.positions = initialPositions(n, seed);
+      state.velocities = Array.from({ length: n }, () => ({ x: 0, y: 0 }));
+      state.lastAdded = null;
+      state.history = [{ edgeCount: 0, largest: 1 }];
+      state.milestones = [];
+      state.milestoneKeys = new Set();
+      state.dragging = null;
+      state.pointerId = null;
+      state.physicsFrames = 0;
+      state.finalized = false;
+
+      els.finalSection.classList.remove("visible");
+      els.finalGrid.innerHTML = "";
+      els.summaryBody.innerHTML = "";
+      els.milestoneLog.innerHTML = "";
+      els.seedChip.textContent = `seed: ${seed}`;
+      els.graphCaption.textContent = `Uniform G(${n}, ${targetM}) process; drag vertices to adjust the view.`;
+      els.newEdgeCaption.textContent = "No edge added yet.";
+
+      buildSvgNodes();
+      updateAll(true);
+
+      if (targetM === 0) {
+        finishEvolution();
+      }
+    }
+
+    function nodeRadius() {
+      if (state.n <= 24) return 11.5;
+      if (state.n <= 50) return 8.5;
+      if (state.n <= 90) return 6.6;
+      return 5.2;
+    }
+
+    function buildSvgNodes() {
+      els.edgeLayer.replaceChildren();
+      els.nodeLayer.replaceChildren();
+      els.labelLayer.replaceChildren();
+
+      const radius = nodeRadius();
+      const showLabels = state.n <= 65;
+
+      for (let i = 0; i < state.n; i += 1) {
+        const circle = createSvgElement("circle", {
+          class: "node",
+          id: `node-${i}`,
+          cx: state.positions[i].x,
+          cy: state.positions[i].y,
+          r: radius,
+          fill: COLORS.isolated,
+          stroke: COLORS.isolatedStroke,
+          "stroke-width": 1.5,
+          "data-node": i,
+          tabindex: 0,
+          role: "button",
+          "aria-label": `Vertex ${i + 1}`
+        });
+        circle.addEventListener("pointerdown", handlePointerDown);
+        els.nodeLayer.appendChild(circle);
+
+        if (showLabels) {
+          const label = createSvgElement("text", {
+            class: "node-label",
+            id: `label-${i}`,
+            x: state.positions[i].x,
+            y: state.positions[i].y,
+            fill: "#18202a",
+            "font-size": state.n <= 25 ? 10.5 : 8.3
+          });
+          label.textContent = String(i + 1);
+          els.labelLayer.appendChild(label);
+        }
+      }
+    }
+
+    function handlePointerDown(event) {
+      const node = Number(event.currentTarget.dataset.node);
+      state.dragging = node;
+      state.pointerId = event.pointerId;
+      state.positions[node].pinned = true;
+      event.currentTarget.setPointerCapture(event.pointerId);
+      moveDraggedNode(event);
+    }
+
+    function svgPointFromEvent(event) {
+      const point = els.graphSvg.createSVGPoint();
+      point.x = event.clientX;
+      point.y = event.clientY;
+      const matrix = els.graphSvg.getScreenCTM();
+      return matrix ? point.matrixTransform(matrix.inverse()) : { x: WIDTH / 2, y: HEIGHT / 2 };
+    }
+
+    function moveDraggedNode(event) {
+      if (state.dragging === null) return;
+      const point = svgPointFromEvent(event);
+      const radius = nodeRadius();
+      const pos = state.positions[state.dragging];
+      pos.x = clamp(point.x, PAD + radius, WIDTH - PAD - radius);
+      pos.y = clamp(point.y, PAD + radius, HEIGHT - PAD - radius);
+      state.velocities[state.dragging] = { x: 0, y: 0 };
+      drawPositions();
+    }
+
+    els.graphStage.addEventListener("pointermove", (event) => {
+      if (state.dragging !== null && event.pointerId === state.pointerId) {
+        moveDraggedNode(event);
+      }
+    });
+
+    function releasePointer(event) {
+      if (state.dragging === null || event.pointerId !== state.pointerId) return;
+      const index = state.dragging;
+      state.positions[index].pinned = false;
+      state.dragging = null;
+      state.pointerId = null;
+      if (els.layoutSelect.value === "force") startPhysics(45);
+    }
+
+    els.graphStage.addEventListener("pointerup", releasePointer);
+    els.graphStage.addEventListener("pointercancel", releasePointer);
+
+    function componentsOfGraph() {
+      const visited = new Array(state.n).fill(false);
+      const components = [];
+      const compOf = new Array(state.n).fill(-1);
+
+      for (let start = 0; start < state.n; start += 1) {
+        if (visited[start]) continue;
+        const queue = [start];
+        visited[start] = true;
+        const component = [];
+        let head = 0;
+
+        while (head < queue.length) {
+          const u = queue[head++];
+          component.push(u);
+          for (const v of state.adj[u]) {
+            if (!visited[v]) {
+              visited[v] = true;
+              queue.push(v);
+            }
+          }
+        }
+        components.push(component);
+      }
+
+      components.sort((a, b) => b.length - a.length || a[0] - b[0]);
+      components.forEach((component, index) => {
+        component.forEach((node) => {
+          compOf[node] = index;
+        });
+      });
+      return { components, compOf };
+    }
+
+    function componentColor(componentIndex, componentSize) {
+      if (componentIndex === 0 && componentSize > 1) return COLORS.giant;
+      if (componentSize === 1) return COLORS.isolated;
+      return COLORS.componentPalette[(componentIndex - 1 + COLORS.componentPalette.length) % COLORS.componentPalette.length];
+    }
+
+    function addEdge() {
+      if (state.edgeIndex >= state.targetM) {
+        finishEvolution();
+        return false;
+      }
+
+      const [u, v] = state.edgeOrder[state.edgeIndex];
+      state.edgeIndex += 1;
+      state.edges.push({ u, v });
+      state.adj[u].add(v);
+      state.adj[v].add(u);
+      state.lastAdded = { u, v, index: state.edges.length - 1 };
+
+      const line = createSvgElement("line", {
+        class: "edge",
+        id: `edge-${state.edges.length - 1}`,
+        x1: state.positions[u].x,
+        y1: state.positions[u].y,
+        x2: state.positions[v].x,
+        y2: state.positions[v].y,
+        stroke: COLORS.newest,
+        "stroke-width": state.n > 90 ? 2.2 : 3.2,
+        opacity: 0.95,
+        filter: "url(#goldGlow)"
+      });
+      els.edgeLayer.appendChild(line);
+      els.newEdgeCaption.textContent = `Newest edge: ${u + 1}—${v + 1}`;
+
+      updateAll(false);
+      if (els.layoutSelect.value === "force") {
+        startPhysics(state.n > 110 ? 25 : 65);
+      }
+
+      if (state.edgeIndex >= state.targetM) {
+        finishEvolution();
+      }
+      return true;
+    }
+
+    function speedSettings() {
+      const speed = Number(els.speedInput.value);
+      let interval = 920 - speed * 82;
+      let batch = 1;
+      if (speed === 8) batch = 2;
+      if (speed === 9) batch = 4;
+      if (speed === 10) batch = state.targetM > 1000 ? 14 : 8;
+      if (state.targetM > 2500 && speed >= 8) batch *= 2;
+      interval = Math.max(70, interval);
+      return { interval, batch };
+    }
+
+    function startEvolution() {
+      if (state.edgeIndex >= state.targetM) {
+        rebuildGraph();
+      }
+      if (state.targetM === 0 || state.playing) return;
+      state.playing = true;
+      syncButtons();
+      scheduleTick();
+    }
+
+    function scheduleTick() {
+      if (!state.playing) return;
+      const { interval, batch } = speedSettings();
+      state.timer = window.setTimeout(() => {
+        for (let i = 0; i < batch && state.edgeIndex < state.targetM; i += 1) {
+          addEdge();
+        }
+        if (state.edgeIndex < state.targetM && state.playing) {
+          scheduleTick();
+        }
+      }, interval);
+    }
+
+    function stopEvolution() {
+      state.playing = false;
+      if (state.timer !== null) {
+        window.clearTimeout(state.timer);
+        state.timer = null;
+      }
+      syncButtons();
+    }
+
+    function syncButtons() {
+      const finished = state.edgeIndex >= state.targetM;
+      els.startButton.disabled = state.playing || state.targetM === 0;
+      els.pauseButton.disabled = !state.playing;
+      els.stepButton.disabled = state.playing || finished;
+      els.startButton.textContent = finished ? "Replay evolution" : "Start evolution";
+    }
+
+    function updateAll(initial) {
+      const result = componentsOfGraph();
+      state.components = result.components;
+      state.compOf = result.compOf;
+
+      const largest = state.components[0]?.length || 0;
+      if (!initial) {
+        state.history.push({ edgeCount: state.edgeIndex, largest });
+        detectMilestones();
+      }
+
+      updateNodeAndEdgeStyles();
+      updateMetrics();
+      updateStatus();
+      drawHistoryChart();
+      drawPositions();
+      syncButtons();
+    }
+
+    function updateNodeAndEdgeStyles() {
+      const giantSize = state.components[0]?.length || 1;
+      const radius = nodeRadius();
+
+      for (let i = 0; i < state.n; i += 1) {
+        const componentIndex = state.compOf[i];
+        const componentSize = state.components[componentIndex].length;
+        const color = componentColor(componentIndex, componentSize);
+        const circle = document.getElementById(`node-${i}`);
+        circle.setAttribute("fill", color);
+        circle.setAttribute("stroke", componentIndex === 0 && giantSize > 1 ? "#103863" : "#4d5861");
+        circle.setAttribute("stroke-width", componentIndex === 0 && giantSize > 1 ? "2" : "1.25");
+        circle.setAttribute("r", componentIndex === 0 && giantSize > 1 ? radius * 1.06 : radius);
+        circle.setAttribute("filter", componentIndex === 0 && giantSize > 1 && state.n <= 90 ? "url(#blueGlow)" : "none");
+
+        const label = document.getElementById(`label-${i}`);
+        if (label) {
+          label.setAttribute("fill", componentIndex === 0 && giantSize > 1 ? "#ffffff" : "#17202a");
+          label.setAttribute("stroke", componentIndex === 0 && giantSize > 1 ? "rgba(16,56,99,0.8)" : "rgba(255,255,255,0.9)");
+        }
+      }
+
+      state.edges.forEach((edge, index) => {
+        const line = document.getElementById(`edge-${index}`);
+        const isNewest = state.lastAdded && index === state.lastAdded.index;
+        const componentIndex = state.compOf[edge.u];
+        const componentSize = state.components[componentIndex].length;
+        const isGiantEdge = componentIndex === 0 && componentSize > 1;
+        const baseColor = isGiantEdge
+          ? COLORS.giantEdge
+          : componentColor(componentIndex, componentSize);
+        line.setAttribute("stroke", isNewest ? COLORS.newest : baseColor);
+        line.setAttribute("stroke-width", isNewest ? (state.n > 90 ? 2.5 : 3.5) : (state.n > 90 ? 0.9 : 1.5));
+        line.setAttribute("opacity", isNewest ? "1" : isGiantEdge ? "0.66" : "0.52");
+        line.setAttribute("filter", isNewest ? "url(#goldGlow)" : "none");
+      });
+    }
+
+    function updateMetrics() {
+      const components = state.components.length;
+      const largest = state.components[0]?.length || 0;
+      const maxM = maximumEdges(state.n);
+      const isolates = state.adj.reduce((count, neighbors) => count + (neighbors.size === 0 ? 1 : 0), 0);
+      const cycleRank = state.edgeIndex - state.n + components;
+      const averageDegree = (2 * state.edgeIndex) / state.n;
+      const density = maxM === 0 ? 0 : state.edgeIndex / maxM;
+
+      els.metrics.edges.textContent = state.edgeIndex.toLocaleString();
+      els.metrics.components.textContent = components.toLocaleString();
+      els.metrics.largest.textContent = largest.toLocaleString();
+      els.metrics.share.textContent = `${((100 * largest) / state.n).toFixed(1)}%`;
+      els.metrics.degree.textContent = averageDegree.toFixed(2);
+      els.metrics.density.textContent = density.toFixed(3);
+      els.metrics.isolates.textContent = isolates.toLocaleString();
+      els.metrics.cycles.textContent = Math.max(0, cycleRank).toLocaleString();
+
+      const phase = phaseDescription(largest, components, isolates, cycleRank, averageDegree);
+      els.phaseTitle.textContent = phase.title;
+      els.phaseText.textContent = phase.text;
+    }
+
+    function phaseDescription(largest, components, isolates, cycleRank, averageDegree) {
+      const share = largest / state.n;
+      if (state.edgeIndex === 0) {
+        return {
+          title: "Isolated beginning",
+          text: "Every vertex is currently its own connected component."
+        };
+      }
+      if (cycleRank === 0 && share < 0.35) {
+        return {
+          title: "Forest of small pieces",
+          text: "Edges are joining vertices, but the graph remains acyclic and strongly fragmented."
+        };
+      }
+      if (share < 0.5) {
+        return {
+          title: "Component competition",
+          text: "Several components are growing; no single component yet contains half the vertices."
+        };
+      }
+      if (components > 1 && isolates > 0) {
+        return {
+          title: "Dominant component with outliers",
+          text: `A blue component contains most vertices, while ${isolates} isolated ${isolates === 1 ? "vertex remains" : "vertices remain"}.`
+        };
+      }
+      if (components > 1) {
+        return {
+          title: "Giant-component regime",
+          text: "One component dominates the drawing, but the graph is not yet connected."
+        };
+      }
+      return {
+        title: averageDegree < 2 ? "Connected sparse graph" : "Connected graph",
+        text: "Every vertex can now be reached from every other vertex."
+      };
+    }
+
+    function updateStatus() {
+      const progress = state.targetM === 0 ? 100 : (100 * state.edgeIndex) / state.targetM;
+      els.progressFill.style.width = `${progress}%`;
+      const verb = state.playing ? "Evolving" : state.edgeIndex >= state.targetM ? "Complete" : "Paused/ready";
+      els.statusText.textContent = `${verb}: ${state.edgeIndex.toLocaleString()} of ${state.targetM.toLocaleString()} edges added.`;
+    }
+
+    function addMilestone(key, text) {
+      if (state.milestoneKeys.has(key)) return;
+      state.milestoneKeys.add(key);
+      state.milestones.push({ key, text, edgeCount: state.edgeIndex });
+      const chip = document.createElement("span");
+      chip.className = "milestone-chip";
+      chip.textContent = `m = ${state.edgeIndex}: ${text}`;
+      els.milestoneLog.appendChild(chip);
+    }
+
+    function detectMilestones() {
+      const largest = state.components[0]?.length || 0;
+      const share = largest / state.n;
+      const cycleRank = state.edgeIndex - state.n + state.components.length;
+      if (state.edgeIndex === 1) addMilestone("first-edge", "first edge");
+      if (cycleRank > 0) addMilestone("first-cycle", "first cycle");
+      if (share >= 0.25) addMilestone("share-25", "largest component reached 25%");
+      if (share >= 0.5) addMilestone("share-50", "largest component reached 50%");
+      if (share >= 0.75) addMilestone("share-75", "largest component reached 75%");
+      if (state.components.length === 1) addMilestone("connected", "graph became connected");
+    }
+
+    function drawHistoryChart() {
+      const svg = els.historySvg;
+      svg.replaceChildren();
+
+      const W = 920;
+      const H = 190;
+      const margin = { left: 46, right: 16, top: 15, bottom: 30 };
+      const innerW = W - margin.left - margin.right;
+      const innerH = H - margin.top - margin.bottom;
+      const xMax = Math.max(1, state.targetM);
+      const yMax = Math.max(1, state.n);
+      const x = (value) => margin.left + (value / xMax) * innerW;
+      const y = (value) => margin.top + innerH - (value / yMax) * innerH;
+
+      const gridGroup = createSvgElement("g");
+      for (let i = 0; i <= 4; i += 1) {
+        const value = (yMax * i) / 4;
+        gridGroup.appendChild(createSvgElement("line", {
+          x1: margin.left,
+          x2: W - margin.right,
+          y1: y(value),
+          y2: y(value),
+          stroke: "#e4e7ea",
+          "stroke-width": 1
+        }));
+        const label = createSvgElement("text", {
+          x: margin.left - 8,
+          y: y(value) + 4,
+          "text-anchor": "end",
+          fill: "#68717a",
+          "font-size": 10
+        });
+        label.textContent = String(Math.round(value));
+        gridGroup.appendChild(label);
+      }
+      svg.appendChild(gridGroup);
+
+      const thresholdGuides = [
+        { m: state.n / 2, label: "n/2", color: "#8d6a1f" },
+        { m: (state.n * Math.log(state.n)) / 2, label: "n log n / 2", color: "#7c5980" }
+      ];
+      thresholdGuides.forEach((guide) => {
+        if (guide.m <= state.targetM && guide.m > 0) {
+          const gx = x(guide.m);
+          svg.appendChild(createSvgElement("line", {
+            x1: gx,
+            x2: gx,
+            y1: margin.top,
+            y2: margin.top + innerH,
+            stroke: guide.color,
+            "stroke-width": 1.2,
+            "stroke-dasharray": "5 5",
+            opacity: 0.78
+          }));
+          const label = createSvgElement("text", {
+            x: gx + 4,
+            y: margin.top + 10,
+            fill: guide.color,
+            "font-size": 9.5
+          });
+          label.textContent = guide.label;
+          svg.appendChild(label);
+        }
+      });
+
+      svg.appendChild(createSvgElement("line", {
+        x1: margin.left,
+        x2: W - margin.right,
+        y1: margin.top + innerH,
+        y2: margin.top + innerH,
+        stroke: "#7e8790",
+        "stroke-width": 1.2
+      }));
+      svg.appendChild(createSvgElement("line", {
+        x1: margin.left,
+        x2: margin.left,
+        y1: margin.top,
+        y2: margin.top + innerH,
+        stroke: "#7e8790",
+        "stroke-width": 1.2
+      }));
+
+      const points = state.history.map((item) => `${x(item.edgeCount)},${y(item.largest)}`).join(" ");
+      svg.appendChild(createSvgElement("polyline", {
+        points,
+        fill: "none",
+        stroke: COLORS.giant,
+        "stroke-width": 3,
+        "stroke-linejoin": "round",
+        "stroke-linecap": "round"
+      }));
+
+      const last = state.history[state.history.length - 1];
+      svg.appendChild(createSvgElement("circle", {
+        cx: x(last.edgeCount),
+        cy: y(last.largest),
+        r: 4.5,
+        fill: COLORS.giant,
+        stroke: "#ffffff",
+        "stroke-width": 2
+      }));
+
+      state.milestones.forEach((milestone) => {
+        const record = state.history.find((item) => item.edgeCount === milestone.edgeCount);
+        if (!record) return;
+        svg.appendChild(createSvgElement("circle", {
+          cx: x(record.edgeCount),
+          cy: y(record.largest),
+          r: 3.3,
+          fill: COLORS.newest,
+          stroke: "#7c5b18",
+          "stroke-width": 1
+        }));
+      });
+
+      const xLabel = createSvgElement("text", {
+        x: margin.left + innerW / 2,
+        y: H - 7,
+        "text-anchor": "middle",
+        fill: "#5b646d",
+        "font-size": 11
+      });
+      xLabel.textContent = "Edges added, m";
+      svg.appendChild(xLabel);
+
+      const yLabel = createSvgElement("text", {
+        x: 12,
+        y: margin.top + innerH / 2,
+        transform: `rotate(-90 12 ${margin.top + innerH / 2})`,
+        "text-anchor": "middle",
+        fill: "#5b646d",
+        "font-size": 11
+      });
+      yLabel.textContent = "Largest component";
+      svg.appendChild(yLabel);
+    }
+
+    function drawPositions() {
+      state.edges.forEach((edge, index) => {
+        const line = document.getElementById(`edge-${index}`);
+        if (!line) return;
+        line.setAttribute("x1", state.positions[edge.u].x);
+        line.setAttribute("y1", state.positions[edge.u].y);
+        line.setAttribute("x2", state.positions[edge.v].x);
+        line.setAttribute("y2", state.positions[edge.v].y);
+      });
+
+      for (let i = 0; i < state.n; i += 1) {
+        const circle = document.getElementById(`node-${i}`);
+        if (circle) {
+          circle.setAttribute("cx", state.positions[i].x);
+          circle.setAttribute("cy", state.positions[i].y);
+        }
+        const label = document.getElementById(`label-${i}`);
+        if (label) {
+          label.setAttribute("x", state.positions[i].x);
+          label.setAttribute("y", state.positions[i].y);
+        }
+      }
+    }
+
+    function resetCircularPositions() {
+      const radius = Math.min(WIDTH, HEIGHT) * 0.39;
+      const cx = WIDTH / 2;
+      const cy = HEIGHT / 2;
+      for (let i = 0; i < state.n; i += 1) {
+        const angle = -Math.PI / 2 + (2 * Math.PI * i) / state.n;
+        state.positions[i].x = cx + Math.cos(angle) * radius;
+        state.positions[i].y = cy + Math.sin(angle) * radius;
+        state.positions[i].pinned = false;
+        state.velocities[i] = { x: 0, y: 0 };
+      }
+      drawPositions();
+    }
+
+    function resetFilledCirclePositions() {
+      const random = mulberry32(hashSeed(`${state.seed}:layout`));
+      const radius = Math.min(WIDTH, HEIGHT) * 0.39;
+      const cx = WIDTH / 2;
+      const cy = HEIGHT / 2;
+      const goldenAngle = Math.PI * (3 - Math.sqrt(5));
+      const rotation = random() * 2 * Math.PI;
+
+      for (let i = 0; i < state.n; i += 1) {
+        const radialFraction = Math.sqrt((i + 0.45) / state.n);
+        const radialJitter = 0.97 + (random() - 0.5) * 0.06;
+        const angularJitter = (random() - 0.5) * 0.12;
+        const r = radius * radialFraction * radialJitter;
+        const angle = rotation + i * goldenAngle + angularJitter;
+        state.positions[i].x = cx + Math.cos(angle) * r;
+        state.positions[i].y = cy + Math.sin(angle) * r;
+        state.positions[i].pinned = false;
+        state.velocities[i] = { x: 0, y: 0 };
+      }
+      drawPositions();
+    }
+
+    function startPhysics(frames) {
+      if (els.layoutSelect.value !== "force") return;
+      state.physicsFrames = Math.max(state.physicsFrames, frames);
+      if (state.physicsRequest === null) {
+        state.physicsRequest = window.requestAnimationFrame(physicsLoop);
+      }
+    }
+
+    function physicsLoop() {
+      state.physicsRequest = null;
+      if (els.layoutSelect.value !== "force" || state.physicsFrames <= 0) return;
+      physicsStep();
+      drawPositions();
+      state.physicsFrames -= 1;
+      if (state.physicsFrames > 0) {
+        state.physicsRequest = window.requestAnimationFrame(physicsLoop);
+      }
+    }
+
+    function physicsStep() {
+      const n = state.n;
+      const forces = Array.from({ length: n }, () => ({ x: 0, y: 0 }));
+      const repulsion = n > 110 ? 1700 : n > 70 ? 2400 : 3600;
+      const springLength = n > 100 ? 34 : n > 60 ? 48 : 70;
+      const springK = n > 100 ? 0.006 : 0.009;
+      const centerK = 0.0025;
+      const gravityToComponent = 0.0018;
+
+      for (let i = 0; i < n; i += 1) {
+        for (let j = i + 1; j < n; j += 1) {
+          let dx = state.positions[i].x - state.positions[j].x;
+          let dy = state.positions[i].y - state.positions[j].y;
+          let dist2 = dx * dx + dy * dy;
+          if (dist2 < 1) {
+            dx = 0.5 + (i % 3) * 0.2;
+            dy = 0.5 + (j % 5) * 0.15;
+            dist2 = dx * dx + dy * dy;
+          }
+          const dist = Math.sqrt(dist2);
+          const strength = repulsion / dist2;
+          const fx = (dx / dist) * strength;
+          const fy = (dy / dist) * strength;
+          forces[i].x += fx;
+          forces[i].y += fy;
+          forces[j].x -= fx;
+          forces[j].y -= fy;
+        }
+      }
+
+      for (const edge of state.edges) {
+        const a = state.positions[edge.u];
+        const b = state.positions[edge.v];
+        const dx = b.x - a.x;
+        const dy = b.y - a.y;
+        const dist = Math.max(0.001, Math.hypot(dx, dy));
+        const extension = dist - springLength;
+        const fx = (dx / dist) * extension * springK;
+        const fy = (dy / dist) * extension * springK;
+        forces[edge.u].x += fx;
+        forces[edge.u].y += fy;
+        forces[edge.v].x -= fx;
+        forces[edge.v].y -= fy;
+      }
+
+      const centroids = state.components.map((component) => {
+        let x = 0;
+        let y = 0;
+        component.forEach((node) => {
+          x += state.positions[node].x;
+          y += state.positions[node].y;
+        });
+        return { x: x / component.length, y: y / component.length };
+      });
+
+      for (let i = 0; i < n; i += 1) {
+        const pos = state.positions[i];
+        forces[i].x += (WIDTH / 2 - pos.x) * centerK;
+        forces[i].y += (HEIGHT / 2 - pos.y) * centerK;
+        const centroid = centroids[state.compOf[i]];
+        if (centroid && state.components[state.compOf[i]].length > 1) {
+          forces[i].x += (centroid.x - pos.x) * gravityToComponent;
+          forces[i].y += (centroid.y - pos.y) * gravityToComponent;
+        }
+      }
+
+      const damping = 0.84;
+      const maxVelocity = n > 100 ? 4.2 : 6.5;
+      const radius = nodeRadius();
+      for (let i = 0; i < n; i += 1) {
+        if (state.positions[i].pinned) continue;
+        state.velocities[i].x = (state.velocities[i].x + forces[i].x) * damping;
+        state.velocities[i].y = (state.velocities[i].y + forces[i].y) * damping;
+        const speed = Math.hypot(state.velocities[i].x, state.velocities[i].y);
+        if (speed > maxVelocity) {
+          const scale = maxVelocity / speed;
+          state.velocities[i].x *= scale;
+          state.velocities[i].y *= scale;
+        }
+        state.positions[i].x = clamp(state.positions[i].x + state.velocities[i].x, PAD + radius, WIDTH - PAD - radius);
+        state.positions[i].y = clamp(state.positions[i].y + state.velocities[i].y, PAD + radius, HEIGHT - PAD - radius);
+      }
+    }
+
+    function finishEvolution() {
+      stopEvolution();
+      updateStatus();
+      if (!state.finalized) {
+        state.finalized = true;
+        renderFinalAnalysis();
+      }
+    }
+
+    function degreeSequence() {
+      return state.adj.map((neighbors) => neighbors.size).sort((a, b) => a - b);
+    }
+
+    function median(values) {
+      if (values.length === 0) return 0;
+      const middle = Math.floor(values.length / 2);
+      return values.length % 2 === 0 ? (values[middle - 1] + values[middle]) / 2 : values[middle];
+    }
+
+    function triangleCount() {
+      let triangles = 0;
+      for (let u = 0; u < state.n; u += 1) {
+        for (const v of state.adj[u]) {
+          if (v <= u) continue;
+          for (const w of state.adj[v]) {
+            if (w <= v) continue;
+            if (state.adj[u].has(w)) triangles += 1;
+          }
+        }
+      }
+      return triangles;
+    }
+
+    function averageLocalClustering() {
+      let total = 0;
+      for (let u = 0; u < state.n; u += 1) {
+        const neighbors = Array.from(state.adj[u]);
+        const degree = neighbors.length;
+        if (degree < 2) continue;
+        let linkedPairs = 0;
+        for (let i = 0; i < degree; i += 1) {
+          for (let j = i + 1; j < degree; j += 1) {
+            if (state.adj[neighbors[i]].has(neighbors[j])) linkedPairs += 1;
+          }
+        }
+        total += linkedPairs / ((degree * (degree - 1)) / 2);
+      }
+      return total / state.n;
+    }
+
+    function bipartiteCheck() {
+      const color = new Array(state.n).fill(-1);
+      for (let start = 0; start < state.n; start += 1) {
+        if (color[start] !== -1) continue;
+        color[start] = 0;
+        const queue = [start];
+        let head = 0;
+        while (head < queue.length) {
+          const u = queue[head++];
+          for (const v of state.adj[u]) {
+            if (color[v] === -1) {
+              color[v] = 1 - color[u];
+              queue.push(v);
+            } else if (color[v] === color[u]) {
+              return false;
+            }
+          }
+        }
+      }
+      return true;
+    }
+
+    function bridgesAndArticulations() {
+      const discovery = new Array(state.n).fill(-1);
+      const low = new Array(state.n).fill(-1);
+      const parent = new Array(state.n).fill(-1);
+      const articulations = new Set();
+      const bridges = [];
+      let time = 0;
+
+      function dfs(u) {
+        discovery[u] = low[u] = time++;
+        let children = 0;
+        for (const v of state.adj[u]) {
+          if (discovery[v] === -1) {
+            parent[v] = u;
+            children += 1;
+            dfs(v);
+            low[u] = Math.min(low[u], low[v]);
+            if (parent[u] === -1 && children > 1) articulations.add(u);
+            if (parent[u] !== -1 && low[v] >= discovery[u]) articulations.add(u);
+            if (low[v] > discovery[u]) bridges.push([u, v]);
+          } else if (v !== parent[u]) {
+            low[u] = Math.min(low[u], discovery[v]);
+          }
+        }
+      }
+
+      for (let i = 0; i < state.n; i += 1) {
+        if (discovery[i] === -1) dfs(i);
+      }
+      return { bridges, articulations: Array.from(articulations).sort((a, b) => a - b) };
+    }
+
+    function componentDiameter(component) {
+      if (component.length <= 1) return 0;
+      const allowed = new Set(component);
+      let diameter = 0;
+      for (const start of component) {
+        const distances = new Map([[start, 0]]);
+        const queue = [start];
+        let head = 0;
+        while (head < queue.length) {
+          const u = queue[head++];
+          const d = distances.get(u);
+          diameter = Math.max(diameter, d);
+          for (const v of state.adj[u]) {
+            if (allowed.has(v) && !distances.has(v)) {
+              distances.set(v, d + 1);
+              queue.push(v);
+            }
+          }
+        }
+      }
+      return diameter;
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function highlightCard(title, body) {
+      return `<article class="highlight-card"><h3>${escapeHtml(title)}</h3><p>${body}</p></article>`;
+    }
+
+    function renderFinalAnalysis() {
+      const components = state.components;
+      const largest = components[0] || [];
+      const componentSizes = components.map((component) => component.length);
+      const degrees = degreeSequence();
+      const averageDegree = (2 * state.targetM) / state.n;
+      const cycleRank = state.targetM - state.n + components.length;
+      const triangles = triangleCount();
+      const clustering = averageLocalClustering();
+      const bipartite = bipartiteCheck();
+      const critical = bridgesAndArticulations();
+      const diameter = componentDiameter(largest);
+      const connected = components.length === 1;
+      const isolates = degrees.filter((degree) => degree === 0).length;
+      const firstCycle = state.milestones.find((item) => item.key === "first-cycle");
+      const firstHalf = state.milestones.find((item) => item.key === "share-50");
+      const connectedMoment = state.milestones.find((item) => item.key === "connected");
+      const maxDegree = degrees[degrees.length - 1] || 0;
+      const minDegree = degrees[0] || 0;
+      const medianDegree = median(degrees);
+      const density = state.targetM / maximumEdges(state.n);
+      const giantShare = largest.length / state.n;
+      const giantThreshold = state.n / 2;
+      const connectivityScale = (state.n * Math.log(state.n)) / 2;
+
+      els.finalIntro.innerHTML = `The seeded process produced a graph with <strong>${state.n}</strong> vertices and <strong>${state.targetM}</strong> edges. The report below describes this exact realization, not merely its expected behavior.`;
+
+      let structureText;
+      if (connected) {
+        structureText = `The graph is connected. Its diameter is ${diameter}, meaning every pair of vertices is separated by at most ${diameter} edge${diameter === 1 ? "" : "s"}.`;
+      } else {
+        structureText = `The graph has ${components.length} components. The blue component contains ${largest.length} vertices (${(100 * giantShare).toFixed(1)}%), and its internal diameter is ${diameter}.`;
+      }
+
+      const cycleText = cycleRank === 0
+        ? "The cycle rank is zero, so the finished graph is a forest."
+        : `The cycle rank is ${cycleRank}, and ${triangles} triangle${triangles === 1 ? " was" : "s were"} detected. ${firstCycle ? `The first independent cycle appeared at edge ${firstCycle.edgeCount}.` : ""}`;
+
+      const degreeText = `Degrees range from ${minDegree} to ${maxDegree}; the median is ${medianDegree.toFixed(1)} and the mean is ${averageDegree.toFixed(2)}. ${isolates === 0 ? "No isolated vertices remain." : `${isolates} isolated ${isolates === 1 ? "vertex remains" : "vertices remain"}.`}`;
+
+      const robustnessText = `${critical.bridges.length} bridge${critical.bridges.length === 1 ? "" : "s"} and ${critical.articulations.length} articulation ${critical.articulations.length === 1 ? "vertex" : "vertices"} were found. These are locally vulnerable connections whose removal can increase the number of components.`;
+
+      const clusteringText = `Mean local clustering is ${clustering.toFixed(3)}. The graph is ${bipartite ? "bipartite, so it contains no odd cycle" : "not bipartite, so at least one odd cycle exists"}.`;
+
+      let trajectoryText = firstHalf
+        ? `The largest component first reached half of all vertices at edge ${firstHalf.edgeCount}.`
+        : "The largest component never reached half of all vertices.";
+      trajectoryText += connectedMoment
+        ? ` Full connectivity first occurred at edge ${connectedMoment.edgeCount}.`
+        : " Full connectivity was not reached.";
+
+      els.finalGrid.innerHTML = [
+        highlightCard("Component structure", escapeHtml(structureText)),
+        highlightCard("Cycle structure", escapeHtml(cycleText)),
+        highlightCard("Degree profile", escapeHtml(degreeText)),
+        highlightCard("Critical connections", escapeHtml(robustnessText)),
+        highlightCard("Clustering and parity", escapeHtml(clusteringText)),
+        highlightCard("Evolution milestones", escapeHtml(trajectoryText))
+      ].join("");
+
+      const topSizes = componentSizes.slice(0, 12).join(", ") + (componentSizes.length > 12 ? ", …" : "");
+      const articulationLabels = critical.articulations.length
+        ? critical.articulations.slice(0, 18).map((v) => v + 1).join(", ") + (critical.articulations.length > 18 ? ", …" : "")
+        : "None";
+
+      const rows = [
+        ["Model and seed", `Uniform G(${state.n}, ${state.targetM}); seed <code>${escapeHtml(state.seed)}</code>`],
+        ["Density", `${density.toFixed(4)} (${(100 * density).toFixed(2)}% of all possible edges)`],
+        ["Component sizes", topSizes],
+        ["Largest component", `${largest.length} vertices (${(100 * giantShare).toFixed(1)}%)`],
+        [connected ? "Graph diameter" : "Largest-component diameter", String(diameter)],
+        ["Degree summary", `minimum ${minDegree}; median ${medianDegree.toFixed(1)}; mean ${averageDegree.toFixed(2)}; maximum ${maxDegree}`],
+        ["Independent cycles", Math.max(0, cycleRank).toLocaleString()],
+        ["Triangles", triangles.toLocaleString()],
+        ["Mean local clustering", clustering.toFixed(4)],
+        ["Bipartite", bipartite ? "Yes" : "No"],
+        ["Bridges", critical.bridges.length.toLocaleString()],
+        ["Articulation vertices", articulationLabels]
+      ];
+      els.summaryBody.innerHTML = rows.map(([label, value]) => `<tr><th>${label}</th><td>${value}</td></tr>`).join("");
+
+      let thresholdMessage = `<strong>Threshold context.</strong> The final edge count is ${state.targetM.toLocaleString()}. `;
+      if (state.targetM < giantThreshold) {
+        thresholdMessage += `This lies below the classical giant-component scale n/2 ≈ ${giantThreshold.toFixed(1)}; a dominant blue component is therefore not guaranteed in a finite sample.`;
+      } else if (state.targetM < connectivityScale) {
+        thresholdMessage += `This lies above n/2 ≈ ${giantThreshold.toFixed(1)} but below the connectivity scale (n log n)/2 ≈ ${connectivityScale.toFixed(1)}. A dominant component is plausible while isolated or small components may persist.`;
+      } else {
+        thresholdMessage += `This lies at or above the connectivity scale (n log n)/2 ≈ ${connectivityScale.toFixed(1)}. Connectivity is asymptotically likely, although a particular finite realization can still differ.`;
+      }
+      els.thresholdNote.innerHTML = thresholdMessage;
+      els.finalSection.classList.add("visible");
+    }
+
+    function randomSeed() {
+      const buffer = new Uint32Array(2);
+      if (window.crypto && window.crypto.getRandomValues) {
+        window.crypto.getRandomValues(buffer);
+        return `${buffer[0]}-${buffer[1]}`;
+      }
+      return `${Date.now()}-${Math.floor(Math.random() * 1e9)}`;
+    }
+
+    els.startButton.addEventListener("click", startEvolution);
+    els.pauseButton.addEventListener("click", stopEvolution);
+    els.stepButton.addEventListener("click", () => {
+      stopEvolution();
+      addEdge();
+    });
+    els.resetButton.addEventListener("click", rebuildGraph);
+    els.newSeedButton.addEventListener("click", () => {
+      els.seedInput.value = randomSeed();
+      rebuildGraph();
+    });
+
+    els.nodeInput.addEventListener("change", rebuildGraph);
+    els.edgeInput.addEventListener("change", rebuildGraph);
+    els.seedInput.addEventListener("change", rebuildGraph);
+    els.speedInput.addEventListener("input", () => {
+      els.speedValue.textContent = els.speedInput.value;
+      if (state.playing) {
+        if (state.timer !== null) window.clearTimeout(state.timer);
+        scheduleTick();
+      }
+    });
+    els.layoutSelect.addEventListener("change", () => {
+      const layout = els.layoutSelect.value;
+      if (layout === "circle") {
+        state.physicsFrames = 0;
+        resetCircularPositions();
+      } else if (layout === "disk") {
+        state.physicsFrames = 0;
+        resetFilledCirclePositions();
+      } else {
+        startPhysics(150);
+      }
+    });
+
+    window.addEventListener("resize", drawPositions);
+
+    rebuildGraph();
+  </script>
+</body>
+</html>
