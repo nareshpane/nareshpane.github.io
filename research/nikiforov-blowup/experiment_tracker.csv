@@ -1,0 +1,14 @@
+scenario,n,edges,triangles,gamma_hat=triangles/n^3,planted_k,largest_k_reported,search_type
+A: deterministic K3[3],9,27,27,0.03704,3,3,planted witness
+B: planted + light noise,24,49,33,0.00239,3,3,planted witness; heuristic checked
+B: planted + dense noise,24,115,176,0.01273,3,3,planted witness; heuristic checked
+"C: random G(18,0.50)",18,80,123,0.02109,-,2,exact k=2; k=3 heuristic
+"C: random G(24,0.50)",24,129,205,0.01483,-,2,exact k=2; k=3 heuristic
+"D: same n, p=0.25",20,44,12,0.00150,-,1,exact k=2; k=3 heuristic
+"D: same n, p=0.50",20,99,150,0.01875,-,2,exact k=2; k=3 heuristic
+"D: same n, p=0.75",20,138,440,0.05500,-,2,exact k=2; k=3 heuristic
+E: increasing n (planted),12,20,12,0.00694,2,2,planted witness; no maximum claim
+E: increasing n (planted),18,35,9,0.00154,2,2,planted witness; no maximum claim
+E: increasing n (planted),27,83,73,0.00371,3,3,planted witness; no maximum claim
+E: increasing n (planted),36,118,73,0.00156,3,3,planted witness; no maximum claim
+E: increasing n (planted),48,227,199,0.00180,4,4,planted witness; no maximum claim

@@ -3,75 +3,118 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nikiforov's Blow-Up Theorem: A Computational Demonstration</title>
+  <title>Nikiforov's Blow-Up Theorem: From Graphs to Structure</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700&family=Source+Code+Pro:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
-    :root { --bg:#f7f4ee; --card:#fffdf9; --ink:#1b1b1b; --muted:#666; --line:#ddd5c7; --accent:#1d4f91; --note:#f5efe3; --soft:#fcfaf6; --shadow:0 14px 32px rgba(0,0,0,.06); --radius:22px; }
-    * { box-sizing:border-box; } html { scroll-behavior:smooth; }
-    body { margin:0; background:var(--bg); color:var(--ink); font-family:"Inter",sans-serif; line-height:1.72; }
-    .page { max-width:1120px; margin:0 auto; padding:34px 20px 56px; }
-    .card { background:var(--card); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:34px 34px 30px; }
-    h1,h2,h3 { font-family:"Cormorant Garamond",serif; line-height:1.08; margin:0 0 12px; color:#151515; }
-    h1 { font-size:3.05rem; margin-bottom:14px; } h2 { font-size:2rem; margin-top:34px; padding-bottom:8px; border-bottom:1px solid var(--line); } h3 { font-size:1.4rem; }
-    p { margin:0 0 14px; font-size:1.02rem; } a { color:var(--accent); text-decoration:none; } a:hover { text-decoration:underline; } .lead { font-size:1.1rem; }
-    .panel,.analysis-box { border:1px solid var(--line); border-radius:18px; padding:16px 18px; margin:18px 0; background:var(--soft); }
-    .note { background:var(--note); border-left:4px solid var(--accent); } .analysis-box { padding:18px 20px; } .analysis-box p:last-child,.panel p:last-child { margin-bottom:0; }
-    .mini-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin:18px 0 24px; }
-    .mini-box { background:var(--soft); border:1px solid var(--line); border-radius:16px; padding:14px; text-align:center; } .mini-box .k { font-size:.8rem; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; font-weight:700; } .mini-box .v { font-size:.96rem; font-weight:600; }
-    .equation { margin:12px 0; padding:12px 14px; border-radius:14px; background:#fffdf9; border:1px solid #e6dece; overflow-x:auto; }
-    .media-wrap { padding:14px; background:var(--soft); border:1px solid var(--line); border-radius:18px; margin:18px 0; } img,video { width:100%; display:block; border-radius:14px; background:#eee8de; } .media-caption { margin-top:10px; color:var(--muted); font-size:.94rem; }
-    .table-wrap { overflow-x:auto; margin:14px 0 18px; } table { width:100%; border-collapse:collapse; min-width:720px; } th,td { border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; font-size:.95rem; } th { background:#f2ede4; } .small { color:var(--muted); font-size:.94rem; }
-    .footer-nav { margin-top:22px; text-align:center; color:var(--muted); font-size:.98rem; } .footer-nav a { font-weight:600; } .sep { margin:0 8px; color:#8a8a8a; }
-    @media (max-width:860px) { .card { padding:24px 18px; } h1 { font-size:2.35rem; } h2 { font-size:1.65rem; } .mini-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+    :root { --bg:#f7f4ee; --card:#fffdf9; --ink:#1b1b1b; --muted:#666; --line:#ddd5c7; --accent:#1d4f91; --note:#f5efe3; --soft:#fcfaf6; --shadow:0 14px 32px rgba(0,0,0,.06); --radius:22px; --a:#d26a5d; --b:#4d8b75; --c:#5e88c9; --d:#b58a42; }
+    * { box-sizing:border-box; } html { scroll-behavior:smooth; } body { margin:0; background:var(--bg); color:var(--ink); font-family:"Inter",sans-serif; line-height:1.72; }
+    .page { max-width:1120px; margin:0 auto; padding:34px 20px 56px; } .card { background:var(--card); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:34px 34px 30px; }
+    h1,h2,h3 { font-family:"Cormorant Garamond",serif; line-height:1.08; margin:0 0 12px; color:#151515; } h1 { font-size:3.05rem; margin-bottom:14px; } h2 { font-size:2rem; margin-top:38px; padding-bottom:8px; border-bottom:1px solid var(--line); } h3 { font-size:1.42rem; margin-top:22px; }
+    p { margin:0 0 14px; font-size:1.02rem; } a { color:var(--accent); text-decoration:none; } a:hover { text-decoration:underline; } .lead { font-size:1.12rem; } .small { color:var(--muted); font-size:.93rem; }
+    .panel,.analysis-box { border:1px solid var(--line); border-radius:18px; padding:16px 18px; margin:18px 0; background:var(--soft); } .note { background:var(--note); border-left:4px solid var(--accent); } .analysis-box { padding:18px 20px; } .panel p:last-child,.analysis-box p:last-child { margin-bottom:0; }
+    .mini-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin:18px 0 24px; } .mini-box { background:var(--soft); border:1px solid var(--line); border-radius:16px; padding:14px; text-align:center; } .mini-box .k { font-size:.8rem; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; font-weight:700; } .mini-box .v { font-size:.96rem; font-weight:600; }
+    .steps { counter-reset:step; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin:16px 0; } .step { position:relative; padding:16px 16px 14px 60px; border:1px solid var(--line); border-radius:15px; background:var(--soft); } .step::before { counter-increment:step; content:"Step " counter(step); position:absolute; left:14px; top:16px; color:var(--accent); font-size:.78rem; font-weight:700; text-transform:uppercase; writing-mode:vertical-rl; transform:rotate(180deg); }
+    .equation { margin:12px 0; padding:12px 14px; border-radius:14px; background:#fffdf9; border:1px solid #e6dece; overflow-x:auto; } .media-wrap { padding:14px; background:var(--soft); border:1px solid var(--line); border-radius:18px; margin:18px 0; } img,video { width:100%; display:block; border-radius:14px; background:#eee8de; } .media-caption { margin:10px 2px 0; color:var(--muted); font-size:.94rem; }
+    .media-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin:18px 0; } .media-grid .media-wrap { margin:0; } .table-wrap { overflow-x:auto; margin:14px 0 18px; } table { width:100%; border-collapse:collapse; min-width:900px; } th,td { border:1px solid var(--line); padding:9px 10px; text-align:left; vertical-align:top; font-size:.9rem; } th { background:#f2ede4; }
+    .decode { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0; border:1px solid #d7e3f0; border-radius:18px; overflow:hidden; margin:18px 0; } .decode div { padding:13px 15px; background:#f3f7fc; border-bottom:1px solid #d7e3f0; } .decode div:nth-child(odd) { border-right:1px solid #d7e3f0; } .decode b { color:var(--accent); font-family:"Source Code Pro",monospace; }
+    .interactive { border:1px solid #d7e3f0; border-radius:18px; background:#f3f7fc; padding:18px; margin:18px 0; } .buttons { display:flex; gap:8px; flex-wrap:wrap; margin:12px 0; } button { cursor:pointer; border:1px solid #9db6d3; background:#fff; color:var(--accent); border-radius:999px; padding:7px 13px; font:600 .92rem "Inter",sans-serif; } button[aria-pressed="true"] { background:var(--accent); color:white; } #interactive-graph { width:100%; max-width:520px; min-height:180px; margin:auto; display:block; } .footer-nav { margin-top:28px; text-align:center; color:var(--muted); font-size:.98rem; } .footer-nav a { font-weight:600; } .sep { margin:0 8px; color:#8a8a8a; }
+    @media (max-width:860px) { .card { padding:24px 18px; } h1 { font-size:2.35rem; } h2 { font-size:1.65rem; } .mini-grid,.steps,.decode,.media-grid { grid-template-columns:1fr; } .decode div:nth-child(odd) { border-right:0; } }
   </style>
   <script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']]}};</script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
-<body><div class="page"><section class="card">
+<body><div class="page"><main class="card">
   <h1>Nikiforov's Graph Blow-Up Theorem</h1>
-  <p class="lead">A computational introduction to a structural principle: sufficiently many copies of one fixed graph force a large, coordinated multipartite pattern. The calculations and pictures below are finite illustrations—not a verification of the asymptotic theorem.</p>
-  <div class="panel note"><strong>Four layers of this page.</strong> The theorem is a mathematical statement. The random-graph discussion is intuition. The figures are computational illustrations. The reported search outcomes are empirical observations with explicitly stated limits.</div>
-  <div class="mini-grid"><div class="mini-box"><div class="k">Fixed pattern</div><div class="v">a graph $H$ on $h$ vertices</div></div><div class="mini-box"><div class="k">Hypothesis</div><div class="v">at least $gamma n^h$ copies</div></div><div class="mini-box"><div class="k">Conclusion</div><div class="v">a balanced $H[k]$</div></div><div class="mini-box"><div class="k">Scale</div><div class="v">$kge c_H(\gamma)\log n$</div></div></div>
+  <p class="lead">A visual path from one line between two dots to a powerful structural theorem. The destination is striking, but the idea begins simply: replace each vertex of a small graph by a group of vertices, and let the original edges tell the groups how to connect.</p>
+  <div class="panel note"><strong>What is on this page?</strong> The theorem is a formal asymptotic result. The diagrams are definitions and examples. The computations are finite, reproducible illustrations—not a proof of the theorem.</div>
 
-  <h2>The theorem</h2>
-  <p>Let $H$ be a fixed graph on $h$ vertices and let $gamma&gt;0$. For all sufficiently large $n$, if an $n$-vertex graph $G$ contains at least $gamma n^h$ copies of $H$, then $G$ contains a balanced blow-up $H[k]$ with</p>
-  <div class="equation">$$k \ge c_H(\gamma)\log n,$$</div>
-  <p>where $c_H(\gamma)&gt;0$ depends only on $H$ and $gamma$. Here $n=|V(G)|$, $h=|V(H)|$, and $k$ is the common cluster size. The statement is asymptotic: “sufficiently large” may depend on $H$ and $gamma$. This page does not assign a numerical value to $c_H(\gamma)$; its optimal dependence on $gamma$ and $H$ is not known in general.</p>
-  <div class="analysis-box"><strong>A structural caution.</strong> The exact graph constructed as $H[k]$ has no edges inside clusters and no prescribed cross-cluster edges for non-edges of $H$. In the usual subgraph-containment language, an ambient host graph can have additional edges not used by the selected copy; the theorem is about the existence of the organized required pattern, not an empirical claim that a host decomposes exactly into such clusters.</div>
+  <h2>Before blow-ups: three graph ideas you need</h2>
+  <p>A <strong>graph</strong> is a set of vertices together with some edges. Vertices are usually drawn as circles; an edge is a line joining two vertices. A <strong>subgraph</strong> is a pattern we can find by selecting some vertices and some of the edges of a larger graph.</p>
+  <div class="media-wrap"><img src="nikiforov-blowup/figure_01_simplest_graph_k2.png" alt="A graph K2 with a red vertex A and green vertex B connected by one dark edge; labels explain vertex and edge." /><div class="media-caption">Figure 1. $K_2$ is the smallest graph with an edge. A graph need not be more mysterious than this picture.</div></div>
 
-  <h2>What is a graph blow-up?</h2>
-  <p>Replace each vertex $v\in V(H)$ by an independent cluster $V_v$ of $k$ vertices. For each edge $uv\in E(H)$, join every vertex of $V_u$ to every vertex of $V_v$. For each non-edge of $H$, add no corresponding complete bipartite connection. Thus $H[k]$ has $hk$ vertices, arranged in $h$ equally sized parts.</p>
-  <div class="equation">$$V(H[k])=\bigsqcup_{v\in V(H)}V_v,\qquad |V_v|=k,\qquad E(V_u,V_v)=V_u\times V_v\ \text{when }uv\in E(H).$$</div>
-  <div class="media-wrap"><img src="nikiforov-blowup/triangle_to_balanced_blowup.png" alt="Diagram comparing a triangle K3 with its balanced blow-up K3[3], showing three independent clusters and all cross-cluster edges." /><div class="media-caption">For $H=K_3$, every pair of the three clusters is completely joined, producing $K_3[3]$.</div></div>
+  <h2>Blow-up in one sentence</h2>
+  <p>To make $H[k]$, replace every vertex of a base graph $H$ by a cluster of $k$ new vertices, then replace every original edge by all possible edges between its two clusters.</p>
+  <div class="steps"><div class="step"><strong>Start with $H$.</strong><br>Keep track of which original vertices are joined.</div><div class="step"><strong>Make clusters.</strong><br>Replace each original vertex by $k$ labelled new vertices.</div><div class="step"><strong>Expand each edge.</strong><br>If $uv$ was an edge, join every vertex in the $u$-cluster to every vertex in the $v$-cluster.</div><div class="step"><strong>Respect non-edges.</strong><br>If $uv$ was not an edge, the construction adds no corresponding edge family.</div></div>
+  <div class="equation">$$V(H[k])=\bigsqcup_{v\in V(H)}V_v,\qquad |V_v|=k,\qquad uv\in E(H)\Longrightarrow E(V_u,V_v)=V_u\times V_v.$$</div>
+  <p class="small">The displayed implication describes required cross-cluster edges. In the abstract construction we add no other edges. Later, when $H[k]$ sits inside a host graph, ordinary subgraph containment allows unused extra host edges.</p>
 
-  <h2>Why many copies are interesting</h2>
-  <p>Many triangles can be scattered throughout a graph. A $K_3[k]$, by contrast, is coherent: three vertex groups support all $k^2$ edges across every pair of groups. Nikiforov's conclusion turns a global abundance condition into this local but highly organized configuration.</p>
-  <p>The logarithm is central. In general it cannot be replaced by a substantially larger order: random graphs provide the guiding intuition that coordinated complete bipartite connections become rare quickly as $k$ grows. That intuition is not itself a proof of sharpness.</p>
+  <h2>Example 1: one edge becomes a grid of connections</h2>
+  <p>Start from $K_2$: A is joined to B. In $K_2[3]$, A becomes A1, A2, A3 and B becomes B1, B2, B3. The single old edge A–B commands all nine possible A–B cross-connections.</p>
+  <div class="media-wrap"><img src="nikiforov-blowup/figure_02_k2_to_k2_3.png" alt="K2 on the left and its blow-up K2[3] on the right, with three labelled red A vertices, three labelled green B vertices, and every cross-cluster edge." /><div class="media-caption">Figure 2. Visually, this is the key translation: vertex → group; edge → every cross-connection. This particular graph is called $K_{3,3}$.</div></div>
+  <div class="media-wrap"><video controls preload="metadata"><source src="nikiforov-blowup/animation_01_k2_construction.mp4" type="video/mp4" />Your browser does not support MP4 video.</video><div class="media-caption">Animation 1. The tracker records the construction stage, vertices, and required A–B cross edges.</div></div>
 
-  <h2>Computational demonstration 1: constructing $K_3[3]$</h2>
-  <p>The animation reveals the three complete bipartite joins one at a time. It is a literal construction of the small example, rather than a simulation of the theorem.</p>
-  <div class="media-wrap"><video controls preload="metadata"><source src="nikiforov-blowup/blowup_construction.mp4" type="video/mp4" />Your browser does not support MP4 video.</video><div class="media-caption">A six-second construction: clusters remain independent while the three cross-cluster joins are progressively added.</div></div>
+  <h2>Example 2: a non-edge matters</h2>
+  <p>Now use the three-vertex path $P_3$: A–B–C. A is not adjacent to C. Its blow-up has complete A–B and B–C families, but no required A–C family. A blow-up is therefore not automatically a complete multipartite graph.</p>
+  <div class="media-wrap"><img src="nikiforov-blowup/figure_03_p3_nonedge_matters.png" alt="A three-vertex path A-B-C and its three clusters of size three. All red-to-green and green-to-blue cross edges are shown; no red-to-blue family is shown." /><div class="media-caption">Figure 3. The missing A–C edge in the base graph remains meaningful after the expansion.</div></div>
 
-  <h2>Computational demonstration 2: copies versus witnessed blow-ups</h2>
-  <p>For $H=K_3$, the script generated fixed-seed random host graphs and two graphs with a deliberately planted balanced blow-up plus background noise. It counts triangles exactly. The search enumerates independent clusters exactly only through $k=3$ for $n\le24$; the $K_3[4]$ row is certified by its construction. A failure to find $k=3$ is not evidence that no larger configuration exists outside this search scope.</p>
-  <div class="media-wrap"><img src="nikiforov-blowup/triangle_copy_and_blowup_experiments.png" alt="Table of four finite graph experiments reporting vertex counts, triangle counts, witnessed balanced triangle blow-up sizes, and search limits." /><div class="media-caption">The reported $k$ is a witnessed lower bound, not a claim of the largest blow-up in each host.</div></div>
-  <div class="table-wrap"><table><thead><tr><th>host graph</th><th>$n$</th><th>triangle copies</th><th>reported $k$</th><th>interpretation</th></tr></thead><tbody><tr><td>random $G(18,1/2)$</td><td>18</td><td>64</td><td>2</td><td>exact search through $k=3$</td></tr><tr><td>random $G(24,1/2)$</td><td>24</td><td>206</td><td>2</td><td>exact search through $k=3$</td></tr><tr><td>planted $K_3[3]$ + noise</td><td>24</td><td>62</td><td>3</td><td>construction supplies a witness</td></tr><tr><td>planted $K_3[4]$ + noise</td><td>30</td><td>83</td><td>4</td><td>no exhaustive search above $n=24$</td></tr></tbody></table></div>
+  <h2>Example 3: triangle blow-up</h2>
+  <p>In a triangle $K_3$, every pair among A, B, C is adjacent. Therefore every pair of its three clusters gets a complete cross-connection. Only now is the notation useful: $K_3[k]$ is the complete tripartite graph $K_{k,k,k}$.</p>
+  <div class="media-wrap"><img src="nikiforov-blowup/figure_04_k3_to_k3_3.png" alt="A triangle with red A, green B, and blue C vertices, beside K3[3] with three consistently colored labelled clusters and all cross-cluster edges." /><div class="media-caption">Figure 4. The cluster colors remain consistent throughout: A red, B green, C blue, and D gold when a fourth cluster is needed.</div></div>
+  <div class="media-wrap"><video controls preload="metadata"><source src="nikiforov-blowup/animation_02_k3_construction.mp4" type="video/mp4" />Your browser does not support MP4 video.</video><div class="media-caption">Animation 2. The three edge families A–B, B–C, and A–C are added in turn. The final graph has 9 vertices and 27 required cross edges.</div></div>
+  <div class="interactive"><strong>Try a different cluster size.</strong><div class="buttons" id="k-buttons"><button aria-pressed="true" data-k="1">k = 1</button><button aria-pressed="false" data-k="2">k = 2</button><button aria-pressed="false" data-k="3">k = 3</button><button aria-pressed="false" data-k="4">k = 4</button></div><svg id="interactive-graph" viewBox="0 0 520 200" role="img" aria-label="Interactive K3 blow-up diagram"></svg><p id="k-summary" class="small"></p></div>
 
-  <h2>Computational demonstration 3: logarithmic scaling</h2>
-  <p>The blue curve is the reference function $\log n$; it is rescaled only to share a drawing with deliberately planted examples. The gold points are not measured estimates of $c_H(\gamma)$ and are not a fitted theorem curve. They simply make the slowly growing logarithmic scale visually tangible.</p>
-  <div class="media-wrap"><img src="nikiforov-blowup/logarithmic_blowup_scale.png" alt="Plot comparing a rescaled logarithm of n with deliberately planted balanced triangle blow-up sizes." /><div class="media-caption">Reference scale versus planted instances; the two series have distinct meanings.</div></div>
+  <h2>Example 4: a more complex base graph</h2>
+  <p>The same operation works for an arbitrary fixed graph. In the four-cycle $C_4$, only consecutive vertices are adjacent. Its blow-up inherits exactly those four edge families.</p>
+  <div class="media-wrap"><img src="nikiforov-blowup/figure_05_c4_to_c4_2.png" alt="A four-cycle A-B-C-D beside C4[2], showing four colored clusters and only the edge families corresponding to consecutive vertices in the cycle." /><div class="media-caption">Figure 5. The diagonally opposite cluster pairs A–C and B–D are not connected by a required family.</div></div>
+
+  <h2>What does “G contains H[k]” mean?</h2>
+  <p>First build $H[k]$ abstractly. Then look inside a larger host graph $G$ for distinct vertices that can play its roles. For a $K_3[k]$ witness, the search checks three disjoint groups of $k$ vertices and verifies that every cross-group pair is an edge. It does <em>not</em> reject a witness because $G$ has extra edges inside a chosen group: this is ordinary subgraph containment, not induced-subgraph containment.</p>
+  <div class="media-wrap"><img src="nikiforov-blowup/figure_06_host_graph_witness.png" alt="Two panels of the same larger gray host graph. The right panel highlights three labeled red, green, and blue clusters with the required K3[3] cross edges." /><div class="media-caption">Figure 6. A structured blow-up can live inside a much messier graph. The gray vertices and edges are not part of the highlighted witness.</div></div>
+  <div class="media-wrap"><video controls preload="metadata"><source src="nikiforov-blowup/animation_03_host_search.mp4" type="video/mp4" />Your browser does not support MP4 video.</video><div class="media-caption">Animation 3. This is an educational reveal of the criterion, not a claim to visualize an optimal search algorithm.</div></div>
+
+  <h2>Many copies versus organized structure</h2>
+  <p>It is easy to confuse these. A graph may have several individual triangles without supplying three groups that are fully cross-connected. Conversely, a planted $K_3[3]$ contains many triangles because every choice of one A, one B, and one C makes one. The finite comparison below is deliberately illustrative; it is not a theorem relating these two particular counts.</p>
+  <div class="media-wrap"><img src="nikiforov-blowup/figure_07_scattered_vs_organized.png" alt="Comparison of three disconnected gray triangles and a colored organized K3[3], with each graph's vertex count, edge count, triangle count, and known blow-up size." /><div class="media-caption">Figure 7. “Many copies” describes a count. “One $H[k]$” describes a coordinated arrangement of vertex groups.</div></div>
+
+  <h2>Nikiforov's theorem</h2>
+  <p>Now that the object is visible, here is the formal statement. Let $H$ be a fixed graph on $h$ vertices and let $\gamma&gt;0$. For all sufficiently large $n$, every $n$-vertex graph $G$ with at least $\gamma n^h$ copies of $H$ contains a blow-up $H[k]$ for some</p>
+  <div class="equation">$$k\ge c_H(\gamma)\log n,$$</div>
+  <p>where $c_H(\gamma)&gt;0$ depends only on $H$ and $\gamma$. The result is asymptotic: the threshold implicit in “sufficiently large” may also depend on $H$ and $\gamma$. This page does not claim a numerical value for $c_H(\gamma)$.</p>
+  <div class="analysis-box"><strong>Plain-English paraphrase.</strong> If a fixed small pattern appears sufficiently abundantly throughout a large graph, its copies cannot remain completely disorganized: somewhere there is a structured blow-up whose cluster size grows on a logarithmic scale. This is an explanation of the theorem, not a substitute for its formal statement.</div>
+
+  <h2>Decode the theorem one symbol at a time</h2>
+  <div class="decode"><div><b>H</b><br>the small pattern we care about.</div><div><b>h</b><br>the number of vertices in $H$.</div><div><b>G</b><br>the large host graph being studied.</div><div><b>n</b><br>the number of vertices in $G$.</div><div><b>copies of H</b><br>different occurrences of that pattern in $G$.</div><div><b>γn<sup>h</sup></b><br>the quantitative abundance assumption.</div><div><b>H[k]</b><br>the organized blow-up guaranteed inside $G$.</div><div><b>k</b><br>the number replacing each original vertex.</div><div><b>c<sub>H</sub>(γ)</b><br>a positive constant depending on $H$ and γ.</div><div><b>log n</b><br>the important growth scale.</div></div>
+
+  <h2>What the theorem does not say</h2>
+  <div class="panel"><p>It does not say every collection of copies visibly lines up into one blow-up. It does not say the host graph is itself equal to $H[k]$. It does not assert a specific, universal coefficient in front of $\log n$. And finite experiments can exhibit the phenomenon but cannot verify an asymptotic theorem.</p></div>
+
+  <h2>Computational experiments</h2>
+  <p>All data were regenerated by <code>generate_blowup_media.py</code> with fixed seeds. A triangle count is exact. For the table, $\widehat\gamma=\text{triangles}/n^3$ is merely a displayed finite normalization; it is not automatically the theorem’s $\gamma$, whose copy-count convention and hypothesis should be kept separate. A reported $k$ is a verified lower bound unless it is a known planted value.</p>
+  <h3>Scenario A — deterministic teaching example</h3><p>A deliberately constructed $K_3[3]$ checks that the witness criterion recognizes a known structure.</p>
+  <h3>Scenario B — planted structure plus noise</h3><p>Starting with $K_3[3]$, the script adds reproducible random background edges and vertices. The planted witness remains valid because the required cross edges remain present.</p>
+  <h3>Scenario C — random graph</h3><p>Fixed-seed samples of $G(n,1/2)$ are used. The script does an exact exhaustive search for $k=2$ and a capped random-triple heuristic for $k=3$; a heuristic failure is never read as nonexistence.</p>
+  <h3>Scenario D — same n, different density</h3><p>At $n=20$, changing $p$ changes the edge and triangle counts. The reported blow-up size remains a limited-search observation, not a maximum claim.</p>
+  <h3>Scenario E — increasing n / logarithmic scale</h3><p>These deliberately planted examples provide known witnesses at increasing sizes. The light-blue curve is only a log-shaped visual reference and is explicitly not a fitted $c_H(\gamma)$.</p>
+  <div class="table-wrap"><table><thead><tr><th>Scenario</th><th>n</th><th>Edges</th><th>Triangles</th><th>$\widehat\gamma$</th><th>Planted k</th><th>Largest k reported</th><th>Search type / notes</th></tr></thead><tbody id="experiment-table"></tbody></table></div>
+  <div class="media-wrap"><img src="nikiforov-blowup/figure_08_scaling_experiment.png" alt="A plot of known planted K3 blow-up cluster sizes against host graph size, with a separately labelled log-shaped blue visual reference." /><div class="media-caption">Figure 8. The values grow slowly in this intentionally modest finite illustration; the plot does not estimate the theorem’s constant or prove a scaling law.</div></div>
 
   <h2>Random-graph intuition</h2>
-  <p>In a random graph, a candidate $K_3[k]$ asks for all cross-cluster edges among three groups, while also asking for independent clusters in the exact construction. As $k$ increases, these joint requirements become increasingly restrictive. This gives intuition for why a logarithmic scale is natural and why one should not expect a generally much larger guaranteed blow-up.</p>
-  <div class="media-wrap"><img src="nikiforov-blowup/random_graph_blowup_scale.png" alt="Plot of small witnessed balanced triangle blow-up sizes in four fixed-seed G(n, one half) random graphs, with the search capped at k equals 3." /><div class="media-caption">One fixed-seed $G(n,1/2)$ sample at each size, using exact search only up to $k=3$. This is an illustration, not a lower-bound proof or an asymptotic estimate.</div></div>
-  <div class="analysis-box"><strong>Why not forget the graph structure?</strong> One can encode each copy of $H$ as a hyperedge of an auxiliary $h$-uniform hypergraph, but that representation loses which vertices and edges of the original copies overlap in $G$. The blow-up conclusion needs precisely this graph-level organization, so a generic hypergraph viewpoint conceals important structure.</div>
-
-  <h2>Computational limitations</h2>
-  <p>All experiments are finite and intentionally small. Exhaustively testing three disjoint independent clusters already grows rapidly with $n$ and $k$. The random graph values are single reproducible samples (seeds are recorded in the generated source/output), not averages. No heuristic failure is interpreted as nonexistence, and no simulation is presented as a proof of the asymptotic theorem.</p>
-
-  <h2>Interpretation</h2>
-  <p>Nikiforov's theorem says that copy abundance forces more than repetition: it forces reusable architecture. The computational examples make the architecture concrete, while the logarithmic plot and random-graph samples explain why the guaranteed scale is both meaningful and, in general, the right order of magnitude.</p>
+  <p>A candidate $K_3[k]$ demands all $3k^2$ cross-cluster edges among three chosen groups. In a random graph, asking many specific edges to occur together rapidly becomes restrictive as $k$ grows. This helps make a logarithmic guaranteed scale plausible, but it is intuition—not a proof of the theorem or of its sharpness.</p>
+  <h2>Why finite computation is not a proof</h2>
+  <p>The theorem quantifies over sufficiently large graphs and every graph satisfying its hypothesis. Our examples are small, selected graphs; the $k=3$ random-graph search is capped and heuristic. Their role is to make the definitions, witnesses, and limitations concrete.</p>
+  <h2>Main takeaways</h2>
+  <div class="panel note"><p><strong>Remember the translation:</strong> vertices become clusters, edges become complete cross-connections, and non-edges create no required edge family. Nikiforov’s theorem says that an abundance of one fixed pattern forces one of these organized expansions at a logarithmic scale.</p></div>
   <div class="footer-nav"><a href="../index.html">Home</a><span class="sep">·</span><a href="../research.html">Research</a></div>
-</section></div></body></html>
+</main></div>
+<script>
+const rows = [
+  ["A: deterministic K3[3]",9,27,27,"0.03704",3,3,"planted witness"],
+  ["B: planted + light noise",24,49,33,"0.00239",3,3,"planted witness; heuristic checked"],
+  ["B: planted + dense noise",24,115,176,"0.01273",3,3,"planted witness; heuristic checked"],
+  ["C: random G(18,0.50)",18,80,123,"0.02109","-",2,"exact k=2; k=3 heuristic"],
+  ["C: random G(24,0.50)",24,129,205,"0.01483","-",2,"exact k=2; k=3 heuristic"],
+  ["D: same n, p=0.25",20,44,12,"0.00150","-",1,"exact k=2; k=3 heuristic"],
+  ["D: same n, p=0.50",20,99,150,"0.01875","-",2,"exact k=2; k=3 heuristic"],
+  ["D: same n, p=0.75",20,138,440,"0.05500","-",2,"exact k=2; k=3 heuristic"],
+  ["E: increasing n (planted)",12,20,12,"0.00694",2,2,"planted witness; no maximum claim"],
+  ["E: increasing n (planted)",18,35,9,"0.00154",2,2,"planted witness; no maximum claim"],
+  ["E: increasing n (planted)",27,83,73,"0.00371",3,3,"planted witness; no maximum claim"],
+  ["E: increasing n (planted)",36,118,73,"0.00156",3,3,"planted witness; no maximum claim"],
+  ["E: increasing n (planted)",48,227,199,"0.00180",4,4,"planted witness; no maximum claim"]
+];
+document.getElementById('experiment-table').innerHTML=rows.map(r=>`<tr>${r.map(v=>`<td>${v}</td>`).join('')}</tr>`).join('');
+function drawK(k) { const svg=document.getElementById('interactive-graph'), colors=['#d26a5d','#4d8b75','#5e88c9'], centers=[[260,35],[130,155],[390,155]]; let lines='', circles='', labels=''; const pts=[]; centers.forEach((c,g)=>{pts[g]=[]; for(let i=0;i<k;i++){const a=-Math.PI/2+2*Math.PI*i/k; pts[g].push([c[0]+24*Math.cos(a),c[1]+24*Math.sin(a)]);} }); for(let a=0;a<3;a++)for(let b=a+1;b<3;b++)pts[a].forEach(x=>pts[b].forEach(y=>lines+=`<line x1="${x[0]}" y1="${x[1]}" x2="${y[0]}" y2="${y[1]}" stroke="#49515a" stroke-width="1.5"/>`)); pts.forEach((g,gi)=>g.forEach((p,i)=>{circles+=`<circle cx="${p[0]}" cy="${p[1]}" r="11" fill="${colors[gi]}" stroke="#1b1b1b"/>`; labels+=`<text x="${p[0]}" y="${p[1]+4}" text-anchor="middle" font-size="10" fill="white">${'ABC'[gi]}${i+1}</text>`;})); svg.innerHTML=lines+circles+labels; document.getElementById('k-summary').textContent=`Clusters: 3 · Vertices: ${3*k} · Required cross edges: ${3*k*k}`; }
+document.querySelectorAll('#k-buttons button').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('#k-buttons button').forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');drawK(+b.dataset.k)})); drawK(1);
+</script></body></html>
