@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nikiforov's Blow-Up Theorem: A Computational Demonstration</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700&family=Source+Code+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg:#f7f4ee; --card:#fffdf9; --ink:#1b1b1b; --muted:#666; --line:#ddd5c7; --accent:#1d4f91; --note:#f5efe3; --soft:#fcfaf6; --shadow:0 14px 32px rgba(0,0,0,.06); --radius:22px; }
+    * { box-sizing:border-box; } html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--bg); color:var(--ink); font-family:"Inter",sans-serif; line-height:1.72; }
+    .page { max-width:1120px; margin:0 auto; padding:34px 20px 56px; }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:34px 34px 30px; }
+    h1,h2,h3 { font-family:"Cormorant Garamond",serif; line-height:1.08; margin:0 0 12px; color:#151515; }
+    h1 { font-size:3.05rem; margin-bottom:14px; } h2 { font-size:2rem; margin-top:34px; padding-bottom:8px; border-bottom:1px solid var(--line); } h3 { font-size:1.4rem; }
+    p { margin:0 0 14px; font-size:1.02rem; } a { color:var(--accent); text-decoration:none; } a:hover { text-decoration:underline; } .lead { font-size:1.1rem; }
+    .panel,.analysis-box { border:1px solid var(--line); border-radius:18px; padding:16px 18px; margin:18px 0; background:var(--soft); }
+    .note { background:var(--note); border-left:4px solid var(--accent); } .analysis-box { padding:18px 20px; } .analysis-box p:last-child,.panel p:last-child { margin-bottom:0; }
+    .mini-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin:18px 0 24px; }
+    .mini-box { background:var(--soft); border:1px solid var(--line); border-radius:16px; padding:14px; text-align:center; } .mini-box .k { font-size:.8rem; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; font-weight:700; } .mini-box .v { font-size:.96rem; font-weight:600; }
+    .equation { margin:12px 0; padding:12px 14px; border-radius:14px; background:#fffdf9; border:1px solid #e6dece; overflow-x:auto; }
+    .media-wrap { padding:14px; background:var(--soft); border:1px solid var(--line); border-radius:18px; margin:18px 0; } img,video { width:100%; display:block; border-radius:14px; background:#eee8de; } .media-caption { margin-top:10px; color:var(--muted); font-size:.94rem; }
+    .table-wrap { overflow-x:auto; margin:14px 0 18px; } table { width:100%; border-collapse:collapse; min-width:720px; } th,td { border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; font-size:.95rem; } th { background:#f2ede4; } .small { color:var(--muted); font-size:.94rem; }
+    .footer-nav { margin-top:22px; text-align:center; color:var(--muted); font-size:.98rem; } .footer-nav a { font-weight:600; } .sep { margin:0 8px; color:#8a8a8a; }
+    @media (max-width:860px) { .card { padding:24px 18px; } h1 { font-size:2.35rem; } h2 { font-size:1.65rem; } .mini-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+  </style>
+  <script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']]}};</script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body><div class="page"><section class="card">
+  <h1>Nikiforov's Graph Blow-Up Theorem</h1>
+  <p class="lead">A computational introduction to a structural principle: sufficiently many copies of one fixed graph force a large, coordinated multipartite pattern. The calculations and pictures below are finite illustrations—not a verification of the asymptotic theorem.</p>
+  <div class="panel note"><strong>Four layers of this page.</strong> The theorem is a mathematical statement. The random-graph discussion is intuition. The figures are computational illustrations. The reported search outcomes are empirical observations with explicitly stated limits.</div>
+  <div class="mini-grid"><div class="mini-box"><div class="k">Fixed pattern</div><div class="v">a graph $H$ on $h$ vertices</div></div><div class="mini-box"><div class="k">Hypothesis</div><div class="v">at least $gamma n^h$ copies</div></div><div class="mini-box"><div class="k">Conclusion</div><div class="v">a balanced $H[k]$</div></div><div class="mini-box"><div class="k">Scale</div><div class="v">$kge c_H(\gamma)\log n$</div></div></div>
+
+  <h2>The theorem</h2>
+  <p>Let $H$ be a fixed graph on $h$ vertices and let $gamma&gt;0$. For all sufficiently large $n$, if an $n$-vertex graph $G$ contains at least $gamma n^h$ copies of $H$, then $G$ contains a balanced blow-up $H[k]$ with</p>
+  <div class="equation">$$k \ge c_H(\gamma)\log n,$$</div>
+  <p>where $c_H(\gamma)&gt;0$ depends only on $H$ and $gamma$. Here $n=|V(G)|$, $h=|V(H)|$, and $k$ is the common cluster size. The statement is asymptotic: “sufficiently large” may depend on $H$ and $gamma$. This page does not assign a numerical value to $c_H(\gamma)$; its optimal dependence on $gamma$ and $H$ is not known in general.</p>
+  <div class="analysis-box"><strong>A structural caution.</strong> The exact graph constructed as $H[k]$ has no edges inside clusters and no prescribed cross-cluster edges for non-edges of $H$. In the usual subgraph-containment language, an ambient host graph can have additional edges not used by the selected copy; the theorem is about the existence of the organized required pattern, not an empirical claim that a host decomposes exactly into such clusters.</div>
+
+  <h2>What is a graph blow-up?</h2>
+  <p>Replace each vertex $v\in V(H)$ by an independent cluster $V_v$ of $k$ vertices. For each edge $uv\in E(H)$, join every vertex of $V_u$ to every vertex of $V_v$. For each non-edge of $H$, add no corresponding complete bipartite connection. Thus $H[k]$ has $hk$ vertices, arranged in $h$ equally sized parts.</p>
+  <div class="equation">$$V(H[k])=\bigsqcup_{v\in V(H)}V_v,\qquad |V_v|=k,\qquad E(V_u,V_v)=V_u\times V_v\ \text{when }uv\in E(H).$$</div>
+  <div class="media-wrap"><img src="nikiforov-blowup/triangle_to_balanced_blowup.png" alt="Diagram comparing a triangle K3 with its balanced blow-up K3[3], showing three independent clusters and all cross-cluster edges." /><div class="media-caption">For $H=K_3$, every pair of the three clusters is completely joined, producing $K_3[3]$.</div></div>
+
+  <h2>Why many copies are interesting</h2>
+  <p>Many triangles can be scattered throughout a graph. A $K_3[k]$, by contrast, is coherent: three vertex groups support all $k^2$ edges across every pair of groups. Nikiforov's conclusion turns a global abundance condition into this local but highly organized configuration.</p>
+  <p>The logarithm is central. In general it cannot be replaced by a substantially larger order: random graphs provide the guiding intuition that coordinated complete bipartite connections become rare quickly as $k$ grows. That intuition is not itself a proof of sharpness.</p>
+
+  <h2>Computational demonstration 1: constructing $K_3[3]$</h2>
+  <p>The animation reveals the three complete bipartite joins one at a time. It is a literal construction of the small example, rather than a simulation of the theorem.</p>
+  <div class="media-wrap"><video controls preload="metadata"><source src="nikiforov-blowup/blowup_construction.mp4" type="video/mp4" />Your browser does not support MP4 video.</video><div class="media-caption">A six-second construction: clusters remain independent while the three cross-cluster joins are progressively added.</div></div>
+
+  <h2>Computational demonstration 2: copies versus witnessed blow-ups</h2>
+  <p>For $H=K_3$, the script generated fixed-seed random host graphs and two graphs with a deliberately planted balanced blow-up plus background noise. It counts triangles exactly. The search enumerates independent clusters exactly only through $k=3$ for $n\le24$; the $K_3[4]$ row is certified by its construction. A failure to find $k=3$ is not evidence that no larger configuration exists outside this search scope.</p>
+  <div class="media-wrap"><img src="nikiforov-blowup/triangle_copy_and_blowup_experiments.png" alt="Table of four finite graph experiments reporting vertex counts, triangle counts, witnessed balanced triangle blow-up sizes, and search limits." /><div class="media-caption">The reported $k$ is a witnessed lower bound, not a claim of the largest blow-up in each host.</div></div>
+  <div class="table-wrap"><table><thead><tr><th>host graph</th><th>$n$</th><th>triangle copies</th><th>reported $k$</th><th>interpretation</th></tr></thead><tbody><tr><td>random $G(18,1/2)$</td><td>18</td><td>64</td><td>2</td><td>exact search through $k=3$</td></tr><tr><td>random $G(24,1/2)$</td><td>24</td><td>206</td><td>2</td><td>exact search through $k=3$</td></tr><tr><td>planted $K_3[3]$ + noise</td><td>24</td><td>62</td><td>3</td><td>construction supplies a witness</td></tr><tr><td>planted $K_3[4]$ + noise</td><td>30</td><td>83</td><td>4</td><td>no exhaustive search above $n=24$</td></tr></tbody></table></div>
+
+  <h2>Computational demonstration 3: logarithmic scaling</h2>
+  <p>The blue curve is the reference function $\log n$; it is rescaled only to share a drawing with deliberately planted examples. The gold points are not measured estimates of $c_H(\gamma)$ and are not a fitted theorem curve. They simply make the slowly growing logarithmic scale visually tangible.</p>
+  <div class="media-wrap"><img src="nikiforov-blowup/logarithmic_blowup_scale.png" alt="Plot comparing a rescaled logarithm of n with deliberately planted balanced triangle blow-up sizes." /><div class="media-caption">Reference scale versus planted instances; the two series have distinct meanings.</div></div>
+
+  <h2>Random-graph intuition</h2>
+  <p>In a random graph, a candidate $K_3[k]$ asks for all cross-cluster edges among three groups, while also asking for independent clusters in the exact construction. As $k$ increases, these joint requirements become increasingly restrictive. This gives intuition for why a logarithmic scale is natural and why one should not expect a generally much larger guaranteed blow-up.</p>
+  <div class="media-wrap"><img src="nikiforov-blowup/random_graph_blowup_scale.png" alt="Plot of small witnessed balanced triangle blow-up sizes in four fixed-seed G(n, one half) random graphs, with the search capped at k equals 3." /><div class="media-caption">One fixed-seed $G(n,1/2)$ sample at each size, using exact search only up to $k=3$. This is an illustration, not a lower-bound proof or an asymptotic estimate.</div></div>
+  <div class="analysis-box"><strong>Why not forget the graph structure?</strong> One can encode each copy of $H$ as a hyperedge of an auxiliary $h$-uniform hypergraph, but that representation loses which vertices and edges of the original copies overlap in $G$. The blow-up conclusion needs precisely this graph-level organization, so a generic hypergraph viewpoint conceals important structure.</div>
+
+  <h2>Computational limitations</h2>
+  <p>All experiments are finite and intentionally small. Exhaustively testing three disjoint independent clusters already grows rapidly with $n$ and $k$. The random graph values are single reproducible samples (seeds are recorded in the generated source/output), not averages. No heuristic failure is interpreted as nonexistence, and no simulation is presented as a proof of the asymptotic theorem.</p>
+
+  <h2>Interpretation</h2>
+  <p>Nikiforov's theorem says that copy abundance forces more than repetition: it forces reusable architecture. The computational examples make the architecture concrete, while the logarithmic plot and random-graph samples explain why the guaranteed scale is both meaningful and, in general, the right order of magnitude.</p>
+  <div class="footer-nav"><a href="../index.html">Home</a><span class="sep">·</span><a href="../research.html">Research</a></div>
+</section></div></body></html>

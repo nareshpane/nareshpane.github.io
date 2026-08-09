@@ -1,0 +1,5 @@
+host graph,n,triangles,reported k,method
+"random G(18, 0.50)",18,64,2,exhaustive search through k=3
+"random G(24, 0.50)",24,206,2,exhaustive search through k=3
+planted K₃[3] + noise,24,62,3,planted witness; exhaustive search through k=3
+planted K₃[4] + noise,30,83,4,planted witness; no exhaustive search above n=24

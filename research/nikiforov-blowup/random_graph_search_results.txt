@@ -1,0 +1,5 @@
+G(n, 1/2), one reproducible sample each; exact search capped at k=3
+n=12, seed=810, witnessed k=1
+n=16, seed=811, witnessed k=2
+n=20, seed=812, witnessed k=2
+n=24, seed=813, witnessed k=2
