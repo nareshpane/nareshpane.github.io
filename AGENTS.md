@@ -1,76 +1,31 @@
-# Repository guidance
+# Repository Guidance
 
-## Purpose and scope
+## Site Model
 
-- This repository publishes Naresh Pane's personal website through GitHub Pages.
-- Do not modify existing, unrelated website or research files unless explicitly asked.
-- AI-assisted, agentic, mathematical, computational, and graph-theory research normally belongs under `research/`.
-- Make the smallest coherent set of changes necessary. Do not reorganize unrelated parts of the site.
-- If the existing structure conflicts with these rules, explain the conflict before any broad restructuring.
+- This is a dependency-free static GitHub Pages site. Root-level HTML files are standalone public pages; no build, test, lint, or deployment command is configured.
+- Make the smallest coherent change and do not alter unrelated pages or research projects. If existing structure conflicts with these rules, explain the conflict before broad restructuring.
+- Keep pages suitable for direct GitHub Pages hosting. Do not introduce React, Vue, Tailwind, Bootstrap, npm dependencies, or another web framework unless explicitly requested.
+- AI-assisted, agentic, mathematical, computational, and graph-theory work normally belongs in `research/`.
 
-## New research-topic layout
+## New Research Projects
 
-For a topic with slug `example-topic`, normally use:
+- Create the primary page as `research/<topic-slug>.html`; place generated figures, videos, and supporting Python in `research/<topic-slug>/`. Do not place the primary page in that asset directory.
+- Link assets from the page with relative paths such as `<topic-slug>/figure_01.png`; never use machine-specific absolute paths.
+- Retain scripts that generate published figures or simulations and use descriptive filenames.
+- Existing projects use older, inconsistent asset layouts. These conventions apply to new work; do not move, rename, or normalize existing projects unless explicitly asked.
+- Do not overwrite `research/erdos-renyi-1960.html` unless explicitly asked. For a substantial new research page, inspect it first and adapt its cream/card visual language, typography, responsive treatment, MathJax/equation presentation, and footer navigation rather than copying topic-specific content.
+- State definitions and methodology precisely where relevant, distinguish proven claims from simulation results, and give images descriptive alt text.
+- Do not present unverified paper claims or citations as factual; ask for the source if it is not available locally.
 
-```text
-research/
-├── example-topic.html
-└── example-topic/
-    ├── analysis.py
-    ├── another_script.py
-    ├── figure_01.png
-    ├── figure_02.jpeg
-    └── supporting files
-```
+## Publishing Research
 
-- The primary page is `research/example-topic.html`, directly inside `research/`.
-- Never put the primary HTML page in `research/example-topic/`; that directory is for supporting materials.
-- Put project-generated or project-used Python, PNG, JPG/JPEG, animation/video, and other computational artifacts in the topic-specific subdirectory.
-- Retain useful Python source used to generate figures or simulations.
-- Use descriptive filenames; avoid generic names such as `image1.png` and `script1.py`.
-- From `research/example-topic.html`, use relative asset paths such as `example-topic/figure_01.png` and `example-topic/simulation.py`. Never put machine-specific absolute paths (for example, `/home/naresh/Documents/...`) in website HTML.
+- Treat a new research page as a draft unless explicitly told it is ready to publish; do not add draft pages to `research.html`.
+- When publishing, add the new entry as the first `<li>` in `research.html`'s `ul.research-list`, using the existing `project-title` and `project-desc` markup and an `href` of `research/<topic-slug>.html`.
+- Preserve all existing research entries below it, including their order and wording; do not restyle or correct them unless explicitly asked.
+- Before finishing, verify every changed HTML asset path and, for a published page, its `research.html` link.
 
-## Existing research
+## Version Control
 
-- Older projects use differing conventions. Do not rename, move, reorganize, or normalize them merely to match this guidance.
-- These rules govern new work unless migration of an older project is explicitly requested.
-- Do not overwrite `research/erdos-renyi-1960.html` unless explicitly asked.
-
-## Canonical research-page reference
-
-Before creating a substantial research page, inspect `research/erdos-renyi-1960.html`. Adapt its visual and structural language to the new question; do not mechanically copy its content or topic-specific sections. Preserve where appropriate:
-
-- cream/off-white background, centered card-style content, restrained blue accent, and rounded panels;
-- Cormorant Garamond major headings, Inter body text, and Source Code Pro where appropriate;
-- MathJax notation, equation containers, analysis boxes, styled tables, responsive media containers, responsive/mobile behavior, and footer navigation to Home and Research.
-
-## Technology and research standards
-
-- Prefer static HTML, CSS, and JavaScript; use Python for research, simulations, and figure generation when needed.
-- Keep pages suitable for direct GitHub Pages hosting. Do not introduce React, Vue, Tailwind, Bootstrap, npm dependencies, or a web framework unless explicitly requested.
-- Where appropriate, state definitions precisely; include notation, equations, algorithms, methodology, informative visualizations, and explanations of what figures show.
-- Distinguish theoretical claims from empirical simulation results, and give images descriptive alt text.
-- Do not invent mathematical results or citations. If factual claims from a paper or source are not locally available, request the needed source before treating them as verified.
-
-## Git workflow
-
-- Before substantive changes, inspect `git status` and do not overwrite unrelated uncommitted work.
-- After changes, inspect `git status` and relevant diffs; summarize created, modified, and deleted files, and verify HTML asset paths are relative and correct.
-- Do not automatically commit, push, force-push, or rewrite history.
-- When explicitly asked to commit, include only files relevant to the requested task unless instructed otherwise.
-
-# Publishing new research pages
-
-- `research.html` is at the repository root and serves as the public index of research projects.
-- Primary research pages normally live directly under `research/` as `research/<topic-slug>.html`.
-- Supporting `.py`, `.png`, `.jpg`/`.jpeg`, `.mp4`, and related files normally live in `research/<topic-slug>/`.
-- A newly created research HTML page should not automatically be listed in `research.html` while it is still a draft.
-- When explicitly told that a research project is ready to publish, update the root-level `research.html` as part of the publishing workflow.
-- Add the new project as the first `<li>` inside the existing `<ul class="research-list">`.
-- Use the existing `project-title` and `project-desc` markup.
-- Link to it with `research/<topic-slug>.html`.
-- Give it a concise project title and description based on the completed page.
-- Preserve every existing item below it and preserve their current order.
-- Do not rewrite, reorder, restyle, or correct older entries unless explicitly asked.
-- Verify the main page, supporting assets, relative links, and `research.html` link before considering the project ready to publish.
-- Do not commit or push unless explicitly requested.
+- Check `git status` before and after substantive work; preserve unrelated uncommitted changes.
+- Review relevant diffs after changes.
+- Do not commit, push, force-push, or rewrite history unless explicitly requested. When asked to commit, include only files relevant to the request.
