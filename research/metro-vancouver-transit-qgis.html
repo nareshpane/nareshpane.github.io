@@ -1,0 +1,730 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A reproducible tutorial for reconstructing Metro Vancouver transit routes from TransLink GTFS data with Python, QGIS, and Leaflet.">
+  <title>Mapping Metro Vancouver Transit Routes with QGIS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&amp;family=Inter:wght@400;500;600;700&amp;family=Source+Code+Pro:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f7f4ee;
+      --paper: #fffdf9;
+      --ink: #20201e;
+      --muted: #67655f;
+      --line: #ded7ca;
+      --blue: #1565c0;
+      --teal: #008f8f;
+      --green: #287352;
+      --red: #b83e35;
+      --purple: #6a3d9a;
+      --gold: #a87524;
+      --salmon: #c8644d;
+      --soft: #f5f1e9;
+      --code: #f1ede5;
+      --radius: 20px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 16px/1.68 Inter, system-ui, sans-serif;
+    }
+    a { color: #174f86; }
+    a:hover { text-decoration-thickness: 2px; }
+    :focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+    img, iframe { max-width: 100%; }
+    h1, h2, h3, h4 {
+      color: #171715;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      line-height: 1.08;
+    }
+    h1 {
+      max-width: 1080px;
+      margin: 0 0 16px;
+      font-size: clamp(2.8rem, 4.6vw, 4rem);
+      letter-spacing: -0.025em;
+      text-wrap: balance;
+    }
+    h2 { margin: 0 0 13px; font-size: clamp(2rem, 4vw, 2.75rem); }
+    h3 { margin: 0 0 8px; font-size: 1.5rem; }
+    h4 { margin: 0 0 6px; font-size: 1.18rem; }
+    p { margin: 0 0 14px; }
+    ul, ol { padding-left: 1.3rem; }
+    li { margin: 5px 0; }
+    code, pre { font-family: "Source Code Pro", ui-monospace, monospace; }
+    code { font-size: .9em; }
+    pre {
+      margin: 16px 0;
+      padding: 16px 18px;
+      overflow-x: auto;
+      border: 1px solid #ddd4c6;
+      border-radius: 14px;
+      background: var(--code);
+      color: #242321;
+      font-size: .84rem;
+      line-height: 1.6;
+    }
+    table { width: 100%; border-collapse: collapse; font-size: .91rem; }
+    th, td { padding: 10px 11px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    th { background: var(--soft); color: #373530; font-size: .8rem; letter-spacing: .035em; text-transform: uppercase; }
+    tbody tr:last-child td { border-bottom: 0; }
+
+    .skip-link { position: absolute; left: -9999px; top: 8px; z-index: 20; padding: 8px 12px; background: #fff; }
+    .skip-link:focus { left: 8px; }
+    .page { max-width: 1200px; margin: auto; padding: 28px 18px 60px; }
+    .sheet {
+      padding: clamp(22px, 5vw, 54px);
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      background: var(--paper);
+      box-shadow: 0 14px 35px #332a1a0b;
+    }
+    .eyebrow, .tag {
+      display: inline-block;
+      border-radius: 99px;
+      font-size: .73rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .eyebrow { margin-bottom: 12px; padding: 5px 10px; background: #e8f1f4; color: #1d6372; }
+    .tag { padding: 3px 8px; background: #f1e9da; color: #745620; }
+    .lead { max-width: 880px; font-size: 1.18rem; }
+    .snapshot { color: var(--muted); font-size: .9rem; }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+      margin: 25px 0 30px;
+    }
+    .stat { padding: 13px 14px; border: 1px solid var(--line); border-radius: 14px; background: #fcfaf6; }
+    .stat strong { display: block; color: #183f4b; font-size: 1.35rem; line-height: 1.15; }
+    .stat span { color: var(--muted); font-size: .78rem; }
+    .notice, .note {
+      margin: 18px 0;
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--teal);
+      border-radius: 14px;
+      background: var(--soft);
+    }
+    .note { border-left-color: var(--gold); }
+    .notice p:last-child, .note p:last-child { margin-bottom: 0; }
+
+    .map-shell { margin: 25px 0 18px; }
+    .map-heading { display: flex; align-items: end; justify-content: space-between; gap: 16px; margin-bottom: 10px; }
+    .map-heading h2 { margin: 0; font-size: 1.75rem; }
+    .map-frame {
+      height: clamp(600px, 72vh, 760px);
+      overflow: hidden;
+      border: 1px solid #cfc8bc;
+      border-radius: 18px;
+      background: #e9ece7;
+    }
+    .map-frame iframe { width: 100%; height: 100%; border: 0; display: block; }
+    .map-meta { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 18px; margin-top: 9px; color: var(--muted); font-size: .78rem; }
+
+    .contents { margin: 32px 0 42px; padding: 19px; border: 1px solid var(--line); border-radius: 18px; background: #fbf9f4; }
+    .contents h2 { font-size: 1.5rem; }
+    .contents-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px 24px; }
+    .contents a { display: block; padding: 3px 0; font-size: .87rem; }
+    .contents strong { display: block; margin-bottom: 5px; color: var(--muted); font-size: .75rem; letter-spacing: .06em; text-transform: uppercase; }
+    .chapter { padding: 34px 0; border-top: 1px solid var(--line); scroll-margin-top: 18px; }
+    .chapter-label { color: #186d79; font-size: .8rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; }
+    .intro { max-width: 900px; }
+    .state {
+      display: inline-block;
+      margin: 0 0 9px;
+      padding: 4px 9px;
+      border: 1px solid #cdd8d7;
+      border-radius: 999px;
+      background: #edf4f3;
+      color: #285f61;
+      font-size: .69rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .state-terminal { border-color: #d6cec0; background: #f2eee7; color: #655b4d; }
+    .state-agent { border-color: #c5d3e2; background: #edf3f9; color: #28557e; }
+    .state-qgis { border-color: #bedac9; background: #edf7f1; color: #286447; }
+    .state-checkpoint { border-color: #c5d7c9; background: #edf5ef; color: #356345; }
+    .grid { display: grid; gap: 15px; margin: 18px 0; }
+    .two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .five { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+    .box { padding: 16px; border: 1px solid var(--line); border-radius: 16px; background: #fcfaf6; }
+    .box p:last-child { margin-bottom: 0; }
+    .small { color: var(--muted); font-size: .87rem; }
+    .table-wrap { margin: 17px 0; overflow-x: auto; border: 1px solid var(--line); border-radius: 14px; }
+    details {
+      margin: 18px 0;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fcfaf6;
+    }
+    summary {
+      padding: 13px 16px;
+      color: #254f58;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    details[open] summary { border-bottom: 1px solid var(--line); }
+    .details-body { padding: 16px; }
+    .details-body > :last-child { margin-bottom: 0; }
+    .prompt-frame {
+      display: block;
+      width: 100%;
+      height: min(68vh, 720px);
+      border: 0;
+      background: #fff;
+    }
+    .prompt-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin: 0 0 14px; }
+    .copy-button {
+      padding: 8px 13px;
+      border: 1px solid #245b66;
+      border-radius: 9px;
+      background: #245b66;
+      color: #fff;
+      cursor: pointer;
+      font: 700 .8rem Inter, system-ui, sans-serif;
+    }
+    .copy-button:hover { background: #194b55; }
+    .copy-status { color: var(--muted); font-size: .82rem; }
+    .checkpoint {
+      margin: 15px 0;
+      padding: 11px 14px;
+      border: 1px solid #cdd9cf;
+      border-left: 4px solid var(--green);
+      border-radius: 12px;
+      background: #f3f7f3;
+    }
+    .checkpoint .state { margin: 0 8px 0 0; vertical-align: 1px; }
+    .checkpoint p { display: inline; margin: 0; font-size: .9rem; }
+    .teaching {
+      margin: 15px 0;
+      padding: 13px 15px;
+      border: 1px dashed #cdbf9f;
+      border-radius: 12px;
+      background: #fbf7ec;
+    }
+    .teaching p:last-child { margin-bottom: 0; }
+    .path-callout {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 7px;
+      margin: 20px 0;
+    }
+    .path-callout span { padding: 10px 7px; border-radius: 10px; background: var(--soft); color: #275a63; font-size: .73rem; font-weight: 700; text-align: center; }
+
+    .workflow {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 8px;
+      margin: 22px 0;
+    }
+    .workflow div { position: relative; min-height: 100px; padding: 13px 12px; border: 1px solid var(--line); border-radius: 14px; background: var(--soft); }
+    .workflow div:not(:last-child)::after { position: absolute; z-index: 2; top: 35px; right: -9px; content: "›"; color: var(--gold); font-size: 1.5rem; font-weight: 700; }
+    .workflow b { display: block; color: #155b68; font-size: .8rem; letter-spacing: .05em; text-transform: uppercase; }
+    .workflow span { font-size: .86rem; }
+    .relation {
+      display: grid;
+      grid-template-columns: 1fr 60px 1fr 60px 1fr;
+      align-items: center;
+      gap: 7px;
+      margin: 16px 0;
+    }
+    .relation .node { padding: 15px 12px; border: 1px solid var(--line); border-radius: 13px; background: #fffefa; text-align: center; }
+    .relation .node b { display: block; color: #194f5a; font-family: "Source Code Pro", monospace; font-size: .9rem; }
+    .relation .node span { color: var(--muted); font-size: .78rem; }
+    .relation .edge { color: var(--gold); font-size: .75rem; text-align: center; }
+    .relation .edge strong { display: block; font-size: 1.3rem; }
+    .equation { margin: 16px 0; padding: 13px 16px; overflow-x: auto; border: 1px solid #e4dccf; border-radius: 13px; background: #fffdf9; font-family: "Source Code Pro", monospace; text-align: center; }
+
+    .tutorial-figure { margin: 22px 0; }
+    .tutorial-figure a { display: block; border-radius: 14px; }
+    .tutorial-figure img { display: block; width: 100%; height: auto; border: 1px solid #d6d0c6; border-radius: 14px; background: #f2efe8; }
+    .tutorial-figure a:hover img { border-color: #8fa6a9; }
+    .tutorial-figure figcaption { margin-top: 8px; color: var(--muted); font-size: .84rem; line-height: 1.5; }
+    .figure-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; align-items: start; }
+    .figure-pair .tutorial-figure { margin: 10px 0 22px; }
+    .mode-key { display: inline-block; width: 30px; height: 4px; margin-right: 7px; border-radius: 9px; vertical-align: middle; }
+    .route-rules { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; margin: 17px 0; }
+    .route-rule { padding: 12px; border: 1px solid var(--line); border-left: 5px solid var(--rule); border-radius: 11px; background: #fcfaf6; }
+    .route-rule b { display: block; font-size: .9rem; }
+    .route-rule code { color: var(--muted); font-size: .75rem; }
+    .step-list { counter-reset: steps; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin: 20px 0; padding: 0; list-style: none; }
+    .step-list li { counter-increment: steps; min-height: 94px; margin: 0; padding: 13px 13px 13px 46px; border: 1px solid var(--line); border-radius: 13px; background: #fcfaf6; position: relative; }
+    .step-list li::before { position: absolute; top: 12px; left: 12px; content: counter(steps, decimal-leading-zero); color: var(--teal); font-weight: 700; }
+    .downloads { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 13px; margin: 20px 0; }
+    .download-group { padding: 16px; border: 1px solid var(--line); border-radius: 15px; background: #fcfaf6; }
+    .download-group h3 { font-size: 1.3rem; }
+    .download-group a { display: block; margin: 6px 0; font-size: .86rem; overflow-wrap: anywhere; }
+    .attribution-legend { padding: 18px; border: 1px solid #b7c9c4; border-left: 5px solid var(--green); border-radius: 14px; background: #f2f7f4; font-weight: 600; }
+    .footer { margin-top: 34px; padding-top: 22px; border-top: 1px solid var(--line); color: var(--muted); text-align: center; }
+    .footer .sep { margin: 0 9px; color: #99948b; }
+
+    @media (max-width: 900px) {
+      .stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .workflow { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .workflow div:nth-child(3)::after { display: none; }
+      .route-rules, .downloads, .step-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .contents-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .path-callout { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .five { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+    @media (max-width: 680px) {
+      .page { padding: 10px 7px 28px; }
+      .sheet { padding: 20px 15px; border-radius: 17px; }
+      h1 { font-size: clamp(2.45rem, 12vw, 3.25rem); }
+      .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .contents-grid, .two, .three, .four, .five, .figure-pair, .route-rules, .downloads, .step-list { grid-template-columns: 1fr; }
+      .path-callout { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .workflow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .workflow div:nth-child(3)::after { display: block; }
+      .workflow div:nth-child(even)::after { display: none; }
+      .relation { grid-template-columns: 1fr; }
+      .relation .edge strong { transform: rotate(90deg); }
+      .map-heading { display: block; }
+      .map-frame { height: 570px; border-radius: 12px; }
+      .map-meta { display: block; }
+      .map-meta span { display: block; margin: 5px 0; }
+      th, td { padding: 8px; }
+    }
+    @media (max-width: 420px) {
+      .workflow { grid-template-columns: 1fr; }
+      .path-callout { grid-template-columns: 1fr; }
+      .workflow div::after { display: none !important; }
+      .map-frame { height: 520px; }
+    }
+  </style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to tutorial</a>
+<div class="page"><main class="sheet" id="main-content">
+  <header>
+    <div class="eyebrow">Reproducible GIS learning project</div>
+    <h1>Mapping Metro Vancouver Transit Routes with QGIS</h1>
+    <p class="lead">A reproducible introduction to GTFS, Python, spatial data, QGIS, and interactive web cartography, built from a dated TransLink static feed and published as inspectable data, code, styles, and a Leaflet map.</p>
+    <p class="snapshot">Snapshot downloaded 2026-08-15 &middot; Feed version 26JUN_20260814 &middot; WGS 84 longitude/latitude</p>
+    <div class="stats" aria-label="Project statistics">
+      <div class="stat"><strong>244</strong><span>routes</span></div>
+      <div class="stat"><strong>65,431</strong><span>scheduled trips</span></div>
+      <div class="stat"><strong>8,907</strong><span>stops, stations &amp; entrances</span></div>
+      <div class="stat"><strong>1,041</strong><span>source shapes</span></div>
+      <div class="stat"><strong>GTFS &rarr; Leaflet</strong><span>Python + QGIS workflow</span></div>
+    </div>
+  </header>
+
+  <section class="map-shell" aria-labelledby="interactive-map-title">
+    <div class="map-heading">
+      <div><span class="tag">Interactive result</span><h2 id="interactive-map-title">Explore the transit hierarchy</h2></div>
+      <a href="GIS%20Learning/web/qgis2web/index.html" target="_blank" rel="noopener">Open map in a new tab</a>
+    </div>
+    <div class="map-frame">
+      <iframe src="GIS%20Learning/web/qgis2web/index.html" title="Interactive Metro Vancouver public transit map"></iframe>
+    </div>
+    <div class="map-meta">
+      <span>Zoom, pan, and use the layer control to compare routes, stations, stops, and entrances.</span>
+      <span>Basemap &copy; OpenStreetMap contributors &middot; Map export: qgis2web + Leaflet</span>
+    </div>
+    <p class="small">The map canvas supports pointer and touch exploration. For a keyboard-readable alternative to feature popups, use the linked <a href="GIS%20Learning/data/processed/route_summary.csv">route summary</a>, <a href="GIS%20Learning/docs/data-dictionary.md">data dictionary</a>, and downloadable GeoJSON layers.</p>
+  </section>
+
+  <aside class="notice">
+    <p><strong>TransLink data attribution.</strong> Route and arrival data used in this product or service is provided by permission of TransLink. TransLink assumes no responsibility for the accuracy or currency of the Data used in this product or service.</p>
+  </aside>
+
+  <nav class="contents" aria-label="Tutorial contents">
+    <h2>Contents</h2>
+    <div class="contents-grid">
+      <div><strong>Prepare</strong><a href="#setup">01. Install the tools</a><a href="#automate">02. Automate the data preparation</a><a href="#first-map">03. Make your first QGIS map</a></div>
+      <div><strong>Understand and style</strong><a href="#gtfs">04. Understand the GTFS data</a><a href="#python">05. How the geometry was built</a><a href="#modes">06. Categorize transit modes</a><a href="#stops">07. Control point clutter</a><a href="#rules">08. Build route rules</a><a href="#labels">09. Add labels</a></div>
+      <div><strong>Export and reproduce</strong><a href="#leaflet">10. Export with qgis2web</a><a href="#final-map">11. Use the final map</a><a href="#reproduce">12. Reproduce the project</a><a href="#downloads">13. Downloads and resources</a><a href="#rights">14. Data rights and attribution</a></div>
+    </div>
+  </nav>
+
+  <section class="chapter" id="setup">
+    <div class="chapter-label">01 &mdash; Install the tools</div>
+    <span class="state state-terminal">Terminal</span>
+    <h2>Start with Ubuntu, QGIS LTR, and OpenCode</h2>
+    <p class="intro">This walkthrough records Ubuntu 24.04 <code>noble</code>, QGIS 3.44.13 Solothurn LTR, and OpenCode. Run each block in a terminal. The QGIS commands use its official signed repository rather than UbuntuGIS or an unofficial package source.</p>
+    <h3>Install QGIS from the official LTR repository</h3>
+    <pre><code>sudo apt update
+sudo apt install curl gnupg software-properties-common wget
+
+sudo mkdir -m755 -p /etc/apt/keyrings
+sudo wget -O /etc/apt/keyrings/qgis-archive-keyring.gpg \
+  https://download.qgis.org/downloads/qgis-archive-keyring.gpg
+
+sudo tee /etc/apt/sources.list.d/qgis.sources &gt;/dev/null &lt;&lt;EOF
+Types: deb deb-src
+URIs: https://qgis.org/ubuntu-ltr
+Suites: noble
+Architectures: amd64
+Components: main
+Signed-By: /etc/apt/keyrings/qgis-archive-keyring.gpg
+EOF
+
+sudo apt update
+sudo apt install qgis qgis-plugin-grass
+qgis --version</code></pre>
+    <aside class="checkpoint"><span class="state state-checkpoint">Checkpoint</span><p><strong>QGIS is ready</strong> when the terminal prints a QGIS version and the application opens to its welcome screen without a package error.</p></aside>
+    <p class="small">These commands reproduce the recorded 64-bit Ubuntu environment. For a later release or another architecture, use the values in the current <a href="https://qgis.org/resources/installation-guide/#debian--ubuntu">QGIS Debian/Ubuntu installation guide</a>.</p>
+    <h3>Install and verify OpenCode</h3>
+    <pre><code>curl -fsSL https://opencode.ai/install | bash
+opencode --version</code></pre>
+    <aside class="checkpoint"><span class="state state-checkpoint">Checkpoint</span><p><strong>OpenCode is ready</strong> when <code>opencode --version</code> prints a version number and running <code>opencode</code> opens its terminal interface.</p></aside>
+    <p class="small">The installer and alternate package methods are maintained in the <a href="https://opencode.ai/docs/">official OpenCode documentation</a>.</p>
+    <figure class="tutorial-figure"><a href="GIS%20Learning/figures/qgis_screenshots/qgis_07_qgis_version_and_ubuntu_environment.png" target="_blank" rel="noopener"><img src="GIS%20Learning/figures/qgis_screenshots/qgis_07_qgis_version_and_ubuntu_environment.png" alt="Ubuntu terminal showing QGIS 3.44.13 Solothurn and Ubuntu 24.04 environment details" width="1844" height="1046" loading="lazy"></a><figcaption>The recorded environment after installation: Ubuntu 24.04 and QGIS 3.44.13 Solothurn.</figcaption></figure>
+  </section>
+
+  <section class="chapter" id="automate">
+    <div class="chapter-label">02 &mdash; Automate the data preparation</div>
+    <span class="state state-agent">OpenCode / Automated</span>
+    <h2>Ask an agent to build and validate Phase 1</h2>
+    <p class="intro">OpenCode handled the repetitive, inspectable work: project structure, an immutable TransLink snapshot, six Python scripts, GIS outputs, documentation, and validation. Start it from the repository root so it reads the project instructions and uses relative paths.</p>
+    <pre><code>cd /path/to/nareshpane.github.io
+opencode</code></pre>
+    <aside class="note"><strong>About <code>/init</code>.</strong> In a new repository, <code>/init</code> asks OpenCode to inspect the project and create an <code>AGENTS.md</code> guidance file. This repository already has that file, so rerunning <code>/init</code> is unnecessary and could replace maintained instructions.</aside>
+    <div class="path-callout" aria-label="Automation workflow"><span>ACQUIRE</span><span>INSPECT</span><span>CONSTRUCT</span><span>SUMMARIZE</span><span>VALIDATE</span><span>DOCUMENT</span></div>
+    <h3>What the automation creates</h3>
+    <p>You do not need to create these folders or scripts manually. The master prompt tells OpenCode to create them, write the scripts, and run the complete sequence.</p>
+    <pre><code>research/GIS Learning/
+|-- data/
+|   |-- raw/          dated source ZIP
+|   |-- extracted/    reproducible working copy
+|   |-- processed/    GeoJSON and route summary
+|   `-- metadata/     checksum and feed reports
+|-- scripts/
+|   |-- 01_download_gtfs.py
+|   |-- 02_inspect_gtfs.py
+|   |-- 03_build_routes.py
+|   |-- 04_build_stops.py
+|   |-- 05_build_route_summary.py
+|   `-- 06_validate_outputs.py
+|-- qgis/             project and reusable styles
+|-- web/qgis2web/     final Leaflet export
+|-- figures/          tutorial screenshots
+`-- docs/             methods and data dictionary</code></pre>
+    <details><summary>Read the complete Phase 1 master prompt</summary><div class="details-body"><p class="small">This is the retained project brief supplied to OpenCode. It specifies provenance, geometry logic, validation, licensing, and explicit stopping conditions.</p><div class="prompt-actions"><button class="copy-button" id="copy-phase-one-prompt" type="button" data-source="GIS%20Learning/docs/phase-1-opencode-master-prompt.txt">Copy Prompt</button><a href="GIS%20Learning/docs/phase-1-opencode-master-prompt.txt" download>Download .txt</a><span class="copy-status" id="copy-prompt-status" aria-live="polite"></span></div><iframe class="prompt-frame" src="GIS%20Learning/docs/phase-1-opencode-master-prompt.txt" title="Complete Phase 1 OpenCode master prompt"></iframe><p class="small"><a href="GIS%20Learning/docs/phase-1-opencode-master-prompt.txt" target="_blank" rel="noopener">Open the prompt as plain text</a>.</p></div></details>
+    <p>Paste the prompt into the Build agent, review its proposed file operations, and allow it to run the pipeline. Treat the checksum, metadata, source archive, generated files, and validation script as the durable evidence rather than relying only on the agent's prose.</p>
+    <div class="figure-pair">
+      <figure class="tutorial-figure"><a href="GIS%20Learning/figures/qgis_screenshots/qgis_01_opencode_gtfs_project_prompt.png" target="_blank" rel="noopener"><img src="GIS%20Learning/figures/qgis_screenshots/qgis_01_opencode_gtfs_project_prompt.png" alt="OpenCode start screen with a large project prompt pasted into the Build agent" width="1844" height="1046" loading="lazy"></a><figcaption>The brief enters the Build agent with boundaries and outputs stated up front.</figcaption></figure>
+      <figure class="tutorial-figure"><a href="GIS%20Learning/figures/qgis_screenshots/qgis_02_opencode_gtfs_readme_output_diff.png" target="_blank" rel="noopener"><img src="GIS%20Learning/figures/qgis_screenshots/qgis_02_opencode_gtfs_readme_output_diff.png" alt="OpenCode showing a README diff for Metro Vancouver transit GeoJSON outputs with validation in progress" width="1844" height="1046" loading="lazy"></a><figcaption>An inspectable documentation diff appears while validation is still running.</figcaption></figure>
+    </div>
+    <div class="figure-pair">
+      <figure class="tutorial-figure"><a href="GIS%20Learning/figures/qgis_screenshots/qgis_03_phase_one_dataset_provenance_report.png" target="_blank" rel="noopener"><img src="GIS%20Learning/figures/qgis_screenshots/qgis_03_phase_one_dataset_provenance_report.png" alt="Phase 1 report showing the TransLink GTFS archive date size checksum and discovered tables" width="1844" height="1046" loading="lazy"></a><figcaption>The report records the snapshot, file size, SHA-256, and discovered tables.</figcaption></figure>
+      <figure class="tutorial-figure"><a href="GIS%20Learning/figures/qgis_screenshots/qgis_04_phase_one_gtfs_statistics_and_outputs.png" target="_blank" rel="noopener"><img src="GIS%20Learning/figures/qgis_screenshots/qgis_04_phase_one_gtfs_statistics_and_outputs.png" alt="Phase 1 report listing GTFS statistics and generated datasets with record counts sizes and geometry types" width="1844" height="1046" loading="lazy"></a><figcaption>Measured counts and output sizes come from the retained snapshot.</figcaption></figure>
+    </div>
+    <figure class="tutorial-figure"><a href="GIS%20Learning/figures/qgis_screenshots/qgis_05_phase_one_validation_and_feed_observations.png" target="_blank" rel="noopener"><img src="GIS%20Learning/figures/qgis_screenshots/qgis_05_phase_one_validation_and_feed_observations.png" alt="Validation report showing passed GTFS checks and observations about route colors stop types and an invalid HandyDART shape" width="1844" height="1046" loading="lazy"></a><figcaption>The agent reports validation results and source-data limitations instead of hiding them.</figcaption></figure>
+    <aside class="checkpoint"><span class="state state-checkpoint">Checkpoint</span><p><strong>Phase 1 is complete</strong> when <code>data/raw/</code> contains the dated ZIP, <code>data/processed/</code> contains three GeoJSON files and <code>route_summary.csv</code>, and the validation script reports PASS.</p></aside>
+    <details><summary>Recovery prompt used after an interrupted session</summary><div class="details-body"><pre><code>Continue if you have next steps, or stop and ask for clarification if you are unsure how to proceed.</code></pre><p class="small">A short recovery instruction lets OpenCode inspect existing files, task state, and repository guidance before continuing.</p></div></details>
+    <h3>Automation stops where visual judgement begins</h3>
+    <div class="table-wrap"><table><thead><tr><th>OpenCode and Python</th><th>You in QGIS</th></tr></thead><tbody><tr><td>Preserve and checksum the official source ZIP</td><td>Create and save the map project</td></tr><tr><td>Inspect relational tables and missing values</td><td>Load layers and understand the interface</td></tr><tr><td>Construct and validate route and stop geometry</td><td>Inspect attributes and judge visual clutter</td></tr><tr><td>Create deterministic representative routes</td><td>Choose symbols, filters, scale thresholds, and labels</td></tr><tr><td>Retain scripts, metadata, and documentation</td><td>Export with qgis2web and test the user experience</td></tr></tbody></table></div>
+  </section>
+
+  <section class="chapter" id="first-map">
+    <div class="chapter-label">03 &mdash; Make your first QGIS map</div>
+    <span class="state state-qgis">QGIS / Manual</span>
+    <h2>Open the application before studying the data model</h2>
+    <p class="intro">Launch QGIS from the Applications menu or run <code>qgis</code>. Choose <strong>New Empty Project</strong>, then use <strong>Project &rarr; Save As</strong> and save <code>metro-vancouver-transit.qgz</code> inside <code>research/GIS Learning/qgis/</code>.</p>
+    <div class="grid five"><div class="box"><h3>Browser</h3><p>Find files, databases, and XYZ tiles.</p></div><div class="box"><h3>Layers</h3><p>Control draw order, visibility, and selection.</p></div><div class="box"><h3>Map canvas</h3><p>Pan, zoom, select, and inspect.</p></div><div class="box"><h3>Layer Properties</h3><p>Double-click a layer to configure styling, labels, rendering, source filters, and related settings.</p></div><div class="box"><h3>Status bar</h3><p>Read scale, coordinates, and project CRS.</p></div></div>
+    <p>If Browser or Layers is missing, enable it from <strong>View &rarr; Panels</strong>. Toolbars can be restored from <strong>View &rarr; Toolbars</strong>.</p>
+    <figure class="tutorial-figure"><a href="GIS%20Learning/figures/qgis_screenshots/qgis_08_initial_transit_layers_and_panels_clean.png" target="_blank" rel="noopener"><img src="GIS%20Learning/figures/qgis_screenshots/qgis_08_initial_transit_layers_and_panels_clean.png" alt="QGIS View Panels menu showing the Browser and Layers panels enabled beside the initial transit layers" width="917" height="830" loading="lazy"></a><figcaption>View &rarr; Panels controls the Browser and Layers panels used throughout this tutorial. This privacy-safe crop contains only the QGIS workspace; the original screenshot remains unchanged in the project record.</figcaption></figure>
+    <h3>Load the prepared GeoJSON layers</h3>
+    <ol><li>Choose <strong>Layer &rarr; Add Layer &rarr; Add Vector Layer</strong>.</li><li>Browse to <code>data/processed/transit_routes_simplified.geojson</code> and click <strong>Add</strong>.</li><li>Repeat for <code>data/processed/transit_stops.geojson</code>.</li><li>Optionally load <code>transit_route_patterns.geojson</code>, but leave it unchecked; it contains every route variant.</li><li>Drag layers so stops draw above routes.</li></ol>
+    <h3>Add OpenStreetMap</h3>
+    <p>In Browser, expand <strong>XYZ Tiles</strong> and double-click <strong>OpenStreetMap</strong>. Drag it below the vector layers. QGIS reads the GeoJSON in WGS 84 and reprojects it on the fly for the basemap-driven map canvas.</p>
+    <figure class="tutorial-figure"><a href="GIS%20Learning/figures/qgis_screenshots/qgis_09_raw_transit_stops_and_routes_over_openstreetmap.png" target="_blank" rel="noopener"><img src="GIS%20Learning/figures/qgis_screenshots/qgis_09_raw_transit_stops_and_routes_over_openstreetmap.png" alt="QGIS map of Metro Vancouver with dense purple transit stops over pink simplified routes on OpenStreetMap" width="1598" height="919" loading="lazy"></a><figcaption>This first map is supposed to look cluttered. All 8,907 locations have equal visual weight, revealing the styling problem.</figcaption></figure>
+    <aside class="teaching"><p><strong>What just happened?</strong> The data are not broken. QGIS is simply rendering all 8,907 stop, station, and entrance records with the same symbol and equal visual importance. Filtering, scale visibility, and distinct markers will turn this dense first view into a readable hierarchy.</p></aside>
+    <aside class="checkpoint"><span class="state state-checkpoint">Checkpoint</span><p><strong>Your first map is loaded</strong> when the Layers panel lists routes, stops, and OpenStreetMap, and the canvas shows dense purple points over route lines and the basemap.</p></aside>
+    <aside class="note"><strong>Save often.</strong> Press <kbd>Ctrl</kbd>+<kbd>S</kbd> after adding layers and after each styling stage. A <code>.qgz</code> stores references and cartographic decisions, not duplicate GeoJSON.</aside>
+  </section>
+
+  <section class="chapter" id="gtfs">
+    <div class="chapter-label">04 &mdash; Understand the GTFS data</div>
+    <h2>The lines on screen came from related text tables</h2>
+    <p class="intro">GTFS Static is a collection of CSV-formatted text tables, not a ready-made GIS layer. A row in <code>routes.txt</code> identifies a public-facing service, but its travelled path arrives through trips and ordered shape points. Stop order is a separate relationship.</p>
+    <div class="grid two">
+      <div class="box">
+        <h3>Routes to lines</h3>
+        <div class="relation" aria-label="Routes to geometry relationship">
+          <div class="node"><b>routes.txt</b><span>244 routes</span></div><div class="edge">route_id<strong>&rarr;</strong></div><div class="node"><b>trips.txt</b><span>65,431 trips</span></div><div class="edge">shape_id<strong>&rarr;</strong></div><div class="node"><b>shapes.txt</b><span>215,714 points</span></div>
+        </div>
+      </div>
+      <div class="box">
+        <h3>Trips to stops</h3>
+        <div class="relation" aria-label="Trips to stops relationship">
+          <div class="node"><b>trips.txt</b><span>trip_id</span></div><div class="edge">trip_id<strong>&rarr;</strong></div><div class="node"><b>stop_times.txt</b><span>1,873,506 rows</span></div><div class="edge">stop_id<strong>&rarr;</strong></div><div class="node"><b>stops.txt</b><span>8,907 locations</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Table</th><th>Role in this project</th><th>Observed size</th></tr></thead>
+      <tbody>
+        <tr><td><code>routes.txt</code></td><td>Names, mode codes, identifiers, and sparse source colours</td><td>244 rows</td></tr>
+        <tr><td><code>trips.txt</code></td><td>Connects routes, service IDs, directions, and shapes</td><td>65,431 rows</td></tr>
+        <tr><td><code>shapes.txt</code></td><td>Ordered WGS 84 points used to create lines</td><td>215,714 rows; 1,041 shapes</td></tr>
+        <tr><td><code>stops.txt</code></td><td>Stops, platforms, stations, and entrances</td><td>8,907 rows</td></tr>
+        <tr><td><code>stop_times.txt</code></td><td>Ordered stop visits for each trip</td><td>1,873,506 rows</td></tr>
+        <tr><td><code>calendar*.txt</code></td><td>Regular service patterns and date exceptions</td><td>43 services; 702 exceptions</td></tr>
+      </tbody>
+    </table></div>
+    <h3>Why a transit route is not just one line</h3>
+    <p class="intro">A single route can have two directions, short turns, branches, alternate terminals, and service-specific variants. GTFS represents each path as a separate <code>shape_id</code>. Concatenating all shapes for one route would create jumps and malformed geometry.</p>
+    <div class="equation"><var>p</var><sub>1</sub>, <var>p</var><sub>2</sub>, &hellip;, <var>p</var><sub>n</sub> ordered by <code>shape_pt_sequence</code> &nbsp;&rarr;&nbsp; <var>L</var> = (<var>p</var><sub>1</sub>, <var>p</var><sub>2</sub>, &hellip;, <var>p</var><sub>n</sub>)</div>
+    <div class="grid two">
+      <div class="box"><h3>Detailed route patterns</h3><p><code>transit_route_patterns.geojson</code> preserves 1,040 unique route/shape/direction combinations and their supporting trip counts. It is the audit-friendly layer.</p></div>
+      <div class="box"><h3>Representative routes</h3><p><code>transit_routes_simplified.geojson</code> contains 482 selected route-direction lines for a cleaner overview. Here “simplified” means fewer variants, not reduced vertices.</p></div>
+    </div>
+    <p>The representative rule chooses the shape with the highest trip count within each route and direction, then breaks ties by greater source point count and finally ascending <code>shape_id</code>. Opposite directions remain separate.</p>
+    <aside class="note"><strong>One explicit exclusion.</strong> HandyDART shape <code>4484</code> contains one point and is used by one trip. A one-point path cannot form a LineString, so it is documented rather than replaced with invented geometry. HandyDART remains in the 244-row route summary.</aside>
+  </section>
+
+  <section class="chapter" id="python">
+    <div class="chapter-label">05 &mdash; How the geometry was built</div>
+    <span class="state state-agent">OpenCode / Automated</span>
+    <h2>A small, ordered processing pipeline</h2>
+    <p class="intro">Each script has one teaching purpose. Paths are derived with <code>pathlib</code>, optional GTFS tables are discovered dynamically, and validation compares the outputs back to the retained archive.</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Script</th><th>Responsibility</th></tr></thead>
+      <tbody>
+        <tr><td><a href="GIS%20Learning/scripts/01_download_gtfs.py"><code>01_download_gtfs.py</code></a></td><td>Download, checksum, validate, date, and extract the immutable ZIP.</td></tr>
+        <tr><td><a href="GIS%20Learning/scripts/02_inspect_gtfs.py"><code>02_inspect_gtfs.py</code></a></td><td>Inventory tables, counts, fields, bounds, and missing values.</td></tr>
+        <tr><td><a href="GIS%20Learning/scripts/03_build_routes.py"><code>03_build_routes.py</code></a></td><td>Build detailed LineStrings and deterministic representatives.</td></tr>
+        <tr><td><a href="GIS%20Learning/scripts/04_build_stops.py"><code>04_build_stops.py</code></a></td><td>Convert all stop-location records into WGS 84 points.</td></tr>
+        <tr><td><a href="GIS%20Learning/scripts/05_build_route_summary.py"><code>05_build_route_summary.py</code></a></td><td>Join trip, stop, service, shape, and projected-length statistics.</td></tr>
+        <tr><td><a href="GIS%20Learning/scripts/06_validate_outputs.py"><code>06_validate_outputs.py</code></a></td><td>Verify provenance, relationships, geometry, CRS, selections, and summaries.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="grid two">
+      <div><h3>Build one shape</h3><pre><code>points = points.sort_values(
+    "shape_pt_sequence", kind="stable"
+)
+coordinates = list(zip(
+    points["shape_pt_lon"],
+    points["shape_pt_lat"]
+))
+geometry = LineString(coordinates)</code></pre></div>
+      <div><h3>Count meaningful patterns</h3><pre><code>combinations = (
+    trips.groupby([
+        "route_id", "shape_id", "direction_id"
+    ])
+    .size()
+    .rename("trip_count")
+    .reset_index()
+)</code></pre></div>
+    </div>
+    <h3>Measure in metres, publish in longitude/latitude</h3>
+    <p>GeoJSON stays in WGS 84 longitude/latitude, represented as OGC CRS84 and interpreted compatibly by GeoPandas/QGIS as EPSG:4326. Distance is different: degrees are angular units, not planar metres. Selected lines are temporarily reprojected to NAD83 / UTM zone 10N (EPSG:26910).</p>
+    <div class="equation"><var>L</var><sub>r</sub> = &Sigma;<sub>i=1</sub><sup>n-1</sup> <var>d</var>(<var>p</var><sub>i</sub>, <var>p</var><sub>i+1</sub>) &nbsp; in EPSG:26910, then metres &divide; 1000</div>
+    <details><summary>Do this manually instead: reconstruct <code>shapes.txt</code> in QGIS</summary><div class="details-body"><ol><li>Extract the GTFS ZIP without editing the retained archive.</li><li>Choose <strong>Layer &rarr; Add Layer &rarr; Add Delimited Text Layer</strong> and open <code>shapes.txt</code>.</li><li>Set X to <code>shape_pt_lon</code>, Y to <code>shape_pt_lat</code>, and geometry CRS to EPSG:4326.</li><li>Open Processing Toolbox and run <strong>Points to Path</strong>.</li><li>Use <code>shape_id</code> as the group field and numeric <code>shape_pt_sequence</code> as the order field.</li><li>Join the paths to an aggregated <code>trips.txt</code> table by <code>shape_id</code>, then join route attributes from <code>routes.txt</code> by <code>route_id</code>.</li><li>Load <code>stops.txt</code> separately with X <code>stop_lon</code>, Y <code>stop_lat</code>, and EPSG:4326.</li><li>Export both outputs as GeoJSON in EPSG:4326.</li></ol><p>Verify numeric sequence order, keep each <code>shape_id</code> separate, and confirm that joins did not multiply geometry. The automated workflow is preferable because these checks are reproducible.</p></div></details>
+  </section>
+
+  <section class="chapter" id="modes">
+    <div class="chapter-label">06 &mdash; Categorize transit modes</div>
+    <span class="state state-qgis">QGIS / Manual</span>
+    <h2>Inspect attributes before choosing symbols</h2>
+    <p class="intro">Right-click <strong>transit_routes_simplified</strong> and choose <strong>Open Attribute Table</strong>. Locate <code>route_type</code>, <code>route_id</code>, and <code>route_short_name</code>. Then open <strong>Layer Properties &rarr; Symbology</strong>, change <strong>Single Symbol</strong> to <strong>Categorized</strong>, choose <code>route_type</code> as the value, and click <strong>Classify</strong>.</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>route_type</th><th>Interpretation in this feed</th><th>Routes</th><th>Initial map role</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Metro / SkyTrain</td><td>Expo, Millennium, Canada</td><td><span class="mode-key" style="background:#1565c0"></span>Rapid transit</td></tr>
+        <tr><td>2</td><td>Rail</td><td>West Coast Express</td><td><span class="mode-key" style="background:#6a3d9a"></span>Commuter rail</td></tr>
+        <tr><td>3</td><td>Bus</td><td>238 routes</td><td><span class="mode-key" style="background:#888"></span>Network background</td></tr>
+        <tr><td>4</td><td>Ferry</td><td>SeaBus</td><td><span class="mode-key" style="background:#009e73"></span>Marine transit</td></tr>
+        <tr><td>715</td><td>Demand-responsive bus</td><td>HandyDART</td><td>No valid line in this snapshot</td></tr>
+      </tbody>
+    </table></div>
+    <figure class="tutorial-figure">
+      <a href="GIS%20Learning/figures/qgis_screenshots/qgis_11_route_type_categorized_symbology_setup.png" target="_blank" rel="noopener"><img src="GIS%20Learning/figures/qgis_screenshots/qgis_11_route_type_categorized_symbology_setup.png" alt="QGIS categorized symbology listing route type values 1 through 4 with different line colors" width="852" height="775" loading="lazy"></a>
+      <figcaption>The first renderer uses the raw mode categories. Human-readable labels are added before moving to route-specific rules.</figcaption>
+    </figure>
+    <aside class="note"><strong>Why not use <code>route_color</code> directly?</strong> Only 12 of 244 route rows populate both <code>route_color</code> and <code>route_text_color</code>. A complete map therefore needs a deliberate custom palette; the colours used here are not presented as official TransLink branding.</aside>
+  </section>
+
+  <section class="chapter" id="stops">
+    <div class="chapter-label">07 &mdash; Control point clutter</div>
+    <span class="state state-qgis">QGIS / Manual</span>
+    <h2>Turn one source layer into three map roles</h2>
+    <p class="intro"><code>location_type</code> changes the meaning of a point. This feed contains 8,720 ordinary stops/platforms, 60 stations, and 127 entrances/exits. Keeping the distinctions allows the map to reveal detail progressively.</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Value</th><th>Meaning</th><th>Features</th><th>Suggested visibility</th></tr></thead>
+      <tbody><tr><td>0</td><td>Stop or platform</td><td>8,720</td><td>Approximately 1:40,000 or closer</td></tr><tr><td>1</td><td>Station</td><td>60</td><td>Regional marker; labels after zooming in</td></tr><tr><td>2</td><td>Entrance or exit</td><td>127</td><td>Very close detail, around 1:10,000</td></tr></tbody>
+    </table></div>
+    <p>Rename the original layer <strong>Transit Stops</strong>. Duplicate it twice and rename the copies <strong>Transit Stations</strong> and <strong>Transit Entrances</strong>. For each layer, open <strong>Layer Properties &rarr; Source</strong>, click <strong>Query Builder</strong>, and apply its expression:</p>
+    <pre><code>"location_type" = '0'   -- Transit Stops
+"location_type" = '1'   -- Transit Stations
+"location_type" = '2'   -- Transit Entrances</code></pre>
+    <div class="figure-pair">
+      <figure class="tutorial-figure"><a href="GIS%20Learning/figures/qgis_screenshots/qgis_14_station_location_type_query_builder_filter.png" target="_blank" rel="noopener"><img src="GIS%20Learning/figures/qgis_screenshots/qgis_14_station_location_type_query_builder_filter.png" alt="QGIS Query Builder for Transit Stations with a filter where location type equals one" width="735" height="737" loading="lazy"></a><figcaption>The station copy receives a provider filter for <code>location_type</code> 1.</figcaption></figure>
+      <figure class="tutorial-figure"><a href="GIS%20Learning/figures/qgis_screenshots/qgis_15_layer_scale_dependent_visibility_setup.png" target="_blank" rel="noopener"><img src="GIS%20Learning/figures/qgis_screenshots/qgis_15_layer_scale_dependent_visibility_setup.png" alt="QGIS Rendering tab with scale dependent visibility enabled at a 1 to 40000 threshold" width="855" height="776" loading="lazy"></a><figcaption>In <strong>Layer Properties &rarr; Rendering</strong>, show ordinary stops at approximately 1:40,000 or closer.</figcaption></figure>
+    </div>
+    <p>In <strong>Symbology</strong>, give stations a 2.2 mm white circle with a dark outline, ordinary stops a small muted circle, and entrances a distinct close-detail marker. Keep stations visible regionally; show ordinary stops around 1:40,000 or closer and entrances around 1:10,000 or closer.</p>
+    <figure class="tutorial-figure"><a href="GIS%20Learning/figures/qgis_screenshots/qgis_18_transit_routes_stations_stops_and_entrances_map.png" target="_blank" rel="noopener"><img src="GIS%20Learning/figures/qgis_screenshots/qgis_18_transit_routes_stations_stops_and_entrances_map.png" alt="QGIS map of Metro Vancouver transit routes with circular station stop and entrance markers" width="1587" height="948" loading="lazy"></a><figcaption>Filtering and scale visibility reveal a hierarchy without deleting any source feature.</figcaption></figure>
+  </section>
+
+  <section class="chapter" id="rules">
+    <div class="chapter-label">08 &mdash; Build route rules</div>
+    <span class="state state-qgis">QGIS / Manual</span>
+    <h2>Promote the services readers recognize</h2>
+    <p class="intro">The categorized map treats every bus alike and every SkyTrain line alike. In <strong>Layer Properties &rarr; Symbology</strong>, choose <strong>Rule-based</strong>. Add the verified rules with the green plus button and expression builder. Make important services thicker and keep residual buses thin and gray.</p>
+    <div class="route-rules" aria-label="Route style palette">
+      <div class="route-rule" style="--rule:#1565c0"><b>Expo Line</b><code>route_id 30053</code></div>
+      <div class="route-rule" style="--rule:#e0a800"><b>Millennium Line</b><code>route_id 30052</code></div>
+      <div class="route-rule" style="--rule:#00a6a6"><b>Canada Line</b><code>route_id 13686</code></div>
+      <div class="route-rule" style="--rule:#6a3d9a"><b>West Coast Express</b><code>route_id 6770</code></div>
+      <div class="route-rule" style="--rule:#009e73"><b>SeaBus</b><code>route_id 6771</code></div>
+      <div class="route-rule" style="--rule:#d73027"><b>RapidBus</b><code>R1 through R6</code></div>
+      <div class="route-rule" style="--rule:#e76f51"><b>99 B-Line</b><code>route_id 6641</code></div>
+      <div class="route-rule" style="--rule:#301f35"><b>NightBus</b><code>short name starts N</code></div>
+      <div class="route-rule" style="--rule:#888"><b>Other Bus</b><code>mutually exclusive residual</code></div>
+    </div>
+    <div class="grid two">
+      <div><h3>Individual service</h3><pre><code>"route_id" = '30053'</code></pre></div>
+      <div><h3>RapidBus family</h3><pre><code>"route_type" = '3'
+AND "route_short_name" IN
+('R1','R2','R3','R4','R5','R6')</code></pre></div>
+    </div>
+    <h3>Keep the final bus rule mutually exclusive</h3>
+    <pre><code>"route_type" = '3'
+AND NOT (
+    "route_short_name" IN ('R1','R2','R3','R4','R5','R6')
+    OR "route_short_name" LIKE 'N%'
+    OR "route_id" = '6641'
+)</code></pre>
+    <figure class="tutorial-figure"><a href="GIS%20Learning/figures/qgis_screenshots/qgis_29_complete_rule_based_route_symbology_overview.png" target="_blank" rel="noopener"><img src="GIS%20Learning/figures/qgis_screenshots/qgis_29_complete_rule_based_route_symbology_overview.png" alt="QGIS showing the complete enabled rule hierarchy for transit route types special IDs RapidBus NightBus and other buses" width="962" height="794" loading="lazy"></a><figcaption>The complete hierarchy after each rule receives a readable label and symbol.</figcaption></figure>
+    <figure class="tutorial-figure"><a href="GIS%20Learning/figures/qgis_screenshots/qgis_31_styled_metro_vancouver_transit_network_map.png" target="_blank" rel="noopener"><img src="GIS%20Learning/figures/qgis_screenshots/qgis_31_styled_metro_vancouver_transit_network_map.png" alt="QGIS map of Metro Vancouver with colored rapid transit selected bus routes and station markers" width="1920" height="1073" loading="lazy"></a><figcaption>The finished regional QGIS map: major services carry colour and weight while ordinary buses recede into a gray network.</figcaption></figure>
+    <p>Use <strong>Style &rarr; Save Style</strong> in Layer Properties to retain the renderer as <code>qgis/styles/transit_routes_detailed.qml</code>. Keep its path repository-relative.</p>
+  </section>
+
+  <section class="chapter" id="labels">
+    <div class="chapter-label">09 &mdash; Add labels</div>
+    <span class="state state-qgis">QGIS / Manual</span>
+    <h2>Let zoom determine what deserves attention</h2>
+    <p class="intro">Open <strong>Transit Stations &rarr; Layer Properties &rarr; Labels</strong>, choose <strong>Single Labels</strong>, and label with <code>stop_name</code>. The saved project uses Open Sans at 9 points, dark gray text, and a light 1 mm buffer. In Labels Rendering, show labels around 1:75,000 or closer.</p>
+    <div class="workflow" aria-label="Progressive map detail">
+      <div><b>Regional</b><span>Major lines, subdued buses, station circles.</span></div>
+      <div><b>Closer</b><span>Station names identify transfer points.</span></div>
+      <div><b>Local</b><span>Ordinary stops enter around 1:40,000.</span></div>
+      <div><b>Street</b><span>Entrances can enter around 1:10,000.</span></div>
+      <div><b>Selection</b><span>Layer toggles keep the hierarchy reversible.</span></div>
+      <div><b>Result</b><span>Less clutter without deleting source features.</span></div>
+    </div>
+    <figure class="tutorial-figure"><a href="GIS%20Learning/figures/qgis_screenshots/qgis_34_station_stop_name_label_text_settings.png" target="_blank" rel="noopener"><img src="GIS%20Learning/figures/qgis_screenshots/qgis_34_station_stop_name_label_text_settings.png" alt="QGIS Transit Stations label text settings using the stop name field and 10 point Open Sans" width="965" height="798" loading="lazy"></a><figcaption>The screenshot records an intermediate 10-point label setting. The final saved QGIS project uses <code>stop_name</code>, Open Sans at 9 points, dark gray text, and a light 1 mm buffer.</figcaption></figure>
+  </section>
+
+  <section class="chapter" id="leaflet">
+    <div class="chapter-label">10 &mdash; Export with qgis2web</div>
+    <span class="state state-qgis">QGIS / Manual</span>
+    <h2>Translate the project with qgis2web</h2>
+    <p class="intro">qgis2web packages vector data, styles, controls, and Leaflet into static files that GitHub Pages can serve. Open <strong>Plugins &rarr; Manage and Install Plugins</strong>, search for <strong>qgis2web</strong>, install it, then choose <strong>Web &rarr; qgis2web &rarr; Create web map</strong>.</p>
+    <ol><li>Choose <strong>Leaflet</strong> and a folder export.</li><li>Enable minified GeoJSON and use the current map-canvas extent.</li><li>Keep OpenStreetMap visible as the basemap.</li><li>Export the route, station, stop, and entrance layers; leave clustering off for stations.</li><li>Choose useful popup fields, retain the layer control, and export to <code>web/qgis2web/</code>.</li></ol>
+    <div class="figure-pair">
+      <figure class="tutorial-figure"><a href="GIS%20Learning/figures/qgis_screenshots/qgis_39_qgis2web_leaflet_export_settings_and_preview_warning.png" target="_blank" rel="noopener"><img src="GIS%20Learning/figures/qgis_screenshots/qgis_39_qgis2web_leaflet_export_settings_and_preview_warning.png" alt="qgis2web Export tab configured for Leaflet with minified GeoJSON and a preview browser warning" width="1086" height="481" loading="lazy"></a><figcaption>Choose Leaflet and folder export. The preview warning did not prevent export.</figcaption></figure>
+      <figure class="tutorial-figure"><a href="GIS%20Learning/figures/qgis_screenshots/qgis_43_qgis2web_route_popup_fields_and_osm_basemap.png" target="_blank" rel="noopener"><img src="GIS%20Learning/figures/qgis_screenshots/qgis_43_qgis2web_route_popup_fields_and_osm_basemap.png" alt="qgis2web settings showing route popup fields set to no label and OpenStreetMap enabled as basemap" width="1052" height="491" loading="lazy"></a><figcaption>Route fields and the OpenStreetMap basemap are configured in the same export tree.</figcaption></figure>
+    </div>
+    <h3>Why opening <code>index.html</code> directly failed</h3>
+    <p>When the export was opened through a <code>file://</code> URL, OpenStreetMap rejected tile requests because the required HTTP referrer context was absent. The vector overlays loaded, but repeated 403 tiles obscured the map.</p>
+    <div class="figure-pair">
+      <figure class="tutorial-figure"><a href="GIS%20Learning/figures/qgis_screenshots/qgis_47_file_url_openstreetmap_403_referer_error.png" target="_blank" rel="noopener"><img src="GIS%20Learning/figures/qgis_screenshots/qgis_47_file_url_openstreetmap_403_referer_error.png" alt="Leaflet transit map covered by OpenStreetMap 403 access blocked tiles requiring a Referer" width="1838" height="985" loading="lazy"></a><figcaption>Educational failure: the export is opened as a local file, so OSM tiles return 403 errors.</figcaption></figure>
+      <figure class="tutorial-figure"><a href="GIS%20Learning/figures/qgis_screenshots/qgis_48_localhost_leaflet_transit_map_success.png" target="_blank" rel="noopener"><img src="GIS%20Learning/figures/qgis_screenshots/qgis_48_localhost_leaflet_transit_map_success.png" alt="Working localhost Leaflet map of Metro Vancouver with OpenStreetMap transit routes station markers and legend" width="1845" height="961" loading="lazy"></a><figcaption>Successful test: serve the same files over HTTP and the basemap, routes, stations, and legend render together.</figcaption></figure>
+    </div>
+    <pre><code>cd "research/GIS Learning/web/qgis2web"
+python3 -m http.server 8000
+
+# Then open:
+http://localhost:8000</code></pre>
+    <aside class="checkpoint"><span class="state state-checkpoint">Checkpoint</span><p><strong>The web export works</strong> when <code>web/qgis2web/index.html</code> exists and the localhost page shows OpenStreetMap, transit routes, station markers, labels, and a working layer control without tile errors.</p></aside>
+    <p class="small">This server is only for testing on the local machine. GitHub Pages provides the HTTP hosting after publication.</p>
+  </section>
+
+  <section class="chapter" id="final-map">
+    <div class="chapter-label">11 &mdash; Use the final map</div>
+    <h2>Read the system at several levels</h2>
+    <p class="intro">The prominent map near the top of this page is the normalized final export. Its generated assets remain separate from the parent tutorial, so the tutorial remains framework-free and the map can also open independently.</p>
+    <div class="grid four">
+      <div class="box"><h3>Pan and zoom</h3><p>Move from the regional network to station and stop detail.</p></div>
+      <div class="box"><h3>Toggle points</h3><p>Compare stations, ordinary stops, and entrances without duplicating source data.</p></div>
+      <div class="box"><h3>Toggle routes</h3><p>Hide or restore the complete route hierarchy and basemap.</p></div>
+      <div class="box"><h3>Inspect features</h3><p>Pointer and touch users can select vectors; equivalent attributes are available in the keyboard-readable downloads.</p></div>
+    </div>
+    <aside class="note"><strong>Publication adjustments.</strong> The stable export was moved to <code>web/qgis2web/index.html</code>, made responsive, given required data and basemap attribution, made keyboard/browser zoom friendly, and corrected so RapidBus, NightBus, residual bus, popups, and station-label zoom logic preserve the intended QGIS rules.</aside>
+  </section>
+
+  <section class="chapter" id="reproduce">
+    <div class="chapter-label">12 &mdash; Reproduce the project</div>
+    <h2>Every stage has a retained input or instruction</h2>
+    <div class="workflow" aria-label="Complete project workflow"><div><b>Setup</b><span>Install verified tools and read repository guidance.</span></div><div><b>Automate</b><span>Acquire, process, document, and validate GTFS.</span></div><div><b>Understand</b><span>Connect visible layers to source tables.</span></div><div><b>QGIS</b><span>Load, inspect, filter, symbolize, and label.</span></div><div><b>Style</b><span>Build a readable scale-aware hierarchy.</span></div><div><b>Export</b><span>Create and locally test the Leaflet map.</span></div></div>
+    <pre><code>cd "research/GIS Learning"
+
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+
+python scripts/01_download_gtfs.py
+python scripts/02_inspect_gtfs.py
+python scripts/03_build_routes.py
+python scripts/04_build_stops.py
+python scripts/05_build_route_summary.py
+python scripts/06_validate_outputs.py</code></pre>
+    <p>The retained raw archive can be verified with <code>sha256sum -c data/metadata/sha256.txt</code>. The ignored <code>data/extracted/</code> directory is recreated from the ZIP and is not a download dependency.</p>
+  </section>
+
+  <section class="chapter" id="downloads">
+    <div class="chapter-label">13 &mdash; Downloads and resources</div>
+    <h2>Use the original evidence or the prepared layers</h2>
+    <p class="intro">These links point only to retained publication assets. The reproducible but ignored extraction directory is intentionally excluded.</p>
+    <div class="downloads">
+      <div class="download-group"><h3>Raw and metadata</h3><a href="GIS%20Learning/data/raw/translink_gtfs_2026-08-15.zip" download>Original dated GTFS ZIP (15.51 MiB)</a><a href="GIS%20Learning/data/metadata/source.json">Source metadata JSON</a><a href="GIS%20Learning/data/metadata/gtfs_summary.json">GTFS summary JSON</a><a href="GIS%20Learning/data/metadata/gtfs_files.csv">GTFS file inventory CSV</a><a href="GIS%20Learning/data/metadata/sha256.txt">SHA-256 checksum</a></div>
+      <div class="download-group"><h3>Processed data</h3><a href="GIS%20Learning/data/processed/transit_route_patterns.geojson" download>Detailed route patterns GeoJSON</a><a href="GIS%20Learning/data/processed/transit_routes_simplified.geojson" download>Representative routes GeoJSON</a><a href="GIS%20Learning/data/processed/transit_stops.geojson" download>Stops and stations GeoJSON</a><a href="GIS%20Learning/data/processed/route_summary.csv" download>Route summary CSV</a></div>
+      <div class="download-group"><h3>Python</h3><a href="GIS%20Learning/scripts/01_download_gtfs.py">01 Download GTFS</a><a href="GIS%20Learning/scripts/02_inspect_gtfs.py">02 Inspect GTFS</a><a href="GIS%20Learning/scripts/03_build_routes.py">03 Build routes</a><a href="GIS%20Learning/scripts/04_build_stops.py">04 Build stops</a><a href="GIS%20Learning/scripts/05_build_route_summary.py">05 Build route summary</a><a href="GIS%20Learning/scripts/06_validate_outputs.py">06 Validate outputs</a><a href="GIS%20Learning/requirements.txt">Python requirements</a></div>
+      <div class="download-group"><h3>QGIS and web map</h3><a href="GIS%20Learning/qgis/metro-vancouver-transit.qgz" download>QGIS project</a><a href="GIS%20Learning/qgis/styles/transit_routes_detailed.qml" download>Rule-based route QML</a><a href="GIS%20Learning/web/qgis2web/index.html" target="_blank" rel="noopener">Open standalone Leaflet map</a><a href="GIS%20Learning/web/qgis2web/THIRD_PARTY_NOTICES.md">Web-map third-party notices</a></div>
+      <div class="download-group"><h3>Documentation</h3><a href="GIS%20Learning/README.md">Project README</a><a href="GIS%20Learning/docs/phase-1-opencode-master-prompt.txt">Phase 1 OpenCode prompt</a><a href="GIS%20Learning/docs/gtfs-explanation.md">GTFS relationships</a><a href="GIS%20Learning/docs/data-dictionary.md">Processed data dictionary</a><a href="GIS%20Learning/docs/manual-qgis-workflow.md">Manual QGIS workflow</a><a href="GIS%20Learning/docs/reproducibility.md">Reproducibility notes</a></div>
+      <div class="download-group"><h3>Screenshot record</h3><a href="GIS%20Learning/figures/qgis_screenshots/screenshot_manifest.csv">Screenshot manifest CSV</a><a href="GIS%20Learning/figures/qgis_screenshots/html_image_references.md">HTML image references</a><p class="small">The tutorial selects 19 views from the complete 48-image record; screenshot 08 is shown as a privacy-safe crop.</p></div>
+    </div>
+  </section>
+
+  <section class="chapter" id="rights">
+    <div class="chapter-label">14 &mdash; Data rights and attribution</div>
+    <h2>Publicly downloadable does not mean public domain</h2>
+    <p>TransLink supplies the original GTFS archive. Its GTFS-specific terms provide a limited, revocable, non-exclusive licence subject to those terms, and TransLink retains its rights in the data. The processed GeoJSON and CSV files remain derived from that source; changing format does not remove the source conditions.</p>
+    <div class="attribution-legend">Route and arrival data used in this product or service is provided by permission of TransLink. TransLink assumes no responsibility for the accuracy or currency of the Data used in this product or service.</div>
+    <div class="grid three">
+      <div class="box"><h3>Source data</h3><p>Governed by the current <a href="https://www.translink.ca/about-us/doing-business-with-translink/app-developer-resources/gtfs/gtfs-data">TransLink GTFS terms</a>. It is not described here as public domain, copyright-free, or MIT licensed.</p></div>
+      <div class="box"><h3>Derived datasets</h3><p>Redistribution and presentation retain TransLink attribution and the applicable source conditions.</p></div>
+      <div class="box"><h3>Project work</h3><p>The Python, documentation, QGIS work, and this HTML are original project materials. No blanket repository licence is asserted in this phase.</p></div>
+    </div>
+    <p>OpenStreetMap tiles remain attributed to <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>. The standalone map also identifies qgis2web, Leaflet, and QGIS.</p>
+    <p class="small">See the complete project summaries in <a href="GIS%20Learning/ATTRIBUTION.md">ATTRIBUTION.md</a> and <a href="GIS%20Learning/DATA_LICENSE.md">DATA_LICENSE.md</a>. Attribution does not imply TransLink sponsorship or endorsement.</p>
+  </section>
+
+  <footer class="footer"><a href="../index.html">Home</a><span class="sep">|</span><a href="../research.html">Research</a></footer>
+</main></div>
+<script>
+  const copyPromptButton = document.getElementById("copy-phase-one-prompt");
+  const copyPromptStatus = document.getElementById("copy-prompt-status");
+
+  copyPromptButton.addEventListener("click", async () => {
+    try {
+      const response = await fetch(copyPromptButton.dataset.source);
+      if (!response.ok) throw new Error("Prompt could not be loaded");
+      await navigator.clipboard.writeText(await response.text());
+      copyPromptButton.textContent = "Copied";
+      copyPromptStatus.textContent = "The full prompt is on your clipboard.";
+      window.setTimeout(() => { copyPromptButton.textContent = "Copy Prompt"; }, 2200);
+    } catch (error) {
+      copyPromptStatus.textContent = "Copy failed. Open or download the .txt file instead.";
+    }
+  });
+</script>
+</body>
+</html>

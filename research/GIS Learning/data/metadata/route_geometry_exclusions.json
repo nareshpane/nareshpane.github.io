@@ -1,0 +1,16 @@
+{
+  "excluded_shape_count": 1,
+  "trips_without_shape_id": 0,
+  "reason": "GTFS shapes that cannot form valid LineStrings are not emitted as route features.",
+  "shapes": [
+    {
+      "shape_id": "4484",
+      "source_point_count": 1,
+      "reason": "Fewer than two source points; a LineString cannot be constructed.",
+      "trip_count": 1,
+      "route_ids": [
+        "HD"
+      ]
+    }
+  ]
+}

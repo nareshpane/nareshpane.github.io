@@ -1,0 +1,807 @@
+We are starting a new reproducible GIS learning project for my existing GitHub Pages research website.
+
+# Project
+
+Mapping Metro Vancouver Transit Routes with QGIS
+
+The eventual goal is to create a detailed educational Research page showing how Metro Vancouver public-transit routes can be reconstructed from GTFS data, processed with Python, analyzed and styled in QGIS, exported as an interactive web map, and reproduced by anyone using the files in this repository.
+
+For this first phase, however, work only on the project structure, raw GTFS data, Python preprocessing, metadata, documentation, and GIS-ready outputs.
+
+Do not work on QGIS itself yet.
+
+Do not create the final research HTML page yet.
+
+Do not modify research.html yet.
+
+Do not create a qgis2web export yet.
+
+---
+
+# 1. Inspect the existing repository first
+
+Before changing anything:
+
+1. Inspect the repository structure.
+2. Locate the existing research directory.
+3. Inspect one or more existing research HTML pages, especially research/rct-visual-guide.html if it exists, only so you understand how this website is organized.
+4. Do not modify any existing research page.
+5. Do not modify research.html.
+6. Check whether an AGENTS.md file exists and follow its general repository conventions except where this prompt explicitly overrides them.
+
+Report any important structural observations before making major changes.
+
+---
+
+# 2. Create the project directory
+
+All supporting materials for this project must live inside:
+
+research/GIS Learning/
+
+Use this exact folder name, including the space.
+
+Create this structure:
+
+research/
+└── GIS Learning/
+    ├── README.md
+    ├── ATTRIBUTION.md
+    ├── DATA_LICENSE.md
+    ├── requirements.txt
+    │
+    ├── data/
+    │   ├── raw/
+    │   ├── extracted/
+    │   ├── processed/
+    │   └── metadata/
+    │
+    ├── scripts/
+    │   ├── 01_download_gtfs.py
+    │   ├── 02_inspect_gtfs.py
+    │   ├── 03_build_routes.py
+    │   ├── 04_build_stops.py
+    │   ├── 05_build_route_summary.py
+    │   └── 06_validate_outputs.py
+    │
+    ├── qgis/
+    │   └── styles/
+    │
+    ├── web/
+    │   └── qgis2web/
+    │
+    ├── figures/
+    │
+    └── docs/
+        ├── gtfs-explanation.md
+        ├── manual-qgis-workflow.md
+        ├── reproducibility.md
+        └── data-dictionary.md
+
+The qgis, web/qgis2web, and figures directories can remain empty for now except for placeholder .gitkeep files if needed.
+
+---
+
+# 3. Use the official TransLink GTFS Static dataset
+
+Use the official TransLink static GTFS feed as the primary source.
+
+Current official static feed URL:
+
+https://gtfs-static.translink.ca/gtfs/google_transit.zip
+
+Do not scrape third-party transit websites.
+
+Do not use unofficial GitHub copies of the TransLink data.
+
+The downloader must preserve the downloaded archive unchanged.
+
+Instead of permanently calling it google_transit.zip, save a dated snapshot using the local download date, for example:
+
+translink_gtfs_2026-08-15.zip
+
+Do not hard-code 2026-08-15 if the script is executed on another date. Generate the date automatically.
+
+Store the archive under:
+
+research/GIS Learning/data/raw/
+
+The download script must:
+
+* use Python
+* download from the official TransLink URL
+* have a reasonable timeout
+* fail clearly if the download is unsuccessful
+* avoid silently overwriting an existing dated snapshot
+* calculate the SHA-256 checksum
+* calculate the file size
+* record the download timestamp
+* record the source URL
+* record the local filename
+* preserve the original ZIP byte-for-byte
+
+Write metadata to:
+
+data/metadata/source.json
+
+and the checksum to:
+
+data/metadata/sha256.txt
+
+The metadata should clearly identify:
+
+* dataset name
+* source organization
+* source URL
+* download date
+* download timestamp
+* filename
+* file size in bytes
+* SHA-256
+* geographic coverage
+* original format
+* note that the source is TransLink GTFS Static Data
+
+---
+
+# 4. Extract the GTFS into a separate directory
+
+Never alter the archive in data/raw/.
+
+Extract its contents into:
+
+data/extracted/<snapshot-date>/
+
+For example:
+
+data/extracted/2026-08-15/
+    agency.txt
+    routes.txt
+    trips.txt
+    stops.txt
+    stop_times.txt
+    shapes.txt
+    calendar.txt
+    ...
+
+The scripts should discover files dynamically rather than assuming every optional GTFS table exists.
+
+---
+
+# 5. Create 02_inspect_gtfs.py
+
+The inspection script should read the downloaded GTFS snapshot and produce an informative inventory of the feed.
+
+At minimum, calculate:
+
+* files contained in the GTFS archive
+* number of agencies
+* number of routes
+* number of trips
+* number of unique shape_id values
+* number of stops
+* number of stop-time records
+* number of service IDs
+* route types represented
+* minimum latitude
+* maximum latitude
+* minimum longitude
+* maximum longitude
+* missing-value counts for important fields
+* whether route_color is populated
+* whether route_text_color is populated
+* whether direction_id is populated
+* whether shape_dist_traveled is present
+* whether feed_info.txt exists
+
+Do not assume the counts in advance.
+
+Calculate everything from the actual downloaded snapshot.
+
+Print a concise summary to the terminal.
+
+Also save a machine-readable report to:
+
+data/metadata/gtfs_summary.json
+
+and a table describing the included GTFS files to:
+
+data/metadata/gtfs_files.csv
+
+For each GTFS table, include information such as:
+
+* filename
+* row count
+* number of columns
+* column names
+
+where appropriate.
+
+---
+
+# 6. Create the route geometry correctly
+
+Create:
+
+03_build_routes.py
+
+The purpose is to transform GTFS shapes.txt point sequences into GIS LineString geometries.
+
+Use the relationships:
+
+routes.txt
+    route_id
+       ↓
+trips.txt
+    route_id
+    shape_id
+    direction_id
+       ↓
+shapes.txt
+    shape_id
+    shape_pt_lat
+    shape_pt_lon
+    shape_pt_sequence
+
+Important:
+
+A GTFS route is not necessarily represented by one shape.
+
+One route_id may have:
+
+* two directions
+* short turns
+* branches
+* alternate terminals
+* different service patterns
+* multiple distinct shape_id values
+
+Do not collapse all shapes belonging to a route into one arbitrary LineString.
+
+---
+
+# 7. Build a complete route-pattern dataset
+
+For each unique GTFS shape:
+
+1. filter the rows belonging to a shape_id
+2. sort by shape_pt_sequence
+3. validate the sequence
+4. create an ordered sequence of longitude/latitude coordinates
+5. create a Shapely LineString
+6. associate the shape with its route metadata through trips.txt
+7. associate the route with metadata from routes.txt
+
+Save a detailed GeoJSON:
+
+data/processed/transit_route_patterns.geojson
+
+Use:
+
+EPSG:4326 / WGS 84
+
+The GeoJSON should retain useful attributes where available, including:
+
+* route_id
+* route_short_name
+* route_long_name
+* route_type
+* route_color
+* route_text_color
+* shape_id
+* direction_id
+* count of trips using that route/shape combination
+* geometry
+
+If one shape_id is associated with multiple trip records, do not unnecessarily duplicate identical geometry hundreds of times. Reduce it to meaningful unique route/shape/direction combinations and include a trip count.
+
+If the actual feed structure requires a slightly different treatment, inspect the data and implement the most logically correct representation. Explain the decision in the documentation rather than forcing the data into an incorrect assumption.
+
+---
+
+# 8. Build a simplified route dataset separately
+
+Also create:
+
+data/processed/transit_routes_simplified.geojson
+
+This is intended for an eventual visually clean overview map.
+
+Do not destroy or replace the detailed route-pattern file.
+
+The simplified file should provide a reasonable representative geometry or set of geometries for each transit route while minimizing unnecessary overlapping variants.
+
+Use a transparent and reproducible selection rule.
+
+For example, a reasonable initial rule might be to identify, within each route and direction, the shape associated with the greatest number of trips, with sensible handling for ties.
+
+However, first inspect the actual TransLink feed and determine whether this rule works well.
+
+Document the exact rule you use.
+
+The simplified dataset should retain:
+
+* route_id
+* route_short_name
+* route_long_name
+* route_type
+* route_color
+* route_text_color
+* direction_id
+* selected shape_id
+* number of trips supporting the selected shape
+* geometry
+
+Do not merge opposite directions into malformed geometry.
+
+---
+
+# 9. Create the stops dataset
+
+Create:
+
+04_build_stops.py
+
+Use stops.txt.
+
+Create a GeoJSON point layer:
+
+data/processed/transit_stops.geojson
+
+Use:
+
+EPSG:4326 / WGS 84
+
+Retain useful attributes where available:
+
+* stop_id
+* stop_code
+* stop_name
+* stop_desc
+* stop_lat
+* stop_lon
+* zone_id
+* location_type
+* parent_station
+* wheelchair_boarding
+* geometry
+
+Handle missing optional fields gracefully.
+
+Do not invent data that is not present.
+
+If parent stations and platform/stop records coexist, preserve the GTFS distinction rather than flattening everything without explanation.
+
+---
+
+# 10. Build a route-level summary table
+
+Create:
+
+05_build_route_summary.py
+
+Generate:
+
+data/processed/route_summary.csv
+
+Use joins involving the relevant GTFS tables.
+
+For every route, calculate useful descriptive statistics that can later be displayed on the website.
+
+Include, where feasible:
+
+* route_id
+* route_short_name
+* route_long_name
+* route_type
+* route_color
+* number of trips
+* number of unique shapes
+* number of directions
+* number of unique stops served
+* number of service IDs
+* representative shape IDs used in the simplified dataset
+
+Also calculate representative route length in kilometres.
+
+Do not calculate distance by treating degrees of latitude and longitude as planar metres.
+
+Use one of these valid approaches:
+
+* reproject geometry to an appropriate projected CRS for southwestern British Columbia, such as NAD83 / UTM Zone 10N, EPSG:26910, before measuring length
+
+or
+
+* use a proper geodesic calculation
+
+Clearly document which method you used.
+
+Keep the exported web geometries themselves in EPSG:4326.
+
+---
+
+# 11. Validate everything
+
+Create:
+
+06_validate_outputs.py
+
+The validation script should perform tests such as:
+
+* required output files exist
+* GeoJSON files can be opened
+* expected geometry types are correct
+* coordinate reference system is correct
+* no completely empty geometries
+* no impossible latitude or longitude values
+* route-pattern geometries contain at least two points
+* stop coordinates fall within a plausible Metro Vancouver region
+* route IDs in processed layers exist in routes.txt
+* shape IDs in processed route data exist in shapes.txt
+* simplified-route geometries correspond to valid detailed route patterns
+* no unexpected duplicate primary identifiers
+* route summary row count is plausible relative to routes.txt
+
+Print a clean PASS/FAIL summary.
+
+If validations fail, investigate and correct the processing scripts instead of suppressing the warning.
+
+---
+
+# 12. Python dependencies
+
+Prefer a small, conventional Python stack.
+
+Use packages such as:
+
+* pandas
+* geopandas
+* shapely
+* pyproj
+* requests
+
+Do not introduce large frameworks unless necessary.
+
+Create:
+
+requirements.txt
+
+Pin versions only where there is a good reproducibility reason. Avoid blindly freezing dozens of unrelated packages from the local environment.
+
+The scripts should work on Linux.
+
+Paths must be robust.
+
+Because the folder is named GIS Learning, never assume that shell paths contain no spaces.
+
+Use pathlib.Path in Python wherever practical.
+
+---
+
+# 13. Documentation
+
+Create a useful README.md.
+
+The README should explain:
+
+## Project purpose
+
+That this project demonstrates how Metro Vancouver transit routes can be reconstructed from TransLink GTFS data and prepared for QGIS and web mapping.
+
+## Current phase
+
+State clearly that Phase 1 includes:
+
+* data download
+* GTFS inspection
+* Python preprocessing
+* GIS-ready GeoJSON
+* route-level summary data
+* validation
+
+and that QGIS styling and web publication will follow in later phases.
+
+## Directory structure
+
+Explain the major directories.
+
+## Reproduction
+
+Someone cloning the repository should be able to run approximately:
+
+cd "research/GIS Learning"
+
+python -m venv .venv
+source .venv/bin/activate
+
+pip install -r requirements.txt
+
+python scripts/01_download_gtfs.py
+python scripts/02_inspect_gtfs.py
+python scripts/03_build_routes.py
+python scripts/04_build_stops.py
+python scripts/05_build_route_summary.py
+python scripts/06_validate_outputs.py
+
+Adapt this sequence if your implementation requires a better command structure.
+
+## Outputs
+
+Explain each processed file.
+
+## CRS
+
+Explain that:
+
+* GTFS latitude/longitude and web GeoJSON use EPSG:4326
+* distance calculations should use an appropriate projected CRS or geodesic method
+* the project uses EPSG:26910 if that is the chosen projected CRS for length calculation
+
+---
+
+# 14. Create docs/gtfs-explanation.md
+
+Explain, in an educational way, the relationships among:
+
+* routes.txt
+* trips.txt
+* shapes.txt
+* stops.txt
+* stop_times.txt
+* calendar.txt
+* calendar_dates.txt
+
+Include the conceptual relationships:
+
+routes.txt
+    │ route_id
+    ▼
+trips.txt
+    │ shape_id
+    ▼
+shapes.txt
+    ▼
+route geometry
+
+and:
+
+trips.txt
+     │ trip_id
+     ▼
+stop_times.txt
+     │ stop_id
+     ▼
+stops.txt
+
+Explain why a route can have multiple shapes.
+
+Explain why GTFS shapes consist of ordered points rather than prebuilt GIS LineStrings.
+
+Keep this technically accurate but readable by someone learning GIS.
+
+---
+
+# 15. Create docs/manual-qgis-workflow.md
+
+Do not perform the QGIS work yet.
+
+Instead create an initial manual workflow explaining how the raw GTFS could theoretically be reconstructed in QGIS without the Python preprocessing.
+
+Include the general workflow:
+
+1. extract the GTFS archive
+2. load shapes.txt as a delimited-text point layer
+3. X field = shape_pt_lon
+4. Y field = shape_pt_lat
+5. CRS = EPSG:4326
+6. use shape_id for grouping
+7. use shape_pt_sequence for ordering
+8. use QGIS Points to Path or equivalent processing
+9. join the result to trips.txt
+10. join route metadata from routes.txt
+11. load stops.txt as points
+12. export resulting layers as GeoJSON
+
+Mark this document as an initial workflow that we will refine during the actual QGIS phase.
+
+Do not fabricate exact menu locations if you have not verified them.
+
+---
+
+# 16. Create docs/data-dictionary.md
+
+Document the processed datasets:
+
+### transit_route_patterns.geojson
+
+Explain every retained field.
+
+### transit_routes_simplified.geojson
+
+Explain every retained field and the shape-selection rule.
+
+### transit_stops.geojson
+
+Explain every retained field.
+
+### route_summary.csv
+
+Explain every derived statistic and calculation.
+
+Also distinguish:
+
+* source GTFS fields
+* fields derived by our scripts
+
+---
+
+# 17. Data attribution and licensing
+
+This is important.
+
+TransLink's GTFS data is publicly downloadable and can be used under TransLink's applicable terms, but do not claim that the dataset is public domain or copyright-free.
+
+Create:
+
+ATTRIBUTION.md
+
+and:
+
+DATA_LICENSE.md
+
+Clearly distinguish between:
+
+1. original TransLink data
+2. processed/derived data based on TransLink data
+3. our own Python code and documentation
+
+Do not make up a licence for TransLink's data.
+
+Do not state that MIT applies to the TransLink GTFS dataset.
+
+Reference the official TransLink GTFS source and applicable terms.
+
+If the official TransLink terms prescribe exact attribution wording, preserve it accurately and identify its official source.
+
+For now, do not add a blanket repository licence that could misleadingly imply ownership of third-party transit data.
+
+---
+
+# 18. Keep the raw snapshot reproducible
+
+Do not normalize, reformat, edit, or recompress the downloaded GTFS ZIP.
+
+The original snapshot under data/raw/ should be the evidence of exactly what dataset was used.
+
+Processed datasets belong separately under:
+
+data/processed/
+
+This distinction should be clear throughout the project.
+
+---
+
+# 19. Keep generated outputs reasonably web-friendly
+
+The eventual project will be hosted using GitHub Pages.
+
+Inspect the file sizes of:
+
+* raw GTFS ZIP
+* route-pattern GeoJSON
+* simplified-route GeoJSON
+* stops GeoJSON
+
+Report their sizes.
+
+Do not prematurely throw away useful information solely to reduce file size.
+
+If any generated GeoJSON becomes unusually large for GitHub Pages or interactive browser use, report that issue and suggest sensible future optimization strategies such as:
+
+* geometry simplification for a web-only derivative
+* gzip or ZIP downloads
+* separating full-resolution downloadable data from lightweight map data
+
+Do not perform aggressive lossy simplification unless clearly documented.
+
+---
+
+# 20. Code quality
+
+All Python scripts should:
+
+* contain concise module-level descriptions
+* use functions rather than one giant procedural block
+* use if __name__ == "__main__":
+* use pathlib
+* have clear error messages
+* avoid unnecessary dependencies
+* avoid hidden absolute paths specific to my computer
+* not depend on notebooks
+* be readable by someone learning Python and GIS
+* avoid excessive abstraction
+
+Prefer straightforward code over an elaborate software architecture.
+
+---
+
+# 21. Run the complete pipeline
+
+Do not merely write the scripts.
+
+Actually run them.
+
+Run:
+
+1. GTFS download
+2. inspection
+3. route construction
+4. stop construction
+5. route summary construction
+6. validation
+
+Fix errors encountered during execution.
+
+Then inspect the generated files programmatically.
+
+Confirm that GeoJSON geometry and important attributes look sensible.
+
+---
+
+# 22. Final Phase 1 report
+
+When Phase 1 is complete, stop.
+
+Do not open or automate QGIS.
+
+Do not create research/metro-vancouver-transit-qgis.html.
+
+Do not modify research.html.
+
+Do not commit or push unless I separately ask you to do so.
+
+Give me a concise but concrete final report containing:
+
+### Dataset
+
+* actual snapshot date
+* raw ZIP filename
+* raw ZIP size
+* SHA-256
+* GTFS tables discovered
+
+### Actual GTFS statistics
+
+* routes
+* trips
+* shapes
+* stops
+* stop-time rows
+* route types
+
+### Generated datasets
+
+For every output, report:
+
+* path
+* number of records/features
+* approximate file size
+* geometry type where relevant
+
+### Simplification logic
+
+Explain exactly how representative route shapes were selected.
+
+### Validation
+
+Report which validation tests passed or failed.
+
+### Important observations
+
+Report any unusual characteristics of the actual TransLink feed that will matter when we open the data in QGIS.
+
+### Next step
+
+End by telling me that the processed files are ready for the QGIS phase.
+
+Stop there.

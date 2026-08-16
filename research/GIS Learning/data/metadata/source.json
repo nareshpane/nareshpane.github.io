@@ -1,0 +1,13 @@
+{
+  "dataset_name": "TransLink GTFS Static Data",
+  "source_organization": "TransLink",
+  "source_url": "https://gtfs-static.translink.ca/gtfs/google_transit.zip",
+  "download_date": "2026-08-15",
+  "download_timestamp": "2026-08-15T11:45:07-07:00",
+  "filename": "translink_gtfs_2026-08-15.zip",
+  "file_size_bytes": 16266729,
+  "sha256": "594496075ff19364041fbec6a62e9d978d56618bed9f7c3d7dcb6be3970dcb59",
+  "geographic_coverage": "Metro Vancouver, British Columbia, Canada",
+  "original_format": "GTFS Static ZIP archive",
+  "source_note": "Official TransLink GTFS Static Data"
+}

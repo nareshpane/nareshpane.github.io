@@ -1,0 +1,8 @@
+# Reproducible GIS working data and local environment
+research/GIS Learning/data/extracted/
+research/GIS Learning/.venv/
+research/GIS Learning/web/qgis2web-test/
+
+# Python bytecode
+__pycache__/
+*.pyc

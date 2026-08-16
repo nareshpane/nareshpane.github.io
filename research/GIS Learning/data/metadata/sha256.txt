@@ -1,0 +1,1 @@
+594496075ff19364041fbec6a62e9d978d56618bed9f7c3d7dcb6be3970dcb59  data/raw/translink_gtfs_2026-08-15.zip

@@ -1,0 +1,17 @@
+filename,row_count,column_count,column_names
+agency.txt,1,7,agency_id|agency_name|agency_url|agency_timezone|agency_lang|agency_phone|agency_fare_url
+calendar.txt,43,10,service_id|monday|tuesday|wednesday|thursday|friday|saturday|sunday|start_date|end_date
+calendar_dates.txt,702,3,service_id|date|exception_type
+direction_names_exceptions.txt,501,4,route_name|direction_id|direction_name|direction_do
+directions.txt,512,4,direction|direction_id|route_id|route_short_name
+feed_info.txt,1,6,feed_publisher_name|feed_publisher_url|feed_lang|feed_start_date|feed_end_date|feed_version
+route_names_exceptions.txt,35,4,route_id|route_name|route_do|name_type
+routes.txt,244,9,route_id|agency_id|route_short_name|route_long_name|route_desc|route_type|route_url|route_color|route_text_color
+shapes.txt,215714,5,shape_id|shape_pt_lat|shape_pt_lon|shape_pt_sequence|shape_dist_traveled
+signup_periods.txt,2,3,sign_id|from_date|to_date
+stop_order_exceptions.txt,82,6,route_name|direction_name|direction_do|stop_id|stop_name|stop_do
+stop_times.txt,1873506,10,trip_id|arrival_time|departure_time|stop_id|stop_sequence|stop_headsign|pickup_type|drop_off_type|shape_dist_traveled|timepoint
+stops.txt,8907,11,stop_id|stop_code|stop_name|stop_desc|stop_lat|stop_lon|zone_id|stop_url|location_type|parent_station|wheelchair_boarding
+transfers.txt,10515,6,from_stop_id|to_stop_id|transfer_type|min_transfer_time|from_trip_id|to_trip_id
+translations.txt,1,5,table_name|field_name|language|translation|record_id
+trips.txt,65431,10,route_id|service_id|trip_id|trip_headsign|trip_short_name|direction_id|block_id|shape_id|wheelchair_accessible|bikes_allowed
