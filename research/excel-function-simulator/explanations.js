@@ -16,9 +16,14 @@
     VLOOKUP: "Searches down the first table column, then returns from another column.",
     HLOOKUP: "Searches across the first table row, then returns from another row.",
     XLOOKUP: "Searches one range and returns the aligned value from another range.",
+    XMATCH: "Returns the relative position of a match, using exact matching by default.",
     MATCH: "Returns the relative position of a value in a lookup range.",
     INDEX: "Returns the value at a relative row and column within an array.",
     IF: "Tests a condition and returns one of two possible values.",
+    IFS: "Tests condition/result pairs in order and returns the first result whose condition is TRUE.",
+    SWITCH: "Compares one expression with listed values and returns the result for the first match.",
+    CHOOSE: "Returns one item from a list using a one-based index number.",
+    LET: "Assigns local names to intermediate values and uses them in a final calculation.",
     AND: "Returns TRUE only when every logical test is TRUE.",
     OR: "Returns TRUE when at least one logical test is TRUE.",
     NOT: "Reverses a logical value.",
@@ -45,6 +50,8 @@
     EDATE: "Moves a date forward or backward by whole months.",
     EOMONTH: "Returns the final day of a month at a chosen offset.",
     WEEKDAY: "Returns a weekday number using the selected week numbering system.",
+    NETWORKDAYS: "Counts Monday-through-Friday workdays between two dates, excluding optional holidays.",
+    WORKDAY: "Moves a date forward or backward by a specified number of workdays.",
     ROUND: "Rounds a number to the requested decimal position.",
     ROUNDUP: "Rounds a number away from zero.",
     ROUNDDOWN: "Rounds a number toward zero.",
@@ -53,6 +60,24 @@
     MOD: "Returns the Excel-style remainder after division.",
     IFERROR: "Returns a fallback when the primary expression produces any spreadsheet error.",
     IFNA: "Returns a fallback only when the primary expression produces #N/A.",
+    MEDIAN: "Returns the middle value of an ordered numeric data set.",
+    "MODE.SNGL": "Returns the most frequently occurring numeric value.",
+    "STDEV.S": "Estimates sample standard deviation using n − 1 in the denominator.",
+    "STDEV.P": "Calculates population standard deviation using n in the denominator.",
+    "VAR.S": "Estimates sample variance using n − 1 in the denominator.",
+    "VAR.P": "Calculates population variance using n in the denominator.",
+    "RANK.EQ": "Returns a number's rank relative to a numeric list, giving tied values the same rank.",
+    "PERCENTILE.INC": "Returns an inclusive percentile, interpolating between ordered values when needed.",
+    "QUARTILE.INC": "Returns an inclusive quartile from 0 through 4.",
+    CORREL: "Measures the strength and direction of a linear relationship between two numeric arrays.",
+    "COVARIANCE.S": "Returns sample covariance for paired numeric observations.",
+    PV: "Returns the present value of equal periodic cash flows at a constant rate.",
+    FV: "Returns the future value of equal periodic cash flows at a constant rate.",
+    PMT: "Calculates the equal periodic payment for a loan or annuity.",
+    NPV: "Discounts equally spaced future cash flows back to the present.",
+    IRR: "Finds the periodic return that makes net present value equal to zero.",
+    XNPV: "Discounts irregular cash flows using their actual dates.",
+    XIRR: "Finds the annualized return that makes XNPV equal to zero for irregular cash flows.",
     SEQUENCE: "Generates a rectangular sequence from one anchor formula.",
     FILTER: "Returns rows whose aligned include values are TRUE.",
     SORT: "Reorders complete rows or columns using a relative sort index.",
@@ -87,7 +112,7 @@
     },
     "#NUM!": {
       title: "Invalid number",
-      message: "The formula produced a number outside the supported date range or used an unsupported numeric option."
+      message: "A numeric argument is outside the supported range, or an iterative calculation could not find a valid result."
     },
     "#CALC!": {
       title: "Empty array",
@@ -146,7 +171,7 @@
       }
 
       if (node.type === "range") {
-        const label = `${node.start}:${node.end}`;
+        const label = `${node.startAddress || node.start}:${node.endAddress || node.end}`;
         if (!seenRanges.has(label)) {
           seenRanges.add(label);
           ranges.push({
@@ -160,6 +185,35 @@
     });
 
     return { functionNames, ranges };
+  }
+
+  function referenceLockDetails(ast) {
+    const details = [];
+    const seen = new Set();
+
+    function addReference(node) {
+      if (!node) return;
+      const address = node.address || node.reference;
+      const key = `${address}:${Boolean(node.columnAbsolute)}:${Boolean(node.rowAbsolute)}`;
+      if (seen.has(key)) return;
+      seen.add(key);
+      details.push({
+        address,
+        columnAbsolute: Boolean(node.columnAbsolute),
+        rowAbsolute: Boolean(node.rowAbsolute)
+      });
+    }
+
+    walkAst(ast, (node) => {
+      if (node.type === "reference") {
+        addReference(node);
+      } else if (node.type === "range") {
+        addReference(node.startReference);
+        addReference(node.endReference);
+      }
+    });
+
+    return details;
   }
 
   function referencesInNode(node, expandRange) {
@@ -237,6 +291,10 @@
       return { text: calculationValue(node.value), precedence: 5 };
     }
 
+    if (node.type === "name") {
+      return { text: node.rawName || node.name, precedence: 5 };
+    }
+
     if (node.type === "reference") {
       const value = context.getCellValue(node.reference);
       const numberFormat = context.getCellNumberFormat?.(node.reference) || "General";
@@ -270,7 +328,7 @@
     if (node.type === "postfix") {
       const operand = expressionParts(node.operand, context);
       const text = operand.precedence < 5 ? `(${operand.text})` : operand.text;
-      return { text: `${text}%`, precedence: 5 };
+      return { text: `${text}${node.operator}`, precedence: 5 };
     }
 
     if (node.type === "binary") {
@@ -308,8 +366,14 @@
     if (node.type === "string") {
       return { text: `"${node.value.replaceAll("\"", "\"\"")}"`, precedence: 5 };
     }
-    if (node.type === "reference") return { text: node.reference, precedence: 5 };
-    if (node.type === "range") return { text: `${node.start}:${node.end}`, precedence: 5 };
+    if (node.type === "name") return { text: node.rawName || node.name, precedence: 5 };
+    if (node.type === "reference") return { text: node.address || node.reference, precedence: 5 };
+    if (node.type === "range") {
+      return {
+        text: `${node.startAddress || node.start}:${node.endAddress || node.end}`,
+        precedence: 5
+      };
+    }
     if (node.type === "function") {
       const argumentsList = node.arguments.map((argument) => formulaExpressionParts(argument).text);
       return { text: `${node.name}(${argumentsList.join(", ")})`, precedence: 5 };
@@ -446,6 +510,9 @@
   }
 
   function purposeFor(ast, functionNames) {
+    if (ast?.type === "postfix" && ast.operator === "#") {
+      return "Returns the entire dynamic-array spill range owned by the referenced anchor cell.";
+    }
     if (ast?.type === "function" && PURPOSES[ast.name]) return PURPOSES[ast.name];
     if (functionNames.length === 1 && PURPOSES[functionNames[0]]) {
       return `${PURPOSES[functionNames[0]]} The function result is then used in an arithmetic expression.`;
@@ -467,6 +534,9 @@
       analyzeText,
       analyzeDate,
       analyzeMath,
+      analyzeStatistics,
+      analyzeFinancial,
+      analyzeAdvanced,
       analyzeError,
       analyzeDynamic,
       spill = null,
@@ -476,6 +546,7 @@
       formatOptions = {},
       displayedResult,
       getCellNumberFormat,
+      getSpill,
       formatValue
     } = options;
     const details = ast ? astDetails(ast, expandRange) : { functionNames: [], ranges: [] };
@@ -503,6 +574,7 @@
       formatOptions,
       underlyingDisplay: formatValue ? formatValue(result, "General") : calculationValue(result),
       displayedResult: displayedResult ?? (formatValue ? formatValue(result, numberFormat, formatOptions) : calculationValue(result)),
+      referenceLocks: ast ? referenceLockDetails(ast) : [],
       error: ERROR_EXPLANATIONS[result] || null,
       logical: ast && evaluateAst
         ? logicalExplanation(ast, result, { getCellValue, expandRange, evaluateAst })
@@ -511,10 +583,34 @@
       text: null,
       date: null,
       math: null,
+      statistical: null,
+      financial: null,
+      advanced: null,
       errorHandling: null,
-      dynamicArray: null
+      dynamicArray: null,
+      spillReference: null
     };
     explanation.lookup = null;
+
+    if (ast?.type === "postfix" && ast.operator === "#"
+      && ast.operand?.type === "reference" && typeof getSpill === "function") {
+      try {
+        const descriptor = getSpill(ast.operand.reference);
+        if (descriptor) {
+          explanation.spillReference = {
+            anchor: ast.operand.reference,
+            range: descriptor.range,
+            rows: descriptor.rows,
+            columns: descriptor.columns,
+            values: descriptor.values.map((row) => row.slice()),
+            formats: descriptor.formats?.map((row) => row.slice()) || null,
+            references: descriptor.references?.slice() || []
+          };
+        }
+      } catch (error) {
+        explanation.spillReference = null;
+      }
+    }
 
     if (ast && analyzeConditional) {
       try {
@@ -554,6 +650,69 @@
         explanation.math = analyzeMath(ast);
       } catch (error) {
         explanation.math = null;
+      }
+    }
+
+    if (ast && analyzeStatistics) {
+      try {
+        explanation.statistical = analyzeStatistics(ast);
+      } catch (error) {
+        explanation.statistical = null;
+      }
+    }
+
+    if (ast && analyzeFinancial) {
+      try {
+        explanation.financial = analyzeFinancial(ast);
+      } catch (error) {
+        explanation.financial = null;
+      }
+    }
+
+    if (ast && analyzeAdvanced) {
+      try {
+        const trace = analyzeAdvanced(ast);
+        if (trace) {
+          if (trace.kind === "ifs") {
+            explanation.advanced = {
+              ...trace,
+              branches: trace.branches.map((branch) => ({
+                ...branch,
+                conditionExpression: formulaExpressionParts(branch.conditionNode).text,
+                valueExpression: formulaExpressionParts(branch.valueNode).text
+              }))
+            };
+          } else if (trace.kind === "switch") {
+            explanation.advanced = {
+              ...trace,
+              cases: trace.cases.map((entry) => ({
+                ...entry,
+                resultExpression: formulaExpressionParts(entry.valueNode).text
+              }))
+            };
+          } else if (trace.kind === "choose") {
+            explanation.advanced = {
+              ...trace,
+              selectedExpression: trace.selectedNode
+                ? formulaExpressionParts(trace.selectedNode).text
+                : null
+            };
+          } else if (trace.kind === "let") {
+            explanation.advanced = {
+              ...trace,
+              bindings: trace.bindings.map((binding) => ({
+                name: binding.name,
+                value: binding.value,
+                expression: formulaExpressionParts(binding.valueNode).text
+              })),
+              calculationExpression: formulaExpressionParts(trace.calculationNode).text
+            };
+          } else {
+            explanation.advanced = trace;
+          }
+        }
+      } catch (error) {
+        explanation.advanced = null;
       }
     }
 
@@ -632,6 +791,27 @@
     }
 
     if (explanation.date) {
+      explanation.referenceGroups = [];
+      explanation.metrics = [];
+      explanation.calculation = "";
+      return explanation;
+    }
+
+    if (explanation.statistical) {
+      explanation.referenceGroups = [];
+      explanation.metrics = [];
+      explanation.calculation = "";
+      return explanation;
+    }
+
+    if (explanation.financial) {
+      explanation.referenceGroups = [];
+      explanation.metrics = [];
+      explanation.calculation = "";
+      return explanation;
+    }
+
+    if (explanation.advanced) {
       explanation.referenceGroups = [];
       explanation.metrics = [];
       explanation.calculation = "";

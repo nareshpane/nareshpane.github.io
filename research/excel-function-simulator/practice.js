@@ -6,22 +6,35 @@
   const PRACTICE_END = "N25";
   const catalog = window.ExcelFunctionCatalog;
   const exercises = window.ExcelExercises;
+  const curriculum = window.ExcelCurriculum || {
+    levels: [
+      { id: "Beginner", label: "Beginner" },
+      { id: "Intermediate", label: "Intermediate" },
+      { id: "Advanced", label: "Advanced" }
+    ],
+    specialTracks: [
+      { id: "Mixed", label: "Mixed" },
+      { id: "All", label: "All" }
+    ]
+  };
   const simulator = window.ExcelSimulator;
   const learningPanel = document.querySelector("#learning-panel");
   const tracePanel = document.querySelector("#trace-panel");
   const sidePanel = document.querySelector("#formula-explorer");
   const modeButtons = [...document.querySelectorAll(".mode-button")];
 
+  const initialProgress = loadProgress();
   const state = {
     mode: "playground",
     selectedFunctionId: "sum",
     functionFilter: "",
     exerciseIndex: 0,
+    practiceFilter: recommendedDifficulty(initialProgress),
     hintsShown: 0,
     solutionVisible: false,
     feedback: null,
     practiceWorkspaceSnapshot: null,
-    progress: loadProgress()
+    progress: initialProgress
   };
 
   function emptyProgress() {
@@ -45,6 +58,90 @@
 
   function saveProgress() {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(state.progress));
+  }
+
+  function exerciseMatchesFilter(exercise, filter) {
+    if (filter === "All") return true;
+    if (filter === "Mixed") return exercise.curriculumTrack === "Mixed";
+    return exercise.difficulty === filter;
+  }
+
+  function pathExercises(filter = state.practiceFilter) {
+    return exercises.filter((exercise) => exerciseMatchesFilter(exercise, filter));
+  }
+
+  function completedCountFor(filter = "All", progress = state.progress) {
+    return exercises.filter((exercise) => (
+      exerciseMatchesFilter(exercise, filter) && progress.completed[exercise.id]
+    )).length;
+  }
+
+  function totalCountFor(filter = "All") {
+    return pathExercises(filter).length;
+  }
+
+  function recommendedDifficulty(progress) {
+    for (const level of ["Beginner", "Intermediate", "Advanced"]) {
+      const candidates = exercises.filter((exercise) => exercise.difficulty === level);
+      if (candidates.some((exercise) => !progress.completed[exercise.id])) return level;
+    }
+    return "All";
+  }
+
+  function firstIncompleteIndex(filter = state.practiceFilter) {
+    const candidate = pathExercises(filter).find((exercise) => !state.progress.completed[exercise.id])
+      || pathExercises(filter)[0];
+    return candidate ? exercises.findIndex((exercise) => exercise.id === candidate.id) : 0;
+  }
+
+  function activePathPosition(exercise = currentExercise()) {
+    const path = pathExercises();
+    const position = path.findIndex((item) => item.id === exercise.id);
+    return { path, position };
+  }
+
+  function completionBreakdown(filter = state.practiceFilter) {
+    const statuses = { independent: 0, "with-hints": 0, "after-solution": 0 };
+    pathExercises(filter).forEach((exercise) => {
+      const status = state.progress.completed[exercise.id]?.status;
+      if (status && Object.prototype.hasOwnProperty.call(statuses, status)) statuses[status] += 1;
+    });
+    return statuses;
+  }
+
+  function setPracticeFilter(filter, options = {}) {
+    const allowed = [
+      ...curriculum.levels.map((entry) => entry.id),
+      ...curriculum.specialTracks.map((entry) => entry.id)
+    ];
+    if (!allowed.includes(filter)) return;
+    state.practiceFilter = filter;
+    if (options.openExercise !== false) {
+      openExercise(firstIncompleteIndex(filter), { prepare: options.prepare !== false });
+    } else {
+      renderPracticePanel();
+    }
+  }
+
+  function adjacentExerciseIndex(direction) {
+    const { path, position } = activePathPosition();
+    if (!path.length) return state.exerciseIndex;
+    const nextPosition = position < 0 ? 0 : position + direction;
+    if (nextPosition >= 0 && nextPosition < path.length) {
+      return exercises.findIndex((exercise) => exercise.id === path[nextPosition].id);
+    }
+
+    if (direction > 0 && ["Beginner", "Intermediate", "Advanced"].includes(state.practiceFilter)) {
+      const order = ["Beginner", "Intermediate", "Advanced"];
+      const current = order.indexOf(state.practiceFilter);
+      if (current >= 0 && current < order.length - 1) {
+        state.practiceFilter = order[current + 1];
+        return firstIncompleteIndex(state.practiceFilter);
+      }
+    }
+
+    const fallback = direction > 0 ? path[0] : path[path.length - 1];
+    return exercises.findIndex((exercise) => exercise.id === fallback.id);
   }
 
   function element(tagName, className, text) {
@@ -104,7 +201,7 @@
       || entry.name.toLowerCase().includes(query)
       || entry.shortDescription.toLowerCase().includes(query)
     ));
-    const categories = ["Basics", "Logic", "Conditional", "Lookup", "Text", "Date", "Math", "Error Handling", "Dynamic Array"];
+    const categories = ["Basics", "Logic", "Conditional", "Lookup", "Text", "Date", "Math", "Error Handling", "Statistics", "Financial", "Advanced", "Dynamic Array"];
 
     categories.forEach((category) => {
       const entries = filtered.filter((entry) => entry.category === category);
@@ -202,6 +299,30 @@
     renderFunctionCatalog(catalogWrap);
     learningPanel.append(catalogWrap);
 
+    const pathLesson = element("details", "practice-path-mini-lesson");
+    pathLesson.open = true;
+    pathLesson.append(element("summary", "", "Practice Path · 100 exercises"));
+    pathLesson.append(element(
+      "p",
+      "learning-copy",
+      "Work from single-function confidence toward applied formulas and then multi-step analysis. Nothing is locked, so you can move between levels whenever you want."
+    ));
+    const pathTerms = element("div", "dynamic-array-terms");
+    curriculum.levels.forEach((level) => {
+      pathTerms.append(element(
+        "div",
+        "",
+        `${level.label} · ${totalCountFor(level.id)} exercises · ${level.description}`
+      ));
+    });
+    pathTerms.append(element(
+      "div",
+      "",
+      `Mixed · ${totalCountFor("Mixed")} challenges · combine two or more spreadsheet skills.`
+    ));
+    pathLesson.append(pathTerms);
+    learningPanel.append(pathLesson);
+
     const formattingLesson = element("details", "formatting-mini-lesson");
     formattingLesson.append(element("summary", "", "Number Formatting"));
     formattingLesson.append(element(
@@ -215,6 +336,43 @@
     comparison.append(element("div", "", "ROUND(10/3,2) underlying: 3.33"));
     formattingLesson.append(comparison);
     learningPanel.append(formattingLesson);
+
+    const referenceLesson = element("details", "reference-mini-lesson");
+    referenceLesson.open = true;
+    referenceLesson.append(element("summary", "", "Cell References"));
+    referenceLesson.append(element(
+      "p",
+      "learning-copy",
+      "Relative references move when copied or filled. A dollar sign locks the row, the column, or both."
+    ));
+    const referenceTerms = element("div", "dynamic-array-terms");
+    referenceTerms.append(element("div", "", "A1 · relative row, relative column"));
+    referenceTerms.append(element("div", "", "$A$1 · locked row, locked column"));
+    referenceTerms.append(element("div", "", "A$1 · locked row"));
+    referenceTerms.append(element("div", "", "$A1 · locked column"));
+    referenceLesson.append(referenceTerms);
+    referenceLesson.append(element(
+      "p",
+      "learning-copy",
+      "Example: =D2*$H$2 filled downward changes D2 to D3, D4, … while $H$2 stays fixed. Press F4 while editing a reference to cycle its locking."
+    ));
+    referenceLesson.append(button("Load Reference Example", "load-reference-example", "learning-button"));
+    learningPanel.append(referenceLesson);
+
+    const financeLesson = element("details", "financial-mini-lesson");
+    financeLesson.append(element("summary", "", "Financial Cash Flows"));
+    financeLesson.append(element(
+      "p",
+      "learning-copy",
+      "Financial functions use a cash-flow sign convention: money received and money paid should have opposite signs."
+    ));
+    const financeTerms = element("div", "dynamic-array-terms");
+    financeTerms.append(element("div", "", "Time 0 · initial investment or loan balance"));
+    financeTerms.append(element("div", "", "NPV · first supplied value is one period in the future"));
+    financeTerms.append(element("div", "", "IRR · periodic rate for equally spaced cash flows"));
+    financeTerms.append(element("div", "", "XNPV / XIRR · use actual dates for irregular cash flows"));
+    financeLesson.append(financeTerms);
+    learningPanel.append(financeLesson);
 
     const spillLesson = element("details", "dynamic-array-mini-lesson");
     spillLesson.open = true;
@@ -283,6 +441,9 @@
   function openExercise(index, options = {}) {
     state.exerciseIndex = Math.max(0, Math.min(exercises.length - 1, index));
     const exercise = currentExercise();
+    if (options.syncFilter && !exerciseMatchesFilter(exercise, state.practiceFilter)) {
+      state.practiceFilter = exercise.difficulty;
+    }
     state.hintsShown = state.progress.hints[exercise.id] || 0;
     state.solutionVisible = Boolean(state.progress.solutions[exercise.id]);
     state.feedback = null;
@@ -307,21 +468,74 @@
 
   function renderPracticePanel() {
     const exercise = currentExercise();
+    const { path, position } = activePathPosition(exercise);
+    const filterMetadata = [
+      ...curriculum.levels,
+      ...curriculum.specialTracks
+    ].find((entry) => entry.id === state.practiceFilter);
+    const breakdown = completionBreakdown();
+
     learningPanel.replaceChildren();
     const heading = element("div", "learning-heading-row");
     heading.append(element("h2", "", "Practice"));
     heading.append(element(
       "span",
       "practice-position",
-      `${state.exerciseIndex + 1} of ${exercises.length}`
+      position >= 0 ? `${position + 1} of ${path.length}` : `${state.exerciseIndex + 1} of ${exercises.length}`
     ));
     learningPanel.append(heading);
+
+    const pathWrap = element("section", "practice-path-controls");
+    pathWrap.append(element("div", "learning-label", "Practice path"));
+    const pathButtons = element("div", "practice-filter-buttons");
+    [...curriculum.levels, ...curriculum.specialTracks].forEach((entry) => {
+      const filterButton = button(entry.label, "set-practice-filter", "practice-filter-button");
+      filterButton.dataset.practiceFilter = entry.id;
+      filterButton.classList.toggle("active", entry.id === state.practiceFilter);
+      filterButton.setAttribute("aria-pressed", String(entry.id === state.practiceFilter));
+      pathButtons.append(filterButton);
+    });
+    pathWrap.append(pathButtons);
+    if (filterMetadata?.description) {
+      pathWrap.append(element("p", "practice-path-description", filterMetadata.description));
+    }
+    learningPanel.append(pathWrap);
+
+    const levelSummary = element("div", "practice-level-summary");
+    curriculum.levels.forEach((level) => {
+      const completed = completedCountFor(level.id);
+      const total = totalCountFor(level.id);
+      const item = element("div", "practice-level-summary-item");
+      item.append(element("span", "", level.label));
+      item.append(element("strong", "", `${completed}/${total}`));
+      levelSummary.append(item);
+    });
+    learningPanel.append(levelSummary);
+
     learningPanel.append(element(
       "div",
       "practice-progress",
-      `${completedCount()} / ${exercises.length} completed`
+      `${completedCountFor(state.practiceFilter)} / ${totalCountFor(state.practiceFilter)} completed in this path · ${completedCount()} / ${exercises.length} overall`
     ));
+    learningPanel.append(element(
+      "div",
+      "practice-mastery",
+      `Independent ${breakdown.independent} · With hints ${breakdown["with-hints"]} · Solution viewed ${breakdown["after-solution"]}`
+    ));
+
+    const exerciseMeta = element("div", "practice-exercise-meta");
+    exerciseMeta.append(element("span", "practice-difficulty", exercise.difficulty));
+    if (exercise.curriculumTrack === "Mixed") {
+      exerciseMeta.append(element("span", "practice-track-label", "Mixed challenge"));
+    }
+    learningPanel.append(exerciseMeta);
     learningPanel.append(element("div", "practice-function", exercise.functionCategory));
+    if (exercise.skills?.length) {
+      const skillRow = element("div", "practice-skills");
+      skillRow.append(element("span", "learning-label", "Skills"));
+      exercise.skills.forEach((skill) => skillRow.append(element("span", "practice-skill", skill)));
+      learningPanel.append(skillRow);
+    }
     learningPanel.append(element("h3", "learning-title", exercise.title));
     learningPanel.append(element("p", "learning-copy", exercise.prompt));
     learningPanel.append(element("div", "learning-label", "Target cell"));
@@ -371,6 +585,15 @@
       actions.append(button("Next Exercise", "next-exercise", "learning-button primary"));
     }
     learningPanel.append(actions);
+
+    const navigation = element("div", "practice-navigation");
+    navigation.append(button("← Previous", "previous-exercise", "learning-link-button"));
+    navigation.append(button(
+      state.feedback?.kind === "correct" ? "Continue next incomplete" : "Skip →",
+      state.feedback?.kind === "correct" ? "continue-path" : "skip-exercise",
+      "learning-link-button"
+    ));
+    learningPanel.append(navigation);
     learningPanel.append(button("Reset Progress", "reset-progress", "reset-progress-button"));
   }
 
@@ -415,7 +638,7 @@
       "#N/A": "The lookup value was not found. Inspect the lookup range.",
       "#REF!": "The formula points outside a selected range.",
       "#VALUE!": "One or more arguments have incompatible values or dimensions.",
-      "#NUM!": "A numeric date value or option is outside the supported range.",
+      "#NUM!": "A numeric argument or iterative calculation is outside the supported range or cannot produce a valid result.",
       "#CALC!": "The array calculation returned no rows and no fallback was supplied.",
       "#SPILL!": "The result cannot spill because a destination is occupied or outside the worksheet.",
       "#DIV/0!": "The formula attempted to divide by zero or average no values.",
@@ -544,7 +767,10 @@
       return state.feedback;
     }
 
-    const valueCorrect = valuesEqual(model.value, exercise.expectedValue);
+    const expectedValue = exercise.validationType === "todayFormula"
+      ? window.ExcelFormatting.todaySerial()
+      : exercise.expectedValue;
+    const valueCorrect = valuesEqual(model.value, expectedValue);
     const functionCorrect = meetsFunctionRequirement(exercise, model.ast);
     const formatCorrect = !exercise.expectedNumberFormat
       || model.numberFormat === exercise.expectedNumberFormat;
@@ -561,7 +787,7 @@
         kind: "incorrect",
         title: "Not quite",
         message: `Your formula returned ${formattedValue(model.value, model.numberFormat)}. Inspect the referenced cells and try again.`,
-        expected: exercise.expectedValue,
+        expected: expectedValue,
         expectedNumberFormat: exercise.expectedNumberFormat
       };
     } else if (!formatCorrect) {
@@ -589,10 +815,11 @@
   }
 
   function firstExerciseForFunction(entry) {
+    const rank = { Beginner: 0, Intermediate: 1, Advanced: 2 };
     const candidates = exercises.filter((exercise) => (
       exercise.functionCategory === entry.name
       || exercise.acceptedFunctionSets.some((set) => set.includes(entry.name))
-    ));
+    )).sort((left, right) => (rank[left.difficulty] ?? 9) - (rank[right.difficulty] ?? 9));
     return candidates.find((exercise) => !state.progress.completed[exercise.id]) || candidates[0];
   }
 
@@ -620,8 +847,12 @@
     } else {
       learningPanel.hidden = false;
       tracePanel.hidden = false;
-      openExercise(options.exerciseIndex ?? state.exerciseIndex, {
-        prepare: options.prepare !== false
+      const requestedIndex = options.exerciseIndex ?? (
+        previousMode !== "practice" ? firstIncompleteIndex(state.practiceFilter) : state.exerciseIndex
+      );
+      openExercise(requestedIndex, {
+        prepare: options.prepare !== false,
+        syncFilter: options.exerciseIndex !== undefined
       });
     }
   }
@@ -652,11 +883,26 @@
       applyWorkspace(entry.exampleSetup || [], entry.exampleFormula, entry.exampleTargetCell || "H4");
     } else if (action === "load-blocked-spill") {
       applyWorkspace([{ cell: "H17", value: "Blocked" }], "=SEQUENCE(5)", "H15");
+    } else if (action === "load-reference-example") {
+      applyWorkspace(
+        [
+          { cell: "H2", value: "Rate" },
+          { cell: "I2", value: "0.05", numberFormat: "Percentage" },
+          { cell: "H3", value: "Fill the formula downward" }
+        ],
+        "=D2*$I$2",
+        "H4"
+      );
     } else if (action === "practice-function") {
       const entry = catalog.find((item) => item.id === state.selectedFunctionId);
       const exercise = firstExerciseForFunction(entry);
       const index = exercises.findIndex((item) => item.id === exercise?.id);
-      if (index >= 0) setMode("practice", { exerciseIndex: index });
+      if (index >= 0) {
+        state.practiceFilter = exercise.difficulty;
+        setMode("practice", { exerciseIndex: index });
+      }
+    } else if (action === "set-practice-filter") {
+      setPracticeFilter(actionButton.dataset.practiceFilter);
     } else if (action === "check-answer") {
       checkAnswer();
     } else if (action === "show-hint") {
@@ -675,16 +921,21 @@
       state.feedback = null;
       prepareExercise(currentExercise());
       renderPracticePanel();
-    } else if (action === "next-exercise") {
-      openExercise((state.exerciseIndex + 1) % exercises.length);
+    } else if (action === "next-exercise" || action === "skip-exercise") {
+      openExercise(adjacentExerciseIndex(1));
+    } else if (action === "previous-exercise") {
+      openExercise(adjacentExerciseIndex(-1));
+    } else if (action === "continue-path") {
+      openExercise(firstIncompleteIndex(state.practiceFilter));
     } else if (action === "reset-progress") {
       if (!window.confirm("Reset all saved practice progress?")) return;
       state.progress = emptyProgress();
+      state.practiceFilter = "Beginner";
       state.hintsShown = 0;
       state.solutionVisible = false;
       state.feedback = null;
       localStorage.removeItem(STORAGE_KEY);
-      renderPracticePanel();
+      openExercise(firstIncompleteIndex("Beginner"));
     }
   });
 
@@ -696,6 +947,7 @@
         selectedFunctionId: state.selectedFunctionId,
         exerciseId: currentExercise().id,
         exerciseIndex: state.exerciseIndex,
+        practiceFilter: state.practiceFilter,
         feedback: state.feedback ? { ...state.feedback } : null,
         progress: JSON.parse(JSON.stringify(state.progress))
       };
@@ -704,6 +956,7 @@
       const index = exercises.findIndex((exercise) => exercise.id === id);
       if (index >= 0) setMode("practice", { exerciseIndex: index });
     },
-    setMode
+    setMode,
+    setPracticeFilter
   });
 })();

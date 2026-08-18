@@ -3,8 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="A browser-based spreadsheet interface for learning how Excel formulas work.">
-  <title>Excel Function Simulator</title>
+  <meta name="description" content="An interactive browser-based spreadsheet for learning Excel formulas through 82 supported functions, visual formula tracing, and 100 guided practice exercises.">
+  <meta name="theme-color" content="#217346">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://nareshpane.github.io/research/excel-function-simulator.html">
+  <meta property="og:title" content="Excel Function Simulator | Naresh Neupane">
+  <meta property="og:description" content="Practice Excel formulas in an interactive browser-based spreadsheet with visual explanations and 100 guided exercises.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nareshpane.github.io/research/excel-function-simulator.html">
+  <title>Excel Function Simulator | Naresh Neupane</title>
   <link rel="stylesheet" href="excel-function-simulator/style.css">
   <script defer src="excel-function-simulator/criteria.js"></script>
   <script defer src="excel-function-simulator/lookup.js"></script>
@@ -19,25 +26,44 @@
 </head>
 <body>
   <main class="page-shell">
-    <header class="page-header">
-      <h1>Excel Function Simulator</h1>
+    <header class="page-header excel-titlebar">
+      <div class="titlebar-product">
+        <span class="titlebar-grid-mark" aria-hidden="true">▦</span>
+        <h1>Excel Function Simulator</h1>
+      </div>
+      <div class="titlebar-book" aria-label="Workbook name">Book1</div>
       <p>Learn formulas by watching them work.</p>
     </header>
 
-    <div class="mode-toolbar" aria-label="Simulator mode">
-      <div id="mode-switcher" class="mode-switcher">
-        <button class="mode-button active" type="button" data-mode="playground" aria-pressed="true">Playground</button>
-        <button class="mode-button" type="button" data-mode="learn" aria-pressed="false">Learn</button>
-        <button class="mode-button" type="button" data-mode="practice" aria-pressed="false">Practice</button>
+    <div class="ribbon-tab-row">
+      <div class="excel-ribbon-tabs" aria-hidden="true">
+        <span class="excel-ribbon-tab file-tab">File</span>
+        <span class="excel-ribbon-tab active">Home</span>
+        <span class="excel-ribbon-tab">Insert</span>
+        <span class="excel-ribbon-tab">Formulas</span>
+        <span class="excel-ribbon-tab">Data</span>
+        <span class="excel-ribbon-tab">Review</span>
+        <span class="excel-ribbon-tab">View</span>
+      </div>
+      <div class="mode-toolbar" aria-label="Simulator mode">
+        <div id="mode-switcher" class="mode-switcher">
+          <button class="mode-button active" type="button" data-mode="playground" aria-pressed="true">Playground</button>
+          <button class="mode-button" type="button" data-mode="learn" aria-pressed="false">Learn</button>
+          <button class="mode-button" type="button" data-mode="practice" aria-pressed="false">Practice</button>
+        </div>
       </div>
     </div>
 
     <div class="workspace-layout">
       <section class="spreadsheet-app" aria-label="Spreadsheet simulator">
-        <div class="number-format-toolbar" aria-label="Number formatting">
+        <div class="number-format-toolbar" aria-label="Workbook and number formatting">
+          <button id="undo-button" class="format-tool-button history-tool-button" type="button" title="Undo (Ctrl+Z)" aria-label="Undo" disabled>↶</button>
+          <button id="redo-button" class="format-tool-button history-tool-button" type="button" title="Redo (Ctrl+Y)" aria-label="Redo" disabled>↷</button>
+          <span class="format-tool-divider" aria-hidden="true"></span>
           <label class="number-format-select-wrap">
             <span class="visually-hidden">Number format</span>
             <select id="number-format-select" class="number-format-select">
+              <option value="Mixed" disabled>Mixed</option>
               <option value="General">General</option>
               <option value="Number">Number</option>
               <option value="Currency">Currency</option>
@@ -55,7 +81,7 @@
         <div class="formula-controls">
           <label class="name-box-wrap">
             <span class="visually-hidden">Selected cell</span>
-            <input id="name-box" class="name-box" type="text" value="A1" readonly>
+            <input id="name-box" class="name-box" type="text" value="A1" autocomplete="off" spellcheck="false">
           </label>
           <button id="formula-function-button" class="formula-symbol" type="button" aria-label="Insert function" aria-expanded="false">fx</button>
           <label class="formula-input-wrap">
@@ -77,10 +103,12 @@
 
         <div class="workbook-bar">
           <div class="sheet-strip" aria-label="Worksheet tabs">
-            <button class="add-sheet-button" type="button" title="Add worksheet (coming later)" aria-label="Add worksheet">+</button>
+            <button class="add-sheet-button" type="button" title="Single-sheet simulator" aria-label="Single-sheet simulator" disabled>+</button>
             <button class="sheet-tab active-sheet" type="button" aria-current="page">Sheet1</button>
+            <button id="reset-workbook-button" class="workbook-action-button" type="button" title="Restore the sample workbook">Reset</button>
           </div>
           <div class="status-info">
+            <span id="save-status" class="save-status" aria-live="polite">Saved locally</span>
             <span>Ready</span>
             <span id="selection-status" aria-live="polite">Selected: A1</span>
           </div>

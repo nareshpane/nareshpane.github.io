@@ -775,6 +775,416 @@
       ]
     },
     {
+      id: "median",
+      name: "MEDIAN",
+      category: "Statistics",
+      syntax: "MEDIAN(number1, [number2], ...)",
+      shortDescription: "Returns the middle value after numeric observations are ordered.",
+      difficulty: "Beginner",
+      exampleFormula: "=MEDIAN(D2:D7)",
+      exampleResult: 74000,
+      arguments: [
+        { name: "number1", description: "First number or range containing numeric observations." },
+        { name: "number2", description: "Optional additional number or range." }
+      ]
+    },
+    {
+      id: "mode-sngl",
+      name: "MODE.SNGL",
+      category: "Statistics",
+      syntax: "MODE.SNGL(number1, [number2], ...)",
+      shortDescription: "Returns the most frequently occurring numeric value.",
+      difficulty: "Beginner",
+      exampleFormula: "=MODE.SNGL(E2:E7)",
+      exampleResult: 5,
+      arguments: [
+        { name: "number1", description: "First number or range to inspect for repeated values." },
+        { name: "number2", description: "Optional additional number or range." }
+      ]
+    },
+    {
+      id: "stdev-s",
+      name: "STDEV.S",
+      category: "Statistics",
+      syntax: "STDEV.S(number1, [number2], ...)",
+      shortDescription: "Estimates standard deviation for a sample using n − 1.",
+      difficulty: "Intermediate",
+      exampleFormula: "=STDEV.S(D2:D7)",
+      exampleResult: 9077.44457432817,
+      arguments: [
+        { name: "number1", description: "First numeric sample or range." },
+        { name: "number2", description: "Optional additional numeric sample or range." }
+      ]
+    },
+    {
+      id: "stdev-p",
+      name: "STDEV.P",
+      category: "Statistics",
+      syntax: "STDEV.P(number1, [number2], ...)",
+      shortDescription: "Calculates standard deviation for a complete population using n.",
+      difficulty: "Intermediate",
+      exampleFormula: "=STDEV.P(D2:D7)",
+      exampleResult: 8286.53526310404,
+      arguments: [
+        { name: "number1", description: "First population value or range." },
+        { name: "number2", description: "Optional additional population value or range." }
+      ]
+    },
+    {
+      id: "var-s",
+      name: "VAR.S",
+      category: "Statistics",
+      syntax: "VAR.S(number1, [number2], ...)",
+      shortDescription: "Estimates sample variance using n − 1.",
+      difficulty: "Intermediate",
+      exampleFormula: "=VAR.S(D2:D7)",
+      exampleResult: 82400000,
+      arguments: [
+        { name: "number1", description: "First numeric sample or range." },
+        { name: "number2", description: "Optional additional numeric sample or range." }
+      ]
+    },
+    {
+      id: "var-p",
+      name: "VAR.P",
+      category: "Statistics",
+      syntax: "VAR.P(number1, [number2], ...)",
+      shortDescription: "Calculates population variance using n.",
+      difficulty: "Intermediate",
+      exampleFormula: "=VAR.P(D2:D7)",
+      exampleResult: 68666666.6666667,
+      arguments: [
+        { name: "number1", description: "First population value or range." },
+        { name: "number2", description: "Optional additional population value or range." }
+      ]
+    },
+    {
+      id: "rank-eq",
+      name: "RANK.EQ",
+      category: "Statistics",
+      syntax: "RANK.EQ(number, ref, [order])",
+      shortDescription: "Returns a number's rank within a numeric list; tied values receive the same rank.",
+      difficulty: "Intermediate",
+      exampleFormula: "=RANK.EQ(D7,D2:D7,0)",
+      exampleResult: 3,
+      arguments: [
+        { name: "number", description: "Number whose rank is required." },
+        { name: "ref", description: "Numeric reference list used for ranking." },
+        { name: "order", description: "Optional 0 for descending; nonzero for ascending." }
+      ]
+    },
+    {
+      id: "percentile-inc",
+      name: "PERCENTILE.INC",
+      category: "Statistics",
+      syntax: "PERCENTILE.INC(array, k)",
+      shortDescription: "Returns the inclusive k-th percentile with interpolation when necessary.",
+      difficulty: "Advanced",
+      exampleFormula: "=PERCENTILE.INC(D2:D7,0.75)",
+      exampleResult: 79750,
+      arguments: [
+        { name: "array", description: "Numeric data used to calculate the percentile." },
+        { name: "k", description: "Percentile from 0 through 1 inclusive." }
+      ]
+    },
+    {
+      id: "quartile-inc",
+      name: "QUARTILE.INC",
+      category: "Statistics",
+      syntax: "QUARTILE.INC(array, quart)",
+      shortDescription: "Returns an inclusive quartile from minimum (0) through maximum (4).",
+      difficulty: "Intermediate",
+      exampleFormula: "=QUARTILE.INC(D2:D7,1)",
+      exampleResult: 69000,
+      arguments: [
+        { name: "array", description: "Numeric data used to calculate the quartile." },
+        { name: "quart", description: "Quartile number 0, 1, 2, 3, or 4." }
+      ]
+    },
+    {
+      id: "correl",
+      name: "CORREL",
+      category: "Statistics",
+      syntax: "CORREL(array1, array2)",
+      shortDescription: "Returns Pearson correlation for two aligned numeric arrays.",
+      difficulty: "Advanced",
+      exampleFormula: "=CORREL(D2:D7,E2:E7)",
+      exampleResult: 0.831467676330196,
+      arguments: [
+        { name: "array1", description: "First aligned numeric array." },
+        { name: "array2", description: "Second aligned numeric array." }
+      ]
+    },
+    {
+      id: "covariance-s",
+      name: "COVARIANCE.S",
+      category: "Statistics",
+      syntax: "COVARIANCE.S(array1, array2)",
+      shortDescription: "Returns sample covariance for two aligned numeric arrays.",
+      difficulty: "Advanced",
+      exampleFormula: "=COVARIANCE.S(D2:D7,E2:E7)",
+      exampleResult: 13000,
+      arguments: [
+        { name: "array1", description: "First aligned numeric sample." },
+        { name: "array2", description: "Second aligned numeric sample." }
+      ]
+    },
+    {
+      id: "pv",
+      name: "PV",
+      category: "Financial",
+      syntax: "PV(rate, nper, pmt, [fv], [type])",
+      shortDescription: "Returns the present value of a stream of equal payments using a constant interest rate.",
+      difficulty: "Intermediate",
+      exampleFormula: "=PV(0.06/12,120,-200)",
+      exampleResult: 18014.6906654335,
+      exampleNumberFormat: "Currency",
+      arguments: [
+        { name: "rate", description: "Interest rate per payment period." },
+        { name: "nper", description: "Total number of payment periods." },
+        { name: "pmt", description: "Payment made each period; cash paid out is normally negative." },
+        { name: "fv", description: "Optional future value after the final payment; defaults to 0." },
+        { name: "type", description: "Optional 0 for end-of-period payments or 1 for beginning-of-period payments." }
+      ]
+    },
+    {
+      id: "fv",
+      name: "FV",
+      category: "Financial",
+      syntax: "FV(rate, nper, pmt, [pv], [type])",
+      shortDescription: "Returns the future value of an investment with equal periodic payments and a constant rate.",
+      difficulty: "Intermediate",
+      exampleFormula: "=FV(0.06/12,120,-200)",
+      exampleResult: 32775.8693612916,
+      exampleNumberFormat: "Currency",
+      arguments: [
+        { name: "rate", description: "Interest rate per payment period." },
+        { name: "nper", description: "Total number of payment periods." },
+        { name: "pmt", description: "Payment made each period; deposits are usually entered as negative cash flows." },
+        { name: "pv", description: "Optional present value; defaults to 0." },
+        { name: "type", description: "Optional 0 for end-of-period payments or 1 for beginning-of-period payments." }
+      ]
+    },
+    {
+      id: "pmt",
+      name: "PMT",
+      category: "Financial",
+      syntax: "PMT(rate, nper, pv, [fv], [type])",
+      shortDescription: "Calculates the equal periodic payment required for a loan or annuity.",
+      difficulty: "Intermediate",
+      exampleFormula: "=PMT(0.05/12,60,20000)",
+      exampleResult: -377.42467288022,
+      exampleNumberFormat: "Currency",
+      arguments: [
+        { name: "rate", description: "Interest rate per payment period." },
+        { name: "nper", description: "Number of payments." },
+        { name: "pv", description: "Present value, such as the amount borrowed." },
+        { name: "fv", description: "Optional balance desired after the final payment; defaults to 0." },
+        { name: "type", description: "Optional 0 for payments at period end or 1 at period beginning." }
+      ]
+    },
+    {
+      id: "npv",
+      name: "NPV",
+      category: "Financial",
+      syntax: "NPV(rate, value1, [value2], ...)",
+      shortDescription: "Discounts equally spaced future cash flows back to the present; the first supplied cash flow is one period away.",
+      difficulty: "Intermediate",
+      exampleFormula: "=NPV(0.1,3000,4200,6800)",
+      exampleResult: 11307.2877535687,
+      exampleNumberFormat: "Currency",
+      arguments: [
+        { name: "rate", description: "Discount rate per period." },
+        { name: "value1", description: "First future cash flow, discounted one period." },
+        { name: "value2", description: "Optional later cash flows at equally spaced periods." }
+      ]
+    },
+    {
+      id: "irr",
+      name: "IRR",
+      category: "Financial",
+      syntax: "IRR(values, [guess])",
+      shortDescription: "Finds the periodic rate that makes the net present value of equally spaced cash flows equal to zero.",
+      difficulty: "Advanced",
+      exampleFormula: "=IRR(H2:H5)",
+      exampleResult: 0.163405600688989,
+      exampleNumberFormat: "Percentage",
+      exampleTargetCell: "H7",
+      exampleSetup: [
+        { cell: "H2", value: "-10000" },
+        { cell: "H3", value: "3000" },
+        { cell: "H4", value: "4200" },
+        { cell: "H5", value: "6800" }
+      ],
+      arguments: [
+        { name: "values", description: "Cash-flow series containing at least one negative and one positive amount." },
+        { name: "guess", description: "Optional starting estimate for the rate; defaults to 10%." }
+      ]
+    },
+    {
+      id: "xnpv",
+      name: "XNPV",
+      category: "Financial",
+      syntax: "XNPV(rate, values, dates)",
+      shortDescription: "Discounts irregularly timed cash flows using their actual dates and a 365-day year.",
+      difficulty: "Advanced",
+      exampleFormula: "=XNPV(0.1,H2:H5,I2:I5)",
+      exampleResult: 2227.43187269064,
+      exampleNumberFormat: "Currency",
+      exampleTargetCell: "H7",
+      exampleSetup: [
+        { cell: "H2", value: "-10000" },
+        { cell: "H3", value: "3000" },
+        { cell: "H4", value: "4200" },
+        { cell: "H5", value: "6800" },
+        { cell: "I2", value: "=DATE(2026,1,1)" },
+        { cell: "I3", value: "=DATE(2026,7,1)" },
+        { cell: "I4", value: "=DATE(2027,3,15)" },
+        { cell: "I5", value: "=DATE(2028,1,1)" }
+      ],
+      arguments: [
+        { name: "rate", description: "Annual discount rate." },
+        { name: "values", description: "Cash flows including the initial amount." },
+        { name: "dates", description: "Dates aligned with the cash flows; no date may precede the first date." }
+      ]
+    },
+    {
+      id: "xirr",
+      name: "XIRR",
+      category: "Financial",
+      syntax: "XIRR(values, dates, [guess])",
+      shortDescription: "Finds the annualized rate that sets XNPV to zero for irregularly dated cash flows.",
+      difficulty: "Advanced",
+      exampleFormula: "=XIRR(H2:H5,I2:I5)",
+      exampleResult: 0.273144698866988,
+      exampleNumberFormat: "Percentage",
+      exampleTargetCell: "H7",
+      exampleSetup: [
+        { cell: "H2", value: "-10000" },
+        { cell: "H3", value: "3000" },
+        { cell: "H4", value: "4200" },
+        { cell: "H5", value: "6800" },
+        { cell: "I2", value: "=DATE(2026,1,1)" },
+        { cell: "I3", value: "=DATE(2026,7,1)" },
+        { cell: "I4", value: "=DATE(2027,3,15)" },
+        { cell: "I5", value: "=DATE(2028,1,1)" }
+      ],
+      arguments: [
+        { name: "values", description: "Cash flows containing at least one outflow and one inflow." },
+        { name: "dates", description: "Actual dates aligned with the cash-flow series." },
+        { name: "guess", description: "Optional starting estimate for the annualized rate; defaults to 10%." }
+      ]
+    },
+    {
+      id: "ifs",
+      name: "IFS",
+      category: "Logic",
+      syntax: "IFS(logical_test1, value_if_true1, [logical_test2, value_if_true2], ...)",
+      shortDescription: "Tests conditions in order and returns the value paired with the first TRUE condition.",
+      difficulty: "Intermediate",
+      exampleFormula: "=IFS(D2>=80000,\"High\",D2>=70000,\"Medium\",TRUE,\"Low\")",
+      exampleResult: "Medium",
+      arguments: [
+        { name: "logical_test1", description: "First condition to evaluate." },
+        { name: "value_if_true1", description: "Value returned if the first condition is TRUE." },
+        { name: "logical_test2, value_if_true2", description: "Optional additional condition and result pairs checked in order." }
+      ]
+    },
+    {
+      id: "switch",
+      name: "SWITCH",
+      category: "Logic",
+      syntax: "SWITCH(expression, value1, result1, [value2, result2], ..., [default])",
+      shortDescription: "Compares one expression with listed values and returns the result for the first match.",
+      difficulty: "Intermediate",
+      exampleFormula: "=SWITCH(C2,\"Finance\",\"Budget\",\"IT\",\"Technology\",\"Other\")",
+      exampleResult: "Budget",
+      arguments: [
+        { name: "expression", description: "Value evaluated once and compared with each listed case." },
+        { name: "value1", description: "First value to compare with the expression." },
+        { name: "result1", description: "Result returned if value1 matches." },
+        { name: "default", description: "Optional final fallback when no listed value matches." }
+      ]
+    },
+    {
+      id: "choose",
+      name: "CHOOSE",
+      category: "Lookup",
+      syntax: "CHOOSE(index_num, value1, [value2], ...)",
+      shortDescription: "Returns one item from a list according to a 1-based index number.",
+      difficulty: "Beginner",
+      exampleFormula: "=CHOOSE(2,\"Low\",\"Medium\",\"High\")",
+      exampleResult: "Medium",
+      arguments: [
+        { name: "index_num", description: "1-based position of the value to return." },
+        { name: "value1", description: "First available value." },
+        { name: "value2", description: "Optional additional values." }
+      ]
+    },
+    {
+      id: "xmatch",
+      name: "XMATCH",
+      category: "Lookup",
+      syntax: "XMATCH(lookup_value, lookup_array, [match_mode], [search_mode])",
+      shortDescription: "Returns the relative position of a match, using exact matching by default and optional wildcard or approximate modes.",
+      difficulty: "Intermediate",
+      exampleFormula: "=XMATCH(\"Noah\",B2:B7)",
+      exampleResult: 4,
+      arguments: [
+        { name: "lookup_value", description: "Value to locate." },
+        { name: "lookup_array", description: "One-dimensional row or column to search." },
+        { name: "match_mode", description: "Optional 0 exact, -1 next smaller, 1 next larger, or 2 wildcard." },
+        { name: "search_mode", description: "Optional 1 first-to-last or -1 last-to-first." }
+      ]
+    },
+    {
+      id: "networkdays",
+      name: "NETWORKDAYS",
+      category: "Date",
+      syntax: "NETWORKDAYS(start_date, end_date, [holidays])",
+      shortDescription: "Counts Monday-through-Friday workdays between two dates, excluding optional holidays.",
+      difficulty: "Intermediate",
+      exampleFormula: "=NETWORKDAYS(DATE(2026,8,17),DATE(2026,8,21))",
+      exampleResult: 5,
+      arguments: [
+        { name: "start_date", description: "First date in the inclusive interval." },
+        { name: "end_date", description: "Last date in the inclusive interval." },
+        { name: "holidays", description: "Optional date or range of dates to exclude." }
+      ]
+    },
+    {
+      id: "workday",
+      name: "WORKDAY",
+      category: "Date",
+      syntax: "WORKDAY(start_date, days, [holidays])",
+      shortDescription: "Moves forward or backward by a specified number of Monday-through-Friday workdays.",
+      difficulty: "Intermediate",
+      exampleFormula: "=WORKDAY(DATE(2026,8,17),5)",
+      exampleResult: 46258,
+      exampleNumberFormat: "Date",
+      arguments: [
+        { name: "start_date", description: "Starting date." },
+        { name: "days", description: "Number of workdays to move; negative values move backward." },
+        { name: "holidays", description: "Optional date or range of dates to skip." }
+      ]
+    },
+    {
+      id: "let",
+      name: "LET",
+      category: "Advanced",
+      syntax: "LET(name1, value1, [name2, value2], ..., calculation)",
+      shortDescription: "Assigns names to intermediate values inside one formula so repeated logic is easier to read and maintain.",
+      difficulty: "Advanced",
+      exampleFormula: "=LET(bonusRate,0.05,D2*bonusRate)",
+      exampleResult: 3600,
+      arguments: [
+        { name: "name1", description: "Local variable name used only inside this LET formula." },
+        { name: "value1", description: "Value or expression assigned to name1." },
+        { name: "name2, value2", description: "Optional additional local bindings evaluated in order." },
+        { name: "calculation", description: "Final expression evaluated using the local names." }
+      ]
+    },
+    {
       id: "sequence",
       name: "SEQUENCE",
       category: "Dynamic Array",

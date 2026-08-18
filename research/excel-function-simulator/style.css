@@ -171,6 +171,38 @@ input {
   background: #c8c8c8;
 }
 
+
+.history-tool-button {
+  min-width: 30px;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.workbook-action-button {
+  height: 24px;
+  margin-left: 6px;
+  padding: 0 8px;
+  color: #555;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 0;
+  font-size: 0.68rem;
+  cursor: pointer;
+}
+
+.workbook-action-button:hover,
+.workbook-action-button:focus-visible {
+  color: #174f31;
+  background: #e4eee7;
+  border-color: #a9b9ae;
+  outline: none;
+}
+
+.save-status {
+  color: #5f6f64;
+  white-space: nowrap;
+}
+
 .decimal-tool {
   min-width: 34px;
   font-family: Consolas, "Courier New", monospace;
@@ -619,15 +651,17 @@ input {
   box-shadow: inset 0 0 0 2px var(--accent);
 }
 
-.sheet-cell.active::after {
+.sheet-cell.selection-fill-corner::after {
   content: "";
   position: absolute;
   right: -1px;
   bottom: -1px;
-  width: 5px;
-  height: 5px;
+  z-index: 5;
+  width: 6px;
+  height: 6px;
   background: var(--accent);
   border: 1px solid var(--surface);
+  cursor: crosshair;
 }
 
 .sheet-cell.editing {
@@ -897,7 +931,8 @@ input {
 }
 
 .formatting-mini-lesson,
-.dynamic-array-mini-lesson {
+.dynamic-array-mini-lesson,
+.practice-path-mini-lesson {
   margin: 10px 0;
   padding: 7px;
   background: #f6f8f7;
@@ -906,14 +941,16 @@ input {
 }
 
 .formatting-mini-lesson summary,
-.dynamic-array-mini-lesson summary {
+.dynamic-array-mini-lesson summary,
+.practice-path-mini-lesson summary {
   color: #315842;
   font-weight: 700;
   cursor: pointer;
 }
 
 .formatting-mini-lesson .learning-copy,
-.dynamic-array-mini-lesson .learning-copy {
+.dynamic-array-mini-lesson .learning-copy,
+.practice-path-mini-lesson .learning-copy {
   margin: 7px 0 !important;
   font-size: 0.7rem !important;
 }
@@ -1037,6 +1074,133 @@ input {
   color: #5f6b64;
   border-bottom: 1px solid #dfdfdf;
   font-size: 0.7rem;
+}
+
+.practice-path-controls {
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #dfdfdf;
+}
+
+.practice-filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  margin-top: 4px;
+}
+
+.practice-filter-button {
+  padding: 3px 6px;
+  color: #4f5b54;
+  background: #f5f5f5;
+  border: 1px solid #cdcdcd;
+  border-radius: 0;
+  font-size: 0.64rem;
+  cursor: pointer;
+}
+
+.practice-filter-button:hover {
+  background: #ecefec;
+}
+
+.practice-filter-button.active {
+  color: #fff;
+  background: var(--accent);
+  border-color: #185d38;
+}
+
+.practice-path-description {
+  margin: 5px 0 0;
+  color: #6a736d;
+  font-size: 0.65rem;
+  line-height: 1.35;
+}
+
+.practice-level-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 3px;
+  margin-bottom: 6px;
+}
+
+.practice-level-summary-item {
+  display: grid;
+  gap: 1px;
+  padding: 4px;
+  color: #5f6b64;
+  background: #f7f8f7;
+  border: 1px solid #e0e2e0;
+  font-size: 0.61rem;
+  text-align: center;
+}
+
+.practice-level-summary-item strong {
+  color: #315842;
+  font-size: 0.66rem;
+}
+
+.practice-mastery {
+  margin: -5px 0 9px;
+  color: #757d78;
+  font-size: 0.61rem;
+  line-height: 1.35;
+}
+
+.practice-exercise-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 4px;
+}
+
+.practice-difficulty,
+.practice-track-label {
+  padding: 2px 5px;
+  color: #526159;
+  background: #f1f4f2;
+  border: 1px solid #d7ddd9;
+  font-size: 0.61rem;
+}
+
+.practice-track-label {
+  color: #6b542b;
+  background: #fbf7ec;
+  border-color: #ded1af;
+}
+
+.practice-skills {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  margin: 0 0 7px;
+}
+
+.practice-skills .learning-label {
+  margin: 0 2px 0 0;
+}
+
+.practice-skill {
+  padding: 2px 4px;
+  color: #3f5f4c;
+  background: #eef5f0;
+  border: 1px solid #cfddd3;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.59rem;
+}
+
+.practice-navigation {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding-top: 5px;
+}
+
+.practice-navigation .learning-link-button {
+  padding-left: 0;
+  padding-right: 0;
+  font-size: 0.64rem;
 }
 
 .practice-function {
@@ -1192,6 +1356,13 @@ input {
   font-family: Consolas, "Courier New", monospace;
   font-size: 0.76rem;
   white-space: normal;
+}
+
+.explorer-reference-locks {
+  margin: 0;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.73rem;
+  white-space: pre-wrap;
 }
 
 .explorer-reference-list {
@@ -1678,5 +1849,906 @@ noscript {
   *::before,
   *::after {
     scroll-behavior: auto !important;
+  }
+}
+
+
+/* Phase 13 workbook interaction */
+.sheet-cell.range-selected {
+  background-color: rgba(33, 115, 70, 0.055);
+}
+
+.sheet-cell.selection-top { border-top: 2px solid var(--accent); }
+.sheet-cell.selection-right { border-right: 2px solid var(--accent); }
+.sheet-cell.selection-bottom { border-bottom: 2px solid var(--accent); }
+.sheet-cell.selection-left { border-left: 2px solid var(--accent); }
+
+.sheet-cell.active {
+  background-clip: padding-box;
+}
+
+.sheet-cell.copy-source {
+  outline: 1px dashed #217346;
+  outline-offset: -2px;
+}
+
+.sheet-cell.cut-source {
+  outline: 1px dashed #8a5b22;
+  outline-offset: -2px;
+}
+
+.sheet-cell.fill-preview {
+  background: rgba(33, 115, 70, 0.10);
+  box-shadow: inset 0 0 0 1px rgba(33, 115, 70, 0.65);
+}
+
+.corner-cell.selected-header {
+  background: #dcebe2;
+}
+
+.name-box:not([readonly]) {
+  cursor: text;
+}
+
+.explorer-field {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 3px 0;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.explorer-field-label {
+  color: var(--muted);
+  font-size: 0.74rem;
+}
+
+.explorer-field-value {
+  color: var(--text);
+  font-size: 0.76rem;
+  font-weight: 600;
+  text-align: right;
+}
+
+
+/* Phase 15 statistical Formula Explorer */
+.statistical-value-list,
+.statistical-pair-list {
+  display: grid;
+  gap: 4px;
+}
+
+.statistical-value-row,
+.statistical-pair-row {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  align-items: baseline;
+  gap: 8px;
+  padding: 2px 0;
+  border-bottom: 1px solid #ececec;
+}
+
+.statistical-pair-row {
+  grid-template-columns: 28px minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.statistical-position {
+  color: #727272;
+  font-variant-numeric: tabular-nums;
+}
+
+.statistical-value,
+.statistical-pair-value {
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
+.statistical-frequency {
+  margin: 0;
+  white-space: pre-wrap;
+  font-family: inherit;
+  font-variant-numeric: tabular-nums;
+}
+
+.sheet-cell.statistical-x-reference {
+  background: #edf5fb;
+  box-shadow: inset 0 0 0 1px #6392b8;
+}
+
+.sheet-cell.statistical-y-reference {
+  background: #eef6ef;
+  box-shadow: inset 0 0 0 1px #78a582;
+}
+
+
+/* Phase 16 financial Formula Explorer */
+.financial-flow-list {
+  display: grid;
+  gap: 4px;
+}
+
+.financial-flow-row {
+  display: grid;
+  grid-template-columns: minmax(74px, 0.8fr) minmax(0, 0.8fr) minmax(0, 1fr);
+  gap: 8px;
+  align-items: baseline;
+  padding: 3px 0;
+  border-bottom: 1px solid #ececec;
+  font-variant-numeric: tabular-nums;
+}
+
+.financial-flow-period {
+  color: #6d6d6d;
+}
+
+.financial-flow-value,
+.financial-flow-present {
+  overflow-wrap: anywhere;
+}
+
+.sheet-cell.financial-value-reference {
+  background: #f4f7ed;
+  box-shadow: inset 0 0 0 1px #8d9f63;
+}
+
+.sheet-cell.financial-date-reference {
+  background: #f2f2f8;
+  box-shadow: inset 0 0 0 1px #8585aa;
+}
+
+/* Phase 17 advanced logic and business-day Formula Explorer */
+.advanced-branch-list,
+.advanced-let-list,
+.workday-list {
+  display: grid;
+  gap: 4px;
+}
+
+.advanced-branch-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) 70px minmax(0, 1fr);
+  gap: 8px;
+  align-items: baseline;
+  padding: 3px 0;
+  border-bottom: 1px solid #ececec;
+}
+
+.advanced-branch-row.selected {
+  background: rgba(33, 115, 70, 0.06);
+}
+
+.advanced-branch-status {
+  color: #6b6b6b;
+  font-size: 0.73rem;
+  font-weight: 650;
+}
+
+.advanced-branch-value,
+.advanced-branch-condition {
+  overflow-wrap: anywhere;
+}
+
+.advanced-let-row {
+  display: grid;
+  grid-template-columns: minmax(72px, 0.7fr) minmax(0, 1.3fr) minmax(0, 0.8fr);
+  gap: 8px;
+  align-items: baseline;
+  padding: 3px 0;
+  border-bottom: 1px solid #ececec;
+}
+
+.advanced-let-expression {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.72rem;
+  overflow-wrap: anywhere;
+}
+
+.workday-row {
+  display: grid;
+  grid-template-columns: minmax(92px, 1fr) minmax(72px, 0.8fr) 72px;
+  gap: 8px;
+  align-items: baseline;
+  padding: 3px 0;
+  border-bottom: 1px solid #ececec;
+  font-variant-numeric: tabular-nums;
+}
+
+.workday-row.included .workday-status {
+  color: #217346;
+  font-weight: 650;
+}
+
+.workday-row.skipped .workday-status,
+.workday-row.skipped .workday-name {
+  color: #777;
+}
+
+.workday-more {
+  color: var(--muted);
+  font-size: 0.74rem;
+  padding-top: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   Phase 19: Excel-like visual polish
+   Keeps the simulator generic and unbranded while closely matching the
+   familiar geometry, shading, density, and selection language of a default
+   desktop spreadsheet workbook.
+   -------------------------------------------------------------------------- */
+:root {
+  --excel-green: #217346;
+  --excel-green-dark: #185c37;
+  --excel-green-deep: #107c41;
+  --excel-green-pale: #e2f0d9;
+  --excel-grid: #d9d9d9;
+  --excel-header: #f3f3f3;
+  --excel-header-hover: #e8e8e8;
+  --excel-chrome: #f7f7f7;
+  --excel-ribbon: #ffffff;
+  --excel-status: #f3f3f3;
+  --excel-taskpane: #ffffff;
+  --excel-ui-text: #242424;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  background: #f3f3f3;
+  color: var(--excel-ui-text);
+  font-family: "Segoe UI", Aptos, Calibri, Arial, sans-serif;
+  font-size: 13px;
+}
+
+button,
+input,
+select {
+  font-family: inherit;
+}
+
+.page-shell {
+  width: 100%;
+  min-height: 100vh;
+  padding: 0 0 18px;
+  background: #f3f3f3;
+}
+
+/* Workbook title bar */
+.page-header.excel-titlebar {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) auto minmax(260px, 1fr);
+  align-items: center;
+  min-height: 38px;
+  margin: 0;
+  padding: 0 14px;
+  color: #fff;
+  background: var(--excel-green);
+  border-bottom: 1px solid #155d37;
+  box-shadow: none;
+}
+
+.titlebar-product {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 9px;
+}
+
+.titlebar-grid-mark {
+  display: grid;
+  width: 22px;
+  height: 22px;
+  place-items: center;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.78);
+  font-size: 15px;
+  line-height: 1;
+}
+
+.page-header.excel-titlebar h1 {
+  margin: 0;
+  overflow: hidden;
+  color: #fff;
+  font-family: "Segoe UI", Aptos, Calibri, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.titlebar-book {
+  padding: 0 24px;
+  color: rgba(255, 255, 255, 0.96);
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.page-header.excel-titlebar p {
+  margin: 0;
+  overflow: hidden;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 11px;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Familiar workbook/ribbon tab row. The Excel-like tabs are visual context;
+   simulator modes remain the actual interactive controls on the right. */
+.ribbon-tab-row {
+  display: flex;
+  min-height: 34px;
+  align-items: stretch;
+  justify-content: space-between;
+  background: #fff;
+  border-bottom: 1px solid #d0d0d0;
+}
+
+.excel-ribbon-tabs {
+  display: flex;
+  min-width: 0;
+  align-items: stretch;
+  padding-left: 4px;
+}
+
+.excel-ribbon-tab {
+  position: relative;
+  display: flex;
+  min-width: 58px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  color: #303030;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.excel-ribbon-tab.file-tab {
+  min-width: 52px;
+  color: #fff;
+  background: var(--excel-green);
+}
+
+.excel-ribbon-tab.active {
+  color: var(--excel-green-deep);
+  font-weight: 600;
+}
+
+.excel-ribbon-tab.active::after {
+  content: "";
+  position: absolute;
+  right: 9px;
+  bottom: 0;
+  left: 9px;
+  height: 2px;
+  background: var(--excel-green-deep);
+}
+
+.mode-toolbar {
+  display: flex;
+  align-items: stretch;
+  margin: 0;
+  padding-right: 8px;
+}
+
+.mode-switcher {
+  display: flex;
+  align-items: stretch;
+  background: transparent;
+  border: 0;
+}
+
+.mode-button {
+  position: relative;
+  min-width: 76px;
+  height: auto;
+  padding: 0 10px;
+  color: #5b5b5b;
+  background: transparent;
+  border: 0;
+  border-left: 1px solid #eeeeee;
+  font-size: 11px;
+}
+
+.mode-button:last-child {
+  border-right: 0;
+}
+
+.mode-button:hover {
+  background: #f5f5f5;
+}
+
+.mode-button.active {
+  color: var(--excel-green-deep);
+  background: #fff;
+  box-shadow: none;
+  font-weight: 600;
+}
+
+.mode-button.active::after {
+  content: "";
+  position: absolute;
+  right: 9px;
+  bottom: 0;
+  left: 9px;
+  height: 2px;
+  background: var(--excel-green-deep);
+}
+
+.workspace-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 0;
+  align-items: stretch;
+  margin: 0 8px;
+  border: 1px solid #bfbfbf;
+  border-top: 0;
+  background: #fff;
+}
+
+.spreadsheet-app {
+  min-width: 0;
+  overflow: hidden;
+  background: #fff;
+  border: 0;
+  border-right: 1px solid #bfbfbf;
+  border-radius: 0;
+}
+
+/* Compact Home-ribbon-like control band */
+.number-format-toolbar {
+  min-height: 44px;
+  gap: 2px;
+  padding: 5px 8px 6px;
+  background: var(--excel-ribbon);
+  border-bottom: 1px solid #d6d6d6;
+}
+
+.number-format-select {
+  width: 116px;
+  height: 26px;
+  color: #2f2f2f;
+  background: #fff;
+  border: 1px solid #a6a6a6;
+  font-size: 11px;
+}
+
+.format-tool-button {
+  min-width: 28px;
+  height: 26px;
+  color: #333;
+  border: 1px solid transparent;
+  font-size: 11px;
+}
+
+.history-tool-button {
+  font-size: 16px;
+}
+
+.format-tool-button:hover,
+.format-tool-button:focus-visible,
+.format-tool-button.active,
+.workbook-action-button:hover,
+.workbook-action-button:focus-visible {
+  color: #1d1d1d;
+  background: #eaf3ed;
+  border-color: #a7c4b0;
+}
+
+.format-tool-divider {
+  height: 24px;
+  margin: 0 4px;
+  background: #dedede;
+}
+
+/* Formula bar */
+.formula-controls {
+  grid-template-columns: 96px 36px minmax(320px, 1fr);
+  min-width: 452px;
+  min-height: 31px;
+  background: #fff;
+  border-bottom: 1px solid #cfcfcf;
+}
+
+.name-box,
+.formula-input {
+  height: 30px;
+  padding: 0 7px;
+  color: #202020;
+  background: #fff;
+  font-size: 12px;
+}
+
+.name-box {
+  border-right: 1px solid #cfcfcf;
+  font-weight: 400;
+}
+
+.formula-symbol {
+  color: #5a5a5a;
+  background: #fff;
+  border-right: 1px solid #cfcfcf;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 14px;
+}
+
+.formula-symbol:hover,
+.formula-symbol:focus-visible,
+.formula-symbol[aria-expanded="true"] {
+  color: var(--excel-green-deep);
+  background: #f1f7f3;
+}
+
+.formula-input:focus {
+  box-shadow: inset 0 -2px 0 var(--excel-green);
+}
+
+/* Worksheet proportions and default shadings */
+.grid-viewport {
+  height: clamp(430px, 63vh, 650px);
+  background: #fff;
+  scrollbar-color: #b8b8b8 #f0f0f0;
+}
+
+.grid-viewport::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+
+.grid-viewport::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-left: 1px solid #dedede;
+  border-top: 1px solid #dedede;
+}
+
+.grid-viewport::-webkit-scrollbar-thumb {
+  min-height: 28px;
+  background: #c5c5c5;
+  border: 3px solid #f0f0f0;
+}
+
+.grid-viewport::-webkit-scrollbar-thumb:hover {
+  background: #adadad;
+}
+
+.spreadsheet-grid {
+  grid-template-columns: 38px repeat(26, 94px);
+  grid-template-rows: 24px repeat(50, 23px);
+}
+
+.corner-cell,
+.column-header,
+.row-header,
+.sheet-cell {
+  border-right-color: var(--excel-grid);
+  border-bottom-color: var(--excel-grid);
+}
+
+.corner-cell,
+.column-header,
+.row-header {
+  color: #444;
+  background: var(--excel-header);
+  font-family: "Segoe UI", Aptos, Calibri, Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.corner-cell {
+  background: #eeeeee;
+}
+
+.corner-cell::after {
+  right: 3px;
+  bottom: 3px;
+  border-right-color: #7f7f7f;
+  border-right-width: 6px;
+  border-top-width: 6px;
+}
+
+.column-header:hover,
+.row-header:hover {
+  background: var(--excel-header-hover);
+}
+
+.column-header.selected-header,
+.row-header.selected-header,
+.corner-cell.selected-header {
+  color: #0f6b38;
+  background: var(--excel-green-pale);
+  font-weight: 600;
+}
+
+.sheet-cell {
+  padding: 2px 5px 1px;
+  color: #202020;
+  background: #fff;
+  font-family: Aptos, Calibri, "Segoe UI", Arial, sans-serif;
+  font-size: 12px;
+  line-height: 19px;
+}
+
+/* Typed headers in a blank Excel workbook do not gain an automatic table fill. */
+.sheet-cell.sample-header {
+  background: #fff;
+  font-weight: 600;
+}
+
+.sheet-cell.active,
+.sheet-cell.formula-edit-target,
+.sheet-cell.editing {
+  box-shadow: inset 0 0 0 2px var(--excel-green-deep);
+}
+
+.sheet-cell.range-selected {
+  background-color: rgba(33, 115, 70, 0.075);
+}
+
+.sheet-cell.selection-top { border-top-color: var(--excel-green-deep); }
+.sheet-cell.selection-right { border-right-color: var(--excel-green-deep); }
+.sheet-cell.selection-bottom { border-bottom-color: var(--excel-green-deep); }
+.sheet-cell.selection-left { border-left-color: var(--excel-green-deep); }
+
+.sheet-cell.selection-fill-corner::after {
+  width: 6px;
+  height: 6px;
+  background: var(--excel-green-deep);
+  border-color: #fff;
+}
+
+.sheet-cell.copy-source {
+  outline-color: var(--excel-green-deep);
+}
+
+/* Preserve teaching highlights, but mute them so the worksheet still reads
+   like Excel rather than a colorful dashboard. */
+.sheet-cell.formula-reference,
+.sheet-cell.lookup-reference,
+.sheet-cell.array-include-reference,
+.sheet-cell.array-sort-key-reference {
+  background: #eef4f8;
+}
+
+.sheet-cell.aggregate-reference,
+.sheet-cell.return-reference,
+.sheet-cell.array-included-reference {
+  background: #edf5ef;
+}
+
+.sheet-cell.table-reference,
+.sheet-cell.array-source-reference {
+  background: #f5f5f5;
+}
+
+.sheet-cell.practice-target {
+  background: #fffdf5;
+  outline-color: #a1844d;
+}
+
+/* Workbook status/sheet tabs */
+.workbook-bar {
+  min-height: 31px;
+  color: #4c4c4c;
+  background: var(--excel-status);
+  border-top: 1px solid #cfcfcf;
+  font-size: 11px;
+}
+
+.sheet-strip,
+.status-info {
+  height: 30px;
+}
+
+.add-sheet-button,
+.sheet-tab {
+  height: 30px;
+  border-right: 0;
+}
+
+.add-sheet-button {
+  width: 34px;
+  color: #4c4c4c;
+  font-size: 16px;
+}
+
+.sheet-tab {
+  min-width: 74px;
+  padding: 0 13px;
+  color: #444;
+  background: transparent;
+  font-size: 11px;
+}
+
+.active-sheet {
+  color: #1b1b1b;
+  background: #fff;
+  border-bottom: 3px solid var(--excel-green-deep);
+  font-weight: 600;
+}
+
+.workbook-action-button {
+  height: 24px;
+  color: #555;
+  font-size: 10px;
+}
+
+.status-info {
+  gap: 18px;
+  padding: 0 9px;
+  white-space: nowrap;
+}
+
+.save-status {
+  color: #5f6f64;
+}
+
+/* Excel-like task pane attached to the workbook rather than a separate card. */
+.function-explorer {
+  min-width: 0;
+  min-height: 100%;
+  padding: 0;
+  overflow: hidden;
+  background: var(--excel-taskpane);
+  border: 0;
+  border-radius: 0;
+}
+
+#learning-panel,
+#trace-panel {
+  padding: 14px 14px 18px;
+}
+
+.function-explorer[data-mode="practice"] #trace-panel {
+  margin: 0;
+  padding-top: 14px;
+  border-top: 1px solid #d7d7d7;
+}
+
+.function-explorer h2 {
+  margin: -14px -14px 12px;
+  padding: 9px 12px;
+  color: #2f2f2f;
+  background: #f5f5f5;
+  border-bottom: 1px solid #d8d8d8;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.function-search,
+.function-picker-search {
+  border-color: #a9a9a9;
+  font-size: 11px;
+}
+
+.function-catalog-button,
+.practice-filter-button,
+.learning-button,
+.practice-difficulty,
+.practice-track-label,
+.practice-skill {
+  border-radius: 0;
+}
+
+.function-catalog-button:hover,
+.function-catalog-button.selected,
+.practice-filter-button.active {
+  color: #0f5f34;
+  background: #eaf3ed;
+  border-color: #a5c2ae;
+}
+
+.practice-filter-button.active,
+.learning-button.primary {
+  color: #fff;
+  background: var(--excel-green-deep);
+  border-color: var(--excel-green-dark);
+}
+
+.explorer-result,
+.learning-result,
+.practice-function {
+  color: var(--excel-green-deep);
+}
+
+.learning-formula,
+.explorer-formula {
+  color: #0f5f34;
+}
+
+/* Keep the website navigation present but visually outside the workbook. */
+.footer-nav {
+  margin: 12px 0 0;
+  color: #7a7a7a;
+  font-size: 11px;
+}
+
+.footer-nav a {
+  color: #53665b;
+}
+
+/* Strong, consistent keyboard focus without changing the workbook's default
+   mouse appearance. */
+button:focus-visible,
+select:focus-visible,
+input:focus-visible,
+a:focus-visible,
+.sheet-cell:focus-visible {
+  outline: 2px solid #1a73e8;
+  outline-offset: 1px;
+}
+
+.sheet-cell.active:focus-visible,
+.sheet-cell.editing:focus-visible {
+  outline: 0;
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    --excel-grid: #b8b8b8;
+  }
+
+  .sheet-cell.active,
+  .sheet-cell.formula-edit-target,
+  .sheet-cell.editing {
+    box-shadow: inset 0 0 0 3px #0b5f32;
+  }
+}
+
+@media (max-width: 1080px) {
+  .workspace-layout {
+    grid-template-columns: 1fr;
+    margin: 0 6px;
+  }
+
+  .spreadsheet-app {
+    border-right: 0;
+    border-bottom: 1px solid #bfbfbf;
+  }
+
+  .function-explorer {
+    min-height: auto;
+  }
+
+  .page-header.excel-titlebar {
+    grid-template-columns: minmax(180px, 1fr) auto;
+  }
+
+  .page-header.excel-titlebar p {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .ribbon-tab-row {
+    display: block;
+  }
+
+  .excel-ribbon-tabs {
+    overflow-x: auto;
+  }
+
+  .mode-toolbar {
+    height: 30px;
+    justify-content: flex-end;
+    border-top: 1px solid #eeeeee;
+  }
+
+  .page-header.excel-titlebar {
+    grid-template-columns: 1fr auto;
+    padding: 0 8px;
+  }
+
+  .titlebar-book {
+    padding: 0 8px;
+  }
+
+  .spreadsheet-grid {
+    grid-template-columns: 36px repeat(26, 90px);
   }
 }

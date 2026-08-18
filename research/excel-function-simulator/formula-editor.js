@@ -156,12 +156,72 @@
     }
 
     const references = [];
-    const pattern = /\b([A-Z]{1,3}[1-9]\d*)(?:\s*:\s*([A-Z]{1,3}[1-9]\d*))?\b/gi;
+    const pattern = /(?<![A-Z0-9_.])(\$?[A-Z]{1,3}\$?[1-9]\d*)(?:\s*:\s*(\$?[A-Z]{1,3}\$?[1-9]\d*))?(?![A-Z0-9_.])/gi;
     let match;
     while ((match = pattern.exec(masked))) {
       references.push({ start: match[1].toUpperCase(), end: (match[2] || match[1]).toUpperCase() });
     }
     return references;
+  }
+
+  function referenceTokenAtCaret(text, caretStart, caretEnd) {
+    if (!text.startsWith("=")) return null;
+    let inString = false;
+    let masked = "";
+    for (let index = 0; index < text.length; index += 1) {
+      const character = text[index];
+      if (character === "\"") {
+        if (inString && text[index + 1] === "\"") {
+          masked += "  ";
+          index += 1;
+          continue;
+        }
+        inString = !inString;
+        masked += " ";
+      } else {
+        masked += inString ? " " : character;
+      }
+    }
+
+    const pattern = /(?<![A-Z0-9_.])\$?[A-Z]{1,3}\$?[1-9]\d*(?:\s*:\s*\$?[A-Z]{1,3}\$?[1-9]\d*)?(?![A-Z0-9_.])/gi;
+    let match;
+    let preceding = null;
+    while ((match = pattern.exec(masked))) {
+      const start = match.index;
+      const end = start + match[0].length;
+      if (caretStart !== caretEnd && caretStart === start && caretEnd === end) {
+        return { start, end, address: text.slice(start, end) };
+      }
+      if (caretStart >= start && caretStart <= end && caretEnd >= start && caretEnd <= end) {
+        return { start, end, address: text.slice(start, end) };
+      }
+      if (end === caretStart && caretStart === caretEnd) {
+        preceding = { start, end, address: text.slice(start, end) };
+      }
+    }
+    return preceding;
+  }
+
+  function cycleReferenceAddress(address) {
+    if (!address.includes(":")) return engine.cycleReferenceLock(address);
+    return address.split(":").map((part) => engine.cycleReferenceLock(part.trim())).join(":");
+  }
+
+  function cycleReferenceAtCaret() {
+    rememberCaret();
+    const reference = referenceTokenAtCaret(
+      sourceText(),
+      state.caretStart,
+      state.caretEnd
+    );
+    if (!reference) return false;
+    const nextAddress = cycleReferenceAddress(reference.address);
+    const current = sourceText();
+    const next = current.slice(0, reference.start) + nextAddress + current.slice(reference.end);
+    const selectionEnd = reference.start + nextAddress.length;
+    writeSource(next, reference.start, selectionEnd);
+    updateAuthoring();
+    return true;
   }
 
   function visibleRange(start, end) {
@@ -420,7 +480,11 @@
   function handleAuthoringKeydown(event, isCellSource) {
     if (!state.active || event.target !== state.source) return;
 
-    if (!autocomplete.hidden && event.key === "ArrowDown") {
+    if (event.key === "F4") {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      cycleReferenceAtCaret();
+    } else if (!autocomplete.hidden && event.key === "ArrowDown") {
       event.preventDefault();
       event.stopImmediatePropagation();
       moveSuggestion(1);
@@ -585,7 +649,7 @@
   }, true);
 
   formulaInput.addEventListener("focus", () => {
-    const target = nameBox.value;
+    const target = simulator.getActiveReference?.() || nameBox.value;
     if (simulator.isSpillCell?.(target)) return;
     if (state.active && state.target === target) {
       state.source = formulaInput;
@@ -602,7 +666,7 @@
     if (!state.active && formulaInput.value.startsWith("=")) {
       beginFormulaEdit(
         formulaInput,
-        state.focusReference || nameBox.value,
+        state.focusReference || simulator.getActiveReference?.() || nameBox.value,
         state.focusStartInput
       );
     } else if (state.active && state.source === formulaInput) {
@@ -680,7 +744,7 @@
   }
 
   functionButton.addEventListener("click", () => {
-    if (simulator.isSpillCell?.(nameBox.value)) return;
+    if (simulator.isSpillCell?.(simulator.getActiveReference?.() || nameBox.value)) return;
     const opening = functionPicker.hidden;
     if (!opening) {
       closeFunctionPicker();
@@ -710,7 +774,7 @@
       setSelection(state.source, state.caretStart, state.caretEnd);
       insertText(`${entry.name}(`);
     } else {
-      const target = nameBox.value;
+      const target = simulator.getActiveReference?.() || nameBox.value;
       const originalInput = simulator.getCell(target)?.input || "";
       formulaInput.focus({ preventScroll: true });
       formulaInput.value = `=${entry.name}(`;

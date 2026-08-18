@@ -68,6 +68,13 @@
         continue;
       }
 
+      const errorMatch = source.slice(position).match(/^#(?:CALC!|DIV\/0!|NAME\?|ERROR!|VALUE!|N\/A|REF!|NUM!|SPILL!)/i);
+      if (errorMatch) {
+        tokens.push({ type: "error", value: errorMatch[0].toUpperCase() });
+        position += errorMatch[0].length;
+        continue;
+      }
+
       const comparison = ["<>", ">=", "<=", "=", ">", "<"]
         .find((operator) => source.startsWith(operator, position));
       if (comparison) {
@@ -76,7 +83,7 @@
         continue;
       }
 
-      if ("+-*/&():,%".includes(character)) {
+      if ("+-*/&():,%#".includes(character)) {
         const tokenTypes = {
           "+": "plus",
           "-": "minus",
@@ -87,7 +94,8 @@
           ")": "rightParen",
           ":": "colon",
           ",": "comma",
-          "%": "percent"
+          "%": "percent",
+          "#": "spill"
         };
         tokens.push({ type: tokenTypes[character], value: character });
         position += 1;
@@ -99,6 +107,13 @@
       if (numberMatch) {
         tokens.push({ type: "number", value: Number(numberMatch[0]) });
         position += numberMatch[0].length;
+        continue;
+      }
+
+      const referenceMatch = remaining.match(/^(?:\$[A-Za-z]+\$?[1-9]\d*|[A-Za-z]+\$[1-9]\d*)(?![A-Za-z0-9_.])/);
+      if (referenceMatch) {
+        tokens.push({ type: "reference", value: referenceMatch[0] });
+        position += referenceMatch[0].length;
         continue;
       }
 
@@ -117,7 +132,20 @@
   }
 
   function isCellReference(value) {
-    return /^[A-Za-z]+[1-9]\d*$/.test(value);
+    return /^\$?[A-Za-z]+\$?[1-9]\d*$/.test(value);
+  }
+
+  function referenceFromRaw(rawReference) {
+    const parsed = parseReference(rawReference);
+    return {
+      type: "reference",
+      reference: formatReference(parsed, { absolute: false }),
+      address: formatReference(parsed),
+      column: parsed.column,
+      row: parsed.row,
+      columnAbsolute: parsed.columnAbsolute,
+      rowAbsolute: parsed.rowAbsolute
+    };
   }
 
   class Parser {
@@ -226,8 +254,16 @@
 
     parsePostfix() {
       let expression = this.parsePrimary();
-      while (this.match("percent")) {
-        expression = { type: "postfix", operator: "%", operand: expression };
+      while (this.current().type === "percent" || this.current().type === "spill") {
+        if (this.match("percent")) {
+          expression = { type: "postfix", operator: "%", operand: expression };
+          continue;
+        }
+        this.consume("spill");
+        if (expression.type !== "reference") {
+          throw new FormulaSyntaxError("The spill operator must follow a cell reference");
+        }
+        expression = { type: "postfix", operator: "#", operand: expression };
       }
       return expression;
     }
@@ -241,10 +277,37 @@
         return { type: "string", value: this.consume("string").value };
       }
 
+      if (this.current().type === "error") {
+        return { type: "error", value: this.consume("error").value };
+      }
+
       if (this.match("leftParen")) {
         const expression = this.parseComparison();
         this.consume("rightParen");
         return expression;
+      }
+
+      if (this.current().type === "reference") {
+        const startToken = this.consume("reference").value;
+        const startNode = referenceFromRaw(startToken);
+        if (!this.match("colon")) return startNode;
+
+        const endToken = this.current().type === "reference"
+          ? this.consume("reference").value
+          : this.consume("identifier").value;
+        if (!isCellReference(endToken)) {
+          throw new FormulaSyntaxError("Invalid range reference");
+        }
+        const endNode = referenceFromRaw(endToken);
+        return {
+          type: "range",
+          start: startNode.reference,
+          end: endNode.reference,
+          startAddress: startNode.address,
+          endAddress: endNode.address,
+          startReference: startNode,
+          endReference: endNode
+        };
       }
 
       if (this.current().type !== "identifier") {
@@ -261,20 +324,34 @@
       }
 
       if (!isCellReference(identifier)) {
-        throw new FormulaSyntaxError("Invalid cell reference");
+        return {
+          type: "name",
+          name: identifier.toUpperCase(),
+          rawName: identifier
+        };
       }
 
-      const start = identifier.toUpperCase();
+      const startNode = referenceFromRaw(identifier);
       if (!this.match("colon")) {
-        return { type: "reference", reference: start };
+        return startNode;
       }
 
-      const end = this.consume("identifier").value;
+      const end = this.current().type === "reference"
+        ? this.consume("reference").value
+        : this.consume("identifier").value;
       if (!isCellReference(end)) {
         throw new FormulaSyntaxError("Invalid range reference");
       }
-
-      return { type: "range", start, end: end.toUpperCase() };
+      const endNode = referenceFromRaw(end);
+      return {
+        type: "range",
+        start: startNode.reference,
+        end: endNode.reference,
+        startAddress: startNode.address,
+        endAddress: endNode.address,
+        startReference: startNode,
+        endReference: endNode
+      };
     }
 
     parseFunctionCall(name) {
@@ -329,12 +406,119 @@
   }
 
   function parseReference(reference) {
-    const match = String(reference).toUpperCase().match(/^([A-Z]+)([1-9]\d*)$/);
+    const match = String(reference).trim().toUpperCase().match(/^(\$?)([A-Z]+)(\$?)([1-9]\d*)$/);
     if (!match) throw new FormulaSyntaxError("Invalid cell reference");
 
     return {
-      column: columnIndex(match[1]),
-      row: Number(match[2]) - 1
+      column: columnIndex(match[2]),
+      row: Number(match[4]) - 1,
+      columnAbsolute: match[1] === "$",
+      rowAbsolute: match[3] === "$"
+    };
+  }
+
+  function formatReference(reference, options = {}) {
+    const parsed = typeof reference === "string" ? parseReference(reference) : reference;
+    const includeAbsolute = options.absolute !== false;
+    const columnPrefix = includeAbsolute && parsed.columnAbsolute ? "$" : "";
+    const rowPrefix = includeAbsolute && parsed.rowAbsolute ? "$" : "";
+    return `${columnPrefix}${columnLabel(parsed.column)}${rowPrefix}${parsed.row + 1}`;
+  }
+
+  function cycleReferenceLock(reference) {
+    const parsed = typeof reference === "string" ? parseReference(reference) : { ...reference };
+
+    if (!parsed.columnAbsolute && !parsed.rowAbsolute) {
+      parsed.columnAbsolute = true;
+      parsed.rowAbsolute = true;
+    } else if (parsed.columnAbsolute && parsed.rowAbsolute) {
+      parsed.columnAbsolute = false;
+      parsed.rowAbsolute = true;
+    } else if (!parsed.columnAbsolute && parsed.rowAbsolute) {
+      parsed.columnAbsolute = true;
+      parsed.rowAbsolute = false;
+    } else {
+      parsed.columnAbsolute = false;
+      parsed.rowAbsolute = false;
+    }
+
+    return formatReference(parsed);
+  }
+
+  function translateReference(reference, rowDelta, columnDelta, options = {}) {
+    const parsed = typeof reference === "string" ? parseReference(reference) : { ...reference };
+    const rowLimit = Number.isInteger(options.rowLimit) ? options.rowLimit : null;
+    const columnLimit = Number.isInteger(options.columnLimit) ? options.columnLimit : null;
+    const translated = {
+      ...parsed,
+      row: parsed.rowAbsolute ? parsed.row : parsed.row + rowDelta,
+      column: parsed.columnAbsolute ? parsed.column : parsed.column + columnDelta
+    };
+
+    if (translated.row < 0 || translated.column < 0
+      || (rowLimit !== null && translated.row >= rowLimit)
+      || (columnLimit !== null && translated.column >= columnLimit)) {
+      return ERROR_VALUES.REF;
+    }
+    return formatReference(translated);
+  }
+
+  function translateFormula(formula, rowDelta, columnDelta, options = {}) {
+    if (typeof formula !== "string" || !formula.startsWith("=")) return formula;
+    let result = "";
+    let index = 0;
+    let inString = false;
+    let invalidReference = false;
+
+    while (index < formula.length) {
+      const character = formula[index];
+      if (character === '"') {
+        result += character;
+        if (inString && formula[index + 1] === '"') {
+          result += '"';
+          index += 2;
+          continue;
+        }
+        inString = !inString;
+        index += 1;
+        continue;
+      }
+
+      if (inString) {
+        result += character;
+        index += 1;
+        continue;
+      }
+
+      const previous = index > 0 ? formula[index - 1] : "";
+      const atBoundary = !previous || !/[A-Za-z0-9_.]/.test(previous);
+      if (atBoundary) {
+        const remaining = formula.slice(index);
+        const match = remaining.match(/^\$?[A-Za-z]+\$?[1-9]\d*(?![A-Za-z0-9_.])/);
+        if (match) {
+          const afterToken = remaining.slice(match[0].length);
+          if (!/^\s*\(/.test(afterToken)) {
+            const translated = translateReference(match[0], rowDelta, columnDelta, options);
+            if (translated === ERROR_VALUES.REF) invalidReference = true;
+            result += translated;
+            index += match[0].length;
+            continue;
+          }
+        }
+      }
+
+      result += character;
+      index += 1;
+    }
+
+    return invalidReference ? `=${ERROR_VALUES.REF}` : result;
+  }
+
+  function referenceLockDescription(reference) {
+    const parsed = typeof reference === "string" ? parseReference(reference) : reference;
+    return {
+      column: parsed.columnAbsolute ? "absolute" : "relative",
+      row: parsed.rowAbsolute ? "absolute" : "relative"
     };
   }
 
@@ -1010,6 +1194,38 @@
     };
   }
 
+  function runXmatch(nodes, context) {
+    if (nodes.length < 2 || nodes.length > 4) throw new FormulaError(ERROR_VALUES.VALUE);
+    const lookupValue = scalarValue(nodes[0], context);
+    const lookupRange = resolveRangeArgument(nodes[1], context);
+    const entries = requireVector(lookupRange);
+    const matchMode = nodes[2] ? integerValue(nodes[2], context) : 0;
+    const searchMode = nodes[3] ? integerValue(nodes[3], context) : 1;
+
+    if (![0, -1, 1, 2].includes(matchMode) || ![1, -1].includes(searchMode)) {
+      throw new FormulaError(ERROR_VALUES.VALUE);
+    }
+
+    entries.forEach((entry) => {
+      if (isKnownErrorValue(entry.value)) throw new FormulaError(entry.value);
+    });
+
+    const search = LookupEngine.search(entries, lookupValue, { matchMode, searchMode });
+    const result = search.selected ? search.selected.index + 1 : ERROR_VALUES.NA;
+    return {
+      kind: "xmatch",
+      functionName: "XMATCH",
+      lookupValue,
+      lookupRange,
+      matchMode,
+      searchMode,
+      search,
+      resultPosition: typeof result === "number" ? result : null,
+      result,
+      error: isKnownErrorValue(result) ? result : null
+    };
+  }
+
   function runMatch(nodes, context) {
     if (nodes.length !== 2 && nodes.length !== 3) throw new FormulaError(ERROR_VALUES.VALUE);
     const lookupValue = scalarValue(nodes[0], context);
@@ -1069,11 +1285,12 @@
     };
   }
 
-  const LOOKUP_FUNCTIONS = new Set(["VLOOKUP", "HLOOKUP", "XLOOKUP", "MATCH", "INDEX"]);
+  const LOOKUP_FUNCTIONS = new Set(["VLOOKUP", "HLOOKUP", "XLOOKUP", "XMATCH", "MATCH", "INDEX"]);
 
   function runLookupFunction(name, nodes, context) {
     if (name === "VLOOKUP" || name === "HLOOKUP") return runTableLookup(name, nodes, context);
     if (name === "XLOOKUP") return runXlookup(nodes, context);
+    if (name === "XMATCH") return runXmatch(nodes, context);
     if (name === "MATCH") return runMatch(nodes, context);
     if (name === "INDEX") return runIndex(nodes, context);
     throw new FormulaError(ERROR_VALUES.NAME);
@@ -1311,6 +1528,196 @@
     return trace.result;
   }
 
+  const ADVANCED_FUNCTIONS = new Set(["IFS", "SWITCH", "CHOOSE", "LET"]);
+
+  function scopedContext(context, bindings) {
+    return {
+      ...context,
+      getNameValue(name) {
+        const key = String(name).toUpperCase();
+        if (bindings.has(key)) return bindings.get(key);
+        if (typeof context.getNameValue === "function") return context.getNameValue(key);
+        throw new FormulaError(ERROR_VALUES.NAME);
+      }
+    };
+  }
+
+  function nodeLabel(node) {
+    if (!node) return "";
+    if (node.type === "name") return node.rawName || node.name;
+    if (node.type === "reference") return node.address || node.reference;
+    if (node.type === "string") return `"${node.value}"`;
+    if (node.type === "number" || node.type === "boolean") return String(node.value);
+    return node.type;
+  }
+
+  function runAdvancedFunction(name, nodes, context) {
+    if (name === "IFS") {
+      if (nodes.length < 2 || nodes.length % 2 !== 0) {
+        throw new FormulaError(ERROR_VALUES.VALUE);
+      }
+
+      const branches = [];
+      for (let index = 0; index < nodes.length; index += 2) {
+        const condition = requireLogical(evaluateNode(nodes[index], context));
+        const branch = {
+          index: (index / 2) + 1,
+          conditionNode: nodes[index],
+          valueNode: nodes[index + 1],
+          condition,
+          selected: false
+        };
+        branches.push(branch);
+        if (condition) {
+          branch.selected = true;
+          const result = evaluateNode(nodes[index + 1], context);
+          return {
+            kind: "ifs",
+            functionName: name,
+            branches,
+            matchedBranch: branch.index,
+            result
+          };
+        }
+      }
+
+      return {
+        kind: "ifs",
+        functionName: name,
+        branches,
+        matchedBranch: null,
+        result: ERROR_VALUES.NA
+      };
+    }
+
+    if (name === "SWITCH") {
+      if (nodes.length < 3) throw new FormulaError(ERROR_VALUES.VALUE);
+      const expression = scalarValue(nodes[0], context);
+      const hasDefault = nodes.length % 2 === 0;
+      const finalPairEnd = hasDefault ? nodes.length - 1 : nodes.length;
+      const cases = [];
+
+      for (let index = 1; index < finalPairEnd; index += 2) {
+        const candidate = scalarValue(nodes[index], context);
+        const matched = compareValues(expression, candidate, "=");
+        const entry = {
+          index: ((index - 1) / 2) + 1,
+          candidate,
+          valueNode: nodes[index + 1],
+          matched,
+          selected: false
+        };
+        cases.push(entry);
+        if (matched) {
+          entry.selected = true;
+          const result = evaluateNode(nodes[index + 1], context);
+          return {
+            kind: "switch",
+            functionName: name,
+            expression,
+            cases,
+            defaultProvided: hasDefault,
+            defaultUsed: false,
+            result
+          };
+        }
+      }
+
+      if (hasDefault) {
+        return {
+          kind: "switch",
+          functionName: name,
+          expression,
+          cases,
+          defaultProvided: true,
+          defaultUsed: true,
+          result: evaluateNode(nodes[nodes.length - 1], context)
+        };
+      }
+
+      return {
+        kind: "switch",
+        functionName: name,
+        expression,
+        cases,
+        defaultProvided: false,
+        defaultUsed: false,
+        result: ERROR_VALUES.NA
+      };
+    }
+
+    if (name === "CHOOSE") {
+      if (nodes.length < 2) throw new FormulaError(ERROR_VALUES.VALUE);
+      const index = integerValue(nodes[0], context);
+      if (index < 1 || index >= nodes.length) {
+        return {
+          kind: "choose",
+          functionName: name,
+          index,
+          optionCount: nodes.length - 1,
+          selectedNode: null,
+          result: ERROR_VALUES.VALUE
+        };
+      }
+
+      const selectedNode = nodes[index];
+      const result = evaluateNode(selectedNode, context);
+      return {
+        kind: "choose",
+        functionName: name,
+        index,
+        optionCount: nodes.length - 1,
+        selectedNode,
+        result
+      };
+    }
+
+    if (name === "LET") {
+      if (nodes.length < 3 || nodes.length % 2 === 0) {
+        throw new FormulaError(ERROR_VALUES.VALUE);
+      }
+
+      const bindings = new Map();
+      const bindingDetails = [];
+      let localContext = scopedContext(context, bindings);
+
+      for (let index = 0; index < nodes.length - 1; index += 2) {
+        const nameNode = nodes[index];
+        if (nameNode?.type !== "name") throw new FormulaError(ERROR_VALUES.NAME);
+        const variableName = nameNode.name.toUpperCase();
+        if (!/^[A-Z_][A-Z0-9_.]*$/.test(variableName)) {
+          throw new FormulaError(ERROR_VALUES.NAME);
+        }
+        const value = evaluateNode(nodes[index + 1], localContext);
+        bindings.set(variableName, value);
+        bindingDetails.push({
+          name: nameNode.rawName || variableName,
+          normalizedName: variableName,
+          value,
+          valueNode: nodes[index + 1]
+        });
+        localContext = scopedContext(context, bindings);
+      }
+
+      const calculationNode = nodes[nodes.length - 1];
+      const result = evaluateNode(calculationNode, localContext);
+      return {
+        kind: "let",
+        functionName: name,
+        bindings: bindingDetails,
+        calculationNode,
+        result
+      };
+    }
+
+    throw new FormulaError(ERROR_VALUES.NAME);
+  }
+
+  function finalizeAdvancedTrace(trace) {
+    if (isKnownErrorValue(trace.result)) throw new FormulaError(trace.result);
+    return trace.result;
+  }
+
   const DATE_FUNCTIONS = new Set([
     "DATE",
     "YEAR",
@@ -1320,9 +1727,11 @@
     "DAYS",
     "EDATE",
     "EOMONTH",
-    "WEEKDAY"
+    "WEEKDAY",
+    "NETWORKDAYS",
+    "WORKDAY"
   ]);
-  const DATE_RESULT_FUNCTIONS = new Set(["DATE", "TODAY", "EDATE", "EOMONTH"]);
+  const DATE_RESULT_FUNCTIONS = new Set(["DATE", "TODAY", "EDATE", "EOMONTH", "WORKDAY"]);
   const VOLATILE_FUNCTIONS = new Set(["TODAY"]);
 
   function dateSerialArgument(node, context) {
@@ -1347,6 +1756,44 @@
       resultDate: ExcelFormatting.formatDateSerial(serial),
       calendar,
       ...extra
+    };
+  }
+
+  function holidaySerialSet(node, context) {
+    if (!node) return new Set();
+    const raw = evaluateNode(node, context);
+    const values = isArrayValue(raw) ? arrayValues(raw) : [raw];
+    const holidays = new Set();
+
+    values.forEach((value) => {
+      if (value === "" || value === null || value === undefined) return;
+      if (isKnownErrorValue(value)) throw new FormulaError(value);
+      if (typeof value !== "number" || !Number.isFinite(value)) {
+        throw new FormulaError(ERROR_VALUES.VALUE);
+      }
+      const serial = Math.floor(value);
+      if (!ExcelFormatting.serialToCalendar(serial)) throw new FormulaError(ERROR_VALUES.NUM);
+      holidays.add(serial);
+    });
+    return holidays;
+  }
+
+  function isStandardWorkday(serial, holidays) {
+    const weekdayNumber = ExcelFormatting.weekday(serial, 2);
+    if (weekdayNumber === null) throw new FormulaError(ERROR_VALUES.NUM);
+    return weekdayNumber <= 5 && !holidays.has(Math.floor(serial));
+  }
+
+  function workdayTraceEntry(serial, holidays) {
+    const weekdayNumber = ExcelFormatting.weekday(serial, 2);
+    const holiday = holidays.has(Math.floor(serial));
+    return {
+      serial: Math.floor(serial),
+      date: ExcelFormatting.formatDateSerial(serial),
+      dayName: ExcelFormatting.weekdayName(serial),
+      weekend: weekdayNumber > 5,
+      holiday,
+      workday: weekdayNumber <= 5 && !holiday
     };
   }
 
@@ -1444,6 +1891,70 @@
         result,
         resultFormat: ExcelFormatting.NUMBER_FORMATS.GENERAL
       };
+    }
+
+    if (name === "NETWORKDAYS") {
+      requireArity(nodes, 2, 3);
+      const startSerial = Math.floor(dateSerialArgument(nodes[0], context));
+      const endSerial = Math.floor(dateSerialArgument(nodes[1], context));
+      const holidays = holidaySerialSet(nodes[2], context);
+      const direction = startSerial <= endSerial ? 1 : -1;
+      const lower = Math.min(startSerial, endSerial);
+      const upper = Math.max(startSerial, endSerial);
+      const days = [];
+      let count = 0;
+
+      for (let serial = lower; serial <= upper; serial += 1) {
+        if (!ExcelFormatting.serialToCalendar(serial)) throw new FormulaError(ERROR_VALUES.NUM);
+        const entry = workdayTraceEntry(serial, holidays);
+        days.push(entry);
+        if (entry.workday) count += 1;
+      }
+
+      const result = direction * count;
+      return {
+        kind: "networkdays",
+        functionName: name,
+        startSerial,
+        startDate: ExcelFormatting.formatDateSerial(startSerial),
+        endSerial,
+        endDate: ExcelFormatting.formatDateSerial(endSerial),
+        holidaySerials: [...holidays],
+        days,
+        workdayCount: result,
+        result,
+        resultFormat: ExcelFormatting.NUMBER_FORMATS.GENERAL
+      };
+    }
+
+    if (name === "WORKDAY") {
+      requireArity(nodes, 2, 3);
+      const startSerial = Math.floor(dateSerialArgument(nodes[0], context));
+      const requestedDays = numericArgument(nodes[1], context);
+      const days = Math.trunc(requestedDays);
+      const holidays = holidaySerialSet(nodes[2], context);
+      const direction = days < 0 ? -1 : 1;
+      let remaining = Math.abs(days);
+      let serial = startSerial;
+      const traversed = [];
+
+      while (remaining > 0) {
+        serial += direction;
+        if (!ExcelFormatting.serialToCalendar(serial)) throw new FormulaError(ERROR_VALUES.NUM);
+        const entry = workdayTraceEntry(serial, holidays);
+        traversed.push(entry);
+        if (entry.workday) remaining -= 1;
+      }
+
+      return dateResultTrace(name, serial, {
+        kind: "workday",
+        startSerial,
+        startDate: ExcelFormatting.formatDateSerial(startSerial),
+        requestedDays,
+        days,
+        holidaySerials: [...holidays],
+        traversed
+      });
     }
 
     throw new FormulaError(ERROR_VALUES.NAME);
@@ -1577,6 +2088,658 @@
 
   function finalizeMathTrace(trace) {
     if (isKnownErrorValue(trace.result)) throw new FormulaError(trace.result);
+    return trace.result;
+  }
+
+  const STATISTICAL_FUNCTIONS = new Set([
+    "MEDIAN",
+    "MODE.SNGL",
+    "STDEV.S",
+    "STDEV.P",
+    "VAR.S",
+    "VAR.P",
+    "RANK.EQ",
+    "PERCENTILE.INC",
+    "QUARTILE.INC",
+    "CORREL",
+    "COVARIANCE.S"
+  ]);
+
+  function statisticalEntriesFromNode(node, context) {
+    const value = evaluateNode(node, context);
+    if (isKnownErrorValue(value)) throw new FormulaError(value);
+    const entries = [];
+
+    if (isArrayValue(value)) {
+      value.values.forEach((row, rowIndex) => row.forEach((entry, columnIndex) => {
+        if (isKnownErrorValue(entry)) throw new FormulaError(entry);
+        if (typeof entry === "number" && Number.isFinite(entry)) {
+          entries.push({
+            value: entry,
+            reference: value.references?.[rowIndex]?.[columnIndex] || null,
+            rowIndex,
+            columnIndex
+          });
+        }
+      }));
+      return entries;
+    }
+
+    if (typeof value === "number" && Number.isFinite(value)) {
+      entries.push({
+        value,
+        reference: node?.type === "reference" ? node.reference : null,
+        rowIndex: 0,
+        columnIndex: 0
+      });
+    }
+    return entries;
+  }
+
+  function statisticalEntries(nodes, context) {
+    const entries = [];
+    nodes.forEach((node) => entries.push(...statisticalEntriesFromNode(node, context)));
+    return entries;
+  }
+
+  function statisticalValues(nodes, context) {
+    return statisticalEntries(nodes, context).map((entry) => entry.value);
+  }
+
+  function statisticalMean(values) {
+    return values.reduce((total, value) => total + value, 0) / values.length;
+  }
+
+  function percentileInclusive(sortedValues, k) {
+    if (!sortedValues.length || !Number.isFinite(k) || k < 0 || k > 1) {
+      throw new FormulaError(ERROR_VALUES.NUM);
+    }
+    if (sortedValues.length === 1) return {
+      index: 0,
+      lowerIndex: 0,
+      upperIndex: 0,
+      fraction: 0,
+      lowerValue: sortedValues[0],
+      upperValue: sortedValues[0],
+      result: sortedValues[0]
+    };
+    const index = (sortedValues.length - 1) * k;
+    const lowerIndex = Math.floor(index);
+    const upperIndex = Math.ceil(index);
+    const fraction = index - lowerIndex;
+    const lowerValue = sortedValues[lowerIndex];
+    const upperValue = sortedValues[upperIndex];
+    return {
+      index,
+      lowerIndex,
+      upperIndex,
+      fraction,
+      lowerValue,
+      upperValue,
+      result: cleanNumericResult(lowerValue + ((upperValue - lowerValue) * fraction))
+    };
+  }
+
+  function pairedStatisticalData(leftNode, rightNode, context) {
+    const left = evaluateNode(leftNode, context);
+    const right = evaluateNode(rightNode, context);
+    if (isKnownErrorValue(left)) throw new FormulaError(left);
+    if (isKnownErrorValue(right)) throw new FormulaError(right);
+    const leftArray = isArrayValue(left) ? left : makeArray(1, 1, [[left]]);
+    const rightArray = isArrayValue(right) ? right : makeArray(1, 1, [[right]]);
+    if (leftArray.rows !== rightArray.rows || leftArray.columns !== rightArray.columns) {
+      throw new FormulaError(ERROR_VALUES.NA);
+    }
+
+    const pairs = [];
+    for (let row = 0; row < leftArray.rows; row += 1) {
+      for (let column = 0; column < leftArray.columns; column += 1) {
+        const x = leftArray.values[row][column];
+        const y = rightArray.values[row][column];
+        if (isKnownErrorValue(x)) throw new FormulaError(x);
+        if (isKnownErrorValue(y)) throw new FormulaError(y);
+        if (typeof x === "number" && Number.isFinite(x)
+          && typeof y === "number" && Number.isFinite(y)) {
+          pairs.push({
+            x,
+            y,
+            xReference: leftArray.references?.[row]?.[column] || null,
+            yReference: rightArray.references?.[row]?.[column] || null
+          });
+        }
+      }
+    }
+    return {
+      left: leftArray,
+      right: rightArray,
+      leftLabel: sourceLabel(leftNode),
+      rightLabel: sourceLabel(rightNode),
+      pairs
+    };
+  }
+
+  function runStatisticalFunction(name, nodes, context) {
+    if (name === "MEDIAN") {
+      requireArity(nodes, 1, Number.POSITIVE_INFINITY);
+      const entries = statisticalEntries(nodes, context);
+      const values = entries.map((entry) => entry.value);
+      if (!values.length) throw new FormulaError(ERROR_VALUES.NUM);
+      const sorted = [...values].sort((left, right) => left - right);
+      const middle = (sorted.length - 1) / 2;
+      const lowerIndex = Math.floor(middle);
+      const upperIndex = Math.ceil(middle);
+      const result = cleanNumericResult((sorted[lowerIndex] + sorted[upperIndex]) / 2);
+      return {
+        kind: "median",
+        functionName: name,
+        entries,
+        sorted,
+        lowerIndex,
+        upperIndex,
+        result
+      };
+    }
+
+    if (name === "MODE.SNGL") {
+      requireArity(nodes, 1, Number.POSITIVE_INFINITY);
+      const entries = statisticalEntries(nodes, context);
+      const values = entries.map((entry) => entry.value);
+      if (!values.length) return { kind: "mode", functionName: name, entries, counts: [], frequency: 0, result: ERROR_VALUES.NA };
+      const counts = new Map();
+      values.forEach((value) => counts.set(value, (counts.get(value) || 0) + 1));
+      const frequency = Math.max(...counts.values());
+      const modes = [...counts.entries()]
+        .filter(([, count]) => count === frequency)
+        .map(([value]) => value)
+        .sort((left, right) => left - right);
+      const result = frequency >= 2 ? modes[0] : ERROR_VALUES.NA;
+      return {
+        kind: "mode",
+        functionName: name,
+        entries,
+        counts: [...counts.entries()].sort((left, right) => left[0] - right[0]),
+        frequency,
+        modes,
+        result
+      };
+    }
+
+    if (["STDEV.S", "STDEV.P", "VAR.S", "VAR.P"].includes(name)) {
+      requireArity(nodes, 1, Number.POSITIVE_INFINITY);
+      const entries = statisticalEntries(nodes, context);
+      const values = entries.map((entry) => entry.value);
+      const sample = name.endsWith(".S");
+      if (!values.length || (sample && values.length < 2)) {
+        throw new FormulaError(ERROR_VALUES.DIV_ZERO);
+      }
+      const mean = statisticalMean(values);
+      const deviations = values.map((value) => {
+        const deviation = value - mean;
+        return { value, deviation, squared: deviation * deviation };
+      });
+      const sumSquared = deviations.reduce((total, entry) => total + entry.squared, 0);
+      const divisor = sample ? values.length - 1 : values.length;
+      const variance = cleanNumericResult(sumSquared / divisor);
+      const standardDeviation = cleanNumericResult(Math.sqrt(variance));
+      const result = name.startsWith("STDEV") ? standardDeviation : variance;
+      return {
+        kind: "dispersion",
+        functionName: name,
+        entries,
+        values,
+        sample,
+        mean: cleanNumericResult(mean),
+        deviations,
+        sumSquared: cleanNumericResult(sumSquared),
+        divisor,
+        variance,
+        standardDeviation,
+        result
+      };
+    }
+
+    if (name === "RANK.EQ") {
+      requireArity(nodes, 2, 3);
+      const number = numericArgument(nodes[0], context);
+      const entries = statisticalEntriesFromNode(nodes[1], context);
+      const values = entries.map((entry) => entry.value);
+      if (!values.length) throw new FormulaError(ERROR_VALUES.NA);
+      const order = nodes[2] ? numericArgument(nodes[2], context) : 0;
+      const ascending = order !== 0;
+      const rank = 1 + values.filter((value) => (
+        ascending ? value < number : value > number
+      )).length;
+      return {
+        kind: "rank",
+        functionName: name,
+        number,
+        entries,
+        values,
+        order,
+        ascending,
+        sorted: [...values].sort((left, right) => ascending ? left - right : right - left),
+        tieCount: values.filter((value) => value === number).length,
+        result: rank
+      };
+    }
+
+    if (name === "PERCENTILE.INC" || name === "QUARTILE.INC") {
+      requireArity(nodes, 2);
+      const entries = statisticalEntriesFromNode(nodes[0], context);
+      const values = entries.map((entry) => entry.value);
+      if (!values.length) throw new FormulaError(ERROR_VALUES.NUM);
+      const sorted = [...values].sort((left, right) => left - right);
+      let k;
+      let quart = null;
+      if (name === "QUARTILE.INC") {
+        quart = numericArgument(nodes[1], context);
+        if (!Number.isInteger(quart) || quart < 0 || quart > 4) {
+          throw new FormulaError(ERROR_VALUES.NUM);
+        }
+        k = quart / 4;
+      } else {
+        k = numericArgument(nodes[1], context);
+      }
+      const interpolation = percentileInclusive(sorted, k);
+      return {
+        kind: "percentile",
+        functionName: name,
+        entries,
+        values,
+        sorted,
+        k,
+        quart,
+        ...interpolation
+      };
+    }
+
+    if (name === "CORREL" || name === "COVARIANCE.S") {
+      requireArity(nodes, 2);
+      const paired = pairedStatisticalData(nodes[0], nodes[1], context);
+      if (paired.pairs.length < 2) throw new FormulaError(ERROR_VALUES.DIV_ZERO);
+      const meanX = statisticalMean(paired.pairs.map((pair) => pair.x));
+      const meanY = statisticalMean(paired.pairs.map((pair) => pair.y));
+      let sumProduct = 0;
+      let sumSquaredX = 0;
+      let sumSquaredY = 0;
+      const pairs = paired.pairs.map((pair) => {
+        const dx = pair.x - meanX;
+        const dy = pair.y - meanY;
+        const product = dx * dy;
+        sumProduct += product;
+        sumSquaredX += dx * dx;
+        sumSquaredY += dy * dy;
+        return { ...pair, dx, dy, product };
+      });
+
+      let result;
+      if (name === "CORREL") {
+        const denominator = Math.sqrt(sumSquaredX * sumSquaredY);
+        if (denominator === 0) throw new FormulaError(ERROR_VALUES.DIV_ZERO);
+        result = cleanNumericResult(sumProduct / denominator);
+      } else {
+        result = cleanNumericResult(sumProduct / (pairs.length - 1));
+      }
+      return {
+        kind: "paired",
+        functionName: name,
+        leftLabel: paired.leftLabel,
+        rightLabel: paired.rightLabel,
+        pairs,
+        meanX: cleanNumericResult(meanX),
+        meanY: cleanNumericResult(meanY),
+        sumProduct: cleanNumericResult(sumProduct),
+        sumSquaredX: cleanNumericResult(sumSquaredX),
+        sumSquaredY: cleanNumericResult(sumSquaredY),
+        result
+      };
+    }
+
+    throw new FormulaError(ERROR_VALUES.NAME);
+  }
+
+  function finalizeStatisticalTrace(trace) {
+    if (isKnownErrorValue(trace.result)) throw new FormulaError(trace.result);
+    return trace.result;
+  }
+
+  const FINANCIAL_FUNCTIONS = new Set([
+    "PV",
+    "FV",
+    "PMT",
+    "NPV",
+    "IRR",
+    "XNPV",
+    "XIRR"
+  ]);
+  const FINANCIAL_PERCENTAGE_RESULT_FUNCTIONS = new Set(["IRR", "XIRR"]);
+
+  function financialScalar(node, context) {
+    return numericArgument(node, context);
+  }
+
+  function normalizePaymentType(value) {
+    const type = Math.trunc(value);
+    if ((type !== 0 && type !== 1) || type !== value) throw new FormulaError(ERROR_VALUES.NUM);
+    return type;
+  }
+
+  function flattenFinancialNode(node, context, options = {}) {
+    const value = evaluateNode(node, context);
+    if (isKnownErrorValue(value)) throw new FormulaError(value);
+    const entries = [];
+    const accept = (entry, reference, rowIndex, columnIndex) => {
+      if (isKnownErrorValue(entry)) throw new FormulaError(entry);
+      if (typeof entry === "number" && Number.isFinite(entry)) {
+        entries.push({ value: entry, reference: reference || null, rowIndex, columnIndex });
+        return;
+      }
+      if (!options.ignoreNonNumeric) throw new FormulaError(ERROR_VALUES.VALUE);
+    };
+
+    if (isArrayValue(value)) {
+      value.values.forEach((row, rowIndex) => row.forEach((entry, columnIndex) => {
+        accept(entry, value.references?.[rowIndex]?.[columnIndex], rowIndex, columnIndex);
+      }));
+      return entries;
+    }
+
+    accept(value, node?.type === "reference" ? node.reference : null, 0, 0);
+    return entries;
+  }
+
+  function financialEntries(nodes, context) {
+    const entries = [];
+    nodes.forEach((node) => entries.push(...flattenFinancialNode(node, context, { ignoreNonNumeric: true })));
+    return entries;
+  }
+
+  function alignedFinancialSeries(valuesNode, datesNode, context) {
+    const valuesRaw = evaluateNode(valuesNode, context);
+    const datesRaw = evaluateNode(datesNode, context);
+    if (isKnownErrorValue(valuesRaw)) throw new FormulaError(valuesRaw);
+    if (isKnownErrorValue(datesRaw)) throw new FormulaError(datesRaw);
+    const valuesArray = isArrayValue(valuesRaw) ? valuesRaw : makeArray(1, 1, [[valuesRaw]]);
+    const datesArray = isArrayValue(datesRaw) ? datesRaw : makeArray(1, 1, [[datesRaw]]);
+    const valueCount = valuesArray.rows * valuesArray.columns;
+    const dateCount = datesArray.rows * datesArray.columns;
+    if (valueCount !== dateCount) throw new FormulaError(ERROR_VALUES.NUM);
+
+    const values = [];
+    const dates = [];
+    for (let row = 0; row < valuesArray.rows; row += 1) {
+      for (let column = 0; column < valuesArray.columns; column += 1) {
+        const entry = valuesArray.values[row][column];
+        if (isKnownErrorValue(entry)) throw new FormulaError(entry);
+        if (typeof entry !== "number" || !Number.isFinite(entry)) throw new FormulaError(ERROR_VALUES.VALUE);
+        values.push({
+          value: entry,
+          reference: valuesArray.references?.[row]?.[column] || null
+        });
+      }
+    }
+    for (let row = 0; row < datesArray.rows; row += 1) {
+      for (let column = 0; column < datesArray.columns; column += 1) {
+        const entry = datesArray.values[row][column];
+        if (isKnownErrorValue(entry)) throw new FormulaError(entry);
+        if (typeof entry !== "number" || !Number.isFinite(entry)) throw new FormulaError(ERROR_VALUES.VALUE);
+        dates.push({
+          value: entry,
+          reference: datesArray.references?.[row]?.[column] || null
+        });
+      }
+    }
+    if (!values.length) throw new FormulaError(ERROR_VALUES.NUM);
+    const firstDate = dates[0].value;
+    if (dates.some((entry) => entry.value < firstDate)) throw new FormulaError(ERROR_VALUES.NUM);
+    return { values, dates };
+  }
+
+  function periodicFactor(rate, nper) {
+    const base = 1 + rate;
+    if (base <= 0 && !Number.isInteger(nper)) throw new FormulaError(ERROR_VALUES.NUM);
+    const factor = Math.pow(base, nper);
+    if (!Number.isFinite(factor)) throw new FormulaError(ERROR_VALUES.NUM);
+    return factor;
+  }
+
+  function calculatePV(rate, nper, pmt, fv = 0, type = 0) {
+    if (nper < 0) throw new FormulaError(ERROR_VALUES.NUM);
+    if (Math.abs(rate) < 1e-14) return cleanNumericResult(-(fv + (pmt * nper)));
+    const factor = periodicFactor(rate, nper);
+    if (rate === 0 || factor === 0) throw new FormulaError(ERROR_VALUES.NUM);
+    return cleanNumericResult(-(fv + (pmt * (1 + (rate * type)) * ((factor - 1) / rate))) / factor);
+  }
+
+  function calculateFV(rate, nper, pmt, pv = 0, type = 0) {
+    if (nper < 0) throw new FormulaError(ERROR_VALUES.NUM);
+    if (Math.abs(rate) < 1e-14) return cleanNumericResult(-(pv + (pmt * nper)));
+    const factor = periodicFactor(rate, nper);
+    return cleanNumericResult(-((pv * factor) + (pmt * (1 + (rate * type)) * ((factor - 1) / rate))));
+  }
+
+  function calculatePMT(rate, nper, pv, fv = 0, type = 0) {
+    if (nper <= 0) throw new FormulaError(ERROR_VALUES.NUM);
+    if (Math.abs(rate) < 1e-14) return cleanNumericResult(-(pv + fv) / nper);
+    const factor = periodicFactor(rate, nper);
+    const denominator = (1 + (rate * type)) * (factor - 1);
+    if (denominator === 0) throw new FormulaError(ERROR_VALUES.DIV_ZERO);
+    return cleanNumericResult(-((fv + (pv * factor)) * rate) / denominator);
+  }
+
+  function periodicNpv(rate, values, startPeriod = 1) {
+    if (rate <= -1) throw new FormulaError(ERROR_VALUES.NUM);
+    return values.reduce((total, value, index) => {
+      const denominator = Math.pow(1 + rate, index + startPeriod);
+      if (!Number.isFinite(denominator) || denominator === 0) throw new FormulaError(ERROR_VALUES.NUM);
+      return total + (value / denominator);
+    }, 0);
+  }
+
+  function solveFinancialRate(objective, derivative, guess = 0.1) {
+    if (!Number.isFinite(guess) || guess <= -1) throw new FormulaError(ERROR_VALUES.NUM);
+    let rate = guess;
+    for (let iteration = 0; iteration < 100; iteration += 1) {
+      const value = objective(rate);
+      if (Number.isFinite(value) && Math.abs(value) < 1e-9) {
+        return { rate: cleanNumericResult(rate), iterations: iteration + 1, method: "Newton" };
+      }
+      const slope = derivative(rate);
+      if (!Number.isFinite(value) || !Number.isFinite(slope) || Math.abs(slope) < 1e-14) break;
+      const next = rate - (value / slope);
+      if (!Number.isFinite(next) || next <= -0.999999999 || next > 1e10) break;
+      if (Math.abs(next - rate) < 1e-12) {
+        return { rate: cleanNumericResult(next), iterations: iteration + 1, method: "Newton" };
+      }
+      rate = next;
+    }
+
+    const grid = [
+      -0.999999, -0.999, -0.99, -0.95, -0.9, -0.75, -0.5, -0.25, -0.1,
+      0, 0.01, 0.05, 0.1, 0.2, 0.5, 1, 2, 5, 10, 25, 100, 1000, 1e6
+    ];
+    const brackets = [];
+    let previousRate = grid[0];
+    let previousValue = objective(previousRate);
+    for (let index = 1; index < grid.length; index += 1) {
+      const candidateRate = grid[index];
+      const candidateValue = objective(candidateRate);
+      if (Number.isFinite(previousValue) && Number.isFinite(candidateValue)) {
+        if (candidateValue === 0) return { rate: cleanNumericResult(candidateRate), iterations: 0, method: "Bracket" };
+        if (previousValue === 0) return { rate: cleanNumericResult(previousRate), iterations: 0, method: "Bracket" };
+        if ((previousValue < 0 && candidateValue > 0) || (previousValue > 0 && candidateValue < 0)) {
+          brackets.push([previousRate, candidateRate]);
+        }
+      }
+      previousRate = candidateRate;
+      previousValue = candidateValue;
+    }
+    if (!brackets.length) throw new FormulaError(ERROR_VALUES.NUM);
+    brackets.sort((left, right) => {
+      const leftMid = (left[0] + left[1]) / 2;
+      const rightMid = (right[0] + right[1]) / 2;
+      return Math.abs(leftMid - guess) - Math.abs(rightMid - guess);
+    });
+    let [low, high] = brackets[0];
+    let lowValue = objective(low);
+    for (let iteration = 0; iteration < 200; iteration += 1) {
+      const mid = (low + high) / 2;
+      const midValue = objective(mid);
+      if (!Number.isFinite(midValue)) throw new FormulaError(ERROR_VALUES.NUM);
+      if (Math.abs(midValue) < 1e-9 || Math.abs(high - low) < 1e-12) {
+        return { rate: cleanNumericResult(mid), iterations: iteration + 1, method: "Bisection" };
+      }
+      if ((lowValue < 0 && midValue > 0) || (lowValue > 0 && midValue < 0)) {
+        high = mid;
+      } else {
+        low = mid;
+        lowValue = midValue;
+      }
+    }
+    throw new FormulaError(ERROR_VALUES.NUM);
+  }
+
+  function periodicIrr(values, guess = 0.1) {
+    if (values.length < 2 || !values.some((value) => value < 0) || !values.some((value) => value > 0)) {
+      throw new FormulaError(ERROR_VALUES.NUM);
+    }
+    const objective = (rate) => {
+      if (rate <= -1) return Number.NaN;
+      return values.reduce((total, value, index) => total + (value / Math.pow(1 + rate, index)), 0);
+    };
+    const derivative = (rate) => {
+      if (rate <= -1) return Number.NaN;
+      return values.reduce((total, value, index) => (
+        index === 0 ? total : total - ((index * value) / Math.pow(1 + rate, index + 1))
+      ), 0);
+    };
+    return solveFinancialRate(objective, derivative, guess);
+  }
+
+  function datedNpv(rate, values, dates) {
+    if (rate <= -1) throw new FormulaError(ERROR_VALUES.NUM);
+    const firstDate = dates[0];
+    return values.reduce((total, value, index) => {
+      const yearFraction = (dates[index] - firstDate) / 365;
+      return total + (value / Math.pow(1 + rate, yearFraction));
+    }, 0);
+  }
+
+  function datedIrr(values, dates, guess = 0.1) {
+    if (values.length < 2 || !values.some((value) => value < 0) || !values.some((value) => value > 0)) {
+      throw new FormulaError(ERROR_VALUES.NUM);
+    }
+    const firstDate = dates[0];
+    const fractions = dates.map((date) => (date - firstDate) / 365);
+    const objective = (rate) => {
+      if (rate <= -1) return Number.NaN;
+      return values.reduce((total, value, index) => total + (value / Math.pow(1 + rate, fractions[index])), 0);
+    };
+    const derivative = (rate) => {
+      if (rate <= -1) return Number.NaN;
+      return values.reduce((total, value, index) => total - (
+        fractions[index] * value / Math.pow(1 + rate, fractions[index] + 1)
+      ), 0);
+    };
+    return solveFinancialRate(objective, derivative, guess);
+  }
+
+  function runFinancialFunction(name, nodes, context) {
+    if (name === "PV" || name === "FV" || name === "PMT") {
+      requireArity(nodes, 3, 5);
+      const rate = financialScalar(nodes[0], context);
+      const nper = financialScalar(nodes[1], context);
+      const third = financialScalar(nodes[2], context);
+      const fourth = nodes[3] ? financialScalar(nodes[3], context) : 0;
+      const type = nodes[4] ? normalizePaymentType(financialScalar(nodes[4], context)) : 0;
+      let result;
+      if (name === "PV") result = calculatePV(rate, nper, third, fourth, type);
+      else if (name === "FV") result = calculateFV(rate, nper, third, fourth, type);
+      else result = calculatePMT(rate, nper, third, fourth, type);
+      return {
+        kind: "time-value",
+        functionName: name,
+        rate,
+        nper,
+        payment: name === "PMT" ? result : third,
+        presentValue: name === "PV" ? result : (name === "PMT" ? third : fourth),
+        futureValue: name === "FV" ? result : fourth,
+        type,
+        result
+      };
+    }
+
+    if (name === "NPV") {
+      requireArity(nodes, 2, Number.POSITIVE_INFINITY);
+      const rate = financialScalar(nodes[0], context);
+      const entries = financialEntries(nodes.slice(1), context);
+      if (!entries.length) throw new FormulaError(ERROR_VALUES.VALUE);
+      const flows = entries.map((entry, index) => {
+        const period = index + 1;
+        const factor = Math.pow(1 + rate, period);
+        if (rate <= -1 || !Number.isFinite(factor) || factor === 0) throw new FormulaError(ERROR_VALUES.NUM);
+        return {
+          ...entry,
+          period,
+          discountFactor: factor,
+          presentValue: cleanNumericResult(entry.value / factor)
+        };
+      });
+      const result = cleanNumericResult(flows.reduce((total, flow) => total + flow.presentValue, 0));
+      return { kind: "npv", functionName: name, rate, flows, result };
+    }
+
+    if (name === "IRR") {
+      requireArity(nodes, 1, 2);
+      const entries = flattenFinancialNode(nodes[0], context, { ignoreNonNumeric: true });
+      const values = entries.map((entry) => entry.value);
+      const guess = nodes[1] ? financialScalar(nodes[1], context) : 0.1;
+      const solved = periodicIrr(values, guess);
+      const flows = entries.map((entry, index) => ({ ...entry, period: index }));
+      return { kind: "irr", functionName: name, guess, flows, ...solved, result: solved.rate };
+    }
+
+    if (name === "XNPV" || name === "XIRR") {
+      requireArity(nodes, name === "XNPV" ? 3 : 2, name === "XNPV" ? 3 : 3);
+      const rateOrGuess = name === "XNPV"
+        ? financialScalar(nodes[0], context)
+        : (nodes[2] ? financialScalar(nodes[2], context) : 0.1);
+      const valuesNode = name === "XNPV" ? nodes[1] : nodes[0];
+      const datesNode = name === "XNPV" ? nodes[2] : nodes[1];
+      const aligned = alignedFinancialSeries(valuesNode, datesNode, context);
+      const values = aligned.values.map((entry) => entry.value);
+      const dates = aligned.dates.map((entry) => entry.value);
+      const firstDate = dates[0];
+      if (name === "XNPV" && rateOrGuess <= -1) throw new FormulaError(ERROR_VALUES.NUM);
+      const flows = values.map((value, index) => {
+        const yearFraction = (dates[index] - firstDate) / 365;
+        const presentValue = name === "XNPV"
+          ? cleanNumericResult(value / Math.pow(1 + rateOrGuess, yearFraction))
+          : null;
+        return {
+          value,
+          valueReference: aligned.values[index].reference,
+          dateSerial: dates[index],
+          dateReference: aligned.dates[index].reference,
+          dateDisplay: ExcelFormatting.formatDateSerial(dates[index]),
+          yearFraction: cleanNumericResult(yearFraction),
+          presentValue
+        };
+      });
+      if (name === "XNPV") {
+        const result = cleanNumericResult(datedNpv(rateOrGuess, values, dates));
+        return { kind: "xnpv", functionName: name, rate: rateOrGuess, flows, result };
+      }
+      const solved = datedIrr(values, dates, rateOrGuess);
+      return { kind: "xirr", functionName: name, guess: rateOrGuess, flows, ...solved, result: solved.rate };
+    }
+
+    throw new FormulaError(ERROR_VALUES.NAME);
+  }
+
+  function finalizeFinancialTrace(trace) {
+    if (isKnownErrorValue(trace.result)) throw new FormulaError(trace.result);
+    if (typeof trace.result !== "number" || !Number.isFinite(trace.result)) throw new FormulaError(ERROR_VALUES.NUM);
     return trace.result;
   }
 
@@ -1903,6 +3066,9 @@
     XLOOKUP(nodes, context) {
       return finalizeLookupTrace(runLookupFunction("XLOOKUP", nodes, context));
     },
+    XMATCH(nodes, context) {
+      return finalizeLookupTrace(runLookupFunction("XMATCH", nodes, context));
+    },
     MATCH(nodes, context) {
       return finalizeLookupTrace(runLookupFunction("MATCH", nodes, context));
     },
@@ -1978,6 +3144,12 @@
     WEEKDAY(nodes, context) {
       return finalizeDateTrace(runDateFunction("WEEKDAY", nodes, context));
     },
+    NETWORKDAYS(nodes, context) {
+      return finalizeDateTrace(runDateFunction("NETWORKDAYS", nodes, context));
+    },
+    WORKDAY(nodes, context) {
+      return finalizeDateTrace(runDateFunction("WORKDAY", nodes, context));
+    },
     ROUND(nodes, context) {
       return finalizeMathTrace(runMathFunction("ROUND", nodes, context));
     },
@@ -1995,6 +3167,60 @@
     },
     MOD(nodes, context) {
       return finalizeMathTrace(runMathFunction("MOD", nodes, context));
+    },
+    MEDIAN(nodes, context) {
+      return finalizeStatisticalTrace(runStatisticalFunction("MEDIAN", nodes, context));
+    },
+    "MODE.SNGL"(nodes, context) {
+      return finalizeStatisticalTrace(runStatisticalFunction("MODE.SNGL", nodes, context));
+    },
+    "STDEV.S"(nodes, context) {
+      return finalizeStatisticalTrace(runStatisticalFunction("STDEV.S", nodes, context));
+    },
+    "STDEV.P"(nodes, context) {
+      return finalizeStatisticalTrace(runStatisticalFunction("STDEV.P", nodes, context));
+    },
+    "VAR.S"(nodes, context) {
+      return finalizeStatisticalTrace(runStatisticalFunction("VAR.S", nodes, context));
+    },
+    "VAR.P"(nodes, context) {
+      return finalizeStatisticalTrace(runStatisticalFunction("VAR.P", nodes, context));
+    },
+    "RANK.EQ"(nodes, context) {
+      return finalizeStatisticalTrace(runStatisticalFunction("RANK.EQ", nodes, context));
+    },
+    "PERCENTILE.INC"(nodes, context) {
+      return finalizeStatisticalTrace(runStatisticalFunction("PERCENTILE.INC", nodes, context));
+    },
+    "QUARTILE.INC"(nodes, context) {
+      return finalizeStatisticalTrace(runStatisticalFunction("QUARTILE.INC", nodes, context));
+    },
+    CORREL(nodes, context) {
+      return finalizeStatisticalTrace(runStatisticalFunction("CORREL", nodes, context));
+    },
+    "COVARIANCE.S"(nodes, context) {
+      return finalizeStatisticalTrace(runStatisticalFunction("COVARIANCE.S", nodes, context));
+    },
+    PV(nodes, context) {
+      return finalizeFinancialTrace(runFinancialFunction("PV", nodes, context));
+    },
+    FV(nodes, context) {
+      return finalizeFinancialTrace(runFinancialFunction("FV", nodes, context));
+    },
+    PMT(nodes, context) {
+      return finalizeFinancialTrace(runFinancialFunction("PMT", nodes, context));
+    },
+    NPV(nodes, context) {
+      return finalizeFinancialTrace(runFinancialFunction("NPV", nodes, context));
+    },
+    IRR(nodes, context) {
+      return finalizeFinancialTrace(runFinancialFunction("IRR", nodes, context));
+    },
+    XNPV(nodes, context) {
+      return finalizeFinancialTrace(runFinancialFunction("XNPV", nodes, context));
+    },
+    XIRR(nodes, context) {
+      return finalizeFinancialTrace(runFinancialFunction("XIRR", nodes, context));
     },
     SEQUENCE(nodes, context) {
       return finalizeDynamicArrayTrace(runDynamicArrayFunction("SEQUENCE", nodes, context));
@@ -2016,6 +3242,11 @@
   function evaluateNode(node, context) {
     if (node.type === "number") return node.value;
     if (node.type === "string" || node.type === "boolean") return node.value;
+    if (node.type === "error") throw new FormulaError(node.value);
+    if (node.type === "name") {
+      if (typeof context.getNameValue !== "function") throw new FormulaError(ERROR_VALUES.NAME);
+      return context.getNameValue(node.name);
+    }
     if (node.type === "reference") return context.getCellValue(node.reference);
 
     if (node.type === "range") {
@@ -2030,11 +3261,19 @@
     }
 
     if (node.type === "postfix") {
-      if (node.operator !== "%") throw new FormulaError(ERROR_VALUES.GENERIC);
-      return mapArrayValues(
-        evaluateNode(node.operand, context),
-        (entry) => requireNumber(entry) / 100
-      );
+      if (node.operator === "%") {
+        return mapArrayValues(
+          evaluateNode(node.operand, context),
+          (entry) => requireNumber(entry) / 100
+        );
+      }
+      if (node.operator === "#" && node.operand?.type === "reference") {
+        if (typeof context.getSpillArray !== "function") throw new FormulaError(ERROR_VALUES.REF);
+        const spilled = context.getSpillArray(node.operand.reference);
+        if (!isArrayValue(spilled)) throw new FormulaError(ERROR_VALUES.REF);
+        return spilled;
+      }
+      throw new FormulaError(ERROR_VALUES.GENERIC);
     }
 
     if (node.type === "binary") {
@@ -2093,6 +3332,10 @@
         return runErrorHandlingFunction(node.name, node.arguments, context).result;
       }
 
+      if (ADVANCED_FUNCTIONS.has(node.name)) {
+        return finalizeAdvancedTrace(runAdvancedFunction(node.name, node.arguments, context));
+      }
+
       const implementation = functions[node.name];
       if (!implementation) throw new FormulaError(ERROR_VALUES.NAME);
       return implementation(node.arguments, context);
@@ -2143,6 +3386,21 @@
     return runErrorHandlingFunction(ast.name, ast.arguments, context, { traceUncaught: true });
   }
 
+  function analyzeStatisticalExpression(ast, context) {
+    if (ast?.type !== "function" || !STATISTICAL_FUNCTIONS.has(ast.name)) return null;
+    return runStatisticalFunction(ast.name, ast.arguments, context);
+  }
+
+  function analyzeFinancialExpression(ast, context) {
+    if (ast?.type !== "function" || !FINANCIAL_FUNCTIONS.has(ast.name)) return null;
+    return runFinancialFunction(ast.name, ast.arguments, context);
+  }
+
+  function analyzeAdvancedExpression(ast, context) {
+    if (ast?.type !== "function" || !ADVANCED_FUNCTIONS.has(ast.name)) return null;
+    return runAdvancedFunction(ast.name, ast.arguments, context);
+  }
+
   function analyzeDynamicArrayExpression(ast, context) {
     if (ast?.type !== "function" || !DYNAMIC_ARRAY_FUNCTIONS.has(ast.name)) return null;
     return runDynamicArrayFunction(ast.name, ast.arguments, context);
@@ -2152,9 +3410,9 @@
     if (!ast) return ExcelFormatting.NUMBER_FORMATS.GENERAL;
     if (ast.type === "reference") return getCellNumberFormat(ast.reference);
     if (ast.type === "function") {
-      return DATE_RESULT_FUNCTIONS.has(ast.name)
-        ? ExcelFormatting.NUMBER_FORMATS.DATE
-        : ExcelFormatting.NUMBER_FORMATS.GENERAL;
+      if (DATE_RESULT_FUNCTIONS.has(ast.name)) return ExcelFormatting.NUMBER_FORMATS.DATE;
+      if (FINANCIAL_PERCENTAGE_RESULT_FUNCTIONS.has(ast.name)) return ExcelFormatting.NUMBER_FORMATS.PERCENTAGE;
+      return ExcelFormatting.NUMBER_FORMATS.GENERAL;
     }
     if (ast.type === "unary") return inferNumberFormat(ast.operand, getCellNumberFormat);
     if (ast.type === "postfix") return ExcelFormatting.NUMBER_FORMATS.GENERAL;
@@ -2252,24 +3510,32 @@
     ERROR_VALUES,
     FormulaError,
     FormulaSyntaxError,
+    analyzeAdvancedExpression,
     analyzeConditionalAggregate,
     analyzeDateExpression,
     analyzeDynamicArrayExpression,
     analyzeErrorExpression,
+    analyzeFinancialExpression,
     analyzeLookupExpression,
     analyzeMathExpression,
+    analyzeStatisticalExpression,
     analyzeTextExpression,
     collectReferences,
     containsVolatileFunction,
+    cycleReferenceLock,
     evaluate,
     expandRange,
+    formatReference,
     inferNumberFormat,
     isArrayValue,
     isSpreadsheetError: isKnownErrorValue,
     makeArray,
     parseFormula,
     parseReference,
-    tokenize
+    referenceLockDescription,
+    tokenize,
+    translateFormula,
+    translateReference
   };
 
   global.FormulaEngine = api;
