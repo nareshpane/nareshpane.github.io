@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A Visual Guide to Quantization</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700&family=Source+Code+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="quantization/quantization.css">
+
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="page">
+    <section class="card">
+      <h1>A Visual Guide to Quantization</h1>
+
+      <p class="lead">
+        Quantization replaces many possible values with a smaller set of allowed values.
+        That single idea underlies everything from old audio recordings to modern
+        large-language-model compression. This page builds the idea up slowly &mdash; starting
+        with rounding a few everyday numbers, and ending with the low-bit formats used for
+        neural-network inference.
+      </p>
+
+      <div class="panel note">
+        <strong>How to read this page.</strong> No machine-learning background is needed
+        until very late. The early sections are pure arithmetic and visualization. Each
+        interactive widget works on its own; you can read the prose and skip the controls,
+        or play with the controls to build intuition.
+      </div>
+
+      <h2>1. What Is Quantization?</h2>
+
+      <p>
+        Suppose you measure six objects and record these values:
+      </p>
+
+      <div class="equation">
+        $$0.7 \quad 1.2 \quad 1.8 \quad 2.4 \quad 2.9 \quad 3.3$$
+      </div>
+
+      <p>
+        Now suppose you are only allowed to report <em>whole numbers</em> &mdash; the nearest
+        integer to each measurement. The rule &ldquo;round to the nearest allowed value&rdquo;
+        maps each real number to one of a small set of possibilities:
+      </p>
+
+      <div class="equation">
+        $$1 \quad 1 \quad 2 \quad 2 \quad 3 \quad 3$$
+      </div>
+
+      <p>
+        You started with six distinct measurements and ended with only four distinct reported
+        values (1, 2, and 3). That is quantization. The stored numbers are <em>close</em> to
+        the originals, but they are not exact. The gap between an original value and its
+        stored stand-in is called the <strong>quantization error</strong>.
+      </p>
+
+      <div class="mentalmodel">
+        <strong>The mental model we will reuse all page long:</strong>
+        <ol>
+          <li>Original values</li>
+          <li>Choose the representable levels</li>
+          <li>Map each value to the nearest level (a code)</li>
+          <li>Store or compute using those codes</li>
+          <li>Reconstruct approximate values when needed</li>
+          <li>Measure the approximation error</li>
+        </ol>
+      </div>
+
+      <h2>2. Start With Rounding</h2>
+
+      <p>
+        Rounding is the simplest possible quantizer. You pick a fixed spacing between allowed
+        values &mdash; here a spacing of $1$ &mdash; and you send every number to the closest
+        multiple of that spacing. The distance between allowed values is the
+        <strong>step size</strong>. A smaller step size means more allowed values, which
+        generally means smaller error.
+      </p>
+
+      <div class="viz" id="viz-numline">
+        <h3>Interactive number-line quantizer</h3>
+        <p>
+          Drag the value and the step size. The highlighted dot is your original value; the
+          square is the nearest allowed level. Watch how a smaller step shrinks the error.
+        </p>
+        <div class="controls">
+          <div class="control">
+            <label for="num-val">Original value</label>
+            <input type="range" id="num-val" min="0" max="10" step="0.01" value="7.37" aria-label="Original value">
+          </div>
+          <div class="control">
+            <label for="num-step">Step size</label>
+            <input type="range" id="num-step" min="0.1" max="2" step="0.05" value="1" aria-label="Quantization step size">
+          </div>
+          <div class="control">
+            <label for="num-val-out">Show value</label>
+            <input type="number" id="num-val-out" value="7.37" step="0.01" aria-label="Current value numeric">
+          </div>
+        </div>
+        <div class="svg-wrap"><svg class="qz" id="numline-svg" viewBox="0 0 760 170" role="img" aria-label="Number line showing original value and nearest quantized level"></svg></div>
+        <div class="readout">
+          <div class="box"><div class="k">Original</div><div class="v" id="num-orig">7.37</div></div>
+          <div class="box"><div class="k">Quantized</div><div class="v" id="num-quant">7.00</div></div>
+          <div class="box"><div class="k">Error</div><div class="v" id="num-err">0.37</div></div>
+        </div>
+        <div class="viz-caption">
+          Trade-off: more levels (small step) &rarr; finer representation but more information
+          needed to name a level. Fewer levels (large step) &rarr; coarse but cheap to store.
+        </div>
+      </div>
+
+      <h2>3. Think in Buckets</h2>
+
+      <p>
+        Rounding to whole numbers hides a useful picture. Imagine laying a ruler down and
+        drawing boundaries every $1$ unit. Each stretch between two boundaries is a
+        <strong>bucket</strong>. Every value that falls inside a bucket is reported by the same
+        representative &mdash; usually the bucket's center or its lower edge.
+      </p>
+
+      <p>
+        The number of buckets is the number of allowed <strong>levels</strong>. Fewer buckets
+        means a coarser map; more buckets means a finer map. The widget below lets you choose
+        how many levels cover the range $0$ to $10$.
+      </p>
+
+      <div class="viz" id="viz-buckets">
+        <h3>Divide a range into buckets</h3>
+        <div class="seg" id="bucket-seg" role="group" aria-label="Number of levels">
+          <button data-levels="2" aria-pressed="false">2 levels</button>
+          <button data-levels="4" aria-pressed="false">4 levels</button>
+          <button data-levels="8" aria-pressed="true">8 levels</button>
+          <button data-levels="16" aria-pressed="false">16 levels</button>
+        </div>
+        <div class="svg-wrap"><svg class="qz" id="buckets-svg" viewBox="0 0 760 220" role="img" aria-label="Range divided into buckets with representative levels"></svg></div>
+        <div class="viz-caption" id="bucket-caption">
+          8 levels across the range 0&ndash;10: each level represents a slice of width 1.25.
+        </div>
+      </div>
+
+      <h2>4. From Buckets to Levels</h2>
+
+<p>
+        A key realization: once you fix the range and the number of levels, the exact values
+        inside do not matter for <em>naming</em> a level. You only need to know which bucket a
+        number falls into. The stored information is the bucket index, not the original number.
+      </p>
+
+      <p>
+        So the real question becomes: how many different levels (buckets) do we need, and how
+        do we write them down efficiently? That is where bits enter.
+      </p>
+
+      <h2>5. How Bits Enter the Story</h2>
+
+      <p>
+        Computers store information in bits, each of which can be $0$ or $1$. With $b$ bits you
+        can form exactly
+      </p>
+      <div class="equation">
+        $$L = 2^b$$
+      </div>
+      <p>
+        distinct codes, where $L$ is the number of possible levels. A few examples:
+      </p>
+
+      <div class="mini-grid">
+        <div class="mini-box"><div class="k">1 bit</div><div class="v">2 levels</div></div>
+        <div class="mini-box"><div class="k">2 bits</div><div class="v">4 levels</div></div>
+        <div class="mini-box"><div class="k">3 bits</div><div class="v">8 levels</div></div>
+        <div class="mini-box"><div class="k">4 bits</div><div class="v">16 levels</div></div>
+        <div class="mini-box"><div class="k">8 bits</div><div class="v">256 levels</div></div>
+      </div>
+
+      <div class="viz" id="viz-bits">
+        <h3>Bit-depth selector</h3>
+        <div class="bits-row" id="bits-selector" role="group" aria-label="Choose bit depth">
+          <button data-bits="1">1</button>
+          <button data-bits="2">2</button>
+          <button data-bits="3">3</button>
+          <button data-bits="4" aria-pressed="true">4</button>
+          <button data-bits="5">5</button>
+          <button data-bits="6">6</button>
+          <button data-bits="7">7</button>
+          <button data-bits="8">8</button>
+        </div>
+        <div class="readout">
+          <div class="box"><div class="k">Bits</div><div class="v" id="bits-n">4</div></div>
+          <div class="box"><div class="k">Possible codes</div><div class="v" id="bits-codes">16</div></div>
+        </div>
+        <div class="binary-codes" id="bits-codes-list" aria-label="Example binary codes"></div>
+        <div class="viz-caption">
+          With 4 bits, the codes run from <code>0000</code> to <code>1111</code>. Each extra bit
+          <em>doubles</em> the number of representable levels.
+        </div>
+      </div>
+
+      <h2>6. A Quantized Signal</h2>
+
+      <p>
+        Quantization is not only about isolated numbers &mdash; it applies to signals too. A
+        smooth sine wave is a nice test: as you reduce the number of levels, the smooth curve
+        turns into a <strong>staircase</strong>. The difference between the smooth curve and the
+        staircase at each point is the local error.
+      </p>
+
+      <div class="viz" id="viz-signal">
+        <h3>Quantized sine wave</h3>
+        <div class="controls">
+          <div class="control">
+            <label for="sig-levels">Levels (2&ndash;32)</label>
+            <input type="range" id="sig-levels" min="2" max="32" step="1" value="8" aria-label="Number of quantization levels for the signal">
+          </div>
+          <div class="control">
+            <label for="sig-range">Vertical range (&plusmn;)</label>
+            <input type="range" id="sig-range" min="1" max="5" step="0.1" value="2" aria-label="Vertical range of the sine wave">
+          </div>
+        </div>
+        <div class="svg-wrap"><svg class="qz" id="signal-svg" viewBox="0 0 760 260" role="img" aria-label="Original sine wave and its quantized staircase approximation"></svg></div>
+        <div class="legend">
+          <span><span class="swatch" style="background:#1d4f91"></span>Original signal</span>
+          <span><span class="swatch" style="background:#b4632a"></span>Quantized staircase</span>
+        </div>
+        <div class="readout">
+          <div class="box"><div class="k">Levels</div><div class="v" id="sig-levels-out">8</div></div>
+          <div class="box"><div class="k">Max error</div><div class="v" id="sig-err">0.13</div></div>
+        </div>
+      </div>
+
+      <h2>7. Precision and Numerical Representation</h2>
+
+      <p>
+        When people say a model is &ldquo;32-bit&rdquo; or &ldquo;4-bit&rdquo;, they are talking
+        about how many bits each number gets. But the bit count alone does <em>not</em> tell you
+        the size of the numbers &mdash; it tells you how many distinct representational states
+        are available.
+      </p>
+
+      <div class="viz" id="viz-ladder">
+        <h3>Precision ladder</h3>
+        <p>
+          The bars below are proportional to bit width. A 4-bit format does <em>not</em> mean
+          the values themselves become smaller; it means there are far fewer distinct states.
+        </p>
+        <div class="ladder">
+          <div class="ladder-row"><div>FP32</div><div class="ladder-track"><div class="ladder-bar" style="width:100%"></div></div><div>32 bits</div></div>
+          <div class="ladder-row"><div>FP16</div><div class="ladder-track"><div class="ladder-bar" style="width:50%"></div></div><div>16 bits</div></div>
+          <div class="ladder-row"><div>INT8</div><div class="ladder-track"><div class="ladder-bar" style="width:25%"></div></div><div>8 bits</div></div>
+          <div class="ladder-row"><div>INT4</div><div class="ladder-track"><div class="ladder-bar" style="width:12.5%"></div></div><div>4 bits</div></div>
+        </div>
+        <div class="analysis-box">
+          <p><strong>Floating point vs integer.</strong> FP32 and FP16 are <em>floating-point</em>
+          formats: they store a sign, an exponent, and a mantissa, so they can represent a very
+          wide range of magnitudes with varying precision. INT8 and INT4 are <em>integer</em>
+          quantization formats: they store a small whole-number code that is later mapped back to
+          a real value through a scale (and possibly a zero-point). They are not simply
+          &ldquo;FP16 with fewer bits&rdquo; &mdash; they are a different way of encoding numbers.</p>
+        </div>
+      </div>
+
+      <h2>8. The Quantization Equation</h2>
+
+      <p>
+        Now we make the bucket idea precise. The standard <strong>affine</strong> quantization
+        rule maps a real value $x$ to an integer code $q$:
+      </p>
+      <div class="equation">
+        $$q = \operatorname{round}\!\left(\frac{x}{s}\right) + z$$
+      </div>
+      <p>and recovers an approximation $\hat{x}$ from the code:</p>
+      <div class="equation">
+        $$\hat{x} = s\,(q - z)$$
+      </div>
+      <p>where</p>
+      <ul class="sub-bullets">
+        <li>$x$ is the original real value,</li>
+        <li>$q$ is the stored integer code,</li>
+        <li>$s$ is the <strong>scale</strong> (how much real distance one code step covers),</li>
+        <li>$z$ is the <strong>zero-point</strong> (which code represents real value $0$).</li>
+      </ul>
+
+      <div class="analysis-box">
+        <p><strong>Worked example.</strong> Take $x = 3.72$, $s = 0.25$, and $z = 0$.</p>
+        <ul class="sub-bullets">
+          <li>Divide: $\dfrac{x}{s} = \dfrac{3.72}{0.25} = 14.88$.</li>
+          <li>Round and add zero-point: $q = \operatorname{round}(14.88) + 0 = 15$.</li>
+          <li>Reconstruct: $\hat{x} = s\,(q - z) = 0.25 \times 15 = 3.75$.</li>
+          <li>Error: $e = x - \hat{x} = 3.72 - 3.75 = -0.03$.</li>
+        </ul>
+        <p style="margin-bottom:0">The stored information is just the integer <code>15</code>; the
+        scale $0.25$ and zero-point $0$ are shared metadata that let us get back close to the
+        original.</p>
+      </div>
+
+      <p>The quantization error is defined as</p>
+      <div class="equation">
+        $$e = x - \hat{x}.$$
+      </div>
+
+      <h2>9. Scale</h2>
+
+      <p>
+        The scale $s$ decides how much real-world distance each code step covers. If your data
+        ranges from $x_{\min}$ to $x_{\max}$ and you have integer codes from $q_{\min}$ to
+        $q_{\max}$, the most common choice spreads the codes evenly across the data range:
+      </p>
+      <div class="equation">
+        $$s = \frac{x_{\max} - x_{\min}}{\,q_{\max} - q_{\min}\,}.$$
+      </div>
+
+      <p>
+        Geometrically this is a straight-line map between two number lines: the top line is the
+        real-value range, the bottom line is the integer-code range, and the scale is the slope
+        of the map.
+      </p>
+
+      <div class="viz" id="viz-scale">
+        <h3>Scale and zero-point map</h3>
+        <div class="controls">
+          <div class="control">
+            <label for="scale-xmin">Real min</label>
+            <input type="number" id="scale-xmin" value="-2" step="0.1" aria-label="Real value minimum">
+          </div>
+          <div class="control">
+            <label for="scale-xmax">Real max</label>
+            <input type="number" id="scale-xmax" value="2" step="0.1" aria-label="Real value maximum">
+          </div>
+          <div class="control">
+            <label for="scale-bits">Bits</label>
+            <input type="number" id="scale-bits" value="4" min="1" max="8" step="1" aria-label="Bits for scale demo">
+          </div>
+        </div>
+        <div class="svg-wrap"><svg class="qz" id="scale-svg" viewBox="0 0 760 240" role="img" aria-label="Two number lines showing mapping from real range to integer code range"></svg></div>
+        <div class="readout">
+          <div class="box"><div class="k">Scale s</div><div class="v" id="scale-s">0.27</div></div>
+          <div class="box"><div class="k">Zero-point z</div><div class="v" id="scale-z">8</div></div>
+          <div class="box"><div class="k">Levels</div><div class="v" id="scale-L">16</div></div>
+        </div>
+      </div>
+
+      <h2>10. Zero-Point</h2>
+
+      <p>
+        The zero-point $z$ is the integer code that represents the real value $0$. It matters
+        when your data does <em>not</em> straddle zero symmetrically. If all your values are
+        positive (say $0.1$ to $9.2$), you would waste codes on negative numbers unless you shift
+        the map so that code $0$ lines up with real $0$.
+      </p>
+
+      <div class="analysis-box">
+        <p><strong>Symmetric vs asymmetric in one sentence.</strong> A <strong>symmetric</strong>
+        quantizer forces the real value $0$ to map exactly to the center code, which is simple
+        but can waste codes when data is one-sided. An <strong>asymmetric</strong> quantizer uses
+        the zero-point to slide the mapping so that $0$ lands on whatever code is convenient,
+        making better use of the available levels for non-centered data.</p>
+      </div>
+
+      <h2>11. Symmetric vs Asymmetric Quantization</h2>
+
+      <p>
+        The two strategies behave differently on the same data. Below, the same set of values is
+        shown under both schemes. Symmetric keeps zero fixed at the center; asymmetric shifts the
+        zero-point so the codes cover the data snugly.
+      </p>
+
+      <div class="viz" id="viz-sym">
+        <h3>Symmetric versus asymmetric</h3>
+        <div class="seg" id="sym-seg" role="group" aria-label="Quantization mode">
+          <button data-mode="symmetric" aria-pressed="true">Symmetric</button>
+          <button data-mode="asymmetric" aria-pressed="false">Asymmetric</button>
+        </div>
+        <div class="controls">
+          <div class="control">
+            <label for="sym-xmin">Real min</label>
+            <input type="number" id="sym-xmin" value="0" step="0.1" aria-label="Real minimum for symmetric demo">
+          </div>
+          <div class="control">
+            <label for="sym-xmax">Real max</label>
+            <input type="number" id="sym-xmax" value="9" step="0.1" aria-label="Real maximum for symmetric demo">
+          </div>
+          <div class="control">
+            <label for="sym-bits">Bits</label>
+            <input type="number" id="sym-bits" value="3" min="1" max="8" step="1" aria-label="Bits for symmetric demo">
+          </div>
+        </div>
+        <div class="svg-wrap"><svg class="qz" id="sym-svg" viewBox="0 0 760 200" role="img" aria-label="Comparison of symmetric and asymmetric level placement"></svg></div>
+        <div class="viz-caption" id="sym-caption"></div>
+      </div>
+
+      <h2>12. Quantization Error</h2>
+
+      <p>There are really two different kinds of error, and it helps to keep them separate.</p>
+
+      <h3>Rounding (discretization) error</h3>
+      <p>
+        This is the normal, unavoidable gap between a real value and the nearest allowed level.
+        With a good range and $L$ levels, the typical rounding error is about half the step size
+        $s$. More levels shrink it; fewer levels grow it.
+      </p>
+
+      <h3>Clipping (saturation) error</h3>
+      <p>
+        This happens when a value lies <em>outside</em> the representable range entirely. It is
+        clamped to the nearest endpoint, and no amount of extra levels inside the range fixes
+        it. The fix is to choose a better range &mdash; not just more levels.
+      </p>
+
+      <div class="viz" id="viz-clip">
+        <h3>Clipping demonstration</h3>
+        <div class="controls">
+          <div class="control">
+            <label for="clip-range">Representable max</label>
+            <input type="range" id="clip-range" min="2" max="8" step="0.1" value="4" aria-label="Representable maximum">
+          </div>
+          <div class="control">
+            <label for="clip-val">Original value</label>
+            <input type="range" id="clip-val" min="0" max="9" step="0.1" value="6.2" aria-label="Original value that may be clipped">
+          </div>
+        </div>
+        <div class="svg-wrap"><svg class="qz" id="clip-svg" viewBox="0 0 760 170" role="img" aria-label="Number line showing a value clipped to the representable maximum"></svg></div>
+        <div class="readout">
+          <div class="box"><div class="k">Original</div><div class="v" id="clip-orig">6.2</div></div>
+          <div class="box"><div class="k">Stored</div><div class="v" id="clip-stored">4.00</div></div>
+          <div class="box"><div class="k">Error</div><div class="v" id="clip-err">2.20</div></div>
+        </div>
+        <div class="viz-caption">
+          Range &minus;4 to +4, original value 6.2 &rarr; stored 4. The error here is dominated by
+          clipping, not by rounding. More levels would not help until the range is widened.
+        </div>
+      </div>
+
+      <h2>13. Quantization Laboratory</h2>
+
+      <p>
+        This combines everything so far. Pick a real range, a bit depth, and a symmetric/asymmetric
+        mode; then type any value to see its code, reconstructed value, and error.
+      </p>
+
+      <div class="viz" id="viz-lab">
+        <h3>Quantization laboratory</h3>
+        <div class="controls">
+          <div class="control">
+            <label for="lab-xmin">Real min</label>
+            <input type="number" id="lab-xmin" value="-3" step="0.1" aria-label="Laboratory real minimum">
+          </div>
+          <div class="control">
+            <label for="lab-xmax">Real max</label>
+            <input type="number" id="lab-xmax" value="3" step="0.1" aria-label="Laboratory real maximum">
+          </div>
+          <div class="control">
+            <label for="lab-bits">Bits</label>
+            <input type="number" id="lab-bits" value="4" min="1" max="8" step="1" aria-label="Laboratory bits">
+          </div>
+          <div class="control">
+            <label for="lab-x">Test value</label>
+            <input type="number" id="lab-x" value="1.37" step="0.01" aria-label="Test value">
+          </div>
+        </div>
+        <div class="seg" id="lab-seg" role="group" aria-label="Laboratory mode">
+          <button data-mode="asymmetric" aria-pressed="true">Asymmetric</button>
+          <button data-mode="symmetric" aria-pressed="false">Symmetric</button>
+        </div>
+        <div class="svg-wrap"><svg class="qz" id="lab-svg" viewBox="0 0 760 150" role="img" aria-label="Laboratory number line with levels and the test value"></svg></div>
+        <div class="readout">
+          <div class="box"><div class="k">Levels</div><div class="v" id="lab-L">16</div></div>
+          <div class="box"><div class="k">Scale s</div><div class="v" id="lab-s">0.40</div></div>
+          <div class="box"><div class="k">Zero-point z</div><div class="v" id="lab-z">8</div></div>
+          <div class="box"><div class="k">Code q</div><div class="v" id="lab-q">12</div></div>
+          <div class="box"><div class="k">Reconstructed</div><div class="v" id="lab-xhat">1.40</div></div>
+          <div class="box"><div class="k">Abs error</div><div class="v" id="lab-err">0.03</div></div>
+          <div class="box"><div class="k">Rel error</div><div class="v" id="lab-rel">2.2%</div></div>
+        </div>
+      </div>
+
+      <h2>14. Quantizing a Vector</h2>
+
+      <p>
+        A vector is just a list of numbers, so the same operation applies to each entry. The
+        example below uses a small vector and shows the original values, the codes, the
+        reconstructed values, and the per-element error. Color encodes the sign and size of the
+        error.
+      </p>
+
+      <div class="viz" id="viz-vector">
+        <h3>Vector quantization</h3>
+        <div class="controls">
+          <div class="control">
+            <label for="vec-bits">Bits</label>
+            <input type="number" id="vec-bits" value="4" min="1" max="8" step="1" aria-label="Vector bits">
+          </div>
+          <div class="seg" id="vec-seg" role="group" aria-label="Vector mode">
+            <button data-mode="asymmetric" aria-pressed="true">Asymmetric</button>
+            <button data-mode="symmetric" aria-pressed="false">Symmetric</button>
+          </div>
+        </div>
+        <div id="vector-tables"></div>
+        <div class="legend">
+          <span><span class="swatch" style="background:#b8442e"></span>Error &lt; 0 (under)</span>
+          <span><span class="swatch" style="background:#2f7d4f"></span>Error &gt; 0 (over)</span>
+          <span><span class="swatch" style="background:#ddd5c7"></span>Near zero</span>
+        </div>
+        <div class="viz-caption" id="vec-caption"></div>
+      </div>
+
+      <h2>15. Quantizing a Matrix</h2>
+
+      <p>
+        A matrix is a grid of numbers. Neural-network weight matrices are exactly this kind of
+        grid. The widget lets you toggle between the original weights, their quantized codes, the
+        reconstructed values, and the error &mdash; the same four views you will meet again with
+        real models.
+      </p>
+
+      <div class="viz" id="viz-matrix">
+        <h3>Matrix quantization</h3>
+        <div class="seg" id="mat-seg" role="group" aria-label="Matrix view">
+          <button data-view="original" aria-pressed="true">Original</button>
+          <button data-view="quantized" aria-pressed="false">Quantized (codes)</button>
+          <button data-view="reconstructed" aria-pressed="false">Reconstructed</button>
+          <button data-view="error" aria-pressed="false">Error</button>
+        </div>
+        <div class="controls">
+          <div class="control">
+            <label for="mat-bits">Bits</label>
+            <input type="number" id="mat-bits" value="4" min="1" max="8" step="1" aria-label="Matrix bits">
+          </div>
+          <div class="seg" id="mat-mode-seg" role="group" aria-label="Matrix mode">
+            <button data-mode="asymmetric" aria-pressed="true">Asymmetric</button>
+            <button data-mode="symmetric" aria-pressed="false">Symmetric</button>
+          </div>
+        </div>
+        <div id="matrix-view"></div>
+        <div class="viz-caption" id="mat-caption"></div>
+      </div>
+
+      <h2>16. One Scale or Many?</h2>
+
+      <p>
+        So far we used <em>one</em> scale for an entire array. That is called
+        <strong>per-tensor</strong> quantization, and it is simplest. But real weight matrices
+        often have rows or channels with very different ranges. Look at the two channels below:
+      </p>
+
+      <div class="equation">
+        $$\text{Channel A: } 0.01\;\; 0.03\;\; 0.05\;\; 0.08 \qquad \text{Channel B: } 2.1\;\; 4.3\;\; 6.7\;\; 9.2$$
+      </div>
+
+      <p>
+        With one global scale, Channel A's tiny values all collapse into a single level &mdash;
+        most of its precision is wasted. Giving each channel its own scale uses the available
+        levels where they are needed.
+      </p>
+
+      <h2>17. Per-Tensor Quantization</h2>
+      <div class="viz" id="viz-pertensor">
+        <h3>Per-tensor: one scale for everything</h3>
+        <div id="pertensor-view"></div>
+        <div class="viz-caption" id="pertensor-caption"></div>
+      </div>
+
+      <h2>18. Per-Channel Quantization</h2>
+      <div class="viz" id="viz-perchannel">
+        <h3>Per-channel: one scale per channel</h3>
+        <div id="perchannel-view"></div>
+        <div class="viz-caption" id="perchannel-caption"></div>
+      </div>
+
+      <h2>19. Per-Group Quantization</h2>
+      <div class="viz" id="viz-pergroup">
+        <h3>Per-group: one scale per small group</h3>
+        <p>
+          A middle ground used by modern methods (e.g. group-wise INT4): split each channel into
+          small groups and give each group its own scale. This localizes the effect of outliers.
+        </p>
+        <div id="pergroup-view"></div>
+        <div class="viz-caption" id="pergroup-caption"></div>
+      </div>
+
+      <h2>20. From Matrices to Neural Networks</h2>
+
+      <p>
+        A trained neural network is, at its core, a large collection of numerical parameters
+        (weights) plus the intermediate numbers computed as data flows through it
+        (activations). Matrix multiplication with weight matrices is the dominant operation.
+        Everything we did to the small matrix above is exactly what happens, at scale, inside an
+        LLM &mdash; except there are billions of entries instead of nine.
+      </p>
+
+      <div class="viz" id="viz-net">
+        <h3>A tiny network</h3>
+        <div class="svg-wrap"><svg class="net" id="net-svg" viewBox="0 0 760 200" role="img" aria-label="Small neural network diagram highlighting weights and activations"></svg></div>
+        <div class="legend">
+          <span><span class="swatch" style="background:#b4632a"></span>Weights (parameters)</span>
+          <span><span class="swatch" style="background:#1d4f91"></span>Activations (computed)</span>
+        </div>
+        <div class="viz-caption">
+          Each connection stores a weight; each neuron produces an activation. Both are just
+          numbers, and both can be quantized &mdash; though not always with the same strategy.
+        </div>
+      </div>
+
+      <h2>21. Weights and Activations</h2>
+
+      <p>
+        <strong>Weights</strong> are fixed after training; they are known ahead of time and easy
+        to calibrate. <strong>Activations</strong> are produced fresh for every input and can vary
+        widely, which makes them harder to quantize well. Modern systems often treat the two
+        differently.
+      </p>
+
+      <h2>22. Why Large Models Make Quantization Important</h2>
+
+      <p>
+        A model with about 7 billion parameters stores roughly:
+      </p>
+
+      <div class="mini-grid">
+        <div class="mini-box"><div class="k">FP32</div><div class="v">&asymp; 28 GB</div></div>
+        <div class="mini-box"><div class="k">FP16</div><div class="v">&asymp; 14 GB</div></div>
+        <div class="mini-box"><div class="k">8-bit</div><div class="v">&asymp; 7 GB</div></div>
+        <div class="mini-box"><div class="k">4-bit</div><div class="v">&asymp; 3.5 GB</div></div>
+      </div>
+
+      <p class="small">
+        These are approximate <em>theoretical raw parameter-storage</em> figures. They ignore
+        metadata, scales, zero-points, activations, KV cache, and framework overhead, so they are
+        not the complete runtime memory requirement.
+      </p>
+
+      <div class="viz" id="viz-storage">
+        <h3>Raw storage by precision</h3>
+        <div class="ladder">
+          <div class="ladder-row"><div>FP32</div><div class="ladder-track"><div class="ladder-bar" style="width:100%"></div></div><div>28 GB</div></div>
+          <div class="ladder-row"><div>FP16</div><div class="ladder-track"><div class="ladder-bar" style="width:50%"></div></div><div>14 GB</div></div>
+          <div class="ladder-row"><div>INT8</div><div class="ladder-track"><div class="ladder-bar" style="width:25%"></div></div><div>7 GB</div></div>
+          <div class="ladder-row"><div>INT4</div><div class="ladder-track"><div class="ladder-bar" style="width:12.5%"></div></div><div>3.5 GB</div></div>
+        </div>
+      </div>
+
+      <h2>23. Model Memory Calculator</h2>
+
+      <div class="viz" id="viz-memcalc">
+        <h3>Interactive memory calculator</h3>
+        <div class="controls">
+          <div class="control">
+            <label for="mem-params">Parameters (billions)</label>
+            <input type="number" id="mem-params" value="7" min="0.0001" max="100000" step="0.5" aria-label="Parameter count in billions">
+          </div>
+          <div class="control">
+            <label for="mem-bits">Bits per parameter</label>
+            <input type="number" id="mem-bits" value="4" min="1" max="32" step="1" aria-label="Bits per parameter">
+          </div>
+        </div>
+        <div class="readout">
+          <div class="box"><div class="k">Raw bytes</div><div class="v" id="mem-bytes">3.50 B</div></div>
+          <div class="box"><div class="k">Decimal GB</div><div class="v" id="mem-gb">3.50 GB</div></div>
+          <div class="box"><div class="k">Binary GiB</div><div class="v" id="mem-gib">3.26 GiB</div></div>
+        </div>
+        <div class="viz-caption">
+          Raw bytes = parameters &times; bits / 8. Decimal GB divides by $10^9$; binary GiB divides by
+          $2^{30}$. Real formats also store scales and zero-points, so actual files are larger.
+        </div>
+      </div>
+
+      <h2>24. Weight-Only Quantization</h2>
+
+      <p>
+        A model does not have to quantize every numerical object. The simplest practical choice
+        is <strong>weight-only</strong> quantization: compress the stored weights to low bits,
+        but keep activations (the numbers flowing through the network) at higher precision.
+        This saves disk and memory bandwidth for the weights while leaving the arithmetic mostly
+        unchanged.
+      </p>
+
+      <div class="viz" id="viz-weightonly">
+        <h3>Weights quantized, activations high precision</h3>
+        <div class="svg-wrap"><svg class="qz" id="weightonly-svg" viewBox="0 0 760 120" role="img" aria-label="Diagram of weight-only quantization"></svg></div>
+        <div class="legend">
+          <span><span class="swatch" style="background:#b4632a"></span>Weights (low-bit)</span>
+          <span><span class="swatch" style="background:#1d4f91"></span>Activations (high precision)</span>
+        </div>
+      </div>
+
+      <h2>25. Weight and Activation Quantization</h2>
+
+      <p>
+        Going further, both weights <em>and</em> activations can be quantized. This is where the
+        big speedups in inference come from, because the dominant matrix multiplications can then
+        run in low-precision arithmetic. It is harder, because activations vary per input and are
+        prone to outliers.
+      </p>
+
+      <div class="viz" id="viz-weightact">
+        <h3>Weights and activations both quantized</h3>
+        <div class="svg-wrap"><svg class="qz" id="weightact-svg" viewBox="0 0 760 120" role="img" aria-label="Diagram of weight and activation quantization"></svg></div>
+        <div class="legend">
+          <span><span class="swatch" style="background:#b4632a"></span>Weights (low-bit)</span>
+          <span><span class="swatch" style="background:#1d4f91"></span>Activations (low-bit)</span>
+        </div>
+        <div class="viz-caption">
+          Conceptually: weight-only changes how weights are <em>stored</em>; weight-and-activation
+          changes how the <em>computation</em> is done. The second usually saves more, but is
+          more sensitive to outliers and hardware support.
+        </div>
+      </div>
+
+      <h2>26. Post-Training Quantization (PTQ)</h2>
+
+      <p>
+        <strong>Post-Training Quantization</strong> is applied after a model has already been
+        trained. You take the float weights, pick a scheme (e.g. per-channel INT4), and convert
+        them, usually using a small <em>calibration</em> set to choose good ranges. It is fast and
+        cheap, but the model itself never &ldquo;knew&rdquo; it would be quantized.
+      </p>
+
+      <div class="panel">
+        <strong>PTQ pipeline:</strong> trained float model &rarr; choose ranges (calibration)
+        &rarr; compute scales/zero-points &rarr; store low-bit weights &rarr; run (dequantize as
+        needed). No retraining required.
+      </div>
+
+      <h2>27. Calibration</h2>
+
+      <p>
+        Calibration answers a question we already met back in the clipping section: what range
+        should the levels cover? A badly chosen range wastes codes or clips values. A good range
+        uses the available levels efficiently.
+      </p>
+
+      <div class="analysis-box">
+        <ul class="sub-bullets">
+          <li><strong>Bad range</strong> &rarr; excessive clipping of ordinary values.</li>
+          <li><strong>Range too wide</strong> &rarr; quantization levels are spread too thinly, so rounding error grows.</li>
+          <li><strong>Well chosen range</strong> &rarr; better use of available codes.</li>
+        </ul>
+        <p style="margin-bottom:0">PTQ typically uses a representative sample of real inputs to
+        estimate each tensor's range &mdash; exactly the scale/zero-point reasoning from Section 9.</p>
+      </div>
+
+      <h2>28. Quantization-Aware Training (QAT)</h2>
+
+      <p>
+        <strong>Quantization-Aware Training</strong> bakes quantization into the training (or
+        fine-tuning) process. The forward pass simulates rounding and clipping, so the model
+        learns weights that survive low-bit storage with less damage. It costs more than PTQ but
+        can preserve more accuracy at very low bit widths.
+      </p>
+
+      <div class="panel">
+        <strong>QAT pipeline:</strong> train/fine-tune with a &ldquo;fake quant&rdquo; operation
+        that rounds &rarr; the model adapts &rarr; export low-bit weights. Slower, but the
+        network accounts for quantization during learning.
+      </div>
+
+      <h2>29. Outliers</h2>
+
+      <p>
+        A small number of unusually large values can wreck low-bit quantization. Suppose almost
+        every value sits near zero, but one point is far away. The global scale is then forced to
+        be huge, so the near-zero values fall into a single coarse level &mdash; their detail is
+        destroyed, even though they carry most of the information.
+      </p>
+
+      <div class="viz" id="viz-outlier">
+        <h3>Outlier effect on scale</h3>
+        <div class="controls">
+          <div class="control">
+            <label for="out-mag">Outlier magnitude</label>
+            <input type="range" id="out-mag" min="0" max="20" step="0.1" value="9" aria-label="Magnitude of the outlier value">
+          </div>
+          <div class="control">
+            <label for="out-bits">Bits</label>
+            <input type="number" id="out-bits" value="4" min="1" max="8" step="1" aria-label="Outlier demo bits">
+          </div>
+        </div>
+        <div class="svg-wrap"><svg class="qz" id="outlier-svg" viewBox="0 0 760 220" role="img" aria-label="Distribution with one outlier and its effect on quantization scale"></svg></div>
+        <div class="readout">
+          <div class="box"><div class="k">Global scale</div><div class="v" id="out-scale">1.20</div></div>
+          <div class="box"><div class="k">Tiny-value steps</div><div class="v" id="out-step">0.05</div></div>
+        </div>
+        <div class="viz-caption">
+          Increase the outlier and watch the scale balloon: the many small values are crushed into
+          fewer effective levels. This is why modern methods use per-channel/per-group scales or
+          special outlier handling instead of one global min/max.
+        </div>
+      </div>
+
+      <h2>30. 8-Bit and 4-Bit Models</h2>
+
+      <p>
+        Two bit widths dominate practical discussion. <strong>INT8</strong> is the classic
+        &ldquo;safe&rdquo; compression: 8 bits (256 levels) usually preserves accuracy well and is
+        widely supported in hardware. <strong>INT4</strong> (16 levels) is the aggressive option
+        that fits huge models into consumer hardware, at the cost of more care about ranges,
+        outliers, and sometimes extra metadata.
+      </p>
+
+      <h2>31. INT8, INT4, FP8, FP4 and NF4</h2>
+
+      <p>
+        The alphabet soup of low-bit formats each solves a slightly different problem:
+      </p>
+
+      <div class="analysis-box">
+        <ul class="sub-bullets">
+          <li><strong>INT8</strong> &mdash; uniform signed/unsigned 8-bit integers; simple, fast, accurate.</li>
+          <li><strong>INT4</strong> &mdash; uniform 4-bit integers; very compact, needs careful scaling.</li>
+          <li><strong>FP8</strong> &mdash; an 8-bit <em>floating-point</em> format (e.g. E4M3/E5M2); keeps an exponent so it covers a wide range with modest precision.</li>
+          <li><strong>FP4</strong> &mdash; a 4-bit floating-point format; extreme compression, research/early-support territory.</li>
+          <li><strong>NF4</strong> &mdash; <em>NormalFloat 4-bit</em>: not uniform integers, but levels spaced to match the bell-shaped distribution of trained weights (see below).</li>
+        </ul>
+      </div>
+
+      <div class="viz" id="viz-nf4">
+        <h3>Uniform INT4 vs NF4</h3>
+        <div class="seg" id="nf4-seg" role="group" aria-label="Level layout">
+          <button data-layout="uniform" aria-pressed="true">Uniform (INT4)</button>
+          <button data-layout="nf4" aria-pressed="false">Non-uniform (NF4)</button>
+        </div>
+        <div class="svg-wrap"><svg class="qz" id="nf4-svg" viewBox="0 0 760 200" role="img" aria-label="Comparison of uniform and non-uniform quantization levels"></svg></div>
+        <div class="viz-caption" id="nf4-caption"></div>
+      </div>
+
+      <h2>32. Modern LLM Quantization Methods</h2>
+
+      <p>
+        The techniques below are all attempts to make the fundamental trade-off (precision vs size)
+        work for billion-parameter models. They differ in <em>what</em> they quantize and
+        <em>how</em> they choose scales &mdash; not in the underlying idea from the top of this
+        page.
+      </p>
+
+      <div class="table-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Method</th>
+              <th>What it quantizes</th>
+              <th>Key idea (in our vocabulary)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Weight-only INT4/INT8</td>
+              <td>Weights</td>
+              <td>Per-channel or per-group scale; activations stay high precision.</td>
+            </tr>
+            <tr>
+              <td>LLM.int8()</td>
+              <td>Weights + activations</td>
+              <td>Most values INT8; a few outlier channels kept at higher precision.</td>
+            </tr>
+            <tr>
+              <td>GPTQ</td>
+              <td>Weights</td>
+              <td>Uses second-order info to compensate rounding error column-by-column.</td>
+            </tr>
+            <tr>
+              <td>AWQ</td>
+              <td>Weights</td>
+              <td>Protects a small set of &ldquo;salient&rdquo; weights that matter most, scales the rest.</td>
+            </tr>
+            <tr>
+              <td>QLoRA</td>
+              <td>Weights (NF4) + adapter</td>
+              <td>Loads a 4-bit NF4 base model, fine-tunes a small high-precision adapter on top.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="small">
+        These descriptions are conceptual summaries. For exact algorithms and measured results,
+        consult the primary papers and the framework documentation in the references.
+      </p>
+
+      <h2>33. What Quantization Does NOT Mean</h2>
+
+      <div class="card-grid">
+        <div class="fcallout">
+          <div class="myth">Misconception: &ldquo;INT4 means every original weight must literally be an integer between &minus;8 and 7.&rdquo;</div>
+          <div class="truth">The stored <em>code</em> is an integer in that range, but it participates in a mapping $\hat{x}=s(q-z)$. The original weight was a float; the code is just its address.</div>
+        </div>
+        <div class="fcallout">
+          <div class="myth">Misconception: &ldquo;Going from FP16 to 4-bit makes every program four times faster.&rdquo;</div>
+          <div class="truth">Fewer bits reduce memory and can speed up bandwidth-bound ops, but actual speed depends on hardware, kernels, and whether compute runs in low precision. Not a guaranteed 4&times;.</div>
+        </div>
+        <div class="fcallout">
+          <div class="myth">Misconception: &ldquo;Quantization is lossless compression.&rdquo;</div>
+          <div class="truth">It is an approximation. The reconstructed value $\hat{x}$ differs from $x$; that gap is the quantization error we measured throughout.</div>
+        </div>
+        <div class="fcallout">
+          <div class="myth">Misconception: &ldquo;Lower precision is always worse.&rdquo;</div>
+          <div class="truth">Many tasks tolerate tiny numerical differences in exchange for large efficiency gains. The right bit width is a deliberate engineering choice.</div>
+        </div>
+        <div class="fcallout">
+          <div class="myth">Misconception: &ldquo;Quantization only matters for AI.&rdquo;</div>
+          <div class="truth">It is a classical signal-processing and numerical idea: audio CD resolution, image formats, and sensor readings all rely on choosing representable levels.</div>
+        </div>
+      </div>
+
+      <h2>34. The Fundamental Trade-Off</h2>
+
+      <p>
+        Reducing bits trades several things against each other. None of them moves in isolation,
+        and fewer bits do <em>not</em> automatically mean proportional speed:
+      </p>
+
+      <div class="analysis-box">
+        <ul class="sub-bullets">
+          <li><strong>Numerical precision</strong> &darr; as bits &darr;</li>
+          <li><strong>Quantization error</strong> &uarr; as levels &darr;</li>
+          <li><strong>Model size / memory</strong> &darr; roughly with bits</li>
+          <li><strong>Memory bandwidth</strong> &darr; (less data to move)</li>
+          <li><strong>Computational efficiency</strong> &mdash; only if hardware/kernel supports the format</li>
+          <li><strong>Hardware support</strong> &mdash; INT8 is universal; FP4/NF4 is not</li>
+          <li><strong>Implementation complexity</strong> &uarr; for per-group/outlier methods</li>
+          <li><strong>Accuracy / model quality</strong> &mdash; may drop at very low bits</li>
+        </ul>
+        <p style="margin-bottom:0">Real speedup depends on hardware, kernels, memory bandwidth,
+        model architecture, the quantization format, and the software implementation. The claim
+        &ldquo;4-bit = four times faster than 16-bit&rdquo; is not generally true.</p>
+      </div>
+
+      <h2>35. Summary / Mental Model</h2>
+
+      <p>
+        We started by rounding a few everyday numbers. Every later idea was the same operation
+        dressed for a harder setting:
+      </p>
+
+      <div class="mentalmodel">
+        <strong>The mental model, restated:</strong>
+        <ol>
+          <li>Original values (a signal, a vector, a weight matrix)</li>
+          <li>Choose the representable levels (via range, bits, scale, zero-point)</li>
+          <li>Map each value to the nearest code (with or without a zero-point shift)</li>
+          <li>Store or compute using those codes (per-tensor, per-channel, or per-group)</li>
+          <li>Reconstruct approximate values when needed ($\hat{x}=s(q-z)$)</li>
+          <li>Measure and manage the error &mdash; rounding, clipping, outliers</li>
+        </ol>
+      </div>
+
+      <h2>36. References / Further Reading</h2>
+
+      <ul class="sub-bullets">
+        <li>Jacob, B. et al. (2017). <em>Quantization and Training of Neural Networks for Efficient Integer-Arithmetic-Only Inference</em>. arXiv:1712.05877 &mdash; the affine INT8 formulation with scale and zero-point.</li>
+        <li>Dettmers, T. et al. (2022). <em>LLM.int8(): 8-bit Matrix Multiplication for Transformers at Scale</em>. arXiv:2208.07339.</li>
+        <li>Frantar, E. et al. (2023). <em>GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers</em>. arXiv:2210.17323.</li>
+        <li>Lin, J. et al. (2023). <em>AWQ: Activation-aware Weight Quantization for LLM Compression and Acceleration</em>. arXiv:2306.00978.</li>
+        <li>Dettmers, T. et al. (2023). <em>QLoRA: Efficient Finetuning of Quantized LLMs</em>. arXiv:2305.14314 (introduces NF4).</li>
+        <li>PyTorch documentation, <em>Quantization</em> &mdash; PTQ, QAT, per-channel/per-tensor scales.</li>
+        <li>Hugging Face documentation, <em>Quantization</em> &mdash; practical INT4/INT8 and NF4 loading.</li>
+      </ul>
+
+      <div class="footer-nav">
+        <a href="../index.html">Home</a>
+        <span class="sep">|</span>
+        <a href="../research.html">Research</a>
+      </div>
+    </section>
+  </div>
+
+  <script defer src="quantization/quantization.js"></script>
+</body>
+</html>
+  </div>
+</body>
+</html>
