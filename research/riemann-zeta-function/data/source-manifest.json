@@ -1,0 +1,23 @@
+{
+  "generated_on": "2026-09-03",
+  "generator": "scripts/generate_numerical_assets.py",
+  "precision": "40 decimal digits for zero generation; JSON values stored as doubles",
+  "zero_count": 500,
+  "random_seed": 1859,
+  "packages": {
+    "mpmath": "1.2.1",
+    "numpy": "1.26.4",
+    "matplotlib": "3.6.3"
+  },
+  "classifications": {
+    "first-zeros.json": "numerically computed",
+    "z-function-samples.json": "numerically computed",
+    "zero-counts.json": "computed from included zeros; finite range",
+    "prime-counting.json": "exact integer sieve plus numerical smooth approximations",
+    "explicit-formula.json": "truncated numerical approximation",
+    "zero-spacings.json": "numerically computed finite sample",
+    "random-matrix-spacings.json": "deterministic seeded simulation",
+    "zeta-domain-coloring.png": "numerically computed visualization",
+    "other PNG files": "static fallbacks generated from the JSON datasets"
+  }
+}

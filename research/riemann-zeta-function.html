@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="An interactive visual guide to the Riemann zeta function, from infinite sums and Euler's prime product to complex zeros, prime-counting formulas, zero statistics, and recent research.">
+  <title>The Riemann Zeta Function</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&amp;family=Inter:wght@400;500;600;700&amp;family=Source+Code+Pro:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="riemann-zeta-function/styles.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <script defer src="riemann-zeta-function/scripts/page.js"></script>
+</head>
+<body>
+<div class="page">
+<main class="card">
+  <div class="eyebrow">A visual path from arithmetic to analytic number theory</div>
+  <h1>The Riemann Zeta Function</h1>
+  <p class="lead">One function connects three mathematical worlds: infinite sums, the prime numbers, and a hidden pattern of zeros in the complex plane. We will begin with ordinary fractions and build each new idea only when it becomes useful.</p>
+
+  <div class="equation" aria-label="The zeta series for real s greater than one">
+    $$\zeta(s)=1+\frac{1}{2^s}+\frac{1}{3^s}+\frac{1}{4^s}+\cdots,\qquad s>1.$$
+  </div>
+  <aside class="panel note"><strong>This formula has a boundary.</strong> For now, $s$ is real and greater than $1$. The displayed infinite series does not converge everywhere that the analytically continued zeta function will later exist.</aside>
+
+  <div class="worlds" aria-label="Three worlds connected by the zeta function">
+    <div class="world"><span class="number">World 1</span><strong>Infinite sums</strong><span>When does adding forever approach a finite answer?</span><div class="motif">1 + 1/2^s + 1/3^s + ...</div></div>
+    <div class="world"><span class="number">World 2</span><strong>Prime numbers</strong><span>Unique factorization rewrites the same sum as a product over primes.</span><div class="motif">2, 3, 5, 7, 11, ...</div></div>
+    <div class="world"><span class="number">World 3</span><strong>Complex zeros</strong><span>The continued function vanishes at special locations whose pattern reflects prime distribution.</span><div class="motif">rho = beta + i gamma</div></div>
+  </div>
+
+  <nav class="toc" aria-label="Guide contents">
+    <h2>Contents</h2>
+    <div class="toc-grid">
+      <div><strong>Foundations</strong><a href="#sums">1. Infinite sums</a><a href="#real-zeta">2. Zeta on the real line</a><a href="#euler-product">3. Primes in the sum</a><a href="#complex">4. Complex arrows</a></div>
+      <div><strong>Continuation and zeros</strong><a href="#continuation">5. Analytic continuation</a><a href="#functional-equation">6. Functional equation</a><a href="#rh">7. Critical strip and RH</a><a href="#domain-coloring">8. Domain coloring</a></div>
+      <div><strong>Primes and computation</strong><a href="#explicit-formula">9. Zeros govern primes</a><a href="#computing">10. Computing zeros</a><a href="#zero-counting">11. Counting zeros</a><a href="#spacing">12. Zero spacing</a></div>
+      <div><strong>Evidence and research</strong><a href="#random-matrices">13. Random matrices</a><a href="#history">14. History</a><a href="#taxonomy">15. Result taxonomy</a><a href="#recent">16. Recent advances</a><a href="#reproducibility">17. Sources</a></div>
+    </div>
+  </nav>
+
+  <section class="chapter" id="sums">
+    <div class="chapter-label">Foundation 1</div>
+    <h2>Why do some infinite sums settle down?</h2>
+    <p class="chapter-intro">A computer never adds infinitely many terms. It can add the first $N$ terms and show how the <strong>partial sum</strong> changes as $N$ grows. That is enough to reveal a sharp difference between reciprocals and squared reciprocals.</p>
+    <div class="equation">$$S_N(p)=\sum_{n=1}^{N}\frac{1}{n^p}.$$</div>
+    <p class="symbols">$p$ controls how quickly the terms shrink; $N$ is the number of terms included.</p>
+
+    <div class="visual" id="convergenceLab">
+      <header><div><h3>Convergence laboratory</h3><p class="small">Change the exponent and number of terms. The plot uses a logarithmic horizontal scale so early and late behavior remain visible together.</p></div><span class="tag computed">Interactive finite sums</span></header>
+      <div class="preset-row" role="group" aria-label="Exponent presets">
+        <button type="button" data-preset-p="1" aria-pressed="true">p = 1</button><button type="button" data-preset-p="1.2">p = 1.2</button><button type="button" data-preset-p="1.5">p = 1.5</button><button type="button" data-preset-p="2">p = 2</button><button type="button" data-preset-p="3">p = 3</button>
+      </div>
+      <div class="control-row"><label for="pSlider">Exponent $p$: <output id="pOutput">1.00</output></label><input id="pSlider" type="range" min="50" max="300" value="100" step="1"></div>
+      <div class="control-row"><label for="nSlider">Terms $N$: <output id="nOutput">1000</output></label><input id="nSlider" type="range" min="1" max="4000" value="1000" step="1"></div>
+      <div class="readouts"><div class="readout"><span>Current partial sum</span><strong id="partialOutput">calculating</strong></div><div class="readout"><span>Last term</span><strong id="lastTermOutput">calculating</strong></div><div class="readout"><span>Change over last 10%</span><strong id="tailChangeOutput">calculating</strong></div><div class="readout"><span>Theorem</span><strong id="pVerdict">diverges</strong></div></div>
+      <svg id="convergenceSvg" class="plot" viewBox="0 0 900 350" role="img" aria-labelledby="convergenceTitle convergenceDesc"><title id="convergenceTitle">Partial sums of a p-series</title><desc id="convergenceDesc">A graph of partial sums changing with the selected exponent and term count.</desc></svg>
+      <p class="status" id="convergenceStatus" aria-live="polite">At p = 1, the harmonic partial sums continue to increase.</p>
+    </div>
+    <div class="grid two"><div class="box"><h3>$p=1$: divergence</h3><p>The terms approach zero, but too slowly. Grouping terms from $2^k+1$ through $2^{k+1}$ contributes roughly another $1/2$ each time, so the total keeps growing.</p></div><div class="box"><h3>$p>1$: convergence</h3><p>The terms shrink fast enough that the remaining tail can be trapped under a finite area. The infinite sum approaches a finite limit.</p></div></div>
+    <aside class="panel caution"><strong>A plot is evidence, not proof.</strong> A very slowly diverging sum can look flat for a long time. The theorem is that $\sum 1/n^p$ converges exactly when $p>1$ and diverges when $p\leq1$.</aside>
+    <details><summary>Advanced bridge: the integral test</summary><div class="details-body"><p>For positive decreasing $f(x)=x^{-p}$, rectangles compare the sum with $\int_1^N x^{-p}\,dx$. If $p\neq1$, this integral is $(N^{1-p}-1)/(1-p)$. It remains bounded as $N\to\infty$ exactly when $p>1$. For $p=1$, it is $\log N$, which grows without bound.</p></div></details>
+  </section>
+
+  <section class="chapter" id="real-zeta">
+    <div class="chapter-label">Foundation 2</div>
+    <h2>Zeta begins as a function on the real line</h2>
+    <p class="chapter-intro">For each real $s>1$, let the p-series run to its limiting value. This turns one convergence question into a function:</p>
+    <div class="equation">$$\zeta(s)=\sum_{n=1}^{\infty}n^{-s},\qquad s>1.$$</div>
+    <div class="value-cards"><div class="value-card"><strong>$\zeta(2)=\pi^2/6$</strong><span>1.6449340668...</span></div><div class="value-card"><strong>$\zeta(3)$</strong><span>1.2020569031...</span></div><div class="value-card"><strong>$\zeta(4)=\pi^4/90$</strong><span>1.0823232337...</span></div></div>
+    <p>Euler's evaluation of $\zeta(2)$ solved the Basel problem: the surprising appearance of $\pi$ links a sum over whole numbers to circle geometry. The value $\zeta(3)$ is called <strong>Ap&eacute;ry's constant</strong>. Roger Ap&eacute;ry proved in 1978 that it is irrational; no comparably simple formula in powers of $\pi$ is known.</p>
+
+    <div class="visual" id="realZetaLab">
+      <header><div><h3>Real-zeta laboratory</h3><p class="small">The target uses an accelerated numerical evaluation; the partial sum uses exactly the selected finite number of terms.</p></div><span class="tag computed">Interactive</span></header>
+      <div class="control-row"><label for="zetaSSlider">Real $s$: <output id="zetaSOutput">2.00</output></label><input id="zetaSSlider" type="range" min="105" max="500" value="200"></div>
+      <div class="control-row"><label for="zetaTermsSlider">Partial-sum terms: <output id="zetaTermsOutput">1000</output></label><input id="zetaTermsSlider" type="range" min="10" max="10000" value="1000" step="10"></div>
+      <div class="readouts"><div class="readout"><span>Finite sum</span><strong id="zetaPartialOutput">calculating</strong></div><div class="readout"><span>Estimated zeta</span><strong id="zetaTargetOutput">calculating</strong></div><div class="readout"><span>Remaining tail</span><strong id="zetaTailOutput">calculating</strong></div><div class="readout"><span>Distance from 1</span><strong id="zetaPoleDistance">1.00</strong></div></div>
+      <svg id="realZetaSvg" class="plot" viewBox="0 0 900 350" role="img" aria-label="Graph of zeta of real s from 1.05 to 5"></svg>
+      <p class="status" id="realZetaStatus" aria-live="polite"></p>
+    </div>
+    <aside class="panel note"><strong>Approaching the boundary.</strong> As $s\to1^+$, positive terms decay almost like $1/n$ and $\zeta(s)$ grows without bound. Complex analysis will identify this blow-up as a simple pole. This observation still uses the Dirichlet series only where $s>1$.</aside>
+  </section>
+
+  <section class="chapter" id="euler-product">
+    <div class="chapter-label">Foundation 3</div>
+    <h2>Every integer is assembled from primes</h2>
+    <p>Unique prime factorization gives each positive integer one prime-power recipe. For example, $12=2^2\cdot3$, $30=2\cdot3\cdot5$, and $72=2^3\cdot3^2$. That uniqueness lets a product over prime choices generate every $n^{-s}$ exactly once.</p>
+    <div class="factor-machine" aria-label="Prime powers multiply to produce the integer twelve"><div>$2^2$<br><span class="small">choose exponent 2</span></div><div class="times">&times;</div><div>$3^1$<br><span class="small">choose exponent 1</span></div><div class="times">&times;</div><div>$5^0=1$<br><span class="small">choose exponent 0</span></div></div>
+    <div class="equation">$$\frac{1}{1-2^{-s}}=1+2^{-s}+2^{-2s}+2^{-3s}+\cdots$$</div>
+    <p>Multiply one such geometric series for each prime. Selecting $2^{-2s}$, $3^{-s}$, and $1$ from the other factors creates $12^{-s}$. No other selection creates it.</p>
+    <div class="equation">$$\boxed{\zeta(s)=\prod_{p\ \mathrm{prime}}\left(1-p^{-s}\right)^{-1}},\qquad \operatorname{Re}(s)>1.$$</div>
+
+    <div class="visual" id="eulerLab">
+      <header><div><h3>Build Euler's product prime by prime</h3><p class="small">The finite product approaches the zeta value as more primes are included.</p></div><span class="tag computed">Interactive finite product</span></header>
+      <div class="control-row"><label for="eulerSSlider">Real $s$: <output id="eulerSOutput">2.00</output></label><input id="eulerSSlider" type="range" min="110" max="400" value="200"></div>
+      <div class="control-row"><label for="primeCountSlider">Prime factors: <output id="primeCountOutput">8</output></label><input id="primeCountSlider" type="range" min="1" max="46" value="8"></div>
+      <div class="readouts"><div class="readout"><span>Finite product</span><strong id="eulerProductOutput">calculating</strong></div><div class="readout"><span>Zeta target</span><strong id="eulerTargetOutput">calculating</strong></div><div class="readout"><span>Difference</span><strong id="eulerDifferenceOutput">calculating</strong></div><div class="readout"><span>Largest prime</span><strong id="largestPrimeOutput">19</strong></div></div>
+      <div id="factorList" class="factor-list" aria-label="Included Euler factors"></div>
+      <svg id="eulerSvg" class="plot compact" viewBox="0 0 900 280" role="img" aria-label="Finite Euler products approaching the zeta value"></svg>
+    </div>
+    <aside class="panel caution"><strong>Domain matters.</strong> The ordinary Euler product converges for $\operatorname{Re}(s)>1$. Later pictures inside the critical strip use analytic continuation, not a normally convergent multiplication of these prime factors.</aside>
+    <details><summary>Advanced bridge: logarithmic differentiation</summary><div class="details-body"><p>Inside the absolutely convergent half-plane, taking a logarithmic derivative packages prime powers with the von Mangoldt function:</p><div class="equation">$$-\frac{\zeta'(s)}{\zeta(s)}=\sum_{n=1}^{\infty}\frac{\Lambda(n)}{n^s},\qquad \operatorname{Re}(s)>1.$$</div><p>This identity is a direct route from zeros and poles of zeta to weighted prime powers.</p></div></details>
+  </section>
+
+  <section class="chapter" id="complex">
+    <div class="chapter-label">Bridge 4</div>
+    <h2>Complex numbers turn terms into arrows</h2>
+    <p>Write $s=\sigma+it$. The horizontal coordinate $\sigma=\operatorname{Re}(s)$ is the real part; $t=\operatorname{Im}(s)$ is the imaginary coordinate. A complex number $a+ib$ can be drawn as an arrow from the origin to $(a,b)$.</p>
+    <div class="equation">$$e^{i\theta}=\cos\theta+i\sin\theta,\qquad n^{-s}=n^{-\sigma}e^{-it\log n}.$$</div>
+    <p>The length of the $n$th arrow is $n^{-\sigma}$. Its direction has angle $-t\log n$. Adding the arrows head to tail forms a complex partial sum.</p>
+    <div class="visual" id="vectorLab">
+      <header><div><h3>Complex summand vectors</h3><p class="small">The thick gold arrow is the cumulative sum; thin colored segments are individual terms.</p></div><span class="tag computed">Interactive geometry</span></header>
+      <div class="control-row"><label for="sigmaSlider">$\sigma$: <output id="sigmaOutput">1.50</output></label><input id="sigmaSlider" type="range" min="30" max="250" value="150"></div>
+      <div class="control-row"><label for="tSlider">$t$: <output id="tOutput">8.00</output></label><input id="tSlider" type="range" min="0" max="3000" value="800"></div>
+      <div class="control-row"><label for="vectorTermsSlider">Terms: <output id="vectorTermsOutput">20</output></label><input id="vectorTermsSlider" type="range" min="2" max="80" value="20"></div>
+      <div class="readouts"><div class="readout"><span>Real part</span><strong id="vectorRealOutput">0</strong></div><div class="readout"><span>Imaginary part</span><strong id="vectorImagOutput">0</strong></div><div class="readout"><span>Magnitude</span><strong id="vectorMagnitudeOutput">0</strong></div><div class="readout"><span>Series status</span><strong id="vectorDomainOutput">convergent</strong></div></div>
+      <svg id="vectorSvg" class="plot" viewBox="0 0 900 430" role="img" aria-label="Complex vectors representing terms of a zeta partial sum"></svg>
+      <p class="status" id="vectorStatus" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <section class="chapter" id="continuation">
+    <div class="chapter-label">Bridge 5</div>
+    <h2>Beyond the defining series</h2>
+    <p class="chapter-intro">A function can first be discovered through one formula and then be uniquely continued beyond that formula's original region. Analytic continuation extends the function while preserving every value where the formulas overlap.</p>
+    <aside class="panel caution"><strong>Continuation does not repair a divergent sum.</strong> When $\operatorname{Re}(s)\leq1$, the original Dirichlet series does not suddenly begin to converge. Other formulas represent the same continued function.</aside>
+    <div class="equation">$$\eta(s)=1-\frac1{2^s}+\frac1{3^s}-\frac1{4^s}+\cdots=(1-2^{1-s})\zeta(s).$$</div>
+    <p>The eta series converges for $\operatorname{Re}(s)>0$ and absolutely for $\operatorname{Re}(s)>1$. Thus $\zeta(s)=\eta(s)/(1-2^{1-s})$ continues zeta across much of the larger half-plane, with qualifications where the denominator vanishes. At $s=1$ there is a genuine pole; the other denominator zeros in this half-plane are removable in the quotient.</p>
+
+    <div class="visual">
+      <header><div><h3>Where each representation works</h3><p class="small">Select a layer to read its role. Boundaries indicate formula domains, not different functions.</p></div><span class="tag">Concept diagram</span></header>
+      <div class="domain-map"><svg class="domain-diagram" viewBox="0 0 700 330" role="img" aria-labelledby="domainTitle domainDesc"><title id="domainTitle">Domains for representations of the zeta function</title><desc id="domainDesc">The complex plane showing the Dirichlet series to the right of one, the eta series to the right of zero, and meromorphic continuation over the plane except for the pole at one.</desc><rect x="45" y="25" width="610" height="260" rx="14" fill="#f3eee5"/><rect x="350" y="25" width="305" height="260" fill="#e4eff5" opacity=".9"/><rect x="248" y="25" width="407" height="260" fill="#e8f2ec" opacity=".55"/><line x1="248" y1="25" x2="248" y2="285" stroke="#287352" stroke-width="2"/><line x1="350" y1="25" x2="350" y2="285" stroke="#1d4f91" stroke-width="2"/><line x1="45" y1="155" x2="655" y2="155" stroke="#8f887e"/><circle cx="350" cy="155" r="10" fill="#a34f4f"/><text x="350" y="180" text-anchor="middle" font-size="13">pole s = 1</text><text x="199" y="305" font-size="13">Re(s) = 0</text><text x="335" y="305" font-size="13">Re(s) = 1</text><text x="493" y="53" font-size="14" fill="#174f86">Dirichlet series</text><text x="270" y="82" font-size="14" fill="#235c43">eta series</text><text x="65" y="116" font-size="14" fill="#5c554c">meromorphic continuation</text></svg><div><div class="button-row" role="group" aria-label="Domain layers"><button type="button" data-domain="dirichlet" aria-pressed="true">Dirichlet</button><button type="button" data-domain="eta">Eta</button><button type="button" data-domain="continued">Continued</button></div><p class="status" id="domainStatus" aria-live="polite">The Dirichlet series converges absolutely for Re(s) &gt; 1.</p></div></div>
+    </div>
+    <div class="equation">$$\zeta(s)=\frac{1}{s-1}+\gamma+O(s-1)\quad\text{near }s=1.$$</div>
+    <p>Here $\gamma$ is the Euler-Mascheroni constant. The coefficient $1$ of $(s-1)^{-1}$ says that the pole is simple and has residue $1$.</p>
+    <details><summary>Advanced bridge: an integral representation</summary><div class="details-body"><p>For $\operatorname{Re}(s)>1$,</p><div class="equation">$$\Gamma(s)\zeta(s)=\int_0^\infty\frac{x^{s-1}}{e^x-1}\,dx.$$</div><p>Subtracting the singular behavior of the integrand near $x=0$ and integrating by parts provides routes to continuation. The identity theorem then guarantees uniqueness wherever analytic continuations overlap.</p></div></details>
+  </section>
+
+  <section class="chapter" id="functional-equation">
+    <div class="chapter-label">Advanced bridge 6</div>
+    <h2>The functional equation reveals symmetry</h2>
+    <p>The Gamma function extends factorials: $\Gamma(n)=(n-1)!$ for positive integers $n$. Combining it with zeta and two elementary factors removes the pole and packages the symmetry into an entire function.</p>
+    <div class="equation">$$\xi(s)=\frac12s(s-1)\pi^{-s/2}\Gamma\!\left(\frac{s}{2}\right)\zeta(s),\qquad \boxed{\xi(s)=\xi(1-s)}.$$</div>
+    <p>The reflection $s\mapsto1-s$ mirrors points across the vertical line $\operatorname{Re}(s)=1/2$. Since zeta also respects complex conjugation, nontrivial zeros occur in reflected and conjugate configurations.</p>
+    <div class="grid two"><div class="box"><h3>Trivial zeros</h3><p>$\zeta(-2)=\zeta(-4)=\zeta(-6)=\cdots=0$. They arise in the functional equation and are simple. They are zeros of zeta, not zeros inserted by the completion.</p></div><div class="box"><h3>Completion bookkeeping</h3><p>$\pi^{-s/2}\Gamma(s/2)\zeta(s)$ is meromorphic. Multiplying by $\tfrac12s(s-1)$ produces the entire $\xi$ function with $\xi(0)=\xi(1)=1/2$.</p></div></div>
+    <figure class="figure"><img src="riemann-zeta-function/images/zero-landscape-overview.png" loading="lazy" alt="Complex plane with trivial zeta zeros on the negative real axis, the critical strip, critical line, and the first computed nontrivial zeros"><figcaption class="caption">A static overview generated from the first 500 computed zero ordinates. The interactive explorer below focuses on the critical strip.</figcaption></figure>
+    <details><summary>Advanced bridge: another common functional equation</summary><div class="details-body"><div class="equation">$$\zeta(s)=2^s\pi^{s-1}\sin\!\left(\frac{\pi s}{2}\right)\Gamma(1-s)\zeta(1-s).$$</div><p>At negative even integers, the sine factor vanishes while the remaining factors are handled by continuation, producing the trivial zeros. One must not infer extra zeta zeros merely from zeros or poles of individual factors before checking cancellations.</p></div></details>
+  </section>
+
+  <section class="chapter" id="rh">
+    <div class="chapter-label">Central question 7</div>
+    <h2>The critical strip and the Riemann Hypothesis</h2>
+    <p>There are no zeta zeros for $\operatorname{Re}(s)>1$ because of the absolutely convergent Euler product. The functional equation reflects that information to the left, apart from the trivial zeros. The remaining, <strong>nontrivial</strong> zeros lie in the open critical strip.</p>
+    <div class="equation">$$\rho=\beta+i\gamma,\qquad 0<\beta<1.$$</div>
+    <aside class="panel note"><strong>Riemann Hypothesis.</strong> Every nontrivial zero $\rho$ of $\zeta(s)$ has real part $\beta=1/2$.</aside>
+    <div class="visual" id="zeroExplorer">
+      <header><div><h3>Explore the first nontrivial zeros</h3><p class="small">Positive ordinates are computed with mpmath at 40-digit precision and stored as doubles for display.</p></div><span class="tag computed">Computed zeros</span></header>
+      <div class="control-row"><label for="zeroHeightSlider">Height shown: <output id="zeroHeightOutput">50</output></label><input id="zeroHeightSlider" type="range" min="25" max="250" value="50"></div>
+      <div class="readouts"><div class="readout"><span>Zeros shown above axis</span><strong id="zerosShownOutput">0</strong></div><div class="readout"><span>Critical line</span><strong>beta = 1/2</strong></div><div class="readout"><span>First ordinate</span><strong>14.134725...</strong></div><div class="readout"><span>RH status</span><strong>Unsolved</strong></div></div>
+      <svg id="zeroSvg" class="plot" viewBox="0 0 900 470" role="img" aria-label="Interactive critical strip and first nontrivial zeta zeros"></svg>
+      <p id="zeroStatus" class="status" aria-live="polite">Loading computed zero data.</p>
+      <div class="button-row"><button id="zeroViewToggle" type="button" aria-pressed="false">Zoom out to trivial zeros</button><button id="hypotheticalToggle" type="button" aria-pressed="false">Show hypothetical off-line quartet</button></div>
+    </div>
+    <p>If an off-line zero $\rho$ existed, symmetry would also produce $\bar\rho$, $1-\rho$, and $1-\bar\rho$, with coincidences possible on symmetry axes. The explorer's quartet is visibly labeled hypothetical; no such zero is known.</p>
+  </section>
+
+  <section class="chapter" id="domain-coloring">
+    <div class="chapter-label">Visual interlude 8</div>
+    <h2>Magnitude and phase across the complex plane</h2>
+    <p>At each point $s$, zeta has a magnitude $|\zeta(s)|$ and an angle, or phase, $\arg\zeta(s)$. Domain coloring assigns hue to phase and brightness to magnitude. Dark meeting points indicate zeros; the pole near $s=1$ becomes very bright. Repeated dark contours show logarithmic magnitude levels.</p>
+    <figure class="figure domain-figure"><img src="riemann-zeta-function/images/zeta-domain-coloring.png" loading="lazy" alt="Domain coloring of the analytically continued Riemann zeta function from real part negative 4.5 to 2 and imaginary part negative 32 to 32, with critical-strip boundaries, critical line, pole, and trivial zeros marked"><div class="phase-legend" aria-label="Phase hue legend"><span>-pi / red</span><span>-2pi/3</span><span>-pi/3</span><span>0 / cyan</span><span>pi/3</span><span>2pi/3</span></div><figcaption class="caption">Hue encodes phase around the color wheel; brightness increases with $|\zeta(s)|$ after nonlinear compression; dark contour bands mark logarithmic magnitude levels. White vertical lines bound the critical strip, and the dashed line is $\operatorname{Re}(s)=1/2$. Color is supplemented by labels, contours, and the zero explorer rather than used alone.</figcaption></figure>
+  </section>
+
+  <section class="chapter" id="explicit-formula">
+    <div class="chapter-label">Advanced bridge 9</div>
+    <h2>Zeros govern the fine structure of prime distribution</h2>
+    <p>The prime-counting function $\pi(x)$ counts primes at or below $x$. It is a staircase: it jumps by one at a prime and stays flat at composite numbers. The prime number theorem says $\pi(x)\sim x/\log x$. The logarithmic integral usually gives a better smooth approximation.</p>
+    <div class="equation">$$\operatorname{Li}(x)=\operatorname{PV}\!\int_0^x\frac{dt}{\log t}.$$</div>
+    <p class="symbols">PV denotes the Cauchy principal value needed because $1/\log t$ is singular at $t=1$.</p>
+    <div class="visual" id="primeCountingLab">
+      <header><div><h3>Prime staircase and smooth approximations</h3><p class="small">Prime counts are exact through 500; the two smooth curves are numerical evaluations.</p></div><span class="tag exact">Exact sieve</span></header>
+      <div class="control-row"><label for="primeMaxSlider">Maximum $x$: <output id="primeMaxOutput">200</output></label><input id="primeMaxSlider" type="range" min="30" max="500" value="200"></div>
+      <svg id="primeCountingSvg" class="plot" viewBox="0 0 900 360" role="img" aria-label="Prime-counting staircase compared with x over log x and the logarithmic integral"></svg>
+      <div class="legend"><span><i class="swatch" style="background:#1b1b1b"></i>exact $\pi(x)$</span><span><i class="swatch" style="background:#b26935"></i>$x/\log x$</span><span><i class="swatch" style="background:#1d4f91"></i>$\operatorname{Li}(x)$</span></div>
+    </div>
+    <p>For explicit formulas, prime powers are easier to handle than primes alone. The von Mangoldt function places weight $\log p$ at $p,p^2,p^3,\ldots$ and zero elsewhere:</p>
+    <div class="equation">$$\Lambda(n)=\begin{cases}\log p,&n=p^m\text{ for a prime }p,\ m\geq1,\\0,&\text{otherwise,}\end{cases}\qquad \psi(x)=\sum_{n\leq x}\Lambda(n).$$</div>
+    <div class="equation">$$\psi_0(x)=x-\sum_\rho\frac{x^\rho}{\rho}-\log(2\pi)-\frac12\log(1-x^{-2}).$$</div>
+    <p>Here $\psi_0$ takes the midpoint of the jump at a prime power, zeros are counted with multiplicity, and the zero sum is interpreted symmetrically by height. The term $x$ is the smooth trend from zeta's pole; nontrivial zeros supply oscillatory corrections; trivial zeros supply the final logarithmic term.</p>
+    <div class="visual" id="explicitLab">
+      <header><div><h3>Add conjugate zero pairs</h3><p class="small">Every displayed curve is a finite critical-line truncation of the symmetric zero sum.</p></div><span class="tag truncated">Truncated approximation</span></header>
+      <div class="button-row" role="group" aria-label="Number of zero pairs"><button type="button" data-zero-pairs="0">0 pairs</button><button type="button" data-zero-pairs="1">1 pair</button><button type="button" data-zero-pairs="3">3 pairs</button><button type="button" data-zero-pairs="10">10 pairs</button><button type="button" data-zero-pairs="30" aria-pressed="true">30 pairs</button></div>
+      <svg id="explicitSvg" class="plot" viewBox="0 0 900 370" role="img" aria-label="Midpoint Chebyshev psi zero staircase compared with truncated explicit formula approximations"></svg>
+      <p class="status" id="explicitStatus" aria-live="polite">Showing a truncation with 30 conjugate zero pairs.</p>
+    </div>
+    <aside class="panel note"><strong>An RH-scale error statement.</strong> A standard equivalent form is $\mathrm{RH}\iff\psi(x)=x+O(x^{1/2}\log^2x)$. The logarithmic factor and the use of $\psi$, rather than an unspecified prime-counting error, matter.</aside>
+  </section>
+
+  <section class="chapter" id="computing">
+    <div class="chapter-label">Computation 10</div>
+    <h2>Hardy's Z function turns a complex search into a real graph</h2>
+    <p>Directly solving $\zeta(s)=0$ means making both real and imaginary parts vanish. On the critical line, the functional equation supplies a phase correction that makes the result real.</p>
+    <div class="equation">$$\vartheta(t)=\operatorname{Im}\log\Gamma\!\left(\frac14+\frac{it}{2}\right)-\frac{t}{2}\log\pi,\qquad Z(t)=e^{i\vartheta(t)}\zeta\!\left(\frac12+it\right).$$</div>
+    <p>The logarithm of Gamma is followed continuously with $\vartheta(0)=0$. For real $t$, $Z(t)$ is real and $|Z(t)|=|\zeta(1/2+it)|$. Its real zeros are exactly the ordinates of critical-line zeros, with multiplicity.</p>
+    <div class="visual" id="zFunctionLab">
+      <header><div><h3>Inspect the first Z-function crossings</h3><p class="small">Samples have spacing 0.05; listed roots come from separate high-precision zero computations.</p></div><span class="tag computed">Computed samples</span></header>
+      <div class="control-row"><label for="zTSlider">$t$: <output id="zTOutput">14.15</output></label><input id="zTSlider" type="range" min="0" max="1400" value="283"></div>
+      <div class="readouts"><div class="readout"><span>Sampled Z(t)</span><strong id="zValueOutput">loading</strong></div><div class="readout"><span>Nearest listed zero</span><strong id="nearestZeroOutput">loading</strong></div><div class="readout"><span>Distance</span><strong id="zeroDistanceOutput">loading</strong></div><div class="readout"><span>Sign</span><strong id="zSignOutput">loading</strong></div></div>
+      <svg id="zFunctionSvg" class="plot" viewBox="0 0 900 380" role="img" aria-label="Hardy Z function from zero to seventy with known zeros marked"></svg>
+      <p class="status" id="zFunctionStatus" aria-live="polite">Loading Hardy Z samples.</p>
+    </div>
+    <aside class="panel caution"><strong>What a crossing does not certify.</strong> A sampled sign change locates an odd-multiplicity zero on the critical line. It can miss an even-multiplicity zero, multiple crossings between samples, and every possible zero away from the line.</aside>
+    <details><summary>Advanced computation: Riemann-Siegel and Turing-type methods</summary><div class="details-body"><p>The Riemann-Siegel formula evaluates $Z(t)$ using about $\sqrt{t/(2\pi)}$ main terms plus a controlled remainder, far fewer than a naive continuation formula at large height. Rigorous computations combine interval arithmetic, adaptive root isolation, and zero-counting information. Turing-type methods compare counted sign changes with an independently controlled count to certify completeness over a finite interval. The browser visualization performs none of that industrial-scale certification.</p></div></details>
+  </section>
+
+  <section class="chapter" id="zero-counting">
+    <div class="chapter-label">Advanced 11</div>
+    <h2>How many zeros occur below height T?</h2>
+    <p>Let $N(T)$ count nontrivial zeros $\rho=\beta+i\gamma$ with $0<\gamma\leq T$, including multiplicity. Away from a zero ordinate, a precise formula is</p>
+    <div class="equation">$$N(T)=\frac{\vartheta(T)}{\pi}+1+S(T),\qquad S(T)=\frac1\pi\arg\zeta\!\left(\frac12+iT\right),$$</div>
+    <p>where the argument follows the standard continuous path from $2$ to $2+iT$ to $1/2+iT$. Its smooth asymptotic form is</p>
+    <div class="equation">$$N(T)=\frac{T}{2\pi}\log\frac{T}{2\pi}-\frac{T}{2\pi}+\frac78+S(T)+O(T^{-1}).$$</div>
+    <div class="visual" id="zeroCountLab">
+      <header><div><h3>Staircase versus smooth growth</h3><p class="small">The exact staircase here is exact relative to the included list of 500 computed ordinates and stops just above its last entry.</p></div><span class="tag computed">Finite computed range</span></header>
+      <div class="control-row"><label for="countTSlider">Inspect height $T$: <output id="countTOutput">100</output></label><input id="countTSlider" type="range" min="10" max="811" value="100"></div>
+      <div class="readouts"><div class="readout"><span>Included N(T)</span><strong id="exactCountOutput">loading</strong></div><div class="readout"><span>Smooth main term</span><strong id="smoothCountOutput">loading</strong></div><div class="readout"><span>Residual</span><strong id="countResidualOutput">loading</strong></div><div class="readout"><span>Local mean gap</span><strong id="meanGapOutput">loading</strong></div></div>
+      <svg id="zeroCountSvg" class="plot" viewBox="0 0 900 350" role="img" aria-label="Zero count staircase and Riemann-von Mangoldt smooth approximation"></svg>
+      <svg id="zeroResidualSvg" class="plot compact" viewBox="0 0 900 230" role="img" aria-label="Residual between included zero count and smooth approximation"></svg>
+    </div>
+    <p>The average density is roughly $\log(T/(2\pi))/(2\pi)$ zeros per unit height. Thus zeros become more tightly packed as $T$ increases, even though the local gaps continue to fluctuate.</p>
+  </section>
+
+  <section class="chapter" id="spacing">
+    <div class="chapter-label">Statistics 12</div>
+    <h2>Raw gaps shrink, so spacing must be unfolded</h2>
+    <p>Order positive ordinates as $\gamma_1\leq\gamma_2\leq\cdots$. A raw gap $\gamma_{n+1}-\gamma_n$ is compared with the local mean spacing $2\pi/\log(\gamma_n/(2\pi))$.</p>
+    <div class="equation">$$\delta_n=(\gamma_{n+1}-\gamma_n)\frac{\log(\gamma_n/(2\pi))}{2\pi}.$$</div>
+    <div class="visual" id="spacingLab">
+      <header><div><h3>Finite distribution of normalized gaps</h3><p class="small">Uses gaps beginning after the first 50 zeros to reduce the most pronounced low-height distortion.</p></div><span class="tag computed">449 computed gaps</span></header>
+      <div class="control-row"><label for="spacingBinsSlider">Histogram bins: <output id="spacingBinsOutput">24</output></label><input id="spacingBinsSlider" type="range" min="10" max="40" value="24"></div>
+      <div class="readouts"><div class="readout"><span>Sample</span><strong id="spacingSampleOutput">loading</strong></div><div class="readout"><span>Height range</span><strong id="spacingRangeOutput">loading</strong></div><div class="readout"><span>Mean normalized gap</span><strong id="spacingMeanOutput">loading</strong></div><div class="readout"><span>Normalization</span><strong>local mean about 1</strong></div></div>
+      <svg id="spacingSvg" class="plot" viewBox="0 0 900 350" role="img" aria-label="Histogram of normalized consecutive zeta zero gaps"></svg>
+    </div>
+    <aside class="panel caution"><strong>Finite evidence has limits.</strong> These zeros were computed on the critical line. Their spacing cannot establish that every higher zero lies there, and 449 low-height gaps are not an asymptotic theorem.</aside>
+  </section>
+
+  <section class="chapter" id="random-matrices">
+    <div class="chapter-label">Statistics 13</div>
+    <h2>Random matrices show a surprising statistical echo</h2>
+    <p>Montgomery's pair-correlation work predicts that suitably normalized pairs of high zeta zeros repel one another with the same sine-kernel pattern that appears among eigenvalues of large random Hermitian matrices. Odlyzko's computations later found striking numerical agreement.</p>
+    <div class="equation">$$1-\left(\frac{\sin \pi u}{\pi u}\right)^2$$</div>
+    <p>This is the conjectured off-diagonal <strong>pair-correlation density</strong>, not the nearest-neighbor gap density. The broader GUE conjecture predicts all local correlation levels and is stronger than Montgomery's pair-correlation conjecture.</p>
+    <div class="visual" id="matrixSpacingLab">
+      <header><div><h3>Zeta gaps and seeded unitary-matrix gaps</h3><p class="small">The matrix sample uses 40 independent 40 by 40 Haar-unitary matrices. Circular eigenangle gaps are normalized to mean one.</p></div><span class="tag simulated">Seed 1859</span></header>
+      <div class="button-row" role="group" aria-label="Spacing distributions"><button type="button" data-spacing-series="both" aria-pressed="true">Compare both</button><button type="button" data-spacing-series="zeta">Zeta only</button><button type="button" data-spacing-series="matrix">Matrix only</button></div>
+      <svg id="matrixSpacingSvg" class="plot" viewBox="0 0 900 360" role="img" aria-label="Comparison of zeta zero gaps and simulated Haar-unitary eigenangle gaps"></svg>
+      <div class="legend"><span><i class="swatch" style="background:#1d4f91"></i>zeta gaps</span><span><i class="swatch" style="background:#b26935"></i>simulated CUE gaps</span></div>
+      <p id="matrixSpacingStatus" class="status" aria-live="polite">Loading deterministic simulation data.</p>
+    </div>
+    <aside class="panel caution"><strong>Statistical agreement is not RH.</strong> Matching local statistics does not prove that every zeta zero is on the critical line. CUE is used here because its unfolded eigenangles share the GUE sine-kernel local limit, not because zeta zeros are literally eigenangles of these finite matrices.</aside>
+  </section>
+
+  <section class="chapter" id="history">
+    <div class="chapter-label">Context 14</div>
+    <h2>A history of different kinds of progress</h2>
+    <p>The subject did not advance through a sequence of almost-proofs. It grew through identities, continuation, prime-distribution theorems, results about subsets of zeros, statistical conjectures, and certified finite computations.</p>
+    <div class="button-row" role="group" aria-label="Timeline filters"><button type="button" data-history-filter="all" aria-pressed="true">All</button><button type="button" data-history-filter="primes">Primes</button><button type="button" data-history-filter="zeros">Zeros</button><button type="button" data-history-filter="statistics">Statistics</button><button type="button" data-history-filter="computation">Computation</button></div>
+    <div class="timeline" id="historyTimeline">
+      <article class="timeline-item" data-kind="primes"><span class="timeline-year">1737 / 1744</span><h3>Euler's prime product</h3><p>Euler wrote the relevant work in 1737 and published it in 1744, exposing the product structure behind reciprocal-power sums.</p></article>
+      <article class="timeline-item" data-kind="zeros"><span class="timeline-year">1859</span><h3>Riemann's memoir</h3><p>Riemann continued zeta to the complex plane, connected its zeros to prime counting, and formulated the hypothesis now bearing his name.</p></article>
+      <article class="timeline-item" data-kind="primes"><span class="timeline-year">1895-1896</span><h3>Explicit formulas and the prime number theorem</h3><p>von Mangoldt made the zero-based explicit formula rigorous. Hadamard and de la Vall&eacute;e Poussin independently proved the prime number theorem by establishing zero-freeness on $\operatorname{Re}(s)=1$.</p></article>
+      <article class="timeline-item" data-kind="zeros"><span class="timeline-year">1905 / 1914</span><h3>Counting zeros and finding infinitely many on the line</h3><p>von Mangoldt established the zero-counting formula. Hardy proved that infinitely many zeros lie on the critical line.</p></article>
+      <article class="timeline-item" data-kind="zeros"><span class="timeline-year">1942</span><h3>Selberg's positive proportion</h3><p>Selberg proved that a positive proportion of nontrivial zeros lie on the critical line.</p></article>
+      <article class="timeline-item" data-kind="statistics"><span class="timeline-year">1973</span><h3>Montgomery's pair correlation</h3><p>Montgomery proved a restricted theorem, under RH in its classical formulation, and conjectured the full pair-correlation law.</p></article>
+      <article class="timeline-item" data-kind="zeros"><span class="timeline-year">1974 / 1989</span><h3>One third, then two fifths</h3><p>Levinson proved more than one third of zeros lie on the line; Conrey later proved more than two fifths.</p></article>
+      <article class="timeline-item" data-kind="computation"><span class="timeline-year">1987</span><h3>Odlyzko's high-zero computations</h3><p>Large computations found strong numerical agreement between high zeta-zero spacings and random-matrix predictions.</p></article>
+      <article class="timeline-item" data-kind="zeros"><span class="timeline-year">2020</span><h3>More than five twelfths</h3><p>Pratt, Robles, Zaharescu, and Zeindler proved an unconditional critical-line proportion exceeding 0.417293.</p></article>
+      <article class="timeline-item" data-kind="computation"><span class="timeline-year">2021</span><h3>Certified through $3\times10^{12}$</h3><p>Platt and Trudgian rigorously verified that every zero through this finite height lies on the critical line.</p></article>
+      <article class="timeline-item" data-kind="primes"><span class="timeline-year">2024-2026</span><h3>Sharper regions and density estimates</h3><p>Recent work improves explicit zero-free regions and zero-density bounds, yielding quantitative consequences for prime distribution without proving RH.</p></article>
+    </div>
+  </section>
+
+  <section class="chapter" id="taxonomy">
+    <div class="chapter-label">Reading research 15</div>
+    <h2>What different kinds of results actually mean</h2>
+    <p>Technical results about zeta zeros are not interchangeable. This table is the vocabulary needed to read recent claims without turning every improvement into an alleged proof of RH.</p>
+    <div class="table-wrap"><table class="taxonomy"><thead><tr><th>Result type</th><th>What it controls</th><th>What it does not control</th><th>Typical status</th><th>Relationship to RH</th></tr></thead><tbody>
+      <tr><td><strong>Zero-free region</strong></td><td>A specified region proved to contain no zeros.</td><td>The rest of the critical strip.</td><td>Often unconditional.</td><td>A region near $\operatorname{Re}(s)=1$ is far weaker than placing every zero on $1/2$.</td></tr>
+      <tr><td><strong>Zero-density estimate</strong></td><td>An upper bound for $N(\sigma,T)$, the number of zeros in a right-hand part of the strip.</td><td>It need not make that count zero.</td><td>Often unconditional.</td><td>Restricts how numerous off-line zeros could be; does not eliminate them.</td></tr>
+      <tr><td><strong>Critical-line proportion</strong></td><td>A lower bound for $N_0(T)/N(T)$ in a limiting sense.</td><td>Zeros outside the proven proportion.</td><td>Unconditional results exist.</td><td>RH requires 100 percent and no exceptional zero.</td></tr>
+      <tr><td><strong>Computational verification</strong></td><td>Zeros through a finite certified height.</td><td>All higher zeros.</td><td>Rigorous but finite.</td><td>Strong finite evidence cannot settle an infinite statement.</td></tr>
+      <tr><td><strong>Bound on $\zeta(s)$</strong></td><td>The function's size in a stated region or average.</td><td>Usually not exact zero locations.</td><td>Conditional or unconditional.</td><td>May support zero estimates without proving RH.</td></tr>
+      <tr><td><strong>Zero statistics</strong></td><td>Spacing, correlation, moments, or distributions.</td><td>Every individual zero location.</td><td>Theorem, conjecture, or computation.</td><td>Statistical laws can coexist logically with rare exceptions.</td></tr>
+      <tr><td><strong>Conditional result</strong></td><td>A conclusion assuming RH or another stated hypothesis.</td><td>The truth of the assumption.</td><td>Explicitly conditional.</td><td>Explains consequences; it is not evidence that the assumption has been proved.</td></tr>
+      <tr><td><strong>Actual proof of RH</strong></td><td>Every nontrivial zero, without an unproved assumption.</td><td>Nothing in the RH statement remains.</td><td>No accepted proof as of the cutoff below.</td><td>This alone resolves RH.</td></tr>
+    </tbody></table></div>
+  </section>
+
+  <section class="chapter" id="recent">
+    <div class="chapter-label">Research snapshot 16</div>
+    <h2>Recent advances concerning zeta zeros</h2>
+    <aside class="panel note"><strong>Checked through: September 3, 2026.</strong> Established claims below were checked against journal papers and primary records. A current Clay Mathematics Institute page still lists RH as unsolved. Preprint status is shown explicitly.</aside>
+    <div class="grid two">
+      <article class="box result-card density"><h3>Sharper zero-density estimates</h3><p class="meta">Guth and Maynard, Annals of Mathematics, 2026 | unconditional</p><p>For $N(\sigma,T)$ counting zeros with real part at least $\sigma$, their large-value estimates imply</p><div class="equation">$$N(\sigma,T)\leq T^{15(1-\sigma)/(3+5\sigma)+o(1)}.$$</div><p>Combined with Ingham's estimate, this improves the previous uniform density exponent $12/5$ to $30/13$ and contributes to primes-in-short-interval results.</p><p class="not-rh">It bounds how many off-line zeros may occur; it does not prove the count is zero.</p><p><a href="https://doi.org/10.4007/annals.2026.203.2.6">Primary journal source</a></p></article>
+      <article class="box result-card zero-free"><h3>Explicit zero-free regions</h3><p class="meta">Bellotti, JMAA, 2024 | unconditional</p><p>The published work improves the explicit Korobov-Vinogradov denominator constant to $53.989$ in a region of the form</p><div class="equation">$$\sigma\geq1-\frac{1}{R(\log t)^{2/3}(\log\log t)^{1/3}}.$$</div><p>It also supplies explicit bounds for $|\zeta(\sigma+it)|$ in its stated range.</p><p class="not-rh">The excluded region lies near real part 1 and leaves most of the critical strip untreated.</p><p><a href="https://doi.org/10.1016/j.jmaa.2024.128249">Primary journal source</a></p></article>
+      <article class="box result-card zero-free"><h3>A classical-region preprint</h3><p class="meta">Bellotti, Trudgian, and Yang, arXiv, March 2026 | preprint</p><p>The preprint states zero-freeness for $t\geq3$ and</p><div class="equation">$$\sigma\geq1-\frac{1}{4.896\log t},$$</div><p>improving the peer-reviewed classical constant $5.558691$ from Mossinghoff, Trudgian, and Yang (2024), if the preprint result is validated through publication.</p><p class="not-rh">This is a clearly labeled unreviewed result near real part 1, not a proof of RH.</p><p><a href="https://arxiv.org/abs/2603.21490">Primary preprint record</a></p></article>
+      <article class="box result-card proportion"><h3>Critical-line proportion</h3><p class="meta">Pratt, Robles, Zaharescu, and Zeindler, 2020 | unconditional</p><p>The established peer-reviewed benchmark is</p><div class="equation">$$\liminf_{T\to\infty}\frac{N_0(T)}{N(T)}>0.417293>\frac5{12}.$$</div><p>The same paper gives a lower bound $0.407511$ for the proportion that are simple and on the line.</p><p class="not-rh">More than 41.7 percent is not the 100 percent required by RH.</p><p><a href="https://doi.org/10.1007/s40687-019-0199-8">Primary journal source</a></p></article>
+      <article class="box result-card computation"><h3>Finite certified verification</h3><p class="meta">Platt and Trudgian, BLMS, 2021 | rigorous computation</p><p>Interval-arithmetic computation verifies that every zero with</p><div class="equation">$$0<\operatorname{Im}(\rho)\leq3\times10^{12}$$</div><p>lies on the critical line. No authoritative superseding certified-height paper was found in the source audit by the cutoff.</p><p class="not-rh">Every finite height leaves infinitely many zeros untested.</p><p><a href="https://doi.org/10.1112/blms.12460">Primary journal source</a></p></article>
+      <article class="box result-card statistics"><h3>Unconditional pair-correlation framework</h3><p class="meta">Baluyot, Goldston, Suriajaya, and Turnage-Butterbaugh, Acta Arithmetica, 2024</p><p>The authors establish an unconditional Montgomery-type pair-correlation framework. A 61.7 percent simple-zero application in the paper requires an additional near-critical-line or strong zero-density hypothesis and is therefore conditional.</p><p class="not-rh">Pair correlation concerns aggregate statistics and neither requires nor establishes RH.</p><p><a href="https://doi.org/10.4064/aa230612-20-3">Primary journal source</a></p></article>
+    </div>
+    <aside class="panel caution"><strong>Deliberate omission.</strong> A very recent August 2026 preprint claiming a much larger critical-line proportion is not presented here as an advance because it lacked peer review and independent authoritative validation at the cutoff. The local audit records the title and reason for exclusion rather than silently treating the claim as established.</aside>
+    <p>See the complete local <a href="riemann-zeta-function/references/recent-results-audit.md">recent-results audit</a> for authors, status, exact classifications, benchmark notes, sources, implications, and non-implications.</p>
+  </section>
+
+  <section class="chapter" id="reproducibility">
+    <div class="chapter-label">Reproducibility and references 17</div>
+    <h2>What is exact, computed, truncated, simulated, or schematic?</h2>
+    <div class="provenance" aria-label="Visualization provenance categories"><div><strong>Exact</strong>finite sums, sieve prime counts, algebraic identities</div><div><strong>Computed</strong>zeros, Z samples, domain coloring</div><div><strong>Truncated</strong>finite explicit-formula zero sums</div><div><strong>Simulated</strong>seeded Haar-unitary matrices</div><div><strong>Schematic</strong>domain and symmetry teaching diagrams</div></div>
+    <p>The Python generator uses mpmath, NumPy, and Matplotlib. It verifies $\zeta(2)$, $\zeta(4)$, initial zero ordinates, conjugation behavior, Z values at listed roots, zero-count consistency, the random seed, and dataset metadata.</p>
+    <pre><code>python3 -m pip install -r riemann-zeta-function/requirements.txt
+python3 riemann-zeta-function/scripts/generate_numerical_assets.py</code></pre>
+    <div class="grid two"><div class="box"><h3>Local project records</h3><p><a href="riemann-zeta-function/README.md">README and regeneration instructions</a></p><p><a href="riemann-zeta-function/references/bibliography.md">Complete local bibliography</a></p><p><a href="riemann-zeta-function/references/recent-results-audit.md">Recent-results source audit</a></p><p><a href="riemann-zeta-function/data/source-manifest.json">Generated-data manifest</a></p></div><div class="box"><h3>Authoritative references</h3><p><a href="https://dlmf.nist.gov/25">NIST DLMF, Chapter 25</a></p><p><a href="https://www.maths.tcd.ie/pub/HistMath/People/Riemann/Zeta/">Riemann's 1859 memoir and translation</a></p><p><a href="https://www.claymath.org/millennium/riemann-hypothesis/">Clay Mathematics Institute: RH status</a></p></div></div>
+    <h3>Selected primary references</h3>
+    <ol class="references">
+      <li>Euler (1744), <em>Variae observationes circa series infinitas</em>, <a href="https://scholarlycommons.pacific.edu/euler-works/72/">Euler Archive E72</a>.</li>
+      <li>Riemann (1859), <em>Ueber die Anzahl der Primzahlen unter einer gegebenen Gr&ouml;sse</em>.</li>
+      <li>von Mangoldt (1895), explicit formula, <a href="https://doi.org/10.1515/crll.1895.114.255">primary paper</a>; von Mangoldt (1905), zero counting, <a href="https://doi.org/10.1007/BF01447494">primary paper</a>.</li>
+      <li>Hardy (1914), infinitely many zeros on the critical line, <a href="https://archive.org/details/comptesrendusheb158acad/page/1012/mode/2up">scanned paper</a>.</li>
+      <li>Montgomery (1973), pair correlation, <a href="https://doi.org/10.1090/pspum/024/9944">primary paper</a>; Odlyzko (1987), spacing computations, <a href="https://doi.org/10.1090/S0025-5718-1987-0866115-0">primary paper</a>.</li>
+      <li>Ap&eacute;ry (1979), irrationality of $\zeta(2)$ and $\zeta(3)$, <a href="https://www.numdam.org/item/AST_1979__61__11_0/">proceedings note</a>.</li>
+      <li>Conrey (1989), more than two fifths on the line, <a href="https://doi.org/10.1515/crll.1989.399.1">primary paper</a>.</li>
+    </ol>
+    <aside class="panel success"><strong>Current conclusion.</strong> The computations, statistics, zero-free regions, density estimates, and proportion theorems on this page are substantial but distinct achievements. As of the stated source cutoff, no accepted proof or disproof of the Riemann Hypothesis is known.</aside>
+  </section>
+
+  <noscript><div class="noscript"><strong>JavaScript is disabled.</strong> All definitions, equations, caveats, source links, and generated fallback figures remain available, but interactive controls will not update.</div><figure class="figure"><img src="riemann-zeta-function/images/explicit-formula-fallback.png" alt="Static comparison of Chebyshev psi with explicit-formula truncations"><figcaption class="caption">Static explicit-formula fallback.</figcaption></figure><figure class="figure"><img src="riemann-zeta-function/images/zero-spacing-fallback.png" alt="Static histogram comparison of normalized zeta-zero and random-matrix gaps"><figcaption class="caption">Static spacing fallback.</figcaption></figure></noscript>
+</main>
+<footer class="footer-nav"><a href="../index.html">Home</a><span class="sep">|</span><a href="../research.html">Research</a></footer>
+</div>
+</body>
+</html>
