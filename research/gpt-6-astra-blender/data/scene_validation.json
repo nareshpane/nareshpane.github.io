@@ -1,0 +1,59 @@
+{
+  "status": "PASS",
+  "blender_version": "4.5.13 LTS",
+  "master_objects": 676,
+  "master_mesh_objects": 670,
+  "buildings": 204,
+  "unique_building_meshes": 12,
+  "architectural_families": 12,
+  "trees": 162,
+  "tree_archetypes": 7,
+  "pedestrians": 48,
+  "animated_pedestrians": 12,
+  "pedestrian_families": 6,
+  "graph_nodes": 64,
+  "graph_edges": 108,
+  "unique_mesh_datablocks": 167,
+  "master_vertices_instanced": 433858,
+  "master_polygons_instanced": 352464,
+  "master_triangles_instanced": 676260,
+  "master_unique_triangles": 69418,
+  "master_render_visible_objects": 608,
+  "blend_bytes": 697223,
+  "render_dimensions": [
+    1440,
+    1000
+  ],
+  "checks": [
+    "204 unique building IDs; twelve linked architectural meshes",
+    "162 trees / seven shared meshes; 48 people / six clothing families / twelve morph walkers",
+    "Pedestrian positions sampled every 12 frames: clear of buildings and vehicle roads",
+    "No empty meshes, missing materials, nonfinite coordinates, or zero dimensions",
+    "No unexpected .001 object names",
+    "All 108 road midpoints, directions, geometric lengths and costs match city.json",
+    "All 64 graph glyphs match node coordinates",
+    "Master embeds matching city.json SHA-256"
+  ],
+  "glb": {
+    "city_web": {
+      "bytes": 1366104,
+      "triangles_instanced": 257840,
+      "triangles_unique": 31924,
+      "mesh_nodes": 601,
+      "unique_meshes": 165,
+      "reimport_objects": 601,
+      "self_contained": true,
+      "reimport": "PASS"
+    },
+    "graph_web": {
+      "bytes": 153468,
+      "triangles_instanced": 4816,
+      "triangles_unique": 3052,
+      "mesh_nodes": 65,
+      "unique_meshes": 2,
+      "reimport_objects": 65,
+      "self_contained": true,
+      "reimport": "PASS"
+    }
+  }
+}

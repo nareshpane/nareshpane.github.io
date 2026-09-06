@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "html_sha256": "b3e005abca3456d0f5a0365f451a3064573720c3fbe04d056fb7f078e16081b7",
+  "checks": [
+    "Current route, closure, accessibility, MC and performance values appear in HTML",
+    "Known superseded graph and media values absent outside original prompt",
+    "Chapter headings/IDs and page.css preserved",
+    "Original prompt and research.html preserved; project remains first index entry"
+  ]
+}

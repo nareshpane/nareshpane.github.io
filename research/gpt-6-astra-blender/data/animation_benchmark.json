@@ -1,0 +1,131 @@
+{
+  "shortest_path": {
+    "status": "PASS",
+    "seconds": 20.52,
+    "frames": 224,
+    "fps": 16,
+    "resolution": [
+      960,
+      540
+    ],
+    "duration_seconds": 14,
+    "average_frame_seconds": 5.13,
+    "frame_timings": [
+      6.502,
+      4.553,
+      4.913,
+      4.552
+    ],
+    "samples": 12,
+    "engine": "BLENDER_EEVEE_NEXT",
+    "stages": [
+      [
+        0,
+        3,
+        "Walking network | origin 40 - destination 47"
+      ],
+      [
+        3,
+        7,
+        "Alternative paths | shortest path grows in gold"
+      ],
+      [
+        7,
+        11,
+        "Shortest path | 303 seconds"
+      ],
+      [
+        11,
+        14,
+        "403.88 m | full route"
+      ]
+    ],
+    "raw_directory": "/tmp/astra-world-v2-analytical-tests/shortest_path"
+  },
+  "bridge_failure": {
+    "status": "PASS",
+    "seconds": 19.256,
+    "frames": 224,
+    "fps": 16,
+    "resolution": [
+      960,
+      540
+    ],
+    "duration_seconds": 14,
+    "average_frame_seconds": 4.814,
+    "frame_timings": [
+      4.334,
+      4.35,
+      5.651,
+      4.92
+    ],
+    "samples": 12,
+    "engine": "BLENDER_EEVEE_NEXT",
+    "stages": [
+      [
+        0,
+        3,
+        "Bridge open | original route 303 s"
+      ],
+      [
+        3,
+        7,
+        "Northern crossing | one edge closes"
+      ],
+      [
+        7,
+        11,
+        "Closure | recalculate from the same origin"
+      ],
+      [
+        11,
+        14,
+        "Detour 498 s | southern crossing remains"
+      ]
+    ],
+    "raw_directory": "/tmp/astra-world-v2-analytical-tests/bridge_failure"
+  },
+  "transit_accessibility": {
+    "status": "PASS",
+    "seconds": 18.764,
+    "frames": 224,
+    "fps": 16,
+    "resolution": [
+      960,
+      540
+    ],
+    "duration_seconds": 14,
+    "average_frame_seconds": 4.691,
+    "frame_timings": [
+      4.902,
+      4.549,
+      4.429,
+      4.882
+    ],
+    "samples": 12,
+    "engine": "BLENDER_EEVEE_NEXT",
+    "stages": [
+      [
+        0,
+        3,
+        "Baseline accessibility | one shared colour scale"
+      ],
+      [
+        3,
+        6,
+        "Existing transit | fixed synthetic opportunities"
+      ],
+      [
+        6,
+        11,
+        "New 33 - 38 transit link | colours interpolate to recomputed values"
+      ],
+      [
+        11,
+        14,
+        "After transit | illustrative accessibility, not a causal estimate"
+      ]
+    ],
+    "raw_directory": "/tmp/astra-world-v2-analytical-tests/transit_accessibility"
+  }
+}

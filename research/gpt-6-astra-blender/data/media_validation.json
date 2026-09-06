@@ -1,0 +1,53 @@
+{
+  "status": "PASS",
+  "videos": [
+    {
+      "name": "astra_city_cinematic.mp4",
+      "codec": "h264",
+      "pixel_format": "yuv420p",
+      "color_space": "bt709",
+      "fps": "24/1",
+      "frames": 576,
+      "width": 1280,
+      "height": 720,
+      "duration": 24.0,
+      "bytes": 9949596
+    },
+    {
+      "name": "bridge_failure.mp4",
+      "codec": "h264",
+      "pixel_format": "yuv420p",
+      "color_space": "bt709",
+      "fps": "16/1",
+      "frames": 224,
+      "width": 960,
+      "height": 540,
+      "duration": 14.0,
+      "bytes": 3689485
+    },
+    {
+      "name": "shortest_path.mp4",
+      "codec": "h264",
+      "pixel_format": "yuv420p",
+      "color_space": "bt709",
+      "fps": "16/1",
+      "frames": 224,
+      "width": 960,
+      "height": 540,
+      "duration": 14.0,
+      "bytes": 3899780
+    },
+    {
+      "name": "transit_accessibility.mp4",
+      "codec": "h264",
+      "pixel_format": "yuv420p",
+      "color_space": "bt709",
+      "fps": "16/1",
+      "frames": 224,
+      "width": 960,
+      "height": 540,
+      "duration": 14.0,
+      "bytes": 4231190
+    }
+  ]
+}

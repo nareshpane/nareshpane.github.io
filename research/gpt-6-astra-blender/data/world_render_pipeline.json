@@ -1,0 +1,45 @@
+{
+  "status": "PASS",
+  "master_sha256": "e5f4dab312c79cdb9d8c0c40bb4b9d98068c8f99179c5cbe996724e3595bfc3c",
+  "stages": [
+    {
+      "stage": "render_views_anatomy",
+      "seconds": 21.568,
+      "returncode": 0
+    },
+    {
+      "stage": "render_animations",
+      "seconds": 1725.734,
+      "returncode": 0
+    }
+  ],
+  "prior_attempt": {
+    "status": "FAIL",
+    "master_sha256": "e5f4dab312c79cdb9d8c0c40bb4b9d98068c8f99179c5cbe996724e3595bfc3c",
+    "stages": [
+      {
+        "stage": "encode_cinematic",
+        "seconds": 32.706,
+        "returncode": 0
+      },
+      {
+        "stage": "validate_cinematic",
+        "seconds": 5.671,
+        "returncode": 0
+      },
+      {
+        "stage": "render_world_tests",
+        "seconds": 26.2,
+        "returncode": 0
+      },
+      {
+        "stage": "render_views",
+        "seconds": 54.958,
+        "returncode": 1
+      }
+    ],
+    "active_stage": "render_views"
+  },
+  "resolved_error": "Anatomy material was unused by the new architectural families; illustration now creates its own local green material.",
+  "active_stage": null
+}

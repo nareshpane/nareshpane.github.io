@@ -1,0 +1,65 @@
+Blender 4.5.13 LTS (hash daeeeca98fb0 built 2026-08-25 01:31:19)
+Read blend: "/home/naresh/Documents/nareshpane.github.io/research/gpt-6-astra-blender/blender/city_master.blend"
+Fra:1 Mem:104.14M (Peak 106.26M) | Time:00:01.21 | Rendering 1 / 16 samples
+Fra:1 Mem:104.14M (Peak 106.26M) | Time:00:04.48 | Rendering 16 / 16 samples
+Saved: '/tmp/astra-world-v2-tests/street.png'
+Time: 00:04.78 (Saving: 00:00.24)
+
+Read blend: "/home/naresh/Documents/nareshpane.github.io/research/gpt-6-astra-blender/blender/city_master.blend"
+Fra:1 Mem:104.15M (Peak 106.29M) | Time:00:00.76 | Rendering 1 / 16 samples
+Fra:1 Mem:104.15M (Peak 106.29M) | Time:00:03.94 | Rendering 16 / 16 samples
+Saved: '/tmp/astra-world-v2-tests/pedestrian.png'
+Time: 00:04.13 (Saving: 00:00.11)
+
+Read blend: "/home/naresh/Documents/nareshpane.github.io/research/gpt-6-astra-blender/blender/city_master.blend"
+Fra:1 Mem:104.15M (Peak 106.29M) | Time:00:00.61 | Rendering 1 / 16 samples
+Fra:1 Mem:104.15M (Peak 106.29M) | Time:00:03.74 | Rendering 16 / 16 samples
+Saved: '/tmp/astra-world-v2-tests/trees.png'
+Time: 00:03.92 (Saving: 00:00.11)
+
+Read blend: "/home/naresh/Documents/nareshpane.github.io/research/gpt-6-astra-blender/blender/city_master.blend"
+Fra:1 Mem:104.15M (Peak 106.29M) | Time:00:00.51 | Rendering 1 / 16 samples
+Fra:1 Mem:104.15M (Peak 106.29M) | Time:00:03.76 | Rendering 16 / 16 samples
+Saved: '/tmp/astra-world-v2-tests/architecture.png'
+Time: 00:03.98 (Saving: 00:00.13)
+
+Read blend: "/home/naresh/Documents/nareshpane.github.io/research/gpt-6-astra-blender/blender/city_master.blend"
+Fra:1 Mem:107.42M (Peak 109.16M) | Time:00:00.28 | Rendering 1 / 16 samples
+Fra:1 Mem:107.42M (Peak 109.16M) | Time:00:02.14 | Rendering 16 / 16 samples
+Saved: '/tmp/astra-world-v2-tests/overlay.png'
+Time: 00:04.13 (Saving: 00:00.12)
+
+Read blend: "/home/naresh/Documents/nareshpane.github.io/research/gpt-6-astra-blender/blender/city_master.blend"
+Fra:1 Mem:104.15M (Peak 106.29M) | Time:00:00.59 | Rendering 1 / 16 samples
+Fra:1 Mem:104.15M (Peak 106.29M) | Time:00:03.74 | Rendering 16 / 16 samples
+Saved: '/tmp/astra-world-v2-tests/waterfront.png'
+Time: 00:03.92 (Saving: 00:00.11)
+
+[
+  {
+    "view": "street",
+    "seconds": 4.831
+  },
+  {
+    "view": "pedestrian",
+    "seconds": 4.177
+  },
+  {
+    "view": "trees",
+    "seconds": 3.971
+  },
+  {
+    "view": "architecture",
+    "seconds": 4.03
+  },
+  {
+    "view": "overlay",
+    "seconds": 4.192
+  },
+  {
+    "view": "waterfront",
+    "seconds": 3.969
+  }
+]
+
+Blender quit

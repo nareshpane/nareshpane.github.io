@@ -1,0 +1,83 @@
+Blender 4.5.13 LTS (hash daeeeca98fb0 built 2026-08-25 01:31:19)
+Read blend: "/home/naresh/Documents/nareshpane.github.io/research/gpt-6-astra-blender/blender/city_master.blend"
+Fra:1 Mem:112.01M (Peak 114.12M) | Time:00:00.94 | Rendering 1 / 16 samples
+Fra:1 Mem:112.01M (Peak 114.12M) | Time:00:04.82 | Rendering 16 / 16 samples
+Saved: '/home/naresh/Documents/nareshpane.github.io/research/gpt-6-astra-blender/renders/hero.png'
+Time: 00:05.27 (Saving: 00:00.30)
+
+Read blend: "/home/naresh/Documents/nareshpane.github.io/research/gpt-6-astra-blender/blender/city_master.blend"
+Fra:1 Mem:112.02M (Peak 114.16M) | Time:00:00.48 | Rendering 1 / 16 samples
+Fra:1 Mem:112.02M (Peak 114.16M) | Time:00:04.08 | Rendering 16 / 16 samples
+Saved: '/home/naresh/Documents/nareshpane.github.io/research/gpt-6-astra-blender/renders/detail.png'
+Time: 00:04.39 (Saving: 00:00.20)
+
+Read blend: "/home/naresh/Documents/nareshpane.github.io/research/gpt-6-astra-blender/blender/city_master.blend"
+Fra:1 Mem:115.33M (Peak 117.07M) | Time:00:00.25 | Rendering 1 / 16 samples
+Fra:1 Mem:115.33M (Peak 117.07M) | Time:00:02.27 | Rendering 16 / 16 samples
+Saved: '/home/naresh/Documents/nareshpane.github.io/research/gpt-6-astra-blender/renders/overlay.png'
+Time: 00:04.43 (Saving: 00:00.18)
+
+Read blend: "/home/naresh/Documents/nareshpane.github.io/research/gpt-6-astra-blender/blender/city_master.blend"
+Fra:1 Mem:72.83M (Peak 72.83M) | Time:00:00.18 | Rendering 1 / 16 samples
+Fra:1 Mem:72.83M (Peak 72.83M) | Time:00:02.16 | Rendering 16 / 16 samples
+Saved: '/home/naresh/Documents/nareshpane.github.io/research/gpt-6-astra-blender/renders/graph.png'
+Time: 00:04.29 (Saving: 00:00.16)
+
+Read blend: "/home/naresh/Documents/nareshpane.github.io/research/gpt-6-astra-blender/blender/city_master.blend"
+Fra:1 Mem:81.09M (Peak 81.09M) | Time:00:00.18 | Rendering 1 / 16 samples
+Fra:1 Mem:81.09M (Peak 81.09M) | Time:00:02.12 | Rendering 16 / 16 samples
+Saved: '/home/naresh/Documents/nareshpane.github.io/research/gpt-6-astra-blender/renders/degree.png'
+Time: 00:04.32 (Saving: 00:00.18)
+
+Read blend: "/home/naresh/Documents/nareshpane.github.io/research/gpt-6-astra-blender/blender/city_master.blend"
+Fra:1 Mem:123.50M (Peak 125.25M) | Time:00:00.33 | Rendering 1 / 16 samples
+Fra:1 Mem:123.50M (Peak 125.25M) | Time:00:02.28 | Rendering 16 / 16 samples
+Saved: '/home/naresh/Documents/nareshpane.github.io/research/gpt-6-astra-blender/renders/betweenness.png'
+Time: 00:04.50 (Saving: 00:00.17)
+
+Read blend: "/home/naresh/Documents/nareshpane.github.io/research/gpt-6-astra-blender/blender/city_master.blend"
+Fra:1 Mem:112.22M (Peak 114.37M) | Time:00:00.25 | Rendering 1 / 16 samples
+Fra:1 Mem:112.22M (Peak 114.37M) | Time:00:02.24 | Rendering 16 / 16 samples
+Saved: '/home/naresh/Documents/nareshpane.github.io/research/gpt-6-astra-blender/renders/route.png'
+Time: 00:04.70 (Saving: 00:00.17)
+
+Read blend: "/home/naresh/Documents/nareshpane.github.io/research/gpt-6-astra-blender/blender/city_master.blend"
+Fra:1 Mem:112.06M (Peak 114.21M) | Time:00:00.26 | Rendering 1 / 16 samples
+Fra:1 Mem:112.06M (Peak 114.21M) | Time:00:02.34 | Rendering 16 / 16 samples
+Saved: '/home/naresh/Documents/nareshpane.github.io/research/gpt-6-astra-blender/renders/closure.png'
+Time: 00:04.25 (Saving: 00:00.17)
+
+Read blend: "/home/naresh/Documents/nareshpane.github.io/research/gpt-6-astra-blender/blender/city_master.blend"
+Fra:1 Mem:117.15M (Peak 119.30M) | Time:00:00.21 | Rendering 1 / 16 samples
+Fra:1 Mem:117.15M (Peak 119.30M) | Time:00:01.97 | Rendering 16 / 16 samples
+Saved: '/home/naresh/Documents/nareshpane.github.io/research/gpt-6-astra-blender/renders/access_before.png'
+Time: 00:03.99 (Saving: 00:00.20)
+
+Read blend: "/home/naresh/Documents/nareshpane.github.io/research/gpt-6-astra-blender/blender/city_master.blend"
+Fra:1 Mem:117.31M (Peak 119.46M) | Time:00:00.34 | Rendering 1 / 16 samples
+Fra:1 Mem:117.31M (Peak 119.46M) | Time:00:01.76 | Rendering 16 / 16 samples
+Saved: '/home/naresh/Documents/nareshpane.github.io/research/gpt-6-astra-blender/renders/access_after.png'
+Time: 00:07.19 (Saving: 00:00.39)
+
+Read blend: "/home/naresh/Documents/nareshpane.github.io/research/gpt-6-astra-blender/blender/city_master.blend"
+Fra:1 Mem:123.50M (Peak 125.25M) | Time:00:00.69 | Rendering 1 / 16 samples
+Fra:1 Mem:123.50M (Peak 125.25M) | Time:00:02.91 | Rendering 16 / 16 samples
+Saved: '/home/naresh/Documents/nareshpane.github.io/research/gpt-6-astra-blender/renders/resilience.png'
+Time: 00:05.11 (Saving: 00:00.17)
+
+Read blend: "/home/naresh/Documents/nareshpane.github.io/research/gpt-6-astra-blender/blender/city_master.blend"
+Traceback (most recent call last):
+  File "/home/naresh/Documents/nareshpane.github.io/research/gpt-6-astra-blender/scripts/render_views.py", line 122, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/home/naresh/Documents/nareshpane.github.io/research/gpt-6-astra-blender/scripts/render_views.py", line 115, in main
+    if mode=='anatomy':anatomy()
+                       ^^^^^^^^^
+  File "/home/naresh/Documents/nareshpane.github.io/research/gpt-6-astra-blender/scripts/render_views.py", line 75, in anatomy
+    palette=[bpy.data.materials['Garden Quarter'],bpy.data.materials['Ivory trim'],
+             ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+KeyError: 'bpy_prop_collection[key]: key "Garden Quarter" not found'
+
+Error: script failed, file: '/home/naresh/Documents/nareshpane.github.io/research/gpt-6-astra-blender/scripts/render_views.py', exiting.
+
+Blender quit

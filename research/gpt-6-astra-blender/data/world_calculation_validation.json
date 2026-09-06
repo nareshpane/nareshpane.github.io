@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "city_sha256": "1aeec4980ba33ca70da97e88bf525c966f753cb2a6d7418506fd7492c2cfa014",
+  "seconds": 8.568,
+  "checks": [
+    "Exact seed replay preserves every city record and all 1200 retained edge-removal sets",
+    "Dijkstra matrices independently reproduce all trial outcomes, node losses and accessibility aggregates",
+    "All alternative paths use real edges with matching stored costs and lengths",
+    "All 108 edge lengths are Euclidean; walking costs are rounded once to integer seconds",
+    "New footways clear every building footprint including path width",
+    "Both river crossings together remain a two-edge cut; neither alone disconnects the graph"
+  ]
+}

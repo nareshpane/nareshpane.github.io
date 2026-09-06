@@ -1,0 +1,179 @@
+{
+  "status": "PREFLIGHT_PASS",
+  "url": "http://127.0.0.1:8000/research/gpt-6-astra-blender.html",
+  "headless_video_decode": "software; VA-API disabled for SwiftShader compatibility",
+  "http_asset_paths_checked": [
+    "/index.html",
+    "/research.html",
+    "/research/gpt-6-astra-blender/README.md",
+    "/research/gpt-6-astra-blender/blender/bridge_failure.blend",
+    "/research/gpt-6-astra-blender/blender/building_anatomy.blend",
+    "/research/gpt-6-astra-blender/blender/city_cinematic.blend",
+    "/research/gpt-6-astra-blender/blender/city_master.blend",
+    "/research/gpt-6-astra-blender/blender/shortest_path.blend",
+    "/research/gpt-6-astra-blender/blender/transit_accessibility.blend",
+    "/research/gpt-6-astra-blender/data/analysis.json",
+    "/research/gpt-6-astra-blender/data/calculation_validation.json",
+    "/research/gpt-6-astra-blender/data/city.json",
+    "/research/gpt-6-astra-blender/data/disruption_trials.json",
+    "/research/gpt-6-astra-blender/data/file_manifest.json",
+    "/research/gpt-6-astra-blender/data/local_qa.json",
+    "/research/gpt-6-astra-blender/data/original_prompt.txt",
+    "/research/gpt-6-astra-blender/data/scene_validation.json",
+    "/research/gpt-6-astra-blender/data/world_calculation_validation.json",
+    "/research/gpt-6-astra-blender/data/world_revision_comparison.json",
+    "/research/gpt-6-astra-blender/favicon.svg",
+    "/research/gpt-6-astra-blender/models/city_web.glb",
+    "/research/gpt-6-astra-blender/models/graph_web.glb",
+    "/research/gpt-6-astra-blender/page.css",
+    "/research/gpt-6-astra-blender/page.js",
+    "/research/gpt-6-astra-blender/renders/access_after.webp",
+    "/research/gpt-6-astra-blender/renders/access_before.webp",
+    "/research/gpt-6-astra-blender/renders/accessibility_statistics.png",
+    "/research/gpt-6-astra-blender/renders/anatomy.png",
+    "/research/gpt-6-astra-blender/renders/anatomy.webp",
+    "/research/gpt-6-astra-blender/renders/betweenness.png",
+    "/research/gpt-6-astra-blender/renders/betweenness.webp",
+    "/research/gpt-6-astra-blender/renders/cinematic/poster.webp",
+    "/research/gpt-6-astra-blender/renders/city_statistics.png",
+    "/research/gpt-6-astra-blender/renders/closure.webp",
+    "/research/gpt-6-astra-blender/renders/degree.png",
+    "/research/gpt-6-astra-blender/renders/degree.webp",
+    "/research/gpt-6-astra-blender/renders/detail.png",
+    "/research/gpt-6-astra-blender/renders/detail.webp",
+    "/research/gpt-6-astra-blender/renders/graph.png",
+    "/research/gpt-6-astra-blender/renders/graph.webp",
+    "/research/gpt-6-astra-blender/renders/graph_map.png",
+    "/research/gpt-6-astra-blender/renders/hero.webp",
+    "/research/gpt-6-astra-blender/renders/monte_carlo.png",
+    "/research/gpt-6-astra-blender/renders/overlay.png",
+    "/research/gpt-6-astra-blender/renders/overlay.webp",
+    "/research/gpt-6-astra-blender/renders/resilience.png",
+    "/research/gpt-6-astra-blender/renders/resilience.webp",
+    "/research/gpt-6-astra-blender/renders/route.webp",
+    "/research/gpt-6-astra-blender/scripts/build_city.py",
+    "/research/gpt-6-astra-blender/scripts/build_page.py",
+    "/research/gpt-6-astra-blender/scripts/generate_charts.py",
+    "/research/gpt-6-astra-blender/scripts/generate_data.py",
+    "/research/gpt-6-astra-blender/scripts/package_assets.py",
+    "/research/gpt-6-astra-blender/scripts/qa_site.py",
+    "/research/gpt-6-astra-blender/scripts/render_animations.py",
+    "/research/gpt-6-astra-blender/scripts/render_views.py",
+    "/research/gpt-6-astra-blender/scripts/run_blender_pipeline.py",
+    "/research/gpt-6-astra-blender/scripts/validate_blender.py",
+    "/research/gpt-6-astra-blender/scripts/world_assets.py",
+    "/research/gpt-6-astra-blender/vendor/tex-svg.js",
+    "/research/gpt-6-astra-blender/video/astra_city_cinematic.mp4",
+    "/research/gpt-6-astra-blender/video/bridge_failure.mp4",
+    "/research/gpt-6-astra-blender/video/shortest_path.mp4",
+    "/research/gpt-6-astra-blender/video/transit_accessibility.mp4"
+  ],
+  "cinematic_hero": [
+    {
+      "duration": 24,
+      "width": 1280,
+      "height": 720,
+      "muted": true,
+      "defaultMuted": true,
+      "autoplay": true,
+      "loop": true,
+      "controls": true,
+      "playsInline": true,
+      "played": 8.152788,
+      "decodedFrames": 200,
+      "loop_observed": true,
+      "viewport_width": 1440,
+      "poster_decoded": {
+        "width": 1280,
+        "height": 720
+      },
+      "pause_resume": true
+    },
+    {
+      "duration": 24,
+      "width": 1280,
+      "height": 720,
+      "muted": true,
+      "defaultMuted": true,
+      "autoplay": true,
+      "loop": true,
+      "controls": true,
+      "playsInline": true,
+      "played": 8.270243,
+      "decodedFrames": 203,
+      "loop_observed": true,
+      "viewport_width": 390,
+      "poster_decoded": {
+        "width": 1280,
+        "height": 720
+      },
+      "pause_resume": true
+    }
+  ],
+  "browser_videos": [
+    {
+      "src": "http://127.0.0.1:8000/research/gpt-6-astra-blender/video/shortest_path.mp4",
+      "duration": 14,
+      "width": 960,
+      "height": 540,
+      "played": 0.110298
+    },
+    {
+      "src": "http://127.0.0.1:8000/research/gpt-6-astra-blender/video/bridge_failure.mp4",
+      "duration": 14,
+      "width": 960,
+      "height": 540,
+      "played": 0.124384
+    },
+    {
+      "src": "http://127.0.0.1:8000/research/gpt-6-astra-blender/video/transit_accessibility.mp4",
+      "duration": 14,
+      "width": 960,
+      "height": 540,
+      "played": 0.126157
+    }
+  ],
+  "browser_models": {
+    "city": "loaded and camera rotated",
+    "graph": "loaded"
+  },
+  "responsive_layouts": [
+    {
+      "width": 1440,
+      "horizontal_overflow": false,
+      "prompt_open_and_closed": true
+    },
+    {
+      "width": 768,
+      "horizontal_overflow": false,
+      "prompt_open_and_closed": true
+    },
+    {
+      "width": 390,
+      "horizontal_overflow": false,
+      "prompt_open_and_closed": true
+    },
+    {
+      "width": 320,
+      "horizontal_overflow": false,
+      "prompt_open_and_closed": true
+    }
+  ],
+  "mathjax_equations": 82,
+  "console_errors": [],
+  "request_failures": [],
+  "expected_media_request_aborts": [
+    {
+      "url": "http://127.0.0.1:8000/research/gpt-6-astra-blender/video/shortest_path.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:8000/research/gpt-6-astra-blender/video/bridge_failure.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:8000/research/gpt-6-astra-blender/video/transit_accessibility.mp4",
+      "failure": "net::ERR_ABORTED"
+    }
+  ]
+}

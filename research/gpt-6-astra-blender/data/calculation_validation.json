@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "checks": [
+    "All 4,096 Floyd\u2013Warshall costs equal independent Dijkstra costs",
+    "Road graph is connected with no graph-theoretic cut edges",
+    "Named crossing removal leaves a connected road graph",
+    "New transit weakly increases accessibility at every origin",
+    "Degree sum equals twice the road edge count"
+  ],
+  "city_sha256": "1aeec4980ba33ca70da97e88bf525c966f753cb2a6d7418506fd7492c2cfa014"
+}

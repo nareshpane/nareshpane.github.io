@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "scenes": [
+    {
+      "name": "shortest_path",
+      "status": "PASS",
+      "frames": 224,
+      "cameras": 4,
+      "graph_sha256": "1aeec4980ba33ca70da97e88bf525c966f753cb2a6d7418506fd7492c2cfa014",
+      "bytes": 697042
+    },
+    {
+      "name": "bridge_failure",
+      "status": "PASS",
+      "frames": 224,
+      "cameras": 4,
+      "graph_sha256": "1aeec4980ba33ca70da97e88bf525c966f753cb2a6d7418506fd7492c2cfa014",
+      "bytes": 712723
+    },
+    {
+      "name": "transit_accessibility",
+      "status": "PASS",
+      "frames": 224,
+      "cameras": 4,
+      "graph_sha256": "1aeec4980ba33ca70da97e88bf525c966f753cb2a6d7418506fd7492c2cfa014",
+      "bytes": 742519
+    }
+  ]
+}

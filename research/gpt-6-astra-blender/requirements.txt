@@ -1,0 +1,7 @@
+# Offline authoring dependencies; the website itself is plain static HTML/CSS/JS.
+networkx==3.6.1
+numpy==1.26.4
+matplotlib==3.6.3
+Pillow==10.2.0
+# Optional browser QA dependency. Also install Chromium with playwright install chromium.
+playwright==1.58.0

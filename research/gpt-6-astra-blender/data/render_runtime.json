@@ -1,0 +1,13 @@
+{
+  "hero": 5.27,
+  "detail": 4.39,
+  "overlay": 4.43,
+  "graph": 8.205,
+  "degree": 7.025,
+  "betweenness": 4.5,
+  "route": 4.7,
+  "closure": 4.25,
+  "access_before": 3.99,
+  "access_after": 7.19,
+  "resilience": 5.11
+}

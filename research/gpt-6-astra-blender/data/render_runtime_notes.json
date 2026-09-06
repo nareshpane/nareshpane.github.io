@@ -1,0 +1,4 @@
+{
+  "source": "Blender core render/save timings recovered from render_views.log",
+  "excludes": "Scene-open overhead and anatomy; original anatomy material failure resolved without repeating the eleven city renders"
+}

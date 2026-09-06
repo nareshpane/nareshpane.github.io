@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "stages": [
+    {
+      "stage": "validate_blender",
+      "seconds": 2.642,
+      "returncode": 0
+    },
+    {
+      "stage": "validate_animations",
+      "seconds": 2.357,
+      "returncode": 0
+    },
+    {
+      "stage": "package_assets",
+      "seconds": 4.26,
+      "returncode": 0
+    },
+    {
+      "stage": "build_page",
+      "seconds": 0.078,
+      "returncode": 0
+    },
+    {
+      "stage": "validate_article_values",
+      "seconds": 0.061,
+      "returncode": 0
+    },
+    {
+      "stage": "qa_site",
+      "seconds": 91.184,
+      "returncode": 0
+    },
+    {
+      "stage": "qa_site",
+      "seconds": 90.212,
+      "returncode": 0
+    },
+    {
+      "stage": "package_assets",
+      "seconds": 1.373,
+      "returncode": 0
+    }
+  ],
+  "active_stage": null
+}

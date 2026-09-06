@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "frames": [
+    {
+      "view": "street",
+      "seconds": 4.831
+    },
+    {
+      "view": "pedestrian",
+      "seconds": 8.796
+    },
+    {
+      "view": "trees",
+      "seconds": 3.971
+    },
+    {
+      "view": "architecture",
+      "seconds": 4.03
+    },
+    {
+      "view": "overlay",
+      "seconds": 4.192
+    },
+    {
+      "view": "waterfront",
+      "seconds": 3.969
+    }
+  ],
+  "visual_inspection": "Street, complete pedestrian close-up, branching trees, architectural variation, graph overlay and waterfront inspected; test-camera framing corrected without changing the scene."
+}

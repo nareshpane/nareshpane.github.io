@@ -1,0 +1,235 @@
+15:59:57 | INFO: Data are loaded, start creating Blender stuff
+15:59:57 | INFO: Blender create Mesh node Base
+15:59:57 | INFO: Blender create Mesh node Riverbank mesh
+15:59:57 | INFO: Blender create Mesh node Water mesh
+15:59:57 | INFO: Blender create Mesh node Quays
+15:59:57 | INFO: Blender create Mesh node Park turf
+15:59:57 | INFO: Blender create Mesh node Park turf.001
+15:59:57 | INFO: Blender create Mesh node RoadMesh_0-8
+15:59:57 | INFO: Blender create Mesh node RoadMesh_0-1
+15:59:57 | INFO: Blender create Mesh node RoadMesh_1-9
+15:59:57 | INFO: Blender create Mesh node RoadMesh_1-2
+15:59:57 | INFO: Blender create Mesh node RoadMesh_2-10
+15:59:57 | INFO: Blender create Mesh node RoadMesh_2-3
+15:59:57 | INFO: Blender create Mesh node RoadMesh_3-11
+15:59:57 | INFO: Blender create Mesh node RoadMesh_4-12
+15:59:57 | INFO: Blender create Mesh node RoadMesh_4-5
+15:59:57 | INFO: Blender create Mesh node RoadMesh_5-13
+15:59:57 | INFO: Blender create Mesh node RoadMesh_5-6
+15:59:57 | INFO: Blender create Mesh node RoadMesh_6-14
+15:59:57 | INFO: Blender create Mesh node RoadMesh_6-7
+15:59:57 | INFO: Blender create Mesh node RoadMesh_7-15
+15:59:57 | INFO: Blender create Mesh node RoadMesh_8-16
+15:59:57 | INFO: Blender create Mesh node RoadMesh_8-9
+15:59:57 | INFO: Blender create Mesh node RoadMesh_9-17
+15:59:57 | INFO: Blender create Mesh node RoadMesh_9-10
+15:59:57 | INFO: Blender create Mesh node RoadMesh_10-18
+15:59:57 | INFO: Blender create Mesh node RoadMesh_10-11
+15:59:57 | INFO: Blender create Mesh node RoadMesh_11-19
+15:59:57 | INFO: Blender create Mesh node RoadMesh_11-12
+15:59:57 | INFO: Blender create Mesh node Bridge markings
+15:59:57 | INFO: Blender create Mesh node Bridge infrastructure
+15:59:57 | INFO: Blender create Mesh node RoadMesh_12-20
+15:59:57 | INFO: Blender create Mesh node RoadMesh_12-13
+15:59:57 | INFO: Blender create Mesh node RoadMesh_13-21
+15:59:57 | INFO: Blender create Mesh node RoadMesh_13-14
+15:59:57 | INFO: Blender create Mesh node RoadMesh_14-22
+15:59:57 | INFO: Blender create Mesh node RoadMesh_14-15
+15:59:57 | INFO: Blender create Mesh node RoadMesh_15-23
+15:59:57 | INFO: Blender create Mesh node RoadMesh_16-24
+15:59:57 | INFO: Blender create Mesh node RoadMesh_16-17
+15:59:57 | INFO: Blender create Mesh node RoadMesh_17-25
+15:59:57 | INFO: Blender create Mesh node RoadMesh_17-18
+15:59:57 | INFO: Blender create Mesh node RoadMesh_18-26
+15:59:57 | INFO: Blender create Mesh node RoadMesh_18-19
+15:59:57 | INFO: Blender create Mesh node RoadMesh_19-27
+15:59:57 | INFO: Blender create Mesh node RoadMesh_20-28
+15:59:57 | INFO: Blender create Mesh node RoadMesh_20-21
+15:59:57 | INFO: Blender create Mesh node RoadMesh_21-29
+15:59:57 | INFO: Blender create Mesh node RoadMesh_21-22
+15:59:57 | INFO: Blender create Mesh node RoadMesh_22-30
+15:59:57 | INFO: Blender create Mesh node RoadMesh_22-23
+15:59:57 | INFO: Blender create Mesh node RoadMesh_23-31
+15:59:57 | INFO: Blender create Mesh node RoadMesh_24-32
+15:59:57 | INFO: Blender create Mesh node RoadMesh_24-25
+15:59:57 | INFO: Blender create Mesh node RoadMesh_25-33
+15:59:57 | INFO: Blender create Mesh node RoadMesh_25-26
+15:59:57 | INFO: Blender create Mesh node RoadMesh_26-34
+15:59:57 | INFO: Blender create Mesh node RoadMesh_26-27
+15:59:57 | INFO: Blender create Mesh node RoadMesh_27-35
+15:59:57 | INFO: Blender create Mesh node RoadMesh_28-36
+15:59:57 | INFO: Blender create Mesh node RoadMesh_28-29
+15:59:57 | INFO: Blender create Mesh node RoadMesh_29-37
+15:59:57 | INFO: Blender create Mesh node RoadMesh_29-30
+15:59:57 | INFO: Blender create Mesh node RoadMesh_30-38
+15:59:57 | INFO: Blender create Mesh node RoadMesh_30-31
+15:59:57 | INFO: Blender create Mesh node RoadMesh_31-39
+15:59:57 | INFO: Blender create Mesh node RoadMesh_32-40
+15:59:57 | INFO: Blender create Mesh node RoadMesh_32-33
+15:59:57 | INFO: Blender create Mesh node RoadMesh_33-41
+15:59:57 | INFO: Blender create Mesh node RoadMesh_33-34
+15:59:57 | INFO: Blender create Mesh node RoadMesh_34-42
+15:59:57 | INFO: Blender create Mesh node RoadMesh_34-35
+15:59:57 | INFO: Blender create Mesh node RoadMesh_35-43
+15:59:57 | INFO: Blender create Mesh node RoadMesh_35-36
+15:59:57 | INFO: Blender create Mesh node Bridge markings.001
+15:59:57 | INFO: Blender create Mesh node Bridge infrastructure.001
+15:59:57 | INFO: Blender create Mesh node RoadMesh_36-44
+15:59:57 | INFO: Blender create Mesh node RoadMesh_36-37
+15:59:57 | INFO: Blender create Mesh node RoadMesh_37-45
+15:59:57 | INFO: Blender create Mesh node RoadMesh_37-38
+15:59:57 | INFO: Blender create Mesh node RoadMesh_38-46
+15:59:57 | INFO: Blender create Mesh node RoadMesh_38-39
+15:59:57 | INFO: Blender create Mesh node RoadMesh_39-47
+15:59:57 | INFO: Blender create Mesh node RoadMesh_40-48
+15:59:57 | INFO: Blender create Mesh node RoadMesh_40-41
+15:59:57 | INFO: Blender create Mesh node RoadMesh_41-49
+15:59:57 | INFO: Blender create Mesh node RoadMesh_41-42
+15:59:57 | INFO: Blender create Mesh node RoadMesh_42-50
+15:59:57 | INFO: Blender create Mesh node RoadMesh_42-43
+15:59:57 | INFO: Blender create Mesh node RoadMesh_43-51
+15:59:57 | INFO: Blender create Mesh node RoadMesh_44-52
+15:59:57 | INFO: Blender create Mesh node RoadMesh_44-45
+15:59:57 | INFO: Blender create Mesh node RoadMesh_45-53
+15:59:57 | INFO: Blender create Mesh node RoadMesh_45-46
+15:59:57 | INFO: Blender create Mesh node RoadMesh_46-54
+15:59:57 | INFO: Blender create Mesh node RoadMesh_46-47
+15:59:57 | INFO: Blender create Mesh node RoadMesh_47-55
+15:59:57 | INFO: Blender create Mesh node RoadMesh_48-49
+15:59:57 | INFO: Blender create Mesh node RoadMesh_49-50
+15:59:57 | INFO: Blender create Mesh node RoadMesh_50-51
+15:59:57 | INFO: Blender create Mesh node RoadMesh_52-53
+15:59:57 | INFO: Blender create Mesh node RoadMesh_53-54
+15:59:57 | INFO: Blender create Mesh node RoadMesh_54-55
+15:59:57 | INFO: Blender create Mesh node RoadMesh_33-40
+15:59:57 | INFO: Blender create Mesh node RoadMesh_13-22
+15:59:57 | INFO: Blender create Mesh node RoadMesh_56-57
+15:59:57 | INFO: Blender create Mesh node RoadMesh_57-58
+15:59:57 | INFO: Blender create Mesh node RoadMesh_58-59
+15:59:57 | INFO: Blender create Mesh node RoadMesh_8-56
+15:59:57 | INFO: Blender create Mesh node RoadMesh_24-57
+15:59:57 | INFO: Blender create Mesh node RoadMesh_32-58
+15:59:57 | INFO: Blender create Mesh node RoadMesh_48-59
+15:59:57 | INFO: Blender create Mesh node RoadMesh_60-61
+15:59:57 | INFO: Blender create Mesh node RoadMesh_61-62
+15:59:57 | INFO: Blender create Mesh node RoadMesh_62-63
+15:59:57 | INFO: Blender create Mesh node RoadMesh_15-60
+15:59:57 | INFO: Blender create Mesh node RoadMesh_31-61
+15:59:57 | INFO: Blender create Mesh node RoadMesh_39-62
+15:59:57 | INFO: Blender create Mesh node RoadMesh_55-63
+15:59:57 | INFO: Blender create Mesh node Joined sidewalk slabs
+15:59:57 | INFO: Blender create Mesh node Joined junctions
+15:59:57 | INFO: Blender create Mesh node Batched markings
+15:59:57 | INFO: Blender create Mesh node Archetype_3_web
+15:59:57 | INFO: Blender create Mesh node Archetype_1_web
+15:59:57 | INFO: Blender create Mesh node Archetype_0_web
+15:59:57 | INFO: Blender create Mesh node Archetype_2_web
+15:59:57 | INFO: Blender create Mesh node Archetype_4_web
+15:59:57 | INFO: Blender create Mesh node Archetype_6_web
+15:59:57 | INFO: Blender create Mesh node Archetype_5_web
+15:59:57 | INFO: Blender create Mesh node Archetype_6_web
+15:59:57 | INFO: Blender create Mesh node Archetype_9_web
+15:59:57 | INFO: Blender create Mesh node Archetype_8_web
+15:59:57 | INFO: Blender create Mesh node Archetype_5_web
+15:59:57 | INFO: Blender create Mesh node Archetype_11_web
+15:59:57 | INFO: Blender create Mesh node Archetype_7_web
+15:59:57 | INFO: Blender create Mesh node Archetype_10_web
+15:59:57 | INFO: Blender create Mesh node Archetype_6_web
+15:59:57 | INFO: Blender create Mesh node Archetype_0_web
+15:59:57 | INFO: Blender create Mesh node Archetype_4_web
+15:59:57 | INFO: Blender create Mesh node Archetype_2_web
+15:59:57 | INFO: Blender create Mesh node Archetype_3_web
+15:59:57 | INFO: Blender create Mesh node Archetype_5_web
+15:59:57 | INFO: Blender create Mesh node Archetype_1_web
+15:59:57 | INFO: Blender create Mesh node Archetype_9_web
+15:59:57 | INFO: Blender create Mesh node Archetype_11_web
+15:59:57 | INFO: Blender create Mesh node Archetype_6_web
+15:59:57 | INFO: Blender create Mesh node Archetype_5_web
+15:59:57 | INFO: Blender create Mesh node Archetype_10_web
+15:59:57 | INFO: Blender create Mesh node Archetype_7_web
+15:59:57 | INFO: Blender create Mesh node Archetype_8_web
+15:59:57 | INFO: Blender create Mesh node Tree family 0 • Mature maple • web
+15:59:57 | INFO: Blender create Mesh node Tree family 1 • Columnar street tree • web
+15:59:57 | INFO: Blender create Mesh node Tree family 2 • Ornamental pear • web
+15:59:57 | INFO: Blender create Mesh node Tree family 3 • Young lime • web
+15:59:57 | INFO: Blender create Mesh node Tree family 4 • Spreading park oak • web
+15:59:57 | INFO: Blender create Mesh node Tree family 5 • Light birch • web
+15:59:57 | INFO: Blender create Mesh node Tree family 6 • Small flowering tree • web
+15:59:57 | INFO: Blender create Mesh node Shared streetlight assembly
+15:59:57 | INFO: Blender create Mesh node Transit route
+15:59:57 | INFO: Blender create Mesh node Station geometry
+15:59:57 | INFO: Blender create Mesh node Pedestrian clothing family 0 • web
+15:59:57 | INFO: Blender create Mesh node Pedestrian clothing family 1 • web
+15:59:57 | INFO: Blender create Mesh node Pedestrian clothing family 2 • web
+15:59:57 | INFO: Blender create Mesh node Pedestrian clothing family 3 • web
+15:59:57 | INFO: Blender create Mesh node Pedestrian clothing family 4 • web
+15:59:57 | INFO: Blender create Mesh node Pedestrian clothing family 5 • web
+15:59:57 | INFO: glTF import finished in 0.41s
+15:59:57 | INFO: Data are loaded, start creating Blender stuff
+15:59:57 | INFO: Blender create Mesh node Graph edge batch
+15:59:57 | INFO: Blender create Mesh node Shared graph node glyph
+15:59:57 | INFO: glTF import finished in 0.01s
+{
+  "status": "PASS",
+  "blender_version": "4.5.13 LTS",
+  "master_objects": 676,
+  "master_mesh_objects": 670,
+  "buildings": 204,
+  "unique_building_meshes": 12,
+  "architectural_families": 12,
+  "trees": 162,
+  "tree_archetypes": 7,
+  "pedestrians": 48,
+  "animated_pedestrians": 12,
+  "pedestrian_families": 6,
+  "graph_nodes": 64,
+  "graph_edges": 108,
+  "unique_mesh_datablocks": 167,
+  "master_vertices_instanced": 433858,
+  "master_polygons_instanced": 352464,
+  "master_triangles_instanced": 676260,
+  "master_unique_triangles": 69418,
+  "master_render_visible_objects": 608,
+  "blend_bytes": 697223,
+  "render_dimensions": [
+    1440,
+    1000
+  ],
+  "checks": [
+    "204 unique building IDs; twelve linked architectural meshes",
+    "162 trees / seven shared meshes; 48 people / six clothing families / twelve morph walkers",
+    "Pedestrian positions sampled every 12 frames: clear of buildings and vehicle roads",
+    "No empty meshes, missing materials, nonfinite coordinates, or zero dimensions",
+    "No unexpected .001 object names",
+    "All 108 road midpoints, directions, geometric lengths and costs match city.json",
+    "All 64 graph glyphs match node coordinates",
+    "Master embeds matching city.json SHA-256"
+  ],
+  "glb": {
+    "city_web": {
+      "bytes": 1366104,
+      "triangles_instanced": 257840,
+      "triangles_unique": 31924,
+      "mesh_nodes": 601,
+      "unique_meshes": 165,
+      "reimport_objects": 601,
+      "self_contained": true,
+      "reimport": "PASS"
+    },
+    "graph_web": {
+      "bytes": 153468,
+      "triangles_instanced": 4816,
+      "triangles_unique": 3052,
+      "mesh_nodes": 65,
+      "unique_meshes": 2,
+      "reimport_objects": 65,
+      "self_contained": true,
+      "reimport": "PASS"
+    }
+  }
+}
+SCENE_VALIDATION_SUCCESS
+Blender 4.5.13 LTS (hash daeeeca98fb0 built 2026-08-25 01:31:19)
+Read blend: "/home/naresh/Documents/nareshpane.github.io/research/gpt-6-astra-blender/blender/city_master.blend"
+
+Blender quit

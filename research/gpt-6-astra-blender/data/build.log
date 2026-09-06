@@ -1,0 +1,246 @@
+Info: Saved as "city_master.blend"
+INFO Draco mesh compression is available, use library at /home/naresh/Documents/astra-blender-test/blender-4.5.13-linux-x64/4.5/scripts/addons_core/io_scene_gltf2/libextern_draco.so
+22:37:41 | INFO: Starting glTF 2.0 export
+22:37:41 | INFO: Extracting primitive: Base
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: Riverbank mesh
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: Water mesh
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: Quays
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: Park turf
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: Park turf.001
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_0-8
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_0-1
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_1-9
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_1-2
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_2-10
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_2-3
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_3-11
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_4-12
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_4-5
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_5-13
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_5-6
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_6-14
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_6-7
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_7-15
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_8-16
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_8-9
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_9-17
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_9-10
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_10-18
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_10-11
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_11-19
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_11-12
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: Bridge markings
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: Bridge infrastructure
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_12-20
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_12-13
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_13-21
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_13-14
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_14-22
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_14-15
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_15-23
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_16-24
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_16-17
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_17-25
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_17-18
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_18-26
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_18-19
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_19-27
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_20-28
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_20-21
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_21-29
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_21-22
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_22-30
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_22-23
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_23-31
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_24-32
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_24-25
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_25-33
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_25-26
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_26-34
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_26-27
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_27-35
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_28-36
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_28-29
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_29-37
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_29-30
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_30-38
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_30-31
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_31-39
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_32-40
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_32-33
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_33-41
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_33-34
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_34-42
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_34-35
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_35-43
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_35-36
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: Bridge markings.001
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: Bridge infrastructure.001
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_36-44
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_36-37
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_37-45
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_37-38
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_38-46
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_38-39
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_39-47
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_40-48
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_40-41
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_41-49
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_41-42
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_42-50
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_42-43
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_43-51
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_44-52
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_44-45
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_45-53
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_45-46
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_46-54
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_46-47
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_47-55
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_48-49
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_49-50
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_50-51
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_52-53
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_53-54
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: RoadMesh_54-55
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: Joined sidewalk slabs
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: Joined junctions
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: Batched markings
+22:37:41 | INFO: Primitives created: 2
+22:37:41 | INFO: Extracting primitive: Archetype_1_web
+22:37:41 | INFO: Primitives created: 4
+22:37:41 | INFO: Extracting primitive: Archetype_0_web
+22:37:41 | INFO: Primitives created: 4
+22:37:41 | INFO: Extracting primitive: Archetype_2_web
+22:37:41 | INFO: Primitives created: 4
+22:37:41 | INFO: Extracting primitive: Archetype_4_web
+22:37:41 | INFO: Primitives created: 4
+22:37:41 | INFO: Extracting primitive: Archetype_3_web
+22:37:41 | INFO: Primitives created: 4
+22:37:41 | INFO: Extracting primitive: Archetype_5_web
+22:37:41 | INFO: Primitives created: 4
+22:37:41 | INFO: Extracting primitive: Shared tree • trunk and crown joined
+22:37:41 | INFO: Primitives created: 2
+22:37:41 | INFO: Extracting primitive: Shared streetlight assembly
+22:37:41 | INFO: Primitives created: 2
+22:37:41 | INFO: Extracting primitive: Transit route
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: Station geometry
+22:37:41 | INFO: Primitives created: 2
+22:37:41 | INFO: Finished glTF 2.0 export in 0.2403416633605957 s
+
+22:37:41 | INFO: Starting glTF 2.0 export
+22:37:41 | INFO: Extracting primitive: Graph edge batch
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Extracting primitive: Shared graph node glyph
+22:37:41 | INFO: Primitives created: 1
+22:37:41 | INFO: Finished glTF 2.0 export in 0.021007061004638672 s
+
+CITY_BUILD_SUCCESS
+Blender 4.5.13 LTS (hash daeeeca98fb0 built 2026-08-25 01:31:19)
+
+Blender quit

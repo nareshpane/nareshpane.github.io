@@ -1,0 +1,113 @@
+{
+  "status": "PASS",
+  "url": "http://127.0.0.1:8000/research/gpt-6-astra-blender.html",
+  "headless_video_decode": "software; VA-API disabled for SwiftShader compatibility",
+  "cinematic_hero": [
+    {
+      "duration": 24,
+      "width": 1280,
+      "height": 720,
+      "muted": true,
+      "defaultMuted": true,
+      "autoplay": true,
+      "loop": true,
+      "controls": true,
+      "playsInline": true,
+      "played": 8.236226,
+      "decodedFrames": 201,
+      "loop_observed": true,
+      "viewport_width": 1440,
+      "poster_decoded": {
+        "width": 1280,
+        "height": 720
+      },
+      "pause_resume": true
+    },
+    {
+      "duration": 24,
+      "width": 1280,
+      "height": 720,
+      "muted": true,
+      "defaultMuted": true,
+      "autoplay": true,
+      "loop": true,
+      "controls": true,
+      "playsInline": true,
+      "played": 8.272809,
+      "decodedFrames": 203,
+      "loop_observed": true,
+      "viewport_width": 390,
+      "poster_decoded": {
+        "width": 1280,
+        "height": 720
+      },
+      "pause_resume": true
+    }
+  ],
+  "browser_videos": [
+    {
+      "src": "http://127.0.0.1:8000/research/gpt-6-astra-blender/video/shortest_path.mp4",
+      "duration": 14,
+      "width": 960,
+      "height": 540,
+      "played": 0.175134
+    },
+    {
+      "src": "http://127.0.0.1:8000/research/gpt-6-astra-blender/video/bridge_failure.mp4",
+      "duration": 14,
+      "width": 960,
+      "height": 540,
+      "played": 0.115868
+    },
+    {
+      "src": "http://127.0.0.1:8000/research/gpt-6-astra-blender/video/transit_accessibility.mp4",
+      "duration": 14,
+      "width": 960,
+      "height": 540,
+      "played": 0.11691
+    }
+  ],
+  "browser_models": {
+    "city": "loaded and camera rotated",
+    "graph": "loaded"
+  },
+  "responsive_layouts": [
+    {
+      "width": 1440,
+      "horizontal_overflow": false,
+      "prompt_open_and_closed": true
+    },
+    {
+      "width": 768,
+      "horizontal_overflow": false,
+      "prompt_open_and_closed": true
+    },
+    {
+      "width": 390,
+      "horizontal_overflow": false,
+      "prompt_open_and_closed": true
+    },
+    {
+      "width": 320,
+      "horizontal_overflow": false,
+      "prompt_open_and_closed": true
+    }
+  ],
+  "mathjax_equations": 82,
+  "console_errors": [],
+  "request_failures": [],
+  "expected_media_request_aborts": [
+    {
+      "url": "http://127.0.0.1:8000/research/gpt-6-astra-blender/video/shortest_path.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:8000/research/gpt-6-astra-blender/video/bridge_failure.mp4",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:8000/research/gpt-6-astra-blender/video/transit_accessibility.mp4",
+      "failure": "net::ERR_ABORTED"
+    }
+  ]
+}

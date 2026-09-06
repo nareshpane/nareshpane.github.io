@@ -1,0 +1,70 @@
+{
+  "status": "PASS",
+  "blender_version": "4.5.13 LTS",
+  "objects": 686,
+  "mesh_objects": 670,
+  "buildings": 204,
+  "added_cameras": 5,
+  "added_empty_targets": 5,
+  "original_meshes_and_material_assignments_unchanged": true,
+  "original_city_transforms_unchanged": true,
+  "presentation_only_mesh_transform": "Studio floor scaled in XY to remove its nearby horizon edge",
+  "master_unchanged": true,
+  "master_sha256": "e5f4dab312c79cdb9d8c0c40bb4b9d98068c8f99179c5cbe996724e3595bfc3c",
+  "loop_camera_pose_identical": true,
+  "camera_motion": [
+    {
+      "shot": "01 Establishing aerial",
+      "max_metres_per_frame": 3.1287,
+      "max_degrees_per_frame": 0.0,
+      "eased_ends": true
+    },
+    {
+      "shot": "02 Innovation District sweep",
+      "max_metres_per_frame": 2.4793,
+      "max_degrees_per_frame": 0.6807,
+      "eased_ends": true
+    },
+    {
+      "shot": "03 Transit street tracking",
+      "max_metres_per_frame": 0.8573,
+      "max_degrees_per_frame": 0.0,
+      "eased_ends": true
+    },
+    {
+      "shot": "04 River and northern bridge",
+      "max_metres_per_frame": 0.6955,
+      "max_degrees_per_frame": 0.4035,
+      "eased_ends": true
+    },
+    {
+      "shot": "05 Full-city reveal",
+      "max_metres_per_frame": 6.5541,
+      "max_degrees_per_frame": 0.1187,
+      "eased_ends": true
+    }
+  ],
+  "full_city_framing": [
+    {
+      "frame": 1,
+      "normalized_bounds": [
+        0.1768,
+        0.1409,
+        0.8203,
+        0.856
+      ],
+      "full_city_visible": true
+    },
+    {
+      "frame": 576,
+      "normalized_bounds": [
+        0.1768,
+        0.1409,
+        0.8203,
+        0.856
+      ],
+      "full_city_visible": true
+    }
+  ],
+  "blend_bytes": 692935
+}

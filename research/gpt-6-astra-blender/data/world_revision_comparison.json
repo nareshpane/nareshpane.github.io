@@ -1,0 +1,96 @@
+{
+  "previous": {
+    "nodes": 56,
+    "edges": 92,
+    "cycle_rank": 37,
+    "same_pair_40_47_seconds": 324,
+    "same_pair_closure_seconds": 540,
+    "maximum_betweenness": 0.3296410068886659,
+    "maximum_nodes": [
+      "35",
+      "36"
+    ],
+    "disconnection_probability_p08": 0.0825,
+    "mean_accessibility_loss_p08": 3.628978206712556
+  },
+  "revised": {
+    "nodes": 64,
+    "edges": 108,
+    "cycle_rank": 45,
+    "same_pair_40_47_seconds": 303,
+    "same_pair_closure_seconds": 498,
+    "maximum_betweenness": 0.30788119096077826,
+    "maximum_nodes": [
+      "35"
+    ],
+    "disconnection_probability_p08": 0.08,
+    "mean_accessibility_loss_p08": 3.4860894737131733
+  },
+  "building_parameters_preserved": true,
+  "nearest_node_reassignments": [
+    {
+      "building": "B171",
+      "previous_node": 40,
+      "revised_node": 59
+    }
+  ],
+  "performance": {
+    "previous": {
+      "master_objects": 596,
+      "master_mesh_objects": 590,
+      "master_triangles_instanced": 266986,
+      "blend_bytes": 379749,
+      "glb": {
+        "city_web": {
+          "bytes": 999008,
+          "triangles_instanced": 68182,
+          "triangles_unique": 17372,
+          "mesh_nodes": 529,
+          "unique_meshes": 123,
+          "reimport_objects": 529,
+          "self_contained": true,
+          "reimport": "PASS"
+        },
+        "graph_web": {
+          "bytes": 131340,
+          "triangles_instanced": 4144,
+          "triangles_unique": 2604,
+          "mesh_nodes": 57,
+          "unique_meshes": 2,
+          "reimport_objects": 57,
+          "self_contained": true,
+          "reimport": "PASS"
+        }
+      }
+    },
+    "revised": {
+      "master_objects": 676,
+      "master_mesh_objects": 670,
+      "master_triangles_instanced": 676260,
+      "blend_bytes": 697223,
+      "glb": {
+        "city_web": {
+          "bytes": 1366104,
+          "triangles_instanced": 257840,
+          "triangles_unique": 31924,
+          "mesh_nodes": 601,
+          "unique_meshes": 165,
+          "reimport_objects": 601,
+          "self_contained": true,
+          "reimport": "PASS"
+        },
+        "graph_web": {
+          "bytes": 153468,
+          "triangles_instanced": 4816,
+          "triangles_unique": 3052,
+          "mesh_nodes": 65,
+          "unique_meshes": 2,
+          "reimport_objects": 65,
+          "self_contained": true,
+          "reimport": "PASS"
+        }
+      }
+    }
+  },
+  "note": "Same-pair travel comparison fixes origin and destination. Monte Carlo aggregates use each version\u2019s seeded stream, not paired failures; origins and opportunity totals also differ."
+}

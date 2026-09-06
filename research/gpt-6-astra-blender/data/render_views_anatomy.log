@@ -1,0 +1,59 @@
+Blender 4.5.13 LTS (hash daeeeca98fb0 built 2026-08-25 01:31:19)
+Read blend: "/home/naresh/Documents/nareshpane.github.io/research/gpt-6-astra-blender/blender/city_master.blend"
+Fra:1 Mem:35.68M (Peak 35.68M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Building anatomy • staged modelling, ViewLayer | Synchronizing object | Stage plinth
+Fra:1 Mem:35.69M (Peak 35.69M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Building anatomy • staged modelling, ViewLayer | Synchronizing object | Stage plinth.002
+Fra:1 Mem:35.69M (Peak 35.69M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Building anatomy • staged modelling, ViewLayer | Synchronizing object | Stage plinth.003
+Fra:1 Mem:35.69M (Peak 35.69M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Building anatomy • staged modelling, ViewLayer | Synchronizing object | 01 Primitive cube
+Fra:1 Mem:35.69M (Peak 35.69M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Building anatomy • staged modelling, ViewLayer | Synchronizing object | 02 Scaled cube
+Fra:1 Mem:35.69M (Peak 35.69M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Building anatomy • staged modelling, ViewLayer | Synchronizing object | 03 Exploded facade and roof
+Fra:1 Mem:35.70M (Peak 35.70M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Building anatomy • staged modelling, ViewLayer | Synchronizing object | 04 Finished archetype
+Fra:1 Mem:35.70M (Peak 35.70M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Building anatomy • staged modelling, ViewLayer | Synchronizing object | Anatomy backdrop
+Fra:1 Mem:35.73M (Peak 35.73M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Building anatomy • staged modelling, ViewLayer | Synchronizing object | Warm softbox
+Fra:1 Mem:35.71M (Peak 35.73M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Building anatomy • staged modelling, ViewLayer | Synchronizing object | Sky fill
+Fra:1 Mem:35.85M (Peak 35.85M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Building anatomy • staged modelling, ViewLayer | Initializing
+Fra:1 Mem:35.19M (Peak 35.85M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Building anatomy • staged modelling, ViewLayer | Waiting for render to start
+Fra:1 Mem:35.19M (Peak 35.85M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Building anatomy • staged modelling, ViewLayer | Updating Scene
+Fra:1 Mem:35.19M (Peak 35.85M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Building anatomy • staged modelling, ViewLayer | Updating Shaders
+Fra:1 Mem:35.20M (Peak 35.85M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Building anatomy • staged modelling, ViewLayer | Loading render kernels (may take a few minutes the first time)
+Fra:1 Mem:35.28M (Peak 35.85M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Building anatomy • staged modelling, ViewLayer | Updating Procedurals
+Fra:1 Mem:35.28M (Peak 35.85M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Building anatomy • staged modelling, ViewLayer | Updating Background
+Fra:1 Mem:35.28M (Peak 35.85M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Building anatomy • staged modelling, ViewLayer | Updating Camera
+Fra:1 Mem:35.28M (Peak 35.85M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Building anatomy • staged modelling, ViewLayer | Updating Meshes Flags
+Fra:1 Mem:35.28M (Peak 35.85M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Building anatomy • staged modelling, ViewLayer | Updating Objects
+Fra:1 Mem:35.28M (Peak 35.85M) | Time:00:00.00 | Mem:0.00M, Peak:0.00M | Building anatomy • staged modelling, ViewLayer | Updating Objects | Copying Transformations to device
+Fra:1 Mem:35.28M (Peak 35.85M) | Time:00:00.00 | Mem:0.01M, Peak:0.01M | Building anatomy • staged modelling, ViewLayer | Updating Particle Systems
+Fra:1 Mem:35.28M (Peak 35.85M) | Time:00:00.00 | Mem:0.01M, Peak:0.01M | Building anatomy • staged modelling, ViewLayer | Updating Particle Systems | Copying Particles to device
+Fra:1 Mem:35.28M (Peak 35.85M) | Time:00:00.00 | Mem:0.01M, Peak:0.01M | Building anatomy • staged modelling, ViewLayer | Updating Meshes
+Fra:1 Mem:35.28M (Peak 35.85M) | Time:00:00.00 | Mem:0.01M, Peak:0.01M | Building anatomy • staged modelling, ViewLayer | Updating Objects | Applying Static Transformations
+Fra:1 Mem:35.28M (Peak 35.85M) | Time:00:00.00 | Mem:0.01M, Peak:0.01M | Building anatomy • staged modelling, ViewLayer | Updating Mesh | Computing attributes
+Fra:1 Mem:35.30M (Peak 35.85M) | Time:00:00.00 | Mem:0.01M, Peak:0.01M | Building anatomy • staged modelling, ViewLayer | Updating Mesh | Copying Attributes to device
+Fra:1 Mem:35.30M (Peak 35.85M) | Time:00:00.00 | Mem:0.02M, Peak:0.02M | Building anatomy • staged modelling, ViewLayer | Updating Scene BVH | Building
+Fra:1 Mem:35.30M (Peak 35.85M) | Time:00:00.00 | Mem:0.02M, Peak:0.02M | Building anatomy • staged modelling, ViewLayer | Updating Scene BVH | Building BVH
+Fra:1 Mem:35.30M (Peak 35.85M) | Time:00:00.01 | Mem:0.08M, Peak:0.08M | Building anatomy • staged modelling, ViewLayer | Updating Scene BVH | Building BVH 0%
+Fra:1 Mem:35.30M (Peak 35.85M) | Time:00:00.01 | Mem:0.15M, Peak:0.20M | Building anatomy • staged modelling, ViewLayer | Updating Scene BVH | Copying BVH to device
+Fra:1 Mem:35.30M (Peak 35.85M) | Time:00:00.01 | Mem:0.15M, Peak:0.20M | Building anatomy • staged modelling, ViewLayer | Updating Mesh | Computing normals
+Fra:1 Mem:35.36M (Peak 35.85M) | Time:00:00.01 | Mem:0.15M, Peak:0.20M | Building anatomy • staged modelling, ViewLayer | Updating Mesh | Copying Mesh to device
+Fra:1 Mem:35.36M (Peak 35.85M) | Time:00:00.01 | Mem:0.21M, Peak:0.21M | Building anatomy • staged modelling, ViewLayer | Updating Objects Flags
+Fra:1 Mem:35.36M (Peak 35.85M) | Time:00:00.01 | Mem:0.21M, Peak:0.21M | Building anatomy • staged modelling, ViewLayer | Updating Primitive Offsets
+Fra:1 Mem:35.36M (Peak 35.85M) | Time:00:00.01 | Mem:0.21M, Peak:0.21M | Building anatomy • staged modelling, ViewLayer | Updating Images
+Fra:1 Mem:35.36M (Peak 35.85M) | Time:00:00.01 | Mem:0.21M, Peak:0.21M | Building anatomy • staged modelling, ViewLayer | Updating Camera Volume
+Fra:1 Mem:35.36M (Peak 35.85M) | Time:00:00.01 | Mem:0.21M, Peak:0.21M | Building anatomy • staged modelling, ViewLayer | Updating Lookup Tables
+Fra:1 Mem:35.36M (Peak 35.85M) | Time:00:00.01 | Mem:0.29M, Peak:0.29M | Building anatomy • staged modelling, ViewLayer | Updating Lights
+Fra:1 Mem:35.36M (Peak 35.85M) | Time:00:00.01 | Mem:0.29M, Peak:0.29M | Building anatomy • staged modelling, ViewLayer | Updating Lights | Computing tree
+Fra:1 Mem:35.42M (Peak 35.85M) | Time:00:00.01 | Mem:0.35M, Peak:0.35M | Building anatomy • staged modelling, ViewLayer | Updating Integrator
+Fra:1 Mem:35.42M (Peak 35.85M) | Time:00:00.01 | Mem:0.35M, Peak:0.35M | Building anatomy • staged modelling, ViewLayer | Updating Film
+Fra:1 Mem:35.42M (Peak 35.85M) | Time:00:00.01 | Mem:0.27M, Peak:0.35M | Building anatomy • staged modelling, ViewLayer | Updating Lookup Tables
+Fra:1 Mem:35.42M (Peak 35.85M) | Time:00:00.01 | Mem:0.35M, Peak:0.35M | Building anatomy • staged modelling, ViewLayer | Updating Baking
+Fra:1 Mem:35.42M (Peak 35.85M) | Time:00:00.01 | Mem:0.35M, Peak:0.35M | Building anatomy • staged modelling, ViewLayer | Updating Device | Writing constant memory
+Fra:1 Mem:35.43M (Peak 35.85M) | Time:00:00.01 | Mem:0.35M, Peak:0.35M | Building anatomy • staged modelling, ViewLayer | Loading denoising kernels (may take a few minutes the first time)
+Fra:1 Mem:35.43M (Peak 35.85M) | Time:00:00.01 | Mem:0.35M, Peak:0.35M | Building anatomy • staged modelling, ViewLayer | Sample 0/24
+Fra:1 Mem:106.48M (Peak 106.48M) | Time:00:00.57 | Remaining:00:12.85 | Mem:71.33M, Peak:71.33M | Building anatomy • staged modelling, ViewLayer | Sample 1/24
+Fra:1 Mem:136.36M (Peak 181.19M) | Time:00:20.84 | Mem:71.33M, Peak:71.33M | Building anatomy • staged modelling, ViewLayer | Sample 24/24
+Fra:1 Mem:136.36M (Peak 181.19M) | Time:00:20.84 | Mem:71.33M, Peak:71.33M | Building anatomy • staged modelling, ViewLayer | Finished
+Saved: '/home/naresh/Documents/nareshpane.github.io/research/gpt-6-astra-blender/renders/anatomy.png'
+Time: 00:21.05 (Saving: 00:00.19)
+
+Info: Saved as "building_anatomy.blend"
+RENDER_VIEWS_SUCCESS
+
+Blender quit
