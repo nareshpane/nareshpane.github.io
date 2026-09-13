@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Discretizing Balls from 2D to 7D</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg:#f7f4ee; --card:#fffdf9; --ink:#1b1b1b; --muted:#666; --line:#ddd5c7; --accent:#1d4f91; --rust:#a85035; --note:#f5efe3; --soft:#fcfaf6; --shadow:0 14px 32px rgba(0,0,0,.06); --radius:22px; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--bg); color:var(--ink); font-family:"Inter",sans-serif; line-height:1.72; }
+    .page { max-width:1120px; margin:0 auto; padding:34px 20px 56px; }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:34px 34px 30px; }
+    h1,h2,h3 { font-family:"Cormorant Garamond",serif; line-height:1.08; margin:0 0 12px; color:#151515; }
+    h1 { font-size:3.05rem; margin-bottom:8px; }
+    h2 { font-size:2rem; margin-top:42px; padding-bottom:8px; border-bottom:1px solid var(--line); }
+    h3 { font-size:1.45rem; margin-top:24px; }
+    p { margin:0 0 14px; font-size:1.02rem; }
+    a { color:var(--accent); text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    .subtitle { color:var(--muted); font-size:1.13rem; margin-bottom:22px; }
+    .lead { font-size:1.1rem; max-width:850px; }
+    .kicker { display:inline-block; margin-bottom:10px; padding:5px 11px; border-radius:999px; background:#edf3fb; color:var(--accent); font-size:.84rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase; }
+    .panel { border:1px solid var(--line); border-radius:16px; padding:16px 18px; margin:18px 0; background:var(--soft); }
+    .note { background:var(--note); border-left:4px solid var(--accent); }
+    .equation { margin:14px 0; padding:12px 14px; border-radius:14px; background:#fffdf9; border:1px solid #e6dece; overflow-x:auto; }
+    .figure { margin:22px 0; padding:14px; background:var(--soft); border:1px solid var(--line); border-radius:18px; }
+    .figure img { display:block; width:100%; border-radius:12px; background:#fffdf9; }
+    figcaption { margin:10px 4px 0; color:var(--muted); font-size:.94rem; }
+    .media-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin:18px 0; }
+    .three-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin:18px 0; }
+    .mini-box { padding:14px; border:1px solid var(--line); border-radius:15px; background:var(--soft); }
+    .mini-box strong { display:block; color:var(--accent); font-size:.88rem; letter-spacing:.04em; text-transform:uppercase; margin-bottom:4px; }
+    .table-wrap { margin:16px 0 20px; overflow-x:auto; }
+    table { width:100%; border-collapse:collapse; min-width:700px; background:var(--card); border:1px solid var(--line); }
+    th,td { border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; font-size:.93rem; }
+    th { background:#f2ede4; font-weight:700; }
+    .small { color:var(--muted); font-size:.93rem; }
+    .formula-list { margin:10px 0 0; padding-left:22px; }
+    .formula-list li { margin-bottom:8px; }
+    .dimension-section { margin-top:28px; padding-top:2px; }
+    .dimension-badge { color:var(--rust); font-family:"Source Code Pro",monospace; font-size:.88rem; }
+    .controls { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin:14px 0 18px; }
+    label { display:block; color:#4f473d; font-size:.87rem; font-weight:700; }
+    select,input { width:100%; margin-top:5px; padding:9px 10px; color:var(--ink); font:inherit; background:#fffdf9; border:1px solid #bfb5a4; border-radius:8px; }
+    .result { display:grid; grid-template-columns:1fr 1.2fr; gap:18px; align-items:center; padding:16px; background:#f3f7fb; border:1px solid #d5e1ee; border-radius:16px; }
+    .count { font-family:"Source Code Pro",monospace; color:var(--accent); font-weight:600; font-size:1.35rem; }
+    .bar-chart { display:flex; align-items:flex-end; gap:5px; height:105px; border-bottom:1px solid #b9b0a2; padding:0 4px; }
+    .bar { flex:1; min-width:0; background:var(--accent); border-radius:4px 4px 0 0; position:relative; opacity:.83; }
+    .bar.active { background:var(--rust); opacity:1; }
+    .bar span { position:absolute; top:100%; left:50%; transform:translateX(-50%); margin-top:4px; color:var(--muted); font-size:.72rem; }
+    .slice-demo { display:grid; grid-template-columns:220px 1fr; gap:20px; align-items:center; margin:14px 0; }
+    #slice-view { max-width:220px; justify-self:center; }
+    .slice-circle { fill:#dce8f5; stroke:var(--accent); stroke-width:2; }
+    .slice-label { font-family:"Inter",sans-serif; fill:#555; font-size:14px; }
+    .pole-demo { display:flex; align-items:center; gap:18px; margin:18px 0; padding:14px; border:1px solid var(--line); border-radius:16px; background:var(--soft); }
+    .pole-demo svg { width:180px; flex:0 0 180px; }
+    .interactive-study { margin:22px 0; padding:18px; border:1px solid var(--line); border-radius:18px; background:#f7fafc; }
+    .interactive-study h3 { margin-top:0; }
+    .interactive-study p:last-child { margin-bottom:0; }
+    .visual-canvas { display:block; width:100%; background:#fffdf9; border:1px solid #d8e1ea; border-radius:14px; }
+    .disk-canvas { max-width:590px; margin:0 auto; aspect-ratio:1/1; }
+    .space-canvas { aspect-ratio:16/10; cursor:grab; touch-action:pan-y; }
+    .space-canvas.dragging { cursor:grabbing; }
+    .stereo-canvas { max-width:650px; margin:0 auto; aspect-ratio:16/8; }
+    .explorer-canvas { max-width:570px; margin:0 auto; aspect-ratio:1/1; }
+    .study-controls { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin:14px 0; align-items:end; }
+    .button-row { display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+    button { appearance:none; border:1px solid #b7c9dc; border-radius:8px; padding:8px 12px; font:600 .88rem "Inter",sans-serif; color:#174b85; background:#fffdf9; cursor:pointer; }
+    button:hover { background:#edf3fb; }
+    button:focus-visible, select:focus-visible, input:focus-visible { outline:3px solid rgba(29,79,145,.25); outline-offset:2px; }
+    .study-readout { padding:10px 12px; border-left:3px solid var(--rust); background:#fffdf9; border-radius:0 10px 10px 0; color:#51483d; font-size:.91rem; }
+    .shell-transition { display:grid; grid-template-columns:1fr auto 1fr; gap:14px; align-items:center; margin:18px 0; padding:13px; border:1px solid var(--line); border-radius:14px; background:#fffdf9; text-align:center; }
+    .shell-transition strong { display:block; color:var(--accent); font-family:"Cormorant Garamond",serif; font-size:1.2rem; }
+    .shell-transition .arrow { color:var(--rust); font-size:1.7rem; }
+    .stereo-layout { display:grid; grid-template-columns:minmax(0,1.25fr) minmax(230px,.75fr); gap:18px; align-items:center; }
+    .cascade { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:8px; margin:18px 0; }
+    .cascade-step { position:relative; min-height:132px; padding:14px 9px; border:1px solid #d6e1ee; border-radius:14px; background:#f3f7fb; text-align:center; }
+    .cascade-step:not(:last-child)::after { content:"→"; position:absolute; right:-14px; top:47px; z-index:1; color:var(--rust); font-size:1.4rem; }
+    .cascade-from { display:block; color:var(--accent); font-family:"Cormorant Garamond",serif; font-size:1.65rem; line-height:1; }
+    .cascade-boundary { display:block; margin:7px 0; color:#655a4b; font-size:.83rem; }
+    .cascade-to { display:block; color:var(--rust); font-family:"Cormorant Garamond",serif; font-size:1.45rem; line-height:1; }
+    .projection-key { display:flex; gap:12px; flex-wrap:wrap; color:var(--muted); font-size:.86rem; }
+    .projection-key span::before { content:""; display:inline-block; width:10px; height:10px; margin-right:5px; border-radius:50%; background:var(--accent); }
+    .projection-key .warm::before { background:var(--rust); }
+    .footer-nav { margin-top:24px; text-align:center; color:var(--muted); font-size:.98rem; }
+    .footer-nav a { font-weight:600; }
+    .sep { margin:0 8px; color:#8a8a8a; }
+    @media (max-width:960px) { .media-grid,.result,.slice-demo,.stereo-layout { grid-template-columns:1fr; } .three-grid { grid-template-columns:1fr 1fr; } .cascade { grid-template-columns:repeat(5,minmax(105px,1fr)); overflow-x:auto; padding-bottom:5px; } }
+    @media (max-width:860px) { .card { padding:24px 18px; } h1 { font-size:2.35rem; } h2 { font-size:1.65rem; } .controls,.study-controls { grid-template-columns:1fr; } }
+    @media (max-width:520px) { .three-grid { grid-template-columns:1fr; } .pole-demo { align-items:flex-start; flex-direction:column; } .interactive-study { padding:13px; } }
+    @media (prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto !important; } }
+  </style>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] } };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="page">
+    <section class="card">
+      <div class="kicker">Geometry and discrete design</div>
+      <h1>Discretizing Balls from 2D to 7D</h1>
+      <p class="subtitle">Radial shells, hyperspherical coordinates, and discrete design spaces</p>
+      <p class="lead">A Euclidean ball contains infinitely many candidate points. Numerical design and optimization replace that continuum with a finite, indexed set: choose radii, choose angles, convert every parameter tuple to Cartesian coordinates, and evaluate the resulting candidates. The construction is elementary; its growth from two to seven dimensions is not.</p>
+
+      <figure class="figure">
+        <img src="discretizing-balls-2d-to-7d/dimensional_coordinate_ladder.svg" alt="A schematic progression from a line through the disk and 3-ball to labelled projections of balls through dimension seven." />
+        <figcaption><strong>Figure 1.</strong> A dimension ladder. The first visible panel is a one-dimensional interval; subsequent panels are schematic views. The panels labelled projection do not claim to display the higher-dimensional balls literally.</figcaption>
+      </figure>
+
+      <h2>Ball, boundary, and dimension</h2>
+      <p>The unit ball and its boundary are different objects:</p>
+      <div class="equation">$$B^d=\{x\in\mathbb{R}^d:\lVert x\rVert\leq1\},\qquad S^{d-1}=\{x\in\mathbb{R}^d:\lVert x\rVert=1\}.$$</div>
+      <p>$B^2$ is the filled disk and $S^1$ is its circle. $B^3$ is the ordinary solid ball and $S^2$ is the usual sphere. $B^4$ is the four-dimensional ball with boundary $S^3$, and the pattern continues through $B^7$ with boundary $S^6$. Thus “sphere” refers to the boundary here, not to the filled region.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Dimension</th><th>Ball</th><th>Boundary</th><th>Polar-type angles</th></tr></thead>
+          <tbody>
+            <tr><td>2</td><td>$B^2$</td><td>$S^1$</td><td>0</td></tr>
+            <tr><td>3</td><td>$B^3$</td><td>$S^2$</td><td>1</td></tr>
+            <tr><td>4</td><td>$B^4$</td><td>$S^3$</td><td>2</td></tr>
+            <tr><td>5</td><td>$B^5$</td><td>$S^4$</td><td>3</td></tr>
+            <tr><td>6</td><td>$B^6$</td><td>$S^5$</td><td>4</td></tr>
+            <tr><td>7</td><td>$B^7$</td><td>$S^6$</td><td>5</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>There is always one azimuth $\alpha$ and $d-2$ polar angles $\beta_1,\ldots,\beta_{d-2}$. Each new coordinate direction therefore introduces one further polar angle.</p>
+
+      <h2>A single coordinate convention</h2>
+      <p>Use radius $r$, azimuth $\alpha$, and polar angles $\beta_1,\ldots,\beta_{d-2}$, with</p>
+      <div class="equation">$$0\leq r\leq1,\qquad 0\leq\alpha&lt;2\pi,\qquad 0\leq\beta_j\leq\pi.$$</div>
+      <p>The construction can be stated recursively. Start on the unit circle in $\mathbb{R}^2$, then wrap the preceding direction into one more coordinate at every step:</p>
+      <div class="equation">$$v_2(\alpha)=(\cos\alpha,\sin\alpha),\qquad v_m=(\sin\beta_{m-2}\,v_{m-1},\cos\beta_{m-2})\quad(m=3,\ldots,d),\qquad x=r v_d.$$</div>
+      <div class="panel note"><strong>Interpretation.</strong> The factor $\sin\beta_{m-2}$ scales every earlier coordinate together; $\cos\beta_{m-2}$ supplies the new last coordinate. This recursion fixes the order of all the explicit formulas below.</div>
+
+      <div class="dimension-section">
+        <div class="dimension-badge">DIMENSION 2</div>
+        <h2>$\mathbb{R}^2$: disk, shells, and spokes</h2>
+        <p>A candidate in the filled disk has radius $r$ and azimuth $\alpha$. Selecting $0<r_1<\cdots<r_m\leq1$ first gives nested filled sub-balls $B^2(r_1)\subset\cdots\subset B^2(r_m)\subset B^2(1)$. Their boundary circles $S^1(r_i)$ are edges of those disks, not the primary objects. Angular choices then supply candidate points on each selected boundary.</p>
+        <div class="equation">$$x_1=r\cos(\alpha),\qquad x_2=r\sin(\alpha).$$</div>
+        <p>Discretization variables: $r_i$, $i=1,\ldots,N_r$, and $\alpha_j$, $j=0,\ldots,N_\alpha-1$. There are no polar angles in two dimensions.</p>
+        <figure class="figure">
+          <img src="discretizing-balls-2d-to-7d/ball_2d_radial_grid.svg" alt="Unit disk with four concentric radial shells, twelve angular spokes, candidate points, the origin, and a highlighted point with radius and azimuth." />
+          <figcaption><strong>Figure 2.</strong> A finite radial-angular grid in $B^2$. The orange point is specified by one radius and one azimuth.</figcaption>
+        </figure>
+        <div class="interactive-study" id="disk-study">
+          <h3>Discretizing the disk with nested concentric sub-balls</h3>
+          <p class="small">The translucent regions are $B^2(r_i)$; their circular edges are $S^1(r_i)$. Build mode adds one filled disk at a time from the shared origin outward.</p>
+          <canvas id="disk-canvas" class="visual-canvas disk-canvas" aria-label="Interactive unit disk showing discretized radial shells, angular directions, candidate points, and a highlighted radius and angle."></canvas>
+          <div class="study-controls">
+            <label for="disk-r">Radial shells $N_r$<input id="disk-r" type="range" min="2" max="10" value="6" /></label>
+            <label for="disk-alpha">Angular directions $N_\alpha$<input id="disk-alpha" type="range" min="6" max="48" step="2" value="24" /></label><label for="disk-mode">Display<select id="disk-mode"><option value="filled" selected>filled balls</option><option value="boundaries">boundaries only</option></select></label>
+            <div class="button-row" aria-label="Disk shell animation controls"><button type="button" id="disk-play">Play</button><button type="button" id="disk-pause">Pause</button><button type="button" id="disk-reset">Reset</button></div>
+          </div>
+          <div id="disk-readout" class="study-readout" aria-live="polite">Selected sub-ball B²(0.500); boundary radius r = 0.500; points on boundary = 24.</div>
+        </div>
+      </div>
+
+      <div class="dimension-section">
+        <div class="dimension-badge">DIMENSION 3</div>
+        <h2>$\mathbb{R}^3$: the first polar angle</h2>
+        <p>In the ordinary solid ball, $\alpha$ still turns around the $x_3$ axis. The added angle $\beta_1$ is a polar inclination: it is $0$ on the positive $x_3$ axis and $\pi$ on the negative axis. Selecting several radii produces nested filled balls $B^3(r_i)$; their visible spherical boundaries are $S^2(r_i)$.</p>
+        <div class="equation">$$\begin{aligned}x_1&amp;=r\sin(\beta_1)\cos(\alpha),\\x_2&amp;=r\sin(\beta_1)\sin(\alpha),\\x_3&amp;=r\cos(\beta_1).\end{aligned}$$</div>
+        <p>Discretization variables: $r_i$, $\alpha_j$, and $\beta_{1,k}$. The finite directional grid lies on selected boundaries $S^2(r_i)$, while the translucent regions represent the enclosed balls $B^3(r_i)$.</p>
+        <figure class="figure">
+          <img src="discretizing-balls-2d-to-7d/ball_3d_coordinate_grid.png" alt="Perspective view of three transparent spherical shells with a finite set of candidate points and a highlighted radius vector." />
+          <figcaption><strong>Figure 3.</strong> Projected view of a finite grid in $B^3$. The points are not surface samples alone: they occupy three positive-radius shells.</figcaption>
+        </figure>
+        <div class="shell-transition" aria-label="A visual transition from the two-dimensional circle shell to the three-dimensional spherical shell">
+          <div><strong>circle shell</strong><span class="small">one direction angle $\alpha$</span></div><div class="arrow">→</div><div><strong>spherical shell</strong><span class="small">azimuth $\alpha$ plus inclination $\beta_1$</span></div>
+        </div>
+        <div class="interactive-study" id="sphere-study">
+          <h3>Discretizing the ball with nested concentric sub-balls</h3>
+          <p class="small">Each tinted volume is $B^3(r_i)=\{x:x_1^2+x_2^2+x_3^2\leq r_i^2\}$, enclosed by its thin boundary $S^2(r_i)$. Drag to inspect; build mode introduces filled balls and their boundaries together.</p>
+          <canvas id="sphere-canvas" class="visual-canvas space-canvas" aria-label="Interactive rotating three-dimensional unit ball showing nested spherical shells, angular guide lines, coordinate axes, and candidate points."></canvas>
+          <div class="study-controls">
+            <label for="sphere-r">Radial shells $N_r$<input id="sphere-r" type="range" min="2" max="7" value="4" /></label>
+            <label for="sphere-angular">Angular resolution<select id="sphere-angular"><option value="10">10 directions</option><option value="14" selected>14 directions</option><option value="18">18 directions</option></select></label>
+            <label for="sphere-show">Show<select id="sphere-show"><option value="both" selected>points and guides</option><option value="points">points</option><option value="guides">shell guides</option></select></label>
+            <div class="button-row" aria-label="Three-dimensional rotation controls"><button type="button" id="sphere-play">Play rotation</button><button type="button" id="sphere-pause">Pause rotation</button><button type="button" id="sphere-reset">Reset view</button></div>
+            <div class="button-row" aria-label="Three-dimensional shell build controls"><button type="button" id="sphere-build">Build shells</button><button type="button" id="sphere-build-pause">Pause build</button><button type="button" id="sphere-build-reset">Reset build</button></div>
+          </div>
+          <div class="stereo-layout"><canvas id="ball-slice-canvas" class="visual-canvas explorer-canvas" aria-label="Linked planar x3 equals c cross-section of the nested three-dimensional balls."></canvas><div><label for="ball-slice-c">Cross-section plane $x_3=c$<input id="ball-slice-c" type="range" min="-1" max="1" step="0.01" value="0" /></label><p id="ball-slice-readout" class="study-readout">At x3 = 0, each B³(ri) cuts a disk of radius ri.</p></div></div>
+          <div id="sphere-readout" class="study-readout" aria-live="polite">Showing 4 nested sub-balls; highlighted B³(0.500).</div>
+        </div>
+      </div>
+
+      <div class="dimension-section">
+        <div class="dimension-badge">DIMENSION 4</div>
+        <h2>$\mathbb{R}^4$: slices make the 4-ball concrete</h2>
+        <p>$B^4$ uses a second polar angle $\beta_2$. A useful representation fixes the fourth coordinate. At $x_4=c$, the remaining coordinates satisfy</p>
+        <div class="equation">$$x_1^2+x_2^2+x_3^2\leq1-x_4^2,$$</div>
+        <p>so the slice is a three-dimensional ball of radius $\sqrt{1-x_4^2}$. For example, fixing $x_4=0.6$ leaves a 3-ball of radius $\sqrt{1-0.6^2}=0.8$.</p>
+        <div class="equation">$$\begin{aligned}x_1&amp;=r\sin(\beta_2)\sin(\beta_1)\cos(\alpha),\\x_2&amp;=r\sin(\beta_2)\sin(\beta_1)\sin(\alpha),\\x_3&amp;=r\sin(\beta_2)\cos(\beta_1),\\x_4&amp;=r\cos(\beta_2).\end{aligned}$$</div>
+        <p>Discretization variables: $r_i$, $\alpha_j$, $\beta_{1,k}$, and $\beta_{2,\ell}$. The static panels are 2D projections of the corresponding 3-ball slices in $(x_1,x_2,x_3)$.</p>
+        <figure class="figure">
+          <img src="discretizing-balls-2d-to-7d/ball_4d_slices.svg" alt="Four labelled projected slices of the 4-dimensional unit ball at x4 values minus 0.8, minus 0.4, zero, and 0.6, showing changing slice radius." />
+          <figcaption><strong>Figure 4.</strong> Fixed-$x_4$ slices of $B^4$. The largest slice occurs at $x_4=0$; it contracts toward either endpoint.</figcaption>
+        </figure>
+        <div class="panel">
+          <label for="x4-slider">Interactive fixed-$x_4$ slice: <output id="x4-output">0.60</output></label>
+          <input id="x4-slider" type="range" min="-1" max="1" step="0.01" value="0.6" />
+          <div class="slice-demo">
+            <svg id="slice-view" viewBox="0 0 220 220" role="img" aria-label="A changing disk representing a two-dimensional projection of the three-dimensional slice of the four-dimensional ball.">
+              <circle cx="110" cy="110" r="80" fill="none" stroke="#ddd5c7" stroke-width="1" stroke-dasharray="3 3" />
+              <circle id="slice-circle" class="slice-circle" cx="110" cy="110" r="64" />
+              <text id="slice-text" class="slice-label" x="110" y="208" text-anchor="middle">slice radius = 0.80</text>
+            </svg>
+            <p class="small">The circle changes only as a <em>2D projection</em> of the actual 3D slice. Its displayed radius is the exact 3-ball radius $\sqrt{1-x_4^2}$.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="dimension-section">
+        <div class="dimension-badge">DIMENSION 5</div>
+        <h2>$\mathbb{R}^5$: one more nested angle</h2>
+        <p>The angle $\beta_3$ controls the new $x_5$ coordinate while scaling the entire four-dimensional direction. A concrete view is obtained by fixing or colour-encoding $x_5$ and projecting a coordinate pair from the remaining variables.</p>
+        <div class="equation">$$\begin{aligned}x_1&amp;=r\sin(\beta_3)\sin(\beta_2)\sin(\beta_1)\cos(\alpha),\\x_2&amp;=r\sin(\beta_3)\sin(\beta_2)\sin(\beta_1)\sin(\alpha),\\x_3&amp;=r\sin(\beta_3)\sin(\beta_2)\cos(\beta_1),\\x_4&amp;=r\sin(\beta_3)\cos(\beta_2),\\x_5&amp;=r\cos(\beta_3).\end{aligned}$$</div>
+        <p>Discretization variables: $r_i$, $\alpha_j$, and $\beta_{1,k},\beta_{2,\ell},\beta_{3,m}$. The added angle is not a decorative parameter: every choice changes both $x_5$ and the scale inherited by $x_1$ through $x_4$.</p>
+        <figure class="figure">
+          <img src="discretizing-balls-2d-to-7d/high_dimension_angle_nesting.svg" alt="Three schematic coordinate diagrams for dimensions five, six, and seven showing the new polar angle scaling the prior direction and supplying a new final coordinate." />
+          <figcaption><strong>Figure 5.</strong> The same recursive construction in dimensions five through seven. These are angle-coordinate diagrams, not literal high-dimensional renderings.</figcaption>
+        </figure>
+      </div>
+
+      <div class="dimension-section">
+        <div class="dimension-badge">DIMENSION 6</div>
+        <h2>$\mathbb{R}^6$: coordinate-pair projections</h2>
+        <p>For $B^6$, a coordinate-pair projection such as $(x_1,x_3)$ records two components of each candidate while deliberately discarding the others. It is a faithful projection of a finite point set, not an attempted rendering of a six-dimensional object.</p>
+        <div class="equation">$$\begin{aligned}x_1&amp;=r\sin(\beta_4)\sin(\beta_3)\sin(\beta_2)\sin(\beta_1)\cos(\alpha),\\x_2&amp;=r\sin(\beta_4)\sin(\beta_3)\sin(\beta_2)\sin(\beta_1)\sin(\alpha),\\x_3&amp;=r\sin(\beta_4)\sin(\beta_3)\sin(\beta_2)\cos(\beta_1),\\x_4&amp;=r\sin(\beta_4)\sin(\beta_3)\cos(\beta_2),\\x_5&amp;=r\sin(\beta_4)\cos(\beta_3),\\x_6&amp;=r\cos(\beta_4).\end{aligned}$$</div>
+        <p>Discretization variables: $r_i$, $\alpha_j$, and $\beta_{1,k},\beta_{2,\ell},\beta_{3,m},\beta_{4,n}$. Four polar grids are now multiplied together.</p>
+      </div>
+
+      <div class="dimension-section">
+        <div class="dimension-badge">DIMENSION 7</div>
+        <h2>$\mathbb{R}^7$: linked projections of a finite sample</h2>
+        <p>At seven dimensions, coordinate-pair views are especially useful. Different panels below show the same sampled candidates in $(x_1,x_2)$, $(x_1,x_3)$, $(x_1,x_4)$, and $(x_2,x_3)$; colour records $x_5$. No panel represents $B^7$ literally.</p>
+        <div class="equation">$$\begin{aligned}x_1&amp;=r\sin(\beta_5)\sin(\beta_4)\sin(\beta_3)\sin(\beta_2)\sin(\beta_1)\cos(\alpha),\\x_2&amp;=r\sin(\beta_5)\sin(\beta_4)\sin(\beta_3)\sin(\beta_2)\sin(\beta_1)\sin(\alpha),\\x_3&amp;=r\sin(\beta_5)\sin(\beta_4)\sin(\beta_3)\sin(\beta_2)\cos(\beta_1),\\x_4&amp;=r\sin(\beta_5)\sin(\beta_4)\sin(\beta_3)\cos(\beta_2),\\x_5&amp;=r\sin(\beta_5)\sin(\beta_4)\cos(\beta_3),\\x_6&amp;=r\sin(\beta_5)\cos(\beta_4),\\x_7&amp;=r\cos(\beta_5).\end{aligned}$$</div>
+        <p>Discretization variables: $r_i$, $\alpha_j$, and five polar-angle grids $\beta_1$ through $\beta_5$.</p>
+        <figure class="figure">
+          <img src="discretizing-balls-2d-to-7d/ball_7d_coordinate_projections.svg" alt="Four coordinate-pair projections of 420 sampled points from the seven-dimensional unit ball, with point color encoding x5." />
+          <figcaption><strong>Figure 6.</strong> Coordinate-pair projections of a finite sample from $B^7$. Colour shows $x_5$ only; the remaining coordinates are suppressed.</figcaption>
+        </figure>
+      </div>
+
+      <h2>From continuum to a tensor grid</h2>
+      <p>Place the origin separately and choose positive radial shells, equally spaced azimuths, and simple polar grids:</p>
+      <div class="equation">$$r_i=\frac{i}{N_r},\ i=1,\ldots,N_r;\qquad \alpha_j=\frac{2\pi j}{N_\alpha},\ j=0,\ldots,N_\alpha-1;\qquad \beta_{q,k}=\frac{\pi k}{N_{\beta_q}-1},\ k=0,\ldots,N_{\beta_q}-1.$$</div>
+      <p>Here $N_{\beta_q}\geq2$. The straightforward tensor-product <em>parameter-combination</em> count is</p>
+      <div class="equation">$$1+N_rN_\alpha\prod_{q=1}^{d-2}N_{\beta_q}.$$</div>
+      <p>This is nominal, not necessarily the number of distinct Cartesian points. At a polar endpoint, a sine factor vanishes. In $\mathbb{R}^3$, for example, $\beta_1=0$ gives $(0,0,r)$ for every azimuth $\alpha$.</p>
+      <div class="pole-demo">
+        <svg viewBox="0 0 180 140" role="img" aria-label="A schematic sphere with multiple azimuth lines meeting at the north pole.">
+          <circle cx="90" cy="70" r="55" fill="#e8f0f8" stroke="#1d4f91" stroke-width="1.5" />
+          <path d="M90 15 C45 48,45 92,90 125 M90 15 C135 48,135 92,90 125 M90 15 C65 48,65 92,90 125 M90 15 C115 48,115 92,90 125" fill="none" stroke="#7fa6cd" stroke-width="1" />
+          <circle cx="90" cy="15" r="4" fill="#a85035" /><text x="98" y="21" font-size="11" fill="#a85035">$\beta_1=0$</text>
+        </svg>
+        <p class="small"><strong>Coordinate degeneracy at a pole.</strong> Many different azimuth indices represent the same Cartesian point. A practical implementation may deduplicate points, but the nominal combination count remains useful for understanding the cost of a direct tensor grid.</p>
+      </div>
+
+      <div class="panel">
+        <h3>Interactive grid-growth calculator</h3>
+        <p class="small">For a common $N_\beta$, the nominal count is $1+N_rN_\alpha N_\beta^{d-2}$. The bars use a logarithmic visual scale so small and large dimensions remain visible together.</p>
+        <div class="controls">
+          <label for="grid-d">Dimension $d$<select id="grid-d"><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7" selected>7</option></select></label>
+          <label for="grid-r">$N_r$<input id="grid-r" type="number" min="1" max="100" value="5" /></label>
+          <label for="grid-alpha">$N_\alpha$<input id="grid-alpha" type="number" min="1" max="360" value="24" /></label>
+          <label for="grid-beta">Common $N_\beta$<input id="grid-beta" type="number" min="2" max="100" value="12" /></label>
+        </div>
+        <div class="result">
+          <div><div class="small">Nominal parameter combinations</div><div id="grid-count" class="count">29,859,841</div><div id="grid-formula" class="small">$1 + 5 \cdot 24 \cdot 12^5$</div></div>
+          <div id="grid-bars" class="bar-chart" aria-label="Log-scale bar chart of nominal counts from dimension two to seven"></div>
+        </div>
+      </div>
+      <figure class="figure">
+        <img src="discretizing-balls-2d-to-7d/tensor_grid_growth.svg" alt="Logarithmic bar chart of tensor-grid counts from dimension two through seven with values 121 through 29,859,841." />
+        <figcaption><strong>Figure 7.</strong> With $N_r=5$, $N_\alpha=24$, and common $N_\beta=12$, the direct grid rises from 121 combinations in two dimensions to 29,859,841 in seven.</figcaption>
+      </figure>
+
+      <h2>Equal angles are not equal area</h2>
+      <p>An angular tensor grid is easy to construct and index, but it is not an equal-area design. On an ordinary sphere, longitude lines converge at the poles. Equal azimuth increments therefore produce much denser surface points near the poles than near the equator. The same Jacobian effect persists in hyperspherical coordinates.</p>
+      <p>Uniform radius spacing has a different meaning from uniform volume. For a point uniformly distributed in the unit $d$-ball,</p>
+      <div class="equation">$$F_R(r)=r^d,\qquad f_R(r)=d r^{d-1},\qquad R=U^{1/d}\quad\text{for }U\sim\operatorname{Uniform}(0,1).$$</div>
+      <p>The last expression gives a convenient uniform-volume radial draw. It places more shell radii near one as dimension rises. Neither choice is universally superior: optimal design may seek candidate or support points informative for a model, rather than a sample uniform in physical volume.</p>
+      <figure class="figure">
+        <img src="discretizing-balls-2d-to-7d/radial_distribution.svg" alt="A plot of radial probability densities for dimensions two, four, and seven, beside a comparison of equal radial spacing and equal-volume shell radii in four dimensions." />
+        <figcaption><strong>Figure 8.</strong> Uniform-volume radial distributions shift outward with dimension. Equal-$r$ shells and equal-volume shells encode different geometric goals.</figcaption>
+      </figure>
+
+      <h2>Unit-ball geometry from 2D to 7D</h2>
+      <p>The unit-ball volume and boundary measure are</p>
+      <div class="equation">$$V_d=\frac{\pi^{d/2}}{\Gamma(d/2+1)},\qquad A_{d-1}=dV_d.$$</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>$d$</th><th>Ball</th><th>Boundary</th><th>Polar angles</th><th>$V_d$</th><th>$A_{d-1}$</th></tr></thead>
+          <tbody>
+            <tr><td>2</td><td>$B^2$</td><td>$S^1$</td><td>0</td><td>$\pi\approx3.1416$</td><td>$2\pi\approx6.2832$</td></tr>
+            <tr><td>3</td><td>$B^3$</td><td>$S^2$</td><td>1</td><td>$4\pi/3\approx4.1888$</td><td>$4\pi\approx12.5664$</td></tr>
+            <tr><td>4</td><td>$B^4$</td><td>$S^3$</td><td>2</td><td>$\pi^2/2\approx4.9348$</td><td>$2\pi^2\approx19.7392$</td></tr>
+            <tr><td>5</td><td>$B^5$</td><td>$S^4$</td><td>3</td><td>$8\pi^2/15\approx5.2638$</td><td>$8\pi^2/3\approx26.3189$</td></tr>
+            <tr><td>6</td><td>$B^6$</td><td>$S^5$</td><td>4</td><td>$\pi^3/6\approx5.1677$</td><td>$\pi^3\approx31.0063$</td></tr>
+            <tr><td>7</td><td>$B^7$</td><td>$S^6$</td><td>5</td><td>$16\pi^3/105\approx4.7248$</td><td>$16\pi^3/15\approx33.0734$</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <figure class="figure">
+        <img src="discretizing-balls-2d-to-7d/unit_ball_geometry.svg" alt="Two line charts: unit-ball volume rises from dimensions two to five and then declines through seven, while the fraction in the outer ten percent of radius rises from two to seven." />
+        <figcaption><strong>Figure 9.</strong> Unit-ball volume does not simply increase with dimension. The right panel isolates a distinct radial effect relevant to shell placement.</figcaption>
+      </figure>
+
+      <h2>Volume near the boundary</h2>
+      <p>For a uniform point in $B^d$, the probability that its radius lies in the outer band of width $\varepsilon$ is</p>
+      <div class="equation">$$\Pr(R\geq1-\varepsilon)=1-(1-\varepsilon)^d.$$</div>
+      <p>With $\varepsilon=0.1$, this is $0.190$ for $d=2$, $0.271$ for $d=3$, $0.344$ for $d=4$, $0.410$ for $d=5$, $0.469$ for $d=6$, and $0.522$ for $d=7$. A larger portion of uniform volume consequently lies in the outer 10% of the radial coordinate as $d$ grows. This directly affects how a finite radial construction represents interior and boundary regions.</p>
+
+      <h2>Information matrices and optimal design</h2>
+      <p>The candidate grid is only one source of computational growth. In polynomial regression of total degree $k$ in $d$ variables, the number of monomial regression terms is</p>
+      <div class="equation">$$p(d,k)=\binom{d+k}{k}.$$</div>
+      <p>The information matrix is therefore $p\times p$. A-optimality and D-optimality are examples of criteria evaluated from that matrix. In a direct search, increasing dimension can enlarge both the candidate design space and the matrix on which the criterion operates.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Dimension $d$</th><th>$k=2$</th><th>$k=3$</th><th>$k=4$</th><th>$k=5$</th></tr></thead>
+          <tbody>
+            <tr><td>2</td><td>$6\times6$</td><td>$10\times10$</td><td>$15\times15$</td><td>$21\times21$</td></tr>
+            <tr><td>3</td><td>$10\times10$</td><td>$20\times20$</td><td>$35\times35$</td><td>$56\times56$</td></tr>
+            <tr><td>4</td><td>$15\times15$</td><td>$35\times35$</td><td>$70\times70$</td><td>$126\times126$</td></tr>
+            <tr><td>5</td><td>$21\times21$</td><td>$56\times56$</td><td>$126\times126$</td><td>$252\times252$</td></tr>
+            <tr><td>6</td><td>$28\times28$</td><td>$84\times84$</td><td>$210\times210$</td><td>$462\times462$</td></tr>
+            <tr><td>7</td><td>$36\times36$</td><td>$120\times120$</td><td>$330\times330$</td><td>$792\times792$</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Stereographic Projection: Dropping One Dimension</h2>
+      <p>Stereographic projection concerns the boundary sphere $S^{d-1}=\{x\in\mathbb{R}^d:x_1^2+\cdots+x_d^2=1\}$, not the filled ball. Remove $N=(0,\ldots,0,1)$ and project a point $x=(x_1,\ldots,x_d)\ne N$ onto the equatorial plane $x_d=0$.</p>
+      <div class="equation">$$L(t)=N+t(x-N)=(tx_1,\ldots,tx_{d-1},1+t(x_d-1)).$$</div>
+      <p>The target lies where the last coordinate vanishes. Thus $1+t(x_d-1)=0$, so $t=1/(1-x_d)$. Every retained coordinate is scaled by that same line-intersection factor:</p>
+      <div class="equation">$$\sigma_d:S^{d-1}\setminus\{N\}\to\mathbb{R}^{d-1},\qquad x_i^*=\frac{x_i}{1-x_d}\quad(i=1,\ldots,d-1).$$</div>
+      <p>Writing $\rho^2=\sum_{i=1}^{d-1}(x_i^*)^2$, the inverse is</p>
+      <div class="equation">$$x_i=\frac{2x_i^*}{1+\rho^2}\quad(i=1,\ldots,d-1),\qquad x_d=\frac{\rho^2-1}{\rho^2+1}.$$</div>
+      <p>Indeed, substituting gives $\sum_{i=1}^{d-1}x_i^2+x_d^2=4\rho^2/(1+\rho^2)^2+(\rho^2-1)^2/(1+\rho^2)^2=1$.</p>
+      <div class="interactive-study">
+        <h3>From the familiar sphere to the plane: $S^2\to\mathbb{R}^2$</h3>
+        <p class="small">Move $P$ toward the north pole. Its projected point $Y$ runs far out in the equatorial plane because the denominator $1-x_3$ approaches zero.</p>
+        <canvas id="stereo-canvas" class="visual-canvas stereo-canvas" aria-label="Interactive cross-sectional diagram of stereographic projection from a sphere north pole onto the equatorial plane."></canvas>
+        <div class="study-controls">
+          <label for="stereo-angle">Location of $P$ away from north pole<input id="stereo-angle" type="range" min="0.16" max="3.0" step="0.01" value="1.35" /></label>
+          <div id="stereo-readout" class="study-readout" aria-live="polite">Projected radial coordinate $\lVert y\rVert=1.00$.</div>
+        </div>
+      </div>
+      <div class="panel note"><strong>North pole as infinity.</strong> At $N$, the denominator $1-x_d$ is zero. As $x\to N$, $\lVert\sigma_d(x)\rVert\to\infty$. Stereographic projection preserves angles locally (it is conformal), but not Euclidean distances or areas.</div>
+      <h3>Explicit transformation: $7D\to6D$</h3>
+      <p>For $x=(x_1,x_2,x_3,x_4,x_5,x_6,x_7)\in S^6\subset\mathbb{R}^7$ and $N=(0,0,0,0,0,0,1)$,</p>
+      <div class="equation">$$(x_1,\ldots,x_6,x_7)\ \xrightarrow{\ \sigma_7\ }\ (x_1^*,\ldots,x_6^*)=\left(\frac{x_1}{1-x_7},\ldots,\frac{x_6}{1-x_7}\right)\in\mathbb{R}^6.$$</div>
+      <p>Conversely, with $\rho^2=(x_1^*)^2+\cdots+(x_6^*)^2$, each $x_i=2x_i^*/(1+\rho^2)$ for $i=1,\ldots,6$, and $x_7=(\rho^2-1)/(\rho^2+1)$.</p>
+      <div class="panel"><strong>Numerical $S^6\to\mathbb{R}^6$ example.</strong> Normalize $(1,2,3,4,5,6,7)$: $x\approx(0.084515,0.169031,0.253546,0.338062,0.422577,0.507093,0.591608)$, with $\lVert x\rVert^2=1$. Here $1-x_7\approx0.408392$, hence $x^*\approx(0.206947,0.413894,0.620840,0.827787,1.034734,1.241681)$. The inverse recovers the displayed seven coordinates to floating-point precision.</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Ambient space</th><th>Source sphere</th><th>Removed coordinate</th><th>Explicit target map</th></tr></thead>
+          <tbody>
+            <tr><td>$\mathbb{R}^7$</td><td>$S^6$</td><td>$x_7$</td><td>$(x_1/(1-x_7),\ldots,x_6/(1-x_7))\in\mathbb{R}^6$</td></tr>
+            <tr><td>$\mathbb{R}^6$</td><td>$S^5$</td><td>$x_6$</td><td>$(x_1/(1-x_6),\ldots,x_5/(1-x_6))\in\mathbb{R}^5$</td></tr>
+            <tr><td>$\mathbb{R}^5$</td><td>$S^4$</td><td>$x_5$</td><td>$(x_1/(1-x_5),\ldots,x_4/(1-x_5))\in\mathbb{R}^4$</td></tr>
+            <tr><td>$\mathbb{R}^4$</td><td>$S^3$</td><td>$x_4$</td><td>$(x_1/(1-x_4),x_2/(1-x_4),x_3/(1-x_4))\in\mathbb{R}^3$</td></tr>
+            <tr><td>$\mathbb{R}^3$</td><td>$S^2$</td><td>$x_3$</td><td>$(x_1/(1-x_3),x_2/(1-x_3))\in\mathbb{R}^2$</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="interactive-study">
+        <h3>$S^3\subset\mathbb{R}^4\to\mathbb{R}^3$: a genuinely three-dimensional target</h3>
+        <p class="small">This is $\sigma_4(x_1,x_2,x_3,x_4)=(x_1^*,x_2^*,x_3^*)$. The rotating cloud is the full 3D target; the companion panel is only the screen projection $\pi_{12}(x^*)=(x_1^*,x_2^*)$, with $x_3^*$ encoded by colour. It is not a map from $\mathbb{R}^4$ to $\mathbb{R}^2$.</p>
+        <div class="media-grid"><canvas id="s3-target-canvas" class="visual-canvas space-canvas" aria-label="Rotating three-dimensional stereographic target from points on the three-sphere."></canvas><canvas id="s3-screen-canvas" class="visual-canvas explorer-canvas" aria-label="Two-dimensional visualization of the three-dimensional stereographic target with third coordinate encoded by color."></canvas></div>
+      </div>
+      <div class="interactive-study">
+        <h3>Project one dimension away</h3>
+        <p class="small">The deterministic sample lies on the selected source sphere. The panel is a 2D coordinate view $(y_1,y_2)$ of the full $\mathbb{R}^{d-1}$ stereographic coordinates; when available, colour encodes $y_3$.</p>
+        <div class="stereo-layout">
+          <canvas id="projection-canvas" class="visual-canvas explorer-canvas" aria-label="A two-dimensional coordinate projection of a deterministic set of stereographic coordinates."></canvas>
+          <div>
+            <label for="projection-d">Dimension drop<select id="projection-d"><option value="7" selected>7 → 6</option><option value="6">6 → 5</option><option value="5">5 → 4</option><option value="4">4 → 3</option><option value="3">3 → 2</option></select></label>
+            <p id="projection-readout" class="study-readout">Viewing $(y_1,y_2)$ from $\mathbb{R}^6$.</p>
+            <div class="projection-key"><span>negative $y_3$</span><span class="warm">positive $y_3$</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="panel"><h3>$S^6$ coordinate inspector</h3><label for="s6-example">Deterministic point<select id="s6-example"><option value="0">Point 1</option><option value="1">Point 2</option><option value="2">Point 3</option></select></label><p id="s6-inspector" class="study-readout">Loading coordinates.</p></div>
+      <div class="panel">
+        <h3>Dimensional cascade</h3>
+        <div class="cascade" aria-label="Dimensional cascade from seven through two dimensions by stereographic projection">
+          <div class="cascade-step"><span class="cascade-from">$\mathbb{R}^7$</span><span class="cascade-boundary">boundary $S^6$</span><span class="cascade-to">$\mathbb{R}^6$</span></div>
+          <div class="cascade-step"><span class="cascade-from">$\mathbb{R}^6$</span><span class="cascade-boundary">boundary $S^5$</span><span class="cascade-to">$\mathbb{R}^5$</span></div>
+          <div class="cascade-step"><span class="cascade-from">$\mathbb{R}^5$</span><span class="cascade-boundary">boundary $S^4$</span><span class="cascade-to">$\mathbb{R}^4$</span></div>
+          <div class="cascade-step"><span class="cascade-from">$\mathbb{R}^4$</span><span class="cascade-boundary">boundary $S^3$</span><span class="cascade-to">$\mathbb{R}^3$</span></div>
+          <div class="cascade-step"><span class="cascade-from">$\mathbb{R}^3$</span><span class="cascade-boundary">boundary $S^2$</span><span class="cascade-to">$\mathbb{R}^2$</span></div>
+        </div>
+        <p class="small">Each row is the stereographic projection for the boundary sphere in that ambient dimension. The diagram does not represent repeated projection of one unchanged point through the cascade.</p>
+      </div>
+      <p>Stereographic projection offers a useful coordinate representation for a finite design on $S^{d-1}$. It is conformal, so it preserves angles locally, but it does not preserve distances and becomes unbounded near the excluded pole. Those properties matter when interpreting clustering after projection.</p>
+
+      <h2>Compact reference</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>$d$</th><th>Ball / boundary</th><th>Coordinates required</th><th>Polar angles</th><th>Nominal grid count</th><th>$p(d,4)\times p(d,4)$</th></tr></thead>
+          <tbody>
+            <tr><td>2</td><td>$B^2/S^1$</td><td>$r,\alpha$</td><td>0</td><td>$1+N_rN_\alpha$</td><td>$15\times15$</td></tr>
+            <tr><td>3</td><td>$B^3/S^2$</td><td>$r,\alpha,\beta_1$</td><td>1</td><td>$1+N_rN_\alpha N_{\beta_1}$</td><td>$35\times35$</td></tr>
+            <tr><td>4</td><td>$B^4/S^3$</td><td>$r,\alpha,\beta_1,\beta_2$</td><td>2</td><td>$1+N_rN_\alpha N_{\beta_1}N_{\beta_2}$</td><td>$70\times70$</td></tr>
+            <tr><td>5</td><td>$B^5/S^4$</td><td>$r,\alpha,\beta_1,\ldots,\beta_3$</td><td>3</td><td>$1+N_rN_\alpha\prod_{q=1}^{3}N_{\beta_q}$</td><td>$126\times126$</td></tr>
+            <tr><td>6</td><td>$B^6/S^5$</td><td>$r,\alpha,\beta_1,\ldots,\beta_4$</td><td>4</td><td>$1+N_rN_\alpha\prod_{q=1}^{4}N_{\beta_q}$</td><td>$210\times210$</td></tr>
+            <tr><td>7</td><td>$B^7/S^6$</td><td>$r,\alpha,\beta_1,\ldots,\beta_5$</td><td>5</td><td>$1+N_rN_\alpha\prod_{q=1}^{5}N_{\beta_q}$</td><td>$330\times330$</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Radial-angular tensor grids are transparent baseline constructions. Their indexed structure is valuable, but their rapid growth, coordinate degeneracies, and nonuniform geometry make careful candidate-set construction central in numerical optimal design.</p>
+
+      <div class="footer-nav"><a href="../research.html">Back to research</a><span class="sep">|</span><a href="../index.html">Home</a></div>
+    </section>
+  </div>
+  <script>
+    (function () {
+      const x4 = document.getElementById('x4-slider');
+      const x4Output = document.getElementById('x4-output');
+      const circle = document.getElementById('slice-circle');
+      const sliceText = document.getElementById('slice-text');
+      function updateSlice() {
+        const value = Number(x4.value);
+        const radius = Math.sqrt(Math.max(0, 1 - value * value));
+        x4Output.value = value.toFixed(2);
+        circle.setAttribute('r', String(80 * radius));
+        sliceText.textContent = 'slice radius = ' + radius.toFixed(3);
+      }
+      x4.addEventListener('input', updateSlice);
+      updateSlice();
+
+      const inputs = ['grid-d', 'grid-r', 'grid-alpha', 'grid-beta'].map(id => document.getElementById(id));
+      const count = document.getElementById('grid-count');
+      const formula = document.getElementById('grid-formula');
+      const bars = document.getElementById('grid-bars');
+      function numeric(input, minimum) { return Math.max(minimum, Math.floor(Number(input.value) || minimum)); }
+      function updateGrid() {
+        const d = numeric(inputs[0], 2), nr = numeric(inputs[1], 1), na = numeric(inputs[2], 1), nb = numeric(inputs[3], 2);
+        const values = [];
+        for (let dimension = 2; dimension <= 7; dimension++) values.push(1 + nr * na * nb ** (dimension - 2));
+        const value = values[d - 2];
+        count.textContent = value.toLocaleString('en-US');
+        formula.textContent = '1 + ' + nr + ' * ' + na + ' * ' + nb + '^' + (d - 2);
+        const logs = values.map(v => Math.log10(v));
+        const max = Math.max(...logs);
+        bars.replaceChildren(...values.map((v, index) => {
+          const bar = document.createElement('div');
+          bar.className = 'bar' + (index + 2 === d ? ' active' : '');
+          bar.style.height = Math.max(8, 100 * Math.log10(v) / max) + '%';
+          bar.title = 'd=' + (index + 2) + ': ' + v.toLocaleString('en-US');
+          const label = document.createElement('span'); label.textContent = 'd=' + (index + 2); bar.appendChild(label); return bar;
+        }));
+      }
+      inputs.forEach(input => input.addEventListener('input', updateGrid));
+      updateGrid();
+    }());
+
+    (function () {
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const palette = { ink: '#1b1b1b', muted: '#666', line: '#ddd5c7', blue: '#1d4f91', pale: '#dce8f5', mid: '#7fa6cd', rust: '#a85035', gold: '#b58a30', paper: '#fffdf9' };
+
+      function responsiveCanvas(canvas, draw) {
+        const context = canvas.getContext('2d');
+        function resize() {
+          const rect = canvas.getBoundingClientRect();
+          const ratio = Math.min(window.devicePixelRatio || 1, 2);
+          canvas.width = Math.max(1, Math.round(rect.width * ratio));
+          canvas.height = Math.max(1, Math.round(rect.height * ratio));
+          context.setTransform(ratio, 0, 0, ratio, 0, 0);
+          draw(rect.width, rect.height, context);
+        }
+        new ResizeObserver(resize).observe(canvas);
+        resize();
+        return { context, redraw: () => { const rect = canvas.getBoundingClientRect(); draw(rect.width, rect.height, context); } };
+      }
+
+      const disk = {
+        canvas: document.getElementById('disk-canvas'), r: document.getElementById('disk-r'), alpha: document.getElementById('disk-alpha'), mode: document.getElementById('disk-mode'),
+        play: document.getElementById('disk-play'), pause: document.getElementById('disk-pause'), reset: document.getElementById('disk-reset'), readout: document.getElementById('disk-readout'),
+        visible: 6, building: false, last: 0, view: null
+      };
+      function diskValues() { return { nr: Number(disk.r.value), na: Number(disk.alpha.value), mode: disk.mode.value }; }
+      function drawDisk(width, height, ctx) {
+        const { nr, na, mode } = diskValues();
+        disk.visible = Math.min(disk.visible, nr);
+        const shown = disk.building ? disk.visible : nr;
+        const highlight = Math.max(1, Math.ceil(nr / 2));
+        const cx = width / 2, cy = height / 2, radius = Math.min(width, height) * .365;
+        ctx.clearRect(0, 0, width, height);
+        ctx.fillStyle = palette.paper; ctx.fillRect(0, 0, width, height);
+        ctx.beginPath(); ctx.arc(cx, cy, radius, 0, Math.PI * 2); ctx.fillStyle = '#f5f9fd'; ctx.fill(); ctx.strokeStyle = palette.blue; ctx.lineWidth = 1.8; ctx.stroke();
+        const maxShell = shown;
+        for (let j = 0; j < na; j++) {
+          const angle = j * Math.PI * 2 / na;
+          ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(cx + radius * Math.cos(angle), cy - radius * Math.sin(angle));
+          ctx.strokeStyle = 'rgba(127,166,205,.32)'; ctx.lineWidth = .7; ctx.stroke();
+        }
+        for (let i = 1; i <= maxShell; i++) {
+          const shell = radius * i / nr;
+          if (mode === 'filled') { ctx.beginPath(); ctx.arc(cx, cy, shell, 0, Math.PI * 2); ctx.fillStyle = i === highlight ? 'rgba(168,80,53,.13)' : 'rgba(29,79,145,.055)'; ctx.fill(); }
+          ctx.beginPath(); ctx.arc(cx, cy, shell, 0, Math.PI * 2);
+          ctx.strokeStyle = i === highlight ? palette.rust : 'rgba(29,79,145,.62)'; ctx.lineWidth = i === highlight ? 2.1 : .9; ctx.stroke();
+          for (let j = 0; j < na; j++) {
+            const angle = j * Math.PI * 2 / na;
+            ctx.beginPath(); ctx.arc(cx + shell * Math.cos(angle), cy - shell * Math.sin(angle), i === highlight ? 2.6 : 1.65, 0, Math.PI * 2);
+            ctx.fillStyle = i === highlight ? palette.rust : palette.blue; ctx.globalAlpha = i === highlight ? .95 : .72; ctx.fill(); ctx.globalAlpha = 1;
+          }
+        }
+        const pointAngle = 2 * Math.PI * 2 / na;
+        const chosenRadius = radius * highlight / nr;
+        if (highlight <= shown) {
+          const px = cx + chosenRadius * Math.cos(pointAngle), py = cy - chosenRadius * Math.sin(pointAngle);
+          ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(px, py); ctx.strokeStyle = palette.gold; ctx.lineWidth = 2.5; ctx.stroke();
+          ctx.beginPath(); ctx.arc(px, py, 5.4, 0, Math.PI * 2); ctx.fillStyle = palette.gold; ctx.fill();
+          ctx.beginPath(); ctx.arc(cx, cy, radius * .18, -pointAngle, 0, true); ctx.strokeStyle = palette.gold; ctx.lineWidth = 1.6; ctx.stroke();
+          ctx.fillStyle = palette.rust; ctx.font = '600 12px Inter'; ctx.fillText('r = ' + (highlight / nr).toFixed(3), (cx + px) / 2 + 7, (cy + py) / 2 - 5);
+          ctx.fillText('alpha', cx + radius * .22, cy - 7);
+        }
+        ctx.beginPath(); ctx.arc(cx, cy, 3.8, 0, Math.PI * 2); ctx.fillStyle = palette.ink; ctx.fill();
+        ctx.fillStyle = palette.muted; ctx.font = '12px Inter'; ctx.fillText('origin', cx + 8, cy + 16); ctx.fillText('unit boundary', cx - radius * .36, cy + radius + 21);
+        disk.readout.textContent = disk.building ? 'Building sub-ball B²(' + (Math.max(1, shown) / nr).toFixed(3) + ') of ' + nr + '; its boundary has ' + na + ' candidate points.' : 'Selected sub-ball B²(' + (highlight / nr).toFixed(3) + '); boundary radius r = ' + (highlight / nr).toFixed(3) + '; points on boundary = ' + na + '.';
+      }
+      disk.view = responsiveCanvas(disk.canvas, drawDisk);
+      function resetDisk() { disk.building = false; disk.visible = diskValues().nr; disk.view.redraw(); }
+      disk.r.addEventListener('input', resetDisk); disk.alpha.addEventListener('input', resetDisk); disk.mode.addEventListener('input', resetDisk);
+      disk.play.addEventListener('click', () => { disk.visible = 0; disk.building = true; disk.last = 0; requestAnimationFrame(buildDisk); });
+      disk.pause.addEventListener('click', () => { disk.building = false; disk.view.redraw(); });
+      disk.reset.addEventListener('click', resetDisk);
+      function buildDisk(time) {
+        if (!disk.building || document.hidden) return;
+        if (!disk.last) disk.last = time;
+        if (time - disk.last > 900) { disk.visible += 1; disk.last = time; if (disk.visible >= diskValues().nr) disk.building = false; disk.view.redraw(); }
+        if (disk.building) requestAnimationFrame(buildDisk);
+      }
+
+      const sphere = {
+        canvas: document.getElementById('sphere-canvas'), r: document.getElementById('sphere-r'), angular: document.getElementById('sphere-angular'), show: document.getElementById('sphere-show'),
+        play: document.getElementById('sphere-play'), pause: document.getElementById('sphere-pause'), reset: document.getElementById('sphere-reset'), build: document.getElementById('sphere-build'), buildPause: document.getElementById('sphere-build-pause'), buildReset: document.getElementById('sphere-build-reset'), readout: document.getElementById('sphere-readout'),
+        yaw: -.72, pitch: .38, rotating: !reducedMotion, building: false, visible: 4, last: 0, drag: null, view: null
+      };
+      function sphereValues() { return { nr: Number(sphere.r.value), angular: Number(sphere.angular.value), show: sphere.show.value }; }
+      function rotate(point) {
+        const cy = Math.cos(sphere.yaw), sy = Math.sin(sphere.yaw), cp = Math.cos(sphere.pitch), sp = Math.sin(sphere.pitch);
+        const x = cy * point[0] + sy * point[2], z = -sy * point[0] + cy * point[2];
+        return [x, cp * point[1] - sp * z, sp * point[1] + cp * z];
+      }
+      function project(point, width, height, scale) {
+        const p = rotate(point), factor = scale / (3.8 - p[2]);
+        return { x: width / 2 + p[0] * factor, y: height / 2 - p[1] * factor, z: p[2], factor };
+      }
+      function drawPath3D(ctx, points, width, height, scale, color, lineWidth) {
+        ctx.beginPath();
+        points.forEach((point, index) => { const q = project(point, width, height, scale); if (index) ctx.lineTo(q.x, q.y); else ctx.moveTo(q.x, q.y); });
+        ctx.strokeStyle = color; ctx.lineWidth = lineWidth; ctx.stroke();
+      }
+      function drawSphere(width, height, ctx) {
+        const { nr, angular, show } = sphereValues();
+        sphere.visible = Math.min(sphere.visible, nr);
+        const shown = sphere.building ? sphere.visible : nr;
+        const scale = Math.min(width, height) * 1.34, guideSteps = 34;
+        const highlight = Math.max(1, Math.ceil(nr / 2));
+        ctx.clearRect(0, 0, width, height); ctx.fillStyle = palette.paper; ctx.fillRect(0, 0, width, height);
+        const axes = [[[-1.15, 0, 0], [1.15, 0, 0], 'x1'], [[0, -1.15, 0], [0, 1.15, 0], 'x2'], [[0, 0, -1.15], [0, 0, 1.15], 'x3']];
+        axes.forEach(([a, b, label]) => { const pa = project(a, width, height, scale), pb = project(b, width, height, scale); ctx.beginPath(); ctx.moveTo(pa.x, pa.y); ctx.lineTo(pb.x, pb.y); ctx.strokeStyle = 'rgba(102,102,102,.38)'; ctx.lineWidth = 1; ctx.stroke(); ctx.fillStyle = palette.muted; ctx.font = '12px Inter'; ctx.fillText(label, pb.x + 4, pb.y - 4); });
+        for (let shell = shown; shell >= 1; shell--) { const q = project([shell / nr, 0, 0], width, height, scale), o = project([0, 0, 0], width, height, scale), rr = Math.abs(q.x - o.x); ctx.beginPath(); ctx.arc(o.x, o.y, rr, 0, Math.PI * 2); ctx.fillStyle = shell === highlight ? 'rgba(168,80,53,.10)' : 'rgba(29,79,145,.045)'; ctx.fill(); }
+        if (show !== 'points') {
+          for (let shell = 1; shell <= shown; shell++) {
+            const radius = shell / nr, highlightShell = shell === highlight;
+            const color = highlightShell ? 'rgba(168,80,53,.70)' : 'rgba(29,79,145,.22)';
+            const lineWidth = highlightShell ? 1.2 : .65;
+            for (let betaIndex = 1; betaIndex < 5; betaIndex++) {
+              const beta = Math.PI * betaIndex / 5, line = [];
+              for (let k = 0; k <= guideSteps; k++) { const alpha = 2 * Math.PI * k / guideSteps; line.push([radius * Math.sin(beta) * Math.cos(alpha), radius * Math.sin(beta) * Math.sin(alpha), radius * Math.cos(beta)]); }
+              drawPath3D(ctx, line, width, height, scale, color, lineWidth);
+            }
+            for (let longitude = 0; longitude < 4; longitude++) {
+              const alpha = 2 * Math.PI * longitude / 4, line = [];
+              for (let k = 0; k <= guideSteps; k++) { const beta = Math.PI * k / guideSteps; line.push([radius * Math.sin(beta) * Math.cos(alpha), radius * Math.sin(beta) * Math.sin(alpha), radius * Math.cos(beta)]); }
+              drawPath3D(ctx, line, width, height, scale, color, lineWidth);
+            }
+          }
+        }
+        if (show !== 'guides') {
+          const points = [];
+          for (let shell = 1; shell <= shown; shell++) {
+            const radius = shell / nr, betaCount = Math.max(5, Math.floor(angular / 2));
+            points.push({ p: [0, 0, radius], shell }); points.push({ p: [0, 0, -radius], shell });
+            for (let b = 1; b < betaCount; b++) for (let a = 0; a < angular; a++) {
+              const beta = Math.PI * b / betaCount, alpha = 2 * Math.PI * a / angular;
+              points.push({ p: [radius * Math.sin(beta) * Math.cos(alpha), radius * Math.sin(beta) * Math.sin(alpha), radius * Math.cos(beta)], shell });
+            }
+          }
+          points.map(item => ({ ...item, q: project(item.p, width, height, scale) })).sort((a, b) => a.q.z - b.q.z).forEach(item => {
+            const highlighted = item.shell === highlight;
+            ctx.beginPath(); ctx.arc(item.q.x, item.q.y, highlighted ? 2.7 + item.q.z * .22 : 1.65 + item.q.z * .14, 0, Math.PI * 2);
+            ctx.fillStyle = highlighted ? palette.rust : palette.blue; ctx.globalAlpha = highlighted ? .88 : .58; ctx.fill(); ctx.globalAlpha = 1;
+          });
+        }
+        const origin = project([0, 0, 0], width, height, scale); ctx.beginPath(); ctx.arc(origin.x, origin.y, 3.4, 0, Math.PI * 2); ctx.fillStyle = palette.ink; ctx.fill();
+        ctx.fillStyle = palette.muted; ctx.font = '12px Inter'; ctx.fillText('origin', origin.x + 7, origin.y + 15);
+        sphere.readout.textContent = 'Showing ' + shown + ' of ' + nr + ' nested sub-balls; highlighted B³(' + (highlight / nr).toFixed(3) + ').';
+      }
+      sphere.view = responsiveCanvas(sphere.canvas, drawSphere);
+      function resetSphere() { sphere.yaw = -.72; sphere.pitch = .38; sphere.rotating = !reducedMotion; sphere.building = false; sphere.visible = sphereValues().nr; sphere.view.redraw(); }
+      sphere.r.addEventListener('input', () => { sphere.visible = sphereValues().nr; sphere.building = false; sphere.view.redraw(); }); sphere.angular.addEventListener('input', sphere.view.redraw); sphere.show.addEventListener('input', sphere.view.redraw);
+      sphere.play.addEventListener('click', () => { sphere.rotating = true; ensureSphereFrame(); }); sphere.pause.addEventListener('click', () => { sphere.rotating = false; }); sphere.reset.addEventListener('click', () => { resetSphere(); ensureSphereFrame(); });
+      sphere.build.addEventListener('click', () => { sphere.visible = 0; sphere.building = true; sphere.last = 0; sphere.view.redraw(); ensureSphereFrame(); }); sphere.buildPause.addEventListener('click', () => { sphere.building = false; }); sphere.buildReset.addEventListener('click', () => { sphere.building = false; sphere.visible = sphereValues().nr; sphere.view.redraw(); });
+      sphere.canvas.addEventListener('pointerdown', event => { sphere.drag = { x: event.clientX, y: event.clientY }; sphere.rotating = false; sphere.canvas.classList.add('dragging'); sphere.canvas.setPointerCapture(event.pointerId); });
+      sphere.canvas.addEventListener('pointermove', event => { if (!sphere.drag) return; sphere.yaw += (event.clientX - sphere.drag.x) * .009; sphere.pitch = Math.max(-1.25, Math.min(1.25, sphere.pitch + (event.clientY - sphere.drag.y) * .009)); sphere.drag = { x: event.clientX, y: event.clientY }; sphere.view.redraw(); });
+      function endDrag() { sphere.drag = null; sphere.canvas.classList.remove('dragging'); }
+      sphere.canvas.addEventListener('pointerup', endDrag); sphere.canvas.addEventListener('pointercancel', endDrag);
+      let sphereFrame = 0;
+      function ensureSphereFrame() { if (!sphereFrame && !document.hidden && (sphere.rotating || sphere.building)) sphereFrame = requestAnimationFrame(animateSphere); }
+      function animateSphere(time) {
+        sphereFrame = 0;
+        if (document.hidden) return;
+        if (sphere.rotating && !sphere.drag) { sphere.yaw += .0022; sphere.pitch += Math.sin(time / 3200) * .00035; }
+        if (sphere.building) { if (!sphere.last) sphere.last = time; if (time - sphere.last > 950) { sphere.visible += 1; sphere.last = time; if (sphere.visible >= sphereValues().nr) sphere.building = false; } }
+        if (sphere.rotating || sphere.building) { sphere.view.redraw(); ensureSphereFrame(); }
+      }
+      document.addEventListener('visibilitychange', ensureSphereFrame);
+      ensureSphereFrame();
+
+      const sliceBall = { canvas: document.getElementById('ball-slice-canvas'), input: document.getElementById('ball-slice-c'), readout: document.getElementById('ball-slice-readout'), view: null };
+      function drawBallSlice(width, height, ctx) { const nr = Number(sphere.r.value), c = Number(sliceBall.input.value), cx = width/2, cy = height/2, R = Math.min(width,height)*.38; ctx.clearRect(0,0,width,height); ctx.fillStyle=palette.paper;ctx.fillRect(0,0,width,height); for(let i=nr;i>=1;i--){const r=i/nr;if(Math.abs(c)>r)continue;const q=Math.sqrt(r*r-c*c)*R;ctx.beginPath();ctx.arc(cx,cy,q,0,Math.PI*2);ctx.fillStyle=i===Math.ceil(nr/2)?'rgba(168,80,53,.13)':'rgba(29,79,145,.06)';ctx.fill();ctx.strokeStyle=i===Math.ceil(nr/2)?palette.rust:'rgba(29,79,145,.52)';ctx.lineWidth=1;ctx.stroke();}ctx.beginPath();ctx.moveTo(cx-R,cy);ctx.lineTo(cx+R,cy);ctx.moveTo(cx,cy-R);ctx.lineTo(cx,cy+R);ctx.strokeStyle=palette.line;ctx.stroke();ctx.fillStyle=palette.muted;ctx.font='12px Inter';ctx.fillText('x1',cx+R-12,cy-7);ctx.fillText('x2',cx+7,cy-R+12);sliceBall.readout.textContent='At x3 = '+c.toFixed(2)+', B³(rᵢ) cuts x1² + x2² ≤ rᵢ² − c²; each visible disk has radius √(rᵢ² − c²).'; }
+      sliceBall.view=responsiveCanvas(sliceBall.canvas,drawBallSlice);sliceBall.input.addEventListener('input',sliceBall.view.redraw);sphere.r.addEventListener('input',sliceBall.view.redraw);
+
+      const stereo = { canvas: document.getElementById('stereo-canvas'), angle: document.getElementById('stereo-angle'), readout: document.getElementById('stereo-readout'), view: null };
+      function drawStereo(width, height, ctx) {
+        const theta = Number(stereo.angle.value), cx = width * .35, cy = height * .58, radius = Math.min(height * .31, width * .15);
+        const x = Math.sin(theta), z = Math.cos(theta), y = x / (1 - z), visibleY = Math.max(-3.1, Math.min(3.1, y));
+        const px = cx + radius * x, py = cy - radius * z, nx = cx, ny = cy - radius, yx = cx + visibleY * radius * .68;
+        ctx.clearRect(0, 0, width, height); ctx.fillStyle = palette.paper; ctx.fillRect(0, 0, width, height);
+        ctx.beginPath(); ctx.moveTo(width * .06, cy); ctx.lineTo(width * .94, cy); ctx.strokeStyle = palette.blue; ctx.lineWidth = 2; ctx.stroke();
+        ctx.fillStyle = palette.muted; ctx.font = '12px Inter'; ctx.fillText('equatorial plane  x3 = 0', width * .61, cy - 9);
+        ctx.beginPath(); ctx.arc(cx, cy, radius, 0, Math.PI * 2); ctx.fillStyle = '#eef4fb'; ctx.fill(); ctx.strokeStyle = palette.blue; ctx.lineWidth = 1.6; ctx.stroke();
+        ctx.setLineDash([4, 4]); ctx.beginPath(); ctx.moveTo(cx - radius, cy); ctx.lineTo(cx + radius, cy); ctx.strokeStyle = 'rgba(29,79,145,.48)'; ctx.lineWidth = 1; ctx.stroke(); ctx.setLineDash([]);
+        ctx.beginPath(); ctx.moveTo(nx, ny); ctx.lineTo(yx, cy); ctx.strokeStyle = palette.gold; ctx.lineWidth = 2; ctx.stroke();
+        ctx.beginPath(); ctx.arc(nx, ny, 4.5, 0, Math.PI * 2); ctx.fillStyle = palette.rust; ctx.fill(); ctx.beginPath(); ctx.arc(px, py, 5, 0, Math.PI * 2); ctx.fillStyle = palette.gold; ctx.fill(); ctx.beginPath(); ctx.arc(yx, cy, 4.5, 0, Math.PI * 2); ctx.fillStyle = palette.rust; ctx.fill();
+        ctx.fillStyle = palette.ink; ctx.font = '600 13px Inter'; ctx.fillText('N', nx + 8, ny - 7); ctx.fillText('P', px + 8, py - 7); ctx.fillText('Y', yx + 8, cy + 18);
+        if (Math.abs(y) > 3.1) { ctx.fillStyle = palette.rust; ctx.font = '12px Inter'; ctx.fillText('Y continues beyond this view', width * .58, cy + 30); }
+        stereo.readout.textContent = 'Projected radial coordinate |y| = ' + Math.abs(y).toFixed(3) + (Math.abs(y) > 3.1 ? ' (beyond the drawn plane)' : '.') ;
+      }
+      stereo.view = responsiveCanvas(stereo.canvas, drawStereo); stereo.angle.addEventListener('input', stereo.view.redraw);
+
+      const explorer = { canvas: document.getElementById('projection-canvas'), select: document.getElementById('projection-d'), readout: document.getElementById('projection-readout'), view: null, data: [] };
+      function fract(value) { return value - Math.floor(value); }
+      function deterministicSpherePoints(dimension, count) {
+        const points = [];
+        for (let sample = 0; points.length < count && sample < count * 3; sample++) {
+          const p = [], seed = sample + 1;
+          for (let coordinate = 0; coordinate < dimension; coordinate++) p.push(fract(Math.sin(seed * 12.9898 + coordinate * 78.233 + dimension * 37.719) * 43758.5453) * 2 - 1);
+          const norm = Math.hypot(...p); for (let coordinate = 0; coordinate < dimension; coordinate++) p[coordinate] /= norm;
+          if (p[dimension - 1] < .91) points.push(p);
+        }
+        return points;
+      }
+      function stereographic(point) { const denominator = 1 - point[point.length - 1]; return point.slice(0, -1).map(value => value / denominator); }
+      function prepareExplorer() { const d = Number(explorer.select.value); explorer.data = deterministicSpherePoints(d, 200).map(stereographic); explorer.readout.textContent = 'Viewing (y1, y2) from R^' + (d - 1) + '; colour encodes y3 when that coordinate exists.'; explorer.view.redraw(); }
+      function drawExplorer(width, height, ctx) {
+        const d = Number(explorer.select.value), pad = 31, data = explorer.data.length ? explorer.data : [ [0, 0] ];
+        const magnitudes = data.map(p => Math.hypot(p[0], p[1])).sort((a, b) => a - b), scale = Math.max(1, magnitudes[Math.floor(magnitudes.length * .9)]);
+        ctx.clearRect(0, 0, width, height); ctx.fillStyle = palette.paper; ctx.fillRect(0, 0, width, height);
+        const cx = width / 2, cy = height / 2, radius = Math.min(width, height) / 2 - pad;
+        ctx.beginPath(); ctx.arc(cx, cy, radius, 0, Math.PI * 2); ctx.strokeStyle = '#d6e1ee'; ctx.lineWidth = 1; ctx.stroke();
+        ctx.beginPath(); ctx.moveTo(pad, cy); ctx.lineTo(width - pad, cy); ctx.moveTo(cx, pad); ctx.lineTo(cx, height - pad); ctx.strokeStyle = palette.line; ctx.stroke();
+        data.forEach(p => { const u = Math.max(-1.12, Math.min(1.12, p[0] / scale)), v = Math.max(-1.12, Math.min(1.12, p[1] / scale)), colorValue = p.length > 2 ? Math.max(-1, Math.min(1, p[2] / scale)) : -.25; const red = Math.round(80 + 110 * Math.max(0, colorValue)), blue = Math.round(115 + 105 * Math.max(0, -colorValue)); ctx.beginPath(); ctx.arc(cx + u * radius * .82, cy - v * radius * .82, 2.3, 0, Math.PI * 2); ctx.fillStyle = 'rgb(' + red + ', ' + Math.round(102 + 35 * (1 - Math.abs(colorValue))) + ', ' + blue + ')'; ctx.globalAlpha = .7; ctx.fill(); ctx.globalAlpha = 1; });
+        ctx.fillStyle = palette.muted; ctx.font = '12px Inter'; ctx.fillText('y1', width - pad - 12, cy - 7); ctx.fillText('y2', cx + 7, pad + 12); ctx.fillStyle = palette.ink; ctx.font = '600 12px Inter'; ctx.fillText('2D view of R^' + (d - 1) + ' stereographic coordinates', pad, height - 10);
+      }
+      explorer.view = responsiveCanvas(explorer.canvas, drawExplorer); explorer.select.addEventListener('input', prepareExplorer); prepareExplorer();
+      const s3 = deterministicSpherePoints(4, 150).map(stereographic), s3canvas=document.getElementById('s3-target-canvas'), s3screen=document.getElementById('s3-screen-canvas'); let s3yaw=.4;
+      function drawS3(width,height,ctx){ctx.clearRect(0,0,width,height);ctx.fillStyle=palette.paper;ctx.fillRect(0,0,width,height);const scale=Math.min(width,height)*.38,pts=s3.map(p=>{const x=Math.cos(s3yaw)*p[0]+Math.sin(s3yaw)*p[2],z=-Math.sin(s3yaw)*p[0]+Math.cos(s3yaw)*p[2],f=scale/(3.5-z);return{x:width/2+x*f,y:height/2-p[1]*f,z,p};}).sort((a,b)=>a.z-b.z);pts.forEach(q=>{ctx.beginPath();ctx.arc(q.x,q.y,2.4,0,Math.PI*2);ctx.fillStyle=q.p[2]>0?palette.rust:palette.blue;ctx.globalAlpha=.68;ctx.fill();});ctx.globalAlpha=1;ctx.fillStyle=palette.muted;ctx.font='12px Inter';ctx.fillText('rotating 3D target R³',14,22);}
+      function drawS3Screen(width,height,ctx){ctx.clearRect(0,0,width,height);ctx.fillStyle=palette.paper;ctx.fillRect(0,0,width,height);const R=Math.min(width,height)*.39,cx=width/2,cy=height/2,s=Math.max(1,...s3.map(p=>Math.hypot(p[0],p[1])));s3.forEach(p=>{ctx.beginPath();ctx.arc(cx+p[0]/s*R,cy-p[1]/s*R,2.4,0,Math.PI*2);ctx.fillStyle=p[2]>0?palette.rust:palette.blue;ctx.globalAlpha=.68;ctx.fill();});ctx.globalAlpha=1;ctx.fillStyle=palette.muted;ctx.font='12px Inter';ctx.fillText('2D visualization: (x1*, x2*); colour x3*',12,22);}
+      const s3view=responsiveCanvas(s3canvas,drawS3),s3screenview=responsiveCanvas(s3screen,drawS3Screen);function spinS3(){if(!document.hidden&&!reducedMotion){s3yaw+=.006;s3view.redraw();}requestAnimationFrame(spinS3);}spinS3();
+      const inspector=document.getElementById('s6-inspector'), inspectorSelect=document.getElementById('s6-example'), examples=deterministicSpherePoints(7,3);function showInspector(){const x=examples[Number(inspectorSelect.value)],y=stereographic(x),den=1-x[6];inspector.textContent='Original: ('+x.map(v=>v.toFixed(4)).join(', ')+') | Projected: ('+y.map(v=>v.toFixed(4)).join(', ')+') | denominator = '+den.toFixed(4)+' | ||x*|| = '+Math.hypot(...y).toFixed(4);}inspectorSelect.addEventListener('input',showInspector);showInspector();
+    }());
+  </script>
+</body>
+</html>
