@@ -10,6 +10,17 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&amp;family=Inter:wght@400;500;600;700&amp;family=Source+Code+Pro:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <link href="lean-programming-language/page.css" rel="stylesheet"/>
+<style>
+.page-provenance-layout{display:grid;grid-template-columns:minmax(0,1fr) 19rem;align-items:start;gap:24px}
+.page-provenance-title{min-width:0}
+.page-provenance{min-width:0;padding:14px 16px;margin:0 0 14px;border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:14px;background:var(--soft);box-shadow:0 4px 12px #00000008;font-size:.75rem;line-height:1.6;overflow-wrap:anywhere}
+.page-provenance .provenance-item + .provenance-item{margin-top:6px}
+.page-provenance .provenance-label{font-weight:700;color:var(--accent)}
+.page-provenance .provenance-item:nth-child(2) .provenance-label{color:var(--green)}
+.page-provenance .provenance-item:nth-child(3) .provenance-label{color:var(--violet)}
+.page-provenance .provenance-item:nth-child(4) .provenance-label{color:var(--gold)}
+@media(max-width:900px){.page-provenance-layout{grid-template-columns:minmax(0,1fr);gap:0}.page-provenance{width:100%;max-width:24rem}}
+</style>
 <script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]}};</script>
 <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <script defer="" src="lean-programming-language/page.js"></script>
@@ -17,8 +28,16 @@
 <body>
 <a class="skip" href="#foundations">Skip to the mathematics</a>
 <div class="page"><main class="card">
-<header><div class="eyebrow">A mathematical notebook · Lean 4 &amp; Mathlib</div>
+<header><div class="page-provenance-layout"><div class="page-provenance-title"><div class="eyebrow">A mathematical notebook · Lean 4 &amp; Mathlib</div>
 <h1>Introduction to Lean Programming Language</h1>
+</div>
+<!-- Page provenance -->
+<aside class="page-provenance" aria-label="Page provenance">
+<div class="provenance-item"><span class="provenance-label">📅 Created:</span> September 16, 2026</div>
+<div class="provenance-item"><span class="provenance-label">🧰 Harness:</span> Codex CLI 0.153.4 on Linux</div>
+<div class="provenance-item"><span class="provenance-label">🤖 Model:</span> GPT-6 Astra</div>
+<div class="provenance-item"><span class="provenance-label">🧠 Reasoning:</span> High</div>
+</aside></div>
 <p class="lead">A proof explains why a statement must be true. Lean asks us to make that explanation precise enough that a small program can check every logical step. Start with a square and a conjunction; finish with differentiation between infinite-dimensional spaces.</p>
 <p>Each stage connects a mathematical claim, its informal reasoning, and a complete Lean example. No programming background is assumed. Later sections introduce the extra mathematics as it becomes necessary.</p>
 <section aria-labelledby="difficulty-title" class="lab difficulty-lab"><div class="label">🧭 Choose a starting point</div><h2 id="difficulty-title">Read in order. Or follow your curiosity.</h2><p class="small">Select a level to preview its mathematical question, then jump into the notebook.</p><nav aria-label="Mathematical difficulty" class="level-path"><a data-description="Expand a square and read your first theorem." data-level="0" data-prerequisite="Only arithmetic and elementary algebra are needed." href="#school"><span aria-hidden="true">🙂</span> High School</a><a data-description="Turn a logical implication into a sequence of proof goals." data-level="1" data-prerequisite="Learn to separate assumptions from the conclusion." href="#states"><span aria-hidden="true">🧠</span> First-Year University</a><a data-description="Build a proof for every natural number using induction." data-level="2" data-prerequisite="Track the smaller case in the induction hypothesis." href="#discrete"><span aria-hidden="true">🔢</span> Discrete Mathematics</a><a data-description="Translate vectors, matrices, and linearity into types." data-level="3" data-prerequisite="Understand vector addition and scalar multiplication." href="#linear"><span aria-hidden="true">📐</span> Linear Algebra</a><a data-description="Move a tangent and connect its slope to a limit statement." data-level="4" data-prerequisite="Start with the derivative of a polynomial." href="#calculus"><span aria-hidden="true">📈</span> Calculus</a><a data-description="Compare a nonlinear map with its local linear approximation." data-level="5" data-prerequisite="Replace scalar slope by a continuous linear map." href="#multivariable"><span aria-hidden="true">∂</span> Multivariable Calculus</a><a data-description="Change a parameter and see exponential growth or decay." data-level="6" data-prerequisite="Distinguish a solution formula from a uniqueness proof." href="#ode"><span aria-hidden="true">🌊</span> Differential Equations</a><a data-description="Read the Fréchet chain rule on general normed spaces." data-level="7" data-prerequisite="Inspect the operator bounds behind the abstract theorem." href="#graduate"><span aria-hidden="true">🎓</span> Graduate Mathematics</a></nav><div class="level-preview" hidden="" id="difficulty-preview"><div><strong id="level-title">High School</strong><p id="level-description"></p><p class="small" id="level-prerequisite"></p></div><a class="action-link" href="#school" id="level-jump">Explore this level →</a></div></section>
