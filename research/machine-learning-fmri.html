@@ -16,14 +16,35 @@
     @media(max-width:680px){.page{padding:14px 10px 40px}.card{padding:23px 16px}.two,.three,.four,.fmri-lab,.sigmoid-wrap,.site-example{grid-template-columns:1fr}.toc-grid{grid-template-columns:1fr}.journey{grid-template-columns:repeat(2,1fr)}.flow{grid-template-columns:1fr}.flow div::after{display:none}.matrix-wrap{overflow:hidden}.matrix-grid{grid-template-columns:34px repeat(6,minmax(38px,1fr));overflow-x:auto}.matrix-cell,.matrix-label{font-size:.65rem}.calculator{grid-template-columns:repeat(2,1fr)}.loss-row{grid-template-columns:1fr}.backprop{grid-template-columns:repeat(2,1fr)}.limitations{columns:1}.people{grid-template-columns:repeat(10,1fr)}.visual{padding:13px}.visual header{display:block}.tag{margin-top:5px}.zoom-story{grid-template-columns:1fr 1fr}.volume-sequence{max-width:100%}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
   </style>
+  <style>
+.page-provenance-layout{display:grid;grid-template-columns:minmax(0,1fr) 19rem;align-items:start;gap:24px}
+.page-provenance-title{min-width:0}
+.page-provenance{min-width:0;padding:14px 16px;margin:0 0 14px;border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:14px;background:var(--soft);box-shadow:0 4px 12px #00000008;font-size:.75rem;line-height:1.6;overflow-wrap:anywhere}
+.page-provenance .provenance-item + .provenance-item{margin-top:6px}
+.page-provenance .provenance-label{font-weight:700;color:var(--accent)}
+.page-provenance .provenance-item:nth-child(2) .provenance-label{color:var(--green)}
+.page-provenance .provenance-item:nth-child(3) .provenance-label{color:var(--violet)}
+.page-provenance .provenance-item:nth-child(4) .provenance-label{color:var(--gold)}
+@media(max-width:900px){.page-provenance-layout{grid-template-columns:minmax(0,1fr);gap:0}.page-provenance{width:100%;max-width:24rem}}
+  </style>
   <script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']]}};</script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
   <script defer src="machine-learning-fmri/page.js"></script>
 </head>
 <body>
 <div class="page"><main class="card">
+  <div class="page-provenance-layout"><div class="page-provenance-title">
   <div class="eyebrow">Visual neuroimaging and machine-learning guide</div>
   <h1>From fMRI to Machine Learning: A Visual Guide to Brain Connectivity</h1>
+  </div>
+<!-- Page provenance -->
+<aside class="page-provenance" aria-label="Page provenance">
+<div class="provenance-item"><span class="provenance-label">📅 Created:</span> August 26, 2026</div>
+<div class="provenance-item"><span class="provenance-label">🧰 Harness:</span> OpenCode on Linux</div>
+<div class="provenance-item"><span class="provenance-label">🤖 Model:</span> GPT-5.6 Sol</div>
+<div class="provenance-item"><span class="provenance-label">🧠 Reasoning:</span> Max</div>
+</aside>
+  </div>
   <p class="lead">A machine-learning model never sees a brain as a person does. It receives numbers. This page follows one resting-state scan as three-dimensional measurements become regional time series, correlations, a graph, a model score, and finally an evaluated prediction.</p>
 
   <figure class="hero-figure">
