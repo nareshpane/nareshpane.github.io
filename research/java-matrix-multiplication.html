@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A warm, interactive investigation of how matrix multiplication becomes computation in Java: from visible arithmetic to geometry, cache tiles, ForkJoinPool, Strassen, and tensor complexity.">
+<title>Inside Matrix Multiplication — A Visual Investigation with Java</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;family=Inter:wght@400;500;600;700&amp;family=Source+Code+Pro:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="java-matrix-multiplication/css/page.css">
+<style>
+.opening .page-provenance-layout{display:grid;grid-template-columns:minmax(0,1fr) 19rem;align-items:start;gap:24px}
+.opening .page-provenance-title{min-width:0}
+.opening .page-provenance-title .eyebrow{display:inline-block;padding:5px 11px;border-radius:99px;background:#eaf1f8;margin-bottom:12px;font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:#1d4f91}
+.opening .page-provenance{min-width:0;padding:14px 16px;margin:0 0 14px;border:1px solid #ddd5c7;border-top:3px solid #a87524;border-radius:14px;background:#fcfaf6;box-shadow:0 4px 12px #00000008;font-size:.75rem;line-height:1.6;overflow-wrap:anywhere}
+.opening .page-provenance .provenance-item + .provenance-item{margin-top:6px}
+.opening .page-provenance .provenance-label{font-weight:700;color:#1d4f91}
+.opening .page-provenance .provenance-item:nth-child(2) .provenance-label{color:#287352}
+.opening .page-provenance .provenance-item:nth-child(3) .provenance-label{color:#6c5b99}
+.opening .page-provenance .provenance-item:nth-child(4) .provenance-label{color:#a87524}
+@media(max-width:900px){.opening .page-provenance-layout{grid-template-columns:minmax(0,1fr);gap:0}.opening .page-provenance{width:100%;max-width:24rem}}
+</style>
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']]}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script defer src="java-matrix-multiplication/js/page.js"></script>
+</head>
+<body id="top">
+<a class="skip" href="#theatre">Skip to the Matrix Theatre</a>
+<div class="page"><main class="card">
+<header class="opening">
+<div class="page-provenance-layout"><div class="page-provenance-title">
+<div class="eyebrow">A visual computational notebook · Java &amp; Matrices</div>
+<h1>Inside matrix<br>multiplication<span class="title-tail">A visual investigation with Java</span></h1>
+</div>
+<aside class="page-provenance" aria-label="Page provenance">
+<div class="provenance-item"><span class="provenance-label">📅 Created:</span> September 22, 2026</div>
+<div class="provenance-item"><span class="provenance-label">🧰 Harness:</span> Codex CLI on Linux</div>
+<div class="provenance-item"><span class="provenance-label">🤖 Model:</span> GPT-6 Astra</div>
+<div class="provenance-item"><span class="provenance-label">🧠 Reasoning:</span> High</div>
+</aside></div>
+<p class="lead">What actually happens when a computer multiplies two matrices—and how can Java let us see the computation rather than merely its final answer?</p>
+<p>A <strong>matrix</strong> is a rectangular array of numbers. You can multiply two tiny matrices on paper; at scale, the same rule becomes millions of carefully organized arithmetic operations. <strong>Java is a general-purpose programming language.</strong> It lets us write that rule explicitly, execute it, and inspect the intermediate values a textbook usually leaves invisible.</p>
+<p class="small opening-note">Matrices organize scientific computing, graphics, statistics, machine learning, and engineering. Here, we follow one operation from hand calculation to Java arrays and loops, geometry, large-scale computation, memory, parallelism, Strassen, and finally complexity theory.</p>
+</header>
+
+<section class="theatre feature" id="theatre" aria-labelledby="theatre-title">
+<header class="scene-heading"><div><span class="stage-label">Act I · 1.1 / See the multiplication</span><h2 id="theatre-title">The Matrix Theatre</h2><p>One row. One column. A number coming into being.</p></div><span class="tag">Computed in Java</span></header>
+<div id="theatreScene" class="theatre-scene">
+<div class="input-matrices">
+<div><div class="matrix-label"><b>A</b><span>2 rows × 3 columns</span></div><div id="theatreA" class="matrix" aria-label="Matrix A"></div></div>
+<div class="theatre-motif"><span>row</span><b>×</b><span>column</span><i>↓</i><small>pair · multiply · add</small></div>
+<div><div class="matrix-label"><b>B</b><span>3 rows × 2 columns</span></div><div id="theatreB" class="matrix" aria-label="Matrix B"></div></div>
+</div>
+<div class="pair-heading"><span id="pairLabel">Select a row from A and a column from B.</span><span class="mono">shared length = 3</span></div>
+<div id="pairLanes" class="pair-lanes" aria-label="Detached row and column entries, paired by their shared index"></div>
+<div class="theatre-output"><div class="accumulator"><span class="stage-label">Accumulator / partial sum</span><strong id="accValue">0</strong><code id="accCode">c[0][0] += a[0][k] * b[k][0]</code></div><span class="output-arrow" aria-hidden="true">→</span><div><div class="matrix-label"><b>C</b><span>2 × 2 result</span></div><div id="theatreC" class="matrix" aria-label="Output matrix C, initially empty"></div></div></div>
+</div>
+<div class="controls" data-player="theatre" aria-label="Matrix Theatre controls"></div>
+<p id="theatreStatus" class="status" aria-live="polite">Loading the Java trace. The worked result is [[0, 21], [4, 23]].</p>
+<div class="correspondence"><div><span>Mathematics</span><b id="theatreMath">one row · one column</b></div><div><span>Java</span><code id="theatreJava">a[i][k] * b[k][j]</code></div><div><span>Machine</span><b id="theatreMachine">multiply, then accumulate</b></div></div>
+<p class="caption">Begin with Play or advance one step at a time. Outlines, labels, and positions repeat the color cues. Motion is illustrative; each product and partial sum comes from Java’s actual classical kernel.</p>
+<noscript><p class="note">Enable JavaScript for the interactive scenes. All explanations, Java code, formulas, and the video below remain readable.</p><img src="java-matrix-multiplication/images/matrix-motion-poster.png" alt="Warm Java-generated diagram of a matrix row paired with a column"></noscript>
+</section>
+
+<nav class="toc" aria-label="Contents">
+<div class="toc-title"><h2>Four acts, one investigation</h2><span class="small">Start with arithmetic. Stay for the deeper problem.</span></div>
+<div class="toc-grid">
+<div><span>I</span><a href="#basics"><b>See the multiplication</b></a><a href="#basics">1.2 Rows, columns &amp; dot products</a><a href="#representation">1.3 What Java sees</a><a href="#classical">1.4 The three loops</a></div>
+<div><span>II</span><a href="#meaning"><b>Understand its meaning</b></a><a href="#meaning">2.1 A matrix moves space</a><a href="#transformations">2.2 Composition &amp; order</a></div>
+<div><span>III</span><a href="#scale"><b>Make it work at scale</b></a><a href="#scale">3.1 Cubic growth</a><a href="#tiles">3.2 Memory &amp; blocking</a><a href="#sparse">3.3 Sparse structure</a><a href="#parallel">3.4 Parallel Java</a><a href="#strassen">3.5 Seven branches</a></div>
+<div><span>IV</span><a href="#numerical"><b>The deeper problem</b></a><a href="#numerical">4.1 Floating-point reality</a><a href="#tensor">4.2 Bilinear maps &amp; tensors</a><a href="#omega">4.3 The exponent ω</a><a href="#recap">4.4 A visual return</a></div>
+</div></nav>
+
+<section class="chapter" id="basics">
+<span class="stage-label">I / 1.2</span><h2>The rule you just watched</h2>
+<div class="split prose-split"><div><p>A row runs horizontally; a column runs vertically. The entry \(A_{12}=-1\) is in row 1, column 2. Here we use one-based subscripts for mathematics and zero-based brackets for Java.</p><p>Multiplying matrices means taking <strong>every row of A with every column of B</strong>. Multiply corresponding entries, then add the products. This operation on two lists is their <strong>dot product</strong>.</p></div><div class="worked"><span class="tag">A calculation you can audit</span><h3>First row × second column</h3><p class="arithmetic">2 × 5 + (−1) × (−2) + 3 × 3</p><p class="arithmetic">10 + 2 + 9 = <strong>21</strong></p><code>C₁₂ ↔ c[0][1] ↔ stored value 21</code></div></div>
+<div class="dimension-flow"><div><small>A · choose a row</small><b>2 × <em>3</em></b></div><span>×</span><div><small>B · choose a column</small><b><em>3</em> × 2</b></div><span>→</span><div><small>C · one entry per pair</small><b>2 × 2</b></div></div>
+<p>The inner dimensions agree because a row and column must have the same length. In general, an \(m\times p\) matrix times a \(p\times n\) matrix produces an \(m\times n\) matrix:</p>
+<div class="equation">$$C_{ij}=\sum_{k=1}^{p}A_{ik}B_{kj}.$$</div>
+<p class="symbols">Keep the row \(i\) and column \(j\) fixed. Let \(k\) walk along both lists. The summation sign means “add all those products.” This is ordinary matrix multiplication, not entry-by-entry multiplication.</p>
+</section>
+
+<section class="chapter" id="representation">
+<span class="stage-label">I / 1.3</span><h2>What Java sees</h2><p class="chapter-intro">The numbers do not change when a mathematical matrix becomes a Java array. Their addresses do. Select any entry, then unfold its representation.</p>
+<div class="visual representation">
+<div class="scene-heading"><h3>Same six values. A new way to address them.</h3><button id="representationToggle" aria-pressed="false">Unfold into Java rows</button></div>
+<div id="representationCells" class="representation-cells" aria-label="Select a matrix entry to reveal its Java address"></div>
+<p id="representationStatus" class="status" aria-live="polite">Mathematical A₁₁ = 2 becomes A[0][0] = 2. Java counts from zero.</p>
+<div class="row-reference"><code>double[][] A</code><span>→</span><code>A[0] → double[3]</code><span>·</span><code>A[1] → double[3]</code></div>
+</div>
+<div class="split"><div><p><code>A[0]</code> selects the first row; <code>A[0][1]</code> selects its second value. A <code>double</code> is Java’s 64-bit floating-point type.</p><p>A Java <code>double[][]</code> is an array of references to row arrays. Rows may have different lengths, so our methods check that the inputs are rectangular and compatible. The visual grid does not imply one contiguous allocation.</p></div><pre><code>// From LearningExamples.main; executable Java.
+double[][] A = {{2, -1, 3}, {4, 0, 1}};
+double[][] B = {{1, 5}, {2, -2}, {0, 3}};
+double[][] C = multiply(A, B);
+System.out.println(Arrays.deepToString(C));
+// [[0.0, 21.0], [4.0, 23.0]]</code></pre></div>
+<p class="small">The complete <a href="java-matrix-multiplication/src/LearningExamples.java">LearningExamples class</a> includes the import, method, validation, and <code>main</code> entry point. The trace kernels also retain small <code>int</code> examples whose values stay within range; Java integers can overflow on larger values.</p>
+</section>
+
+<section class="chapter" id="classical">
+<span class="stage-label">I / 1.4</span><h2>Three loops, three different jobs</h2><p class="chapter-intro">The detached row and column become the inner loop. The two outer loops decide where its answer belongs. Step through the execution and watch the indices, matrix outlines, and code move together.</p>
+<div class="visual loop-lab">
+<div class="loop-tracks"><div><b>i</b><span>output row</span><div id="iTrack"></div></div><div><b>j</b><span>output column</span><div id="jTrack"></div></div><div><b>k</b><span>shared dimension</span><div id="kTrack"></div></div></div>
+<div class="split loop-body"><div><div class="loop-matrices"><div><small>A[i][k]</small><div id="loopA" class="matrix"></div></div><span>×</span><div><small>B[k][j]</small><div id="loopB" class="matrix"></div></div></div><div id="loopArithmetic" class="arithmetic">2 × 1 → c[0][0]</div><div id="loopC" class="matrix output-matrix"></div></div>
+<pre class="code-block" id="javaCode"><code><span data-line="allocate">double[][] c = new double[a.length][b[0].length];</span>
+<span data-line="i">for (int i = 0; i &lt; a.length; i++) {</span>
+<span data-line="j">  for (int j = 0; j &lt; b[0].length; j++) {</span>
+<span data-line="k">    for (int k = 0; k &lt; b.length; k++) {</span>
+<span data-line="add">      c[i][j] += a[i][k] * b[k][j];</span>
+<span>    }</span>
+<span>  }</span>
+<span>}</span>
+<span data-line="return">return c;</span></code></pre></div>
+<div class="controls" data-player="loops" aria-label="Java loop controls"></div><p id="loopsStatus" class="status" aria-live="polite">Loading Java execution states…</p>
+<div class="correspondence"><div><span>Mathematics</span><b>sum over k</b></div><div><span>Java</span><code>c[i][j] += …</code></div><div><span>Machine</span><b id="loopCounts">0 products · 0 additions</b></div></div>
+</div>
+<p>The array allocation initializes each <code>double</code> to <code>0.0</code>. Every <code>+=</code> reads the current entry, adds a product, and writes the new partial value. For this \(2\times3\) by \(3\times2\) example, the method performs 12 multiplications and 12 additions, including adding the first product to zero.</p>
+<aside class="note">These are source-level arithmetic steps. A JVM may compile and optimize the loops; this scene does not claim one animation frame equals one processor instruction or a fused multiply-add.</aside>
+</section>
+
+<div class="act-break" id="meaning"><span>ACT II</span><h2>Understand what<br>multiplication means.</h2><p>The same row–column rule can move an entire coordinate system.</p><div class="act-symbol" aria-hidden="true">x → Bx → ABx</div></div>
+<section class="chapter">
+<span class="stage-label">II / 2.1</span><h2>A matrix is also an action</h2>
+<p>For a vector \(x=(x_1,x_2)\), multiplying \(Ax\) produces a new vector. Each output coordinate is a row–vector dot product. Equivalently, the columns of \(A\) tell us where the two unit basis vectors go: \(Ax=x_1A_{\cdot1}+x_2A_{\cdot2}\).</p>
+<p>This links arithmetic to geometry. Lines through the origin remain lines through the origin, and linear combinations are preserved. In Java, a column vector can simply be a \(2\times1\) array passed to the same multiplication method.</p>
+</section>
+<section class="chapter" id="transformations">
+<span class="stage-label">II / 2.2</span><h2>Two actions become one matrix</h2>
+<p>Let \(B\) rotate by 90° counterclockwise and let \(A\) shear horizontally. With column vectors, <strong>the rightmost matrix acts first</strong>. First \(B\), then \(A\), is \(AB\).</p>
+<div class="matrix-equations"><div class="equation">$$A=\begin{bmatrix}1&1\\0&1\end{bmatrix}$$</div><div class="equation">$$B=\begin{bmatrix}0&-1\\1&0\end{bmatrix}$$</div><div class="equation">$$AB=\begin{bmatrix}1&-1\\1&0\end{bmatrix}$$</div><div class="equation">$$BA=\begin{bmatrix}0&-1\\1&1\end{bmatrix}$$</div></div>
+<div class="visual geometry">
+<div class="scene-heading"><h3>Follow x = (1, 1) through the plane</h3><span class="tag">Java-computed endpoints</span></div>
+<div class="split"><canvas id="geometryCanvas" width="600" height="440" role="img" aria-label="Coordinate grid, basis vectors, and x under matrix composition"></canvas><div><div class="segmented" id="geometryOrder"><button data-order="ab" aria-pressed="true">AB · B then A</button><button data-order="ba" aria-pressed="false">BA · A then B</button></div><div class="geometry-steps" id="geometrySteps"><button data-step="0" aria-pressed="true">1 · Original x</button><button data-step="1" aria-pressed="false">2 · First action</button><button data-step="2" aria-pressed="false">3 · Second action</button><button data-step="3" aria-pressed="false">4 · Product in one action</button></div><p id="geometryStatus" class="status" aria-live="polite"></p><code id="geometryCode"></code></div></div>
+<p class="caption">Solid arrow: transformed x. Dashed arrow: original x. Labeled e₁ and e₂ track the basis. Intermediate motion interpolates between the exact Java-computed states; it illustrates the action, not numerical integration.</p>
+</div>
+<p>For this vector, \(ABx=(0,1)\) while \(BAx=(-1,2)\). Reversing the order changes the result. And because \(A(Bx)=(AB)x\) for <em>every</em> vector, multiplication encodes composition. Expanding the \(i\)-th coordinate gives exactly \(\sum_k A_{ik}B_{kj}\) as the coefficient of \(x_j\)—the rule from Act I.</p>
+</section>
+
+<div class="act-break"><span>ACT III</span><h2>Make multiplication<br>work at scale.</h2><p>Keep the rule. Change the organization of the work.</p><div class="act-symbol matrix-text" aria-hidden="true">▦ → ▦ ▦ → ▦</div></div>
+<section class="chapter" id="scale">
+<span class="stage-label">III / 3.1</span><h2>When a few products become a field</h2>
+<p>Each output entry needs \(n\) products. There are \(n^2\) output entries. The third loop gives the third factor: \(n^2\times n=n^3\). Double the width and height, and the multiplication count grows eightfold.</p>
+<div class="visual scale-scene"><div class="scene-heading"><h3>Zoom out of the small matrix</h3><span class="tag">Exact counts · sampled pulses</span></div>
+<div class="size-buttons" id="scaleSizes"></div><canvas id="scaleCanvas" width="900" height="340" role="img" aria-label="Growing result grid and shared-dimension sweep illustrating cubic operation growth"></canvas>
+<div class="scale-metrics"><div><small>Output entries · n²</small><b id="scaleCells"></b></div><span>×</span><div><small>Products per entry · n</small><b id="scaleTerms"></b></div><span>=</span><div><small>Scalar multiplications · n³</small><b id="scaleProducts"></b></div></div>
+<div class="controls" data-player="scale" aria-label="Computation field controls"></div><p id="scaleStatus" class="status" aria-live="polite"></p></div>
+<p>The picture samples a field of work; the counts are exact and generated by Java. The browser never runs a large matrix product for this effect. For an \(n\times n\) product, the literal Java kernel also performs \(n^3\) additions to its zero-initialized result. A dot-product implementation starting from its first term needs \(n^2(n-1)\) additions.</p>
+<div class="correspondence"><div><span>Mathematics</span><b>O(n³) arithmetic</b></div><div><span>Java</span><code>i → j → k</code></div><div><span>Machine</span><b>work grows faster than storage</b></div></div>
+</section>
+
+<section class="chapter" id="tiles">
+<span class="stage-label">III / 3.2</span><h2>Keep useful numbers nearby</h2>
+<p class="chapter-intro">A cook keeps frequently used ingredients on the counter. A blocked algorithm does something similar: work on a small group of entries long enough to reuse them before fetching another group.</p>
+<div class="visual tile-scene"><div class="scene-heading"><h3>The cell grid becomes a tile grid</h3><button id="tileLayout" aria-pressed="false">Reorganize into tiles</button></div>
+<div class="tile-overview"><div id="denseTileGrid" class="dense-tile-grid" role="img" aria-label="Schematic 16 by 16 grid regrouping into sixteen four by four tiles"></div><p><strong>Zoom out: a 16×16 field.</strong><br>Group neighboring cells into 4×4 tiles.<br><span class="small">Schematic layout above; actual Java values below in a 4×4 example with 2×2 tiles.</span></p></div>
+<div class="tile-matrices"><div><small>A · input</small><div id="tileA" class="tile-grid"></div></div><span>×</span><div><small>B · input</small><div id="tileB" class="tile-grid"></div></div><span>→</span><div><small>C · partial result</small><div id="tileC" class="tile-grid"></div></div></div>
+<div class="memory-flow"><div id="mainMemory"><span>01</span><b>Main memory</b><small>full arrays</small><code id="memoryTile">A tile + B tile</code></div><i>→</i><div id="cacheMemory"><span>02</span><b>Cache</b><small>reuse a working set</small><code id="cacheTile">nearby entries</code></div><i>→</i><div id="processorMemory"><span>03</span><b>Processor</b><small>multiply and add</small><code id="processorTile">update C tile</code></div></div>
+<div class="controls" data-player="tiles" aria-label="Blocked multiplication controls"></div><p id="tilesStatus" class="status" aria-live="polite"></p>
+<pre id="blockedCode" class="code-block"><code><span data-line="select">for (int ii = 0; ii &lt; rows; ii += blockSize)</span>
+<span data-line="select">  for (int kk = 0; kk &lt; shared; kk += blockSize)</span>
+<span data-line="select">    for (int jj = 0; jj &lt; cols; jj += blockSize)</span>
+<span data-line="compute">      for (int i = ii; i &lt; Math.min(ii + blockSize, rows); i++)</span>
+<span data-line="compute">        for (int k = kk; k &lt; Math.min(kk + blockSize, shared); k++) {</span>
+<span data-line="compute">          int aik = a[i][k];</span>
+<span data-line="compute">          for (int j = jj; j &lt; Math.min(jj + blockSize, cols); j++)</span>
+<span data-line="compute">            c[i][j] += aik * b[k][j];</span>
+<span data-line="compute">        }</span></code></pre></div>
+<div class="split prose-split"><div><h3>Locality is the useful idea</h3><p><em>Spatial locality</em> uses nearby entries; <em>temporal locality</em> reuses the same entry soon. The inner <code>j</code> loop walks along Java row arrays, reusing <code>aik</code>. The tiles help keep a small working set close to execution resources.</p></div><div><h3>Movement has a cost</h3><p>With ideal resident \(b\times b\) tiles, \(b^3\) products reuse about \(3b^2\) entries. A simplified tiled model suggests \(O(n^3/b+n^2)\) element transfers when the working set fits. Actual caches, row objects, packing, and loop order affect traffic.</p></div></div>
+<p>A flat <code>double[]</code> can encode a matrix using <code>a[i * cols + j]</code>, making row-major layout explicit. The current kernels use arrays of rows. Java does not explicitly “load the cache”: the hierarchy animation is a model of locality, not a record of cache misses.</p>
+<aside class="note"><strong>Still O(n³) arithmetic.</strong> Blocking changes when values are used. It does not remove scalar products. Tile size is a tuning choice; this page makes no performance claim from the animation.</aside>
+</section>
+
+<section class="chapter" id="sparse">
+<span class="stage-label">III / 3.3</span><h2>Sometimes the best product is one you skip</h2><p>When most entries are zero, the dense loops spend time on contributions known to vanish. Start with the full matrix, then let the irrelevant paths recede.</p>
+<div class="visual"><div class="scene-heading"><h3>36 positions. Only 7 nonzero values.</h3><button id="sparseToggle" aria-pressed="false">Fade zero products</button></div><div class="split"><div id="sparseGrid" class="sparse-grid" aria-label="Six by six sparse matrix"></div><div><div id="sparsePaths" class="sparse-paths"></div><div id="csrData" class="csr"></div></div></div><p id="sparseStatus" class="status" aria-live="polite"></p></div>
+<p><strong>Compressed sparse row (CSR)</strong> stores values, column indices, and offsets into each row. For example, <code>rowOffsets[3]=3</code> and <code>rowOffsets[4]=5</code> say that zero-based row 3 uses stored positions 3 and 4: \(5\) at column 2 and \(1\) at column 5.</p>
+<pre><code>// From MatrixAlgorithms.sparseTimesDense; repeat for each output row i.
+for (int p = a.rowOffsets[i]; p &lt; a.rowOffsets[i + 1]; p++) {
+    int k = a.columnIndices[p], value = a.values[p];
+    for (int j = 0; j &lt; b[0].length; j++)
+        c[i][j] += value * b[k][j];
+}</code></pre>
+<p>Against a dense right matrix with \(q\) columns, this kernel uses \(7q\) products instead of \(36q\) for the displayed left matrix. It still allocates a dense result. General sparse-by-sparse multiplication has additional indexing costs, and its result may become dense.</p>
+</section>
+
+<section class="chapter" id="parallel">
+<span class="stage-label">III / 3.4</span><h2>Tiles become independent Java tasks</h2><p class="chapter-intro">Give each task its own output tile and the whole shared dimension. The inputs can be read by everyone; no two tasks write the same output entry.</p>
+<div class="visual parallel-scene"><div class="scene-heading"><h3>ForkJoinPool · four result tiles</h3><span class="tag">Actual computed results · illustrative schedule</span></div><div class="parallel-layout"><div id="workerLanes" class="worker-lanes"></div><div><small>Joined output C</small><div id="parallelC" class="tile-grid"></div></div></div><div class="controls" data-player="parallel" aria-label="Parallel task controls"></div><p id="parallelStatus" class="status" aria-live="polite"></p></div>
+<div class="split"><pre><code>// Each RecursiveAction owns r0, c0 and one C tile.
+protected void compute() {
+  for (int i = r0; i &lt; Math.min(r0 + tileSize, a.length); i++)
+    for (int j = c0; j &lt; Math.min(c0 + tileSize, b[0].length); j++) {
+      int sum = 0;
+      for (int k = 0; k &lt; b.length; k++)
+        sum += a[i][k] * b[k][j];
+      c[i][j] = sum;
+    }
+}</code></pre><pre><code>ForkJoinPool pool = new ForkJoinPool(parallelism);
+try {
+  pool.submit(new RecursiveAction() {
+    protected void compute() {
+      invokeAll(tasks);
+    }
+  }).join();
+} finally {
+  pool.shutdown();
+}</code></pre></div>
+<p>These are excerpts of the complete <a href="java-matrix-multiplication/src/MatrixAlgorithms.java">parallel method</a>. The lanes represent software tasks, not transistor-level CPU activity. The trace contains values produced by actual <code>ForkJoinPool</code> execution; task-to-lane assignment is a deterministic illustration. Real workers can steal tasks and finish in a different order.</p>
+<aside class="note">Scheduling, task allocation, joining, and shared memory bandwidth impose overhead. A tiny matrix can finish sooner on one thread. Parallel execution distributes the classical work; it does not change its arithmetic exponent.</aside>
+</section>
+
+<section class="chapter climax" id="strassen">
+<span class="stage-label">III / 3.5</span><h2>Eight products.<br>Then, unexpectedly, seven.</h2><p class="chapter-intro">Blocking grouped the arithmetic. Parallelism distributed it. Strassen changes how much multiplication is needed. First split the matrices into four quadrants and watch the ordinary eight branches reorganize.</p>
+<div class="visual strassen-scene"><div class="scene-heading"><h3>The recursion theatre</h3><span class="tag">1969 · Strassen’s idea</span></div><canvas id="strassenCanvas" width="900" height="450" role="img" aria-label="Four matrix quadrants feeding eight ordinary block products, reorganized into seven recursive Strassen products"></canvas><div class="controls" data-player="strassen" aria-label="Strassen recursion controls"></div><p id="strassenStatus" class="status" aria-live="polite"></p>
+<div id="sevenProducts" class="seven-products"></div></div>
+<p>For \(A=\left[\begin{smallmatrix}a&b\\c&d\end{smallmatrix}\right]\) and \(B=\left[\begin{smallmatrix}e&f\\g&h\end{smallmatrix}\right]\), ordinary multiplication needs \(ae,bg,af,bh,ce,dg,cf,dh\). Strassen instead multiplies seven pairs of sums or differences, then recombines them. At larger sizes these letters stand for whole blocks.</p>
+<details class="formula-details"><summary>The seven products and their recombination</summary>
+<div class="equation">$$\begin{aligned}M_1&=(a+d)(e+h),&M_2&=(c+d)e,\\M_3&=a(f-h),&M_4&=d(g-e),\\M_5&=(a+b)h,&M_6&=(c-a)(e+f),\\M_7&=(b-d)(g+h).\end{aligned}$$</div>
+<div class="equation">$$C=\begin{bmatrix}M_1+M_4-M_5+M_7&M_3+M_5\\M_2+M_4&M_1-M_2+M_3+M_6\end{bmatrix}.$$</div></details>
+<div class="split"><div><p>Each recursive call has half the width, with seven children instead of eight. Additions and subtractions cost \(O(n^2)\) per node; the recurrence is \(T(n)=7T(n/2)+O(n^2)\).</p><div class="equation">$$O(n^{\log_2 7})\approx O(n^{2.8074}).$$</div><p id="strassenVerified" class="verification">Java correctness comparison is loading…</p></div><pre><code>// From strassenRecursive; every product recurses.
+int[][] m1 = strassenRecursive(
+    add(a11, a22), add(b11, b22));
+int[][] m2 = strassenRecursive(
+    add(a21, a22), b11);
+// … five more recursive products …
+int[][] c11 = add(subtract(add(m1, m4), m5), m7);
+int[][] c12 = add(m3, m5);
+int[][] c21 = add(m2, m4);
+int[][] c22 = add(subtract(add(m1, m3), m2), m6);</code></pre></div>
+<p>The supplied Java implementation handles equal square power-of-two sizes, down to scalar base cases. Practical variants need cutoffs to conventional kernels, attention to padding and temporary allocations, and rounding-error analysis. Seven branches are a mathematical saving, not a promise of faster execution for every size.</p>
+<div class="visual growth-comparison"><h3>A smaller exponent is not a stopwatch</h3><label for="growthSize">Compare ideal scalar leaves at n = 2<sup>p</sup>: <output id="growthSizeOut">64</output></label><input id="growthSize" type="range" min="1" max="10" value="6"><div class="growth-row"><span>Classical · 8ᵖ</span><div><i id="classicBar"></i></div><b id="classicCount"></b></div><div class="growth-row"><span>Strassen · 7ᵖ</span><div><i id="strassenBar"></i></div><b id="strassenCount"></b></div><p class="caption">Linear bar lengths compare exact leaf counts for recursion to scalars. They omit additions, allocations, data transfers, JVM compilation, and task overhead. A Java benchmark needs warm-up, repeated measurements, fixed inputs, and recorded settings; timing a single tiny call with <code>System.nanoTime()</code> is not enough.</p></div>
+</section>
+
+<div class="act-break"><span>ACT IV</span><h2>The deeper problem.</h2><p>What changes when numbers are finite—and when algorithms are allowed to be radically different?</p><div class="act-symbol" aria-hidden="true">AB → T → ω</div></div>
+<section class="chapter" id="numerical">
+<span class="stage-label">IV / 4.1</span><h2>The partial sum is a machine number</h2>
+<p>Return to the accumulator in Act I. Java <code>double</code> arithmetic stores finite-precision binary values. Many decimal fractions have no exact representation, and operations round. Even rearranging a dot product can change its last bits.</p>
+<div class="visual precision"><div class="scene-heading"><h3>Same terms, different summation order</h3><button id="precisionToggle" aria-pressed="false">Reverse the accumulation</button></div><div id="precisionTerms" class="precision-terms"></div><div class="precision-result"><code id="precisionCode"></code><strong id="precisionValue"></strong></div><p id="precisionStatus" class="status" aria-live="polite"></p></div>
+<pre><code>// Executed in LearningExamples.sum, using Java double.
+double result = 0;
+for (int k = 0; k &lt; values.length; k++)
+    result += values[reverse ? values.length - 1 - k : k];</code></pre>
+<p>The trace records <code>0.6000000000000001</code> forward and <code>0.6</code> backward for \([0.1,0.2,0.3]\). A sharper cancellation example gives <code>(1e16 + -1e16) + 1 = 1.0</code> but <code>1e16 + (-1e16 + 1) = 0.0</code>. The small term can disappear when added at a much larger scale.</p>
+<p>The parallel kernel above keeps each entry’s \(k\)-order fixed, so changing which worker owns a tile does not itself reorder that entry’s sum. Splitting a dot product among workers and reducing partial sums could. Strassen also introduces different intermediate expressions. Floating-point comparisons therefore usually need a justified error tolerance, not exact equality. The integer tests here establish small-example algebraic correctness, not numerical stability for arbitrary doubles.</p>
+</section>
+
+<section class="chapter" id="tensor">
+<span class="stage-label">IV / 4.2 · Optional graduate view</span><h2>From loops to a bilinear map</h2>
+<p>Strassen’s seven products suggest a different question: can we describe all outputs using fewer products of carefully chosen linear combinations of inputs?</p>
+<details class="graduate"><summary>Open the bilinear and tensor viewpoint</summary>
+<p>Over a field \(\mathbb F\), let \(U=\mathbb F^{m\times p}\), \(V=\mathbb F^{p\times n}\), and \(W=\mathbb F^{m\times n}\). The map \(\mu:U\times V\to W\), \(\mu(A,B)=AB\), is linear separately in \(A\) and \(B\), hence bilinear. It is generally not linear in the pair jointly.</p>
+<div class="tensor-flow"><div><b>Linear forms</b><code>αᵣ(A), βᵣ(B)</code><small>add / scale input entries</small></div><span>→</span><div><b>r products</b><code>αᵣ(A) βᵣ(B)</code><small>the costly bilinear steps</small></div><span>→</span><div><b>Linear recombination</b><code>Σᵣ αᵣ(A)βᵣ(B) Wᵣ</code><small>recover every output entry</small></div></div>
+<div class="equation">$$\mu(A,B)=\sum_{r=1}^{R}\alpha_r(A)\beta_r(B)W_r,\qquad T_\mu=\sum_{i=1}^{m}\sum_{k=1}^{p}\sum_{j=1}^{n}a_{ik}^{*}\otimes b_{kj}^{*}\otimes E_{ij}\in U^*\otimes V^*\otimes W.$$</div>
+<p>Here \(a_{ik}^{*}\) and \(b_{kj}^{*}\) extract input coordinates and \(E_{ij}\) is an output basis matrix. The tensor encodes which pair of input coordinates contributes to which output coordinate. An \(R\)-term decomposition into simple tensors corresponds to a bilinear algorithm using \(R\) products of linear forms; additions and scalar multiplications remain additional work.</p>
+<p>For \(2\times2\) matrices, the coordinate expansion has eight terms; Strassen gives a seven-term decomposition. Recursing this fixed construction gives the exponent \(\log_2 7\). <em>Border rank</em> allows a tensor to arise as a limit (more precisely, through an appropriate algebraic degeneration) of tensors of bounded rank. Such degenerations are algebraic tools, not instructions to substitute a tiny floating-point parameter into Java.</p>
+<p>Tensor powers, degenerations, and asymptotic combinations of many products connect this viewpoint to exponent bounds. Exact rank, border rank, and asymptotic exponent are different notions. This panel gives a bridge to algebraic complexity, not a full treatment; see the primary references below.</p>
+</details></section>
+
+<section class="chapter" id="omega">
+<span class="stage-label">IV / 4.3</span><h2>How close can the exponent get to two?</h2>
+<p>The matrix multiplication exponent \(\omega\) is the infimum of exponents \(\tau\) for which square matrices over a fixed field can be multiplied using \(O(n^{\tau+\varepsilon})\) arithmetic operations for every \(\varepsilon&gt;0\). This is an algebraic model, distinct from bit complexity, memory traffic, or measured Java runtime.</p>
+<div class="omega-scale"><div><small>Basic lower bound</small><b>2</b><span>n² output coordinates</span></div><div><small>Reported Aug. 2026 upper bound</small><b>&lt; 2.371177</b><span>asymptotic research</span></div><div><small>Strassen</small><b>2.8074…</b><span>seven-way recursion</span></div><div><small>Classical</small><b>3</b><span>the triple loop</span></div></div>
+<p>The August 17, 2026 preprint by Dupont and collaborators reports \(\omega&lt;2.371177\), improving the previous bound \(2.371339\). This exact statement is from the <a href="https://arxiv.org/abs/2608.16884v1">version 1 primary record</a>, checked for this revision. It is a reported asymptotic upper bound, not an exact value of \(\omega\), and not a claim about this Java implementation.</p>
+<p>The elementary lower bound is \(2\); explicit output already contains \(n^2\) coordinates. Whether \(\omega=2\) remains an open question. The interval between a lower bound and an upper bound expresses what is not yet known.</p>
+<div class="split prose-split"><div><h3>Practical algorithm design</h3><p>Choose layouts, kernel sizes, numerical behavior, vectorization, and concurrency to minimize actual cost on available machines. Tuned classical kernels remain central; Strassen-like variants can help in appropriate regimes.</p></div><div><h3>Asymptotic complexity research</h3><p>Prove that some algorithm achieves a smaller growth exponent in an idealized model. Large constants and enormous crossover sizes can separate this achievement from a useful routine at everyday sizes.</p></div></div>
+</section>
+
+<section class="chapter recap" id="recap">
+<span class="stage-label">IV / 4.4</span><h2>One computation, seen all the way through</h2><p>Follow the same numerical particles as they become an entry, a matrix, a program, a field of work, and a question about what computation can achieve.</p>
+<div class="visual recap-scene"><canvas id="recapCanvas" width="900" height="350" role="img" aria-label="Visual transformation from one scalar product through matrix entries, Java loops, tiles, workers, Strassen recursion, and omega"></canvas><div id="recapSteps" class="recap-steps"></div><div class="controls" data-player="recap" aria-label="Visual recap controls"></div><p id="recapStatus" class="status" aria-live="polite"></p></div>
+<p class="closing">A matrix product is more than its answer. It is a structure of dependencies, an order of arithmetic, a movement of data, and a choice of algorithm. Java makes those choices explicit enough to inspect.</p>
+<details class="media-details"><summary>Watch the Java-rendered film &amp; see the static recap</summary><figure><video controls muted playsinline preload="none" poster="java-matrix-multiplication/images/matrix-motion-poster.png" aria-label="Thirty-second Java2D matrix multiplication film"><source src="java-matrix-multiplication/videos/matrix-multiplication-in-motion.mp4" type="video/mp4">Your browser does not support MP4 video.</video><figcaption>Java2D renders all 600 frames; ffmpeg encodes the 30-second video. The warm palette matches the interactive investigation.</figcaption></figure><figure><img src="java-matrix-multiplication/images/algorithm-recap.png" alt="Java-generated warm recap linking row-column arithmetic, classical loops, cache tiles, seven-way recursion, sparse structure, workers, and omega"><figcaption>A static companion to the interactive transformation.</figcaption></figure></details>
+</section>
+
+<section class="chapter" id="reproduce">
+<span class="stage-label">Reproducibility / Follow the evidence</span><h2>Java computes. The browser shows.</h2>
+<p>The classical and blocked kernels emit their own arithmetic and tile states. Java also generates geometric endpoints, scale counts, CSR arrays, precision examples, Strassen products, and values computed by real parallel tasks. Browser JavaScript lays out and animates those data. Worker schedules and memory movement are explicitly illustrative.</p>
+<div class="source-grid"><a href="java-matrix-multiplication/src/MatrixAlgorithms.java"><b>MatrixAlgorithms.java</b><span>classical · blocked · CSR · parallel · Strassen</span></a><a href="java-matrix-multiplication/src/LearningExamples.java"><b>LearningExamples.java</b><span>executable double arrays and sums</span></a><a href="java-matrix-multiplication/src/TraceWriter.java"><b>TraceWriter.java</b><span>five deterministic JSON traces</span></a><a href="java-matrix-multiplication/src/MatrixTests.java"><b>MatrixTests.java</b><span>fixed-seed correctness and validation tests</span></a></div>
+<p>Rebuild from the repository root with a JDK (17 or newer) and ffmpeg:</p><pre><code>./research/java-matrix-multiplication/build-media.sh</code></pre>
+<p>Preview from the repository root:</p><pre><code>python3 -m http.server 8001 --bind 127.0.0.1</code></pre><p class="small">Open <code>http://127.0.0.1:8001/research/java-matrix-multiplication.html</code>. HTTP is needed to fetch the traces. The <a href="java-matrix-multiplication/README.md">README</a> documents the build and checks. There is no framework, site build, or server-side application.</p>
+</section>
+<section class="chapter" id="sources">
+<span class="stage-label">Read further</span><h2>Primary &amp; technical references</h2><ol class="references">
+<li>Volker Strassen, “Gaussian Elimination is Not Optimal,” <em>Numerische Mathematik</em> 13 (1969), 354–356. <a href="https://doi.org/10.1007/BF02165411">Original paper</a>.</li>
+<li>Oracle, Java Language Specification, <a href="https://docs.oracle.com/javase/specs/jls/se21/html/jls-10.html">Chapter 10: Arrays</a> and <a href="https://docs.oracle.com/javase/specs/jls/se21/html/jls-4.html#jls-4.2.3">floating-point types</a>; Java SE 21 <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/concurrent/ForkJoinPool.html">ForkJoinPool API</a>.</li>
+<li>Josh Alman et al., “More Asymmetry Yields Faster Matrix Multiplication.” <a href="https://arxiv.org/abs/2404.16349">Primary paper and algebraic-complexity background</a>.</li>
+<li>Emilien Dupont et al., “Improving the matrix multiplication exponent with modern optimization and AlphaEvolve,” August 17, 2026. <a href="https://arxiv.org/abs/2608.16884v1">arXiv:2608.16884v1</a>. Reported bound checked September 23, 2026.</li>
+</ol>
+<p class="provenance">Created September 22, 2026 · redesigned September 23, 2026 · Codex on Linux · original implementation: GPT-5.6 Sol · design and implementation revision: GPT-6</p>
+</section>
+<footer class="footer-nav"><a href="../research.html">← Research</a><span>·</span><a href="../index.html">Home</a><span>·</span><a href="#top">Back to top ↑</a></footer>
+</main></div>
+</body></html>
