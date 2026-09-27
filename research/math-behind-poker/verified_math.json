@@ -1,0 +1,773 @@
+{
+  "method": "Exhaustive enumeration, independently compared with combinatorial formulas. No simulation.",
+  "five_card_total": 2598960,
+  "categories": [
+    {
+      "id": "straight-flush",
+      "label": "Straight flush",
+      "count": 40,
+      "fraction": "1/64974",
+      "percent": 0.0015390771693292702,
+      "one_in": 64974.0
+    },
+    {
+      "id": "four-of-a-kind",
+      "label": "Four of a kind",
+      "count": 624,
+      "fraction": "1/4165",
+      "percent": 0.024009603841536616,
+      "one_in": 4165.0
+    },
+    {
+      "id": "full-house",
+      "label": "Full house",
+      "count": 3744,
+      "fraction": "6/4165",
+      "percent": 0.14405762304921968,
+      "one_in": 694.1666666666666
+    },
+    {
+      "id": "flush",
+      "label": "Flush",
+      "count": 5108,
+      "fraction": "1277/649740",
+      "percent": 0.1965401545233478,
+      "one_in": 508.80187940485513
+    },
+    {
+      "id": "straight",
+      "label": "Straight",
+      "count": 10200,
+      "fraction": "5/1274",
+      "percent": 0.3924646781789639,
+      "one_in": 254.8
+    },
+    {
+      "id": "three-of-a-kind",
+      "label": "Three of a kind",
+      "count": 54912,
+      "fraction": "88/4165",
+      "percent": 2.112845138055222,
+      "one_in": 47.32954545454545
+    },
+    {
+      "id": "two-pair",
+      "label": "Two pair",
+      "count": 123552,
+      "fraction": "198/4165",
+      "percent": 4.75390156062425,
+      "one_in": 21.035353535353536
+    },
+    {
+      "id": "one-pair",
+      "label": "One pair",
+      "count": 1098240,
+      "fraction": "352/833",
+      "percent": 42.25690276110444,
+      "one_in": 2.366477272727273
+    },
+    {
+      "id": "high-card",
+      "label": "High card",
+      "count": 1302540,
+      "fraction": "1277/2548",
+      "percent": 50.11773940345369,
+      "one_in": 1.9953014878621769
+    }
+  ],
+  "royal_flushes": 4,
+  "scenarios": [
+    {
+      "id": "flush",
+      "label": "Flush draw",
+      "hole": [
+        "Ah",
+        "Qh"
+      ],
+      "flop": [
+        "8h",
+        "3h",
+        "Kc"
+      ],
+      "outs": [
+        "2h",
+        "4h",
+        "5h",
+        "6h",
+        "7h",
+        "9h",
+        "10h",
+        "Jh",
+        "Kh"
+      ],
+      "target": "At least one more heart: enough for a heart flush.",
+      "caution": "Making this flush does not rule out an opponent’s full house or four of a kind.",
+      "out_count": 9,
+      "runout_hits": 378,
+      "turn": {
+        "fraction": "9/47",
+        "percent": 19.148936170212767
+      },
+      "by_river": {
+        "fraction": "378/1081",
+        "percent": 34.96762257169288
+      },
+      "rule_two_percent": 18,
+      "rule_four_percent": 36
+    },
+    {
+      "id": "open",
+      "label": "Open-ended straight draw",
+      "hole": [
+        "8s",
+        "9d"
+      ],
+      "flop": [
+        "6c",
+        "7h",
+        "Kh"
+      ],
+      "outs": [
+        "5s",
+        "5h",
+        "5d",
+        "5c",
+        "10s",
+        "10h",
+        "10d",
+        "10c"
+      ],
+      "target": "Any five or ten completes the current 6–7–8–9 sequence.",
+      "caution": "A straight-completing card may also complete an opponent’s flush or a higher straight.",
+      "out_count": 8,
+      "runout_hits": 340,
+      "turn": {
+        "fraction": "8/47",
+        "percent": 17.02127659574468
+      },
+      "by_river": {
+        "fraction": "340/1081",
+        "percent": 31.45235892691952
+      },
+      "rule_two_percent": 16,
+      "rule_four_percent": 32
+    },
+    {
+      "id": "gutshot",
+      "label": "Gutshot straight draw",
+      "hole": [
+        "8s",
+        "9d"
+      ],
+      "flop": [
+        "5c",
+        "7h",
+        "Kh"
+      ],
+      "outs": [
+        "6s",
+        "6h",
+        "6d",
+        "6c"
+      ],
+      "target": "Any six fills the inside gap in 5–7–8–9.",
+      "caution": "The two-card result below counts hitting a six. A ten and a jack can also make a different straight without a six.",
+      "out_count": 4,
+      "runout_hits": 178,
+      "turn": {
+        "fraction": "4/47",
+        "percent": 8.51063829787234
+      },
+      "by_river": {
+        "fraction": "178/1081",
+        "percent": 16.466234967622572
+      },
+      "rule_two_percent": 8,
+      "rule_four_percent": 16
+    },
+    {
+      "id": "set",
+      "label": "Pocket pair → at least three eights",
+      "hole": [
+        "8s",
+        "8d"
+      ],
+      "flop": [
+        "Kc",
+        "7h",
+        "2c"
+      ],
+      "outs": [
+        "8h",
+        "8c"
+      ],
+      "target": "Either remaining eight makes a third eight; hitting both makes four.",
+      "caution": "This counts at least three eights, including full houses or quads, not the exclusive three-of-a-kind category.",
+      "out_count": 2,
+      "runout_hits": 91,
+      "turn": {
+        "fraction": "2/47",
+        "percent": 4.25531914893617
+      },
+      "by_river": {
+        "fraction": "91/1081",
+        "percent": 8.418131359851989
+      },
+      "rule_two_percent": 4,
+      "rule_four_percent": 8
+    }
+  ],
+  "seven_cards": [
+    "As",
+    "Qs",
+    "Js",
+    "10s",
+    "Kd",
+    "9s",
+    "2c"
+  ],
+  "subsets": [
+    {
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "cards": [
+        "As",
+        "Qs",
+        "Js",
+        "10s",
+        "Kd"
+      ],
+      "rank": [
+        4,
+        14
+      ],
+      "category": "Straight"
+    },
+    {
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        5
+      ],
+      "cards": [
+        "As",
+        "Qs",
+        "Js",
+        "10s",
+        "9s"
+      ],
+      "rank": [
+        5,
+        14,
+        12,
+        11,
+        10,
+        9
+      ],
+      "category": "Flush"
+    },
+    {
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        6
+      ],
+      "cards": [
+        "As",
+        "Qs",
+        "Js",
+        "10s",
+        "2c"
+      ],
+      "rank": [
+        0,
+        14,
+        12,
+        11,
+        10,
+        2
+      ],
+      "category": "High card"
+    },
+    {
+      "indices": [
+        0,
+        1,
+        2,
+        4,
+        5
+      ],
+      "cards": [
+        "As",
+        "Qs",
+        "Js",
+        "Kd",
+        "9s"
+      ],
+      "rank": [
+        0,
+        14,
+        13,
+        12,
+        11,
+        9
+      ],
+      "category": "High card"
+    },
+    {
+      "indices": [
+        0,
+        1,
+        2,
+        4,
+        6
+      ],
+      "cards": [
+        "As",
+        "Qs",
+        "Js",
+        "Kd",
+        "2c"
+      ],
+      "rank": [
+        0,
+        14,
+        13,
+        12,
+        11,
+        2
+      ],
+      "category": "High card"
+    },
+    {
+      "indices": [
+        0,
+        1,
+        2,
+        5,
+        6
+      ],
+      "cards": [
+        "As",
+        "Qs",
+        "Js",
+        "9s",
+        "2c"
+      ],
+      "rank": [
+        0,
+        14,
+        12,
+        11,
+        9,
+        2
+      ],
+      "category": "High card"
+    },
+    {
+      "indices": [
+        0,
+        1,
+        3,
+        4,
+        5
+      ],
+      "cards": [
+        "As",
+        "Qs",
+        "10s",
+        "Kd",
+        "9s"
+      ],
+      "rank": [
+        0,
+        14,
+        13,
+        12,
+        10,
+        9
+      ],
+      "category": "High card"
+    },
+    {
+      "indices": [
+        0,
+        1,
+        3,
+        4,
+        6
+      ],
+      "cards": [
+        "As",
+        "Qs",
+        "10s",
+        "Kd",
+        "2c"
+      ],
+      "rank": [
+        0,
+        14,
+        13,
+        12,
+        10,
+        2
+      ],
+      "category": "High card"
+    },
+    {
+      "indices": [
+        0,
+        1,
+        3,
+        5,
+        6
+      ],
+      "cards": [
+        "As",
+        "Qs",
+        "10s",
+        "9s",
+        "2c"
+      ],
+      "rank": [
+        0,
+        14,
+        12,
+        10,
+        9,
+        2
+      ],
+      "category": "High card"
+    },
+    {
+      "indices": [
+        0,
+        1,
+        4,
+        5,
+        6
+      ],
+      "cards": [
+        "As",
+        "Qs",
+        "Kd",
+        "9s",
+        "2c"
+      ],
+      "rank": [
+        0,
+        14,
+        13,
+        12,
+        9,
+        2
+      ],
+      "category": "High card"
+    },
+    {
+      "indices": [
+        0,
+        2,
+        3,
+        4,
+        5
+      ],
+      "cards": [
+        "As",
+        "Js",
+        "10s",
+        "Kd",
+        "9s"
+      ],
+      "rank": [
+        0,
+        14,
+        13,
+        11,
+        10,
+        9
+      ],
+      "category": "High card"
+    },
+    {
+      "indices": [
+        0,
+        2,
+        3,
+        4,
+        6
+      ],
+      "cards": [
+        "As",
+        "Js",
+        "10s",
+        "Kd",
+        "2c"
+      ],
+      "rank": [
+        0,
+        14,
+        13,
+        11,
+        10,
+        2
+      ],
+      "category": "High card"
+    },
+    {
+      "indices": [
+        0,
+        2,
+        3,
+        5,
+        6
+      ],
+      "cards": [
+        "As",
+        "Js",
+        "10s",
+        "9s",
+        "2c"
+      ],
+      "rank": [
+        0,
+        14,
+        11,
+        10,
+        9,
+        2
+      ],
+      "category": "High card"
+    },
+    {
+      "indices": [
+        0,
+        2,
+        4,
+        5,
+        6
+      ],
+      "cards": [
+        "As",
+        "Js",
+        "Kd",
+        "9s",
+        "2c"
+      ],
+      "rank": [
+        0,
+        14,
+        13,
+        11,
+        9,
+        2
+      ],
+      "category": "High card"
+    },
+    {
+      "indices": [
+        0,
+        3,
+        4,
+        5,
+        6
+      ],
+      "cards": [
+        "As",
+        "10s",
+        "Kd",
+        "9s",
+        "2c"
+      ],
+      "rank": [
+        0,
+        14,
+        13,
+        10,
+        9,
+        2
+      ],
+      "category": "High card"
+    },
+    {
+      "indices": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "cards": [
+        "Qs",
+        "Js",
+        "10s",
+        "Kd",
+        "9s"
+      ],
+      "rank": [
+        4,
+        13
+      ],
+      "category": "Straight"
+    },
+    {
+      "indices": [
+        1,
+        2,
+        3,
+        4,
+        6
+      ],
+      "cards": [
+        "Qs",
+        "Js",
+        "10s",
+        "Kd",
+        "2c"
+      ],
+      "rank": [
+        0,
+        13,
+        12,
+        11,
+        10,
+        2
+      ],
+      "category": "High card"
+    },
+    {
+      "indices": [
+        1,
+        2,
+        3,
+        5,
+        6
+      ],
+      "cards": [
+        "Qs",
+        "Js",
+        "10s",
+        "9s",
+        "2c"
+      ],
+      "rank": [
+        0,
+        12,
+        11,
+        10,
+        9,
+        2
+      ],
+      "category": "High card"
+    },
+    {
+      "indices": [
+        1,
+        2,
+        4,
+        5,
+        6
+      ],
+      "cards": [
+        "Qs",
+        "Js",
+        "Kd",
+        "9s",
+        "2c"
+      ],
+      "rank": [
+        0,
+        13,
+        12,
+        11,
+        9,
+        2
+      ],
+      "category": "High card"
+    },
+    {
+      "indices": [
+        1,
+        3,
+        4,
+        5,
+        6
+      ],
+      "cards": [
+        "Qs",
+        "10s",
+        "Kd",
+        "9s",
+        "2c"
+      ],
+      "rank": [
+        0,
+        13,
+        12,
+        10,
+        9,
+        2
+      ],
+      "category": "High card"
+    },
+    {
+      "indices": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "cards": [
+        "Js",
+        "10s",
+        "Kd",
+        "9s",
+        "2c"
+      ],
+      "rank": [
+        0,
+        13,
+        11,
+        10,
+        9,
+        2
+      ],
+      "category": "High card"
+    }
+  ],
+  "best_subset_index": 1,
+  "flush_tree": {
+    "hit_hit": {
+      "fraction": "36/1081",
+      "percent": 3.330249768732655
+    },
+    "hit_miss": {
+      "fraction": "171/1081",
+      "percent": 15.818686401480111
+    },
+    "miss_hit": {
+      "fraction": "171/1081",
+      "percent": 15.818686401480111
+    },
+    "miss_miss": {
+      "fraction": "703/1081",
+      "percent": 65.03237742830713
+    }
+  },
+  "bayes_posterior": {
+    "fraction": "3/7",
+    "percent": 42.857142857142854
+  },
+  "ev_units": 2.5,
+  "gutshot_all_straight_runouts": 194
+}

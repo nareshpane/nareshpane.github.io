@@ -1,0 +1,195 @@
+/* Phase 2 additions; Phase 1's layout and card definitions remain intact. */
+.math-part { margin-top: 26px; }
+.part-heading { background: var(--felt); color: var(--paper); padding: 38px; border-radius: 18px; }
+.part-heading .stage-label { color: #e5cc8c; }
+.part-heading h2 { font-size: clamp(2rem, 4vw, 3.2rem); }
+.part-heading p { max-width: 660px; margin-bottom: 0; color: #e0e6db; }
+.math-part .chapter { border-bottom: 1px solid var(--line); }
+.math-part .math-hand { flex-wrap: wrap; gap: 6px; }
+.math-equation { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 10px 16px; padding: 22px 18px; margin: 22px 0 14px; border: 1px solid var(--line); border-radius: 10px; background: #faf6ec; font: 1.14rem/1.9 Georgia, serif; text-align: center; overflow-wrap: anywhere; }
+.math-equation strong { color: var(--green); }
+.math-equation sub { font-size: .66em; }
+.math-equation .fraction { display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center; line-height: 1.5; margin: 0 5px; max-width: 100%; }
+.fraction > span:first-child { border-bottom: 1px solid var(--ink); padding: 0 6px 3px; }
+.fraction > span:last-child { padding: 3px 6px 0; }
+.formula-key { font-size: .88rem; color: var(--muted); }
+.deck-grid { padding: 22px 18px; border: 1px solid var(--line); border-radius: 12px; margin: 24px 0; background: #f7f5ee; }
+.suit-row + .suit-row { margin-top: 14px; }
+.suit-name { display: block; font-size: .73rem; margin-bottom: 5px; color: var(--muted); }
+.suit-cards { display: grid; grid-template-columns: repeat(13, minmax(0, 1fr)); gap: 7px; max-width: 880px; }
+.deck-cell { min-width: 0; position: relative; display: block; padding-bottom: 4px; }
+.deck-cell .playing-card { --card-width: 49px; width: 100%; height: auto; aspect-ratio: 1 / 1.44; max-height: 86px; }
+.deck-cell .corner { font-size: 15px; }
+.deck-cell .pip { font-size: 27px; }
+.rank-suit-key { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 30px 0; }
+.rank-suit-key > div { border-left: 2px solid var(--gold); padding-left: 20px; }
+.rank-suit-key p { font-size: .85rem; }
+.choose-seven, .subset-source { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; padding: 22px 10px; background: #eef1e9; border-radius: 10px; margin: 22px 0; }
+.choice-card { display: flex; flex-direction: column; text-align: center; gap: 10px; }
+.choice-card > .playing-card { flex: none; }
+.choice-card > small { font-size: .7rem; line-height: 1.5; color: var(--green); }
+.playing-card.chosen { outline: 2px solid var(--gold); outline-offset: 2px; }
+.playing-card.not-chosen { border: 1px dashed #737a70; background: #e2e6dc; box-shadow: none; }
+.factor-flow { display: flex; flex-wrap: wrap; gap: 18px; margin: 22px 0; }
+.count-factor { flex: 1 1 170px; min-width: 0; padding: 16px 0 12px; border-top: 2px solid #ad955e; }
+.count-factor .math-hand { --card-width: 38px; margin: 0 0 17px; }
+.count-factor > strong { display: block; color: var(--green); font: 700 1.4rem/1.5 'Cormorant Garamond', Georgia, serif; }
+.count-factor > span { display: block; font-size: .81rem; line-height: 1.65; max-width: 290px; }
+.derivation { padding: 27px 0; border-top: 1px solid var(--line); }
+.derivation:first-of-type { margin-top: 25px; }
+.derivation > p { font-size: .94rem; }
+.derivation .count-factor { flex-basis: 180px; }
+.probability-line { display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap; color: var(--green); padding-top: 9px; }
+.probability-line > span { font-size: .76rem; color: var(--muted); }
+.order-demo { background: #f4f2e9; padding: 23px; border-radius: 12px; margin: 25px 0; }
+.order-equals { font-size: 1.4rem; color: var(--green); }
+.order-equals span { font-size: .8rem; vertical-align: middle; margin-left: 10px; }
+.order-demo p { font-size: .85rem; margin-top: 15px; }
+.math-controls { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 20px 0; }
+.math-controls label { font-size: .86rem; font-weight: 600; }
+.math-controls select { max-width: 100%; min-height: 44px; padding: 8px; border: 1px solid #899b88; border-radius: 6px; background: white; font: .83rem Inter, Arial, sans-serif; color: var(--ink); }
+.math-controls button { font-size: .8rem; }
+.math-table-wrap { margin: 22px 0; }
+.math-table-wrap table { border-collapse: collapse; width: 100%; font-size: .84rem; font-variant-numeric: tabular-nums; }
+.math-table-wrap caption { text-align: left; font-size: .78rem; color: var(--muted); padding-bottom: 12px; }
+.math-table-wrap th, .math-table-wrap td { padding: 13px 10px; border-bottom: 1px solid var(--line); text-align: right; }
+.math-table-wrap th:first-child { text-align: left; }
+.math-table-wrap thead { background: var(--felt); color: white; }
+.math-table-wrap tbody th { font-weight: 500; }
+.math-table-wrap tbody tr:nth-child(even) { background: #f6f3eb; }
+.math-table-wrap tfoot { background: #e6eddf; font-weight: 700; }
+.verification-note { margin: 24px 0 0; font-size: .82rem; color: var(--muted); }
+.rarity-figure { margin: 28px 0; }
+.rarity-chart { display: block; width: 100%; background: #faf8f2; border-radius: 12px; }
+.rarity-chart text { fill: var(--ink); font: 13px Inter, Arial, sans-serif; }
+.rarity-chart .rarity-value { font: 600 12px Inter, Arial, sans-serif; }
+.rarity-grid { stroke: #dcd9cb; stroke-width: 1; }
+.rarity-stem { stroke: #9eb4a2; stroke-width: 2; }
+.rarity-dot { fill: var(--green); }
+.rarity-mobile { display: none; }
+.subset-lab, .outs-lab { border-top: 4px solid var(--green); background: #f3f6ee; padding: 24px; margin: 26px 0; border-radius: 0 0 14px 14px; }
+.subset-source { background: transparent; padding: 8px 0; }
+#subset-result .hand { margin: 25px auto; }
+#subset-status { min-height: 5em; margin-bottom: 0; }
+.draw-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin: 18px 0 25px; }
+.deck-legend { display: flex; gap: 8px 18px; flex-wrap: wrap; font-size: .73rem; margin: 20px 0 10px; }
+.deck-legend span { padding: 3px 6px; border: 1px solid #b6bcad; border-radius: 3px; }
+.outs-lab .deck-grid { padding: 15px 12px; background: #eef0e7; margin: 15px 0 22px; }
+.outs-lab .suit-row + .suit-row { margin-top: 20px; }
+.deck-cell .deck-badge { display: block; text-align: center; font: 700 .9rem/1.1 Inter, Arial, sans-serif; margin-top: 5px; }
+.deck-cell.known .playing-card { opacity: .48; border: 2px dashed #616859; box-shadow: none; }
+.deck-cell.out .playing-card { outline: 2px solid var(--green); outline-offset: 1px; background: #fff8dc; }
+.deck-cell.out .deck-badge { color: var(--green); }
+.draw-reference { margin: 26px 0; }
+.draw-reference-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 35px; padding: 25px 0; border-top: 1px solid var(--line); }
+.draw-reference-row .small-label { margin: 12px 0 0; }
+.draw-reference-row p { font-size: .9rem; }
+.draw-reference-row p.small { font-size: .81rem; }
+.out-list { font-family: Georgia, serif; }
+.conditioning-flow { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 15px; margin: 28px 0; align-items: center; }
+.conditioning-flow > div { display: flex; flex-direction: column; align-items: center; padding: 20px 12px; border-top: 2px solid var(--gold); border-bottom: 1px solid var(--line); text-align: center; gap: 8px; }
+.conditioning-flow strong { font: 700 1.5rem 'Cormorant Garamond', Georgia, serif; color: var(--green); }
+.conditioning-flow span { font-size: .8rem; }
+.conditioning-flow b { font-size: .78rem; }
+.conditioning-flow .flow-arrow { font-size: 1.6rem; color: var(--gold); }
+.probability-tree { padding: 25px 10px; margin: 20px 0; }
+.tree-root { padding: 14px; text-align: center; width: max-content; max-width: 100%; margin: 0 auto 25px; border: 1px solid var(--green); border-radius: 10px; background: #e9efdf; font-size: .9rem; position: relative; }
+.tree-root::after { content: ''; position: absolute; bottom: -26px; height: 25px; border-left: 2px solid var(--gold); left: 50%; }
+.tree-branches { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; border-top: 2px solid var(--gold); }
+.tree-branch { padding: 22px 0 0 18px; border-left: 2px solid var(--gold); }
+.tree-branch h3 { font-size: 1.5rem; }
+.tree-branch h3 span { display: block; font: .9rem/1.8 'Source Code Pro', monospace; color: var(--green); }
+.tree-leaf { display: flex; flex-direction: column; padding: 15px; margin-top: 16px; background: #f0f4e9; border-left: 3px solid var(--green); gap: 6px; }
+.tree-leaf strong { font-size: .85rem; }
+.tree-leaf span { font: .8rem/1.65 'Source Code Pro', monospace; }
+.tree-leaf b { font-size: .72rem; color: var(--green); }
+.tree-miss { background: #f3ede6; border-left: 3px dashed #8a7157; }
+.tree-miss b { color: #6c4b34; }
+.bayes-cohorts { display: grid; grid-template-columns: 1fr; gap: 26px; padding: 26px; border: 1px solid var(--line); border-radius: 12px; margin: 25px 0; }
+.bayes-cohorts > div { max-width: 700px; }
+.bayes-cohorts p { margin: 12px 0 0; font-size: .9rem; }
+.cohort-bar { display: flex; height: 50px; width: 100%; border: 1px solid #759577; }
+.cohort-bar > span { display: grid; place-items: center; font-size: .78rem; font-weight: 600; }
+.cohort-h { background: var(--green); color: white; width: 20%; }
+.cohort-l { background: #ede6cf; color: var(--ink); width: 80%; }
+.posterior .cohort-h { width: 42.857142857%; }
+.posterior .cohort-l { width: 57.142857143%; }
+.payoff-example { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 25px; margin: 25px 0; }
+.payoff-example > div { display: flex; flex-direction: column; padding: 20px 0; border-top: 3px solid var(--gold); }
+.payoff-example strong { font: 700 2rem/1.5 'Cormorant Garamond', Georgia, serif; color: var(--green); }
+.payoff-example span:last-child { font-size: .8rem; margin-top: 8px; }
+.math-reproducibility { background: #f3f0e7; border-radius: 12px; padding: 24px; margin: 28px 0 35px; }
+.math-reproducibility p { font-size: .86rem; }
+.math-reproducibility pre { white-space: pre-wrap; overflow-wrap: anywhere; font-size: .76rem; line-height: 1.8; padding: 16px; background: #e7e6da; border-radius: 6px; }
+@media (max-width: 850px) {
+  .suit-cards { gap: 5px; }
+  .deck-cell .corner { font-size: 12px; left: 3px; top: 3px; }
+  .deck-cell .corner.bottom { left: auto; top: auto; bottom: 3px; right: 3px; }
+  .deck-cell .pip { font-size: 22px; }
+  .draw-reference-row { gap: 24px; }
+  .rarity-chart { display: none; }
+  .rarity-mobile { display: block; padding: 16px; border: 1px solid var(--line); border-radius: 10px; background: #faf8f2; }
+  .rarity-mobile-row { margin: 16px 0; }
+  .rarity-mobile-row > span { display: flex; justify-content: space-between; gap: 12px; font-size: .76rem; }
+  .rarity-track { position: relative; height: 14px; border-bottom: 1px solid #adbca9; margin-top: 4px; }
+  .rarity-track::before { content: ''; position: absolute; height: 10px; top: 9px; left: var(--position); width: 10px; border-radius: 50%; background: var(--green); transform: translateX(-50%); }
+  .rarity-mobile-axis { position: relative; height: 25px; font-size: .58rem; color: var(--muted); margin-top: 22px; }
+  .rarity-mobile-axis span { position: absolute; transform: translateX(-50%); border-top: 1px solid var(--gold); padding-top: 3px; }
+  .rarity-mobile-axis span:first-child { transform: none; }
+  .rarity-mobile-axis span:last-child { transform: translateX(-100%); }
+}
+@media (max-width: 640px) {
+  .part-heading { padding: 24px 18px; }
+  .deck-grid { padding: 18px 10px; }
+  .suit-cards { grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 8px 5px; }
+  .deck-cell .playing-card { max-height: none; }
+  .deck-cell .corner { font-size: 12px; }
+  .deck-cell .pip { font-size: 20px; }
+  .suit-row + .suit-row { margin-top: 18px; }
+  .rank-suit-key { grid-template-columns: 1fr; }
+  .math-equation { font-size: 1rem; padding: 18px 10px; gap: 12px; }
+  .math-equation > span { max-width: 100%; }
+  .math-equation .fraction { margin: 0 2px; }
+  .factor-flow { gap: 10px; }
+  .count-factor { flex-basis: 100%; }
+  .derivation .count-factor { flex-basis: 100%; }
+  .count-factor > span { max-width: none; }
+  .choose-seven, .subset-source { gap: 12px 10px; }
+  .choose-seven .playing-card, .subset-source .playing-card { --card-width: 46px; }
+  .order-demo { padding: 18px 12px; }
+  .order-demo .hand { --card-width: 43px; }
+  .math-table-wrap table { font-size: .68rem; }
+  .math-table-wrap th, .math-table-wrap td { padding: 10px 4px; }
+  .frequency-table th:first-child { max-width: 85px; }
+  .math-table-wrap td { overflow-wrap: anywhere; }
+  .subset-lab, .outs-lab { padding: 20px 12px; }
+  .subset-lab .math-hand { --card-width: 42px; }
+  #subset-status { min-height: 8em; }
+  .draw-cards { grid-template-columns: 1fr; gap: 10px; }
+  .outs-lab .deck-grid { padding: 12px 5px; }
+  .outs-lab .suit-cards { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .draw-reference-row { grid-template-columns: 1fr; gap: 16px; }
+  .conditioning-flow { grid-template-columns: 1fr; gap: 10px; }
+  .conditioning-flow .flow-arrow { text-align: center; transform: rotate(90deg); }
+  .tree-branches { grid-template-columns: 1fr; gap: 22px; }
+  .tree-root { font-size: .79rem; }
+  .tree-branch { padding-left: 12px; }
+  .tree-leaf { padding: 13px 10px; }
+  .tree-leaf span { font-size: .72rem; }
+  .bayes-cohorts { padding: 20px 13px; }
+  .cohort-bar > span { font-size: .66rem; }
+  .payoff-example { grid-template-columns: 1fr; gap: 10px; }
+  .math-reproducibility { padding: 22px 16px; }
+}
+@media (max-width: 370px) {
+  .suit-cards { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .outs-lab .suit-cards { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .order-demo .hand, .subset-lab .math-hand { --card-width: 38px; }
+  .frequency-table { font-size: .61rem !important; }
+  .math-table-wrap th, .math-table-wrap td { padding: 9px 3px; }
+}
+@media print {
+  .math-controls { display: none !important; }
+  .derivation, .tree-branch, .draw-reference-row { break-inside: avoid; }
+  .part-heading, .cohort-bar, .deck-cell .playing-card { print-color-adjust: exact; }
+}

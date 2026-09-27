@@ -1,0 +1,171 @@
+/* Shared visual revision: three card scales, warm olive surfaces, opening film. */
+:root {
+  --bg: #f4f2e5; --paper: #fffef8; --ink: #293329; --muted: #606752;
+  --line: #d6d8be; --green: #435b35; --felt: #34452c; --gold: #8a6824;
+  --soft: #f2f1df; --card-normal: 78px; --card-compact: 64px; --card-hero: 100px;
+}
+.playing-card { --card-width: var(--card-normal); border-radius: 9px; box-shadow: 0 4px 9px #3e442319; }
+.hand, .card-group { flex-wrap: wrap; gap: 9px; min-width: 0; }
+.card-group { max-width: 100%; }
+.hand { row-gap: 17px; }
+.poker-table .playing-card { --card-width: var(--card-hero); }
+.count-factor .playing-card, .out-strip .playing-card { --card-width: var(--card-compact); }
+.choose-seven .playing-card, .subset-source .playing-card { --card-width: var(--card-normal); }
+.deck-cell .playing-card { --card-width: var(--card-compact); width: var(--card-width); height: calc(var(--card-width) * 1.44); max-height: none; }
+.deck-cell .corner { font-size: calc(var(--card-width) * .26); }
+.deck-cell .pip { font-size: calc(var(--card-width) * .56); }
+.suit-cards, .outs-lab .suit-cards { grid-template-columns: repeat(auto-fill, minmax(var(--card-compact), 1fr)); gap: 12px 9px; max-width: none; }
+.deck-cell { width: var(--card-compact); }
+.poker-table { background: radial-gradient(ellipse at 50% 30%, #f2f4cd, #e0e7bf 85%); border-color: #a8b38c; color: var(--ink); box-shadow: inset 0 0 0 2px #fff9dc, 0 7px 22px #626d3210; border-radius: 70px 70px 35px 35px; }
+.table-label, .street > span, .opponent > span:last-child, .private-zone p { color: #46533a; }
+.selection-key { color: #615016; }
+.private-zone, .table-result { border-color: #adb88b; }
+.card-back { width: 38px; height: 55px; border-color: #fffdf1; background: repeating-linear-gradient(45deg, #b5be8e 0 1px, transparent 1px 5px), repeating-linear-gradient(-45deg, #b5be8e 0 1px, #e4e8cc 1px 5px); }
+.playing-card.unused, .playing-card.not-chosen { background: #e8eacf; }
+.part-heading { background: linear-gradient(110deg, #e8edc7, #f4f0d9); color: var(--ink); border: 1px solid #c9d0ac; }
+.part-heading .stage-label { color: var(--gold); }
+.part-heading p { color: #536044; }
+.math-table-wrap thead { background: #e1e7bf; color: var(--ink); }
+.math-table-wrap tfoot, .shared-board, .choose-seven { background: #edf0d8; }
+.comparison-lab, .subset-lab, .outs-lab, .laboratory .experiment { background: #f4f5e6; border-color: #c4cea6; }
+.deck-grid, .outs-lab .deck-grid { background: #f1f1df; }
+.cohort-h, #pot-base-bar { background: #c8d5a2; color: var(--ink); }
+.cohort-l, #pot-bet-bar { background: #e4e7cd; color: var(--ink); }
+#pot-call-bar { background: #e9d79e; color: var(--ink); }
+.pot-composition span { color: var(--ink); }
+.rank-suit-key, .draw-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.selection-example > *, .selection-input > *, .compare-grid > *, .ladder-rung > *, .tie-row > *, .draw-cards > *, .rank-suit-key > * { min-width: 0; }
+.selection-example { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+.selection-title { grid-column: 1 / -1; display: flex; gap: 18px; align-items: center; }
+.selection-title h3 { margin: 0; }
+.selected-output { grid-column: auto; }
+.ladder-rung { grid-template-columns: 175px minmax(0, 1fr); gap: 12px 28px; padding: 28px 0; }
+.rung-explanation { grid-column: 2; max-width: 690px; }
+.rung-explanation p { font-size: .91rem; }
+.rung-explanation .outranks { font-size: .84rem; }
+.compare-grid.three { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+.compare-grid.three > :last-child { grid-column: 1 / -1; border-left: 0; padding: 20px 0 0; border-top: 1px solid var(--line); }
+.tie-row { grid-template-columns: minmax(200px, .7fr) minmax(0, 1fr); }
+.count-factor, .derivation .count-factor { flex-basis: 320px; }
+/* The opening explains the purpose before introducing the rules. */
+.page-provenance-layout { margin-bottom: 25px; }
+.subtitle { max-width: 650px; font-size: 1.17rem; color: #536044; }
+.intro-purpose { margin: 20px 0 40px; }
+.intro-thesis { font: 600 clamp(1.9rem, 3.1vw, 2.65rem)/1.2 'Cormorant Garamond', Georgia, serif; color: var(--green); max-width: 850px; margin: 0 0 26px; }
+.intro-aims { display: grid; grid-template-columns: 1fr 1fr; gap: 38px; }
+.intro-aims p { font-size: 1rem; }
+.intro-aims strong { color: var(--green); }
+.intro-roadmap { display: flex; flex-wrap: wrap; gap: 10px 0; list-style: none; padding: 20px 0; margin: 16px 0 0; border-block: 1px solid var(--line); }
+.intro-roadmap li { font-size: .81rem; font-weight: 600; }
+.intro-roadmap li:not(:last-child)::after { content: '→'; color: var(--gold); padding: 0 14px; }
+.intro-film { margin: 0 0 48px; border: 1px solid #c7cfaa; border-radius: 18px; background: linear-gradient(145deg, #f5f5df, #e9edcf 65%, #f3edda); overflow: hidden; }
+.intro-film-heading { display: flex; justify-content: space-between; gap: 15px; padding: 24px 28px 0; }
+.intro-film-heading h2 { font-size: 1.6rem; margin-bottom: 5px; }
+.intro-film-heading > span { font: .75rem/1.7 'Source Code Pro', monospace; color: var(--muted); white-space: nowrap; }
+.intro-stage { position: relative; display: grid; padding: 22px 28px; min-height: 490px; align-items: center; }
+.intro-scene { grid-area: 1 / 1; min-width: 0; width: 100%; text-align: center; }
+.intro-scene[aria-hidden="true"] { visibility: hidden; pointer-events: none; }
+.intro-scene h3 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 14px; }
+.intro-scene p { max-width: 700px; margin: 14px auto 0; font-size: .91rem; }
+.intro-scene .hand { justify-content: center; margin: 20px auto; }
+.intro-scene .playing-card { --card-width: var(--card-hero); transition: none; }
+/* Compact ranks are confined to the full-deck opening; later hands keep their scales. */
+.intro-full-deck { width: 100%; max-width: 860px; margin: 25px auto; display: grid; gap: 13px; }
+.intro-suit-row { display: grid; grid-template-columns: 82px minmax(0, 1fr); gap: 10px; align-items: center; }
+.intro-suit-label { text-align: left; font-size: .76rem; text-transform: capitalize; }
+.intro-ranks { display: grid; grid-template-columns: repeat(13, minmax(0, 1fr)); gap: 6px; }
+.intro-ranks .playing-card { width: 100%; height: 65px; border-radius: 5px; padding-top: 7px; }
+.intro-ranks .corner { position: static; display: block; font-size: 18px; }
+.intro-ranks .corner small, .intro-ranks .corner.bottom { display: none; }
+.intro-ranks .pip { inset: auto 0 7px; font-size: 20px; }
+.intro-ranks .intro-deck-focus { border-color: #9a7829; background: #fff9de; }
+.intro-scene.intro-transition-out { visibility: visible; pointer-events: none; }
+.intro-flights { position: absolute; inset: 0; pointer-events: none; z-index: 2; }
+.intro-flights .playing-card { position: absolute; transform-origin: top left; transition: none; }
+.intro-rank-panels { display: grid; }
+.intro-rank-panel { grid-area: 1 / 1; min-width: 0; }
+.intro-speed { max-width: 430px; margin: 10px 0 0; }
+.intro-speed label { display: block; font-size: .8rem; font-weight: 600; }
+.intro-speed input { display: block; width: 100%; min-height: 32px; accent-color: var(--green); }
+.intro-speed output { color: var(--green); font-variant-numeric: tabular-nums; }
+.intro-speed-limits { display: flex; justify-content: space-between; font-size: .68rem; color: var(--muted); }
+@media (max-width: 560px) {
+  .intro-suit-row { grid-template-columns: 1fr; gap: 4px; }
+  .intro-ranks { grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 5px; }
+  .intro-ranks .playing-card { height: 43px; padding-top: 4px; }
+  .intro-ranks .corner { font-size: 16px; }
+  .intro-ranks .pip { font-size: 14px; bottom: 3px; }
+  .intro-full-deck { gap: 10px; margin-block: 18px; }
+}
+.intro-board { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; margin-top: 20px; }
+.intro-board .hand { margin: 0 0 12px; }
+.intro-board > div > small, .intro-hole > small { display: block; font-size: .72rem; text-transform: uppercase; letter-spacing: .06em; color: var(--green); }
+.intro-hole .hand { margin: 16px auto 10px; }
+.intro-seven { gap: 12px; }
+.intro-seven .playing-card { --card-width: var(--card-normal); }
+.intro-selected { outline: 3px solid #9a7829; outline-offset: 2px; }
+.intro-selected::after { content: '✓'; position: absolute; top: -10px; right: -5px; font: 700 13px/21px Inter, sans-serif; width: 21px; border-radius: 50%; background: #ead38f; color: #384129; }
+.intro-equation { font: 600 clamp(1.65rem, 3vw, 2.6rem)/1.5 'Cormorant Garamond', Georgia, serif; color: var(--green); overflow-wrap: anywhere; }
+.intro-outs .playing-card { --card-width: var(--card-compact); }
+.intro-nowrap { white-space: nowrap; }
+.intro-outs { max-width: min(100%, 690px); }
+.intro-final-flow { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin: 30px 0; text-align: left; }
+.intro-final-flow > div { padding: 18px 0 10px; border-top: 2px solid #a4b180; }
+.intro-final-flow b { display: block; color: var(--gold); font: 1.9rem/1.3 Georgia, serif; margin-bottom: 16px; }
+.intro-final-flow strong { display: block; font-size: .85rem; }
+.intro-final-flow span { display: block; font-size: .75rem; margin-top: 8px; color: var(--muted); }
+.intro-controls { padding: 18px 28px 22px; background: #fffdf580; border-top: 1px solid #c7cfaa; }
+.intro-buttons { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.intro-buttons button { padding: 9px 17px; font-size: .8rem; }
+.intro-buttons button + button { color: var(--green); background: #fffdf3; }
+.intro-buttons output { margin-left: auto; font: .76rem 'Source Code Pro', monospace; color: var(--muted); }
+.intro-seek { display: flex; align-items: center; gap: 14px; margin-top: 12px; }
+.intro-seek label { font-size: .74rem; white-space: nowrap; }
+.intro-seek input { width: 100%; min-width: 0; min-height: 32px; accent-color: var(--green); }
+.intro-film > figcaption { margin: 0; padding: 0 28px 22px; font-size: .8rem; }
+.intro-mode { font-size: .78rem; color: var(--muted); margin: 12px 0 0; }
+@media (max-width: 1050px) {
+  .compare-grid:not(.three), .compare-grid.three, .selection-example, .draw-reference-row { grid-template-columns: 1fr; }
+  .selected-output { grid-column: 1; padding: 18px 0 0; border-left: 0; border-top: 1px dashed var(--line); }
+  .comparison-hand + .comparison-hand, .compare-grid.three .comparison-hand + .comparison-hand { padding: 22px 0 0; border-left: 0; border-top: 1px solid var(--line); }
+  .tie-row { grid-template-columns: 1fr; gap: 12px; }
+  .tie-row > div:first-child { max-width: none; }
+  .board-streets { flex-wrap: wrap; }
+  .private-zone { flex-wrap: wrap; }
+}
+@media (max-width: 700px) {
+  :root { --card-normal: 68px; --card-compact: 58px; --card-hero: 76px; }
+  .intro-aims { grid-template-columns: 1fr; gap: 8px; }
+  .intro-film-heading { padding: 22px 15px 0; flex-wrap: wrap; }
+  .intro-stage { padding: 24px 14px; min-height: 650px; }
+  .intro-controls { padding: 16px 14px; }
+  .intro-film > figcaption { padding: 0 14px 20px; }
+  .intro-final-flow { grid-template-columns: 1fr 1fr; gap: 14px; }
+  .intro-scene .hand { gap: 10px; }
+  .intro-board { gap: 18px; }
+  .intro-board > :first-child { flex-basis: 100%; }
+  .intro-board .hand { margin: 0 auto 12px; }
+  .intro-seven { max-width: min(100%, 380px); }
+  .intro-roadmap li { font-size: .8rem; }
+  .intro-roadmap li:not(:last-child)::after { padding: 0 9px; }
+  .intro-buttons output { margin-left: 0; }
+  .ladder-rung, .ladder-rung:first-child { grid-template-columns: 1fr; }
+  .rung-explanation { grid-column: 1; }
+  .poker-table { padding-inline: 10px; border-radius: 35px 35px 20px 20px; }
+  .board-streets .flop { flex-basis: 100%; }
+  .poker-table .hand { justify-content: center; }
+  .private-zone > div:last-child { text-align: center; }
+  .hand, .card-group { gap: 8px; row-gap: 16px; }
+  .rank-suit-key, .draw-cards { grid-template-columns: 1fr; }
+}
+@media (max-width: 370px) {
+  :root { --card-hero: 68px; --card-normal: 64px; --card-compact: 56px; }
+  .intro-stage { padding-inline: 10px; }
+  .intro-scene .hand { gap: 7px; }
+  .intro-board { gap: 14px; }
+  .intro-final-flow strong { font-size: .77rem; }
+}
+@media print {
+  .intro-controls { display: none !important; }
+  .intro-film { break-inside: avoid; }
+}

@@ -1,0 +1,262 @@
+:root {
+  --bg: #f7f4ee;
+  --paper: #fffdf9;
+  --ink: #222a27;
+  --muted: #646962;
+  --line: #ddd5c7;
+  --green: #205543;
+  --felt: #153f33;
+  --gold: #98722e;
+  --red: #b32f3f;
+  --soft: #f5f1e8;
+  --card-width: 51px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; color: var(--ink); background: var(--bg); font-family: Inter, Arial, sans-serif; line-height: 1.7; }
+a { color: var(--green); text-underline-offset: 4px; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 3px solid var(--gold); outline-offset: 5px; }
+[hidden] { display: none !important; }
+.page { max-width: 1180px; margin: 0 auto; padding: 34px 20px 48px; }
+.paper { padding: 40px; border: 1px solid var(--line); border-radius: 22px; background: var(--paper); box-shadow: 0 14px 32px #0000000c; }
+h1, h2, h3, h4 { font-family: 'Cormorant Garamond', Georgia, serif; line-height: 1.08; margin: 0 0 14px; font-weight: 700; }
+h1 { font-size: clamp(2.8rem, 5.6vw, 4.7rem); letter-spacing: -.035em; color: var(--felt); }
+h2 { font-size: clamp(2rem, 3.5vw, 2.8rem); }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.35rem; }
+p { margin: 0 0 16px; }
+figure { margin: 24px 0; }
+figcaption, .caption, .small { font-size: .86rem; color: var(--muted); }
+figcaption { margin: 15px 4px 0; }
+.caption { margin: 12px 0 0; }
+.small-label, .stage-label, .eyebrow, .hand-label { display: block; font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.small-label, .stage-label { color: var(--green); margin-bottom: 10px; }
+.eyebrow { color: var(--gold); margin-bottom: 20px; }
+.subtitle { color: var(--muted); font-size: 1.07rem; line-height: 1.65; }
+.page-provenance-layout { display: grid; grid-template-columns: minmax(0, 1fr) 17rem; gap: 28px; align-items: start; margin-bottom: 34px; }
+.page-provenance { font-size: .75rem; line-height: 1.6; background: #fcfaf6; padding: 14px 16px; border: 1px solid var(--line); border-top: 3px solid var(--gold); border-radius: 14px; box-shadow: 0 4px 12px #00000008; }
+.page-provenance div + div { margin-top: 7px; }
+.page-provenance strong { color: var(--green); }
+.page-provenance div:nth-child(3) strong { color: #6c5b99; }
+.page-provenance div:nth-child(4) strong { color: #876324; }
+.version { display: inline-block; color: var(--muted); font-size: .69rem; }
+.lead { font-size: 1.08rem; max-width: 900px; }
+.opening h2 { font-size: 1.8rem; }
+.skip-link { position: absolute; top: -100px; left: 12px; background: white; padding: 12px; z-index: 10; }
+.skip-link:focus { top: 12px; }
+/* Card faces are native HTML: ranks stay readable without images or scripts. */
+.hand { display: flex; align-items: flex-start; gap: 6px; margin: 10px 0; max-width: 100%; width: max-content; }
+.card-group { display: flex; gap: 4px; position: relative; padding-bottom: 9px; }
+.card-group.matched { border-bottom: 2px solid var(--gold); }
+.card-group.matched::before, .card-group.matched::after { content: ''; position: absolute; bottom: -2px; height: 6px; border-left: 2px solid var(--gold); }
+.card-group.matched::before { left: 0; }
+.card-group.matched::after { right: 0; }
+.playing-card { position: relative; display: inline-block; flex: 0 0 var(--card-width); width: var(--card-width); height: calc(var(--card-width) * 1.44); border: 1px solid #d2cbbf; border-radius: 6px; background: linear-gradient(135deg, #fff, #fffdf5); box-shadow: 0 3px 5px #00000013; font-family: Georgia, 'Times New Roman', serif; line-height: 1; transition: transform .18s ease, box-shadow .18s ease; }
+.playing-card.black { color: #222a2d; }
+.playing-card.red { color: var(--red); }
+.corner { position: absolute; top: 4px; left: 4px; font-size: calc(var(--card-width) * .26); font-weight: 700; text-align: center; }
+.corner small { display: block; font-size: .82em; margin-top: 1px; }
+.corner.bottom { top: auto; left: auto; bottom: 4px; right: 4px; transform: rotate(180deg); }
+.pip { position: absolute; inset: 0; display: grid; place-items: center; font-size: calc(var(--card-width) * .56); }
+.red-text { color: var(--red); }
+@media (hover: hover) { .ladder-rung:hover .playing-card { transform: translateY(-3px); box-shadow: 0 6px 8px #00000017; } }
+/* A teaching table, with a separate street for every reveal. */
+.poker-table { --card-width: 66px; padding: 25px 35px 24px; border: 7px solid #314b3e; border-radius: 110px 110px 65px 65px; background: radial-gradient(ellipse at 50% 40%, #245c47, var(--felt) 80%); box-shadow: inset 0 0 0 1px #bba36b66, inset 0 0 35px #001e1755; color: #fffdf4; text-align: center; }
+.opponent { display: flex; align-items: center; justify-content: center; gap: 6px; margin-bottom: 23px; }
+.opponent > span:last-child { font-size: .73rem; line-height: 1.65; text-align: left; margin-left: 10px; color: #e1e9db; }
+.card-back { width: 29px; height: 41px; border: 2px solid #e1dbc7; border-radius: 4px; background: repeating-linear-gradient(45deg, #9c864e 0 1px, transparent 1px 5px), repeating-linear-gradient(-45deg, #9c864e 0 1px, #31473c 1px 5px); transform: rotate(-7deg); }
+.card-back + .card-back { transform: rotate(7deg); }
+.table-label { display: block; font-size: .73rem; letter-spacing: .055em; text-transform: uppercase; color: #e5dcc1; font-weight: 600; }
+.board-streets { display: flex; justify-content: center; gap: 16px; margin: 10px 0 26px; }
+.street > span { display: block; border-top: 1px solid #bda67488; padding-top: 10px; font-size: .72rem; color: #e5dcc1; }
+.poker-table .hand { margin: 10px auto 15px; gap: 9px; }
+.playing-card.selected { box-shadow: 0 0 0 2px #dfc788, 0 5px 10px #0003; }
+.playing-card.selected::after { content: '✓'; position: absolute; right: -4px; top: -7px; background: #e5cc8c; color: #133c2e; font: 700 12px/18px Inter, sans-serif; width: 18px; border-radius: 50%; }
+.playing-card.unused { background: #d6dcd1; box-shadow: none; }
+.private-zone { display: flex; justify-content: center; align-items: center; gap: 26px; padding: 18px 0 10px; border-top: 1px solid #e0cf9833; }
+.private-zone > div:last-child { text-align: left; }
+.private-zone p { font-size: .8rem; margin: 6px 0; color: #e1e9db; }
+.table-result { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 20px; border-top: 1px solid #e0cf9833; padding-top: 17px; }
+.table-result strong { font: 600 1.2rem Georgia, serif; letter-spacing: .05em; }
+.table-result > span { font-size: .76rem; }
+.selection-key { color: #f0d69a; }
+.information-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 23px; margin: 28px 0 22px; }
+.information-strip > div { border-left: 2px solid var(--line); padding-left: 14px; font-size: .87rem; }
+.toc { display: flex; flex-wrap: wrap; gap: 9px 24px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 20px 0; margin: 30px 0 0; }
+.toc a { font-size: .78rem; font-weight: 600; text-decoration: none; }
+.toc a:hover { text-decoration: underline; }
+.chapter { padding: 44px 0 38px; border-bottom: 1px solid var(--line); scroll-margin-top: 20px; }
+.deal-timeline { display: grid; grid-template-columns: repeat(5, 1fr); list-style: none; margin: 30px 0 24px; padding: 0; gap: 15px; }
+.deal-timeline li { border-top: 3px solid var(--green); padding-top: 15px; }
+.deal-timeline strong { font-size: .9rem; }
+.deal-number { display: block; color: var(--gold); font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.8rem; margin: 6px 0; }
+.deal-timeline p { font-size: .79rem; color: var(--muted); }
+.note { background: var(--soft); border-left: 3px solid var(--gold); padding: 16px 20px; margin: 22px 0 0; font-size: .9rem; border-radius: 0 10px 10px 0; }
+.selection-examples { margin-top: 28px; }
+.selection-example { display: grid; grid-template-columns: 150px 1fr 1fr; gap: 25px; padding: 26px 0; border-top: 1px solid var(--line); --card-width: 46px; }
+.selection-title > span { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 3.5rem; line-height: 1; color: var(--gold); }
+.selection-title h3 { font-size: 1.45rem; margin-top: 10px; }
+.selection-input { display: grid; gap: 14px; }
+.selection-input .small-label { margin: 0; }
+.selected-output { border-left: 1px solid var(--line); padding-left: 22px; align-self: center; }
+.selected-output .caption { max-width: 300px; }
+/* The ladder is one continuous reference sheet, not a grid of dashboard cards. */
+.ladder-key { display: flex; justify-content: space-between; gap: 20px; padding: 17px 0 12px; font-size: .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--green); }
+.hand-ladder { list-style: none; padding: 0; margin: 0; border-top: 4px solid var(--green); }
+.ladder-rung { display: grid; grid-template-columns: 175px minmax(270px, .95fr) minmax(0, 1fr); gap: 20px; align-items: center; border-bottom: 1px solid var(--line); padding: 24px 0; scroll-margin-top: 20px; }
+.ladder-rung:first-child { background: linear-gradient(90deg, #f4ebd9, transparent); padding-left: 12px; }
+.rung-number { font: 500 .75rem 'Source Code Pro', monospace; color: var(--gold); display: block; margin-bottom: 8px; }
+.rung-heading h3 { font-size: 1.75rem; margin: 0; }
+.pattern { font: 500 .73rem/1.7 'Source Code Pro', monospace; color: var(--green); margin-top: 5px; }
+.rung-explanation p { font-size: .83rem; margin-bottom: 9px; }
+.rung-explanation .outranks { margin: 0; color: var(--muted); font-size: .76rem; border-left: 2px solid var(--line); padding-left: 10px; }
+.comparison { padding: 27px 0; border-top: 1px solid var(--line); }
+.comparison:first-of-type { margin-top: 25px; }
+.compare-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px; margin: 20px 0 12px; }
+.compare-grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; --card-width: 46px; }
+.comparison-hand { min-width: 0; }
+.comparison-hand + .comparison-hand { border-left: 1px solid var(--line); padding-left: 22px; }
+.comparison-hand h4 { font-size: 1.3rem; min-height: 1.4em; }
+.compare-grid .hand { margin-bottom: 12px; }
+.comparison-lab { border: 1px solid #b5c5b7; border-top: 4px solid var(--green); padding: 27px; margin: 30px 0; background: #f1f5ee; border-radius: 4px 4px 16px 16px; }
+.lab-heading { display: flex; gap: 15px; justify-content: space-between; align-items: start; }
+.tag { font-size: .67rem; border: 1px solid #c8d2c0; padding: 3px 8px; border-radius: 30px; white-space: nowrap; color: var(--green); }
+.lab-controls { display: flex; flex-wrap: wrap; gap: 10px; margin: 23px 0 15px; }
+button { font: 600 .86rem Inter, sans-serif; border-radius: 30px; border: 1px solid var(--green); background: var(--green); color: white; min-height: 44px; padding: 10px 18px; cursor: pointer; }
+button:hover { background: #123f2f; }
+button:disabled { opacity: .55; cursor: default; }
+#compare-reset { color: var(--green); background: transparent; }
+.comparison-status { border-left: 3px solid var(--green); padding: 10px 14px; background: #fffdf9; min-height: 5em; font-size: .9rem; }
+.compare-trace { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 14px 0; }
+.compare-trace li { border: 1px solid #c6cebd; padding: 4px 9px; border-radius: 5px; font: .75rem/1.7 'Source Code Pro', monospace; }
+.compare-trace li.current { background: var(--green); color: white; font-weight: 600; }
+.lab-hand .playing-card.compared { box-shadow: 0 0 0 2px #697968; }
+.lab-hand .playing-card.deciding { box-shadow: 0 0 0 3px var(--gold); transform: translateY(-5px); }
+.lab-hand .playing-card.deciding::after { content: '↓'; position: absolute; top: -24px; left: 0; right: 0; text-align: center; color: var(--green); font: 700 20px/1 Inter, sans-serif; }
+.tie-row { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding: 26px 0; border-bottom: 1px solid var(--line); }
+.tie-row:last-child { border-bottom: 0; }
+.tie-row > div:first-child { max-width: 330px; }
+.tie-row p { font-size: .9rem; }
+.tie-row .caption { font-size: .83rem; }
+.hand-label { font-size: .65rem; color: var(--green); }
+.showdown { margin: 24px 0; padding: 28px; border: 1px solid var(--line); border-radius: 16px; background: #fcfaf5; }
+.shared-board { display: flex; flex-direction: column; align-items: center; background: #eceee4; border-radius: 10px; padding: 20px 8px 12px; margin: 24px 0; }
+.shared-board .small-label { margin-bottom: 0; }
+.showdown .compare-grid > div { text-align: center; }
+.showdown .hand { margin-left: auto; margin-right: auto; }
+.verdict { display: flex; gap: 20px; border-top: 1px solid var(--line); padding-top: 20px; font-size: .87rem; }
+.verdict strong { flex: 0 0 180px; color: var(--green); }
+.bridge { border: 0; }
+.counting-preview { display: flex; justify-content: center; align-items: center; gap: 35px; margin: 28px 0; padding: 28px 15px; background: var(--soft); border-radius: 14px; }
+.counting-preview > div { display: flex; flex-direction: column; align-items: center; font-size: .8rem; }
+.counting-preview svg { width: 90px; flex-shrink: 1; color: var(--gold); }
+.deck-icon { font: 2.5rem/1.1 Georgia, serif; letter-spacing: .1em; margin-bottom: 12px; }
+.deck-icon span { color: var(--red); }
+.choose-equation > span { font: 2.7rem/1.5 'Cormorant Garamond', Georgia, serif; color: var(--green); }
+.choose-equation small { color: var(--muted); font-size: .8rem; }
+.next-phase { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.55rem; color: var(--green); margin-top: 24px; }
+.sources { font-size: .78rem; color: var(--muted); border-top: 1px solid var(--line); padding-top: 22px; }
+.footer-nav { display: flex; justify-content: center; gap: 16px; font-size: .9rem; padding-top: 25px; }
+.footer-nav span { color: #999; }
+@media (max-width: 1080px) {
+  .paper { padding: 30px; }
+  .ladder-rung { grid-template-columns: 150px 1fr; gap: 14px 24px; }
+  .rung-explanation { grid-column: 2; }
+  .rung-visual .hand { margin-top: 0; }
+  .selection-example { grid-template-columns: 120px 1fr 1fr; gap: 15px; --card-width: 40px; }
+  .selected-output { padding-left: 14px; }
+  .compare-grid.three { --card-width: 38px; gap: 12px; }
+  .compare-grid.three .comparison-hand + .comparison-hand { padding-left: 10px; }
+}
+@media (max-width: 850px) {
+  .page-provenance-layout { grid-template-columns: 1fr; gap: 8px; }
+  .page-provenance { max-width: 350px; }
+  .selection-example { grid-template-columns: 100px 1fr; --card-width: 49px; }
+  .selected-output { grid-column: 2; border-left: 0; padding-left: 0; }
+  .selection-input { grid-template-columns: 1fr; }
+  .compare-grid.three { grid-template-columns: 1fr; --card-width: 51px; gap: 22px; }
+  .compare-grid.three .comparison-hand + .comparison-hand { border-left: 0; border-top: 1px solid var(--line); padding: 22px 0 0; }
+  .compare-grid:not(.three) { --card-width: 43px; gap: 18px; }
+  .comparison-hand + .comparison-hand { padding-left: 15px; }
+  .tie-row { gap: 25px; --card-width: 45px; }
+  .deal-timeline { gap: 12px; }
+  .deal-timeline strong { font-size: .79rem; }
+  .lab-heading { display: block; }
+}
+@media (max-width: 640px) {
+  .page { padding: 12px 10px 30px; }
+  .paper { padding: 24px 17px; border-radius: 16px; }
+  h1 { font-size: clamp(2.8rem, 10.5vw, 3.8rem); }
+  h2 { font-size: 2.15rem; }
+  .page-provenance-layout { margin-bottom: 28px; }
+  .eyebrow { font-size: .62rem; letter-spacing: .07em; }
+  .chapter { padding: 34px 0 28px; }
+  .poker-table { --card-width: 44px; border-width: 4px; border-radius: 45px 45px 25px 25px; padding: 24px 10px 20px; }
+  .table-label { font-size: .61rem; letter-spacing: .035em; }
+  .board-streets { gap: 10px; }
+  .poker-table .hand { gap: 5px; }
+  .street > span { font-size: .6rem; }
+  .private-zone { gap: 15px; }
+  .private-zone p { font-size: .69rem; }
+  .table-result { gap: 10px; flex-direction: column; }
+  .table-result > span { font-size: .7rem; }
+  .information-strip { grid-template-columns: 1fr; gap: 17px; }
+  .information-strip .small-label { margin-bottom: 3px; }
+  .toc { gap: 12px 20px; }
+  .deal-timeline { grid-template-columns: 1fr; gap: 0; }
+  .deal-timeline li { border-top: 0; border-left: 2px solid var(--green); padding: 0 0 20px 20px; display: grid; grid-template-columns: 90px 1fr; gap: 0 12px; }
+  .deal-timeline li:last-child { padding-bottom: 0; }
+  .deal-timeline strong { font-size: .9rem; }
+  .deal-number { margin: 0; line-height: 1.15; font-size: 1.5rem; }
+  .deal-timeline p { grid-column: 2; margin: 8px 0 0; }
+  .selection-example { grid-template-columns: 1fr; gap: 12px; --card-width: 47px; }
+  .selection-title { display: flex; gap: 16px; align-items: center; }
+  .selection-title > span { font-size: 2.7rem; }
+  .selection-title h3 { margin: 0; }
+  .selected-output { grid-column: 1; padding: 16px 0 0; border-top: 1px dashed var(--line); }
+  .ladder-key > span:last-child { display: none; }
+  .ladder-rung, .ladder-rung:first-child { grid-template-columns: 1fr; gap: 10px; padding: 22px 0; }
+  .ladder-rung:first-child { background: linear-gradient(90deg, #f4ebd988, transparent); }
+  .rung-heading { display: flex; align-items: baseline; gap: 15px; }
+  .rung-number { margin: 0; }
+  .rung-heading h3 { font-size: 1.9rem; }
+  .rung-explanation { grid-column: 1; }
+  .rung-explanation p { font-size: .88rem; }
+  .rung-explanation .outranks { font-size: .82rem; }
+  .compare-grid:not(.three), .compare-grid.three { grid-template-columns: 1fr; --card-width: 47px; gap: 20px; }
+  .comparison-hand + .comparison-hand { border-left: 0; border-top: 1px solid var(--line); padding: 20px 0 0; }
+  .comparison-lab { padding: 20px 14px; }
+  .comparison-lab .compare-grid { --card-width: 44px; }
+  .comparison-status { min-height: 8em; }
+  .tie-row { grid-template-columns: 1fr; gap: 10px; --card-width: 47px; }
+  .tie-row > div:first-child { max-width: none; }
+  .showdown { padding: 22px 14px; --card-width: 43px; }
+  .showdown .compare-grid { gap: 12px; }
+  .verdict { flex-direction: column; gap: 8px; }
+  .verdict strong { flex-basis: auto; }
+  .counting-preview { gap: 15px; padding: 22px 10px; }
+  .counting-preview svg { width: 38px; }
+  .choose-equation > span { font-size: 2rem; }
+  .choose-equation small { font-size: .65rem; text-align: center; }
+}
+@media (max-width: 370px) {
+  :root { --card-width: 43px; }
+  .paper { padding: 22px 13px; }
+  .poker-table { --card-width: 37px; padding-left: 7px; padding-right: 7px; }
+  .selection-example, .compare-grid:not(.three), .compare-grid.three, .tie-row { --card-width: 41px; }
+  .comparison-lab .compare-grid, .showdown { --card-width: 37px; }
+  .board-streets { gap: 7px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+@media print {
+  .page { max-width: none; padding: 0; }
+  .paper { padding: 0; box-shadow: none; border: 0; }
+  .lab-controls, .skip-link, .toc { display: none !important; }
+  .playing-card { box-shadow: none; print-color-adjust: exact; }
+  .ladder-rung, .comparison, .showdown, .tie-row { break-inside: avoid; }
+  .poker-table { print-color-adjust: exact; }
+}
