@@ -503,7 +503,9 @@
   }
 
   function advance(now) {
-    elapsed = Math.min(duration, anchorElapsed + (now - anchorTime) * rate / 1000);
+    // A frame timestamp can precede the input handler's performance.now().
+    // Never render before the playback anchor after Play, Replay or a seek.
+    elapsed = Math.min(duration, anchorElapsed + Math.max(0, now - anchorTime) * rate / 1000);
   }
 
   function tick(now) {
@@ -588,6 +590,6 @@
     buildWorld();
   });
   buildWorld();
-  motionMode();
-  if (!reduced.matches) play();
+  // Start the existing clock on landing; reduced motion still controls rendering.
+  play();
 })();
