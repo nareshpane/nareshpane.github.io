@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Harmonized System (HS) for Canada — an independent educational research collection by Naresh Neupane.">
+<title>Harmonized System (HS) for Canada | Naresh Neupane</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="1-harmonized-system-canada/css/style.css">
+<script src="1-harmonized-system-canada/js/app.js" defer></script>
+</head>
+<body id="top"><a class="skip" href="#main">Skip to content</a><div class="page"><nav class="collection-nav" aria-label="Collection navigation"><a href="harmonized-system-index.html">Collection Home</a><a href="harmonized-system-canada.html" aria-current="page">Page 1</a><a href="preferential-tariffs-canada.html">Page 2</a><a href="alberta-trade-by-hs.html">Page 3</a><a href="hs-data-analysis.html">Page 4</a><a href="../../research.html">Main Research Page</a></nav><main id="main">
+<header class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow">Study 01 / 04 · Classification · Research draft</div>
+    <h1>Harmonized System (HS) for Canada</h1>
+    <p class="lead">An interactive guide to Canada’s commodity classification system</p>
+    <p class="hero-intro">Explore the Harmonized System hierarchy using the Canada Border Services Agency Customs Tariff, from broad chapters to six-digit international subheadings.</p>
+  </div>
+  <aside class="meta-card" aria-label="Page provenance">
+    <dl class="meta">
+      <div><dt><span aria-hidden="true">📅</span> Created:</dt><dd>October 2, 2026</dd></div>
+      <div><dt><span aria-hidden="true">🧰</span> Harness:</dt><dd>Codex CLI on Linux</dd></div>
+      <div><dt><span aria-hidden="true">🤖</span> Model:</dt><dd>GPT-5.6 Sol</dd></div>
+      <div><dt><span aria-hidden="true">🧠</span> Reasoning:</dt><dd>Medium</dd></div>
+      <div><dt>Codex CLI:</dt><dd>0.160.0</dd></div>
+    </dl>
+  </aside>
+</header>
+<aside class="card source-panel" aria-label="Official source and attribution"><div><h2>Source &amp; attribution · Independent educational guide</h2><p>Classification information is based on the <strong>Canada Border Services Agency (CBSA), Customs Tariff chapter-by-chapter (T2026-2)</strong>. The chapter schedules represented are effective <strong>September 1, 2026</strong>; the source page was modified <strong>September 16, 2026</strong>.</p><p>The material has been reorganized here for educational and research purposes. CBSA remains the authoritative source for official and current tariff classification. This is not an official CBSA or Government of Canada website.</p><p class="small" id="snapshot-meta">Snapshot: T2026-2 · Chapter schedules effective September 1, 2026</p></div><a class="source-link" href="https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/html/tblmod-2-eng.html">Official CBSA source ↗</a></aside>
+<nav class="jump-links" aria-label="On this page"><a href="#understanding">Read a code</a><a href="#explorer">Explore the hierarchy</a><a href="#beyond">Beyond HS6</a><a href="#schedule">Read a tariff table</a><a href="#national">Canadian special chapters</a><a href="#method">Collection method</a></nav>
+<section id="understanding" class="card"><div class="eyebrow">One product, increasing specificity</div><h2 style="margin-top:12px">From a chapter to a classification</h2><p>The Harmonized System organizes goods into broad sections, two-digit chapters, four-digit headings and six-digit international subheadings. Canada extends that structure with tariff items and statistical suffixes. More digits generally mean greater commodity specificity.</p><ol class="hierarchy"><li><code>06</code><span>HS2 / Chapter</span></li><li><code>06.01</code><span>HS4 / Heading</span></li><li><code>0601.10</code><span>HS6 / International Subheading</span></li><li><code>0601.10.11</code><span>Canadian 8-digit Tariff Item</span></li><li><code>0601.10.11.00</code><span>Canadian 10-digit Classification</span></li></ol><div class="digit-groups"><div class="digit-group"><strong>INTERNATIONAL</strong><code>06 + 01 + 10</code><span>First 6 digits: internationally harmonized</span></div><div class="digit-group canadian"><strong>CANADIAN EXTENSIONS</strong><code>11 + 00</code><span>Digits 7–8: tariff item · Digits 9–10: statistical suffix</span></div></div><p class="small">Chapter 06 covers live plants and related goods; heading 06.01 narrows to bulbs, tubers and related products; 0601.10 identifies dormant bulbs and related goods. The Canadian item 0601.10.11 further specifies certain narcissus bulbs. The example uses statistical suffix 00. Dots aid reading; leading zeros remain part of the code. <a href="https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/html/02/ch06-eng.html">See the Chapter 6 schedule ↗</a></p></section>
+<section id="explorer" class="section-space"><div class="eyebrow">The classification atlas</div><h2 style="margin-top:12px">Explore Canada’s HS hierarchy</h2><p>Begin with one of the 21 sections, then open a chapter, heading and subheading. The detailed explorer stops at six digits. Open an HS6 row to inspect its full source description and how it was extracted. Its separate “Canadian tariff details” control reveals the national tariff and statistical rows beneath it.</p><div class="stats" aria-label="Dataset statistics"><div class="stat"><strong id="stat-sections">—</strong><span>HS sections</span></div><div class="stat"><strong id="stat-hs2">—</strong><span>HS2 chapters, including reserved 77</span></div><div class="stat"><strong id="stat-hs4">—</strong><span>HS4 headings</span></div><div class="stat"><strong id="stat-hs6">—</strong><span>HS6 prefixes in the source HTML</span></div></div><p class="small" id="data-note">Statistics load from the local, validated dataset.</p><div class="legend"><span>HS2 · Chapter</span><span>HS4 · Heading</span><span>HS6 · International subheading / source prefix</span></div>
+<div class="toolbar"><label for="hs-search">Search codes or descriptions</label><div class="search-row"><input id="hs-search" class="explorer-control" type="search" placeholder="Try 060110, 06.01, bulbs or petroleum" aria-describedby="search-help" disabled autocomplete="off"><button id="clear-search" class="control explorer-control" type="button" disabled>Clear</button></div><div class="toolbar-bottom"><button id="expand-all" class="control explorer-control" type="button" disabled>Expand all</button><button id="collapse-all" class="control explorer-control" type="button" disabled>Collapse all</button><p id="result-count" role="status" aria-live="polite">Loading classifications…</p></div></div><p class="small" id="search-help">Code searches ignore dots, spaces and hyphens and match prefixes. Description searches require all entered words. Matches reveal their ancestors; matching chapters and headings also show descendants. Expand/collapse applies to the current results. Clear restores the collapsed overview.</p><details class="section-nav"><summary>Jump to an HS section</summary><ul id="section-links"></ul></details><div id="loading" class="status" role="status">Loading the local CBSA snapshot…</div><noscript><p class="error">JavaScript is required for the explorer. You can still read this guide and <a href="1-harmonized-system-canada/data/hs-t2026-2.json">download the JSON dataset</a> or visit the official CBSA schedules.</p></noscript><div id="explorer-tree"></div><p id="no-results" class="empty-state" hidden>No matching classifications. Try a shorter code or a different commodity name.</p></section>
+<section id="beyond" class="card"><div class="eyebrow">Where the international hierarchy ends</div><h2 style="margin-top:12px">Beyond HS6 in Canada</h2><div class="split"><div><p><strong>HS6</strong> is the international subheading. <strong>HS8</strong> is the Canadian tariff item. <strong>HS10</strong> is the Canadian statistical classification, including the two-digit statistical suffix.</p><p>For <code>0601.10.11.00</code>, read <code>0601.10</code> as the international subheading, add <code>11</code> for the tariff item, then <code>00</code> for the statistical suffix.</p></div><div><p>A six-digit code alone does not specify every Canadian tariff rate or reporting detail. The applicable treatment also depends on the full tariff item and the relevant conditions, including origin.</p><p class="small">This explorer intentionally does not reproduce the entire HS8/HS10 tree. Follow a chapter’s official HTML or PDF link for national detail, legal notes and complete schedules.</p></div></div></section>
+<section id="schedule" class="card"><div class="eyebrow">Reading the official schedule</div><h2 style="margin-top:12px">What the CBSA table columns mean</h2><dl class="definitions"><div><dt>Tariff Item</dt><dd>The code column includes four- and six-digit hierarchy rows and eight-digit Canadian tariff items. Its label does not mean that every displayed row is eight digits.</dd></div><div><dt>SS</dt><dd>The two-digit statistical suffix. Combine it with an eight-digit tariff item to form the ten-digit classification.</dd></div><div><dt>Description of Goods</dt><dd>The product wording and its nested qualifiers. Read it with the parent descriptions and applicable section and chapter notes.</dd></div><div><dt>Unit of Meas.</dt><dd>The unit specified for statistical quantity reporting. For example, NMB means number; KGM means kilograms.</dd></div><div><dt>MFN Tariff</dt><dd>The Most-Favoured-Nation tariff rate for goods entitled to that treatment. A rate may be “Free”, a percentage, a specific duty or a combination.</dd></div><div><dt>Applicable Preferential Tariffs</dt><dd>Rates for listed preferential tariff treatments. Eligibility depends on the treatment’s conditions; an acronym alone does not establish entitlement.</dd></div></dl><div class="table-wrap"><table class="example-table"><caption>Educational representation · One row from the T2026-2 Chapter 6 HTML schedule</caption><thead><tr><th scope="col">Tariff Item</th><th scope="col">SS</th><th scope="col">Description of Goods</th><th scope="col">Unit of Meas.</th><th scope="col">MFN Tariff</th><th scope="col">Applicable Preferential Tariffs</th></tr></thead><tbody id="tariff-example"><tr><td colspan="6">The example loads directly from the same local dataset as the explorer.</td></tr></tbody></table></div><p class="small">The row is retained from the source HTML, including ancestor wording. It illustrates the schedule’s structure, rather than determining the duty payable for a particular import. <a href="https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/html/02/ch06-eng.html">Read Chapter 6 in context ↗</a></p><h3>Preferential tariff abbreviations: a compact orientation</h3><p>The abbreviations identify tariff treatments under Canadian preference programs and trade agreements. For example, UST denotes the United States Tariff, MXT the Mexico Tariff, GPT the General Preferential Tariff and LDCT the Least Developed Country Tariff.</p><div class="acronyms"><code>CCCT</code><code>LDCT</code><code>GPT</code><code>UST</code><code>MXT</code><code>CT</code><code>CRT</code><code>PT</code><code>COLT</code><code>JT</code><code>PAT</code><code>HNT</code><code>KRT</code><code>CEUT</code><code>UAT</code><code>CPTPT</code><code>UKT</code><code>CPUKT</code></div><p class="small">This is a selection, not an exhaustive list. The <a href="https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/html/admin-eng.html">official administrative guidelines</a> define abbreviations and units; the <a href="https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/html/countries-pays-2-eng.html">country-treatment list</a> identifies the treatments listed for each country. The planned <a href="preferential-tariffs-canada.html">Page 2: Preferential Tariffs and Trade Agreements in Canada</a> will explore these in detail.</p><p><a href="https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/html/tblmod-2-eng.html">Official tariff schedule and country-treatment documents ↗</a></p></section>
+<section id="national" class="card"><div class="eyebrow">Canadian national provisions</div><h2 style="margin-top:12px">Canadian Special Classification Chapters</h2><p>Chapters 98 and 99 contain Canadian national provisions. They are shown separately here and are not treated as ordinary international HS chapters or added to Section XXI.</p><div id="special-chapters" class="national-grid"></div><noscript><p>98 — Special classification provisions – non-commercial<br>99 — Special classification provisions – commercial</p></noscript><p class="small" style="margin-top:18px">Chapter 77 is different: it is reserved for possible future use in the Harmonized System and remains in Section XV with no classification children.</p></section>
+<details id="method" class="card method"><summary>How the source data were collected</summary><p>This is a reproducible snapshot of the CBSA HTML schedules, not a separately certified international HS nomenclature. Codes, descriptions and source anomalies are retained so readers can trace the data back to CBSA.</p><ol><li><strong>HTML → structured hierarchy.</strong> The Python program reads section headings and chapter links from the master page, then selects tariff tables by their six column labels. It separates the code, SS and description cells; skips repeated table headers; preserves leading zeros; and distinguishes HS4, HS6 and Canadian tariff-item rows.</li><li><strong>Optional PDFs → local reference.</strong> The same master page supplies PDF links. The optional downloader saves them locally; this website links to CBSA’s documents.</li></ol><p>Repeated parent descriptions are removed only when they exactly match the heading prefix. Intermediate commodity groups remain in the description. When no HS6 row exists, an unsplit eight-digit <code>.00</code> tariff item can supply the six-digit prefix and its description. Some unsplit rows also carry the heading. Every reconstructed node records its provenance. Each HS6 also retains all associated eight-digit Canadian tariff-item rows and their statistical suffixes, with the description, unit, MFN tariff and preferential tariff text from each source row. Only whitespace is normalized; blank cells and differing rates remain separate. These are national tariff-line attributes, not attributes of the international HS6.</p><p>If only statistical rows exist, the parser retains their common description path and flags the node for review. It stops rather than guesses when no safe common path is available. In particular, the Chapter 71 HTML contains statistical-only prefixes and literal “null” text; raw descriptions for those rows are available inside the flagged HS6 nodes.</p><p id="build-summary" class="small">Build statistics load from the generated JSON.</p><ul id="warning-list" class="small"></ul><p class="small">Warnings report source ambiguities; passing structural checks does not resolve them. Chapter 6 regression checks verify <code>06 → 0601 → 0601.10</code> and inference of <code>0602.10</code> from <code>0602.10.00</code>. Chapter 15 checks verify the lard line <code>1501.10.00 00</code>, unit KGM, MFN Free and its full preferential-tariff text. A multiple-row regression retains all 13 source rows beneath <code>0601.10</code>, including base rows with blank SS. Validation also checks code strings, leading zeros, duplicates, parent prefixes, descriptions, source URLs and the treatment of Chapters 77, 98 and 99.</p><h3>Run locally</h3><pre><code>python3 -m pip install -r requirements.txt
+python3 build_cbsa_hs.py
+python3 build_cbsa_hs.py --validate-only
+# Optional reference PDFs:
+python3 build_cbsa_hs.py --download-pdfs
+# Refresh cached HTML (and PDFs when requested):
+python3 build_cbsa_hs.py --force --download-pdfs</code></pre><p class="small">Run these commands from the page’s <code>scripts/</code> directory. The builder resolves output paths relative to its own file. The master is fetched on every build; chapter responses are cached locally, with <code>--force</code> to refresh them. Requests are sequential, paced and retried on transient server failures. A failed build preserves the previous JSON.</p><p><a href="1-harmonized-system-canada/scripts/build_cbsa_hs.py">Full Python source</a> · <a href="1-harmonized-system-canada/scripts/requirements.txt">Python requirements</a> · <a href="1-harmonized-system-canada/data/hs-t2026-2.json">Generated JSON dataset</a></p><h3>Excerpts from the actual builder</h3><p class="small">These excerpts are copied verbatim from the linked Python file. The companion <a href="1-harmonized-system-canada/scripts/sync_source_excerpts.py">excerpt synchronizer</a> keeps this documentation aligned with it.</p>
+<!-- SOURCE_EXCERPTS_START -->
+<h3>Discover the source links</h3>
+<pre><code>def discover(master, master_url):
+    &quot;&quot;&quot;Use section headers, chapter rows, and their actual HTML/PDF links.&quot;&quot;&quot;
+    sections, special = [], []
+    for table in master.select(&#x27;main table&#x27;):
+        header = table.find_previous(&#x27;h3&#x27;)
+        match = re.match(r&#x27;Section ([IVX]+):\s*(.*)&#x27;, clean(header.get_text(&#x27; &#x27;))) if header else None
+        if not match:
+            continue
+        section = {&#x27;code&#x27;: match[1], &#x27;description&#x27;: match[2], &#x27;chapters&#x27;: []}
+        for row in table.select(&#x27;tr&#x27;):
+            cells = row.find_all([&#x27;th&#x27;, &#x27;td&#x27;], recursive=False)
+            if len(cells) != 3:
+                continue
+            label = BeautifulSoup(str(cells[0]), &#x27;lxml&#x27;)
+            for extra in label.select(&#x27;ol, ul&#x27;):
+                extra.decompose()  # subchapter summaries are not chapter titles
+            chapter_match = re.match(r&#x27;Chapter (\d+)\s*[-–]\s*(.*)&#x27;, clean(label.get_text(&#x27; &#x27;)))
+            if not chapter_match:
+                continue
+            code = chapter_match[1].zfill(2)
+            links = {clean(a.get_text(&#x27; &#x27;)): urljoin(master_url, a[&#x27;href&#x27;])
+                     for a in cells[2].select(&#x27;a[href]&#x27;)}
+            html_url = links.get(&#x27;HTML&#x27;)
+            if not html_url:
+                raise ValueError(f&#x27;No chapter HTML link for {code}&#x27;)
+            chapter = {&#x27;code&#x27;: code, &#x27;display_code&#x27;: code,
+                       &#x27;description&#x27;: chapter_match[2], &#x27;source_url&#x27;: html_url,
+                       &#x27;pdf_url&#x27;: next((u for u in links.values() if urlparse(u).path.endswith(&#x27;.pdf&#x27;)), None),
+                       &#x27;effective_date&#x27;: clean(cells[1].get_text()),
+                       &#x27;reserved&#x27;: code == &#x27;77&#x27;, &#x27;section_code&#x27;: section[&#x27;code&#x27;],
+                       &#x27;headings&#x27;: []}
+            if code in {&#x27;98&#x27;, &#x27;99&#x27;}:
+                chapter[&#x27;section_code&#x27;] = None
+                chapter[&#x27;national_provision&#x27;] = True
+                special.append(chapter)
+            else:
+                section[&#x27;chapters&#x27;].append(chapter)
+        if section[&#x27;chapters&#x27;]:
+            sections.append(section)
+    pdf_links = sorted({urljoin(master_url, a[&#x27;href&#x27;]) for a in master.select(&#x27;main a[href]&#x27;)
+                        if urlparse(urljoin(master_url, a[&#x27;href&#x27;])).path.lower().endswith(&#x27;.pdf&#x27;)})
+    return sections, special, pdf_links</code></pre>
+<h3>Reconstruct the HS hierarchy</h3>
+<pre><code>def parse_chapter(chapter, soup):
+    headings, explicit, candidates = {}, {}, {}
+    tariff_lines = {}
+    current = None
+    example = None
+    for values in tariff_rows(soup):
+        display, suffix, description, unit, mfn, preferences = values
+        if not display:
+            continue  # unnumbered explanatory/group rows are not HS nodes
+        if re.fullmatch(r&#x27;\d{2}\.\d{2}&#x27;, display):
+            code = display.replace(&#x27;.&#x27;, &#x27;&#x27;)
+            if code in headings:
+                raise ValueError(f&#x27;Duplicate HS4 row: {code}&#x27;)
+            current = node(code, description, chapter[&#x27;source_url&#x27;],
+                           chapter_code=chapter[&#x27;code&#x27;], extraction=&#x27;explicit_hs4_row&#x27;, subheadings=[])
+            headings[code] = current
+        elif re.fullmatch(r&#x27;\d{4}\.\d{2}(?:\.\d{2})?&#x27;, display):
+            code = display.replace(&#x27;.&#x27;, &#x27;&#x27;)
+            if current is None or current[&#x27;code&#x27;] != code[:4]:
+                if code[:4] in headings:
+                    raise ValueError(f&#x27;Out-of-order HS4 parent for {display}&#x27;)
+                # Unsplit headings (e.g. 0205.00.00) can omit HS4 as well.
+                # The flattened description starts with the heading before
+                # CBSA&#x27;s space-hyphen-space hierarchy separators.
+                current = node(code[:4], description.split(&#x27; - &#x27;)[0], chapter[&#x27;source_url&#x27;],
+                               chapter_code=chapter[&#x27;code&#x27;], extraction=&#x27;inferred_from_child_row&#x27;,
+                               inferred_from=display, subheadings=[])
+                headings[code[:4]] = current
+            hs6 = code[:6]  # strings throughout: preserve leading zeros
+            if len(code) == 6:
+                if hs6 in explicit:
+                    raise ValueError(f&#x27;Duplicate HS6 row: {display}&#x27;)
+                explicit[hs6] = description
+            else:
+                # SS distinguishes statistical detail from the base tariff item.
+                candidates.setdefault(hs6, []).append((code, suffix, description))
+                # Retain every Canadian source row, including blank-SS base
+                # rows and each statistical suffix. Never inherit or merge rates.
+                tariff_lines.setdefault(hs6, []).append(dict(zip(
+                    [&#x27;tariff_item&#x27;, &#x27;statistical_suffix&#x27;, &#x27;description&#x27;, &#x27;unit&#x27;,
+                     &#x27;mfn_tariff&#x27;, &#x27;preferential_tariffs&#x27;], values)))
+                if display == &#x27;0601.10.11&#x27; and suffix == &#x27;00&#x27;:
+                    example = dict(zip([&#x27;tariff_item&#x27;, &#x27;ss&#x27;, &#x27;description&#x27;, &#x27;unit&#x27;, &#x27;mfn&#x27;, &#x27;preferences&#x27;], values))
+        else:
+            raise ValueError(f&#x27;Unrecognized tariff code cell: {display!r}&#x27;)
+    for hs6 in sorted(set(explicit) | set(candidates)):
+        parent = headings[hs6[:4]]
+        inferred = hs6 not in explicit
+        evidence = []
+        source_warning = None
+        if not inferred:
+            full = explicit[hs6]
+        else:
+            rows = candidates[hs6]
+            evidence = sorted({r[0] for r in rows})
+            # An unsplit .00 tariff item carries the international description.
+            # Prefer the blank-SS base row over more detailed statistical rows.
+            base_rows = [r for r in rows if r[0].endswith(&#x27;00&#x27;) and r[1] in {&#x27;&#x27;, &#x27;00&#x27;}]
+            if not base_rows:
+                if not all(r[0].endswith(&#x27;00&#x27;) for r in rows):
+                    raise ValueError(f&#x27;Cannot safely infer HS6 description for {hs6}; inspect source&#x27;)
+                # Some source rows have only statistical suffixes and literal
+                # &quot;null&quot; text. Retain the common ancestor path, flag it visibly,
+                # and retain all verbatim descriptions for manual verification.
+                paths = [r[2].split(&#x27; - &#x27;) for r in rows]
+                common = []
+                for parts in zip(*paths):
+                    if len(set(parts)) != 1 or parts[0] == &#x27;null&#x27;:
+                        break
+                    common.append(parts[0])
+                if len(common) &lt; 2:
+                    raise ValueError(f&#x27;No common HS6 description path: {hs6}&#x27;)
+                full = &#x27; - &#x27;.join(common)
+                source_warning = (&#x27;Source HTML has only statistical rows for this prefix, &#x27;
+                                  &#x27;with no base tariff-item row. The common description path &#x27;
+                                  &#x27;is retained; verify classification against the official schedule.&#x27;)
+            else:
+                full = min((r[2] for r in base_rows), key=len)
+        parent[&#x27;subheadings&#x27;].append(node(
+            hs6, relative_description(full, parent[&#x27;description&#x27;]), chapter[&#x27;source_url&#x27;],
+            heading_code=parent[&#x27;code&#x27;], chapter_code=chapter[&#x27;code&#x27;],
+            source_description=full,
+            extraction=&#x27;inferred_from_tariff_item&#x27; if inferred else &#x27;explicit_hs6_row&#x27;,
+            inferred_from=evidence, source_warning=source_warning,
+            source_row_descriptions=[r[2] for r in candidates.get(hs6, [])] if source_warning else [],
+            canadian_tariff_lines=tariff_lines.get(hs6, [])))
+    chapter[&#x27;headings&#x27;] = list(headings.values())
+    if not chapter[&#x27;reserved&#x27;] and not headings:
+        raise ValueError(f&#x27;No tariff headings parsed for chapter {chapter[&quot;code&quot;]}&#x27;)
+    return example</code></pre>
+<h3>Download optional reference PDFs</h3>
+<pre><code>def download_pdfs(fetcher, pdf_links):
+    downloaded = 0
+    for index, url in enumerate(pdf_links, 1):
+        # URLs come from anchors in the master page, never a hand-written list.
+        destination = BASE / &#x27;source-pdfs&#x27; / Path(urlparse(url).path).name
+        _, fetched = fetcher.get(url, destination, pdf=True)
+        downloaded += int(fetched)
+        print(f&#x27;PDF {index}/{len(pdf_links)}: {destination.name} ({&quot;downloaded&quot; if fetched else &quot;cached&quot;})&#x27;, flush=True)
+    return downloaded</code></pre>
+<!-- SOURCE_EXCERPTS_END -->
+<p class="small">The browser fetches only the local JSON. It does not scrape CBSA. Reference PDFs and the HTML cache are ignored by Git.</p></details>
+</main><footer><a class="back-top" href="#top">Back to top ↑</a><p>Naresh Neupane · Independent research &amp; educational notes</p><nav class="collection-nav" aria-label="Collection navigation"><a href="harmonized-system-index.html">Collection Home</a><a href="harmonized-system-canada.html" aria-current="page">Page 1</a><a href="preferential-tariffs-canada.html">Page 2</a><a href="alberta-trade-by-hs.html">Page 3</a><a href="hs-data-analysis.html">Page 4</a><a href="../../research.html">Main Research Page</a></nav></footer></div></body>
+</html>

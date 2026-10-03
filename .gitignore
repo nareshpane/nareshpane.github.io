@@ -6,3 +6,7 @@ research/GIS Learning/web/qgis2web-test/
 # Python bytecode
 __pycache__/
 *.pyc
+
+# CBSA reference downloads and reproducible scraper cache (local only)
+research/harmonized-system/1-harmonized-system-canada/source-pdfs/*
+research/harmonized-system/1-harmonized-system-canada/data/.cache/
