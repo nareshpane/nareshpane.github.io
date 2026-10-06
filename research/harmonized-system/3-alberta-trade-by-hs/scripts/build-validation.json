@@ -1,0 +1,7472 @@
+{
+  "source": "ODPFN018_202512N.csv",
+  "source_bytes": 57771032,
+  "source_sha256": "8157e603c73c868f056297a2594c254df0c5032814f0c0cf97192f1c015e293b",
+  "schemas": [
+    {
+      "file": "ODPFN016_202512N.csv",
+      "columns": [
+        "YearMonth/AnnéeMois",
+        "HS8",
+        "Country/Pays",
+        "Province",
+        "State/État",
+        "Value/Valeur",
+        "Quantity/Quantité",
+        "Unit of Measure/Unité de Mesure"
+      ]
+    },
+    {
+      "file": "ODPFN018_202512N.csv",
+      "columns": [
+        "YearMonth/AnnéeMois",
+        "HS6",
+        "Country/Pays",
+        "Province",
+        "State/État",
+        "Value/Valeur",
+        "Quantity/Quantité",
+        "Unit of Measure/Unité de Mesure"
+      ]
+    },
+    {
+      "file": "ODPFN020_202512N.csv",
+      "columns": [
+        "YearMonth/AnnéeMois",
+        "HS2",
+        "Country/Pays",
+        "Province",
+        "State/État",
+        "Value/Valeur"
+      ]
+    }
+  ],
+  "raw_rows_examined": 1212795,
+  "alberta_2025_source_rows": 104986,
+  "complete_key": [
+    "YearMonth",
+    "HS6",
+    "Country",
+    "Province",
+    "State",
+    "Unit of Measure"
+  ],
+  "duplicate_keys": 0,
+  "months": [
+    "202501",
+    "202502",
+    "202503",
+    "202504",
+    "202505",
+    "202506",
+    "202507",
+    "202508",
+    "202509",
+    "202510",
+    "202511",
+    "202512"
+  ],
+  "removed_rows": 0,
+  "country_filter": "Active 2025 countries and separately identified territorial destinations; retain XK and AQ; exclude ZX, ZZ and ambiguous legacy grouped label PC. No world/continent totals; zero Alberta value for all excluded codes.",
+  "unallocated_nonmarket_value": 0,
+  "country_validation": [
+    {
+      "code": "AD",
+      "name": "Andorra",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "AE",
+      "name": "United Arab Emirates",
+      "alberta_value": 414319620,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "AF",
+      "name": "Afghanistan",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "AG",
+      "name": "Antigua and Barbuda",
+      "alberta_value": 13062,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "AI",
+      "name": "Anguilla",
+      "alberta_value": 18,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "AL",
+      "name": "Albania",
+      "alberta_value": 1913730,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "AM",
+      "name": "Armenia",
+      "alberta_value": 94835,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "AO",
+      "name": "Angola",
+      "alberta_value": 4554016,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "AQ",
+      "name": "Antarctica",
+      "alberta_value": 260454,
+      "retained": true,
+      "decision": "Retain separately reported Antarctica geographic destination (not a sovereign country)"
+    },
+    {
+      "code": "AR",
+      "name": "Argentina",
+      "alberta_value": 54231774,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "AS",
+      "name": "American Samoa",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "AT",
+      "name": "Austria",
+      "alberta_value": 3822948,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "AU",
+      "name": "Australia",
+      "alberta_value": 350796388,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "AW",
+      "name": "Aruba",
+      "alberta_value": 30716,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "AX",
+      "name": "Åland Islands",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "AZ",
+      "name": "Azerbaijan",
+      "alberta_value": 970370,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "BA",
+      "name": "Bosnia and Herzegovina",
+      "alberta_value": 104240,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "BB",
+      "name": "Barbados",
+      "alberta_value": 843203,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "BD",
+      "name": "Bangladesh",
+      "alberta_value": 353166513,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "BE",
+      "name": "Belgium",
+      "alberta_value": 176003963,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "BF",
+      "name": "Burkina Faso",
+      "alberta_value": 424587,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "BG",
+      "name": "Bulgaria",
+      "alberta_value": 62805156,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "BH",
+      "name": "Bahrain",
+      "alberta_value": 9418038,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "BI",
+      "name": "Burundi",
+      "alberta_value": 184619,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "BJ",
+      "name": "Benin",
+      "alberta_value": 1299071,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "BL",
+      "name": "Saint Barthélemy",
+      "alberta_value": 450434,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "BM",
+      "name": "Bermuda",
+      "alberta_value": 91788,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "BN",
+      "name": "Brunei Darussalam",
+      "alberta_value": 581629,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "BO",
+      "name": "Bolivia",
+      "alberta_value": 3904398,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "BQ",
+      "name": "Bonaire, Sint Eustatius and Saba",
+      "alberta_value": 8317,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "BR",
+      "name": "Brazil",
+      "alberta_value": 136400341,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "BS",
+      "name": "Bahamas",
+      "alberta_value": 3092955,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "BT",
+      "name": "Bhutan",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "BV",
+      "name": "Bouvet Island",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "BW",
+      "name": "Botswana",
+      "alberta_value": 1358768,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "BY",
+      "name": "Belarus",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "BZ",
+      "name": "Belize",
+      "alberta_value": 325412,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "CA",
+      "name": "Canada",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Recognized country lookup record, but zero Alberta exports; not an active market"
+    },
+    {
+      "code": "CC",
+      "name": "Cocos (Keeling) Islands",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "CD",
+      "name": "Congo, Democratic Republic of the",
+      "alberta_value": 259064,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "CF",
+      "name": "Central African Republic",
+      "alberta_value": 7208,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "CG",
+      "name": "Congo, Republic of the",
+      "alberta_value": 10626062,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "CH",
+      "name": "Switzerland",
+      "alberta_value": 84121183,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "CI",
+      "name": "Côte d'Ivoire",
+      "alberta_value": 3901593,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "CK",
+      "name": "Cook Islands",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "CL",
+      "name": "Chile",
+      "alberta_value": 121104081,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "CM",
+      "name": "Cameroon",
+      "alberta_value": 10835111,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "CN",
+      "name": "China",
+      "alberta_value": 10192667946,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "CO",
+      "name": "Colombia",
+      "alberta_value": 180072461,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "CR",
+      "name": "Costa Rica",
+      "alberta_value": 22292788,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "CU",
+      "name": "Cuba",
+      "alberta_value": 104504011,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "CV",
+      "name": "Cabo Verde",
+      "alberta_value": 83582,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "CW",
+      "name": "Curaçao",
+      "alberta_value": 1776896,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "CX",
+      "name": "Christmas Island",
+      "alberta_value": 65703,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "CY",
+      "name": "Cyprus",
+      "alberta_value": 1228528,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "CZ",
+      "name": "Czechia",
+      "alberta_value": 24060298,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "DE",
+      "name": "Germany",
+      "alberta_value": 107574324,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "DJ",
+      "name": "Djibouti",
+      "alberta_value": 321848,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "DK",
+      "name": "Denmark",
+      "alberta_value": 28857398,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "DM",
+      "name": "Dominica",
+      "alberta_value": 146932,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "DO",
+      "name": "Dominican Republic",
+      "alberta_value": 11594913,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "DZ",
+      "name": "Algeria",
+      "alberta_value": 158909752,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "EA",
+      "name": "Ceuta and Melilla",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Retain separately reported Ceuta and Melilla territorial destination (zero Alberta value)"
+    },
+    {
+      "code": "EC",
+      "name": "Ecuador",
+      "alberta_value": 125992035,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "EE",
+      "name": "Estonia",
+      "alberta_value": 313112,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "EG",
+      "name": "Egypt",
+      "alberta_value": 36524068,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "EH",
+      "name": "Western Sahara",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "ER",
+      "name": "Eritrea",
+      "alberta_value": 229997,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "ES",
+      "name": "Spain",
+      "alberta_value": 179602207,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "ET",
+      "name": "Ethiopia",
+      "alberta_value": 1012510,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "FI",
+      "name": "Finland",
+      "alberta_value": 14020967,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "FJ",
+      "name": "Fiji",
+      "alberta_value": 110420,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "FK",
+      "name": "Falkland Islands (Malvinas)",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "FM",
+      "name": "Micronesia, Federated States of",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "FO",
+      "name": "Faroe Islands",
+      "alberta_value": 89159,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "FR",
+      "name": "France",
+      "alberta_value": 242103289,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "GA",
+      "name": "Gabon",
+      "alberta_value": 4042371,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "GB",
+      "name": "United Kingdom",
+      "alberta_value": 192139045,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "GD",
+      "name": "Grenada",
+      "alberta_value": 14769,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "GE",
+      "name": "Georgia",
+      "alberta_value": 9399767,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "GF",
+      "name": "French Guiana",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "GG",
+      "name": "Guernsey",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "GH",
+      "name": "Ghana",
+      "alberta_value": 59790464,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "GI",
+      "name": "Gibraltar",
+      "alberta_value": 47292,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "GL",
+      "name": "Greenland",
+      "alberta_value": 1169272,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "GM",
+      "name": "Gambia",
+      "alberta_value": 698389,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "GN",
+      "name": "Guinea",
+      "alberta_value": 7539769,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "GP",
+      "name": "Guadeloupe",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "GQ",
+      "name": "Equatorial Guinea",
+      "alberta_value": 2261114,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "GR",
+      "name": "Greece",
+      "alberta_value": 17710068,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "GS",
+      "name": "South Georgia and the South Sandwich Islands",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "GT",
+      "name": "Guatemala",
+      "alberta_value": 118847044,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "GU",
+      "name": "Guam",
+      "alberta_value": 295809,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "GW",
+      "name": "Guinea-Bissau",
+      "alberta_value": 9931,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "GY",
+      "name": "Guyana",
+      "alberta_value": 1312648,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "HK",
+      "name": "Hong Kong",
+      "alberta_value": 1410425757,
+      "retained": true,
+      "decision": "Retain separately reported Hong Kong destination"
+    },
+    {
+      "code": "HM",
+      "name": "Heard Island and McDonald Islands",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "HN",
+      "name": "Honduras",
+      "alberta_value": 905984,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "HR",
+      "name": "Croatia",
+      "alberta_value": 19027796,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "HT",
+      "name": "Haiti",
+      "alberta_value": 233254,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "HU",
+      "name": "Hungary",
+      "alberta_value": 5282510,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "ID",
+      "name": "Indonesia",
+      "alberta_value": 449228689,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "IE",
+      "name": "Ireland",
+      "alberta_value": 11326846,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "IL",
+      "name": "Israel",
+      "alberta_value": 20023378,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "IM",
+      "name": "Isle of Man",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "IN",
+      "name": "India",
+      "alberta_value": 323321840,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "IO",
+      "name": "British Indian Ocean Territory",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "IQ",
+      "name": "Iraq",
+      "alberta_value": 11693238,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "IR",
+      "name": "Iran",
+      "alberta_value": 875801,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "IS",
+      "name": "Iceland",
+      "alberta_value": 8327727,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "IT",
+      "name": "Italy",
+      "alberta_value": 310980442,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "JE",
+      "name": "Jersey",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "JM",
+      "name": "Jamaica",
+      "alberta_value": 1985417,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "JO",
+      "name": "Jordan",
+      "alberta_value": 2627112,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "JP",
+      "name": "Japan",
+      "alberta_value": 2387586321,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "KE",
+      "name": "Kenya",
+      "alberta_value": 35134681,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "KG",
+      "name": "Kyrgyzstan",
+      "alberta_value": 1709291,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "KH",
+      "name": "Cambodia",
+      "alberta_value": 5236519,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "KI",
+      "name": "Kiribati",
+      "alberta_value": 14238,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "KM",
+      "name": "Comoros",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "KN",
+      "name": "Saint Kitts and Nevis",
+      "alberta_value": 28376,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "KP",
+      "name": "Korea, North",
+      "alberta_value": 97926,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "KR",
+      "name": "Korea, South",
+      "alberta_value": 1393357614,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "KW",
+      "name": "Kuwait",
+      "alberta_value": 48440124,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "KY",
+      "name": "Cayman Islands",
+      "alberta_value": 367650,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "KZ",
+      "name": "Kazakhstan",
+      "alberta_value": 8652904,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "LA",
+      "name": "Laos",
+      "alberta_value": 11742182,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "LB",
+      "name": "Lebanon",
+      "alberta_value": 5098357,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "LC",
+      "name": "Saint Lucia",
+      "alberta_value": 5174,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "LI",
+      "name": "Liechtenstein",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "LK",
+      "name": "Sri Lanka",
+      "alberta_value": 24456821,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "LR",
+      "name": "Liberia",
+      "alberta_value": 142527,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "LS",
+      "name": "Lesotho",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "LT",
+      "name": "Lithuania",
+      "alberta_value": 5174952,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "LU",
+      "name": "Luxembourg",
+      "alberta_value": 1265127,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "LV",
+      "name": "Latvia",
+      "alberta_value": 5034616,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "LY",
+      "name": "Libya",
+      "alberta_value": 13332759,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "MA",
+      "name": "Morocco",
+      "alberta_value": 129101199,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "MC",
+      "name": "Monaco",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "MD",
+      "name": "Moldova, Republic of",
+      "alberta_value": 172233,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "ME",
+      "name": "Montenegro",
+      "alberta_value": 69548,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "MF",
+      "name": "Saint Martin (French part)",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "MG",
+      "name": "Madagascar",
+      "alberta_value": 184721,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "MH",
+      "name": "Marshall Islands",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "MK",
+      "name": "Macedonia, North",
+      "alberta_value": 136063,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "ML",
+      "name": "Mali",
+      "alberta_value": 429051,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "MM",
+      "name": "Myanmar",
+      "alberta_value": 778497,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "MN",
+      "name": "Mongolia",
+      "alberta_value": 1421717,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "MO",
+      "name": "Macao",
+      "alberta_value": 6573260,
+      "retained": true,
+      "decision": "Retain separately reported Macao destination"
+    },
+    {
+      "code": "MP",
+      "name": "Northern Mariana Islands",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "MQ",
+      "name": "Martinique",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "MR",
+      "name": "Mauritania",
+      "alberta_value": 86180,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "MS",
+      "name": "Montserrat",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "MT",
+      "name": "Malta",
+      "alberta_value": 2408917,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "MU",
+      "name": "Mauritius",
+      "alberta_value": 171856,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "MV",
+      "name": "Maldives",
+      "alberta_value": 24315076,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "MW",
+      "name": "Malawi",
+      "alberta_value": 433088,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "MX",
+      "name": "Mexico",
+      "alberta_value": 992364685,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "MY",
+      "name": "Malaysia",
+      "alberta_value": 130446734,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "MZ",
+      "name": "Mozambique",
+      "alberta_value": 24148084,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "NA",
+      "name": "Namibia",
+      "alberta_value": 584435,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "NC",
+      "name": "New Caledonia",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "NE",
+      "name": "Niger",
+      "alberta_value": 11770,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "NF",
+      "name": "Norfolk Island",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "NG",
+      "name": "Nigeria",
+      "alberta_value": 135539766,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "NI",
+      "name": "Nicaragua",
+      "alberta_value": 153992,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "NL",
+      "name": "Netherlands",
+      "alberta_value": 541296030,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "NO",
+      "name": "Norway",
+      "alberta_value": 53472740,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "NP",
+      "name": "Nepal",
+      "alberta_value": 5089230,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "NR",
+      "name": "Nauru",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "NU",
+      "name": "Niue",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "NZ",
+      "name": "New Zealand",
+      "alberta_value": 62406087,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "OM",
+      "name": "Oman",
+      "alberta_value": 45976110,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "PA",
+      "name": "Panama",
+      "alberta_value": 369681974,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "PC",
+      "name": "Pacific Islands",
+      "alberta_value": 0,
+      "retained": false,
+      "decision": "Pacific Islands: legacy grouped/ambiguous label, not an individually identified market; excluded conservatively (zero Alberta value)"
+    },
+    {
+      "code": "PE",
+      "name": "Peru",
+      "alberta_value": 506792177,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "PF",
+      "name": "French Polynesia",
+      "alberta_value": 54347,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "PG",
+      "name": "Papua New Guinea",
+      "alberta_value": 2333557,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "PH",
+      "name": "Philippines",
+      "alberta_value": 161028453,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "PK",
+      "name": "Pakistan",
+      "alberta_value": 66108924,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "PL",
+      "name": "Poland",
+      "alberta_value": 50179042,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "PM",
+      "name": "Saint Pierre and Miquelon",
+      "alberta_value": 1969,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "PN",
+      "name": "Pitcairn",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "PR",
+      "name": "Puerto Rico",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "PS",
+      "name": "Palestine, State of",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "PT",
+      "name": "Portugal",
+      "alberta_value": 46275543,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "PW",
+      "name": "Palau",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "PY",
+      "name": "Paraguay",
+      "alberta_value": 356038,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "QA",
+      "name": "Qatar",
+      "alberta_value": 19700718,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "RE",
+      "name": "Réunion",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "RO",
+      "name": "Romania",
+      "alberta_value": 13643109,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "RS",
+      "name": "Serbia",
+      "alberta_value": 1016833,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "RU",
+      "name": "Russian Federation",
+      "alberta_value": 6038460,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "RW",
+      "name": "Rwanda",
+      "alberta_value": 1146970,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "SA",
+      "name": "Saudi Arabia",
+      "alberta_value": 96334974,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "SB",
+      "name": "Solomon Islands",
+      "alberta_value": 10072,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "SC",
+      "name": "Seychelles",
+      "alberta_value": 745334,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "SD",
+      "name": "Sudan",
+      "alberta_value": 10947317,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "SE",
+      "name": "Sweden",
+      "alberta_value": 116336012,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "SG",
+      "name": "Singapore",
+      "alberta_value": 1202411608,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "SH",
+      "name": "Saint Helena, Ascension and Tristan da Cunha",
+      "alberta_value": 2191,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "SI",
+      "name": "Slovenia",
+      "alberta_value": 2180337,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "SJ",
+      "name": "Svalbard and Jan Mayen",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "SK",
+      "name": "Slovakia",
+      "alberta_value": 5439361,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "SL",
+      "name": "Sierra Leone",
+      "alberta_value": 446932,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "SM",
+      "name": "San Marino",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "SN",
+      "name": "Senegal",
+      "alberta_value": 713794,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "SO",
+      "name": "Somalia",
+      "alberta_value": 30500,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "SR",
+      "name": "Suriname",
+      "alberta_value": 1902374,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "SS",
+      "name": "South Sudan",
+      "alberta_value": 35555,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "ST",
+      "name": "Sao Tome and Principe",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "SV",
+      "name": "El Salvador",
+      "alberta_value": 41205374,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "SX",
+      "name": "Sint Maarten (Dutch part)",
+      "alberta_value": 861335,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "SY",
+      "name": "Syria",
+      "alberta_value": 224851,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "SZ",
+      "name": "Eswatini",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "TC",
+      "name": "Turks and Caicos Islands",
+      "alberta_value": 189440,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "TD",
+      "name": "Chad",
+      "alberta_value": 476542,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "TF",
+      "name": "French Southern Territories",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "TG",
+      "name": "Togo",
+      "alberta_value": 6531864,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "TH",
+      "name": "Thailand",
+      "alberta_value": 118864512,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "TJ",
+      "name": "Tajikistan",
+      "alberta_value": 145283,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "TK",
+      "name": "Tokelau",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "TL",
+      "name": "Timor-Leste",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "TM",
+      "name": "Turkmenistan",
+      "alberta_value": 4302280,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "TN",
+      "name": "Tunisia",
+      "alberta_value": 592092,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "TO",
+      "name": "Tonga",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "TR",
+      "name": "Türkiye",
+      "alberta_value": 81536076,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "TT",
+      "name": "Trinidad and Tobago",
+      "alberta_value": 5631843,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "TV",
+      "name": "Tuvalu",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "TW",
+      "name": "Taiwan",
+      "alberta_value": 205070859,
+      "retained": true,
+      "decision": "Retain separately reported Taiwan destination"
+    },
+    {
+      "code": "TZ",
+      "name": "Tanzania, United Republic of",
+      "alberta_value": 9852020,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "UA",
+      "name": "Ukraine",
+      "alberta_value": 20429860,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "UG",
+      "name": "Uganda",
+      "alberta_value": 4064722,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "UM",
+      "name": "United States Minor Outlying Islands",
+      "alberta_value": 22917623,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "US",
+      "name": "United States of America",
+      "alberta_value": 152042164486,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "UY",
+      "name": "Uruguay",
+      "alberta_value": 1370232,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "UZ",
+      "name": "Uzbekistan",
+      "alberta_value": 9491486,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "VA",
+      "name": "Holy See (Vatican City State)",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "VC",
+      "name": "Saint Vincent and the Grenadines",
+      "alberta_value": 172053,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "VE",
+      "name": "Venezuela",
+      "alberta_value": 73097388,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "VG",
+      "name": "Virgin Islands, British",
+      "alberta_value": 14083,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "VI",
+      "name": "Virgin Islands, United States",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "VN",
+      "name": "Viet Nam",
+      "alberta_value": 259081938,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "VU",
+      "name": "Vanuatu",
+      "alberta_value": 3400,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "WF",
+      "name": "Wallis and Futuna",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "WS",
+      "name": "Samoa",
+      "alberta_value": 98522,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "XK",
+      "name": "Kosovo",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Retain separately reported Kosovo destination; nonstandard ISO-style code is not a reason to discard"
+    },
+    {
+      "code": "YE",
+      "name": "Yemen",
+      "alberta_value": 144724,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "YT",
+      "name": "Mayotte",
+      "alberta_value": 0,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "ZA",
+      "name": "South Africa",
+      "alberta_value": 25029869,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "ZM",
+      "name": "Zambia",
+      "alberta_value": 3415876,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "ZW",
+      "name": "Zimbabwe",
+      "alberta_value": 3075377,
+      "retained": true,
+      "decision": "Identified country/territorial destination; retained"
+    },
+    {
+      "code": "ZX",
+      "name": "Unknown or unspecified",
+      "alberta_value": 0,
+      "retained": false,
+      "decision": "Unknown or unspecified: not an identified destination market"
+    },
+    {
+      "code": "ZZ",
+      "name": "High Seas",
+      "alberta_value": 0,
+      "retained": false,
+      "decision": "High Seas: not a country or territorial destination"
+    }
+  ],
+  "coverage": {
+    "active_hs4_missing_cbsa": [
+      "9802",
+      "9806",
+      "9807",
+      "9812",
+      "9901"
+    ],
+    "active_hs6_missing_cbsa": [
+      "980200",
+      "980610",
+      "980620",
+      "980700",
+      "981200",
+      "990100"
+    ],
+    "source_hs4_missing_cbsa": [
+      "9802",
+      "9806",
+      "9807",
+      "9810",
+      "9811",
+      "9812",
+      "9901"
+    ],
+    "source_hs6_missing_cbsa": [
+      "980200",
+      "980610",
+      "980620",
+      "980700",
+      "981000",
+      "981100",
+      "981200",
+      "990100"
+    ],
+    "active_hs6_missing_statcan": [],
+    "hs4_missing_descriptions": [
+      "9802",
+      "9806",
+      "9807",
+      "9812",
+      "9901"
+    ],
+    "hs6_missing_descriptions": [],
+    "leading_zero_hs4": 42,
+    "leading_zero_hs6": 93
+  },
+  "hierarchy_source": {
+    "organization": "Canada Border Services Agency",
+    "title": "Customs Tariff chapter-by-chapter (T2026-2)",
+    "url": "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/html/tblmod-2-eng.html",
+    "edition": "T2026-2",
+    "date_modified": "2026-09-16",
+    "retrieved_at": "2026-10-03T06:31:53.021951+00:00",
+    "master_sha256": "ea443c3ce0a3dfffb44f3f2805c3a481e8b6c59631c9dda1c4c3275410f96e73",
+    "method": "CBSA HTML tariff tables; missing HS4 rows reconstructed from child descriptions; missing HS6 rows inferred from unsplit .00 tariff items. Statistical-only prefixes retain common description paths with explicit source warnings.",
+    "pdf_links": [
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/admin-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ca-td-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch01-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch02-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch03-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch04-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch05-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch06-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch07-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch08-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch09-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch10-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch11-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch12-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch13-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch14-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch15-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch16-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch17-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch18-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch19-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch20-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch21-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch22-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch23-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch24-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch25-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch26-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch27-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch28-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch29-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch30-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch31-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch32-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch33-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch34-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch35-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch36-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch37-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch38-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch39-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch40-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch41-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch42-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch43-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch44-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch45-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch46-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch47-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch48-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch49-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch50-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch51-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch52-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch53-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch54-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch55-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch56-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch57-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch58-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch59-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch60-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch61-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch62-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch63-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch64-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch65-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch66-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch67-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch68-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch69-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch70-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch71-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch72-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch73-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch74-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch75-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch76-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch77-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch78-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch79-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch80-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch81-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch82-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch83-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch84-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch85-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch86-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch87-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch88-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch89-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch90-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch91-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch92-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch93-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch94-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch95-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch96-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch97-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch98-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/ch99-2026-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/countries-pays-2-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/rules-regles-eng.pdf",
+      "https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/2026/01-99/toc-tdm-eng.pdf"
+    ],
+    "pdfs_downloaded": 0,
+    "html_chapter_pages_parsed": 99,
+    "chapter_effective_dates": [
+      "2026-09-01"
+    ]
+  },
+  "heading_label_audit": [
+    {
+      "code": "2709",
+      "action": "Remove exact appended tariff-rate note from heading label",
+      "original_description": "Petroleum oils and oils obtained from bituminous minerals, crude.Note: The General Tariff rate that applies to goods of this tariff item is the Most-Favoured-Nation Tariff rate.",
+      "removed_note": "Note: The General Tariff rate that applies to goods of this tariff item is the Most-Favoured-Nation Tariff rate."
+    },
+    {
+      "code": "9702",
+      "action": "Remove exact appended tariff-rate note from heading label",
+      "original_description": "Original engravings, prints and lithographs.Note: The General Tariff rate that applies to goods of this tariff item is the Most-Favoured-Nation Tariff rate.",
+      "removed_note": "Note: The General Tariff rate that applies to goods of this tariff item is the Most-Favoured-Nation Tariff rate."
+    },
+    {
+      "code": "9704",
+      "action": "Remove exact appended tariff-rate note from heading label",
+      "original_description": "Postage or revenue stamps, stamp-postmarks, first-day covers, postal stationery (stamped paper), and the like, used or unused, other than those of heading 49.07.Note: The General Tariff rate that applies to goods of this tariff item is the Most-Favoured-Nation Tariff rate.",
+      "removed_note": "Note: The General Tariff rate that applies to goods of this tariff item is the Most-Favoured-Nation Tariff rate."
+    }
+  ],
+  "description_note": "HS4 from Page 1 CBSA T2026-2 hierarchy by exact string code: explicit rows or inferred heading paths confirmed across all children; exact appended tariff-rate notes removed and recorded. HS6 from year-active StatCan export descriptions, CBSA fallback only. Code coverage does not certify unchanged wording between tariff editions. Unmatched HS4 remains a code-only label.",
+  "reconciliation": "PASS: exact integer CAD equality: source HS6 vs independent HS2 by destination; valid-country sum; overall HS4/HS6; every country HS4/HS6; every country-HS4 children. Nonnegative values; twelve months; unique complete keys.",
+  "checks": {
+    "alberta": {
+      "actual": 177964624065,
+      "approximate_target": 177960000000.0
+    },
+    "US": {
+      "actual": 152042164486,
+      "approximate_target": 152040000000.0
+    },
+    "CN": {
+      "actual": 10192667946,
+      "approximate_target": 10190000000.0
+    },
+    "JP": {
+      "actual": 2387586321,
+      "approximate_target": 2390000000.0
+    },
+    "top10": {
+      "actual": 171118295313,
+      "approximate_target": 171120000000.0
+    },
+    "US_2709": {
+      "actual": 110821617128,
+      "approximate_target": 110820000000.0
+    },
+    "US_2711": {
+      "actual": 11573399330,
+      "approximate_target": 11570000000.0
+    }
+  },
+  "summary": {
+    "year": 2025,
+    "province": "Alberta",
+    "currency": "CAD",
+    "overall": {
+      "total": 177964624065,
+      "hs4Count": 954,
+      "hs6Count": 2645,
+      "top4": [
+        [
+          "2709",
+          119844663416
+        ],
+        [
+          "2711",
+          11762290066
+        ],
+        [
+          "3901",
+          3596310629
+        ],
+        [
+          "0201",
+          3210365155
+        ]
+      ],
+      "top4Share": 77.77592316068707
+    },
+    "countries": [
+      {
+        "code": "US",
+        "name": "United States of America",
+        "rank": 1,
+        "share": 85.43392558201226,
+        "total": 152042164486,
+        "hs4Count": 848,
+        "hs6Count": 2205,
+        "top4": [
+          [
+            "2709",
+            110821617128
+          ],
+          [
+            "2711",
+            11573399330
+          ],
+          [
+            "0201",
+            2845291330
+          ],
+          [
+            "3901",
+            2633249849
+          ]
+        ],
+        "top4Share": 84.10401027194963
+      },
+      {
+        "code": "CN",
+        "name": "China",
+        "rank": 2,
+        "share": 5.727356208881838,
+        "total": 10192667946,
+        "hs4Count": 242,
+        "hs6Count": 412,
+        "top4": [
+          [
+            "2709",
+            6319506727
+          ],
+          [
+            "2905",
+            611199704
+          ],
+          [
+            "3901",
+            588629882
+          ],
+          [
+            "4703",
+            437252541
+          ]
+        ],
+        "top4Share": 78.06188621225982
+      },
+      {
+        "code": "JP",
+        "name": "Japan",
+        "rank": 3,
+        "share": 1.3416072624230957,
+        "total": 2387586321,
+        "hs4Count": 211,
+        "hs6Count": 323,
+        "top4": [
+          [
+            "1205",
+            364110921
+          ],
+          [
+            "0203",
+            362000224
+          ],
+          [
+            "2701",
+            345360432
+          ],
+          [
+            "1001",
+            230736623
+          ]
+        ],
+        "top4Share": 54.54077988914731
+      },
+      {
+        "code": "HK",
+        "name": "Hong Kong",
+        "rank": 4,
+        "share": 0.792531529459953,
+        "total": 1410425757,
+        "hs4Count": 122,
+        "hs6Count": 174,
+        "top4": [
+          [
+            "2709",
+            1215445736
+          ],
+          [
+            "3901",
+            32948764
+          ],
+          [
+            "8517",
+            28888635
+          ],
+          [
+            "7602",
+            25766303
+          ]
+        ],
+        "top4Share": 92.38695702577134
+      },
+      {
+        "code": "KR",
+        "name": "Korea, South",
+        "rank": 5,
+        "share": 0.7829407790005998,
+        "total": 1393357614,
+        "hs4Count": 130,
+        "hs6Count": 196,
+        "top4": [
+          [
+            "2709",
+            399927045
+          ],
+          [
+            "2701",
+            179579657
+          ],
+          [
+            "7502",
+            125241838
+          ],
+          [
+            "0203",
+            123515928
+          ]
+        ],
+        "top4Share": 59.44378239138829
+      },
+      {
+        "code": "SG",
+        "name": "Singapore",
+        "rank": 6,
+        "share": 0.6756464181110678,
+        "total": 1202411608,
+        "hs4Count": 152,
+        "hs6Count": 246,
+        "top4": [
+          [
+            "2709",
+            1088166780
+          ],
+          [
+            "3901",
+            42054007
+          ],
+          [
+            "8431",
+            17182329
+          ],
+          [
+            "7502",
+            12803972
+          ]
+        ],
+        "top4Share": 96.4900105987666
+      },
+      {
+        "code": "MX",
+        "name": "Mexico",
+        "rank": 7,
+        "share": 0.5576190718878757,
+        "total": 992364685,
+        "hs4Count": 143,
+        "hs6Count": 236,
+        "top4": [
+          [
+            "0201",
+            231853363
+          ],
+          [
+            "1205",
+            206313851
+          ],
+          [
+            "1001",
+            79099200
+          ],
+          [
+            "0206",
+            67107907
+          ]
+        ],
+        "top4Share": 58.88705330137781
+      },
+      {
+        "code": "NL",
+        "name": "Netherlands",
+        "rank": 8,
+        "share": 0.3041593422534899,
+        "total": 541296030,
+        "hs4Count": 201,
+        "hs6Count": 367,
+        "top4": [
+          [
+            "7502",
+            237632734
+          ],
+          [
+            "2309",
+            117699809
+          ],
+          [
+            "1205",
+            54012966
+          ],
+          [
+            "8105",
+            39899692
+          ]
+        ],
+        "top4Share": 82.99436465477126
+      },
+      {
+        "code": "PE",
+        "name": "Peru",
+        "rank": 9,
+        "share": 0.2847713019722946,
+        "total": 506792177,
+        "hs4Count": 100,
+        "hs6Count": 161,
+        "top4": [
+          [
+            "2710",
+            286256811
+          ],
+          [
+            "1001",
+            172856620
+          ],
+          [
+            "1514",
+            17654394
+          ],
+          [
+            "8705",
+            5233384
+          ]
+        ],
+        "top4Share": 95.10825756096862
+      },
+      {
+        "code": "ID",
+        "name": "Indonesia",
+        "rank": 10,
+        "share": 0.2524258353929505,
+        "total": 449228689,
+        "hs4Count": 105,
+        "hs6Count": 150,
+        "top4": [
+          [
+            "1001",
+            258215425
+          ],
+          [
+            "2503",
+            98721609
+          ],
+          [
+            "2301",
+            38511659
+          ],
+          [
+            "3901",
+            13344168
+          ]
+        ],
+        "top4Share": 90.99883222284586
+      },
+      {
+        "code": "AE",
+        "name": "United Arab Emirates",
+        "rank": 11,
+        "share": 0.2328101004212351,
+        "total": 414319620,
+        "hs4Count": 222,
+        "hs6Count": 398,
+        "top4": [
+          [
+            "1205",
+            82031239
+          ],
+          [
+            "9015",
+            70242586
+          ],
+          [
+            "8419",
+            52877001
+          ],
+          [
+            "8479",
+            39151043
+          ]
+        ],
+        "top4Share": 58.96459091172173
+      },
+      {
+        "code": "PA",
+        "name": "Panama",
+        "rank": 12,
+        "share": 0.2077277863183511,
+        "total": 369681974,
+        "hs4Count": 28,
+        "hs6Count": 32,
+        "top4": [
+          [
+            "2710",
+            363057455
+          ],
+          [
+            "1001",
+            2668979
+          ],
+          [
+            "0713",
+            1725542
+          ],
+          [
+            "0202",
+            1284764
+          ]
+        ],
+        "top4Share": 99.74431157955243
+      },
+      {
+        "code": "BD",
+        "name": "Bangladesh",
+        "rank": 13,
+        "share": 0.1984475930851342,
+        "total": 353166513,
+        "hs4Count": 32,
+        "hs6Count": 38,
+        "top4": [
+          [
+            "1001",
+            189189755
+          ],
+          [
+            "0713",
+            84360139
+          ],
+          [
+            "1205",
+            66947996
+          ],
+          [
+            "1201",
+            6643259
+          ]
+        ],
+        "top4Share": 98.2939027970639
+      },
+      {
+        "code": "AU",
+        "name": "Australia",
+        "rank": 14,
+        "share": 0.19711579750359529,
+        "total": 350796388,
+        "hs4Count": 288,
+        "hs6Count": 558,
+        "top4": [
+          [
+            "2503",
+            184295546
+          ],
+          [
+            "8414",
+            21547079
+          ],
+          [
+            "8431",
+            9780655
+          ],
+          [
+            "9802",
+            9682384
+          ]
+        ],
+        "top4Share": 64.22690532378002
+      },
+      {
+        "code": "IN",
+        "name": "India",
+        "rank": 15,
+        "share": 0.18167758996974004,
+        "total": 323321840,
+        "hs4Count": 160,
+        "hs6Count": 254,
+        "top4": [
+          [
+            "0713",
+            153054470
+          ],
+          [
+            "7502",
+            48428030
+          ],
+          [
+            "7204",
+            18574155
+          ],
+          [
+            "2713",
+            15307232
+          ]
+        ],
+        "top4Share": 72.79554236113465
+      },
+      {
+        "code": "IT",
+        "name": "Italy",
+        "rank": 16,
+        "share": 0.17474284208664814,
+        "total": 310980442,
+        "hs4Count": 134,
+        "hs6Count": 211,
+        "top4": [
+          [
+            "1001",
+            155566822
+          ],
+          [
+            "8411",
+            42045501
+          ],
+          [
+            "9027",
+            21054826
+          ],
+          [
+            "3902",
+            15709187
+          ]
+        ],
+        "top4Share": 75.36690554964225
+      },
+      {
+        "code": "VN",
+        "name": "Viet Nam",
+        "rank": 17,
+        "share": 0.1455805834227889,
+        "total": 259081938,
+        "hs4Count": 101,
+        "hs6Count": 148,
+        "top4": [
+          [
+            "0202",
+            74288705
+          ],
+          [
+            "1001",
+            62231420
+          ],
+          [
+            "3901",
+            30267201
+          ],
+          [
+            "0206",
+            29136314
+          ]
+        ],
+        "top4Share": 75.62226896727938
+      },
+      {
+        "code": "FR",
+        "name": "France",
+        "rank": 18,
+        "share": 0.13604012048572864,
+        "total": 242103289,
+        "hs4Count": 186,
+        "hs6Count": 308,
+        "top4": [
+          [
+            "1205",
+            118538398
+          ],
+          [
+            "8411",
+            42389104
+          ],
+          [
+            "2306",
+            13480726
+          ],
+          [
+            "8807",
+            11684268
+          ]
+        ],
+        "top4Share": 76.86491859265901
+      },
+      {
+        "code": "TW",
+        "name": "Taiwan",
+        "rank": 19,
+        "share": 0.11523124895040919,
+        "total": 205070859,
+        "hs4Count": 101,
+        "hs6Count": 135,
+        "top4": [
+          [
+            "7502",
+            38337101
+          ],
+          [
+            "8105",
+            36474111
+          ],
+          [
+            "0202",
+            18140574
+          ],
+          [
+            "2004",
+            10582426
+          ]
+        ],
+        "top4Share": 50.48704262754369
+      },
+      {
+        "code": "GB",
+        "name": "United Kingdom",
+        "rank": 20,
+        "share": 0.10796474075084886,
+        "total": 192139045,
+        "hs4Count": 258,
+        "hs6Count": 453,
+        "top4": [
+          [
+            "1001",
+            75983114
+          ],
+          [
+            "2309",
+            9709341
+          ],
+          [
+            "9802",
+            8759937
+          ],
+          [
+            "8431",
+            7276929
+          ]
+        ],
+        "top4Share": 52.945678479873784
+      },
+      {
+        "code": "CO",
+        "name": "Colombia",
+        "rank": 21,
+        "share": 0.10118441344512948,
+        "total": 180072461,
+        "hs4Count": 118,
+        "hs6Count": 200,
+        "top4": [
+          [
+            "1001",
+            109996293
+          ],
+          [
+            "8413",
+            17783690
+          ],
+          [
+            "1003",
+            8821625
+          ],
+          [
+            "0202",
+            8460341
+          ]
+        ],
+        "top4Share": 80.55754233291674
+      },
+      {
+        "code": "ES",
+        "name": "Spain",
+        "rank": 22,
+        "share": 0.1009201732892723,
+        "total": 179602207,
+        "hs4Count": 135,
+        "hs6Count": 225,
+        "top4": [
+          [
+            "1001",
+            84957091
+          ],
+          [
+            "2306",
+            41673740
+          ],
+          [
+            "2309",
+            15602645
+          ],
+          [
+            "3901",
+            12892259
+          ]
+        ],
+        "top4Share": 86.37184230147015
+      },
+      {
+        "code": "BE",
+        "name": "Belgium",
+        "rank": 23,
+        "share": 0.09889828606370449,
+        "total": 176003963,
+        "hs4Count": 71,
+        "hs6Count": 86,
+        "top4": [
+          [
+            "1514",
+            65968209
+          ],
+          [
+            "1205",
+            33236952
+          ],
+          [
+            "8105",
+            28191811
+          ],
+          [
+            "1001",
+            15414177
+          ]
+        ],
+        "top4Share": 81.14087124276855
+      },
+      {
+        "code": "PH",
+        "name": "Philippines",
+        "rank": 24,
+        "share": 0.0904834058150713,
+        "total": 161028453,
+        "hs4Count": 89,
+        "hs6Count": 124,
+        "top4": [
+          [
+            "1001",
+            58714337
+          ],
+          [
+            "4407",
+            23784895
+          ],
+          [
+            "0206",
+            14723476
+          ],
+          [
+            "0203",
+            9905508
+          ]
+        ],
+        "top4Share": 66.52750740889252
+      },
+      {
+        "code": "DZ",
+        "name": "Algeria",
+        "rank": 25,
+        "share": 0.0892928877493988,
+        "total": 158909752,
+        "hs4Count": 39,
+        "hs6Count": 53,
+        "top4": [
+          [
+            "1001",
+            149199869
+          ],
+          [
+            "0713",
+            3774147
+          ],
+          [
+            "8413",
+            2854397
+          ],
+          [
+            "8481",
+            994169
+          ]
+        ],
+        "top4Share": 98.68656896525772
+      },
+      {
+        "code": "BR",
+        "name": "Brazil",
+        "rank": 26,
+        "share": 0.07664463750401371,
+        "total": 136400341,
+        "hs4Count": 116,
+        "hs6Count": 179,
+        "top4": [
+          [
+            "2503",
+            44692670
+          ],
+          [
+            "9802",
+            17538873
+          ],
+          [
+            "8481",
+            15087488
+          ],
+          [
+            "8526",
+            8954515
+          ]
+        ],
+        "top4Share": 63.250242167649716
+      },
+      {
+        "code": "NG",
+        "name": "Nigeria",
+        "rank": 27,
+        "share": 0.0761610722985571,
+        "total": 135539766,
+        "hs4Count": 77,
+        "hs6Count": 121,
+        "top4": [
+          [
+            "1001",
+            97463549
+          ],
+          [
+            "8703",
+            21748000
+          ],
+          [
+            "8479",
+            3058799
+          ],
+          [
+            "9806",
+            2849681
+          ]
+        ],
+        "top4Share": 92.31241331787456
+      },
+      {
+        "code": "MY",
+        "name": "Malaysia",
+        "rank": 28,
+        "share": 0.0732992496038738,
+        "total": 130446734,
+        "hs4Count": 117,
+        "hs6Count": 183,
+        "top4": [
+          [
+            "1001",
+            40677111
+          ],
+          [
+            "3901",
+            30400406
+          ],
+          [
+            "1514",
+            26141341
+          ],
+          [
+            "8481",
+            4336715
+          ]
+        ],
+        "top4Share": 77.85213924941962
+      },
+      {
+        "code": "MA",
+        "name": "Morocco",
+        "rank": 29,
+        "share": 0.07254318080252115,
+        "total": 129101199,
+        "hs4Count": 45,
+        "hs6Count": 67,
+        "top4": [
+          [
+            "1001",
+            115527642
+          ],
+          [
+            "8419",
+            2635049
+          ],
+          [
+            "8413",
+            2464739
+          ],
+          [
+            "8537",
+            1977461
+          ]
+        ],
+        "top4Share": 94.96804983197717
+      },
+      {
+        "code": "EC",
+        "name": "Ecuador",
+        "rank": 30,
+        "share": 0.07079611223969014,
+        "total": 125992035,
+        "hs4Count": 63,
+        "hs6Count": 90,
+        "top4": [
+          [
+            "1001",
+            117629071
+          ],
+          [
+            "0713",
+            1825647
+          ],
+          [
+            "1004",
+            1128157
+          ],
+          [
+            "8504",
+            864988
+          ]
+        ],
+        "top4Share": 96.39328628988333
+      },
+      {
+        "code": "CL",
+        "name": "Chile",
+        "rank": 31,
+        "share": 0.06804952480655245,
+        "total": 121104081,
+        "hs4Count": 119,
+        "hs6Count": 195,
+        "top4": [
+          [
+            "2503",
+            38187262
+          ],
+          [
+            "1001",
+            34657554
+          ],
+          [
+            "2701",
+            15176400
+          ],
+          [
+            "1205",
+            5307845
+          ]
+        ],
+        "top4Share": 77.06516595423403
+      },
+      {
+        "code": "TH",
+        "name": "Thailand",
+        "rank": 32,
+        "share": 0.06679108987221291,
+        "total": 118864512,
+        "hs4Count": 115,
+        "hs6Count": 162,
+        "top4": [
+          [
+            "1001",
+            29053642
+          ],
+          [
+            "3901",
+            18282791
+          ],
+          [
+            "8481",
+            15930074
+          ],
+          [
+            "4707",
+            15052203
+          ]
+        ],
+        "top4Share": 65.88906031095303
+      },
+      {
+        "code": "GT",
+        "name": "Guatemala",
+        "rank": 33,
+        "share": 0.06678127443833566,
+        "total": 118847044,
+        "hs4Count": 35,
+        "hs6Count": 44,
+        "top4": [
+          [
+            "2710",
+            63840865
+          ],
+          [
+            "1001",
+            53022058
+          ],
+          [
+            "0206",
+            852433
+          ],
+          [
+            "3902",
+            419854
+          ]
+        ],
+        "top4Share": 99.4010503113565
+      },
+      {
+        "code": "SE",
+        "name": "Sweden",
+        "rank": 34,
+        "share": 0.06537030188511471,
+        "total": 116336012,
+        "hs4Count": 82,
+        "hs6Count": 98,
+        "top4": [
+          [
+            "2710",
+            101424277
+          ],
+          [
+            "7504",
+            6504581
+          ],
+          [
+            "3902",
+            3687667
+          ],
+          [
+            "8526",
+            1242712
+          ]
+        ],
+        "top4Share": 97.01143700886016
+      },
+      {
+        "code": "DE",
+        "name": "Germany",
+        "rank": 35,
+        "share": 0.06044702679826381,
+        "total": 107574324,
+        "hs4Count": 189,
+        "hs6Count": 315,
+        "top4": [
+          [
+            "1205",
+            31705686
+          ],
+          [
+            "2803",
+            11043350
+          ],
+          [
+            "8529",
+            5604523
+          ],
+          [
+            "2309",
+            5058093
+          ]
+        ],
+        "top4Share": 49.65092971441772
+      },
+      {
+        "code": "CU",
+        "name": "Cuba",
+        "rank": 36,
+        "share": 0.05872178897859546,
+        "total": 104504011,
+        "hs4Count": 187,
+        "hs6Count": 331,
+        "top4": [
+          [
+            "2503",
+            49239339
+          ],
+          [
+            "1001",
+            30653980
+          ],
+          [
+            "7501",
+            6688626
+          ],
+          [
+            "8431",
+            2803315
+          ]
+        ],
+        "top4Share": 85.53285098310724
+      },
+      {
+        "code": "SA",
+        "name": "Saudi Arabia",
+        "rank": 37,
+        "share": 0.0541315300757832,
+        "total": 96334974,
+        "hs4Count": 173,
+        "hs6Count": 312,
+        "top4": [
+          [
+            "1003",
+            18440288
+          ],
+          [
+            "8479",
+            17478481
+          ],
+          [
+            "9027",
+            7502005
+          ],
+          [
+            "8431",
+            6195053
+          ]
+        ],
+        "top4Share": 51.50344152270182
+      },
+      {
+        "code": "CH",
+        "name": "Switzerland",
+        "rank": 38,
+        "share": 0.04726848576898939,
+        "total": 84121183,
+        "hs4Count": 84,
+        "hs6Count": 109,
+        "top4": [
+          [
+            "8411",
+            57202425
+          ],
+          [
+            "8526",
+            6981022
+          ],
+          [
+            "2939",
+            6847347
+          ],
+          [
+            "8529",
+            2644261
+          ]
+        ],
+        "top4Share": 87.58204815070184
+      },
+      {
+        "code": "TR",
+        "name": "Türkiye",
+        "rank": 39,
+        "share": 0.04581588977493621,
+        "total": 81536076,
+        "hs4Count": 88,
+        "hs6Count": 146,
+        "top4": [
+          [
+            "0713",
+            48482359
+          ],
+          [
+            "1001",
+            6553894
+          ],
+          [
+            "8411",
+            3785951
+          ],
+          [
+            "2309",
+            3640746
+          ]
+        ],
+        "top4Share": 76.60774599945182
+      },
+      {
+        "code": "VE",
+        "name": "Venezuela",
+        "rank": 40,
+        "share": 0.04107411143312495,
+        "total": 73097388,
+        "hs4Count": 24,
+        "hs6Count": 28,
+        "top4": [
+          [
+            "1001",
+            67100360
+          ],
+          [
+            "0713",
+            1803797
+          ],
+          [
+            "8705",
+            1354635
+          ],
+          [
+            "8413",
+            899859
+          ]
+        ],
+        "top4Share": 97.34773423094133
+      },
+      {
+        "code": "PK",
+        "name": "Pakistan",
+        "rank": 41,
+        "share": 0.037147227628708,
+        "total": 66108924,
+        "hs4Count": 58,
+        "hs6Count": 85,
+        "top4": [
+          [
+            "1205",
+            31253237
+          ],
+          [
+            "0713",
+            23319395
+          ],
+          [
+            "3901",
+            3877990
+          ],
+          [
+            "4705",
+            3071901
+          ]
+        ],
+        "top4Share": 93.0623572091417
+      },
+      {
+        "code": "BG",
+        "name": "Bulgaria",
+        "rank": 42,
+        "share": 0.0352908092436736,
+        "total": 62805156,
+        "hs4Count": 25,
+        "hs6Count": 32,
+        "top4": [
+          [
+            "1205",
+            59859405
+          ],
+          [
+            "3902",
+            1204392
+          ],
+          [
+            "2309",
+            631128
+          ],
+          [
+            "0713",
+            447021
+          ]
+        ],
+        "top4Share": 98.94401981900977
+      },
+      {
+        "code": "NZ",
+        "name": "New Zealand",
+        "rank": 43,
+        "share": 0.03506656861040357,
+        "total": 62406087,
+        "hs4Count": 151,
+        "hs6Count": 221,
+        "top4": [
+          [
+            "2503",
+            34692148
+          ],
+          [
+            "2309",
+            6236000
+          ],
+          [
+            "4705",
+            3372794
+          ],
+          [
+            "3901",
+            2004426
+          ]
+        ],
+        "top4Share": 74.20008243747121
+      },
+      {
+        "code": "GH",
+        "name": "Ghana",
+        "rank": 44,
+        "share": 0.03359682538826484,
+        "total": 59790464,
+        "hs4Count": 47,
+        "hs6Count": 65,
+        "top4": [
+          [
+            "1001",
+            46471168
+          ],
+          [
+            "8703",
+            8813824
+          ],
+          [
+            "8421",
+            1299714
+          ],
+          [
+            "3403",
+            914739
+          ]
+        ],
+        "top4Share": 96.168253519491
+      },
+      {
+        "code": "AR",
+        "name": "Argentina",
+        "rank": 45,
+        "share": 0.030473345073452535,
+        "total": 54231774,
+        "hs4Count": 100,
+        "hs6Count": 166,
+        "top4": [
+          [
+            "8481",
+            10314149
+          ],
+          [
+            "8421",
+            7181307
+          ],
+          [
+            "7308",
+            6436820
+          ],
+          [
+            "8414",
+            4437415
+          ]
+        ],
+        "top4Share": 52.31193617232584
+      },
+      {
+        "code": "NO",
+        "name": "Norway",
+        "rank": 46,
+        "share": 0.030046836713160226,
+        "total": 53472740,
+        "hs4Count": 142,
+        "hs6Count": 224,
+        "top4": [
+          [
+            "9802",
+            17860596
+          ],
+          [
+            "2309",
+            8590254
+          ],
+          [
+            "8807",
+            8449105
+          ],
+          [
+            "9019",
+            3720587
+          ]
+        ],
+        "top4Share": 72.22472983430436
+      },
+      {
+        "code": "PL",
+        "name": "Poland",
+        "rank": 47,
+        "share": 0.028196076756059424,
+        "total": 50179042,
+        "hs4Count": 80,
+        "hs6Count": 116,
+        "top4": [
+          [
+            "3901",
+            27522504
+          ],
+          [
+            "2309",
+            14611495
+          ],
+          [
+            "8703",
+            2225220
+          ],
+          [
+            "3902",
+            1130158
+          ]
+        ],
+        "top4Share": 90.65413604349003
+      },
+      {
+        "code": "KW",
+        "name": "Kuwait",
+        "rank": 48,
+        "share": 0.02721896233844074,
+        "total": 48440124,
+        "hs4Count": 83,
+        "hs6Count": 119,
+        "top4": [
+          [
+            "8479",
+            9615328
+          ],
+          [
+            "8504",
+            8341499
+          ],
+          [
+            "8431",
+            7173043
+          ],
+          [
+            "1001",
+            6694315
+          ]
+        ],
+        "top4Share": 65.69798417526759
+      },
+      {
+        "code": "PT",
+        "name": "Portugal",
+        "rank": 49,
+        "share": 0.026002663868240617,
+        "total": 46275543,
+        "hs4Count": 65,
+        "hs6Count": 82,
+        "top4": [
+          [
+            "1001",
+            11885133
+          ],
+          [
+            "1205",
+            11747091
+          ],
+          [
+            "3902",
+            10138746
+          ],
+          [
+            "1211",
+            7081314
+          ]
+        ],
+        "top4Share": 88.2805070488314
+      },
+      {
+        "code": "OM",
+        "name": "Oman",
+        "rank": 50,
+        "share": 0.025834409642675745,
+        "total": 45976110,
+        "hs4Count": 99,
+        "hs6Count": 170,
+        "top4": [
+          [
+            "8431",
+            10000721
+          ],
+          [
+            "8479",
+            6198714
+          ],
+          [
+            "8413",
+            6188908
+          ],
+          [
+            "3917",
+            4305023
+          ]
+        ],
+        "top4Share": 58.059209445949215
+      },
+      {
+        "code": "SV",
+        "name": "El Salvador",
+        "rank": 51,
+        "share": 0.023153688108795208,
+        "total": 41205374,
+        "hs4Count": 23,
+        "hs6Count": 26,
+        "top4": [
+          [
+            "1001",
+            20798715
+          ],
+          [
+            "2710",
+            18335005
+          ],
+          [
+            "8429",
+            633209
+          ],
+          [
+            "3902",
+            506041
+          ]
+        ],
+        "top4Share": 97.73717865053233
+      },
+      {
+        "code": "EG",
+        "name": "Egypt",
+        "rank": 52,
+        "share": 0.02052321813500413,
+        "total": 36524068,
+        "hs4Count": 69,
+        "hs6Count": 98,
+        "top4": [
+          [
+            "1001",
+            14432402
+          ],
+          [
+            "0713",
+            10069304
+          ],
+          [
+            "8413",
+            4563917
+          ],
+          [
+            "8207",
+            3106641
+          ]
+        ],
+        "top4Share": 88.08510596355258
+      },
+      {
+        "code": "KE",
+        "name": "Kenya",
+        "rank": 53,
+        "share": 0.019742508481442565,
+        "total": 35134681,
+        "hs4Count": 56,
+        "hs6Count": 82,
+        "top4": [
+          [
+            "8802",
+            17658166
+          ],
+          [
+            "1001",
+            9921594
+          ],
+          [
+            "0713",
+            2715441
+          ],
+          [
+            "8807",
+            1622672
+          ]
+        ],
+        "top4Share": 90.84435119817937
+      },
+      {
+        "code": "DK",
+        "name": "Denmark",
+        "rank": 54,
+        "share": 0.01621524398549011,
+        "total": 28857398,
+        "hs4Count": 96,
+        "hs6Count": 121,
+        "top4": [
+          [
+            "2710",
+            19649400
+          ],
+          [
+            "2309",
+            4593547
+          ],
+          [
+            "8517",
+            822035
+          ],
+          [
+            "8807",
+            575645
+          ]
+        ],
+        "top4Share": 88.85287232064374
+      },
+      {
+        "code": "ZA",
+        "name": "South Africa",
+        "rank": 55,
+        "share": 0.014064519356868399,
+        "total": 25029869,
+        "hs4Count": 95,
+        "hs6Count": 117,
+        "top4": [
+          [
+            "1001",
+            5777646
+          ],
+          [
+            "8411",
+            3822307
+          ],
+          [
+            "2309",
+            3818477
+          ],
+          [
+            "2616",
+            3328414
+          ]
+        ],
+        "top4Share": 66.90743766976966
+      },
+      {
+        "code": "LK",
+        "name": "Sri Lanka",
+        "rank": 56,
+        "share": 0.013742518283334424,
+        "total": 24456821,
+        "hs4Count": 26,
+        "hs6Count": 29,
+        "top4": [
+          [
+            "1001",
+            15690008
+          ],
+          [
+            "0713",
+            4258849
+          ],
+          [
+            "3901",
+            3170726
+          ],
+          [
+            "1004",
+            898107
+          ]
+        ],
+        "top4Share": 98.20446410430857
+      },
+      {
+        "code": "MV",
+        "name": "Maldives",
+        "rank": 57,
+        "share": 0.013662870431552248,
+        "total": 24315076,
+        "hs4Count": 30,
+        "hs6Count": 41,
+        "top4": [
+          [
+            "8807",
+            14224400
+          ],
+          [
+            "8802",
+            6403550
+          ],
+          [
+            "8411",
+            2408613
+          ],
+          [
+            "8479",
+            489855
+          ]
+        ],
+        "top4Share": 96.75650612813219
+      },
+      {
+        "code": "MZ",
+        "name": "Mozambique",
+        "rank": 58,
+        "share": 0.013569036052457328,
+        "total": 24148084,
+        "hs4Count": 7,
+        "hs6Count": 8,
+        "top4": [
+          [
+            "1001",
+            24000879
+          ],
+          [
+            "8413",
+            119289
+          ],
+          [
+            "8807",
+            10181
+          ],
+          [
+            "3403",
+            7274
+          ]
+        ],
+        "top4Share": 99.95667979289784
+      },
+      {
+        "code": "CZ",
+        "name": "Czechia",
+        "rank": 59,
+        "share": 0.013519708271466464,
+        "total": 24060298,
+        "hs4Count": 44,
+        "hs6Count": 54,
+        "top4": [
+          [
+            "2309",
+            10155381
+          ],
+          [
+            "8419",
+            7740754
+          ],
+          [
+            "9027",
+            1877415
+          ],
+          [
+            "8411",
+            1502100
+          ]
+        ],
+        "top4Share": 88.42637776140594
+      },
+      {
+        "code": "UM",
+        "name": "United States Minor Outlying Islands",
+        "rank": 60,
+        "share": 0.01287762841654954,
+        "total": 22917623,
+        "hs4Count": 79,
+        "hs6Count": 112,
+        "top4": [
+          [
+            "8802",
+            19257635
+          ],
+          [
+            "2106",
+            1110019
+          ],
+          [
+            "9014",
+            580939
+          ],
+          [
+            "8541",
+            430050
+          ]
+        ],
+        "top4Share": 93.28473114336508
+      },
+      {
+        "code": "CR",
+        "name": "Costa Rica",
+        "rank": 61,
+        "share": 0.012526527739500496,
+        "total": 22292788,
+        "hs4Count": 40,
+        "hs6Count": 49,
+        "top4": [
+          [
+            "1001",
+            19337896
+          ],
+          [
+            "2803",
+            821966
+          ],
+          [
+            "8431",
+            665336
+          ],
+          [
+            "8412",
+            482592
+          ]
+        ],
+        "top4Share": 95.58153964412168
+      },
+      {
+        "code": "UA",
+        "name": "Ukraine",
+        "rank": 62,
+        "share": 0.011479730933793997,
+        "total": 20429860,
+        "hs4Count": 76,
+        "hs6Count": 117,
+        "top4": [
+          [
+            "8526",
+            7538162
+          ],
+          [
+            "8517",
+            2969813
+          ],
+          [
+            "2309",
+            2609444
+          ],
+          [
+            "8431",
+            1439142
+          ]
+        ],
+        "top4Share": 71.25139868799884
+      },
+      {
+        "code": "IL",
+        "name": "Israel",
+        "rank": 63,
+        "share": 0.011251324865938885,
+        "total": 20023378,
+        "hs4Count": 59,
+        "hs6Count": 82,
+        "top4": [
+          [
+            "2309",
+            8715989
+          ],
+          [
+            "8526",
+            2224810
+          ],
+          [
+            "1211",
+            2070606
+          ],
+          [
+            "0713",
+            1961540
+          ]
+        ],
+        "top4Share": 74.77731779323149
+      },
+      {
+        "code": "QA",
+        "name": "Qatar",
+        "rank": 64,
+        "share": 0.011070019170104552,
+        "total": 19700718,
+        "hs4Count": 68,
+        "hs6Count": 98,
+        "top4": [
+          [
+            "1214",
+            7055253
+          ],
+          [
+            "8481",
+            3884702
+          ],
+          [
+            "8431",
+            3153695
+          ],
+          [
+            "9027",
+            1420626
+          ]
+        ],
+        "top4Share": 78.74979988039014
+      },
+      {
+        "code": "HR",
+        "name": "Croatia",
+        "rank": 65,
+        "share": 0.010691897954421697,
+        "total": 19027796,
+        "hs4Count": 45,
+        "hs6Count": 57,
+        "top4": [
+          [
+            "9802",
+            6919750
+          ],
+          [
+            "8807",
+            5297307
+          ],
+          [
+            "2309",
+            4437973
+          ],
+          [
+            "0713",
+            486434
+          ]
+        ],
+        "top4Share": 90.08643985882547
+      },
+      {
+        "code": "GR",
+        "name": "Greece",
+        "rank": 66,
+        "share": 0.009951454168515847,
+        "total": 17710068,
+        "hs4Count": 42,
+        "hs6Count": 58,
+        "top4": [
+          [
+            "2309",
+            4804584
+          ],
+          [
+            "8807",
+            4629248
+          ],
+          [
+            "1001",
+            4550463
+          ],
+          [
+            "0713",
+            2572444
+          ]
+        ],
+        "top4Share": 93.48772122162376
+      },
+      {
+        "code": "FI",
+        "name": "Finland",
+        "rank": 67,
+        "share": 0.007878513538105734,
+        "total": 14020967,
+        "hs4Count": 46,
+        "hs6Count": 55,
+        "top4": [
+          [
+            "3901",
+            11456201
+          ],
+          [
+            "8414",
+            321393
+          ],
+          [
+            "8436",
+            311031
+          ],
+          [
+            "9703",
+            230802
+          ]
+        ],
+        "top4Share": 87.86431777494377
+      },
+      {
+        "code": "RO",
+        "name": "Romania",
+        "rank": 68,
+        "share": 0.007666191565699583,
+        "total": 13643109,
+        "hs4Count": 58,
+        "hs6Count": 92,
+        "top4": [
+          [
+            "2309",
+            4971669
+          ],
+          [
+            "8431",
+            2076092
+          ],
+          [
+            "8413",
+            2004763
+          ],
+          [
+            "8419",
+            1430772
+          ]
+        ],
+        "top4Share": 76.83949457561323
+      },
+      {
+        "code": "LY",
+        "name": "Libya",
+        "rank": 69,
+        "share": 0.007491802974916143,
+        "total": 13332759,
+        "hs4Count": 51,
+        "hs6Count": 71,
+        "top4": [
+          [
+            "8430",
+            4259260
+          ],
+          [
+            "8416",
+            1696308
+          ],
+          [
+            "8703",
+            1542150
+          ],
+          [
+            "8431",
+            938640
+          ]
+        ],
+        "top4Share": 63.27541058831109
+      },
+      {
+        "code": "LA",
+        "name": "Laos",
+        "rank": 70,
+        "share": 0.0065980427636625535,
+        "total": 11742182,
+        "hs4Count": 2,
+        "hs6Count": 2,
+        "top4": [
+          [
+            "4703",
+            11003633
+          ],
+          [
+            "2613",
+            738549
+          ]
+        ],
+        "top4Share": 100.0
+      },
+      {
+        "code": "IQ",
+        "name": "Iraq",
+        "rank": 71,
+        "share": 0.006570540668649489,
+        "total": 11693238,
+        "hs4Count": 47,
+        "hs6Count": 85,
+        "top4": [
+          [
+            "8479",
+            2574096
+          ],
+          [
+            "8413",
+            2189198
+          ],
+          [
+            "9026",
+            2078865
+          ],
+          [
+            "8431",
+            1807013
+          ]
+        ],
+        "top4Share": 73.96729631262102
+      },
+      {
+        "code": "DO",
+        "name": "Dominican Republic",
+        "rank": 72,
+        "share": 0.006515290924203599,
+        "total": 11594913,
+        "hs4Count": 21,
+        "hs6Count": 22,
+        "top4": [
+          [
+            "1001",
+            10976027
+          ],
+          [
+            "4017",
+            160299
+          ],
+          [
+            "3924",
+            133936
+          ],
+          [
+            "4009",
+            51718
+          ]
+        ],
+        "top4Share": 97.646097042729
+      },
+      {
+        "code": "IE",
+        "name": "Ireland",
+        "rank": 73,
+        "share": 0.006364661549737531,
+        "total": 11326846,
+        "hs4Count": 73,
+        "hs6Count": 89,
+        "top4": [
+          [
+            "2306",
+            4021764
+          ],
+          [
+            "7310",
+            1856000
+          ],
+          [
+            "8419",
+            1564953
+          ],
+          [
+            "9508",
+            621090
+          ]
+        ],
+        "top4Share": 71.19198936756092
+      },
+      {
+        "code": "SD",
+        "name": "Sudan",
+        "rank": 74,
+        "share": 0.006151400626678249,
+        "total": 10947317,
+        "hs4Count": 4,
+        "hs6Count": 4,
+        "top4": [
+          [
+            "1001",
+            10738354
+          ],
+          [
+            "8413",
+            202405
+          ],
+          [
+            "9806",
+            4158
+          ],
+          [
+            "8432",
+            2400
+          ]
+        ],
+        "top4Share": 100.0
+      },
+      {
+        "code": "CM",
+        "name": "Cameroon",
+        "rank": 75,
+        "share": 0.006088351017471075,
+        "total": 10835111,
+        "hs4Count": 27,
+        "hs6Count": 31,
+        "top4": [
+          [
+            "1001",
+            9339375
+          ],
+          [
+            "8703",
+            660093
+          ],
+          [
+            "9806",
+            372603
+          ],
+          [
+            "8431",
+            176448
+          ]
+        ],
+        "top4Share": 97.3549694137882
+      },
+      {
+        "code": "CG",
+        "name": "Congo, Republic of the",
+        "rank": 76,
+        "share": 0.0059708844135893694,
+        "total": 10626062,
+        "hs4Count": 20,
+        "hs6Count": 27,
+        "top4": [
+          [
+            "8431",
+            9215123
+          ],
+          [
+            "8481",
+            738742
+          ],
+          [
+            "8479",
+            210976
+          ],
+          [
+            "0207",
+            109300
+          ]
+        ],
+        "top4Share": 96.68813338375026
+      },
+      {
+        "code": "TZ",
+        "name": "Tanzania, United Republic of",
+        "rank": 77,
+        "share": 0.005535942916611134,
+        "total": 9852020,
+        "hs4Count": 39,
+        "hs6Count": 48,
+        "top4": [
+          [
+            "1001",
+            6409278
+          ],
+          [
+            "8807",
+            828543
+          ],
+          [
+            "8537",
+            469325
+          ],
+          [
+            "8481",
+            339703
+          ]
+        ],
+        "top4Share": 81.6771484426544
+      },
+      {
+        "code": "UZ",
+        "name": "Uzbekistan",
+        "rank": 78,
+        "share": 0.005333355463124694,
+        "total": 9491486,
+        "hs4Count": 46,
+        "hs6Count": 68,
+        "top4": [
+          [
+            "9802",
+            3235329
+          ],
+          [
+            "7309",
+            1266960
+          ],
+          [
+            "8431",
+            1217364
+          ],
+          [
+            "8479",
+            1101487
+          ]
+        ],
+        "top4Share": 71.86588064292567
+      },
+      {
+        "code": "BH",
+        "name": "Bahrain",
+        "rank": 79,
+        "share": 0.00529208433950342,
+        "total": 9418038,
+        "hs4Count": 48,
+        "hs6Count": 63,
+        "top4": [
+          [
+            "0206",
+            2180043
+          ],
+          [
+            "8481",
+            1841424
+          ],
+          [
+            "0713",
+            1560930
+          ],
+          [
+            "7326",
+            761375
+          ]
+        ],
+        "top4Share": 67.35768107964736
+      },
+      {
+        "code": "GE",
+        "name": "Georgia",
+        "rank": 80,
+        "share": 0.005281817692355992,
+        "total": 9399767,
+        "hs4Count": 8,
+        "hs6Count": 10,
+        "top4": [
+          [
+            "9802",
+            8032763
+          ],
+          [
+            "8412",
+            742102
+          ],
+          [
+            "2309",
+            399281
+          ],
+          [
+            "8703",
+            158558
+          ]
+        ],
+        "top4Share": 99.28654614523957
+      },
+      {
+        "code": "KZ",
+        "name": "Kazakhstan",
+        "rank": 81,
+        "share": 0.004862148331704172,
+        "total": 8652904,
+        "hs4Count": 75,
+        "hs6Count": 135,
+        "top4": [
+          [
+            "8481",
+            1121029
+          ],
+          [
+            "9026",
+            965057
+          ],
+          [
+            "8483",
+            615718
+          ],
+          [
+            "8479",
+            555016
+          ]
+        ],
+        "top4Share": 37.63846218564311
+      },
+      {
+        "code": "IS",
+        "name": "Iceland",
+        "rank": 82,
+        "share": 0.004679428309841158,
+        "total": 8327727,
+        "hs4Count": 50,
+        "hs6Count": 69,
+        "top4": [
+          [
+            "9802",
+            2206803
+          ],
+          [
+            "3901",
+            1974547
+          ],
+          [
+            "2309",
+            1143356
+          ],
+          [
+            "9019",
+            889447
+          ]
+        ],
+        "top4Share": 74.62003737634531
+      },
+      {
+        "code": "GN",
+        "name": "Guinea",
+        "rank": 83,
+        "share": 0.004236667281271679,
+        "total": 7539769,
+        "hs4Count": 8,
+        "hs6Count": 10,
+        "top4": [
+          [
+            "1001",
+            7169947
+          ],
+          [
+            "8703",
+            237754
+          ],
+          [
+            "8479",
+            82964
+          ],
+          [
+            "7307",
+            16425
+          ]
+        ],
+        "top4Share": 99.56657823336498
+      },
+      {
+        "code": "MO",
+        "name": "Macao",
+        "rank": 84,
+        "share": 0.0036935767625363423,
+        "total": 6573260,
+        "hs4Count": 15,
+        "hs6Count": 17,
+        "top4": [
+          [
+            "6103",
+            3411470
+          ],
+          [
+            "4202",
+            686570
+          ],
+          [
+            "6105",
+            673895
+          ],
+          [
+            "6107",
+            577340
+          ]
+        ],
+        "top4Share": 81.37933080389334
+      },
+      {
+        "code": "TG",
+        "name": "Togo",
+        "rank": 85,
+        "share": 0.003670315959881046,
+        "total": 6531864,
+        "hs4Count": 6,
+        "hs6Count": 6,
+        "top4": [
+          [
+            "1001",
+            6353959
+          ],
+          [
+            "8703",
+            78123
+          ],
+          [
+            "0207",
+            69360
+          ],
+          [
+            "6309",
+            28022
+          ]
+        ],
+        "top4Share": 99.96325704270635
+      },
+      {
+        "code": "RU",
+        "name": "Russian Federation",
+        "rank": 86,
+        "share": 0.0033930676007803136,
+        "total": 6038460,
+        "hs4Count": 2,
+        "hs6Count": 2,
+        "top4": [
+          [
+            "0511",
+            6037908
+          ],
+          [
+            "9617",
+            552
+          ]
+        ],
+        "top4Share": 100.0
+      },
+      {
+        "code": "TT",
+        "name": "Trinidad and Tobago",
+        "rank": 87,
+        "share": 0.0031645856751525065,
+        "total": 5631843,
+        "hs4Count": 88,
+        "hs6Count": 135,
+        "top4": [
+          [
+            "0713",
+            1566551
+          ],
+          [
+            "3811",
+            577721
+          ],
+          [
+            "9026",
+            412559
+          ],
+          [
+            "8479",
+            380973
+          ]
+        ],
+        "top4Share": 52.16416721843986
+      },
+      {
+        "code": "SK",
+        "name": "Slovakia",
+        "rank": 88,
+        "share": 0.003056428224753995,
+        "total": 5439361,
+        "hs4Count": 20,
+        "hs6Count": 24,
+        "top4": [
+          [
+            "9027",
+            2866253
+          ],
+          [
+            "2309",
+            2279923
+          ],
+          [
+            "8807",
+            129239
+          ],
+          [
+            "0713",
+            33161
+          ]
+        ],
+        "top4Share": 97.5955815398169
+      },
+      {
+        "code": "HU",
+        "name": "Hungary",
+        "rank": 89,
+        "share": 0.0029682921691620073,
+        "total": 5282510,
+        "hs4Count": 44,
+        "hs6Count": 62,
+        "top4": [
+          [
+            "2309",
+            2520138
+          ],
+          [
+            "0713",
+            835757
+          ],
+          [
+            "8516",
+            431769
+          ],
+          [
+            "8526",
+            245717
+          ]
+        ],
+        "top4Share": 76.35349483484177
+      },
+      {
+        "code": "KH",
+        "name": "Cambodia",
+        "rank": 90,
+        "share": 0.002942449392687958,
+        "total": 5236519,
+        "hs4Count": 8,
+        "hs6Count": 9,
+        "top4": [
+          [
+            "3901",
+            3287758
+          ],
+          [
+            "2615",
+            1468111
+          ],
+          [
+            "0202",
+            169272
+          ],
+          [
+            "8703",
+            137280
+          ]
+        ],
+        "top4Share": 96.67531044955628
+      },
+      {
+        "code": "LT",
+        "name": "Lithuania",
+        "rank": 91,
+        "share": 0.0029078543149732355,
+        "total": 5174952,
+        "hs4Count": 22,
+        "hs6Count": 30,
+        "top4": [
+          [
+            "2309",
+            2667033
+          ],
+          [
+            "2615",
+            1271540
+          ],
+          [
+            "8703",
+            627213
+          ],
+          [
+            "8526",
+            249613
+          ]
+        ],
+        "top4Share": 93.05205149728924
+      },
+      {
+        "code": "LB",
+        "name": "Lebanon",
+        "rank": 92,
+        "share": 0.0028648148623840377,
+        "total": 5098357,
+        "hs4Count": 24,
+        "hs6Count": 31,
+        "top4": [
+          [
+            "8703",
+            3167979
+          ],
+          [
+            "1514",
+            483108
+          ],
+          [
+            "0713",
+            480081
+          ],
+          [
+            "9027",
+            318233
+          ]
+        ],
+        "top4Share": 87.27127190190879
+      },
+      {
+        "code": "NP",
+        "name": "Nepal",
+        "rank": 93,
+        "share": 0.0028596863150404566,
+        "total": 5089230,
+        "hs4Count": 21,
+        "hs6Count": 27,
+        "top4": [
+          [
+            "1205",
+            2816567
+          ],
+          [
+            "0713",
+            1163088
+          ],
+          [
+            "8807",
+            549249
+          ],
+          [
+            "3901",
+            284121
+          ]
+        ],
+        "top4Share": 94.57275462103304
+      },
+      {
+        "code": "LV",
+        "name": "Latvia",
+        "rank": 94,
+        "share": 0.002828998193574219,
+        "total": 5034616,
+        "hs4Count": 16,
+        "hs6Count": 17,
+        "top4": [
+          [
+            "2309",
+            4638874
+          ],
+          [
+            "8702",
+            187503
+          ],
+          [
+            "8703",
+            75859
+          ],
+          [
+            "8517",
+            74652
+          ]
+        ],
+        "top4Share": 98.85337829141288
+      },
+      {
+        "code": "AO",
+        "name": "Angola",
+        "rank": 95,
+        "share": 0.0025589445227814974,
+        "total": 4554016,
+        "hs4Count": 42,
+        "hs6Count": 59,
+        "top4": [
+          [
+            "8479",
+            1316595
+          ],
+          [
+            "8207",
+            752418
+          ],
+          [
+            "8481",
+            714486
+          ],
+          [
+            "8807",
+            474089
+          ]
+        ],
+        "top4Share": 71.53220366375524
+      },
+      {
+        "code": "TM",
+        "name": "Turkmenistan",
+        "rank": 96,
+        "share": 0.002417491691173764,
+        "total": 4302280,
+        "hs4Count": 28,
+        "hs6Count": 40,
+        "top4": [
+          [
+            "9802",
+            2445901
+          ],
+          [
+            "8481",
+            450830
+          ],
+          [
+            "8483",
+            275196
+          ],
+          [
+            "8479",
+            170963
+          ]
+        ],
+        "top4Share": 77.70042860994636
+      },
+      {
+        "code": "UG",
+        "name": "Uganda",
+        "rank": 97,
+        "share": 0.0022840056114272443,
+        "total": 4064722,
+        "hs4Count": 28,
+        "hs6Count": 35,
+        "top4": [
+          [
+            "1001",
+            2747328
+          ],
+          [
+            "8807",
+            575201
+          ],
+          [
+            "0713",
+            360651
+          ],
+          [
+            "8422",
+            226408
+          ]
+        ],
+        "top4Share": 96.18340442470604
+      },
+      {
+        "code": "GA",
+        "name": "Gabon",
+        "rank": 98,
+        "share": 0.002271446373816158,
+        "total": 4042371,
+        "hs4Count": 34,
+        "hs6Count": 42,
+        "top4": [
+          [
+            "8431",
+            1448105
+          ],
+          [
+            "8481",
+            1273686
+          ],
+          [
+            "8479",
+            383918
+          ],
+          [
+            "8523",
+            289829
+          ]
+        ],
+        "top4Share": 83.9986730559862
+      },
+      {
+        "code": "BO",
+        "name": "Bolivia",
+        "rank": 99,
+        "share": 0.00219391804439401,
+        "total": 3904398,
+        "hs4Count": 82,
+        "hs6Count": 123,
+        "top4": [
+          [
+            "1001",
+            927959
+          ],
+          [
+            "9015",
+            715644
+          ],
+          [
+            "8431",
+            562401
+          ],
+          [
+            "8433",
+            543841
+          ]
+        ],
+        "top4Share": 70.42942343480351
+      },
+      {
+        "code": "CI",
+        "name": "Côte d'Ivoire",
+        "rank": 100,
+        "share": 0.002192341888450245,
+        "total": 3901593,
+        "hs4Count": 22,
+        "hs6Count": 26,
+        "top4": [
+          [
+            "2103",
+            1101202
+          ],
+          [
+            "0206",
+            885239
+          ],
+          [
+            "9032",
+            442580
+          ],
+          [
+            "1001",
+            379477
+          ]
+        ],
+        "top4Share": 71.9833667940249
+      },
+      {
+        "code": "AT",
+        "name": "Austria",
+        "rank": 101,
+        "share": 0.0021481505215349443,
+        "total": 3822948,
+        "hs4Count": 56,
+        "hs6Count": 70,
+        "top4": [
+          [
+            "9027",
+            733091
+          ],
+          [
+            "7304",
+            663430
+          ],
+          [
+            "2803",
+            462742
+          ],
+          [
+            "8529",
+            332913
+          ]
+        ],
+        "top4Share": 57.3425534430497
+      },
+      {
+        "code": "ZM",
+        "name": "Zambia",
+        "rank": 102,
+        "share": 0.0019194129271176848,
+        "total": 3415876,
+        "hs4Count": 23,
+        "hs6Count": 23,
+        "top4": [
+          [
+            "7326",
+            855709
+          ],
+          [
+            "2930",
+            712955
+          ],
+          [
+            "8535",
+            536973
+          ],
+          [
+            "4008",
+            257961
+          ]
+        ],
+        "top4Share": 69.19449066652302
+      },
+      {
+        "code": "BS",
+        "name": "Bahamas",
+        "rank": 103,
+        "share": 0.0017379605729228105,
+        "total": 3092955,
+        "hs4Count": 33,
+        "hs6Count": 43,
+        "top4": [
+          [
+            "8537",
+            2072695
+          ],
+          [
+            "4418",
+            233414
+          ],
+          [
+            "9030",
+            143115
+          ],
+          [
+            "2004",
+            109969
+          ]
+        ],
+        "top4Share": 82.74265225326589
+      },
+      {
+        "code": "ZW",
+        "name": "Zimbabwe",
+        "rank": 104,
+        "share": 0.0017280833290085483,
+        "total": 3075377,
+        "hs4Count": 1,
+        "hs6Count": 1,
+        "top4": [
+          [
+            "1001",
+            3075377
+          ]
+        ],
+        "top4Share": 100.0
+      },
+      {
+        "code": "JO",
+        "name": "Jordan",
+        "rank": 105,
+        "share": 0.0014761989995497478,
+        "total": 2627112,
+        "hs4Count": 18,
+        "hs6Count": 20,
+        "top4": [
+          [
+            "8703",
+            1986936
+          ],
+          [
+            "1214",
+            278700
+          ],
+          [
+            "1514",
+            124697
+          ],
+          [
+            "8207",
+            40296
+          ]
+        ],
+        "top4Share": 92.52095076266258
+      },
+      {
+        "code": "MT",
+        "name": "Malta",
+        "rank": 106,
+        "share": 0.001353593172045341,
+        "total": 2408917,
+        "hs4Count": 44,
+        "hs6Count": 63,
+        "top4": [
+          [
+            "8807",
+            1248797
+          ],
+          [
+            "2309",
+            742941
+          ],
+          [
+            "8481",
+            73096
+          ],
+          [
+            "3926",
+            36339
+          ]
+        ],
+        "top4Share": 87.22479852979575
+      },
+      {
+        "code": "PG",
+        "name": "Papua New Guinea",
+        "rank": 107,
+        "share": 0.0013112476775989418,
+        "total": 2333557,
+        "hs4Count": 42,
+        "hs6Count": 53,
+        "top4": [
+          [
+            "8411",
+            1037511
+          ],
+          [
+            "8807",
+            726155
+          ],
+          [
+            "9405",
+            97737
+          ],
+          [
+            "4010",
+            86188
+          ]
+        ],
+        "top4Share": 83.46018545936525
+      },
+      {
+        "code": "GQ",
+        "name": "Equatorial Guinea",
+        "rank": 108,
+        "share": 0.0012705412729521728,
+        "total": 2261114,
+        "hs4Count": 30,
+        "hs6Count": 45,
+        "top4": [
+          [
+            "9026",
+            477646
+          ],
+          [
+            "8483",
+            472426
+          ],
+          [
+            "8481",
+            369612
+          ],
+          [
+            "8431",
+            199100
+          ]
+        ],
+        "top4Share": 67.16972253499823
+      },
+      {
+        "code": "SI",
+        "name": "Slovenia",
+        "rank": 109,
+        "share": 0.001225151915137725,
+        "total": 2180337,
+        "hs4Count": 8,
+        "hs6Count": 8,
+        "top4": [
+          [
+            "2803",
+            1973286
+          ],
+          [
+            "9806",
+            74045
+          ],
+          [
+            "7504",
+            57278
+          ],
+          [
+            "8703",
+            48940
+          ]
+        ],
+        "top4Share": 98.77138258902178
+      },
+      {
+        "code": "JM",
+        "name": "Jamaica",
+        "rank": 110,
+        "share": 0.001115624529555292,
+        "total": 1985417,
+        "hs4Count": 35,
+        "hs6Count": 42,
+        "top4": [
+          [
+            "0202",
+            886654
+          ],
+          [
+            "0207",
+            382444
+          ],
+          [
+            "8431",
+            158405
+          ],
+          [
+            "0206",
+            142570
+          ]
+        ],
+        "top4Share": 79.0802637430827
+      },
+      {
+        "code": "AL",
+        "name": "Albania",
+        "rank": 111,
+        "share": 0.0010753429284356126,
+        "total": 1913730,
+        "hs4Count": 25,
+        "hs6Count": 34,
+        "top4": [
+          [
+            "8413",
+            656399
+          ],
+          [
+            "8703",
+            449596
+          ],
+          [
+            "8479",
+            278414
+          ],
+          [
+            "8481",
+            140118
+          ]
+        ],
+        "top4Share": 79.66259608199694
+      },
+      {
+        "code": "SR",
+        "name": "Suriname",
+        "rank": 112,
+        "share": 0.0010689618849784295,
+        "total": 1902374,
+        "hs4Count": 45,
+        "hs6Count": 66,
+        "top4": [
+          [
+            "8413",
+            1018994
+          ],
+          [
+            "8431",
+            174223
+          ],
+          [
+            "8430",
+            169203
+          ],
+          [
+            "9026",
+            75054
+          ]
+        ],
+        "top4Share": 75.56211344351847
+      },
+      {
+        "code": "CW",
+        "name": "Curaçao",
+        "rank": 113,
+        "share": 0.000998454613851236,
+        "total": 1776896,
+        "hs4Count": 24,
+        "hs6Count": 29,
+        "top4": [
+          [
+            "8411",
+            937196
+          ],
+          [
+            "8807",
+            522812
+          ],
+          [
+            "8479",
+            77255
+          ],
+          [
+            "7304",
+            62759
+          ]
+        ],
+        "top4Share": 90.0459002665322
+      },
+      {
+        "code": "KG",
+        "name": "Kyrgyzstan",
+        "rank": 114,
+        "share": 0.0009604667270140702,
+        "total": 1709291,
+        "hs4Count": 22,
+        "hs6Count": 33,
+        "top4": [
+          [
+            "8703",
+            918494
+          ],
+          [
+            "8807",
+            365770
+          ],
+          [
+            "8431",
+            90766
+          ],
+          [
+            "8516",
+            52526
+          ]
+        ],
+        "top4Share": 83.51743500667821
+      },
+      {
+        "code": "MN",
+        "name": "Mongolia",
+        "rank": 115,
+        "share": 0.000798876185348348,
+        "total": 1421717,
+        "hs4Count": 32,
+        "hs6Count": 38,
+        "top4": [
+          [
+            "8703",
+            323798
+          ],
+          [
+            "8474",
+            283936
+          ],
+          [
+            "8421",
+            176410
+          ],
+          [
+            "8432",
+            153874
+          ]
+        ],
+        "top4Share": 65.97782821757072
+      },
+      {
+        "code": "UY",
+        "name": "Uruguay",
+        "rank": 116,
+        "share": 0.0007699462784803428,
+        "total": 1370232,
+        "hs4Count": 15,
+        "hs6Count": 15,
+        "top4": [
+          [
+            "2703",
+            276714
+          ],
+          [
+            "0713",
+            252977
+          ],
+          [
+            "8436",
+            252592
+          ],
+          [
+            "8537",
+            190652
+          ]
+        ],
+        "top4Share": 71.00512905843682
+      },
+      {
+        "code": "BW",
+        "name": "Botswana",
+        "rank": 117,
+        "share": 0.0007635045488050041,
+        "total": 1358768,
+        "hs4Count": 5,
+        "hs6Count": 6,
+        "top4": [
+          [
+            "8411",
+            1329511
+          ],
+          [
+            "1204",
+            22057
+          ],
+          [
+            "9401",
+            6059
+          ],
+          [
+            "8708",
+            892
+          ]
+        ],
+        "top4Share": 99.98167457579218
+      },
+      {
+        "code": "GY",
+        "name": "Guyana",
+        "rank": 118,
+        "share": 0.0007375892860148245,
+        "total": 1312648,
+        "hs4Count": 27,
+        "hs6Count": 32,
+        "top4": [
+          [
+            "8431",
+            507784
+          ],
+          [
+            "3906",
+            133253
+          ],
+          [
+            "8479",
+            123360
+          ],
+          [
+            "8536",
+            79958
+          ]
+        ],
+        "top4Share": 64.32455616433347
+      },
+      {
+        "code": "BJ",
+        "name": "Benin",
+        "rank": 119,
+        "share": 0.0007299602417194588,
+        "total": 1299071,
+        "hs4Count": 5,
+        "hs6Count": 7,
+        "top4": [
+          [
+            "8703",
+            637942
+          ],
+          [
+            "0207",
+            281532
+          ],
+          [
+            "1001",
+            278283
+          ],
+          [
+            "8807",
+            99314
+          ]
+        ],
+        "top4Share": 99.84604382670386
+      },
+      {
+        "code": "LU",
+        "name": "Luxembourg",
+        "rank": 120,
+        "share": 0.0007108867881169033,
+        "total": 1265127,
+        "hs4Count": 27,
+        "hs6Count": 31,
+        "top4": [
+          [
+            "8807",
+            531503
+          ],
+          [
+            "8511",
+            192611
+          ],
+          [
+            "8411",
+            119178
+          ],
+          [
+            "9030",
+            100000
+          ]
+        ],
+        "top4Share": 74.56105197343824
+      },
+      {
+        "code": "CY",
+        "name": "Cyprus",
+        "rank": 121,
+        "share": 0.0006903214649846876,
+        "total": 1228528,
+        "hs4Count": 8,
+        "hs6Count": 9,
+        "top4": [
+          [
+            "2309",
+            1133750
+          ],
+          [
+            "0713",
+            65357
+          ],
+          [
+            "4016",
+            14165
+          ],
+          [
+            "8517",
+            9487
+          ]
+        ],
+        "top4Share": 99.5304136332261
+      },
+      {
+        "code": "GL",
+        "name": "Greenland",
+        "rank": 122,
+        "share": 0.0006570249599566112,
+        "total": 1169272,
+        "hs4Count": 15,
+        "hs6Count": 17,
+        "top4": [
+          [
+            "8479",
+            921048
+          ],
+          [
+            "8807",
+            158732
+          ],
+          [
+            "0210",
+            19138
+          ],
+          [
+            "8483",
+            17653
+          ]
+        ],
+        "top4Share": 95.4928365683947
+      },
+      {
+        "code": "RW",
+        "name": "Rwanda",
+        "rank": 123,
+        "share": 0.0006444932559074658,
+        "total": 1146970,
+        "hs4Count": 16,
+        "hs6Count": 18,
+        "top4": [
+          [
+            "1001",
+            531954
+          ],
+          [
+            "2309",
+            218093
+          ],
+          [
+            "8703",
+            189679
+          ],
+          [
+            "8807",
+            125344
+          ]
+        ],
+        "top4Share": 92.85944706487528
+      },
+      {
+        "code": "RS",
+        "name": "Serbia",
+        "rank": 124,
+        "share": 0.0005713680487581682,
+        "total": 1016833,
+        "hs4Count": 13,
+        "hs6Count": 16,
+        "top4": [
+          [
+            "0202",
+            245892
+          ],
+          [
+            "9806",
+            218270
+          ],
+          [
+            "0511",
+            168561
+          ],
+          [
+            "8506",
+            123101
+          ]
+        ],
+        "top4Share": 74.33118319330706
+      },
+      {
+        "code": "ET",
+        "name": "Ethiopia",
+        "rank": 125,
+        "share": 0.0005689389143036594,
+        "total": 1012510,
+        "hs4Count": 23,
+        "hs6Count": 26,
+        "top4": [
+          [
+            "8807",
+            639961
+          ],
+          [
+            "3926",
+            51092
+          ],
+          [
+            "8536",
+            48772
+          ],
+          [
+            "9405",
+            44326
+          ]
+        ],
+        "top4Share": 77.44624744446969
+      },
+      {
+        "code": "AZ",
+        "name": "Azerbaijan",
+        "rank": 126,
+        "share": 0.0005452600510344016,
+        "total": 970370,
+        "hs4Count": 39,
+        "hs6Count": 54,
+        "top4": [
+          [
+            "9015",
+            221974
+          ],
+          [
+            "8479",
+            212267
+          ],
+          [
+            "9026",
+            181188
+          ],
+          [
+            "2309",
+            139927
+          ]
+        ],
+        "top4Share": 77.84206024506116
+      },
+      {
+        "code": "HN",
+        "name": "Honduras",
+        "rank": 127,
+        "share": 0.0005090809506439311,
+        "total": 905984,
+        "hs4Count": 13,
+        "hs6Count": 13,
+        "top4": [
+          [
+            "0202",
+            565855
+          ],
+          [
+            "0206",
+            278060
+          ],
+          [
+            "8703",
+            18633
+          ],
+          [
+            "1204",
+            10989
+          ]
+        ],
+        "top4Share": 96.4185901737779
+      },
+      {
+        "code": "IR",
+        "name": "Iran",
+        "rank": 128,
+        "share": 0.000492120838397704,
+        "total": 875801,
+        "hs4Count": 2,
+        "hs6Count": 2,
+        "top4": [
+          [
+            "0511",
+            493556
+          ],
+          [
+            "2103",
+            382245
+          ]
+        ],
+        "top4Share": 100.0
+      },
+      {
+        "code": "SX",
+        "name": "Sint Maarten (Dutch part)",
+        "rank": 129,
+        "share": 0.0004839922566214087,
+        "total": 861335,
+        "hs4Count": 3,
+        "hs6Count": 4,
+        "top4": [
+          [
+            "8807",
+            860304
+          ],
+          [
+            "7312",
+            1003
+          ],
+          [
+            "5807",
+            28
+          ]
+        ],
+        "top4Share": 100.0
+      },
+      {
+        "code": "BB",
+        "name": "Barbados",
+        "rank": 130,
+        "share": 0.0004738037148843849,
+        "total": 843203,
+        "hs4Count": 23,
+        "hs6Count": 26,
+        "top4": [
+          [
+            "4418",
+            176924
+          ],
+          [
+            "9403",
+            138386
+          ],
+          [
+            "3923",
+            124370
+          ],
+          [
+            "0713",
+            102595
+          ]
+        ],
+        "top4Share": 64.31132242176558
+      },
+      {
+        "code": "MM",
+        "name": "Myanmar",
+        "rank": 131,
+        "share": 0.0004374448034771567,
+        "total": 778497,
+        "hs4Count": 9,
+        "hs6Count": 10,
+        "top4": [
+          [
+            "3901",
+            614208
+          ],
+          [
+            "8481",
+            110880
+          ],
+          [
+            "9027",
+            48243
+          ],
+          [
+            "3917",
+            3880
+          ]
+        ],
+        "top4Share": 99.8348098965057
+      },
+      {
+        "code": "SC",
+        "name": "Seychelles",
+        "rank": 132,
+        "share": 0.00041881020113737513,
+        "total": 745334,
+        "hs4Count": 9,
+        "hs6Count": 10,
+        "top4": [
+          [
+            "8807",
+            710058
+          ],
+          [
+            "4016",
+            13049
+          ],
+          [
+            "7318",
+            7072
+          ],
+          [
+            "8483",
+            5385
+          ]
+        ],
+        "top4Share": 98.68917827443804
+      },
+      {
+        "code": "SN",
+        "name": "Senegal",
+        "rank": 133,
+        "share": 0.00040108757779821065,
+        "total": 713794,
+        "hs4Count": 14,
+        "hs6Count": 18,
+        "top4": [
+          [
+            "8703",
+            413605
+          ],
+          [
+            "2103",
+            199011
+          ],
+          [
+            "8530",
+            54610
+          ],
+          [
+            "9807",
+            25588
+          ]
+        ],
+        "top4Share": 97.06077663863803
+      },
+      {
+        "code": "GM",
+        "name": "Gambia",
+        "rank": 134,
+        "share": 0.0003924313630696175,
+        "total": 698389,
+        "hs4Count": 12,
+        "hs6Count": 14,
+        "top4": [
+          [
+            "8703",
+            643960
+          ],
+          [
+            "9806",
+            18000
+          ],
+          [
+            "9807",
+            16231
+          ],
+          [
+            "9404",
+            12100
+          ]
+        ],
+        "top4Share": 98.84047429154812
+      },
+      {
+        "code": "TN",
+        "name": "Tunisia",
+        "rank": 135,
+        "share": 0.0003327020766687562,
+        "total": 592092,
+        "hs4Count": 14,
+        "hs6Count": 19,
+        "top4": [
+          [
+            "9026",
+            163446
+          ],
+          [
+            "6309",
+            157797
+          ],
+          [
+            "8479",
+            111108
+          ],
+          [
+            "8703",
+            79619
+          ]
+        ],
+        "top4Share": 86.46798132722617
+      },
+      {
+        "code": "NA",
+        "name": "Namibia",
+        "rank": 136,
+        "share": 0.0003283995361834048,
+        "total": 584435,
+        "hs4Count": 10,
+        "hs6Count": 11,
+        "top4": [
+          [
+            "8479",
+            346171
+          ],
+          [
+            "8481",
+            114043
+          ],
+          [
+            "3403",
+            56923
+          ],
+          [
+            "8531",
+            51010
+          ]
+        ],
+        "top4Share": 97.21303481139904
+      },
+      {
+        "code": "BN",
+        "name": "Brunei Darussalam",
+        "rank": 137,
+        "share": 0.0003268228183302122,
+        "total": 581629,
+        "hs4Count": 19,
+        "hs6Count": 22,
+        "top4": [
+          [
+            "8479",
+            174991
+          ],
+          [
+            "8481",
+            92538
+          ],
+          [
+            "9027",
+            80008
+          ],
+          [
+            "9603",
+            66810
+          ]
+        ],
+        "top4Share": 71.23905444879813
+      },
+      {
+        "code": "TD",
+        "name": "Chad",
+        "rank": 138,
+        "share": 0.0002677734423364653,
+        "total": 476542,
+        "hs4Count": 17,
+        "hs6Count": 20,
+        "top4": [
+          [
+            "8481",
+            139968
+          ],
+          [
+            "8412",
+            135295
+          ],
+          [
+            "8413",
+            94663
+          ],
+          [
+            "3403",
+            55631
+          ]
+        ],
+        "top4Share": 89.30104796639121
+      },
+      {
+        "code": "BL",
+        "name": "Saint Barthélemy",
+        "rank": 139,
+        "share": 0.00025310311100675996,
+        "total": 450434,
+        "hs4Count": 1,
+        "hs6Count": 1,
+        "top4": [
+          [
+            "8411",
+            450434
+          ]
+        ],
+        "top4Share": 100.0
+      },
+      {
+        "code": "SL",
+        "name": "Sierra Leone",
+        "rank": 140,
+        "share": 0.0002511353041921197,
+        "total": 446932,
+        "hs4Count": 8,
+        "hs6Count": 10,
+        "top4": [
+          [
+            "8703",
+            251888
+          ],
+          [
+            "9806",
+            116870
+          ],
+          [
+            "0207",
+            43610
+          ],
+          [
+            "9032",
+            26864
+          ]
+        ],
+        "top4Share": 98.2771428315717
+      },
+      {
+        "code": "MW",
+        "name": "Malawi",
+        "rank": 141,
+        "share": 0.00024335623007964687,
+        "total": 433088,
+        "hs4Count": 3,
+        "hs6Count": 3,
+        "top4": [
+          [
+            "3004",
+            319909
+          ],
+          [
+            "1001",
+            110422
+          ],
+          [
+            "9807",
+            2757
+          ]
+        ],
+        "top4Share": 100.0
+      },
+      {
+        "code": "ML",
+        "name": "Mali",
+        "rank": 142,
+        "share": 0.00024108780172136512,
+        "total": 429051,
+        "hs4Count": 7,
+        "hs6Count": 9,
+        "top4": [
+          [
+            "4911",
+            300531
+          ],
+          [
+            "4907",
+            71103
+          ],
+          [
+            "8536",
+            19496
+          ],
+          [
+            "8544",
+            19172
+          ]
+        ],
+        "top4Share": 95.63012322544407
+      },
+      {
+        "code": "BF",
+        "name": "Burkina Faso",
+        "rank": 143,
+        "share": 0.0002385794380375975,
+        "total": 424587,
+        "hs4Count": 5,
+        "hs6Count": 6,
+        "top4": [
+          [
+            "8703",
+            378858
+          ],
+          [
+            "8704",
+            27506
+          ],
+          [
+            "8529",
+            9023
+          ],
+          [
+            "9806",
+            7200
+          ]
+        ],
+        "top4Share": 99.52895401884655
+      },
+      {
+        "code": "KY",
+        "name": "Cayman Islands",
+        "rank": 144,
+        "share": 0.00020658600097158585,
+        "total": 367650,
+        "hs4Count": 10,
+        "hs6Count": 10,
+        "top4": [
+          [
+            "8431",
+            185852
+          ],
+          [
+            "9018",
+            105501
+          ],
+          [
+            "4811",
+            30330
+          ],
+          [
+            "8703",
+            24000
+          ]
+        ],
+        "top4Share": 94.0250237998096
+      },
+      {
+        "code": "PY",
+        "name": "Paraguay",
+        "rank": 145,
+        "share": 0.00020006110870099685,
+        "total": 356038,
+        "hs4Count": 13,
+        "hs6Count": 15,
+        "top4": [
+          [
+            "8433",
+            193793
+          ],
+          [
+            "9504",
+            105518
+          ],
+          [
+            "8431",
+            17803
+          ],
+          [
+            "8703",
+            16312
+          ]
+        ],
+        "top4Share": 93.64899252327
+      },
+      {
+        "code": "BZ",
+        "name": "Belize",
+        "rank": 146,
+        "share": 0.00018285207057844606,
+        "total": 325412,
+        "hs4Count": 29,
+        "hs6Count": 31,
+        "top4": [
+          [
+            "8429",
+            60000
+          ],
+          [
+            "1001",
+            58910
+          ],
+          [
+            "8431",
+            48939
+          ],
+          [
+            "8703",
+            40000
+          ]
+        ],
+        "top4Share": 63.87256769879415
+      },
+      {
+        "code": "DJ",
+        "name": "Djibouti",
+        "rank": 147,
+        "share": 0.00018084942537930902,
+        "total": 321848,
+        "hs4Count": 4,
+        "hs6Count": 4,
+        "top4": [
+          [
+            "8543",
+            298598
+          ],
+          [
+            "8703",
+            12950
+          ],
+          [
+            "8711",
+            5300
+          ],
+          [
+            "3304",
+            5000
+          ]
+        ],
+        "top4Share": 100.0
+      },
+      {
+        "code": "EE",
+        "name": "Estonia",
+        "rank": 148,
+        "share": 0.00017594058462182835,
+        "total": 313112,
+        "hs4Count": 13,
+        "hs6Count": 15,
+        "top4": [
+          [
+            "1207",
+            143000
+          ],
+          [
+            "9029",
+            75719
+          ],
+          [
+            "8807",
+            37956
+          ],
+          [
+            "8517",
+            31884
+          ]
+        ],
+        "top4Share": 92.15839699532435
+      },
+      {
+        "code": "GU",
+        "name": "Guam",
+        "rank": 149,
+        "share": 0.00016621786580009205,
+        "total": 295809,
+        "hs4Count": 7,
+        "hs6Count": 7,
+        "top4": [
+          [
+            "2703",
+            101470
+          ],
+          [
+            "1514",
+            77476
+          ],
+          [
+            "9006",
+            69010
+          ],
+          [
+            "1517",
+            27514
+          ]
+        ],
+        "top4Share": 93.12427951820263
+      },
+      {
+        "code": "AQ",
+        "name": "Antarctica",
+        "rank": 150,
+        "share": 0.00014635155799552134,
+        "total": 260454,
+        "hs4Count": 5,
+        "hs6Count": 8,
+        "top4": [
+          [
+            "8807",
+            207703
+          ],
+          [
+            "9802",
+            41769
+          ],
+          [
+            "9026",
+            5719
+          ],
+          [
+            "7318",
+            5190
+          ]
+        ],
+        "top4Share": 99.97197201809148
+      },
+      {
+        "code": "CD",
+        "name": "Congo, Democratic Republic of the",
+        "rank": 151,
+        "share": 0.0001455705038914808,
+        "total": 259064,
+        "hs4Count": 10,
+        "hs6Count": 12,
+        "top4": [
+          [
+            "8703",
+            171962
+          ],
+          [
+            "9806",
+            27000
+          ],
+          [
+            "8431",
+            17745
+          ],
+          [
+            "8481",
+            15008
+          ]
+        ],
+        "top4Share": 89.44314918321341
+      },
+      {
+        "code": "HT",
+        "name": "Haiti",
+        "rank": 152,
+        "share": 0.00013106762157113092,
+        "total": 233254,
+        "hs4Count": 2,
+        "hs6Count": 2,
+        "top4": [
+          [
+            "0713",
+            208254
+          ],
+          [
+            "9806",
+            25000
+          ]
+        ],
+        "top4Share": 100.0
+      },
+      {
+        "code": "ER",
+        "name": "Eritrea",
+        "rank": 153,
+        "share": 0.00012923748256619564,
+        "total": 229997,
+        "hs4Count": 2,
+        "hs6Count": 2,
+        "top4": [
+          [
+            "3924",
+            173043
+          ],
+          [
+            "8431",
+            56954
+          ]
+        ],
+        "top4Share": 100.0
+      },
+      {
+        "code": "SY",
+        "name": "Syria",
+        "rank": 154,
+        "share": 0.00012634589665296356,
+        "total": 224851,
+        "hs4Count": 2,
+        "hs6Count": 2,
+        "top4": [
+          [
+            "8708",
+            130000
+          ],
+          [
+            "8703",
+            94851
+          ]
+        ],
+        "top4Share": 100.0
+      },
+      {
+        "code": "TC",
+        "name": "Turks and Caicos Islands",
+        "rank": 155,
+        "share": 0.00010644812192046028,
+        "total": 189440,
+        "hs4Count": 19,
+        "hs6Count": 23,
+        "top4": [
+          [
+            "9403",
+            135197
+          ],
+          [
+            "5512",
+            9510
+          ],
+          [
+            "9405",
+            9221
+          ],
+          [
+            "3918",
+            6565
+          ]
+        ],
+        "top4Share": 84.71970016891892
+      },
+      {
+        "code": "MG",
+        "name": "Madagascar",
+        "rank": 156,
+        "share": 0.00010379647133271402,
+        "total": 184721,
+        "hs4Count": 9,
+        "hs6Count": 10,
+        "top4": [
+          [
+            "8421",
+            80029
+          ],
+          [
+            "4016",
+            70160
+          ],
+          [
+            "8484",
+            11956
+          ],
+          [
+            "8412",
+            4977
+          ]
+        ],
+        "top4Share": 90.47265876646402
+      },
+      {
+        "code": "BI",
+        "name": "Burundi",
+        "rank": 157,
+        "share": 0.00010373915657112257,
+        "total": 184619,
+        "hs4Count": 4,
+        "hs6Count": 4,
+        "top4": [
+          [
+            "1001",
+            159587
+          ],
+          [
+            "2104",
+            12102
+          ],
+          [
+            "9807",
+            6930
+          ],
+          [
+            "8703",
+            6000
+          ]
+        ],
+        "top4Share": 100.0
+      },
+      {
+        "code": "MD",
+        "name": "Moldova, Republic of",
+        "rank": 158,
+        "share": 9.677934640375124e-05,
+        "total": 172233,
+        "hs4Count": 6,
+        "hs6Count": 6,
+        "top4": [
+          [
+            "2309",
+            163912
+          ],
+          [
+            "3921",
+            6042
+          ],
+          [
+            "4819",
+            1560
+          ],
+          [
+            "6309",
+            555
+          ]
+        ],
+        "top4Share": 99.90478015246788
+      },
+      {
+        "code": "VC",
+        "name": "Saint Vincent and the Grenadines",
+        "rank": 159,
+        "share": 9.667820270682513e-05,
+        "total": 172053,
+        "hs4Count": 5,
+        "hs6Count": 7,
+        "top4": [
+          [
+            "0713",
+            118537
+          ],
+          [
+            "8807",
+            32702
+          ],
+          [
+            "9401",
+            11395
+          ],
+          [
+            "9403",
+            7104
+          ]
+        ],
+        "top4Share": 98.65448437400104
+      },
+      {
+        "code": "MU",
+        "name": "Mauritius",
+        "rank": 160,
+        "share": 9.656750654963378e-05,
+        "total": 171856,
+        "hs4Count": 1,
+        "hs6Count": 2,
+        "top4": [
+          [
+            "0713",
+            171856
+          ]
+        ],
+        "top4Share": 100.0
+      },
+      {
+        "code": "NI",
+        "name": "Nicaragua",
+        "rank": 161,
+        "share": 8.652955653914442e-05,
+        "total": 153992,
+        "hs4Count": 7,
+        "hs6Count": 8,
+        "top4": [
+          [
+            "1107",
+            88230
+          ],
+          [
+            "8421",
+            21001
+          ],
+          [
+            "1204",
+            17849
+          ],
+          [
+            "9807",
+            11271
+          ]
+        ],
+        "top4Share": 89.84297885604448
+      },
+      {
+        "code": "DM",
+        "name": "Dominica",
+        "rank": 162,
+        "share": 8.256247598193133e-05,
+        "total": 146932,
+        "hs4Count": 1,
+        "hs6Count": 1,
+        "top4": [
+          [
+            "0713",
+            146932
+          ]
+        ],
+        "top4Share": 100.0
+      },
+      {
+        "code": "TJ",
+        "name": "Tajikistan",
+        "rank": 163,
+        "share": 8.163588733620266e-05,
+        "total": 145283,
+        "hs4Count": 3,
+        "hs6Count": 3,
+        "top4": [
+          [
+            "8517",
+            85037
+          ],
+          [
+            "8473",
+            53918
+          ],
+          [
+            "7318",
+            6328
+          ]
+        ],
+        "top4Share": 100.0
+      },
+      {
+        "code": "YE",
+        "name": "Yemen",
+        "rank": 164,
+        "share": 8.132177996630434e-05,
+        "total": 144724,
+        "hs4Count": 8,
+        "hs6Count": 10,
+        "top4": [
+          [
+            "0713",
+            89052
+          ],
+          [
+            "8503",
+            16411
+          ],
+          [
+            "0712",
+            13358
+          ],
+          [
+            "8536",
+            8868
+          ]
+        ],
+        "top4Share": 88.22931925596308
+      },
+      {
+        "code": "LR",
+        "name": "Liberia",
+        "rank": 165,
+        "share": 8.008726495437839e-05,
+        "total": 142527,
+        "hs4Count": 9,
+        "hs6Count": 11,
+        "top4": [
+          [
+            "8429",
+            65000
+          ],
+          [
+            "8703",
+            53357
+          ],
+          [
+            "8431",
+            10358
+          ],
+          [
+            "3924",
+            4000
+          ]
+        ],
+        "top4Share": 93.11569036042295
+      },
+      {
+        "code": "MK",
+        "name": "Macedonia, North",
+        "rank": 166,
+        "share": 7.64550824158762e-05,
+        "total": 136063,
+        "hs4Count": 3,
+        "hs6Count": 3,
+        "top4": [
+          [
+            "0203",
+            77700
+          ],
+          [
+            "0713",
+            50522
+          ],
+          [
+            "9031",
+            7841
+          ]
+        ],
+        "top4Share": 100.0
+      },
+      {
+        "code": "FJ",
+        "name": "Fiji",
+        "rank": 167,
+        "share": 6.204603896989667e-05,
+        "total": 110420,
+        "hs4Count": 8,
+        "hs6Count": 8,
+        "top4": [
+          [
+            "0710",
+            53170
+          ],
+          [
+            "8807",
+            49966
+          ],
+          [
+            "7312",
+            4107
+          ],
+          [
+            "4006",
+            1787
+          ]
+        ],
+        "top4Share": 98.74117007788445
+      },
+      {
+        "code": "BA",
+        "name": "Bosnia and Herzegovina",
+        "rank": 168,
+        "share": 5.857343870876679e-05,
+        "total": 104240,
+        "hs4Count": 2,
+        "hs6Count": 3,
+        "top4": [
+          [
+            "8703",
+            66200
+          ],
+          [
+            "9806",
+            38040
+          ]
+        ],
+        "top4Share": 100.0
+      },
+      {
+        "code": "WS",
+        "name": "Samoa",
+        "rank": 169,
+        "share": 5.536044060308059e-05,
+        "total": 98522,
+        "hs4Count": 2,
+        "hs6Count": 2,
+        "top4": [
+          [
+            "8807",
+            64106
+          ],
+          [
+            "8422",
+            34416
+          ]
+        ],
+        "top4Share": 100.0
+      },
+      {
+        "code": "KP",
+        "name": "Korea, North",
+        "rank": 170,
+        "share": 5.502554258436968e-05,
+        "total": 97926,
+        "hs4Count": 2,
+        "hs6Count": 2,
+        "top4": [
+          [
+            "8421",
+            93212
+          ],
+          [
+            "9032",
+            4714
+          ]
+        ],
+        "top4Share": 100.0
+      },
+      {
+        "code": "AM",
+        "name": "Armenia",
+        "rank": 171,
+        "share": 5.328868054437738e-05,
+        "total": 94835,
+        "hs4Count": 1,
+        "hs6Count": 2,
+        "top4": [
+          [
+            "0713",
+            94835
+          ]
+        ],
+        "top4Share": 100.0
+      },
+      {
+        "code": "BM",
+        "name": "Bermuda",
+        "rank": 172,
+        "share": 5.157654251918923e-05,
+        "total": 91788,
+        "hs4Count": 10,
+        "hs6Count": 10,
+        "top4": [
+          [
+            "9806",
+            23520
+          ],
+          [
+            "8531",
+            21332
+          ],
+          [
+            "2004",
+            15392
+          ],
+          [
+            "8712",
+            13571
+          ]
+        ],
+        "top4Share": 80.41900902078703
+      },
+      {
+        "code": "FO",
+        "name": "Faroe Islands",
+        "rank": 173,
+        "share": 5.0099282634640615e-05,
+        "total": 89159,
+        "hs4Count": 1,
+        "hs6Count": 2,
+        "top4": [
+          [
+            "8422",
+            89159
+          ]
+        ],
+        "top4Share": 100.0
+      },
+      {
+        "code": "MR",
+        "name": "Mauritania",
+        "rank": 174,
+        "share": 4.8425354450513446e-05,
+        "total": 86180,
+        "hs4Count": 4,
+        "hs6Count": 5,
+        "top4": [
+          [
+            "8431",
+            39830
+          ],
+          [
+            "8407",
+            28842
+          ],
+          [
+            "8703",
+            17227
+          ],
+          [
+            "2710",
+            281
+          ]
+        ],
+        "top4Share": 100.0
+      },
+      {
+        "code": "CV",
+        "name": "Cabo Verde",
+        "rank": 175,
+        "share": 4.696551375821321e-05,
+        "total": 83582,
+        "hs4Count": 2,
+        "hs6Count": 2,
+        "top4": [
+          [
+            "0713",
+            68740
+          ],
+          [
+            "4901",
+            14842
+          ]
+        ],
+        "top4Share": 100.0
+      },
+      {
+        "code": "ME",
+        "name": "Montenegro",
+        "rank": 176,
+        "share": 3.90796768545406e-05,
+        "total": 69548,
+        "hs4Count": 1,
+        "hs6Count": 2,
+        "top4": [
+          [
+            "8703",
+            69548
+          ]
+        ],
+        "top4Share": 100.0
+      },
+      {
+        "code": "CX",
+        "name": "Christmas Island",
+        "rank": 177,
+        "share": 3.6919135106313354e-05,
+        "total": 65703,
+        "hs4Count": 1,
+        "hs6Count": 1,
+        "top4": [
+          [
+            "4101",
+            65703
+          ]
+        ],
+        "top4Share": 100.0
+      },
+      {
+        "code": "PF",
+        "name": "French Polynesia",
+        "rank": 178,
+        "share": 3.0538091649130354e-05,
+        "total": 54347,
+        "hs4Count": 3,
+        "hs6Count": 3,
+        "top4": [
+          [
+            "2004",
+            48847
+          ],
+          [
+            "8807",
+            3423
+          ],
+          [
+            "7312",
+            2077
+          ]
+        ],
+        "top4Share": 100.0
+      },
+      {
+        "code": "GI",
+        "name": "Gibraltar",
+        "rank": 179,
+        "share": 2.6573820639054095e-05,
+        "total": 47292,
+        "hs4Count": 2,
+        "hs6Count": 2,
+        "top4": [
+          [
+            "0713",
+            42292
+          ],
+          [
+            "9108",
+            5000
+          ]
+        ],
+        "top4Share": 100.0
+      },
+      {
+        "code": "SS",
+        "name": "South Sudan",
+        "rank": 180,
+        "share": 1.9978689690044158e-05,
+        "total": 35555,
+        "hs4Count": 2,
+        "hs6Count": 2,
+        "top4": [
+          [
+            "9806",
+            20400
+          ],
+          [
+            "8479",
+            15155
+          ]
+        ],
+        "top4Share": 100.0
+      },
+      {
+        "code": "AW",
+        "name": "Aruba",
+        "rank": 181,
+        "share": 1.7259609971013818e-05,
+        "total": 30716,
+        "hs4Count": 3,
+        "hs6Count": 5,
+        "top4": [
+          [
+            "8711",
+            25300
+          ],
+          [
+            "8517",
+            5386
+          ],
+          [
+            "8533",
+            30
+          ]
+        ],
+        "top4Share": 100.0
+      },
+      {
+        "code": "SO",
+        "name": "Somalia",
+        "rank": 182,
+        "share": 1.7138237534702486e-05,
+        "total": 30500,
+        "hs4Count": 2,
+        "hs6Count": 2,
+        "top4": [
+          [
+            "8703",
+            25200
+          ],
+          [
+            "3924",
+            5300
+          ]
+        ],
+        "top4Share": 100.0
+      },
+      {
+        "code": "KN",
+        "name": "Saint Kitts and Nevis",
+        "rank": 183,
+        "share": 1.5944741910974352e-05,
+        "total": 28376,
+        "hs4Count": 2,
+        "hs6Count": 2,
+        "top4": [
+          [
+            "9806",
+            25000
+          ],
+          [
+            "5911",
+            3376
+          ]
+        ],
+        "top4Share": 100.0
+      },
+      {
+        "code": "GD",
+        "name": "Grenada",
+        "rank": 184,
+        "share": 8.298840332787573e-06,
+        "total": 14769,
+        "hs4Count": 3,
+        "hs6Count": 3,
+        "top4": [
+          [
+            "9023",
+            6476
+          ],
+          [
+            "8714",
+            4500
+          ],
+          [
+            "8807",
+            3793
+          ]
+        ],
+        "top4Share": 100.0
+      },
+      {
+        "code": "KI",
+        "name": "Kiribati",
+        "rank": 185,
+        "share": 8.00046642685554e-06,
+        "total": 14238,
+        "hs4Count": 1,
+        "hs6Count": 1,
+        "top4": [
+          [
+            "8807",
+            14238
+          ]
+        ],
+        "top4Share": 100.0
+      },
+      {
+        "code": "VG",
+        "name": "Virgin Islands, British",
+        "rank": 186,
+        "share": 7.91337046561361e-06,
+        "total": 14083,
+        "hs4Count": 2,
+        "hs6Count": 2,
+        "top4": [
+          [
+            "4911",
+            14079
+          ],
+          [
+            "1204",
+            4
+          ]
+        ],
+        "top4Share": 100.0
+      },
+      {
+        "code": "AG",
+        "name": "Antigua and Barbuda",
+        "rank": 187,
+        "share": 7.339660940271602e-06,
+        "total": 13062,
+        "hs4Count": 10,
+        "hs6Count": 11,
+        "top4": [
+          [
+            "9802",
+            7897
+          ],
+          [
+            "4821",
+            3943
+          ],
+          [
+            "8713",
+            551
+          ],
+          [
+            "4820",
+            216
+          ]
+        ],
+        "top4Share": 96.51661307609861
+      },
+      {
+        "code": "NE",
+        "name": "Niger",
+        "rank": 188,
+        "share": 6.613673960113057e-06,
+        "total": 11770,
+        "hs4Count": 1,
+        "hs6Count": 1,
+        "top4": [
+          [
+            "9807",
+            11770
+          ]
+        ],
+        "top4Share": 100.0
+      },
+      {
+        "code": "SB",
+        "name": "Solomon Islands",
+        "rank": 189,
+        "share": 5.659551752443391e-06,
+        "total": 10072,
+        "hs4Count": 1,
+        "hs6Count": 1,
+        "top4": [
+          [
+            "8807",
+            10072
+          ]
+        ],
+        "top4Share": 100.0
+      },
+      {
+        "code": "GW",
+        "name": "Guinea-Bissau",
+        "rank": 190,
+        "share": 5.580322523184603e-06,
+        "total": 9931,
+        "hs4Count": 1,
+        "hs6Count": 1,
+        "top4": [
+          [
+            "4901",
+            9931
+          ]
+        ],
+        "top4Share": 100.0
+      },
+      {
+        "code": "BQ",
+        "name": "Bonaire, Sint Eustatius and Saba",
+        "rank": 191,
+        "share": 4.6734007074137884e-06,
+        "total": 8317,
+        "hs4Count": 1,
+        "hs6Count": 1,
+        "top4": [
+          [
+            "1214",
+            8317
+          ]
+        ],
+        "top4Share": 100.0
+      },
+      {
+        "code": "CF",
+        "name": "Central African Republic",
+        "rank": 192,
+        "share": 4.05024315246346e-06,
+        "total": 7208,
+        "hs4Count": 2,
+        "hs6Count": 2,
+        "top4": [
+          [
+            "8703",
+            5208
+          ],
+          [
+            "9806",
+            2000
+          ]
+        ],
+        "top4Share": 100.0
+      },
+      {
+        "code": "LC",
+        "name": "Saint Lucia",
+        "rank": 193,
+        "share": 2.907319377198382e-06,
+        "total": 5174,
+        "hs4Count": 1,
+        "hs6Count": 1,
+        "top4": [
+          [
+            "9018",
+            5174
+          ]
+        ],
+        "top4Share": 100.0
+      },
+      {
+        "code": "VU",
+        "name": "Vanuatu",
+        "rank": 194,
+        "share": 1.9104920530488014e-06,
+        "total": 3400,
+        "hs4Count": 2,
+        "hs6Count": 2,
+        "top4": [
+          [
+            "8807",
+            3235
+          ],
+          [
+            "7320",
+            165
+          ]
+        ],
+        "top4Share": 100.0
+      },
+      {
+        "code": "SH",
+        "name": "Saint Helena, Ascension and Tristan da Cunha",
+        "rank": 195,
+        "share": 1.2311435553617424e-06,
+        "total": 2191,
+        "hs4Count": 1,
+        "hs6Count": 1,
+        "top4": [
+          [
+            "3907",
+            2191
+          ]
+        ],
+        "top4Share": 100.0
+      },
+      {
+        "code": "PM",
+        "name": "Saint Pierre and Miquelon",
+        "rank": 196,
+        "share": 1.106399662486203e-06,
+        "total": 1969,
+        "hs4Count": 7,
+        "hs6Count": 10,
+        "top4": [
+          [
+            "2005",
+            756
+          ],
+          [
+            "1602",
+            429
+          ],
+          [
+            "0701",
+            251
+          ],
+          [
+            "1902",
+            234
+          ]
+        ],
+        "top4Share": 84.81462671406805
+      },
+      {
+        "code": "AI",
+        "name": "Anguilla",
+        "rank": 197,
+        "share": 1.0114369692611301e-08,
+        "total": 18,
+        "hs4Count": 1,
+        "hs6Count": 1,
+        "top4": [
+          [
+            "1004",
+            18
+          ]
+        ],
+        "top4Share": 100.0
+      }
+    ],
+    "top10Total": 171118295313,
+    "top10Share": 96.15298333139543,
+    "thresholds": {
+      "90": 2,
+      "95": 7,
+      "99": 35
+    }
+  },
+  "json_bytes": {
+    "summary.json": 41978,
+    "product-index.json": 319932,
+    "alberta-products.json": 46735,
+    "countries/US.json": 39093,
+    "countries/CN.json": 7083,
+    "countries/JP.json": 5529,
+    "countries/HK.json": 2993,
+    "countries/KR.json": 3399,
+    "countries/SG.json": 4077,
+    "countries/MX.json": 3996,
+    "countries/NL.json": 6121,
+    "countries/PE.json": 2699,
+    "countries/ID.json": 2506,
+    "countries/AE.json": 6715,
+    "countries/PA.json": 553,
+    "countries/BD.json": 676,
+    "countries/AU.json": 9230,
+    "countries/IN.json": 4296,
+    "countries/IT.json": 3542,
+    "countries/VN.json": 2506,
+    "countries/FR.json": 5030,
+    "countries/TW.json": 2338,
+    "countries/GB.json": 7448,
+    "countries/CO.json": 3337,
+    "countries/ES.json": 3679,
+    "countries/BE.json": 1481,
+    "countries/PH.json": 2122,
+    "countries/DZ.json": 886,
+    "countries/BR.json": 3019,
+    "countries/NG.json": 2042,
+    "countries/MY.json": 3095,
+    "countries/MA.json": 1149,
+    "countries/EC.json": 1499,
+    "countries/CL.json": 3240,
+    "countries/TH.json": 2658,
+    "countries/GT.json": 742,
+    "countries/SE.json": 1610,
+    "countries/DE.json": 5234,
+    "countries/CU.json": 5338,
+    "countries/SA.json": 5191,
+    "countries/CH.json": 1812,
+    "countries/TR.json": 2465,
+    "countries/VE.json": 488,
+    "countries/PK.json": 1419,
+    "countries/BG.json": 548,
+    "countries/NZ.json": 3639,
+    "countries/GH.json": 1098,
+    "countries/AR.json": 2796,
+    "countries/NO.json": 3688,
+    "countries/PL.json": 1932,
+    "countries/KW.json": 1993,
+    "countries/PT.json": 1360,
+    "countries/OM.json": 2819,
+    "countries/SV.json": 450,
+    "countries/EG.json": 1626,
+    "countries/KE.json": 1375,
+    "countries/DK.json": 1982,
+    "countries/ZA.json": 1943,
+    "countries/LK.json": 496,
+    "countries/MV.json": 698,
+    "countries/MZ.json": 149,
+    "countries/CZ.json": 908,
+    "countries/UM.json": 1804,
+    "countries/CR.json": 809,
+    "countries/UA.json": 1942,
+    "countries/IL.json": 1392,
+    "countries/QA.json": 1624,
+    "countries/HR.json": 965,
+    "countries/GR.json": 982,
+    "countries/FI.json": 939,
+    "countries/RO.json": 1506,
+    "countries/LY.json": 1190,
+    "countries/LA.json": 52,
+    "countries/IQ.json": 1418,
+    "countries/DO.json": 383,
+    "countries/IE.json": 1464,
+    "countries/SD.json": 84,
+    "countries/CM.json": 527,
+    "countries/CG.json": 465,
+    "countries/TZ.json": 814,
+    "countries/UZ.json": 1108,
+    "countries/BH.json": 1048,
+    "countries/GE.json": 187,
+    "countries/KZ.json": 2221,
+    "countries/IS.json": 1136,
+    "countries/GN.json": 184,
+    "countries/MO.json": 309,
+    "countries/TG.json": 115,
+    "countries/RU.json": 48,
+    "countries/TT.json": 2169,
+    "countries/SK.json": 406,
+    "countries/HU.json": 1025,
+    "countries/KH.json": 172,
+    "countries/LT.json": 507,
+    "countries/LB.json": 523,
+    "countries/NP.json": 457,
+    "countries/LV.json": 292,
+    "countries/AO.json": 966,
+    "countries/TM.json": 677,
+    "countries/UG.json": 581,
+    "countries/GA.json": 698,
+    "countries/BO.json": 1960,
+    "countries/CI.json": 451,
+    "countries/AT.json": 1142,
+    "countries/ZM.json": 405,
+    "countries/BS.json": 715,
+    "countries/ZW.json": 33,
+    "countries/JO.json": 349,
+    "countries/MT.json": 1026,
+    "countries/PG.json": 866,
+    "countries/GQ.json": 748,
+    "countries/SI.json": 148,
+    "countries/JM.json": 683,
+    "countries/AL.json": 574,
+    "countries/SR.json": 1051,
+    "countries/CW.json": 486,
+    "countries/KG.json": 542,
+    "countries/MN.json": 637,
+    "countries/UY.json": 266,
+    "countries/BW.json": 114,
+    "countries/GY.json": 544,
+    "countries/BJ.json": 136,
+    "countries/LU.json": 513,
+    "countries/CY.json": 162,
+    "countries/GL.json": 290,
+    "countries/RW.json": 308,
+    "countries/RS.json": 284,
+    "countries/ET.json": 440,
+    "countries/AZ.json": 875,
+    "countries/HN.json": 228,
+    "countries/IR.json": 50,
+    "countries/SX.json": 78,
+    "countries/BB.json": 436,
+    "countries/MM.json": 171,
+    "countries/SC.json": 176,
+    "countries/SN.json": 306,
+    "countries/GM.json": 236,
+    "countries/TN.json": 322,
+    "countries/NA.json": 194,
+    "countries/BN.json": 370,
+    "countries/TD.json": 333,
+    "countries/BL.json": 32,
+    "countries/SL.json": 178,
+    "countries/MW.json": 66,
+    "countries/ML.json": 161,
+    "countries/BF.json": 113,
+    "countries/KY.json": 174,
+    "countries/PY.json": 258,
+    "countries/BZ.json": 498,
+    "countries/DJ.json": 81,
+    "countries/EE.json": 252,
+    "countries/GU.json": 132,
+    "countries/AQ.json": 141,
+    "countries/CD.json": 213,
+    "countries/HT.json": 49,
+    "countries/ER.json": 49,
+    "countries/SY.json": 49,
+    "countries/TC.json": 375,
+    "countries/MG.json": 176,
+    "countries/BI.json": 81,
+    "countries/MD.json": 108,
+    "countries/VC.json": 129,
+    "countries/MU.json": 49,
+    "countries/NI.json": 145,
+    "countries/DM.json": 32,
+    "countries/TJ.json": 64,
+    "countries/YE.json": 177,
+    "countries/LR.json": 191,
+    "countries/MK.json": 64,
+    "countries/FJ.json": 139,
+    "countries/BA.json": 64,
+    "countries/WS.json": 48,
+    "countries/KP.json": 47,
+    "countries/AM.json": 48,
+    "countries/BM.json": 175,
+    "countries/FO.json": 48,
+    "countries/MR.json": 96,
+    "countries/CV.json": 48,
+    "countries/ME.json": 48,
+    "countries/CX.json": 31,
+    "countries/PF.json": 63,
+    "countries/GI.json": 47,
+    "countries/SS.json": 48,
+    "countries/AW.json": 91,
+    "countries/SO.json": 47,
+    "countries/KN.json": 47,
+    "countries/GD.json": 62,
+    "countries/KI.json": 31,
+    "countries/VG.json": 44,
+    "countries/AG.json": 178,
+    "countries/NE.json": 31,
+    "countries/SB.json": 31,
+    "countries/GW.json": 30,
+    "countries/BQ.json": 30,
+    "countries/CF.json": 46,
+    "countries/LC.json": 30,
+    "countries/VU.json": 45,
+    "countries/SH.json": 30,
+    "countries/PM.json": 161,
+    "countries/AI.json": 28
+  }
+}
