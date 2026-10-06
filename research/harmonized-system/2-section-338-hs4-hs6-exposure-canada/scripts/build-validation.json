@@ -1,0 +1,75 @@
+{
+  "source": "ODPFN018_202512N.csv",
+  "raw_rows": 1212795,
+  "raw_value_total": 720769312708,
+  "selected_rows": 808936,
+  "selected_value_before_dedup": 517282733046,
+  "duplicate_rows": 0,
+  "duplicate_value": 0,
+  "selected_duplicate_rows": 0,
+  "selected_duplicate_value": 0,
+  "annual_value_total": 517282733046,
+  "province_totals": {
+    "ON": 190317873807,
+    "QC": 84339012465,
+    "AB": 152042164486,
+    "BC": 27916212374,
+    "MB": 12942004807,
+    "NB": 14473068963,
+    "NS": 4584131237,
+    "PE": 2035426507,
+    "SK": 23683450602,
+    "NL": 4760459611,
+    "YT": 185871841,
+    "NU": 490806,
+    "NT": 2565540
+  },
+  "origins": 13,
+  "months_aggregated": 12,
+  "hs6_products": 4543,
+  "hs4_products": 1175,
+  "hs6_annual_rows": 17132,
+  "hs4_annual_rows": 6289,
+  "hs6_dense_rows": 59059,
+  "hs4_dense_rows": 15275,
+  "repeated_keys_with_different_records": 0,
+  "reconciliation": "Exact integer equality for every product, province and Canada total",
+  "section338_mode": "supplied-september-reconstruction",
+  "section338_hs6": 412,
+  "section338_positive_matches": 396,
+  "section338_exposure": 36362891123,
+  "section338_share": 7.029596930266448,
+  "description_compatibility": {
+    "statcan_hs6_in_cbsa": 4541,
+    "statcan_hs6_not_in_cbsa": [
+      "980200",
+      "990100"
+    ],
+    "headings_not_in_cbsa": [
+      "9802",
+      "9901"
+    ],
+    "headings_without_safe_description": [
+      "9802",
+      "9901"
+    ],
+    "note": "Exact string prefixes only. 2026 CBSA import treatment is separate context; no claim of full year-to-year or import/export equivalence."
+  },
+  "output_bytes": {
+    "metadata.json": 3156,
+    "search-index.json": 502307,
+    "exports-hs6-2025-us.json": 252928,
+    "exports-hs4-2025-us.json": 74894,
+    "section338-hs6.json": 17833,
+    "tariffs-0.json": 305900,
+    "tariffs-1.json": 261425,
+    "tariffs-2.json": 402133,
+    "tariffs-3.json": 329106,
+    "tariffs-4.json": 285870,
+    "tariffs-5.json": 120512,
+    "tariffs-6.json": 230122,
+    "tariffs-7.json": 477561,
+    "tariffs-8.json": 952198,
+    "tariffs-9.json": 278857
+  }
+}

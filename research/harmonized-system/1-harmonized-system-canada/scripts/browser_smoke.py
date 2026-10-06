@@ -9,7 +9,7 @@ from playwright.sync_api import sync_playwright
 
 BASE = 'http://localhost:8000/research/harmonized-system/'
 PAGES = ['harmonized-system-index.html', 'harmonized-system-canada.html',
-         'preferential-tariffs-canada.html', 'alberta-trade-by-hs.html', 'hs-data-analysis.html']
+         'section-338-hs4-hs6-exposure-canada.html', 'alberta-trade-by-hs.html', 'hs-data-analysis.html']
 shots = Path('/tmp/hs-review'); shots.mkdir(exist_ok=True)
 errors, console_errors, external_requests = [], [], []
 results = {}
