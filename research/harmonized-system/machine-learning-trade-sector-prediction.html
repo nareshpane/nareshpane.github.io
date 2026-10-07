@@ -19,9 +19,10 @@ table.datasets { table-layout: fixed; }
 /* The collection header is static; each sticky strip is bounded by its model body. */
 details.model { isolation: isolate; }
 details.model:not([open]) { border-color: #cbbdaa; }
+.model > summary > span:nth-child(2) { color: #C65A3A; }
 .model-controls-label { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px; }
 .model-body { overflow: visible; }
-.model-context { position: sticky; top: 8px; z-index: 5; display: flex; gap: 8px; align-items: center; justify-content: center; text-align: center; min-height: 42px; padding: 9px 14px; margin: 0 0 14px; border: 2px solid springgreen; border-radius: 6px; background: #e6fff1; color: #355b53; font-size: 16px; line-height: 1.35; }
+.model-context { position: sticky; top: 8px; z-index: 5; display: flex; gap: 8px; align-items: center; justify-content: center; text-align: center; min-height: 42px; padding: 9px 14px; margin: 0 0 14px; border: 2px solid #C65A3A; border-radius: 6px; background: #e6fff1; color: #355b53; font-size: 16px; line-height: 1.35; }
 .model-context strong { flex: 0 0 auto; white-space: nowrap; font-variant-numeric: tabular-nums; }
 .model-context span { min-width: 0; }
 .model-body > .model-key-label { margin: 12px 0 6px; font-size: .9rem; line-height: 1.4; color: #264e48; }
