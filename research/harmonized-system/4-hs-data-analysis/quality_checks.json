@@ -1,0 +1,32 @@
+{
+  "protected_directories_unchanged": true,
+  "completed_utc": "2026-10-06T23:53:11.416610+00:00",
+  "python": "3.13.1",
+  "numpy": "2.4.0",
+  "pandas": "2.3.3",
+  "scipy": "1.18.1",
+  "sklearn": "1.9.1",
+  "all_six_models": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "predictions_frozen_before_2025": true,
+  "html_details": 6,
+  "initial_open_details": 0,
+  "figures": 18,
+  "all_relative_assets_exist": true,
+  "hs4_leading_zeros_preserved": true,
+  "product_comparisons": 300,
+  "frozen_files_unchanged": true,
+  "browser_viewports_css_px": [
+    1422,
+    390
+  ],
+  "mathjax_errors": 0,
+  "math_blocks_rendered": 17,
+  "figures_visually_reviewed": true
+}

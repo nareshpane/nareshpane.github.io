@@ -1,0 +1,19 @@
+{
+  "information_year": 2024,
+  "no_2025_outcomes_used": true,
+  "initial_architecture": "48/24 ReLU, L2=0.01",
+  "training_log_target_max": 25.333201161098835,
+  "scoring_log_prediction_max": 66.89665892606199,
+  "orders_of_magnitude_above_training_max": 18.05078035614236,
+  "worst_cell": {
+    "iso2": "UG",
+    "HS4": "7108",
+    "importer_gdp": 53911907079.0485,
+    "importer_population": 50015092.0,
+    "importer_internet": 8.949831061
+  },
+  "training_min_importer_gdp": 1830489311088.89,
+  "training_min_importer_internet": 83.12233799,
+  "warnings": [],
+  "repair": "Fixed 32/16 tanh network, L2=0.1; same shared features, preprocessing, optimization budget and seed."
+}

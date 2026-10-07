@@ -1,0 +1,1338 @@
+{
+  "baci_revision": "HS2022",
+  "baci_vintage": "V202601",
+  "baci_units": "thousand current USD (local Readme.txt); multiply v by 1000",
+  "baci_files": [
+    {
+      "file": "BACI_HS22_Y2022_V202601.csv",
+      "bytes": 358848697,
+      "columns": [
+        "t",
+        "i",
+        "j",
+        "k",
+        "v",
+        "q"
+      ]
+    },
+    {
+      "file": "BACI_HS22_Y2023_V202601.csv",
+      "bytes": 378631303,
+      "columns": [
+        "t",
+        "i",
+        "j",
+        "k",
+        "v",
+        "q"
+      ]
+    },
+    {
+      "file": "BACI_HS22_Y2024_V202601.csv",
+      "bytes": 366160727,
+      "columns": [
+        "t",
+        "i",
+        "j",
+        "k",
+        "v",
+        "q"
+      ]
+    }
+  ],
+  "hs6_count": 5609,
+  "hs4_count": 1229,
+  "directed_pairs": 42,
+  "annual_grid_cells": 51618,
+  "wdi_years": [
+    "2022",
+    "2023",
+    "2024"
+  ],
+  "wdi_updated": "2026-07-13",
+  "wdi_indicators": {
+    "NY.GDP.MKTP.CD": "gdp",
+    "SP.POP.TOTL": "population",
+    "NV.IND.MANF.ZS": "manufacturing",
+    "IT.NET.USER.ZS": "internet"
+  },
+  "wdi_missing": {
+    "2022": {
+      "global_missing": {
+        "gdp": 9,
+        "population": 1,
+        "manufacturing": 31,
+        "internet": 51
+      },
+      "network_missing": {
+        "gdp": [],
+        "population": [],
+        "manufacturing": [
+          "USA"
+        ],
+        "internet": []
+      }
+    },
+    "2023": {
+      "global_missing": {
+        "gdp": 14,
+        "population": 1,
+        "manufacturing": 34,
+        "internet": 52
+      },
+      "network_missing": {
+        "gdp": [],
+        "population": [],
+        "manufacturing": [
+          "CAN",
+          "USA"
+        ],
+        "internet": []
+      }
+    },
+    "2024": {
+      "global_missing": {
+        "gdp": 18,
+        "population": 1,
+        "manufacturing": 43,
+        "internet": 51
+      },
+      "network_missing": {
+        "gdp": [],
+        "population": [],
+        "manufacturing": [
+          "CAN",
+          "USA"
+        ],
+        "internet": []
+      }
+    }
+  },
+  "geodist_columns": [
+    "iso_o",
+    "iso_d",
+    "contig",
+    "comlang_off",
+    "comlang_ethno",
+    "colony",
+    "comcol",
+    "curcol",
+    "col45",
+    "smctry",
+    "dist",
+    "distcap",
+    "distw",
+    "distwces"
+  ],
+  "legal_files": {
+    "cbp_september_guidance.txt": {
+      "bytes": 23649,
+      "sample": "GitHub - Budget-Lab-Yale/tariff-rate-tracker: Code to track and organize tariff rates. · GitHub (https://github.com/Budget-Lab-Yale/tariff-rate-tracker/tree/master)\nciteturn6view0 [wordlim: 200] Crawled: 2 months ago;"
+    },
+    "original_alcohol_annex.txt": {
+      "bytes": 16597,
+      "sample": " (https://www.whitehouse.gov/wp-content/uploads/2026/07/Annex-II-1.pdf)\nciteturn18view0 [wordlim: 200] Crawled: today; Content type: application/pdf; Number of pages: 7; Source: click({\"ref_id\":\"turn16view0\",\"id\":102}"
+    },
+    "original_dairy_motor_annex.txt": {
+      "bytes": 10951,
+      "sample": " (https://www.whitehouse.gov/wp-content/uploads/2026/07/Annex-II.pdf)\nciteturn19view0 [wordlim: 200] Crawled: today; Content type: application/pdf; Number of pages: 2; Source: open({\"ref_id\":\"turn18view1\",\"lineno\":nul"
+    },
+    "september_ban_annexes.txt": {
+      "bytes": 25830,
+      "sample": " (https://content.govdelivery.com/attachments/USDHSCBP/2026/09/28/file_attachments/3795897/ANNEX-I-MOTOR-VEHICLES.pdf)\nciteturn7view0 [wordlim: 200] Crawled: today; Content type: application/pdf; Number of pages: 1; S"
+    },
+    "september_scope_annexes.txt": {
+      "bytes": 21916,
+      "sample": " (https://www.whitehouse.gov/wp-content/uploads/2026/09/Alcohol-Scope-Modification-Annex-I.pdf)\nciteturn15view0 [wordlim: 200] Crawled: today; Content type: application/pdf; Number of pages: 3; Source: click({\"ref_id\""
+    },
+    "yale_retrieval_part1.txt": {
+      "bytes": 26108,
+      "sample": " (https://raw.githubusercontent.com/Budget-Lab-Yale/tariff-rate-tracker/master/resources/s338_products.csv)\nciteturn8view0 [wordlim: 200] Crawled: last month; Content type: text/plain; Source: open({\"ref_id\":\"https://"
+    },
+    "yale_retrieval_part2.txt": {
+      "bytes": 17550,
+      "sample": " (https://raw.githubusercontent.com/Budget-Lab-Yale/tariff-rate-tracker/master/resources/s338_products.csv)\nciteturn9view0 [wordlim: 200] Crawled: last month; Content type: text/plain; Source: open({\"ref_id\":\"turn8vie"
+    },
+    "yale_retrieval_part3.txt": {
+      "bytes": 17607,
+      "sample": " (https://raw.githubusercontent.com/Budget-Lab-Yale/tariff-rate-tracker/master/resources/s338_products.csv)\nciteturn10view0 [wordlim: 200] Crawled: last month; Content type: text/plain; Source: open({\"ref_id\":\"turn8vi"
+    }
+  },
+  "statcan_metadata": {
+    "2023": {
+      "HS6_file": "ODPFN018_202312N.csv",
+      "columns": [
+        "YearMonth/AnnéeMois",
+        "HS6",
+        "Country/Pays",
+        "Province",
+        "State/État",
+        "Value/Valeur",
+        "Quantity/Quantité",
+        "Unit of Measure/Unité de Mesure"
+      ],
+      "other_levels": [
+        "ODPFN016_202312N.csv",
+        "ODPFN018_202312N.csv",
+        "ODPFN020_202312N.csv"
+      ],
+      "lookup_files": [
+        "ODPF_2_HS8Desc.TXT",
+        "ODPF_4_HS6XDesc.TXT",
+        "ODPF_5_HS2Desc.TXT",
+        "ODPF_6_CtyDesc.TXT",
+        "ODPF_7_StateDesc.TXT",
+        "ODPF_8_ProvDesc.TXT",
+        "ODPF_9_UOMDesc.TXT"
+      ],
+      "unit": "current CAD dollars"
+    },
+    "2024": {
+      "HS6_file": "ODPFN018_202412N.csv",
+      "columns": [
+        "YearMonth/AnnéeMois",
+        "HS6",
+        "Country/Pays",
+        "Province",
+        "State/État",
+        "Value/Valeur",
+        "Quantity/Quantité",
+        "Unit of Measure/Unité de Mesure"
+      ],
+      "other_levels": [
+        "ODPFN016_202412N.csv",
+        "ODPFN018_202412N.csv",
+        "ODPFN020_202412N.csv"
+      ],
+      "lookup_files": [
+        "ODPF_2_HS8Desc.TXT",
+        "ODPF_4_HS6XDesc.TXT",
+        "ODPF_5_HS2Desc.TXT",
+        "ODPF_6_CtyDesc.TXT",
+        "ODPF_7_StateDesc.TXT",
+        "ODPF_8_ProvDesc.TXT",
+        "ODPF_9_UOMDesc.TXT"
+      ],
+      "unit": "current CAD dollars"
+    },
+    "2025": {
+      "HS6_file": "ODPFN018_202512N.csv",
+      "columns": [
+        "YearMonth/AnnéeMois",
+        "HS6",
+        "Country/Pays",
+        "Province",
+        "State/État",
+        "Value/Valeur",
+        "Quantity/Quantité",
+        "Unit of Measure/Unité de Mesure"
+      ],
+      "other_levels": [
+        "ODPFN016_202512N.csv",
+        "ODPFN018_202512N.csv",
+        "ODPFN020_202512N.csv"
+      ],
+      "lookup_files": [
+        "ODPF_2_HS8Desc.TXT",
+        "ODPF_4_HS6XDesc.TXT",
+        "ODPF_5_HS2Desc.TXT",
+        "ODPF_6_CtyDesc.TXT",
+        "ODPF_7_StateDesc.TXT",
+        "ODPF_8_ProvDesc.TXT",
+        "ODPF_9_UOMDesc.TXT"
+      ],
+      "unit": "current CAD dollars"
+    }
+  },
+  "historical_country_duplicates": [
+    {
+      "country_code": "56",
+      "country_name": "Belgium",
+      "country_iso2": "BE",
+      "country_iso3": "BEL"
+    },
+    {
+      "country_code": "58",
+      "country_name": "Belgium-Luxembourg (...1998)",
+      "country_iso2": "BE",
+      "country_iso3": "BEL"
+    },
+    {
+      "country_code": "276",
+      "country_name": "Germany",
+      "country_iso2": "DE",
+      "country_iso3": "DEU"
+    },
+    {
+      "country_code": "280",
+      "country_name": "Fed. Rep. of Germany (...1990)",
+      "country_iso2": "DE",
+      "country_iso3": "DEU"
+    },
+    {
+      "country_code": "729",
+      "country_name": "Sudan",
+      "country_iso2": "SD",
+      "country_iso3": "SDN"
+    },
+    {
+      "country_code": "736",
+      "country_name": "Sudan (...2011)",
+      "country_iso2": "SD",
+      "country_iso3": "SDN"
+    }
+  ],
+  "country_lookup_corrections": "Namibia ISO2 missing in supplied BACI lookup: NAM -> NA. Historic duplicated ISO3 use current-first record as reference code.",
+  "dynamic_linear_feasibility": "An imputation-qualified dynamic specification is estimable: exact 2023 GDP, population and internet exist for all seven; manufacturing is missing for CAN and USA (2/7), and is median-imputed within 2023 training folds. The fully observed preferred specification is unavailable. No future-year values are substituted.",
+  "vintage_limit": "BACI released 2026-01-22 and WDI updated 2026-07-13: retrospective year holdout, not a real-time vintage backtest.",
+  "annual_scans": {
+    "2022": {
+      "rows": 11007862,
+      "years": [
+        2022
+      ],
+      "missing_quantity": 331670,
+      "unknown_country_ids": [],
+      "unknown_hs6": [],
+      "active_hs6": 5606,
+      "active_hs4": 1228,
+      "grid_cells": 51618,
+      "positive_cells": 42328,
+      "zero_cells": 9290,
+      "network_feature_missing": {
+        "log_exporter_gdp": 0,
+        "log_importer_gdp": 0,
+        "log_exporter_population": 0,
+        "log_importer_population": 0,
+        "exporter_manufacturing": 7374,
+        "importer_manufacturing": 7374,
+        "exporter_internet": 0,
+        "importer_internet": 0,
+        "log_distance": 0,
+        "common_border": 0,
+        "common_language": 0,
+        "log_external_supply": 0,
+        "log_external_demand": 0,
+        "log_world_demand": 0
+      }
+    },
+    "2023": {
+      "rows": 11641922,
+      "years": [
+        2023
+      ],
+      "missing_quantity": 412531,
+      "unknown_country_ids": [],
+      "unknown_hs6": [],
+      "active_hs6": 5606,
+      "active_hs4": 1228,
+      "grid_cells": 51618,
+      "positive_cells": 42414,
+      "zero_cells": 9204,
+      "network_feature_missing": {
+        "log_exporter_gdp": 0,
+        "log_importer_gdp": 0,
+        "log_exporter_population": 0,
+        "log_importer_population": 0,
+        "exporter_manufacturing": 14748,
+        "importer_manufacturing": 14748,
+        "exporter_internet": 0,
+        "importer_internet": 0,
+        "log_distance": 0,
+        "common_border": 0,
+        "common_language": 0,
+        "log_external_supply": 0,
+        "log_external_demand": 0,
+        "log_world_demand": 0
+      }
+    },
+    "2024": {
+      "rows": 11250411,
+      "years": [
+        2024
+      ],
+      "missing_quantity": 364215,
+      "unknown_country_ids": [],
+      "unknown_hs6": [],
+      "active_hs6": 5606,
+      "active_hs4": 1228,
+      "grid_cells": 51618,
+      "positive_cells": 42268,
+      "zero_cells": 9350,
+      "network_feature_missing": {
+        "log_exporter_gdp": 0,
+        "log_importer_gdp": 0,
+        "log_exporter_population": 0,
+        "log_importer_population": 0,
+        "exporter_manufacturing": 14748,
+        "importer_manufacturing": 14748,
+        "exporter_internet": 0,
+        "importer_internet": 0,
+        "log_distance": 0,
+        "common_border": 0,
+        "common_language": 0,
+        "log_external_supply": 0,
+        "log_external_demand": 0,
+        "log_world_demand": 0
+      }
+    }
+  },
+  "alberta_scans": {
+    "2023": {
+      "months": [
+        "202301",
+        "202302",
+        "202303",
+        "202304",
+        "202305",
+        "202306",
+        "202307",
+        "202308",
+        "202309",
+        "202310",
+        "202311",
+        "202312"
+      ],
+      "alberta_rows": 102173,
+      "total_cad": 174760163456,
+      "duplicates": 0,
+      "negative_values": 0,
+      "hs2_destination_reconciliation": "exact",
+      "non_baci_hs6": [
+        "271012",
+        "271019",
+        "271020",
+        "271099",
+        "980200",
+        "980610",
+        "980620",
+        "980700",
+        "981200",
+        "990100"
+      ],
+      "non_baci_hs4": [
+        "9802",
+        "9806",
+        "9807",
+        "9812",
+        "9901"
+      ],
+      "unmapped_iso2": [
+        "AQ",
+        "MF",
+        "TW",
+        "UM"
+      ]
+    },
+    "2024": {
+      "months": [
+        "202401",
+        "202402",
+        "202403",
+        "202404",
+        "202405",
+        "202406",
+        "202407",
+        "202408",
+        "202409",
+        "202410",
+        "202411",
+        "202412"
+      ],
+      "alberta_rows": 103916,
+      "total_cad": 182634257196,
+      "duplicates": 0,
+      "negative_values": 0,
+      "hs2_destination_reconciliation": "exact",
+      "non_baci_hs6": [
+        "271012",
+        "271019",
+        "271099",
+        "980200",
+        "980610",
+        "980620",
+        "980700",
+        "981000",
+        "981200",
+        "990100"
+      ],
+      "non_baci_hs4": [
+        "9802",
+        "9806",
+        "9807",
+        "9810",
+        "9812",
+        "9901"
+      ],
+      "unmapped_iso2": [
+        "AQ",
+        "TW",
+        "UM"
+      ]
+    },
+    "2025": {
+      "months": [
+        "202501",
+        "202502",
+        "202503",
+        "202504",
+        "202505",
+        "202506",
+        "202507",
+        "202508",
+        "202509",
+        "202510",
+        "202511",
+        "202512"
+      ],
+      "alberta_rows": 104986,
+      "total_cad": 177964624065,
+      "duplicates": 0,
+      "negative_values": 0,
+      "hs2_destination_reconciliation": "exact",
+      "non_baci_hs6": [
+        "271012",
+        "271019",
+        "271099",
+        "980200",
+        "980610",
+        "980620",
+        "980700",
+        "981200",
+        "990100"
+      ],
+      "non_baci_hs4": [
+        "9802",
+        "9806",
+        "9807",
+        "9812",
+        "9901"
+      ],
+      "unmapped_iso2": [
+        "AQ",
+        "FO",
+        "TW",
+        "UM"
+      ]
+    }
+  },
+  "eligibility": {
+    "eligible": 185,
+    "excluded": [
+      {
+        "iso3": "ASM",
+        "iso2": "AS",
+        "missing_gdp": true,
+        "missing_population": false,
+        "missing_distance": true
+      },
+      {
+        "iso3": "IOT",
+        "iso2": "IO",
+        "missing_gdp": true,
+        "missing_population": true,
+        "missing_distance": true
+      },
+      {
+        "iso3": "VGB",
+        "iso2": "VG",
+        "missing_gdp": true,
+        "missing_population": false,
+        "missing_distance": false
+      },
+      {
+        "iso3": "CXR",
+        "iso2": "CX",
+        "missing_gdp": true,
+        "missing_population": true,
+        "missing_distance": true
+      },
+      {
+        "iso3": "CCK",
+        "iso2": "CC",
+        "missing_gdp": true,
+        "missing_population": true,
+        "missing_distance": true
+      },
+      {
+        "iso3": "MYT",
+        "iso2": "YT",
+        "missing_gdp": true,
+        "missing_population": true,
+        "missing_distance": true
+      },
+      {
+        "iso3": "COD",
+        "iso2": "CD",
+        "missing_gdp": false,
+        "missing_population": false,
+        "missing_distance": true
+      },
+      {
+        "iso3": "COK",
+        "iso2": "CK",
+        "missing_gdp": true,
+        "missing_population": true,
+        "missing_distance": false
+      },
+      {
+        "iso3": "CUB",
+        "iso2": "CU",
+        "missing_gdp": true,
+        "missing_population": false,
+        "missing_distance": false
+      },
+      {
+        "iso3": "CSK",
+        "iso2": "CS",
+        "missing_gdp": true,
+        "missing_population": true,
+        "missing_distance": true
+      },
+      {
+        "iso3": "ERI",
+        "iso2": "ER",
+        "missing_gdp": true,
+        "missing_population": false,
+        "missing_distance": false
+      },
+      {
+        "iso3": "FLK",
+        "iso2": "FK",
+        "missing_gdp": true,
+        "missing_population": true,
+        "missing_distance": false
+      },
+      {
+        "iso3": "ATF",
+        "iso2": "TF",
+        "missing_gdp": true,
+        "missing_population": true,
+        "missing_distance": true
+      },
+      {
+        "iso3": "PSE",
+        "iso2": "PS",
+        "missing_gdp": false,
+        "missing_population": false,
+        "missing_distance": true
+      },
+      {
+        "iso3": "DDR",
+        "iso2": "DD",
+        "missing_gdp": true,
+        "missing_population": true,
+        "missing_distance": true
+      },
+      {
+        "iso3": "GIB",
+        "iso2": "GI",
+        "missing_gdp": true,
+        "missing_population": false,
+        "missing_distance": false
+      },
+      {
+        "iso3": "GRL",
+        "iso2": "GL",
+        "missing_gdp": true,
+        "missing_population": false,
+        "missing_distance": false
+      },
+      {
+        "iso3": "GUM",
+        "iso2": "GU",
+        "missing_gdp": true,
+        "missing_population": false,
+        "missing_distance": true
+      },
+      {
+        "iso3": "PRK",
+        "iso2": "KP",
+        "missing_gdp": true,
+        "missing_population": false,
+        "missing_distance": false
+      },
+      {
+        "iso3": "MAC",
+        "iso2": "MO",
+        "missing_gdp": false,
+        "missing_population": false,
+        "missing_distance": true
+      },
+      {
+        "iso3": "S19",
+        "iso2": "",
+        "missing_gdp": true,
+        "missing_population": true,
+        "missing_distance": true
+      },
+      {
+        "iso3": "MNE",
+        "iso2": "ME",
+        "missing_gdp": false,
+        "missing_population": false,
+        "missing_distance": true
+      },
+      {
+        "iso3": "MSR",
+        "iso2": "MS",
+        "missing_gdp": true,
+        "missing_population": true,
+        "missing_distance": true
+      },
+      {
+        "iso3": "ANT",
+        "iso2": "AN",
+        "missing_gdp": true,
+        "missing_population": true,
+        "missing_distance": false
+      },
+      {
+        "iso3": "CUW",
+        "iso2": "CW",
+        "missing_gdp": false,
+        "missing_population": false,
+        "missing_distance": true
+      },
+      {
+        "iso3": "SXM",
+        "iso2": "SX",
+        "missing_gdp": false,
+        "missing_population": false,
+        "missing_distance": true
+      },
+      {
+        "iso3": "BES",
+        "iso2": "BQ",
+        "missing_gdp": true,
+        "missing_population": true,
+        "missing_distance": true
+      },
+      {
+        "iso3": "NIU",
+        "iso2": "NU",
+        "missing_gdp": true,
+        "missing_population": true,
+        "missing_distance": false
+      },
+      {
+        "iso3": "NFK",
+        "iso2": "NF",
+        "missing_gdp": true,
+        "missing_population": true,
+        "missing_distance": false
+      },
+      {
+        "iso3": "MNP",
+        "iso2": "MP",
+        "missing_gdp": true,
+        "missing_population": false,
+        "missing_distance": false
+      },
+      {
+        "iso3": "PCN",
+        "iso2": "PN",
+        "missing_gdp": true,
+        "missing_population": true,
+        "missing_distance": true
+      },
+      {
+        "iso3": "TLS",
+        "iso2": "TL",
+        "missing_gdp": false,
+        "missing_population": false,
+        "missing_distance": true
+      },
+      {
+        "iso3": "ROU",
+        "iso2": "RO",
+        "missing_gdp": false,
+        "missing_population": false,
+        "missing_distance": true
+      },
+      {
+        "iso3": "BLM",
+        "iso2": "BL",
+        "missing_gdp": true,
+        "missing_population": true,
+        "missing_distance": true
+      },
+      {
+        "iso3": "SHN",
+        "iso2": "SH",
+        "missing_gdp": true,
+        "missing_population": true,
+        "missing_distance": false
+      },
+      {
+        "iso3": "AIA",
+        "iso2": "AI",
+        "missing_gdp": true,
+        "missing_population": true,
+        "missing_distance": false
+      },
+      {
+        "iso3": "SPM",
+        "iso2": "PM",
+        "missing_gdp": true,
+        "missing_population": true,
+        "missing_distance": false
+      },
+      {
+        "iso3": "SMR",
+        "iso2": "SM",
+        "missing_gdp": true,
+        "missing_population": false,
+        "missing_distance": false
+      },
+      {
+        "iso3": "SRB",
+        "iso2": "RS",
+        "missing_gdp": false,
+        "missing_population": false,
+        "missing_distance": true
+      },
+      {
+        "iso3": "R20",
+        "iso2": "",
+        "missing_gdp": true,
+        "missing_population": true,
+        "missing_distance": true
+      },
+      {
+        "iso3": "ZA1",
+        "iso2": "",
+        "missing_gdp": true,
+        "missing_population": true,
+        "missing_distance": true
+      },
+      {
+        "iso3": "SSD",
+        "iso2": "SS",
+        "missing_gdp": true,
+        "missing_population": false,
+        "missing_distance": true
+      },
+      {
+        "iso3": "SYR",
+        "iso2": "SY",
+        "missing_gdp": true,
+        "missing_population": false,
+        "missing_distance": false
+      },
+      {
+        "iso3": "TKL",
+        "iso2": "TK",
+        "missing_gdp": true,
+        "missing_population": true,
+        "missing_distance": false
+      },
+      {
+        "iso3": "SUN",
+        "iso2": "SU",
+        "missing_gdp": true,
+        "missing_population": true,
+        "missing_distance": true
+      },
+      {
+        "iso3": "PUS",
+        "iso2": "PU",
+        "missing_gdp": true,
+        "missing_population": true,
+        "missing_distance": true
+      },
+      {
+        "iso3": "WLF",
+        "iso2": "WF",
+        "missing_gdp": true,
+        "missing_population": true,
+        "missing_distance": false
+      },
+      {
+        "iso3": "YEM",
+        "iso2": "YE",
+        "missing_gdp": true,
+        "missing_population": false,
+        "missing_distance": false
+      },
+      {
+        "iso3": "SCG",
+        "iso2": "CS",
+        "missing_gdp": true,
+        "missing_population": true,
+        "missing_distance": true
+      }
+    ]
+  },
+  "fallback": {
+    "cells": 685,
+    "lag_cad": 805915611,
+    "destinations": [
+      "AE",
+      "AL",
+      "AQ",
+      "AR",
+      "AS",
+      "AT",
+      "AU",
+      "AZ",
+      "BB",
+      "BE",
+      "BG",
+      "BH",
+      "BM",
+      "BO",
+      "BR",
+      "BT",
+      "BW",
+      "BZ",
+      "CD",
+      "CG",
+      "CH",
+      "CK",
+      "CL",
+      "CM",
+      "CN",
+      "CO",
+      "CR",
+      "CU",
+      "CW",
+      "CX",
+      "CY",
+      "CZ",
+      "DE",
+      "DK",
+      "DO",
+      "DZ",
+      "EC",
+      "EG",
+      "ES",
+      "FI",
+      "FR",
+      "GB",
+      "GE",
+      "GH",
+      "GI",
+      "GL",
+      "GM",
+      "GR",
+      "GT",
+      "GU",
+      "GW",
+      "HK",
+      "HN",
+      "HR",
+      "HU",
+      "ID",
+      "IE",
+      "IL",
+      "IN",
+      "IQ",
+      "IS",
+      "IT",
+      "JM",
+      "JP",
+      "KE",
+      "KH",
+      "KR",
+      "KW",
+      "LB",
+      "LR",
+      "LU",
+      "LV",
+      "LY",
+      "MN",
+      "MO",
+      "MV",
+      "MX",
+      "MY",
+      "NA",
+      "NG",
+      "NL",
+      "NO",
+      "NP",
+      "NZ",
+      "PA",
+      "PE",
+      "PG",
+      "PH",
+      "PK",
+      "PL",
+      "PM",
+      "PN",
+      "PT",
+      "QA",
+      "RO",
+      "RS",
+      "RW",
+      "SA",
+      "SE",
+      "SG",
+      "SK",
+      "SL",
+      "SN",
+      "SS",
+      "SV",
+      "SX",
+      "SY",
+      "TD",
+      "TG",
+      "TH",
+      "TT",
+      "TW",
+      "TZ",
+      "UM",
+      "US",
+      "VC",
+      "VE",
+      "YE",
+      "ZA",
+      "ZW"
+    ],
+    "hs4": [
+      "0201",
+      "0202",
+      "0203",
+      "0206",
+      "0207",
+      "0209",
+      "0210",
+      "0406",
+      "0504",
+      "0511",
+      "0701",
+      "0713",
+      "1001",
+      "1002",
+      "1004",
+      "1008",
+      "1107",
+      "1201",
+      "1204",
+      "1213",
+      "1214",
+      "1507",
+      "1514",
+      "1516",
+      "1517",
+      "1601",
+      "1602",
+      "1701",
+      "1902",
+      "1905",
+      "2004",
+      "2005",
+      "2103",
+      "2106",
+      "2303",
+      "2309",
+      "2503",
+      "2519",
+      "2530",
+      "2615",
+      "2701",
+      "2703",
+      "2710",
+      "2711",
+      "2803",
+      "2804",
+      "2806",
+      "2815",
+      "2827",
+      "2833",
+      "2902",
+      "2903",
+      "2905",
+      "2914",
+      "2915",
+      "2918",
+      "2923",
+      "2933",
+      "2942",
+      "3006",
+      "3204",
+      "3208",
+      "3209",
+      "3211",
+      "3304",
+      "3305",
+      "3307",
+      "3401",
+      "3402",
+      "3403",
+      "3506",
+      "3808",
+      "3810",
+      "3811",
+      "3814",
+      "3820",
+      "3822",
+      "3824",
+      "3901",
+      "3906",
+      "3907",
+      "3910",
+      "3915",
+      "3916",
+      "3917",
+      "3918",
+      "3919",
+      "3920",
+      "3921",
+      "3923",
+      "3924",
+      "3925",
+      "3926",
+      "4008",
+      "4009",
+      "4010",
+      "4013",
+      "4015",
+      "4016",
+      "4101",
+      "4202",
+      "4203",
+      "4407",
+      "4412",
+      "4415",
+      "4421",
+      "4703",
+      "4705",
+      "4707",
+      "4801",
+      "4802",
+      "4811",
+      "4817",
+      "4818",
+      "4819",
+      "4820",
+      "4821",
+      "4823",
+      "4901",
+      "4908",
+      "4911",
+      "5607",
+      "5609",
+      "5702",
+      "5904",
+      "5911",
+      "6103",
+      "6105",
+      "6107",
+      "6109",
+      "6114",
+      "6201",
+      "6211",
+      "6216",
+      "6301",
+      "6304",
+      "6305",
+      "6306",
+      "6307",
+      "6309",
+      "6310",
+      "6403",
+      "6404",
+      "6505",
+      "6506",
+      "6507",
+      "6804",
+      "6805",
+      "6806",
+      "6807",
+      "6808",
+      "6809",
+      "6815",
+      "6902",
+      "6909",
+      "6912",
+      "6914",
+      "7009",
+      "7015",
+      "7017",
+      "7019",
+      "7113",
+      "7204",
+      "7211",
+      "7215",
+      "7216",
+      "7217",
+      "7218",
+      "7220",
+      "7223",
+      "7226",
+      "7228",
+      "7304",
+      "7306",
+      "7307",
+      "7308",
+      "7309",
+      "7310",
+      "7311",
+      "7312",
+      "7313",
+      "7314",
+      "7315",
+      "7317",
+      "7318",
+      "7320",
+      "7322",
+      "7324",
+      "7326",
+      "7412",
+      "7415",
+      "7419",
+      "7501",
+      "7502",
+      "7504",
+      "7507",
+      "7508",
+      "7604",
+      "7605",
+      "7606",
+      "7607",
+      "7608",
+      "7609",
+      "7610",
+      "7616",
+      "8003",
+      "8105",
+      "8108",
+      "8201",
+      "8202",
+      "8203",
+      "8204",
+      "8205",
+      "8206",
+      "8207",
+      "8208",
+      "8211",
+      "8213",
+      "8301",
+      "8302",
+      "8304",
+      "8305",
+      "8307",
+      "8310",
+      "8311",
+      "8402",
+      "8404",
+      "8406",
+      "8409",
+      "8411",
+      "8412",
+      "8413",
+      "8414",
+      "8416",
+      "8417",
+      "8418",
+      "8419",
+      "8421",
+      "8422",
+      "8423",
+      "8424",
+      "8425",
+      "8426",
+      "8427",
+      "8428",
+      "8429",
+      "8431",
+      "8443",
+      "8467",
+      "8471",
+      "8474",
+      "8479",
+      "8481",
+      "8482",
+      "8483",
+      "8484",
+      "8487",
+      "8503",
+      "8504",
+      "8505",
+      "8506",
+      "8507",
+      "8508",
+      "8511",
+      "8512",
+      "8513",
+      "8514",
+      "8515",
+      "8516",
+      "8517",
+      "8518",
+      "8519",
+      "8523",
+      "8524",
+      "8526",
+      "8529",
+      "8530",
+      "8531",
+      "8533",
+      "8534",
+      "8535",
+      "8536",
+      "8537",
+      "8538",
+      "8539",
+      "8541",
+      "8542",
+      "8543",
+      "8544",
+      "8545",
+      "8609",
+      "8703",
+      "8708",
+      "8711",
+      "8716",
+      "8802",
+      "8807",
+      "9001",
+      "9002",
+      "9004",
+      "9012",
+      "9014",
+      "9015",
+      "9017",
+      "9018",
+      "9019",
+      "9023",
+      "9024",
+      "9025",
+      "9026",
+      "9027",
+      "9030",
+      "9031",
+      "9032",
+      "9101",
+      "9102",
+      "9401",
+      "9403",
+      "9404",
+      "9405",
+      "9406",
+      "9503",
+      "9603",
+      "9608",
+      "9609",
+      "9610",
+      "9705",
+      "9802",
+      "9806",
+      "9807",
+      "9810",
+      "9812",
+      "9901"
+    ],
+    "rule": "Identical constant-USD 2024 persistence for all six models, outside structural eligibility only."
+  },
+  "2025_evaluation": {
+    "opened_utc": "2026-10-06T23:52:57.489017+00:00",
+    "forecast_freeze_utc": "2026-10-06T23:52:57.221878+00:00",
+    "actual_total_cad": 177964624065,
+    "actual_destinations": 197,
+    "actual_outside_frozen_destination_cad": 961673,
+    "prediction_files_unchanged": true,
+    "pdf_fx_diagnostic": 1.3978
+  }
+}

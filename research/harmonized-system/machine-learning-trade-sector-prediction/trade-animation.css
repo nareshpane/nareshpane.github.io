@@ -1,0 +1,117 @@
+/* Isolated presentation styles; the research notebook below is unchanged. */
+.trade-intro {
+  --ta-ink: #28584f;
+  --ta-gold: #b5833e;
+  width: 100%;
+  max-width: 1150px;
+  margin: 14px auto 28px;
+  overflow: hidden;
+  border: 1px solid #d6ccbc;
+  border-radius: 16px;
+  background: #f8f5ec;
+  color: var(--ta-ink);
+}
+.trade-intro .ta-heading { padding: 20px 18px 0; text-align: center; min-height: 104px; }
+.trade-intro .ta-kicker { margin: 0 0 6px; font-size: .72rem; letter-spacing: .13em; font-weight: 700; text-transform: uppercase; }
+.trade-intro .ta-headline { margin: 0; font: normal clamp(1.4rem, 2.6vw, 2rem)/1.2 Georgia, serif; }
+.trade-intro .ta-subline { margin: 7px 0 0; min-height: 24px; font-size: .95rem; }
+.trade-intro .ta-stage { display: block; width: 100%; height: auto; aspect-ratio: 1120 / 490; }
+.trade-intro svg { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+.trade-intro .ta-linework { stroke: #28584f; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.trade-intro .ta-label { fill: #28584f; font-size: 22px; font-weight: 600; transition: opacity .4s; }
+.trade-intro[data-phase="logistics"] #ta-economy .ta-label { opacity: 0; }
+.trade-intro .ta-small-label { fill: #536c66; font-size: 18px; }
+.trade-intro .ta-country-label { fill: #28584f; font-size: 20px; font-weight: 600; }
+.trade-intro .ta-land { fill: #e1e7d9; stroke: #97afa2; stroke-width: 1.8; stroke-linejoin: round; }
+.trade-intro .ta-route { fill: none; stroke: #b5833e; stroke-width: 2.4; stroke-linecap: round; }
+.trade-intro .ta-data-link { fill: none; stroke: #86a99c; stroke-width: 2; }
+.trade-intro .ta-map-label { fill: #28584f; font-size: 29px; font-weight: 700; letter-spacing: .06em; }
+.trade-intro .ta-world-label { fill: #456c60; font-size: 18px; letter-spacing: .1em; }
+.trade-intro .ta-canada-land { fill: #dce5d4; stroke: #628b76; stroke-width: 1.25; stroke-linejoin: round; }
+.trade-intro .ta-province-label { fill: #536c66; font-size: 14px; }
+.trade-intro .ta-country-label { paint-order: stroke; stroke: #f8f5ec; stroke-width: 5px; stroke-linejoin: round; }
+.trade-intro .ta-country-leader { fill: none; stroke: #97afa2; stroke-width: 1; }
+.trade-intro .ta-analyst { opacity: 0; }
+.trade-intro .ta-canada { transform: translate(175px, 5px) scale(1.16); }
+.trade-intro .ta-farm { transform: translate(35px, 175px); }
+.trade-intro .ta-mine { transform: translate(310px, 168px); }
+.trade-intro .ta-factory { transform: translate(590px, 152px); }
+.trade-intro .ta-city { transform: translate(865px, 148px); }
+.trade-intro .ta-yard { transform: translate(790px, 278px); }
+.trade-intro .ta-port { transform: translate(975px, 230px); }
+.trade-intro .ta-world-position { transform: translate(0, 0); }
+.trade-intro .ta-scene { opacity: 0; }
+.trade-intro .ta-world { opacity: 1; }
+.trade-intro .ta-ship, .trade-intro .ta-route-dot, .trade-intro .ta-seed { opacity: 0; }
+.trade-intro .ta-partners { display: flex; visibility: hidden; opacity: 0; flex-wrap: wrap; justify-content: center; gap: 5px 14px; padding: 0 18px 12px; min-height: 38px; transition: opacity .4s; }
+.trade-intro .ta-partners span { font-size: .81rem; color: #4c655d; }
+.trade-intro .ta-partners span::before { content: ""; display: inline-block; width: 6px; height: 6px; margin-right: 5px; border-radius: 50%; background: #c4caba; }
+.trade-intro .ta-partners .is-connected::before { background: #b5833e; }
+.trade-intro[data-phase="global"] .ta-partners,
+.trade-intro[data-phase="data"] .ta-partners,
+.trade-intro[data-phase="final"] .ta-partners { visibility: visible; opacity: 1; }
+.trade-intro .ta-controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding: 10px 18px 12px; border-top: 1px solid #e3dccd; }
+.trade-intro .ta-controls[hidden] { display: none; }
+.trade-intro .ta-controls button { padding: 6px 14px; font-size: .84rem; background: #fffdf7; }
+.trade-intro .ta-note { margin: 0 0 0 auto; font-size: .75rem; color: #617268; }
+.trade-intro .ta-progress { height: 3px; overflow: hidden; background: #e9e2d3; }
+.trade-intro .ta-progress-fill { width: 100%; height: 100%; background: #91b49b; transform: scaleX(1); transform-origin: left; }
+.trade-intro .ta-description { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.trade-intro .ta-static-note { margin: 0; padding: 9px 18px; text-align: center; font-size: .79rem; color: #607066; }
+.trade-intro .ta-static-note[hidden] { display: none; }
+.trade-intro .ta-mobile-only { display: none; }
+@media (max-width: 650px) {
+  .trade-intro { margin-top: 10px; border-radius: 12px; }
+  .trade-intro .ta-heading { padding: 18px 12px 0; min-height: 150px; }
+  .trade-intro .ta-headline { font-size: 1.45rem; }
+  .trade-intro .ta-subline { font-size: .86rem; }
+  .trade-intro .ta-stage { aspect-ratio: 560 / 630; }
+  .trade-intro .ta-canada { transform: translate(-90px, 75px) scale(1.08); }
+  .trade-intro .ta-farm { transform: translate(20px, 125px) scale(.94); }
+  .trade-intro .ta-mine { transform: translate(305px, 130px) scale(.94); }
+  .trade-intro .ta-factory { transform: translate(20px, 335px) scale(.94); }
+  .trade-intro .ta-city { transform: translate(305px, 335px) scale(.94); }
+  .trade-intro .ta-yard { transform: translate(320px, 367px) scale(.92); }
+  .trade-intro .ta-port { transform: translate(430px, 315px) scale(.72); }
+  .trade-intro .ta-world-position { transform: translate(0px, 145px) scale(.5); }
+  .trade-intro .ta-decorative, .trade-intro .ta-country-label,
+  .trade-intro .ta-world-label { display: none; }
+  .trade-intro .ta-port .ta-small-label, .trade-intro .ta-yard .ta-small-label { display: none; }
+  .trade-intro .ta-label { font-size: 24px; }
+  .trade-intro .ta-partners { gap: 6px 10px; padding: 0 10px 12px; }
+  .trade-intro .ta-partners span { font-size: .75rem; }
+  .trade-intro .ta-controls { padding: 10px 12px; }
+  .trade-intro .ta-note { flex-basis: 100%; margin: 2px 0 0; font-size: .72rem; }
+  .trade-intro .ta-mobile-only { display: block; }
+  .trade-intro .ta-extra-truck, .trade-intro .ta-extra-thought { display: none; }
+  .trade-intro .ta-country-leader { display: none; }
+  .trade-intro .ta-analyst { transform: translate(15px, 415px); }
+  .trade-intro .ta-analyst-space { width: 530px; height: 205px; }
+  .trade-intro .ta-analyst-art { transform: translate(280px, 15px) scale(.85); }
+  .trade-intro [data-ta-thought="0"] { transform: translate(0px, 6px); font-size: 29px !important; }
+  .trade-intro [data-ta-thought="1"] { transform: translate(20px, 10px); font-size: 25px !important; }
+  .trade-intro [data-ta-thought="2"] { transform: translate(-145px, 39px); font-size: 26px !important; }
+  .trade-intro [data-ta-thought="3"] { transform: translate(0px, 61px); font-size: 24px !important; }
+  .trade-intro [data-ta-thought="8"] { transform: translate(-139px, 37px); font-size: 31px !important; }
+  .trade-intro [data-ta-thought="9"] { transform: translate(-35px, 113px); font-size: 24px !important; }
+  .trade-intro:not(.ta-enhanced) .ta-stage { aspect-ratio: 1120 / 490; }
+  .trade-intro:not(.ta-enhanced) .ta-world-position { transform: none; }
+  .trade-intro:not(.ta-enhanced) .ta-mobile-only { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .trade-intro .ta-controls, .trade-intro .ta-progress { display: none; }
+  .trade-intro .ta-scene { opacity: 0 !important; }
+  .trade-intro .ta-world { opacity: 1 !important; }
+  .trade-intro .ta-route { stroke-dashoffset: 0 !important; }
+  .trade-intro .ta-route-dot, .trade-intro .ta-seed { opacity: 0 !important; }
+  .trade-intro .ta-partners, .trade-intro .ta-label { transition: none; }
+  .trade-intro.ta-enhanced .ta-world-position { transform: translate(0px, 60px) scale(.7); }
+  .trade-intro.ta-enhanced .ta-analyst, .trade-intro [data-ta-thought] { opacity: 1 !important; }
+}
+@media (max-width: 650px) and (prefers-reduced-motion: reduce) {
+  .trade-intro.ta-enhanced .ta-stage { aspect-ratio: 560 / 460; }
+  .trade-intro.ta-enhanced .ta-world-position { transform: translate(0px, 25px) scale(.5); }
+  .trade-intro.ta-enhanced .ta-world .ta-mobile-only { transform: translateY(-88px); }
+  .trade-intro.ta-enhanced .ta-analyst { transform: translate(15px, 245px); }
+}
+@media print { .trade-intro .ta-controls, .trade-intro .ta-progress { display: none; } }

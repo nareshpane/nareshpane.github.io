@@ -1,0 +1,16 @@
+{
+  "freeze_utc": "2026-10-06T23:52:57.221878+00:00",
+  "phase": "A complete; 2025 Alberta observations not opened",
+  "cad_per_usd": 1.3698,
+  "eligible_destinations": 185,
+  "grid_hs4": 1229,
+  "cells_per_model": 228050,
+  "lambda": 0.13434182576877998,
+  "hashes": {
+    "frozen_hs4_predictions.csv.gz": "f5b0d9ce2dc776503fff7c4c052d51528edfcb27d9e8144e6ebdc867c1559847",
+    "frozen_destination_predictions.csv": "913eb4033e763fe6b0cd1189f1a2e698311f7afb0fa60f0ec6c96f8ac184a118",
+    "frozen_top5_hs4.csv": "e28b9a7797648146a46c1e821fea986764bbabcdba0bc46c9d103b437ea48021",
+    "frozen_destination_universe.csv": "094bfd0f3647bf40467a9e2dd3a66b57e3bb0fe0eee0317424c1771e446a8c31",
+    "frozen_hs4_universe.csv": "da43a0f8ac2d17b6b0076cd761c49f461203efb427738c17c6569df8c31a7bc6"
+  }
+}
