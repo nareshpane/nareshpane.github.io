@@ -1,0 +1,273 @@
+/* Conceptual 40-second story. Separate from all explorer data and calculations.
+ * Example membership checked against data/section338-hs6.json, October 2026.
+ * Routes, production icons and ribbon widths are illustrative, not estimates.
+ * Deterministic render(time): Replay resets every object, including paused ones.
+ */
+(() => {
+  'use strict';
+  const root = document.getElementById('origin-exposure');
+  if (!root) return;
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  const narrow = matchMedia('(max-width: 650px)');
+  const duration = 40;
+  const mapFile = '2-section-338-hs4-hs6-exposure-canada/animation-maps.svg';
+  const provinces = [
+    ['BC','British Columbia',108.5,253.6,'forest'],['AB','Alberta',154.9,271.3,'energy'],
+    ['SK','Saskatchewan',196.9,290.3,'grain'],['MB','Manitoba',240,285.2,'gear'],
+    ['ON','Ontario',314.2,316.6,'car'],['QC','Quebec',385.2,276.8,'plane'],
+    ['NB','New Brunswick',434.8,320.5,'forest'],['NS','Nova Scotia',461.9,322.1,'fish'],
+    ['PE','Prince Edward Island',455.3,310.6,'grain'],['NL','Newfoundland and Labrador',448.3,242.7,'energy'],
+    ['YT','Yukon',102.4,155.6,'mineral'],['NT','Northwest Territories',157.5,176.2,'mineral'],
+    ['NU','Nunavut',253.8,158.5,'mineral']
+  ];
+  const colors = ['#c2d3bd','#dbc6a9','#d8d8b1','#bcd1c9','#b9ced2','#c9c7d8'];
+  // Short, gently sloped driving lanes on either side of a schematic crossing.
+  // The longer curved lines still describe conceptual Canada-to-U.S. corridors.
+  const truckLegs = {
+    0: [[156,303],[106,311],[124,330],[174,338]],
+    1: [[160,323],[214,332],[214,352],[268,361]],
+    3: [[353,325],[405,334],[392,365],[424.7,372.2]]
+  };
+  const kids = [['841410',false],['841420',false],['841430',false],['841440',false],['841480',true],['841490',false]];
+  const cargo = [['940360',true],['841490',false],['853710',true],['841480',true],['841410',false],['841420',false]];
+  const svg = root.querySelector('.oa-stage');
+  const controls = root.querySelector('.oa-controls');
+  const pause = root.querySelector('[data-oa-pause]');
+  const replay = root.querySelector('[data-oa-replay]');
+  const heading = root.querySelector('.oa-heading');
+  const headline = root.querySelector('.oa-headline');
+  const subline = root.querySelector('.oa-subline');
+  const kicker = root.querySelector('.oa-kicker');
+  const progress = root.querySelector('.oa-progress-fill');
+  const note = root.querySelector('.oa-static-note');
+  const clamp = x => Math.max(0, Math.min(1, x));
+  const ease = x => { x = clamp(x); return x*x*(3-2*x); };
+  const ramp = (t,a,b) => ease((t-a)/(b-a));
+  const windowAlpha = (t,a,b) => ramp(t,a,a+.65)*(1-ramp(t,b-.65,b));
+  const mix = (a,b,u) => a+(b-a)*u;
+  const opacity = (el,v) => { el.style.opacity = v.toFixed(3); };
+  const move = (el,x,y,s=1,angle=0) => el.setAttribute('transform',`translate(${x.toFixed(2)} ${y.toFixed(2)}) scale(${s}) rotate(${angle})`);
+  const get = id => root.querySelector(`#oa-${id}`);
+  const use = (id,x=0,y=0,s=1,extra='') => `<use href="#oa-${id}" transform="translate(${x} ${y}) scale(${s})" ${extra}/>`;
+  const text = (x,y,label,cls='oa-label',extra='') => `<text x="${x}" y="${y}" class="${cls}" ${extra}>${label}</text>`;
+  const line = d => `<path d="${d}" class="oa-line"/>`;
+  const panel = (x,y,w,h,fill='#fffdf7') => `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="12" fill="${fill}" stroke="#d4dacb"/>`;
+  const tile = (code,matched=false) => `<rect x="-44" y="-23" width="88" height="46" rx="7" fill="${matched?'#f1d8c7':'#e5ece1'}" stroke="${matched?'#b75c38':'#86a68e'}" stroke-width="1.5"/><path d="M-35-14H-27M-35-10H-27" stroke="${matched?'#b75c38':'#6d927e'}"/>${text(0,9,code,'oa-code','text-anchor="middle"')}`;
+  const defs = `<defs>
+    <pattern id="oa-ties" width="15" height="10" patternUnits="userSpaceOnUse"><path d="M7 0V10" stroke="#b8b4a6" stroke-width="2"/></pattern>
+    <symbol id="oa-forest" viewBox="-18 -20 36 40"><path d="M-9 8V17M7 5V17" stroke="#547763" stroke-width="2"/><path d="M-9-17L-18 8H0ZM7-20L-3 5H17Z" fill="#86a68c" stroke="#547763"/></symbol>
+    <symbol id="oa-energy" viewBox="-18 -20 36 40"><path d="M-11 15L-5-16H5L11 15M-8 0H8M-5-12L8 0L-10 10H11" fill="none" stroke="#9b754d" stroke-width="2"/><path d="M13-8Q22 2 14 6Q8 2 13-8" fill="#bf9060"/></symbol>
+    <symbol id="oa-grain" viewBox="-18 -20 36 40"><path d="M0 18V-18M0-9L-9-16M0-2L9-9M0 4L-9-3M0 10L9 3M-12 18H12" fill="none" stroke="#b5833e" stroke-width="3" stroke-linecap="round"/></symbol>
+    <symbol id="oa-gear" viewBox="-18 -20 36 40"><path d="M-6-16H6L8-10L14-8L18-2V6L11 9L7 16H-7L-11 9L-18 6V-2L-14-8L-8-10Z" fill="#bacdc7" stroke="#54786b"/><circle r="7" fill="#f8f5ec" stroke="#54786b" stroke-width="2"/></symbol>
+    <symbol id="oa-car" viewBox="-18 -20 36 40"><path d="M-17 4L-12-7H9L15 1L18 3V12H-18V4Z" fill="#9ab7be" stroke="#54786b"/><path d="M-9-4H6L10 1H-11Z" fill="#eef3ef"/><circle cx="-11" cy="12" r="4" fill="#47685a"/><circle cx="11" cy="12" r="4" fill="#47685a"/></symbol>
+    <symbol id="oa-plane" viewBox="-18 -20 36 40"><path d="M-3-19H3L5-3L18 5V10L5 5L4 14L10 18H-10L-4 14L-5 5L-18 10V5L-5-3Z" fill="#b8b5cd" stroke="#696a83"/></symbol>
+    <symbol id="oa-fish" viewBox="-18 -20 36 40"><path d="M-13 0Q0-17 14 0Q0 17-13 0L-18-9V9Z" fill="#a2bdc4" stroke="#547c85"/><circle cx="8" cy="-2" r="1.5" fill="#28584f"/></symbol>
+    <symbol id="oa-mineral" viewBox="-18 -20 36 40"><path d="M-17-5L-7-16H7L17-5L0 17ZM-17-5H17M-7-16L-5-5L0 17L5-5L7-16" fill="#c9c2d2" stroke="#84758d" stroke-width="1.5"/></symbol>
+    <symbol id="oa-box" overflow="visible"><rect x="-10" y="-10" width="20" height="20" rx="3" fill="#e4c092" stroke="#957348"/><path d="M-10-3H10M0-10V10" stroke="#957348"/></symbol>
+    <symbol id="oa-container" overflow="visible"><rect width="48" height="24" rx="3" fill="var(--oa-cargo,#bdcfc2)" stroke="#54786b" stroke-width="1.5"/><path d="M8 4V20M16 4V20M24 4V20M32 4V20M40 4V20" stroke="#54786b" opacity=".5"/></symbol>
+    <symbol id="oa-truck-body" overflow="visible">${use('container',0,-28,1.3)}<path d="M62-19H78L91-4V5H62Z" fill="#89aa98" stroke="#28584f" stroke-width="1.5"/><path d="M68-15H77L85-6H68Z" fill="#edf4f0"/><path d="M0 5H65" stroke="#54786b" stroke-width="3"/></symbol>
+    <symbol id="oa-wheel" overflow="visible"><circle r="6" fill="#486859"/><circle r="3.5" fill="#dfdfcd"/><path d="M-3 0H3M0-3V3" stroke="#486859"/></symbol>
+    <symbol id="oa-train" overflow="visible"><path d="M0-32H35L47-12V5H0Z" fill="#557f77" stroke="#28584f" stroke-width="1.5"/><rect x="24" y="-26" width="10" height="12" fill="#dce9e4"/>${[55,109,163].map((x,i)=>`${use('container',x,-25,1,`style="--oa-cargo:${colors[i]}"`)}<path d="M${x-7} 5H${x+48}" stroke="#54786b" stroke-width="3"/>${use('wheel',x+8,8,.8)}${use('wheel',x+38,8,.8)}`).join('')}${use('wheel',12,8)}${use('wheel',35,8)}</symbol>
+    <symbol id="oa-ship" overflow="visible"><path d="M0 4H132L118 25H21Z" fill="#608890" stroke="#28584f" stroke-width="1.5"/><path d="M10 14H125" stroke="#dce7df" stroke-width="2"/><rect x="10" y="-24" width="19" height="28" rx="2" fill="#e8ecdf" stroke="#54786b"/><path d="M19-24V-35" stroke="#54786b"/><rect x="13" y="-20" width="12" height="6" fill="#9ab7be"/>${use('container',36,-20,.8)}${use('container',77,-20,.8, 'style="--oa-cargo:#dbc6a9"')}${use('container',58,-40,.8, 'style="--oa-cargo:#b9ced2"')}<path d="M-5 32Q20 27 43 32T91 32T139 32" fill="none" stroke="#a3bcc2" stroke-width="2"/></symbol>
+    <symbol id="oa-document" overflow="visible"><path d="M0 0H25L35 10V44H0Z" fill="#fffdf7" stroke="#90a99b"/><path d="M25 0V10H35M6 18H28M6 25H28M6 32H20" fill="none" stroke="#90a99b"/><circle cx="27" cy="35" r="8" fill="#efccba" stroke="#b75c38"/><path d="M23 35L26 38L31 32" fill="none" stroke="#b75c38"/></symbol>
+  </defs>`;
+  let refs, routes, elapsed = 0, last = null, frame = 0, lastPaint = 0;
+  let userPaused = false, visible = true, finished = false, phase = '';
+  function truck(id) {
+    return `<g id="oa-${id}">${use('truck-body')}<g data-oa-wheel transform="translate(13 9)">${use('wheel')}</g><g data-oa-wheel transform="translate(31 9)">${use('wheel')}</g><g data-oa-wheel transform="translate(77 9)">${use('wheel')}</g></g>`;
+  }
+  function ribbon(x,y,w) {
+    return `<g id="oa-ribbon"><rect x="${x}" y="${y}" width="${w}" height="34" rx="8" fill="#8ea895"/><path d="M${x+8} ${y}H${x+w*.4}V${y+34}H${x+8}Q${x} ${y+34} ${x} ${y+26}V${y+8}Q${x} ${y} ${x+8} ${y}" fill="#b75c38"/><path d="M${x+w*.4} ${y}V${y+34}" stroke="#fffdf7" stroke-width="3"/>${text(x,y-16,'HS4 EXPORTS','oa-micro')}${text(x,y+63,'Section 338 matched','oa-small oa-policy-text')}${text(x+w,y+63,'Not matched','oa-small','text-anchor="end"')}${text(x+w/2,y+102,'EXPOSURE INTENSITY','oa-label','text-anchor="middle"')}${text(x+w/2,y+129,'Matched HS6 exports / all HS6 exports in the heading','oa-small','text-anchor="middle"')}${text(x+w/2,y+157,'Illustrative widths · product scope, not duties paid','oa-small','text-anchor="middle"')}</g>`;
+  }
+  function layout() {
+    const m = narrow.matches;
+    svg.setAttribute('viewBox',m?'0 0 560 630':'0 0 1120 490');
+    const map = `<g id="oa-geography"><use href="${mapFile}#US" id="oa-us-land" fill="#e3dccb" stroke="#b6af99" stroke-width="1"/>${provinces.map(([abbr,name],i)=>`<use href="${mapFile}#${abbr}" class="oa-province" data-oa-origin="${abbr}" fill="${colors[i%colors.length]}"><title>${name}</title></use>`).join('')}<path id="oa-border-line" class="oa-border" d="M90.4 306.2L136.1 323.4L195.7 336.8L256.6 340.6L288 348.2L328.7 361.4L346.3 396.7L368.1 381.5L388.7 355.2L410.7 347L418.3 323.2L429.9 317.7L438.2 334.7"/>
+      <g id="oa-origin-labels">${provinces.map(([abbr,,x,y],i)=>text(i===6?490:i===7?526:i===8?512:x, i===6?380:i===7?344:i===8?303:y,abbr,'oa-origin-label')).join('')}</g>
+      <g id="oa-production-icons">${provinces.map(([abbr,,x,y,icon],i)=>{ const px=i===6?490:i===7?526:i===8?512:x, py=i===6?346:i===7?310:i===8?269:y+22; return `<g data-oa-production="${abbr}">${line(`M${x} ${y+4}L${px} ${py}`)}<circle cx="${px}" cy="${py}" r="19" fill="#fffdf7" stroke="#d4dacb"/>${use(icon,px-14,py-16,1,'width="28" height="32"')}</g>`;}).join('')}</g>
+      <g id="oa-trade-routes">${Object.entries(truckLegs).map(([i,[a,b,c,d]])=>{
+        const x=(b[0]+c[0])/2,y=(b[1]+c[1])/2;
+        return `<g data-oa-truck-lane="${i}"><path d="M${a}L${b}M${c}L${d}" fill="none" stroke="#d6d8c8" stroke-width="6" stroke-linecap="round"/><path d="M${a}L${b}M${c}L${d}" fill="none" stroke="#f8f5ec" stroke-width="1" stroke-dasharray="4 5"/><path d="M${b}L${c}" class="oa-line" stroke-dasharray="2 3"/><rect x="${x-7}" y="${y-9}" width="14" height="18" rx="3" fill="#fffdf7" stroke="#b75c38"/><path d="M${x-4} ${y-3}H${x+4}M${x-4} ${y+3}H${x+4}" stroke="#b75c38" stroke-width="1.5"/></g>`;
+      }).join('')}${[
+        ['M108.5 253.6Q95 289 89.1 319.9','truck',108.5,253.6,96,285,89.1,319.9],
+        ['M196.9 290.3Q224 340 228.6 416','truck',196.9,290.3,224,340,228.6,416],
+        ['M314.2 316.6Q335 350 344.8 406.8','train',314.2,316.6,335,350,344.8,406.8],
+        ['M385.2 276.8Q405 324 424.7 372.2','truck',385.2,276.8,405,324,424.7,372.2],
+        ['M460.2 327.4Q480 374 423.3 368.6','ship',460.2,327.4,480,374,423.3,368.6]
+      ].map(([d,mode,...pts],i)=>`<path id="oa-route-${i}" class="oa-route" d="${d}" pathLength="1" stroke-dasharray="1"/><g id="oa-carrier-${i}" data-mode="${mode}" data-points="${pts}">${mode==='truck'?`<g transform="translate(-45 0)">${truck('crossing-'+i)}</g>`:mode==='train'?`<g transform="translate(210 0) scale(-1 1)">${use(mode)}</g>`:use(mode)}</g><circle cx="${pts[4]}" cy="${pts[5]}" r="3" fill="#b5833e"/>`).join('')}</g>
+      <g id="oa-country-labels">${text(260,228,'CANADA','oa-country')}${text(265,469,'UNITED STATES','oa-country')}</g>
+    </g>`;
+    const cardX=m?35:760, cardY=m?440:80, cardW=m?490:305;
+    const productionCards = `<g id="oa-production-cards">${panel(cardX,cardY,cardW,m?104:250)}${text(cardX+20,cardY+30,'MANY PRODUCTS','oa-micro')}${(m?['grain','gear','mineral','fish']:['forest','grain','car','mineral']).map((icon,i)=>`${use(icon,cardX+(m?18+i*122:20),cardY+(m?43:48+i*48),1,'width="30" height="34"')}${m?'':text(cardX+67,cardY+71+i*48,['Forestry &amp; marine','Agriculture &amp; energy','Manufacturing','Minerals'][i],'oa-small')}`).join('')}${text(m?280:912,m?585:375,'13 ORIGINS → ONE CANADA','oa-label','text-anchor="middle"')}${text(m?280:912,m?611:403,'Production symbols are examples','oa-small','text-anchor="middle"')}</g>`;
+    const railY=m?604:460, roadY=m?536:389;
+    const logistics = `<g id="oa-logistics" class="oa-scene">${panel(m?25:710,m?420:76,m?510:350,m?70:136)}${text(m?45:730,m?451:106,'ONE INTEGRATED EXPORT SYSTEM','oa-micro')}${text(m?45:730,m?478:139,'Road · Rail · Container · Ocean','oa-small')}${m?'':text(730,181,'Products travel with the freight.','oa-small')}<path d="M0 ${roadY+15}H${m?390:825}" stroke="#d6d8c8" stroke-width="22"/><path d="M0 ${roadY+15}H${m?390:825}" stroke="#f8f5ec" stroke-dasharray="14 18"/><path d="M0 ${railY+14}H${m?560:1120}" stroke="#98ab99" stroke-width="3"/><rect y="${railY+7}" width="${m?560:1120}" height="10" fill="url(#oa-ties)"/><path d="M${m?420:890} ${roadY-10}V${roadY-74}H${m?500:1005}V${roadY-10}M${m?432:902} ${roadY-74}V${roadY-105}H${m?502:1020}" fill="none" stroke="#769a8c" stroke-width="4"/>${use('container',m?422:902,roadY-28)}${use('container',m?472:952,roadY-28,1,'style="--oa-cargo:#dbc6a9"')}${truck('road-0')}${truck('road-1')}${truck('road-2')}<g id="oa-inland-train"><g transform="translate(210 0) scale(-1 1)">${use('train')}</g></g><g id="oa-coastal-ship">${use('ship')}</g>${provinces.map(([, ,x,y],i)=>`<g data-oa-parcel="${i}">${use('box')}</g>`).join('')}</g>`;
+    const tradeNote = `<g id="oa-trade-note" class="oa-scene">${panel(m?35:790,m?505:116,m?490:278,m?100:190)}${text(m?55:810,m?539:152,'CANADA → UNITED STATES','oa-micro')}${text(m?55:810,m?568:190,'2025 domestic exports','oa-label')}${text(m?55:810,m?594:224,'Conceptual corridors','oa-small')}${m?'':text(810,265,'One destination. Several modes.','oa-small')}</g>`;
+    const bx=m?226:485, by=m?180:110;
+    const border = `<g id="oa-checkpoint" class="oa-scene">${text(m?35:65,55,'CANADA','oa-country')}${text(m?525:1040,55,'UNITED STATES','oa-country','text-anchor="end"')}${[0,1,2].map(i=>`<path d="M${m?20:35} ${m?188+i*65:173+i*91}H${m?325:735}" stroke="#e6e5d9" stroke-width="38"/><path d="M${m?20:35} ${m?188+i*65:173+i*91}H${m?325:735}" stroke="#bdc6b6" stroke-dasharray="10 12"/>`).join('')}
+      <rect x="${bx}" y="${by}" width="${m?79:155}" height="${m?187:267}" rx="10" fill="#deeadf" stroke="#86a68e"/><path d="M${bx-10} ${by}H${bx+(m?89:165)}" stroke="#54786b" stroke-width="6"/>${text(bx+(m?39:77),by-24,'U.S. BORDER','oa-label','text-anchor="middle"')}${use('document',bx+(m?21:60),by+16,m?.9:1.1)}
+      <g id="oa-scanner"><rect x="${bx+8}" y="${by+67}" width="${m?63:139}" height="30" rx="4" fill="#b75c38" opacity=".16"/><path d="M${bx+8} ${by+67}V${by+97}M${bx+(m?71:147)} ${by+67}V${by+97}" stroke="#b75c38" stroke-width="2"/></g><g id="oa-gate" transform="translate(${bx+12} ${by+(m?171:246)})"><path d="M0 0H${m?54:127}" stroke="#b75c38" stroke-width="5"/><path d="M0 0H${m?54:127}" stroke="#f4dfc9" stroke-width="5" stroke-dasharray="8 10"/></g>
+      ${panel(m?364:795,m?105:111,m?177:281,m?160:116,'#f4e1d2')}${text(m?379:815,m?133:143,'SECTION 338','oa-micro oa-policy-text')}${text(m?379:815,m?153:165,'MATCH','oa-micro oa-policy-text')}${panel(m?364:795,m?363:313,m?177:281,m?165:116,'#e7eee1')}${text(m?379:815,m?394:347,'NOT MATCHED','oa-micro')}
+      <path d="M${bx+(m?80:156)} ${by+90}Q${m?330:720} ${by+90} ${m?360:786} ${m?205:200}" fill="none" stroke="#b75c38" stroke-width="2"/><path d="M${bx+(m?80:156)} ${by+90}Q${m?334:724} ${m?428:378} ${m?360:786} ${m?428:378}" fill="none" stroke="#86a68e" stroke-width="2"/>
+      ${truck('inspection-0')}${truck('inspection-1')}${truck('inspection-2')}${cargo.map(([c,match],i)=>`<g id="oa-screen-tile-${i}">${tile(c)}<rect class="oa-stamp" x="-44" y="-23" width="88" height="46" rx="7" fill="${match?'#d77b4a':'#86a68e'}" opacity="0"/></g>`).join('')}${text(m?280:560,m?558:473,'Product-scope screening · no duty amount is inferred','oa-small','text-anchor="middle"')}</g>`;
+    const parentX=m?280:180, parentY=m?85:140;
+    const hierarchy = `<g id="oa-hierarchy" class="oa-scene">${panel(parentX-62,parentY-34,124,78)}${text(parentX,parentY-9,'HS4','oa-micro','text-anchor="middle"')}${text(parentX,parentY+22,'8414','oa-code','text-anchor="middle"')}<g id="oa-hs-children">${kids.map(([c,match],i)=>{const x=m?104+(i%3)*176:430+(i%3)*214,y=m?214+Math.floor(i/3)*99:117+Math.floor(i/3)*119;return `<path data-oa-branch d="M${parentX} ${parentY+44}Q${m?parentX:300} ${m?160:y} ${x} ${y}" class="oa-line" pathLength="1" stroke-dasharray="1"/>`;}).join('')}${kids.map(([c,match],i)=>{const x=m?104+(i%3)*176:430+(i%3)*214,y=m?214+Math.floor(i/3)*99:117+Math.floor(i/3)*119;return `<g data-oa-child transform="translate(${x} ${y})">${tile(c,match)}${text(0,48,match?'338 MATCH':'NOT MATCHED',match?'oa-micro oa-policy-text':'oa-micro','text-anchor="middle"')}</g>`;}).join('')}</g>${text(m?280:644,m?381:302,'Selected HS6 children · locally validated scope','oa-small','text-anchor="middle"')}${ribbon(m?40:180,m?424:329,m?480:760)}</g>`;
+    const final = `<g id="oa-final" class="oa-scene">${panel(m?30:80,m?32:54,m?500:430,m?210:255)}${text(m?50:100,m?61:84,'13 CANADIAN ORIGINS','oa-micro')}${provinces.map(([abbr],i)=>{const x=(m?60:115)+(i%7)*(m?66:56),y=(m?106:137)+Math.floor(i/7)*56;return `<circle cx="${x}" cy="${y}" r="19" fill="${colors[i%colors.length]}" stroke="#8fa795"/>${text(x,y+5,abbr,'oa-micro','text-anchor="middle"')}`;}).join('')}${text(m?280:295,m?222:274,'ONE CANADA','oa-label','text-anchor="middle"')}
+      <g id="oa-final-process">${m?'':line('M525 176H570')}${panel(m?30:590,m?269:86,m?500:440,m?137:200)}${text(m?50:612,m?302:118,'HS PRODUCTS · ROAD / RAIL / OCEAN','oa-micro')}${use('container',m?70:631,m?332:156,1.4)}${use('document',m?259:815,m?312:150,1.3)}${text(m?436:951,m?352:178,'U.S.','oa-country','text-anchor="middle"')}${line(m?'M156 350H240M321 350H385':'M717 177H791M869 177H903')}${text(m?280:812,m?392:245,'CANADA → UNITED STATES','oa-label','text-anchor="middle"')}</g>
+      <g id="oa-final-ribbon"><rect x="${m?40:180}" y="${m?447:335}" width="${m?480:760}" height="34" rx="8" fill="#8ea895"/><path d="M${m?48:188} ${m?447:335}H${m?232:484}V${m?481:369}H${m?48:188}Q${m?40:180} ${m?481:369} ${m?40:180} ${m?473:361}V${m?455:343}Q${m?40:180} ${m?447:335} ${m?48:188} ${m?447:335}" fill="#b75c38"/>${text(m?40:180,m?510:401,'Section 338 matched','oa-small oa-policy-text')}${text(m?520:940,m?510:401,'Not matched','oa-small','text-anchor="end"')}${text(m?280:560,m?553:442,'PRODUCT-LEVEL EXPOSURE','oa-label','text-anchor="middle"')}${text(m?280:560,m?586:476,'Schematic composition · not tariff revenue or economic loss','oa-small','text-anchor="middle"')}</g></g>`;
+    svg.innerHTML=defs+`<g id="oa-map-scene" class="oa-scene">${map}${productionCards}</g>`+logistics+tradeNote+border+hierarchy+final;
+    refs=Object.fromEntries(['map-scene','geography','us-land','border-line','origin-labels','production-icons','production-cards','trade-routes','country-labels','logistics','trade-note','checkpoint','scanner','gate','hierarchy','final','ribbon','final-ribbon','final-process'].map(id=>[id,get(id)]));
+    refs.origins=[...root.querySelectorAll('[data-oa-origin]')];
+    refs.products=[...root.querySelectorAll('[data-oa-production]')];
+    refs.parcels=[...root.querySelectorAll('[data-oa-parcel]')];
+    refs.children=[...root.querySelectorAll('[data-oa-child]')];
+    refs.branches=[...root.querySelectorAll('[data-oa-branch]')];
+    routes=[...root.querySelectorAll('[data-points]')].map((el,i)=>({el,path:get(`route-${i}`),mode:el.dataset.mode,p:el.dataset.points.split(',').map(Number)}));
+    render(reduced.matches?40:elapsed);
+  }
+  const phases=[
+    [0,'origins','Thirteen origins. One Canada.','Provincial and territorial origins form the Canadian total.','01 / 07 · Origin'],
+    [6,'production','Different places. Different products.','Illustrative production, across a connected country.','02 / 07 · Production'],
+    [12,'logistics','Products enter the network.','Trucks, rail, containers and coastal freight.','03 / 07 · Logistics'],
+    [19,'trade','Canadian goods. One destination.','2025 domestic exports to the United States.','04 / 07 · Canada → U.S.'],
+    [25,'border','The border reads the product.','HS6 codes separate matched and non-matched scope.','05 / 07 · Product screening'],
+    [32,'hierarchy','One heading. Different exposure.','HS4 groups HS6 products with different scope matches.','06 / 07 · HS4 → HS6'],
+    [37,'final','From Canadian origin to U.S. product exposure','13 origins · one destination · product-level exposure','07 / 07 · Exposure']
+  ];
+  function render(t) {
+    const m=narrow.matches;
+    root.dataset.animationTime=t.toFixed(2);
+    const copy=[...phases].reverse().find(p=>t>=p[0]);
+    if(phase!==copy[1]) {phase=copy[1];root.dataset.phase=phase;headline.textContent=copy[2];subline.textContent=copy[3];kicker.textContent=copy[4];}
+    opacity(heading,Math.min(1,...phases.slice(1).map(p=>ease(Math.abs(t-p[0])/.35))));
+    opacity(refs['map-scene'],ramp(t,0,.8)*(1-ramp(t,24.1,25)));
+    const camera=ramp(t,18.2,20);
+    const logisticsSpace=ramp(t,10.9,11.7)*(1-camera);
+    const mapX=(m?mix(-26,48,camera):mix(132,230,camera))+(m?12:72)*logisticsSpace;
+    const mapY=(m?mix(0,5,camera):mix(-12,2,camera))+(m?0:12)*logisticsSpace;
+    const mapScale=(m?mix(1,.82,camera):mix(1.12,.80,camera))-(m?.04:.28)*logisticsSpace;
+    move(refs.geography,mapX,mapY,mapScale);
+    refs.origins.forEach((el,i)=>opacity(el,.22+.78*ramp(t,.35+i*.24,1.3+i*.24)));
+    opacity(refs['us-land'],ramp(t,18.3,20));
+    opacity(refs['border-line'],ramp(t,19.1,20.4));
+    opacity(refs['country-labels'],ramp(t,18.4,20));
+    opacity(refs['origin-labels'],1-ramp(t,17.8,19));
+    opacity(refs['production-icons'],windowAlpha(t,5.5,13.8));
+    refs.products.forEach((el,i)=>opacity(el,ramp(t,5.8+i*.18,6.5+i*.18)));
+    opacity(refs['production-cards'],1-ramp(t,11.6,12.4));
+    opacity(refs.logistics,windowAlpha(t,11.7,19.2));
+    const roadY=m?536:389,railY=m?604:460;
+    const fleet=[0,1,2].map(i=>{
+      const el=get(`road-${i}`),scale=m?.67:.9;
+      const x=(m?30+i*135:110+i*220)+(m?385:580)*ramp(t,14.9,18.3);
+      move(el,x,roadY,scale);opacity(el,windowAlpha(t,12,18.5));
+      return {el,x,y:roadY,scale};
+    });
+    const rail={el:get('inland-train'),x:mix(m?20:95,m?345:930,ramp(t,15.1,18.1)),y:railY,scale:m?.74:1};
+    move(rail.el,rail.x,rail.y,rail.scale);
+    move(get('coastal-ship'),mix(m?460:975,m?394:882,ramp(t,15.9,19)),m?552:402,m?.7:1);
+    opacity(get('coastal-ship'),windowAlpha(t,15.5,19.2));
+    refs.parcels.forEach((el,i)=>{
+      const a=12.25+i*.12,u=ramp(t,a,a+1.25),[,,x,y]=provinces[i];
+      const carrier=i<9?fleet[i%3]:rail;
+      const slotX=i<9?12+Math.floor(i/3)*20:[17,37,69,125][i-9],slotY=-15,cargoScale=i<9?.8:.85;
+      const targetX=carrier.x+slotX*carrier.scale,targetY=carrier.y+slotY*carrier.scale;
+      const loaded=u>=1,parent=loaded?carrier.el:refs.logistics;
+      if(el.parentNode!==parent) parent.appendChild(el);
+      if(loaded) move(el,slotX,slotY,cargoScale);
+      else move(el,mix(mapX+x*mapScale,targetX,u),mix(mapY+y*mapScale,targetY,u),mix(1,cargoScale*carrier.scale,u));
+      opacity(el,ramp(t,a-.25,a));
+      el.dataset.loaded=String(loaded);el.dataset.freight=carrier.el.id;
+    });
+    opacity(refs['trade-note'],windowAlpha(t,19.1,25));
+    opacity(refs['trade-routes'],windowAlpha(t,19.2,25));
+    routes.forEach(({el,path,mode,p},i)=>{
+      const start=19.5+i*.3,u=ramp(t,start,23.9+i*.08),[sx,sy,cx,cy,ex,ey]=p;
+      path.style.strokeDashoffset=(1-ramp(t,start,start+1.1)).toFixed(3);
+      if(mode==='truck') {
+        const [a,b,c,d]=truckLegs[i],incoming=u<.5,from=incoming?a:c,to=incoming?b:d;
+        const travel=incoming?ramp(u,0,.38):ramp(u,.62,1);
+        const facing=to[0]<from[0]?-1:1;
+        const tilt=Math.atan2(facing*(to[1]-from[1]),Math.abs(to[0]-from[0]))*180/Math.PI;
+        move(el,mix(from[0],to[0],travel),mix(from[1],to[1],travel),.42,Math.max(-12,Math.min(12,tilt)));
+        el.setAttribute('transform',el.getAttribute('transform')+` scale(${facing} 1)`);
+        // Inspection masks the short handoff between the two driving lanes.
+        opacity(el,windowAlpha(t,start,24.6)*((1-ramp(u,.38,.46))+ramp(u,.54,.62)));
+      }else{
+        const x=(1-u)**2*sx+2*(1-u)*u*cx+u*u*ex,y=(1-u)**2*sy+2*(1-u)*u*cy+u*u*ey;
+        const facing=mix(cx-sx,ex-cx,u)<0?-1:1;
+        move(el,x,y,mode==='train'?.23:mode==='ship'?.37:.42);
+        el.setAttribute('transform',el.getAttribute('transform')+` scale(${facing} 1)`);
+        opacity(el,windowAlpha(t,start,24.6));
+      }
+    });
+    opacity(refs.checkpoint,windowAlpha(t,24.8,32.2));
+    const bx=m?226:485,by=m?180:110;
+    [0,1,2].forEach(i=>{move(get(`inspection-${i}`),mix(m?-95:-100,bx-90,ramp(t,25.1+i*.3,26.5+i*.3)),m?180+i*65:165+i*91,m?.6:.8);opacity(get(`inspection-${i}`),1-ramp(t,27.1,28.2));});
+    let screening=0;
+    cargo.forEach(([,matched],i)=>{
+      const start=26+i*.46,u=ramp(t,start,start+.65),v=ramp(t,start+.7,start+1.5);
+      const x=mix(m?135:330,bx+(m?40:77),u),y=mix(m?235:210,by+82,u);
+      const slot=cargo.slice(0,i).filter(c=>c[1]===matched).length;
+      // Fill the far position first, so later tiles do not cross settled ones.
+      const targetX=m?(405+(slot===0?1:0)*79):(844+(2-slot)*89);
+      const targetY=matched?(m?187+Math.floor(slot/2)*49:204):(m?437+Math.floor(slot/2)*49:390);
+      const product=get(`screen-tile-${i}`),classification=ramp(t,start+.5,start+.75);
+      // Reach the lane's product row before entering its labelled panel.
+      move(product,mix(x,targetX,v),mix(y,targetY,ramp(t,start+.65,start+1.1)),m?.77:.95);
+      opacity(product,ramp(t,start-.3,start));
+      product.firstElementChild.setAttribute('fill',matched&&classification>.5?'#f1d8c7':'#e5ece1');
+      product.firstElementChild.setAttribute('stroke',matched&&classification>.5?'#b75c38':'#86a68e');
+      opacity(product.querySelector('.oa-stamp'),.14*classification);
+      screening=Math.max(screening,windowAlpha(t,start+.15,start+.8));
+    });
+    opacity(refs.scanner,.4+.6*screening);
+    refs.gate.setAttribute('transform',`translate(${bx+12} ${by+(m?171:246)}) rotate(${-63*ramp(t,26.5,27)*(1-ramp(t,30,30.7))})`);
+    opacity(refs.hierarchy,windowAlpha(t,31.8,37.5));
+    refs.children.forEach((el,i)=>opacity(el,ramp(t,32.5+i*.19,33.1+i*.19)));
+    refs.branches.forEach((el,i)=>{el.style.strokeDashoffset=(1-ramp(t,32.2+i*.19,32.8+i*.19)).toFixed(3);});
+    opacity(refs.ribbon,ramp(t,34.7,35.6));
+    opacity(refs.final,ramp(t,37,38));
+    opacity(refs['final-process'],ramp(t,37.4,38.4));
+    opacity(refs['final-ribbon'],ramp(t,38,39));
+    // Wheel motion derives from the same timeline, so Pause also stops wheels.
+    root.querySelectorAll('[data-oa-wheel]').forEach(w=>w.firstElementChild.setAttribute('transform',`rotate(${t*240})`));
+    progress.style.transform=`scaleX(${clamp(t/duration)})`;
+  }
+  function tick(now) {
+    if(last!==null) elapsed=Math.min(duration,elapsed+Math.min((now-last)/1000,.12));
+    last=now;
+    if(now-lastPaint>=30 || elapsed===duration) {render(elapsed);lastPaint=now;}
+    if(elapsed>=duration) {finished=true;frame=0;last=null;reconcile();return;}
+    frame=requestAnimationFrame(tick);
+  }
+  function reconcile() {
+    const run=!reduced.matches&&!userPaused&&!finished&&visible&&!document.hidden;
+    if(run&&!frame) {last=null;frame=requestAnimationFrame(tick);}
+    else if(!run&&frame) {cancelAnimationFrame(frame);frame=0;last=null;}
+    pause.disabled=finished;
+    pause.textContent=finished?'Complete':userPaused?'Resume':'Pause';
+    pause.setAttribute('aria-label',finished?'Animation complete':`${userPaused?'Resume':'Pause'} Canadian origin and product exposure animation`);
+    pause.setAttribute('aria-pressed',String(userPaused));
+    root.dataset.playback=reduced.matches?'static':finished?'complete':userPaused?'paused':run?'playing':'suspended';
+  }
+  function staticFrame() {render(40);controls.hidden=true;note.hidden=false;}
+  pause.addEventListener('click',()=>{userPaused=!userPaused;reconcile();});
+  replay.addEventListener('click',()=>{
+    if(frame) cancelAnimationFrame(frame);
+    frame=0;elapsed=0;last=null;lastPaint=0;userPaused=false;finished=false;
+    render(0);reconcile();
+  });
+  document.addEventListener('visibilitychange',reconcile);
+  if('IntersectionObserver' in window) new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;reconcile();},{threshold:.08}).observe(root);
+  narrow.addEventListener('change',layout);
+  reduced.addEventListener('change',()=>{
+    if(reduced.matches) staticFrame();
+    else {controls.hidden=false;note.hidden=true;elapsed=0;userPaused=false;finished=false;render(0);}
+    reconcile();
+  });
+  layout();
+  root.querySelector('.oa-fallback').hidden=true;
+  svg.removeAttribute('hidden');
+  if(reduced.matches) staticFrame(); else {controls.hidden=false;note.hidden=true;render(0);}
+  reconcile();
+})();

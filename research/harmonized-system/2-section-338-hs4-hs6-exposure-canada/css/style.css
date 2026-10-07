@@ -65,7 +65,7 @@ strong { font-weight:650; }
 .search-card > label { display:block; font-size:1.07rem; font-weight:650; margin-bottom:10px; }
 .search-shell { position:relative; display:flex; align-items:center; }
 .search-icon { position:absolute; left:16px; font-size:1.9rem; color:#4e7466; pointer-events:none; }
-#product-search { width:100%; min-width:0; border:1px solid #a3b8a2; border-radius:11px; background:#fff; color:var(--ink); padding:15px 46px 15px 49px; font-size:1.04rem; }
+#product-search { width:100%; min-width:0; border:1px solid #c85a3a; border-radius:11px; background:#fff; color:var(--ink); padding:15px 46px 15px 49px; font-size:1.04rem; }
 #product-search::placeholder { color:#69756a; font-size:.92rem; }
 #product-search::-webkit-search-cancel-button { display:none; }
 #clear-search { position:absolute; right:9px; border:0; color:#4a6255; background:transparent; font-size:1.45rem; padding:3px 11px; }
