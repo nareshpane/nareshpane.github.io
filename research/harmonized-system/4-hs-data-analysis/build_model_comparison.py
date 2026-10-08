@@ -2,6 +2,8 @@
 
 Run: python research/harmonized-system/4-hs-data-analysis/build_model_comparison.py
 Optional: --audit-only, --render-only, --fresh (ignore compact caches).
+Use --presentation-only for editorial formatting of the existing page from saved
+artifacts, preserving its layout/animation and writing no analytical assets.
 Requires numpy, pandas, scipy, scikit-learn, xlrd, matplotlib, statsmodels.
 The local reference's vendor directory is an optional READ-ONLY dependency fallback.
 No module from the reference analysis itself is imported or executed.
@@ -16,6 +18,7 @@ import warnings
 import platform
 from datetime import datetime, timezone
 from html import escape
+from format_model_comparison import format_presentation, key_blocks, render_saved_page
 
 RAW_ROOT = Path(os.environ.get('TRADE_RAW_ROOT', r'D:\Trade_Data_Scientist_Gov_Alberta\raw_data_machine_learning'))
 QUESTION1_REFERENCE = Path(os.environ.get('TRADE_QUESTION1_REFERENCE', r'D:\Trade_Data_Scientist_Gov_Alberta\question_1'))
@@ -932,6 +935,10 @@ def model_narrative(model,diag):
 
 def render_page():
     global AUDIT
+    # The published page's representative key blocks were added after the initial
+    # builder. Retain them rather than losing the Dataset Size placement on rebuild.
+    keys = key_blocks(PAGE_PATH.read_text(encoding='utf-8'))
+    assert len(keys) == 6, 'Expected the existing six representative key blocks'
     AUDIT=json.loads((OUTPUT_DIR/'data_audit.json').read_text(encoding='utf-8'))
     diag=json.loads((OUTPUT_DIR/'model_diagnostics.json').read_text(encoding='utf-8'))
     summ=pd.read_csv(OUTPUT_DIR/'model_summary.csv')
@@ -984,7 +991,7 @@ def render_page():
           ('errors','Where the model over- and underpredicts','Signed lollipop chart of predicted minus observed destination exports. Negative values indicate underprediction.',
            'Named markets use separate U.S. and non-U.S. panels. Limits are shared within dynamic Models 1/6 and within structural Models 2–5. The final strip plots every remaining evaluation destination, with a symmetric-log axis preserving zero errors; country identities are in the CSV.')]:
             charts.append(f'<figure><h4>{title}</h4><a href="4-hs-data-analysis/figures/model_{m:02d}_{suffix}.svg"><img src="4-hs-data-analysis/figures/model_{m:02d}_{suffix}.svg" alt="{alt}" loading="lazy"></a><figcaption>{cap} Predictions assume 1.3698 CAD/USD; actual values are nominal observed CAD. On narrow screens, scroll the figure horizontally or open its SVG.</figcaption></figure>')
-        sections.append(f'<details class="model" id="model-{m:02d}"><summary><span class="model-number">{m:02d}</span><span>{escape(MODEL_NAMES[m])}</span><span class="model-tag">{"Dynamic" if m in [1,6] else "Structural"}</span></summary><div class="model-body">{terminology}{narrative}<h3>Internal validation results</h3>{vtable}<h3>Alberta scoring assumptions</h3>{scoring}<h3>Frozen 2025 predictions and external comparison</h3>{metrics_html}{external}{table}{"".join(charts)}<h3>Top-five predicted HS4 products in each predicted destination</h3><p class="small">Destination and within-destination HS4 ranks were frozen in Phase A. Values are CAD million. Labels use exact-code CBSA T2026-2 heading text where available; later wording vintage is disclosed, and no tariff rule is inferred. BACI child fallbacks are labelled in the downloadable CSV. Actual 2025 product values were joined only afterward.</p>{product_tables(prod[prod.model==m])}<div class="teaches"><h3>What this model teaches us</h3>{teaches}</div></div></details>')
+        sections.append(f'<details class="model" id="model-{m:02d}"><summary><span class="model-number">{m:02d}</span><span>{escape(MODEL_NAMES[m])}</span><span class="model-tag">{"Dynamic" if m in [1,6] else "Structural"}</span></summary><div class="model-body">{keys[m]}{terminology}{narrative}<h3>Internal validation results</h3>{vtable}<h3>Alberta scoring assumptions</h3>{scoring}<h3>Frozen 2025 predictions and external comparison</h3>{metrics_html}{external}{table}{"".join(charts)}<h3>Top-five predicted HS4 products in each predicted destination</h3><p class="small">Destination and within-destination HS4 ranks were frozen in Phase A. Values are CAD million. Labels use exact-code CBSA T2026-2 heading text where available; later wording vintage is disclosed, and no tariff rule is inferred. BACI child fallbacks are labelled in the downloadable CSV. Actual 2025 product values were joined only afterward.</p>{product_tables(prod[prod.model==m])}<div class="teaches"><h3>What this model teaches us</h3>{teaches}</div></div></details>')
     refrows=[]
     for q in refs.itertuples():
         if 'wape' in q.checkpoint:derived=pct(q.derived);reference=pct(q.reference_rounded)
@@ -1042,9 +1049,12 @@ python -m http.server 8000</code></pre><p class="small">Override local roots wit
     html='''<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Six trade models, audited local data, frozen Alberta 2025 predictions and a critical comparison of predictive performance and economic assumptions."><title>Machine Learning for Trade-Sector Prediction | Naresh Neupane</title><link rel="stylesheet" href="4-hs-data-analysis/css/style.css"><link rel="stylesheet" href="4-hs-data-analysis/css/comparison.css"><script>window.MathJax={tex:{inlineMath:[['\\\\(','\\\\)']]},options:{enableMenu:false},startup:{typeset:true}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script><script defer src="4-hs-data-analysis/js/comparison.js"></script></head><body id="top"><a class="skip" href="#main">Skip to content</a><div class="page">'''+nav+'<main id="main">'+intro+'<div class="model-controls"><p>Explore the mathematical approaches</p><button type="button" id="expand-all">Expand all six</button><button type="button" id="collapse-all">Collapse all</button></div>'+''.join(sections)+synthesis+observations+refs_html+'</main><footer><a class="back-top" href="#top">Back to top ↑</a><p>Naresh Neupane · Independent research &amp; educational notes</p>'+nav+'</footer></div></body></html>'
     import re
     html=re.sub(r'(?=</?(?:section|details|summary|header|footer|nav|main|figure|table|thead|tbody|tr|caption|h[1-4]|div|p|ul|ol|li|dl|pre)(?:\s|>))', '\n', html)
-    PAGE_PATH.write_text(html+'\n',encoding='utf-8')
+    PAGE_PATH.write_text(format_presentation(html)+'\n',encoding='utf-8')
 
 def main():
+    if ARGS.presentation_only:
+        render_saved_page()
+        return
     for p in [OUTPUT_DIR,CACHE,OUTPUT_DIR/'figures']:p.mkdir(parents=True,exist_ok=True)
     before=protected_manifest()
     if ARGS.render_only:
@@ -1119,6 +1129,7 @@ def verify_publication():
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--presentation-only', action='store_true')
     parser.add_argument('--audit-only',action='store_true');parser.add_argument('--render-only',action='store_true');parser.add_argument('--fresh',action='store_true')
     ARGS=parser.parse_args()
     main()

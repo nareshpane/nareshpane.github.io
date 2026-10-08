@@ -241,6 +241,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 <h3 class="model-key-label" id="model-01-key-equation">Key Equation</h3>
 <div class="equation representative-equation" tabindex="0" role="region" aria-label="Equation; scroll horizontally if needed">\[\widehat y_{\mathrm{AB},j,k,2025}=\widehat\alpha+\widehat\rho\log(1+V_{\mathrm{AB},j,k,2024})+\widehat\beta^{\mathsf T}X_{\mathrm{CAN\ proxy},j,k,2024}+\widehat\gamma_{\mathrm{HS2}(k)}\]
 </div>
+<h3 class="model-key-label" id="model-01-dataset-size">Dataset Size</h3>
+<p class="model-dataset-size" aria-labelledby="model-01-dataset-size">51,618 exporter–destination–HS4 transitions fit the final regression: 2023 predictors and lagged trade paired with 2024 trade responses. The responses include 42,268 positive and 9,350 zero-valued cells. Each cell is one exporter–destination–HS4 product observation across 42 directed foreign-country pairs and 1,229 headings. Domestic/self-pairs and products outside the fixed HS2022 universe are excluded; valid absent flows are retained as zeros. Missing explanatory variables are median-imputed rather than causing row deletion. Alberta 2025 outcomes are excluded. Exporter-held-out validation uses 7,374 test cells per fold, separate from the 44,244 cells supplied to each fold’s fit.</p>
 <h3 class="model-key-label assumption-label" id="model-01-key-assumption">Key Assumption</h3>
 <p class="model-key-assumption" aria-labelledby="model-01-key-assumption">Transfer to Alberta assumes the estimated 2023&ndash;2024 relationship between lagged trade and predictors remains sufficiently stable in 2024&ndash;2025.</p>
 <figure class="model-main-figure">
@@ -249,7 +251,7 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </figure>
 
 
-<p class="notice">2025 Alberta outcomes below are an external diagnostic. This model’s output is an imputation-qualified one-year prediction. It is not a certificate of commercial opportunity.
+<p class="notice">2025 Alberta outcomes below are an external diagnostic, meaning that previously frozen predictions are compared with observed Alberta exports that were not used to fit or select the model. This model produces an imputation-qualified one-year prediction, meaning that missing explanatory variables, including manufacturing shares, were replaced with estimated values from the fitted 2023 training-sample medians rather than directly observed data.
 </p>
 <h3>Intuition and relevance to Alberta
 </h3>
@@ -276,6 +278,7 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </p>
 <h3>Internal validation results
 </h3>
+<p class="metric-definitions">WAPE = Weighted Absolute Percentage Error; MAE = Mean Absolute Error; RMSLE = Root Mean Squared Logarithmic Error.</p>
 <div class="table-scroll" role="region" tabindex="0" aria-label="2023→2024 transition exporter transfer">
 <table class="">
 <caption>2023→2024 transition exporter transfer
@@ -285,19 +288,19 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </tr>
 </thead>
 <tbody>
-<tr><td>CAN</td><td>49.66%</td><td>33.065</td><td>2.762</td><td>25.53%</td><td>0.943</td><td>3/3</td>
+<tr><td>CAN</td><td>49.7%</td><td>33.1</td><td>2.8</td><td>25.5%</td><td>0.94</td><td>3/3</td>
 </tr>
-<tr><td>CHN</td><td>83.14%</td><td>114.691</td><td>1.831</td><td>77.55%</td><td>0.771</td><td>3/3</td>
+<tr><td>CHN</td><td>83.1%</td><td>114.7</td><td>1.8</td><td>77.5%</td><td>0.77</td><td>3/3</td>
 </tr>
-<tr><td>JPN</td><td>35.51%</td><td>16.723</td><td>2.298</td><td>27.53%</td><td>0.943</td><td>3/3</td>
+<tr><td>JPN</td><td>35.5%</td><td>16.7</td><td>2.3</td><td>27.5%</td><td>0.94</td><td>3/3</td>
 </tr>
-<tr><td>KOR</td><td>35.41%</td><td>15.854</td><td>2.417</td><td>23.70%</td><td>0.829</td><td>3/3</td>
+<tr><td>KOR</td><td>35.4%</td><td>15.9</td><td>2.4</td><td>23.7%</td><td>0.83</td><td>3/3</td>
 </tr>
-<tr><td>MEX</td><td>37.20%</td><td>28.278</td><td>2.778</td><td>27.43%</td><td>0.943</td><td>3/3</td>
+<tr><td>MEX</td><td>37.2%</td><td>28.3</td><td>2.8</td><td>27.4%</td><td>0.94</td><td>3/3</td>
 </tr>
-<tr><td>GBR</td><td>62.91%</td><td>9.189</td><td>2.696</td><td>56.95%</td><td>1.000</td><td>3/3</td>
+<tr><td>GBR</td><td>62.9%</td><td>9.2</td><td>2.7</td><td>56.9%</td><td>1.00</td><td>3/3</td>
 </tr>
-<tr><td>USA</td><td>51.20%</td><td>63.870</td><td>1.665</td><td>36.06%</td><td>0.771</td><td>3/3</td>
+<tr><td>USA</td><td>51.2%</td><td>63.9</td><td>1.7</td><td>36.1%</td><td>0.77</td><td>3/3</td>
 </tr>
 </tbody>
 </table>
@@ -367,8 +370,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </p>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #1 · United States">
 <table class="products">
-<caption>Predicted destination #1 · United States
-</caption>
+<caption>Predicted destination <span class="destination-accent">#1 · United States
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -389,8 +392,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #2 · China">
 <table class="products">
-<caption>Predicted destination #2 · China
-</caption>
+<caption>Predicted destination <span class="destination-accent">#2 · China
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -411,8 +414,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #3 · Japan">
 <table class="products">
-<caption>Predicted destination #3 · Japan
-</caption>
+<caption>Predicted destination <span class="destination-accent">#3 · Japan
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -433,8 +436,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #4 · South Korea">
 <table class="products">
-<caption>Predicted destination #4 · South Korea
-</caption>
+<caption>Predicted destination <span class="destination-accent">#4 · South Korea
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -455,8 +458,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #5 · Singapore">
 <table class="products">
-<caption>Predicted destination #5 · Singapore
-</caption>
+<caption>Predicted destination <span class="destination-accent">#5 · Singapore
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -477,8 +480,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #6 · Netherlands">
 <table class="products">
-<caption>Predicted destination #6 · Netherlands
-</caption>
+<caption>Predicted destination <span class="destination-accent">#6 · Netherlands
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -499,8 +502,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #7 · United Kingdom">
 <table class="products">
-<caption>Predicted destination #7 · United Kingdom
-</caption>
+<caption>Predicted destination <span class="destination-accent">#7 · United Kingdom
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -521,8 +524,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #8 · Mexico">
 <table class="products">
-<caption>Predicted destination #8 · Mexico
-</caption>
+<caption>Predicted destination <span class="destination-accent">#8 · Mexico
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -543,8 +546,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #9 · Italy">
 <table class="products">
-<caption>Predicted destination #9 · Italy
-</caption>
+<caption>Predicted destination <span class="destination-accent">#9 · Italy
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -565,8 +568,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #10 · Taiwan">
 <table class="products">
-<caption>Predicted destination #10 · Taiwan
-</caption>
+<caption>Predicted destination <span class="destination-accent">#10 · Taiwan
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -619,6 +622,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 <h3 class="model-key-label" id="model-02-key-equation">Key Equation</h3>
 <div class="equation representative-equation" tabindex="0" role="region" aria-label="Equation; scroll horizontally if needed">\[\min_{\beta}\;\frac{1}{2n}\lVert y-A\beta\rVert_2^2+\alpha\left[r\lVert\beta\rVert_1+\frac{1-r}{2}\lVert\beta\rVert_2^2\right],\quad y=\log(1+V_{2024})\]
 </div>
+<h3 class="model-key-label" id="model-02-dataset-size">Dataset Size</h3>
+<p class="model-dataset-size" aria-labelledby="model-02-dataset-size">51,618 zero-filled 2024 cells enter the final fitting pipeline (42,268 positive and 9,350 zero-valued cells). Each cell is one exporter–destination–HS4 product observation across 42 directed foreign-country pairs and 1,229 headings. Domestic/self-pairs and products outside the fixed HS2022 universe are excluded; valid absent flows are retained as zeros. Missing explanatory variables are median-imputed rather than causing row deletion. Alberta 2025 outcomes are excluded. Exporter-held-out validation uses 7,374 test cells per fold, separate from the 44,244 cells supplied to each fold’s fit.</p>
 <h3 class="model-key-label assumption-label" id="model-02-key-assumption">Key Assumption</h3>
 <p class="model-key-assumption" aria-labelledby="model-02-key-assumption">After regularization, an additive linear predictor is assumed to represent the main trade relationships despite remaining nonlinearities.</p>
 <figure class="model-main-figure">
@@ -627,7 +632,7 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </figure>
 
 
-<p class="notice">2025 Alberta outcomes below are an external diagnostic. This model’s output is model-implied trade potential based on 2024 information. It is not a certificate of commercial opportunity.
+<p class="notice">2025 Alberta outcomes below are an external diagnostic, meaning that previously frozen predictions are compared with observed Alberta exports that were not used to fit or select the model. This model produces structural model-implied trade potential based on 2024 information, rather than an explicitly dynamic one-year forecast. Missing explanatory variables are replaced with medians estimated from this model’s training sample; these estimated inputs are not directly observed values.
 </p>
 <h3>Intuition and relevance to Alberta
 </h3>
@@ -648,6 +653,7 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </p>
 <h3>Internal validation results
 </h3>
+<p class="metric-definitions">WAPE = Weighted Absolute Percentage Error; MAE = Mean Absolute Error; RMSLE = Root Mean Squared Logarithmic Error.</p>
 <div class="table-scroll" role="region" tabindex="0" aria-label="2024 cross-sectional exporter transfer">
 <table class="">
 <caption>2024 cross-sectional exporter transfer
@@ -657,19 +663,19 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </tr>
 </thead>
 <tbody>
-<tr><td>CAN</td><td>104.04%</td><td>69.276</td><td>4.042</td><td>50.63%</td><td>0.771</td><td>3/3</td>
+<tr><td>CAN</td><td>104.0%</td><td>69.3</td><td>4.0</td><td>50.6%</td><td>0.77</td><td>3/3</td>
 </tr>
-<tr><td>CHN</td><td>100.89%</td><td>139.170</td><td>3.470</td><td>52.59%</td><td>0.771</td><td>3/3</td>
+<tr><td>CHN</td><td>100.9%</td><td>139.2</td><td>3.5</td><td>52.6%</td><td>0.77</td><td>3/3</td>
 </tr>
-<tr><td>JPN</td><td>91.63%</td><td>43.147</td><td>3.954</td><td>88.00%</td><td>0.886</td><td>3/3</td>
+<tr><td>JPN</td><td>91.6%</td><td>43.1</td><td>4.0</td><td>88.0%</td><td>0.89</td><td>3/3</td>
 </tr>
-<tr><td>KOR</td><td>86.59%</td><td>38.771</td><td>3.915</td><td>49.42%</td><td>0.714</td><td>3/3</td>
+<tr><td>KOR</td><td>86.6%</td><td>38.8</td><td>3.9</td><td>49.4%</td><td>0.71</td><td>3/3</td>
 </tr>
-<tr><td>MEX</td><td>79.20%</td><td>60.204</td><td>4.649</td><td>69.08%</td><td>0.886</td><td>3/3</td>
+<tr><td>MEX</td><td>79.2%</td><td>60.2</td><td>4.6</td><td>69.1%</td><td>0.89</td><td>3/3</td>
 </tr>
-<tr><td>GBR</td><td>163.69%</td><td>23.909</td><td>4.254</td><td>119.45%</td><td>0.943</td><td>3/3</td>
+<tr><td>GBR</td><td>163.7%</td><td>23.9</td><td>4.3</td><td>119.4%</td><td>0.94</td><td>3/3</td>
 </tr>
-<tr><td>USA</td><td>573.98%</td><td>715.981</td><td>2.675</td><td>532.25%</td><td>0.714</td><td>3/3</td>
+<tr><td>USA</td><td>574.0%</td><td>716.0</td><td>2.7</td><td>532.3%</td><td>0.71</td><td>3/3</td>
 </tr>
 </tbody>
 </table>
@@ -739,8 +745,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </p>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #1 · United States">
 <table class="products">
-<caption>Predicted destination #1 · United States
-</caption>
+<caption>Predicted destination <span class="destination-accent">#1 · United States
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -761,8 +767,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #2 · Germany">
 <table class="products">
-<caption>Predicted destination #2 · Germany
-</caption>
+<caption>Predicted destination <span class="destination-accent">#2 · Germany
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -783,8 +789,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #3 · Ireland">
 <table class="products">
-<caption>Predicted destination #3 · Ireland
-</caption>
+<caption>Predicted destination <span class="destination-accent">#3 · Ireland
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -805,8 +811,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #4 · Switzerland">
 <table class="products">
-<caption>Predicted destination #4 · Switzerland
-</caption>
+<caption>Predicted destination <span class="destination-accent">#4 · Switzerland
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -827,8 +833,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #5 · China">
 <table class="products">
-<caption>Predicted destination #5 · China
-</caption>
+<caption>Predicted destination <span class="destination-accent">#5 · China
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -849,8 +855,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #6 · United Kingdom">
 <table class="products">
-<caption>Predicted destination #6 · United Kingdom
-</caption>
+<caption>Predicted destination <span class="destination-accent">#6 · United Kingdom
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -871,8 +877,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #7 · France">
 <table class="products">
-<caption>Predicted destination #7 · France
-</caption>
+<caption>Predicted destination <span class="destination-accent">#7 · France
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -893,8 +899,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #8 · Italy">
 <table class="products">
-<caption>Predicted destination #8 · Italy
-</caption>
+<caption>Predicted destination <span class="destination-accent">#8 · Italy
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -915,8 +921,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #9 · South Korea">
 <table class="products">
-<caption>Predicted destination #9 · South Korea
-</caption>
+<caption>Predicted destination <span class="destination-accent">#9 · South Korea
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -937,8 +943,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #10 · Netherlands">
 <table class="products">
-<caption>Predicted destination #10 · Netherlands
-</caption>
+<caption>Predicted destination <span class="destination-accent">#10 · Netherlands
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -987,6 +993,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 <h3 class="model-key-label" id="model-03-key-equation">Key Equation</h3>
 <div class="equation representative-equation" tabindex="0" role="region" aria-label="Equation; scroll horizontally if needed">\[\widehat f(x)=\frac{1}{B}\sum_{b=1}^{B}T_b(x),\qquad y=\log(1+V_{2024})\]
 </div>
+<h3 class="model-key-label" id="model-03-dataset-size">Dataset Size</h3>
+<p class="model-dataset-size" aria-labelledby="model-03-dataset-size">51,618 zero-filled 2024 cells enter the final fitting pipeline (42,268 positive and 9,350 zero-valued cells). Each cell is one exporter–destination–HS4 product observation across 42 directed foreign-country pairs and 1,229 headings. Domestic/self-pairs and products outside the fixed HS2022 universe are excluded; valid absent flows are retained as zeros. Missing explanatory variables are median-imputed rather than causing row deletion. Alberta 2025 outcomes are excluded. Exporter-held-out validation uses 7,374 test cells per fold, separate from the 44,244 cells supplied to each fold’s fit.</p>
 <h3 class="model-key-label assumption-label" id="model-03-key-assumption">Key Assumption</h3>
 <p class="model-key-assumption" aria-labelledby="model-03-key-assumption">Tree-based transfer to Alberta assumes its Canadian-proxy scoring patterns are sufficiently represented in the seven-country training network.</p>
 <figure class="model-main-figure">
@@ -995,7 +1003,7 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </figure>
 
 
-<p class="notice">2025 Alberta outcomes below are an external diagnostic. This model’s output is model-implied trade potential based on 2024 information. It is not a certificate of commercial opportunity.
+<p class="notice">2025 Alberta outcomes below are an external diagnostic, meaning that previously frozen predictions are compared with observed Alberta exports that were not used to fit or select the model. This model produces structural model-implied trade potential based on 2024 information, rather than an explicitly dynamic one-year forecast. Missing explanatory variables are replaced with medians estimated from this model’s training sample; these estimated inputs are not directly observed values.
 </p>
 <h3>Intuition and relevance to Alberta
 </h3>
@@ -1016,6 +1024,7 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </p>
 <h3>Internal validation results
 </h3>
+<p class="metric-definitions">WAPE = Weighted Absolute Percentage Error; MAE = Mean Absolute Error; RMSLE = Root Mean Squared Logarithmic Error.</p>
 <div class="table-scroll" role="region" tabindex="0" aria-label="2024 cross-sectional exporter transfer">
 <table class="">
 <caption>2024 cross-sectional exporter transfer
@@ -1025,19 +1034,19 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </tr>
 </thead>
 <tbody>
-<tr><td>CAN</td><td>88.19%</td><td>58.720</td><td>4.167</td><td>57.47%</td><td>0.714</td><td>2/3</td>
+<tr><td>CAN</td><td>88.2%</td><td>58.7</td><td>4.2</td><td>57.5%</td><td>0.71</td><td>2/3</td>
 </tr>
-<tr><td>CHN</td><td>80.35%</td><td>110.838</td><td>3.502</td><td>8.80%</td><td>0.943</td><td>3/3</td>
+<tr><td>CHN</td><td>80.3%</td><td>110.8</td><td>3.5</td><td>8.8%</td><td>0.94</td><td>3/3</td>
 </tr>
-<tr><td>JPN</td><td>67.44%</td><td>31.756</td><td>3.722</td><td>47.03%</td><td>0.771</td><td>3/3</td>
+<tr><td>JPN</td><td>67.4%</td><td>31.8</td><td>3.7</td><td>47.0%</td><td>0.77</td><td>3/3</td>
 </tr>
-<tr><td>KOR</td><td>77.23%</td><td>34.581</td><td>3.823</td><td>59.23%</td><td>0.771</td><td>3/3</td>
+<tr><td>KOR</td><td>77.2%</td><td>34.6</td><td>3.8</td><td>59.2%</td><td>0.77</td><td>3/3</td>
 </tr>
-<tr><td>MEX</td><td>82.59%</td><td>62.780</td><td>4.834</td><td>69.47%</td><td>0.429</td><td>2/3</td>
+<tr><td>MEX</td><td>82.6%</td><td>62.8</td><td>4.8</td><td>69.5%</td><td>0.43</td><td>2/3</td>
 </tr>
-<tr><td>GBR</td><td>136.17%</td><td>19.889</td><td>3.973</td><td>100.47%</td><td>0.943</td><td>2/3</td>
+<tr><td>GBR</td><td>136.2%</td><td>19.9</td><td>4.0</td><td>100.5%</td><td>0.94</td><td>2/3</td>
 </tr>
-<tr><td>USA</td><td>79.55%</td><td>99.226</td><td>2.889</td><td>65.10%</td><td>0.714</td><td>3/3</td>
+<tr><td>USA</td><td>79.5%</td><td>99.2</td><td>2.9</td><td>65.1%</td><td>0.71</td><td>3/3</td>
 </tr>
 </tbody>
 </table>
@@ -1107,8 +1116,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </p>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #1 · United States">
 <table class="products">
-<caption>Predicted destination #1 · United States
-</caption>
+<caption>Predicted destination <span class="destination-accent">#1 · United States
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -1129,8 +1138,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #2 · China">
 <table class="products">
-<caption>Predicted destination #2 · China
-</caption>
+<caption>Predicted destination <span class="destination-accent">#2 · China
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -1151,8 +1160,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #3 · India">
 <table class="products">
-<caption>Predicted destination #3 · India
-</caption>
+<caption>Predicted destination <span class="destination-accent">#3 · India
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -1173,8 +1182,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #4 · Germany">
 <table class="products">
-<caption>Predicted destination #4 · Germany
-</caption>
+<caption>Predicted destination <span class="destination-accent">#4 · Germany
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -1195,8 +1204,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #5 · Indonesia">
 <table class="products">
-<caption>Predicted destination #5 · Indonesia
-</caption>
+<caption>Predicted destination <span class="destination-accent">#5 · Indonesia
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -1217,8 +1226,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #6 · Brazil">
 <table class="products">
-<caption>Predicted destination #6 · Brazil
-</caption>
+<caption>Predicted destination <span class="destination-accent">#6 · Brazil
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -1239,8 +1248,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #7 · United Kingdom">
 <table class="products">
-<caption>Predicted destination #7 · United Kingdom
-</caption>
+<caption>Predicted destination <span class="destination-accent">#7 · United Kingdom
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -1261,8 +1270,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #8 · Italy">
 <table class="products">
-<caption>Predicted destination #8 · Italy
-</caption>
+<caption>Predicted destination <span class="destination-accent">#8 · Italy
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -1283,8 +1292,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #9 · France">
 <table class="products">
-<caption>Predicted destination #9 · France
-</caption>
+<caption>Predicted destination <span class="destination-accent">#9 · France
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -1305,8 +1314,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #10 · Mexico">
 <table class="products">
-<caption>Predicted destination #10 · Mexico
-</caption>
+<caption>Predicted destination <span class="destination-accent">#10 · Mexico
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -1355,6 +1364,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 <h3 class="model-key-label" id="model-04-key-equation">Key Equation</h3>
 <div class="equation representative-equation" tabindex="0" role="region" aria-label="Equation; scroll horizontally if needed">\[h_1=\tanh(W_1x+b_1),\quad h_2=\tanh(W_2h_1+b_2),\quad \widehat y=W_3h_2+b_3\]
 </div>
+<h3 class="model-key-label" id="model-04-dataset-size">Dataset Size</h3>
+<p class="model-dataset-size" aria-labelledby="model-04-dataset-size">43,875 2024 cells fit the network weights; 7,743 cells are reserved for training-only early stopping (15%). 51,618 zero-filled 2024 cells enter the final fitting pipeline (42,268 positive and 9,350 zero-valued cells). Preprocessing and dollar calibration use all input cells. Each cell is one exporter–destination–HS4 product observation across 42 directed foreign-country pairs and 1,229 headings. Domestic/self-pairs and products outside the fixed HS2022 universe are excluded; valid absent flows are retained as zeros. Missing explanatory variables are median-imputed rather than causing row deletion. Alberta 2025 outcomes are excluded. Exporter-held-out validation uses 7,374 test cells per fold, separate from the 44,244 cells supplied to each fold’s fit.</p>
 <h3 class="model-key-label assumption-label" id="model-04-key-assumption">Key Assumption</h3>
 <p class="model-key-assumption" aria-labelledby="model-04-key-assumption">Standardized predictors are assumed to contain stable structure that lets the learned neural mapping transfer from the training network to Alberta.</p>
 <figure class="model-main-figure">
@@ -1363,7 +1374,7 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </figure>
 
 
-<p class="notice">2025 Alberta outcomes below are an external diagnostic. This model’s output is model-implied trade potential based on 2024 information. It is not a certificate of commercial opportunity.
+<p class="notice">2025 Alberta outcomes below are an external diagnostic, meaning that previously frozen predictions are compared with observed Alberta exports that were not used to fit or select the model. This model produces structural model-implied trade potential based on 2024 information, rather than an explicitly dynamic one-year forecast. Missing explanatory variables are replaced with medians estimated from this model’s training sample; these estimated inputs are not directly observed values.
 </p>
 <h3>Intuition and relevance to Alberta
 </h3>
@@ -1386,6 +1397,7 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </p>
 <h3>Internal validation results
 </h3>
+<p class="metric-definitions">WAPE = Weighted Absolute Percentage Error; MAE = Mean Absolute Error; RMSLE = Root Mean Squared Logarithmic Error.</p>
 <div class="table-scroll" role="region" tabindex="0" aria-label="2024 cross-sectional exporter transfer">
 <table class="">
 <caption>2024 cross-sectional exporter transfer
@@ -1395,19 +1407,19 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </tr>
 </thead>
 <tbody>
-<tr><td>CAN</td><td>221.92%</td><td>147.763</td><td>4.008</td><td>136.12%</td><td>0.943</td><td>3/3</td>
+<tr><td>CAN</td><td>221.9%</td><td>147.8</td><td>4.0</td><td>136.1%</td><td>0.94</td><td>3/3</td>
 </tr>
-<tr><td>CHN</td><td>429.51%</td><td>592.496</td><td>3.948</td><td>394.61%</td><td>0.486</td><td>2/3</td>
+<tr><td>CHN</td><td>429.5%</td><td>592.5</td><td>3.9</td><td>394.6%</td><td>0.49</td><td>2/3</td>
 </tr>
-<tr><td>JPN</td><td>247.16%</td><td>116.391</td><td>3.933</td><td>203.23%</td><td>0.657</td><td>3/3</td>
+<tr><td>JPN</td><td>247.2%</td><td>116.4</td><td>3.9</td><td>203.2%</td><td>0.66</td><td>3/3</td>
 </tr>
-<tr><td>KOR</td><td>134.97%</td><td>60.432</td><td>4.027</td><td>72.83%</td><td>0.771</td><td>3/3</td>
+<tr><td>KOR</td><td>135.0%</td><td>60.4</td><td>4.0</td><td>72.8%</td><td>0.77</td><td>3/3</td>
 </tr>
-<tr><td>MEX</td><td>94.14%</td><td>71.567</td><td>4.525</td><td>14.58%</td><td>0.829</td><td>3/3</td>
+<tr><td>MEX</td><td>94.1%</td><td>71.6</td><td>4.5</td><td>14.6%</td><td>0.83</td><td>3/3</td>
 </tr>
-<tr><td>GBR</td><td>96.53%</td><td>14.100</td><td>3.885</td><td>94.82%</td><td>0.943</td><td>3/3</td>
+<tr><td>GBR</td><td>96.5%</td><td>14.1</td><td>3.9</td><td>94.8%</td><td>0.94</td><td>3/3</td>
 </tr>
-<tr><td>USA</td><td>95.34%</td><td>118.926</td><td>3.297</td><td>66.32%</td><td>0.943</td><td>3/3</td>
+<tr><td>USA</td><td>95.3%</td><td>118.9</td><td>3.3</td><td>66.3%</td><td>0.94</td><td>3/3</td>
 </tr>
 </tbody>
 </table>
@@ -1477,8 +1489,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </p>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #1 · United States">
 <table class="products">
-<caption>Predicted destination #1 · United States
-</caption>
+<caption>Predicted destination <span class="destination-accent">#1 · United States
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -1499,8 +1511,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #2 · France">
 <table class="products">
-<caption>Predicted destination #2 · France
-</caption>
+<caption>Predicted destination <span class="destination-accent">#2 · France
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -1521,8 +1533,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #3 · China">
 <table class="products">
-<caption>Predicted destination #3 · China
-</caption>
+<caption>Predicted destination <span class="destination-accent">#3 · China
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -1543,8 +1555,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #4 · Germany">
 <table class="products">
-<caption>Predicted destination #4 · Germany
-</caption>
+<caption>Predicted destination <span class="destination-accent">#4 · Germany
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -1565,8 +1577,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #5 · Ireland">
 <table class="products">
-<caption>Predicted destination #5 · Ireland
-</caption>
+<caption>Predicted destination <span class="destination-accent">#5 · Ireland
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -1587,8 +1599,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #6 · Switzerland">
 <table class="products">
-<caption>Predicted destination #6 · Switzerland
-</caption>
+<caption>Predicted destination <span class="destination-accent">#6 · Switzerland
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -1609,8 +1621,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #7 · United Kingdom">
 <table class="products">
-<caption>Predicted destination #7 · United Kingdom
-</caption>
+<caption>Predicted destination <span class="destination-accent">#7 · United Kingdom
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -1631,8 +1643,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #8 · Italy">
 <table class="products">
-<caption>Predicted destination #8 · Italy
-</caption>
+<caption>Predicted destination <span class="destination-accent">#8 · Italy
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -1653,8 +1665,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #9 · Mexico">
 <table class="products">
-<caption>Predicted destination #9 · Mexico
-</caption>
+<caption>Predicted destination <span class="destination-accent">#9 · Mexico
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -1675,8 +1687,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #10 · Japan">
 <table class="products">
-<caption>Predicted destination #10 · Japan
-</caption>
+<caption>Predicted destination <span class="destination-accent">#10 · Japan
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -1725,6 +1737,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 <h3 class="model-key-label" id="model-05-key-equation">Key Equation</h3>
 <div class="equation representative-equation" tabindex="0" role="region" aria-label="Equation; scroll horizontally if needed">\[F_M(x)=F_0(x)+\eta\sum_{m=1}^{M}h_m(x),\qquad r_{n,m}=-\left.\frac{\partial L(y_n,F(x_n))}{\partial F(x_n)}\right|_{F=F_{m-1}}\]
 </div>
+<h3 class="model-key-label" id="model-05-dataset-size">Dataset Size</h3>
+<p class="model-dataset-size" aria-labelledby="model-05-dataset-size">46,456 2024 cells fit the boosted trees; 5,162 cells are reserved for automatic early stopping (10%). 51,618 zero-filled 2024 cells enter the final fitting pipeline (42,268 positive and 9,350 zero-valued cells). Preprocessing and dollar calibration use all input cells. Each cell is one exporter–destination–HS4 product observation across 42 directed foreign-country pairs and 1,229 headings. Domestic/self-pairs and products outside the fixed HS2022 universe are excluded; valid absent flows are retained as zeros. Missing explanatory variables are median-imputed rather than causing row deletion. Alberta 2025 outcomes are excluded. Exporter-held-out validation uses 7,374 test cells per fold, separate from the 44,244 cells supplied to each fold’s fit.</p>
 <h3 class="model-key-label assumption-label" id="model-05-key-assumption">Key Assumption</h3>
 <p class="model-key-assumption" aria-labelledby="model-05-key-assumption">Relationships learned from the 2024 cross-section are assumed to provide useful Alberta trade potential without specifying next-year adjustment.</p>
 <figure class="model-main-figure">
@@ -1733,7 +1747,7 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </figure>
 
 
-<p class="notice">2025 Alberta outcomes below are an external diagnostic. This model’s output is model-implied trade potential based on 2024 information. It is not a certificate of commercial opportunity.
+<p class="notice">2025 Alberta outcomes below are an external diagnostic, meaning that previously frozen predictions are compared with observed Alberta exports that were not used to fit or select the model. This model produces structural model-implied trade potential based on 2024 information, rather than an explicitly dynamic one-year forecast. Missing explanatory variables are replaced with medians estimated from this model’s training sample; these estimated inputs are not directly observed values.
 </p>
 <h3>Intuition and relevance to Alberta
 </h3>
@@ -1754,6 +1768,7 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </p>
 <h3>Internal validation results
 </h3>
+<p class="metric-definitions">WAPE = Weighted Absolute Percentage Error; MAE = Mean Absolute Error; RMSLE = Root Mean Squared Logarithmic Error.</p>
 <div class="table-scroll" role="region" tabindex="0" aria-label="2024 cross-sectional exporter transfer">
 <table class="">
 <caption>2024 cross-sectional exporter transfer
@@ -1763,19 +1778,19 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </tr>
 </thead>
 <tbody>
-<tr><td>CAN</td><td>90.64%</td><td>60.352</td><td>4.195</td><td>68.17%</td><td>0.486</td><td>2/3</td>
+<tr><td>CAN</td><td>90.6%</td><td>60.4</td><td>4.2</td><td>68.2%</td><td>0.49</td><td>2/3</td>
 </tr>
-<tr><td>CHN</td><td>140.07%</td><td>193.223</td><td>4.021</td><td>79.69%</td><td>0.600</td><td>3/3</td>
+<tr><td>CHN</td><td>140.1%</td><td>193.2</td><td>4.0</td><td>79.7%</td><td>0.60</td><td>3/3</td>
 </tr>
-<tr><td>JPN</td><td>81.49%</td><td>38.373</td><td>3.874</td><td>49.23%</td><td>0.657</td><td>3/3</td>
+<tr><td>JPN</td><td>81.5%</td><td>38.4</td><td>3.9</td><td>49.2%</td><td>0.66</td><td>3/3</td>
 </tr>
-<tr><td>KOR</td><td>94.69%</td><td>42.397</td><td>3.905</td><td>58.78%</td><td>0.771</td><td>3/3</td>
+<tr><td>KOR</td><td>94.7%</td><td>42.4</td><td>3.9</td><td>58.8%</td><td>0.77</td><td>3/3</td>
 </tr>
-<tr><td>MEX</td><td>90.50%</td><td>68.794</td><td>5.341</td><td>59.17%</td><td>0.771</td><td>3/3</td>
+<tr><td>MEX</td><td>90.5%</td><td>68.8</td><td>5.3</td><td>59.2%</td><td>0.77</td><td>3/3</td>
 </tr>
-<tr><td>GBR</td><td>182.54%</td><td>26.663</td><td>4.367</td><td>135.08%</td><td>1.000</td><td>3/3</td>
+<tr><td>GBR</td><td>182.5%</td><td>26.7</td><td>4.4</td><td>135.1%</td><td>1.00</td><td>3/3</td>
 </tr>
-<tr><td>USA</td><td>80.44%</td><td>100.342</td><td>2.512</td><td>43.72%</td><td>0.714</td><td>3/3</td>
+<tr><td>USA</td><td>80.4%</td><td>100.3</td><td>2.5</td><td>43.7%</td><td>0.71</td><td>3/3</td>
 </tr>
 </tbody>
 </table>
@@ -1845,8 +1860,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </p>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #1 · United States">
 <table class="products">
-<caption>Predicted destination #1 · United States
-</caption>
+<caption>Predicted destination <span class="destination-accent">#1 · United States
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -1867,8 +1882,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #2 · China">
 <table class="products">
-<caption>Predicted destination #2 · China
-</caption>
+<caption>Predicted destination <span class="destination-accent">#2 · China
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -1889,8 +1904,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #3 · Germany">
 <table class="products">
-<caption>Predicted destination #3 · Germany
-</caption>
+<caption>Predicted destination <span class="destination-accent">#3 · Germany
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -1911,8 +1926,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #4 · Italy">
 <table class="products">
-<caption>Predicted destination #4 · Italy
-</caption>
+<caption>Predicted destination <span class="destination-accent">#4 · Italy
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -1933,8 +1948,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #5 · France">
 <table class="products">
-<caption>Predicted destination #5 · France
-</caption>
+<caption>Predicted destination <span class="destination-accent">#5 · France
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -1955,8 +1970,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #6 · United Kingdom">
 <table class="products">
-<caption>Predicted destination #6 · United Kingdom
-</caption>
+<caption>Predicted destination <span class="destination-accent">#6 · United Kingdom
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -1977,8 +1992,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #7 · South Korea">
 <table class="products">
-<caption>Predicted destination #7 · South Korea
-</caption>
+<caption>Predicted destination <span class="destination-accent">#7 · South Korea
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -1999,8 +2014,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #8 · India">
 <table class="products">
-<caption>Predicted destination #8 · India
-</caption>
+<caption>Predicted destination <span class="destination-accent">#8 · India
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -2021,8 +2036,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #9 · Mexico">
 <table class="products">
-<caption>Predicted destination #9 · Mexico
-</caption>
+<caption>Predicted destination <span class="destination-accent">#9 · Mexico
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -2043,8 +2058,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #10 · Japan">
 <table class="products">
-<caption>Predicted destination #10 · Japan
-</caption>
+<caption>Predicted destination <span class="destination-accent">#10 · Japan
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -2093,6 +2108,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 <h3 class="model-key-label" id="model-06-key-equation">Key Equation</h3>
 <div class="equation representative-equation" tabindex="0" role="region" aria-label="Equation; scroll horizontally if needed">\[p_t=\log(1+V^*_t),\quad y_t=\log(1+V_t),\quad \widehat y_{t+1}=y_t+\lambda(p_t-y_t)\]
 </div>
+<h3 class="model-key-label" id="model-06-dataset-size">Dataset Size</h3>
+<p class="model-dataset-size" aria-labelledby="model-06-dataset-size">Classification stage: 51,618 zero-filled 2024 cells enter the pipeline; 46,456 fit the classifier and 5,162 are reserved for automatic early stopping. Conditional-positive-value stage: 42,268 positive 2024 cells enter its separate pipeline; 38,041 fit the regressor and 4,227 are reserved for automatic early stopping. The 9,350 zero-valued cells are excluded only from the positive-value stage. Stage-specific preprocessing uses the full input sample for that stage; positive-dollar calibration uses all 42,268 positive cells. Adjustment stage: λ is estimated on 51,618 matched 2022→2023 transitions using exporter-out-of-fold structural signals, with zeros retained. The separate 2023→2024 temporal validation covers 51,618 cells (7,374 per exporter) and does not refit λ. Each cell is one exporter–destination–HS4 product observation across 42 directed foreign-country pairs and 1,229 headings. Domestic/self-pairs and products outside the fixed HS2022 universe are excluded; valid absent flows are retained as zeros. Missing explanatory variables are median-imputed rather than causing row deletion. Alberta 2025 outcomes are excluded.</p>
 <h3 class="model-key-label assumption-label" id="model-06-key-assumption">Key Assumption</h3>
 <p class="model-key-assumption" aria-labelledby="model-06-key-assumption">A common estimated adjustment rate is assumed to approximate Alberta's movement from observed bilateral HS4 trade toward model-implied structural potential.</p>
 <figure class="model-main-figure">
@@ -2101,7 +2118,7 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </figure>
 
 
-<p class="notice">2025 Alberta outcomes below are an external diagnostic. This model’s output is a one-year partial-adjustment prediction. It is not a certificate of commercial opportunity.
+<p class="notice">2025 Alberta outcomes below are an external diagnostic, meaning that previously frozen predictions are compared with observed Alberta exports that were not used to fit or select the model. This model produces an imputation-qualified one-year partial-adjustment prediction, meaning that missing explanatory variables were replaced with estimated values rather than directly observed data; the classification and conditional-positive-value stages use separate medians estimated from their respective training samples.
 </p>
 <h3>Intuition and relevance to Alberta
 </h3>
@@ -2152,6 +2169,7 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </ol>
 <h3>Internal validation results
 </h3>
+<p class="metric-definitions">WAPE = Weighted Absolute Percentage Error; MAE = Mean Absolute Error; RMSLE = Root Mean Squared Logarithmic Error.</p>
 <div class="table-scroll" role="region" tabindex="0" aria-label="2023→2024 temporal test">
 <table class="">
 <caption>2023→2024 temporal test
@@ -2161,19 +2179,19 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </tr>
 </thead>
 <tbody>
-<tr><td>CAN</td><td>30.45%</td><td>20.273</td><td>2.855</td><td>24.20%</td><td>0.943</td><td>3/3</td>
+<tr><td>CAN</td><td>30.4%</td><td>20.3</td><td>2.9</td><td>24.2%</td><td>0.94</td><td>3/3</td>
 </tr>
-<tr><td>CHN</td><td>20.04%</td><td>27.649</td><td>1.808</td><td>9.62%</td><td>0.943</td><td>3/3</td>
+<tr><td>CHN</td><td>20.0%</td><td>27.6</td><td>1.8</td><td>9.6%</td><td>0.94</td><td>3/3</td>
 </tr>
-<tr><td>JPN</td><td>21.13%</td><td>9.948</td><td>2.362</td><td>8.35%</td><td>0.829</td><td>3/3</td>
+<tr><td>JPN</td><td>21.1%</td><td>9.9</td><td>2.4</td><td>8.3%</td><td>0.83</td><td>3/3</td>
 </tr>
-<tr><td>KOR</td><td>29.48%</td><td>13.199</td><td>2.477</td><td>17.84%</td><td>1.000</td><td>3/3</td>
+<tr><td>KOR</td><td>29.5%</td><td>13.2</td><td>2.5</td><td>17.8%</td><td>1.00</td><td>3/3</td>
 </tr>
-<tr><td>MEX</td><td>28.72%</td><td>21.833</td><td>2.864</td><td>22.59%</td><td>1.000</td><td>3/3</td>
+<tr><td>MEX</td><td>28.7%</td><td>21.8</td><td>2.9</td><td>22.6%</td><td>1.00</td><td>3/3</td>
 </tr>
-<tr><td>GBR</td><td>37.63%</td><td>5.496</td><td>2.730</td><td>17.31%</td><td>1.000</td><td>3/3</td>
+<tr><td>GBR</td><td>37.6%</td><td>5.5</td><td>2.7</td><td>17.3%</td><td>1.00</td><td>3/3</td>
 </tr>
-<tr><td>USA</td><td>21.97%</td><td>27.407</td><td>1.655</td><td>10.31%</td><td>0.771</td><td>3/3</td>
+<tr><td>USA</td><td>22.0%</td><td>27.4</td><td>1.7</td><td>10.3%</td><td>0.77</td><td>3/3</td>
 </tr>
 </tbody>
 </table>
@@ -2245,8 +2263,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </p>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #1 · United States">
 <table class="products">
-<caption>Predicted destination #1 · United States
-</caption>
+<caption>Predicted destination <span class="destination-accent">#1 · United States
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -2267,8 +2285,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #2 · China">
 <table class="products">
-<caption>Predicted destination #2 · China
-</caption>
+<caption>Predicted destination <span class="destination-accent">#2 · China
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -2289,8 +2307,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #3 · Japan">
 <table class="products">
-<caption>Predicted destination #3 · Japan
-</caption>
+<caption>Predicted destination <span class="destination-accent">#3 · Japan
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -2311,8 +2329,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #4 · South Korea">
 <table class="products">
-<caption>Predicted destination #4 · South Korea
-</caption>
+<caption>Predicted destination <span class="destination-accent">#4 · South Korea
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -2333,8 +2351,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #5 · Peru">
 <table class="products">
-<caption>Predicted destination #5 · Peru
-</caption>
+<caption>Predicted destination <span class="destination-accent">#5 · Peru
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -2355,8 +2373,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #6 · Singapore">
 <table class="products">
-<caption>Predicted destination #6 · Singapore
-</caption>
+<caption>Predicted destination <span class="destination-accent">#6 · Singapore
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -2377,8 +2395,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #7 · Mexico">
 <table class="products">
-<caption>Predicted destination #7 · Mexico
-</caption>
+<caption>Predicted destination <span class="destination-accent">#7 · Mexico
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -2399,8 +2417,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #8 · India">
 <table class="products">
-<caption>Predicted destination #8 · India
-</caption>
+<caption>Predicted destination <span class="destination-accent">#8 · India
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -2421,8 +2439,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #9 · Hong Kong">
 <table class="products">
-<caption>Predicted destination #9 · Hong Kong
-</caption>
+<caption>Predicted destination <span class="destination-accent">#9 · Hong Kong
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -2443,8 +2461,8 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </div>
 <div class="table-scroll" role="region" tabindex="0" aria-label="Predicted destination #10 · Netherlands">
 <table class="products">
-<caption>Predicted destination #10 · Netherlands
-</caption>
+<caption>Predicted destination <span class="destination-accent">#10 · Netherlands
+</span></caption>
 <thead>
 <tr><th scope="col">HS4 rank</th><th scope="col">HS4</th><th scope="col">Product heading</th><th scope="col">Predicted CAD m</th><th scope="col">Actual CAD m</th><th scope="col">Absolute error CAD m</th>
 </tr>
@@ -2503,17 +2521,17 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </tr>
 </thead>
 <tbody>
-<tr><td><a href="#model-01">01 · Dynamic linear regression</a></td><td>Additive one-year persistence</td><td>2023 predictors → 2024 response</td><td>Yes</td><td>Yes (log1p)</td><td>No</td><td>Transition + exporter transfer</td><td>119.0</td><td>33.33%</td><td>7/10</td><td>One transition; missing manufacturing; lag dominance</td>
+<tr><td><a href="#model-01">01 · Dynamic linear regression</a></td><td>Additive one-year persistence</td><td>2023 predictors → 2024 response</td><td>Yes</td><td>Yes (log1p)</td><td>No</td><td>Transition + exporter transfer</td><td>119.0</td><td>33.3%</td><td>7/10</td><td>One transition; missing manufacturing; lag dominance</td>
 </tr>
-<tr><td><a href="#model-02">02 · Elastic Net regression</a></td><td>Regularized additive structure</td><td>2024 only</td><td>No</td><td>Yes (log1p)</td><td>No</td><td>Nested exporter CV</td><td>439.8</td><td>171.66%</td><td>4/10</td><td>Linearity and omitted-variable bias remain</td>
+<tr><td><a href="#model-02">02 · Elastic Net regression</a></td><td>Regularized additive structure</td><td>2024 only</td><td>No</td><td>Yes (log1p)</td><td>No</td><td>Nested exporter CV</td><td>439.8</td><td>171.7%</td><td>4/10</td><td>Linearity and omitted-variable bias remain</td>
 </tr>
-<tr><td><a href="#model-03">03 · Random Forest regression</a></td><td>Average randomized tree partitions</td><td>2024 only</td><td>No</td><td>Yes (log1p)</td><td>Yes</td><td>Exporter-held-out 2024</td><td>550.4</td><td>209.35%</td><td>4/10</td><td>Weak extrapolation; no dynamics</td>
+<tr><td><a href="#model-03">03 · Random Forest regression</a></td><td>Average randomized tree partitions</td><td>2024 only</td><td>No</td><td>Yes (log1p)</td><td>Yes</td><td>Exporter-held-out 2024</td><td>550.4</td><td>209.3%</td><td>4/10</td><td>Weak extrapolation; no dynamics</td>
 </tr>
-<tr><td><a href="#model-04">04 · Multilayer Perceptron</a></td><td>Learn nonlinear hidden representations</td><td>2024 only</td><td>No</td><td>Yes (log1p)</td><td>Yes</td><td>Exporter-held-out 2024</td><td>627.9</td><td>257.81%</td><td>4/10</td><td>Optimizer/preprocessing dependence; no dynamics</td>
+<tr><td><a href="#model-04">04 · Multilayer Perceptron</a></td><td>Learn nonlinear hidden representations</td><td>2024 only</td><td>No</td><td>Yes (log1p)</td><td>Yes</td><td>Exporter-held-out 2024</td><td>627.9</td><td>257.8%</td><td>4/10</td><td>Optimizer/preprocessing dependence; no dynamics</td>
 </tr>
-<tr><td><a href="#model-05">05 · Single-stage gradient boosting</a></td><td>Sequential single-response correction</td><td>2024 only</td><td>No</td><td>Yes (log1p)</td><td>Yes</td><td>Exporter-held-out 2024</td><td>591.8</td><td>232.64%</td><td>5/10</td><td>Structural potential lacks adjustment clock</td>
+<tr><td><a href="#model-05">05 · Single-stage gradient boosting</a></td><td>Sequential single-response correction</td><td>2024 only</td><td>No</td><td>Yes (log1p)</td><td>Yes</td><td>Exporter-held-out 2024</td><td>591.8</td><td>232.6%</td><td>5/10</td><td>Structural potential lacks adjustment clock</td>
 </tr>
-<tr><td><a href="#model-06">06 · Dynamic two-stage boosted partial adjustment</a></td><td>Trade margins + geometric adjustment</td><td>2022–2024, ordered phases</td><td>Yes</td><td>Yes (two margins)</td><td>Yes</td><td>Separate temporal test</td><td>140.0</td><td>23.49%</td><td>9/10</td><td>One λ transition; generated-regressor uncertainty</td>
+<tr><td><a href="#model-06">06 · Dynamic two-stage boosted partial adjustment</a></td><td>Trade margins + geometric adjustment</td><td>2022–2024, ordered phases</td><td>Yes</td><td>Yes (two margins)</td><td>Yes</td><td>Separate temporal test</td><td>140.0</td><td>23.5%</td><td>9/10</td><td>One λ transition; generated-regressor uncertainty</td>
 </tr>
 </tbody>
 </table>
@@ -2522,6 +2540,7 @@ details.model:not([open]) { border-color: #cbbdaa; }
 </p>
 <h3>How to read the errors
 </h3>
+<p class="error-definitions">MAE = Mean Absolute Error; WAPE = Weighted Absolute Percentage Error; RMSLE = Root Mean Squared Logarithmic Error.</p>
 <div class="equation" tabindex="0" role="region" aria-label="Equation; scroll horizontally if needed">\[\mathrm{MAE}=\frac1n\sum_n|\widehat V_n-V_n|,\quad \mathrm{WAPE}=\frac{\sum_n|\widehat V_n-V_n|}{\sum_n V_n},\quad \mathrm{RMSLE}=\sqrt{\frac1n\sum_n[\log(1+\widehat V_n)-\log(1+V_n)]^2}\]
 </div>
 <p>Destination metrics first sum HS4 predictions. Spearman compares destination ranks; top-ten overlap counts shared destinations. A high rank correlation can coexist with badly understated dollar exports. WAPE is not bounded by 100%: forecasts far above the observed scale can legitimately produce larger percentages. Signed error is predicted minus actual; relative error divides by actual and is undefined at zero. Top-ten mean/median errors use the frozen predicted ten, not an outcome-selected list.
