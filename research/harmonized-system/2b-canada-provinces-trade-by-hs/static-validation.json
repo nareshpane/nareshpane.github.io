@@ -1,0 +1,31 @@
+{
+  "html_references_checked": 60,
+  "geographies": 14,
+  "hs4": 1216,
+  "hs6": 4998,
+  "source_files_unchanged": [
+    "Note aux utilisateurs.docx",
+    "Note to User.docx",
+    "ODPF_2_HS8Desc.TXT",
+    "ODPF_4_HS6XDesc.TXT",
+    "ODPF_5_HS2Desc.TXT",
+    "ODPF_6_CtyDesc.TXT",
+    "ODPF_7_StateDesc.TXT",
+    "ODPF_8_ProvDesc.TXT",
+    "ODPF_9_UOMDesc.TXT",
+    "ODPFN016_202512N.csv",
+    "ODPFN018_202512N.csv",
+    "ODPFN020_202512N.csv"
+  ],
+  "landing_entry_position": "Immediately after Section 338",
+  "serialized_hierarchy_ranks_shares_totals": "PASS",
+  "animation_uses_actual_alberta_values": true,
+  "relative_paths_and_fragments": "PASS",
+  "python_script_syntax": "PASS",
+  "destination_country_or_territory_categories": 221,
+  "destination_origin_heading_country_pairs": 125952,
+  "destination_vs_hs4_difference": 0,
+  "national_destination_vs_13_origins_difference": 0,
+  "destination_sort_codes_integer_values": "PASS",
+  "existing_aggregate_assets_unchanged": true
+}

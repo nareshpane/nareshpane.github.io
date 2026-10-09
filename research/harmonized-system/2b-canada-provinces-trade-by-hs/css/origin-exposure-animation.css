@@ -1,0 +1,62 @@
+/* Opening illustration only. Footprint follows Study 04's trade introduction. */
+.origin-exposure {
+  --oa-ink:#28584f; --oa-policy:#b75c38; --oa-calm:#6d927e;
+  width:100%; max-width:1150px; margin:14px auto 28px; overflow:hidden;
+  border:1px solid #d6ccbc; border-radius:16px; background:#f8f5ec; color:var(--oa-ink);
+}
+.origin-exposure .oa-heading { padding:20px 18px 0; text-align:center; min-height:104px; }
+.origin-exposure .oa-kicker { margin:0 0 6px; font-size:.72rem; letter-spacing:.13em; font-weight:700; text-transform:uppercase; }
+.origin-exposure .oa-headline { margin:0; font:normal clamp(1.4rem,2.6vw,2rem)/1.2 Georgia,serif; letter-spacing:-.025em; }
+.origin-exposure .oa-subline { margin:7px 0 0; min-height:24px; font-size:.95rem; }
+.origin-exposure .oa-stage { display:block; width:100%; height:auto; aspect-ratio:1120 / 490; }
+.origin-exposure svg { font-family:system-ui,-apple-system,"Segoe UI",sans-serif; }
+.origin-exposure .oa-scene { opacity:0; }
+.origin-exposure .oa-label { fill:#28584f; font-size:19px; font-weight:650; }
+.origin-exposure .oa-small { fill:#5d7268; font-size:15px; }
+.origin-exposure .oa-code { font:20px ui-monospace,Consolas,monospace; fill:#28584f; }
+.origin-exposure .oa-micro { fill:#536c66; font-size:12px; font-weight:650; letter-spacing:.04em; }
+.origin-exposure .oa-country { fill:#476e60; font-size:25px; font-weight:700; letter-spacing:.1em; }
+.origin-exposure .oa-origin-label { fill:#355c50; font-size:13px; font-weight:700; paint-order:stroke; stroke:#f8f5ec; stroke-width:3px; }
+.origin-exposure .oa-province { stroke:#819c8b; stroke-width:1; stroke-linejoin:round; }
+.origin-exposure .oa-route { fill:none; stroke:#b5833e; stroke-width:2.2; stroke-linecap:round; }
+.origin-exposure .oa-border { fill:none; stroke:#b75c38; stroke-width:3; stroke-linejoin:round; stroke-dasharray:5 3; }
+.origin-exposure .oa-line { fill:none; stroke:#90a99b; stroke-width:1.5; }
+.origin-exposure .oa-policy-text { fill:#9d4b2c; }
+.origin-exposure .oa-controls { display:flex; flex-wrap:wrap; gap:8px; align-items:center; padding:10px 18px 12px; border-top:1px solid #e3dccd; }
+.origin-exposure .oa-controls button { padding:6px 14px; font-size:.84rem; color:#28584f; background:#fffdf7; border:1px solid #bbc8b4; border-radius:7px; }
+.origin-exposure .oa-controls button:hover { background:#e9efdf; }
+.origin-exposure .oa-note { margin:0 0 0 auto; font-size:.75rem; color:#617268; }
+.origin-exposure .oa-progress { height:3px; overflow:hidden; background:#e9e2d3; }
+.origin-exposure .oa-progress-fill { height:100%; background:#91b49b; transform:scaleX(0); transform-origin:left; }
+.origin-exposure .oa-static-note { margin:0; padding:9px 18px; text-align:center; font-size:.79rem; color:#607066; }
+.origin-exposure .oa-description { position:absolute; width:1px; height:1px; padding:0; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+.origin-exposure .oa-fallback { display:grid; grid-template-columns:1fr 1fr; gap:24px; align-items:center; min-height:400px; padding:30px; }
+.origin-exposure .oa-fallback svg { width:100%; height:auto; }
+.origin-exposure .oa-fallback p { font-size:.95rem; }
+.origin-exposure .oa-fallback-ribbon { display:flex; height:28px; margin:20px 0 8px; border-radius:7px; overflow:hidden; }
+.origin-exposure .oa-fallback-ribbon span:first-child { width:40%; background:#b75c38; }
+.origin-exposure .oa-fallback-ribbon span:last-child { flex:1; background:#8ea895; }
+@media (max-width:650px) {
+  .origin-exposure { margin-top:10px; border-radius:12px; }
+  .origin-exposure .oa-heading { padding:18px 12px 0; min-height:150px; }
+  .origin-exposure .oa-headline { font-size:1.45rem; }
+  .origin-exposure .oa-subline { font-size:.86rem; }
+  .origin-exposure .oa-stage { aspect-ratio:560 / 630; }
+  .origin-exposure .oa-code { font-size:22px; }
+  .origin-exposure .oa-micro { font-size:13.5px; }
+  .origin-exposure .oa-controls { padding:10px 12px; }
+  .origin-exposure .oa-note { flex-basis:100%; margin:2px 0 0; font-size:.72rem; }
+  .origin-exposure .oa-fallback { grid-template-columns:1fr; padding:18px; gap:10px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .origin-exposure .oa-controls,.origin-exposure .oa-progress { display:none; }
+}
+@media print {
+  .origin-exposure .oa-stage,.origin-exposure .oa-controls,.origin-exposure .oa-progress { display:none; }
+  .origin-exposure .oa-fallback[hidden] { display:grid !important; }
+}
+
+.origin-exposure .oa-world-label { fill:#345a4c; font-size:19px; font-weight:650; paint-order:stroke; stroke:#f8f5ec; stroke-width:4px; stroke-linejoin:round; }
+@media(max-width:650px) { .origin-exposure .oa-world-label { font-size:26px; } }
+
+#origin-exposure[data-phase=logistics] [data-oa-global-caption] { opacity:0; }

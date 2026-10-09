@@ -1,0 +1,26 @@
+{
+  "tested_at": "2026-10-09T02:03:28.572Z",
+  "url": "http://localhost:8000/research/harmonized-system/canada-and-provinces-trade-by-hs.html",
+  "browser": "C:/Program Files/Google/Chrome/Application/chrome.exe",
+  "checks": [
+    "Canada default, annual value and Top 20",
+    "Seven animation phases, six global destinations, pause/resume, replay before/after completion, speed, still mode, unique SVG ids and attached cargo",
+    "All 14 geographies: keyboard selection, totals, counts, rankings and synchronized details",
+    "Autocomplete arrows/Enter, Escape, no-match query, clear/reset",
+    "Top 10/20/50/All: {\"10\":6,\"20\":6,\"50\":14,\"all\":266} ms DOM render",
+    "All 1,216 Canada bars: complete HS6 segments, proportional widths and per-heading gradient",
+    "HS4 selection, full HS6 drilldown, exact keyboard/touch tooltips and absent comparison values",
+    "Comparison synchronization; changing geography updates selected HS4",
+    "Destination Top 10/20/All, unranked Other, full-HS4 denominator, exact country tooltip, distinct top-three HS6 shades and one-decimal percentages",
+    "HS4/province synchronization, Clear preserves origin and HS4 Top N, all dependent sections empty, asynchronous stale-response protection and selection after Clear",
+    "Four exact metadata rows, compact model SVG, light-blue instruction and pale-teal Clear button",
+    "Desktop/tablet/390px/320px layout, resize, actual mobile country touch tooltip, screenshots and reduced-motion static frame"
+  ],
+  "errors": [],
+  "render_ms": {
+    "10": 6,
+    "20": 6,
+    "50": 14,
+    "all": 266
+  }
+}
