@@ -1,0 +1,27 @@
+/* Top navigation only; page and footer typography remain unchanged. */
+nav.collection-nav.collection-top-nav {
+  display:flex;
+  flex-wrap:nowrap;
+  align-items:center;
+  gap:4px;
+  max-width:100%;
+  min-width:0;
+  overflow-x:auto;
+  overflow-y:hidden;
+  overscroll-behavior-x:contain;
+  scrollbar-width:thin;
+  font-size:13px;
+  padding:8px 0 18px;
+}
+nav.collection-top-nav a {
+  flex:0 0 auto;
+  white-space:nowrap;
+  padding:7px 8px;
+  border-radius:7px;
+  text-decoration:none;
+}
+nav.collection-nav.collection-top-nav a[aria-current="page"] {
+  background:#e4ecee;
+  color:#183e56;
+  font-weight:700;
+}

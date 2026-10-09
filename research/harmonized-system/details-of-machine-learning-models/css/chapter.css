@@ -1,0 +1,71 @@
+:root{--bg:#f7f4ee;--card:#fffdf8;--ink:#223632;--muted:#59675f;--line:#ded4c4;--coral:#b64c30;--border:#df8b70;--peach:#fff0df;--soft:#f0f3df;--blue:#24597f}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.7 system-ui,-apple-system,"Segoe UI",sans-serif}a{color:var(--blue);text-underline-offset:3px}p{margin:0 0 17px}.page{max-width:1360px;margin:auto;padding:24px 28px 50px}h1,h2{font-family:Georgia,serif;font-weight:normal;line-height:1.17;letter-spacing:-.025em}h1{font-size:clamp(2.4rem,4.6vw,4rem);max-width:1050px;margin:15px 0 22px}h2{font-size:clamp(1.7rem,2.6vw,2.35rem);margin:8px 0 20px}h3{font-size:1.22rem;margin:32px 0 13px;color:#34594d}h4{font-size:1.05rem;margin:22px 0 12px}.eyebrow{font-size:.74rem;color:#526b47;letter-spacing:.12em;text-transform:uppercase;font-weight:750}.lead{font:1.35rem/1.5 Georgia,serif;color:#42675b}.hero{padding:28px 8px}.hero p{max-width:900px}.card,.model{background:var(--card);border:1px solid var(--line);border-radius:18px;margin:22px 0;padding:28px;box-shadow:0 5px 18px #334b3405}.prose{max-width:920px}.notice{background:var(--peach);border-left:4px solid var(--coral);padding:18px 22px;margin:18px 0}.note{background:var(--soft);padding:16px 20px;border-radius:10px;margin:18px 0}.small,figcaption{font-size:.86rem;color:var(--muted)}.collection-nav,.toc,.controls{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center}.collection-nav{font-size:.85rem;padding:6px 0 20px}.collection-nav a{text-decoration:none;padding:6px 10px;border-radius:8px}.collection-nav a:hover{background:#efeadc}.toc{font-size:.91rem;margin:20px 0}.toc a{background:#f0f3df;border:1px solid #d3d9bd;padding:7px 12px;border-radius:7px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:24px 0}.stats div{background:#fff0df;padding:16px 20px;border-radius:10px}.stats strong{display:block;font:1.9rem Georgia,serif}.stats span{font-size:.83rem}.model{padding:0;border-color:#cbbdaa}.model>summary{display:flex;align-items:center;gap:16px;padding:23px 25px;cursor:pointer;color:var(--coral);font:1.5rem/1.4 Georgia,serif;list-style:none}.model>summary::-webkit-details-marker{display:none}.expand-label{margin-left:auto;flex-shrink:0;font:600 .8rem system-ui,sans-serif;border:1px solid #cc927a;border-radius:6px;padding:6px 9px}.model[open]{border:2px solid var(--border)}.model[open]>summary{background:#fff0e4;border-bottom:1px solid #efd5c4}.model-body{padding:22px 28px 32px;min-width:0}.model-body>p,.model-body>ul,.model-body>.prose{max-width:920px}.classroom{display:block;height:250px;max-width:100%;width:auto;border-radius:10px;margin:0 0 10px}.classroom-wrap{margin:0 0 22px}.model h3{border-bottom:1px solid #eadacc;padding-bottom:8px}.equation{overflow-x:auto;overflow-y:hidden;max-width:100%;padding:6px 10px;background:#fcf9ef;border-radius:8px;margin:18px 0;font-size:1rem}.table-scroll{max-width:100%;overflow:auto;border:1px solid var(--line);border-radius:10px;max-height:500px;margin:17px 0;position:relative;isolation:isolate}.table-scroll.compact{max-height:360px}.table-scroll.dataset{height:500px}table{border-collapse:separate;border-spacing:0;width:100%;font-size:.84rem;font-variant-numeric:tabular-nums}caption{text-align:left;padding:12px;background:#f3f2e6;font-weight:650}th,td{padding:10px 12px;border-bottom:1px solid #e7dfd1;text-align:left;vertical-align:top;white-space:nowrap}thead th{position:sticky;top:0;background:#ffe7d0;z-index:3;color:#423e2e}tbody tr:nth-child(even){background:#faf7ee}tbody tr:hover{background:#ffecd8}td:first-child,th:first-child{position:sticky;left:0;z-index:2;background:#fff4e6}thead th:first-child{z-index:4}.text-table td{white-space:normal;min-width:160px}.text-table th{white-space:normal}.dataset table{min-width:3800px}.dataset td.description{white-space:normal;min-width:340px;max-width:380px}.numeric{text-align:right}.filter-grid{display:grid;grid-template-columns:2fr repeat(4,1fr);gap:12px;margin:20px 0}label{font-size:.87rem;display:block}input,select,button{font:inherit;color:inherit}input,select{width:100%;border:1px solid #b9b9a8;background:#fff;padding:10px 12px;border-radius:8px;margin-top:5px;min-width:0}input[type=search]{border:2px solid #c75b3b}button,.download{cursor:pointer;background:#f0f3df;border:1px solid #b6c29d;padding:9px 15px;border-radius:8px;text-decoration:none;font-size:.9rem}button:hover,.download:hover{background:#e5ebd4}.charts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:22px 0}.charts figure{margin:0;padding:12px;border:1px solid var(--line);border-radius:10px;background:#fcfaf3;min-width:0}.charts img{display:block;width:100%;height:auto}.charts figcaption{padding:4px 8px}.metric-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.metric-grid div{padding:14px;background:#f4f1df;border-radius:8px}.metric-grid strong{display:block}.prediction-controls{max-width:720px}.step{font-family:ui-monospace,monospace;font-size:.9rem;overflow-x:auto;white-space:pre-wrap;background:#f5f1e6;padding:16px;border-radius:8px}pre{overflow-x:auto;background:#f5f1e6;padding:16px;font-size:.87rem}footer{border-top:1px solid var(--line);margin-top:30px;padding-top:25px}.skip{position:absolute;top:-100px;padding:12px;background:#fff}.skip:focus{top:10px;z-index:10}:focus-visible{outline:3px solid #995120;outline-offset:4px}[hidden]{display:none!important}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}.status{padding:6px 12px;background:#eef2da;border-radius:6px;font-size:.87rem}.split-line{margin:25px 0;border:0;border-top:1px solid var(--line)}
+@media(max-width:900px){.filter-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.filter-grid label:first-child{grid-column:1/-1}.stats{grid-template-columns:repeat(2,1fr)}}@media(max-width:650px){body{font-size:16px}.page{padding:14px 12px 35px}.hero{padding:18px 4px}.card{padding:20px 16px}.model-body{padding:18px 16px}.model>summary{font-size:1.25rem;padding:18px 15px;gap:8px}.expand-label{font-size:.72rem;padding:5px}.charts{grid-template-columns:1fr}.classroom{height:auto;width:100%;max-height:250px;object-fit:contain}.metric-grid{grid-template-columns:1fr}.equation{font-size:.96rem}.table-scroll.dataset{height:470px}.collection-nav{gap:2px;font-size:.78rem}h3{margin-top:28px}}
+@media print{.model-body{display:block!important}.filter-grid,.controls{display:none}.table-scroll{max-height:none!important;height:auto!important}.page{max-width:none}.model{break-before:page}}
+
+/* Compact presentation classes; retain the existing palette, type and controls. */
+.hero{padding-bottom:16px}.hero .lead{margin-bottom:0}
+.table-scroll{margin:14px 0 5px}
+table{width:auto;table-layout:auto}
+th,td{padding:8px 9px}
+caption{padding:9px;line-height:1.45;white-space:normal}
+.numerical-table,.mathematical-table,.prediction-table{width:max-content;max-width:100%}
+.numerical-table table,.mathematical-table table,.prediction-table table{width:max-content;max-width:100%}
+.numerical-table th,.mathematical-table th,.prediction-table th{white-space:nowrap}
+.numeric{text-align:right;white-space:nowrap}
+.text-table{width:100%;max-width:1080px}
+.text-table table{width:100%}
+.text-table th,.text-table td{white-space:normal;min-width:0;overflow-wrap:break-word;line-height:1.55}
+.text-table td:first-child,.text-table th:first-child{position:static}
+.text-table:not(.numerical-table) td:first-child{max-width:18rem}
+.text-table td.numeric{white-space:nowrap}
+.model-body>p,.model-body>ul,.model-body>.prose,.prose{max-width:1020px}
+/* Many-column comparisons need room for their explanation columns, rather than
+   squeezing them into the reading-width limit next to nonwrapping dollar cells. */
+.text-table.mixed-table{width:100%;max-width:100%}
+.mixed-table table{width:max-content;min-width:100%}
+.mixed-table th{white-space:nowrap}
+.mixed-table td:not(.numeric){min-width:110px;max-width:270px}
+.text-table.record-table{width:100%;max-width:680px}
+.record-table table{width:100%}
+.record-table td:first-child{white-space:nowrap}
+.record-table td:last-child:not(.numeric){overflow-wrap:anywhere}
+/* Keep the heading-to-content gap compact inside expanded algorithm panels. */
+.model-body>h3:first-child{margin-top:12px}
+.dataset table{min-width:0;width:max-content}
+.dataset td.description{min-width:0;max-width:none;white-space:nowrap;padding-top:7px;padding-bottom:7px}
+.description-ellipsis{display:block;width:340px;max-width:340px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.dataset td.metadata{white-space:normal;line-height:1.45}
+.metadata-text{display:block;width:260px;white-space:normal;overflow-wrap:anywhere}
+.rounding-caption{font-size:12px;line-height:1.45;color:var(--muted);margin:4px 0 15px;max-width:960px}
+.classroom-wrap{margin:0 auto 22px;text-align:center}
+.classroom-scene{position:relative;width:444px;max-width:100%;margin:0 auto;aspect-ratio:1672/941}
+.classroom{width:100%;height:auto;display:block;margin:0;border-radius:10px}
+.classroom-wrap figcaption{margin-top:7px;text-align:center}
+.blackboard-overlay{position:absolute;left:34%;top:8%;width:40%;height:24%;color:#fffbe7;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;pointer-events:none}
+.board-label{font:600 10px/1.2 Georgia,serif;color:#fffbe7;text-align:center;white-space:nowrap}
+.board-math{width:100%;font-size:12px;line-height:1.2;text-align:center}
+.board-math mjx-container{margin:0!important;max-width:100%}
+.board-math svg{width:100%;height:auto;max-height:48px;overflow:visible}
+@media(max-width:650px){.text-table{max-width:100%}.rounding-caption{font-size:12px}.classroom-scene{max-width:100%}.classroom{max-height:none;object-fit:contain}.board-label{font-size:8px}.board-math{font-size:10px}.board-math svg{max-height:38px}.text-table table{min-width:0}}
+@media(max-width:650px){.record-table td:first-child,.record-table th:first-child{width:45%;white-space:normal;overflow-wrap:anywhere;max-width:none}}
+
+/* Center the existing scroll boxes, with their table titles, without stretching
+   compact tables or changing cell alignment. */
+.table-scroll{margin-inline:auto}
+.rounding-caption{margin-inline:auto;text-align:center}
+
+/* Provenance conventions from the Canada and Provinces reference page. */
+.hero{display:grid;grid-template-columns:minmax(0,1fr) 17rem;gap:28px;align-items:start}
+.page-provenance{--line:#d6d8be;--gold:#8a6824;--green:#435b35;--muted:#606752;color:#293329;font-size:.75rem;line-height:1.6;background:#fffaf5;padding:14px 16px;border:1px solid #e4d5c6;border-top:3px solid #ca7138;border-radius:14px;box-shadow:0 4px 12px #00000008}
+.provenance-item{display:flex;align-items:flex-start;gap:7px}
+.page-provenance .provenance-item+.provenance-item{margin-top:6px}
+.provenance-icon{flex:0 0 18px;width:18px;height:19px;display:inline-flex;align-items:center;justify-content:center}
+.provenance-icon svg{width:18px;height:18px}
+.page-provenance strong{color:#8c472a;font-weight:700}
+.page-provenance .provenance-item:nth-child(2) strong{color:#32765a}
+.page-provenance .provenance-item:nth-child(3) strong{color:#8154a0}
+.page-provenance .provenance-item:nth-child(4) strong{color:#99692d}
+@media(max-width:1050px){.hero{grid-template-columns:1fr 235px;gap:25px}}
+@media(max-width:800px){.hero{grid-template-columns:1fr;gap:20px}.page-provenance{width:100%;max-width:350px}}
+@media(max-width:650px){.page-provenance{max-width:100%}}

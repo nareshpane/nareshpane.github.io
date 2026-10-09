@@ -1,0 +1,28 @@
+{
+  "rows": 336,
+  "historical_numeric_outcomes": 252,
+  "observed_outcomes": 207,
+  "illustrative_outcomes": 84,
+  "observed_grid_zeros": 45,
+  "outcome_status_counts": {
+    "observed": 207,
+    "illustrative": 84,
+    "imputed": 45
+  },
+  "missing_covariates": {
+    "exporter_gdp": 0,
+    "exporter_population": 0,
+    "exporter_manufacturing": 84,
+    "exporter_internet": 0,
+    "destination_gdp": 0,
+    "destination_population": 0,
+    "destination_manufacturing": 84,
+    "destination_internet": 0
+  },
+  "zeros_by_sector": {
+    "1001": 45,
+    "8703": 0
+  },
+  "dataset_sha256": "5d2f1378ab91cc486c977f96301e992a527e62ce6673d80c241dafbe384133e6",
+  "checks": "336 unique IDs; 7 countries; 42 non-self pairs/year; 2 headings/pair/year; 84/year; years 2022\u20132025"
+}

@@ -1,0 +1,66 @@
+/* The Page 3 provenance component, scoped to metadata only. */
+aside.page-provenance.hs-page-provenance {
+  min-width:0;
+  width:100%;
+  max-width:17rem;
+  justify-self:end;
+  color:#293329;
+  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:.75rem;
+  font-weight:400;
+  line-height:1.6;
+  letter-spacing:normal;
+  text-align:left;
+  background:var(--hs-meta-background,#fcfaf6);
+  padding:14px 16px;
+  border:1px solid var(--hs-meta-border,#d6d8be);
+  border-top:3px solid var(--hs-meta-accent,#8a6824);
+  border-radius:14px;
+  box-shadow:0 4px 12px #00000008;
+}
+.hs-page-provenance .provenance-item {
+  display:flex;
+  align-items:flex-start;
+  gap:7px;
+}
+.hs-page-provenance .provenance-item+.provenance-item { margin-top:6px; }
+.hs-page-provenance .provenance-icon {
+  flex:0 0 18px;
+  width:18px;
+  height:19px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+}
+.hs-page-provenance .provenance-icon svg { width:18px; height:18px; }
+.hs-page-provenance .provenance-label { color:var(--hs-meta-created,#435b35); font-weight:700; }
+.hs-page-provenance .provenance-item:nth-child(2) .provenance-label { color:#32765a; }
+.hs-page-provenance .provenance-item:nth-child(3) .provenance-label { color:#8154a0; }
+.hs-page-provenance .provenance-item:nth-child(4) .provenance-label { color:#99692d; }
+aside.hs-page-provenance--warm {
+  --hs-meta-background:#fffaf5;
+  --hs-meta-border:#e4d5c6;
+  --hs-meta-accent:#ca7138;
+  --hs-meta-created:#8c472a;
+}
+aside.hs-page-provenance--blue { --hs-meta-accent:#1d4f91; --hs-meta-created:#1d4f91; }
+/* Only the two headers that previously had no provenance slot need a grid. */
+header.hero.hs-metadata-layout {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 17rem;
+  gap:28px;
+  align-items:start;
+}
+.hs-metadata-copy { min-width:0; }
+@media(max-width:1050px) {
+  header.hero.hs-metadata-layout { grid-template-columns:minmax(0,1fr) 235px; gap:25px; }
+}
+@media(max-width:900px) {
+  aside.page-provenance.hs-page-provenance { max-width:350px; justify-self:start; }
+}
+@media(max-width:800px) {
+  header.hero.hs-metadata-layout { grid-template-columns:minmax(0,1fr); gap:20px; }
+}
+@media(max-width:650px) {
+  aside.page-provenance.hs-page-provenance { max-width:100%; }
+}

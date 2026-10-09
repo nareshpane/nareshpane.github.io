@@ -1,0 +1,7 @@
+[45040:18168:1008/212317.242:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: PHONE_REGISTRATION_ERROR
+[45040:18168:1008/212317.259:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: PHONE_REGISTRATION_ERROR
+[45040:18168:1008/212317.315:ERROR:google_apis\gcm\engine\mcs_client.cc:702]   Error code: 401  Error message: Authentication Failed: wrong_secret
+[45040:18168:1008/212317.315:ERROR:google_apis\gcm\engine\mcs_client.cc:704] Failed to log in to GCM, resetting connection.
+[45040:35544:1008/212317.881:ERROR:extensions\common\file_util.cc:143] Moving extension from : C:\Users\user\AppData\Local\Temp\scoped_dir45040_847664924\CRX_INSTALL to : D:\GitHub\nareshpane.github.io\research\harmonized-system\details-of-machine-learning-models\results\browser\profiles\chapter-qa-o91rpia7\Default\Extensions\Temp\scoped_dir45040_1685712196\CRX_INSTALL failed.
+279647 bytes written to file D:\GitHub\nareshpane.github.io\research\harmonized-system\details-of-machine-learning-models\results\browser\1440-algorithm.png
+[45040:3684:1008/212318.011:ERROR:chrome\browser\web_applications\externally_managed_app_manager.cc:680] https://docs.google.com/presentation/installwebapp?usp=chrome_default from install source 1 failed to install with reason 21

@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "protected_files": 1130,
+  "canonical_data_predictions_parameters_metrics_unchanged": true,
+  "unrelated_repository_files_unchanged": true,
+  "models_refitted": false
+}

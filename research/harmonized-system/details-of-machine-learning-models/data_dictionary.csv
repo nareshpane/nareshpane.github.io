@@ -1,0 +1,31 @@
+column,meaning,unit,missing_policy
+observation_id,"1–336 ordered year, alphabetic exporter, alphabetic destination, HS4",,blank means unavailable; never zero unless genuinely numeric zero
+year,year,,blank means unavailable; never zero unless genuinely numeric zero
+exporter,exporter,,blank means unavailable; never zero unless genuinely numeric zero
+destination,destination,,blank means unavailable; never zero unless genuinely numeric zero
+exporter_iso3,exporter iso3,,blank means unavailable; never zero unless genuinely numeric zero
+destination_iso3,destination iso3,,blank means unavailable; never zero unless genuinely numeric zero
+hs4_code,"Four-character HS2022 heading; codes are categories, not numeric magnitudes",,blank means unavailable; never zero unless genuinely numeric zero
+hs4_description,"Official CBSA heading label, T2026-2 wording; data remain HS2022",,blank means unavailable; never zero unless genuinely numeric zero
+observed_exports_usd,BACI reconciled HS6 sum; blank for 2025; absent valid source cell is grid zero,USD,blank means unavailable; never zero unless genuinely numeric zero
+distance_km,CEPII distw population-weighted national bilateral distance,km,blank means unavailable; never zero unless genuinely numeric zero
+common_language,"CEPII comlang_off, shared official language",binary,blank means unavailable; never zero unless genuinely numeric zero
+contiguity,"CEPII contig, common land border",binary,blank means unavailable; never zero unless genuinely numeric zero
+external_supply_usd,Exporter-HS4 exports outside complete seven-country internal network,USD,blank means unavailable; never zero unless genuinely numeric zero
+external_demand_usd,Destination-HS4 imports outside complete seven-country internal network,USD,blank means unavailable; never zero unless genuinely numeric zero
+world_external_demand_usd,All selected-HS4 flows outside complete internal network,USD,blank means unavailable; never zero unless genuinely numeric zero
+trade_status,"Distinguishes BACI positive reconciliation, absent-grid zero, and unobserved scenario",,blank means unavailable; never zero unless genuinely numeric zero
+data_source,data source,,blank means unavailable; never zero unless genuinely numeric zero
+macro_year,Covariate year; 2025 record intentionally retains 2024 macro/product inputs,,blank means unavailable; never zero unless genuinely numeric zero
+data_status,Outcome status; inspect covariate_status separately,,blank means unavailable; never zero unless genuinely numeric zero
+exporter_gdp,exporter gdp,USD,blank means unavailable; never zero unless genuinely numeric zero
+exporter_population,exporter population,persons,blank means unavailable; never zero unless genuinely numeric zero
+exporter_manufacturing,exporter manufacturing,percent,blank means unavailable; never zero unless genuinely numeric zero
+exporter_internet,exporter internet,percent,blank means unavailable; never zero unless genuinely numeric zero
+destination_gdp,destination gdp,USD,blank means unavailable; never zero unless genuinely numeric zero
+destination_population,destination population,persons,blank means unavailable; never zero unless genuinely numeric zero
+destination_manufacturing,destination manufacturing,percent,blank means unavailable; never zero unless genuinely numeric zero
+destination_internet,destination internet,percent,blank means unavailable; never zero unless genuinely numeric zero
+covariate_status,Raw missing values retained; fit-specific medians are learned later,,blank means unavailable; never zero unless genuinely numeric zero
+illustrative_exports_usd,Artificial 2025 scenario only; never observed and never a model training target,USD,blank means unavailable; never zero unless genuinely numeric zero
+scenario_procedure,scenario procedure,,blank means unavailable; never zero unless genuinely numeric zero

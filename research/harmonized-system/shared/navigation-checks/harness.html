@@ -1,0 +1,33 @@
+<!doctype html><meta charset="utf-8"><style>body{margin:0}iframe{border:0;height:1100px}</style><iframe id="page"></iframe><pre id="qa" hidden></pre><script>
+const params=new URLSearchParams(location.search),width=Number(params.get('width')),name=params.get('page');
+const frame=document.getElementById('page');frame.style.width=width+'px';
+const expected=[["harmonized-system-index.html", "Collection Home"], ["harmonized-system-canada.html", "Page 1: HS Classification"], ["section-338-hs4-hs6-exposure-canada.html", "Page 2: Section 338 Exposure"], ["canada-and-provinces-trade-by-hs.html", "Page 3: Provincial Exports"], ["alberta-trade-by-hs.html", "Page 4: Alberta Export Atlas"], ["machine-learning-trade-sector-prediction.html", "Page 5: Machine Learning"], ["details-of-machine-learning-models.html", "Page 6: Model Details"]];
+frame.addEventListener('load',async()=>{try{
+ const w=frame.contentWindow,d=w.document,nav=d.querySelector('nav.collection-top-nav');
+ const check=(x,msg)=>{if(!x)throw Error(msg)};
+ check(nav,'shared top navigation');
+ const links=[...nav.querySelectorAll('a')];check(links.length===7,'seven navigation links');
+ check(!links.some(a=>a.textContent==='Main Research Page'),'Main Research Page absent from top navigation');
+ check(links.every((a,i)=>a.getAttribute('href')===expected[i][0]&&a.textContent===expected[i][1]),'consistent order, URLs and descriptors');
+ const selected=links.filter(a=>a.getAttribute('aria-current')==='page');
+ check(selected.length===1&&selected[0].getAttribute('href')===name,'one correct current-page link');
+ const style=w.getComputedStyle(selected[0]);
+ check(style.backgroundColor==='rgb(228, 236, 238)'&&style.fontWeight==='700','pale blue stronger active item');
+ check(style.borderRadius==='7px','rounded active item');
+ check(parseFloat(style.paddingLeft)>=10&&parseFloat(style.paddingTop)>=7,'comfortable link padding');
+ const rect=nav.getBoundingClientRect();check(rect.right<=width+1&&rect.left>=0,'navigation fits the viewport');
+ const positions=links.map(a=>a.getBoundingClientRect());
+ check(positions.every(r=>Math.abs(r.top-positions[0].top)<1),'single horizontal row');
+ check(positions.slice(1).every((r,i)=>r.left>=positions[i].right),'no overlapping labels');
+ check(w.getComputedStyle(nav).overflowX==='auto','horizontal scrolling enabled');
+ if(nav.scrollWidth>nav.clientWidth){nav.scrollLeft=100;check(nav.scrollLeft>0,'horizontal navigation scroll works');}
+ // Each active link must remain readable when brought into the scroll viewport.
+ nav.scrollLeft=selected[0].offsetLeft-nav.offsetLeft;
+ const active=selected[0].getBoundingClientRect();check(active.left>=rect.left-1&&active.right<=rect.right+1,'active item is visible within scroll area');
+ nav.scrollLeft=0;
+ check(parseFloat(w.getComputedStyle(nav).fontSize)>=13,'readable font size');
+ const result={status:'PASS',page:name,width,links:links.map(a=>({label:a.textContent,href:a.getAttribute('href'),active:a.getAttribute('aria-current')==='page'})),navigationWidth:nav.clientWidth,contentWidth:nav.scrollWidth,activeBackground:style.backgroundColor,pageWidth:d.documentElement.scrollWidth};
+ document.getElementById('qa').textContent=JSON.stringify(result);
+}catch(e){document.getElementById('qa').textContent=JSON.stringify({status:'FAIL',page:name,width,message:e.message});}});
+frame.src='../../'+name;
+</script>

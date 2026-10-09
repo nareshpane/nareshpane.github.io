@@ -1,0 +1,80 @@
+{
+  "sources": [
+    {
+      "file": "country_codes_V202601.csv",
+      "bytes": 5346,
+      "sha256": "c6892f28bea23d689b29b074d299cea7f5196c708b03026fbe419fa4ecb4e820"
+    },
+    {
+      "file": "product_codes_HS22_V202601.csv",
+      "bytes": 630077,
+      "sha256": "1d7dfab3d0c790e111663832b1d101d6ffafe396fb6dbed7035b7283f6614efd"
+    },
+    {
+      "file": "Readme.txt",
+      "bytes": 571,
+      "sha256": "156c8fe9d8582f24fdec5c43d912e3736dc515a6efd5cd04e513095a0db44c66"
+    },
+    {
+      "file": "API_Download_DS2_EN_csv_v2_461602.csv",
+      "bytes": 121227,
+      "sha256": "39a80d097bde080bf1d428d9e834987cc28844ac558c44fe5f36ddddc9d459af"
+    },
+    {
+      "file": "dist_cepii.xls",
+      "bytes": 8144384,
+      "sha256": "b0124c0edabbad96be8a93fbe239cdd338908b3155bf4fc8d9c00a5f1db8c339"
+    },
+    {
+      "file": "BACI_HS22_Y2022_V202601.csv",
+      "bytes": 358848697,
+      "sha256": "14fdfc77d0337226877e7dc1a4baf463b685ca151497a485d7e47229e09f1845"
+    },
+    {
+      "file": "BACI_HS22_Y2023_V202601.csv",
+      "bytes": 378631303,
+      "sha256": "33369651455b1843a6231dddc27c66e952c4ae63821596cb906c276807a225c4"
+    },
+    {
+      "file": "BACI_HS22_Y2024_V202601.csv",
+      "bytes": 366160727,
+      "sha256": "298a39428bede6eaeb9aad1cc35e5244b7f213fa76b25a6928e4c2ebd5522134"
+    }
+  ],
+  "subset_sha256": "b15533cc67c2938c6d155a111dc8fa60dce47aaeb97d4ca85a11f27275d82215",
+  "scans": [
+    {
+      "year": 2022,
+      "raw_rows_scanned": 11007862,
+      "selected_hs6_rows": 40419
+    },
+    {
+      "year": 2023,
+      "raw_rows_scanned": 11641922,
+      "selected_hs6_rows": 43948
+    },
+    {
+      "year": 2024,
+      "raw_rows_scanned": 11250411,
+      "selected_hs6_rows": 41770
+    }
+  ],
+  "network": {
+    "CAN": "Canada",
+    "CHN": "China",
+    "DEU": "Germany",
+    "JPN": "Japan",
+    "MEX": "Mexico",
+    "GBR": "United Kingdom",
+    "USA": "United States"
+  },
+  "hs_revision": "HS2022",
+  "label_vintage": "CBSA T2026-2; heading-only descriptive wording",
+  "units": "BACI v*1000 -> current USD; no currency mixing",
+  "outside_network_rule": "NOT(exporter in network AND destination in network)",
+  "available_baci_years": [
+    2022,
+    2023,
+    2024
+  ]
+}

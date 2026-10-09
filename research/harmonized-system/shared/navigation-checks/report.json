@@ -1,0 +1,683 @@
+{
+  "integrity": {
+    "seven_pages_unchanged_outside_top_navigation_and_stylesheet_link": true,
+    "unrelated_tracked_files_unchanged": 1072,
+    "calculations_datasets_and_models_unchanged": true
+  },
+  "link_statuses": [
+    {
+      "href": "harmonized-system-index.html",
+      "status": 200
+    },
+    {
+      "href": "harmonized-system-canada.html",
+      "status": 200
+    },
+    {
+      "href": "section-338-hs4-hs6-exposure-canada.html",
+      "status": 200
+    },
+    {
+      "href": "canada-and-provinces-trade-by-hs.html",
+      "status": 200
+    },
+    {
+      "href": "alberta-trade-by-hs.html",
+      "status": 200
+    },
+    {
+      "href": "machine-learning-trade-sector-prediction.html",
+      "status": 200
+    },
+    {
+      "href": "details-of-machine-learning-models.html",
+      "status": 200
+    }
+  ],
+  "browser": [
+    {
+      "status": "PASS",
+      "page": "harmonized-system-index.html",
+      "width": 1440,
+      "links": [
+        {
+          "label": "Collection Home",
+          "href": "harmonized-system-index.html",
+          "active": true
+        },
+        {
+          "label": "Page 1: HS Classification",
+          "href": "harmonized-system-canada.html",
+          "active": false
+        },
+        {
+          "label": "Page 2: Section 338 Exposure",
+          "href": "section-338-hs4-hs6-exposure-canada.html",
+          "active": false
+        },
+        {
+          "label": "Page 3: Provincial Exports",
+          "href": "canada-and-provinces-trade-by-hs.html",
+          "active": false
+        },
+        {
+          "label": "Page 4: Alberta Export Atlas",
+          "href": "alberta-trade-by-hs.html",
+          "active": false
+        },
+        {
+          "label": "Page 5: Machine Learning",
+          "href": "machine-learning-trade-sector-prediction.html",
+          "active": false
+        },
+        {
+          "label": "Page 6: Model Details",
+          "href": "details-of-machine-learning-models.html",
+          "active": false
+        }
+      ],
+      "navigationWidth": 952,
+      "contentWidth": 1241,
+      "activeBackground": "rgb(228, 236, 238)",
+      "pageWidth": 1425
+    },
+    {
+      "status": "PASS",
+      "page": "harmonized-system-canada.html",
+      "width": 1440,
+      "links": [
+        {
+          "label": "Collection Home",
+          "href": "harmonized-system-index.html",
+          "active": false
+        },
+        {
+          "label": "Page 1: HS Classification",
+          "href": "harmonized-system-canada.html",
+          "active": true
+        },
+        {
+          "label": "Page 2: Section 338 Exposure",
+          "href": "section-338-hs4-hs6-exposure-canada.html",
+          "active": false
+        },
+        {
+          "label": "Page 3: Provincial Exports",
+          "href": "canada-and-provinces-trade-by-hs.html",
+          "active": false
+        },
+        {
+          "label": "Page 4: Alberta Export Atlas",
+          "href": "alberta-trade-by-hs.html",
+          "active": false
+        },
+        {
+          "label": "Page 5: Machine Learning",
+          "href": "machine-learning-trade-sector-prediction.html",
+          "active": false
+        },
+        {
+          "label": "Page 6: Model Details",
+          "href": "details-of-machine-learning-models.html",
+          "active": false
+        }
+      ],
+      "navigationWidth": 1132,
+      "contentWidth": 1209,
+      "activeBackground": "rgb(228, 236, 238)",
+      "pageWidth": 1425
+    },
+    {
+      "status": "PASS",
+      "page": "section-338-hs4-hs6-exposure-canada.html",
+      "width": 1440,
+      "links": [
+        {
+          "label": "Collection Home",
+          "href": "harmonized-system-index.html",
+          "active": false
+        },
+        {
+          "label": "Page 1: HS Classification",
+          "href": "harmonized-system-canada.html",
+          "active": false
+        },
+        {
+          "label": "Page 2: Section 338 Exposure",
+          "href": "section-338-hs4-hs6-exposure-canada.html",
+          "active": true
+        },
+        {
+          "label": "Page 3: Provincial Exports",
+          "href": "canada-and-provinces-trade-by-hs.html",
+          "active": false
+        },
+        {
+          "label": "Page 4: Alberta Export Atlas",
+          "href": "alberta-trade-by-hs.html",
+          "active": false
+        },
+        {
+          "label": "Page 5: Machine Learning",
+          "href": "machine-learning-trade-sector-prediction.html",
+          "active": false
+        },
+        {
+          "label": "Page 6: Model Details",
+          "href": "details-of-machine-learning-models.html",
+          "active": false
+        }
+      ],
+      "navigationWidth": 1160,
+      "contentWidth": 1210,
+      "activeBackground": "rgb(228, 236, 238)",
+      "pageWidth": 1425
+    },
+    {
+      "status": "PASS",
+      "page": "canada-and-provinces-trade-by-hs.html",
+      "width": 1440,
+      "links": [
+        {
+          "label": "Collection Home",
+          "href": "harmonized-system-index.html",
+          "active": false
+        },
+        {
+          "label": "Page 1: HS Classification",
+          "href": "harmonized-system-canada.html",
+          "active": false
+        },
+        {
+          "label": "Page 2: Section 338 Exposure",
+          "href": "section-338-hs4-hs6-exposure-canada.html",
+          "active": false
+        },
+        {
+          "label": "Page 3: Provincial Exports",
+          "href": "canada-and-provinces-trade-by-hs.html",
+          "active": true
+        },
+        {
+          "label": "Page 4: Alberta Export Atlas",
+          "href": "alberta-trade-by-hs.html",
+          "active": false
+        },
+        {
+          "label": "Page 5: Machine Learning",
+          "href": "machine-learning-trade-sector-prediction.html",
+          "active": false
+        },
+        {
+          "label": "Page 6: Model Details",
+          "href": "details-of-machine-learning-models.html",
+          "active": false
+        }
+      ],
+      "navigationWidth": 1160,
+      "contentWidth": 1211,
+      "activeBackground": "rgb(228, 236, 238)",
+      "pageWidth": 1425
+    },
+    {
+      "status": "PASS",
+      "page": "alberta-trade-by-hs.html",
+      "width": 1440,
+      "links": [
+        {
+          "label": "Collection Home",
+          "href": "harmonized-system-index.html",
+          "active": false
+        },
+        {
+          "label": "Page 1: HS Classification",
+          "href": "harmonized-system-canada.html",
+          "active": false
+        },
+        {
+          "label": "Page 2: Section 338 Exposure",
+          "href": "section-338-hs4-hs6-exposure-canada.html",
+          "active": false
+        },
+        {
+          "label": "Page 3: Provincial Exports",
+          "href": "canada-and-provinces-trade-by-hs.html",
+          "active": false
+        },
+        {
+          "label": "Page 4: Alberta Export Atlas",
+          "href": "alberta-trade-by-hs.html",
+          "active": true
+        },
+        {
+          "label": "Page 5: Machine Learning",
+          "href": "machine-learning-trade-sector-prediction.html",
+          "active": false
+        },
+        {
+          "label": "Page 6: Model Details",
+          "href": "details-of-machine-learning-models.html",
+          "active": false
+        }
+      ],
+      "navigationWidth": 1220,
+      "contentWidth": 1220,
+      "activeBackground": "rgb(228, 236, 238)",
+      "pageWidth": 1440
+    },
+    {
+      "status": "PASS",
+      "page": "machine-learning-trade-sector-prediction.html",
+      "width": 1440,
+      "links": [
+        {
+          "label": "Collection Home",
+          "href": "harmonized-system-index.html",
+          "active": false
+        },
+        {
+          "label": "Page 1: HS Classification",
+          "href": "harmonized-system-canada.html",
+          "active": false
+        },
+        {
+          "label": "Page 2: Section 338 Exposure",
+          "href": "section-338-hs4-hs6-exposure-canada.html",
+          "active": false
+        },
+        {
+          "label": "Page 3: Provincial Exports",
+          "href": "canada-and-provinces-trade-by-hs.html",
+          "active": false
+        },
+        {
+          "label": "Page 4: Alberta Export Atlas",
+          "href": "alberta-trade-by-hs.html",
+          "active": false
+        },
+        {
+          "label": "Page 5: Machine Learning",
+          "href": "machine-learning-trade-sector-prediction.html",
+          "active": true
+        },
+        {
+          "label": "Page 6: Model Details",
+          "href": "details-of-machine-learning-models.html",
+          "active": false
+        }
+      ],
+      "navigationWidth": 1152,
+      "contentWidth": 1208,
+      "activeBackground": "rgb(228, 236, 238)",
+      "pageWidth": 1425
+    },
+    {
+      "status": "PASS",
+      "page": "details-of-machine-learning-models.html",
+      "width": 1440,
+      "links": [
+        {
+          "label": "Collection Home",
+          "href": "harmonized-system-index.html",
+          "active": false
+        },
+        {
+          "label": "Page 1: HS Classification",
+          "href": "harmonized-system-canada.html",
+          "active": false
+        },
+        {
+          "label": "Page 2: Section 338 Exposure",
+          "href": "section-338-hs4-hs6-exposure-canada.html",
+          "active": false
+        },
+        {
+          "label": "Page 3: Provincial Exports",
+          "href": "canada-and-provinces-trade-by-hs.html",
+          "active": false
+        },
+        {
+          "label": "Page 4: Alberta Export Atlas",
+          "href": "alberta-trade-by-hs.html",
+          "active": false
+        },
+        {
+          "label": "Page 5: Machine Learning",
+          "href": "machine-learning-trade-sector-prediction.html",
+          "active": false
+        },
+        {
+          "label": "Page 6: Model Details",
+          "href": "details-of-machine-learning-models.html",
+          "active": true
+        }
+      ],
+      "navigationWidth": 1304,
+      "contentWidth": 1304,
+      "activeBackground": "rgb(228, 236, 238)",
+      "pageWidth": 1425
+    },
+    {
+      "status": "PASS",
+      "page": "harmonized-system-index.html",
+      "width": 390,
+      "links": [
+        {
+          "label": "Collection Home",
+          "href": "harmonized-system-index.html",
+          "active": true
+        },
+        {
+          "label": "Page 1: HS Classification",
+          "href": "harmonized-system-canada.html",
+          "active": false
+        },
+        {
+          "label": "Page 2: Section 338 Exposure",
+          "href": "section-338-hs4-hs6-exposure-canada.html",
+          "active": false
+        },
+        {
+          "label": "Page 3: Provincial Exports",
+          "href": "canada-and-provinces-trade-by-hs.html",
+          "active": false
+        },
+        {
+          "label": "Page 4: Alberta Export Atlas",
+          "href": "alberta-trade-by-hs.html",
+          "active": false
+        },
+        {
+          "label": "Page 5: Machine Learning",
+          "href": "machine-learning-trade-sector-prediction.html",
+          "active": false
+        },
+        {
+          "label": "Page 6: Model Details",
+          "href": "details-of-machine-learning-models.html",
+          "active": false
+        }
+      ],
+      "navigationWidth": 343,
+      "contentWidth": 1293,
+      "activeBackground": "rgb(228, 236, 238)",
+      "pageWidth": 375
+    },
+    {
+      "status": "PASS",
+      "page": "harmonized-system-canada.html",
+      "width": 390,
+      "links": [
+        {
+          "label": "Collection Home",
+          "href": "harmonized-system-index.html",
+          "active": false
+        },
+        {
+          "label": "Page 1: HS Classification",
+          "href": "harmonized-system-canada.html",
+          "active": true
+        },
+        {
+          "label": "Page 2: Section 338 Exposure",
+          "href": "section-338-hs4-hs6-exposure-canada.html",
+          "active": false
+        },
+        {
+          "label": "Page 3: Provincial Exports",
+          "href": "canada-and-provinces-trade-by-hs.html",
+          "active": false
+        },
+        {
+          "label": "Page 4: Alberta Export Atlas",
+          "href": "alberta-trade-by-hs.html",
+          "active": false
+        },
+        {
+          "label": "Page 5: Machine Learning",
+          "href": "machine-learning-trade-sector-prediction.html",
+          "active": false
+        },
+        {
+          "label": "Page 6: Model Details",
+          "href": "details-of-machine-learning-models.html",
+          "active": false
+        }
+      ],
+      "navigationWidth": 351,
+      "contentWidth": 1209,
+      "activeBackground": "rgb(228, 236, 238)",
+      "pageWidth": 375
+    },
+    {
+      "status": "PASS",
+      "page": "section-338-hs4-hs6-exposure-canada.html",
+      "width": 390,
+      "links": [
+        {
+          "label": "Collection Home",
+          "href": "harmonized-system-index.html",
+          "active": false
+        },
+        {
+          "label": "Page 1: HS Classification",
+          "href": "harmonized-system-canada.html",
+          "active": false
+        },
+        {
+          "label": "Page 2: Section 338 Exposure",
+          "href": "section-338-hs4-hs6-exposure-canada.html",
+          "active": true
+        },
+        {
+          "label": "Page 3: Provincial Exports",
+          "href": "canada-and-provinces-trade-by-hs.html",
+          "active": false
+        },
+        {
+          "label": "Page 4: Alberta Export Atlas",
+          "href": "alberta-trade-by-hs.html",
+          "active": false
+        },
+        {
+          "label": "Page 5: Machine Learning",
+          "href": "machine-learning-trade-sector-prediction.html",
+          "active": false
+        },
+        {
+          "label": "Page 6: Model Details",
+          "href": "details-of-machine-learning-models.html",
+          "active": false
+        }
+      ],
+      "navigationWidth": 343,
+      "contentWidth": 1210,
+      "activeBackground": "rgb(228, 236, 238)",
+      "pageWidth": 375
+    },
+    {
+      "status": "PASS",
+      "page": "canada-and-provinces-trade-by-hs.html",
+      "width": 390,
+      "links": [
+        {
+          "label": "Collection Home",
+          "href": "harmonized-system-index.html",
+          "active": false
+        },
+        {
+          "label": "Page 1: HS Classification",
+          "href": "harmonized-system-canada.html",
+          "active": false
+        },
+        {
+          "label": "Page 2: Section 338 Exposure",
+          "href": "section-338-hs4-hs6-exposure-canada.html",
+          "active": false
+        },
+        {
+          "label": "Page 3: Provincial Exports",
+          "href": "canada-and-provinces-trade-by-hs.html",
+          "active": true
+        },
+        {
+          "label": "Page 4: Alberta Export Atlas",
+          "href": "alberta-trade-by-hs.html",
+          "active": false
+        },
+        {
+          "label": "Page 5: Machine Learning",
+          "href": "machine-learning-trade-sector-prediction.html",
+          "active": false
+        },
+        {
+          "label": "Page 6: Model Details",
+          "href": "details-of-machine-learning-models.html",
+          "active": false
+        }
+      ],
+      "navigationWidth": 343,
+      "contentWidth": 1211,
+      "activeBackground": "rgb(228, 236, 238)",
+      "pageWidth": 375
+    },
+    {
+      "status": "PASS",
+      "page": "alberta-trade-by-hs.html",
+      "width": 390,
+      "links": [
+        {
+          "label": "Collection Home",
+          "href": "harmonized-system-index.html",
+          "active": false
+        },
+        {
+          "label": "Page 1: HS Classification",
+          "href": "harmonized-system-canada.html",
+          "active": false
+        },
+        {
+          "label": "Page 2: Section 338 Exposure",
+          "href": "section-338-hs4-hs6-exposure-canada.html",
+          "active": false
+        },
+        {
+          "label": "Page 3: Provincial Exports",
+          "href": "canada-and-provinces-trade-by-hs.html",
+          "active": false
+        },
+        {
+          "label": "Page 4: Alberta Export Atlas",
+          "href": "alberta-trade-by-hs.html",
+          "active": true
+        },
+        {
+          "label": "Page 5: Machine Learning",
+          "href": "machine-learning-trade-sector-prediction.html",
+          "active": false
+        },
+        {
+          "label": "Page 6: Model Details",
+          "href": "details-of-machine-learning-models.html",
+          "active": false
+        }
+      ],
+      "navigationWidth": 362,
+      "contentWidth": 1212,
+      "activeBackground": "rgb(228, 236, 238)",
+      "pageWidth": 390
+    },
+    {
+      "status": "PASS",
+      "page": "machine-learning-trade-sector-prediction.html",
+      "width": 390,
+      "links": [
+        {
+          "label": "Collection Home",
+          "href": "harmonized-system-index.html",
+          "active": false
+        },
+        {
+          "label": "Page 1: HS Classification",
+          "href": "harmonized-system-canada.html",
+          "active": false
+        },
+        {
+          "label": "Page 2: Section 338 Exposure",
+          "href": "section-338-hs4-hs6-exposure-canada.html",
+          "active": false
+        },
+        {
+          "label": "Page 3: Provincial Exports",
+          "href": "canada-and-provinces-trade-by-hs.html",
+          "active": false
+        },
+        {
+          "label": "Page 4: Alberta Export Atlas",
+          "href": "alberta-trade-by-hs.html",
+          "active": false
+        },
+        {
+          "label": "Page 5: Machine Learning",
+          "href": "machine-learning-trade-sector-prediction.html",
+          "active": true
+        },
+        {
+          "label": "Page 6: Model Details",
+          "href": "details-of-machine-learning-models.html",
+          "active": false
+        }
+      ],
+      "navigationWidth": 347,
+      "contentWidth": 1208,
+      "activeBackground": "rgb(228, 236, 238)",
+      "pageWidth": 375
+    },
+    {
+      "status": "PASS",
+      "page": "details-of-machine-learning-models.html",
+      "width": 390,
+      "links": [
+        {
+          "label": "Collection Home",
+          "href": "harmonized-system-index.html",
+          "active": false
+        },
+        {
+          "label": "Page 1: HS Classification",
+          "href": "harmonized-system-canada.html",
+          "active": false
+        },
+        {
+          "label": "Page 2: Section 338 Exposure",
+          "href": "section-338-hs4-hs6-exposure-canada.html",
+          "active": false
+        },
+        {
+          "label": "Page 3: Provincial Exports",
+          "href": "canada-and-provinces-trade-by-hs.html",
+          "active": false
+        },
+        {
+          "label": "Page 4: Alberta Export Atlas",
+          "href": "alberta-trade-by-hs.html",
+          "active": false
+        },
+        {
+          "label": "Page 5: Machine Learning",
+          "href": "machine-learning-trade-sector-prediction.html",
+          "active": false
+        },
+        {
+          "label": "Page 6: Model Details",
+          "href": "details-of-machine-learning-models.html",
+          "active": true
+        }
+      ],
+      "navigationWidth": 351,
+      "contentWidth": 1207,
+      "activeBackground": "rgb(228, 236, 238)",
+      "pageWidth": 375
+    }
+  ]
+}

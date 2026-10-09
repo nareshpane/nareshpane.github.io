@@ -1,0 +1,52 @@
+{
+  "rows": [
+    {
+      "observation_id": 1,
+      "log_exporter_gdp": 28.419734254963355,
+      "log_destination_gdp": 30.538837877796663,
+      "log_exporter_population": 17.477792719235495,
+      "log_destination_population": 21.068396906014875,
+      "log_distance": 9.252288132583939,
+      "contiguity": 0,
+      "HS2": "10"
+    },
+    {
+      "observation_id": 2,
+      "log_exporter_gdp": 28.419734254963355,
+      "log_destination_gdp": 30.538837877796663,
+      "log_exporter_population": 17.477792719235495,
+      "log_destination_population": 21.068396906014875,
+      "log_distance": 9.252288132583939,
+      "contiguity": 0,
+      "HS2": "87"
+    },
+    {
+      "observation_id": 3,
+      "log_exporter_gdp": 28.419734254963355,
+      "log_destination_gdp": 29.066348875081406,
+      "log_exporter_population": 17.477792719235495,
+      "log_destination_population": 18.236491199555413,
+      "log_distance": 8.785954489625112,
+      "contiguity": 0,
+      "HS2": "10"
+    },
+    {
+      "observation_id": 4,
+      "log_exporter_gdp": 28.419734254963355,
+      "log_destination_gdp": 29.066348875081406,
+      "log_exporter_population": 17.477792719235495,
+      "log_destination_population": 18.236491199555413,
+      "log_distance": 8.785954489625112,
+      "contiguity": 0,
+      "HS2": "87"
+    }
+  ],
+  "static_dimension": [
+    252,
+    16
+  ],
+  "dynamic_dimension_with_intercept": [
+    168,
+    17
+  ]
+}

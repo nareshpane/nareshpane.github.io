@@ -1,0 +1,5151 @@
+[
+  {
+    "status": "PASS",
+    "viewport": 390,
+    "documentWidth": 375,
+    "models": 6,
+    "datasetRows": 336,
+    "predictionRowsEach": 168,
+    "mathExpressions": 133,
+    "mathErrors": 0,
+    "images": 32,
+    "consoleErrors": [],
+    "measurements": {
+      "decimalCandidates": [],
+      "mathCandidates": [],
+      "tooltips": [],
+      "tables": [
+        {
+          "caption": "All 336 rows \u00b7 money in current USD \u00b7 N/A is unavailable, never silently zero",
+          "width": 300,
+          "tableWidth": 5155.625,
+          "parentWidth": 349,
+          "classes": "table-scroll dataset",
+          "columns": [
+            {
+              "text": "1",
+              "width": 113,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2022",
+              "width": 47,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "Canada",
+              "width": 115,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "China",
+              "width": 115,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "1001",
+              "width": 47,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "Wheat and meslin.",
+              "width": 358,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "1,603,329,352",
+              "width": 171,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "N/A",
+              "width": 178,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2,200,562,785,046",
+              "width": 145,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "18,316,765,021,690",
+              "width": 163,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "38,950,132",
+              "width": 209,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "1,412,175,000",
+              "width": 227,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "10,428",
+              "width": 105,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "0",
+              "width": 220,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "0",
+              "width": 157,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "9.3%",
+              "width": 196,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "26.0%",
+              "width": 214,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "94.0%",
+              "width": 153,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "75.6%",
+              "width": 171,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "5,152,604,570",
+              "width": 185,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2,704,766,362",
+              "width": 195,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "70,937,372,946",
+              "width": 238,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2022",
+              "width": 83,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "observed",
+              "width": 117,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "observed_baci_reconciled",
+              "width": 177,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "observed",
+              "width": 278,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "BACI HS2022 V202601 Y2022; WDI 2026-07-13; CEPII GeoDist; CBSA T2026-2",
+              "width": 278,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "none",
+              "width": 278,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "CAN",
+              "width": 103,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "CHN",
+              "width": 121,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Two different trade sectors",
+          "width": 315,
+          "tableWidth": 315,
+          "parentWidth": 349,
+          "classes": "table-scroll text-table text-table",
+          "columns": [
+            {
+              "text": "1001",
+              "width": 47,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "Wheat and meslin.",
+              "width": 181,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "45 grid zeros over 2022\u20132024",
+              "width": 87,
+              "whiteSpace": "normal"
+            }
+          ]
+        },
+        {
+          "caption": "Exact source feature family",
+          "width": 300,
+          "tableWidth": 367.484375,
+          "parentWidth": 349,
+          "classes": "table-scroll text-table text-table",
+          "columns": [
+            {
+              "text": "Economic size",
+              "width": 89,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "log exporter GDP; log destination GDP",
+              "width": 150,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "World Bank, GDP in USD",
+              "width": 129,
+              "whiteSpace": "normal"
+            }
+          ]
+        },
+        {
+          "caption": "Example of Transformation: Observation 263's Complete Transformed Feature Vector",
+          "width": 300,
+          "tableWidth": 595.390625,
+          "parentWidth": 349,
+          "classes": "table-scroll numerical-table compact rounded-exact",
+          "columns": [
+            {
+              "text": "log_exporter_gdp",
+              "width": 179,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "28.5",
+              "width": 174,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "-0.9",
+              "width": 242,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Four real rows: a portion of the matrix before scaling",
+          "width": 315,
+          "tableWidth": 860.921875,
+          "parentWidth": 349,
+          "classes": "table-scroll numerical-table compact rounded-exact",
+          "columns": [
+            {
+              "text": "1",
+              "width": 32,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "28.4",
+              "width": 128,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "30.5",
+              "width": 145,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "17.5",
+              "width": 170,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "21.1",
+              "width": 187,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "9.3",
+              "width": 94,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "0",
+              "width": 61,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "10",
+              "width": 44,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Time-aware counts; no 2025 tuning",
+          "width": 300,
+          "tableWidth": 300,
+          "parentWidth": 349,
+          "classes": "table-scroll text-table text-table",
+          "columns": [
+            {
+              "text": "Observed development",
+              "width": 100,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "2022\u20132024 BACI outcomes",
+              "width": 98,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "252 / IDs 1\u2013252",
+              "width": 102,
+              "whiteSpace": "normal"
+            }
+          ]
+        },
+        {
+          "caption": "Notation for prediction errors",
+          "width": 300,
+          "tableWidth": 300,
+          "parentWidth": 349,
+          "classes": "table-scroll text-table text-table",
+          "columns": [
+            {
+              "text": "Vi",
+              "width": 128,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "Actual trade target in USD for evaluated observation i, with disclosed",
+              "width": 172,
+              "whiteSpace": "normal"
+            }
+          ]
+        },
+        {
+          "caption": "Two actual validation cells: single-stage gradient boosting",
+          "width": 315,
+          "tableWidth": 650.421875,
+          "parentWidth": 349,
+          "classes": "table-scroll numerical-table prediction-table",
+          "columns": [
+            {
+              "text": "181",
+              "width": 113,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "China \u2192 Canada",
+              "width": 135,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "1001",
+              "width": 47,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "0.0",
+              "width": 99,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "105.8",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "105.8",
+              "width": 137,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Model-specific notation",
+          "width": 298,
+          "tableWidth": 298,
+          "parentWidth": 347,
+          "classes": "table-scroll text-table text-table",
+          "columns": [
+            {
+              "text": "V_it",
+              "width": 84,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "Observed scalar trade in dollars",
+              "width": 108,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "Cell i at origin year t",
+              "width": 106,
+              "whiteSpace": "normal"
+            }
+          ]
+        },
+        {
+          "caption": "Every term in the fitted linear predictor",
+          "width": 298,
+          "tableWidth": 585.484375,
+          "parentWidth": 347,
+          "classes": "table-scroll mathematical-table compact",
+          "columns": [
+            {
+              "text": "log_exporter_gdp",
+              "width": 179,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "-0.9",
+              "width": 198,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "0.3",
+              "width": 106,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "-0.2",
+              "width": 103,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "84 observed validation predictions + 84 unobserved 2025 predictions",
+          "width": 298,
+          "tableWidth": 1377.984375,
+          "parentWidth": 347,
+          "classes": "table-scroll prediction-table numerical-table",
+          "columns": [
+            {
+              "text": "169",
+              "width": 113,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2024",
+              "width": 47,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "Canada",
+              "width": 115,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "China",
+              "width": 115,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "1001",
+              "width": 47,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "573,720,099.0",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2,095,260,649.0",
+              "width": 124,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "1,521,540,550.0",
+              "width": 124,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "1,521,540,550.0",
+              "width": 150,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "265.2%",
+              "width": 112,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "N/A",
+              "width": 163,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "N/A",
+              "width": 148,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Three observed cells for arithmetic",
+          "width": 313,
+          "tableWidth": 537.53125,
+          "parentWidth": 347,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "169",
+              "width": 40,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "573,720,099.0",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2,095,260,649.0",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "1,521,540,550.0",
+              "width": 109,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "1,521,540,550.0",
+              "width": 150,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Small rank-correlation calculation",
+          "width": 313,
+          "tableWidth": 609.5625,
+          "parentWidth": 347,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "China",
+              "width": 91,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "935,254,253.0",
+              "width": 149,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "8,617,247,765.7",
+              "width": 149,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2.0",
+              "width": 110,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2.0",
+              "width": 110,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Keep the four evaluation activities separate",
+          "width": 298,
+          "tableWidth": 1002.71875,
+          "parentWidth": 347,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "N",
+              "width": 186,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "count",
+              "width": 63,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "168",
+              "width": 191,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "84",
+              "width": 208,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "0",
+              "width": 165,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "84",
+              "width": 191,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Largest observed validation errors",
+          "width": 313,
+          "tableWidth": 647.8125,
+          "parentWidth": 347,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "196",
+              "width": 40,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "Germany \u2192 China",
+              "width": 168,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "8703",
+              "width": 47,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "11,304,788,932.0",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "348,236,884,204.0",
+              "width": 124,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "336,932,095,272.0",
+              "width": 150,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Model-specific notation",
+          "width": 298,
+          "tableWidth": 306.03125,
+          "parentWidth": 347,
+          "classes": "table-scroll text-table text-table",
+          "columns": [
+            {
+              "text": "y_i",
+              "width": 65,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "Observed scalar log1p trade",
+              "width": 113,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "Contemporaneous target at fit year",
+              "width": 128,
+              "whiteSpace": "normal"
+            }
+          ]
+        },
+        {
+          "caption": "Every term in the fitted linear predictor",
+          "width": 298,
+          "tableWidth": 585.484375,
+          "parentWidth": 347,
+          "classes": "table-scroll mathematical-table compact",
+          "columns": [
+            {
+              "text": "log_exporter_gdp",
+              "width": 179,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "-0.9",
+              "width": 198,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "1.3",
+              "width": 106,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "-1.1",
+              "width": 103,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "84 observed validation predictions + 84 unobserved 2025 predictions",
+          "width": 298,
+          "tableWidth": 1371.265625,
+          "parentWidth": 347,
+          "classes": "table-scroll prediction-table numerical-table",
+          "columns": [
+            {
+              "text": "169",
+              "width": 113,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2024",
+              "width": 47,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "Canada",
+              "width": 115,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "China",
+              "width": 115,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "1001",
+              "width": 47,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "573,720,099.0",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "396,052.5",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "-573,324,046.5",
+              "width": 122,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "573,324,046.5",
+              "width": 150,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "-99.9%",
+              "width": 112,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "N/A",
+              "width": 163,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "N/A",
+              "width": 148,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Three observed cells for arithmetic",
+          "width": 313,
+          "tableWidth": 532.75,
+          "parentWidth": 347,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "169",
+              "width": 40,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "573,720,099.0",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "396,052.5",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "-573,324,046.5",
+              "width": 105,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "573,324,046.5",
+              "width": 150,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Small rank-correlation calculation",
+          "width": 313,
+          "tableWidth": 609.5625,
+          "parentWidth": 347,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "China",
+              "width": 91,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "935,254,253.0",
+              "width": 149,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "67,127,797.5",
+              "width": 149,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2.0",
+              "width": 110,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2.0",
+              "width": 110,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Keep the four evaluation activities separate",
+          "width": 298,
+          "tableWidth": 992.5625,
+          "parentWidth": 347,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "N",
+              "width": 186,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "count",
+              "width": 63,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "252",
+              "width": 191,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "84",
+              "width": 198,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "0",
+              "width": 165,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "84",
+              "width": 191,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Largest observed validation errors",
+          "width": 313,
+          "tableWidth": 662.78125,
+          "parentWidth": 347,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "242",
+              "width": 40,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "United States \u2192 Canada",
+              "width": 188,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "8703",
+              "width": 47,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "15,597,579,400.0",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "68,088,862,338.4",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "52,491,282,938.4",
+              "width": 150,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Model-specific notation",
+          "width": 298,
+          "tableWidth": 298,
+          "parentWidth": 347,
+          "classes": "table-scroll text-table text-table",
+          "columns": [
+            {
+              "text": "R",
+              "width": 67,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "Set of row indices in one tree node",
+              "width": 123,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "Bootstrap sample, multiplicities retained",
+              "width": 108,
+              "whiteSpace": "normal"
+            }
+          ]
+        },
+        {
+          "caption": "Exact first-tree decision path",
+          "width": 313,
+          "tableWidth": 606.125,
+          "parentWidth": 347,
+          "classes": "table-scroll mathematical-table compact",
+          "columns": [
+            {
+              "text": "0",
+              "width": 52,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "numeric__log_external_supply",
+              "width": 238,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "0.33",
+              "width": 81,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "-0.02",
+              "width": 132,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "right >",
+              "width": 102,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "All 120 tree outputs",
+          "width": 155,
+          "tableWidth": 154.71875,
+          "parentWidth": 347,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "1",
+              "width": 45,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "19.5",
+              "width": 110,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "84 observed validation predictions + 84 unobserved 2025 predictions",
+          "width": 298,
+          "tableWidth": 1371.265625,
+          "parentWidth": 347,
+          "classes": "table-scroll prediction-table numerical-table",
+          "columns": [
+            {
+              "text": "169",
+              "width": 113,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2024",
+              "width": 47,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "Canada",
+              "width": 115,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "China",
+              "width": 115,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "1001",
+              "width": 47,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "573,720,099.0",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "332,567,119.8",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "-241,152,979.2",
+              "width": 122,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "241,152,979.2",
+              "width": 150,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "-42.0%",
+              "width": 112,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "N/A",
+              "width": 163,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "N/A",
+              "width": 148,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Three observed cells for arithmetic",
+          "width": 313,
+          "tableWidth": 532.75,
+          "parentWidth": 347,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "169",
+              "width": 40,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "573,720,099.0",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "332,567,119.8",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "-241,152,979.2",
+              "width": 105,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "241,152,979.2",
+              "width": 150,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Small rank-correlation calculation",
+          "width": 313,
+          "tableWidth": 609.5625,
+          "parentWidth": 347,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "China",
+              "width": 91,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "935,254,253.0",
+              "width": 149,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "523,218,265.3",
+              "width": 149,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2.0",
+              "width": 110,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2.0",
+              "width": 110,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Keep the four evaluation activities separate",
+          "width": 298,
+          "tableWidth": 985.3125,
+          "parentWidth": 347,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "N",
+              "width": 186,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "count",
+              "width": 63,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "252",
+              "width": 191,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "84",
+              "width": 191,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "0",
+              "width": 165,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "84",
+              "width": 191,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Largest observed validation errors",
+          "width": 313,
+          "tableWidth": 635.140625,
+          "parentWidth": 347,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "228",
+              "width": 40,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "Mexico \u2192 United States",
+              "width": 160,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "8703",
+              "width": 47,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "49,637,259,600.0",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "18,110,409,560.6",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "31,526,850,039.4",
+              "width": 150,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Model-specific notation",
+          "width": 298,
+          "tableWidth": 298,
+          "parentWidth": 347,
+          "classes": "table-scroll text-table text-table",
+          "columns": [
+            {
+              "text": "z",
+              "width": 67,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "16-dimensional standardized input vector",
+              "width": 128,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "14 numeric features and two HS2 indicators",
+              "width": 103,
+              "whiteSpace": "normal"
+            }
+          ]
+        },
+        {
+          "caption": "Compute the first hidden neuron",
+          "width": 298,
+          "tableWidth": 527.28125,
+          "parentWidth": 347,
+          "classes": "table-scroll mathematical-table compact",
+          "columns": [
+            {
+              "text": "numeric__log_exporter_gdp",
+              "width": 238,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "-0.9",
+              "width": 52,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "-1.0",
+              "width": 169,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "0.8",
+              "width": 68,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "All hidden units and the final output",
+          "width": 298,
+          "tableWidth": 437.953125,
+          "parentWidth": 347,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "1",
+              "width": 52,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "1",
+              "width": 45,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "0.7",
+              "width": 44,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "-1.3",
+              "width": 152,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "-0.9",
+              "width": 63,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "tanh",
+              "width": 83,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "84 observed validation predictions + 84 unobserved 2025 predictions",
+          "width": 298,
+          "tableWidth": 1371.265625,
+          "parentWidth": 347,
+          "classes": "table-scroll prediction-table numerical-table",
+          "columns": [
+            {
+              "text": "169",
+              "width": 113,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2024",
+              "width": 47,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "Canada",
+              "width": 115,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "China",
+              "width": 115,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "1001",
+              "width": 47,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "573,720,099.0",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2,125,959,708.6",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "1,552,239,609.6",
+              "width": 122,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "1,552,239,609.6",
+              "width": 150,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "270.6%",
+              "width": 112,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "N/A",
+              "width": 163,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "N/A",
+              "width": 148,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Three observed cells for arithmetic",
+          "width": 313,
+          "tableWidth": 537.53125,
+          "parentWidth": 347,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "169",
+              "width": 40,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "573,720,099.0",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2,125,959,708.6",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "1,552,239,609.6",
+              "width": 109,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "1,552,239,609.6",
+              "width": 150,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Small rank-correlation calculation",
+          "width": 313,
+          "tableWidth": 609.5625,
+          "parentWidth": 347,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "China",
+              "width": 91,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "935,254,253.0",
+              "width": 149,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "8,155,225,175.4",
+              "width": 149,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2.0",
+              "width": 110,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2.0",
+              "width": 110,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Keep the four evaluation activities separate",
+          "width": 298,
+          "tableWidth": 985.3125,
+          "parentWidth": 347,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "N",
+              "width": 186,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "count",
+              "width": 63,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "252",
+              "width": 191,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "84",
+              "width": 191,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "0",
+              "width": 165,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "84",
+              "width": 191,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Largest observed validation errors",
+          "width": 313,
+          "tableWidth": 635.140625,
+          "parentWidth": 347,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "228",
+              "width": 40,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "Mexico \u2192 United States",
+              "width": 160,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "8703",
+              "width": 47,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "49,637,259,600.0",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "6,042,582,668.5",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "43,594,676,931.5",
+              "width": 150,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Model-specific notation",
+          "width": 298,
+          "tableWidth": 298,
+          "parentWidth": 347,
+          "classes": "table-scroll text-table text-table",
+          "columns": [
+            {
+              "text": "F_m(z)",
+              "width": 67,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "Learned scalar additive log prediction",
+              "width": 128,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "After m correction trees",
+              "width": 104,
+              "whiteSpace": "normal"
+            }
+          ]
+        },
+        {
+          "caption": "All 150 fitted updates; the first five show the mechanism",
+          "width": 298,
+          "tableWidth": 446.515625,
+          "parentWidth": 347,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "0",
+              "width": 73,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "15.1",
+              "width": 182,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "Initial mean log1p target",
+              "width": 192,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "84 observed validation predictions + 84 unobserved 2025 predictions",
+          "width": 298,
+          "tableWidth": 1376.125,
+          "parentWidth": 347,
+          "classes": "table-scroll prediction-table numerical-table",
+          "columns": [
+            {
+              "text": "169",
+              "width": 113,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2024",
+              "width": 47,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "Canada",
+              "width": 115,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "China",
+              "width": 115,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "1001",
+              "width": 47,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "573,720,099.0",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2,184,400,024.4",
+              "width": 124,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "1,610,679,925.4",
+              "width": 122,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "1,610,679,925.4",
+              "width": 150,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "280.7%",
+              "width": 112,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "N/A",
+              "width": 163,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "N/A",
+              "width": 148,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Three observed cells for arithmetic",
+          "width": 313,
+          "tableWidth": 537.53125,
+          "parentWidth": 347,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "169",
+              "width": 40,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "573,720,099.0",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2,184,400,024.4",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "1,610,679,925.4",
+              "width": 109,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "1,610,679,925.4",
+              "width": 150,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Small rank-correlation calculation",
+          "width": 313,
+          "tableWidth": 609.5625,
+          "parentWidth": 347,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "China",
+              "width": 91,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "935,254,253.0",
+              "width": 149,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2,459,564,097.6",
+              "width": 149,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2.0",
+              "width": 110,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2.0",
+              "width": 110,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Keep the four evaluation activities separate",
+          "width": 298,
+          "tableWidth": 985.3125,
+          "parentWidth": 347,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "N",
+              "width": 186,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "count",
+              "width": 63,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "252",
+              "width": 191,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "84",
+              "width": 191,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "0",
+              "width": 165,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "84",
+              "width": 191,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Largest observed validation errors",
+          "width": 313,
+          "tableWidth": 635.140625,
+          "parentWidth": 347,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "228",
+              "width": 40,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "Mexico \u2192 United States",
+              "width": 160,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "8703",
+              "width": 47,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "49,637,259,600.0",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "76,041,911,018.6",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "26,404,651,418.6",
+              "width": 150,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Model-specific notation",
+          "width": 298,
+          "tableWidth": 298,
+          "parentWidth": 347,
+          "classes": "table-scroll text-table text-table",
+          "columns": [
+            {
+              "text": "d_i = 1{V_i>0}",
+              "width": 77,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "Observed binary scalar",
+              "width": 115,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "All 84 cells classify, including zeros",
+              "width": 106,
+              "whiteSpace": "normal"
+            }
+          ]
+        },
+        {
+          "caption": "Both structural boosting stages: every fitted iteration",
+          "width": 298,
+          "tableWidth": 427.46875,
+          "parentWidth": 347,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "1",
+              "width": 73,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "0.8",
+              "width": 148,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "17.9",
+              "width": 207,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "84 observed validation predictions + 84 unobserved 2025 predictions",
+          "width": 298,
+          "tableWidth": 1364.015625,
+          "parentWidth": 347,
+          "classes": "table-scroll prediction-table numerical-table",
+          "columns": [
+            {
+              "text": "169",
+              "width": 113,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2024",
+              "width": 47,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "Canada",
+              "width": 115,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "China",
+              "width": 115,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "1001",
+              "width": 47,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "573,720,099.0",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "794,414,371.4",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "220,694,272.4",
+              "width": 115,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "220,694,272.4",
+              "width": 150,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "38.5%",
+              "width": 112,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "N/A",
+              "width": 163,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "N/A",
+              "width": 148,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Three observed cells for arithmetic",
+          "width": 313,
+          "tableWidth": 527.375,
+          "parentWidth": 347,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "169",
+              "width": 40,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "573,720,099.0",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "794,414,371.4",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "220,694,272.4",
+              "width": 99,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "220,694,272.4",
+              "width": 150,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Small rank-correlation calculation",
+          "width": 313,
+          "tableWidth": 609.5625,
+          "parentWidth": 347,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "China",
+              "width": 91,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "935,254,253.0",
+              "width": 149,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "1,181,882,496.3",
+              "width": 149,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2.0",
+              "width": 110,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2.0",
+              "width": 110,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Keep the four evaluation activities separate",
+          "width": 298,
+          "tableWidth": 970.8125,
+          "parentWidth": 347,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "N",
+              "width": 186,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "count",
+              "width": 63,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "84",
+              "width": 191,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "84",
+              "width": 183,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "0",
+              "width": 165,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "84",
+              "width": 183,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Structural classifier diagnostics: same-year exporter OOF",
+          "width": 313,
+          "tableWidth": 517.328125,
+          "parentWidth": 347,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "2022",
+              "width": 76,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "84",
+              "width": 33,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "69",
+              "width": 82,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "0.4",
+              "width": 111,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "0.1",
+              "width": 85,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "83.3%",
+              "width": 131,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "OOF 2023 calibration check",
+          "width": 313,
+          "tableWidth": 519.78125,
+          "parentWidth": 347,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "0.0\u20130.2",
+              "width": 111,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "5",
+              "width": 33,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "0.1",
+              "width": 191,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "0.2",
+              "width": 185,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Largest observed validation errors",
+          "width": 313,
+          "tableWidth": 635.140625,
+          "parentWidth": 347,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "228",
+              "width": 40,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "Mexico \u2192 United States",
+              "width": 160,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "8703",
+              "width": 47,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "49,637,259,600.0",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "39,966,061,969.7",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "9,671,197,630.3",
+              "width": 150,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "2025 observed holdout: outcomes unavailable",
+          "width": 315,
+          "tableWidth": 1144.59375,
+          "parentWidth": 349,
+          "classes": "table-scroll text-table text-table mixed-table",
+          "columns": [
+            {
+              "text": "Dynamic linear regression",
+              "width": 288,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "168",
+              "width": 116,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "84",
+              "width": 96,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "84",
+              "width": 132,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "0",
+              "width": 127,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "N/A",
+              "width": 165,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "N/A",
+              "width": 110,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "N/A",
+              "width": 110,
+              "whiteSpace": "normal"
+            }
+          ]
+        },
+        {
+          "caption": "Observed 2024 chronological validation",
+          "width": 315,
+          "tableWidth": 1150.375,
+          "parentWidth": 349,
+          "classes": "table-scroll numerical-table ",
+          "columns": [
+            {
+              "text": "Dynamic linear regression",
+              "width": 297,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "168",
+              "width": 116,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "84",
+              "width": 96,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "84",
+              "width": 132,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "10,853,781,638.9",
+              "width": 117,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "45,823,328,334.4",
+              "width": 117,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "316.8%",
+              "width": 83,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "297.2%",
+              "width": 133,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2.0",
+              "width": 61,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "2025 illustrative scenario comparison\u2014not an observed test",
+          "width": 315,
+          "tableWidth": 1135.875,
+          "parentWidth": 349,
+          "classes": "table-scroll numerical-table ",
+          "columns": [
+            {
+              "text": "Dynamic linear regression",
+              "width": 297,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "168",
+              "width": 116,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "84",
+              "width": 96,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "84",
+              "width": 132,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "1,267,489,473.6",
+              "width": 109,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "3,233,504,673.8",
+              "width": 109,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "35.1%",
+              "width": 83,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "14.5%",
+              "width": 133,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "0.7",
+              "width": 61,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Why identical raw data can yield different predictions",
+          "width": 300,
+          "tableWidth": 300,
+          "parentWidth": 349,
+          "classes": "table-scroll text-table text-table",
+          "columns": [
+            {
+              "text": "1 \u00b7 Dynamic OLS",
+              "width": 86,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "One linear log plane plus observed trade lag",
+              "width": 102,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "Stable additive effects and persistence; unstable collinear slopes",
+              "width": 113,
+              "whiteSpace": "normal"
+            }
+          ]
+        },
+        {
+          "caption": "Four validation cells with largest prediction spread\u2014not selected for accuracy",
+          "width": 315,
+          "tableWidth": 1074.6875,
+          "parentWidth": 349,
+          "classes": "table-scroll numerical-table ",
+          "columns": [
+            {
+              "text": "196",
+              "width": 40,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "Germany \u2192 China",
+              "width": 168,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "8703",
+              "width": 47,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "11,304,788,932.0",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "348,236,884,204.0",
+              "width": 124,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "19,576,728,563.4",
+              "width": 117,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "14,319,122,004.9",
+              "width": 117,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "6,040,229,139.2",
+              "width": 111,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "3,824,376,859.9",
+              "width": 117,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "17,128,010,395.5",
+              "width": 117,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Observation 263: complete input record",
+          "width": 300,
+          "tableWidth": 300,
+          "parentWidth": 349,
+          "classes": "table-scroll text-table text-table compact record-table",
+          "columns": [
+            {
+              "text": "observation_id",
+              "width": 135,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "263",
+              "width": 165,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "One 2025 record through all six rules",
+          "width": 315,
+          "tableWidth": 1769.71875,
+          "parentWidth": 349,
+          "classes": "table-scroll text-table text-table mixed-table",
+          "columns": [
+            {
+              "text": "Dynamic linear regression",
+              "width": 288,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "14 economic inputs + HS2 + trade lag",
+              "width": 244,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "a + sum of standardized coefficient products; lag included",
+              "width": 270,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "408,841,839.5",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "N/A",
+              "width": 119,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "N/A",
+              "width": 159,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "N/A",
+              "width": 171,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "-242,188,383.7",
+              "width": 194,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "242,188,383.7",
+              "width": 206,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Observed Canada \u2192 United States wheat validation cell 179",
+          "width": 315,
+          "tableWidth": 891.5625,
+          "parentWidth": 349,
+          "classes": "table-scroll numerical-table ",
+          "columns": [
+            {
+              "text": "Dynamic linear regression",
+              "width": 297,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "685,179,327.0",
+              "width": 154,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "354,587,245.0",
+              "width": 154,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "-330,592,082.0",
+              "width": 137,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "330,592,082.0",
+              "width": 150,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        }
+      ],
+      "paragraphs": [
+        {
+          "model": "algorithm-01",
+          "panel": 347,
+          "paragraph": [
+            {
+              "width": 315,
+              "maxWidth": "1020px"
+            },
+            {
+              "width": 315,
+              "maxWidth": "1020px"
+            }
+          ]
+        },
+        {
+          "model": "algorithm-02",
+          "panel": 347,
+          "paragraph": [
+            {
+              "width": 315,
+              "maxWidth": "1020px"
+            },
+            {
+              "width": 315,
+              "maxWidth": "1020px"
+            }
+          ]
+        },
+        {
+          "model": "algorithm-03",
+          "panel": 347,
+          "paragraph": [
+            {
+              "width": 315,
+              "maxWidth": "1020px"
+            },
+            {
+              "width": 315,
+              "maxWidth": "1020px"
+            }
+          ]
+        },
+        {
+          "model": "algorithm-04",
+          "panel": 347,
+          "paragraph": [
+            {
+              "width": 315,
+              "maxWidth": "1020px"
+            },
+            {
+              "width": 315,
+              "maxWidth": "1020px"
+            }
+          ]
+        },
+        {
+          "model": "algorithm-05",
+          "panel": 347,
+          "paragraph": [
+            {
+              "width": 315,
+              "maxWidth": "1020px"
+            },
+            {
+              "width": 315,
+              "maxWidth": "1020px"
+            }
+          ]
+        },
+        {
+          "model": "algorithm-06",
+          "panel": 347,
+          "paragraph": [
+            {
+              "width": 315,
+              "maxWidth": "1020px"
+            },
+            {
+              "width": 315,
+              "maxWidth": "1020px"
+            }
+          ]
+        }
+      ],
+      "issues": [],
+      "wideShortCells": [],
+      "inspectedModels": [
+        "algorithm-01",
+        "algorithm-02",
+        "algorithm-03",
+        "algorithm-04",
+        "algorithm-05",
+        "algorithm-06"
+      ]
+    },
+    "checks": [
+      "combined search and all filters",
+      "clear restores all rows",
+      "six independent collapses and all-controls",
+      "prediction table year/search/clear",
+      "2025 observed N/A",
+      "sticky headers/ID",
+      "both table scroll axes",
+      "all images",
+      "local MathJax",
+      "CSV response",
+      "responsive no overflow"
+    ],
+    "view": "follow",
+    "requested_width": 390
+  },
+  {
+    "status": "PASS",
+    "viewport": 1440,
+    "documentWidth": 1425,
+    "models": 6,
+    "datasetRows": 336,
+    "predictionRowsEach": 168,
+    "mathExpressions": 133,
+    "mathErrors": 0,
+    "images": 32,
+    "consoleErrors": [],
+    "measurements": {
+      "decimalCandidates": [],
+      "mathCandidates": [],
+      "tooltips": [],
+      "tables": [
+        {
+          "caption": "All 336 rows \u00b7 money in current USD \u00b7 N/A is unavailable, never silently zero",
+          "width": 1229,
+          "tableWidth": 5155.625,
+          "parentWidth": 1302,
+          "classes": "table-scroll dataset",
+          "columns": [
+            {
+              "text": "1",
+              "width": 113,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2022",
+              "width": 47,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "Canada",
+              "width": 115,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "China",
+              "width": 115,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "1001",
+              "width": 47,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "Wheat and meslin.",
+              "width": 358,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "1,603,329,352",
+              "width": 171,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "N/A",
+              "width": 178,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2,200,562,785,046",
+              "width": 145,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "18,316,765,021,690",
+              "width": 163,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "38,950,132",
+              "width": 209,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "1,412,175,000",
+              "width": 227,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "10,428",
+              "width": 105,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "0",
+              "width": 220,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "0",
+              "width": 157,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "9.3%",
+              "width": 196,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "26.0%",
+              "width": 214,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "94.0%",
+              "width": 153,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "75.6%",
+              "width": 171,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "5,152,604,570",
+              "width": 185,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2,704,766,362",
+              "width": 195,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "70,937,372,946",
+              "width": 238,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2022",
+              "width": 83,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "observed",
+              "width": 117,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "observed_baci_reconciled",
+              "width": 177,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "observed",
+              "width": 278,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "BACI HS2022 V202601 Y2022; WDI 2026-07-13; CEPII GeoDist; CBSA T2026-2",
+              "width": 278,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "none",
+              "width": 278,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "CAN",
+              "width": 103,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "CHN",
+              "width": 121,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Two different trade sectors",
+          "width": 1078,
+          "tableWidth": 1078,
+          "parentWidth": 1302,
+          "classes": "table-scroll text-table text-table",
+          "columns": [
+            {
+              "text": "1001",
+              "width": 47,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "Wheat and meslin.",
+              "width": 846,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "45 grid zeros over 2022\u20132024",
+              "width": 185,
+              "whiteSpace": "normal"
+            }
+          ]
+        },
+        {
+          "caption": "Exact source feature family",
+          "width": 1078,
+          "tableWidth": 1078,
+          "parentWidth": 1302,
+          "classes": "table-scroll text-table text-table",
+          "columns": [
+            {
+              "text": "Economic size",
+              "width": 160,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "log exporter GDP; log destination GDP",
+              "width": 320,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "World Bank, GDP in USD",
+              "width": 598,
+              "whiteSpace": "normal"
+            }
+          ]
+        },
+        {
+          "caption": "Example of Transformation: Observation 263's Complete Transformed Feature Vector",
+          "width": 595,
+          "tableWidth": 595.390625,
+          "parentWidth": 1302,
+          "classes": "table-scroll numerical-table compact rounded-exact",
+          "columns": [
+            {
+              "text": "log_exporter_gdp",
+              "width": 179,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "28.5",
+              "width": 174,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "-0.9",
+              "width": 242,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Four real rows: a portion of the matrix before scaling",
+          "width": 861,
+          "tableWidth": 860.921875,
+          "parentWidth": 1302,
+          "classes": "table-scroll numerical-table compact rounded-exact",
+          "columns": [
+            {
+              "text": "1",
+              "width": 32,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "28.4",
+              "width": 128,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "30.5",
+              "width": 145,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "17.5",
+              "width": 170,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "21.1",
+              "width": 187,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "9.3",
+              "width": 94,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "0",
+              "width": 61,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "10",
+              "width": 44,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Time-aware counts; no 2025 tuning",
+          "width": 1078,
+          "tableWidth": 1078,
+          "parentWidth": 1302,
+          "classes": "table-scroll text-table text-table",
+          "columns": [
+            {
+              "text": "Observed development",
+              "width": 210,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "2022\u20132024 BACI outcomes",
+              "width": 450,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "252 / IDs 1\u2013252",
+              "width": 418,
+              "whiteSpace": "normal"
+            }
+          ]
+        },
+        {
+          "caption": "Notation for prediction errors",
+          "width": 1078,
+          "tableWidth": 1078,
+          "parentWidth": 1302,
+          "classes": "table-scroll text-table text-table",
+          "columns": [
+            {
+              "text": "Vi",
+              "width": 177,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "Actual trade target in USD for evaluated observation i, with disclosed",
+              "width": 901,
+              "whiteSpace": "normal"
+            }
+          ]
+        },
+        {
+          "caption": "Two actual validation cells: single-stage gradient boosting",
+          "width": 650,
+          "tableWidth": 650.421875,
+          "parentWidth": 1302,
+          "classes": "table-scroll numerical-table prediction-table",
+          "columns": [
+            {
+              "text": "181",
+              "width": 113,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "China \u2192 Canada",
+              "width": 135,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "1001",
+              "width": 47,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "0.0",
+              "width": 99,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "105.8",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "105.8",
+              "width": 137,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Model-specific notation",
+          "width": 1078,
+          "tableWidth": 1078,
+          "parentWidth": 1300,
+          "classes": "table-scroll text-table text-table",
+          "columns": [
+            {
+              "text": "V_it",
+              "width": 174,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "Observed scalar trade in dollars",
+              "width": 366,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "Cell i at origin year t",
+              "width": 538,
+              "whiteSpace": "normal"
+            }
+          ]
+        },
+        {
+          "caption": "Every term in the fitted linear predictor",
+          "width": 585,
+          "tableWidth": 585.484375,
+          "parentWidth": 1300,
+          "classes": "table-scroll mathematical-table compact",
+          "columns": [
+            {
+              "text": "log_exporter_gdp",
+              "width": 179,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "-0.9",
+              "width": 198,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "0.3",
+              "width": 106,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "-0.2",
+              "width": 103,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "84 observed validation predictions + 84 unobserved 2025 predictions",
+          "width": 1227,
+          "tableWidth": 1377.984375,
+          "parentWidth": 1300,
+          "classes": "table-scroll prediction-table numerical-table",
+          "columns": [
+            {
+              "text": "169",
+              "width": 113,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2024",
+              "width": 47,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "Canada",
+              "width": 115,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "China",
+              "width": 115,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "1001",
+              "width": 47,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "573,720,099.0",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2,095,260,649.0",
+              "width": 124,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "1,521,540,550.0",
+              "width": 124,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "1,521,540,550.0",
+              "width": 150,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "265.2%",
+              "width": 112,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "N/A",
+              "width": 163,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "N/A",
+              "width": 148,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Three observed cells for arithmetic",
+          "width": 538,
+          "tableWidth": 537.53125,
+          "parentWidth": 1300,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "169",
+              "width": 40,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "573,720,099.0",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2,095,260,649.0",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "1,521,540,550.0",
+              "width": 109,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "1,521,540,550.0",
+              "width": 150,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Small rank-correlation calculation",
+          "width": 610,
+          "tableWidth": 609.5625,
+          "parentWidth": 1300,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "China",
+              "width": 91,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "935,254,253.0",
+              "width": 149,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "8,617,247,765.7",
+              "width": 149,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2.0",
+              "width": 110,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2.0",
+              "width": 110,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Keep the four evaluation activities separate",
+          "width": 1003,
+          "tableWidth": 1002.71875,
+          "parentWidth": 1300,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "N",
+              "width": 186,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "count",
+              "width": 63,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "168",
+              "width": 191,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "84",
+              "width": 208,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "0",
+              "width": 165,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "84",
+              "width": 191,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Largest observed validation errors",
+          "width": 648,
+          "tableWidth": 647.8125,
+          "parentWidth": 1300,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "196",
+              "width": 40,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "Germany \u2192 China",
+              "width": 168,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "8703",
+              "width": 47,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "11,304,788,932.0",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "348,236,884,204.0",
+              "width": 124,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "336,932,095,272.0",
+              "width": 150,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Model-specific notation",
+          "width": 1078,
+          "tableWidth": 1078,
+          "parentWidth": 1300,
+          "classes": "table-scroll text-table text-table",
+          "columns": [
+            {
+              "text": "y_i",
+              "width": 142,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "Observed scalar log1p trade",
+              "width": 508,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "Contemporaneous target at fit year",
+              "width": 428,
+              "whiteSpace": "normal"
+            }
+          ]
+        },
+        {
+          "caption": "Every term in the fitted linear predictor",
+          "width": 585,
+          "tableWidth": 585.484375,
+          "parentWidth": 1300,
+          "classes": "table-scroll mathematical-table compact",
+          "columns": [
+            {
+              "text": "log_exporter_gdp",
+              "width": 179,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "-0.9",
+              "width": 198,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "1.3",
+              "width": 106,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "-1.1",
+              "width": 103,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "84 observed validation predictions + 84 unobserved 2025 predictions",
+          "width": 1227,
+          "tableWidth": 1371.265625,
+          "parentWidth": 1300,
+          "classes": "table-scroll prediction-table numerical-table",
+          "columns": [
+            {
+              "text": "169",
+              "width": 113,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2024",
+              "width": 47,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "Canada",
+              "width": 115,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "China",
+              "width": 115,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "1001",
+              "width": 47,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "573,720,099.0",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "396,052.5",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "-573,324,046.5",
+              "width": 122,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "573,324,046.5",
+              "width": 150,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "-99.9%",
+              "width": 112,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "N/A",
+              "width": 163,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "N/A",
+              "width": 148,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Three observed cells for arithmetic",
+          "width": 533,
+          "tableWidth": 532.75,
+          "parentWidth": 1300,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "169",
+              "width": 40,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "573,720,099.0",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "396,052.5",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "-573,324,046.5",
+              "width": 105,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "573,324,046.5",
+              "width": 150,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Small rank-correlation calculation",
+          "width": 610,
+          "tableWidth": 609.5625,
+          "parentWidth": 1300,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "China",
+              "width": 91,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "935,254,253.0",
+              "width": 149,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "67,127,797.5",
+              "width": 149,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2.0",
+              "width": 110,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2.0",
+              "width": 110,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Keep the four evaluation activities separate",
+          "width": 993,
+          "tableWidth": 992.5625,
+          "parentWidth": 1300,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "N",
+              "width": 186,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "count",
+              "width": 63,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "252",
+              "width": 191,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "84",
+              "width": 198,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "0",
+              "width": 165,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "84",
+              "width": 191,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Largest observed validation errors",
+          "width": 663,
+          "tableWidth": 662.78125,
+          "parentWidth": 1300,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "242",
+              "width": 40,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "United States \u2192 Canada",
+              "width": 188,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "8703",
+              "width": 47,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "15,597,579,400.0",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "68,088,862,338.4",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "52,491,282,938.4",
+              "width": 150,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Model-specific notation",
+          "width": 1078,
+          "tableWidth": 1078,
+          "parentWidth": 1300,
+          "classes": "table-scroll text-table text-table",
+          "columns": [
+            {
+              "text": "R",
+              "width": 166,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "Set of row indices in one tree node",
+              "width": 427,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "Bootstrap sample, multiplicities retained",
+              "width": 485,
+              "whiteSpace": "normal"
+            }
+          ]
+        },
+        {
+          "caption": "Exact first-tree decision path",
+          "width": 606,
+          "tableWidth": 606.125,
+          "parentWidth": 1300,
+          "classes": "table-scroll mathematical-table compact",
+          "columns": [
+            {
+              "text": "0",
+              "width": 52,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "numeric__log_external_supply",
+              "width": 238,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "0.33",
+              "width": 81,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "-0.02",
+              "width": 132,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "right >",
+              "width": 102,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "All 120 tree outputs",
+          "width": 155,
+          "tableWidth": 154.71875,
+          "parentWidth": 1300,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "1",
+              "width": 45,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "19.5",
+              "width": 110,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "84 observed validation predictions + 84 unobserved 2025 predictions",
+          "width": 1227,
+          "tableWidth": 1371.265625,
+          "parentWidth": 1300,
+          "classes": "table-scroll prediction-table numerical-table",
+          "columns": [
+            {
+              "text": "169",
+              "width": 113,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2024",
+              "width": 47,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "Canada",
+              "width": 115,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "China",
+              "width": 115,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "1001",
+              "width": 47,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "573,720,099.0",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "332,567,119.8",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "-241,152,979.2",
+              "width": 122,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "241,152,979.2",
+              "width": 150,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "-42.0%",
+              "width": 112,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "N/A",
+              "width": 163,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "N/A",
+              "width": 148,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Three observed cells for arithmetic",
+          "width": 533,
+          "tableWidth": 532.75,
+          "parentWidth": 1300,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "169",
+              "width": 40,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "573,720,099.0",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "332,567,119.8",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "-241,152,979.2",
+              "width": 105,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "241,152,979.2",
+              "width": 150,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Small rank-correlation calculation",
+          "width": 610,
+          "tableWidth": 609.5625,
+          "parentWidth": 1300,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "China",
+              "width": 91,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "935,254,253.0",
+              "width": 149,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "523,218,265.3",
+              "width": 149,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2.0",
+              "width": 110,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2.0",
+              "width": 110,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Keep the four evaluation activities separate",
+          "width": 985,
+          "tableWidth": 985.3125,
+          "parentWidth": 1300,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "N",
+              "width": 186,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "count",
+              "width": 63,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "252",
+              "width": 191,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "84",
+              "width": 191,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "0",
+              "width": 165,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "84",
+              "width": 191,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Largest observed validation errors",
+          "width": 635,
+          "tableWidth": 635.140625,
+          "parentWidth": 1300,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "228",
+              "width": 40,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "Mexico \u2192 United States",
+              "width": 160,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "8703",
+              "width": 47,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "49,637,259,600.0",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "18,110,409,560.6",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "31,526,850,039.4",
+              "width": 150,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Model-specific notation",
+          "width": 1078,
+          "tableWidth": 1078,
+          "parentWidth": 1300,
+          "classes": "table-scroll text-table text-table",
+          "columns": [
+            {
+              "text": "z",
+              "width": 133,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "16-dimensional standardized input vector",
+              "width": 526,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "14 numeric features and two HS2 indicators",
+              "width": 419,
+              "whiteSpace": "normal"
+            }
+          ]
+        },
+        {
+          "caption": "Compute the first hidden neuron",
+          "width": 527,
+          "tableWidth": 527.28125,
+          "parentWidth": 1300,
+          "classes": "table-scroll mathematical-table compact",
+          "columns": [
+            {
+              "text": "numeric__log_exporter_gdp",
+              "width": 238,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "-0.9",
+              "width": 52,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "-1.0",
+              "width": 169,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "0.8",
+              "width": 68,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "All hidden units and the final output",
+          "width": 438,
+          "tableWidth": 437.953125,
+          "parentWidth": 1300,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "1",
+              "width": 52,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "1",
+              "width": 45,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "0.7",
+              "width": 44,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "-1.3",
+              "width": 152,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "-0.9",
+              "width": 63,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "tanh",
+              "width": 83,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "84 observed validation predictions + 84 unobserved 2025 predictions",
+          "width": 1227,
+          "tableWidth": 1371.265625,
+          "parentWidth": 1300,
+          "classes": "table-scroll prediction-table numerical-table",
+          "columns": [
+            {
+              "text": "169",
+              "width": 113,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2024",
+              "width": 47,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "Canada",
+              "width": 115,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "China",
+              "width": 115,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "1001",
+              "width": 47,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "573,720,099.0",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2,125,959,708.6",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "1,552,239,609.6",
+              "width": 122,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "1,552,239,609.6",
+              "width": 150,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "270.6%",
+              "width": 112,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "N/A",
+              "width": 163,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "N/A",
+              "width": 148,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Three observed cells for arithmetic",
+          "width": 538,
+          "tableWidth": 537.53125,
+          "parentWidth": 1300,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "169",
+              "width": 40,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "573,720,099.0",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2,125,959,708.6",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "1,552,239,609.6",
+              "width": 109,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "1,552,239,609.6",
+              "width": 150,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Small rank-correlation calculation",
+          "width": 610,
+          "tableWidth": 609.5625,
+          "parentWidth": 1300,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "China",
+              "width": 91,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "935,254,253.0",
+              "width": 149,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "8,155,225,175.4",
+              "width": 149,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2.0",
+              "width": 110,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2.0",
+              "width": 110,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Keep the four evaluation activities separate",
+          "width": 985,
+          "tableWidth": 985.3125,
+          "parentWidth": 1300,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "N",
+              "width": 186,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "count",
+              "width": 63,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "252",
+              "width": 191,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "84",
+              "width": 191,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "0",
+              "width": 165,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "84",
+              "width": 191,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Largest observed validation errors",
+          "width": 635,
+          "tableWidth": 635.140625,
+          "parentWidth": 1300,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "228",
+              "width": 40,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "Mexico \u2192 United States",
+              "width": 160,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "8703",
+              "width": 47,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "49,637,259,600.0",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "6,042,582,668.5",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "43,594,676,931.5",
+              "width": 150,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Model-specific notation",
+          "width": 1078,
+          "tableWidth": 1078,
+          "parentWidth": 1300,
+          "classes": "table-scroll text-table text-table",
+          "columns": [
+            {
+              "text": "F_m(z)",
+              "width": 156,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "Learned scalar additive log prediction",
+              "width": 496,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "After m correction trees",
+              "width": 426,
+              "whiteSpace": "normal"
+            }
+          ]
+        },
+        {
+          "caption": "All 150 fitted updates; the first five show the mechanism",
+          "width": 447,
+          "tableWidth": 446.515625,
+          "parentWidth": 1300,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "0",
+              "width": 73,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "15.1",
+              "width": 182,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "Initial mean log1p target",
+              "width": 192,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "84 observed validation predictions + 84 unobserved 2025 predictions",
+          "width": 1227,
+          "tableWidth": 1376.125,
+          "parentWidth": 1300,
+          "classes": "table-scroll prediction-table numerical-table",
+          "columns": [
+            {
+              "text": "169",
+              "width": 113,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2024",
+              "width": 47,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "Canada",
+              "width": 115,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "China",
+              "width": 115,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "1001",
+              "width": 47,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "573,720,099.0",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2,184,400,024.4",
+              "width": 124,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "1,610,679,925.4",
+              "width": 122,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "1,610,679,925.4",
+              "width": 150,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "280.7%",
+              "width": 112,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "N/A",
+              "width": 163,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "N/A",
+              "width": 148,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Three observed cells for arithmetic",
+          "width": 538,
+          "tableWidth": 537.53125,
+          "parentWidth": 1300,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "169",
+              "width": 40,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "573,720,099.0",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2,184,400,024.4",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "1,610,679,925.4",
+              "width": 109,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "1,610,679,925.4",
+              "width": 150,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Small rank-correlation calculation",
+          "width": 610,
+          "tableWidth": 609.5625,
+          "parentWidth": 1300,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "China",
+              "width": 91,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "935,254,253.0",
+              "width": 149,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2,459,564,097.6",
+              "width": 149,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2.0",
+              "width": 110,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2.0",
+              "width": 110,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Keep the four evaluation activities separate",
+          "width": 985,
+          "tableWidth": 985.3125,
+          "parentWidth": 1300,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "N",
+              "width": 186,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "count",
+              "width": 63,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "252",
+              "width": 191,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "84",
+              "width": 191,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "0",
+              "width": 165,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "84",
+              "width": 191,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Largest observed validation errors",
+          "width": 635,
+          "tableWidth": 635.140625,
+          "parentWidth": 1300,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "228",
+              "width": 40,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "Mexico \u2192 United States",
+              "width": 160,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "8703",
+              "width": 47,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "49,637,259,600.0",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "76,041,911,018.6",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "26,404,651,418.6",
+              "width": 150,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Model-specific notation",
+          "width": 1078,
+          "tableWidth": 1078,
+          "parentWidth": 1300,
+          "classes": "table-scroll text-table text-table",
+          "columns": [
+            {
+              "text": "d_i = 1{V_i>0}",
+              "width": 179,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "Observed binary scalar",
+              "width": 518,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "All 84 cells classify, including zeros",
+              "width": 380,
+              "whiteSpace": "normal"
+            }
+          ]
+        },
+        {
+          "caption": "Both structural boosting stages: every fitted iteration",
+          "width": 427,
+          "tableWidth": 427.46875,
+          "parentWidth": 1300,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "1",
+              "width": 73,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "0.8",
+              "width": 148,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "17.9",
+              "width": 207,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "84 observed validation predictions + 84 unobserved 2025 predictions",
+          "width": 1227,
+          "tableWidth": 1364.015625,
+          "parentWidth": 1300,
+          "classes": "table-scroll prediction-table numerical-table",
+          "columns": [
+            {
+              "text": "169",
+              "width": 113,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2024",
+              "width": 47,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "Canada",
+              "width": 115,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "China",
+              "width": 115,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "1001",
+              "width": 47,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "573,720,099.0",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "794,414,371.4",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "220,694,272.4",
+              "width": 115,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "220,694,272.4",
+              "width": 150,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "38.5%",
+              "width": 112,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "N/A",
+              "width": 163,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "N/A",
+              "width": 148,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Three observed cells for arithmetic",
+          "width": 527,
+          "tableWidth": 527.375,
+          "parentWidth": 1300,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "169",
+              "width": 40,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "573,720,099.0",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "794,414,371.4",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "220,694,272.4",
+              "width": 99,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "220,694,272.4",
+              "width": 150,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Small rank-correlation calculation",
+          "width": 610,
+          "tableWidth": 609.5625,
+          "parentWidth": 1300,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "China",
+              "width": 91,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "935,254,253.0",
+              "width": 149,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "1,181,882,496.3",
+              "width": 149,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2.0",
+              "width": 110,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2.0",
+              "width": 110,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Keep the four evaluation activities separate",
+          "width": 971,
+          "tableWidth": 970.8125,
+          "parentWidth": 1300,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "N",
+              "width": 186,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "count",
+              "width": 63,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "84",
+              "width": 191,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "84",
+              "width": 183,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "0",
+              "width": 165,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "84",
+              "width": 183,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Structural classifier diagnostics: same-year exporter OOF",
+          "width": 517,
+          "tableWidth": 517.328125,
+          "parentWidth": 1300,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "2022",
+              "width": 76,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "84",
+              "width": 33,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "69",
+              "width": 82,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "0.4",
+              "width": 111,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "0.1",
+              "width": 85,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "83.3%",
+              "width": 131,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "OOF 2023 calibration check",
+          "width": 520,
+          "tableWidth": 519.78125,
+          "parentWidth": 1300,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "0.0\u20130.2",
+              "width": 111,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "5",
+              "width": 33,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "0.1",
+              "width": 191,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "0.2",
+              "width": 185,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Largest observed validation errors",
+          "width": 635,
+          "tableWidth": 635.140625,
+          "parentWidth": 1300,
+          "classes": "table-scroll numerical-table compact",
+          "columns": [
+            {
+              "text": "228",
+              "width": 40,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "Mexico \u2192 United States",
+              "width": 160,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "8703",
+              "width": 47,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "49,637,259,600.0",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "39,966,061,969.7",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "9,671,197,630.3",
+              "width": 150,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "2025 observed holdout: outcomes unavailable",
+          "width": 1244,
+          "tableWidth": 1244,
+          "parentWidth": 1302,
+          "classes": "table-scroll text-table text-table mixed-table",
+          "columns": [
+            {
+              "text": "Dynamic linear regression",
+              "width": 313,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "168",
+              "width": 126,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "84",
+              "width": 104,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "84",
+              "width": 143,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "0",
+              "width": 138,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "N/A",
+              "width": 180,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "N/A",
+              "width": 120,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "N/A",
+              "width": 120,
+              "whiteSpace": "normal"
+            }
+          ]
+        },
+        {
+          "caption": "Observed 2024 chronological validation",
+          "width": 1150,
+          "tableWidth": 1150.375,
+          "parentWidth": 1302,
+          "classes": "table-scroll numerical-table ",
+          "columns": [
+            {
+              "text": "Dynamic linear regression",
+              "width": 297,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "168",
+              "width": 116,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "84",
+              "width": 96,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "84",
+              "width": 132,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "10,853,781,638.9",
+              "width": 117,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "45,823,328,334.4",
+              "width": 117,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "316.8%",
+              "width": 83,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "297.2%",
+              "width": 133,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "2.0",
+              "width": 61,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "2025 illustrative scenario comparison\u2014not an observed test",
+          "width": 1136,
+          "tableWidth": 1135.875,
+          "parentWidth": 1302,
+          "classes": "table-scroll numerical-table ",
+          "columns": [
+            {
+              "text": "Dynamic linear regression",
+              "width": 297,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "168",
+              "width": 116,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "84",
+              "width": 96,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "84",
+              "width": 132,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "1,267,489,473.6",
+              "width": 109,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "3,233,504,673.8",
+              "width": 109,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "35.1%",
+              "width": 83,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "14.5%",
+              "width": 133,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "0.7",
+              "width": 61,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Why identical raw data can yield different predictions",
+          "width": 1078,
+          "tableWidth": 1078,
+          "parentWidth": 1302,
+          "classes": "table-scroll text-table text-table",
+          "columns": [
+            {
+              "text": "1 \u00b7 Dynamic OLS",
+              "width": 192,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "One linear log plane plus observed trade lag",
+              "width": 366,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "Stable additive effects and persistence; unstable collinear slopes",
+              "width": 520,
+              "whiteSpace": "normal"
+            }
+          ]
+        },
+        {
+          "caption": "Four validation cells with largest prediction spread\u2014not selected for accuracy",
+          "width": 1075,
+          "tableWidth": 1074.6875,
+          "parentWidth": 1302,
+          "classes": "table-scroll numerical-table ",
+          "columns": [
+            {
+              "text": "196",
+              "width": 40,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "Germany \u2192 China",
+              "width": 168,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "8703",
+              "width": 47,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "11,304,788,932.0",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "348,236,884,204.0",
+              "width": 124,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "19,576,728,563.4",
+              "width": 117,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "14,319,122,004.9",
+              "width": 117,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "6,040,229,139.2",
+              "width": 111,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "3,824,376,859.9",
+              "width": 117,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "17,128,010,395.5",
+              "width": 117,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Observation 263: complete input record",
+          "width": 663,
+          "tableWidth": 663,
+          "parentWidth": 1302,
+          "classes": "table-scroll text-table text-table compact record-table",
+          "columns": [
+            {
+              "text": "observation_id",
+              "width": 185,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "263",
+              "width": 478,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "One 2025 record through all six rules",
+          "width": 1244,
+          "tableWidth": 1769.71875,
+          "parentWidth": 1302,
+          "classes": "table-scroll text-table text-table mixed-table",
+          "columns": [
+            {
+              "text": "Dynamic linear regression",
+              "width": 288,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "14 economic inputs + HS2 + trade lag",
+              "width": 244,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "a + sum of standardized coefficient products; lag included",
+              "width": 270,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "408,841,839.5",
+              "width": 119,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "N/A",
+              "width": 119,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "N/A",
+              "width": 159,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "N/A",
+              "width": 171,
+              "whiteSpace": "normal"
+            },
+            {
+              "text": "-242,188,383.7",
+              "width": 194,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "242,188,383.7",
+              "width": 206,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        },
+        {
+          "caption": "Observed Canada \u2192 United States wheat validation cell 179",
+          "width": 892,
+          "tableWidth": 891.5625,
+          "parentWidth": 1302,
+          "classes": "table-scroll numerical-table ",
+          "columns": [
+            {
+              "text": "Dynamic linear regression",
+              "width": 297,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "685,179,327.0",
+              "width": 154,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "354,587,245.0",
+              "width": 154,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "-330,592,082.0",
+              "width": 137,
+              "whiteSpace": "nowrap"
+            },
+            {
+              "text": "330,592,082.0",
+              "width": 150,
+              "whiteSpace": "nowrap"
+            }
+          ]
+        }
+      ],
+      "paragraphs": [
+        {
+          "model": "algorithm-01",
+          "panel": 1300,
+          "paragraph": [
+            {
+              "width": 1020,
+              "maxWidth": "1020px"
+            },
+            {
+              "width": 1020,
+              "maxWidth": "1020px"
+            }
+          ]
+        },
+        {
+          "model": "algorithm-02",
+          "panel": 1300,
+          "paragraph": [
+            {
+              "width": 1020,
+              "maxWidth": "1020px"
+            },
+            {
+              "width": 1020,
+              "maxWidth": "1020px"
+            }
+          ]
+        },
+        {
+          "model": "algorithm-03",
+          "panel": 1300,
+          "paragraph": [
+            {
+              "width": 1020,
+              "maxWidth": "1020px"
+            },
+            {
+              "width": 1020,
+              "maxWidth": "1020px"
+            }
+          ]
+        },
+        {
+          "model": "algorithm-04",
+          "panel": 1300,
+          "paragraph": [
+            {
+              "width": 1020,
+              "maxWidth": "1020px"
+            },
+            {
+              "width": 1020,
+              "maxWidth": "1020px"
+            }
+          ]
+        },
+        {
+          "model": "algorithm-05",
+          "panel": 1300,
+          "paragraph": [
+            {
+              "width": 1020,
+              "maxWidth": "1020px"
+            },
+            {
+              "width": 1020,
+              "maxWidth": "1020px"
+            }
+          ]
+        },
+        {
+          "model": "algorithm-06",
+          "panel": 1300,
+          "paragraph": [
+            {
+              "width": 1020,
+              "maxWidth": "1020px"
+            },
+            {
+              "width": 1020,
+              "maxWidth": "1020px"
+            }
+          ]
+        }
+      ],
+      "issues": [],
+      "wideShortCells": [
+        {
+          "caption": "Time-aware counts; no 2025 tuning",
+          "text": "252 / IDs 1\u2013252",
+          "width": 418,
+          "whiteSpace": "normal"
+        },
+        {
+          "caption": "Observation 263: complete input record",
+          "text": "263",
+          "width": 478,
+          "whiteSpace": "nowrap"
+        }
+      ],
+      "inspectedModels": [
+        "algorithm-01",
+        "algorithm-02",
+        "algorithm-03",
+        "algorithm-04",
+        "algorithm-05",
+        "algorithm-06"
+      ]
+    },
+    "checks": [
+      "combined search and all filters",
+      "clear restores all rows",
+      "six independent collapses and all-controls",
+      "prediction table year/search/clear",
+      "2025 observed N/A",
+      "sticky headers/ID",
+      "both table scroll axes",
+      "all images",
+      "local MathJax",
+      "CSV response",
+      "responsive no overflow"
+    ],
+    "view": "follow",
+    "requested_width": 1440
+  }
+]

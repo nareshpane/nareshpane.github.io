@@ -1,0 +1,24 @@
+{
+  "checks": [
+    "Model 1: independent prediction arithmetic reconstructed",
+    "Model 2: independent prediction arithmetic reconstructed",
+    "Model 3: independent prediction arithmetic reconstructed",
+    "Model 4: independent prediction arithmetic reconstructed",
+    "Model 5: independent prediction arithmetic reconstructed",
+    "Model 6: all three stages independently reconstructed",
+    "No 2025 outcome in fit IDs",
+    "All six forecast exactly same 84 IDs",
+    "All forecast-origin covariates are 2024",
+    "Grid structure validated"
+  ],
+  "versions": {
+    "python": "3.13.1",
+    "numpy": "2.4.0",
+    "pandas": "2.3.3",
+    "scipy": "1.18.1",
+    "scikit_learn": "1.9.1",
+    "matplotlib": "3.10.8"
+  },
+  "dataset_sha256": "5d2f1378ab91cc486c977f96301e992a527e62ce6673d80c241dafbe384133e6",
+  "seed": 338
+}

@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "checks": [
+    "Dataset grid, IDs, no duplicates/self-trade, exact countries/years/headings",
+    "Historical values match hashed extract; 2025 targets unavailable and inputs historical",
+    "Scenario seed/formula independently reproduced; never stored as observed",
+    "Model 1: metrics, common coverage, inverse units and exact/rounded worked arithmetic independently checked",
+    "Model 2: metrics, common coverage, inverse units and exact/rounded worked arithmetic independently checked",
+    "Model 3: metrics, common coverage, inverse units and exact/rounded worked arithmetic independently checked",
+    "Model 4: metrics, common coverage, inverse units and exact/rounded worked arithmetic independently checked",
+    "Model 5: metrics, common coverage, inverse units and exact/rounded worked arithmetic independently checked",
+    "Model 6: metrics, common coverage, inverse units and exact/rounded worked arithmetic independently checked",
+    "All training targets precede 2025; all explicit fit IDs audited",
+    "336 static table rows, 6 collapsed model sections, 168 evaluation rows each, unique HTML IDs and all relative paths",
+    "Companion landing link verified"
+  ],
+  "relative_asset_links_checked": 89,
+  "dataset_sha256": "5d2f1378ab91cc486c977f96301e992a527e62ce6673d80c241dafbe384133e6",
+  "forecast_sha256": "2d071be3c1eae8d5fc8dd59cf2d64973e655d97a7b47f540cc79a5b858757bef"
+}

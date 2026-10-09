@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "independent_refit": true,
+  "checks": [
+    {
+      "file": "frozen_2025_predictions.csv",
+      "sha256": "2d071be3c1eae8d5fc8dd59cf2d64973e655d97a7b47f540cc79a5b858757bef",
+      "bit_identical": true
+    },
+    {
+      "file": "predictions.csv",
+      "sha256": "23f4b04e2989ca024f1742692458db2c63e531c0901aec4f4026611751909ddb",
+      "bit_identical": true
+    },
+    {
+      "file": "metrics.json",
+      "sha256": "fceb86bfac32a1df9f5e42916b971392544f333a6fba69cea858d3c7a8963b10",
+      "bit_identical": true
+    },
+    {
+      "file": "worked_examples.json",
+      "sha256": "ccddac62577d8d92873f4969ccfc18700ae87419aa5e7c8f6626238814a49d89",
+      "bit_identical": true
+    },
+    {
+      "file": "lambda_estimation.csv",
+      "sha256": "475ab5c11a9101bea9b8816ad4228e4a54498c997268eea49e0a01f2b85463b9",
+      "bit_identical": true
+    },
+    {
+      "file": "elastic_tuning.json",
+      "sha256": "6dc6b53400c3c481461e54b4ac26aca81511fe0987f73beb23c274a55e235fbd",
+      "bit_identical": true
+    },
+    {
+      "file": "fit_records.json",
+      "sha256": "3d35e12e2fa99d08b72c29cadd3ad06fc9b7bf3b06168a50496365742397dc93",
+      "bit_identical": true
+    }
+  ]
+}

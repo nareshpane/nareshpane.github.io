@@ -1,0 +1,594 @@
+[
+  {
+    "model": 1,
+    "name": "Dynamic linear regression",
+    "training_N": 168,
+    "validation_training_N": 84,
+    "validation_N": 84,
+    "holdout_predictions_N": 84,
+    "observed_holdout_N": 0,
+    "training": {
+      "N": 168,
+      "MSE": 1.0136363501865478e+19,
+      "RMSE": 3183765616.6661325,
+      "MAE": 1239637039.2268815,
+      "WAPE": 35.605436871139084,
+      "Destination WAPE": 17.221714388983525,
+      "RMSLE": 1.6653466763120655,
+      "R2": 0.8487630026757623,
+      "rank_correlation": 0.9285714285714288,
+      "top_overlap_3": 2,
+      "mean_absolute_top3_error": 15611330290.827888,
+      "median_absolute_top3_error": 11992423304.877747
+    },
+    "validation": {
+      "N": 84,
+      "MSE": 2.0997774196411122e+21,
+      "RMSE": 45823328334.38785,
+      "MAE": 10853781638.856697,
+      "WAPE": 316.81451408104533,
+      "Destination WAPE": 297.18316427624467,
+      "RMSLE": 2.0418464107325045,
+      "R2": -30.086564504850426,
+      "rank_correlation": 0.7142857142857144,
+      "top_overlap_3": 2,
+      "mean_absolute_top3_error": 276415144802.0862,
+      "median_absolute_top3_error": 85815194649.7172
+    },
+    "holdout_observed": {
+      "N": 0,
+      "reason": "No observed 2025 bilateral outcomes in archive"
+    },
+    "scenario": {
+      "N": 84,
+      "MSE": 1.0455552475653415e+19,
+      "RMSE": 3233504673.825819,
+      "MAE": 1267489473.6159678,
+      "WAPE": 35.055622036554006,
+      "Destination WAPE": 14.472050767198757,
+      "RMSLE": 0.7055037493595597,
+      "R2": 0.8585498368225297,
+      "rank_correlation": 0.8571428571428573,
+      "top_overlap_3": 2,
+      "mean_absolute_top3_error": 3853253718.1140747,
+      "median_absolute_top3_error": 4081949551.110302
+    },
+    "by_sector_validation": {
+      "1001": {
+        "N": 42,
+        "MSE": 1.004929864434783e+17,
+        "RMSE": 317006287.7033803,
+        "MAE": 118601774.48209569,
+        "WAPE": 101.30240157125043,
+        "Destination WAPE": 98.4244989335403,
+        "RMSLE": 2.556941083206332,
+        "R2": -0.5395834862314655,
+        "rank_correlation": 0.8571428571428573,
+        "top_overlap_3": 2,
+        "mean_absolute_top3_error": 1162068374.8375497,
+        "median_absolute_top3_error": 905687160.6138138
+      },
+      "8703": {
+        "N": 42,
+        "MSE": 4.199454346295781e+21,
+        "RMSE": 64803197037.61367,
+        "MAE": 21588961503.231297,
+        "WAPE": 320.56098216948965,
+        "Destination WAPE": 301.732650366576,
+        "RMSLE": 1.3417622095788981,
+        "R2": -36.12052647219125,
+        "rank_correlation": 0.7142857142857144,
+        "top_overlap_3": 2,
+        "mean_absolute_top3_error": 275856025826.4075,
+        "median_absolute_top3_error": 86076566006.28107
+      }
+    }
+  },
+  {
+    "model": 2,
+    "name": "Elastic Net regression",
+    "training_N": 252,
+    "validation_training_N": 168,
+    "validation_N": 84,
+    "holdout_predictions_N": 84,
+    "observed_holdout_N": 0,
+    "training": {
+      "N": 252,
+      "MSE": 9.916244759169176e+19,
+      "RMSE": 9958034323.68516,
+      "MAE": 3343064966.870921,
+      "WAPE": 100.12447517682594,
+      "Destination WAPE": 68.6619889951783,
+      "RMSLE": 3.8047860727755616,
+      "R2": -0.6194049018153562,
+      "rank_correlation": 0.7857142857142859,
+      "top_overlap_3": 2,
+      "mean_absolute_top3_error": 150825187899.2283,
+      "median_absolute_top3_error": 127088633251.5918
+    },
+    "validation": {
+      "N": 84,
+      "MSE": 1.0313402032122603e+20,
+      "RMSE": 10155492125.998919,
+      "MAE": 3611004393.9771657,
+      "WAPE": 105.40276564315539,
+      "Destination WAPE": 73.82577079176741,
+      "RMSLE": 3.6671887861070736,
+      "R2": -0.5268677267271122,
+      "rank_correlation": 0.8571428571428573,
+      "top_overlap_3": 2,
+      "mean_absolute_top3_error": 53475950400.541565,
+      "median_absolute_top3_error": 43270061598.754395
+    },
+    "holdout_observed": {
+      "N": 0,
+      "reason": "No observed 2025 bilateral outcomes in archive"
+    },
+    "scenario": {
+      "N": 84,
+      "MSE": 8.796070335883312e+19,
+      "RMSE": 9378736767.75466,
+      "MAE": 3336058801.450648,
+      "WAPE": 92.26713031528246,
+      "Destination WAPE": 62.117057755296806,
+      "RMSLE": 3.5093360975792716,
+      "R2": -0.18999506456347626,
+      "rank_correlation": 0.8571428571428573,
+      "top_overlap_3": 2,
+      "mean_absolute_top3_error": 48524847714.19854,
+      "median_absolute_top3_error": 47946997106.63726
+    },
+    "by_sector_validation": {
+      "1001": {
+        "N": 42,
+        "MSE": 7.655047935036848e+16,
+        "RMSE": 276677572.90819305,
+        "MAE": 115097042.69171996,
+        "WAPE": 98.30887344927645,
+        "Destination WAPE": 98.27145882748367,
+        "RMSLE": 4.764525290603798,
+        "R2": -0.17277690754287023,
+        "rank_correlation": -0.07142857142857144,
+        "top_overlap_3": 1,
+        "mean_absolute_top3_error": 626828278.0316042,
+        "median_absolute_top3_error": 623102575.0476292
+      },
+      "8703": {
+        "N": 42,
+        "MSE": 2.0619149016310173e+20,
+        "RMSE": 14359369420.80333,
+        "MAE": 7106911745.262611,
+        "WAPE": 105.5260860469031,
+        "Destination WAPE": 75.49959644288107,
+        "RMSLE": 2.0483764158708064,
+        "R2": -0.822602661627051,
+        "rank_correlation": 0.8571428571428573,
+        "top_overlap_3": 2,
+        "mean_absolute_top3_error": 53428037766.39443,
+        "median_absolute_top3_error": 43731749005.46977
+      }
+    }
+  },
+  {
+    "model": 3,
+    "name": "Random Forest regression",
+    "training_N": 252,
+    "validation_training_N": 168,
+    "validation_N": 84,
+    "holdout_predictions_N": 84,
+    "observed_holdout_N": 0,
+    "training": {
+      "N": 252,
+      "MSE": 2.5507539058303906e+19,
+      "RMSE": 5050498892.020857,
+      "MAE": 1998560319.2309053,
+      "WAPE": 59.856689910372985,
+      "Destination WAPE": 25.41712247827874,
+      "RMSLE": 2.68523021648039,
+      "R2": 0.5834407602124894,
+      "rank_correlation": 0.9642857142857145,
+      "top_overlap_3": 3,
+      "mean_absolute_top3_error": 44357247486.58972,
+      "median_absolute_top3_error": 22276190317.87799
+    },
+    "validation": {
+      "N": 84,
+      "MSE": 3.442015577328249e+19,
+      "RMSE": 5866869333.237488,
+      "MAE": 2460440173.4002905,
+      "WAPE": 71.8185775150168,
+      "Destination WAPE": 45.297314152735765,
+      "RMSLE": 3.2099305921780643,
+      "R2": 0.49042008800340964,
+      "rank_correlation": 0.8214285714285715,
+      "top_overlap_3": 2,
+      "mean_absolute_top3_error": 33813245912.746143,
+      "median_absolute_top3_error": 22128689960.832382
+    },
+    "holdout_observed": {
+      "N": 0,
+      "reason": "No observed 2025 bilateral outcomes in archive"
+    },
+    "scenario": {
+      "N": 84,
+      "MSE": 2.917220487746011e+19,
+      "RMSE": 5401129963.022563,
+      "MAE": 2186894498.782673,
+      "WAPE": 60.484089674083094,
+      "Destination WAPE": 31.362976132681485,
+      "RMSLE": 2.693956745720122,
+      "R2": 0.6053376280428977,
+      "rank_correlation": 0.9285714285714288,
+      "top_overlap_3": 3,
+      "mean_absolute_top3_error": 24341202190.060253,
+      "median_absolute_top3_error": 17228866656.972534
+    },
+    "by_sector_validation": {
+      "1001": {
+        "N": 42,
+        "MSE": 5.292214323479695e+16,
+        "RMSE": 230048132.43057844,
+        "MAE": 93161221.9593766,
+        "WAPE": 79.5726333691732,
+        "Destination WAPE": 75.2600342375397,
+        "RMSLE": 4.337380254333162,
+        "R2": 0.1892164750612073,
+        "rank_correlation": 0.9285714285714288,
+        "top_overlap_3": 2,
+        "mean_absolute_top3_error": 731459612.004007,
+        "median_absolute_top3_error": 788012654.6909997
+      },
+      "8703": {
+        "N": 42,
+        "MSE": 6.878738940333018e+19,
+        "RMSE": 8293816335.278361,
+        "MAE": 4827719124.841204,
+        "WAPE": 71.68378080927582,
+        "Destination WAPE": 46.95174871674849,
+        "RMSLE": 1.3395675953538244,
+        "R2": 0.3919628840466982,
+        "rank_correlation": 0.8214285714285715,
+        "top_overlap_3": 2,
+        "mean_absolute_top3_error": 33871391813.49414,
+        "median_absolute_top3_error": 22016235364.20031
+      }
+    }
+  },
+  {
+    "model": 4,
+    "name": "Multilayer Perceptron",
+    "training_N": 252,
+    "validation_training_N": 168,
+    "validation_N": 84,
+    "holdout_predictions_N": 84,
+    "observed_holdout_N": 0,
+    "training": {
+      "N": 252,
+      "MSE": 5.15866969902832e+19,
+      "RMSE": 7182387972.69287,
+      "MAE": 3459259882.8347497,
+      "WAPE": 103.60450176750959,
+      "Destination WAPE": 77.07321315533304,
+      "RMSLE": 1.866573566204079,
+      "R2": 0.15754651076677018,
+      "rank_correlation": -0.21428571428571433,
+      "top_overlap_3": 1,
+      "mean_absolute_top3_error": 75025399784.46796,
+      "median_absolute_top3_error": 96065027141.43182
+    },
+    "validation": {
+      "N": 84,
+      "MSE": 5.718437141365558e+19,
+      "RMSE": 7562034872.549556,
+      "MAE": 3401023551.351048,
+      "WAPE": 99.2735674672163,
+      "Destination WAPE": 75.7816628346941,
+      "RMSLE": 2.776130600088636,
+      "R2": 0.15340281594048077,
+      "rank_correlation": 0.0,
+      "top_overlap_3": 2,
+      "mean_absolute_top3_error": 52108181820.552795,
+      "median_absolute_top3_error": 29584547208.073257
+    },
+    "holdout_observed": {
+      "N": 0,
+      "reason": "No observed 2025 bilateral outcomes in archive"
+    },
+    "scenario": {
+      "N": 84,
+      "MSE": 6.2803724885331255e+19,
+      "RMSE": 7924880118.041614,
+      "MAE": 3585002526.808218,
+      "WAPE": 99.15229766867289,
+      "Destination WAPE": 77.31831421432571,
+      "RMSLE": 1.928920871311138,
+      "R2": 0.15034646386508776,
+      "rank_correlation": -0.14285714285714288,
+      "top_overlap_3": 2,
+      "mean_absolute_top3_error": 16524766133.493013,
+      "median_absolute_top3_error": 10444459694.129784
+    },
+    "by_sector_validation": {
+      "1001": {
+        "N": 42,
+        "MSE": 1.395976176686074e+18,
+        "RMSE": 1181514357.3761911,
+        "MAE": 432990638.02619374,
+        "WAPE": 369.8341924601053,
+        "Destination WAPE": 369.8328883926101,
+        "RMSLE": 3.296921549416127,
+        "R2": -20.386784738527354,
+        "rank_correlation": 0.7500000000000002,
+        "top_overlap_3": 2,
+        "mean_absolute_top3_error": 4523147900.490743,
+        "median_absolute_top3_error": 5476356417.585075
+      },
+      "8703": {
+        "N": 42,
+        "MSE": 1.1297276665062508e+20,
+        "RMSE": 10628864786.543531,
+        "MAE": 6369056464.675904,
+        "WAPE": 94.57013462661746,
+        "Destination WAPE": 74.54201117967884,
+        "RMSLE": 2.1316919370520084,
+        "R2": 0.0013920311360748894,
+        "rank_correlation": 0.3214285714285715,
+        "top_overlap_3": 2,
+        "mean_absolute_top3_error": 52966399470.48939,
+        "median_absolute_top3_error": 29002624537.400085
+      }
+    }
+  },
+  {
+    "model": 5,
+    "name": "Single-stage gradient boosting",
+    "training_N": 252,
+    "validation_training_N": 168,
+    "validation_N": 84,
+    "holdout_predictions_N": 84,
+    "observed_holdout_N": 0,
+    "training": {
+      "N": 252,
+      "MSE": 3.652651555218496e+19,
+      "RMSE": 6043717031.114623,
+      "MAE": 1892952489.0398781,
+      "WAPE": 56.6937455233433,
+      "Destination WAPE": 13.453463164710454,
+      "RMSLE": 1.6662148798726661,
+      "R2": 0.403491747450584,
+      "rank_correlation": 1.0,
+      "top_overlap_3": 3,
+      "mean_absolute_top3_error": 31263995315.14705,
+      "median_absolute_top3_error": 20808682327.915527
+    },
+    "validation": {
+      "N": 84,
+      "MSE": 2.706657919095815e+19,
+      "RMSE": 5202555063.712267,
+      "MAE": 2000145555.081878,
+      "WAPE": 58.38289024132029,
+      "Destination WAPE": 7.204958341693012,
+      "RMSLE": 2.150464182556282,
+      "R2": 0.5992875473014786,
+      "rank_correlation": 0.8571428571428573,
+      "top_overlap_3": 2,
+      "mean_absolute_top3_error": 5091797358.455696,
+      "median_absolute_top3_error": 3573284966.0512085
+    },
+    "holdout_observed": {
+      "N": 0,
+      "reason": "No observed 2025 bilateral outcomes in archive"
+    },
+    "scenario": {
+      "N": 84,
+      "MSE": 4.224426204001195e+19,
+      "RMSE": 6499558603.475466,
+      "MAE": 2082108913.4753926,
+      "WAPE": 57.58597970956273,
+      "Destination WAPE": 12.123840904858621,
+      "RMSLE": 1.6335722692321637,
+      "R2": 0.42848952527512696,
+      "rank_correlation": 0.9642857142857145,
+      "top_overlap_3": 3,
+      "mean_absolute_top3_error": 8056194587.852468,
+      "median_absolute_top3_error": 6798452076.841049
+    },
+    "by_sector_validation": {
+      "1001": {
+        "N": 42,
+        "MSE": 1.547855098595029e+17,
+        "RMSE": 393427896.6462634,
+        "MAE": 143391692.18512642,
+        "WAPE": 122.47643719623831,
+        "Destination WAPE": 95.42802115979686,
+        "RMSLE": 2.897295541085676,
+        "R2": -1.3713616573793606,
+        "rank_correlation": 0.8928571428571429,
+        "top_overlap_3": 2,
+        "mean_absolute_top3_error": 1121619279.7923794,
+        "median_absolute_top3_error": 1138724350.020329
+      },
+      "8703": {
+        "N": 42,
+        "MSE": 5.39783728720568e+19,
+        "RMSE": 7346997541.312832,
+        "MAE": 3856899417.978629,
+        "WAPE": 57.26868637804141,
+        "Destination WAPE": 6.604851874869855,
+        "RMSLE": 0.9244841526602692,
+        "R2": 0.522865245364459,
+        "rank_correlation": 0.8928571428571429,
+        "top_overlap_3": 2,
+        "mean_absolute_top3_error": 3866594571.095571,
+        "median_absolute_top3_error": 1148929389.6606445
+      }
+    }
+  },
+  {
+    "model": 6,
+    "name": "Dynamic two-stage boosted partial adjustment",
+    "training_N": 84,
+    "positive_training_N": 69,
+    "validation_training_N": 84,
+    "lambda_training_N": 84,
+    "validation_N": 84,
+    "holdout_predictions_N": 84,
+    "observed_holdout_N": 0,
+    "training": {
+      "N": 84,
+      "MSE": 7.932065457345913e+19,
+      "RMSE": 8906214379.491386,
+      "MAE": 2994633573.7974076,
+      "WAPE": 87.41132004507024,
+      "Destination WAPE": 20.609545358300647,
+      "RMSLE": 4.2867692050245765,
+      "R2": -0.1743181071954969,
+      "rank_correlation": 0.7857142857142859,
+      "top_overlap_3": 2,
+      "mean_absolute_top3_error": 9041013214.465252,
+      "median_absolute_top3_error": 12073234538.720802
+    },
+    "validation": {
+      "N": 84,
+      "MSE": 2.0741853666354424e+18,
+      "RMSE": 1440203237.961727,
+      "MAE": 522413871.83943856,
+      "WAPE": 15.248906092185159,
+      "Destination WAPE": 13.590768548414353,
+      "RMSLE": 1.7988237889332221,
+      "R2": 0.9692923180372375,
+      "rank_correlation": 0.9642857142857145,
+      "top_overlap_3": 3,
+      "mean_absolute_top3_error": 10596557333.098764,
+      "median_absolute_top3_error": 8920728332.677238
+    },
+    "holdout_observed": {
+      "N": 0,
+      "reason": "No observed 2025 bilateral outcomes in archive"
+    },
+    "scenario": {
+      "N": 84,
+      "MSE": 1.636655068661421e+18,
+      "RMSE": 1279318204.6158106,
+      "MAE": 447704575.4598859,
+      "WAPE": 12.382400570620336,
+      "Destination WAPE": 7.946471207875878,
+      "RMSLE": 0.18937175802886672,
+      "R2": 0.9778581641604812,
+      "rank_correlation": 1.0,
+      "top_overlap_3": 3,
+      "mean_absolute_top3_error": 5398341095.250275,
+      "median_absolute_top3_error": 1750106261.8471832
+    },
+    "by_sector_validation": {
+      "1001": {
+        "N": 42,
+        "MSE": 6424857321396472.0,
+        "RMSE": 80155207.69978999,
+        "MAE": 32527849.03687657,
+        "WAPE": 27.783304590270884,
+        "Destination WAPE": 10.863429442051293,
+        "RMSLE": 2.5334461350814714,
+        "R2": 0.9015692081259938,
+        "rank_correlation": 0.8571428571428573,
+        "top_overlap_3": 3,
+        "mean_absolute_top3_error": 96622801.2969311,
+        "median_absolute_top3_error": 114922507.94262218
+      },
+      "8703": {
+        "N": 42,
+        "MSE": 4.1419458759494886e+18,
+        "RMSE": 2035177111.690648,
+        "MAE": 1012299894.6420003,
+        "WAPE": 15.031007787379716,
+        "Destination WAPE": 13.885991528997128,
+        "RMSLE": 0.23061814305232153,
+        "R2": 0.9633878121165466,
+        "rank_correlation": 0.9642857142857145,
+        "top_overlap_3": 3,
+        "mean_absolute_top3_error": 10670211026.68035,
+        "median_absolute_top3_error": 9040458234.114815
+      }
+    },
+    "classification": {
+      "2022": {
+        "N": 84,
+        "positive_N": 69,
+        "log_loss": 0.4021020443606992,
+        "Brier": 0.11692182414582569,
+        "accuracy": 0.8333333333333334,
+        "probability_bins": [
+          {
+            "bin": "0.0–0.2",
+            "N": 4,
+            "mean_probability": 0.10439861152394476,
+            "positive_fraction": 0.75
+          },
+          {
+            "bin": "0.2–0.4",
+            "N": 7,
+            "mean_probability": 0.26020098283726306,
+            "positive_fraction": 0.42857142857142855
+          },
+          {
+            "bin": "0.4–0.6",
+            "N": 6,
+            "mean_probability": 0.5342858457592045,
+            "positive_fraction": 0.16666666666666666
+          },
+          {
+            "bin": "0.6–0.8",
+            "N": 3,
+            "mean_probability": 0.7200100790514427,
+            "positive_fraction": 0.3333333333333333
+          },
+          {
+            "bin": "0.8–1.0",
+            "N": 64,
+            "mean_probability": 0.9749046728598111,
+            "positive_fraction": 0.953125
+          }
+        ]
+      },
+      "2023": {
+        "N": 84,
+        "positive_N": 69,
+        "log_loss": 0.3233317017759807,
+        "Brier": 0.10389033095572785,
+        "accuracy": 0.8571428571428571,
+        "probability_bins": [
+          {
+            "bin": "0.0–0.2",
+            "N": 5,
+            "mean_probability": 0.12728550305210234,
+            "positive_fraction": 0.2
+          },
+          {
+            "bin": "0.2–0.4",
+            "N": 6,
+            "mean_probability": 0.2659342412843831,
+            "positive_fraction": 0.6666666666666666
+          },
+          {
+            "bin": "0.4–0.6",
+            "N": 5,
+            "mean_probability": 0.4460300452894387,
+            "positive_fraction": 0.4
+          },
+          {
+            "bin": "0.6–0.8",
+            "N": 8,
+            "mean_probability": 0.6986070788408446,
+            "positive_fraction": 0.625
+          },
+          {
+            "bin": "0.8–1.0",
+            "N": 60,
+            "mean_probability": 0.974805628324645,
+            "positive_fraction": 0.95
+          }
+        ]
+      }
+    }
+  }
+]

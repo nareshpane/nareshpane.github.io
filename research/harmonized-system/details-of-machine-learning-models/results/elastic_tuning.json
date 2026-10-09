@@ -1,0 +1,30 @@
+{
+  "design": "Fit 2022 targets, predict 2023 using 2022 X; no 2024/2025 target in selection",
+  "candidates": [
+    {
+      "alpha": 0.01,
+      "l1_ratio": 0.2,
+      "next_year_log_MSE": 13.298202204480337
+    },
+    {
+      "alpha": 0.01,
+      "l1_ratio": 0.8,
+      "next_year_log_MSE": 12.931428545940829
+    },
+    {
+      "alpha": 0.1,
+      "l1_ratio": 0.2,
+      "next_year_log_MSE": 15.098410709145302
+    },
+    {
+      "alpha": 0.1,
+      "l1_ratio": 0.8,
+      "next_year_log_MSE": 14.980596508192166
+    }
+  ],
+  "chosen": {
+    "alpha": 0.01,
+    "l1_ratio": 0.8,
+    "next_year_log_MSE": 12.931428545940829
+  }
+}
