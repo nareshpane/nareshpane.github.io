@@ -336,6 +336,7 @@
         if (!productMap.has(code) || v.length !== 13 || v.some(n => !Number.isSafeInteger(n) || n < 0)) throw new Error('Invalid product array: ' + code);
       }
       try { scope = await loadJSON('section338-hs6.json'); scopeSet = new Set(scope.hs6); } catch (error) { console.error(error); }
+      if (window.GeographyExposure) window.GeographyExposure.initialize({hs4,hs6,products,origins,scope,meta});
       if (window.HS4Exposure) window.HS4Exposure.initialize({hs4,hs6,products,origins,scope},
         {money,fullMoney,percent,animateNumber,showTooltip,hideTooltip,onSelect:selectProduct});
       else $('exposure-live').textContent = 'The exposure module could not load. The existing export explorer is available.';

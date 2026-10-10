@@ -1,5 +1,67 @@
 # Page 2: annual product geography
 
+## Canada and Provinces Exposure Explorer
+
+The addition sits after the opening animation and following figure, before the
+unchanged Product Explorer. `css/geography-explorer.css` and
+`js/geography-explorer.js` extend the current cards and controls. One initialization
+hook in `js/app.js` passes its already-loaded datasets to the new module; no new
+data download or dependency is introduced. All fourteen geographic summaries are
+computed once and cached. The searchable full list and Clear control are independent
+of the product search and the product's exposure-ribbon geography selector.
+
+The source is the existing Statistics Canada CIMT domestic-export snapshot,
+`ODPFN018_202512N.csv` (source SHA-256 in `data/metadata.json`), reference year 2025,
+destination US, integer CAD, customs-based domestic exports excluding re-exports.
+Official catalogue: <https://open.canada.ca/data/en/dataset/2909a648-5753-4924-878a-b069392d9cde>.
+The retained builder sums all twelve months and US states at HS6 by origin. Source
+retrieval date was not recorded in the trade metadata; its generated snapshot is
+dated October 6, 2026. This addition reuses that snapshot without re-downloading it.
+
+For each geography and HS4, sum **all** its HS6 values for the denominator, and
+only HS6 members of `data/section338-hs6.json` for the exposed numerator. The same
+supplied September detailed-line reconstruction used by the existing ribbon is
+applied as unique HS6 set membership. Parent HS4 totals are checks, not added trade.
+Summary cards sum these sector numerators and denominators; overall intensity is
+100 times their ratio. All positive-exposure sectors are sorted by exposed CAD,
+descending (ties by code), without a top-N cut-off. Bar width is exposed CAD relative
+to the largest sector for the selected geography. Blue colour interpolates linearly
+from RGB(161,199,229) at 0% to RGB(14,65,126) at 100% **sector** intensity.
+
+Canada is constructed from the thirteen source origins because the archive has
+no national-origin record. All sums reconcile to the retained source audit. There
+is no additional authoritative national total to compare within this archive.
+Source-absent observations are already explicit zeroes in the validated dense
+arrays; unavailable scope or invalid/missing values produce an unavailable state.
+A zero export denominator yields unavailable intensity. No provincial allocation
+is estimated. HS6 coverage is a potential upper bound; detailed classifications,
+packaged-only restrictions and shipment exceptions are unresolved, and the supplied
+policy extracts do not certify current implementation or tariff liabilities.
+
+Run from the repository root:
+
+```powershell
+node research/harmonized-system/2-section-338-hs4-hs6-exposure-canada/scripts/verify_geography.js
+```
+
+This independently checks every geography and sector against HS6 arithmetic and
+the existing exposure model, including Alberta, Ontario and British Columbia,
+plus missing values, duplicated scope, ranking, formatting and unchanged opening
+and Product Explorer content. The local server instructions below still apply.
+Rendered checks also passed in installed headless Edge: all fourteen selections,
+Clear, keyboard search, focused tooltips, full rankings, widths and colours,
+anchor links, independent product/ribbon selections, introductory animation,
+unique IDs and no page overflow at 320, 390, 768, 1024 and 1440 pixels.
+The reproducible browser check starts and stops its own temporary local server:
+
+```powershell
+node research/harmonized-system/2-section-338-hs4-hs6-exposure-canada/scripts/verify_geography_browser.js
+```
+
+It needs Node 22+ and an installed Edge/Chrome (or `BROWSER_EXE`), installs nothing,
+uses an isolated temporary browser profile, and leaves screenshots in the printed
+temporary directory. The historical review notes below describe earlier additions.
+
 Research draft at `../section-338-hs4-hs6-exposure-canada.html`. This reuses the existing
 `2-section-338-hs4-hs6-exposure-canada/{css,js,data,scripts}` layout. No framework, package
 installation, browser library or site build is needed. Raw sources stay outside Git.
