@@ -1,0 +1,649 @@
+{
+  "metadata": {
+    "configuration": {
+      "ns": [
+        50,
+        100,
+        500,
+        1000,
+        5000,
+        10000,
+        20000,
+        30000,
+        40000,
+        50000,
+        60000,
+        70000,
+        80000,
+        90000,
+        100000
+      ],
+      "models": [
+        "simple",
+        "multigraph"
+      ],
+      "experiments": [
+        "snapshot",
+        "trajectory"
+      ],
+      "seed": 20261012
+    },
+    "started_utc": "2026-10-12T07:39:31.792281+00:00",
+    "python": "3.13.1",
+    "numpy": "2.4.0",
+    "numba": "0.68.0",
+    "platform": "Windows-11-10.0.22621-SP0",
+    "threads": 4,
+    "rng": "Numba MT19937, SeedSequence([base,n,simple,trajectory,trial_index]); uint32 seed",
+    "stopping": "snapshot: floor(n/2); trajectory: first failure or connectivity",
+    "interval": "95% Wilson; z=1.959963984540054",
+    "seed_count": 60000,
+    "seed_sha256": "d7b7f614c6963deeee8d230a0100e32cf2a16314fba852d16ef86a56303254f1",
+    "seed_collision_check": "passed",
+    "updated_utc": "2026-10-12T07:50:30.081252+00:00",
+    "target_trials": 1000,
+    "complete": true
+  },
+  "rows": [
+    {
+      "n": 50,
+      "model": "simple",
+      "experiment": "snapshot",
+      "trials": 1000,
+      "successes": 997,
+      "runtime_seconds": 0.6653663999168202,
+      "accepted_edges_total": 25000,
+      "seed_provenance": "SeedSequence(20261012,50,1,0,j)"
+    },
+    {
+      "n": 100,
+      "model": "simple",
+      "experiment": "snapshot",
+      "trials": 1000,
+      "successes": 988,
+      "runtime_seconds": 0.00323269993532449,
+      "accepted_edges_total": 50000,
+      "seed_provenance": "SeedSequence(20261012,100,1,0,j)"
+    },
+    {
+      "n": 500,
+      "model": "simple",
+      "experiment": "snapshot",
+      "trials": 1000,
+      "successes": 974,
+      "runtime_seconds": 0.009006300242617726,
+      "accepted_edges_total": 250000,
+      "seed_provenance": "SeedSequence(20261012,500,1,0,j)"
+    },
+    {
+      "n": 1000,
+      "model": "simple",
+      "experiment": "snapshot",
+      "trials": 1000,
+      "successes": 968,
+      "runtime_seconds": 0.015197800006717443,
+      "accepted_edges_total": 500000,
+      "seed_provenance": "SeedSequence(20261012,1000,1,0,j)"
+    },
+    {
+      "n": 5000,
+      "model": "simple",
+      "experiment": "snapshot",
+      "trials": 1000,
+      "successes": 948,
+      "runtime_seconds": 0.09278559999074787,
+      "accepted_edges_total": 2500000,
+      "seed_provenance": "SeedSequence(20261012,5000,1,0,j)"
+    },
+    {
+      "n": 10000,
+      "model": "simple",
+      "experiment": "snapshot",
+      "trials": 1000,
+      "successes": 946,
+      "runtime_seconds": 0.17085940018296242,
+      "accepted_edges_total": 5000000,
+      "seed_provenance": "SeedSequence(20261012,10000,1,0,j)"
+    },
+    {
+      "n": 20000,
+      "model": "simple",
+      "experiment": "snapshot",
+      "trials": 1000,
+      "successes": 942,
+      "runtime_seconds": 0.5041239999700338,
+      "accepted_edges_total": 10000000,
+      "seed_provenance": "SeedSequence(20261012,20000,1,0,j)"
+    },
+    {
+      "n": 30000,
+      "model": "simple",
+      "experiment": "snapshot",
+      "trials": 1000,
+      "successes": 947,
+      "runtime_seconds": 0.6886064000427723,
+      "accepted_edges_total": 15000000,
+      "seed_provenance": "SeedSequence(20261012,30000,1,0,j)"
+    },
+    {
+      "n": 40000,
+      "model": "simple",
+      "experiment": "snapshot",
+      "trials": 1000,
+      "successes": 956,
+      "runtime_seconds": 1.0412882999517024,
+      "accepted_edges_total": 20000000,
+      "seed_provenance": "SeedSequence(20261012,40000,1,0,j)"
+    },
+    {
+      "n": 50000,
+      "model": "simple",
+      "experiment": "snapshot",
+      "trials": 1000,
+      "successes": 943,
+      "runtime_seconds": 3.221669199760072,
+      "accepted_edges_total": 25000000,
+      "seed_provenance": "SeedSequence(20261012,50000,1,0,j)"
+    },
+    {
+      "n": 60000,
+      "model": "simple",
+      "experiment": "snapshot",
+      "trials": 1000,
+      "successes": 949,
+      "runtime_seconds": 3.9734755002427846,
+      "accepted_edges_total": 30000000,
+      "seed_provenance": "SeedSequence(20261012,60000,1,0,j)"
+    },
+    {
+      "n": 70000,
+      "model": "simple",
+      "experiment": "snapshot",
+      "trials": 1000,
+      "successes": 944,
+      "runtime_seconds": 8.315757400006987,
+      "accepted_edges_total": 35000000,
+      "seed_provenance": "SeedSequence(20261012,70000,1,0,j)"
+    },
+    {
+      "n": 80000,
+      "model": "simple",
+      "experiment": "snapshot",
+      "trials": 1000,
+      "successes": 946,
+      "runtime_seconds": 6.7829190999036655,
+      "accepted_edges_total": 40000000,
+      "seed_provenance": "SeedSequence(20261012,80000,1,0,j)"
+    },
+    {
+      "n": 90000,
+      "model": "simple",
+      "experiment": "snapshot",
+      "trials": 1000,
+      "successes": 935,
+      "runtime_seconds": 5.62572969996836,
+      "accepted_edges_total": 45000000,
+      "seed_provenance": "SeedSequence(20261012,90000,1,0,j)"
+    },
+    {
+      "n": 100000,
+      "model": "simple",
+      "experiment": "snapshot",
+      "trials": 1000,
+      "successes": 932,
+      "runtime_seconds": 6.335200100205839,
+      "accepted_edges_total": 50000000,
+      "seed_provenance": "SeedSequence(20261012,100000,1,0,j)"
+    },
+    {
+      "n": 50,
+      "model": "multigraph",
+      "experiment": "snapshot",
+      "trials": 1000,
+      "successes": 989,
+      "runtime_seconds": 0.004225800046697259,
+      "accepted_edges_total": 25000,
+      "seed_provenance": "SeedSequence(20261012,50,0,0,j)"
+    },
+    {
+      "n": 100,
+      "model": "multigraph",
+      "experiment": "snapshot",
+      "trials": 1000,
+      "successes": 980,
+      "runtime_seconds": 0.002606599824503064,
+      "accepted_edges_total": 50000,
+      "seed_provenance": "SeedSequence(20261012,100,0,0,j)"
+    },
+    {
+      "n": 500,
+      "model": "multigraph",
+      "experiment": "snapshot",
+      "trials": 1000,
+      "successes": 970,
+      "runtime_seconds": 0.006588299758732319,
+      "accepted_edges_total": 250000,
+      "seed_provenance": "SeedSequence(20261012,500,0,0,j)"
+    },
+    {
+      "n": 1000,
+      "model": "multigraph",
+      "experiment": "snapshot",
+      "trials": 1000,
+      "successes": 966,
+      "runtime_seconds": 0.011030900059267879,
+      "accepted_edges_total": 500000,
+      "seed_provenance": "SeedSequence(20261012,1000,0,0,j)"
+    },
+    {
+      "n": 5000,
+      "model": "multigraph",
+      "experiment": "snapshot",
+      "trials": 1000,
+      "successes": 951,
+      "runtime_seconds": 0.06488099973648787,
+      "accepted_edges_total": 2500000,
+      "seed_provenance": "SeedSequence(20261012,5000,0,0,j)"
+    },
+    {
+      "n": 10000,
+      "model": "multigraph",
+      "experiment": "snapshot",
+      "trials": 1000,
+      "successes": 940,
+      "runtime_seconds": 0.13529339991509914,
+      "accepted_edges_total": 5000000,
+      "seed_provenance": "SeedSequence(20261012,10000,0,0,j)"
+    },
+    {
+      "n": 20000,
+      "model": "multigraph",
+      "experiment": "snapshot",
+      "trials": 1000,
+      "successes": 951,
+      "runtime_seconds": 0.285012400127016,
+      "accepted_edges_total": 10000000,
+      "seed_provenance": "SeedSequence(20261012,20000,0,0,j)"
+    },
+    {
+      "n": 30000,
+      "model": "multigraph",
+      "experiment": "snapshot",
+      "trials": 1000,
+      "successes": 940,
+      "runtime_seconds": 0.36223709990736097,
+      "accepted_edges_total": 15000000,
+      "seed_provenance": "SeedSequence(20261012,30000,0,0,j)"
+    },
+    {
+      "n": 40000,
+      "model": "multigraph",
+      "experiment": "snapshot",
+      "trials": 1000,
+      "successes": 952,
+      "runtime_seconds": 0.571227699983865,
+      "accepted_edges_total": 20000000,
+      "seed_provenance": "SeedSequence(20261012,40000,0,0,j)"
+    },
+    {
+      "n": 50000,
+      "model": "multigraph",
+      "experiment": "snapshot",
+      "trials": 1000,
+      "successes": 925,
+      "runtime_seconds": 0.6733722002245486,
+      "accepted_edges_total": 25000000,
+      "seed_provenance": "SeedSequence(20261012,50000,0,0,j)"
+    },
+    {
+      "n": 60000,
+      "model": "multigraph",
+      "experiment": "snapshot",
+      "trials": 1000,
+      "successes": 933,
+      "runtime_seconds": 0.8652078999439254,
+      "accepted_edges_total": 30000000,
+      "seed_provenance": "SeedSequence(20261012,60000,0,0,j)"
+    },
+    {
+      "n": 70000,
+      "model": "multigraph",
+      "experiment": "snapshot",
+      "trials": 1000,
+      "successes": 942,
+      "runtime_seconds": 1.1778043998638168,
+      "accepted_edges_total": 35000000,
+      "seed_provenance": "SeedSequence(20261012,70000,0,0,j)"
+    },
+    {
+      "n": 80000,
+      "model": "multigraph",
+      "experiment": "snapshot",
+      "trials": 1000,
+      "successes": 938,
+      "runtime_seconds": 1.8307027000701055,
+      "accepted_edges_total": 40000000,
+      "seed_provenance": "SeedSequence(20261012,80000,0,0,j)"
+    },
+    {
+      "n": 90000,
+      "model": "multigraph",
+      "experiment": "snapshot",
+      "trials": 1000,
+      "successes": 948,
+      "runtime_seconds": 4.538824299816042,
+      "accepted_edges_total": 45000000,
+      "seed_provenance": "SeedSequence(20261012,90000,0,0,j)"
+    },
+    {
+      "n": 100000,
+      "model": "multigraph",
+      "experiment": "snapshot",
+      "trials": 1000,
+      "successes": 947,
+      "runtime_seconds": 5.299180700094439,
+      "accepted_edges_total": 50000000,
+      "seed_provenance": "SeedSequence(20261012,100000,0,0,j)"
+    },
+    {
+      "n": 50,
+      "model": "simple",
+      "experiment": "trajectory",
+      "trials": 1000,
+      "successes": 987,
+      "runtime_seconds": 0.011900399927981198,
+      "accepted_edges_total": 104832,
+      "seed_provenance": "SeedSequence(20261012,50,1,1,j)"
+    },
+    {
+      "n": 100,
+      "model": "simple",
+      "experiment": "trajectory",
+      "trials": 1000,
+      "successes": 964,
+      "runtime_seconds": 0.025715499999932945,
+      "accepted_edges_total": 248163,
+      "seed_provenance": "SeedSequence(20261012,100,1,1,j)"
+    },
+    {
+      "n": 500,
+      "model": "simple",
+      "experiment": "trajectory",
+      "trials": 1000,
+      "successes": 916,
+      "runtime_seconds": 0.0909472000785172,
+      "accepted_edges_total": 1558417,
+      "seed_provenance": "SeedSequence(20261012,500,1,1,j)"
+    },
+    {
+      "n": 1000,
+      "model": "simple",
+      "experiment": "trajectory",
+      "trials": 1000,
+      "successes": 930,
+      "runtime_seconds": 0.20961039990652353,
+      "accepted_edges_total": 3498361,
+      "seed_provenance": "SeedSequence(20261012,1000,1,1,j)"
+    },
+    {
+      "n": 5000,
+      "model": "simple",
+      "experiment": "trajectory",
+      "trials": 1000,
+      "successes": 886,
+      "runtime_seconds": 1.9553134996676818,
+      "accepted_edges_total": 20582079,
+      "seed_provenance": "SeedSequence(20261012,5000,1,1,j)"
+    },
+    {
+      "n": 10000,
+      "model": "simple",
+      "experiment": "trajectory",
+      "trials": 1000,
+      "successes": 907,
+      "runtime_seconds": 6.819589599967003,
+      "accepted_edges_total": 44860837,
+      "seed_provenance": "SeedSequence(20261012,10000,1,1,j)"
+    },
+    {
+      "n": 20000,
+      "model": "simple",
+      "experiment": "trajectory",
+      "trials": 1000,
+      "successes": 895,
+      "runtime_seconds": 12.41372870001942,
+      "accepted_edges_total": 94600432,
+      "seed_provenance": "SeedSequence(20261012,20000,1,1,j)"
+    },
+    {
+      "n": 30000,
+      "model": "simple",
+      "experiment": "trajectory",
+      "trials": 1000,
+      "successes": 893,
+      "runtime_seconds": 25.0164233999094,
+      "accepted_edges_total": 146671162,
+      "seed_provenance": "SeedSequence(20261012,30000,1,1,j)"
+    },
+    {
+      "n": 40000,
+      "model": "simple",
+      "experiment": "trajectory",
+      "trials": 1000,
+      "successes": 866,
+      "runtime_seconds": 42.76937320001889,
+      "accepted_edges_total": 196691862,
+      "seed_provenance": "SeedSequence(20261012,40000,1,1,j)"
+    },
+    {
+      "n": 50000,
+      "model": "simple",
+      "experiment": "trajectory",
+      "trials": 1000,
+      "successes": 855,
+      "runtime_seconds": 38.39189000020269,
+      "accepted_edges_total": 247113785,
+      "seed_provenance": "SeedSequence(20261012,50000,1,1,j)"
+    },
+    {
+      "n": 60000,
+      "model": "simple",
+      "experiment": "trajectory",
+      "trials": 1000,
+      "successes": 887,
+      "runtime_seconds": 31.487430699868128,
+      "accepted_edges_total": 312398527,
+      "seed_provenance": "SeedSequence(20261012,60000,1,1,j)"
+    },
+    {
+      "n": 70000,
+      "model": "simple",
+      "experiment": "trajectory",
+      "trials": 1000,
+      "successes": 875,
+      "runtime_seconds": 58.970986399799585,
+      "accepted_edges_total": 363711806,
+      "seed_provenance": "SeedSequence(20261012,70000,1,1,j)"
+    },
+    {
+      "n": 80000,
+      "model": "simple",
+      "experiment": "trajectory",
+      "trials": 1000,
+      "successes": 887,
+      "runtime_seconds": 41.238219699822366,
+      "accepted_edges_total": 428546139,
+      "seed_provenance": "SeedSequence(20261012,80000,1,1,j)"
+    },
+    {
+      "n": 90000,
+      "model": "simple",
+      "experiment": "trajectory",
+      "trials": 1000,
+      "successes": 881,
+      "runtime_seconds": 85.32359539996833,
+      "accepted_edges_total": 479580340,
+      "seed_provenance": "SeedSequence(20261012,90000,1,1,j)"
+    },
+    {
+      "n": 100000,
+      "model": "simple",
+      "experiment": "trajectory",
+      "trials": 1000,
+      "successes": 862,
+      "runtime_seconds": 96.62529030011501,
+      "accepted_edges_total": 526976445,
+      "seed_provenance": "SeedSequence(20261012,100000,1,1,j)"
+    },
+    {
+      "n": 50,
+      "model": "multigraph",
+      "experiment": "trajectory",
+      "trials": 1000,
+      "successes": 901,
+      "runtime_seconds": 0.004143400001339614,
+      "accepted_edges_total": 107142,
+      "seed_provenance": "SeedSequence(20261012,50,0,1,j)"
+    },
+    {
+      "n": 100,
+      "model": "multigraph",
+      "experiment": "trajectory",
+      "trials": 1000,
+      "successes": 880,
+      "runtime_seconds": 0.007850200054235756,
+      "accepted_edges_total": 238893,
+      "seed_provenance": "SeedSequence(20261012,100,0,1,j)"
+    },
+    {
+      "n": 500,
+      "model": "multigraph",
+      "experiment": "trajectory",
+      "trials": 1000,
+      "successes": 873,
+      "runtime_seconds": 0.02627439994830638,
+      "accepted_edges_total": 1531302,
+      "seed_provenance": "SeedSequence(20261012,500,0,1,j)"
+    },
+    {
+      "n": 1000,
+      "model": "multigraph",
+      "experiment": "trajectory",
+      "trials": 1000,
+      "successes": 855,
+      "runtime_seconds": 0.05816639983095229,
+      "accepted_edges_total": 3261220,
+      "seed_provenance": "SeedSequence(20261012,1000,0,1,j)"
+    },
+    {
+      "n": 5000,
+      "model": "multigraph",
+      "experiment": "trajectory",
+      "trials": 1000,
+      "successes": 888,
+      "runtime_seconds": 0.4497383999405429,
+      "accepted_edges_total": 20566174,
+      "seed_provenance": "SeedSequence(20261012,5000,0,1,j)"
+    },
+    {
+      "n": 10000,
+      "model": "multigraph",
+      "experiment": "trajectory",
+      "trials": 1000,
+      "successes": 868,
+      "runtime_seconds": 0.9958686999743804,
+      "accepted_edges_total": 43190879,
+      "seed_provenance": "SeedSequence(20261012,10000,0,1,j)"
+    },
+    {
+      "n": 20000,
+      "model": "multigraph",
+      "experiment": "trajectory",
+      "trials": 1000,
+      "successes": 887,
+      "runtime_seconds": 2.137618500040844,
+      "accepted_edges_total": 94640469,
+      "seed_provenance": "SeedSequence(20261012,20000,0,1,j)"
+    },
+    {
+      "n": 30000,
+      "model": "multigraph",
+      "experiment": "trajectory",
+      "trials": 1000,
+      "successes": 874,
+      "runtime_seconds": 2.7149213997181505,
+      "accepted_edges_total": 144882328,
+      "seed_provenance": "SeedSequence(20261012,30000,0,1,j)"
+    },
+    {
+      "n": 40000,
+      "model": "multigraph",
+      "experiment": "trajectory",
+      "trials": 1000,
+      "successes": 872,
+      "runtime_seconds": 12.723364800098352,
+      "accepted_edges_total": 197594826,
+      "seed_provenance": "SeedSequence(20261012,40000,0,1,j)"
+    },
+    {
+      "n": 50000,
+      "model": "multigraph",
+      "experiment": "trajectory",
+      "trials": 1000,
+      "successes": 879,
+      "runtime_seconds": 14.696496300050057,
+      "accepted_edges_total": 255876881,
+      "seed_provenance": "SeedSequence(20261012,50000,0,1,j)"
+    },
+    {
+      "n": 60000,
+      "model": "multigraph",
+      "experiment": "trajectory",
+      "trials": 1000,
+      "successes": 884,
+      "runtime_seconds": 16.400080400169827,
+      "accepted_edges_total": 310691793,
+      "seed_provenance": "SeedSequence(20261012,60000,0,1,j)"
+    },
+    {
+      "n": 70000,
+      "model": "multigraph",
+      "experiment": "trajectory",
+      "trials": 1000,
+      "successes": 875,
+      "runtime_seconds": 26.96877170028165,
+      "accepted_edges_total": 363344970,
+      "seed_provenance": "SeedSequence(20261012,70000,0,1,j)"
+    },
+    {
+      "n": 80000,
+      "model": "multigraph",
+      "experiment": "trajectory",
+      "trials": 1000,
+      "successes": 873,
+      "runtime_seconds": 20.917206799727865,
+      "accepted_edges_total": 420693871,
+      "seed_provenance": "SeedSequence(20261012,80000,0,1,j)"
+    },
+    {
+      "n": 90000,
+      "model": "multigraph",
+      "experiment": "trajectory",
+      "trials": 1000,
+      "successes": 877,
+      "runtime_seconds": 21.99490240018349,
+      "accepted_edges_total": 481093635,
+      "seed_provenance": "SeedSequence(20261012,90000,0,1,j)"
+    },
+    {
+      "n": 100000,
+      "model": "multigraph",
+      "experiment": "trajectory",
+      "trials": 1000,
+      "successes": 889,
+      "runtime_seconds": 35.6718692999566,
+      "accepted_edges_total": 543524608,
+      "seed_provenance": "SeedSequence(20261012,100000,0,1,j)"
+    }
+  ]
+}

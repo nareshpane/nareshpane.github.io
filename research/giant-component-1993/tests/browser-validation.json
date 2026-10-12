@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "page_sha256": "37c468d088db444c9f2dc690561501ef04ed36c9a5e7be28efe075ae28ae0cab",
+  "checks": [
+    "MathJax typesetting; both demos; all 15 real Python disclosures",
+    "Generate, seed changes/reproduction, critical jump, previous/next, play/pause, restart/reset, timeline, model switch and 200 vertices on both demos",
+    "Multigraph seed 0: auto-pause at edge 37; historical failure persists after final merger, and backward navigation recomputes the correct prefix",
+    "390px mobile resize: no page-wide horizontal overflow; canvas redraw; no JS errors or missing local assets",
+    "320px viewport has no page-wide overflow; accessible source disclosure and clipboard copy verified"
+  ],
+  "errors": [],
+  "failedRequests": [],
+  "mathjaxContainers": 119,
+  "failureSeed": 0,
+  "firstFailure": 37
+}
