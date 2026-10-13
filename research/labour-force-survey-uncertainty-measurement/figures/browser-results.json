@@ -1,0 +1,133 @@
+{
+  "errors": [],
+  "failed": [],
+  "mathjaxRendered": 93,
+  "layouts": [
+    {
+      "name": "desktop",
+      "width": 1440,
+      "documentWidth": 1425,
+      "bodyWidth": 1425,
+      "chapters": 19,
+      "overflow": [],
+      "wide": [
+        {
+          "tag": "DIV",
+          "id": "",
+          "cls": "page",
+          "right": 1352.5,
+          "text": "\nSurvey inference · Research draft · CanadaMeasuring Uncertainty in Canada's Lab"
+        },
+        {
+          "tag": "MAIN",
+          "id": "main",
+          "cls": "paper",
+          "right": 1324.5,
+          "text": "\nSurvey inference · Research draft · CanadaMeasuring Uncertainty in Canada's Lab"
+        },
+        {
+          "tag": "HEADER",
+          "id": "",
+          "cls": "hero",
+          "right": 1289.5,
+          "text": "Survey inference · Research draft · CanadaMeasuring Uncertainty in Canada's Labo"
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "cls": "",
+          "right": 1014.5,
+          "text": "Survey inference · Research draft · CanadaMeasuring Uncertainty in Canada's Labo"
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "cls": "eyebrow",
+          "right": 489.140625,
+          "text": "Survey inference · Research draft · Canada"
+        },
+        {
+          "tag": "H1",
+          "id": "",
+          "cls": "",
+          "right": 1014.5,
+          "text": "Measuring Uncertainty in Canada's Labour Force Survey"
+        },
+        {
+          "tag": "P",
+          "id": "",
+          "cls": "subtitle",
+          "right": 1014.5,
+          "text": "Sampling uncertainty, confidence intervals, survey design, and the interpretatio"
+        },
+        {
+          "tag": "ASIDE",
+          "id": "",
+          "cls": "metadata",
+          "right": 1289.5,
+          "text": "Created: October 13, 2026Harness: Codex on WindowsModel: Not exposed; to complet"
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "cls": "",
+          "right": 1273.5,
+          "text": "Created: October 13, 2026"
+        },
+        {
+          "tag": "STRONG",
+          "id": "",
+          "cls": "",
+          "right": 1105.59375,
+          "text": "Created:"
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "cls": "",
+          "right": 1273.5,
+          "text": "Harness: Codex on Windows"
+        },
+        {
+          "tag": "STRONG",
+          "id": "",
+          "cls": "",
+          "right": 1106.734375,
+          "text": "Harness:"
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "cls": "",
+          "right": 1273.5,
+          "text": "Model: Not exposed; to complete"
+        },
+        {
+          "tag": "STRONG",
+          "id": "",
+          "cls": "",
+          "right": 1097.53125,
+          "text": "Model:"
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "cls": "",
+          "right": 1273.5,
+          "text": "Reasoning: Not exposed; to complete"
+        }
+      ]
+    },
+    {
+      "name": "mobile",
+      "width": 390,
+      "documentWidth": 390,
+      "bodyWidth": 390,
+      "chapters": 19,
+      "overflow": [],
+      "wide": []
+    }
+  ],
+  "noScriptTables": true,
+  "directFileOpening": true
+}

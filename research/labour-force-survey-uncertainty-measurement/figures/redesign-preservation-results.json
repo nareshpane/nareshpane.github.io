@@ -1,0 +1,31 @@
+{
+  "preserved_files_verified": 23,
+  "article_sections_preserved": [
+    "overview",
+    "survey-journey",
+    "methodology",
+    "classification",
+    "design",
+    "sampling-units",
+    "rotation",
+    "imputation",
+    "weights",
+    "sampling",
+    "variance",
+    "bootstrap",
+    "cv",
+    "intervals",
+    "errors",
+    "seasonality",
+    "provinces",
+    "case-study",
+    "laboratory",
+    "examples",
+    "conclusions",
+    "glossary",
+    "sources"
+  ],
+  "statistical_forms_preserved": 8,
+  "local_asset_paths_verified": 20,
+  "mathematical_corrections": "No numerical or substantive formula corrections required; equivalent multiline layouts and explicit auxiliary notation only."
+}

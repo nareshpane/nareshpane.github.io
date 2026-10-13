@@ -1,0 +1,1918 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 9]><html class="no-js lt-ie9" lang="en" dir="ltr"><![endif]--><!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+<!--<![endif]-->
+
+<head>
+<meta charset="utf-8">
+<link rel="schema.dc" href="http://purl.org/dc/elements/1.1/" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<!-- wet-boew.github.io/wet-boew/License-en.htm / wet-boew.github.io/wet-boew/Licence-en.htm -->
+
+
+<meta content="width=device-width,initial-scale=1" name="viewport" />
+
+<title>Chapter 7 Variance estimation</title>
+<meta name="dcterms.title" content="Methodology of the Canadian Labour Force Survey. Chapter 7 Variance estimation" />
+<meta name="dcterms.language" title="ISO639-2" content="eng" />
+<meta name="dcterms.creator" content="Government of Canada, Statistics Canada" />
+<meta name="dcterms.issued" title="W3CDTF" content="2017-03-29" />
+<meta name="dcterms.modified" title="W3CDTF" content="2017-03-29" />
+<meta name="dcterms.subject" title="gcstc" content="none" />
+<meta name="description" content="" />
+<meta name="keywords" content="none" />
+<meta name="STCtopic" content="Education, training and learning; Labour" />
+<meta name="STCtopicID" content="1821; 2621" />
+<meta name="STCsubtopic" content="Fields of study; Outcomes of education; Adult education and training; Job training and educational attainment" />
+<meta name="STCsubtopicID" content="1586; 3073; 966; 2624" />
+<meta name="STCtype" content="Survey documentation" />
+<meta name="STCthesaurus" content="none" />
+
+<meta property="dcterms:service" content="StatCan"/> 
+<meta property="dcterms:accessRights" content="2"/>
+
+<link href="/wet-boew4b/assets/favicon.ico" rel="icon" type="image/x-icon">
+<link rel="stylesheet" href="/wet-boew4b/css/wet-boew.min.css">
+<script src="/wet-boew4b/js/jquery.min.js"></script>
+
+<link rel="stylesheet" href="/wet-boew4b/css/theme.min.css">
+<link rel="stylesheet" href="/wet-boew4b/css/statcan.css">
+<link rel="stylesheet" href="/wet-boew4b/invitation-manager/Overlay.css"> 
+
+<noscript><link rel="stylesheet" href="/wet-boew4b/css/noscript.min.css" /></noscript>
+<!-- Adobe Analytics v5 production version --><!--script src="//assets.adobedtm.com/be5dfd287373/8cdb3d539c44/launch-6df9e9b447f9.min.js"></script-->
+<!-- Adobe Analytics v5 staging version --><!--script src="//assets.adobedtm.com/be5dfd287373/8cdb3d539c44/launch-dfa8abb35555-staging.min.js"></script-->
+<!-- Adobe Analytics v10 production version --><script src="//assets.adobedtm.com/be5dfd287373/8f0ead8a37e7/launch-09394abc039d.min.js"></script>
+
+<script>dataLayer1 = [];</script>
+
+
+
+<script src="/Framework/js/jquery.tooltipster.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/Framework/css/tooltipster.css">
+<link rel="stylesheet" type="text/css" href="/Framework/css/pubs_wet4.css">
+<link rel="stylesheet" type="text/css" href="/wet-boew4b/css/font-awesome.min.css">
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  config: ["MMLorHTML.js"],
+  jax: ["input/MathML","output/HTML-CSS","output/NativeMML"],
+  extensions: ["mml2jax.js","MathMenu.js","MathZoom.js"]
+});
+</script>
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js">
+</script>
+<script>!window.MathJax && document.write(unescape('%3Cscript src="/mathjax/MathJax.js"%3E%3C/script%3E'))</script>
+<!-- CustomScriptsCSSEnd -->
+</head>
+
+<body vocab="http://schema.org/" typeof="WebPage">
+
+<ul id="wb-tphp">
+<li class="wb-slc">
+<a class="wb-sl" href="#wb-cont">Skip to main content</a>
+</li>
+<li class="wb-slc visible-sm visible-md visible-lg">
+<a class="wb-sl" href="#wb-info">Skip to "About this site"</a>
+</li>
+</ul>
+<header role="banner">
+<div id="wb-bnr" class="container">
+<section id="wb-lng" class="visible-md visible-lg text-right">
+<h2 class="wb-inv">Language selection</h2>
+<div class="row">
+<div class="col-md-12">
+<ul class="list-inline margin-bottom-none">
+<li><a lang="fr" href="
+/cgi-bin/change.cgi
+">Fran&#231;ais</a></li>
+</ul>
+</div>
+</div>
+</section>
+<div class="row">
+<div class="brand col-xs-9 col-sm-5 col-md-4">
+<a href="https://www.canada.ca/en.html"><img src="/wet-boew4b/assets/sig-blk-gov-en.svg" alt="Government of Canada"><span class="wb-inv"> / <span lang="fr">Gouvernement du Canada</span></span></a>
+</div>
+<section class="wb-mb-links col-sm-offset-4 col-xs-4 col-sm-3 visible-sm visible-xs" id="wb-glb-mn">
+<h2>Search and menus</h2>
+<ul class="list-inline text-right chvrn">
+<li><a href="#mb-pnl" title="Search and menus" aria-controls="mb-pnl" class="overlay-lnk" role="button"><span class="glyphicon glyphicon-search"><span class="glyphicon glyphicon-th-list"><span class="wb-inv">Search and menus</span></span></span></a></li>
+</ul>
+<div id="mb-pnl"></div>
+</section>
+
+<section id="wb-srch" class="col-lg-offset-2 col-md-offset-2 col-xs-6 text-right visible-md visible-lg">
+<h2 class="wb-inv">Search</h2>
+<form action="https://www.statcan.gc.ca/search/results/site-search" method="get" name="cse-search-box" role="search" class="form-inline">
+<div class="form-group wb-srch-qry">
+<label for="wb-srch-q" class="wb-inv">Search Statistics Canada</label>
+<input type="hidden" name="fq" value="stclac:2" />
+<input id="wb-srch-q" list="wb-srch-q-ac" class="wb-srch-q form-control" name="q" type="search" value="" size="27" maxlength="150" placeholder="Search Statistics Canada">
+<datalist id="wb-srch-q-ac">
+</datalist>
+</div>
+<div class="form-group submit">
+<button type="submit" id="wb-srch-sub" class="btn btn-primary btn-small" name="wb-srch-sub"><span class="glyphicon-search glyphicon"></span><span class="wb-inv">Search</span></button>
+</div>
+</form>
+</section>
+</div>
+</div>
+
+<nav role="navigation" id="wb-sm" class="wb-menu visible-md visible-lg" data-trgt="mb-pnl" data-ajax-replace="/wet-boew4b/ajax/sitemenu-en.html" typeof="SiteNavigationElement">
+	<div class="container nvbar">
+		<h2 class="wb-inv">Topics menu</h2>
+		<div class="row">
+			<ul class="list-inline menu">
+				<li><a href="https://www150.statcan.gc.ca/n1/en/subjects?MM=1">Subjects</a></li>
+				<li><a href="https://www150.statcan.gc.ca/n1/en/type/data?MM=1">Data</a></li>
+				<li><a href="https://www150.statcan.gc.ca/n1/en/type/analysis?MM=1">Analysis</a></li>
+				<li><a href="https://www.statcan.gc.ca/en/reference?MM=1">Reference</a></li>
+				<li><a href="https://www.statcan.gc.ca/en/geography?MM=1">Geography</a></li>
+				<li><a href="https://www.statcan.gc.ca/en/census?MM=1">Census</a></li>
+				<li><a href="https://www.statcan.gc.ca/en/surveys?MM=1">Surveys and statistical programs</a></li>
+				<li><a href="https://www.statcan.gc.ca/en/about/statcan?MM=1">About StatCan</a></li>
+				<li><a href="https://www.canada.ca/en.html">Canada.ca</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<nav role="navigation" id="wb-bc" class="" property="breadcrumb">
+	<div class="container">
+		<div class="row">
+
+<!-- Breadcrumb trail -->
+<ol class="breadcrumb">
+<li><a href="http://www.statcan.gc.ca/eng/start" title="Main page of Statistics Canada">Home</a></li>
+<li><a href="/cgi-bin/IPS/display?cat_num=71-526-x" title="Online catalogue: 71-526-X">71-526-X</a></li>
+<li><a href="/pub/71-526-x/71-526-x2017001-eng.htm" title="Main page: Methodology of the Canadian Labour Force Survey">Main page</a></li>
+<li>Chapter 7 Variance estimation</li>
+</ol>
+
+</div>
+</div>
+</nav>
+</header>
+
+<main role="main" property="mainContentOfPage" class="container">
+
+
+<!--H1 and logo start-->
+<section>
+  <h1 property="name" id="wb-cont">
+  <span class="hidden-xs hidden-sm"><span class="small">Methodology of the Canadian Labour Force Survey</span><br>
+    Chapter 7 Variance estimation</span>
+  <small class="visible-sm visible-xs"><span class="small">Methodology of the Canadian Labour Force Survey</span><br/>
+  Chapter 7 Variance estimation</small></h1>
+  
+  
+  
+
+<div class="row pstn-tp-sm pstn-rght-sm mrgn-tp-xl"> 
+     <a href="#toc-tdm" aria-controls="toc-tdm" class="btn btn-xs wb-lbx btn-primary mrgn-rght-sm"><span class="glyphicon glyphicon-list mrgn-rght-sm" title="Table of contents"></span>Table of contents</a>
+</div>
+
+
+<details class="hidden-xs hidden-sm rel-article mrgn-bttm-md hidden-print"><summary class="rel-article"><span class="h4">On this page</span></summary>
+
+<ul>
+ <li class="list-unstyled"><a href="#a70">7.0 Introduction</a></li>
+ <li class="list-unstyled"><a href="#a71">7.1 The Rao-Wu bootstrap</a></li>
+ <li class="list-unstyled"><a href="#a72">7.2 <abbr title="Labour Force Survey">LFS</abbr> bootstrap samples</a>
+ 		<ul>
+        <li class="list-unstyled"><a href="#a721">7.2.1 Strata with one selected <abbr title="Primary sampling unit">PSU</abbr></a></li>
+        <li class="list-unstyled"><a href="#a722">7.2.2 Bootstrap sample coordination</a></li>
+        <li class="list-unstyled"><a href="#a723">7.2.3 Redesign transition period</a></li>
+        </ul></li>
+        
+ <li class="list-unstyled"><a href="#a73">7.3 <abbr title="Labour Force Survey">LFS</abbr> bootstrap weights</a></li>
+ <li class="list-unstyled"><a href="#a74">7.4 Variance estimation</a></li>
+	 
+ 	
+</ul>
+</details>
+
+
+ <!--CONTENT-->
+ 
+<h2 id="a70" class="mrgn-tp-md">7.0 Introduction</h2>
+
+
+
+        <p>In a survey based on a probability sample such
+      as the Labour Force Survey (LFS), statistical inferences need to account for
+      the sampling error. The variance measures the precision of an estimator. Because
+      of the complexity of the estimation method and sample design, an explicit form
+      of the variance estimator is not readily available for the <abbr title="Labour Force Survey">LFS</abbr>. The survey
+  therefore uses a resampling method for variance estimation. </p>
+    <p>With the 2015 redesign, a major change to the
+      <abbr title="Labour Force Survey">LFS</abbr> variance estimation methodology was introduced. Previously, variance
+      estimation was based on a resampling method called the jackknife. A variance
+      estimation system custom-built for the <abbr title="Labour Force Survey">LFS</abbr> used the jackknife method to produce
+      variance estimates of totals, rates or proportions, changes, and moving
+      averages. As of January 2015, variance estimation is based on a resampling method
+      called the bootstrap. Each month, 1,000 sets of <abbr title="Labour Force Survey">LFS</abbr> bootstrap weights are
+      generated, and these bootstrap weights can be used with various standard
+      software packages to produce variance estimates. The variance estimates
+      obtained using the new methodology are similar in value to those obtained using
+      the old methodology. The main advantage of the new methodology is that once
+      bootstrap weights are generated, they can be used to produce variance estimates
+  for a much wider variety of analyses than the old system. </p>
+  <p>This chapter will describe how variance is
+      estimated for the <abbr title="Labour Force Survey">LFS</abbr>. <a href="#a71">Section 7.1</a> presents the particular bootstrap method
+      that is implemented, the Rao-Wu bootstrap. <a href="#a71">Sections 7.2</a> and <a href="#a71" title="Section 7.3">7.3</a> describe how
+  the <abbr title="Labour Force Survey">LFS</abbr> bootstrap samples and bootstrap weights are generated. <a href="#a74">Section 7.4</a> discusses how the bootstrap weights are used to compute variance estimates.</p>
+    <h2 id="a71">7.1 The Rao-Wu bootstrap</h2>
+    <p>The <abbr title="Labour Force Survey">LFS</abbr> uses the Rao-Wu bootstrap, as proposed
+      in Rao and Wu (1988) and Rao, Wu and Yue (1992). The method was proposed for
+      stratified multistage designs where the primary sampling units (PSUs) are
+      selected using probability proportional to size with replacement (PPSWR)
+      sampling. For the <abbr title="Labour Force Survey">LFS</abbr>, the <abbr title="Primary sampling units">PSUs</abbr> are actually selected using PPS without
+      replacement (PPSWOR). Särndal, Swensson and Wretman (1992, p. 154), states that
+      the variance estimator for multistage sampling with <abbr title="Primary sampling units">PSUs</abbr> selected without
+      replacement can be approximated by the variance estimator for multistage
+      sampling with <abbr title="Primary sampling units">PSUs</abbr> selected with replacement, and that the approximation is
+      conservative if the selection of <abbr title="Primary sampling units">PSUs</abbr> without replacement is more efficient
+  than the selection of <abbr title="Primary sampling units">PSUs</abbr> with replacement. This is the case for the <abbr title="Labour Force Survey">LFS</abbr>.</p>
+    <p>The
+      first step in applying the Rao-Wu bootstrap is to select bootstrap samples. For
+      each stratum <em>h</em>, <em>m<sub>h</sub></em> <abbr title="Primary sampling units">PSUs</abbr> are drawn using simple random sampling with
+      replacement (SRSWR) from the original set of <em>n<sub>h</sub></em> sampled <abbr title="Primary sampling units">PSUs</abbr>. For most applications of the Rao-Wu
+      bootstrap at Statistics Canada, including the <abbr title="Labour Force Survey">LFS</abbr>, <em>m<sub>h</sub></em> is set to <em>n<sub>h </sub></em>− 1. This process of selecting bootstrap samples is repeated <em>B</em> times. The number of times the <em>j</em><sup>th</sup> <abbr title="Primary sampling unit">PSU</abbr> is selected in the
+      bootstrap sample of the <em>b</em><sup>th</sup> replicate, called the multiplicity of the <abbr title="Primary sampling unit">PSU</abbr>, is denoted as
+  <math xmlns='http://www.w3.org/1998/Math/MathML'>
+    <semantics>
+      <mrow>
+        <msubsup>
+          <mi>m</mi>
+          <mrow>
+            <mi>h</mi>
+            <mi>j</mi>
+          </mrow>
+          <mrow>
+            <mo stretchy='false'>(</mo>
+            <mi>b</mi>
+            <mo stretchy='false'>)</mo>
+          </mrow>
+        </msubsup>
+      </mrow>
+      <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+        feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+        hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+        4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+        vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+        fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamyBamaaDa
+        aaleaacaWGObGaamOAaaqaaiaacIcacaWGIbGaaiykaaaaaaa@3B31@ </annotation>
+    </semantics>
+  </math>
+      , where <em>b</em>=1,...,<em>B</em>. The multiplicities,
+  <math xmlns='http://www.w3.org/1998/Math/MathML'>
+    <semantics>
+      <mrow>
+        <msubsup>
+          <mi>m</mi>
+          <mrow>
+            <mi>h</mi>
+            <mi>j</mi>
+          </mrow>
+          <mrow>
+            <mo stretchy='false'>(</mo>
+            <mi>b</mi>
+            <mo stretchy='false'>)</mo>
+          </mrow>
+        </msubsup>
+      </mrow>
+      <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+        feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+        hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+        4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+        vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+        fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamyBamaaDa
+        aaleaacaWGObGaamOAaaqaaiaacIcacaWGIbGaaiykaaaaaaa@3B31@ </annotation>
+    </semantics>
+  </math>
+      , have values between
+      0 and <em>n<sub>h </sub></em>− 1 inclusive,
+      and satisfy
+  <math xmlns='http://www.w3.org/1998/Math/MathML'>
+    <semantics>
+      <mrow>
+        <mstyle displaystyle='true'>
+          <msubsup>
+            <mo>&#x2211;</mo>
+            <mrow>
+              <mi>j</mi>
+              <mo>=</mo>
+              <mn>1</mn>
+            </mrow>
+            <mrow>
+              <msub>
+                <mi>n</mi>
+                <mi>h</mi>
+              </msub>
+            </mrow>
+          </msubsup>
+          <mrow>
+            <msubsup>
+              <mi>m</mi>
+              <mrow>
+                <mi>h</mi>
+                <mi>j</mi>
+              </mrow>
+              <mrow>
+                <mo stretchy='false'>(</mo>
+                <mi>b</mi>
+                <mo stretchy='false'>)</mo>
+              </mrow>
+            </msubsup>
+          </mrow>
+        </mstyle>
+        <mo>=</mo>
+        <msub>
+          <mi>n</mi>
+          <mi>h</mi>
+        </msub>
+        <mo>&#x2212;</mo>
+        <mn>1</mn>
+      </mrow>
+      <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+        feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+        hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+        4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+        vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+        fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaWaaabmaeaaca
+        WGTbWaa0baaSqaaiaadIgacaWGQbaabaGaaiikaiaadkgacaGGPaaa
+        aaqaaiaadQgacqGH9aqpcaaIXaaabaGaamOBamaaBaaameaacaWGOb
+        aabeaaa0GaeyyeIuoakiabg2da9iaad6gadaWgaaWcbaGaamiAaaqa
+        baGccqGHsislcaaIXaaaaa@46B3@ </annotation>
+    </semantics>
+  </math>
+      for each bootstrap replicate and each stratum.</p>
+    <p>The next step is to produce <em>B</em> sets of bootstrap weights by applying
+      an adjustment factor to the original survey weight. They are calculated as
+      follows:</p>
+    <p><math display='block'>
+ <semantics>
+  <mrow>
+   <msubsup>
+    <mi>w</mi>
+    <mrow>
+     <mi>h</mi><mi>j</mi><mi>k</mi></mrow>
+    <mrow>
+     <mo stretchy='false'>(</mo><mi>b</mi><mo stretchy='false'>)</mo></mrow>
+   </msubsup>
+   <mo>=</mo><mfrac>
+    <mrow>
+     <msub>
+      <mi>n</mi>
+      <mi>h</mi>
+     </msub>
+     </mrow>
+    <mrow>
+     <msub>
+      <mi>n</mi>
+      <mi>h</mi>
+     </msub>
+     <mo>&#x2212;</mo><mn>1</mn></mrow>
+   </mfrac>
+   <msubsup>
+    <mi>m</mi>
+    <mrow>
+     <mi>h</mi><mi>j</mi></mrow>
+    <mrow>
+     <mo stretchy='false'>(</mo><mi>b</mi><mo stretchy='false'>)</mo></mrow>
+   </msubsup>
+   <msub>
+    <mi>w</mi>
+    <mrow>
+     <mi>h</mi><mi>j</mi><mi>k</mi></mrow>
+   </msub>
+   <mo>,</mo><mtext>&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;(7</mtext><mtext>.1)</mtext></mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaam4DamaaDa
+  aaleaacaWGObGaamOAaiaadUgaaeaacaGGOaGaamOyaiaacMcaaaGc
+  cqGH9aqpdaWcaaqaaiaad6gadaWgaaWcbaGaamiAaaqabaaakeaaca
+  WGUbWaaSbaaSqaaiaadIgaaeqaaOGaeyOeI0IaaGymaaaacaWGTbWa
+  a0baaSqaaiaadIgacaWGQbaabaGaaiikaiaadkgacaGGPaaaaOGaam
+  4DamaaBaaaleaacaWGObGaamOAaiaadUgaaeqaaOGaaiilaiaabcca
+  caqGGaGaaeiiaiaabccacaqGGaGaaeiiaiaabIcacaqG3aGaaeOlai
+  aabgdacaqGPaaaaa@545A@
+  </annotation>
+ </semantics>
+</math></p>
+    <p>where
+      <math xmlns='http://www.w3.org/1998/Math/MathML'>
+        <semantics>
+          <mrow>
+            <msubsup>
+              <mi>w</mi>
+              <mrow>
+                <mi>h</mi>
+                <mi>j</mi>
+                <mi>k</mi>
+              </mrow>
+              <mrow></mrow>
+            </msubsup>
+          </mrow>
+          <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+            feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+            hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+            4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+            vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+            fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaam4DamaaDa
+            aaleaacaWGObGaamOAaiaadUgaaeaaaaaaaa@39EB@ </annotation>
+        </semantics>
+      </math>
+      is the survey weight for unit <em>k</em> in <abbr title="Primary sampling unit">PSU</abbr> <em>j </em>and stratum <em>h</em>, and
+      <math xmlns='http://www.w3.org/1998/Math/MathML'>
+        <semantics>
+          <mrow>
+            <msubsup>
+              <mi>w</mi>
+              <mrow>
+                <mi>h</mi>
+                <mi>j</mi>
+                <mi>k</mi>
+              </mrow>
+              <mrow>
+                <mo stretchy='false'>(</mo>
+                <mi>b</mi>
+                <mo stretchy='false'>)</mo>
+              </mrow>
+            </msubsup>
+          </mrow>
+          <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+            feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+            hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+            4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+            vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+            fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaam4DamaaDa
+            aaleaacaWGObGaamOAaiaadUgaaeaacaGGOaGaamOyaiaacMcaaaaa
+            aa@3C2B@ </annotation>
+        </semantics>
+      </math>
+      is the bootstrap weight for the <em>b</em><sup>th</sup> replicate.</p>
+    <p>The <em>B</em> sets of bootstrap weights can be used
+      to produce variance estimates for a variety of analyses. For an estimate,
+      <math xmlns='http://www.w3.org/1998/Math/MathML'>
+        <semantics>
+          <mover accent='true'>
+            <mi>&#x03B8;</mi>
+            <mo>&#x005E;</mo>
+          </mover>
+          <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+            feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+            hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+            4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+            vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+            fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGafqiUdeNbaK
+            aaaaa@37BC@ </annotation>
+        </semantics>
+      </math>
+      , of a population
+      parameter,
+      <math xmlns='http://www.w3.org/1998/Math/MathML'>
+        <semantics>
+          <mi>&#x03B8;</mi>
+          <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+            feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+            hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+            4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+            vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+            fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaeqiUdehaaa@37AC@ </annotation>
+        </semantics>
+      </math>
+      , the bootstrap
+      variance estimate is computed as follows. The estimate is calculated using each
+      set of bootstrap weights, resulting in <em>B</em> estimates denoted as
+  <math xmlns='http://www.w3.org/1998/Math/MathML'>
+    <semantics>
+      <mrow>
+        <msup>
+          <mover accent='true'>
+            <mi>&#x03B8;</mi>
+            <mo>&#x005E;</mo>
+          </mover>
+          <mrow>
+            <mo>*</mo>
+            <mo stretchy='false'>(</mo>
+            <mn>1</mn>
+            <mo stretchy='false'>)</mo>
+          </mrow>
+        </msup>
+        <mo>,</mo>
+        <mn>...</mn>
+        <mo>,</mo>
+        <msup>
+          <mover accent='true'>
+            <mi>&#x03B8;</mi>
+            <mo>&#x005E;</mo>
+          </mover>
+          <mrow>
+            <mo>*</mo>
+            <mo stretchy='false'>(</mo>
+            <mi>B</mi>
+            <mo stretchy='false'>)</mo>
+          </mrow>
+        </msup>
+        <mo>.</mo>
+      </mrow>
+      <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+        feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+        hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+        4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+        vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+        fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGafqiUdeNbaK
+        aadaahaaWcbeqaaiaacQcacaGGOaGaaGymaiaacMcaaaGccaGGSaGa
+        aiOlaiaac6cacaGGUaGaaiilaiqbeI7aXzaajaWaaWbaaSqabeaaca
+        GGQaGaaiikaiaadkeacaGGPaaaaOGaaiOlaaaa@43A8@ </annotation>
+    </semantics>
+  </math>
+      For example, suppose
+  <math xmlns='http://www.w3.org/1998/Math/MathML'>
+    <semantics>
+      <mover accent='true'>
+        <mi>&#x03B8;</mi>
+        <mo>&#x005E;</mo>
+      </mover>
+      <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+        feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+        hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+        4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+        vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+        fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGafqiUdeNbaK
+        aaaaa@37BC@ </annotation>
+    </semantics>
+  </math>
+      is an estimate of a total, given by
+  <math xmlns='http://www.w3.org/1998/Math/MathML'>
+    <semantics>
+      <mrow>
+        <mover accent='true'>
+          <mi>&#x03B8;</mi>
+          <mo>&#x005E;</mo>
+        </mover>
+        <mo>=</mo>
+        <mstyle displaystyle='true'>
+          <msub>
+            <mo>&#x2211;</mo>
+            <mi>h</mi>
+          </msub>
+          <mrow>
+            <mstyle displaystyle='true'>
+              <msub>
+                <mo>&#x2211;</mo>
+                <mi>j</mi>
+              </msub>
+              <mrow>
+                <mstyle displaystyle='true'>
+                  <msub>
+                    <mo>&#x2211;</mo>
+                    <mi>k</mi>
+                  </msub>
+                  <mrow>
+                    <msubsup>
+                      <mi>w</mi>
+                      <mrow>
+                        <mi>h</mi>
+                        <mi>j</mi>
+                        <mi>k</mi>
+                      </mrow>
+                      <mrow></mrow>
+                    </msubsup>
+                  </mrow>
+                </mstyle>
+              </mrow>
+            </mstyle>
+          </mrow>
+        </mstyle>
+        <msub>
+          <mi>y</mi>
+          <mrow>
+            <mi>h</mi>
+            <mi>j</mi>
+            <mi>k</mi>
+          </mrow>
+        </msub>
+      </mrow>
+      <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+        feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+        hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+        4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+        vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+        fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGafqiUdeNbaK
+        aacqGH9aqpdaaeqaqaamaaqababaWaaabeaeaacaWG3bWaa0baaSqa
+        aiaadIgacaWGQbGaam4AaaqaaaaaaeaacaWGRbaabeqdcqGHris5aa
+        WcbaGaamOAaaqab0GaeyyeIuoaaSqaaiaadIgaaeqaniabggHiLdGc
+        caWG5bWaaSbaaSqaaiaadIgacaWGQbGaam4Aaaqabaaaaa@4921@ </annotation>
+    </semantics>
+  </math>
+      , where
+  <math xmlns='http://www.w3.org/1998/Math/MathML'>
+    <semantics>
+      <mrow>
+        <msub>
+          <mi>y</mi>
+          <mrow>
+            <mi>h</mi>
+            <mi>j</mi>
+            <mi>k</mi>
+          </mrow>
+        </msub>
+      </mrow>
+      <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+        feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+        hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+        4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+        vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+        fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamyEamaaBa
+        aaleaacaWGObGaamOAaiaadUgaaeqaaaaa@39EC@ </annotation>
+    </semantics>
+  </math>
+      is the value of a variable of interest <em>y</em> for unit <em>k</em> in <abbr title="Primary sampling unit">PSU</abbr> <em>j</em> and stratum <em>h</em>. Then the estimate for the <em>b</em><sup>th</sup> bootstrap replicate is
+  <math xmlns='http://www.w3.org/1998/Math/MathML'>
+    <semantics>
+      <mrow>
+        <msup>
+          <mover accent='true'>
+            <mi>&#x03B8;</mi>
+            <mo>&#x005E;</mo>
+          </mover>
+          <mrow>
+            <mo>*</mo>
+            <mo stretchy='false'>(</mo>
+            <mi>b</mi>
+            <mo stretchy='false'>)</mo>
+          </mrow>
+        </msup>
+        <mo>=</mo>
+        <mstyle displaystyle='true'>
+          <msub>
+            <mo>&#x2211;</mo>
+            <mi>h</mi>
+          </msub>
+          <mrow>
+            <mstyle displaystyle='true'>
+              <msub>
+                <mo>&#x2211;</mo>
+                <mi>j</mi>
+              </msub>
+              <mrow>
+                <mstyle displaystyle='true'>
+                  <msub>
+                    <mo>&#x2211;</mo>
+                    <mi>k</mi>
+                  </msub>
+                  <mrow>
+                    <msubsup>
+                      <mi>w</mi>
+                      <mrow>
+                        <mi>h</mi>
+                        <mi>j</mi>
+                        <mi>k</mi>
+                      </mrow>
+                      <mrow>
+                        <mo stretchy='false'>(</mo>
+                        <mi>b</mi>
+                        <mo stretchy='false'>)</mo>
+                      </mrow>
+                    </msubsup>
+                  </mrow>
+                </mstyle>
+              </mrow>
+            </mstyle>
+          </mrow>
+        </mstyle>
+        <msub>
+          <mi>y</mi>
+          <mrow>
+            <mi>h</mi>
+            <mi>j</mi>
+            <mi>k</mi>
+          </mrow>
+        </msub>
+      </mrow>
+      <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+        feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+        hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+        4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+        vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+        fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGafqiUdeNbaK
+        aadaahaaWcbeqaaiaacQcacaGGOaGaamOyaiaacMcaaaGccqGH9aqp
+        daaeqaqaamaaqababaWaaabeaeaacaWG3bWaa0baaSqaaiaadIgaca
+        WGQbGaam4AaaqaaiaacIcacaWGIbGaaiykaaaaaeaacaWGRbaabeqd
+        cqGHris5aaWcbaGaamOAaaqab0GaeyyeIuoaaSqaaiaadIgaaeqani
+        abggHiLdGccaWG5bWaaSbaaSqaaiaadIgacaWGQbGaam4Aaaqabaaa
+        aa@4E86@ </annotation>
+    </semantics>
+  </math>
+      . The bootstrap
+      variance estimate is given by the variance of the <em>B</em> estimates</p>
+    <p><math display='block'>
+ <semantics>
+  <mrow>
+   <msub>
+    <mover accent='true'>
+     <mi>V</mi>
+     <mo>&#x005E;</mo>
+    </mover>
+    
+    <mrow>
+     <mtext>BOOT</mtext></mrow>
+   </msub>
+   <mo stretchy='false'>(</mo><mover accent='true'>
+    <mi>&#x03B8;</mi>
+    <mo>&#x005E;</mo>
+   </mover>
+   <mo stretchy='false'>)</mo><mo>=</mo><mfrac>
+    <mn>1</mn>
+    <mi>B</mi>
+   </mfrac>
+   <msup>
+    <mrow>
+     <mstyle displaystyle='true'>
+      <msubsup>
+       <mo>&#x2211;</mo>
+       <mrow>
+        <mi>b</mi><mo>=</mo><mn>1</mn></mrow>
+       <mi>B</mi>
+      </msubsup>
+      <mrow>
+       <mrow><mo>(</mo>
+        <mrow>
+         <msup>
+          <mover accent='true'>
+           <mi>&#x03B8;</mi>
+           <mo>&#x005E;</mo>
+          </mover>
+          
+          <mrow>
+           <mo>*</mo><mo stretchy='false'>(</mo><mi>b</mi><mo stretchy='false'>)</mo></mrow>
+         </msup>
+         <mo>&#x2212;</mo><msup>
+          <mover accent='true'>
+           <mi>&#x03B8;</mi>
+           <mo>&#x005E;</mo>
+          </mover>
+          
+          <mrow>
+           <mo>*</mo><mo stretchy='false'>(</mo><mo>.</mo><mo stretchy='false'>)</mo></mrow>
+         </msup>
+         </mrow>
+       <mo>)</mo></mrow></mrow>
+     </mstyle></mrow>
+    <mn>2</mn>
+   </msup>
+   <mtext>&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;(7</mtext><mtext>.2)</mtext></mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGabmOvayaaja
+  WaaSbaaSqaaiaabkeacaqGpbGaae4taiaabsfaaeqaaOGaaiikaiqb
+  eI7aXzaajaGaaiykaiabg2da9maalaaabaGaaGymaaqaaiaadkeaaa
+  WaaabmaeaadaqadaqaaiqbeI7aXzaajaWaaWbaaSqabeaacaGGQaGa
+  aiikaiaadkgacaGGPaaaaOGaeyOeI0IafqiUdeNbaKaadaahaaWcbe
+  qaaiaacQcacaGGOaGaaiOlaiaacMcaaaaakiaawIcacaGLPaaaaSqa
+  aiaadkgacqGH9aqpcaaIXaaabaGaamOqaaqdcqGHris5aOWaaWbaaS
+  qabeaacaaIYaaaaOGaaeiiaiaabccacaqGGaGaaeiiaiaabccacaqG
+  GaGaaeikaiaabEdacaqGUaGaaeOmaiaabMcaaaa@59DC@
+  </annotation>
+ </semantics>
+</math></p>
+  <p> where
+      <math xmlns='http://www.w3.org/1998/Math/MathML'>
+        <semantics>
+          <mrow>
+            <msup>
+              <mover accent='true'>
+                <mi>&#x03B8;</mi>
+                <mo>&#x005E;</mo>
+              </mover>
+              <mrow>
+                <mo>*</mo>
+                <mo stretchy='false'>(</mo>
+                <mo>.</mo>
+                <mo stretchy='false'>)</mo>
+              </mrow>
+            </msup>
+            <mo>=</mo>
+            <mfrac>
+              <mn>1</mn>
+              <mi>B</mi>
+            </mfrac>
+            <mstyle displaystyle='true'>
+              <msubsup>
+                <mo>&#x2211;</mo>
+                <mrow>
+                  <mi>b</mi>
+                  <mo>=</mo>
+                  <mn>1</mn>
+                </mrow>
+                <mi>B</mi>
+              </msubsup>
+              <mrow>
+                <msup>
+                  <mover accent='true'>
+                    <mi>&#x03B8;</mi>
+                    <mo>&#x005E;</mo>
+                  </mover>
+                  <mrow>
+                    <mo>*</mo>
+                    <mo stretchy='false'>(</mo>
+                    <mi>b</mi>
+                    <mo stretchy='false'>)</mo>
+                  </mrow>
+                </msup>
+              </mrow>
+            </mstyle>
+          </mrow>
+          <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+            feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+            hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+            4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+            vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+            fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGafqiUdeNbaK
+            aadaahaaWcbeqaaiaacQcacaGGOaGaaiOlaiaacMcaaaGccqGH9aqp
+            daWcaaqaaiaaigdaaeaacaWGcbaaamaaqadabaGafqiUdeNbaKaada
+            ahaaWcbeqaaiaacQcacaGGOaGaamOyaiaacMcaaaaabaGaamOyaiab
+            g2da9iaaigdaaeaacaWGcbaaniabggHiLdaaaa@478B@ </annotation>
+        </semantics>
+      </math>.  </p>
+    <h2 id="a72">7.2 <abbr title="Labour Force Survey">LFS</abbr>
+  bootstrap samples</h2>
+    <p>To obtain stable variance estimates for various
+      types of analyses, as many bootstrap replicates as possible should be made
+      available. A compromise has to be reached between ensuring stability, and
+      limiting the execution time and the size of files.  The <abbr title="Labour Force Survey">LFS</abbr> has opted to generate 1,000 <abbr title="Labour Force Survey">LFS</abbr>
+      bootstrap replicates each month. This ensures the stability of the variance
+  estimates for the key survey estimates.</p>
+    <p>As described in <a href="#a71">Section 7.1</a>, the first step in
+      applying the Rao-Wu bootstrap consists in drawing 1,000 bootstrap samples at
+      the <abbr title="Primary sampling unit">PSU</abbr> level, with <em>n<sub>h </sub></em>− 1
+      <abbr title="Primary sampling units">PSUs</abbr> selected with replacement per stratum. A two-stage sample design is used
+      for all provinces except Prince Edward Island (PEI), and the bootstrap samples
+      are therefore selected at the cluster level. Since a one-stage sample design is
+  used for <abbr title="Prince Edward Island">PEI</abbr>, the bootstrap samples are selected at the dwelling level.</p>
+  <p>The remainder of this section provides details
+      on various considerations related to the generation of the <abbr title="Labour Force Survey">LFS</abbr> bootstrap
+      samples. This is followed by <a href="#a73">Section 7.3</a>, which describes the generation of the
+  1,000 sets of <abbr title="Labour Force Survey">LFS</abbr> bootstrap weights.</p>
+    <h3 id="a721"><strong>7.2.1 </strong>Strata
+  with one selected <abbr title="Primary sampling unit">PSU</abbr></h3>
+    <p>To estimate the variance, each stratum should
+      contain at least two sampled <abbr title="Primary sampling units">PSUs</abbr>. This is usually the case for the <abbr title="Labour Force Survey">LFS</abbr> and it
+      is always the case for the one-stage strata in <abbr title="Prince Edward Island">PEI</abbr>. Most two-stage strata in
+      the provinces contain six sampled <abbr title="Primary sampling units">PSUs</abbr>, one for each rotation. However, for
+      various reasons, some strata may only have one sampled <abbr title="Primary sampling unit">PSU</abbr> on the final
+      tabulation file.  This can happen by
+      design (a few three-stage strata in the previous design, transition between
+      redesigns), or due to survey results (out-of-scope and non-responding
+  dwellings). The single-<abbr title="Primary sampling unit">PSU</abbr> strata are handled in one of three different ways.</p>
+    <p>First, the three-stage strata in the provinces with
+      only one selected <abbr title="Primary sampling unit">PSU</abbr> are handled by splitting the selected <abbr title="Primary sampling unit">PSU</abbr>. The <abbr title="Primary sampling unit">PSU</abbr> is
+      split by the rotation group or by the second sampling stage unit (SSU). For
+      these strata, the bootstrap samples are selected at the rotation group level or
+  at the <abbr title="Secondary sampling unit">SSU</abbr> level instead of the <abbr title="Primary sampling unit">PSU</abbr> level.</p>
+    <p>Second, the single-<abbr title="Primary sampling unit">PSU</abbr> strata that occur during
+      the redesign transition period are handled by collapsing strata; this is
+  discussed in more detail in <a href="#a723">Section 7.2.3</a>.  </p>
+  <p>Finally, the remaining single-<abbr title="Primary sampling unit">PSU</abbr> strata are handled
+      by temporarily splitting the <abbr title="Primary sampling unit">PSU</abbr> into two parts based on whether the household
+      identifier is even or odd. The strategy was chosen because it is easy to
+      implement and requires no manual intervention. This situation happens rarely
+      enough that the strategy used has no impact on the variance estimates at the
+  provincial level. </p>
+  <h3 id="a722"><strong>7.2.2 </strong>Bootstrap
+      sample coordination</h3>
+    <p>The <abbr title="Labour Force Survey">LFS</abbr> produces estimates involving multiple
+      survey months, such as estimates of change between periods and moving averages.
+      The sample overlap and dependence that exists between months can be taken into
+      account in the variance estimation through the coordinated bootstrap method
+      proposed by Roberts, Kovacevic, Mantel and Phillips (2001). Their method takes
+      the dependence into account by retaining the same bootstrap samples of <abbr title="Primary sampling units">PSUs</abbr>
+  from one month to the next.</p>
+    <p>In practice, the sampled <abbr title="Primary sampling units">PSUs</abbr> in a stratum are
+      not always the same from one month to the next, and the coordinated bootstrap
+      needs to be adapted. A strategy is proposed in Neusy (2013) and Benhin and
+      Mantel (2012) to adapt the coordinated bootstrap in the presence of change.
+  There are potentially four different situations:</p>
+    <ol class="lst-lwr-rmn">
+      <li class="ListSpacing"> When the sampled <abbr title="Primary sampling units">PSUs</abbr>
+        in the stratum are the same in the current month as in the previous month, the
+        previous month’s bootstrap sample can be used for the current month without any
+      further work.</li>
+    
+    <li class="ListSpacing">When the <abbr title="Primary sampling units">PSUs</abbr> are not
+      all the same but the number of sampled <abbr title="Primary sampling units">PSUs</abbr> in the stratum remains the same for
+      the two months, the coordinated bootstrap can be implemented by pairing each
+      <abbr title="Primary sampling unit">PSU</abbr> in the current month with a <abbr title="Primary sampling unit">PSU</abbr> in the previous month. <abbr title="Primary sampling units">PSUs</abbr> that are common
+      to both months’ samples are paired; new <abbr title="Primary sampling units">PSUs</abbr> replacing retired <abbr title="Primary sampling units">PSUs</abbr> are paired
+      with the <abbr title="Primary sampling unit">PSU</abbr> that they are replacing; and all remaining <abbr title="Primary sampling units">PSUs</abbr> are randomly
+      paired. The current-month bootstrap samples for the stratum are generated by transferring
+      the multiplicities of the previous month to the current month: each current-month
+      <abbr title="Primary sampling unit">PSU</abbr> receives the multiplicities of the previous-month <abbr title="Primary sampling unit">PSU</abbr> with which it is
+      paired. This results in a Rao-Wu bootstrap sample with the same multiplicities
+      in the current month as in the previous month for the <abbr title="Primary sampling units">PSUs</abbr> that are common to
+      both months.</li>
+    <li class="ListSpacing">When there are fewer
+      sampled <abbr title="Primary sampling units">PSUs</abbr> in the stratum for the current month than for the previous month,
+      the coordinated bootstrap is adapted as follows. Each <abbr title="Primary sampling unit">PSU</abbr> in the current month
+      is first paired with a <abbr title="Primary sampling unit">PSU</abbr> in the previous month as described in ii, leaving
+      one or more previous-month <abbr title="Primary sampling units">PSUs</abbr> unpaired. Each current-month <abbr title="Primary sampling unit">PSU</abbr> receives the
+      multiplicities of the previous-month <abbr title="Primary sampling unit">PSU</abbr> with which it is paired, resulting in
+      preliminary bootstrap samples for the current month. The sum of the
+      multiplicities for the preliminary bootstrap samples is not necessarily <em>n<sub>h </sub></em>
+  <math xmlns='http://www.w3.org/1998/Math/MathML'>
+    <semantics>
+      <mo>&#x2013;</mo>
+      <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+        feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+        hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+        4rNCHbGeaGqk0Jf9crFfpeea0xh9v8qiW7rqqrpu0xh9Wqpm0db9Wq
+        pepeuf0xe9q8qiYRWFGCk9vi=dbvc9s8vr0db9Fn0dbbG8Fq0Jfr=x
+        fr=xfbpdbaqaaeaaciGaaiaabeqaamaabaabaaGcbaacbaqcLbwaqa
+        aaaaaaaaWdbiaa=nbiaaa@3D01@ </annotation>
+    </semantics>
+  </math>
+      1 for all the bootstrap replicates. This is because
+      the multiplicities of the unpaired previous-month <abbr title="Primary sampling units">PSUs</abbr> are not carried forward
+      to the current month and because <em>n<sub>h</sub></em> is smaller than it was in the previous month. For the bootstrap replicates
+      where the sum is less than <em>n<sub>h </sub></em>−
+      1, <abbr title="Primary sampling units">PSUs</abbr> are randomly added to the bootstrap sample using SRSWR (<abbr title="that is to say">i.e</abbr>., the <abbr title="Primary sampling unit">PSU</abbr>
+      multiplicities are increased) until the sum of the multiplicities is <em>n<sub>h </sub></em>− 1. Conversely, for the
+      bootstrap replicates where the sum is greater than <em>n<sub>h </sub></em>− 1, <abbr title="Primary sampling units">PSUs</abbr> are randomly dropped from the bootstrap
+      sample (<abbr title="that is to say">i.e</abbr>., the <abbr title="Primary sampling unit">PSU</abbr> multiplicities are decreased) until the sum of the
+      multiplicities is <em>n<sub>h </sub></em>− 1. </li>
+    <li class="ListSpacing">When there are more
+      sampled <abbr title="Primary sampling units">PSUs</abbr> in the stratum for the current month than for the previous month,
+      an extra step is required to adapt the coordinated bootstrap. The current-month
+      <abbr title="Primary sampling units">PSUs</abbr> are paired, as many as possible, with the previous-month <abbr title="Primary sampling units">PSUs</abbr> as described
+      in ii. The current month has more sampled <abbr title="Primary sampling units">PSUs</abbr> than the previous month so not
+      all current month <abbr title="Primary sampling units">PSUs</abbr> can be paired. The paired current-month <abbr title="Primary sampling units">PSUs</abbr> receive
+      their multiplicities from the previous-month <abbr title="Primary sampling units">PSUs</abbr> with which they are paired.
+      The multiplicities of the unpaired current-month <abbr title="Primary sampling units">PSUs</abbr> (new <abbr title="Primary sampling units">PSUs</abbr>) are generated
+      using the
+      <math xmlns='http://www.w3.org/1998/Math/MathML'>
+        <semantics>
+          <mrow>
+            <mtext>Binomial</mtext>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <msubsup>
+                  <mi>n</mi>
+                  <mi>h</mi>
+                  <mo>*</mo>
+                </msubsup>
+                <mo>&#x2212;</mo>
+                <mn>1</mn>
+                <mo>,</mo>
+                <mrow>
+                  <mn>1</mn>
+                  <mo>/</mo>
+                  <mrow>
+                    <msubsup>
+                      <mi>n</mi>
+                      <mi>h</mi>
+                      <mo>*</mo>
+                    </msubsup>
+                  </mrow>
+                </mrow>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+          </mrow>
+          <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+            feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+            hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+            4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+            vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+            fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaaeOqaiaabM
+            gacaqGUbGaae4Baiaab2gacaqGPbGaaeyyaiaabYgadaqadaqaaiaa
+            d6gadaqhaaWcbaGaamiAaaqaaiaacQcaaaGccqGHsislcaaIXaGaai
+            ilamaalyaabaGaaGymaaqaaiaad6gadaqhaaWcbaGaamiAaaqaaiaa
+            cQcaaaaaaaGccaGLOaGaayzkaaaaaa@4775@ </annotation>
+        </semantics>
+      </math>
+      distribution, where
+      <math xmlns='http://www.w3.org/1998/Math/MathML'>
+        <semantics>
+          <mrow>
+            <msubsup>
+              <mi>n</mi>
+              <mi>h</mi>
+              <mo>*</mo>
+            </msubsup>
+          </mrow>
+          <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+            feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+            hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+            4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+            vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+            fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamOBamaaDa
+            aaleaacaWGObaabaGaaiOkaaaaaaa@38B1@ </annotation>
+        </semantics>
+      </math>
+      is the number of sampled <abbr title="Primary sampling units">PSUs</abbr> in the previous
+      month. This ensures that the expected multiplicities of the unpaired <abbr title="Primary sampling units">PSUs</abbr> are
+      the same as the paired <abbr title="Primary sampling units">PSUs</abbr>. The multiplicities for the paired and unpaired
+      current month <abbr title="Primary sampling units">PSUs</abbr> together form preliminary bootstrap samples for the current
+      month. The sum of the multiplicities for the preliminary bootstrap samples is
+      not necessarily <em>n<sub>h </sub></em>
+  <math xmlns='http://www.w3.org/1998/Math/MathML'>
+    <semantics>
+      <mo>&#x2013;</mo>
+      <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+        feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+        hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+        4rNCHbGeaGqk0Jf9crFfpeea0xh9v8qiW7rqqrpu0xh9Wqpm0db9Wq
+        pepeuf0xe9q8qiYRWFGCk9vi=dbvc9s8vr0db9Fn0dbbG8Fq0Jfr=x
+        fr=xfbpdbaqaaeaaciGaaiaabeqaamaabaabaaGcbaacbaqcLbwaqa
+        aaaaaaaaWdbiaa=nbiaaa@3D01@ </annotation>
+    </semantics>
+  </math>
+      1 for all the bootstrap replicates. <abbr title="Primary sampling units">PSUs</abbr> are randomly
+      added or dropped from the bootstrap samples, as described in iii, until the sum
+      of the multiplicities is <em>n<sub>h </sub></em>−
+      1for all bootstrap samples. </li>
+  </ol>
+      
+    <p>The
+      strategies for handling increases or decreases in the number of sampled <abbr title="Primary sampling units">PSUs</abbr>
+      described in iii and iv maintain correct cross-sectional variance estimates,
+  and provide some coordination for variance estimates involving multiple months. </p>
+    <p>For the
+      <abbr title="Labour Force Survey">LFS</abbr>, the coordination for two and three-stage strata in the provinces is
+      implemented as follows. The <abbr title="Labour Force Survey">LFS</abbr> bootstrap samples are based on the <abbr title="Primary sampling units">PSUs</abbr> present
+      in the current month’s final tabulation file, and the number of <abbr title="Primary sampling units">PSUs</abbr> within
+      most strata remains the same from one month to the next. This means that the
+      coordination described in i and ii are most commonly used. However, there are
+      sometimes differences in the number of <abbr title="Primary sampling units">PSUs</abbr>, usually caused by a <abbr title="Primary sampling unit">PSU</abbr> with temporarily
+      no respondents in the final tabulation file. If the number of <abbr title="Primary sampling units">PSUs</abbr> decreases by
+      one, then the adaptation to the coordinated bootstrap described in iii is used.
+      If the number of <abbr title="Primary sampling units">PSUs</abbr> decreases by more than one or if it increases, then new
+      bootstrap samples are randomly selected using a fixed random seed that is
+      assigned to each <abbr title="Labour Force Survey">LFS</abbr> stratum and kept until the next redesign. These fixed
+      random seeds are used so that the same bootstrap samples are selected for a
+  given stratum and number of <abbr title="Primary sampling units">PSUs</abbr>.</p>
+  <p>Starting
+      with the 2015 redesign,  <abbr title="Prince Edward Island">PEI</abbr> uses a one-stage sample design, and <abbr title="Primary sampling units">PSUs</abbr> are at the
+      dwelling level. As described in <a href="chapt2-eng.htm#a256">Section 2.5.6</a>, the  <abbr title="Prince Edward Island">PEI</abbr> strata were formed based
+      on the Census Dissemination Areas (DAs), and then assigned to one of six
+      rotation groups. All dwellings in the same one-stage stratum belong to the same
+      rotation group. Every six months, when a new sample of dwellings is rotated
+      into a stratum, new bootstrap samples are also selected for that stratum. For
+      the other five months, the bootstrap samples are coordinated using the
+  strategies described in i, ii, iii and iv, depending on the situation. </p>
+  <h3 id="a723"><strong>7.2.3 </strong>Redesign
+      transition period</h3>
+    <p>The <abbr title="Labour Force Survey">LFS</abbr> sample was redesigned in January 2015
+      and the new sample was gradually phased-in from January to June 2015. Each month
+      during the transition period, a rotation group from the old design was rotated
+      out and replaced by a rotation group from the new design. In the end, the
+      estimates are based on an integration of the two designs. The new <abbr title="Labour Force Survey">LFS</abbr> sample
+      was selected independently from the old sample, so the bootstrap samples for
+      the new design were also selected independently and separately from the
+  bootstrap samples for the old design, <abbr title="that is to say">i.e</abbr>. without coordination.</p>
+    <p>As the old sample was gradually phased-out
+      during the transition period, the number of sampled <abbr title="Primary sampling units">PSUs</abbr> in the old design
+      strata decreased each month. The bootstrap samples for the old design were
+      coordinated during this period using the coordination strategy described in iii
+      of <a href="#a722">Section 7.2.2</a>. By the fifth month of the transition period, only one
+      rotation group from the old design remained in the <abbr title="Labour Force Survey">LFS</abbr> sample, and therefore
+      many strata were left with only one <abbr title="Primary sampling unit">PSU</abbr>. The single-<abbr title="Primary sampling unit">PSU</abbr> strata were randomly
+      paired within the province and collapsed to form two-<abbr title="Primary sampling unit">PSU</abbr> strata. Preliminary bootstrap
+      samples for the collapsed strata were generated using the previous month
+      multiplicities of each <abbr title="Primary sampling unit">PSU</abbr>. Each collapsed stratum had two <abbr title="Primary sampling units">PSUs</abbr>, so <abbr title="Primary sampling units">PSUs</abbr> were
+      randomly added or dropped from the bootstrap samples until the sum of the
+  multiplicities was one for all the bootstrap samples of each collapsed stratum.</p>
+  <p>The bootstrap samples for the new sample were
+      created by first generating bootstrap samples for the June 2015 sample, when
+      the new sample was completely phased-in. The bootstrap samples were generated
+      using a new set of random seeds that will be kept until the next redesign. Next,
+      bootstrap samples for the new design were generated moving backwards from May
+      to January 2015. While moving backwards, the number of sampled <abbr title="Primary sampling units">PSUs</abbr> decreases
+      each month. The same methodology used to coordinate the bootstrap samples for
+      the old design moving forward through time was used to coordinate the bootstrap
+      samples for the new design moving backward through time. The January 2015 sample
+      contained only one rotation group from the new sample, and therefore many new
+      design strata contained only one <abbr title="Primary sampling unit">PSU</abbr>. The single-<abbr title="Primary sampling unit">PSU</abbr> strata were collapsed and
+      handled, as described previously for the old design strata in the fifth month
+  of the transition. </p>
+  <h2 id="a73">7.3 <abbr title="Labour Force Survey">LFS</abbr>
+  bootstrap weights</h2>
+    <p>In order to properly estimate the sampling
+      variability of an estimator, each of the weighting steps leading to the
+      computation of the final weights should be repeated for each bootstrap
+      replicate. Currently, only the final weighting step, composite calibration (see
+      <a href="chapt6-eng.htm#a631">Section 6.3.1</a>), is repeated for each bootstrap replicate. This was also the
+      case for the previous variance estimation system based on the jackknife. </p>
+    <p>The following steps are performed to generate 1,000
+  sets of final <abbr title="Labour Force Survey">LFS</abbr> bootstrap weights for the provinces:</p>
+    <ol>
+      <li class="ListSpacing"> Initial bootstrap weights are generated for each
+        household by applying Equation (7.1), using the multiplicities from the 1,000
+        <abbr title="Labour Force Survey">LFS</abbr> bootstrap samples and the household subweights from the current month <abbr title="Labour Force Survey">LFS</abbr> final
+      tabulation file.</li>
+    
+    
+      <li class="ListSpacing"> A separate set of composite control totals is required
+        for each bootstrap replicate.  The 1,000
+        sets of totals are calculated using the previous month’s final bootstrap
+        weights. To do this, first, each set of replicate weights from the previous
+        month’s bootstrap weight file is calibrated to the current month’s demographic
+        control totals. Next, for each set of weights, provincial-level estimates for
+        the 28 labour characteristics listed in Appendix G are calculated.  </li>
+   
+   
+      <li class="ListSpacing"> Composite auxiliary variables that correspond to the
+        composite control totals are derived for the current month households, as
+        described in Section 6.3.1. The characteristics are derived using the previous
+        month’s final tabulation file for households that are common to both the
+        current and previous month. The auxiliary variables of households missing from
+        the previous month’s final tabulation file are imputed using donor imputation
+        in the case of nonrespondents, and using mean imputation in the case of
+        households from the birth rotation. The donor imputation for the nonrespondents
+        is only performed once, whereas the mean imputation is performed separately for
+        each of the 1,000 bootstrap replicates.</li>
+    
+    
+      <li class="ListSpacing"> The initial bootstrap weights generated in step 1 are
+        calibrated to the current month’s demographic control totals and to the
+        composite control totals computed in step 2, using the composite auxiliary
+        variables derived in step 3. The calibration is repeated for each bootstrap
+        replicate. </li>
+    </ol>
+    
+  <p>Note that if negative weights are obtained in
+      step 4, then the calibration is applied a second time to the calibrated
+      weights, with the negative weights replaced by their value in the initial
+      bootstrap weights file. If after this second round of calibration there are
+      still negative weights, these negative weights are set to one and it is
+      accepted that the control totals will not be satisfied.</p>
+    <p>Monthly <abbr title="Labour Force Survey">LFS</abbr> bootstrap weights have been
+      generated beginning from 1998 for the ten provinces. They are now generated
+  every month, as part of monthly production.</p>
+  <h2 id="a74">7.4 Variance
+      estimation</h2>
+    <p>The <abbr title="Labour Force Survey">LFS</abbr> bootstrap weights are used to compute
+      variance estimates using Equation (7.2). The variance estimates can be produced
+      using software packages, such as SAS (PROC SURVEYMEANS), Stata 9 or newer,
+      SUDAAN and WesVar. Gagné, Roberts, and Keown (2014) and Phillips (2004) provide
+  guidance on how to use bootstrap weights with these software packages.</p>
+    <p>In order to reduce the size of the <abbr title="Labour Force Survey">LFS</abbr>
+      bootstrap weight files, the files contain one record per household. Like the
+      survey weights, the bootstrap weights are the same for all household members,
+      and so a person level bootstrap weights file can be generated by assigning the
+  household level bootstrap weights to each member of the household.</p>
+    <p>As
+      described in <a href="#a71">Section 7.1</a>, the bootstrap variance estimate for an estimate,
+<math xmlns='http://www.w3.org/1998/Math/MathML'>
+      <semantics>
+          <mover accent='true'>
+            <mi>&#x03B8;</mi>
+            <mo>&#x005E;</mo>
+          </mover>
+          <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+            feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+            hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+            4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+            vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+            fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGafqiUdeNbaK
+            aaaaa@37BC@ </annotation>
+      </semantics>
+      </math>
+      , is obtained by
+      first computing the estimate with each set of bootstrap weights to obtain
+      <math xmlns='http://www.w3.org/1998/Math/MathML'>
+        <semantics>
+          <mrow>
+            <msup>
+              <mover accent='true'>
+                <mi>&#x03B8;</mi>
+                <mo>&#x005E;</mo>
+              </mover>
+              <mrow>
+                <mo>*</mo>
+                <mo stretchy='false'>(</mo>
+                <mn>1</mn>
+                <mo stretchy='false'>)</mo>
+              </mrow>
+            </msup>
+            <mo>,</mo>
+            <mn>...</mn>
+            <mo>,</mo>
+            <msup>
+              <mover accent='true'>
+                <mi>&#x03B8;</mi>
+                <mo>&#x005E;</mo>
+              </mover>
+              <mrow>
+                <mo>*</mo>
+                <mo stretchy='false'>(</mo>
+                <mn>1</mn>
+                <mo>,</mo>
+                <mn>000</mn>
+                <mo stretchy='false'>)</mo>
+              </mrow>
+            </msup>
+          </mrow>
+          <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+            feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+            hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+            4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+            vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+            fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGafqiUdeNbaK
+            aadaahaaWcbeqaaiaacQcacaGGOaGaaGymaiaacMcaaaGccaGGSaGa
+            aiOlaiaac6cacaGGUaGaaiilaiqbeI7aXzaajaWaaWbaaSqabeaaca
+            GGQaGaaiikaiaaigdacaGGSaGaaGimaiaaicdacaaIWaGaaiykaaaa
+            aaa@45BE@ </annotation>
+        </semantics>
+      </math>
+      , and then applying
+  (7.2).</p>
+    <p>For
+      estimates involving multiple survey months, each of
+      <math xmlns='http://www.w3.org/1998/Math/MathML'>
+        <semantics>
+          <mrow>
+            <msup>
+              <mover accent='true'>
+                <mi>&#x03B8;</mi>
+                <mo>&#x005E;</mo>
+              </mover>
+              <mrow>
+                <mo>*</mo>
+                <mo stretchy='false'>(</mo>
+                <mn>1</mn>
+                <mo stretchy='false'>)</mo>
+              </mrow>
+            </msup>
+            <mo>,</mo>
+            <mn>...</mn>
+            <mo>,</mo>
+            <msup>
+              <mover accent='true'>
+                <mi>&#x03B8;</mi>
+                <mo>&#x005E;</mo>
+              </mover>
+              <mrow>
+                <mo>*</mo>
+                <mo stretchy='false'>(</mo>
+                <mn>1</mn>
+                <mo>,</mo>
+                <mn>000</mn>
+                <mo stretchy='false'>)</mo>
+              </mrow>
+            </msup>
+          </mrow>
+          <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+            feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+            hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+            4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+            vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+            fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGafqiUdeNbaK
+            aadaahaaWcbeqaaiaacQcacaGGOaGaaGymaiaacMcaaaGccaGGSaGa
+            aiOlaiaac6cacaGGUaGaaiilaiqbeI7aXzaajaWaaWbaaSqabeaaca
+            GGQaGaaiikaiaaigdacaGGSaGaaGimaiaaicdacaaIWaGaaiykaaaa
+            aaa@45BE@ </annotation>
+        </semantics>
+      </math>
+      should be computed using multiple survey
+      months as well. For example, consider an estimate of change of the form:
+      <math xmlns='http://www.w3.org/1998/Math/MathML'>
+        <semantics>
+          <mrow>
+            <msub>
+              <mover accent='true'>
+                <mi>&#x03B8;</mi>
+                <mo>&#x005E;</mo>
+              </mover>
+              <mi>C</mi>
+            </msub>
+            <mo>=</mo>
+            <msub>
+              <mover accent='true'>
+                <mi>&#x03B8;</mi>
+                <mo>&#x005E;</mo>
+              </mover>
+              <mn>2</mn>
+            </msub>
+            <mo>&#x2212;</mo>
+            <msub>
+              <mover accent='true'>
+                <mi>&#x03B8;</mi>
+                <mo>&#x005E;</mo>
+              </mover>
+              <mn>1</mn>
+            </msub>
+            <mo>,</mo>
+          </mrow>
+          <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+            feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+            hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+            4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+            vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+            fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGafqiUdeNbaK
+            aadaWgaaWcbaGaam4qaaqabaGccqGH9aqpcuaH4oqCgaqcamaaBaaa
+            leaacaaIYaaabeaakiabgkHiTiqbeI7aXzaajaWaaSbaaSqaaiaaig
+            daaeqaaOGaaiilaaaa@40CC@ </annotation>
+        </semantics>
+      </math>
+      where
+      <math xmlns='http://www.w3.org/1998/Math/MathML'>
+        <semantics>
+          <mrow>
+            <msub>
+              <mover accent='true'>
+                <mi>&#x03B8;</mi>
+                <mo>&#x005E;</mo>
+              </mover>
+              <mn>1</mn>
+            </msub>
+          </mrow>
+          <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+            feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+            hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+            4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+            vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+            fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGafqiUdeNbaK
+            aadaWgaaWcbaGaaGymaaqabaaaaa@38A3@ </annotation>
+        </semantics>
+      </math>
+      is an estimate of
+      <math xmlns='http://www.w3.org/1998/Math/MathML'>
+        <semantics>
+          <mrow>
+            <msub>
+              <mi>&#x03B8;</mi>
+              <mn>1</mn>
+            </msub>
+          </mrow>
+          <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+            feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+            hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+            4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+            vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+            fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaeqiUde3aaS
+            baaSqaaiaaigdaaeqaaaaa@3893@ </annotation>
+        </semantics>
+      </math>
+      , the population
+      parameter for the first month; and
+      <math xmlns='http://www.w3.org/1998/Math/MathML'>
+        <semantics>
+          <mrow>
+            <msub>
+              <mover accent='true'>
+                <mi>&#x03B8;</mi>
+                <mo>&#x005E;</mo>
+              </mover>
+              <mn>2</mn>
+            </msub>
+          </mrow>
+          <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+            feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+            hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+            4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+            vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+            fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGafqiUdeNbaK
+            aadaWgaaWcbaGaaGOmaaqabaaaaa@38A4@ </annotation>
+        </semantics>
+      </math>
+      is an estimate of
+      <math xmlns='http://www.w3.org/1998/Math/MathML'>
+        <semantics>
+          <mrow>
+            <msub>
+              <mi>&#x03B8;</mi>
+              <mn>2</mn>
+            </msub>
+          </mrow>
+          <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+            feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+            hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+            4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+            vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+            fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaeqiUde3aaS
+            baaSqaaiaaikdaaeqaaaaa@3894@ </annotation>
+        </semantics>
+      </math>
+      , the population
+      parameter for the second month. The bootstrap variance estimate of
+      <math xmlns='http://www.w3.org/1998/Math/MathML'>
+        <semantics>
+          <mrow>
+            <msub>
+              <mover accent='true'>
+                <mi>&#x03B8;</mi>
+                <mo>&#x005E;</mo>
+              </mover>
+              <mi>C</mi>
+            </msub>
+          </mrow>
+          <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+            feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+            hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+            4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+            vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+            fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGafqiUdeNbaK
+            aadaWgaaWcbaGaam4qaaqabaaaaa@38B0@ </annotation>
+        </semantics>
+      </math>
+      is obtained by first computing
+      <math xmlns='http://www.w3.org/1998/Math/MathML'>
+        <semantics>
+          <mrow>
+            <msubsup>
+              <mover accent='true'>
+                <mi>&#x03B8;</mi>
+                <mo>&#x005E;</mo>
+              </mover>
+              <mrow>
+                <msub>
+                  <mrow></mrow>
+                  <mi>C</mi>
+                </msub>
+              </mrow>
+              <mrow>
+                <mo>*</mo>
+                <mo stretchy='false'>(</mo>
+                <mi>b</mi>
+                <mo stretchy='false'>)</mo>
+              </mrow>
+            </msubsup>
+            <mo>=</mo>
+            <msubsup>
+              <mover accent='true'>
+                <mi>&#x03B8;</mi>
+                <mo>&#x005E;</mo>
+              </mover>
+              <mn>2</mn>
+              <mrow>
+                <mo>*</mo>
+                <mo stretchy='false'>(</mo>
+                <mi>b</mi>
+                <mo stretchy='false'>)</mo>
+              </mrow>
+            </msubsup>
+            <mo>&#x2212;</mo>
+            <msubsup>
+              <mover accent='true'>
+                <mi>&#x03B8;</mi>
+                <mo>&#x005E;</mo>
+              </mover>
+              <mn>1</mn>
+              <mrow>
+                <mo>*</mo>
+                <mo stretchy='false'>(</mo>
+                <mi>b</mi>
+                <mo stretchy='false'>)</mo>
+              </mrow>
+            </msubsup>
+          </mrow>
+          <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+            feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+            hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+            4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+            vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+            fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGafqiUdeNbaK
+            aadaqhaaWcbaWaaSbaaWqaaiaadoeaaeqaaaWcbaGaaiOkaiaacIca
+            caWGIbGaaiykaaaakiabg2da9iqbeI7aXzaajaWaa0baaSqaaiaaik
+            daaeaacaGGQaGaaiikaiaadkgacaGGPaaaaOGaeyOeI0IafqiUdeNb
+            aKaadaqhaaWcbaGaaGymaaqaaiaacQcacaGGOaGaamOyaiaacMcaaa
+            aaaa@4917@ </annotation>
+        </semantics>
+      </math>
+      for <em>b=</em>1,...,1000,  where
+      <math xmlns='http://www.w3.org/1998/Math/MathML'>
+        <semantics>
+          <mrow>
+            <msubsup>
+              <mover accent='true'>
+                <mi>&#x03B8;</mi>
+                <mo>&#x005E;</mo>
+              </mover>
+              <mrow>
+                <msub>
+                  <mrow></mrow>
+                  <mn>1</mn>
+                </msub>
+              </mrow>
+              <mrow>
+                <mo>*</mo>
+                <mo stretchy='false'>(</mo>
+                <mi>b</mi>
+                <mo stretchy='false'>)</mo>
+              </mrow>
+            </msubsup>
+          </mrow>
+          <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+            feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+            hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+            4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+            vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+            fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGafqiUdeNbaK
+            aadaqhaaWcbaWaaSbaaWqaaiaaigdaaeqaaaWcbaGaaiOkaiaacIca
+            caWGIbGaaiykaaaaaaa@3BCA@ </annotation>
+        </semantics>
+      </math>
+      is an estimate of
+      <math xmlns='http://www.w3.org/1998/Math/MathML'>
+        <semantics>
+          <mrow>
+            <msub>
+              <mi>&#x03B8;</mi>
+              <mn>1</mn>
+            </msub>
+          </mrow>
+          <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+            feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+            hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+            4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+            vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+            fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaeqiUde3aaS
+            baaSqaaiaaigdaaeqaaaaa@3893@ </annotation>
+        </semantics>
+      </math>
+      based on the <em>b</em><sup>th</sup> set of first month bootstrap weights, and
+      <math xmlns='http://www.w3.org/1998/Math/MathML'>
+        <semantics>
+          <mrow>
+            <msubsup>
+              <mover accent='true'>
+                <mi>&#x03B8;</mi>
+                <mo>&#x005E;</mo>
+              </mover>
+              <mn>2</mn>
+              <mrow>
+                <mo>*</mo>
+                <mo stretchy='false'>(</mo>
+                <mi>b</mi>
+                <mo stretchy='false'>)</mo>
+              </mrow>
+            </msubsup>
+          </mrow>
+          <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+            feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+            hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+            4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+            vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+            fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGafqiUdeNbaK
+            aadaqhaaWcbaGaaGOmaaqaaiaacQcacaGGOaGaamOyaiaacMcaaaaa
+            aa@3B93@ </annotation>
+        </semantics>
+      </math>
+      is an estimate of
+      <math xmlns='http://www.w3.org/1998/Math/MathML'>
+        <semantics>
+          <mrow>
+            <msub>
+              <mi>&#x03B8;</mi>
+              <mn>2</mn>
+            </msub>
+          </mrow>
+          <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+            feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+            hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+            4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+            vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+            fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaeqiUde3aaS
+            baaSqaaiaaikdaaeqaaaaa@3894@ </annotation>
+        </semantics>
+      </math>
+      based on the <em>b</em><sup>th</sup> set of second month bootstrap weights. Equation
+      (7.2) is then applied to
+      <math xmlns='http://www.w3.org/1998/Math/MathML'>
+        <semantics>
+          <mrow>
+            <msubsup>
+              <mrow>
+                <mover accent='true'>
+                  <mi>&#x03B8;</mi>
+                  <mo stretchy='true'>&#x005E;</mo>
+                </mover>
+              </mrow>
+              <mi>C</mi>
+              <mrow>
+                <mo>*</mo>
+                <mo stretchy='false'>(</mo>
+                <mn>1</mn>
+                <mo stretchy='false'>)</mo>
+              </mrow>
+            </msubsup>
+            <mo>,</mo>
+            <mn>...</mn>
+            <mo>,</mo>
+            <msubsup>
+              <mrow>
+                <mover accent='true'>
+                  <mi>&#x03B8;</mi>
+                  <mo stretchy='true'>&#x005E;</mo>
+                </mover>
+              </mrow>
+              <mi>C</mi>
+              <mrow>
+                <mo>*</mo>
+                <mo stretchy='false'>(</mo>
+                <mn>1</mn>
+                <mo>,</mo>
+                <mn>000</mn>
+                <mo stretchy='false'>)</mo>
+              </mrow>
+            </msubsup>
+          </mrow>
+          <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+            feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+            hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+            4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+            vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+            fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaWaaecaaeaacq
+            aH4oqCaiaawkWaamaaDaaaleaacaWGdbaabaGaaiOkaiaacIcacaaI
+            XaGaaiykaaaakiaacYcacaGGUaGaaiOlaiaac6cacaGGSaWaaecaae
+            aacqaH4oqCaiaawkWaamaaDaaaleaacaWGdbaabaGaaiOkaiaacIca
+            caaIXaGaaiilaiaaicdacaaIWaGaaGimaiaacMcaaaaaaa@48B2@ </annotation>
+        </semantics>
+      </math>. Because the
+      bootstrap weights are based on coordinated bootstrap samples, this approach of
+      handling estimates involving multiple periods will take into account the
+      overlap and dependence that exists between months. In practice, software
+      packages are not usually designed to deal with multiple datasets from different
+      periods. A solution to this problem is to create an input file containing the
+      data and bootstrap weights from all the months of interest in the same file. It
+      may be necessary to create dummy variables to identify the different months.</p>
+   
+    
+    
+
+  
+  
+  <ul class="pager">
+    <li class="previous"><a href="chapt6-eng.htm" rel="prev">Previous</a></li>
+  
+ <li><a href="/pub/71-526-x/71-526-x2017001-eng.htm"><span class="fa fa-home text-primary mrgn-rght-sm"></span>Main page</a></li> 
+ 
+  <li class="next"><a href="chapt8-eng.htm" rel="next">Next</a></li> 
+</ul>
+
+ 
+ 
+</section>
+
+
+ <!--END OF CONTENT-->
+ 
+ 
+
+<!-- More info button text -->  
+﻿    <!-- More info page -->
+    <section id="moreinfo" class="mfp-hide modal-dialog modal-content overlay-def">
+      <header class="modal-header">
+        <h2 class="modal-title">More information</h2>
+      </header>
+      <div class="modal-body">
+      
+      <div class="pstn-rght-lg pstn-rght-md pstn-lft-md pstn-lft-sm pstn-lft-xs mrgn-lft-md mrgn-rght-sm">
+        <span class="label label-primary">ISSN: </span>
+      </div>
+      <span class="clearfix"></span>
+      
+      <h2>Acknowledgement</h2>
+
+<p>Sincere thanks are due to the many people who contributed in various ways to this document.</p>
+
+<p>Our gratitude goes first to the primary authors of the various chapters: Lihua An, Justin Francis, Guy Laflamme, Yves Lafortune, Scott Meyer, Elisabeth Neusy, Steven Thomas and Sylvia White. These people worked on different aspects of the 2015 redesign of the methodology of the Labour Force Survey, and thus were the best people to write about it.</p>
+
+<p>Besides these, numerous people in Household Survey Methods Division, Labour Statistics Division, and elsewhere in Statistics Canada, were also involved in the planning, reviewing, verification, revision, translation and production of this document.  Sincere thanks are due to all of them.</p>
+
+        <h2>Note of appreciation </h2>
+        <p>Canada owes the success of its statistical system to a long-standing partnership between Statistics Canada, the citizens of Canada, its businesses, governments and other institutions. Accurate and timely statistical information could not be produced without their continued co-operation and goodwill.</p>
+        
+            
+                <h2>Standards of service to the public</h2>
+        <p>Statistics Canada is committed to serving its clients in a prompt, reliable and courteous manner. To this end, the Agency has developed <a href="https://www.statcan.gc.ca/eng/about/service/standards">standards of service</a> which its employees observe in serving its clients.</p>
+        <h2>Copyright</h2>
+        <p>Published by authority of the Minister responsible for Statistics Canada.</p>
+    	<p> © Minister of Industry, 2017</p>
+        <p>Use of this publication is governed by the <a href="https://www.statcan.gc.ca/eng/reference/licence">Statistics Canada Open Licence Agreement</a>.</p>
+    	<p>Catalogue <abbr title="number">no.</abbr> 71-526-X</p>
+    	<p> Frequency: Occasional</p>
+    	<p> Ottawa</p>
+        
+        <a class="btn btn-primary popup-modal-dismiss">close</a> </div>
+    </section>
+    <!-- END More info page -->  
+
+<!-- Table of contents button text --> 
+﻿    <!-- Table of contents page -->
+    <section id="toc-tdm" class="mfp-hide modal-dialog modal-content overlay-def">
+      <header class="modal-header">
+        <h2 class="modal-title">Table of contents</h2>
+      </header>
+      <div class="modal-body">
+      
+     
+<p><a href="/pub/71-526-x/71-526-x2017001-eng.htm">Abstract</a><strong> - Main page</strong><br>
+       
+<a href="/pub/71-526-x/2017001/chapt1-eng.htm">Chapter 1 Introduction and overview</a><br />
+         
+<a href="/pub/71-526-x/2017001/chapt2-eng.htm">Chapter 2 Sample design</a><br />
+
+<a href="/pub/71-526-x/2017001/chapt3-eng.htm">Chapter 3 Sampling frame creation and maintenance</a><br />
+
+<a href="/pub/71-526-x/2017001/chapt4-eng.htm">Chapter 4 Collection</a><br />
+
+<a href="/pub/71-526-x/2017001/chapt5-eng.htm">Chapter 5 Processing and imputation</a><br />
+
+<a href="/pub/71-526-x/2017001/chapt6-eng.htm">Chapter 6 Weighting and estimation</a><br />
+
+<a href="/pub/71-526-x/2017001/chapt7-eng.htm">Chapter 7 Variance estimation</a><br />
+
+<a href="/pub/71-526-x/2017001/chapt8-eng.htm">Chapter 8 Data quality</a><br />
+
+<a href="/pub/71-526-x/2017001/chapt9-eng.htm">Chapter 9 LFS frame for other surveys</a><br />
+
+<a href="/pub/71-526-x/2017001/app-ann-eng.htm">Appendices</a><br />
+
+
+<a href="/pub/71-526-x/2017001/ref-biblio-eng.htm">References</a></p>
+		
+       
+        
+        <a class="btn btn-primary popup-modal-dismiss">close</a> </div>
+    </section>
+    
+    
+    <!-- END Table of contents page --> 
+
+
+
+
+<div class="pagedetails">
+	<dl id="wb-dtmd">
+		<dt>Date modified:&#32;</dt>
+		<dd><time property="dateModified">
+  2017-12-21
+</time></dd>
+	</dl>
+</div>
+</main>
+
+<footer id="wb-info">
+	<h2 class="wb-inv">About this site</h2>
+	<div class="gc-contextual">
+		<div class="container">
+			<nav>
+				<h3>Statistics Canada</h3>
+				<ul class="list-unstyled colcount-sm-2 colcount-md-3">
+					<li><a href="https://www.statcan.gc.ca/en/reference/refcentre/index">Contact StatCan</a></li>
+					<li><a href="https://www.statcan.gc.ca/en/trust">Trust Centre</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+	<div class="gc-main-footer">
+		<div class="container">
+			<nav>
+				<h3>Government of Canada</h3>
+				<ul class="list-unstyled colcount-sm-2 colcount-md-3">
+					<li><a href="https://www.canada.ca/en/contact.html">All contacts</a></li>
+					<li><a href="https://www.canada.ca/en/government/dept.html">Departments and agencies</a></li>
+					<li><a href="https://www.canada.ca/en/government/system.html">About government</a></li>
+				</ul>
+				<h4><span class="wb-inv">Themes and topics</span></h4>
+				<ul class="list-unstyled colcount-sm-2 colcount-md-3">
+					<li><a href="https://www.canada.ca/en/services/jobs.html">Jobs</a></li>
+					<li><a href="https://www.canada.ca/en/services/immigration-citizenship.html">Immigration and citizenship</a></li>
+					<li><a href="https://travel.gc.ca/">Travel and tourism</a></li>
+					<li><a href="https://www.canada.ca/en/services/business.html">Business</a></li>
+					<li><a href="https://www.canada.ca/en/services/benefits.html">Benefits</a></li>
+					<li><a href="https://www.canada.ca/en/services/health.html">Health</a></li>
+					<li><a href="https://www.canada.ca/en/services/taxes.html">Taxes</a></li>
+					<li><a href="https://www.canada.ca/en/services/environment.html">Environment and natural resources</a></li>
+					<li><a href="https://www.canada.ca/en/services/defence.html">National security and defence</a></li>
+					<li><a href="https://www.canada.ca/en/services/culture.html">Culture, history and sport</a></li>
+					<li><a href="https://www.canada.ca/en/services/policing.html">Policing, justice and emergencies</a></li>
+					<li><a href="https://www.canada.ca/en/services/transport.html">Transport and infrastructure</a></li>
+					<li><a href="https://international.gc.ca/world-monde/index.aspx?lang=eng">Canada and the world</a></li>
+					<li><a href="https://www.canada.ca/en/services/finance.html">Money and finance</a></li>
+					<li><a href="https://www.canada.ca/en/services/science.html">Science and innovation</a></li>
+					<li><a href="https://www.canada.ca/en/services/indigenous-peoples.html">Indigenous peoples</a></li>
+					<li><a href="https://www.canada.ca/en/services/veterans.html">Veterans and military</a></li>
+					<li><a href="https://www.canada.ca/en/services/youth.html">Youth</a></li>
+					<li><a href="https://www.canada.ca/en/services/life-events.html">Manage life events</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+	<div class="gc-sub-footer">
+		<div class="container d-flex align-items-center">
+			<nav>
+				<h3 class="wb-inv">Government of Canada Corporate</h3>
+				<ul>
+					<li><a href="https://www.canada.ca/en/social.html">Social media</a></li>
+					<li><a href="https://www.canada.ca/en/mobile.html">Mobile applications</a></li>
+					<li><a href="https://www.canada.ca/en/government/about-canada-ca.html">About Canada.ca</a></li>
+					<li><a href="https://www.statcan.gc.ca/en/terms-conditions">Terms and conditions</a></li>
+					<li><a href="https://www.statcan.gc.ca/en/about/transparency/privacy">Privacy</a></li>
+				</ul>
+			</nav>
+			<div class="wtrmrk align-self-end">
+				<img src="/wet-boew4b/assets/wmms-blk.svg" alt="Symbol of the Government of Canada">
+			</div>
+		</div>
+	</div>
+</footer>
+
+<script>
+
+    modifyBreadCrum();
+    
+
+    function modifyBreadCrum(){
+        
+    let dailyEn = "n1/dai-quo/index-eng.htm";
+    let dailyFr = "n1/dai-quo/index-fra.htm";
+ 
+    let breadcrumb = document.querySelector("#wb-bc ol.breadcrumb");
+        
+    if(breadcrumb === undefined || breadcrumb === null || breadcrumb.children.length == 0){
+        return;
+    } 
+        
+    let lastListNode = breadcrumb.children[breadcrumb.children.length -1];
+    
+    if(window.location.href.indexOf("daily-quotidien") != -1 || window.location.href.indexOf("dai-quo") != -1){
+        let href = window.location.href;
+        let env = href.split("n1")[0];
+        href = href.indexOf("eng") != -1 ? env + dailyEn : env + dailyFr;
+
+        createBreadcrumAnchor(href);
+    }
+    else{
+        removeBreadcrumNotAnchor();
+    }
+
+    return;
+
+    function createBreadcrumAnchor(href){
+
+        let anchor = document.createElement("a");
+    
+        if(lastListNode.lastChild !== undefined && lastListNode.lastChild !== null){
+            if(lastListNode.lastChild.nodeName === anchor.nodeName){
+                return;
+            } 
+
+            anchor.innerHTML = lastListNode.innerHTML;
+            anchor.href = href;
+            lastListNode.innerHTML = anchor.outerHTML; 
+        }
+    }
+
+    function removeBreadcrumNotAnchor(){
+
+        let anchor = document.createElement("a");
+
+        if(lastListNode.lastChild !== undefined && lastListNode.lastChild !== null){
+            if(lastListNode.lastChild.nodeName === anchor.nodeName){
+                return;
+            } 
+        
+            breadcrumb.removeChild(lastListNode);
+        }
+
+    }
+
+    }
+
+</script>
+
+<!--[if gte IE 9 | !IE ]><!-->
+<script src="/wet-boew4b/js/wet-boew.min.js"></script>
+<script src="/wet-boew4b/js/theme.min.js"></script>
+<!--<![endif]-->
+<!--[if lt IE 9]>
+<script src="/wet-boew4b/js/ie8-wet-boew2.min.js"></script>
+<![endif]-->
+<!-- InvitationManager -->
+<script src="/wet-boew4b/invitation-manager/Overlay.js"></script>
+<script src="/wet-boew4b/invitation-manager/InvitationManager.js"></script>
+<!-- End InvitationManager -->
+<script type="text/javascript">_satellite.pageBottom();</script>
+
+<!-- CustomScriptsJSStart -->
+<!-- CustomScriptsJSEnd -->
+
+</body>
+</html>

@@ -1,0 +1,2363 @@
+{
+  "errors": [],
+  "failed": [],
+  "enhancementChecks": {
+    "stages": [],
+    "geographies": [
+      "BC",
+      "AB",
+      "SK",
+      "MB",
+      "ON",
+      "QC",
+      "NB",
+      "NS",
+      "PE",
+      "NL",
+      "YT",
+      "NT",
+      "NU"
+    ],
+    "layouts": [
+      {
+        "name": "desktop",
+        "stage": 0,
+        "width": 1440,
+        "documentWidth": 1425,
+        "sceneWidth": 1114,
+        "wide": [
+          {
+            "tag": "DIV",
+            "id": "",
+            "cls": "page",
+            "right": 1352.5,
+            "text": "\nSurvey inference · Research draft · CanadaMeasuring Uncerta"
+          },
+          {
+            "tag": "MAIN",
+            "id": "main",
+            "cls": "paper",
+            "right": 1324.5,
+            "text": "\nSurvey inference · Research draft · CanadaMeasuring Uncerta"
+          },
+          {
+            "tag": "HEADER",
+            "id": "",
+            "cls": "hero",
+            "right": 1289.5,
+            "text": "Survey inference · Research draft · CanadaMeasuring Uncertai"
+          },
+          {
+            "tag": "DIV",
+            "id": "",
+            "cls": "",
+            "right": 1014.5,
+            "text": "Survey inference · Research draft · CanadaMeasuring Uncertai"
+          },
+          {
+            "tag": "SPAN",
+            "id": "",
+            "cls": "eyebrow",
+            "right": 489.140625,
+            "text": "Survey inference · Research draft · Canada"
+          },
+          {
+            "tag": "H1",
+            "id": "",
+            "cls": "",
+            "right": 1014.5,
+            "text": "Measuring Uncertainty in Canada's Labour Force Survey"
+          },
+          {
+            "tag": "P",
+            "id": "",
+            "cls": "subtitle",
+            "right": 1014.5,
+            "text": "Sampling uncertainty, confidence intervals, survey design, a"
+          },
+          {
+            "tag": "ASIDE",
+            "id": "",
+            "cls": "metadata",
+            "right": 1289.5,
+            "text": "📅Created: October 13, 2026🧰Harness: Codex on Windows Power"
+          },
+          {
+            "tag": "DIV",
+            "id": "",
+            "cls": "",
+            "right": 1272.5,
+            "text": "📅Created: October 13, 2026"
+          },
+          {
+            "tag": "SPAN",
+            "id": "",
+            "cls": "meta-icon",
+            "right": 1074.5,
+            "text": "📅"
+          },
+          {
+            "tag": "SPAN",
+            "id": "",
+            "cls": "",
+            "right": 1222.9375,
+            "text": "Created: October 13, 2026"
+          },
+          {
+            "tag": "STRONG",
+            "id": "",
+            "cls": "",
+            "right": 1128.46875,
+            "text": "Created:"
+          },
+          {
+            "tag": "DIV",
+            "id": "",
+            "cls": "",
+            "right": 1272.5,
+            "text": "🧰Harness: Codex on Windows PowerShell"
+          },
+          {
+            "tag": "SPAN",
+            "id": "",
+            "cls": "meta-icon",
+            "right": 1074.5,
+            "text": "🧰"
+          },
+          {
+            "tag": "SPAN",
+            "id": "",
+            "cls": "",
+            "right": 1272.5,
+            "text": "Harness: Codex on Windows PowerShell"
+          },
+          {
+            "tag": "STRONG",
+            "id": "",
+            "cls": "",
+            "right": 1129.53125,
+            "text": "Harness:"
+          },
+          {
+            "tag": "DIV",
+            "id": "",
+            "cls": "",
+            "right": 1272.5,
+            "text": "Model: GPT Sol-6.1"
+          },
+          {
+            "tag": "SPAN",
+            "id": "",
+            "cls": "meta-icon",
+            "right": 1074.5,
+            "text": ""
+          },
+          {
+            "tag": "svg",
+            "id": "",
+            "cls": {},
+            "right": 1074.5,
+            "text": ""
+          },
+          {
+            "tag": "path",
+            "id": "",
+            "cls": {},
+            "right": 1067,
+            "text": ""
+          }
+        ],
+        "svgTextOverflow": []
+      },
+      {
+        "name": "desktop",
+        "stage": 1,
+        "width": 1440,
+        "documentWidth": 1425,
+        "sceneWidth": 1114,
+        "wide": [
+          {
+            "tag": "DIV",
+            "id": "",
+            "cls": "page",
+            "right": 1352.5,
+            "text": "\nSurvey inference · Research draft · CanadaMeasuring Uncerta"
+          },
+          {
+            "tag": "MAIN",
+            "id": "main",
+            "cls": "paper",
+            "right": 1324.5,
+            "text": "\nSurvey inference · Research draft · CanadaMeasuring Uncerta"
+          },
+          {
+            "tag": "HEADER",
+            "id": "",
+            "cls": "hero",
+            "right": 1289.5,
+            "text": "Survey inference · Research draft · CanadaMeasuring Uncertai"
+          },
+          {
+            "tag": "DIV",
+            "id": "",
+            "cls": "",
+            "right": 1014.5,
+            "text": "Survey inference · Research draft · CanadaMeasuring Uncertai"
+          },
+          {
+            "tag": "SPAN",
+            "id": "",
+            "cls": "eyebrow",
+            "right": 489.140625,
+            "text": "Survey inference · Research draft · Canada"
+          },
+          {
+            "tag": "H1",
+            "id": "",
+            "cls": "",
+            "right": 1014.5,
+            "text": "Measuring Uncertainty in Canada's Labour Force Survey"
+          },
+          {
+            "tag": "P",
+            "id": "",
+            "cls": "subtitle",
+            "right": 1014.5,
+            "text": "Sampling uncertainty, confidence intervals, survey design, a"
+          },
+          {
+            "tag": "ASIDE",
+            "id": "",
+            "cls": "metadata",
+            "right": 1289.5,
+            "text": "📅Created: October 13, 2026🧰Harness: Codex on Windows Power"
+          },
+          {
+            "tag": "DIV",
+            "id": "",
+            "cls": "",
+            "right": 1272.5,
+            "text": "📅Created: October 13, 2026"
+          },
+          {
+            "tag": "SPAN",
+            "id": "",
+            "cls": "meta-icon",
+            "right": 1074.5,
+            "text": "📅"
+          },
+          {
+            "tag": "SPAN",
+            "id": "",
+            "cls": "",
+            "right": 1222.9375,
+            "text": "Created: October 13, 2026"
+          },
+          {
+            "tag": "STRONG",
+            "id": "",
+            "cls": "",
+            "right": 1128.46875,
+            "text": "Created:"
+          },
+          {
+            "tag": "DIV",
+            "id": "",
+            "cls": "",
+            "right": 1272.5,
+            "text": "🧰Harness: Codex on Windows PowerShell"
+          },
+          {
+            "tag": "SPAN",
+            "id": "",
+            "cls": "meta-icon",
+            "right": 1074.5,
+            "text": "🧰"
+          },
+          {
+            "tag": "SPAN",
+            "id": "",
+            "cls": "",
+            "right": 1272.5,
+            "text": "Harness: Codex on Windows PowerShell"
+          },
+          {
+            "tag": "STRONG",
+            "id": "",
+            "cls": "",
+            "right": 1129.53125,
+            "text": "Harness:"
+          },
+          {
+            "tag": "DIV",
+            "id": "",
+            "cls": "",
+            "right": 1272.5,
+            "text": "Model: GPT Sol-6.1"
+          },
+          {
+            "tag": "SPAN",
+            "id": "",
+            "cls": "meta-icon",
+            "right": 1074.5,
+            "text": ""
+          },
+          {
+            "tag": "svg",
+            "id": "",
+            "cls": {},
+            "right": 1074.5,
+            "text": ""
+          },
+          {
+            "tag": "path",
+            "id": "",
+            "cls": {},
+            "right": 1067,
+            "text": ""
+          }
+        ],
+        "svgTextOverflow": []
+      },
+      {
+        "name": "desktop",
+        "stage": 2,
+        "width": 1440,
+        "documentWidth": 1425,
+        "sceneWidth": 1114,
+        "wide": [
+          {
+            "tag": "DIV",
+            "id": "",
+            "cls": "page",
+            "right": 1352.5,
+            "text": "\nSurvey inference · Research draft · CanadaMeasuring Uncerta"
+          },
+          {
+            "tag": "MAIN",
+            "id": "main",
+            "cls": "paper",
+            "right": 1324.5,
+            "text": "\nSurvey inference · Research draft · CanadaMeasuring Uncerta"
+          },
+          {
+            "tag": "HEADER",
+            "id": "",
+            "cls": "hero",
+            "right": 1289.5,
+            "text": "Survey inference · Research draft · CanadaMeasuring Uncertai"
+          },
+          {
+            "tag": "DIV",
+            "id": "",
+            "cls": "",
+            "right": 1014.5,
+            "text": "Survey inference · Research draft · CanadaMeasuring Uncertai"
+          },
+          {
+            "tag": "SPAN",
+            "id": "",
+            "cls": "eyebrow",
+            "right": 489.140625,
+            "text": "Survey inference · Research draft · Canada"
+          },
+          {
+            "tag": "H1",
+            "id": "",
+            "cls": "",
+            "right": 1014.5,
+            "text": "Measuring Uncertainty in Canada's Labour Force Survey"
+          },
+          {
+            "tag": "P",
+            "id": "",
+            "cls": "subtitle",
+            "right": 1014.5,
+            "text": "Sampling uncertainty, confidence intervals, survey design, a"
+          },
+          {
+            "tag": "ASIDE",
+            "id": "",
+            "cls": "metadata",
+            "right": 1289.5,
+            "text": "📅Created: October 13, 2026🧰Harness: Codex on Windows Power"
+          },
+          {
+            "tag": "DIV",
+            "id": "",
+            "cls": "",
+            "right": 1272.5,
+            "text": "📅Created: October 13, 2026"
+          },
+          {
+            "tag": "SPAN",
+            "id": "",
+            "cls": "meta-icon",
+            "right": 1074.5,
+            "text": "📅"
+          },
+          {
+            "tag": "SPAN",
+            "id": "",
+            "cls": "",
+            "right": 1222.9375,
+            "text": "Created: October 13, 2026"
+          },
+          {
+            "tag": "STRONG",
+            "id": "",
+            "cls": "",
+            "right": 1128.46875,
+            "text": "Created:"
+          },
+          {
+            "tag": "DIV",
+            "id": "",
+            "cls": "",
+            "right": 1272.5,
+            "text": "🧰Harness: Codex on Windows PowerShell"
+          },
+          {
+            "tag": "SPAN",
+            "id": "",
+            "cls": "meta-icon",
+            "right": 1074.5,
+            "text": "🧰"
+          },
+          {
+            "tag": "SPAN",
+            "id": "",
+            "cls": "",
+            "right": 1272.5,
+            "text": "Harness: Codex on Windows PowerShell"
+          },
+          {
+            "tag": "STRONG",
+            "id": "",
+            "cls": "",
+            "right": 1129.53125,
+            "text": "Harness:"
+          },
+          {
+            "tag": "DIV",
+            "id": "",
+            "cls": "",
+            "right": 1272.5,
+            "text": "Model: GPT Sol-6.1"
+          },
+          {
+            "tag": "SPAN",
+            "id": "",
+            "cls": "meta-icon",
+            "right": 1074.5,
+            "text": ""
+          },
+          {
+            "tag": "svg",
+            "id": "",
+            "cls": {},
+            "right": 1074.5,
+            "text": ""
+          },
+          {
+            "tag": "path",
+            "id": "",
+            "cls": {},
+            "right": 1067,
+            "text": ""
+          }
+        ],
+        "svgTextOverflow": []
+      },
+      {
+        "name": "desktop",
+        "stage": 3,
+        "width": 1440,
+        "documentWidth": 1425,
+        "sceneWidth": 1114,
+        "wide": [
+          {
+            "tag": "DIV",
+            "id": "",
+            "cls": "page",
+            "right": 1352.5,
+            "text": "\nSurvey inference · Research draft · CanadaMeasuring Uncerta"
+          },
+          {
+            "tag": "MAIN",
+            "id": "main",
+            "cls": "paper",
+            "right": 1324.5,
+            "text": "\nSurvey inference · Research draft · CanadaMeasuring Uncerta"
+          },
+          {
+            "tag": "HEADER",
+            "id": "",
+            "cls": "hero",
+            "right": 1289.5,
+            "text": "Survey inference · Research draft · CanadaMeasuring Uncertai"
+          },
+          {
+            "tag": "DIV",
+            "id": "",
+            "cls": "",
+            "right": 1014.5,
+            "text": "Survey inference · Research draft · CanadaMeasuring Uncertai"
+          },
+          {
+            "tag": "SPAN",
+            "id": "",
+            "cls": "eyebrow",
+            "right": 489.140625,
+            "text": "Survey inference · Research draft · Canada"
+          },
+          {
+            "tag": "H1",
+            "id": "",
+            "cls": "",
+            "right": 1014.5,
+            "text": "Measuring Uncertainty in Canada's Labour Force Survey"
+          },
+          {
+            "tag": "P",
+            "id": "",
+            "cls": "subtitle",
+            "right": 1014.5,
+            "text": "Sampling uncertainty, confidence intervals, survey design, a"
+          },
+          {
+            "tag": "ASIDE",
+            "id": "",
+            "cls": "metadata",
+            "right": 1289.5,
+            "text": "📅Created: October 13, 2026🧰Harness: Codex on Windows Power"
+          },
+          {
+            "tag": "DIV",
+            "id": "",
+            "cls": "",
+            "right": 1272.5,
+            "text": "📅Created: October 13, 2026"
+          },
+          {
+            "tag": "SPAN",
+            "id": "",
+            "cls": "meta-icon",
+            "right": 1074.5,
+            "text": "📅"
+          },
+          {
+            "tag": "SPAN",
+            "id": "",
+            "cls": "",
+            "right": 1222.9375,
+            "text": "Created: October 13, 2026"
+          },
+          {
+            "tag": "STRONG",
+            "id": "",
+            "cls": "",
+            "right": 1128.46875,
+            "text": "Created:"
+          },
+          {
+            "tag": "DIV",
+            "id": "",
+            "cls": "",
+            "right": 1272.5,
+            "text": "🧰Harness: Codex on Windows PowerShell"
+          },
+          {
+            "tag": "SPAN",
+            "id": "",
+            "cls": "meta-icon",
+            "right": 1074.5,
+            "text": "🧰"
+          },
+          {
+            "tag": "SPAN",
+            "id": "",
+            "cls": "",
+            "right": 1272.5,
+            "text": "Harness: Codex on Windows PowerShell"
+          },
+          {
+            "tag": "STRONG",
+            "id": "",
+            "cls": "",
+            "right": 1129.53125,
+            "text": "Harness:"
+          },
+          {
+            "tag": "DIV",
+            "id": "",
+            "cls": "",
+            "right": 1272.5,
+            "text": "Model: GPT Sol-6.1"
+          },
+          {
+            "tag": "SPAN",
+            "id": "",
+            "cls": "meta-icon",
+            "right": 1074.5,
+            "text": ""
+          },
+          {
+            "tag": "svg",
+            "id": "",
+            "cls": {},
+            "right": 1074.5,
+            "text": ""
+          },
+          {
+            "tag": "path",
+            "id": "",
+            "cls": {},
+            "right": 1067,
+            "text": ""
+          }
+        ],
+        "svgTextOverflow": []
+      },
+      {
+        "name": "desktop",
+        "stage": 4,
+        "width": 1440,
+        "documentWidth": 1425,
+        "sceneWidth": 1114,
+        "wide": [
+          {
+            "tag": "DIV",
+            "id": "",
+            "cls": "page",
+            "right": 1352.5,
+            "text": "\nSurvey inference · Research draft · CanadaMeasuring Uncerta"
+          },
+          {
+            "tag": "MAIN",
+            "id": "main",
+            "cls": "paper",
+            "right": 1324.5,
+            "text": "\nSurvey inference · Research draft · CanadaMeasuring Uncerta"
+          },
+          {
+            "tag": "HEADER",
+            "id": "",
+            "cls": "hero",
+            "right": 1289.5,
+            "text": "Survey inference · Research draft · CanadaMeasuring Uncertai"
+          },
+          {
+            "tag": "DIV",
+            "id": "",
+            "cls": "",
+            "right": 1014.5,
+            "text": "Survey inference · Research draft · CanadaMeasuring Uncertai"
+          },
+          {
+            "tag": "SPAN",
+            "id": "",
+            "cls": "eyebrow",
+            "right": 489.140625,
+            "text": "Survey inference · Research draft · Canada"
+          },
+          {
+            "tag": "H1",
+            "id": "",
+            "cls": "",
+            "right": 1014.5,
+            "text": "Measuring Uncertainty in Canada's Labour Force Survey"
+          },
+          {
+            "tag": "P",
+            "id": "",
+            "cls": "subtitle",
+            "right": 1014.5,
+            "text": "Sampling uncertainty, confidence intervals, survey design, a"
+          },
+          {
+            "tag": "ASIDE",
+            "id": "",
+            "cls": "metadata",
+            "right": 1289.5,
+            "text": "📅Created: October 13, 2026🧰Harness: Codex on Windows Power"
+          },
+          {
+            "tag": "DIV",
+            "id": "",
+            "cls": "",
+            "right": 1272.5,
+            "text": "📅Created: October 13, 2026"
+          },
+          {
+            "tag": "SPAN",
+            "id": "",
+            "cls": "meta-icon",
+            "right": 1074.5,
+            "text": "📅"
+          },
+          {
+            "tag": "SPAN",
+            "id": "",
+            "cls": "",
+            "right": 1222.9375,
+            "text": "Created: October 13, 2026"
+          },
+          {
+            "tag": "STRONG",
+            "id": "",
+            "cls": "",
+            "right": 1128.46875,
+            "text": "Created:"
+          },
+          {
+            "tag": "DIV",
+            "id": "",
+            "cls": "",
+            "right": 1272.5,
+            "text": "🧰Harness: Codex on Windows PowerShell"
+          },
+          {
+            "tag": "SPAN",
+            "id": "",
+            "cls": "meta-icon",
+            "right": 1074.5,
+            "text": "🧰"
+          },
+          {
+            "tag": "SPAN",
+            "id": "",
+            "cls": "",
+            "right": 1272.5,
+            "text": "Harness: Codex on Windows PowerShell"
+          },
+          {
+            "tag": "STRONG",
+            "id": "",
+            "cls": "",
+            "right": 1129.53125,
+            "text": "Harness:"
+          },
+          {
+            "tag": "DIV",
+            "id": "",
+            "cls": "",
+            "right": 1272.5,
+            "text": "Model: GPT Sol-6.1"
+          },
+          {
+            "tag": "SPAN",
+            "id": "",
+            "cls": "meta-icon",
+            "right": 1074.5,
+            "text": ""
+          },
+          {
+            "tag": "svg",
+            "id": "",
+            "cls": {},
+            "right": 1074.5,
+            "text": ""
+          },
+          {
+            "tag": "path",
+            "id": "",
+            "cls": {},
+            "right": 1067,
+            "text": ""
+          }
+        ],
+        "svgTextOverflow": []
+      },
+      {
+        "name": "desktop",
+        "stage": 5,
+        "width": 1440,
+        "documentWidth": 1425,
+        "sceneWidth": 1114,
+        "wide": [
+          {
+            "tag": "DIV",
+            "id": "",
+            "cls": "page",
+            "right": 1352.5,
+            "text": "\nSurvey inference · Research draft · CanadaMeasuring Uncerta"
+          },
+          {
+            "tag": "MAIN",
+            "id": "main",
+            "cls": "paper",
+            "right": 1324.5,
+            "text": "\nSurvey inference · Research draft · CanadaMeasuring Uncerta"
+          },
+          {
+            "tag": "HEADER",
+            "id": "",
+            "cls": "hero",
+            "right": 1289.5,
+            "text": "Survey inference · Research draft · CanadaMeasuring Uncertai"
+          },
+          {
+            "tag": "DIV",
+            "id": "",
+            "cls": "",
+            "right": 1014.5,
+            "text": "Survey inference · Research draft · CanadaMeasuring Uncertai"
+          },
+          {
+            "tag": "SPAN",
+            "id": "",
+            "cls": "eyebrow",
+            "right": 489.140625,
+            "text": "Survey inference · Research draft · Canada"
+          },
+          {
+            "tag": "H1",
+            "id": "",
+            "cls": "",
+            "right": 1014.5,
+            "text": "Measuring Uncertainty in Canada's Labour Force Survey"
+          },
+          {
+            "tag": "P",
+            "id": "",
+            "cls": "subtitle",
+            "right": 1014.5,
+            "text": "Sampling uncertainty, confidence intervals, survey design, a"
+          },
+          {
+            "tag": "ASIDE",
+            "id": "",
+            "cls": "metadata",
+            "right": 1289.5,
+            "text": "📅Created: October 13, 2026🧰Harness: Codex on Windows Power"
+          },
+          {
+            "tag": "DIV",
+            "id": "",
+            "cls": "",
+            "right": 1272.5,
+            "text": "📅Created: October 13, 2026"
+          },
+          {
+            "tag": "SPAN",
+            "id": "",
+            "cls": "meta-icon",
+            "right": 1074.5,
+            "text": "📅"
+          },
+          {
+            "tag": "SPAN",
+            "id": "",
+            "cls": "",
+            "right": 1222.9375,
+            "text": "Created: October 13, 2026"
+          },
+          {
+            "tag": "STRONG",
+            "id": "",
+            "cls": "",
+            "right": 1128.46875,
+            "text": "Created:"
+          },
+          {
+            "tag": "DIV",
+            "id": "",
+            "cls": "",
+            "right": 1272.5,
+            "text": "🧰Harness: Codex on Windows PowerShell"
+          },
+          {
+            "tag": "SPAN",
+            "id": "",
+            "cls": "meta-icon",
+            "right": 1074.5,
+            "text": "🧰"
+          },
+          {
+            "tag": "SPAN",
+            "id": "",
+            "cls": "",
+            "right": 1272.5,
+            "text": "Harness: Codex on Windows PowerShell"
+          },
+          {
+            "tag": "STRONG",
+            "id": "",
+            "cls": "",
+            "right": 1129.53125,
+            "text": "Harness:"
+          },
+          {
+            "tag": "DIV",
+            "id": "",
+            "cls": "",
+            "right": 1272.5,
+            "text": "Model: GPT Sol-6.1"
+          },
+          {
+            "tag": "SPAN",
+            "id": "",
+            "cls": "meta-icon",
+            "right": 1074.5,
+            "text": ""
+          },
+          {
+            "tag": "svg",
+            "id": "",
+            "cls": {},
+            "right": 1074.5,
+            "text": ""
+          },
+          {
+            "tag": "path",
+            "id": "",
+            "cls": {},
+            "right": 1067,
+            "text": ""
+          }
+        ],
+        "svgTextOverflow": []
+      },
+      {
+        "name": "desktop",
+        "stage": 6,
+        "width": 1440,
+        "documentWidth": 1425,
+        "sceneWidth": 1114,
+        "wide": [
+          {
+            "tag": "DIV",
+            "id": "",
+            "cls": "page",
+            "right": 1352.5,
+            "text": "\nSurvey inference · Research draft · CanadaMeasuring Uncerta"
+          },
+          {
+            "tag": "MAIN",
+            "id": "main",
+            "cls": "paper",
+            "right": 1324.5,
+            "text": "\nSurvey inference · Research draft · CanadaMeasuring Uncerta"
+          },
+          {
+            "tag": "HEADER",
+            "id": "",
+            "cls": "hero",
+            "right": 1289.5,
+            "text": "Survey inference · Research draft · CanadaMeasuring Uncertai"
+          },
+          {
+            "tag": "DIV",
+            "id": "",
+            "cls": "",
+            "right": 1014.5,
+            "text": "Survey inference · Research draft · CanadaMeasuring Uncertai"
+          },
+          {
+            "tag": "SPAN",
+            "id": "",
+            "cls": "eyebrow",
+            "right": 489.140625,
+            "text": "Survey inference · Research draft · Canada"
+          },
+          {
+            "tag": "H1",
+            "id": "",
+            "cls": "",
+            "right": 1014.5,
+            "text": "Measuring Uncertainty in Canada's Labour Force Survey"
+          },
+          {
+            "tag": "P",
+            "id": "",
+            "cls": "subtitle",
+            "right": 1014.5,
+            "text": "Sampling uncertainty, confidence intervals, survey design, a"
+          },
+          {
+            "tag": "ASIDE",
+            "id": "",
+            "cls": "metadata",
+            "right": 1289.5,
+            "text": "📅Created: October 13, 2026🧰Harness: Codex on Windows Power"
+          },
+          {
+            "tag": "DIV",
+            "id": "",
+            "cls": "",
+            "right": 1272.5,
+            "text": "📅Created: October 13, 2026"
+          },
+          {
+            "tag": "SPAN",
+            "id": "",
+            "cls": "meta-icon",
+            "right": 1074.5,
+            "text": "📅"
+          },
+          {
+            "tag": "SPAN",
+            "id": "",
+            "cls": "",
+            "right": 1222.9375,
+            "text": "Created: October 13, 2026"
+          },
+          {
+            "tag": "STRONG",
+            "id": "",
+            "cls": "",
+            "right": 1128.46875,
+            "text": "Created:"
+          },
+          {
+            "tag": "DIV",
+            "id": "",
+            "cls": "",
+            "right": 1272.5,
+            "text": "🧰Harness: Codex on Windows PowerShell"
+          },
+          {
+            "tag": "SPAN",
+            "id": "",
+            "cls": "meta-icon",
+            "right": 1074.5,
+            "text": "🧰"
+          },
+          {
+            "tag": "SPAN",
+            "id": "",
+            "cls": "",
+            "right": 1272.5,
+            "text": "Harness: Codex on Windows PowerShell"
+          },
+          {
+            "tag": "STRONG",
+            "id": "",
+            "cls": "",
+            "right": 1129.53125,
+            "text": "Harness:"
+          },
+          {
+            "tag": "DIV",
+            "id": "",
+            "cls": "",
+            "right": 1272.5,
+            "text": "Model: GPT Sol-6.1"
+          },
+          {
+            "tag": "SPAN",
+            "id": "",
+            "cls": "meta-icon",
+            "right": 1074.5,
+            "text": ""
+          },
+          {
+            "tag": "svg",
+            "id": "",
+            "cls": {},
+            "right": 1074.5,
+            "text": ""
+          },
+          {
+            "tag": "path",
+            "id": "",
+            "cls": {},
+            "right": 1067,
+            "text": ""
+          }
+        ],
+        "svgTextOverflow": []
+      },
+      {
+        "name": "mobile",
+        "stage": 0,
+        "width": 390,
+        "documentWidth": 390,
+        "sceneWidth": 308,
+        "wide": [
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 450.875,
+            "text": "Imputation"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 604.296875,
+            "text": "Sampling uncertainty"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 746.15625,
+            "text": "Variance estimation"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 825.25,
+            "text": "Bootstrap"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 971.984375,
+            "text": "Confidence intervals"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 1049.34375,
+            "text": "Provinces"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 1170.0625,
+            "text": "September 2026"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 1256.640625,
+            "text": "Laboratory"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 1345.25,
+            "text": "All sections"
+          },
+          {
+            "tag": "MJX-MATH",
+            "id": "",
+            "cls": "MJX-TEX",
+            "right": 447.65625,
+            "text": ""
+          },
+          {
+            "tag": "MJX-MI",
+            "id": "",
+            "cls": "mjx-i",
+            "right": 393.796875,
+            "text": ""
+          },
+          {
+            "tag": "MJX-C",
+            "id": "",
+            "cls": "mjx-c1D45D TEX-I",
+            "right": 393.796875,
+            "text": ""
+          },
+          {
+            "tag": "MJX-MO",
+            "id": "",
+            "cls": "mjx-n",
+            "right": 414.09375,
+            "text": ""
+          },
+          {
+            "tag": "MJX-C",
+            "id": "",
+            "cls": "mjx-c3D",
+            "right": 414.09375,
+            "text": ""
+          },
+          {
+            "tag": "MJX-MFRAC",
+            "id": "",
+            "cls": "",
+            "right": 442.3125,
+            "text": ""
+          },
+          {
+            "tag": "MJX-FRAC",
+            "id": "",
+            "cls": "",
+            "right": 442.3125,
+            "text": ""
+          },
+          {
+            "tag": "MJX-NUM",
+            "id": "",
+            "cls": "",
+            "right": 438.09375,
+            "text": ""
+          },
+          {
+            "tag": "MJX-NSTRUT",
+            "id": "",
+            "cls": "",
+            "right": 424.328125,
+            "text": ""
+          },
+          {
+            "tag": "MJX-MI",
+            "id": "",
+            "cls": "mjx-i",
+            "right": 437.40625,
+            "text": ""
+          },
+          {
+            "tag": "MJX-C",
+            "id": "",
+            "cls": "mjx-c1D43F TEX-I",
+            "right": 437.40625,
+            "text": ""
+          }
+        ],
+        "svgTextOverflow": []
+      },
+      {
+        "name": "mobile",
+        "stage": 1,
+        "width": 390,
+        "documentWidth": 390,
+        "sceneWidth": 308,
+        "wide": [
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 450.875,
+            "text": "Imputation"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 604.296875,
+            "text": "Sampling uncertainty"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 746.15625,
+            "text": "Variance estimation"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 825.25,
+            "text": "Bootstrap"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 971.984375,
+            "text": "Confidence intervals"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 1049.34375,
+            "text": "Provinces"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 1170.0625,
+            "text": "September 2026"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 1256.640625,
+            "text": "Laboratory"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 1345.25,
+            "text": "All sections"
+          },
+          {
+            "tag": "MJX-MATH",
+            "id": "",
+            "cls": "MJX-TEX",
+            "right": 447.65625,
+            "text": ""
+          },
+          {
+            "tag": "MJX-MI",
+            "id": "",
+            "cls": "mjx-i",
+            "right": 393.796875,
+            "text": ""
+          },
+          {
+            "tag": "MJX-C",
+            "id": "",
+            "cls": "mjx-c1D45D TEX-I",
+            "right": 393.796875,
+            "text": ""
+          },
+          {
+            "tag": "MJX-MO",
+            "id": "",
+            "cls": "mjx-n",
+            "right": 414.09375,
+            "text": ""
+          },
+          {
+            "tag": "MJX-C",
+            "id": "",
+            "cls": "mjx-c3D",
+            "right": 414.09375,
+            "text": ""
+          },
+          {
+            "tag": "MJX-MFRAC",
+            "id": "",
+            "cls": "",
+            "right": 442.3125,
+            "text": ""
+          },
+          {
+            "tag": "MJX-FRAC",
+            "id": "",
+            "cls": "",
+            "right": 442.3125,
+            "text": ""
+          },
+          {
+            "tag": "MJX-NUM",
+            "id": "",
+            "cls": "",
+            "right": 438.09375,
+            "text": ""
+          },
+          {
+            "tag": "MJX-NSTRUT",
+            "id": "",
+            "cls": "",
+            "right": 424.328125,
+            "text": ""
+          },
+          {
+            "tag": "MJX-MI",
+            "id": "",
+            "cls": "mjx-i",
+            "right": 437.40625,
+            "text": ""
+          },
+          {
+            "tag": "MJX-C",
+            "id": "",
+            "cls": "mjx-c1D43F TEX-I",
+            "right": 437.40625,
+            "text": ""
+          }
+        ],
+        "svgTextOverflow": []
+      },
+      {
+        "name": "mobile",
+        "stage": 2,
+        "width": 390,
+        "documentWidth": 390,
+        "sceneWidth": 308,
+        "wide": [
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 450.875,
+            "text": "Imputation"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 604.296875,
+            "text": "Sampling uncertainty"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 746.15625,
+            "text": "Variance estimation"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 825.25,
+            "text": "Bootstrap"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 971.984375,
+            "text": "Confidence intervals"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 1049.34375,
+            "text": "Provinces"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 1170.0625,
+            "text": "September 2026"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 1256.640625,
+            "text": "Laboratory"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 1345.25,
+            "text": "All sections"
+          },
+          {
+            "tag": "MJX-MATH",
+            "id": "",
+            "cls": "MJX-TEX",
+            "right": 447.65625,
+            "text": ""
+          },
+          {
+            "tag": "MJX-MI",
+            "id": "",
+            "cls": "mjx-i",
+            "right": 393.796875,
+            "text": ""
+          },
+          {
+            "tag": "MJX-C",
+            "id": "",
+            "cls": "mjx-c1D45D TEX-I",
+            "right": 393.796875,
+            "text": ""
+          },
+          {
+            "tag": "MJX-MO",
+            "id": "",
+            "cls": "mjx-n",
+            "right": 414.09375,
+            "text": ""
+          },
+          {
+            "tag": "MJX-C",
+            "id": "",
+            "cls": "mjx-c3D",
+            "right": 414.09375,
+            "text": ""
+          },
+          {
+            "tag": "MJX-MFRAC",
+            "id": "",
+            "cls": "",
+            "right": 442.3125,
+            "text": ""
+          },
+          {
+            "tag": "MJX-FRAC",
+            "id": "",
+            "cls": "",
+            "right": 442.3125,
+            "text": ""
+          },
+          {
+            "tag": "MJX-NUM",
+            "id": "",
+            "cls": "",
+            "right": 438.09375,
+            "text": ""
+          },
+          {
+            "tag": "MJX-NSTRUT",
+            "id": "",
+            "cls": "",
+            "right": 424.328125,
+            "text": ""
+          },
+          {
+            "tag": "MJX-MI",
+            "id": "",
+            "cls": "mjx-i",
+            "right": 437.40625,
+            "text": ""
+          },
+          {
+            "tag": "MJX-C",
+            "id": "",
+            "cls": "mjx-c1D43F TEX-I",
+            "right": 437.40625,
+            "text": ""
+          }
+        ],
+        "svgTextOverflow": []
+      },
+      {
+        "name": "mobile",
+        "stage": 3,
+        "width": 390,
+        "documentWidth": 390,
+        "sceneWidth": 308,
+        "wide": [
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 450.875,
+            "text": "Imputation"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 604.296875,
+            "text": "Sampling uncertainty"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 746.15625,
+            "text": "Variance estimation"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 825.25,
+            "text": "Bootstrap"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 971.984375,
+            "text": "Confidence intervals"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 1049.34375,
+            "text": "Provinces"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 1170.0625,
+            "text": "September 2026"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 1256.640625,
+            "text": "Laboratory"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 1345.25,
+            "text": "All sections"
+          },
+          {
+            "tag": "MJX-MATH",
+            "id": "",
+            "cls": "MJX-TEX",
+            "right": 447.65625,
+            "text": ""
+          },
+          {
+            "tag": "MJX-MI",
+            "id": "",
+            "cls": "mjx-i",
+            "right": 393.796875,
+            "text": ""
+          },
+          {
+            "tag": "MJX-C",
+            "id": "",
+            "cls": "mjx-c1D45D TEX-I",
+            "right": 393.796875,
+            "text": ""
+          },
+          {
+            "tag": "MJX-MO",
+            "id": "",
+            "cls": "mjx-n",
+            "right": 414.09375,
+            "text": ""
+          },
+          {
+            "tag": "MJX-C",
+            "id": "",
+            "cls": "mjx-c3D",
+            "right": 414.09375,
+            "text": ""
+          },
+          {
+            "tag": "MJX-MFRAC",
+            "id": "",
+            "cls": "",
+            "right": 442.3125,
+            "text": ""
+          },
+          {
+            "tag": "MJX-FRAC",
+            "id": "",
+            "cls": "",
+            "right": 442.3125,
+            "text": ""
+          },
+          {
+            "tag": "MJX-NUM",
+            "id": "",
+            "cls": "",
+            "right": 438.09375,
+            "text": ""
+          },
+          {
+            "tag": "MJX-NSTRUT",
+            "id": "",
+            "cls": "",
+            "right": 424.328125,
+            "text": ""
+          },
+          {
+            "tag": "MJX-MI",
+            "id": "",
+            "cls": "mjx-i",
+            "right": 437.40625,
+            "text": ""
+          },
+          {
+            "tag": "MJX-C",
+            "id": "",
+            "cls": "mjx-c1D43F TEX-I",
+            "right": 437.40625,
+            "text": ""
+          }
+        ],
+        "svgTextOverflow": []
+      },
+      {
+        "name": "mobile",
+        "stage": 4,
+        "width": 390,
+        "documentWidth": 390,
+        "sceneWidth": 308,
+        "wide": [
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 450.875,
+            "text": "Imputation"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 604.296875,
+            "text": "Sampling uncertainty"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 746.15625,
+            "text": "Variance estimation"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 825.25,
+            "text": "Bootstrap"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 971.984375,
+            "text": "Confidence intervals"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 1049.34375,
+            "text": "Provinces"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 1170.0625,
+            "text": "September 2026"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 1256.640625,
+            "text": "Laboratory"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 1345.25,
+            "text": "All sections"
+          },
+          {
+            "tag": "MJX-MATH",
+            "id": "",
+            "cls": "MJX-TEX",
+            "right": 447.65625,
+            "text": ""
+          },
+          {
+            "tag": "MJX-MI",
+            "id": "",
+            "cls": "mjx-i",
+            "right": 393.796875,
+            "text": ""
+          },
+          {
+            "tag": "MJX-C",
+            "id": "",
+            "cls": "mjx-c1D45D TEX-I",
+            "right": 393.796875,
+            "text": ""
+          },
+          {
+            "tag": "MJX-MO",
+            "id": "",
+            "cls": "mjx-n",
+            "right": 414.09375,
+            "text": ""
+          },
+          {
+            "tag": "MJX-C",
+            "id": "",
+            "cls": "mjx-c3D",
+            "right": 414.09375,
+            "text": ""
+          },
+          {
+            "tag": "MJX-MFRAC",
+            "id": "",
+            "cls": "",
+            "right": 442.3125,
+            "text": ""
+          },
+          {
+            "tag": "MJX-FRAC",
+            "id": "",
+            "cls": "",
+            "right": 442.3125,
+            "text": ""
+          },
+          {
+            "tag": "MJX-NUM",
+            "id": "",
+            "cls": "",
+            "right": 438.09375,
+            "text": ""
+          },
+          {
+            "tag": "MJX-NSTRUT",
+            "id": "",
+            "cls": "",
+            "right": 424.328125,
+            "text": ""
+          },
+          {
+            "tag": "MJX-MI",
+            "id": "",
+            "cls": "mjx-i",
+            "right": 437.40625,
+            "text": ""
+          },
+          {
+            "tag": "MJX-C",
+            "id": "",
+            "cls": "mjx-c1D43F TEX-I",
+            "right": 437.40625,
+            "text": ""
+          }
+        ],
+        "svgTextOverflow": []
+      },
+      {
+        "name": "mobile",
+        "stage": 5,
+        "width": 390,
+        "documentWidth": 390,
+        "sceneWidth": 308,
+        "wide": [
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 450.875,
+            "text": "Imputation"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 604.296875,
+            "text": "Sampling uncertainty"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 746.15625,
+            "text": "Variance estimation"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 825.25,
+            "text": "Bootstrap"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 971.984375,
+            "text": "Confidence intervals"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 1049.34375,
+            "text": "Provinces"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 1170.0625,
+            "text": "September 2026"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 1256.640625,
+            "text": "Laboratory"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 1345.25,
+            "text": "All sections"
+          },
+          {
+            "tag": "MJX-MATH",
+            "id": "",
+            "cls": "MJX-TEX",
+            "right": 447.65625,
+            "text": ""
+          },
+          {
+            "tag": "MJX-MI",
+            "id": "",
+            "cls": "mjx-i",
+            "right": 393.796875,
+            "text": ""
+          },
+          {
+            "tag": "MJX-C",
+            "id": "",
+            "cls": "mjx-c1D45D TEX-I",
+            "right": 393.796875,
+            "text": ""
+          },
+          {
+            "tag": "MJX-MO",
+            "id": "",
+            "cls": "mjx-n",
+            "right": 414.09375,
+            "text": ""
+          },
+          {
+            "tag": "MJX-C",
+            "id": "",
+            "cls": "mjx-c3D",
+            "right": 414.09375,
+            "text": ""
+          },
+          {
+            "tag": "MJX-MFRAC",
+            "id": "",
+            "cls": "",
+            "right": 442.3125,
+            "text": ""
+          },
+          {
+            "tag": "MJX-FRAC",
+            "id": "",
+            "cls": "",
+            "right": 442.3125,
+            "text": ""
+          },
+          {
+            "tag": "MJX-NUM",
+            "id": "",
+            "cls": "",
+            "right": 438.09375,
+            "text": ""
+          },
+          {
+            "tag": "MJX-NSTRUT",
+            "id": "",
+            "cls": "",
+            "right": 424.328125,
+            "text": ""
+          },
+          {
+            "tag": "MJX-MI",
+            "id": "",
+            "cls": "mjx-i",
+            "right": 437.40625,
+            "text": ""
+          },
+          {
+            "tag": "MJX-C",
+            "id": "",
+            "cls": "mjx-c1D43F TEX-I",
+            "right": 437.40625,
+            "text": ""
+          }
+        ],
+        "svgTextOverflow": []
+      },
+      {
+        "name": "mobile",
+        "stage": 6,
+        "width": 390,
+        "documentWidth": 390,
+        "sceneWidth": 308,
+        "wide": [
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 450.875,
+            "text": "Imputation"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 604.296875,
+            "text": "Sampling uncertainty"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 746.15625,
+            "text": "Variance estimation"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 825.25,
+            "text": "Bootstrap"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 971.984375,
+            "text": "Confidence intervals"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 1049.34375,
+            "text": "Provinces"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 1170.0625,
+            "text": "September 2026"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 1256.640625,
+            "text": "Laboratory"
+          },
+          {
+            "tag": "A",
+            "id": "",
+            "cls": "",
+            "right": 1345.25,
+            "text": "All sections"
+          },
+          {
+            "tag": "MJX-MATH",
+            "id": "",
+            "cls": "MJX-TEX",
+            "right": 447.65625,
+            "text": ""
+          },
+          {
+            "tag": "MJX-MI",
+            "id": "",
+            "cls": "mjx-i",
+            "right": 393.796875,
+            "text": ""
+          },
+          {
+            "tag": "MJX-C",
+            "id": "",
+            "cls": "mjx-c1D45D TEX-I",
+            "right": 393.796875,
+            "text": ""
+          },
+          {
+            "tag": "MJX-MO",
+            "id": "",
+            "cls": "mjx-n",
+            "right": 414.09375,
+            "text": ""
+          },
+          {
+            "tag": "MJX-C",
+            "id": "",
+            "cls": "mjx-c3D",
+            "right": 414.09375,
+            "text": ""
+          },
+          {
+            "tag": "MJX-MFRAC",
+            "id": "",
+            "cls": "",
+            "right": 442.3125,
+            "text": ""
+          },
+          {
+            "tag": "MJX-FRAC",
+            "id": "",
+            "cls": "",
+            "right": 442.3125,
+            "text": ""
+          },
+          {
+            "tag": "MJX-NUM",
+            "id": "",
+            "cls": "",
+            "right": 438.09375,
+            "text": ""
+          },
+          {
+            "tag": "MJX-NSTRUT",
+            "id": "",
+            "cls": "",
+            "right": 424.328125,
+            "text": ""
+          },
+          {
+            "tag": "MJX-MI",
+            "id": "",
+            "cls": "mjx-i",
+            "right": 437.40625,
+            "text": ""
+          },
+          {
+            "tag": "MJX-C",
+            "id": "",
+            "cls": "mjx-c1D43F TEX-I",
+            "right": 437.40625,
+            "text": ""
+          }
+        ],
+        "svgTextOverflow": []
+      }
+    ],
+    "playback": [],
+    "pauseResume": true,
+    "fullPlayback": false,
+    "reducedMotion": true
+  },
+  "mathjaxRendered": 150,
+  "layouts": [
+    {
+      "name": "desktop",
+      "width": 1440,
+      "documentWidth": 1425,
+      "bodyWidth": 1425,
+      "chapters": 22,
+      "overflow": [],
+      "wide": [
+        {
+          "tag": "DIV",
+          "id": "",
+          "cls": "page",
+          "right": 1352.5,
+          "text": "\nSurvey inference · Research draft · CanadaMeasuring Uncertainty in Canada's Lab"
+        },
+        {
+          "tag": "MAIN",
+          "id": "main",
+          "cls": "paper",
+          "right": 1324.5,
+          "text": "\nSurvey inference · Research draft · CanadaMeasuring Uncertainty in Canada's Lab"
+        },
+        {
+          "tag": "HEADER",
+          "id": "",
+          "cls": "hero",
+          "right": 1289.5,
+          "text": "Survey inference · Research draft · CanadaMeasuring Uncertainty in Canada's Labo"
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "cls": "",
+          "right": 1014.5,
+          "text": "Survey inference · Research draft · CanadaMeasuring Uncertainty in Canada's Labo"
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "cls": "eyebrow",
+          "right": 489.140625,
+          "text": "Survey inference · Research draft · Canada"
+        },
+        {
+          "tag": "H1",
+          "id": "",
+          "cls": "",
+          "right": 1014.5,
+          "text": "Measuring Uncertainty in Canada's Labour Force Survey"
+        },
+        {
+          "tag": "P",
+          "id": "",
+          "cls": "subtitle",
+          "right": 1014.5,
+          "text": "Sampling uncertainty, confidence intervals, survey design, and the interpretatio"
+        },
+        {
+          "tag": "ASIDE",
+          "id": "",
+          "cls": "metadata",
+          "right": 1289.5,
+          "text": "📅Created: October 13, 2026🧰Harness: Codex on Windows PowerShellModel: GPT Sol-"
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "cls": "",
+          "right": 1272.5,
+          "text": "📅Created: October 13, 2026"
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "cls": "meta-icon",
+          "right": 1074.5,
+          "text": "📅"
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "cls": "",
+          "right": 1222.9375,
+          "text": "Created: October 13, 2026"
+        },
+        {
+          "tag": "STRONG",
+          "id": "",
+          "cls": "",
+          "right": 1128.46875,
+          "text": "Created:"
+        },
+        {
+          "tag": "DIV",
+          "id": "",
+          "cls": "",
+          "right": 1272.5,
+          "text": "🧰Harness: Codex on Windows PowerShell"
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "cls": "meta-icon",
+          "right": 1074.5,
+          "text": "🧰"
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "cls": "",
+          "right": 1272.5,
+          "text": "Harness: Codex on Windows PowerShell"
+        }
+      ]
+    },
+    {
+      "name": "mobile",
+      "width": 390,
+      "documentWidth": 390,
+      "bodyWidth": 390,
+      "chapters": 22,
+      "overflow": [],
+      "wide": [
+        {
+          "tag": "A",
+          "id": "",
+          "cls": "",
+          "right": 450.875,
+          "text": "Imputation"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "cls": "",
+          "right": 604.296875,
+          "text": "Sampling uncertainty"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "cls": "",
+          "right": 746.15625,
+          "text": "Variance estimation"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "cls": "",
+          "right": 825.25,
+          "text": "Bootstrap"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "cls": "",
+          "right": 971.984375,
+          "text": "Confidence intervals"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "cls": "",
+          "right": 1049.34375,
+          "text": "Provinces"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "cls": "",
+          "right": 1170.0625,
+          "text": "September 2026"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "cls": "",
+          "right": 1256.640625,
+          "text": "Laboratory"
+        },
+        {
+          "tag": "A",
+          "id": "",
+          "cls": "",
+          "right": 1345.25,
+          "text": "All sections"
+        },
+        {
+          "tag": "MJX-MATH",
+          "id": "",
+          "cls": "MJX-TEX",
+          "right": 447.65625,
+          "text": ""
+        },
+        {
+          "tag": "MJX-MI",
+          "id": "",
+          "cls": "mjx-i",
+          "right": 393.796875,
+          "text": ""
+        },
+        {
+          "tag": "MJX-C",
+          "id": "",
+          "cls": "mjx-c1D45D TEX-I",
+          "right": 393.796875,
+          "text": ""
+        },
+        {
+          "tag": "MJX-MO",
+          "id": "",
+          "cls": "mjx-n",
+          "right": 414.09375,
+          "text": ""
+        },
+        {
+          "tag": "MJX-C",
+          "id": "",
+          "cls": "mjx-c3D",
+          "right": 414.09375,
+          "text": ""
+        },
+        {
+          "tag": "MJX-MFRAC",
+          "id": "",
+          "cls": "",
+          "right": 442.3125,
+          "text": ""
+        }
+      ]
+    }
+  ],
+  "noScriptTables": true,
+  "directFileOpening": true
+}

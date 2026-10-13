@@ -1,0 +1,77 @@
+[
+  {
+    "url": "https://doi.org/10.25318/1410028701-eng",
+    "status": 200,
+    "final_url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410028701"
+  },
+  {
+    "url": "https://www.census.gov/data/software/x13as.html",
+    "status": 200,
+    "final_url": "https://www.census.gov/data/software/x13as.html"
+  },
+  {
+    "url": "https://www.statcan.gc.ca/en/microdata/data-centres",
+    "status": 200,
+    "final_url": "https://www.statcan.gc.ca/en/microdata/data-centres"
+  },
+  {
+    "url": "https://www.statcan.gc.ca/en/reference/licence",
+    "status": 200,
+    "final_url": "https://www.statcan.gc.ca/en/terms-conditions/open-licence"
+  },
+  {
+    "url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261009/dq261009a-eng.htm",
+    "status": 200,
+    "final_url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261009/dq261009a-eng.htm"
+  },
+  {
+    "url": "https://www150.statcan.gc.ca/n1/pub/71-526-x/2017001/chapt2-eng.htm",
+    "status": 200,
+    "final_url": "https://www150.statcan.gc.ca/n1/pub/71-526-x/2017001/chapt2-eng.htm"
+  },
+  {
+    "url": "https://www150.statcan.gc.ca/n1/pub/71-526-x/2017001/chapt5-eng.htm",
+    "status": 200,
+    "final_url": "https://www150.statcan.gc.ca/n1/pub/71-526-x/2017001/chapt5-eng.htm"
+  },
+  {
+    "url": "https://www150.statcan.gc.ca/n1/pub/71-526-x/2017001/chapt6-eng.htm",
+    "status": 200,
+    "final_url": "https://www150.statcan.gc.ca/n1/pub/71-526-x/2017001/chapt6-eng.htm"
+  },
+  {
+    "url": "https://www150.statcan.gc.ca/n1/pub/71-526-x/2017001/chapt7-eng.htm",
+    "status": 200,
+    "final_url": "https://www150.statcan.gc.ca/n1/pub/71-526-x/2017001/chapt7-eng.htm"
+  },
+  {
+    "url": "https://www150.statcan.gc.ca/n1/pub/71-526-x/2017001/chapt8-eng.htm",
+    "status": 200,
+    "final_url": "https://www150.statcan.gc.ca/n1/pub/71-526-x/2017001/chapt8-eng.htm"
+  },
+  {
+    "url": "https://www150.statcan.gc.ca/n1/pub/71-526-x/2017001/ref-biblio-eng.htm",
+    "status": 200,
+    "final_url": "https://www150.statcan.gc.ca/n1/pub/71-526-x/2017001/ref-biblio-eng.htm"
+  },
+  {
+    "url": "https://www150.statcan.gc.ca/n1/pub/71-526-x/71-526-x2017001-eng.htm",
+    "status": 200,
+    "final_url": "https://www150.statcan.gc.ca/n1/pub/71-526-x/71-526-x2017001-eng.htm"
+  },
+  {
+    "url": "https://www150.statcan.gc.ca/n1/pub/71-543-g/71-543-g2025001-eng.htm",
+    "status": 200,
+    "final_url": "https://www150.statcan.gc.ca/n1/pub/71-543-g/71-543-g2025001-eng.htm"
+  },
+  {
+    "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410028701",
+    "status": 200,
+    "final_url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410028701"
+  },
+  {
+    "url": "https://www23.statcan.gc.ca/imdb/p2SV.pl?Function=getSurvey&SDDS=3701",
+    "status": 200,
+    "final_url": "https://www23.statcan.gc.ca/imdb/p2SV.pl?Function=getSurvey&SDDS=3701"
+  }
+]

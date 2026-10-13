@@ -1,0 +1,100 @@
+[
+  {
+    "file": "guide-2025.html",
+    "url": "https://www150.statcan.gc.ca/n1/pub/71-543-g/71-543-g2025001-eng.htm",
+    "downloaded_utc": "2026-10-13T09:10:36.743213+00:00",
+    "bytes": 333807,
+    "sha256": "cef1a308b70a0e9daf37e6b8ba19927b6d0c77325396490cdfac479671c3183d"
+  },
+  {
+    "file": "methodology-2017.html",
+    "url": "https://www150.statcan.gc.ca/n1/pub/71-526-x/71-526-x2017001-eng.htm",
+    "downloaded_utc": "2026-10-13T09:10:37.435261+00:00",
+    "bytes": 21278,
+    "sha256": "336ee9d5a12b260966ed0cbbaa1a10d3329bb16d4a0848ef07033eca5aa3d138"
+  },
+  {
+    "file": "methodology-2017.pdf",
+    "url": "https://www150.statcan.gc.ca/n1/pub/71-526-x/71-526-x2017001-eng.pdf",
+    "downloaded_utc": "2026-10-13T09:10:39.782927+00:00",
+    "bytes": 5169607,
+    "sha256": "f25eae23216f58905510f45cacb5089ce19ca9e46c5de426892b78029161c186"
+  },
+  {
+    "file": "guide-2025.pdf",
+    "url": "https://www150.statcan.gc.ca/n1/pub/71-543-g/71-543-g2025001-eng.pdf",
+    "downloaded_utc": "2026-10-13T09:10:41.075248+00:00",
+    "bytes": 703857,
+    "sha256": "2f5ae9dd33ae2a96c0bed40451112fded144ad74be964f29f2d1fea766170c03"
+  },
+  {
+    "file": "september-2026.html",
+    "url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261009/dq261009a-eng.htm",
+    "downloaded_utc": "2026-10-13T09:10:41.840080+00:00",
+    "bytes": 70962,
+    "sha256": "f7b29f3515c2dcdb24ccee2a3aa945160e4589a5ed1529ec81062c7a3e5137ca"
+  },
+  {
+    "file": "survey-3701.html",
+    "url": "https://www23.statcan.gc.ca/imdb/p2SV.pl?Function=getSurvey&SDDS=3701",
+    "downloaded_utc": "2026-10-13T09:10:44.230669+00:00",
+    "bytes": 37002,
+    "sha256": "974c11b62b744875c62904113c74f457ccd08c1b805648e7ba8d385095b074f8"
+  },
+  {
+    "file": "table-14100287.zip",
+    "url": "https://www150.statcan.gc.ca/n1/tbl/csv/14100287-eng.zip",
+    "downloaded_utc": "2026-10-13T09:11:05.630535+00:00",
+    "bytes": 60542509,
+    "sha256": "c1cfb244022b8ed68840e53adc4afbe0b0d2ac231a592fe451e95ec57bc5922c"
+  },
+  {
+    "file": "chapter-2.html",
+    "url": "https://www150.statcan.gc.ca/n1/pub/71-526-x/2017001/chapt2-eng.htm",
+    "downloaded_utc": "2026-10-13T09:11:06.726711+00:00",
+    "bytes": 173094,
+    "sha256": "129b9e696c94ddaf53089796ffe092849a20464189ad1e79becf2693ec408c4d"
+  },
+  {
+    "file": "chapter-5.html",
+    "url": "https://www150.statcan.gc.ca/n1/pub/71-526-x/2017001/chapt5-eng.htm",
+    "downloaded_utc": "2026-10-13T09:11:07.458194+00:00",
+    "bytes": 41175,
+    "sha256": "2fe8ab34088a41759676a46853100eeb7e7f7dc15fd3e4ce3d40751d290c26b4"
+  },
+  {
+    "file": "chapter-6.html",
+    "url": "https://www150.statcan.gc.ca/n1/pub/71-526-x/2017001/chapt6-eng.htm",
+    "downloaded_utc": "2026-10-13T09:11:08.479195+00:00",
+    "bytes": 188726,
+    "sha256": "5c63fcd0981755aea484267ca734aa23826e2288e07ef98b282ae8df1a0b5a06"
+  },
+  {
+    "file": "chapter-7.html",
+    "url": "https://www150.statcan.gc.ca/n1/pub/71-526-x/2017001/chapt7-eng.htm",
+    "downloaded_utc": "2026-10-13T09:11:09.335306+00:00",
+    "bytes": 89657,
+    "sha256": "f29bd468d1da6b77088809633857a15933d6fda6bd37f04d733cc1b5ed19b849"
+  },
+  {
+    "file": "chapter-8.html",
+    "url": "https://www150.statcan.gc.ca/n1/pub/71-526-x/2017001/chapt8-eng.htm",
+    "downloaded_utc": "2026-10-13T09:11:10.067382+00:00",
+    "bytes": 83013,
+    "sha256": "df76204c86402fee11e5cec0c8175dc0e8eb62e7bf40d1e34c7768d2e30f1752"
+  },
+  {
+    "file": "guide-appendix-b.html",
+    "url": "https://www150.statcan.gc.ca/n1/pub/71-543-g/2025001/app_ann_b-eng.htm",
+    "downloaded_utc": "2026-10-13T09:37:30.851302+00:00",
+    "bytes": 61038,
+    "sha256": "1789ad79f68341a32e35eb0d0442269441ff1d35370125f0e9efa1a400e344e1"
+  },
+  {
+    "file": "methodology-references.html",
+    "url": "https://www150.statcan.gc.ca/n1/pub/71-526-x/2017001/ref-biblio-eng.htm",
+    "downloaded_utc": "2026-10-13T09:37:31.575732+00:00",
+    "bytes": 25287,
+    "sha256": "839e4b74dc277a721c5cede4caeab7f2c3fc0ccc18ee81fadcb0bfc29fd16b94"
+  }
+]

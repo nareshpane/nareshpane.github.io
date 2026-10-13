@@ -1,0 +1,671 @@
+{
+  "errors": [],
+  "failed": [],
+  "mathjaxRendered": 150,
+  "layouts": [
+    {
+      "name": "desktop",
+      "width": 1440,
+      "clientWidth": 1425,
+      "documentWidth": 1425,
+      "mathOverflow": [],
+      "wideElements": [],
+      "mathScrollbars": 0,
+      "navRows": 2,
+      "navScroll": false,
+      "duplicateIds": [],
+      "missingAnchors": []
+    },
+    {
+      "name": "tablet",
+      "width": 768,
+      "clientWidth": 768,
+      "documentWidth": 768,
+      "mathOverflow": [],
+      "wideElements": [],
+      "mathScrollbars": 0,
+      "navRows": 3,
+      "navScroll": false,
+      "duplicateIds": [],
+      "missingAnchors": []
+    },
+    {
+      "name": "mobile",
+      "width": 390,
+      "clientWidth": 390,
+      "documentWidth": 390,
+      "mathOverflow": [],
+      "wideElements": [],
+      "mathScrollbars": 0,
+      "navRows": 7,
+      "navScroll": false,
+      "duplicateIds": [],
+      "missingAnchors": []
+    },
+    {
+      "name": "narrow",
+      "width": 320,
+      "clientWidth": 320,
+      "documentWidth": 320,
+      "mathOverflow": [],
+      "wideElements": [],
+      "mathScrollbars": 0,
+      "navRows": 8,
+      "navScroll": false,
+      "duplicateIds": [],
+      "missingAnchors": []
+    }
+  ],
+  "scenes": [
+    {
+      "name": "desktop",
+      "label": "canada",
+      "elapsed": 0,
+      "playing": false,
+      "stage": 0,
+      "geo": "Canada",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "desktop",
+      "label": "ontario",
+      "elapsed": 7.5,
+      "playing": false,
+      "stage": 1,
+      "geo": "ON",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "desktop",
+      "label": "bc",
+      "elapsed": 10.5,
+      "playing": false,
+      "stage": 1,
+      "geo": "BC",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "desktop",
+      "label": "prairie",
+      "elapsed": 13.5,
+      "playing": false,
+      "stage": 1,
+      "geo": "SK",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "desktop",
+      "label": "pei",
+      "elapsed": 17.5,
+      "playing": false,
+      "stage": 2,
+      "geo": "PE",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "desktop",
+      "label": "yukon",
+      "elapsed": 22.5,
+      "playing": false,
+      "stage": 3,
+      "geo": "YT",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "desktop",
+      "label": "zoom",
+      "elapsed": 31,
+      "playing": false,
+      "stage": 4,
+      "geo": "ON",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "desktop",
+      "label": "selection",
+      "elapsed": 38,
+      "playing": false,
+      "stage": 5,
+      "geo": "ON",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "desktop",
+      "label": "rotation",
+      "elapsed": 47,
+      "playing": false,
+      "stage": 6,
+      "geo": "ON",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "desktop",
+      "label": "households",
+      "elapsed": 55,
+      "playing": false,
+      "stage": 7,
+      "geo": "ON",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "desktop",
+      "label": "interview",
+      "elapsed": 66,
+      "playing": false,
+      "stage": 8,
+      "geo": "ON",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "desktop",
+      "label": "imputation",
+      "elapsed": 81,
+      "playing": false,
+      "stage": 9,
+      "geo": "ON",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "desktop",
+      "label": "analysis",
+      "elapsed": 90,
+      "playing": false,
+      "stage": 10,
+      "geo": "ON",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "desktop",
+      "label": "release",
+      "elapsed": 102,
+      "playing": false,
+      "stage": 11,
+      "geo": "ON",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "desktop",
+      "label": "reliability",
+      "elapsed": 108,
+      "playing": false,
+      "stage": 12,
+      "geo": "ON",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "tablet",
+      "label": "canada",
+      "elapsed": 0,
+      "playing": false,
+      "stage": 0,
+      "geo": "Canada",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "tablet",
+      "label": "ontario",
+      "elapsed": 7.5,
+      "playing": false,
+      "stage": 1,
+      "geo": "ON",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "tablet",
+      "label": "bc",
+      "elapsed": 10.5,
+      "playing": false,
+      "stage": 1,
+      "geo": "BC",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "tablet",
+      "label": "prairie",
+      "elapsed": 13.5,
+      "playing": false,
+      "stage": 1,
+      "geo": "SK",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "tablet",
+      "label": "pei",
+      "elapsed": 17.5,
+      "playing": false,
+      "stage": 2,
+      "geo": "PE",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "tablet",
+      "label": "yukon",
+      "elapsed": 22.5,
+      "playing": false,
+      "stage": 3,
+      "geo": "YT",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "tablet",
+      "label": "zoom",
+      "elapsed": 31,
+      "playing": false,
+      "stage": 4,
+      "geo": "ON",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "tablet",
+      "label": "selection",
+      "elapsed": 38,
+      "playing": false,
+      "stage": 5,
+      "geo": "ON",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "tablet",
+      "label": "rotation",
+      "elapsed": 47,
+      "playing": false,
+      "stage": 6,
+      "geo": "ON",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "tablet",
+      "label": "households",
+      "elapsed": 55,
+      "playing": false,
+      "stage": 7,
+      "geo": "ON",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "tablet",
+      "label": "interview",
+      "elapsed": 66,
+      "playing": false,
+      "stage": 8,
+      "geo": "ON",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "tablet",
+      "label": "imputation",
+      "elapsed": 81,
+      "playing": false,
+      "stage": 9,
+      "geo": "ON",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "tablet",
+      "label": "analysis",
+      "elapsed": 90,
+      "playing": false,
+      "stage": 10,
+      "geo": "ON",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "tablet",
+      "label": "release",
+      "elapsed": 102,
+      "playing": false,
+      "stage": 11,
+      "geo": "ON",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "tablet",
+      "label": "reliability",
+      "elapsed": 108,
+      "playing": false,
+      "stage": 12,
+      "geo": "ON",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "mobile",
+      "label": "canada",
+      "elapsed": 0,
+      "playing": false,
+      "stage": 0,
+      "geo": "Canada",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "mobile",
+      "label": "ontario",
+      "elapsed": 7.5,
+      "playing": false,
+      "stage": 1,
+      "geo": "ON",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "mobile",
+      "label": "bc",
+      "elapsed": 10.5,
+      "playing": false,
+      "stage": 1,
+      "geo": "BC",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "mobile",
+      "label": "prairie",
+      "elapsed": 13.5,
+      "playing": false,
+      "stage": 1,
+      "geo": "SK",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "mobile",
+      "label": "pei",
+      "elapsed": 17.5,
+      "playing": false,
+      "stage": 2,
+      "geo": "PE",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "mobile",
+      "label": "yukon",
+      "elapsed": 22.5,
+      "playing": false,
+      "stage": 3,
+      "geo": "YT",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "mobile",
+      "label": "zoom",
+      "elapsed": 31,
+      "playing": false,
+      "stage": 4,
+      "geo": "ON",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "mobile",
+      "label": "selection",
+      "elapsed": 38,
+      "playing": false,
+      "stage": 5,
+      "geo": "ON",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "mobile",
+      "label": "rotation",
+      "elapsed": 47,
+      "playing": false,
+      "stage": 6,
+      "geo": "ON",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "mobile",
+      "label": "households",
+      "elapsed": 55,
+      "playing": false,
+      "stage": 7,
+      "geo": "ON",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "mobile",
+      "label": "interview",
+      "elapsed": 66,
+      "playing": false,
+      "stage": 8,
+      "geo": "ON",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "mobile",
+      "label": "imputation",
+      "elapsed": 81,
+      "playing": false,
+      "stage": 9,
+      "geo": "ON",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "mobile",
+      "label": "analysis",
+      "elapsed": 90,
+      "playing": false,
+      "stage": 10,
+      "geo": "ON",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "mobile",
+      "label": "release",
+      "elapsed": 102,
+      "playing": false,
+      "stage": 11,
+      "geo": "ON",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "mobile",
+      "label": "reliability",
+      "elapsed": 108,
+      "playing": false,
+      "stage": 12,
+      "geo": "ON",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "narrow",
+      "label": "canada",
+      "elapsed": 0,
+      "playing": false,
+      "stage": 0,
+      "geo": "Canada",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "narrow",
+      "label": "ontario",
+      "elapsed": 7.5,
+      "playing": false,
+      "stage": 1,
+      "geo": "ON",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "narrow",
+      "label": "bc",
+      "elapsed": 10.5,
+      "playing": false,
+      "stage": 1,
+      "geo": "BC",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "narrow",
+      "label": "prairie",
+      "elapsed": 13.5,
+      "playing": false,
+      "stage": 1,
+      "geo": "SK",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "narrow",
+      "label": "pei",
+      "elapsed": 17.5,
+      "playing": false,
+      "stage": 2,
+      "geo": "PE",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "narrow",
+      "label": "yukon",
+      "elapsed": 22.5,
+      "playing": false,
+      "stage": 3,
+      "geo": "YT",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "narrow",
+      "label": "zoom",
+      "elapsed": 31,
+      "playing": false,
+      "stage": 4,
+      "geo": "ON",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "narrow",
+      "label": "selection",
+      "elapsed": 38,
+      "playing": false,
+      "stage": 5,
+      "geo": "ON",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "narrow",
+      "label": "rotation",
+      "elapsed": 47,
+      "playing": false,
+      "stage": 6,
+      "geo": "ON",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "narrow",
+      "label": "households",
+      "elapsed": 55,
+      "playing": false,
+      "stage": 7,
+      "geo": "ON",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "narrow",
+      "label": "interview",
+      "elapsed": 66,
+      "playing": false,
+      "stage": 8,
+      "geo": "ON",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "narrow",
+      "label": "imputation",
+      "elapsed": 81,
+      "playing": false,
+      "stage": 9,
+      "geo": "ON",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "narrow",
+      "label": "analysis",
+      "elapsed": 90,
+      "playing": false,
+      "stage": 10,
+      "geo": "ON",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "narrow",
+      "label": "release",
+      "elapsed": 102,
+      "playing": false,
+      "stage": 11,
+      "geo": "ON",
+      "reduced": false,
+      "visible": true
+    },
+    {
+      "name": "narrow",
+      "label": "reliability",
+      "elapsed": 108,
+      "playing": false,
+      "stage": 12,
+      "geo": "ON",
+      "reduced": false,
+      "visible": true
+    }
+  ],
+  "interactions": [
+    "viewport autoplay; offscreen suspension; pause/resume; Next while playing",
+    "50 rapid replay/next/previous cycles; stable node count; replay reset",
+    "automatic completion at 108 seconds",
+    "Ontario anchor inside actual outline; 433 deterministic timeline samples have finite transformations",
+    "reduced motion disables autoplay; still-scene navigation works",
+    "donor transfer/reset; weighted replicate laboratory; MNAR imputation experiment; all original laboratory and provincial controls"
+  ],
+  "noScriptTables": true,
+  "directFileOpening": true
+}

@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 9]><html class="no-js lt-ie9" lang="en" dir="ltr"><![endif]--><!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+<!--<![endif]-->
+
+<head>
+<meta charset="utf-8">
+<link rel="schema.dc" href="http://purl.org/dc/elements/1.1/" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<!-- wet-boew.github.io/wet-boew/License-en.htm / wet-boew.github.io/wet-boew/Licence-en.htm -->
+
+
+<meta content="width=device-width,initial-scale=1" name="viewport" />
+
+<title>Chapter 8 Data quality</title>
+<meta name="dcterms.title" content="Methodology of the Canadian Labour Force Survey. Chapter 8 Data quality" />
+<meta name="dcterms.language" title="ISO639-2" content="eng" />
+<meta name="dcterms.creator" content="Government of Canada, Statistics Canada" />
+<meta name="dcterms.issued" title="W3CDTF" content="2017-03-29" />
+<meta name="dcterms.modified" title="W3CDTF" content="2017-03-29" />
+<meta name="dcterms.subject" title="gcstc" content="none" />
+<meta name="description" content="" />
+<meta name="keywords" content="none" />
+<meta name="STCtopic" content="Education, training and learning; Labour" />
+<meta name="STCtopicID" content="1821; 2621" />
+<meta name="STCsubtopic" content="Fields of study; Outcomes of education; Adult education and training; Job training and educational attainment" />
+<meta name="STCsubtopicID" content="1586; 3073; 966; 2624" />
+<meta name="STCtype" content="Survey documentation" />
+<meta name="STCthesaurus" content="none" />
+
+<meta property="dcterms:service" content="StatCan"/> 
+<meta property="dcterms:accessRights" content="2"/>
+
+<link href="/wet-boew4b/assets/favicon.ico" rel="icon" type="image/x-icon">
+<link rel="stylesheet" href="/wet-boew4b/css/wet-boew.min.css">
+<script src="/wet-boew4b/js/jquery.min.js"></script>
+
+<link rel="stylesheet" href="/wet-boew4b/css/theme.min.css">
+<link rel="stylesheet" href="/wet-boew4b/css/statcan.css">
+<link rel="stylesheet" href="/wet-boew4b/invitation-manager/Overlay.css"> 
+
+<noscript><link rel="stylesheet" href="/wet-boew4b/css/noscript.min.css" /></noscript>
+<!-- Adobe Analytics v5 production version --><!--script src="//assets.adobedtm.com/be5dfd287373/8cdb3d539c44/launch-6df9e9b447f9.min.js"></script-->
+<!-- Adobe Analytics v5 staging version --><!--script src="//assets.adobedtm.com/be5dfd287373/8cdb3d539c44/launch-dfa8abb35555-staging.min.js"></script-->
+<!-- Adobe Analytics v10 production version --><script src="//assets.adobedtm.com/be5dfd287373/8f0ead8a37e7/launch-09394abc039d.min.js"></script>
+
+<script>dataLayer1 = [];</script>
+
+
+
+<script src="/Framework/js/jquery.tooltipster.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/Framework/css/tooltipster.css">
+<link rel="stylesheet" type="text/css" href="/Framework/css/pubs_wet4.css">
+<link rel="stylesheet" type="text/css" href="/wet-boew4b/css/font-awesome.min.css">
+
+
+<!-- CustomScriptsCSSEnd -->
+</head>
+
+<body vocab="http://schema.org/" typeof="WebPage">
+
+<ul id="wb-tphp">
+<li class="wb-slc">
+<a class="wb-sl" href="#wb-cont">Skip to main content</a>
+</li>
+<li class="wb-slc visible-sm visible-md visible-lg">
+<a class="wb-sl" href="#wb-info">Skip to "About this site"</a>
+</li>
+</ul>
+<header role="banner">
+<div id="wb-bnr" class="container">
+<section id="wb-lng" class="visible-md visible-lg text-right">
+<h2 class="wb-inv">Language selection</h2>
+<div class="row">
+<div class="col-md-12">
+<ul class="list-inline margin-bottom-none">
+<li><a lang="fr" href="
+/cgi-bin/change.cgi
+">Fran&#231;ais</a></li>
+</ul>
+</div>
+</div>
+</section>
+<div class="row">
+<div class="brand col-xs-9 col-sm-5 col-md-4">
+<a href="https://www.canada.ca/en.html"><img src="/wet-boew4b/assets/sig-blk-gov-en.svg" alt="Government of Canada"><span class="wb-inv"> / <span lang="fr">Gouvernement du Canada</span></span></a>
+</div>
+<section class="wb-mb-links col-sm-offset-4 col-xs-4 col-sm-3 visible-sm visible-xs" id="wb-glb-mn">
+<h2>Search and menus</h2>
+<ul class="list-inline text-right chvrn">
+<li><a href="#mb-pnl" title="Search and menus" aria-controls="mb-pnl" class="overlay-lnk" role="button"><span class="glyphicon glyphicon-search"><span class="glyphicon glyphicon-th-list"><span class="wb-inv">Search and menus</span></span></span></a></li>
+</ul>
+<div id="mb-pnl"></div>
+</section>
+
+<section id="wb-srch" class="col-lg-offset-2 col-md-offset-2 col-xs-6 text-right visible-md visible-lg">
+<h2 class="wb-inv">Search</h2>
+<form action="https://www.statcan.gc.ca/search/results/site-search" method="get" name="cse-search-box" role="search" class="form-inline">
+<div class="form-group wb-srch-qry">
+<label for="wb-srch-q" class="wb-inv">Search Statistics Canada</label>
+<input type="hidden" name="fq" value="stclac:2" />
+<input id="wb-srch-q" list="wb-srch-q-ac" class="wb-srch-q form-control" name="q" type="search" value="" size="27" maxlength="150" placeholder="Search Statistics Canada">
+<datalist id="wb-srch-q-ac">
+</datalist>
+</div>
+<div class="form-group submit">
+<button type="submit" id="wb-srch-sub" class="btn btn-primary btn-small" name="wb-srch-sub"><span class="glyphicon-search glyphicon"></span><span class="wb-inv">Search</span></button>
+</div>
+</form>
+</section>
+</div>
+</div>
+
+<nav role="navigation" id="wb-sm" class="wb-menu visible-md visible-lg" data-trgt="mb-pnl" data-ajax-replace="/wet-boew4b/ajax/sitemenu-en.html" typeof="SiteNavigationElement">
+	<div class="container nvbar">
+		<h2 class="wb-inv">Topics menu</h2>
+		<div class="row">
+			<ul class="list-inline menu">
+				<li><a href="https://www150.statcan.gc.ca/n1/en/subjects?MM=1">Subjects</a></li>
+				<li><a href="https://www150.statcan.gc.ca/n1/en/type/data?MM=1">Data</a></li>
+				<li><a href="https://www150.statcan.gc.ca/n1/en/type/analysis?MM=1">Analysis</a></li>
+				<li><a href="https://www.statcan.gc.ca/en/reference?MM=1">Reference</a></li>
+				<li><a href="https://www.statcan.gc.ca/en/geography?MM=1">Geography</a></li>
+				<li><a href="https://www.statcan.gc.ca/en/census?MM=1">Census</a></li>
+				<li><a href="https://www.statcan.gc.ca/en/surveys?MM=1">Surveys and statistical programs</a></li>
+				<li><a href="https://www.statcan.gc.ca/en/about/statcan?MM=1">About StatCan</a></li>
+				<li><a href="https://www.canada.ca/en.html">Canada.ca</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<nav role="navigation" id="wb-bc" class="" property="breadcrumb">
+	<div class="container">
+		<div class="row">
+
+<!-- Breadcrumb trail -->
+<ol class="breadcrumb">
+<li><a href="http://www.statcan.gc.ca/eng/start" title="Main page of Statistics Canada">Home</a></li>
+<li><a href="/cgi-bin/IPS/display?cat_num=71-526-x" title="Online catalogue: 71-526-X">71-526-X</a></li>
+<li><a href="/pub/71-526-x/71-526-x2017001-eng.htm" title="Main page: Methodology of the Canadian Labour Force Survey">Main page</a></li>
+<li>Chapter 8 Data quality</li>
+</ol>
+
+</div>
+</div>
+</nav>
+</header>
+
+<main role="main" property="mainContentOfPage" class="container">
+
+
+<!--H1 and logo start-->
+<section>
+  <h1 property="name" id="wb-cont">
+  <span class="hidden-xs hidden-sm"><span class="small">Methodology of the Canadian Labour Force Survey</span><br>
+    Chapter 8 Data quality</span>
+  <small class="visible-sm visible-xs"><span class="small">Methodology of the Canadian Labour Force Survey</span><br/>
+  Chapter 8 Data quality</small></h1>
+  
+  
+  
+
+<div class="row pstn-tp-sm pstn-rght-sm mrgn-tp-xl"> 
+     <a href="#toc-tdm" aria-controls="toc-tdm" class="btn btn-xs wb-lbx btn-primary mrgn-rght-sm"><span class="glyphicon glyphicon-list mrgn-rght-sm" title="Table of contents"></span>Table of contents</a>
+</div>
+
+
+<details class="hidden-xs hidden-sm rel-article mrgn-bttm-md hidden-print"><summary class="rel-article"><span class="h4">On this page</span></summary>
+
+<ul>
+ <li class="list-unstyled"><a href="#a80">8.0 Introduction</a></li>
+ <li class="list-unstyled"><a href="#a81">8.1 Quality indicators related to sampling errors</a>
+ 		<ul>
+        <li class="list-unstyled"><a href="#a811">8.1.1	Standard error</a></li>
+        <li class="list-unstyled"><a href="#a812">8.1.2	Coefficient of variation</a></li>
+        <li class="list-unstyled"><a href="#a813">8.1.3	Design effect</a></li>
+        </ul></li>
+        
+ <li class="list-unstyled"><a href="#a82">8.2 Quality indicators related to non-sampling errors</a>
+ 		<ul>
+        <li class="list-unstyled"><a href="#a821">8.2.1	Coverage errors</a></li>
+        <li class="list-unstyled"><a href="#a822">8.2.2	Nonresponse</a></li>
+        <li class="list-unstyled"><a href="#a823">8.2.3	Measurement or Response errors</a></li>
+        <li class="list-unstyled"><a href="#a824">8.2.4	Processing errors</a></li>
+        <li class="list-unstyled"><a href="#a825">8.2.5	Monitoring of collection procedures</a></li>
+ 		</ul></li>
+ 
+ <li class="list-unstyled"><a href="#a83">8.3 <abbr title="Labour Force Survey">LFS</abbr> committees</a>
+ 		<ul>
+        <li class="list-unstyled"><a href="#a831">8.3.1	Operations Committee</a></li>
+        <li class="list-unstyled"><a href="#a832">8.3.2	Data Quality Committee</a></li> 
+	 	</ul></li>
+        
+ <li class="list-unstyled"><a href="#a84">8.4 Resources available regarding <abbr title="Labour Force Survey">LFS</abbr> data quality</a>
+ 		<ul>
+        <li class="list-unstyled"><a href="#a841">8.4.1	The Daily</a></li>
+      	<li class="list-unstyled"><a href="#a842">8.4.2	The Labour Force Survey web page</a></li>
+        <li class="list-unstyled"><a href="#a843">8.4.3	The Guide to the Labour Force Survey</a></li>
+        <li class="list-unstyled"><a href="#a844">8.4.4	Access to <abbr title="Labour Force Survey">LFS</abbr> data</a></li>
+		</ul></li>
+ 	
+</ul>
+</details>
+
+
+ <!--CONTENT-->
+ 
+<h2 id="a80" class="mrgn-tp-md">8.0 Introduction</h2>
+
+
+
+      
+        <p>The data  quality evaluation refers to the process of evaluating the final product of the  survey against the original objectives of the survey. In particular, the  evaluations are in terms of data accuracy and reliability. Such information  allows users to make more informed interpretation and use of the survey  results. Users must be provided with information allowing them to assess the  degree to which data limitations restrict the use of the data. Data quality  evaluations are also of benefit to the statistical agency. When data  limitations can be traced to specific steps in the survey process, such  evaluations can be used to improve the quality of subsequent occasions of the  survey and of other similar surveys. </p>
+        <p>          The <em>accuracy</em> of  statistical information is the degree to which the information correctly  describes the phenomena it was designed to measure. It is usually characterized  in terms of statistical error and is traditionally decomposed into bias  (systematic error) and variance (random error) components. It may also be  described in terms of the major sources of error that potentially cause  inaccuracy (<abbr title="for example">e.g.</abbr>, sampling errors and  non-sampling errors). This is the approach that will be used here.</p>
+        <p>          In a sample survey,  inferences are made about the target population based on the data collected  from only a portion of this population. The results will probably differ from  those obtainable from a complete census of this population under the same  conditions. The error caused by applying conclusions to the entire population  based on only a sample is called a sampling error. Some factors that contribute  to sampling errors include sample size, variability of the characteristics  examined, the sampling plan, and the estimation method.</p>
+        <p>          Non-sampling error, as its  name indicates, is not caused by the sampling process and can take place in a  census or a sample survey. This type of error can occur at any step of the  survey (planning, design, data collection, coding, data capture, editing, estimation,  analysis, and dissemination of data) and is mainly caused by human error.  Interviewers may misunderstand instructions, respondents may make errors in  answering questions, the answers may be incorrectly entered and errors may be  introduced in the processing and tabulation of the data. These are all examples  of non-sampling errors. Non-sampling error is also associated with other types  of errors, such as errors in the information sources, the methods used to  obtain population projections, seasonal adjustment errors, <em>etc</em>.</p>
+        <p>          To monitor and ensure the  quality of its data, the <abbr title="Labour Force Survey">LFS</abbr> adopted a program to measure data quality. A range  of quality indicators are regularly produced, and carefully analyzed. If there  are unusual values, the <abbr title="Labour Force Survey">LFS</abbr> managers are immediately notified so they can make  the necessary corrections as quickly as possible. Some indicators are merely  monitored, since their role is to detect trends or long-term effects. For  example, some measure the consequences of certain operational changes, while others  measure the impact of minor changes to the sample design. This long-term  information on data reliability can be used to make changes that are likely to  improve the overall quality of the results and to help analysts and data users  at Statistics Canada and elsewhere with their work.</p>
+        <p>          The quality indicators  produced for the <abbr title="Labour Force Survey">LFS</abbr> are described below. <a href="#a81">Section 8.1</a> presents indicators  related to sampling errors. Indicators related to non-sampling errors are  discussed in <a href="#a82">Section 8.2</a>. <a href="#a83">Section 8.3</a> describes the committees monitoring  various aspects of the <abbr title="Labour Force Survey">LFS</abbr> to ensure the quality of the data released. <a href="#a84">Section  8.4</a> informs users of other resources available regarding <abbr title="Labour Force Survey">LFS</abbr> data quality. </p>
+        <h2 id="a81">8.1 Quality  indicators related to sampling errors</h2>
+  <p>Sampling error was defined  earlier as the error that results from estimating a population parameter by  measuring a portion of the population, the sample, rather than the entire  population. The effect sampling errors have on survey estimates depends on  several factors including the sample size, the sample design, the estimation  method and the variability of the characteristic of interest.</p>
+  <p>          If all other factors are  constant, the sampling error is expected to decrease as the sample size  increases. This is consistent with the fact that the sampling error should  become zero once the entire population is sampled. For a given sample size, the  sampling error is linked to the relative efficiency of various design  characteristics. The stratification, the allocation and the selection method at  each stage all have some impact on the magnitude of the sampling error. The  estimation method used also plays an important role for a given sample design.  For example, the composite estimation method used by the <abbr title="Labour Force Survey">LFS</abbr> significantly  reduces the sampling errors (See <a href="chapt6-eng.htm">Chapter 6</a>).</p>
+  <p>          Finally, sampling errors  differ from one variable to another since the degree of variability differs  from one variable to another. These errors are generally greater for relatively  rare characteristics and when the charac­teristic of interest is not  distributed evenly in the popu­lation. Therefore, although they are based on  the same sample, unemployment estimates generally have a higher  sampling error than employment estimates.</p>
+  <p>          For probability  sample surveys, like the <abbr title="Labour Force Survey">LFS</abbr>, methods exist to calculate sampling errors. The  most commonly used measure to quantify sampling error is sampling variance. The  methods used for variance estimation in the case of the <abbr title="Labour Force Survey">LFS</abbr> have been presented  in <a href="chapt7-eng.htm">Chapter 7</a>.</p>
+        <p>          Three key measurements are  derived from the sampling variance: the standard error (SE), the coefficient of  variation (CV) and the design effect.</p>
+        <h3 id="a811">8.1.1 Standard  error</h3>
+  <p>The standard error, defined  as the square root of the sampling variance, can be used to calculate a  confidence interval associated with an estimate. The confidence interval is  built around the resulting estimate and its width depends on the standard error  and on a confidence level parameter.</p>
+  <p>          To illustrate, the following example will be considered. In May 2015,  the <abbr title="Labour Force Survey">LFS</abbr> estimate for the unemployment rate of the Canadian population 15 years  of age and up was 6.8%, and the standard error associated with this estimate  was 0.001395. An approximate 68% confidence interval for the true unemployment  rate is then given by 0.068±1x(0.001395), or between 6.66% and 6.94%. The  confidence level means that if the same selection and estimation process was  repeated several times (leading to different samples and different estimates), 68%  of the confi­dence intervals built this way would contain the true population  value.</p>
+  <p>          The estimates of change from  one month to the next have become more important to users over time. In response,  the monthly <abbr title="Labour Force Survey">LFS</abbr> release now provides the standard errors (SEs) for the provincial  and national month-to-month changes for employed and unemployed.</p>
+  <p>          Given their stability, the  SEs included in the monthly <abbr title="Labour Force Survey">LFS</abbr> publication are not updated every month.  Instead, an estimate of the <abbr title="Standard Error">SE</abbr> that corresponds to the average of the SEs from  the twelve previous months is provided. These esti­mates are updated twice a  year (usually in January and July). The table below provides the SEs observed  for the month-to-month change in employment and unemployment estimates for  Canadians 15 years of age and up.</p>
+        <div class="table-responsive">
+          <table class="pub-table">
+            <caption>
+              Table 8.1<br />
+                Standard error (SE) of the variation from one month to the next, <em>Employed</em> and <em>Unemployed</em><br />
+                <span class="wb-inv">Table summary<br />
+                This table displays the results of Standard error (SE) of the variation from one month to the next. The information is grouped by Province (appearing as row headers), Employed and Unemployed, calculated using thousands units of measure (appearing as column headers).</span>
+            </caption>
+            <tr>
+              <th id="h_766_1-1" class="col-left" rowspan="2">Province</th>
+              <th id="h_766_1-2">Employed</th>
+              <th id="h_766_1-3">Unemployed</th>
+            </tr>
+            <tr>
+              <th id="u_766_2-1" class="uom-center" colspan="2">thousands</th>
+            </tr>
+            <tr class="highlight-row">
+              <th id="s_766_3-1" headers="h_766_1-1" class="row-stub">Newfoundland and Labrador</th>
+              <td headers="s_766_3-1 h_766_1-2 u_766_2-1">2.1</td>
+              <td headers="s_766_3-1 h_766_1-3 u_766_2-1">2.1</td>
+            </tr>
+            <tr class="highlight-row">
+              <th id="s_766_4-1" headers="h_766_1-1" class="row-stub">Prince Edward Island</th>
+              <td headers="s_766_4-1 h_766_1-2 u_766_2-1">0.6</td>
+              <td headers="s_766_4-1 h_766_1-3 u_766_2-1">0.6</td>
+            </tr>
+            <tr class="highlight-row">
+              <th id="s_766_5-1" headers="h_766_1-1" class="row-stub">Nova Scotia</th>
+              <td headers="s_766_5-1 h_766_1-2 u_766_2-1">2.7</td>
+              <td headers="s_766_5-1 h_766_1-3 u_766_2-1">2.5</td>
+            </tr>
+            <tr class="highlight-row">
+              <th id="s_766_6-1" headers="h_766_1-1" class="row-stub">New Brunswick</th>
+              <td headers="s_766_6-1 h_766_1-2 u_766_2-1">2.3</td>
+              <td headers="s_766_6-1 h_766_1-3 u_766_2-1">2.1</td>
+            </tr>
+            <tr class="highlight-row">
+              <th id="s_766_7-1" headers="h_766_1-1" class="row-stub">Quebec</th>
+              <td headers="s_766_7-1 h_766_1-2 u_766_2-1">15.9</td>
+              <td headers="s_766_7-1 h_766_1-3 u_766_2-1">13.7</td>
+            </tr>
+            <tr class="highlight-row">
+              <th id="s_766_8-1" headers="h_766_1-1" class="row-stub">Ontario</th>
+              <td headers="s_766_8-1 h_766_1-2 u_766_2-1">19.3</td>
+              <td headers="s_766_8-1 h_766_1-3 u_766_2-1">17.0</td>
+            </tr>
+            <tr class="highlight-row">
+              <th id="s_766_9-1" headers="h_766_1-1" class="row-stub">Manitoba</th>
+              <td headers="s_766_9-1 h_766_1-2 u_766_2-1">2.6</td>
+              <td headers="s_766_9-1 h_766_1-3 u_766_2-1">2.1</td>
+            </tr>
+            <tr class="highlight-row">
+              <th id="s_766_10-1" headers="h_766_1-1" class="row-stub">Saskatchewan</th>
+              <td headers="s_766_10-1 h_766_1-2 u_766_2-1">2.7</td>
+              <td headers="s_766_10-1 h_766_1-3 u_766_2-1">2.1</td>
+            </tr>
+            <tr class="highlight-row">
+              <th id="s_766_11-1" headers="h_766_1-1" class="row-stub">Alberta</th>
+              <td headers="s_766_11-1 h_766_1-2 u_766_2-1">9.8</td>
+              <td headers="s_766_11-1 h_766_1-3 u_766_2-1">8.1</td>
+            </tr>
+            <tr class="highlight-row">
+              <th id="s_766_12-1" headers="h_766_1-1" class="row-stub">British Columbia</th>
+              <td headers="s_766_12-1 h_766_1-2 u_766_2-1">10.6</td>
+              <td headers="s_766_12-1 h_766_1-3 u_766_2-1">8.5</td>
+            </tr>
+            <tr class="highlight-row">
+              <th id="s_766_13-1" headers="h_766_1-1" class="row-stub"><strong>Canada</strong></th>
+              <td headers="s_766_13-1 h_766_1-2 u_766_2-1"><strong>29.5</strong></td>
+              <td headers="s_766_13-1 h_766_1-3 u_766_2-1"><strong>25.3</strong></td>
+            </tr>
+          </table>
+        </div>
+      
+        
+        
+        <h3 id="812">8.1.2 Coefficient  of variation</h3>
+  <p>The Coefficient of Variation (CV), which is  defined as the standard error divided by the estimate, is a relative measure of  variation and is usually expressed as a percentage. In the example used  earlier, the <abbr title="Coefficient of variation">CV</abbr> for the May 2015 unemployment rate is 2.05%  ((0.001395/0.068)x100%). It gives an indication of the uncertainty associated with  the estimates. Small <abbr title="Coefficient of Variations">CVs</abbr> are desirable because they indicate that the sampling  variability is small relative to the estimate.</p>
+        <p>          In order to obtain <abbr title="Coefficient of Variations">CVs</abbr>, the users are provided  with approximate <abbr title="Coefficient of variation">CV</abbr> tables. These tables give approximate <abbr title="Coefficient of Variations">CVs</abbr> according to the  observed values of the estimates, for various domains. The values are  conservative in the sense that, if many survey estimates were to be produced  for the same domain, around 75% of the approximated <abbr title="Coefficient of Variations">CVs</abbr> obtained from the  tables will be larger than the actual <abbr title="Coefficient of Variations">CVs</abbr> that would be calculated if the  precise methods were used. There will, however, be 25% of approximated <abbr title="Coefficient of Variations">CVs</abbr> that  will be somewhat lower than the precise calculation. This has the net effect of  producing quality indicators that show lower quality of the survey estimates  than is actually the case – confidence intervals are wider and statistical  tests show fewer significant differences.   These approximate <abbr title="Coefficient of variation">CV</abbr> tables are updated annually and provided in the  Guide to the Labour Force Survey (71-543-G).</p>
+        <h3 id="a813">8.1.3 Design  effect</h3>
+  <p>A third measure derived from the sampling variance  is the design effect, a relative measure calculated by dividing the sampling  variance of an estimate obtained under the survey design by the sampling  variance of a Simple Random Sample (SRS) of the same sample size.  It can also be used to compare the effectiveness  of one sample design to another.  In the  case of the <abbr title="Labour Force Survey">LFS</abbr>, it is particularly useful as an indicator of the deterioration of the sample  design over time, or as a comparison establishing the gain/loss in efficiency  obtained by redesigning the survey or associated with modifying some components  of the design.</p>
+  <p>          Different types of design effects can be computed,  and each one depends on the data used to establish it.  Below, the term unadjusted design effect will  be used to refer to design effects based on non-calibrated weights, meaning  without the adjustment that takes the population counts and estimated totals  into consideration. The term adjusted design effect will be used to refer to  design effects that are based on the final weights, after composite  calibration. As a result, the unadjusted design effects are indicative of the  effectiveness of the sample design, while the adjusted design effects provide a  more general evaluation of the overall strategy adopted by combining all the  characteristics of the survey plan (stratification, multi-stage sampling,  post-stratification and estimation). The smaller the design effect is, the more  effective the design with regard to sampling variance. It should be noted that  the unadjusted design effects (sample design) are generally greater than the  adjusted design effects (survey plan) based on the final weights, since they do  not benefit from the gain in precision from calibration.</p>
+  <p>          The table below presents  some values representing the averaged adjusted and unadjusted design effects  for the characteristics employment and unemployment at the national and  provincial levels, based on survey data from January to August 2015.</p>
+  <div class="table-responsive">
+    <table class="pub-table">
+      <caption>
+        Table 8.2<br />
+          Design effects, Employed and Unemployed, 2015<br />
+          <span class="wb-inv">Table summary<br />
+          This table displays the results of Design effects. The information is grouped by Province (appearing as row headers), Employed and Unemployed (appearing as column headers).</span>
+      </caption>
+      <tr>
+        <th id="h_280_1-1" class="col-left" rowspan="2">Province</th>
+        <th id="h_280_1-2" class="col-group" colspan="2">Employed</th>
+        <th id="h_280_1-3" class="col-group" colspan="2">Unemployed</th>
+      </tr>
+      <tr>
+        <th id="h_280_2-1" headers="h_280_1-2">Adjusted</th>
+        <th id="h_280_2-2" headers="h_280_1-2">Unadjusted</th>
+        <th id="h_280_2-3" headers="h_280_1-3">Adjusted</th>
+        <th id="h_280_2-4" headers="h_280_1-3">Unadjusted</th>
+      </tr>
+      <tr class="highlight-row">
+        <th id="s_280_3-1" headers="h_280_1-1" class="row-stub">Newfoundland and Labrador</th>
+        <td headers="s_280_3-1 h_280_1-2 h_280_2-1">0.40</td>
+        <td headers="s_280_3-1 h_280_1-2 h_280_2-2">1.78</td>
+        <td headers="s_280_3-1 h_280_1-3 h_280_2-3">1.08</td>
+        <td headers="s_280_3-1 h_280_1-3 h_280_2-4">1.00</td>
+      </tr>
+      <tr class="highlight-row">
+        <th id="s_280_4-1" headers="h_280_1-1" class="row-stub">Prince Edward Island</th>
+        <td headers="s_280_4-1 h_280_1-2 h_280_2-1">0.31</td>
+        <td headers="s_280_4-1 h_280_1-2 h_280_2-2">1.28</td>
+        <td headers="s_280_4-1 h_280_1-3 h_280_2-3">1.00</td>
+        <td headers="s_280_4-1 h_280_1-3 h_280_2-4">1.03</td>
+      </tr>
+      <tr class="highlight-row">
+        <th id="s_280_5-1" headers="h_280_1-1" class="row-stub">Nova Scotia</th>
+        <td headers="s_280_5-1 h_280_1-2 h_280_2-1">0.35</td>
+        <td headers="s_280_5-1 h_280_1-2 h_280_2-2">1.85</td>
+        <td headers="s_280_5-1 h_280_1-3 h_280_2-3">1.08</td>
+        <td headers="s_280_5-1 h_280_1-3 h_280_2-4">1.17</td>
+      </tr>
+      <tr class="highlight-row">
+        <th id="s_280_6-1" headers="h_280_1-1" class="row-stub">New Brunswick</th>
+        <td headers="s_280_6-1 h_280_1-2 h_280_2-1">0.36</td>
+        <td headers="s_280_6-1 h_280_1-2 h_280_2-2">2.20</td>
+        <td headers="s_280_6-1 h_280_1-3 h_280_2-3">1.17</td>
+        <td headers="s_280_6-1 h_280_1-3 h_280_2-4">1.17</td>
+      </tr>
+      <tr class="highlight-row">
+        <th id="s_280_7-1" headers="h_280_1-1" class="row-stub">Quebec</th>
+        <td headers="s_280_7-1 h_280_1-2 h_280_2-1">0.50</td>
+        <td headers="s_280_7-1 h_280_1-2 h_280_2-2">2.70</td>
+        <td headers="s_280_7-1 h_280_1-3 h_280_2-3">1.66</td>
+        <td headers="s_280_7-1 h_280_1-3 h_280_2-4">1.96</td>
+      </tr>
+      <tr class="highlight-row">
+        <th id="s_280_8-1" headers="h_280_1-1" class="row-stub">Ontario</th>
+        <td headers="s_280_8-1 h_280_1-2 h_280_2-1">0.42</td>
+        <td headers="s_280_8-1 h_280_1-2 h_280_2-2">2.92</td>
+        <td headers="s_280_8-1 h_280_1-3 h_280_2-3">1.39</td>
+        <td headers="s_280_8-1 h_280_1-3 h_280_2-4">1.64</td>
+      </tr>
+      <tr class="highlight-row">
+        <th id="s_280_9-1" headers="h_280_1-1" class="row-stub">Manitoba</th>
+        <td headers="s_280_9-1 h_280_1-2 h_280_2-1">0.32</td>
+        <td headers="s_280_9-1 h_280_1-2 h_280_2-2">3.03</td>
+        <td headers="s_280_9-1 h_280_1-3 h_280_2-3">1.01</td>
+        <td headers="s_280_9-1 h_280_1-3 h_280_2-4">1.19</td>
+      </tr>
+      <tr class="highlight-row">
+        <th id="s_280_10-1" headers="h_280_1-1" class="row-stub">Saskatchewan</th>
+        <td headers="s_280_10-1 h_280_1-2 h_280_2-1">0.34</td>
+        <td headers="s_280_10-1 h_280_1-2 h_280_2-2">4.87</td>
+        <td headers="s_280_10-1 h_280_1-3 h_280_2-3">1.10</td>
+        <td headers="s_280_10-1 h_280_1-3 h_280_2-4">1.11</td>
+      </tr>
+      <tr class="highlight-row">
+        <th id="s_280_11-1" headers="h_280_1-1" class="row-stub">Alberta</th>
+        <td headers="s_280_11-1 h_280_1-2 h_280_2-1">0.48</td>
+        <td headers="s_280_11-1 h_280_1-2 h_280_2-2">4.25</td>
+        <td headers="s_280_11-1 h_280_1-3 h_280_2-3">1.44</td>
+        <td headers="s_280_11-1 h_280_1-3 h_280_2-4">1.66</td>
+      </tr>
+      <tr class="highlight-row">
+        <th id="s_280_12-1" headers="h_280_1-1" class="row-stub">British Columbia</th>
+        <td headers="s_280_12-1 h_280_1-2 h_280_2-1">0.44</td>
+        <td headers="s_280_12-1 h_280_1-2 h_280_2-2">3.52</td>
+        <td headers="s_280_12-1 h_280_1-3 h_280_2-3">1.44</td>
+        <td headers="s_280_12-1 h_280_1-3 h_280_2-4">1.59</td>
+      </tr>
+      <tr class="highlight-row">
+        <th id="s_280_13-1" headers="h_280_1-1" class="row-stub"><strong>Canada</strong></th>
+        <td headers="s_280_13-1 h_280_1-2 h_280_2-1"><strong>0.54</strong></td>
+        <td headers="s_280_13-1 h_280_1-2 h_280_2-2"><strong>3.73</strong></td>
+        <td headers="s_280_13-1 h_280_1-3 h_280_2-3"><strong>1.77</strong></td>
+        <td headers="s_280_13-1 h_280_1-3 h_280_2-4"><strong>2.08</strong></td>
+      </tr>
+      
+    </table>
+  </div>
+  <p>In the <abbr title="Labour Force Survey">LFS</abbr>, unadjusted  design effects, together with other information, are used to identify regions  where the sample design has lost a significant portion of its effectiveness  over time. In some cases, a mini-redesign is performed in these regions to  remedy this problem.</p>
+        <h2 id="a82">8.2 Quality  indicators related to non-sampling errors</h2>
+  <p>Non-sampling errors are  errors that arise during the course of virtually all survey activities, apart  from sampling. The impact on the estimates can be seen in the bias and/or  variability of the estimates. If these errors are random errors, then their  effects will approximately cancel out over a large enough domain, leading  solely to increased variability. However, the effect can still be large for  small domains or when the characteristics being studied are rare. If the errors  are systematic, in the sense that they tend to go in the same direction, this  will lead to a bias in the final results. And unlike random errors, the bias  linked to systematic errors cannot be reduced by increasing the size of the  sample.</p>
+        <p>          The most common sources of non-sampling errors are coverage error,  nonresponse, measurement or response errors and processing errors.  Each one is discussed separately in the  following sections.</p>
+        <h3 id="a821">8.2.1 Coverage  errors</h3>
+  <p>Coverage errors consist of  omissions, erroneous inclusions, duplications and misclassifications of units  on the survey frame.  In the case of the  <abbr title="Labour Force Survey">LFS</abbr>, those errors may happen when the list of dwellings associated with a <abbr title="Primary sampling unit">PSU</abbr>  is established or uploaded, when listing maintenance is performed to identify  growth, when the dwellings and/or the persons to include in the survey are  contacted, or when data are collected and processed. In the <abbr title="Labour Force Survey">LFS</abbr>, three main  indicators are used to measure and monitor the coverage errors: the slippage  rate, the vacancy rate and the <abbr title="Primary sampling unit">PSU</abbr> yield evaluation.</p>
+  <p>          The slippage rate is the  relative difference between the population size estimates produced from the  pre-calibration weights and the most recent population projection estimates  used as calibration totals.</p>
+  <p>          The population projection estimates used to  determine the slippage rate can also contain errors, and these errors are one  of the factors that contribute to slippage. In the <abbr title="Labour Force Survey">LFS</abbr>, undercoverage is  typically observed, as indicated by a positive slippage rate. To reduce the  resulting bias as much as possible, the weight of each respondent is modified  by the composite calibration adjustment factor (see <a href="chapt6-eng.htm">Chapter 6</a>).</p>
+  <p>          Undercoverage is the result  of omitting dwellings or persons from the target population. An occupied  dwelling may not be on the <abbr title="Primary sampling unit">PSU</abbr> list for various reasons: it was omitted when  the list was being established, the building was under construction when it was  last verified, there were errors in the cluster delineations, or it was wrongly  classified as vacant. It is also possible that persons in the household were  overlooked, either because the respondent did not make their existence known or  they were classified as being a member of a usual place of residence other than  the dwelling sampled. Students are often overlooked since they live elsewhere  during their studies, even though their usual residence is in the sample.  Therefore, errors can slip into the survey estimates if the characteristics of  the individuals not included in the survey differ from those of the individuals  included. For example, if the survey does not include a part of the population  that is young and highly mobile with higher unemployment rates than the  population of the same age in the survey, the slippage biases the unemployment  estimates downward.</p>
+  <p>          Slippage is also affected by  population growth and nonresponse adjustments.   The population grows between redesigns, and usually in specific places  and unevenly.  The selected sample can  over- or underestimate this growth, or accurately account for it. For instance,  the selected <abbr title="Primary sampling units">PSUs</abbr> in an area may experience no growth, but other <abbr title="Primary sampling units">PSUs</abbr> on the  frame in the same area could be facing significant growth.  In such a case, growth would be  underestimated by the selected sample, and if the projected population  estimates are in line with the growth that is actually occurring, the slippage  rates would become larger for that area.</p>
+  <p>          The adjustments to account for  nonresponse (see <a href="chapt5-eng.htm">Chapters 5</a> and <a href="chapt6-eng.htm">6</a>) can also influence slippage. For instance,  if non-respondent households have fewer members but are represented in the  sample, via imputation or nonresponse adjustment factors, by large households,  this can affect the slippage rate.</p>
+  <p>          Lastly, as mentioned  earlier, the population estimates also play a role in slippage.  The more accurate they are, the more  informative the slippage rates are.</p>
+        <p>          Every month, the slippage  rates are thoroughly analyzed. They are produced monthly at the national  (excluding the territories) and provincial levels and for 12 age-sex groups  (15-19, 20-24, 25-29, 30-39, 40-54, 55+). The table below provides the average  slippage rates for the 2015 calendar year.</p>
+        <div class="table-responsive">
+          <table class="pub-table">
+            <caption>
+              Table 8.3<br />
+                Average slippage rates - Canada by age group and province, 2015<br />
+                <span class="wb-inv">Table summary<br />
+                This table displays the results of Average slippage rates - Canada by age group and province % (appearing as column headers).</span>
+            </caption>
+            <tr>
+              <td class="row-heading"><strong></strong></td>
+              <th id="h_633_1-2">%</th>
+            </tr>
+            <tr class="highlight-row">
+              <th id="s_633_2-1" class="row-heading">Canada</th>
+              <th class="row-heading"></th>
+            </tr>
+            <tr class="highlight-row">
+              <th id="s_633_3-1" headers="s_633_2-1" class="stub-indent1">All ages</th>
+              <td headers="s_633_3-1 h_633_1-2">11.7</td>
+            </tr>
+            <tr class="highlight-row">
+              <th id="s_633_4-1" headers="s_633_2-1" class="stub-indent1">15 to 19</th>
+              <td headers="s_633_4-1 h_633_1-2">8.2</td>
+            </tr>
+            <tr class="highlight-row">
+              <th id="s_633_5-1" headers="s_633_2-1" class="stub-indent1">20 to 24</th>
+              <td headers="s_633_5-1 h_633_1-2">21.3</td>
+            </tr>
+            <tr class="highlight-row">
+              <th id="s_633_6-1" headers="s_633_2-1" class="stub-indent1">25 to 29</th>
+              <td headers="s_633_6-1 h_633_1-2">21.3</td>
+            </tr>
+            <tr class="highlight-row">
+              <th id="s_633_7-1" headers="s_633_2-1" class="stub-indent1">30 to 39</th>
+              <td headers="s_633_7-1 h_633_1-2">16.3</td>
+            </tr>
+            <tr class="highlight-row">
+              <th id="s_633_8-1" headers="s_633_2-1" class="stub-indent1">40 to 54</th>
+              <td headers="s_633_8-1 h_633_1-2">9.8</td>
+            </tr>
+            <tr class="highlight-row">
+              <th id="s_633_9-1" headers="s_633_2-1" class="stub-indent1">55+</th>
+              <td headers="s_633_9-1 h_633_1-2">7.0</td>
+            </tr>
+            <tr class="highlight-row">
+              <th id="s_633_10-1" class="row-stub">Newfoundland and Labrador</th>
+              <td headers="s_633_10-1 h_633_1-2">11.6</td>
+            </tr>
+            <tr class="highlight-row">
+              <th id="s_633_11-1" class="row-stub">Prince Edward Island</th>
+              <td headers="s_633_11-1 h_633_1-2">16.2</td>
+            </tr>
+            <tr class="highlight-row">
+              <th id="s_633_12-1" class="row-stub">Nova Scotia</th>
+              <td headers="s_633_12-1 h_633_1-2">12.3</td>
+            </tr>
+            <tr class="highlight-row">
+              <th id="s_633_13-1" class="row-stub">New Brunswick</th>
+              <td headers="s_633_13-1 h_633_1-2">11.7</td>
+            </tr>
+            <tr class="highlight-row">
+              <th id="s_633_14-1" class="row-stub">Quebec</th>
+              <td headers="s_633_14-1 h_633_1-2">8.6</td>
+            </tr>
+            <tr class="highlight-row">
+              <th id="s_633_15-1" class="row-stub">Ontario</th>
+              <td headers="s_633_15-1 h_633_1-2">12.0</td>
+            </tr>
+            <tr class="highlight-row">
+              <th id="s_633_16-1" class="row-stub">Manitoba</th>
+              <td headers="s_633_16-1 h_633_1-2">9.5</td>
+            </tr>
+            <tr class="highlight-row">
+              <th id="s_633_17-1" class="row-stub">Saskatchewan</th>
+              <td headers="s_633_17-1 h_633_1-2">13.7</td>
+            </tr>
+            <tr class="highlight-row">
+              <th id="s_633_18-1" class="row-stub">Alberta</th>
+              <td headers="s_633_18-1 h_633_1-2">15.1</td>
+            </tr>
+            <tr class="highlight-row">
+              <th id="s_633_19-1" class="row-stub">British Columbia</th>
+              <td headers="s_633_19-1 h_633_1-2">12.8</td>
+            </tr>
+            
+          </table>
+        </div>
+        
+  <p>Dwellings correctly  identified as being vacant or invalid do not introduce a bias into the <abbr title="Labour Force Survey">LFS</abbr>  estimates. However, the estimation variance is higher because the sample  contains fewer valid households. The <abbr title="Labour Force Survey">LFS</abbr> inter­viewers return to selected  vacant dwellings every month to interview any persons targeted by the survey  who may have moved in since the previous month. Non-existent dwellings are  simply removed from the survey frame. Special attention must be given when  deter­mining vacant dwellings since they have a direct influence on two other  indicators. If a dwelling is coded as vacant but its occupants are just  temporarily absent, the nonresponse rate produced for the <abbr title="Labour Force Survey">LFS</abbr> will be  underestimated. Furthermore, the slippage rate will be overestimated since this  wrongly coded dwelling should have been considered when deter­mining the rate.  It is therefore important for interviewers to do a thorough job when  determining whether a dwelling is vacant, and therefore out of the scope of the  survey, or quite simply occupied by a temporarily absent household, and  therefore within the scope of the survey. Vacancy rates are also produced and  monitored on a monthly basis.</p>
+        <p>          The table below presents the  average vacancy rates and the minimum and maximum values for 2015 at the provincial  and national levels.</p>
+        <div class="table-responsive">
+          <table class="pub-table">
+            <caption>
+              Table 8.4<br />
+                Vacancy rate (unweighted), Canada and the Provinces, 2015<br />
+                <span class="wb-inv">Table summary<br />
+                This table displays the results of Vacancy rate (unweighted). The information is grouped by Province (appearing as row headers), Average, Maximum and Minimum, calculated using % units of measure (appearing as column headers).</span>
+            </caption>
+            <tr>
+              <th id="h_232_1-1" class="col-left" rowspan="2">Province</th>
+              <th id="h_232_1-2">Average</th>
+              <th id="h_232_1-3">Maximum</th>
+              <th id="h_232_1-4">Minimum</th>
+            </tr>
+            <tr>
+              <th id="u_232_2-1" class="uom-center" colspan="3">%</th>
+            </tr>
+            <tr class="highlight-row">
+              <th id="s_232_3-1" headers="h_232_1-1" class="row-stub">Newfoundland and Labrador</th>
+              <td headers="s_232_3-1 h_232_1-2 u_232_2-1">15.4</td>
+              <td headers="s_232_3-1 h_232_1-3 u_232_2-1">16.4</td>
+              <td headers="s_232_3-1 h_232_1-4 u_232_2-1">14.5</td>
+            </tr>
+            <tr class="highlight-row">
+              <th id="s_232_4-1" headers="h_232_1-1" class="row-stub">Prince Edward Island</th>
+              <td headers="s_232_4-1 h_232_1-2 u_232_2-1">21.1</td>
+              <td headers="s_232_4-1 h_232_1-3 u_232_2-1">23.4</td>
+              <td headers="s_232_4-1 h_232_1-4 u_232_2-1">19.8</td>
+            </tr>
+            <tr class="highlight-row">
+              <th id="s_232_5-1" headers="h_232_1-1" class="row-stub">Nova Scotia</th>
+              <td headers="s_232_5-1 h_232_1-2 u_232_2-1">18.1</td>
+              <td headers="s_232_5-1 h_232_1-3 u_232_2-1">18.9</td>
+              <td headers="s_232_5-1 h_232_1-4 u_232_2-1">17.4</td>
+            </tr>
+            <tr class="highlight-row">
+              <th id="s_232_6-1" headers="h_232_1-1" class="row-stub">New Brunswick</th>
+              <td headers="s_232_6-1 h_232_1-2 u_232_2-1">17.1</td>
+              <td headers="s_232_6-1 h_232_1-3 u_232_2-1">18.1</td>
+              <td headers="s_232_6-1 h_232_1-4 u_232_2-1">16.2</td>
+            </tr>
+            <tr class="highlight-row">
+              <th id="s_232_7-1" headers="h_232_1-1" class="row-stub">Quebec</th>
+              <td headers="s_232_7-1 h_232_1-2 u_232_2-1">12.8</td>
+              <td headers="s_232_7-1 h_232_1-3 u_232_2-1">13.3</td>
+              <td headers="s_232_7-1 h_232_1-4 u_232_2-1">12.2</td>
+            </tr>
+            <tr class="highlight-row">
+              <th id="s_232_8-1" headers="h_232_1-1" class="row-stub">Ontario</th>
+              <td headers="s_232_8-1 h_232_1-2 u_232_2-1">11.5</td>
+              <td headers="s_232_8-1 h_232_1-3 u_232_2-1">11.8</td>
+              <td headers="s_232_8-1 h_232_1-4 u_232_2-1">11.2</td>
+            </tr>
+            <tr class="highlight-row">
+              <th id="s_232_9-1" headers="h_232_1-1" class="row-stub">Manitoba</th>
+              <td headers="s_232_9-1 h_232_1-2 u_232_2-1">14.1</td>
+              <td headers="s_232_9-1 h_232_1-3 u_232_2-1">15.5</td>
+              <td headers="s_232_9-1 h_232_1-4 u_232_2-1">12.0</td>
+            </tr>
+            <tr class="highlight-row">
+              <th id="s_232_10-1" headers="h_232_1-1" class="row-stub">Saskatchewan</th>
+              <td headers="s_232_10-1 h_232_1-2 u_232_2-1">14.3</td>
+              <td headers="s_232_10-1 h_232_1-3 u_232_2-1">15.8</td>
+              <td headers="s_232_10-1 h_232_1-4 u_232_2-1">12.6</td>
+            </tr>
+            <tr class="highlight-row">
+              <th id="s_232_11-1" headers="h_232_1-1" class="row-stub">Alberta</th>
+              <td headers="s_232_11-1 h_232_1-2 u_232_2-1">14.6</td>
+              <td headers="s_232_11-1 h_232_1-3 u_232_2-1">15.2</td>
+              <td headers="s_232_11-1 h_232_1-4 u_232_2-1">13.7</td>
+            </tr>
+            <tr class="highlight-row">
+              <th id="s_232_12-1" headers="h_232_1-1" class="row-stub">British Columbia</th>
+              <td headers="s_232_12-1 h_232_1-2 u_232_2-1">12.3</td>
+              <td headers="s_232_12-1 h_232_1-3 u_232_2-1">13.2</td>
+              <td headers="s_232_12-1 h_232_1-4 u_232_2-1">11.9</td>
+            </tr>
+            <tr class="highlight-row">
+              <th id="s_232_13-1" headers="h_232_1-1" class="row-stub"><strong>Canada</strong></th>
+              <td headers="s_232_13-1 h_232_1-2 u_232_2-1"><strong>13.7</strong></td>
+              <td headers="s_232_13-1 h_232_1-3 u_232_2-1"><strong>14.1</strong></td>
+              <td headers="s_232_13-1 h_232_1-4 u_232_2-1"><strong>13.0</strong></td>
+            </tr>
+           
+          </table>
+        </div>
+       
+       
+  <p>For this quality indicator, there  is some variability observed between provinces.   This is linked to the proportion of seasonal dwellings owned varying  from province to province. Seasonal dwellings are always considered as vacant,  because they are not the usual place of residence for any of the occupants.</p>
+  <p>          The yields of  the <abbr title="Primary sampling units">PSUs</abbr> are monitored monthly to detect any large differences between the  number of dwellings surveyed in the field and the number of dwellings  anticipated by the sample design. As a result, any significant discre­pancy,  such as 50% (positive or negative), between a <abbr title="Dwelling Universe File">DUF</abbr> extract and the survey field  results is reviewed. First, all clusters with an unexpected count are brought  to the attention of the unit in Ottawa responsible for controlling the sample,  which verifies the cluster boundaries and the expected number of dwellings. If  the discrepancy cannot be explained at the central office, the cluster is sent  to the regional office in question for an in-depth analysis. All the causes  that explain the discrepancies are filed for future reference.</p>
+  <p>          This control plays an important  role, because if the sample size requires changes, it is vital to know which  regions are undersampled or oversampled. In addition, the discrepancies  recorded can turn out to be problems for the survey and taint the quality of  the <abbr title="Labour Force Survey">LFS</abbr> data.</p>
+        <p>          All of these indicators  (slippage rate, vacancy rate, and <abbr title="Primary sampling unit">PSU</abbr> yield) serve to detect potential problems  with the sample coverage and to assist in taking any necessary action. Examples  of possible actions are to put together training tools for inter­viewers to  increase their knowledge of the household composition rules, to distribute a  newsletter explaining slippage or the concept of multiple dwellings, or  establish a program to relist a certain number of <abbr title="Primary sampling units">PSUs</abbr> considered to be  growing.</p>
+        <h3 id="a822">8.2.2 Nonresponse</h3>
+        <p>Every month during the  survey week, the inter­viewers are busy determining which selected dwellings  contain persons eligible for the survey. Dwellings are identified as ineligible  for the survey month for the following reasons:</p>
+  <ul>
+          <li class="ListSpacing">dwellings outside the scope of the survey, meaning a dwelling occupied  by no persons who are part of the target population, <abbr title="for example">e.g.</abbr>, only members of the Canadian Armed Forces;</li>
+          <li class="ListSpacing">vacant dwellings, meaning dwellings that are unoccupied, seasonal, under  construction;</li>
+          <li class="ListSpacing">invalid dwellings, meaning dwellings that are demolished, turned into  business locations, moved (<abbr title="for example">e.g.</abbr>,  mobile home), abandoned, or were initially entered by mistake.</li>
+        </ul>
+        <p>When a  dwelling is identified as eligible for the survey, it is not always possible to  do an interview. This is called household nonresponse and can occur due to any  number of reasons such as: no one at home, temporary absence, interview  impossible (inclement weather, unusual circumstances in the household, <em>etc</em>.), technical problems, or refusal.</p>
+        <p>          The magnitude of the bias  due to nonresponse is usually not known, but it is directly linked to the  differences in characteristics between the groups of responding units and the  groups of non-responding units. Since the effect of this bias grows as the  nonresponse rate increases, efforts are made to maintain the response rate as  high as possible during collection.</p>
+        <p>          The table below presents the  average nonresponse rates as well as the minimum and maximum rates for 2015. </p>
+        <div class="table-responsive">
+          <table class="pub-table">
+            <caption>
+              Table 8.5<br />
+                Nonresponse rates (unweighted), Canada and the Provinces, 2015<br />
+                <span class="wb-inv">Table summary<br />
+                This table displays the results of Nonresponse rates (unweighted). The information is grouped by Province (appearing as row headers), Average, Maximum and Minimum, calculated using % units of measure (appearing as column headers).</span>
+            </caption>
+            <tr>
+              <th id="h_936_1-1" class="col-left" rowspan="2">Province</th>
+              <th id="h_936_1-2">Average</th>
+              <th id="h_936_1-3">Maximum</th>
+              <th id="h_936_1-4">Minimum</th>
+            </tr>
+            <tr>
+              <th id="u_936_2-1" class="uom-center" colspan="3">%</th>
+            </tr>
+            <tr class="highlight-row">
+              <th id="s_936_3-1" headers="h_936_1-1" class="row-stub">Newfoundland and Labrador</th>
+              <td headers="s_936_3-1 h_936_1-2 u_936_2-1">11.2</td>
+              <td headers="s_936_3-1 h_936_1-3 u_936_2-1">13.0</td>
+              <td headers="s_936_3-1 h_936_1-4 u_936_2-1">9.9</td>
+            </tr>
+            <tr class="highlight-row">
+              <th id="s_936_4-1" headers="h_936_1-1" class="row-stub">Prince Edward Island</th>
+              <td headers="s_936_4-1 h_936_1-2 u_936_2-1">10.9</td>
+              <td headers="s_936_4-1 h_936_1-3 u_936_2-1">12.2</td>
+              <td headers="s_936_4-1 h_936_1-4 u_936_2-1">9.0</td>
+            </tr>
+            <tr class="highlight-row">
+              <th id="s_936_5-1" headers="h_936_1-1" class="row-stub">Nova Scotia</th>
+              <td headers="s_936_5-1 h_936_1-2 u_936_2-1">10.3</td>
+              <td headers="s_936_5-1 h_936_1-3 u_936_2-1">11.3</td>
+              <td headers="s_936_5-1 h_936_1-4 u_936_2-1">9.7</td>
+            </tr>
+            <tr class="highlight-row">
+              <th id="s_936_6-1" headers="h_936_1-1" class="row-stub">New Brunswick</th>
+              <td headers="s_936_6-1 h_936_1-2 u_936_2-1">11.4</td>
+              <td headers="s_936_6-1 h_936_1-3 u_936_2-1">12.5</td>
+              <td headers="s_936_6-1 h_936_1-4 u_936_2-1">10.5</td>
+            </tr>
+            <tr class="highlight-row">
+              <th id="s_936_7-1" headers="h_936_1-1" class="row-stub">Quebec</th>
+              <td headers="s_936_7-1 h_936_1-2 u_936_2-1">10.2</td>
+              <td headers="s_936_7-1 h_936_1-3 u_936_2-1">11.9</td>
+              <td headers="s_936_7-1 h_936_1-4 u_936_2-1">8.2</td>
+            </tr>
+            <tr class="highlight-row">
+              <th id="s_936_8-1" headers="h_936_1-1" class="row-stub">Ontario</th>
+              <td headers="s_936_8-1 h_936_1-2 u_936_2-1">13.9</td>
+              <td headers="s_936_8-1 h_936_1-3 u_936_2-1">15.4</td>
+              <td headers="s_936_8-1 h_936_1-4 u_936_2-1">12.6</td>
+            </tr>
+            <tr class="highlight-row">
+              <th id="s_936_9-1" headers="h_936_1-1" class="row-stub">Manitoba</th>
+              <td headers="s_936_9-1 h_936_1-2 u_936_2-1">11.7</td>
+              <td headers="s_936_9-1 h_936_1-3 u_936_2-1">12.8</td>
+              <td headers="s_936_9-1 h_936_1-4 u_936_2-1">10.3</td>
+            </tr>
+            <tr class="highlight-row">
+              <th id="s_936_10-1" headers="h_936_1-1" class="row-stub">Saskatchewan</th>
+              <td headers="s_936_10-1 h_936_1-2 u_936_2-1">11.9</td>
+              <td headers="s_936_10-1 h_936_1-3 u_936_2-1">12.8</td>
+              <td headers="s_936_10-1 h_936_1-4 u_936_2-1">11.1</td>
+            </tr>
+            <tr class="highlight-row">
+              <th id="s_936_11-1" headers="h_936_1-1" class="row-stub">Alberta</th>
+              <td headers="s_936_11-1 h_936_1-2 u_936_2-1">12.8</td>
+              <td headers="s_936_11-1 h_936_1-3 u_936_2-1">14.0</td>
+              <td headers="s_936_11-1 h_936_1-4 u_936_2-1">11.5</td>
+            </tr>
+            <tr class="highlight-row">
+              <th id="s_936_12-1" headers="h_936_1-1" class="row-stub">British Columbia</th>
+              <td headers="s_936_12-1 h_936_1-2 u_936_2-1">11.7</td>
+              <td headers="s_936_12-1 h_936_1-3 u_936_2-1">12.6</td>
+              <td headers="s_936_12-1 h_936_1-4 u_936_2-1">10.6</td>
+            </tr>
+            <tr class="highlight-row">
+              <th id="s_936_13-1" headers="h_936_1-1" class="row-stub"><strong>Canada</strong></th>
+              <td headers="s_936_13-1 h_936_1-2 u_936_2-1"><strong>12.0</strong></td>
+              <td headers="s_936_13-1 h_936_1-3 u_936_2-1"><strong>13.1</strong></td>
+              <td headers="s_936_13-1 h_936_1-4 u_936_2-1"><strong>11.2</strong></td>
+            </tr>
+            
+          </table>
+        </div>
+        
+        
+  <p>Every month, the <abbr title="Labour Force Survey">LFS</abbr> produces nonresponse rates by  cause (simple refusal, no contact, temporary absence, technical problem or  other reason) and also by collection mode. These rates are carefully analyzed  to identify the major causes of the nonresponse and to make any necessary  corrections.</p>
+        <p>          Refusal rates for the <abbr title="Labour Force Survey">LFS</abbr> are usually very low,  with monthly Canadian rates varying between 1% and 2%. The refusal rates are  usually similar across provinces, but can dip as low as 0.5% or climb as high  as 3%.  To a certain extent, the  collection system makes it possible to get more information on the reason for  refusal, and thus allows tracking of the changes in respondents&rsquo; attitudes  toward the survey over time.</p>
+        <h3 id="a823">8.2.3 Measurement  or Response error<strong>s</strong> <strong> </strong></h3>
+  <p>Measurement or response  errors can be the result of the questionnaire design, how the questions are  formulated, the respondent&rsquo;s comprehension, the way the interview is conducted,  or the general survey conditions. They can occur when the information is  provided, received, or entered into the computer. However, with the  computerized collection method, it is possible to reduce some of these errors,  since some verification rules are integrated into the collection instrument and  conflicts must be resolved during the interview. Nevertheless, the respondent  may incorrectly interpret the question, not know the answer, or have forgotten  or altered the facts for personal reasons. In addition, interviewers can  unintentionally re-interpret responses. As in the other error categories,  response errors may lead to an increase in the variance and/or the presence of  bias.</p>
+  <p>          The proxy responses provided  by one household member when information is collected about another household  member can also lead to response errors. However, those errors are considered  preferable to the nonresponse errors that would have to be dealt with if  responses were only accepted by the respondent for him or herself. Currently,  about 60% of the <abbr title="Labour Force Survey">LFS</abbr> information is provided by proxy and this rate remains  fairly stable through time.</p>
+  <p>          In repeated surveys, in  which the sample consists of a certain number of panels or rotation groups, the  expected value of estimates varies slightly from one rotation group to another.  This is called rotation group bias. With regard to the <abbr title="Labour Force Survey">LFS</abbr>, this bias is at its  highest level for the sixth of the sample in its first interview. It is  possible to calculate the rotation effect by taking the ratio between an  estimate calculated for the part of the sample participating in the survey a  certain number of times (first month, second month, <em>etc.</em>) and the estimate calculated for the entire sample.</p>
+        <p>          Brisebois and Mantel (1996)  calculated a modified rotation effect that takes into account the differences  in the effects of sampling errors for the six rotation groups. Their study  revealed several statistically significant differences between the rotation  groups, but the overall effect was determined to be minor.</p>
+        <h3 id="a824">8.2.4 Processing  errors</h3>
+  <p>Processing errors can occur  at various stages of the survey, such as input, validation, verification,  coding, imputation, weighting and data tabulation.</p>
+  <p>          The computerized collection  method helps to prevent skip errors during data input, since the application  determines the flow of questions. Similarly, certain verification rules are  integrated into the collec­tion system to detect and correct discrepancies at  the time of the interview.</p>
+  <p>          The variables &ldquo;occupation&rdquo;  and &ldquo;industry&rdquo; are coded to classification standards at the central office. In  the first month of interviews, the interviewer collects information that  accurately describes the type of company, industry or service in which the  person works and that clearly and accurately indicates the type of work or  nature of his/her duties. The first type of information is used to determine  the industry, while the second type serves to identify the occupation. One of  the first processing steps at the central office consists of coding the  descriptive information collected for the variables &ldquo;occupation&rdquo; and &ldquo;industry&rdquo;  based on the standard classification for these variables, <abbr title="National Occupational Classification">NOC</abbr> and <abbr title="North American Industry Classification System">NAICS</abbr>. Monthly  quality control processes are in place to evaluate the precision of this coding  process.</p>
+  <p>          The imputation rate is also  a quality indicator with regard to data processing. Every month, diagnostics  evaluating the results of the imputation process are produced and carefully  examined. The diagnostics give information on the number of records treated by  each imputation method and at each level of collapsing (see <a href="chapt5-eng.htm">Chapter 5</a>). The  respective profiles of the non-imputed records and of the imputed ones are  compared, as well as their respective contribution to the survey key estimates.  This makes it possible to control the imputation quality and take the necessary  actions.</p>
+        <p>          To avoid errors likely to  occur at the estimation and tabulation steps, a pre-release evaluation tool has  been built.  With the help of this tool,  it is possible to highlight variables, subgroups and/or domains for which the  estimates and/or the standard errors are unusually distant from their  respective historical averages. These estimates can then be more specifically  investigated to see if any error is responsible for the sudden change. In  addition to this, comparisons with other data sources are performed regularly,  to verify if the <abbr title="Labour Force Survey">LFS</abbr> data is in line with other economic developments.</p>
+        <h3 id="a825">8.2.5 Monitoring  of collection procedures&nbsp;&nbsp;<strong> </strong></h3>
+        <p>The collection application  produces paradata files that contain a host of information on the activities of  interviewers in the field and in call centres. Using these files, it is possible to produce quality indi­cators on  the interviewers&rsquo; activities. The <abbr title="Labour Force Survey">LFS</abbr> regularly analyzes the calls and visits  made by the interviewers. Reports produced include, among others, information  on the duration of the interviews (in person and over the telephone), the  number of attempts to reach a respondent, and the number of cases transferred  from one collection mode to another. Using this source of information, it is  relatively easy to check whether the interviewers strictly follow the  collection procedures and to take action in questionable cases These indicators  can also be used to improve the training program for interviewers and  strengthen certain components, such as task planning or the work schedule.</p>
+        <h2 id="a83">8.3 <abbr title="Labour Force Survey">LFS</abbr>  committees</h2>
+        <p>The <abbr title="Labour Force Survey">LFS</abbr> needs several  coordination groups to see that the survey runs smoothly. Two permanent  committees are described below. Their mandates include looking after permanent  operations and evaluating the survey on a regular basis.</p>
+        <h3 id="a831">8.3.1 Operations  Committee </h3>
+        <p>The mandate of  this committee is to monitor the activities that occur during each survey month  and the circumstances surrounding the conduct of the survey, to ensure that the  operations run smoothly, and to examine proposed changes and recommend whether  they should be adopted. The Operations Committee is chaired by a senior member  of Labour Statistics Division and meets every week.</p>
+        <h3 id="a832">8.3.2 Data  Quality Committee </h3>
+  <p>The committee,  which was officially created in the spring of 1972, has the mandate of  examining, evaluating and documenting monthly survey quality, and advising on  any aspect of quality that needs attention.   It also initiates and reviews ad hoc studies and investigations related  to methods and procedures affecting data quality, and makes recommendations  based on its findings. This committee is chaired by a member of the Household  Survey Methods Division.</p>
+        <p>          To ensure the best data  quality possible, the Data Quality Committee periodically examines the  different quality indicators described earlier. It meets every month to examine  and assess the quality of the monthly data and to make suggestions and  recommendations on any survey aspect likely to improve quality. By closely  following the evolu­tion of the quality indicators, the committee can intervene  immediately with those in charge of the <abbr title="Labour Force Survey">LFS</abbr> activities in question to control  the quality of the monthly data. The committee also discusses new developments  that are likely to influence the quality of data that has just been collected  or will be collected in the future, especially changes to the collection methods  or the questionnaire, unusual problems in the field, ongoing testing of  processes and methods, <em>etc</em>.</p>
+     
+     
+        <h2 id="a84">8.4 Resources  available regarding <abbr title="Labour Force Survey">LFS</abbr> data quality </h2>
+        <p>There are multiple other resources with  information on various aspects of <abbr title="Labour Force Survey">LFS</abbr> data quality.  This section will describe a few of them. </p>
+        <h3 id="a841">8.4.1 The  Daily</h3>
+        <p>The Labour Force Survey measures the  current state of the Canadian labour market. Thanks to the data collected by the <abbr title="Labour Force Survey">LFS</abbr>, it is  possible to produce various types of estimates (monthly estimate, estimate of  change from one month to the next, three month moving average, <em>etc</em>.) for many different characteristics  (labour force status, hours worked, multiple job holders, <em>etc</em>.), over thousands of domains (national, provincial,  subprovincial, age-sex groups, <em>etc</em>.).  Statistics Canada publishes the  <abbr title="Labour Force Survey">LFS</abbr> estimates on a monthly basis, only ten days after the end of collection.  The publication of new <abbr title="Labour Force Survey">LFS</abbr> estimates, which  usually takes place on the first Friday of the month, is announced through <em>The Daily</em>, Statistics Canada&rsquo;s official  release bulletin, and is accompanied by a short analysis of the current labour  market.  The press release includes information  on specific aspects of the survey, such as upcoming revisions, newly available  reports and products, date of next release…     </p>
+        <h3 id="a842">8.4.2 The  Labour Force Survey web page</h3>
+        <p>The Labour  Force Survey web page, on Statistics Canada web site, has detailed information  on many aspects of the survey, including quality.  In particular, it contains information on the  quality evaluation process and the various sources of data to which the <abbr title="Labour Force Survey">LFS</abbr>  estimates are compared to see if labour market trends are in line with general  economic performance. It also features a summary of the changes that occurred  to the data or to the estimates through the years.       </p>
+        <h3 id="a843">8.4.3 The  Guide to the Labour Force Survey</h3>
+        <p>The Guide to the Labour Force Survey  (71-543-G) is a valuable source of information on survey concepts,  classifications and definitions. It also provides guidelines and assistance on  the comparison of <abbr title="Labour Force Survey">LFS</abbr> estimates across surveys (such as with the Survey of  Employment, Payrolls and Hours) or across countries (such as with the USA).   <a href="/pub/71-543-g/2016001/appendix-appendice3-eng.htm">Appendix C</a> also contains the Labour Force questionnaire.  <br>
+  </p>
+        <h3 id="a844">8.4.4 Access  to <abbr title="Labour Force Survey">LFS</abbr> data</h3>
+  <p>For users interested in the  most common <abbr title="Labour Force Survey">LFS</abbr> estimates, the CANSIM tables are likely to have the information  that is sought. Various types of estimates are provided for various domains and  disclosure rules are applied to protect confidentiality.</p>
+  <p>          For more specific  situations, users may want to use the monthly released Public Use Micro-data File  (71M0001X). This product is for users who prefer to do their own analysis and  allows them to focus on specific subgroups in the population or cross-classify  variables that are not in the catalogued products. Users can then submit  requests on a cost-recovery basis to obtain variance estimates associated with  their particular needs.</p>
+        <p>          A Research Data Centre  (RDC) provides access to Statistics Canada&rsquo;s confidential microdata files. They  are accessible only to researchers with approved projects who have been sworn  in as &quot;deemed employees&quot; of Statistics Canada. The <abbr title="Research Data Centre">RDC</abbr> confidential  microdata files contain most of the original information collected during the  survey interview with the subject as well as derived variables added to the  dataset afterwards. They also contain the bootstrap weights used to calculate  the variance estimates, which are available only in the Master file. <abbr title="Research Data Centre"><a href="http://www.statcan.gc.ca/eng/rdc/index">RDCs</a></abbr> are  located throughout the country. The following web site has more information:  www.statcan.gc.ca/eng/rdc/index.</p>
+        <p>The Real Time Remote Access  (RTRA) complements existing methods of access to confidential micro-data. Using  a secure username and password, the <abbr title="Real Time Remote Access">RTRA</abbr> provides around the clock access to  survey results from any computer with internet access. Confidentiality of the  micro data is automated in the <abbr title="Real Time Remote Access">RTRA</abbr> system, eliminating the need for manual  intervention and allowing for rapid access to results. In order to utilize the  <abbr title="Real Time Remote Access"><a href="/eng/rtra/rtra">RTRA</a></abbr> Program, applicants must complete an application form. More information is  provided on this web page: www.statcan.gc.ca/eng/rtra/rtra. </p>
+     
+     
+     
+<ul class="pager">
+    <li class="previous"><a href="chapt7-eng.htm" rel="prev">Previous</a></li>
+  
+ <li><a href="/pub/71-526-x/71-526-x2017001-eng.htm"><span class="fa fa-home text-primary mrgn-rght-sm"></span>Main page</a></li> 
+ 
+  <li class="next"><a href="chapt9-eng.htm" rel="next">Next</a></li> 
+</ul>
+
+ 
+ 
+</section>
+
+
+ <!--END OF CONTENT-->
+ 
+ 
+
+<!-- More info button text -->  
+﻿    <!-- More info page -->
+    <section id="moreinfo" class="mfp-hide modal-dialog modal-content overlay-def">
+      <header class="modal-header">
+        <h2 class="modal-title">More information</h2>
+      </header>
+      <div class="modal-body">
+      
+      <div class="pstn-rght-lg pstn-rght-md pstn-lft-md pstn-lft-sm pstn-lft-xs mrgn-lft-md mrgn-rght-sm">
+        <span class="label label-primary">ISSN: </span>
+      </div>
+      <span class="clearfix"></span>
+      
+      <h2>Acknowledgement</h2>
+
+<p>Sincere thanks are due to the many people who contributed in various ways to this document.</p>
+
+<p>Our gratitude goes first to the primary authors of the various chapters: Lihua An, Justin Francis, Guy Laflamme, Yves Lafortune, Scott Meyer, Elisabeth Neusy, Steven Thomas and Sylvia White. These people worked on different aspects of the 2015 redesign of the methodology of the Labour Force Survey, and thus were the best people to write about it.</p>
+
+<p>Besides these, numerous people in Household Survey Methods Division, Labour Statistics Division, and elsewhere in Statistics Canada, were also involved in the planning, reviewing, verification, revision, translation and production of this document.  Sincere thanks are due to all of them.</p>
+
+        <h2>Note of appreciation </h2>
+        <p>Canada owes the success of its statistical system to a long-standing partnership between Statistics Canada, the citizens of Canada, its businesses, governments and other institutions. Accurate and timely statistical information could not be produced without their continued co-operation and goodwill.</p>
+        
+            
+                <h2>Standards of service to the public</h2>
+        <p>Statistics Canada is committed to serving its clients in a prompt, reliable and courteous manner. To this end, the Agency has developed <a href="https://www.statcan.gc.ca/eng/about/service/standards">standards of service</a> which its employees observe in serving its clients.</p>
+        <h2>Copyright</h2>
+        <p>Published by authority of the Minister responsible for Statistics Canada.</p>
+    	<p> © Minister of Industry, 2017</p>
+        <p>Use of this publication is governed by the <a href="https://www.statcan.gc.ca/eng/reference/licence">Statistics Canada Open Licence Agreement</a>.</p>
+    	<p>Catalogue <abbr title="number">no.</abbr> 71-526-X</p>
+    	<p> Frequency: Occasional</p>
+    	<p> Ottawa</p>
+        
+        <a class="btn btn-primary popup-modal-dismiss">close</a> </div>
+    </section>
+    <!-- END More info page -->  
+
+<!-- Table of contents button text --> 
+﻿    <!-- Table of contents page -->
+    <section id="toc-tdm" class="mfp-hide modal-dialog modal-content overlay-def">
+      <header class="modal-header">
+        <h2 class="modal-title">Table of contents</h2>
+      </header>
+      <div class="modal-body">
+      
+     
+<p><a href="/pub/71-526-x/71-526-x2017001-eng.htm">Abstract</a><strong> - Main page</strong><br>
+       
+<a href="/pub/71-526-x/2017001/chapt1-eng.htm">Chapter 1 Introduction and overview</a><br />
+         
+<a href="/pub/71-526-x/2017001/chapt2-eng.htm">Chapter 2 Sample design</a><br />
+
+<a href="/pub/71-526-x/2017001/chapt3-eng.htm">Chapter 3 Sampling frame creation and maintenance</a><br />
+
+<a href="/pub/71-526-x/2017001/chapt4-eng.htm">Chapter 4 Collection</a><br />
+
+<a href="/pub/71-526-x/2017001/chapt5-eng.htm">Chapter 5 Processing and imputation</a><br />
+
+<a href="/pub/71-526-x/2017001/chapt6-eng.htm">Chapter 6 Weighting and estimation</a><br />
+
+<a href="/pub/71-526-x/2017001/chapt7-eng.htm">Chapter 7 Variance estimation</a><br />
+
+<a href="/pub/71-526-x/2017001/chapt8-eng.htm">Chapter 8 Data quality</a><br />
+
+<a href="/pub/71-526-x/2017001/chapt9-eng.htm">Chapter 9 LFS frame for other surveys</a><br />
+
+<a href="/pub/71-526-x/2017001/app-ann-eng.htm">Appendices</a><br />
+
+
+<a href="/pub/71-526-x/2017001/ref-biblio-eng.htm">References</a></p>
+		
+       
+        
+        <a class="btn btn-primary popup-modal-dismiss">close</a> </div>
+    </section>
+    
+    
+    <!-- END Table of contents page --> 
+
+
+
+
+<div class="pagedetails">
+	<dl id="wb-dtmd">
+		<dt>Date modified:&#32;</dt>
+		<dd><time property="dateModified">
+  2017-12-21
+</time></dd>
+	</dl>
+</div>
+</main>
+
+<footer id="wb-info">
+	<h2 class="wb-inv">About this site</h2>
+	<div class="gc-contextual">
+		<div class="container">
+			<nav>
+				<h3>Statistics Canada</h3>
+				<ul class="list-unstyled colcount-sm-2 colcount-md-3">
+					<li><a href="https://www.statcan.gc.ca/en/reference/refcentre/index">Contact StatCan</a></li>
+					<li><a href="https://www.statcan.gc.ca/en/trust">Trust Centre</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+	<div class="gc-main-footer">
+		<div class="container">
+			<nav>
+				<h3>Government of Canada</h3>
+				<ul class="list-unstyled colcount-sm-2 colcount-md-3">
+					<li><a href="https://www.canada.ca/en/contact.html">All contacts</a></li>
+					<li><a href="https://www.canada.ca/en/government/dept.html">Departments and agencies</a></li>
+					<li><a href="https://www.canada.ca/en/government/system.html">About government</a></li>
+				</ul>
+				<h4><span class="wb-inv">Themes and topics</span></h4>
+				<ul class="list-unstyled colcount-sm-2 colcount-md-3">
+					<li><a href="https://www.canada.ca/en/services/jobs.html">Jobs</a></li>
+					<li><a href="https://www.canada.ca/en/services/immigration-citizenship.html">Immigration and citizenship</a></li>
+					<li><a href="https://travel.gc.ca/">Travel and tourism</a></li>
+					<li><a href="https://www.canada.ca/en/services/business.html">Business</a></li>
+					<li><a href="https://www.canada.ca/en/services/benefits.html">Benefits</a></li>
+					<li><a href="https://www.canada.ca/en/services/health.html">Health</a></li>
+					<li><a href="https://www.canada.ca/en/services/taxes.html">Taxes</a></li>
+					<li><a href="https://www.canada.ca/en/services/environment.html">Environment and natural resources</a></li>
+					<li><a href="https://www.canada.ca/en/services/defence.html">National security and defence</a></li>
+					<li><a href="https://www.canada.ca/en/services/culture.html">Culture, history and sport</a></li>
+					<li><a href="https://www.canada.ca/en/services/policing.html">Policing, justice and emergencies</a></li>
+					<li><a href="https://www.canada.ca/en/services/transport.html">Transport and infrastructure</a></li>
+					<li><a href="https://international.gc.ca/world-monde/index.aspx?lang=eng">Canada and the world</a></li>
+					<li><a href="https://www.canada.ca/en/services/finance.html">Money and finance</a></li>
+					<li><a href="https://www.canada.ca/en/services/science.html">Science and innovation</a></li>
+					<li><a href="https://www.canada.ca/en/services/indigenous-peoples.html">Indigenous peoples</a></li>
+					<li><a href="https://www.canada.ca/en/services/veterans.html">Veterans and military</a></li>
+					<li><a href="https://www.canada.ca/en/services/youth.html">Youth</a></li>
+					<li><a href="https://www.canada.ca/en/services/life-events.html">Manage life events</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+	<div class="gc-sub-footer">
+		<div class="container d-flex align-items-center">
+			<nav>
+				<h3 class="wb-inv">Government of Canada Corporate</h3>
+				<ul>
+					<li><a href="https://www.canada.ca/en/social.html">Social media</a></li>
+					<li><a href="https://www.canada.ca/en/mobile.html">Mobile applications</a></li>
+					<li><a href="https://www.canada.ca/en/government/about-canada-ca.html">About Canada.ca</a></li>
+					<li><a href="https://www.statcan.gc.ca/en/terms-conditions">Terms and conditions</a></li>
+					<li><a href="https://www.statcan.gc.ca/en/about/transparency/privacy">Privacy</a></li>
+				</ul>
+			</nav>
+			<div class="wtrmrk align-self-end">
+				<img src="/wet-boew4b/assets/wmms-blk.svg" alt="Symbol of the Government of Canada">
+			</div>
+		</div>
+	</div>
+</footer>
+
+<script>
+
+    modifyBreadCrum();
+    
+
+    function modifyBreadCrum(){
+        
+    let dailyEn = "n1/dai-quo/index-eng.htm";
+    let dailyFr = "n1/dai-quo/index-fra.htm";
+ 
+    let breadcrumb = document.querySelector("#wb-bc ol.breadcrumb");
+        
+    if(breadcrumb === undefined || breadcrumb === null || breadcrumb.children.length == 0){
+        return;
+    } 
+        
+    let lastListNode = breadcrumb.children[breadcrumb.children.length -1];
+    
+    if(window.location.href.indexOf("daily-quotidien") != -1 || window.location.href.indexOf("dai-quo") != -1){
+        let href = window.location.href;
+        let env = href.split("n1")[0];
+        href = href.indexOf("eng") != -1 ? env + dailyEn : env + dailyFr;
+
+        createBreadcrumAnchor(href);
+    }
+    else{
+        removeBreadcrumNotAnchor();
+    }
+
+    return;
+
+    function createBreadcrumAnchor(href){
+
+        let anchor = document.createElement("a");
+    
+        if(lastListNode.lastChild !== undefined && lastListNode.lastChild !== null){
+            if(lastListNode.lastChild.nodeName === anchor.nodeName){
+                return;
+            } 
+
+            anchor.innerHTML = lastListNode.innerHTML;
+            anchor.href = href;
+            lastListNode.innerHTML = anchor.outerHTML; 
+        }
+    }
+
+    function removeBreadcrumNotAnchor(){
+
+        let anchor = document.createElement("a");
+
+        if(lastListNode.lastChild !== undefined && lastListNode.lastChild !== null){
+            if(lastListNode.lastChild.nodeName === anchor.nodeName){
+                return;
+            } 
+        
+            breadcrumb.removeChild(lastListNode);
+        }
+
+    }
+
+    }
+
+</script>
+
+<!--[if gte IE 9 | !IE ]><!-->
+<script src="/wet-boew4b/js/wet-boew.min.js"></script>
+<script src="/wet-boew4b/js/theme.min.js"></script>
+<!--<![endif]-->
+<!--[if lt IE 9]>
+<script src="/wet-boew4b/js/ie8-wet-boew2.min.js"></script>
+<![endif]-->
+<!-- InvitationManager -->
+<script src="/wet-boew4b/invitation-manager/Overlay.js"></script>
+<script src="/wet-boew4b/invitation-manager/InvitationManager.js"></script>
+<!-- End InvitationManager -->
+<script type="text/javascript">_satellite.pageBottom();</script>
+
+<!-- CustomScriptsJSStart -->
+<!-- CustomScriptsJSEnd -->
+
+</body>
+</html>

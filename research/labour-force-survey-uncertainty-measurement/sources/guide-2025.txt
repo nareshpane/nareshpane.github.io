@@ -1,0 +1,2318 @@
+PAGE 1
+Catalogue no. 71-543-G 
+ISSN 1704-8842 
+Guide to the Labour Force Survey
+2025
+Release date: April 4, 2025
+
+PAGE 2
+How to obtain more information
+For information about this product or the wide range of services and data available from Statistics Canada, visit our website, 
+www.statcan.gc.ca. 
+ 
+You can also contact us by 
+ 
+Email at infostats@statcan.gc.ca 
+ 
+Telephone, from Monday to Friday, 8:30 a.m. to 4:30 p.m., at the following numbers: 
+ • Statistical Information Service 1-800-263-1136
+ • National telecommunications device for the hearing impaired 1-800-363-7629
+ • Fax line 1-514-283-9350
+Note of appreciation
+Canada owes the success of its statistical system to a 
+long-standing partnership between Statistics Canada, the  
+citizens of Canada, its businesses, governments and other 
+institutions. Accurate and timely statistical information could not 
+be produced without their continued co-operation and goodwill.
+Standards of service to the public
+Statistics Canada is committed to serving its clients in a prompt, 
+reliable and courteous manner. To this end, Statistics Canada has 
+developed standards of service that its employees observe. To 
+obtain a copy of these service standards, please contact Statistics 
+Canada toll-free at 1-800-263-1136. The service standards are 
+also published on www.statcan.gc.ca under “Contact us” > 
+“Standards of service to the public.”
+Published by authority of the Minister responsible for Statistics Canada
+© His Majesty the King in Right of Canada, as represented by the Minister of Industry, 2025
+Use of this publication is governed by the Statistics Canada Open Licence Agreement.
+An HTML version is also available.
+Cette publication est aussi disponible en français.
+
+PAGE 3
+Statistics Canada – Catalogue no. 71-543-G      
+3
+Guide to the Labour Force Survey 2025
+Table of contents
+Section 1: Background and objectives .................................................................................................5
+Introduction .......................................................................................................................................... 5
+Background and objectives ..................................................................................................................5
+Section 2: Determining labour force status .........................................................................................6
+Labour force classification ................................................................................................................... 7
+Section 3: Dictionary of concepts and definitions .............................................................................. 9
+Section 4: Survey methodology .......................................................................................................... 19
+Population coverage........................................................................................................................... 19
+Sample design and sample size for the provinces .............................................................................19
+Selection of dwellings for the provinces............................................................................................. 21
+Selection of household members for the provinces ...........................................................................21
+Sample rotation for the provinces ......................................................................................................21
+Survey coverage and collection for the territories .............................................................................. 22
+Sample design and sample size for the territories ............................................................................. 22
+Exclusion of the territories from national totals .................................................................................. 23
+Exclusions from the Labour Force Survey coverage for the provinces and territories ......................23
+Section 5: Data collection ....................................................................................................................24
+Interviewing for the LFS...................................................................................................................... 24
+Supervision and quality control ..........................................................................................................24
+Non-response to the LFS ...................................................................................................................24
+Section 6: Data processing.................................................................................................................. 25
+Data capture .......................................................................................................................................25
+Editing and imputation ....................................................................................................................... 25
+Industry and occupation coding .........................................................................................................25
+Creation of derived variables ..............................................................................................................25
+Weighting ............................................................................................................................................26
+Seasonal adjustment ..........................................................................................................................26
+Procedures used in seasonal adjustment .......................................................................................... 26
+Adjustment for reference week effect................................................................................................. 27
+Adjustment for holiday effects on actual hours worked ..................................................................... 27
+Regular annual revisions for seasonal adjustment .............................................................................28
+Other revisions and redesigns ............................................................................................................28
+
+PAGE 4
+Statistics Canada – Catalogue no. 71-543-G
+4
+Guide to the Labour Force Survey 2025
+Section 7: Data quality .........................................................................................................................29
+Non-sampling errors ...........................................................................................................................29
+Sampling errors ..................................................................................................................................29
+Confidentiality release criteria ............................................................................................................34
+Section 8: Comparing the Survey of Employment, Payrolls and Hours and the  
+Labour Force Survey ..........................................................................................................36
+Comparing employment trends from the two surveys .......................................................................38
+Comparing earnings and wage trends from the two surveys ............................................................ 38
+Sampling error in the LFS ...................................................................................................................38
+Estimates by province or territory ...................................................................................................... 39
+Release schedule differences .............................................................................................................39
+Revision schedule .............................................................................................................................. 39
+Section 9: Related products, services, and programs ......................................................................39
+Catalogued publications..................................................................................................................... 39
+The Labour Force Survey Supplements Program ..............................................................................42
+Appendices ........................................................................................................................................... 43
+Appendix A – Sub-provincial geography descriptions ....................................................................... 43
+Appendix B – Sample size by sub-provincial region, based on the 2025 sample design .................45
+Appendix C – Information on the Labour Force Survey questionnaire .............................................. 49
+
+PAGE 5
+Statistics Canada – Catalogue no. 71-543-G      
+5
+Guide to the Labour Force Survey 2025
+Guide to the Labour Force Survey 2025
+Section 1: Background and objectives
+Introduction
+The Labour Force Survey (LFS) is a household survey carried out monthly by Statistics Canada. Since its inception 
+in 1945, the objectives of the LFS have been to divide the working-age population into three mutually exclusive 
+categories in relation to the labour market — employed, unemployed, and not in the labour force — and to 
+provide descriptive and explanatory data on each of these groups. Data from the survey provide information on 
+major labour market trends, such as shifts in employment across industrial sectors, hours worked, labour force 
+participation and unemployment rates.
+Background and objectives
+The LFS was developed following the Second World War to satisfy a need for reliable and timely data on the 
+labour market. Information was urgently required on the massive labour market changes involved in the transition 
+from a war-time to a peace-time economy. The survey was designed to provide estimates of employment by 
+industry and occupation at the regional as well as the national level.
+Initially a quarterly survey, the LFS became a monthly survey in 1952. In 1960, the Interdepartmental Committee 
+on Unemployment Statistics recommended that the LFS be designated as the source of the official measure 
+of unemployment in Canada. This endorsement was followed by demand for a broader range of labour market 
+statistics, particularly more detailed regional data. The scope of the survey has expanded considerably over the 
+years, with a major redesign of the survey content in 1976 and again in 1997, and provides a rich and detailed 
+picture of the Canadian labour market.
+The LFS is the only source of monthly estimates of total employment, including self-employment, full- and part-
+time employment, and unemployment. It publishes monthly standard labour market indicators such as the 
+unemployment rate, the employment rate and the participation rate. In addition, the LFS provides information on 
+the personal characteristics of the working-age population, including age, gender, employment equity groups, 
+educational attainment, and family characteristics.
+Employment estimates include detailed breakdowns by demographic characteristics, industry and occupation, 
+job tenure, and usual and actual hours worked. The LFS questionnaire permits analyses of many topical issues, 
+such as involuntary part-time employment, multiple job-holding and work absences. Since January 1997, it also 
+provides monthly information on the wages and union status of employees, as well as the number of employees at 
+their workplace and the permanency of their job.
+Starting in late 2003 in Alberta, and then in April 2004 for the rest of western Canada, questions were added to 
+the LFS to identify Indigenous respondents, with the goal of producing labour market statistics for the off-reserve 
+Indigenous population in these provinces. Starting in 2004, the Indigenous group questions were asked in the 
+territories. In January 2007, these questions were extended to all provinces. Labour market data for the Indigenous 
+population have been available since the fall of 2008.
+In January 2006, five questions were added to the LFS to identify the immigrant population. Specifically, questions 
+were added to identify the country of birth of the respondent, whether or not the respondent was a ‘landed 
+immigrant’, the month and year they became a landed immigrant, and the country where the respondent received 
+their highest level of education. These questions are comparable to those used in the census questionnaire. 
+Labour market data for the immigrant population have been available since the fall of 2007.
+In January 2022, the LFS added a question to capture information on visible minorities. According to the 
+Employment Equity Act, visible minorities are “persons, other than Aboriginal peoples, who are non-Caucasian 
+in race or non-white in colour.” The LFS visible minority variable conforms to the departmental standard 
+Classification of visible minority. Labour market data by visible minority population group have been available 
+since the spring of 2022. 
+
+PAGE 6
+Statistics Canada – Catalogue no. 71-543-G
+6
+Guide to the Labour Force Survey 2025
+LFS also started collecting distinct gender of person and sex at birth questions in January 2022. Prior to 2022, LFS 
+collected information on sex of person (male or female), as recorded by the interviewer based on presentation. The 
+questions for gender and sex at birth are comparable with the questions used in the 2021 Census and conform to 
+the departmental standards for Gender of person. Labour market data by gender were first published in January 2025. 
+Unemployment estimates are produced by demographic group, and information on duration of unemployment and 
+activity before looking for work are available. Information on industry, occupation and reason for leaving last job is 
+collected from persons with recent labour market involvement who are currently unemployed or not in the labour 
+force.
+In addition to providing national, provincial and territorial estimates, the LFS also publishes estimates of labour 
+force status for sub-provincial areas such as economic regions (ERs), census metropolitan areas (CMAs), and a 
+selection of census subdivisions (CSDs) with a larger population.
+Section 2: Determining labour force status
+The concepts of employment and unemployment are derived from the theory of labour supply as a factor in 
+production. In this context, production refers to the goods and services included in the National Economic 
+Accounts. For this reason, unpaid housework and volunteer work are not counted as work for purposes of 
+the LFS, although these activities need not differ from paid work either in purpose or in the nature of the tasks 
+involved.
+While the logical and precise unit of measurement for total labour supply is person-hours, the conceptual terms 
+of reference for the LFS require that individual members of the population be classified as employed, unemployed 
+or not in the labour force. Accordingly, persons who are supplying services in the reference period, regardless of 
+the quantity supplied, are classified as employed, while those who provide evidence that they are offering, but not 
+supplying, their labour services to the market are classified as unemployed. The remainder of the population, who 
+are neither currently supplying, nor offering their labour services, are considered to be not in the labour force.
+The concepts and definitions of employment and unemployment adopted by the survey are based on those 
+endorsed by the International Labour Organization (ILO).
+Employment: Employed persons are those who, during the reference week:
+• did any work at all at a job or business, that is, paid work in the context of an employer-employee 
+relationship, or self-employment. It also includes persons who did unpaid family work, which is defined as 
+unpaid work contributing directly to the operation of a farm, business or professional practice owned and 
+operated by a related member of the same household; or
+• had a job but were not at work due to illness or disability, personal or family responsibilities, vacation or 
+labour dispute. This category excludes persons not at work because they were on layoff or between casual 
+jobs, and those who did not then have a job (even if they had a job to start at a future date).
+Unemployment: Given the concept of unemployment as the unutilized supply of labour, the operational definition 
+of unemployment is based primarily on the activity of job search and the availability to take a job. In addition to 
+being conceptually appropriate, job search activities can, in a household survey, be objectively and consistently 
+measured over time. The definition of unemployment is therefore the following:
+Unemployed persons are those who, during the reference week:
+• were without work, but had looked for work in the past four weeks ending with the reference period and 
+were available for work;
+• were on temporary layoff due to business conditions, with an expectation of recall, and were available for 
+work; or
+• were without work, but had a job to start within four weeks from the reference period and were available for 
+work.
+Persons are regarded as available if they reported that they could have worked in the reference week had 
+a suitable job been offered (or recalled if on temporary layoff), or if their reason for not taking a job was of a 
+
+PAGE 7
+Statistics Canada – Catalogue no. 71-543-G      
+7
+Guide to the Labour Force Survey 2025
+temporary nature, such as own illness or disability, personal or family responsibilities, they already had a job to 
+start in the near future, or they were on vacation (prior to 1997, those on vacation were not considered available). 
+Full-time students currently attending school and looking for full-time work are not considered to be available for 
+work during the reference week. They are assumed to be looking for a summer or co-op job, or permanent job to 
+start sometime in the future, and are therefore not part of the current labour supply.
+It should be noted that, in the above definition, there are two groups for which job search is not required: persons 
+on temporary layoff and persons with a job to start at a definite date in the future. Persons on temporary layoff are 
+included among the unemployed on the grounds that their willingness to supply labour services is apparent in their 
+expectation of returning to work. A similar argument is applied for persons who will be starting at a new job in four 
+weeks or less.
+Finally, for the purposes of measuring job search as an identification of unemployment, the LFS uses a four-
+week search period, although the reference period for identifying the employed is one week. The justification for 
+this difference is that delays inherent in job search (for example, periods spent awaiting the results of earlier job 
+applications) require that the active element of looking for work be measured over a period greater than one week, 
+if a comprehensive measure of job search is to be obtained.
+Not in the labour force: Persons who were neither employed, nor unemployed during the reference period. This 
+includes persons who, during the reference period, were either unable to work or unavailable for work. It also 
+includes persons who were without work and who had neither looked for work in the past four weeks, nor had a 
+job to start within four weeks of the reference period.
+Note on international comparisons: Most industrialized countries, including Canada and the United States, 
+subscribe to guidelines established by the International Labour Organization and the United Nations for defining 
+and measuring labour market status, including unemployment. However, the guidelines are, by design, rather 
+imprecise, so that individual countries can interpret them within their particular labour market context. As a result, 
+unemployment rates are not strictly comparable across all countries. Analysts in the Centre for Labour Market 
+Information at Statistics Canada have thoroughly examined measurement differences between American and 
+Canadian unemployment rates. Based on a past study, adjusting the Canadian unemployment rate to the U.S. 
+measurement lowers it by approximately one percentage point. For more information on conceptual differences 
+between American and Canadian measures of employment and unemployment, consult the technical document 
+entitled “Measuring employment and unemployment in Canada and the United States – a comparison.”
+Labour force classification
+A labour force status (employed, unemployed and not in the labour force) is assigned to each respondent aged 15 
+and older, according to their responses to a number of questions during the interview. Figure 2.1 illustrates how the 
+classification is derived.
+
+PAGE 8
+Statistics Canada – Catalogue no. 71-543-G
+8
+Guide to the Labour Force Survey 2025
+Source: Labour Force Survey (3701).
+Figure 2.1
+Labour force classiﬁcation 
+
+
+PAGE 9
+Statistics Canada – Catalogue no. 71-543-G      
+9
+Guide to the Labour Force Survey 2025
+Section 3: Dictionary of concepts and definitions
+The LFS dictionary provides users with definitions of terms and variables associated with the survey. Where 
+appropriate, changes to definitions through time are documented.
+Absence from work (hours lost): A distinction is made between those who lose hours from work because they 
+missed part of the work week or the full work week. Reasons for the absence are collected for both situations:
+• Part-week absence: Collected for employees only. Reasons for absence include: own illness or disability, 
+personal or family responsibilities, maternity or parental leave, vacation, weather, labour dispute, job started 
+or ended during reference week, holiday, working short time, temporary layoff due to business conditions, 
+and other reasons.
+• Full-week absence: Collected for all employed persons. Reasons for absence include: own illness or 
+disability, personal or family responsibilities, maternity or parental leave, vacation, labour dispute, work 
+schedule, temporary layoff due to business conditions, self-employed (no work available), seasonal 
+business (self-employed), and other reasons. The number of full weeks absent from work is recorded. In 
+addition, employees and self-employed with an incorporated business are asked if they received wages or 
+salary for any time off during the reference week.
+Activity prior to unemployment: Main activity before looking for work. Distinguishes between those who were 
+working (that is, job leavers, job losers and temporary layoffs) and those who were not in the labour force but were 
+keeping house, going to school or involved in some other type of activity.
+Actual hours worked: Number of hours actually worked by the respondent during the reference week, including 
+paid and unpaid hours. These hours reflect temporary decreases or increases in work hours (for example, hours 
+lost due to illness, vacation or holidays, or more hours worked due to overtime).
+Age: Age is collected for every household member in the survey, and the information on labour market activity is 
+collected for all persons aged 15 and older. Prior to 1966, information on labour market activity was collected for 
+persons aged 14 and older. Effective January 1997, date of birth is collected to ensure inclusion of respondents 
+who turn 15 during their six-month rotation in the survey.
+Availability: Persons are regarded as available if they reported that they could have worked in the reference week, 
+had a suitable job been offered (or recalled if on temporary layoff), or if they could not take a job because of their 
+own illness or disability, personal or family responsibilities, they already had a job to start in the near future, or 
+vacation (prior to 1997, those on vacation were not considered available). Full-time students currently attending 
+school and looking for full-time work are not considered to be available for work during the reference week. They 
+are assumed to be looking for a summer or co-op job or permanent job to start sometime in the future.
+Average hours worked: Average number of hours worked per week, usual or actual, is calculated by dividing 
+total hours worked at main job during the reference week by the total number of employees. Also available is the 
+average number of actual hours worked in the reference week, calculated by excluding persons who were not at 
+work during the reference week.
+Born in Canada: Anyone born in Canada, regardless of citizenship.
+Census metropolitan area (CMA) and census agglomeration (CA): A CMA or a CA is formed by one or more 
+adjacent municipalities centred on a population centre (known as the core). A CMA must have a total population 
+of at least 100,000, based on data from the 2021 Census of Population Program, of which 50,000 or more must 
+live in the core based on adjusted data from the previous Census of Population Program. A CA must have a core 
+population of at least 10,000 also based on data from the previous Census of Population Program. To be included 
+in the CMA or CA, other adjacent municipalities must have a high degree of integration with the core, as measured 
+by commuting flows derived from data on place of work from the previous Census Program. The boundaries of 
+CMAs and CAs are based on the 2021 Standard Geographical Classification.
+The terms ‘core,’ ‘fringe’ and ‘rural area’ replaced the terms ‘urban core,’ ‘urban fringe’ and ‘rural fringe’ in the 2011 
+Census. These terms distinguish between population centres and rural areas within a CMA or CA.
+A CMA or CA can have more than one core. In cases where there are multiple cores, one of these is the core and 
+the others are secondary cores. The core is the population centre with the highest population, around which a 
+
+PAGE 10
+Statistics Canada – Catalogue no. 71-543-G
+10
+Guide to the Labour Force Survey 2025
+CMA or a CA is delineated. The core must have a population (based on the previous census) of at least 50,000 
+persons in the case of a CMA, or at least 10,000 persons in the case of a CA.
+A secondary core is a population centre with at least 10,000 persons (based on the previous census) and that is 
+within a CMA or CA, but outside the main municipality (census subdivision) that contains the core. The secondary 
+core can also be the core of a CA that has been merged with an adjacent CMA.
+The fringe includes all population centres within a CMA or CA that have less than 10,000 persons and are not 
+contiguous with the core or secondary core. As there cannot be two cores within the same census subdivision 
+(CSD), other population centers within a CSD that already have a core or secondary core are defined as ‘fringe’ 
+even if their population is over 10,000 persons (based on the previous census).
+All territory within a CMA or CA that is not classified as a core or fringe is classified as rural area.
+Class of worker: There are two broad categories of workers: those who work for others (employees) and those 
+who work for themselves (self-employed). The first group is subdivided into two classes: public sector employees 
+and private sector employees. See Public/private sector employment and Self-employment.
+Country of birth: The country of birth of the respondent. This is based on current geographic names and 
+boundaries at the time of collection.
+Country of highest education: Identifies the country in which the respondent obtained their highest degree, 
+certificate or diploma. This information is only available for those who are now, or have ever been, landed 
+immigrants to Canada and who have a level of educational attainment above high school.
+Discouraged searcher (also called Discouraged worker): Since 1997, discouraged searchers are defined as 
+those persons who reported wanting to work at a job or business during the reference week and were available, 
+but who did not look for work because they believed no suitable work was available. Prior to January 1997, the 
+definition of discouraged searcher was limited to those who looked for work within the previous six months, but 
+not during the last four weeks, although they were available, and did not look because they believed no suitable 
+work was available. The change in concept and question wording resulted in a complete break in the series.
+Duration of joblessness: Number of months or years elapsed since persons who are not currently employed last 
+worked, provided they worked at some time in the past.
+Duration of unemployment: Number of continuous weeks during which a person has been on temporary layoff 
+or without work and looking for work. Respondents are required to look for work at least once every four weeks; 
+they are not required to undertake job search activities each week in order to be counted as unemployed. The LFS 
+measures the duration of incomplete spells of unemployment, since the information is collected only from those 
+currently unemployed. A spell of unemployment is interrupted or completed by any period of work or withdrawal 
+from the labour force.
+Dwelling: Any set of living quarters that is structurally separate and has a private entrance outside the building, or 
+from a common hall or stairway inside the building.
+Earnings: Beginning in March 2020, self-employed workers are asked to report their total earnings after deducting 
+all business expenses, but before deductions such as income taxes and social assistance contributions. Weekly 
+self-employment earnings are calculated using reported weekly, monthly or yearly earnings. For earnings of 
+employees, see Wages. 
+Economic region: An economic region (ER) is a grouping of complete census divisions (CDs) (with one exception 
+in Ontario) created as a standard geographic unit for analysis of regional economic activity. They have been 
+established in consultation with the provinces, except for Quebec, where economic regions are designated by 
+law (les régions administratives). ERs generally correspond to regions used by the province for administrative and 
+statistical purposes. The current boundaries are based on the 2021 Standard Geographical Classification.
+Educational attainment: Highest level of schooling completed. Questions relating to educational attainment were 
+changed in 1990 to better capture the relationship between education and labour market outcomes.
+From 1976 to 1989: data on primary and secondary education reflected the number of years of primary and 
+secondary education completed. In the case of those whose highest level was grades 11 through 13, no attempt 
+
+PAGE 11
+Statistics Canada – Catalogue no. 71-543-G      
+11
+Guide to the Labour Force Survey 2025
+was made to determine if the respondent had actually graduated from high school. However, postsecondary 
+education was limited to levels that normally require high school graduation. In addition, information on type of 
+postsecondary education was limited to three categories: 1) some postsecondary; 2) postsecondary certificate or 
+diploma; and 3) university degree.
+Beginning January 1990: data on primary and secondary education reflect the highest grade completed. 
+This provides a more consistent measure for those who accelerate or fail a grade than did years of school. A 
+question on high school graduation has also been added, since it is generally believed that persons who have 
+never completed their secondary education have greater difficulty competing in the labour market. With the new 
+questions, any education that could be counted towards a degree, certificate or diploma from an educational 
+institution is taken as postsecondary education. The change allows more persons into the postsecondary 
+education category. For example, trades programs offered through apprenticeship, vocational schools or private 
+trade schools do not always require high school graduation. Such education is now considered as postsecondary, 
+while only primary or secondary would have been recognized prior to 1990. Finally, more information is collected 
+on the type of postsecondary education: 1) some postsecondary; 2) trades certificate or diploma from a vocational 
+or apprenticeship training; 3) non-university certificate or diploma from a community college, CEGEP, school of 
+nursing, etc.; 4) university certificate below bachelor’s degree; 5) bachelor’s degree; and 6) university degree or 
+certificate above bachelor’s degree.
+Employee: A person who works for others. Employees can be subdivided into public sector employees and 
+private sector employees. See Public/private sector employment.
+Note: The definition of a paid worker may vary depending on the nature of the analysis. Those concerned with 
+estimating the number of workers associated with total labour income usually include both employees and the 
+self-employed with an incorporated business in estimates of paid workers. In contrast, most labour market 
+analysts include only employees in paid worker estimates, while incorporated owners are grouped with the rest of 
+the self-employed.
+Employment: Employed persons are those who, during the reference week, did any work for pay or profit or had a 
+job and were absent from work. See the section entitled Determining labour force status for more detail.
+Employment rate (employment/population ratio): Number of employed persons expressed as a percentage of 
+the population 15 years of age and older. The employment rate for a particular group (for example, one defined by 
+age, gender, or province) is the number employed in that group expressed as a percentage of the population for 
+that group.
+Establishment size: Beginning January 1997, the number of employees at the location of employment (building 
+or compound) is collected from employees. Responses are recorded according to the following size groups: less 
+than 20, 20 to 99, 100 to 500, or more than 500. The concept of location of employment approximates the concept 
+of establishment used by many Statistics Canada business surveys.
+Family: The LFS identifies families according to the criteria for ‘economic families’: a group of two or more 
+persons who live in the same dwelling and who are related by blood, marriage (including common-law) or 
+adoption. A person living alone or who is related to no one else in the dwelling where he or she lives is classified as 
+a ‘Person not in an economic family’.
+Firm size: Beginning January 1998, the number of employees at all locations of the employer is collected from 
+employees. Responses are recorded according to the following size groups: less than 20, 20 to 99, 100 to 500, or 
+more than 500. The concept of firm targets the concept of enterprise used by many Statistics Canada business 
+surveys.
+Flows into unemployment: Characterizes the unemployed in terms of their activity immediately prior to looking 
+for work. See Job leavers, Job losers, Re-entrants and New entrants.
+Full-time employment: See Type of work.
+Future starts: Persons who did not have a job during the survey reference week and did not search for work 
+within the previous four weeks, but were available to work and had a job to start within the next four weeks. These 
+persons are classified as unemployed, despite the lack of job search within the previous four weeks, since it is 
+apparent that they are part of the current supply of labour. In contrast, those with jobs to start at a later time than 
+
+PAGE 12
+Statistics Canada – Catalogue no. 71-543-G
+12
+Guide to the Labour Force Survey 2025
+the next four weeks are designated as long-term future starts, and are classified as not in the labour force since 
+they are not part of current labour supply.
+Gender: Gender refers to an individual’s personal and social identity as a man, woman or non-binary person (a 
+person who is not exclusively a man or a woman). 
+Gender includes the following concepts: 
+• gender identity, which refers to the gender that a person feels internally and individually; 
+• gender expression, which refers to the way a person presents their gender, regardless of their gender 
+identity, through body language, aesthetic choices or accessories (e.g., clothes, hairstyle and makeup), 
+which may have traditionally been associated with a specific gender. 
+A person’s gender may differ from their sex at birth, and from what is indicated on their current identification or legal 
+documents such as their birth certificate, passport or driver’s license. A person’s gender may change over time. 
+Some people may not identify with a specific gender. 
+In LFS data collected up to 2021, “gender” – previously referred to as “sex” – was based on the gender expression 
+of the respondent. Since 2022, “gender” in LFS data is based on the gender identity reported directly by the 
+respondent. Gender data are aggregated into two categories: men+ and women+. Individuals in the category 
+“non-binary persons” are distributed into the other two gender categories and are denoted by the “+” symbol.
+For more information on the classification of gender at Statistics Canada, please refer to Gender - Usage.
+Goods-producing industries (or goods sector/goods industries): Includes agriculture; forestry, fishing, mining, 
+quarrying, and oil and gas; utilities (electric power, gas and water); construction; and manufacturing.
+Government sector: See Public/private sector employment.
+Hours: See Actual hours worked, Usual hours worked, Average hours worked, and Overtime hours.
+Hours lost: See Absence from work.
+Household: Any person or group of persons living in a dwelling. A household may consist of any combination of 
+one person living alone, one or more families or a group of people who are not related.
+Immigrant: Refers to a person who is or has ever been a landed immigrant or permanent resident in Canada. This 
+person has been granted the right to live in Canada permanently by immigration authorities. Some immigrants 
+have resided in Canada for a number of years, while others have arrived more recently. Some immigrants are 
+Canadian citizens, while others are not.
+Immigrant status: See Born in Canada, Immigrant, Non-immigrant, and Other non-immigrant.
+Indigenous group: Includes persons who reported being an Indigenous person, that is, First Nations, Métis or 
+Inuk (Inuit). Excluded from the survey’s coverage are persons living on reserves and other Indigenous settlements 
+in the provinces. In the LFS, a person may report more than one Indigenous group. For example, a respondent 
+could report being both First Nations and Métis.
+Industry: General nature of the business carried out in the establishment where the person worked (main job 
+only), based on the 2022 North American Industry Classification System (NAICS). If a person did not have a job 
+during the survey reference week, the information is collected for the last job held, provided the person worked 
+within the previous twelve months.
+Involuntary part-time rate: The rate of involuntary part-time workers can be derived in different ways. Published 
+rates are based on all involuntary part-time workers, whether they looked for full-time work or not. The rates 
+can be presented as the number of involuntary part-timers as a share of the labour force, as a share of the total 
+employed or as a share of the part-time employed, depending on one’s analytical preference.
+Involuntary part-time workers: Also referred to as underemployed, these respondents work part-time because 
+they could not find work with 30 or more hours or due to business conditions, whether or not they looked for full-
+time work. This group generally represents 15 to 25 percent of the total number of part-time workers, depending 
+
+PAGE 13
+Statistics Canada – Catalogue no. 71-543-G      
+13
+Guide to the Labour Force Survey 2025
+on current economic conditions. This is the most widely used and inclusive definition of involuntary part-time 
+workers.
+Another, more restrictive definition would be to limit involuntary part-time workers to those who also looked for 
+full-time work during the past four weeks. They generally represent approximately 35% of all involuntary part-time 
+workers.
+Job leavers: Persons who are not currently employed, but who worked within the last year and left that job 
+voluntarily (i.e., the employer did not initiate the termination). Detailed reasons include own illness, personal or 
+family responsibilities, going to school, no specific reason, changed residence, dissatisfied with job, and retired. 
+Since 1997, further detail is available, including business sold or closed down (self-employed only) and pregnancy.
+Job losers: Persons currently not employed who last worked within the previous year and left that job involuntarily 
+(employer-initiated job termination because of business conditions, downsizing, etc.). Prior to 1997, this category 
+was broken down into those on temporary layoff and those laid off on a permanent basis. Since January 1997, 
+more detail regarding the reason for permanent layoff is available: end of seasonal job; end of temporary, term 
+or contract job; casual job; no work; company moved; company went out of business; laid off due to business 
+conditions with no expectation of recall; dismissal by employer; and other reasons.
+Job permanency: Beginning January 1997, information is collected to allow the classification of paid jobs as 
+either permanent or temporary. This classification is based on the intentions of the employer and characteristics of 
+the job, rather than the intentions of the employee. If a job that was formerly considered permanent is ending in the 
+near future because of downsizing or closure, it would still be regarded as permanent.
+• Permanent: A permanent job is one that is expected to last as long as the employee wants it, business 
+conditions permitting. That is, there is no pre-determined termination date.
+• Temporary: A temporary job has a predetermined end date, or will end as soon as a specified project 
+is completed. Information is collected to allow the sub-classification of temporary jobs into four groups: 
+seasonal; temporary, term or contract, including work done through a temporary help agency; casual job; 
+and other temporary work.
+Job search: See Methods of job search.
+Job security: See Job permanency.
+Job tenure: The number of consecutive months or years that a person has worked for the current (or, if employed 
+within the previous twelve months, the most recent) employer. The employee may have worked in one or more 
+occupations, one or more locations, or have experienced periods of temporary layoff with recall and still be 
+considered to have continuous tenure if their employer has not changed. However, if a person has worked for the 
+same employer over different periods of time, job tenure measures the most recent period of uninterrupted work.
+Labour force: Civilian non-institutional population 15 years of age and older who, during the survey reference 
+week, were employed or unemployed. Prior to 1966, persons aged 14 and older were covered by the survey.
+Labour force by industry or occupation: See Unemployment by industry or occupation.
+Labour force status: Designates the status of the respondent with respect to the labour market: a member of the 
+non-institutional population 15 years of age and older is either employed, unemployed, or not in the labour force. 
+See the Determining labour force status section for more detail.
+Main job: When a respondent holds more than one job or business, the job or business involving the greatest 
+number of usual hours worked is considered to be the main job. The information available from the LFS regarding 
+full- or part-time status, industry and occupation refer to the main job, as does employee information regarding 
+wages, union status, job permanency, and workplace size.
+Marital status: Refers to the marital status reported by the respondent. Before November 1999, no differentiation 
+was made between married and common-law relationships; both were classified as married in the survey. The 
+classification of ‘single’ is reserved for those who have never married; otherwise, respondents are classified as 
+either widowed, separated or divorced.
+
+PAGE 14
+Statistics Canada – Catalogue no. 71-543-G
+14
+Guide to the Labour Force Survey 2025
+Methods of job search: Identifies the various job search activities undertaken by unemployed persons in the 
+previous four weeks. If more than one method is used, each one is recorded. Search methods include: checked 
+with public employment agency, private employment agency, union, employers directly, friends or relatives, placed 
+or answered ads, looked at job ads, and other methods.
+Month of immigration: Refers to the month in which the immigrant obtained landed immigrant status. The month 
+of immigration is collected directly from immigrants who landed in Canada within the five-year period prior to the 
+year of the birth interview and imputed for all other immigrants.
+Multiple jobholders: Persons who, during the reference week, were employed in two or more jobs 
+simultaneously. 
+New entrants: Persons entering the labour force in search of their first job (unemployed).
+Non-immigrant: A concept used by the census, a non-immigrant refers to a person who is a Canadian citizen by 
+birth. Since the LFS does not include questions on citizenship, this category cannot be produced. It is composed 
+of two groups: born in Canada and other non-immigrants.
+Not in the labour force: See the Determining labour force status section.
+Occupation: Refers to the kind of work persons were doing during the reference week, as determined by the kind 
+of work reported and the description of the most important duties. For those not currently employed, information 
+on occupation is collected for the most recent job held within the previous year. Occupational classification is 
+based on the 2021 National Occupational Classification (NOC).
+Other job (see also Main job): Information collected about the second job of multiple job holders or the old job 
+of those who changed jobs during reference week regarding: usual hours, actual hours worked and status in 
+employment.
+Other non-immigrant: Refers to a person who is either a Canadian citizen by descent who was born outside 
+of Canada, or is a non-permanent resident. Since the LFS does not include questions on citizenship, these two 
+groups cannot be separated. A non-permanent resident refers to a person from another country who has a 
+work permit (i.e., temporary foreign workers), study permit or who is a refugee claimant, and any non-Canadian-
+born family member living in Canada with them. In 2021, other non-immigrants represented 3.4% of Canada’s 
+population.
+Overtime hours (extra hours worked): The number of hours worked during the reference week in excess of 
+the usual hours reported at main job. It includes all extra hours, whether the work was done at a premium or 
+regular wage rate or without pay. Since January 1997, extra hours are collected from employees only, through 
+two questions regarding the number of paid overtime hours worked in the reference week and the number of extra 
+hours worked without pay.
+• Paid overtime: Includes any hours worked during the reference week over and above standard or 
+scheduled paid hours, for overtime pay or compensation (including time off in lieu).
+• Unpaid overtime: Refers to time spent directly on work or work-related activities over and above 
+scheduled paid hours. These must be extra hours worked for which the respondent received no additional 
+compensation.
+Participation rate (labour force/population ratio): Total labour force expressed as a percentage of the 
+population aged 15 years and older. The participation rate for a particular group (for example, women aged 25 
+years and older) is the labour force of that group expressed as a percentage of the population for that group.
+Part-time employment: See Type of work and Reason for working part-time.
+Permanent job: See Job permanency.
+Personal or family responsibilities: Beginning January 1997, more detail is collected on the personal or family 
+reasons for the following data items: reason for absence from work, reason for leaving last job, reason for working 
+part-time, and reason for not looking for work. Personal or family reasons include: a) caring for own children; 
+b) caring for elder relative; and c) other personal or family reasons. Pregnancy is also included in the response list 
+
+PAGE 15
+Statistics Canada – Catalogue no. 71-543-G      
+15
+Guide to the Labour Force Survey 2025
+for the question on reason for leaving last job, and maternity or parental leave is included in the response list for 
+the question on reason for absence from work.
+Population: The target population covered by the survey corresponds to all persons aged 15 years and older 
+residing in the provinces of Canada, with the exception of the following: persons living on reserve, full-time 
+members of the regular Armed Forces and persons living in institutions (for example, inmates of penal institutions 
+and patients in hospitals or nursing homes).
+The territories are not included in the national total. The target population in the territories is the same as in the 
+provinces, with the exception of persons living on reserves, who are included in the territories but not included in 
+the provinces. See the Survey methodology section for more detail.
+Population centre: A population centre (POPCTR) has a population of at least 1,000 and a population density 
+of 400 persons or more per square kilometre, based on population counts from the most recent Census of 
+Population. All areas outside population centres are classified as rural areas. Taken together, population centres 
+and rural areas cover all of Canada. 
+Population centres are classified into three groups, depending on the size of their population:
+• small population centres, with a population between 1,000 and 29,999
+• medium population centres, with a population between 30,000 and 99,999
+• large urban population centres, with a population of 100,000 or more.
+Population centre population includes all population living in the cores, secondary cores and fringes of census 
+metropolitan areas (CMAs) and census agglomerations (CAs), as well as the population living in population centres 
+outside CMAs and CAs
+Public/private sector employment:
+• The public sector includes employees in federal, provincial, territorial, municipal and Indigenous public 
+administrations, as well as in Crown corporations, liquor control boards and other government institutions 
+such as schools (including universities), hospitals and public libraries.
+• The private sector comprises all other employees and self-employed owners of businesses (including 
+unpaid family workers in those businesses), and self-employed persons without businesses.
+The LFS definition of public/private sector employment was changed in January 1999 in order to harmonize 
+estimates with the System of National Accounts standard. Prior to January 1999, ‘ownership’ rules were used 
+as the basis for classification of health care institutions and universities to the public sector by the LFS. Since 
+January 1999, ‘funding’ rules are used. As a result, all employees in universities and hospitals are now classified in 
+the public sector. All historical data were revised to reflect this new definition. Thus, there is no break in public and 
+private sector series.
+Racialized group: Data on racialized groups are derived from the Visible minority variable.
+Reason for leaving last job: Asked of all persons classified as unemployed or not in the labour force who last 
+worked within the previous year. See Job Losers and Job Leavers for detailed reasons.
+Reason for not looking for work: Beginning January 1997, this question is asked of those who were not 
+employed and did not search for work, but said they wanted work during reference week. Prior to 1997, this 
+question was asked of persons who had looked for work in the previous six months, but not during the past four 
+weeks. See also Discouraged searchers.
+Reason for time lost/absence from work: See Absence from work.
+Reason for working part-time (see also Type of work): Beginning January 1997, with the redesign of the LFS, 
+all respondents who usually worked less than 30 hours per week at their main or only job are asked if they want 
+to work more or less than 30 hours at a (single) job or business. Depending on the response, the main reason for 
+working part-time is collected. For those who respond that they want to work less than 30 hours, the main reason 
+for not wanting to work 30 or more hours per week is collected. Responses include own illness, personal or family 
+responsibilities, going to school, personal preference, and other.
+
+PAGE 16
+Statistics Canada – Catalogue no. 71-543-G
+16
+Guide to the Labour Force Survey 2025
+For those who respond that they want to work 30 or more hours per week, the main reason for working less than 
+30 hours is collected. Responses include own illness, personal or family responsibilities, going to school, business 
+conditions, could not find work with 30 or more hours, and other. Those whose response is ‘business conditions’ 
+or ‘could not find work with 30 or more hours’ are further asked if they looked for work with 30 or more hours 
+during the past four weeks. See Involuntary part-time rate or Involuntary part-time workers.
+Prior to January 1997, the question on reason for working part-time was asked of all persons whose total usual 
+work hours at all jobs or businesses were below 30 per week as opposed to their main or only job. Reasons 
+included: own illness, personal or family responsibilities, going to school, could only find part-time work, did not 
+want full-time work, other, and full-time work less than 30 hours. This last category of respondents was redefined 
+as full-time workers and not counted in any part-time estimates.
+The change in concepts and definitions introduced in January 1997 resulted in a complete break in the series on 
+reason for working part-time and involuntary part-time work. Estimates prior to 1997 are available upon request.
+Re-entrants: Persons currently unemployed who worked in the past and were out of the labour force for some 
+time following separation from their last job.
+Reference person: At the time of interview, the respondent designates a reference person for the household. 
+The reference person is normally an adult with knowledge of the labour force activities for the other members 
+of the household. The relationship of each household member to that reference person is recorded. See also 
+Relationship to reference person. 
+Reference week: The labour force status of respondents is based on their activities during a specific week each 
+month. This reference week usually contains the 15th day of the month and stretches from Sunday to Saturday. 
+In December, and sometimes in November, the reference week is earlier, usually the second week in the month, 
+to ensure that data collection is complete before Christmas. LFS interviews are conducted during the survey or 
+collection period, which is typically the ten days following the reference week (Sunday to Tuesday).
+Relationship to reference person: Relationship of each household member to the person who has been 
+identified as the reference person (for example, someone with knowledge of the labour force activities for the 
+other members of the household). Relationships include self, spouse, child (son or daughter), grandchild, son or 
+daughter-in-law, foster child, parent, parent-in-law, sibling (brother or sister), and other relative.
+Retirement age: The LFS asks people who are not working, and who have left their last job within the year 
+prior to being surveyed, why they left this job. One of the response categories is ‘retired’. The average or median 
+retirement age is calculated from this variable. For a complete description of who is represented and how the age 
+is calculated, refer to the article “Defining retirement” in the February 2007 issue of Perspectives on Labour and 
+Income (75-001-X) on the Statistics Canada website.
+Returning students: Since a majority of students are not attending school during the summer, supplementary 
+questions are asked from May to August to identify those who are on summer break, so that their labour market 
+situation can be monitored. Youth (aged 15 to 24) are given the status of ‘returning student’ if they reported they 
+were attending school full-time in the previous March and intend to return to school full-time in the fall. Information 
+is also available on those who were full-time students in the previous March, but do not intend to return to school 
+full-time or are unsure of their intentions.
+Rural areas: Rural areas include all territory lying outside Population centres. Taken together, population centres 
+and rural areas cover all of Canada. Rural population includes all population living in the rural areas of census 
+metropolitan areas (CMAs) and census agglomerations (CAs), as well as population living in rural areas outside 
+CMAs and CAs.
+School attendance: Establishes whether or not a respondent is attending an educational establishment. For 
+those who are students, information is collected on the type of school, and whether enrolment is full- or part-time, 
+as designated by the educational establishment.
+Seasonal adjustment: Monthly or quarterly time series data are sometimes influenced by seasonal and calendar 
+effects. These effects can bring about changes in the data that normally occur at the same time, and in about the 
+same magnitude, every year. For example, youth employment numbers are high in the summer months due to the 
+end of school and decline to a much lower level in September when school starts again. A seasonally adjusted 
+
+PAGE 17
+Statistics Canada – Catalogue no. 71-543-G      
+17
+Guide to the Labour Force Survey 2025
+time series is a monthly or quarterly time series that has been modified to eliminate the effect of seasonal and 
+calendar influences. In particular, the seasonally adjusted data reveals the “true” underlying movement of the 
+unadjusted series (direction, turning points, relationship to other socio-economic indicators) and allow for more 
+meaningful comparisons of socio-economic conditions from period to period.
+Seasonally adjusted data are estimated by breaking down time series data into various components. Using 
+well-established statistical techniques, this process involves decomposing a time series into four separate 
+components: (1) the trend-cycle, (2) seasonal effects, (3) other calendar effects such as trading days and moving 
+holidays, and (4) the irregular component. The seasonally adjusted series is the original time series with the 
+estimated seasonal and calendar effects removed, or equivalently, the estimated combination of the trend-cycle 
+and the irregular components.
+For more information on seasonal adjustment, see Seasonally adjusted data – Frequently asked questions. 
+Self-employment: Working owners of an incorporated business, farm or professional practice, or working 
+owners of an unincorporated business, farm or professional practice. The latter group also includes self-employed 
+workers who do not own a business (such as babysitters and newspaper carriers). Self-employed workers are 
+further subdivided by those with or without paid help. Also included among the self-employed are Unpaid family 
+workers. 
+Seniority: See Job tenure.
+Services-producing industries (or service sector/service industries): Includes wholesale and retail trade; 
+transportation and warehousing; finance, insurance, real estate, rental and leasing; professional, scientific and 
+technical services; business, building and other support services; educational services; health care and social 
+assistance; information, culture and recreation; accommodation and food services; other services (except public 
+administration); and public administration.
+Student: See School attendance and Returning students.
+Temporary layoff: Persons on temporary layoff are employees who did not work during the reference week 
+because they had been temporarily released by their employer due to business conditions (not enough work, 
+drop in orders or sales, retooling, etc.). They must have a definite date of return to work, or an indication from their 
+employer that they will be recalled in the future, and they must be available for work during the reference week. 
+Persons on temporary layoff are not required to undertake any job search in order to be counted as unemployed.
+Prior to January 1997, the wording and structure of the questionnaire was such that it was likely that a number of 
+persons on temporary layoff were not identified as such, and were classified as ‘not in the labour force’, rather 
+than ‘unemployed’. The 1997 redesign addressed this problem, resulting in a higher number of identified persons 
+on temporary layoff. These changes resulted in a break in the temporary layoff series. Since those on temporary 
+layoff account for a small proportion of the unemployed (less than 10%), the impact of these changes on the 
+overall unemployment rate is negligible.
+Temporary work: See Job permanency.
+Type of work: Full-time or part-time work schedule. Full-time employment consists of persons who usually 
+work 30 hours or more per week at their main or only job. Part-time employment consists of persons who usually 
+work less than 30 hours per week at their main or only job. This information is available for those currently 
+employed or who last worked within the previous year.
+Note: prior to 1996, full-time and part-time had been defined according to usual hours at all jobs, and those who 
+considered their work schedule of less than 30 hours per week to be full-time work were classified as full-time 
+workers. In January 1996, when the definition was revised, all historical data and records were adjusted to reflect 
+this new definition. Thus, there is no break in part-time and full-time data series.
+Type of work sought: Identifies whether a job searcher is looking for full-time or part-time work. Unemployed 
+persons on temporary layoff are classified as looking for full- or part-time work on the basis of their usual hours 
+at their former job. This information is not available for non-searchers who are classified as unemployed because 
+they have a job to start in the next four weeks (future-starts).
+
+PAGE 18
+Statistics Canada – Catalogue no. 71-543-G
+18
+Guide to the Labour Force Survey 2025
+Unemployment: Unemployed persons are those who, during reference week, were without work, were available 
+for work and were either on temporary layoff, had looked for work in the past four weeks or had a job to start 
+within the next four weeks. See the Determining labour force status section for more detail.
+Unemployment by industry or occupation: The LFS produces data on the number of unemployed, the 
+unemployment rate and the labour force by industry or occupation. The basis for these categories is industry or 
+occupation of last job for those currently unemployed who held a job in the previous year. It is important to note 
+that no data are collected on industry or occupation of job search. Thus, these data should be interpreted with 
+caution. For example, a recent graduate of law school looking for work as a lawyer in a law firm, may have last 
+held a job as a server in a restaurant. For this person, unemployment is attributed to the accommodation and food 
+services industry and the services occupation.
+Unemployment rate: Number of unemployed persons expressed as a percentage of the labour force. The 
+unemployment rate for a particular group (for example, one defined by age, gender, or marital status) is the 
+number of unemployed persons in that group expressed as a percentage of the labour force for that same group. 
+For a note on international comparisons, see the Determining labour force status section.
+Union status: Beginning January 1997, employees are classified as: a) union member; b) not a member, but 
+covered by a union contract or collective agreement; or c) non-unionized.
+Unpaid family workers: Persons who work without pay on a farm or in a business or professional practice owned 
+and operated by another family member living in the same dwelling. They represented approximately 1% of the 
+self-employed in 2024.
+Usual hours worked: Prior to January 1997, usual hours was the number of hours usually worked by the 
+respondent in a typical week, regardless of whether they were paid. Beginning January 1997, usual hours for 
+employees refers to their normal paid or contract hours, not counting any overtime. However, the definition of 
+usual hours remains unchanged for the self-employed and unpaid family workers.
+Visible minority: Beginning January 2022, information is collected on visible minority of a person. Visible minority 
+refers to whether a person is a visible minority or not, as defined by the Employment Equity Act. The Employment 
+Equity Act defines visible minorities as “persons, other than Aboriginal peoples, who are non-Caucasian in race or 
+non-white in colour”. The visible minority population consists mainly of the following groups: South Asian, Chinese, 
+Black, Filipino, Arab, Latin American, Southeast Asian, West Asian, Korean and Japanese. 
+Respondents reporting one or more of the three Indigenous categories (First Nations, Métis and/or Inuit) are not 
+asked the population group question.
+When deriving the visible minority variable based on responses to the population group and Indigenous group 
+questions, persons who have identified as Indigenous (First Nations, Métis and/or Inuit) on the Indigenous group 
+question are included in the category ‘Not a visible minority’. 
+For more information on visible minority, refer to Visible minority of person. 
+Variable hours: Beginning January 1997, information is collected to determine if the number of hours worked 
+varies from week to week. In these cases, usual hours worked are calculated as the average of the hours worked 
+in the last four weeks.
+Wages: Beginning January 1997, information is collected on the usual wages or salary of employees at their 
+main job. Respondents are asked to report their wage/salary before taxes and other deductions, and include tips 
+and commissions. Weekly and hourly wages/salary are calculated in conjunction with usual paid work hours per 
+week. Average hourly wages, average weekly wages and wage distributions can then be cross-tabulated by other 
+characteristics such as age, gender, education, occupation, and union status. Those who are paid on an hourly 
+basis are also identified. For earnings of self-employed workers, see Earnings. 
+Work: Includes any work for pay or profit, that is, paid work in the context of an employer-employee relationship or 
+self-employment. It also includes work performed by those working in family business without pay (unpaid family 
+workers).
+Year of immigration: Refers to the year in which the immigrant obtained landed immigrant status by immigration 
+authorities.
+
+PAGE 19
+Statistics Canada – Catalogue no. 71-543-G      
+19
+Guide to the Labour Force Survey 2025
+Section 4: Survey methodology
+Population coverage
+The Labour Force Survey (LFS) target population includes all persons aged 15 years and older whose usual place 
+of residence is in Canada, including both non-permanent residents (NPRs) —that is, those with a work or study 
+permit, their families, asylum claimants, protected persons and related groups — as well as permanent residents 
+(landed immigrants) and the Canadian-born population.
+Excluded from the survey’s coverage are: persons living on reserves and other Indigenous settlements in the 
+provinces, full-time members of the Canadian Armed Forces, and the institutionalized population. These groups 
+together represent an exclusion of approximately 2% of the population aged 15 and older (see the sub-section 
+entitled Exclusions from the Labour Force Survey coverage for the provinces and territories for more 
+information).
+National LFS estimates are derived using the results of the LFS in the provinces. Territorial LFS results are not 
+included in the national estimates, but are published separately (see the sub-section entitled Exclusion of the 
+territories from national totals for more information).
+Sample design and sample size for the provinces
+The LFS plays a central role in the national statistical system in several ways. First, the LFS provides monthly 
+estimates of employment and unemployment, which are among the most timely and important measures of 
+the overall performance of the Canadian economy. Therefore, the LFS sample must be optimized to accurately 
+measure month-to-month changes in the labour market.
+Second, the Employment Insurance Act has designated the LFS as the official source of monthly unemployment 
+rates for all the employment insurance economic regions (EIERs), which are used in the administration of the 
+Employment Insurance program.
+Third, the infrastructure used for the LFS (frame, sample, interviewers, processing systems) supports other 
+Statistics Canada household surveys that are conducted in response to the policy and information needs of 
+government.
+For the LFS to continue to fulfill these three key roles, the sampling frame must be up to date and the estimates 
+must be sufficiently reliable to support the various uses of the data. Every ten years, after the decennial population 
+census, the LFS undergoes a sample redesign to reflect changes in population characteristics, geographical 
+boundaries, and collection context, as well as to integrate any new quality targets. The current sample design, 
+based on population characteristics and geographical boundaries from the 2021 Census, was phased in between 
+April and September 2025. 
+The LFS design strata, which divide the population to make sampling more efficient, are set out to be 
+homogeneous with respect to a set of key labour market variables. However, the strata become less efficient 
+the further the design is from the source year (i.e., 2021 for the design in place from 2025 to 2034) and as the 
+population and labour market characteristics shift over time.
+There are four types of LFS design strata: (1) regular strata – by far the most common – which group clusters that 
+are similar based on information from the 2021 Census and administrative data within important geographical 
+boundaries to improve the design’s efficiency; (2) remote strata which group together remote regions and are 
+intended to control collection costs in remote regions; (3) large-cluster strata which group together large clusters 
+(e.g., large apartment or condo buildings) for statistical efficiency; and (4) high-income strata which group together 
+areas with higher prevalence of high-income households within a Census Metropolitan Area (CMA), primarily so 
+other surveys (e.g., Survey of Household Spending) can sample them appropriately. All four stratum types are 
+sampled at the same rate for the LFS.
+The sample is allocated to strata to efficiently meet the need for reliable estimates at various geographic levels. 
+The 2025 design uses quality targets at the national, provincial, economic region (ER), CMA, census subdivision 
+(CSD), and EIER levels.
+
+PAGE 20
+Statistics Canada – Catalogue no. 71-543-G
+20
+Guide to the Labour Force Survey 2025
+Historically, the quality indicator used to allocate the sample was the coefficient of variation (CV; see the section 
+entitled Data quality for a definition). The 2025 design introduced adjusted CV targets, in which the CV is adjusted 
+to a reference unemployment level (see the Data quality section for a definition). Adjusted CVs do not depend on 
+the unemployment rate and therefore, are more robust to changes in unemployment than the CV. For example, 
+when unemployment falls, the CV rises and quality targets may not be achieved, even though overall LFS quality 
+is maintained. Furthermore, using an adjusted CV allows for more consistent data quality and sample allocation 
+across different areas. Using a CV target, areas with high unemployment may be allocated insufficient sample, 
+since the CV target is easier to satisfy, impacting the quality of other estimates for that area (employment by 
+industry, occupation, etc.). Conversely, areas with historically low unemployment may be allocated excessive 
+sample, reducing the efficiency of the sample and increasing collection costs.
+While most LFS sample allocation targets in the 2025 sample design use adjusted CVs, EIER targets are still based 
+on the methodology used in the 2015 sample design: areas with an unemployment rate over 4.7% have a CV 
+target, and areas with an unemployment rate under 4.7% have a standard error target, where the standard error 
+target and the CV target agree when the unemployment rate is equal to 4.7%. This method addresses some of the 
+limitations of CV as a quality target, namely the excessive sample required by regions with low unemployment.
+The quality targets are as follows. 
+For monthly estimates of unemployment count at the Canada level:
+• An average adjusted CV of 2%.
+For at least 90% of monthly estimates of unemployment count at the provincial level:
+• An adjusted CV below 7%. 
+• The sample size for Prince Edward Island is capped to limit response burden therefore the sample in the 
+province may not meet the 7% quality target.
+For at least 90% of three-month moving average estimates of unemployment count at the sub-provincial level:
+• Economic regions: An adjusted CV lower than 25%. 
+• Census metropolitan areas: An adjusted CV lower than 25%.
+• Census subdivisions: 
+ f An adjusted CV lower than 14% for Canada’s 20 largest CSDs, 
+ f An adjusted CV lower than 21% for the two largest CSDs from each province plus the three next-
+largest CSDs in Canada (nine CSDs total). 
+ f No CSDs in Prince Edward Island are targeted due to response burden.
+For at least 90% of three-month moving average estimates of unemployment rate at the EIER level: 
+• A CV lower than 15% if the unemployment rate is higher than 4.7%, or
+• A fixed confidence interval width1 equivalent to that of an unemployment rate of 4.7% with a CV of 15%.
+As part of Statistics Canada’s Disaggregated Data Action Plan (DDAP) to examine the labour market experiences 
+of diverse population groups, the LFS sample increased by 20% between November 2021 and April 2022. This 
+sample increase was paused between January and March 2023, resumed in April and was fully implemented 
+again in September 2023. Much of the additional sample was allocated to CSDs to meet quality targets.
+The sample size further increased in response to the COVID-19 pandemic. By removing existing measures which 
+stabilize the sample size in areas of rapid growth (stabilization) at the start of the pandemic and reintroducing 
+them with higher targets in 2022, about 3,600 households were added to the sample. These units were helpful to 
+improve data quality in the face of lower response rates, which fell during the pandemic and have only partially 
+recovered since. 
+1. The width of the confidence interval would be approximately 2.8 percentage points, assuming a 95% confidence interval.
+
+PAGE 21
+Statistics Canada – Catalogue no. 71-543-G      
+21
+Guide to the Labour Force Survey 2025
+Due to lower response rates and the added quality targets for CSDs and new CMAs, the sample size required 
+under the 2025 sample design is larger than under the 2015 design. However, efficiency gains in the 2025 sample 
+redesign result in a reduction in sample size compared with the sample in effect from 2022 to 2024. 
+The sample allocation under the 2025 design also differs from the 2015 design due to changes in the population 
+and quality targets and the introduction of adjusted CVs, since the 2025 allocation is much less dependent on 
+unemployment rates.
+Table 4.1 compares the national and provincial sample sizes from the 2025 design with those from the 2015 design. 
+Table 4.1 
+Household Target Allocation, Canada and provinces
+Design
+Difference2015 2025
+number of households
+Canada 52,617 63,596 10,979
+Newfoundland and Labrador 2,009 3,724 1,715
+Prince Edward Island 1,421 1,600 179
+Nova Scotia 2,965 3,392 427
+New Brunswick 2,810 3,912 1,102
+Quebec 10,185 12,043 1,858
+Ontario 14,972 19,519 4,547
+Manitoba 4,206 4,145 -61
+Saskatchewan 4,122 3,903 -219
+Alberta 4,500 4,095 -405
+British Columbia 5,427 7,262 1,835
+Source: Labour Force Survey (3701).
+Selection of dwellings for the provinces
+A two-stage approach is used to select dwellings for all provinces except Prince Edward Island. Within each 
+stratum, ‘clusters’ are defined as contiguous geographic areas containing approximately 100 to 400 dwellings. 
+During the first stage of sampling, a number of clusters, typically six, is selected from each stratum. For each 
+selected cluster, a list of its dwellings is extracted from the Statistical Building Register (SBgR) created and maintained 
+by Statistics Canada. During the second stage of sampling, a sample of dwellings is selected from the list.
+In Prince Edward Island, sampling is done in a single stage by using a complete list of addresses for all strata and 
+selecting dwellings from this list.
+Selection of household members for the provinces
+Demographic information is collected for all persons who consider a selected dwelling their usual place of 
+residence. Labour force information is collected for all civilian household members 15 years of age or older. 
+Respondent burden is minimized for persons aged 70 years and older by carrying forward their responses from 
+the initial interview to the subsequent five months in survey.
+Sample rotation for the provinces
+The LFS follows a rotating panel sample design, in which dwellings in the provinces remain in the sample for six 
+consecutive months. The total sample consists of six representative sub-samples or panels, and each month a 
+panel is replaced after completing its six-month stay in the survey. Outgoing dwellings are replaced by dwellings in 
+the same or a similar area. This sample rotation structure results in a five-sixths month-to-month sample overlap, 
+which makes the design efficient for estimating month-to-month changes. The rotation after six months prevents 
+undue respondent burden for dwellings that are selected for the survey.
+
+PAGE 22
+Statistics Canada – Catalogue no. 71-543-G
+22
+Guide to the Labour Force Survey 2025
+Survey coverage and collection for the territories
+The LFS in the territories started as a pilot project, first in Yukon beginning in 1991 and then in the Northwest 
+Territories and Nunavut starting in 2000. Given the complexities of collecting data in remote areas, and associated 
+data quality issues at the outset of collection, data are available since 1992 for Yukon, 2001 for the Northwest 
+Territories and 2004 for Nunavut.
+Survey coverage in Yukon and in the Northwest Territories is about 95%. In Nunavut, the survey coverage started 
+at 70% between 2004 and 2007 and was expanded to about 93% in 2008.
+The same LFS questions are asked in the territories as in the provinces, with a few exceptions. The rent questions 
+are not asked in the territories. 
+Like the provinces, survey operations are conducted by Statistics Canada staff. The first contact is generally in 
+person and most of the other interviews are done over the phone where possible. Starting in March 2020, some 
+households in the territories may be able to complete the survey by electronic questionnaire. Aside from a different 
+rotation schedule as explained below, data collection and processing are otherwise the same for the territories as 
+for the provinces.
+Sample design and sample size for the territories
+Like the provinces, the sample design for the territories is based on a rotating panel; however, the interval of the 
+rotation is different in the territories. Occupants of selected dwellings in the territories are interviewed every three 
+months over a two-year period, for a total of eight interviews. For example, if a dwelling was first selected for the 
+month of January 2022, household members were interviewed again every three months: April, July, and October 
+2022; January, April, July, and October 2023.
+After eight interviews, the dwelling is replaced by another from the same community or from another community in 
+the same stratum. Each quarter, approximately one-eighth of the sampled households are experiencing their first 
+interview.
+The following guidelines were used in sample allocation for the territories:
+• a CV of 25% or less for three-month average estimates of unemployment count (see the Data quality 
+section for explanation of sampling error and CVs).
+The quarterly sample is collected over three months and estimates for the territories are only available as three-
+month moving averages.
+The sample design for Yukon, the Northwest Territories and Nunavut was updated in 2011, when revised sampling 
+fractions and new labeling conventions were implemented.
+Table 4.2 
+Sample size, territories
+Quarterly sample size (2011 sample design)
+number of households
+Yukon 690
+Northwest Territories 693
+Nunavut 669
+Source: Labour Force Survey (3701).
+The community boundaries are usually consistent with the 2016 Standard Geographical Classification. The 
+communities included on the frame and eligible to be sampled are:
+Yukon – The census agglomeration of Whitehorse and communities of Dawson and Watson Lake are always in 
+sample; plus one community is selected from Carmacks, Mayo, Haines Junction or Teslin; and one community 
+from Pelly Crossing, Ross River, Carcross or Faro. Watson Lake includes the small neighbouring villages of Upper 
+Liard, Two Mile Village and Two and One-Half Mile Village.
+
+PAGE 23
+Statistics Canada – Catalogue no. 71-543-G      
+23
+Guide to the Labour Force Survey 2025
+Northwest Territories – Yellowknife, Norman Wells, Hay River and Inuvik are always in sample. One community 
+from each of the following groups is also selected: Fort Smith or Fort Simpson; Behchokò, Fort Liard, Fort 
+Providence, or Fort Resolution; Tuktoyaktuk, Fort McPherson or Aklavik; Fort Good Hope, Déline or Tulita; Hay 
+River Dene 1 or Dettah; Whatì, Wekweètì, Gamètì, Lutselk’e, Tsiigehtchic, or Wrigley.
+Nunavut – Iqaluit, Rankin Inlet, Cambridge Bay and Kugluktuk are always in sample. One community from each 
+of the following groups is also selected: Baker Lake or Arviat; Igloolik or Pond Inlet; Cape Dorset or Pangnirtung; 
+Taloyoak, Gjoa Haven or Kugaaruk; Coral Harbour or Naujaat; Qikiqtarjuaq, Arctic Bay, Hall Beach, or Clyde River.
+Exclusion of the territories from national totals
+Although Statistics Canada collects and produces labour force data on the territories in a nearly identical 
+questionnaire as used for the provinces, a different methodology is used in the territories.
+There are many challenges in conducting a survey that covers the many relatively small and scattered 
+communities in the territories, and factors such as survey costs, logistics around travel, sample sizes, and the 
+burden on respondents must all be taken into account.
+The LFS achieves this by using a sample design, a rotation pattern and reliability criteria that are different from 
+those in the ten provinces. To improve their reliability, estimates for the territories are calculated and reported 
+separately as moving averages and are therefore not included with the monthly provincial totals.
+Exclusions from the Labour Force Survey coverage for the provinces and territories
+Indian reserves are excluded from the LFS conducted in the provinces. However, Indigenous populations living 
+off-reserve are included in the provincial target population. In the territories, both Indigenous and non-Indigenous 
+communities are included in the sample. It should be noted that labour market indicators for First Nations people 
+living on reserves are available from the Census of Population.
+The LFS also excludes residents of institutions (for example, inmates of penal institutions and patients in hospitals 
+or nursing homes) for conceptual reasons. The LFS is designed to measure current labour force participation in 
+the labour market. Residents of institutions are for the most part not able to participate in the labour market and 
+are not economically active.
+Full-time members of the Canadian Armed Forces are not included in the LFS because of the practical difficulties 
+associated with sampling and interviewing, since many of these persons live in locations that are not accessible 
+for the purposes of conducting the LFS, such as naval vessels, military camps and barracks, or are stationed in 
+other countries.
+Also excluded from sampling are dwellings in remote areas with very low population density. The large effort and 
+cost associated with travelling to these locations are considered against the impact, in terms of potential bias to 
+the LFS estimates, of excluding these areas from the survey frame. Altogether, remote areas that are excluded 
+represent less than 1% of the Canadian population. While remote populations are excluded from sampling, they 
+are included in the population control totals used for weighting calibration unlike the other excluded populations. 
+
+PAGE 24
+Statistics Canada – Catalogue no. 71-543-G
+24
+Guide to the Labour Force Survey 2025
+Section 5: Data collection
+Interviewing for the LFS
+Data collection for the LFS is carried out each month over the ten days following the LFS reference week. The 
+reference week is normally the week containing the 15th day of the month.
+Statistics Canada interviewers are employees hired and trained to carry out the LFS and other household surveys. 
+Each month, they contact the sampled dwellings to obtain the required labour force information for all household 
+members currently living there. In each dwelling, information about all household members is usually obtained 
+from one knowledgeable household member. Such ‘proxy’ reporting, which accounts for approximately 65% of 
+the information collected, is used to avoid the high cost and extended time requirements that would be involved in 
+repeat visits or calls necessary to obtain information directly from each respondent. 
+Responses to survey questions are captured in one of three ways: by in-person interview; by telephone interview; 
+or by self-completed electronic questionnaire. For all three collection methods, the LFS questionnaire can be 
+completed in either English or French. For respondents completing by in-person interview, the interviewer will 
+use a computerized questionnaire on a laptop computer. LFS telephone interviews are conducted by interviewers 
+working from their homes or a Statistics Canada call centre. Certain LFS participants are eligible to respond to the 
+survey by electronic questionnaire using a provided secure access code.
+The response data collected by interviewers are encrypted to ensure confidentiality and sent electronically over a 
+secure connection to head office in Ottawa for further processing.
+Some respondents may be invited to complete a brief initial survey to confirm contact information, before 
+completing the main LFS questionnaire for six months.
+Supervision and quality control
+All LFS interviewers are under the supervision of senior interviewers who are responsible for ensuring that 
+their staff are familiar with the concepts and procedures of the LFS and any supplementary surveys, as well as 
+periodically monitoring their interviews. The senior interviewers are, in turn, under the supervision of the Regional 
+Office Data Collection Managers.
+Non-response to the LFS
+Prior to the pandemic, non-response to the LFS tended to average about 10% of eligible households. Since 
+March 2020, non-response has tended to average between 25 and 30%. Interviewers are instructed to make all 
+reasonable attempts to obtain interviews with members of eligible households. Email and/or SMS reminders are 
+sent to respondents in the self-completing electronic questionnaire group inviting them to complete the survey 
+before the end of collection. Telephone follow-ups are also made with those who have not yet responded in the 
+second part of the collection. For individuals who at first refuse to participate in the LFS, a letter is sent from the 
+Regional Office to the dwelling address stressing the importance of the survey and the household’s co-operation. 
+This is followed by a second call or visit from the interviewer. For cases in which the timing of the interviewer’s call 
+or visit is inconvenient, an appointment is arranged at a more convenient time. For cases in which there is no one 
+home, numerous call backs are made. Under no circumstances are sampled dwellings replaced by other dwellings 
+for reasons of non-response.
+Each month, after all attempts to obtain interviews have been made, a number of non-responding households 
+remain. A weight adjustment is applied to account for non-responding households.
+
+PAGE 25
+Statistics Canada – Catalogue no. 71-543-G      
+25
+Guide to the Labour Force Survey 2025
+Section 6: Data processing
+Data capture
+Responses to survey questions are captured in one of two ways: 1) directly by the interviewer at the time of the 
+interview using a computerized questionnaire on a laptop or desktop computer or 2) by a secure web-based 
+application for respondents who wish to self-complete the survey by electronic questionnaire. The response data 
+are encrypted to ensure confidentiality and sent electronically to the head office in Ottawa for further processing.
+Editing and imputation
+The LFS data go through several steps of editing and imputation to produce a complete and consistent final 
+microdata file. While some edits are applied within the collection application, for example by limiting collected 
+values to valid ranges, most editing is done during processing. After editing, imputation is used to replace invalid, 
+inconsistent, and missing data. 
+Edits are done to identify logically inconsistent and missing information. Since the true value of each entry on 
+the questionnaire is not known, the identification of errors can be done only through recognition of obvious 
+inconsistencies (for example, a 15-year-old respondent who is recorded as having last worked in 1940). 
+Responses that are unusual but possible are kept. Quality controls and interviewer training are used to ensure 
+errors are both minimal in number and non-systematic in nature.
+Missing and invalid values are filled with reasonable valid values using item imputation. The item imputation 
+methods used for the LFS include manual, deterministic, carry-forward, and donor imputation. Manual imputation 
+is used for crucial demographic variables that are either key for later processing, such as age, or are complicated 
+to impute in other ways, such as economic family structure. Deterministic imputation is used when other data 
+in the questionnaire can be used to logically fill the missing value. For example, if a person initially reports that 
+they worked the week before but later reports they worked no hours that week, their labour status is edited to be 
+employed but absent.
+Carry-forward imputation is used when a value collected from the same person in a previous month can be 
+reasonably used to fill a missing value in the current month. Commonly carried forward values include wages and 
+usual work hours. Donor imputation is used to fill all remaining missing values. This involves copying values from 
+another record (i.e., a donor) with similar characteristics. The resulting records are again checked against all edits 
+to ensure that they are complete and consistent after imputation.
+Total non-response is treated in one of two ways, depending on whether demographic data such as age and 
+gender are available or not for the non-respondent. Total non-response of a household where the demographics 
+of the residents are unavailable is treated using a weighting non-response adjustment, as discussed in the 
+Weighting section. Total non-response where the demographics of the household members are known, usually 
+from a previous month’s collection, is treated using whole record donor imputation. Donors are found by matching 
+the recipient record’s previous cycle labour force information as well as their geographic and demographic 
+information. 
+Industry and occupation coding
+In this process, industry, occupation and class of worker codes are assigned using the respondent’s job 
+description from the questionnaire. Coding is performed either manually or automatically using machine learning 
+models created from historical write-in responses and is based on the classifications described in the North 
+American Industry Classification System (NAICS) 2022 V1.0 and the National Occupational Classification (NOC) 
+2021 V1.0 standards.
+Creation of derived variables
+Many variables on the microdata file are derived by combining items on the questionnaire according to 
+classification rules. For example, as described in Figure 2.1, labour force status is derived from specific 
+
+PAGE 26
+Statistics Canada – Catalogue no. 71-543-G
+26
+Guide to the Labour Force Survey 2025
+combinations of responses to a number of survey questions regarding work activity, status in employment, job 
+search, availability, etc. 
+Weighting
+The sample data are weighted to enable tabulations of estimates at national, provincial, and sub-provincial levels 
+of aggregation.
+The first step of the weighting process is the calculation of the basic weight, which is the inverse of the probability 
+of selection. For example, in an area where 2% of the households are sampled, each household would be 
+assigned a basic weight of 1/0.02 = 50. The basic weight is then adjusted for any sub-sampling due to growth that 
+may have occurred in the area and for non-response and coverage error.
+In the LFS, some survey non-response is compensated for by carry-forward, substitution or donor imputation 
+methods (as discussed above in the sub-section entitled Editing and imputation). Any remaining non-response 
+is accounted for by adjusting the weights for the responding households in the same area. This non-response 
+adjustment assumes that the characteristics of the responding households are not significantly different from the 
+non-responding households.
+The weights derived after the non-response adjustments are called the subweights. 
+The final adjustment to the weight is made to correct for coverage errors, align with other products on known 
+totals, reduce any remaining non-response bias,  and reduce the sampling variance of the estimates. The 
+subweights are adjusted using composite calibration. This increases efficiency by leveraging the overlap between 
+consecutive monthly samples, and it ensures that survey estimates conform to population control totals. An 
+integrated method of weighting is applied, to ensure a common final weight for every person in a household.
+There are two sets of weights used in the LFS tabulations. First, for most tables, the weights are calibrated to 
+standard population totals (age, gender, geography, etc.) as well as composite control totals. The second set of 
+weights are calibrated again to standard population totals as well as additional population control totals based on 
+census projections to ensure proper coverage of Indigenous peoples and visible minority population groups. As 
+a result of this additional adjustment, the labour force estimates for the total population in Indigenous  and visible 
+minority tables will not match exactly with those in other tables.
+For comprehensive information on the LFS methodology see the publication Methodology of the Canadian Labour 
+Force Survey (71-526-X).
+Seasonal adjustment
+Most estimates associated with the labour market are subject to seasonal variation i.e., annually-recurring 
+fluctuations attributable to climate and regular institutional events, such as holidays and vacations. Seasonal 
+adjustment is used to remove these seasonal variations from approximately 1,300 series in the LFS to facilitate 
+analysis of short-term change for major indicators, such as employment and unemployment by age and gender, 
+employment and unemployment by industry, employment by occupation, and employment by class of worker 
+(public and private employees or self-employed). Many of these indicators are adjusted at national and provincial 
+levels. Main labour force status estimates are also seasonally adjusted for census metropolitan areas (CMAs), 
+and published as three-month moving averages to reduce irregular movements caused by relatively small sample 
+sizes. Estimates of hours worked are also seasonally adjusted.
+Procedures used in seasonal adjustment
+The method being used for seasonal adjustment is X-12-ARIMA, as implemented in X-13ARIMA-SEATS (US 
+Census Bureau) and Proc X12/X13 (SAS version 9.4).
+Seasonally adjusted estimates of overall employment and unemployment for Canada are derived by summing 
+seasonally adjusted estimates for major age/gender groups (men aged 15 to 24, 25 to 54, and 55 and older; 
+women aged 15 to 24, 25 to 54, and 55 and older). The resulting overall estimate is used as a benchmark for other 
+seasonally adjusted series. For example, employment estimates by industry and class of worker are adjusted 
+independently and then increased or decreased proportionately so that their total sums to the overall benchmark 
+
+PAGE 27
+Statistics Canada – Catalogue no. 71-543-G      
+27
+Guide to the Labour Force Survey 2025
+(the class of worker estimates are in fact adjusted to match the national totals by gender). This procedure is known 
+as reconciliation or raking, and Statistics Canada’s in-house TSRaking SAS procedure is used for this purpose.
+Overall employment and unemployment estimates for the provinces are also derived by summing adjusted 
+estimates for major age/gender groups (men 15 to 24, 25 and older; women aged 15 to 24, 25 and older). However, 
+prior to summation, the estimates for each age/gender group are raked to the corresponding national estimate. 
+Provincial estimates of employment by industry are raked to the provincial employment total as well as the national 
+industry totals.
+Seasonally adjusted estimates of labour force for any particular group are derived by adding the seasonally 
+adjusted estimates of employment and unemployment for that group. Similarly, seasonally adjusted rates (for 
+example, unemployment rate) are calculated by dividing the seasonally adjusted numerator by the seasonally 
+adjusted denominator. In the case of the participation rate and employment rate, only the numerator is seasonally 
+adjusted, as the denominator is based on population totals in the LFS which are less subject to seasonal 
+fluctuations. 
+Adjustment for reference week effect
+The definition of the LFS reference week (usually the week with the 15th day of the month) implies that the actual 
+dates of the reference week vary from year to year. This variability may impact the month-to-month change in 
+major labour market estimates. For example, more students may have finished exams and entered the labour 
+market before the end of reference week in years when the 15th day of June falls near the beginning of the week 
+than is the case in years when the 15th falls near the end of reference week. The reference week effects are 
+removed from the series so that the underlying trend is easier to interpret. These adjustments compensate for 
+early or late reference weeks.
+The reference week effects are estimated by the X-12-ARIMA seasonal adjustment method using a regression 
+model with ARIMA residuals.
+Adjustment for holiday effects on actual hours worked
+In addition, actual hours of work are affected by variability in the dates of the reference week, combined with the 
+presence of fixed (Remembrance Day) or moving (Easter, Thanksgiving) holidays. Specifically, in some years, 
+holidays may occur during the reference week, reducing work hours during that week. Similarly, fluctuations can 
+also occur in July, depending on the timing of the reference week, as the usual vacation period tends to peak in 
+the latter half of the month. This variability could introduce significant fluctuations in estimates of actual hours 
+worked, and it is therefore removed from the series prior to seasonal adjustment.
+Starting in January 2010, a method used by the System of National Accounts labour statistics was adopted. 
+Permanent prior adjustments are now generated by adding back the hours lost due to the holiday, as reported 
+by respondents of the LFS. The historical series have been revised using this new method. The holidays that may 
+occur during the reference week, and for which an adjustment (adding back the hours lost) is made, include Family 
+Day (for certain provinces), spring break (for certain provinces), Good Friday or Easter Monday, Thanksgiving, and 
+Remembrance Day.
+As hours lost due to holidays are not reported for the self-employed, a model is used to estimate and remove 
+systematic fluctuations due to holiday occurrence in the reference week. This model is based on an augmented 
+version of the time series regression used to adjust for reference week location.
+Starting in January 2015, to better reflect the actual hours worked from the self-employed workers, the seasonally 
+adjusted total actual hours worked series is derived as the sum of the three seasonally adjusted classes of workers 
+(public employees, private employees and self-employed). This total is then used as a benchmark to adjust the 
+actual hours worked by industry and by province in the raking step so that the totals are the same. 
+Since holiday effects on actual hours worked vary from industry to industry, depending on the characteristics of 
+each regarding the observance of holidays and summer vacation practices, prior adjustments are calculated and 
+performed separately for each major industry group. 
+
+PAGE 28
+Statistics Canada – Catalogue no. 71-543-G
+28
+Guide to the Labour Force Survey 2025
+Regular annual revisions for seasonal adjustment
+Each year, the Labour Force Survey revises its seasonally adjusted estimates for the previous three years, using 
+the latest seasonal factors.
+Seasonal adjustment requires data from past, current and future values. As new data become available, various 
+time series components can be better estimated which leads to revised and more accurate seasonally adjusted 
+estimates.
+Seasonal adjustment models and options for each series are also reviewed each year. When appropriate, updated 
+options will be used to produce the revised seasonally adjusted estimates (and the on-going seasonally adjusted 
+estimates on a monthly basis for the year to come).
+The impact of COVID-19 pandemic on seasonal adjustment
+The COVID-19 pandemic had brought unprecedented shocks to the labour market and consequently to the time 
+series data.  It is important to ensure that the irregular patterns in the data during the pandemic period do not 
+unduly affect the estimation of seasonal factors. To this end, special outlier strategies were introduced to handle 
+pandemic shocks to the labour market and to better model the seasonal components in the time series data.  
+Level shifts and temporary changes were identified and added to the regression ARIMA models when appropriate. 
+The level shifts are reflected in the trend-cycle of the time series. Lowered outlier detection thresholds were 
+also applied for the period of March 2020 to December 2021 to prevent unusual movements from impacting the 
+estimation of the seasonal factors.
+Other revisions and redesigns
+Approximately every five years, population estimates are rebased or reweighted to the most recent census 
+population counts. As of January 2025, LFS estimates have been adjusted to reflect population counts following 
+the 2021 Census. Given the minimal changes, revisions were necessary only back to 2011. However, revisions for 
+seasonal adjustment were applied back to January 2008 and for trend-cycle series back to July 2007. Generally, 
+the introduction of the latest classification systems for industry, occupation and geography, along with other 
+changes, occur at this time. For more information, see The 2025 Revisions of the Labour Force Survey (LFS). 
+The LFS undergoes a sample redesign every ten years to reflect changes in population characteristics and new 
+definitions of geographical boundaries. The most recent redesign phased in between April and September 2025 
+defines new clusters and strata based on the 2021 Census. For more information, see Section 4.   
+Other enhancements to the methodology, questionnaire, data collection, processing and dissemination systems 
+occur on an ad hoc basis. 
+In January 2019, the LFS transitioned to the Social Survey Processing Environment (SSPE), a corporate data 
+processing system used by most Statistics Canada social survey programs. For more information, see Transition 
+of Labour Force Survey Data Processing to the Social Survey Processing Environment (SSPE).
+In March 2020, the LFS transitioned to an Integrated Collection and Operation System (ICOS). ICOS is an 
+integrated collection platform that is used by both interviewers and respondents, and supports all data collection 
+modes.  Also in March 2020, eight questions were added to the LFS questionnaire to capture additional 
+information on multiple jobholders as well as information on self-employment earnings, the main activity of those 
+not in the labour force and older continuing workers.
+In January 2022, questions on gender, sex at birth and population group were added to the LFS questionnaire and 
+data collection for Indigenous identity was updated to follow the current standard.
+In 2023, methodological enhancements to imputation and outlier detection were applied historically to improve 
+data quality for rare employment characteristics and wages. For more information, see The 2023 Revisions of the 
+Labour Force Survey (LFS).  
+
+PAGE 29
+Statistics Canada – Catalogue no. 71-543-G      
+29
+Guide to the Labour Force Survey 2025
+Section 7: Data quality
+Non-sampling errors
+Errors that are not related to sampling may occur at almost every phase of a survey operation. Interviewers may 
+misunderstand instructions, respondents may make errors in answering questions, answers may be incorrectly 
+entered, and errors may be introduced in the processing and tabulation of the data. These are all examples of 
+non-sampling errors.
+Over a large number of observations, randomly occurring errors will have little effect on estimates derived from 
+the survey. However, errors occurring systematically will contribute to biases in the survey estimates. Quality 
+assurance measures are implemented at each step of the data collection and processing cycle to monitor the 
+quality of the data. These measures include the use of highly skilled interviewers, extensive training of interviewers 
+with respect to the survey procedures and questionnaire, observation of interviewers to detect problems of 
+questionnaire design or misunderstanding of instructions, edits to ensure data entry errors are minimized, and 
+coding and edit quality checks to verify the processing logic.
+Sampling errors
+The Labour Force Survey (LFS) collects information from a sample of households. Somewhat different figures 
+might have been obtained if a complete census had been taken using the same questionnaires, interviewers, 
+supervisors, processing methods, etc. The difference between the estimates obtained from a sample and those 
+that would give a complete count taken under similar conditions is called the sampling error.
+Three related measures can be used to interpret and evaluate sampling error: the standard error; the coefficient of 
+variation (CV) and the confidence interval. These measures can be used to conduct hypothesis tests.
+Approximate measures of sampling error accompany LFS products and users are urged to make use of them 
+while analyzing the data. All seasonally adjusted data tables include standard errors for monthly estimates and 
+may include additional standard errors for month-to-month estimates of change and year-over-year estimates of 
+change. Tables 7.1, 7.2, and 7.3 below can be used to obtain approximate CVs for most other released estimates.
+CVs and standard errors are available for most estimates upon request on a cost recovery basis. For these 
+measures, please contact Statistics Canada’s Statistical Information Service (toll-free 1-800-263-1136; 514-283-
+8300; STATCAN.infostats-infostats.STATCAN@statcan.gc.ca).
+Users with an approved research proposal can also obtain direct access within secure facilities to Labour Force 
+Survey data and bootstrap weights through Statistics Canada’s Research Data Centres (RDCs). See the sub-
+section entitled Access to microdata in Section 9 for more information.
+Interpretation using standard error
+The standard error is a numerical measure of the sampling error that quantifies how different the estimates from all 
+potential samples would be from one another, assuming the same sampling plan. On its own, it is a value that can 
+be difficult to interpret but it is used in developing other more intuitive measures including coefficients of variation 
+and confidence intervals. They are also useful in data analysis with hypothesis tests.
+Although the concept of standard error is based on the idea of selecting several samples, in practice only one 
+sample is drawn and the standard error is estimated based on the information collected from the units in that 
+sample.
+The standard error depends on the sample size, the response rate, the size of the population, the variability of the 
+characteristic of interest in the population, and the sample design and estimation methods. Typically, of similar 
+estimates, the one with larger sample size will yield the smaller standard error.
+Interpretation using coefficient of variation
+To obtain the coefficient of variation (CV), the standard error is divided by the estimate. CVs are a relative measure, 
+meaning that the quality of estimates of varying sizes can be compared.
+
+PAGE 30
+Statistics Canada – Catalogue no. 71-543-G
+30
+Guide to the Labour Force Survey 2025
+Small CVs are desirable because they indicate that the sampling variability is small relative to the estimate. 
+Since the CV is the standard error expressed as a percentage of the estimate, the smaller the estimate, the larger 
+the CV (all other things being equal). For example, when the unemployment rate is high, the CV may be small. If the 
+unemployment rate falls due to improved economic conditions, then the corresponding CV will become larger.
+The adjusted CV removes this dependence on the estimate size. It is primarily useful as a quality target, since it 
+does not move with the economy and instead isolates the quality of the survey itself. 
+For estimates of proportions, the adjusted CV is calculated as (1 )
+(1 )
+pqCVadj CV pq
+−= ×× −
+ where  p    
+is the estimated proportion and  q   is a fixed reference proportion. Since the CV is expected to depend on the 
+estimated proportion through a factor of  (1 ) p
+p
+−  , the first factor  
+(1 )
+p
+p−
+ removes this dependence and the 
+second factor  (1 )−  replaces it by a fixed value. 
+The adjusted CV can be extended to counts by using p =count/in-scope population. For the LFS quality targets, 
+p  is the proportion of unemployed (unemployed count divided by population aged 15 and older), and q  is 4.5%, 
+close to the average proportion of unemployed from 2005 to 2024. 
+Interpretation using confidence intervals
+Confidence intervals provide another way of looking at the variability inherent in estimates from sample surveys. A 
+confidence interval is a range of values that has a probability, known as the level of confidence, of containing the 
+actual value. For example, a 68% confidence interval means that if many samples were drawn and a confidence 
+interval was constructed for each sample, 68% of the constructed confidence intervals should contain the actual 
+value. To illustrate how to calculate the confidence interval, let us say that one month the published estimate for 
+total employment rose by 60,000 and the associated standard error for the month-to-month movement estimate 
+was 25,000. We can say that:
+• The lower and upper bounds of a 68% confidence interval can be computed by adding or subtracting one 
+standard error (25,000) from 60,000. This means that there are approximately two chances in three (68%) 
+that the range (35,000 to 85,000) contains the real value of the change between the two months.
+• A 95% confidence interval can be constructed by adding and subtracting 50,000 (two standard errors) from 
+60,000. This means that there are approximately nineteen chances in twenty (95%) that the range (10,000 to 
+110,000) contains the real value of the change between the two months.
+Conducting hypothesis tests
+Standard errors may also be used to perform hypothesis testing, a procedure that can be used for comparing 
+population parameters using sample estimates. The larger the observed change between two estimates relative 
+to its standard error, the better the chance that we are observing a real change as opposed to a change due to 
+sampling variability.
+One simple way to conduct a hypothesis test is with a confidence interval. If the 95% confidence interval of an 
+observed estimate of change does not contain zero, then the change is considered statistically significant at the 
+5% level of significance. The level of significance is the probability of concluding that there is a change, when in 
+fact the actual change is zero. If the confidence interval of the estimate does contain zero, it is less likely to reflect 
+a real change and more likely to be due to sampling variability.
+To illustrate, let us say that between two months, the published estimate for total employment increased by 60,000 
+and the associated standard error for the movement estimate was 25,000. Since the 95% confidence interval 
+(10,000 to 110,000) does not contain zero, this change in employment is considered significant at the 5% level of 
+significance.
+
+PAGE 31
+Statistics Canada – Catalogue no. 71-543-G      
+31
+Guide to the Labour Force Survey 2025
+Using approximate sampling variability tables
+In practice, standard errors are not provided with all published estimates, so approximate CV tables are provided 
+to allow users to obtain CVs. Standard errors can be calculated from a CV by multiplying the CV by the estimate. 
+Standard errors can then be used to produce confidence intervals and perform hypothesis tests, as described 
+above.
+Three tables are available: 7.1 for monthly totals for Canada and the provinces, 7.2 for annual averages for Canada 
+and the provinces, and 7.3 for three-month moving averages and annual averages for the territories.
+These tables are supplied as a rough guide to the sampling variability. The sampling variability is modeled so that, 
+given an estimate, approximately 75% of the actual CVs will be less than or equal to the CVs derived from the 
+table. There will, however, be 25% of the actual CVs that will be somewhat higher than the ones given in the table.
+Table 7.1 
+Coefficient of variation (CV) for estimates of monthly totals, Canada and provinces
+Coefficient of variation
+1.0% 2.5% 5.0% 7.5% 10.0% 16.5% 20.0% 25.0% 33.3%
+estimates (in thousands)
+Canada 2,038.8 531.3 192.1 106.0 69.5 33.3 25.1 18.1 11.9
+Newfoundland and Labrador 327.1 80.2 27.7 14.9 9.6 4.4 3.3 2.3 1.5
+Prince Edward Island 116.5 30.7 11.2 6.2 4.1 2.0 1.5 1.1 0.7
+Nova Scotia 417.4 106.8 38.1 20.9 13.6 6.5 4.9 3.5 2.3
+New Brunswick 309.5 80.3 28.9 15.9 10.4 5.0 3.8 2.7 1.8
+Quebec 1,709.9 439.0 156.9 86.0 56.1 26.7 20.1 14.4 9.4
+Ontario 2,010.5 502.8 176.2 95.4 61.8 29.0 21.6 15.4 10.0
+Manitoba 396.2 101.7 36.4 19.9 13.0 6.2 4.6 3.3 2.2
+Saskatchewan 371.2 96.0 34.5 19.0 12.4 5.9 4.5 3.2 2.1
+Alberta 1,368.1 354.6 127.7 70.3 46.0 22.0 16.6 11.9 7.8
+British Columbia 1,471.0 369.9 130.2 70.7 45.8 21.5 16.1 11.5 7.5
+Source: Labour Force Survey (3701).
+Table 7.2 
+Coefficient of variation (CV) for estimates of annual averages, Canada and provinces
+Coefficient of variation
+1.0% 2.5% 5.0% 7.5% 10.0% 16.5% 20.0% 25.0% 33.3%
+estimates (in thousands)
+Canada 963.2 224.7 74.7 39.2 24.8 11.2 8.3 5.8 3.7
+Newfoundland and Labrador 176.7 38.2 12.0 6.1 3.8 1.6 1.2 0.8 0.5
+Prince Edward Island 61.4 14.3 4.8 2.5 1.6 0.7 0.5 0.4 0.2
+Nova Scotia 237.4 53.2 17.2 8.9 5.5 2.4 1.8 1.2 0.8
+New Brunswick 172.6 39.8 13.1 6.8 4.3 1.9 1.4 1.0 0.6
+Quebec 804.2 188.2 62.7 33.0 20.9 9.5 7.0 4.9 3.1
+Ontario 927.6 211.7 69.2 36.0 22.6 10.1 7.4 5.2 3.3
+Manitoba 198.1 45.4 14.9 7.8 4.9 2.2 1.6 1.1 0.7
+Saskatchewan 197.5 45.0 14.7 7.6 4.8 2.1 1.6 1.1 0.7
+Alberta 710.6 165.8 55.1 29.0 18.3 8.3 6.1 4.3 2.7
+British Columbia 713.4 161.3 52.4 27.1 17.0 7.5 5.5 3.8 2.4
+Source: Labour Force Survey (3701).
+
+PAGE 32
+Statistics Canada – Catalogue no. 71-543-G
+32
+Guide to the Labour Force Survey 2025
+V
+Table 7.3 
+Coefficient of variation (CV) for estimates of three-month moving averages and annual averages, territories
+Coefficient of variation
+2.0% 3.5% 5.0% 7.5% 10.0% 16.5% 20.0% 25.0% 33.3%
+estimates (in thousands)
+Three-month moving average
+Yukon 33.2 13.5 7.6 4 2.5 1.1 0.8 0.6 0.4
+Northwest Territories 48.8 18.8 10.2 5.1 3.1 1.3 1 0.7 0.4
+Nunavut 41.2 15.1 7.9 3.8 2.3 0.9 0.7 0.4 0.3
+Annual average  
+Yukon 24.7 9.5 5.2 2.6 1.6 0.7 0.5 0.3 0.2
+Northwest Territories 36.7 13.3 7 3.3 2 0.8 0.6 0.4 0.2
+Nunavut 28.9 10.1 5.1 2.4 1.4 0.5 0.4 0.2 0.1
+Source: Labour Force Survey (3701).
+ariability of monthly estimates for Canada and the provinces
+To look up an approximate measure of the CV of an estimate of a monthly total, consult Table 7.1, which gives the 
+size of the estimate as a function of the geography and the CV. The rows give the geographic area of the estimate, 
+while the columns indicate the resulting level of accuracy in terms of the CV, given the size of the estimate. To 
+determine the CV for an estimate of size X in area A, look across the row for area A and find the first estimate 
+that is less than or equal to X. The title of that column will give the approximate CV. For example, to determine 
+the standard error for an estimate of 28,000 thousand unemployed in Newfoundland and Labrador in January 
+2024, we find the closest but smaller estimate of 27,700, giving a CV of 5.0%. Therefore, the estimate of 28,000 
+unemployed in Newfoundland and Labrador has a CV of roughly 5.0%.
+The CV values given in Table 7.1 are derived from a model based on LFS sample data for the five-year period 
+from January 2020 through December 2024 inclusive. It is important to bear in mind that these values are 
+approximations. 
+Table 7.1 can be used with either seasonally adjusted estimates, or with estimates that have not been seasonally 
+adjusted. Studies have shown that LFS standard errors for seasonally adjusted data are close to those for 
+unadjusted data, particularly when estimates are for larger populations and domains.
+Variability of annual estimates for Canada and the provinces
+To look up an approximate measure of the CV of an estimate of an annual average, consult Table 7.2, which 
+gives the size of the estimate as a function of the geography and the CV. The rows give the geographic level of 
+the estimate, while the columns indicate the resulting level of accuracy in terms of the CV, given the size of the 
+estimate. To determine the CV for an estimate of size X in area A, look across the row for area A and find the first 
+estimate that is less than or equal to X. The title of that column will give the approximate CV. For example, to 
+determine the standard error for an annual average estimate of 198,800 unemployed in Quebec in 2022, we find 
+the closest but smaller estimate of 188,200, giving a CV of 2.5%. Therefore, the estimate of 198,800 unemployed 
+in Quebec has a CV of roughly 2.5%.
+The CV values given in Table 7.2 are derived from a model based on LFS sample data for the five-year period from 
+2020 to 2024. It is important to bear in mind that these values are approximations. 
+Sampling variability tables for the territories
+The CV values for three-month moving averages given in Table 7.3 for Yukon, the Northwest Territories and 
+Nunavut are derived from a model based on LFS sample data for the five-year period of January 2020 through 
+December 2024 inclusive. The CV values for annual averages given in the same table are derived from a model 
+based on LFS sample data for the five-year period of 2020 to 2024.
+
+PAGE 33
+Statistics Canada – Catalogue no. 71-543-G      
+33
+Guide to the Labour Force Survey 2025
+Variability of rates
+Estimates that are rates and percentages are subject to sampling variability that is related to the variability of the 
+numerator and the denominator of the ratio. The various rates given are treated differently because some of the 
+denominators are calibrated figures that have no sampling variability associated with them.
+Unemployment rate
+The unemployment rate is the ratio of X, the total number of unemployed in a group, to Y, the total number of 
+participants in the labour force in the same group. Here, the group may be a province or CMA and/or it may be an 
+age-gender group.
+The CV for the unemployment rate can be estimated with the following formula:
+[ ] [ ] [ ] [ ][ ]
+2 22
+( / ) ( ) () 2 ( ) ()CV X Y CV X CV Y p CV X CV Y= +−
+where CV(X) would be the CV for the total number of unemployed in a specific geographic or demographic 
+subgroup and CV(Y) would be the CV for the total number of participants in the labour force in the same subgroup. 
+The correlation coefficient, denoted p, measures the amount of linear association between X and Y (respectively, 
+the number of unemployed and the number of participants in the labour force in the same subgroup). The value of 
+p ranges between -1 and 1. For example, a strong positive linear association would indicate that unemployment 
+counts generally increase as the total number of participants in the labour force increases. Note that we can 
+expect a larger CV for the unemployment rate when p is negative, since in this case, the third term on the right side 
+of the equation above becomes positive.
+When p is not available, the most conservative approach is to take p = -1, which leads to the simplified formula:
+CV ( X/Y )  = CV ( X )  + CV (Y )
+Note that this will likely lead to an overestimation of the CV(X/Y).
+For example, in January 2024, there were 28,000 unemployed persons in Newfoundland and Labrador and 
+275,900 participants in the labour force, giving an unemployment rate of 10.4%. Table 7.1 gives the CVs for the two 
+counts as 5.0% and 2.5%, respectively. An approximation of the CV for the unemployment rate of 10.4% using the 
+above formula would be:
+5.0% + 2.5% = 7.5% 
+Participation rate and employment rate
+The participation rate represents the number of persons in the labour force expressed as a percentage of the 
+total population size. The employment rate is the total number of employed divided by the total population size. 
+For both the above rates, the numerator and the denominator represent the same geographic and demographic 
+group.
+For Canada, the provinces, CMAs and some age-gender groups, the LFS population estimates are not subject to 
+sampling variability because they are calibrated to independent sources. Therefore, in the case of the participation 
+rate and the employment rate of these geographic and demographic groups, the CV is equal to that of the 
+contributing numerator.
+Some subgroups of Canada such as industry and occupation groups are not calibrated to independent sources. 
+For example, there is no official independent source for a monthly count of persons in the agriculture industry 
+in Manitoba. To determine the CV of rates in the case of such subgroups, the variability of both the numerator 
+and the denominator must be taken into account because the denominator is no longer a controlled total and is 
+subject to sampling variability. Therefore, for participation rates and employment rates of subgroups, the CV can 
+be determined in a similar fashion to that of the unemployment rate. The totals in the numerator and denominator 
+for the relevant rate should reflect the same subgroup.
+
+PAGE 34
+Statistics Canada – Catalogue no. 71-543-G
+34
+Guide to the Labour Force Survey 2025
+Variability of estimates of change
+The difference of estimates from two time periods gives an estimate of change that is also subject to sampling 
+variability. Users are typically interested in determining if this change is statistically significant or not. An estimate 
+of year-over-year or month-to-month change is based on two samples which may have some households in 
+common. Hence, the sampling variability of change depends on the sampling variability of the estimates for both 
+periods and the correlation p, between the periods.
+The value of p ranges between -1 and 1, with 1 being a perfect positive linear association. One can generally use 
+the sample overlap to approximate the correlation coefficient as follows:
+• For the provinces: use p = 5/6 for month-to-month changes, and p  = 0 for year-over-year changes.
+• Empirical studies at Statistics Canada have shown that for the provinces, a value of p equal to 5/6 is a good 
+approximation for estimates of employment, but for estimates of unemployment, a p of 0.45 would yield a 
+better approximation for month-to-month changes.
+Typically, the CV of the estimate of change is not a useful measure for analysis but can be used to derive more 
+useful statistics. As described in the sub-section entitled Conducting hypothesis tests, a hypothesis test can be 
+conducted by using confidence intervals based on the standard error of the estimate. The standard error can be 
+derived from the CV by multiplying the CV by the estimate of change (Y2-Y1). The CV for an estimate of change can 
+be calculated from the CVs of the estimates from the two time periods using the following formula: 
+(1)    2 22 2
+1 12 2
+21
+21
+() ( )( )1 Y CV Y Y CV YCV Y Y p YY
++−=− −
+where Y1 and Y2 are the estimates for the two periods. The value of p is the correlation coefficient between Y1 and Y 2.
+Note: If the estimate of change (Y2-Y1) is negative then the calculated CV will be negative, but generally the 
+equivalent positive value is reported.
+When comparing the annual averages of two years, the CV of the annual estimates (Table 7.2) should be used. For 
+month-to-month change, seasonally adjusted estimates should be used in conjunction with the CVs of the monthly 
+estimates from Table 7.1. Note that the above formula gives an approximate estimate of the sampling variability 
+associated with an estimate of change.
+Guidelines on data reliability
+Household surveys within Statistics Canada generally use the following guidelines and reliability categories in 
+interpreting CV values for data accuracy and in the dissemination of statistical information.
+Category 1 — If the CV is ≤ 16.5% — no release restrictions: data are of sufficient accuracy that no special 
+warnings to users or other restrictions are required.
+Category 2 — If the CV is > 16.5% and ≤ 33.3% — release with caveats: data are potentially useful for some 
+purposes but should be accompanied by a warning to users regarding their accuracy.
+Category 3 — If the CV > 33.3% — not recommended for release: data contain a level of error that makes them 
+so potentially misleading that they should not be released in most circumstances. If users insist on inclusion 
+of Category 3 data in a non-standard product, even after being advised of their accuracy, the data should be 
+accompanied by a disclaimer. The user should acknowledge the warnings given and undertake not to disseminate, 
+present or report the data, directly or indirectly, without this disclaimer.
+Confidentiality release criteria
+Statistics Canada is prohibited by law from releasing any data which would divulge information obtained under 
+the Statistics Act that relates to any identifiable person, business or organization without the prior knowledge or 
+the consent in writing of that person, business or organization. Various confidentiality rules are applied to all data 
+
+PAGE 35
+Statistics Canada – Catalogue no. 71-543-G      
+35
+Guide to the Labour Force Survey 2025
+that are released or published to prevent the publication or disclosure of any information deemed confidential. If 
+necessary, data are suppressed to prevent direct or residual disclosure of identifiable data.
+The LFS produces a wide range of outputs that contain estimates for various labour force characteristics. Most 
+of these outputs are estimates in the form of tabular cross-classifications. Estimates are rounded to the nearest 
+hundred and a series of suppression rules are used so that any estimate below a minimum level is not released.
+The LFS suppresses estimates below the levels presented in Table 7.4.
+Table 7.4 
+Minimum size for release, Canada, provinces and territories
+Minimum size for release
+thousands
+Canada 1.5
+Newfoundland and Labrador 0.5
+Prince Edward Island 0.2
+Nova Scotia 0.5
+New Brunswick 0.5
+Quebec 1.5
+Ontario 1.5
+Manitoba 0.5
+Saskatchewan 0.5
+Alberta 1.5
+British Columbia 1.5
+Yukon 0.2
+Northwest Territories 0.2
+Nunavut 0.2
+Source: Labour Force Survey (3701).
+
+PAGE 36
+Statistics Canada – Catalogue no. 71-543-G
+36
+Guide to the Labour Force Survey 2025
+Section 8: Comparing the Survey of Employment, Payrolls and Hours and the 
+Labour Force Survey
+Statistics Canada has two monthly surveys that measure employment levels and trends: the Labour Force 
+Survey (LFS), a household survey, and the Survey of Employment, Payrolls and Hours (SEPH), which combines 
+administrative data and establishment survey data from the Business Payroll Survey.
+The LFS provides the first timely picture of overall labour market conditions, with total employment, unemployment 
+and unemployment rate, as well as information on which groups of Canadians are most affected by changes in the 
+labour market.
+Approximately two months later, the SEPH provides a preliminary estimate of payroll employment of the same 
+month by industry, along with estimates of earnings and hours worked.
+Statistics from LFS and SEPH, along with those from the Employment Insurance program and the Job Vacancy 
+and Wage Survey, and the Census of Population contribute to a more comprehensive understanding of the supply 
+and demand components of the labour market.
+The LFS provides a broader picture of employment, including employment in agriculture and the number of self-
+employed. The SEPH provides a reliable gauge of monthly change in non-farm payroll employment by industry 
+(4-digit NAICS level).
+Because the LFS has a broader definition of employment than the SEPH, the LFS employment level exceeds the 
+SEPH employment level. See Chart 8.1 below for more details.
+Source: Statistics Canada, Labour Force Survey (3701), Survey of Employment, Payrolls and Hours (2612).
+Chart 8.1
+Labour Force Survey (LFS) and Survey of Employment, Payrolls and Hours (SEPH) employment levels, January 2008 to 
+December 2024, seasonally adjusted
+12,000
+13,000
+14,000
+15,000
+16,000
+17,000
+18,000
+19,000
+20,000
+21,000
+22,000
+Jan. 
+2008
+Jan. 
+2009
+Jan. 
+2010
+Jan. 
+2011
+Jan. 
+2012
+Jan. 
+2013
+Jan. 
+2014
+Jan. 
+2015
+Jan. 
+2016
+Jan. 
+2017
+Jan. 
+2018
+Jan. 
+2019
+Jan. 
+2020
+Jan. 
+2021
+Jan. 
+2022
+Jan. 
+2023
+Jan. 
+2024
+thousands
+LFS LFS, adjusted to SEPH concepts SEPH
+For comparability purposes, an adjusted LFS series was included in Chart 8.1 to be closer in concepts and 
+definitions to SEPH employment. This adjusted series is created by subtracting agriculture, fishing and hunting 
+employment, self-employed workers (except those incorporated with paid employees), unpaid family and private 
+household workers, as well as workers absent for four weeks or more without pay from their job, and then adding 
+to the total to account for the second jobs of multiple job holders. For the SEPH, employment data from the three 
+territories are removed to make the national totals comparable to the LFS. 
+
+PAGE 37
+Statistics Canada – Catalogue no. 71-543-G      
+37
+Guide to the Labour Force Survey 2025
+This adjustment process has some limitations. For example, the adjustment for multiple jobholders adds the 
+secondary wage and salary jobs of workers, but as data are not collected on the industry of the secondary job, 
+the exclusion of agriculture, fishing, and hunting employment is based on the industry of the primary job. The 
+adjustment process for multiple job holders also assumes these workers hold two jobs, whereas some workers 
+may hold three or more jobs. Also, the adjustment can be challenging because, unlike LFS, duration of unpaid 
+absences for individual workers is not directly observed in SEPH.  
+Additionally, some independent contractors sampled in the LFS may be misclassified as wage and salary workers 
+rather than self-employed, which could limit the ability to fully reconcile the two employment measures.
+The major features and distinctions of the two surveys are shown in Table 8.1.
+Table 8.1 
+Features of the Labour Force Survey (LFS) and the Survey of Employment, Payrolls and Hours (SEPH)
+Feature LFS SEPH
+Population Non-institutionalized civilian population aged 15 and 
+older residing in Canada, excluding those living in very 
+remote areas and those living on reserves and other 
+Indigenous settlements in the provinces.
+Non-farm wage and salary jobs.
+Type of survey Monthly sample survey of approximately 65,000 
+households.
+Monthly census of businesses (from administrative 
+data), plus a survey of 15,000 establishments for the 
+earnings.
+Major outputs Labour force, employment, unemployment, by 
+province, and associated rates with demographic 
+details.
+Employment, earnings and hours by industry and 
+province or territory.
+Reference period Usually, the Sunday-to-Saturday week that includes 
+the 15th of the month.1
+SEPH comprises two main data sources: the payroll 
+deduction remittance forms (PD7) and the Business 
+Payrolls Survey (BPS).  
+PD7 reference period: the entire reference month. 
+BPS reference period: the pay period that covers the 
+last week of the reference month. When a reported 
+pay period is longer than one week, the data are 
+proportionally adjusted to reflect one week.
+Employment concept Estimate of employed persons (multiple jobholders 
+are counted only once). Includes workers absent from 
+work without pay.
+Number of jobs (multiple jobholders counted for each 
+non-farm payroll job). Includes only those receiving 
+pay for the reference period.
+Employment definition differences Includes the unincorporated self-employed, 
+incorporated self-employed without employees, 
+unpaid family workers, agriculture, forestry, fishing 
+and hunting, religious organization workers, 
+private household workers, international and other 
+extraterritorial public administration and workers 
+absent without pay.
+Excludes all of the groups listed in the column to the 
+left, except for forestry, logging and support activities 
+for forestry.
+Earnings and wage concepts LFS wages refer to the usual wages or salaries of 
+an employee at their main job. Wages are reported 
+before taxes and other deductions, and include tips, 
+commissions and bonuses.
+SEPH earnings represent an employee’s gross pay, 
+based on gross taxable payrolls, before any source 
+deductions.
+Size of month-to-month change in employment for a 
+statistically significant movement
++/- 32,000 for 68% confidence intervals (updated 
+twice a year).
+Based on a census, but the administrative data is 
+also subject to non-sampling errors. As a result, there 
+are some statistical uncertainties associated with the 
+employment estimates.
+Benchmark adjustment to survey results No direct benchmark for employment. Adjustment to 
+underlying population approximately every 5 years to 
+the Census of Population. Population estimates are 
+rebased approximately every 5 years following the 
+cycle of the Census of Population. 
+No benchmark adjustment.
+1. In November and December, the reference week is often one week earlier.
+Sources: Statistics Canada, Labour Force Survey and Survey of Employment, Payrolls and Hours.
+
+PAGE 38
+Statistics Canada – Catalogue no. 71-543-G
+38
+Guide to the Labour Force Survey 2025
+Comparing employment trends from the two surveys
+The LFS is the only survey conducted by Statistics Canada designed to provide the official unemployment rate 
+every month, with a monthly sample size of approximately 65,000 households. It is the earliest and most timely 
+indicator of the pulse of the labour market in Canada. The sample size makes it a very reliable source for different 
+geographic levels. It provides a complete picture as it includes employees, self-employed, unemployed people 
+as well as people not currently participating in the labour force. Characteristics of all three groups, including age, 
+gender and occupation are also available.
+The SEPH, also a monthly survey, is designed to provide data on payroll employment as well as average weekly 
+earnings and hours worked. It is a census of all payroll employees in Canada, excluding the agriculture sector. 
+Consequently, the SEPH does not survey the self-employed or the unemployed. However, the employment 
+payrolls data are available at a detailed industry level.  
+As mentioned earlier, SEPH and LFS estimates track well over the long term, but discrepancies in trends can 
+occur. These discrepancies might be more common for sub-groups, for example, at the provincial level or in a 
+specific industry.
+Table 8.2 provides year-over-year employment change from LFS and SEPH for December over several years.
+Table 8.2 
+December year-over-year employment change, based on the Labour Force Survey (LFS) and the Survey of Employment, 
+Payrolls and Hours (SEPH), not seasonally adjusted
+LFS Employment2
+LFS employment, adjusted to 
+SEPH concepts1,2 SEPH employment2
+Level variation
+in thousands percent change in thousands percent change in thousands percent change
+2017 to 2018 +279.4 +1.5 +254.6 +1.6 +307.6 +1.9
+2018 to 2019 +284.5 +1.5 +330.9 +2.0 +278.2 +1.6
+2019 to 2020 -593.7 -3.1 -838.9 -4.9 -1,079.3 -6.3
+2020 to 2021 +905.3 +4.9 +1,212.9 +7.5 +1,083.5 +6.7
+2021 to 2022 +484.9 +2.5 +517.0 +3.0 +752.7 +4.4
+2022 to 2023 +531.3 +2.7 +542.5 +3.0 +217.3 +1.2
+2023 to 2024 +392.7 +1.9 +246.8 +1.3 +184.3 +1.0
+1. This is an internal series created from LFS employment to be more similar in concepts and definition to the SEPH employment. The LFS adjusted series is created by subtracting agriculture, 
+fishing and hunting employment, self-employed workers (except those incorporated with paid employees), unpaid family and private household workers, as well as workers absent for four weeks 
+or more without pay from their job, and then adding the second job of multiple job holders.
+2. Excluding the territories.
+Sources: Statistics Canada, Labour Force Survey and Survey of Employment, Payrolls and Hours. 
+Comparing earnings and wage trends from the two surveys
+The SEPH and the LFS each provide monthly indicators of pay received by employees. In SEPH, earnings 
+estimates are expressed as average weekly earnings. They are derived for payroll employees and are available 
+by industry and province or territory. In the LFS, wages estimates are expressed as average hourly wages 
+and average weekly wages and are available by socio-demographic characteristics. For more information on 
+comparing earnings and wage trends from the SEPH and LFS, please refer to Earnings and Wages – A guide to 
+using indicators from the Survey of Employment, Payrolls and Hours and the Labour Force Survey. 
+Sampling error in the LFS
+The LFS is subject to sampling and non-sampling error. Standard errors are measures of sampling error, and are 
+available from the LFS to help users assess the statistical significance of a variation over time, or of a difference 
+between corresponding estimates for two population groups. See Section 7 on Data Quality for more information. 
+Employment estimates from the SEPH, as they are derived from all the administrative payroll deduction forms 
+submitted by employers to the Canada Revenue Agency, are not subject to sampling error. They are, however, 
+subject to non-sampling error.
+
+PAGE 39
+Statistics Canada – Catalogue no. 71-543-G      
+39
+Guide to the Labour Force Survey 2025
+Estimates by province or territory
+Estimates from the LFS are based on where people usually reside. However, the SEPH counts employees in the 
+province or territory where they work. This does not affect comparability at the national level, but can create differences 
+at the provincial/territorial level. Territorial estimates from the LFS are not provided on a monthly basis due to limitations 
+in the survey design. Instead, they are presented as 3-month moving averages, reflecting the average levels over the 
+preceding three months. Territorial estimates are not included in the national totals for the LFS.
+Release schedule differences
+The LFS interviews take place over the ten days following the reference week. This is followed by nine calendar 
+days of processing and analysis, enabling the release of the estimates less than three weeks after the Saturday 
+closing the reference week. The release usually takes place the first or second Friday of the month following the 
+month of the reference week.
+With the SEPH, businesses have until the 15th of the following month to file data from the last pay period of the 
+reference month to the Canada Revenue Agency. These data, approximately one million records every month, are 
+provided to Statistics Canada five weeks after the reference period. This is followed by three and a half weeks of 
+processing and analysis, bringing the release to eight and a half weeks after the reference period
+Revision schedule
+Estimates from both surveys are revised according to different schedules. For LFS, the annual revision maintains 
+coherence in the estimates of month-to-month and year-over-year changes. For SEPH, while the annual revision 
+does not impact the overall trends, it could affect the month-to-month change.
+The seasonally adjusted LFS estimates are revised yearly, going back three years, and are published around 
+the end of January. Approximately every five years, population control totals are updated according to the latest 
+census population projections and all LFS estimates are revised historically over a longer time span. This exercise 
+is called a rebasing. At the same time, the latest classifications for geography, industry and occupation are 
+updated along with the latest seasonal factors. The latest rebasing took place in January 2025.  
+With the SEPH, monthly estimates are revised the month following their initial preliminary release. For example, 
+when preliminary estimates for May are released, revised estimates for April are also released.
+Every year at the end of March, the SEPH estimates undergo a historical revision. The span and the breadth of the 
+revisions vary depending on the year. The revisions to specific industries sometimes go back as far as 2001 and 
+can include updates to new classification systems (i.e., moving from NAICS 2017 to NAICS 2022, which occurred 
+in the January 2023 reference period), or sometimes will span only a few years with minimal changes. At the same 
+time, seasonally adjusted data are revised back to January 2001. 
+Section 9: Related products, services, and programs
+A broad range of tabulated data compiled from the Labour Force Survey (LFS) is contained in regular publications 
+and data tables. Analytical articles based on LFS data frequently appear in the Statistics Canada publications 
+listed below. However, the wealth of information that can be extracted from the survey, and the variety of questions 
+that can be addressed, are far too vast for regular publication. In order to meet particular analytical needs and 
+address issues of current interest, the survey provides a custom tabulation service on a cost-recovery basis. A 
+public use microdata file is also available for clients wishing to do their own data extractions and analyses.
+Catalogued publications
+Monthly: Labour Force Survey in brief: Interactive app (Catalogue no. 14200001)
+This interactive visualization application provides seasonally adjusted estimates available by province, gender, age 
+group and industry. Historical estimates going back five years are also included for monthly employment changes 
+and unemployment rates. The interactive application allows users to quickly and easily explore and personalize 
+
+PAGE 40
+Statistics Canada – Catalogue no. 71-543-G
+40
+Guide to the Labour Force Survey 2025
+the information presented. Combine multiple provinces, genders and age groups to create your own labour market 
+domains of interest.
+Monthly: Statistics Canada – Data Visualization Products: Labour Market Indicators, by province and 
+census metropolitan area, seasonally adjusted (catalogue no. 71-607-X, issue 2017001) 
+This web application provides access to Statistics Canada’s Labour Market Indicators for Canada, by province 
+and by census metropolitan area. This dynamic application allows users to view geographical rankings for each 
+labour market indicator and to create quick reports with interactive maps and charts that can be easily copied into 
+other programs. All provincial and CMA estimates used in this application are seasonally adjusted, three-month 
+moving averages.
+Monthly: Statistics Canada – Data Visualization Products: Labour Market Indicators, by province, territory 
+and economic region, unadjusted for seasonality (catalogue no. 71-607-X, issue 2017002) 
+This web application provides access to Statistics Canada’s Labour Market Indicators for Canada, by province, 
+territory and economic region (ER). This dynamic application allows users to view a snapshot of key labour market 
+indicators, observe geographical rankings for each indicator using an interactive map and table, and easily copy 
+data into other programs. The provincial and ER estimates used in this application from the Labour Force Survey 
+(LFS) are three-month moving averages, unadjusted for seasonality. The provincial, territorial and ER estimates 
+used in this application from the Job Vacancy and Wage Survey (JVWS) are quarterly data, unadjusted for 
+seasonality. Historical estimates are available in this application, with data going back 10 years for the LFS and 
+from the first quarter of 2016 for JVWS.
+Occasional: Statistics Canada – Data Visualization Products: Labour market indicators, census 
+metropolitan areas, census agglomerations and self-contained labour areas: Interactive dashboard 
+(catalogue no. 71-607-X, issue 2024025)
+This interactive webtool provides access to Statistics Canada’s Labour Market Indicators for Canada, by census 
+metropolitan area, census agglomeration, and self-contained labour areas. The data presented in this dashboard 
+has been developed using Small Area Estimation (SAE) methodology to increase the level of geographical detail 
+available from the Labour Force Survey (LFS) by combining LFS data with additional information from Employment 
+Insurance Statistics and demographic projections. Estimates used in this application have not been adjusted for 
+seasonality and may be subject to regular seasonal variations. 
+Occasional: Labour Statistics: Research Papers (catalogue no. 75-004-M)
+The papers in this series cover a variety of topics related to labour statistics. These more in-depth studies are 
+intended to showcase recent or historical trends in the labour market using survey and administrative data from 
+the Centre for Labour Market Information.
+Occasional: Labour Statistics at a Glance (catalogue no. 71-222-X)
+Labour Statistics at a Glance features short analytical articles on specific topics of interest related to Canada’s 
+labour market. The studies examine recent or historical trends using data produced by the Centre for Labour 
+Market Information.
+Occasional: Labour Statistics: Technical Papers (catalogue no. 75-005-M)
+The papers in this series cover a variety of technical topics related to the surveys and administrative data of the 
+Centre for Labour Market Information.
+Occasional: Insights on Canadian Society (catalogue no. 75-006-X)
+This publication brings together and analyzes a wide range of data sources in order to provide information on 
+various aspects of Canadian society, including labour, income, education, social, and demographic issues that 
+affect the lives of Canadians.
+
+PAGE 41
+Statistics Canada – Catalogue no. 71-543-G      
+41
+Guide to the Labour Force Survey 2025
+Occasional: Statistics Canada - Infographics (catalogue no. 11-627-M)
+Every year, Statistics Canada collects data from hundreds of surveys. As the amount of data gathered increases, 
+Statistics Canada has introduced infographics to help people, business owners, academics, and management at 
+all levels, understand key information derived from the data. Infographics provide a quick overview of Statistics 
+Canada survey data.
+Occasional: Improvements to the Labour Force Survey (LFS) (catalogue no. 71F0031X)
+This paper introduces and explains the standard revisions and other modifications made to the Labour Force 
+Survey estimates.
+Occasional: Aboriginal Peoples Living Off-reserve in Western Canada: Estimates from the Labour Force 
+Survey (catalogue no. 71-587-X)
+This paper provides information on Aboriginal employment and unemployment, Aboriginal youths and the impact 
+of education on labour market performance in Manitoba, Saskatchewan, Alberta, and British Columbia.
+Occasional: The Aboriginal Labour Force Analysis Series (catalogue no. 71-588-X)
+This series of analytical reports provides an overview of the labour market conditions among the Aboriginal 
+off-reserve populations, based on estimates from the Labour Force Survey. These reports examine the 
+Aboriginal labour force characteristics by Aboriginal group as well as diverse socio-economic and employment 
+characteristics.
+Occasional: The Immigrant Labour Force Analysis Series (catalogue no. 71-606-X)
+This series of analytical reports provides an overview of the Canadian labour market experiences of immigrants 
+to Canada, based on data from the Labour Force Survey. These reports examine the labour force characteristics 
+of immigrants by reporting on employment and unemployment at the national level, the provincial level and large 
+metropolitan areas. They also provide more detailed analysis by region of birth as well as in-depth analysis of 
+other specific aspects of the immigrant labour market.
+Occasional: Methodology of the Canadian Labour Force Survey (catalogue no. 71-526-X)
+This publication offers an in-depth look at the methodological and operational aspects of the LFS, covering 
+stratification, sampling, survey operations, weighting, estimation, and data quality. This document would be of 
+interest to those who would like more in-depth methodological information on the LFS than provided by the Guide 
+to the Labour Force Survey.
+Data tables
+A large selection of high-demand LFS monthly and annual average time series is available on Statistics Canada’s 
+website. These data tables are dynamically updated as new results are released. 
+Custom tabulations
+Custom tabulations can be arranged on an ad hoc or regular basis for a fee. This service enables users to 
+specify tables and time series to meet their own requirements. For example, users may wish to have labour force 
+estimates for age groups or educational levels that differ from those used in LFS publications. Subject matter and 
+tabulation expertise is also provided to ensure that the customized data package is accurate and appropriate.
+Access to microdata
+Research Data Centres (RDC) provide access to Statistics Canada’s confidential microdata files. They are 
+accessible only to researchers with approved projects who have been sworn in as ‘deemed employees’ of 
+Statistics Canada. The RDC confidential microdata files contain most of the original information collected during 
+the survey interview as well as derived variables added to the dataset afterwards. They also contain the bootstrap 
+
+PAGE 42
+Statistics Canada – Catalogue no. 71-543-G
+42
+Guide to the Labour Force Survey 2025
+weights used to calculate the exact variance, which are available only in the master file. RDCs are located 
+throughout the country. The following website has more information: www.statcan.gc.ca/eng/rdc/index.
+The Real Time Remote Access (RTRA) complements existing methods of access to confidential micro-data. 
+Using a secure username and password, the RTRA provides around the clock access to survey results from any 
+computer with internet access. Confidentiality of the micro data is automated in the RTRA system, eliminating 
+the need for manual intervention and allowing for rapid access to results. RTRA subscribers must complete an 
+application form and pay the associated fees to use the service. More information is provided on the website  
+www.statcan.gc.ca/eng/rtra/rtra.
+Monthly: Public Use Microdata File (catalogue no. 71M0001X)
+The Public Use Microdata File (PUMF) contains non-aggregated data for a wide variety of variables collected from 
+the LFS. This product is for users who prefer to do their own analysis by focusing on specific subgroups in the 
+population or by cross-classifying variables that are not in catalogued products. Monthly files are available back to 
+2006 and can be directly downloaded. For reference periods prior to 2006, files are available by request through 
+Statistic Canada’s Electronic File Transfer (EFT) service and date back to 1976. More information is provided on 
+the website Labour Force Survey: Public Use Microdata File.
+General inquiries
+For inquiries on any of these products and services, contact Statistics Canada’s Statistical Information Service 
+(toll-free: 1-800-263-1136; 514-283-8300; statcan.infostats-infostats.statcan@statcan.gc.ca).
+The Labour Force Survey Supplements Program
+The LFS Supplements Program is an initiative designed to enhance the core LFS by collecting additional data on 
+emerging labour market topics, quality of employment and forms of employment. The program is funded through 
+Statistics Canada’s Disaggregated Data Action Plan (DDAP) and aims to provide a more disaggregated picture of 
+the labour market by offering more detailed insights on specific facets of job quality and disseminating more data 
+and analysis on the labour market experiences of employment equity groups.
+The program is comprised of two non-mandatory surveys that complement the core LFS questionnaire. The 
+Labour Market Indicators (LMI) program consists of a short questionnaire that is collected monthly immediately 
+after the main LFS. Summary results from the LMI are typically released in the LFS Daily. The Labour Market and 
+Socio-economic Indicators program (LMSI) is collected from July to December among respondents who are 
+in their last month of participation in the LFS. The LMSI is used to collect more detailed information on specific 
+topics such as gig work and the stability of self-employment. The LMSI also collects information for the Canadian 
+Income Survey (CIS) and the disability screening questions (DSQ). 
+
+PAGE 43
+Statistics Canada – Catalogue no. 71-543-G      
+43
+Guide to the Labour Force Survey 2025
+Appendices
+Appendix A – Sub-provincial geography descriptions
+Labour market information from the LFS is available for a variety of geographic levels. While designed to provide 
+highly reliable data at the national and provincial levels, key labour market estimates are also available for census 
+metropolitan areas, economic regions and employment insurance economic regions. 
+Labour Force Survey estimates are based on a sample and are therefore subject to sampling variability. As a 
+result, estimates will show more variability than trends observed over longer periods of time. Estimates for smaller 
+geographic areas also have more variability. For an explanation of sampling variability of estimates and how to use 
+standard errors to assess this variability, see Section 7 of this publication.
+Census metropolitan area (CMA)
+A CMA is formed by one or more adjacent municipalities centred on a population centre (known as the core). 
+A CMA must have a total population of at least 100,000, based on data from the current Census of Population 
+Program, of which 50,000 or more must live in the core based on adjusted data from the previous Census of 
+Population Program.
+The CMAs are based on the Standard Geographical Classification (SGC) 2021 - Volume I, The Classification. 
+A list of the 41 CMAs and their associated census subdivisions are available in the Variant of Standard 
+Geographical Classification (SGC) 2021 for Statistical area classification.
+Please note that Indian reserves, although geographically part of certain CMAs, are excluded from the LFS.
+Economic region (ER)
+An economic region is a grouping of complete census divisions (with one exception in Ontario) created as a 
+standard geographic unit for analysis of regional economic activity. In the case of Prince Edward Island, the 
+province constitutes one economic region.
+The composition of economic regions is determined through a consultative process with the provinces, except for 
+Quebec, where economic regions (régions administratives) are designated by law.
+The current boundaries are based on the 2021 Standard Geographical Classification (SGC). Excluding the 
+territories, the LFS publishes estimates for 66 ERs, seven of which are combined for data quality purposes. 
+Combined ERs include: South Coast-Burin Peninsula and Notre Dame-Central Bonavista Bay (Newfoundland and 
+Labrador); Prince Edward Island; Côte-Nord and Nord-du-Québec (Quebec), Parklands and North (Manitoba); 
+Prince Albert and Northern Saskatchewan (Saskatchewan); Banff-Jasper-Rocky Mountain House and Athabasca-
+Grande Prairie-Peace River (Alberta); North Coast and Nechako (British Columbia). 
+Employment insurance economic region (EIER)
+In compliance with the Employment Insurance Act, the Labour Force Survey publishes seasonally adjusted, three-
+month moving average unemployment rates for employment insurance economic regions (EIERs). These rates are 
+generally used to determine eligibility, benefit entitlement and weekly amount of benefits for persons living within a 
+particular EIER.
+Unemployment rates for the EI program also contain a specific adjustment to account for Indigenous peoples 
+living on reserves. As such, estimates for EIER may not match estimates published in other tables.
+The boundaries of these regions are determined by Employment and Social Development Canada (ESDC) and 
+are currently based on 1996 Census boundaries, with the exception of those in Prince Edward Island and in the 
+territories, which respect the 2011 Census boundaries.
+For geographic descriptions and maps of employment insurance economic regions, see the ESDC website.
+
+PAGE 44
+Statistics Canada – Catalogue no. 71-543-G
+44
+Guide to the Labour Force Survey 2025
+The employment insurance economic regions are outlined below by province.
+Newfoundland and Labrador
+01. St. John’s; 02. Newfoundland and Labrador.
+Prince Edward Island
+65. Charlottetown; 66. Prince Edward Island.
+Nova Scotia
+04. Eastern Nova Scotia; 05. Western Nova Scotia; 06. Halifax.
+New Brunswick
+07. Fredericton–Moncton–Saint John; 08. Madawaska–Charlotte; 09. Restigouche–Albert.
+Quebec
+10. Gaspésie–Îles-de-la-Madeleine; 11. Quebec; 12. Trois-Rivières; 13. South Central Quebec; 14. Sherbrooke; 15. 
+Montérégie; 16. Montreal; 17. Central Quebec; 18. North Western Quebec; 19. Lower Saint Lawrence and North 
+Shore; 20. Hull; 21. Chicoutimi–Jonquière.
+Ontario
+22. Ottawa; 23. Eastern Ontario; 24. Kingston; 25. Central Ontario; 26. Oshawa; 27. Toronto; 28. Hamilton; 29. 
+St. Catharines; 30. London; 31. Niagara; 32. Windsor; 33. Kitchener; 34. Huron; 35. South Central Ontario; 36. 
+Sudbury; 37. Thunder Bay; 38. Northern Ontario.
+Manitoba
+39. Winnipeg; 40. Southern Manitoba; 41. Northern Manitoba.
+Saskatchewan
+42. Regina; 43. Saskatoon; 44. Southern Saskatchewan; 45. Northern Saskatchewan.
+Alberta
+46. Calgary; 47. Edmonton; 48. Northern Alberta; 49. Southern Alberta.
+British Columbia
+50. Southern Interior British Columbia; 51. Abbotsford; 52. Vancouver; 53. Victoria; 54. Southern Coastal British 
+Columbia; 55. Northern British Columbia.
+Yukon
+59. Whitehorse; 60. Yukon (excluding Whitehorse).
+Northwest Territories
+61. Yellowknife; 62. Northwest Territories (excluding Yellowknife).
+Nunavut
+63. Iqaluit; 64. Nunavut (excluding Iqaluit).
+
+PAGE 45
+Statistics Canada – Catalogue no. 71-543-G      
+45
+Guide to the Labour Force Survey 2025
+Appendix B – Sample size by sub-provincial region, based on the 2025 sample design
+Table B-1 
+Sample size by census metropolitan area (CMA), based on the 2025 sample design
+CMA
+Standard Geographical  
+Classification (SGC) code
+Sample  
+size
+number of 
+households
+St. John's 10001 1,390
+Halifax 12205 1,479
+Moncton 13305 736
+Saint John 13310 595
+Fredericton 13320 419
+Saguenay 24408 895
+Québec 24421 766
+Sherbrooke 24433 897
+Trois-Rivières 24442 996
+Drummondville 24447 217
+Montréal 24462 2,805
+Ottawa–Gatineau 24505, 35505 1,602
+Ottawa–Gatineau (Quebec part) 24505 782
+Ottawa–Gatineau (Ontario part) 35505 820
+Kingston 35521 937
+Belleville - Quinte West 35522 235
+Peterborough 35529 194
+Oshawa 35532 664
+Toronto 35535 5,479
+Hamilton 35537 885
+St. Catharines–Niagara 35539 803
+Kitchener–Cambridge–Waterloo 35541 983
+Brantford 35543 365
+Guelph 35550 238
+London 35555 774
+Windsor 35559 954
+Barrie 35568 213
+Greater Sudbury 35580 1,045
+Thunder Bay 35595 984
+Winnipeg 46602 2,334
+Regina 47705 784
+Saskatoon 47725 1,049
+Lethbridge 48810 219
+Calgary 48825 1,002
+Red Deer 48830 245
+Edmonton 48835 1,083
+Kelowna 59915 222
+Kamloops 59925 259
+Chilliwack 59930 219
+Abbotsford–Mission 59932 989
+Vancouver 59933 2,541
+Victoria 59935 933
+Nanaimo 59938 218
+Source: Labour Force Survey (3701).
+
+PAGE 46
+Statistics Canada – Catalogue no. 71-543-G
+46
+Guide to the Labour Force Survey 2025
+Table B-2 
+Sample size by economic region (ER), based on the 2025 sample design 
+ER
+Standard Geographical  
+Classification (SGC) code
+Sample 
+size
+number of 
+households
+Avalon Peninsula 1010 1,836
+South Coast–Burin Peninsula and Notre Dame–Central Bonavista Bay 1020, 1040 1,085
+West Coast–Northern Peninsula–Labrador 1030 802
+Prince Edward Island 1110 1,600
+Cape Breton 1210 620
+North Shore 1220 532
+Annapolis Valley 1230 397
+Southern 1240 433
+Halifax 1250 1,411
+Campbellton–Miramichi 1310 876
+Moncton–Richibucto 1320 1,073
+Saint John–St. Stephen 1330 829
+Fredericton–Oromocto 1340 584
+Edmundston–Woodstock 1350 549
+Gaspésie–Îles-de-la-Madeleine 2410 567
+Bas-Saint-Laurent 2415 585
+Capitale-Nationale 2420 767
+Chaudière-Appalaches 2425 835
+Estrie 2430 1,066
+Centre-du-Québec 2433 398
+Montérégie 2435 1,472
+Montréal 2440 1,141
+Laval 2445 526
+Lanaudière 2450 297
+Laurentides 2455 500
+Outaouais 2460 943
+Abitibi-Témiscamingue 2465 555
+Mauricie 2470 1,022
+Saguenay–Lac-Saint-Jean 2475 1,121
+Côte-Nord and Nord-du-Québec 2480, 2490 250
+Ottawa 3510 1,342
+Kingston–Pembroke 3515 1,438
+Muskoka–Kawarthas 3520 339
+Toronto 3530 6,094
+Kitchener–Waterloo–Barrie 3540 1,782
+Hamilton–Niagara Peninsula 3550 2,388
+London 3560 1,058
+Windsor–Sarnia 3570 1,685
+Stratford–Bruce Peninsula 3580 341
+Northeast 3590 1,896
+Northwest 3595 1,156
+Southeast 4610 453
+South Central and North Central 4620, 4640 278
+Southwest 4630 502
+Winnipeg 4650 2,152
+Interlake 4660 387
+Parklands and North 4670, 4680 374
+Regina–Moose Mountain 4710 1,040
+Swift Current–Moose Jaw 4720 349
+Saskatoon–Biggar 4730 1,191
+Yorkton–Melville 4740 256
+Prince Albert and Northern 4750, 4760 1,068
+Lethbridge–Medicine Hat 4810 321
+Camrose–Drumheller 4820 246
+Calgary 4830 1,064
+Banff–Jasper–Rocky Mountain House and Athabasca–Grande Prairie–Peace River 4840, 4870 554
+Red Deer 4850 326
+Edmonton 4860 1,114
+Wood Buffalo–Cold Lake 4880 471
+
+PAGE 47
+Statistics Canada – Catalogue no. 71-543-G      
+47
+Guide to the Labour Force Survey 2025
+Table B-2 
+Sample size by economic region (ER), based on the 2025 sample design 
+ER
+Standard Geographical  
+Classification (SGC) code
+Sample 
+size
+number of 
+households
+Vancouver Island and Coast 5910 1,558
+Lower Mainland–Southwest 5920 3,863
+Thompson–Okanagan 5930 718
+Kootenay 5940 256
+Cariboo 5950 322
+North Coast and Nechako 5960, 5970 296
+Northeast 5980 250
+Source: Labour Force Survey (3701).
+Table B-3 
+Sample size by employment insurance economic region (EIER), based on the 2025 sample design
+EIER Code
+Sample 
+size
+number of 
+households
+St. John’s 001 1,360
+Newfoundland and Labrador 002 2,364
+Charlottetown 003 834
+Prince Edward Island 062 766
+Eastern Nova Scotia 004 757
+Western Nova Scotia 005 1,256
+Halifax 006 1,379
+Fredericton–Moncton–Saint John 007 1,851
+Madawaska–Charlotte 008 763
+Restigouche–Albert 009 1,298
+Gaspésie–Îles-de-la-Madeleine 010 827
+Québec 011 754
+Trois-Rivières 012 978
+South Central Quebec 013 657
+Sherbrooke 014 744
+Montérégie 015 794
+Montreal 016 2,620
+Central Quebec 017 1,183
+North Western Quebec 018 909
+Lower Saint Lawrence and North Shore 019 972
+Hull 020 750
+Chicoutimi–Jonquière 021 857
+Ottawa 022 715
+Eastern Ontario 023 859
+Kingston 024 925
+Central Ontario 025 1,110
+Oshawa 026 664
+Toronto 027 5,479
+Hamilton 028 885
+St. Catharines 029 803
+London 030 743
+Niagara 031 755
+Windsor 032 733
+Kitchener 033 966
+Huron 034 979
+South Central Ontario 035 852
+Sudbury 036 994
+Thunder Bay 037 975
+Northern Ontario 038 1,083
+
+PAGE 48
+Statistics Canada – Catalogue no. 71-543-G
+48
+Guide to the Labour Force Survey 2025
+Table B-3 
+Sample size by employment insurance economic region (EIER), based on the 2025 sample design
+EIER Code
+Sample 
+size
+number of 
+households
+Winnipeg 039 2,304
+Southern Manitoba 040 1,220
+Northern Manitoba 041 621
+Regina 042 781
+Saskatoon 043 1,044
+Southern Saskatchewan 044 987
+Northern Saskatchewan 045 1,091
+Calgary 046 990
+Edmonton 047 1,083
+Northern Alberta 048 856
+Southern Alberta 049 1,167
+Southern Interior British Columbia 050 974
+Abbotsford 051 989
+Vancouver 052 2,541
+Victoria 053 933
+Southern Coastal British Columbia 054 934
+Northern British Columbia 055 891
+Whitehorse 056 164
+Yukon (excluding Whitehorse) 059 66
+Yellowknife 057 105
+Northwest Territories (excluding Yellowknife) 060 126
+Iqaluit 058 58
+Nunavut (excluding Iqaluit) 061 165
+Source: Labour Force Survey (3701).
+
+PAGE 49
+Statistics Canada – Catalogue no. 71-543-G      
+49
+Guide to the Labour Force Survey 2025
+Appendix C – Information on the Labour Force Survey questionnaire
+The LFS application consists of several questionnaire components (Household, Demographics, Labour Force 
+Information (LFI), Rent and Exit). Each of the questionnaire components is comprised of a number of question 
+blocks and each question is identified by their block ID and electronic questionnaire question number. In some 
+instances, question numbers are repeated within components (e.g. there are three separate questions in the 
+household, demographics and the LFI component labelled as EQ 1).
+Question wording within the collection application is controlled dynamically based on responses provided 
+throughout the survey. For simplicity, as a result of the complexity of the logic within the application, not all 
+variations of these questions are presented. 
+Selected dwellings are in the survey for six consecutive months. A birth interview corresponds to the first interview 
+for a new household, and is usually conducted in person. 
+Subsequent interviews are conducted in the following months, and are usually done by telephone. Starting in 
+2015, LFS respondents who met certain criteria were also offered the option of completing the survey on-line for 
+subsequent interviews.
+Starting in fall 2024, some dwellings may be invited to complete a brief initial survey to confirm contact 
+information, before completing the main LFS questionnaire for six months. 
+Refer to the following page to view the LFS questionnaire: Questionnaire(s) and Reporting guide(s) - Labour Force 
+Survey questionnaire.

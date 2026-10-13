@@ -1,0 +1,2276 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 9]><html class="no-js lt-ie9" lang="en" dir="ltr"><![endif]--><!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+<!--<![endif]-->
+
+<head>
+<meta charset="utf-8">
+<link rel="schema.dc" href="http://purl.org/dc/elements/1.1/" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<!-- wet-boew.github.io/wet-boew/License-en.htm / wet-boew.github.io/wet-boew/Licence-en.htm -->
+
+
+<meta content="width=device-width,initial-scale=1" name="viewport" />
+
+<title>Chapter 2 Sample design</title>
+<meta name="dcterms.title" content="Methodology of the Canadian Labour Force Survey. Chapter 2 Sample design" />
+<meta name="dcterms.language" title="ISO639-2" content="eng" />
+<meta name="dcterms.creator" content="Government of Canada, Statistics Canada" />
+<meta name="dcterms.issued" title="W3CDTF" content="2017-03-29" />
+<meta name="dcterms.modified" title="W3CDTF" content="2017-03-29" />
+<meta name="dcterms.subject" title="gcstc" content="none" />
+<meta name="description" content="" />
+<meta name="keywords" content="none" />
+<meta name="STCtopic" content="Education, training and learning; Labour" />
+<meta name="STCtopicID" content="1821; 2621" />
+<meta name="STCsubtopic" content="Fields of study; Outcomes of education; Adult education and training; Job training and educational attainment" />
+<meta name="STCsubtopicID" content="1586; 3073; 966; 2624" />
+<meta name="STCtype" content="Survey documentation" />
+<meta name="STCthesaurus" content="none" />
+
+<meta property="dcterms:service" content="StatCan"/> 
+<meta property="dcterms:accessRights" content="2"/>
+
+<link href="/wet-boew4b/assets/favicon.ico" rel="icon" type="image/x-icon">
+<link rel="stylesheet" href="/wet-boew4b/css/wet-boew.min.css">
+<script src="/wet-boew4b/js/jquery.min.js"></script>
+
+<link rel="stylesheet" href="/wet-boew4b/css/theme.min.css">
+<link rel="stylesheet" href="/wet-boew4b/css/statcan.css">
+<link rel="stylesheet" href="/wet-boew4b/invitation-manager/Overlay.css"> 
+
+<noscript><link rel="stylesheet" href="/wet-boew4b/css/noscript.min.css" /></noscript>
+<!-- Adobe Analytics v5 production version --><!--script src="//assets.adobedtm.com/be5dfd287373/8cdb3d539c44/launch-6df9e9b447f9.min.js"></script-->
+<!-- Adobe Analytics v5 staging version --><!--script src="//assets.adobedtm.com/be5dfd287373/8cdb3d539c44/launch-dfa8abb35555-staging.min.js"></script-->
+<!-- Adobe Analytics v10 production version --><script src="//assets.adobedtm.com/be5dfd287373/8f0ead8a37e7/launch-09394abc039d.min.js"></script>
+
+<script>dataLayer1 = [];</script>
+
+
+
+<script src="/Framework/js/jquery.tooltipster.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/Framework/css/tooltipster.css">
+<link rel="stylesheet" type="text/css" href="/Framework/css/pubs_wet4.css">
+<link rel="stylesheet" type="text/css" href="/wet-boew4b/css/font-awesome.min.css">
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  config: ["MMLorHTML.js"],
+  jax: ["input/MathML","output/HTML-CSS","output/NativeMML"],
+  extensions: ["mml2jax.js","MathMenu.js","MathZoom.js"]
+});
+</script>
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js">
+</script>
+<script>!window.MathJax && document.write(unescape('%3Cscript src="/mathjax/MathJax.js"%3E%3C/script%3E'))</script>
+
+
+<!-- CustomScriptsCSSEnd -->
+</head>
+
+<body vocab="http://schema.org/" typeof="WebPage">
+
+<ul id="wb-tphp">
+<li class="wb-slc">
+<a class="wb-sl" href="#wb-cont">Skip to main content</a>
+</li>
+<li class="wb-slc visible-sm visible-md visible-lg">
+<a class="wb-sl" href="#wb-info">Skip to "About this site"</a>
+</li>
+</ul>
+<header role="banner">
+<div id="wb-bnr" class="container">
+<section id="wb-lng" class="visible-md visible-lg text-right">
+<h2 class="wb-inv">Language selection</h2>
+<div class="row">
+<div class="col-md-12">
+<ul class="list-inline margin-bottom-none">
+<li><a lang="fr" href="
+/cgi-bin/change.cgi
+">Fran&#231;ais</a></li>
+</ul>
+</div>
+</div>
+</section>
+<div class="row">
+<div class="brand col-xs-9 col-sm-5 col-md-4">
+<a href="https://www.canada.ca/en.html"><img src="/wet-boew4b/assets/sig-blk-gov-en.svg" alt="Government of Canada"><span class="wb-inv"> / <span lang="fr">Gouvernement du Canada</span></span></a>
+</div>
+<section class="wb-mb-links col-sm-offset-4 col-xs-4 col-sm-3 visible-sm visible-xs" id="wb-glb-mn">
+<h2>Search and menus</h2>
+<ul class="list-inline text-right chvrn">
+<li><a href="#mb-pnl" title="Search and menus" aria-controls="mb-pnl" class="overlay-lnk" role="button"><span class="glyphicon glyphicon-search"><span class="glyphicon glyphicon-th-list"><span class="wb-inv">Search and menus</span></span></span></a></li>
+</ul>
+<div id="mb-pnl"></div>
+</section>
+
+<section id="wb-srch" class="col-lg-offset-2 col-md-offset-2 col-xs-6 text-right visible-md visible-lg">
+<h2 class="wb-inv">Search</h2>
+<form action="https://www.statcan.gc.ca/search/results/site-search" method="get" name="cse-search-box" role="search" class="form-inline">
+<div class="form-group wb-srch-qry">
+<label for="wb-srch-q" class="wb-inv">Search Statistics Canada</label>
+<input type="hidden" name="fq" value="stclac:2" />
+<input id="wb-srch-q" list="wb-srch-q-ac" class="wb-srch-q form-control" name="q" type="search" value="" size="27" maxlength="150" placeholder="Search Statistics Canada">
+<datalist id="wb-srch-q-ac">
+</datalist>
+</div>
+<div class="form-group submit">
+<button type="submit" id="wb-srch-sub" class="btn btn-primary btn-small" name="wb-srch-sub"><span class="glyphicon-search glyphicon"></span><span class="wb-inv">Search</span></button>
+</div>
+</form>
+</section>
+</div>
+</div>
+
+<nav role="navigation" id="wb-sm" class="wb-menu visible-md visible-lg" data-trgt="mb-pnl" data-ajax-replace="/wet-boew4b/ajax/sitemenu-en.html" typeof="SiteNavigationElement">
+	<div class="container nvbar">
+		<h2 class="wb-inv">Topics menu</h2>
+		<div class="row">
+			<ul class="list-inline menu">
+				<li><a href="https://www150.statcan.gc.ca/n1/en/subjects?MM=1">Subjects</a></li>
+				<li><a href="https://www150.statcan.gc.ca/n1/en/type/data?MM=1">Data</a></li>
+				<li><a href="https://www150.statcan.gc.ca/n1/en/type/analysis?MM=1">Analysis</a></li>
+				<li><a href="https://www.statcan.gc.ca/en/reference?MM=1">Reference</a></li>
+				<li><a href="https://www.statcan.gc.ca/en/geography?MM=1">Geography</a></li>
+				<li><a href="https://www.statcan.gc.ca/en/census?MM=1">Census</a></li>
+				<li><a href="https://www.statcan.gc.ca/en/surveys?MM=1">Surveys and statistical programs</a></li>
+				<li><a href="https://www.statcan.gc.ca/en/about/statcan?MM=1">About StatCan</a></li>
+				<li><a href="https://www.canada.ca/en.html">Canada.ca</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<nav role="navigation" id="wb-bc" class="" property="breadcrumb">
+	<div class="container">
+		<div class="row">
+
+<!-- Breadcrumb trail -->
+<ol class="breadcrumb">
+<li><a href="http://www.statcan.gc.ca/eng/start" title="Main page of Statistics Canada">Home</a></li>
+<li><a href="/cgi-bin/IPS/display?cat_num=71-526-x" title="Online catalogue: 71-526-X">71-526-X</a></li>
+<li><a href="/pub/71-526-x/71-526-x2017001-eng.htm" title="Main page: Methodology of the Canadian Labour Force Survey">Main page</a></li>
+<li>Chapter 2 Sample design</li>
+</ol>
+
+</div>
+</div>
+</nav>
+</header>
+
+<main role="main" property="mainContentOfPage" class="container">
+
+
+<!--H1 and logo start-->
+<section>
+  <h1 property="name" id="wb-cont">
+  <span class="hidden-xs hidden-sm"><span class="small">Methodology of the Canadian Labour Force Survey</span><br>
+    Chapter 2 Sample design</span>
+  <small class="visible-sm visible-xs"><span class="small">Methodology of the Canadian Labour Force Survey</span><br/>
+  Chapter 2 Sample design</small></h1>
+  
+  
+  
+
+<div class="row pstn-tp-sm pstn-rght-sm mrgn-tp-xl"> 
+     <a href="#toc-tdm" aria-controls="toc-tdm" class="btn btn-xs wb-lbx btn-primary mrgn-rght-sm"><span class="glyphicon glyphicon-list mrgn-rght-sm" title="Table of contents"></span>Table of contents</a>
+</div>
+
+
+<details class="hidden-xs hidden-sm rel-article mrgn-bttm-md hidden-print"><summary class="rel-article"><span class="h4">On this page</span></summary>
+
+<ul>
+ <li class="list-unstyled"><a href="#a20">2.0 Introduction</a></li>
+ <li class="list-unstyled"><a href="#a21">2.1 Some basic survey theory concepts</a></li>
+ <li class="list-unstyled"><a href="#a22">2.2 Overview of the sample design</a>
+ 		<ul>
+        <li class="list-unstyled"><a href="#a221">2.2.1 The Dwelling Universe File and its impact on the sample design</a></li>
+        </ul></li>
+ <li class="list-unstyled"><a href="#a23">2.3 Sample allocation</a>
+ 		<ul>
+        <li class="list-unstyled"><a href="#a231">2.3.1 Allocation of the sample funded by Statistics Canada</a></li>
+        <li class="list-unstyled"><a href="#a232">2.3.2 Allocation of the sample funded by <abbr title="Employment and Social Development Canada">ESDC</abbr></a></li>
+        </ul></li>
+        
+ <li class="list-unstyled"><a href="#a24">2.4 Creation of <abbr title="Primary sampling units">PSUs</abbr></a></li>
+ <li class="list-unstyled"><a href="#a25">2.5 Stratification</a>
+ 		<ul>
+        <li class="list-unstyled"><a href="#a251">2.5.1 Changes made during this redesign</a></li>
+        <li class="list-unstyled"><a href="#a252">2.5.2 Stratum size</a></li>
+        <li class="list-unstyled"><a href="#a253">2.5.3 Adjustments to geographic boundaries</a></li>
+        <li class="list-unstyled"><a href="#a254">2.5.4 Special strata</a></li>
+        <li class="list-unstyled"><a href="#a255">2.5.5 Stratification of the remaining <abbr title="Primary sampling units">PSUs</abbr></a></li>
+        <li class="list-unstyled"><a href="#a256">2.5.6 Creating strata in Prince Edward Island</a></li>        
+        </ul></li>
+        
+ <li class="list-unstyled"><a href="#a26">2.6 Sample selection strategy</a>
+ 		<ul>
+        <li class="list-unstyled"><a href="#a261">2.6.1 Sample allocation of <abbr title="Primary sampling units">PSUs</abbr> to Strata</a></li>  
+        <li class="list-unstyled"><a href="#a262">2.6.2 Overview of the <abbr title="Rao-Hartley-Cochran">RHC</abbr> method</a></li>  
+        <li class="list-unstyled"><a href="#a263">2.6.3 <abbr title="Primary sampling unit">PSU</abbr> and start selection</a></li>  
+        <li class="list-unstyled"><a href="#a264">2.6.4 Sample rotation</a></li> 
+        </ul></li> 
+        
+ <li class="list-unstyled"><a href="#fn">Notes</a></li>
+
+
+</ul>
+</details>
+
+
+ <!--CONTENT-->
+ 
+<h2 id="a20" class="mrgn-tp-md">2.0 Introduction</h2>
+
+
+<p>As mentioned in  <a href="chapt1-eng.htm">Chapter 1</a>, the objective of the Labour Force Survey (LFS) is to produce  reliable and timely data on employment, unemployment and characteristics of the  working-age population at various levels of geography. In theory, such data  could be acquired through an administrative source, a census of the population,  or a sample survey. As there is currently no administrative source available  that can produce the required estimates, nor is it feasible to conduct a census  and contact everyone of working age every month to determine their employment  status, a sample of the population is contacted, and their responses are used  to produce monthly labour force estimates.</p>
+<p>   The sample design consists of all the steps to  be carried out when selecting a sample. It impacts the quality of estimates  produced and the survey costs. Since a significant portion of a survey&rsquo;s budget  is spent on data collection, the sample design tries to minimize collection  costs while maximizing data quality. </p>
+ <p>   This chapter describes the various strategies  the <abbr title="Labour Force Survey">LFS</abbr> uses to achieve this objective in the ten provinces. First, <a href="#a21">Section 2.1</a> presents some basic concepts of survey theory that will be used throughout this  chapter. <a href="#a22">Section 2.2</a> outlines the overall <abbr title="Labour Force Survey">LFS</abbr> sample design. The sample allocation  is described in <a href="#a23">Section 2.3</a>.  <a href="#a24">Section 2.4</a> describes how the clusters are formed and <a href="#a25">Section 2.5</a> describes how they are  stratified.  Finally, <a href="#a26">Section 2.6</a> describes the sample selection process and rotation methodology. </p>
+ <h2 id="a21">2.1 Some basic survey theory concepts</h2>
+<p>This section presents some concepts required in  order to understand the sample design that is described in the following  sections. For further information, a conceptual overview of survey theory is  available in Survey Methods and Practices (Statistics Canada (2003)). More  technical details can be found in one of the many books on sampling theory (<abbr title="for example">e.g.</abbr>, Cochran 1977 or Särndal, Swensson  and Wretman 1992).</p>
+<p>   Data collected from a sample survey are used to  produce estimates for the <em>target  population</em> - the group or population of interest. Selecting a sample  requires a <em>survey frame</em>, which should  correspond as closely as possible to the target population although practical  constraints may prevent this. The <abbr title="Labour Force Survey">LFS</abbr> selects a <em>probabilistic sample</em>, <em><abbr title="that is to say">i.e</abbr></em>.,  a subset of the population for which the surveyed units are selected at random. <em>Estimates</em> for the population are  calculated based on the information provided from this sample. </p>
+<p>   Estimates can differ depending on which  individuals are selected in the sample. Also, the estimate produced from a  sample differs from the estimate produced if the entire population was inter­viewed.  These types of differences are called <em>sampling  errors</em>. Survey results also have other errors not associated with the  sample design, called <em>non-sampling errors</em>. </p>
+<p>   Two important measures of sampling error are <em>bias</em> and <em>sampling variance</em>. Suppose that it is possible to select several different  samples using the same sample design. For each sample, an estimate of the  characteristic of interest (<abbr title="for example">e.g.</abbr>, the  number of unemployed, average number of hours worked) can be produced from the  observed data. Bias is the difference between the average of the estimates  produced from all of the possible samples and the corresponding true value for  the whole population. The variability between the sample estimates, or how  different they are from one another, is the sampling variance.</p>
+<p>   Bias can be caused by a number of sources, such  as an imperfect survey frame, the method used to produce the estimate, or survey  nonresponse. The sample design can add bias when some regions are excluded from  survey coverage (<abbr title="for example">e.g.</abbr> due to  prohibitive collection costs). This error component can be difficult to measure  in practice because the true value for the population is generally unknown. </p>
+<p>   Sampling variance measures the spread between  the estimates produced from all the possible samples. It reflects the degree of  precision of an estimate: the smaller the sampling variance, the more precise  the estimate. Sampling variance can be estimated from a single observed sample,  even though it reflects variability between many theoretical samples.</p>
+<p>   Other measures of variability are derived from  sampling variance. <em>Standard error</em> is  obtained by taking the square root of the sampling variance and is often used  to determine a <em>confidence interval</em> or  to carry out a <em>statistical test</em>.  Standard error is an <em>absolute measure</em> of variation, since it is measured in the same units as the estimate. Another  measure is the <em>Coefficient of Variation</em> (CV), which is defined as the standard error divided by the estimate. The <abbr title="Coefficient of Variation">CV</abbr> is  a <em>relative measure</em>, since it is  unit-free and calculated relative to the estimate. A third measure is the <em>design effect</em>, a relative measure calculated  by dividing the sampling variance of an estimate obtained under the survey  design by the sampling variance of a Simple Random Sample (SRS) of the same  sample size.  It can be used to compare  the effectiveness of one sample design to another. The smaller the standard  error, confidence interval length, <abbr title="Coefficient of Variation">CV</abbr> or design effect is, the more precise the  estimate is. </p>
+<p>   The primary goal of an effective sample design is  to reduce the sampling variance given limited budget and operational  constraints. A more efficient sample design can obtain the same precision of  the estimates (as measured by sampling variance) using a smaller sample size than  another less efficient design. Similarly, given a fixed total sample size, a  more efficient sample design has lower sampling variance than a less efficient  sample design. </p>
+ <p>   Several factors influence the sampling variance  of an estimate. The most influential factors are the number of individuals in  the population, the number of individuals in the sample, the sampling method  used to draw the sample, the response rate, and the homogeneity of the  characteristic of interest in the population. The size of the population cannot  be controlled. Response rates can sometimes be changed by data collection, but  usually not by the sample design. However, by controlling the number of  individuals in the sample, the sampling method used to draw the sample, and the  homogeneity within sampled groups, a more effective sample design can be  obtained. </p>
+ <h2 id="a22">2.2 Overview  of the sample design</h2>
+<p>The <abbr title="Labour Force Survey">LFS</abbr> uses a complex sample design. A more  efficient sampling method would be simple random sampling (SRS), where units  are selected at random from a list with equal probability. However, a simple  random sample of individuals requires a list of all individuals in the target  population, which may be difficult to obtain in practice. Also, operational  constraints may prevent the feasibility of an <abbr title="Simple Random Sample">SRS</abbr> design requiring a more  complex sampling method to be used.</p>
+<p>   For most <abbr title="Labour Force Survey">LFS</abbr> estimates the target population is  all persons in Canada aged 15 and over. It is impossible to directly select a  sample of such persons to interview since a complete and up-to-date list of  persons residing in the ten provinces is not available. Instead of selecting  persons directly, it is easier to select dwellings and then identify and  interview persons living in the selected dwellings. Although a fairly complete  and regularly updated list of dwelling addresses is now available (see <a href="#a221">Section  2.2.1</a>), selecting dwellings by simple random sampling would lead to a sample  that would be too geographically spread out. As a result, travel costs  associated with in-person collection could be exceedingly high. </p>
+<p>   To reduce travel costs, the sample of dwellings  is taken through two consecutive selection stages. This method is called  two-stage sampling. In the first stage, the provinces are divided into geographic  regions called clusters or primary sampling units (PSUs). A random selection of  these <abbr title="Primary sampling units">PSUs</abbr> makes up the first stage sample. In the second stage, for each  selected <abbr title="Primary sampling unit">PSU</abbr>, a list of dwellings in the region is established either by an  extraction from the Address Register (The Dwelling Universe File (<a href="#a221">Section 2.2.1</a>)) or through field  listing. A second-stage sample of dwellings is selected from these lists.  Dwellings are the secondary sampling units (SSUs). All of the residents, who  are part of the target population occupying the selected dwellings within the  selected clusters, make up the <abbr title="Labour Force Survey">LFS</abbr> sample of persons. This two-stage selection  method is more complex but reduces the geographic spread of the sampled persons  by clustering them, thereby reducing costs.</p>
+<p>   Starting in January 2015, the sample design in  Prince Edward Island (PEI) was changed to one-stage sampling. This means that  dwellings are selected directly from a list, without any clusters. <a href="#a256">Section  2.5.6</a> has more information about the one-stage sample design in <abbr title="Prince Edward Island">PEI</abbr>.</p>
+<p>   In addition to the monthly estimates described  in <a href="chapt1-eng.htm#a12">Section 1.2</a>, the <abbr title="Labour Force Survey">LFS</abbr> produces change estimates between two given reference  periods. To improve the quality of these estimates, it is preferable to  increase the overlap between the samples of these two periods, which is only  possible by keeping the same dwellings in the sample for several months. Unfortunately,  when the sample overlap is increased, the burden imposed on respondents rises  because they must participate in the survey several times. This increased  burden could lead to a lower response rate. On the other hand, in addition to  improved quality, a bigger overlap also reduces survey collection costs, since  it costs less to obtain a response in subsequent months than in the first  month. Therefore, the sample overlap is a compromise between the quality of the  change estimates and the cost of survey operations versus the burden imposed on  respondents.</p>
+<p>   It was decided to keep each dwelling in the <abbr title="Labour Force Survey">LFS</abbr> sample  for six consecutive months. Subject to this limitation, the maximum overlap of  the sample between two consecutive months is five-sixths. Therefore, it is  necessary to replace one-sixth of the sample of dwellings each month. To  implement this strategy, the <abbr title="Labour Force Survey">LFS</abbr> <abbr title="Primary sampling unit">PSU</abbr> population is divided into six rotation  groups<sup id="n1-refa"><a class="fn-lnk" href="#n1"><span class="wb-inv">Note </span>1</a></sup>, with a sample  selected in each group representing the whole population. The first rotation  group is initially contacted in January. These dwellings then remain in the  sample until June inclusively. In July, all the dwellings in rotation group 1  are replaced by a new sample of dwellings from the same rotation group. The  second rotation group is made up of the dwellings initially surveyed from  February to July inclusively, and so on for the other rotation groups. The  rotation pattern is illustrated in <a href="#fig2_1-eng">Figure 2.1</a> at the end of the chapter. More  information about the rotation of the dwelling sample is provided in <a href="#a264">Section 2.6.4</a>. </p>
+ <p>   The strategy of overlapping rotation groups has  some advantages. First, it allows for more effective processing and estimation  methods (described in <a href="chapt5-eng.htm">Chapters 5</a> and <a href="chapt6-eng.htm" title="Chapter 6">6</a>). It also permits a simple method for  selecting a subset of the <abbr title="Labour Force Survey">LFS</abbr> sample for other Statistics Canada surveys. Since  each rotation group represents the whole population, it is straightforward to  build the sample for another survey by grouping together the dwellings from an  appropriate number of rotation groups. Information on using the <abbr title="Labour Force Survey">LFS</abbr> survey  frame and sample for other household surveys is given in <a href="chapt9-eng.htm">Chapter 9</a>. </p>
+
+
+ <h3 id="a221">2.2.1 The Dwelling Universe File and its impact on  the sample design</h3>
+<p>For the sample design, it is important to know  approximately how many dwellings and how many occupied dwellings (<em><abbr title="that is to say">i.e</abbr>.</em>, dwellings that correspond to  households of persons) are in the <abbr title="Labour Force Survey">LFS</abbr> population.  The counts are used for <abbr title="Primary sampling unit">PSU</abbr> creation, sample  allocation and stratification. For previous <abbr title="Labour Force Survey">LFS</abbr> designs, these counts came from  the most recent Census. However, the most recent Census counts are from May  2011 while this redesign was phased in starting January 2015. </p>
+<p>   To have a more up-to-date count of the total  number of dwellings in the population, the Dwelling Universe File (DUF) was  used for this design.  The <abbr title="Dwelling Universe File">DUF</abbr> is an  extraction from Statistics Canada&rsquo;s Address Register (AR) database that  contains residential addresses (dwellings). It is updated quarterly, using the  latest administrative files available and the results of field listing and  verification.  </p>
+ <p>   For planning the redesign, the June 2013  extract of the <abbr title="Dwelling Universe File">DUF</abbr> was used. Since the <abbr title="Dwelling Universe File">DUF</abbr> did not identify occupied dwellings,  the number needed to be estimated. This was done by multiplying the total  number of dwellings on the <abbr title="Dwelling Universe File">DUF</abbr> by the dwelling occupancy rate from the 2011  Census. </p>
+ <h2 id="a23">2.3 Sample  allocation</h2>
+<p>As described in <a href="chapt1-eng.htm">Chapter 1</a>, the <abbr title="Labour Force Survey">LFS</abbr> is the official source of monthly  estimates of total employment and unemployment. The <abbr title="Labour Force Survey">LFS</abbr> is also one of the main  sources of information on socio-demographic characteristics of the working-age  population such as age, marital status, level of education and family status.  </p>
+<p>   The <abbr title="Labour Force Survey">LFS</abbr> produces data for a variety of geographic regions including  National, Provincial and sub-provincial regions, such as Economic Regions  (ERs), Census Metropolitan Areas (CMAs) and Employment Insurance Economic  Regions (EIERs). The sample allocation step specifies the target number of households to  select in each of these regions<sup id="n2-refa"><a class="fn-lnk" href="#n2"><span class="wb-inv">Note </span>2</a></sup>.  It is esta­blished to ensure that the sample can produce estimates that satisfy  various <abbr title="Labour Force Survey">LFS</abbr> precision objectives. This is a crucial step because the subsequent  steps depend on it, and it ensures that the survey resources are effectively  used. More information on the Census related geographies used by the <abbr title="Labour Force Survey">LFS</abbr> can be  found in the Census Dictionary (Statistics Canada (2012)).</p>
+<p>   As explained in <a href="#a21">Section 2.1</a>, the number of units  sampled has a direct impact on the quality of the esti­mates produced by the  survey. Since the total sample size is fixed, too much sample assigned to a  given region will produce estimates for that region that are of better quality  than required by the survey objectives to the detriment of the data quality in other  regions. The <abbr title="Labour Force Survey">LFS</abbr> produces estimates at various geographical levels (Canada,  provinces, economic regions, <abbr title="and so on"><em>etc</em></abbr>.), so  it is necessary to reach a suitable compromise for all these estimates when  allocating the finite-budgeted sample. </p>
+ <p>   In order to meet the survey objectives and  maintain the overall efficacy of the survey design, the <abbr title="Labour Force Survey">LFS</abbr> sample is allocated  in two steps. In the first step, sample funded by Statistics Canada is  allocated. In the second step, additional sample funded by Employment and Social Development Canada (ESDC) is added. This two-step approach is based on  the hypothesis that the Statistics Canada <abbr title="Labour Force Survey">LFS</abbr> budget is ensured over a long  period of time, but that the funding from <abbr title="Employment and Social Development Canada">ESDC</abbr> could fluctuate over time. Thus,  each part of the sample should be allocated separately to meet the appropriate  objectives for which it is funded. <a href="app-ann_b-eng.htm#tblb_4">Table B.4</a> in Appendix B provides the <abbr title="Labour Force Survey">LFS</abbr>  sample allocation based on various geographical units.</p>
+
+
+ <h3 id="a231">2.3.1 Allocation of the sample funded by Statistics  Canada</h3>
+<p>The first step consists of allocating the  sample funded by Statistics Canada (36,000 households) among the 10 provinces.  Statistics Canada has established <abbr title="Labour Force Survey">LFS</abbr> quality objectives for the provinces, Economic  Regions (ERs) and Census Metropolitan Areas (CMAs). All targets are based on  estimates of the number of unemployed persons. This is because unemployment is  an issue of high interest and because unemployment, being rarer than  employment, takes more resources to measure at the same quality in terms of <abbr title="Coefficient of Variation">CV</abbr>  than employment would. The purpose of the allocation is to ensure that the  sample will be able to meet these objectives.</p>
+<p>   To make adjustments to the sample allocation of  the previous design,  it was necessary to  predict the precision of the estimates of the number of unemployed persons (monthly  and three-month moving average) for each province, <abbr title="Economic Region">ER</abbr>, and <abbr title="Census Metropolitan Area">CMA</abbr> for a given  sample size. These predictions were based on a <abbr title="Coefficient of Variation">CV</abbr> esti­mation model involving  the sample size, the estimate of the number of unemployed persons, and the  estimated variance of that estimate. This model is based on data from 80  previous months of <abbr title="Labour Force Survey">LFS</abbr>. Therefore, it is implicitly assumed that the new sample  design will have comparable efficiency to the previous one. It is also assumed  that response rates, vacancy rates, and the number of adults per household will  remain constant over time. Model assumptions were validated by analyzing <abbr title="Labour Force Survey">LFS</abbr>  trends over the last nine years. Using this model, it was possible to predict  the impact of allocation changes on the quality of future unemployment  estimates. </p>
+<p>   The allocation strategy for the sample funded  by Statistics Canada is based on the following criteria:</p>
+ <ul>
+   <li class="ListSpacing">For  each province, the <abbr title="Coefficient of Variation">CV</abbr> of the monthly estimate of the number of unemployed  should be less than 7%;<sup id="n3-refa"><a class="fn-lnk" href="#n3"><span class="wb-inv">Note </span>3</a></sup></li>
+   <li class="ListSpacing"> For  each <abbr title="Economic Region">ER</abbr>, the <abbr title="Coefficient of Variation">CV</abbr> of the three-month moving average estimate of the number of  unemployed should be less than 25%; </li>
+   <li class="ListSpacing"> The  minimum sample size for each <abbr title="Economic Region">ER</abbr> is 200;</li>
+   <li class="ListSpacing"> For  <abbr title="Census Metropolitan Areas">CMAs</abbr> that do not correspond well to <abbr title="Employment Insurance Economic Regions">EIERs</abbr>, that is for five <abbr title="Census Metropolitan Areas">CMAs</abbr> and Lethbridge<sup id="n4-refa"><a class="fn-lnk" href="#n4"><span class="wb-inv">Note </span>4</a></sup>, the  <abbr title="Coefficient of Variation">CV</abbr> of the three-month moving average estimate of the number of unemployed  should be less than 25%; </li>
+ </ul>
+<p>   In previous designs, it was expected that <abbr title="Coefficient of Variations">CVs</abbr>  should be below the target for all months. However, in practice this does not  happen. Over a ten-year design, some months can be outliers for some domains,  which is difficult to predict. Allocating a larger sample to control for  outliers can be both difficult and potentially a waste of finite resources  better spent in a different region. For the redesign, the sample was allocated  such that the <abbr title="Coefficient of Variation">CV</abbr> targets would be met for at least 90% of the monthly estimates  over time.</p>
+ <p>   Using the <abbr title="Coefficient of Variation">CV</abbr> estimation model and non-linear  programming, the 36,000 households were allocated to provinces, <abbr title="Economic  Regions">ERs</abbr> and <abbr title="Census Metropolitan Areas">CMAs</abbr> to  meet the above constraints while minimizing the variance of national monthly  estimate of the number of unemployed. Further details on allocation to the  provinces, <abbr title="Economic  Regions">ERs</abbr>, and <abbr title="Census Metropolitan Areas">CMAs</abbr> follow.</p>
+ <h4>Allocation  to the ten provinces</h4>
+<p>For the provinces, the previous design aimed to  have <abbr title="Coefficient of Variations">CVs</abbr> less than 7% for the monthly estimates of the number of unemployed. In  practice, this was not achieved for many provinces. Simulations showed that it  would not be possible to meet a 7% <abbr title="Coefficient of Variation">CV</abbr> target for all provinces and in all months using only the 36,000 sampled  households funded by Statistics Canada. &nbsp;&nbsp;Given that the sample size was fixed, the only solution was to modify  the targets.</p>
+<p>   As mentioned earlier, the <abbr title="Coefficient of Variation">CV</abbr> is a relative  quality measure. For very low levels of unemployment, <abbr title="Coefficient of Variations">CVs</abbr> tend to be higher. On  the other hand, standard error is an absolute quality measure, in that it is  measured in the same units as the estimate. For a fixed sample size, <abbr title="Coefficient of Variations">CVs</abbr>  increase as unemployment rate decreases, even if the standard error remains the  same. Because of a low unemployment rate in the Prairie provinces over the last  few years, <abbr title="Coefficient of Variations">CVs</abbr> were higher than the 7% target, even though standard errors were  comparable to months with higher unemployment and lower <abbr title="Coefficient of Variations">CVs</abbr>. A decision was  made to adopt two allocation procedures: Allocate to provinces based on <abbr title="Coefficient of Variations">CVs</abbr>  when unemployment rate is above 5%; Allocate based on a comparable standard  error size when unemployment rate is below 5%. </p>
+ <p>   The exception to this rule was <abbr title="Prince Edward Island">PEI</abbr>. The sample  size in <abbr title="Prince Edward Island">PEI</abbr> was kept at the same level as in the previous design. A sample  increase was avoided because a further increase would have led to dwellings  being selected a second time over the planned ten-year life of the new design,  which would impose considerable burden on respondents.</p>
+ <h4>Allocation  to Economic Regions</h4>
+ <p>The <abbr title="Coefficient of Variation">CV</abbr> target for <abbr title="Economic  Regions">ERs</abbr> remained unchanged from the previous <abbr title="Labour Force Survey">LFS</abbr> designs.  However, some changes were made to the geographic regions targeted since it is  difficult to ensure that we meet these targets for all <abbr title="Economic  Regions">ERs</abbr>.  <abbr title="Economic  Regions">ERs</abbr> that are small in terms of their  household count were combined and the precision objective was applied to the  combined <abbr title="Economic Region">ER</abbr>.  Four groups of <abbr title="Economic  Regions">ERs</abbr> were  combined with the last redesign.  They  were located in the northern regions of Quebec, Manitoba, Saskatchewan and  British Columbia. For this redesign, three additional pairs of small rural <abbr title="Economic  Regions">ERs</abbr>  were combined in Newfoundland and Labrador, Manitoba and Alberta.</p>
+ <h4>Allocation  to Census Metropolitan Areas</h4>
+<p>Ensuring that the sample from Statistics Canada  supports <abbr title="Coefficient of Variation">CV</abbr> targets for all Census Metropolitan Areas (CMAs) has been  considered. However, simulations have shown that imposing such targets detract  from the precision of more important provincial and national estimates. In most  cases, the Census Metropolitan Areas correspond to Employment Insurance  Economic Regions (EIERs).  The additional  <abbr title="Employment and Social Development Canada">ESDC</abbr> sample allocated for <abbr title="Employment Insurance Economic Region">EIER</abbr> estimates (see <a href="#a232">Section 2.3.2</a>) provides enough  sample to have sufficient quality for most <abbr title="Census Metropolitan Area">CMA</abbr> estimates. Two <abbr title="Census Metropolitan Areas">CMAs</abbr> (Moncton and  Saint John) together form a single <abbr title="Employment Insurance Economic Region">EIER</abbr> and each has sufficient quality due to  the <abbr title="Employment and Social Development Canada">ESDC</abbr> sample.</p>
+ <p>   There are six areas  that do not correspond well to <abbr title="Employment Insurance Economic Regions">EIERs</abbr> and where the <abbr title="Coefficient of Variation">CV</abbr> requirements are not met  even with the additional <abbr title="Employment and Social Development Canada">ESDC</abbr> sample. Five of these areas are the <abbr title="Census Metropolitan Areas">CMAs</abbr> of  Peterborough, Barrie, Brantford, Guelph and Kelowna.  The sixth area is Lethbridge. After each  census, Statistics Canada reviews the list of <abbr title="Census Metropolitan Areas">CMAs</abbr>. It was expected that  Lethbridge would become a <abbr title="Census Metropolitan Area">CMA</abbr> following the 2016 Census, so it was important to  ensure that the sample drawn in Lethbridge would be sufficient to produce good  estimates after 2016. Additional sample was allocated to these six areas so  they would have sufficient sample for the <abbr title="Coefficient of Variations">CVs</abbr> of the three-month moving average  estimate of the number of unemployed to be under 25%. </p>
+ <h3 id="a232">2.3.2 Allocation of the sample funded by <abbr title="Employment and Social Development Canada">ESDC</abbr></h3>
+<p>This step of the <abbr title="Labour Force Survey">LFS</abbr> sample allocation involves  adding sample funded by <abbr title="Employment and Social Development Canada">ESDC</abbr> to the core sample funded by Statistics Canada.  <abbr title="Labour Force Survey">LFS</abbr> unemployment rate estimates for <abbr title="Employment Insurance Economic Regions">EIERs</abbr> are used by <abbr title="Employment and Social Development Canada">ESDC</abbr> to establish  employment insurance eligibility criteria and duration of benefits in each region.  To help improve precision of unemployment rate estimates for <abbr title="Employment Insurance Economic Regions">EIERs</abbr>, <abbr title="Employment and Social Development Canada">ESDC</abbr> pays  for an additional sample of 16,600 households. </p>
+<p>   <abbr title="Employment and Social Development Canada">ESDC</abbr> eligibility criteria and benefits are  determined based on ranges of the unemployment rate. <abbr title="Employment and Social Development Canada">ESDC</abbr> needs comparable precision  of estimates in all <abbr title="Employment Insurance Economic Regions">EIERs</abbr>, except when region&rsquo;s unemployment rates are in the  highest and lowest ranges. The lowest range is 6% and lower; therefore, in  regions with low unemployment, <abbr title="Employment and Social Development Canada">ESDC</abbr> just needs to be able to determine that the  unemployment rate is below 6%. Similarly, the highest range is above 13%; therefore,  in regions with very high unemployment, <abbr title="Employment and Social Development Canada">ESDC</abbr> just needs to be able to determine  that the unemployment rate is above 13%. </p>
+ <p>   Before  allocating the sample funded by <abbr title="Employment and Social Development Canada">ESDC</abbr>, the number of units allocated to each  <abbr title="Employment Insurance Economic Region">EIER</abbr> by the sample funded by Statistics Canada had to be determined. First, the  sample in an <abbr title="Economic Region">ER</abbr> or <abbr title="Census Metropolitan Area">CMA</abbr> was proportionally allocated to the <abbr title="Economic Region">ER</abbr>-<abbr title="Employment Insurance Economic Region">EIER</abbr>-<abbr title="Census Metropolitan Area">CMA</abbr>  intersections based on the size of each intersection. By summing the intersections,  the Statistics Canada sample allocated to each <abbr title="Employment Insurance Economic Region">EIER</abbr> was determined. For the  sample funded by <abbr title="Employment and Social Development Canada">ESDC</abbr>, the target sample size in each <abbr title="Employment Insurance Economic Region">EIER</abbr> was based on the  following criteria:       </p>
+ <ul>
+   <li class="ListSpacing">For each  <abbr title="Employment Insurance Economic Region">EIER</abbr><sup id="n5-refa"><a class="fn-lnk" href="#n5"><span class="wb-inv">Note </span>5</a></sup>, the <abbr title="Coefficient of Variation">CV</abbr>  of the estimated unemployment rate by three-month moving average must be less  than 15%. However, in regions with low unemployment, <abbr title="Employment and Social Development Canada">ESDC</abbr> just needs sufficient  quality to conclude that unemployment rate is below 6%. Therefore, for rates  less than 4.8%, the sample size required is such that the standard error must be  small enough to conclude the unemployment rate is less than 6%.  The value of 4.8% was chosen because it is  the maximum value for which the upper bound of the confidence interval on the  unemployment rate will be 6% when the <abbr title="Coefficient of Variation">CV</abbr> is 15%. </li>
+   <li class="ListSpacing">The minimum sample size for each <abbr title="Employment Insurance Economic Region">EIER</abbr> is 500;</li>
+   <li class="ListSpacing">The quality of the estimates  produced for each <abbr title="Employment Insurance Economic Region">EIER</abbr> must be similar from one <abbr title="Employment Insurance Economic Region">EIER</abbr> to another.   </li>
+</ul>
+ <p>Once again,  non-linear programming was used to solve this problem. After allocating the  sample funded by <abbr title="Employment and Social Development Canada">ESDC</abbr>, the total sample size (Statistics Canada and <abbr title="Employment and Social Development Canada">ESDC</abbr>)  assigned to each <abbr title="Employment Insurance Economic Region">EIER</abbr> was allocated to the <abbr title="Economic Region">ER</abbr>-<abbr title="Employment Insurance Economic Region">EIER</abbr>-<abbr title="Census Metropolitan Area">CMA</abbr> intersections,  proportionally to the size of each intersection. This new allocation was then  compared to the one used before the redesign to identify potential errors in  the model used and to predict the effectiveness of the new design. Changes in  regional sample sizes and predicted <abbr title="Coefficient of Variations">CVs</abbr> were used to evaluate the new design. </p>
+ <p>   After this final step of  sample allocation, two parameters were produced: the inverse sampling ratio  (ISR) and the number of sampled households required for each intersection. The  inverse sampling ratio is the number of households in the intersection divided  by the number of households allocated to the sample for the intersection. It is  used to determine the size and number of design strata (see <a href="#a25">Section 2.5</a>) and  during the sample selection process (see <a href="#a26">Section 2.6</a>). </p>
+ <h2 id="a24">2.4 Creation  of <abbr title="Primary sampling units">PSUs</abbr></h2>
+<p>In Section 2.2, the basic design was presented  where the <abbr title="Labour Force Survey">LFS</abbr> has a selection of clusters as primary sampling units (PSUs)  followed by a selection of dwellings as the secondary sampling units (SSUs)<sup id="n6-refa"><a class="fn-lnk" href="#n6"><span class="wb-inv">Note </span>6</a></sup>.  The first step of the two-stage sample design is determining the geographic  boundaries of the <abbr title="Primary sampling units">PSUs</abbr> used for the first stage of sample selection based on  size, shape and other factors.</p>
+<p>   The determination of the size and shape of the <abbr title="Primary sampling units">PSUs</abbr> is a compromise  between collection costs and the sample design&rsquo;s efficiency. From a cost  perspective, collection is cheaper if the shape of <abbr title="Primary sampling units">PSUs</abbr> is geographically  compact and contiguous, reducing travel time between the sampled dwellings  within the <abbr title="Primary sampling unit">PSU</abbr>.  If <abbr title="Primary sampling units">PSUs</abbr> are made too  large, it is too costly for an interviewer to visit all the sampled dwellings  frequently enough to get responses. On the other hand, small <abbr title="Primary sampling units">PSUs</abbr> remain in the  sample for less time, which increases costs associated with <abbr title="Primary sampling unit">PSU</abbr> replacement. Also,  when the <abbr title="Primary sampling units">PSUs</abbr> are small, many <abbr title="Primary sampling units">PSUs</abbr> will need to be selected.  The selected <abbr title="Primary sampling units">PSUs</abbr> will be generally further  away from each other, again increasing the travel costs.</p>
+<p>   From a design perspective, the <abbr title="Labour Force Survey">LFS</abbr> could select  either a few <abbr title="Primary sampling units">PSUs</abbr> with many dwellings selected in each or many <abbr title="Primary sampling units">PSUs</abbr> with a few  dwellings selected in each. The latter case leads to a more efficient survey  design<sup id="n7-refa"><a class="fn-lnk" href="#n7"><span class="wb-inv">Note </span>7</a></sup>.  However, moving towards such a design negates  the advantages of a clustered design.</p>
+<p>   To determine the ideal size of a <abbr title="Primary sampling unit">PSU</abbr> given the  above considerations, two elements are necessary. The first is a tool to  evaluate the sampling variance resulting from different scenarios. This tool  can be built using census data. The second is a relatively accurate model to  estimate the collection costs for different scenarios of <abbr title="Primary sampling unit">PSU</abbr> size and the  number of dwellings selected per <abbr title="Primary sampling unit">PSU</abbr>. To build this model, detailed information  on costs is needed. Due to the complexity and recent major changes in the  collection strategy (see <a href="chapt4-eng.htm">Chapter 4</a>), it was virtually impossible to build a  valid updated cost model. Therefore, it was not possible to re-evaluate the  ideal size of the <abbr title="Primary sampling units">PSUs</abbr>. The ideal size of the <abbr title="Primary sampling units">PSUs</abbr> that was used in the two  previous redesigns (200 households) was maintained and used once again as a  target for this design.</p>
+<p>   Once a target <abbr title="Primary sampling unit">PSU</abbr> size was established, <abbr title="Primary sampling units">PSUs</abbr>  were built from the standard geographical unit of Dissemination Areas (DAs)  from Census 2011. This has several advantages. Using <abbr title="Dissemination Areas">DAs</abbr> as a basis for <abbr title="Primary sampling units">PSUs</abbr>  removes the need to create new geography definitions for <abbr title="Labour Force Survey">LFS</abbr>, as was done in  previous designs. This streamlines the <abbr title="Primary sampling unit">PSU</abbr> creation process and reduces  redesign costs. For analysis, using standard geographical units helps in comparing  estimates across surveys, linking to auxiliary data from Census and other  sources, and multi-level modeling. Also, since many household surveys typically  sample for regions defined by standard geographical units, using <abbr title="Dissemination Areas">DAs</abbr> as <abbr title="Primary sampling units">PSUs</abbr>  simplifies use of the <abbr title="Labour Force Survey">LFS</abbr> frame by other household surveys which includes the  ability to update as new <abbr title="Dissemination Areas">DAs</abbr> are defined as will be the case with the 2016  Census.</p>
+<p>   Unfortunately, some <abbr title="Dissemination Areas">DAs</abbr> are too large and  others are too small for the ideal constraint of 200 dwellings per <abbr title="Primary sampling unit">PSU</abbr>.  Simulation showed that having a lot of variability in <abbr title="Primary sampling unit">PSU</abbr> size would increase  sampling variance under the <abbr title="Labour Force Survey">LFS</abbr> sample selection strategy (see <a href="#a26">Section 2.6</a>).  Some variability was inevitable in order to stay close to standard geographical  units. An acceptable range of 100 to 600 households per <abbr title="Primary sampling unit">PSU</abbr> was determined. <abbr title="Dissemination Areas">DAs</abbr>  below this range were joined with other contiguous <abbr title="Dissemination Areas">DAs</abbr> to form larger <abbr title="Primary sampling units">PSUs</abbr>. <abbr title="Dissemination Areas">DAs</abbr>  above this range were split into smaller contiguous and compact <abbr title="Primary sampling units">PSUs</abbr> at the  level of Census 2011 Dissemination Blocks or block faces.</p>
+<p>   An exception to this rule was made in Toronto.  Toronto contained many <abbr title="Dissemination Areas">DAs</abbr> with more than 600 households, yet many were  difficult to split into smaller <abbr title="Primary sampling units">PSUs</abbr> due to the presence of high-rise apartment  buildings with more than 600 units. It is inconvenient to split a single  building into more than one <abbr title="Primary sampling unit">PSU</abbr>. First, unit occupancy changes frequently,  making it difficult to accurately control for the number of households in each  piece when dividing up the building. Also, once an interviewer has established  regular access to an apartment building, it is quite efficient to continue to  collect from other units in the building.   This means that this large <abbr title="Primary sampling unit">PSU</abbr> would not have the same high costs as a  large <abbr title="Primary sampling unit">PSU</abbr> of detached houses. Therefore, in Toronto many <abbr title="Primary sampling units">PSUs</abbr> were created  containing between 600 and 1000 households. To avoid a negative impact on  design efficiency, these <abbr title="Primary sampling units">PSUs</abbr> were grouped together into special strata (see  <a href="#a254">Section 2.5.4</a>).</p>
+ <p>   Once all <abbr title="Primary sampling units">PSUs</abbr> were created, a detailed analysis  was done to identify those that were far from an urban centre and would  probably have a very high collection cost.   Depending on the situation, these <abbr title="Primary sampling units">PSUs</abbr> were either stratified separately  (see <a href="#a25">Section 2.5</a>) or excluded from the survey frame. Under the previous <abbr title="Labour Force Survey">LFS</abbr>  design, less than 1% of households in Canada were excluded. For this redesign,  approximately 100,000 additional households were excluded in northern areas of  the ten provinces, bringing the rate of exclusions up to 1.5%. See <a href="app-ann_b-eng.htm#b1">Appendix B.1</a> for more details on excluded areas. Excluding persons belonging to the target  population of a survey inherently introduces bias into the survey estimates; however,  the cost required to cover these regions was deemed too high relative to the  potential impact on estimates.</p>
+ <h2 id="a25">2.5 Stratification</h2>
+<p>Stratification is the process whereby the population is divided into  homogeneous, mutually exclusive groups called strata, in order to improve the efficiency  of the sample design. In many surveys, strata are defined based on geographic  domains of interest.  In the case of the  <abbr title="Labour Force Survey">LFS</abbr>, strata are formed within each domain of interest: <abbr title="Economic Region">ER</abbr>-<abbr title="Employment Insurance Economic Region">EIER</abbr>-<abbr title="Census Metropolitan Area">CMA</abbr> intersections.  This extra stratification ensures that the survey can accommodate the rotation,  allocation and selection constraints that are described in this chapter. </p>
+ <p>   The first step is to determine how many strata are needed within a  domain.  Once the number of strata is  determined, the strata can be defined based on geographic, socio-economic and  efficiency constraints and the <abbr title="Primary sampling units">PSUs</abbr> can be grouped into these strata.  Stratification will improve the sample  design&rsquo;s efficiency if the <abbr title="Primary sampling units">PSUs</abbr> grouped together are homogeneous, meaning that  the households therein have similar characteristics. Once this process is  complete, a survey frame can be created, containing all of the <abbr title="Primary sampling units">PSUs</abbr> and their  corresponding strata.</p>
+ 
+ 
+ <h3 id="a251">2.5.1 Changes made during this redesign</h3>
+<p>Two past strategies, which were previously introduced  to the <abbr title="Labour Force Survey">LFS</abbr> stratification methodology in order to reduce the costs associated  with in-person collection and listing, were discontinued for this design. First,  in isolated urban areas , a three-stage sample design had been used so that, in  the first stage, only one of a group of population centres would need to be  visited at a time. Second, the rural <abbr title="Primary sampling units">PSUs</abbr> that were the most expensive for  in-person collection (due to high vacancy, distance from urban centres or lack  of road access) had been stratified separately and given a reduced sampling rate  to minimize the number of in-person visits needed. These innovations reduced  collection and listing costs, but also decreased the efficiency of the sample  design. In addition, they could lead to shifts in some local industry  employment figures, especially when a particular <abbr title="Primary sampling unit">PSU</abbr> with many workers  associated with a given industry was replaced by another <abbr title="Primary sampling unit">PSU</abbr> in a different  area with a different dominant industry. Now, with more interviews handled by  telephone instead of in-person (see <a href="chapt4-eng.htm">Chapter 4</a>), the expanded exclusion of  high-cost remote areas (mentioned in <a href="#a24">Section 2.4</a>), and the reliance on the <abbr title="Dwelling Universe File">DUF</abbr>  to provide dwelling lists, the potential cost savings offered by these two  innovations appeared less favourable compared to the loss of design efficiency  and the impact on estimates; therefore, they were discontinued for this  redesign. </p>
+ <p>   For the redesign, two-stage sampling was used in all  provinces except <abbr title="Prince Edward Island">PEI</abbr>. Other changes in the stratification methodology include: <abbr title="Prince Edward Island">PEI</abbr> being stratified differently to facilitate the new one-stage design (see  <a href="#a256">Section 2.5.6</a>), a new type of special stratum being introduced to deal with the  large <abbr title="Primary sampling units">PSUs</abbr> in Toronto (see <a href="#a254">Section 2.5.4</a>), and the specific needs of the  Canadian Community Health Survey (CCHS) being taken into account (see <a href="#a253">Section  2.5.3</a>).</p>
+ <h3 id="a252">2.5.2 Stratum size</h3>
+<p>The size and number of strata in each <abbr title="Economic Region">ER</abbr>-<abbr title="Employment Insurance Economic Region">EIER</abbr>-<abbr title="Census Metropolitan Area">CMA</abbr> intersection is determined based on  the  sample allocation, the number of <abbr title="Primary sampling units">PSUs</abbr> to select in each stratum and the number  of households to select in each <abbr title="Primary sampling unit">PSU</abbr> (also called the sample take or density  factor). The allocation to each intersection was explained earlier.  The number of <abbr title="Primary sampling units">PSUs</abbr> is based on the rotation  strategy where one sixth of the sample rotates every month. To imple­ment this  approach, it is preferable to select six <abbr title="Primary sampling units">PSUs</abbr> (or sometimes twelve) in each  stratum. Finally, past studies have determined that in order to improve the  sample design&rsquo;s efficiency, the sample take  for a  <abbr title="Primary sampling unit">PSU</abbr>  should be ten in rural strata, eight in urban strata, and six in strata  covering the Montréal, Toronto and Vancouver <abbr title="Census Metropolitan Areas">CMAs</abbr>. Selecting more households  per <abbr title="Primary sampling unit">PSU</abbr> in the rural strata reduces the travel costs per unit for in-person  collection. At the other end of the spectrum, selecting six households per <abbr title="Primary sampling unit">PSU</abbr> in  the largest <abbr title="Census Metropolitan Areas">CMAs</abbr> helps to increase the number of <abbr title="Primary sampling units">PSUs</abbr> required in the sample, improving  the precision of the estimates. This reduction of the sample take also increases  the number of strata needed. More and smaller strata should lead to an increase  in the homo­geneity of <abbr title="Primary sampling units">PSUs</abbr> within, which should also improve the efficiency of  the sample design.</p>
+<p>   By combining these constraints (allocation  requirements, six <abbr title="Primary sampling units">PSUs</abbr> selected per stratum and a fixed number of households  selected in each <abbr title="Primary sampling unit">PSU</abbr>), the size requirement of each stratum within an intersection,  in terms of households, can be calculated as: </p>
+ 
+ 
+<p><math display='block'>
+ <semantics>
+  <mrow>
+   <msub>
+    <mi>M</mi>
+    <mi>h</mi>
+   </msub>
+   <mo>=</mo><mi>I</mi><mi>S</mi><mi>R</mi><mo>&#x00D7;</mo><mn>6</mn><mo>&#x00D7;</mo><msubsup>
+    <mi>m</mi>
+    <mi>h</mi>
+    <mo>*</mo>
+   </msubsup>
+   <mtext>&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;(2</mtext><mtext>.1)</mtext></mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamytamaaBa
+  aaleaacaWGObaabeaakiabg2da9iaadMeacaWGtbGaamOuaiabgEna
+  0kaaiAdacqGHxdaTcaWGTbWaa0baaSqaaiaadIgaaeaacaGGQaaaaO
+  GaaeiiaiaabccacaqGGaGaaeiiaiaabccacaqGGaGaaeikaiaabkda
+  caqGUaGaaeymaiaabMcaaaa@4A63@
+  </annotation>
+ </semantics>
+</math></p>
+
+   <p>where</p>
+   
+   <p><div class="row mrgn-tp-xl">
+  <div class="col-sm-1"><math>
+ <semantics>
+  <mrow>
+   <msub>
+    <mi>M</mi>
+    <mi>h</mi>
+   </msub>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamytamaaBa
+  aaleaacaWGObaabeaaaaa@37E2@
+  </annotation>
+ </semantics>
+</math></div>is the number of households  to group together in each stratum of an intersection.</div></p>
+  
+  <p><div class="row">
+   <div class="col-sm-1"><math>
+ <semantics>
+  <mrow>
+   <mi>I</mi><mi>S</mi><mi>R</mi></mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamysaiaado
+  facaWGsbaaaa@3874@
+  </annotation>
+ </semantics>
+</math></div>is the inverse  sampling ratio as established during the first two steps of the sample  allocation.</div></p>
+   
+   <p><div class="row">
+   <div class="col-sm-1"><math>
+ <semantics>
+  <mrow>
+   <msubsup>
+    <mi>m</mi>
+    <mi>h</mi>
+    <mo>*</mo>
+   </msubsup>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamyBamaaDa
+  aaleaacaWGObaabaGaaiOkaaaaaaa@38B1@
+  </annotation>
+ </semantics>
+</math></div>is the number of households  to select per <abbr title="Primary sampling unit">PSU</abbr>. As explained in the previous paragraph, this number varies  by the population density of the region (rural, urban, three largest <abbr title="Census Metropolitan Areas">CMAs</abbr>).</div></p>
+   
+   
+<p>The number of strata needed in each region can  be determined by dividing the number of households in a region by this result  and rounding the result to the most appropriate integer. Usually, the strata within  an <abbr title="Economic Region">ER</abbr>-<abbr title="Employment Insurance Economic Region">EIER</abbr>-<abbr title="Census Metropolitan Area">CMA</abbr> intersection that this process creates are approximately the  same size.</p>
+   
+ <h3 id="a253">2.5.3 Adjustments to geographic boundaries</h3>
+<p>Using the stratum size expression described  above, it was not possible to create strata in some small <abbr title="Economic Region">ER</abbr>-<abbr title="Employment Insurance Economic Region">EIER</abbr>-<abbr title="Census Metropolitan Area">CMA</abbr>  intersections. Consequently, these small intersections were combined with a  neigh­bouring intersection. Combining was done so that the combined group  respected the boundaries of the <abbr title="Census Metropolitan Area">CMA</abbr> or <abbr title="Employment Insurance Economic Region">EIER</abbr> as much as possible. This approach  implicitly gives more importance to the estimates by <abbr title="Census Metropolitan Area">CMA</abbr> and by <abbr title="Employment Insurance Economic Region">EIER</abbr> than by <abbr title="Economic Region">ER</abbr>;  therefore, the efficiency of the sample design decreased at the <abbr title="Economic Region">ER</abbr> level, but  was maintained for the <abbr title="Employment Insurance Economic Regions">EIERs</abbr> and <abbr title="Census Metropolitan Areas">CMAs</abbr>. In cases where 2011 Census boundaries  for a <abbr title="Census Metropolitan Area">CMA</abbr> no longer matched the boundaries for the <abbr title="Employment Insurance Economic Region">EIER</abbr> representing that city<sup id="n8-refa"><a class="fn-lnk" href="#n8"><span class="wb-inv">Note </span>8</a></sup>,  the resulting small intersections were treated as if the <abbr title="Employment Insurance Economic Region">EIER</abbr> boundaries matched  the <abbr title="Census Metropolitan Area">CMA</abbr> boundaries. After combining the small pieces, there were 120  intersections covering the ten provinces in which stratification occurred.</p>
+<p>   Outside <abbr title="Census Metropolitan Areas">CMAs</abbr>, it was favourable to create  separate strata for urban and rural areas for three reasons: rural strata have  more households than urban strata (see <a href="#a252">Equation 2.1</a> in Section 2.5.2); persons  residing in rural areas have different characteristics from those residing in  urban areas; and stratification that respects these areas allows for the imple­mentation  of more appropriate collection strategies. In some cases, an urban or rural  area is too small to create a stratum using the size determined in <a href="#a252">Section  2.5.2</a>. In such cases, it is necessary to combine the area with a neighbouring urban  area or a rural area. Each case was evaluated sepa­rately. </p>
+<p>   The <abbr title="Canadian Community Health Survey">CCHS</abbr> is a regular user of the area frame,  and they rely on the <abbr title="Labour Force Survey">LFS</abbr> stratification methodology to identify the <abbr title="Primary sampling units">PSUs</abbr> for  their sample.  For the <abbr title="Labour Force Survey">LFS</abbr> redesign, it is beneficial to make some adjustments  to support their needs and minimize the impact on the <abbr title="Labour Force Survey">LFS</abbr>. The <abbr title="Canadian Community Health Survey">CCHS</abbr> samples at  a much higher rate in some rural regions than the <abbr title="Labour Force Survey">LFS</abbr> does and their geographic  domains do not always correspond well with <abbr title="Labour Force Survey">LFS</abbr> regions. In the past, the <abbr title="Canadian Community Health Survey">CCHS</abbr> would simply select more  dwellings within the limited <abbr title="Primary sampling units">PSUs</abbr> that were available causing much faster <abbr title="Primary sampling unit">PSU</abbr>  rotation than planned (see <a href="#a264">Section 2.6.4</a>) or select more <abbr title="Primary sampling units">PSUs</abbr> than required by  the <abbr title="Labour Force Survey">LFS</abbr>.  For the redesign, the solution was to create  additional <abbr title="Canadian Community Health Survey">CCHS</abbr> specific strata that would ensure that there were enough <abbr title="Primary sampling units">PSUs</abbr>  selected in those regions to meet the <abbr title="Canadian Community Health Survey">CCHS</abbr> requirements.  This has less impact on <abbr title="Labour Force Survey">LFS</abbr> operations. </p>
+ <p>   After the adjustments to the geographic  boundaries, <abbr title="Primary sampling units">PSUs</abbr> can be grouped into strata. Some <abbr title="Primary sampling units">PSUs</abbr> were assigned to special  strata (see <a href="#a254">Section 2.5.4</a>), and the remaining <abbr title="Primary sampling units">PSUs</abbr> in each intersection were  stratified geographically and then optimally (see <a href="#a255">Section 2.5.5</a>). </p>
+ <h3 id="a254">2.5.4 Special strata</h3>
+ <p>Special strata can be divided into two  categories: those created to improve efficiency, and those created to target  specific populations. The first category is used to group remote <abbr title="Primary sampling units">PSUs</abbr> as well  as <abbr title="Primary sampling units">PSUs</abbr> with a large number of dwellings in Toronto. The second category of  special strata helps target sub-populations of interest for analysts who use  <abbr title="Labour Force Survey">LFS</abbr> data. </p>
+ <h4>Strata  used to group inconvenient <abbr title="Primary sampling units">PSUs</abbr></h4>
+<p>Two special strata were created to group  inconvenient <abbr title="Primary sampling units">PSUs</abbr>: remote strata containing <abbr title="Primary sampling units">PSUs</abbr> that are geographically  isolated and difficult for in-person collection, and strata in Toronto  containing <abbr title="Primary sampling units">PSUs</abbr> with a large number of dwellings. By grouping these <abbr title="Primary sampling units">PSUs</abbr>, the  rate at which these <abbr title="Primary sampling units">PSUs</abbr> are selected can be controlled. </p>
+<p>   A significant part of Canada is inhabited by a  small portion of the population. Collection costs are high in regions with a small  population, while the impact of these regions on the main <abbr title="Labour Force Survey">LFS</abbr> estimates is  relatively low. Such <abbr title="Primary sampling units">PSUs</abbr> were identified using data from Census 2011 on  population density, distances to urban centres and accessibility by road. If  there were enough of these <abbr title="Primary sampling units">PSUs</abbr> in a province, they were grouped together into  a remote stratum. By assigning these regions to specific strata, the number of  these <abbr title="Primary sampling units">PSUs</abbr> selected in a given sample can be better controlled, thereby better  controlling the assignment of <abbr title="Labour Force Survey">LFS</abbr> resources. </p>
+<p>   As mentioned in <a href="#a24">Section 2.4</a>, Toronto contains  many <abbr title="Primary sampling units">PSUs</abbr> with between 600 and 1000 dwellings, unlike other <abbr title="Labour Force Survey">LFS</abbr> <abbr title="Primary sampling units">PSUs</abbr> in the  provinces. If <abbr title="Primary sampling units">PSUs</abbr> with 1000 dwellings were stratified with <abbr title="Primary sampling units">PSUs</abbr> with 100  dwellings, there would be a considerable increase in sampling variance given  the sample selection strategy used. However, the design stays efficient if <abbr title="Primary sampling unit">PSU</abbr>  sizes are relatively homogeneous within a stratum. Since these <abbr title="Primary sampling units">PSUs</abbr> could not  be split any further, they were instead grouped together as special strata. That  way, the variability of <abbr title="Primary sampling unit">PSU</abbr> sizes within Toronto strata is reduced leading to a  more efficient design.</p>
+ <p>   <a href="app-ann_b-eng.htm#tblb_2">Table B.2</a> in Appendix B presents the number of  households in the first-category special strata.</p>
+ <h4>Strata  to target certain sub-populations</h4>
+<p>Three types of sub-populations were targeted by  special strata: households with high income, Aboriginal people , and recent immigrants. For simplification, the terms  high-income strata, Aboriginal strata, and immigrant strata will be used from  now on, although this is technically incorrect since these strata do not only contain  high-income households, Aboriginal people, or immigrants. High income strata  were created in most large <abbr title="Census Metropolitan Areas">CMAs</abbr>. Aboriginal strata were created in British  Columbia, Alberta and Saskatchewan. Immigrant strata were created in Manitoba only . </p>
+<p>   Because the <abbr title="Labour Force Survey">LFS</abbr> samples clusters of dwellings,  instead of persons directly, it is difficult to target these rare  sub-populations, especially when they do not all live in the same  neighbourhood. Even in a neighbourhood with a higher prevalence of the  sub-population, many households still will not have any members of the  sub-population, so a sample of these dwellings may not yield many more members  than a sample from a different region. Since there is no better tool available  within the constraints of the <abbr title="Labour Force Survey">LFS</abbr> design to target sub-populations, special  strata can help by at least ensuring that a <abbr title="Primary sampling unit">PSU</abbr> with higher prevalence is  selected.  </p>
+<p>   For special strata to effectively cover a  target population, they need to have a higher prevalence of the target  population and represent a large proportion of the overall target population. However,  even if they produce good estimates for their target population, special strata  cannot be justified if their introduction leads to a significant decline in the  quality of the main <abbr title="Labour Force Survey">LFS</abbr> estimates. In order to find a viable compromise, two  guidelines from a study done for the last redesign were used. The first  guideline states that the strata must be created based on the prevalence of  specific character­istics. For example, it would be futile to create an  immigrant stratum in northern Manitoba, where the proportion of immi­grants is  very low. The second guideline states that no more than 8% of a domain can be  used to create each type of special stratum. This limitation guarantees that the  creation of these strata will not have a major adverse effect on the main <abbr title="Labour Force Survey">LFS</abbr>  estimates, based on a study conducted using 1996 and 2001 Census data.</p>
+<p>   Using these two guidelines, the special strata  were created in sequence. For each category, they were created by identifying  the <abbr title="Primary sampling units">PSUs</abbr> with the highest prevalence of the sub-population of interest. <abbr title="Primary sampling units">PSUs</abbr>  were then continually added to strata in decreasing order of prevalence until  the 8% limit for the domain was reached. Using this approach, these strata are  not contiguous and may be quite spread out geographically.</p>
+<p>   High-income strata  were created first. <abbr title="Primary sampling units">PSUs</abbr> in a given <abbr title="Census Metropolitan Area">CMA</abbr> were first classified in descending  order based on the proportion of households with an income over $150,000 based  on the 2012 T1 Family File (T1FF) generated from 2012 tax returns received by  Canada Revenue Agency<sup id="n9-refa"><a class="fn-lnk" href="#n9"><span class="wb-inv">Note </span>9</a></sup>.  <abbr title="Primary sampling units">PSUs</abbr> at the top of this list were assigned to a high-income stratum until the  stratum&rsquo;s pre-determined size had been reached (see <a href="#a252">Section 2.5.2</a>). If the  limit of 8% was not attained, another high-income stratum was created for the  same <abbr title="Census Metropolitan Area">CMA</abbr>. In this way, high income strata were created for most <abbr title="Census Metropolitan Areas">CMAs</abbr>.</p>
+<p>   To create the  Aboriginal strata, the basic strategy had to be slightly modified. The  high-income strata respect the <abbr title="Census Metropolitan Area">CMA</abbr> boundaries, but a significant number of Aboriginal people  live outside these boundaries, so special strata were created separately  in <abbr title="Census Metropolitan Areas">CMAs</abbr> and outside <abbr title="Census Metropolitan Areas">CMAs</abbr>. Furthermore, some <abbr title="Economic Region">ER</abbr>-<abbr title="Employment Insurance Economic Region">EIER</abbr> intersections outside <abbr title="Census Metropolitan Areas">CMAs</abbr>  were too small to form an Aboriginal stratum, although several <abbr title="Primary sampling units">PSUs</abbr> in these  intersections had a high proportion of Aboriginal households. To remedy this  problem, the Aboriginal strata created outside <abbr title="Census Metropolitan Areas">CMAs</abbr> respect the boundaries of just  the <abbr title="Employment Insurance Economic Regions">EIERs</abbr>, rather than those of the <abbr title="Economic Region">ER</abbr>-<abbr title="Employment Insurance Economic Region">EIER</abbr> intersections. Finally, <abbr title="Primary sampling units">PSUs</abbr>  already assigned to a remote stratum could not also be assigned to an  Aboriginal stratum. Among the remaining <abbr title="Primary sampling units">PSUs</abbr> in the combined intersections,  <abbr title="Primary sampling units">PSUs</abbr> were put into the strata in descending order based on the proportion of  households with at least one person who reported having an Aboriginal identity on  the 2011 National Household Survey until the 8% limit was reached.  As with high income strata, multiple strata  were created where necessary to reach the 8% limit.</p>
+<p>   To create the immigrant strata in Manitoba,  strata also had to be created both inside and outside <abbr title="Census Metropolitan Areas">CMAs</abbr>. Since most of the  recent immigrant population of Manitoba resides in Winnipeg and the prevalence of  immigrants was low elsewhere, only two immigrant strata were created outside  Winnipeg. For these two strata, <abbr title="Primary sampling units">PSUs</abbr> outside Winnipeg were put into descending  order based on the proportion of households with at least one person who had  immigrated to Canada in the last ten years according to the 2011 National  Household Survey. </p>
+<p>   Using only 8% of Winnipeg and strata outside  Winnipeg would have provided inadequate representation of the target  population, since recent immigrants are disproportionately located in Winnipeg.  However, using more than 8% of the <abbr title="Census Metropolitan Area">CMA</abbr> to create strata by sorting <abbr title="Primary sampling units">PSUs</abbr> in  descending order of prevalence would have had a major adverse effect on main  <abbr title="Labour Force Survey">LFS</abbr> estimates for Winnipeg.  The end  decision was that the top 25% of PSUs<sup id="n10-refa"><a class="fn-lnk" href="#n10"><span class="wb-inv">Note </span>10</a></sup> in terms of prevalence were isolated and stratified into twelve strata using  the same optimization algorithm used to stratify PSUs outside special strata  (see <a href="#a255">Section 2.5.5</a>). That way, more strata could be created to cover the target  population without as much impact on <abbr title="Labour Force Survey">LFS</abbr> estimates. Simulations were conducted  to evaluate alternate strategies and this was the most favourable option. </p>
+ <p>   <a href="app-ann_b-eng.htm#tblb3_1">Tables B.3</a> in Appendix B give the number of  households in the special strata, the prevalence of the target population and  the proportion of the sub-popu­lation covered by the special strata.</p>
+ <h3 id="a255">2.5.5 Stratification of the remaining <abbr title="Primary sampling units">PSUs</abbr></h3>
+ <p>After forming special strata, which only cover  a small portion of the Canadian territory, the remaining <abbr title="Primary sampling units">PSUs</abbr> in the nine  provinces other than <abbr title="Prince Edward Island">PEI</abbr><sup id="n11-refa"><a class="fn-lnk" href="#n11"><span class="wb-inv">Note </span>11</a></sup> are stratified within the geographic regions discussed in <a href="#a253">Section 2.5.3</a>. To  determine the number of strata that needed to be created in a region, the  number of households not in special strata was divided by the targeted stratum  size from Equation (2.1) in <a href="#a252">Section 2.5.2</a>. Since this quotient is not an  integer, the result was rounded up<sup id="n12-refa"><a class="fn-lnk" href="#n12"><span class="wb-inv">Note </span>12</a></sup>.  If more than one stratum was needed for a region, the <abbr title="Primary sampling units">PSUs</abbr> were stratified  first geographically and then optimally (both described below).</p>
+ <h4>Geographic  stratification</h4>
+<p>In the case of <abbr title="Census Metropolitan Areas">CMAs</abbr>, each was divided into  several pieces that would serve as the basis for stratification.  The regions considered were the largest  Census Subdivision (CSD), the second-largest CSD, the third-largest CSD, the  remaining urban <abbr title="Primary sampling units">PSUs</abbr>, and the rural <abbr title="Primary sampling units">PSUs</abbr>. These regions were created only if  the <abbr title="Census Metropolitan Area">CMA</abbr> required several strata and if the region in question met the targeted  stratum size.  Otherwise, they were  combined with other regions.</p>
+<p>   Within a region, if only one stratum was needed  then stratification is complete. If between two and nine strata were needed,  the <abbr title="Primary sampling units">PSUs</abbr> were stratified optimally (described below) within the piece. If more  than ten strata were needed, the piece was first divided into super-strata –  compact areas with a similar number of households – to ensure better geographic  distribution of the selected <abbr title="Primary sampling units">PSUs</abbr> in a sample. <abbr title="Primary sampling units">PSUs</abbr> were then optimally  stratified within the super-strata. </p>
+ <p>   Outside <abbr title="Census Metropolitan Areas">CMAs</abbr>, the regions were defined using  the largest Census Agglomeration (CA) in an <abbr title="Employment Insurance Economic Region">EIER</abbr>, the remaining urban <abbr title="Primary sampling units">PSUs</abbr> and  the remaining rural <abbr title="Primary sampling units">PSUs</abbr>. Within each piece, <abbr title="Primary sampling units">PSUs</abbr> were assigned to the required  number of strata using optimal stratification.</p>
+ <h4>Optimal  stratification</h4>
+<p>After geographic stratification, <abbr title="Primary sampling units">PSUs</abbr> in  regions that needed two or more strata were stratified optimally. The purpose  of optimal stratification is to reduce the sampling variance of several  variables of interest by grouping together <abbr title="Primary sampling units">PSUs</abbr> with similar characteristics,  creating strata that are as homogeneous as possible while conforming to the  stratum size constraints determined in <a href="#a252">Section 2.5.2</a>. This was achieved using  the iterative process described below.  </p>
+<p>   The algorithm used for optimal stratification  is based on an iterative method developed by Friedman and Rubin (1967) and  modified by Drew, Bélanger and Foy (1985). Starting with a random initial  stratification with equal-sized strata, the algorithm exchanges a <abbr title="Primary sampling unit">PSU</abbr> between  two strata and checks whether this new stratification decreases a weighted sum  of squares of auxiliary data. If the sum of squares decreased, the new stratification  replaces the previous one; otherwise, the previous stratifi­cation is retained.  <abbr title="Primary sampling unit">PSU</abbr> exchanges continue iteratively until no exchange leads to a decrease. The  process is then repeated using different initial stratifications. The  stratification associated with the smallest variance is retained<sup id="n13-refa"><a class="fn-lnk" href="#n13"><span class="wb-inv">Note </span>13</a></sup>. </p>
+<p>   The weighted sum of squares is calculated over  several auxiliary characteristics. The list of these characteristics of  interest (29 in total) is identical to the list from the last redesign and is  available at the end of <a href="app-ann_b-eng.htm">Appendix B</a>. Household income was given three times the  weight compared to the rest of the characteristics in the weighted sum of  squares because income is correlated with several <abbr title="Labour Force Survey">LFS</abbr> variables. All other  variables were given equal weight in the process.</p>
+ <p>   After both geographic and optimal  stratification are complete, the <abbr title="Labour Force Survey">LFS</abbr> geographic variable is defined by  assigning unique identifiers to each created stratum and each <abbr title="Primary sampling unit">PSU</abbr> assigned to  that stratum. The result is a completed <abbr title="Labour Force Survey">LFS</abbr> area frame in all provinces except  for <abbr title="Prince Edward Island">PEI</abbr>. This frame is used for the first stage of sample selection (Section  2.6).</p>
+<h3 id="a256">2.5.6 Creating strata in Prince Edward Island</h3>
+<p>For the redesign, it was decided to use  one-stage sampling in <abbr title="Prince Edward Island">PEI</abbr>. As explained in <a href="#a21">Sections 2.1</a> and <a href="#a22" title="Section 2.2">2.2</a>, the primary  gain from two-stage sampling is to reduce the geographic spread of selected  samples, thus reducing travel costs in survey collection, though with a loss in  efficiency of the design. However, since  <abbr title="Prince Edward Island">PEI</abbr> is a small province and many cases  are now handled by telephone instead of in-person, travel costs in<abbr title="Prince Edward Island"> PEI</abbr> are  minimal. Historically, the other reason for two-stage sampling was the lack of  a complete list of dwellings for an entire province, which limited the survey  design options. However, with recent improvements to the Dwelling Universe File (<a href="#a221">Section 2.2.1</a>), a reasonably up-to-date list of all dwellings in  <abbr title="Prince Edward Island">PEI</abbr> is now  available. While the <abbr title="Coefficient of Variations">CVs</abbr> of monthly unemployment estimates for  <abbr title="Prince Edward Island">PEI</abbr> were  often far above the 7% target, it was not prudent to increase the sample size  as  <abbr title="Prince Edward Island">PEI</abbr> already has the highest sampling rate in the country. Therefore, it was  decided to simply select dwellings in  <abbr title="Prince Edward Island">PEI</abbr> from a list at random (one-stage systematic  random sampling) to improve the efficiency of the design. Since <abbr title="Canadian Community Health Survey">CCHS</abbr> needs to  sample dwellings in  <abbr title="Prince Edward Island">PEI</abbr> at a slightly higher rate than <abbr title="Labour Force Survey">LFS</abbr>, the <abbr title="Inverse sampling ratio">ISR</abbr> (<a href="#a232">Section  2.3.2</a>) was adjusted so that each sample would contain enough dwellings for  either <abbr title="Labour Force Survey">LFS</abbr> or <abbr title="Canadian Community Health Survey">CCHS</abbr>.  </p>
+<p>  Even though there are no <abbr title="Primary sampling units">PSUs</abbr> to stratify, it  was still advantageous to stratify the province for several reasons. Without  strata, selecting dwellings at random could result in samples where only one  dwelling is selected in one part of the island. In terms of the collection  strategy, it would be hard to create a full-time workload for an interviewer covering  that region and potentially very costly if that interviewer was also covering  other parts of the island. In terms of sample design, that part of the island  would be poorly represented in the sample and sampling variance would likely  increase if that part of the province had different characteristics. Creating  strata ensures that each <abbr title="Labour Force Survey">LFS</abbr> sample better represents the whole province. To  stay consistent with standard geography units, geographically contiguous strata  were created using Census <abbr title="Dissemination Areas">DAs</abbr>.</p>
+<p>  As explained in <a href="#a22">Section 2.2</a>, one-sixth of the  sample is replaced every month, so the  <abbr title="Prince Edward Island">PEI</abbr> sample needed to be split into six  rotation groups. This is more challenging without clusters in a stratum.<sup id="n14-refa"><a class="fn-lnk" href="#n14"><span class="wb-inv">Note </span>14</a></sup> To address this,  <abbr title="Prince Edward Island">PEI</abbr> geographic strata were pooled together in groups of six to  form super-strata.  The process controlled  for the number of households in the super-strata and minimized the distance  between the strata within.  A modified  version of the Friedman-Rubin algorithm discussed above was used. These super-strata  also respected the boundaries of Charlottetown and Summerside, the two major  cities in the province. Then, each stratum in a super-stratum was randomly  assigned to one of six rotation groups in a way that balanced the overall  number of occupied dwellings in each rotation group. Thus, one-sixth of the   <abbr title="Prince Edward Island">PEI</abbr> sample can be replaced each month. </p>
+<h2 id="a26">2.6 Sample  selection strategy</h2>
+<p>Once allocation and stratification are  completed, all the pieces are in place to select the sample. This section  provides a conceptual description of the selection and rotation method used by  the <abbr title="Labour Force Survey">LFS</abbr> in the provinces other than <abbr title="Prince Edward Island">PEI</abbr>. For <abbr title="Prince Edward Island">PEI</abbr>, systematic random sampling of  dwellings within strata is used.   Additional information on processing the growth and maintenance of the  survey frame is given in <a href="chapt3-eng.htm">Chapter 3</a>. For a more detailed description of the  sampling probabilities and the sampling weights, refer to <a href="chapt6-eng.htm">Chapter 6</a>.</p>
+<h3 id="a261">2.6.1 Sample allocation of <abbr title="Primary sampling units">PSUs</abbr> to Strata</h3>
+<p>When a two-stage design is used, survey theory  stipu­lates that it is preferable to select the <abbr title="Primary sampling units">PSUs</abbr> with a proba­bility  proportional to their size when this size measure­ment is also correlated to  the estimates of interest. This is the case for the <abbr title="Labour Force Survey">LFS</abbr>. For example, the  number of persons who work in a <abbr title="Primary sampling unit">PSU</abbr> is strongly correlated to the number of  persons who live in the <abbr title="Primary sampling unit">PSU</abbr>. Therefore, the <abbr title="Primary sampling units">PSUs</abbr> for the <abbr title="Labour Force Survey">LFS</abbr> are ideally selected  with a probability proportional to their size. The size measure­ used for <abbr title="Labour Force Survey">LFS</abbr>  is based on the number of households in the <abbr title="Primary sampling unit">PSU</abbr> as estimated using the <abbr title="Dwelling Universe File">DUF</abbr>  (explained in <a href="#a221">Section 2.2.1</a>)<sup id="n15-refa"><a class="fn-lnk" href="#n15"><span class="wb-inv">Note </span>15</a></sup>.</p>
+<p>  The first step is to determine the number of  <abbr title="Primary sampling units">PSUs</abbr> to select in each stratum.  By  design, as described with determining the size of the strata, this should be  six. However, due to rounding, the creation of special strata and other factors,  the number of strata defined and the required sample size may not correspond to  six <abbr title="Primary sampling units">PSUs</abbr> being selected.  Also, to  simplify the sample rotation process – where one-sixth of the sample rotates  out every month – it is preferable to select a multiple of six <abbr title="Primary sampling units">PSUs</abbr> in each  stratum. The rotation method will be discussed in detail later in the chapter. </p>
+<p>  To determine the number of <abbr title="Primary sampling units">PSUs</abbr> to select in a  stratum, the number of households to survey in the stratum is needed. Up to  this point the allocation is only known at the <abbr title="Economic Region">ER</abbr>-<abbr title="Employment Insurance Economic Region">EIER</abbr>-<abbr title="Census Metropolitan Area">CMA</abbr> intersection  level.  Strata are given the same sampling rate as the intersection in which  they are located. Thus, within an <abbr title="Economic Region">ER</abbr>-<abbr title="Employment Insurance Economic Region">EIER</abbr>-<abbr title="Census Metropolitan Area">CMA</abbr> intersection, the constant sampling rate implies  that the sample is allocated to strata proportionally to the number of  households. The household stratum allocation is given by the number of  households in the stratum divided by the inverse sampling ratio (ISR) for the  <abbr title="Economic Region">ER</abbr>-<abbr title="Employment Insurance Economic Region">EIER</abbr>-<abbr title="Census Metropolitan Area">CMA</abbr> intersection. </p>
+<p>  The number of <abbr title="Primary sampling units">PSUs</abbr> to select in the stratum is  determined by the household stratum allocation divided by the target number of  households to survey per selected <abbr title="Primary sampling unit">PSU</abbr>. As discussed in <a href="#a252">Section 2.5.2</a>, this  target number is six households per <abbr title="Primary sampling unit">PSU</abbr> in the Montréal, Toronto and Vancouver  <abbr title="Census Metropolitan Area">CMA</abbr> strata, eight in the urban strata outside these three <abbr title="Census Metropolitan Areas">CMAs</abbr>, and ten in the  rural strata. If the result of the second division is closer to six <abbr title="Primary sampling units">PSUs</abbr> than  to twelve, six <abbr title="Primary sampling units">PSUs</abbr> will be selected in the stratum. Otherwise, twelve <abbr title="Primary sampling units">PSUs</abbr>  will be selected. This can result in eighteen <abbr title="Primary sampling units">PSUs</abbr> in rare situations.</p>
+<p>  The approach described below is based on selecting  six <abbr title="Primary sampling units">PSUs</abbr>. The same approach applies when twelve or eighteen <abbr title="Primary sampling units">PSUs</abbr> are selected. </p>
+<h3 id="a262">2.6.2 Overview of the <abbr title="Rao-Hartley-Cochran">RHC</abbr> method</h3>
+<p>The <abbr title="Labour Force Survey">LFS</abbr> selects the <abbr title="Primary sampling unit">PSU</abbr> sample using the  Rao-Hartley-Cochran (RHC) method. The <abbr title="Rao-Hartley-Cochran">RHC</abbr> method is used because it allows the  selection probabilities to be updated when strong growth is observed in some  <abbr title="Primary sampling units">PSUs</abbr>. The method described in Keyfitz (1951) can be combined with the <abbr title="Rao-Hartley-Cochran">RHC</abbr>  method to update the probabilities while maximizing the overlap of the selected  <abbr title="Primary sampling units">PSUs</abbr> before and after the update. For more information on the <abbr title="Rao-Hartley-Cochran">RHC</abbr> method, see  Rao, Hartley and Cochran (1962). </p>
+<p>  When using the <abbr title="Rao-Hartley-Cochran">RHC</abbr> method to select multiple  <abbr title="Primary sampling units">PSUs</abbr> in a stratum, all the <abbr title="Primary sampling units">PSUs</abbr> must first be distributed into groups, each  containing roughly the same number of <abbr title="Primary sampling units">PSUs</abbr> – plus or minus one. In the case of  the <abbr title="Labour Force Survey">LFS</abbr>, the groups used are the six rotation groups.  After the <abbr title="Primary sampling units">PSUs</abbr> have been distributed to the  rotation groups, one <abbr title="Primary sampling unit">PSU</abbr> is selected per group with probability proportional to  size within the group. This can be summarized by the following equation:</p>
+
+<p><math display='block'>
+ <semantics>
+  <mrow>
+   <msub>
+    <mi>&#x03C0;</mi>
+    <mrow>
+     <mi>h</mi><mi>i</mi><mi>j</mi></mrow>
+   </msub>
+   <mo>=</mo><mfrac>
+    <mrow>
+     <msub>
+      <mi>M</mi>
+      <mrow>
+       <mi>h</mi><mi>i</mi><mi>j</mi></mrow>
+     </msub>
+     </mrow>
+    <mrow>
+     <mstyle displaystyle='true'>
+      <munder>
+       <mo>&#x2211;</mo>
+       <mrow>
+        <mi>j</mi><mo>&#x2208;</mo><mi>h</mi><mi>i</mi></mrow>
+      </munder>
+      <mrow>
+       <msub>
+        <mi>M</mi>
+        <mrow>
+         <mi>h</mi><mi>i</mi><mi>j</mi></mrow>
+       </msub>
+       </mrow>
+     </mstyle></mrow>
+   </mfrac>
+   <mtext>&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;(2</mtext><mtext>.2)</mtext></mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaeqiWda3aaS
+  baaSqaaiaadIgacaWGPbGaamOAaaqabaGccqGH9aqpdaWcaaqaaiaa
+  d2eadaWgaaWcbaGaamiAaiaadMgacaWGQbaabeaaaOqaamaaqafaba
+  GaamytamaaBaaaleaacaWGObGaamyAaiaadQgaaeqaaaqaaiaadQga
+  cqGHiiIZcaWGObGaamyAaaqab0GaeyyeIuoaaaGccaqGGaGaaeiiai
+  aabccacaqGGaGaaeiiaiaabccacaqGOaGaaeOmaiaab6cacaqGYaGa
+  aeykaaaa@5117@
+  </annotation>
+ </semantics>
+</math></p>
+
+
+<p> where</p>
+
+<p><div class="row">
+   <div class="col-sm-1"><math>
+ <semantics>
+  <mrow>
+   <msub>
+    <mi>M</mi>
+    <mrow>
+     <mi>h</mi><mi>i</mi><mi>j</mi></mrow>
+   </msub>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamytamaaBa
+  aaleaacaWGObGaamyAaiaadQgaaeqaaaaa@39BF@
+  </annotation>
+ </semantics>
+</math></div>is the number of households in <abbr title="Primary sampling unit">PSU</abbr> <em>j</em> in rotation group <em>i</em> of stratum <em>h</em>.</div></p>
+   
+   <p><div class="row">
+   <div class="col-sm-1"><math>
+ <semantics>
+  <mrow>
+   <mstyle displaystyle='true'>
+    <munder>
+     <mo>&#x2211;</mo>
+     <mrow>
+      <mi>j</mi><mo>&#x2208;</mo><mi>h</mi><mi>i</mi></mrow>
+    </munder>
+    <mrow>
+     <msub>
+      <mi>M</mi>
+      <mrow>
+       <mi>h</mi><mi>i</mi><mi>j</mi></mrow>
+     </msub>
+     </mrow>
+   </mstyle></mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaWaaabuaeaaca
+  WGnbWaaSbaaSqaaiaadIgacaWGPbGaamOAaaqabaaabaGaamOAaiab
+  gIGiolaadIgacaWGPbaabeqdcqGHris5aaaa@4024@
+  </annotation>
+ </semantics>
+</math></div>is the total number  of households in all the <abbr title="Primary sampling units">PSUs</abbr> in rotation group <em>i</em> of stratum <em>h</em>.</div></p>
+   
+   <p><div class="row">
+   <div class="col-sm-1"><math>
+ <semantics>
+  <mrow>
+   <msub>
+    <mi>&#x03C0;</mi>
+    <mrow>
+     <mi>h</mi><mi>i</mi><mi>j</mi></mrow>
+   </msub>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaeqiWda3aaS
+  baaSqaaiaadIgacaWGPbGaamOAaaqabaaaaa@3AA9@
+  </annotation>
+ </semantics>
+</math>
+</div>is the selection probability  of <abbr title="Primary sampling unit">PSU</abbr> <em>j</em> in rotation group <em>i</em> of stratum <em>h</em>.</div></p>
+   
+   
+ 
+  <p>Rather than using the  number of households, the <abbr title="Labour Force Survey">LFS</abbr> uses the rounded inverse sampling ratio of the  <abbr title="Primary sampling unit">PSU</abbr> <math>
+ <semantics>
+  <mrow>
+   <mrow><mo>(</mo>
+    <mrow>
+     <mi>I</mi><mi>S</mi><msubsup>
+      <mi>R</mi>
+      <mrow>
+       <mi>h</mi><mi>i</mi><mi>j</mi></mrow>
+      <mo>*</mo>
+     </msubsup>
+     </mrow>
+   <mo>)</mo></mrow></mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaWaaeWaaeaaca
+  WGjbGaam4uaiaadkfadaqhaaWcbaGaamiAaiaadMgacaWGQbaabaGa
+  aiOkaaaaaOGaayjkaiaawMcaaaaa@3DAC@
+  </annotation>
+ </semantics>
+</math> as a size measure for the <abbr title="Primary sampling unit">PSU</abbr> – described below.  These values are used mainly because of the  way the sample is selected in the second stage. It will be shown later that  this is not an extreme departure from using the number of households in terms  of sampling probability for the <abbr title="Primary sampling unit">PSU</abbr>.  </p>
+<h4>Second-stage  selection probabilities</h4>
+<p>Dwellings are selected from within the selected  <abbr title="Primary sampling units">PSUs</abbr> with probabilities that ensure that all households in the stratum have the  same overall probability of selection.   This is often referred to as a self-weighted design.  </p>
+<p>  At the second-stage,  dwellings are selected from the  <abbr title="Primary sampling unit">PSU</abbr> listing line generated by the Address Register and/or field listing of the  <abbr title="Primary sampling unit">PSU</abbr><sup id="n16-refa"><a class="fn-lnk" href="#n16"><span class="wb-inv">Note </span>16</a></sup> using systematic  sampling where households are selected at regular intervals. This method is  recommended because it is simple to use, ensures a good distribution of the  house­holds selected in the <abbr title="Primary sampling unit">PSU</abbr>, controls the overlap of samples and  facilitates adding new dwellings to the <abbr title="Primary sampling unit">PSU</abbr>. To select the systematic sample of dwellings, the <abbr title="Primary sampling unit">PSU</abbr> <abbr title="Inverse sampling ratio">ISR</abbr>,
+
+  <math>
+    <semantics>
+      <mrow>
+        <mi>I</mi><mi>S</mi><msub>
+          <mi>R</mi>
+          <mrow>
+            <mi>h</mi><mi>i</mi><mi>j</mi></mrow>
+          </msub>
+        </mrow>
+      <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+        feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+        hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+        4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+        vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+        fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamysaiaado
+        facaWGsbWaaSbaaSqaaiaadIgacaWGPbGaamOAaaqabaaaaa@3B6A@
+        </annotation>
+      </semantics>
+</math>
+  , and a starting point on  the list must  be determined. <math>
+ <semantics>
+  <mrow>
+   <mi>I</mi><mi>S</mi><msub>
+    <mi>R</mi>
+    <mrow>
+     <mi>h</mi><mi>i</mi><mi>j</mi></mrow>
+   </msub>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamysaiaado
+  facaWGsbWaaSbaaSqaaiaadIgacaWGPbGaamOAaaqabaaaaa@3B6A@
+  </annotation>
+ </semantics>
+</math>
+   can be obtained from  the number of households in the <abbr title="Primary sampling unit">PSU</abbr> and the <abbr title="Inverse sampling ratio">ISR</abbr> of the stratum, <math>
+ <semantics>
+  <mrow>
+   <mi>I</mi><mi>S</mi><msub>
+    <mi>R</mi>
+    <mi>h</mi>
+   </msub>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamysaiaado
+  facaWGsbWaaSbaaSqaaiaadIgaaeqaaaaa@398D@
+  </annotation>
+ </semantics>
+</math>, using the following equation:</p>
+  
+  <p><math display='block'>
+ <semantics>
+  <mrow>
+   <mi>I</mi><mi>S</mi><msub>
+    <mi>R</mi>
+    <mrow>
+     <mi>h</mi><mi>i</mi><mi>j</mi></mrow>
+   </msub>
+   <mo>=</mo><mrow><mo>(</mo>
+    <mrow>
+     <mfrac>
+      <mrow>
+       <msub>
+        <mi>M</mi>
+        <mrow>
+         <mi>h</mi><mi>i</mi><mi>j</mi></mrow>
+       </msub>
+       </mrow>
+      <mrow>
+       <mstyle displaystyle='true'>
+        <munder>
+         <mo>&#x2211;</mo>
+         <mrow>
+          <mi>j</mi><mo>&#x2208;</mo><mi>h</mi><mi>i</mi></mrow>
+        </munder>
+        <mrow>
+         <msub>
+          <mi>M</mi>
+          <mrow>
+           <mi>h</mi><mi>i</mi><mi>j</mi></mrow>
+         </msub>
+         </mrow>
+       </mstyle></mrow>
+     </mfrac>
+     </mrow>
+   <mo>)</mo></mrow><mi>I</mi><mi>S</mi><msub>
+    <mi>R</mi>
+    <mi>h</mi>
+   </msub>
+   <mtext>&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;(2</mtext><mtext>.3)</mtext></mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamysaiaado
+  facaWGsbWaaSbaaSqaaiaadIgacaWGPbGaamOAaaqabaGccqGH9aqp
+  daqadaqaamaalaaabaGaamytamaaBaaaleaacaWGObGaamyAaiaadQ
+  gaaeqaaaGcbaWaaabuaeaacaWGnbWaaSbaaSqaaiaadIgacaWGPbGa
+  amOAaaqabaaabaGaamOAaiabgIGiolaadIgacaWGPbaabeqdcqGHri
+  s5aaaaaOGaayjkaiaawMcaaiaadMeacaWGtbGaamOuamaaBaaaleaa
+  caWGObaabeaakiaabccacaqGGaGaaeiiaiaabccacaqGGaGaaeiiai
+  aabIcacaqGYaGaaeOlaiaabodacaqGPaaaaa@5701@
+  </annotation>
+ </semantics>
+</math></p>
+
+<p>where</p>
+
+<p><div class="row">
+   <div class="col-sm-1"><math>
+ <semantics>
+  <mrow>
+   <mi>I</mi><mi>S</mi><msub>
+    <mi>R</mi>
+    <mrow>
+     <mi>h</mi><mi>i</mi><mi>j</mi></mrow>
+   </msub>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamysaiaado
+  facaWGsbWaaSbaaSqaaiaadIgacaWGPbGaamOAaaqabaaaaa@3B69@
+  </annotation>
+ </semantics>
+</math></div>is the inverse sampling ratio in  <abbr title="Primary sampling unit">PSU</abbr> <em>j</em> in rotation group <em>i</em> of stratum <em>h</em>.</div></p>
+   
+   <p><div class="row">
+   <div class="col-sm-1"><math>
+ <semantics>
+  <mrow>
+   <mi>I</mi><mi>S</mi><msub>
+    <mi>R</mi>
+    <mi>h</mi>
+   </msub>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamysaiaado
+  facaWGsbWaaSbaaSqaaiaadIgaaeqaaaaa@398C@
+  </annotation>
+ </semantics>
+</math></div>is the inverse sampling ratio of stratum <em>h</em> established during the allocation of  the sample.</div></p>
+   
+  
+  <p>Since <math>
+ <semantics>
+  <mrow>
+   <mi>I</mi><mi>S</mi><msub>
+    <mi>R</mi>
+    <mi>h</mi>
+   </msub>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamysaiaado
+  facaWGsbWaaSbaaSqaaiaadIgaaeqaaaaa@398D@
+  </annotation>
+ </semantics>
+</math>
+    is constant for all the <abbr title="Primary sampling units">PSUs</abbr> of a group, <math>
+ <semantics>
+  <mrow>
+   <mi>I</mi><mi>S</mi><msub>
+    <mi>R</mi>
+    <mrow>
+     <mi>h</mi><mi>i</mi><mi>j</mi></mrow>
+   </msub>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamysaiaado
+  facaWGsbWaaSbaaSqaaiaadIgacaWGPbGaamOAaaqabaaaaa@3B6A@
+  </annotation>
+ </semantics>
+</math> is proportional to the  number of households in the <abbr title="Primary sampling unit">PSU</abbr>. For the redesign, a switch to simple random  sampling was considered. However, a study showed that adjacent dwellings have  correlated responses.  This implies that  for monthly estimates, systematic sampling should lead to a better  representation of the <abbr title="Primary sampling unit">PSU</abbr> since the sample is guaranteed to be spread out over  the entire region. Also, systematic sampling can give reduced variance of estimates  of month-to-month change as neighbouring households are rotated in to replace  those who are rotated out. </p>
+<p>  The <abbr title="Labour Force Survey">LFS</abbr> selection  system cannot use these <em><abbr title="Inverse sampling ratio">ISR</abbr></em>s directly  and instead is configured to use <strong>integer</strong> inverse sampling ratios <em><abbr title="Inverse sampling ratio">ISR</abbr>*</em>. The result of Equation  2.3 is therefore rounded up or down so that </p>
+  <p><math display='block'>
+ <semantics>
+  <mrow>
+   <mstyle displaystyle='true'>
+    <msub>
+     <mo>&#x2211;</mo>
+     <mrow>
+      <mi>j</mi><mo>&#x2208;</mo><mi>h</mi><mi>i</mi></mrow>
+    </msub>
+    <mrow>
+     <mi>I</mi><mi>S</mi><msubsup>
+      <mi>R</mi>
+      <mrow>
+       <mi>h</mi><mi>i</mi><mi>j</mi></mrow>
+      <mo>*</mo>
+     </msubsup>
+     </mrow>
+   </mstyle><mo>=</mo><mi>I</mi><mi>S</mi><msubsup>
+    <mi>R</mi>
+    <mrow>
+     <mi>h</mi><mi>i</mi></mrow>
+    <mo>*</mo>
+   </msubsup>
+   <mo>=</mo><mi>I</mi><mi>S</mi><msubsup>
+    <mi>R</mi>
+    <mi>h</mi>
+    <mo>*</mo>
+   </msubsup>
+   <mo>,</mo><mo>&#x2200;</mo><mi>i</mi><mo>&#x2208;</mo><mi>h</mi><mtext>&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;(2</mtext><mtext>.4)</mtext></mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaWaaabeaeaaca
+  WGjbGaam4uaiaadkfadaqhaaWcbaGaamiAaiaadMgacaWGQbaabaGa
+  aiOkaaaaaeaacaWGQbGaeyicI4SaamiAaiaadMgaaeqaniabggHiLd
+  GccqGH9aqpcaWGjbGaam4uaiaadkfadaqhaaWcbaGaamiAaiaadMga
+  aeaacaGGQaaaaOGaeyypa0JaamysaiaadofacaWGsbWaa0baaSqaai
+  aadIgaaeaacaGGQaaaaOGaaiilaiabgcGiIiaadMgacqGHiiIZcaWG
+  ObGaaeiiaiaabccacaqGGaGaaeiiaiaabccacaqGGaGaaeikaiaabk
+  dacaqGUaGaaeinaiaabMcaaaa@5A05@
+  </annotation>
+ </semantics>
+</math></p>
+
+<p>This is called  controlled rounding. The second-stage selection probability of a household when  <abbr title="Primary sampling unit">PSU</abbr> <em>j</em> in rotation group <em>i</em> of stratum <em>h</em> is selected is <math>
+ <semantics>
+  <mrow>
+   <mrow><mn>1</mn><mo>/</mo><mrow>
+    <mi>I</mi><mi>S</mi><msubsup>
+     <mi>R</mi>
+     <mrow>
+      <mi>h</mi><mi>i</mi><mi>j</mi></mrow>
+     <mo>*</mo>
+    </msubsup>
+    </mrow></mrow>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaWaaSGbaeaaca
+  aIXaaabaGaamysaiaadofacaWGsbWaa0baaSqaaiaadIgacaWGPbGa
+  amOAaaqaaiaacQcaaaaaaaaa@3CEA@
+  </annotation>
+ </semantics>
+</math>.  </p>
+<p>  The rounded value <math>
+ <semantics>
+  <mrow>
+   <mi>I</mi><mi>S</mi><msubsup>
+    <mi>R</mi>
+    <mrow>
+     <mi>h</mi><mi>i</mi><mi>j</mi></mrow>
+    <mo>*</mo>
+   </msubsup>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamysaiaado
+  facaWGsbWaa0baaSqaaiaadIgacaWGPbGaamOAaaqaaiaacQcaaaaa
+  aa@3C19@
+  </annotation>
+ </semantics>
+</math>
+   has some useful  interpretations. First, it is the sampling interval to use in systematic  sampling if the corresponding <abbr title="Primary sampling unit">PSU</abbr> is selected in the first stage. By applying  this sampling interval, the appropriate number of households will be selected  in the <abbr title="Primary sampling unit">PSU</abbr><sup id="n17-refa"><a class="fn-lnk" href="#n17"><span class="wb-inv">Note </span>17</a></sup>.  Second,
+
+  <math>
+    <semantics>
+      <mrow>
+        <mi>I</mi><mi>S</mi><msubsup>
+          <mi>R</mi>
+          <mrow>
+            <mi>h</mi><mi>i</mi><mi>j</mi></mrow>
+          <mo>*</mo>
+          </msubsup>
+        </mrow>
+      <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+        feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+        hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+        4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+        vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+        fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamysaiaado
+        facaWGsbWaa0baaSqaaiaadIgacaWGPbGaamOAaaqaaiaacQcaaaaa
+        aa@3C19@
+        </annotation>
+      </semantics>
+</math> is the number of  distinct samples available in the <abbr title="Primary sampling unit">PSU</abbr>. In <abbr title="Labour Force Survey">LFS</abbr> terminology, this concept is  called the number of <strong>random starts</strong>. </p>
+<h4>First-stage  selection probabilities</h4>
+<p>As  stated earlier, a self-weighted design is achievable when the first and second  stage probabilities are in agreement.   The second stage probabilities were defined earlier as <math>
+ <semantics>
+  <mrow>
+   <mrow><mn>1</mn><mo>/</mo><mrow>
+    <mi>I</mi><mi>S</mi><msubsup>
+     <mi>R</mi>
+     <mrow>
+      <mi>h</mi><mi>i</mi><mi>j</mi></mrow>
+     <mo>*</mo>
+    </msubsup>
+    </mrow></mrow>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaWaaSGbaeaaca
+  aIXaaabaGaamysaiaadofacaWGsbWaa0baaSqaaiaadIgacaWGPbGa
+  amOAaaqaaiaacQcaaaaaaaaa@3CEA@
+  </annotation>
+ </semantics>
+</math>
+. In order to preserve the self-weighting aspect, the values <math>
+ <semantics>
+  <mrow>
+   <mi>I</mi><mi>S</mi><msubsup>
+    <mi>R</mi>
+    <mrow>
+     <mi>h</mi><mi>i</mi><mi>j</mi></mrow>
+    <mo>*</mo>
+   </msubsup>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamysaiaado
+  facaWGsbWaa0baaSqaaiaadIgacaWGPbGaamOAaaqaaiaacQcaaaaa
+  aa@3C19@
+  </annotation>
+ </semantics>
+</math> must be used as size  values in the probability proportional to size sample. The first-stage  selection probability associated with each <abbr title="Primary sampling unit">PSU</abbr> is therefore:</p>
+
+
+<p><math display='block'>
+ <semantics>
+  <mrow>
+   <msubsup>
+    <mi>&#x03C0;</mi>
+    <mrow>
+     <mi>h</mi><mi>i</mi><mi>j</mi></mrow>
+    <mo>*</mo>
+   </msubsup>
+   <mo>=</mo><mfrac>
+    <mrow>
+     <mi>I</mi><mi>S</mi><msubsup>
+      <mi>R</mi>
+      <mrow>
+       <mi>h</mi><mi>i</mi><mi>j</mi></mrow>
+      <mo>*</mo>
+     </msubsup>
+     </mrow>
+    <mrow>
+     <mstyle displaystyle='true'>
+      <munder>
+       <mo>&#x2211;</mo>
+       <mrow>
+        <mi>j</mi><mo>&#x2208;</mo><mi>h</mi><mi>i</mi></mrow>
+      </munder>
+      <mrow>
+       <mi>I</mi><mi>S</mi><msubsup>
+        <mi>R</mi>
+        <mrow>
+         <mi>h</mi><mi>i</mi><mi>j</mi></mrow>
+        <mo>*</mo>
+       </msubsup>
+       </mrow>
+     </mstyle></mrow>
+   </mfrac>
+   <mo>=</mo><mfrac>
+    <mrow>
+     <mi>I</mi><mi>S</mi><msubsup>
+      <mi>R</mi>
+      <mrow>
+       <mi>h</mi><mi>i</mi><mi>j</mi></mrow>
+      <mo>*</mo>
+     </msubsup>
+     </mrow>
+    <mrow>
+     <mi>I</mi><mi>S</mi><msubsup>
+      <mi>R</mi>
+      <mi>h</mi>
+      <mo>*</mo>
+     </msubsup>
+     </mrow>
+   </mfrac>
+   <mo><mtext>&#x2009;</mtext>.</mo>
+   <mtext>&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;(2</mtext><mtext>.5)</mtext></mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaeqiWda3aa0
+  baaSqaaiaadIgacaWGPbGaamOAaaqaaiaacQcaaaGccqGH9aqpdaWc
+  aaqaaiaadMeacaWGtbGaamOuamaaDaaaleaacaWGObGaamyAaiaadQ
+  gaaeaacaGGQaaaaaGcbaWaaabuaeaacaWGjbGaam4uaiaadkfadaqh
+  aaWcbaGaamiAaiaadMgacaWGQbaabaGaaiOkaaaaaeaacaWGQbGaey
+  icI4SaamiAaiaadMgaaeqaniabggHiLdaaaOGaeyypa0ZaaSaaaeaa
+  caWGjbGaam4uaiaadkfadaqhaaWcbaGaamiAaiaadMgacaWGQbaaba
+  GaaiOkaaaaaOqaaiaadMeacaWGtbGaamOuamaaDaaaleaacaWGObaa
+  baGaaiOkaaaaaaGccaqGGaGaaeiiaiaabccacaqGGaGaaeiiaiaabc
+  cacaqGOaGaaeOmaiaab6cacaqG1aGaaeykaaaa@620E@
+  </annotation>
+ </semantics>
+</math></p>
+
+<p>This is not an  extreme change from using the number of households as a size measure.  As stated earlier, <math>
+ <semantics>
+  <mrow>
+   <mi>I</mi><mi>S</mi><msub>
+    <mi>R</mi>
+    <mrow>
+     <mi>h</mi><mi>i</mi><mi>j</mi></mrow>
+   </msub>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamysaiaado
+  facaWGsbWaaSbaaSqaaiaadIgacaWGPbGaamOAaaqabaaaaa@3B6A@
+  </annotation>
+ </semantics>
+</math> is proportional to the  number of households in the <abbr title="Primary sampling unit">PSU</abbr>. In this case,</p>
+
+<p><math display='block'>
+ <semantics>
+  <mrow>
+   <msubsup>
+    <mi>&#x03C0;</mi>
+    <mrow>
+     <mi>h</mi><mi>i</mi><mi>j</mi></mrow>
+    <mo>*</mo>
+   </msubsup>
+   <mo>=</mo><mfrac>
+    <mrow>
+     <mi>I</mi><mi>S</mi><msubsup>
+      <mi>R</mi>
+      <mrow>
+       <mi>h</mi><mi>i</mi><mi>j</mi></mrow>
+      <mo>*</mo>
+     </msubsup>
+     </mrow>
+    <mrow>
+     <mstyle displaystyle='true'>
+      <munder>
+       <mo>&#x2211;</mo>
+       <mrow>
+        <mi>j</mi><mo>&#x2208;</mo><mi>h</mi><mi>i</mi></mrow>
+      </munder>
+      <mrow>
+       <mi>I</mi><mi>S</mi><msubsup>
+        <mi>R</mi>
+        <mrow>
+         <mi>h</mi><mi>i</mi><mi>j</mi></mrow>
+        <mo>*</mo>
+       </msubsup>
+       </mrow>
+     </mstyle></mrow>
+   </mfrac>
+   <mo>&#x2248;</mo><mfrac>
+    <mrow>
+     <msub>
+      <mi>M</mi>
+      <mrow>
+       <mi>h</mi><mi>i</mi><mi>j</mi></mrow>
+     </msub>
+     </mrow>
+    <mrow>
+     <mstyle displaystyle='true'>
+      <munder>
+       <mo>&#x2211;</mo>
+       <mrow>
+        <mi>j</mi><mo>&#x2208;</mo><mi>h</mi><mi>i</mi></mrow>
+      </munder>
+      <mrow>
+       <msub>
+        <mi>M</mi>
+        <mrow>
+         <mi>h</mi><mi>i</mi><mi>j</mi></mrow>
+       </msub>
+       </mrow>
+     </mstyle></mrow>
+   </mfrac>
+   <mo>=</mo><msub>
+    <mi>&#x03C0;</mi>
+    <mrow>
+     <mi>h</mi><mi>i</mi><mi>j</mi></mrow>
+   </msub>
+   <mo><mtext>&#x2009;</mtext>.</mo>
+   <mtext>&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;(2</mtext><mtext>.6)</mtext></mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaeqiWda3aa0
+  baaSqaaiaadIgacaWGPbGaamOAaaqaaiaacQcaaaGccqGH9aqpdaWc
+  aaqaaiaadMeacaWGtbGaamOuamaaDaaaleaacaWGObGaamyAaiaadQ
+  gaaeaacaGGQaaaaaGcbaWaaabuaeaacaWGjbGaam4uaiaadkfadaqh
+  aaWcbaGaamiAaiaadMgacaWGQbaabaGaaiOkaaaaaeaacaWGQbGaey
+  icI4SaamiAaiaadMgaaeqaniabggHiLdaaaOGaeyisIS7aaSaaaeaa
+  caWGnbWaaSbaaSqaaiaadIgacaWGPbGaamOAaaqabaaakeaadaaeqb
+  qaaiaad2eadaWgaaWcbaGaamiAaiaadMgacaWGQbaabeaaaeaacaWG
+  QbGaeyicI4SaamiAaiaadMgaaeqaniabggHiLdaaaOGaeyypa0Jaeq
+  iWda3aaSbaaSqaaiaadIgacaWGPbGaamOAaaqabaGccaqGGaGaaeii
+  aiaabccacaqGGaGaaeiiaiaabccacaqGOaGaaeOmaiaab6cacaqG2a
+  Gaaeykaaaa@6C0C@
+  </annotation>
+ </semantics>
+</math></p>
+
+<p>The only difference  between these two probabilities is due to the controlled rounding of <math>
+ <semantics>
+  <mrow>
+   <mi>I</mi><mi>S</mi><msubsup>
+    <mi>R</mi>
+    <mrow>
+     <mi>h</mi><mi>i</mi><mi>j</mi></mrow>
+    <mo>*</mo>
+   </msubsup>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamysaiaado
+  facaWGsbWaa0baaSqaaiaadIgacaWGPbGaamOAaaqaaiaacQcaaaaa
+  aa@3C19@
+  </annotation>
+ </semantics>
+</math>. As a result, the overall selection probability of house­hold <em>k</em> in <abbr title="Primary sampling unit">PSU</abbr><em> j</em> in rotation group <em>i</em> of  stratum <em>h</em> is:</p>
+
+
+<p><math display='block'>
+ <semantics>
+  <mrow>
+   <msubsup>
+    <mi>&#x03C0;</mi>
+    <mrow>
+     <mi>h</mi><mi>i</mi><mi>j</mi><mi>k</mi></mrow>
+    <mo>*</mo>
+   </msubsup>
+   <mo>=</mo><mfrac>
+    <mrow>
+     <mi>I</mi><mi>S</mi><msubsup>
+      <mi>R</mi>
+      <mrow>
+       <mi>h</mi><mi>i</mi><mi>j</mi></mrow>
+      <mo>*</mo>
+     </msubsup>
+     </mrow>
+    <mrow>
+     <mstyle displaystyle='true'>
+      <munder>
+       <mo>&#x2211;</mo>
+       <mrow>
+        <mi>j</mi><mo>&#x2208;</mo><mi>h</mi><mi>i</mi></mrow>
+      </munder>
+      <mrow>
+       <mi>I</mi><mi>S</mi><msubsup>
+        <mi>R</mi>
+        <mrow>
+         <mi>h</mi><mi>i</mi><mi>j</mi></mrow>
+        <mo>*</mo>
+       </msubsup>
+       </mrow>
+     </mstyle></mrow>
+   </mfrac>
+   <mo>&#x00D7;</mo><mfrac>
+    <mn>1</mn>
+    <mrow>
+     <mi>I</mi><mi>S</mi><msubsup>
+      <mi>R</mi>
+      <mrow>
+       <mi>h</mi><mi>i</mi><mi>j</mi></mrow>
+      <mo>*</mo>
+     </msubsup>
+     </mrow>
+   </mfrac>
+   <mo>=</mo><mfrac>
+    <mn>1</mn>
+    <mrow>
+     <mi>I</mi><mi>S</mi><msubsup>
+      <mi>R</mi>
+      <mi>h</mi>
+      <mo>*</mo>
+     </msubsup>
+     </mrow>
+   </mfrac>
+   <mo><mtext>&#x2009;</mtext>.</mo>
+   <mtext>&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;(2</mtext><mtext>.7)</mtext></mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaeqiWda3aa0
+  baaSqaaiaadIgacaWGPbGaamOAaiaadUgaaeaacaGGQaaaaOGaeyyp
+  a0ZaaSaaaeaacaWGjbGaam4uaiaadkfadaqhaaWcbaGaamiAaiaadM
+  gacaWGQbaabaGaaiOkaaaaaOqaamaaqafabaGaamysaiaadofacaWG
+  sbWaa0baaSqaaiaadIgacaWGPbGaamOAaaqaaiaacQcaaaaabaGaam
+  OAaiabgIGiolaadIgacaWGPbaabeqdcqGHris5aaaakiabgEna0oaa
+  laaabaGaaGymaaqaaiaadMeacaWGtbGaamOuamaaDaaaleaacaWGOb
+  GaamyAaiaadQgaaeaacaGGQaaaaaaakiabg2da9maalaaabaGaaGym
+  aaqaaiaadMeacaWGtbGaamOuamaaDaaaleaacaWGObaabaGaaiOkaa
+  aaaaGccaqGGaGaaeiiaiaabccacaqGGaGaaeiiaiaabccacaqGOaGa
+  aeOmaiaab6cacaqG3aGaaeykaaaa@669D@
+  </annotation>
+ </semantics>
+</math></p>
+
+<p>As required, Equation  2.7 suggests that the selection probability is the same for all households in  the same stratum. The <abbr title="Labour Force Survey">LFS</abbr> sample design is therefore self-weighted within the  stratum. </p>
+<h3 id="a263">2.6.3 <abbr title="Primary sampling unit">PSU</abbr> and start selection</h3>
+<p>In practice, to  select a <abbr title="Primary sampling unit">PSU</abbr> in a rotation group, the <abbr title="Primary sampling units">PSUs</abbr> of a rotation group are put in  random order. A random whole number <em>U</em> is then drawn from a uniform distribution on the interval <math>
+ <semantics>
+  <mrow>
+   <mrow><mo>[</mo> <mrow>
+    <mn>1</mn><mo>,</mo><mi>I</mi><mi>S</mi><msubsup>
+     <mi>R</mi>
+     <mi>h</mi>
+     <mo>*</mo>
+    </msubsup>
+    </mrow> <mo>]</mo></mrow></mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaWaamWaaeaaca
+  aIXaGaaiilaiaadMeacaWGtbGaamOuamaaDaaaleaacaWGObaabaGa
+  aiOkaaaaaOGaay5waiaaw2faaaaa@3DA2@
+  </annotation>
+ </semantics>
+</math>
+  . This random number <em>U</em> has two functions.  First, it is used to identify the first <abbr title="Primary sampling unit">PSU</abbr> selected. This <abbr title="Primary sampling unit">PSU</abbr> is the first for  which the cumulative total of the <math>
+ <semantics>
+  <mrow>
+   <mi>I</mi><mi>S</mi><msubsup>
+    <mi>R</mi>
+    <mrow>
+     <mi>h</mi><mi>i</mi><mi>j</mi></mrow>
+    <mo>*</mo>
+   </msubsup>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamysaiaado
+  facaWGsbWaa0baaSqaaiaadIgacaWGPbGaamOAaaqaaiaacQcaaaaa
+  aa@3C19@
+  </annotation>
+ </semantics>
+</math> is greater than or equal to <em>U</em> (or <math>
+ <semantics>
+  <mrow>
+   <mstyle displaystyle='true'>
+    <msub>
+     <mo>&#x2211;</mo>
+     <mrow>
+      <mi>j</mi><mo>&#x2264;</mo><msup>
+       <mi>j</mi>
+       <mo>*</mo>
+      </msup>
+      </mrow>
+    </msub>
+    <mrow>
+     <mi>I</mi><mi>S</mi><msubsup>
+      <mi>R</mi>
+      <mrow>
+       <mi>h</mi><mi>i</mi><mi>j</mi></mrow>
+      <mo>*</mo>
+     </msubsup>
+     </mrow>
+   </mstyle><mo>&#x2265;</mo><mi>U</mi></mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaWaaabeaeaaca
+  WGjbGaam4uaiaadkfadaqhaaWcbaGaamiAaiaadMgacaWGQbaabaGa
+  aiOkaaaaaeaacaWGQbGaeyizImQaamOAamaaCaaameqabaGaaiOkaa
+  aaaSqab0GaeyyeIuoakiabgwMiZkaadwfaaaa@4515@
+  </annotation>
+ </semantics>
+</math> where the indicator <em>j</em> follows the random order).</p>
+<p>  It also determines  the number of random starts to use in this first <abbr title="Primary sampling unit">PSU</abbr> before moving on to the  next <abbr title="Primary sampling unit">PSU</abbr>. The number of starts to use in the first <abbr title="Primary sampling unit">PSU</abbr> is <math>
+ <semantics>
+  <mrow>
+   <msub>
+    <mi>D</mi>
+    <mrow>
+     <msup>
+      <mi>j</mi>
+      <mo>*</mo>
+     </msup>
+     </mrow>
+   </msub>
+   <mo>=</mo><mrow><mo>(</mo>
+    <mrow>
+     <mstyle displaystyle='true'>
+      <msub>
+       <mo>&#x2211;</mo>
+       <mrow>
+        <mi>j</mi><mo>&#x2264;</mo><msup>
+         <mi>j</mi>
+         <mo>*</mo>
+        </msup>
+        </mrow>
+      </msub>
+      <mrow>
+       <mi>I</mi><mi>S</mi><msubsup>
+        <mi>R</mi>
+        <mrow>
+         <mi>h</mi><mi>i</mi><mi>j</mi></mrow>
+        <mo>*</mo>
+       </msubsup>
+       </mrow>
+     </mstyle></mrow>
+   <mo>)</mo></mrow><mo>&#x2212;</mo><mi>U</mi><mo>+</mo><mn>1</mn></mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamiramaaBa
+  aaleaacaWGQbWaaWbaaWqabeaacaGGQaaaaaWcbeaakiabg2da9maa
+  bmaabaWaaabeaeaacaWGjbGaam4uaiaadkfadaqhaaWcbaGaamiAai
+  aadMgacaWGQbaabaGaaiOkaaaaaeaacaWGQbGaeyizImQaamOAamaa
+  CaaameqabaGaaiOkaaaaaSqab0GaeyyeIuoaaOGaayjkaiaawMcaai
+  abgkHiTiaadwfacqGHRaWkcaaIXaaaaa@4B3D@
+  </annotation>
+ </semantics>
+</math>.  Lastly, a second  random whole number <math>
+ <semantics>
+  <mrow>
+   <msub>
+    <mi>U</mi>
+    <mrow>
+     <msup>
+      <mi>j</mi>
+      <mo>*</mo>
+     </msup>
+     </mrow>
+   </msub>
+   <mo>&#x2208;</mo><mrow><mo>[</mo> <mrow>
+    <mn>1</mn><mo>,</mo><mi>I</mi><mi>S</mi><msubsup>
+     <mi>R</mi>
+     <mrow>
+      <mi>h</mi><mi>i</mi><msup>
+       <mi>j</mi>
+       <mo>*</mo>
+      </msup>
+      </mrow>
+     <mo>*</mo>
+    </msubsup>
+    </mrow> <mo>]</mo></mrow></mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamyvamaaBa
+  aaleaacaWGQbWaaWbaaWqabeaacaGGQaaaaaWcbeaakiabgIGiopaa
+  dmaabaGaaGymaiaacYcacaWGjbGaam4uaiaadkfadaqhaaWcbaGaam
+  iAaiaadMgacaWGQbWaaWbaaWqabeaacaGGQaaaaaWcbaGaaiOkaaaa
+  aOGaay5waiaaw2faaaaa@44D0@
+  </annotation>
+ </semantics>
+</math>
+<sup id="n18-refa"><a class="fn-lnk" href="#n18"><span class="wb-inv">Note </span>18</a></sup> is selected. This  number indicates the first random start to use to select the sample of  dwellings for the <abbr title="Primary sampling unit">PSU</abbr> <em>j*</em>. The systematic sample for a selected <abbr title="Primary sampling unit">PSU</abbr> <em>hij </em>is composed of the dwelling whose line  number on the dwelling frame is equal to the starting point <math>
+ <semantics>
+  <mrow>
+   <msub>
+    <mi>U</mi>
+    <mrow>
+     <msup>
+      <mi>j</mi>
+      <mo>*</mo>
+     </msup>
+     </mrow>
+   </msub>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamyvamaaBa
+  aaleaacaWGQbWaaWbaaWqabeaacaGGQaaaaaWcbeaaaaa@38D3@
+  </annotation>
+ </semantics>
+</math>
+, and of other dwellings whose additional lines are in  intervals of <math>
+ <semantics>
+  <mrow>
+   <mi>I</mi><mi>S</mi><msubsup>
+    <mi>R</mi>
+    <mrow>
+     <mi>h</mi><mi>i</mi><mi>j</mi></mrow>
+    <mo>*</mo>
+   </msubsup>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamysaiaado
+  facaWGsbWaa0baaSqaaiaadIgacaWGPbGaamOAaaqaaiaacQcaaaaa
+  aa@3C19@
+  </annotation>
+ </semantics>
+</math>
+. Therefore,  dwellings are selected with line numbers such that <math>
+ <semantics>
+  <mrow>
+   <mi>d</mi><mo>=</mo><msub>
+    <mi>U</mi>
+    <mrow>
+     <msup>
+      <mi>j</mi>
+      <mo>*</mo>
+     </msup>
+     </mrow>
+   </msub>
+   <mo>+</mo><mi>t</mi><mo>&#x00D7;</mo><mi>I</mi><mi>S</mi><msubsup>
+    <mi>R</mi>
+    <mrow>
+     <mi>h</mi><mi>i</mi><mi>j</mi></mrow>
+    <mo>*</mo>
+   </msubsup>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamizaiabg2
+  da9iaadwfadaWgaaWcbaGaamOAamaaCaaameqabaGaaiOkaaaaaSqa
+  baGccqGHRaWkcaWG0bGaey41aqRaamysaiaadofacaWGsbWaa0baaS
+  qaaiaadIgacaWGPbGaamOAaaqaaiaacQcaaaaaaa@44E0@
+  </annotation>
+ </semantics>
+</math>, <em>t</em> = 0,1,2,… until <em>d</em> exceeds the number of lines  available. </p>
+<p>  These dwellings will  remain in the sample for a period of six months.</p>
+<p>  Gray (1973) and Alexander, Ernst and Haas  (1982) use two different approaches to illustrate that this method produces a  sample that respects the selection probabilities specified. Laflamme (2003)  demonstrates the sample selection process using a diagram.</p>
+<h3 id="a264">2.6.4 Sample rotation</h3>
+<p>Section 2.6.3 describes  how the first sample of dwellings was selected in each group created using the  <abbr title="Rao-Hartley-Cochran">RHC</abbr> method. After a period of six months, it is necessary to replace this  sample with new dwellings. By continuing with the example given at the end of  the previous section, the first sample corresponded to the random start
+<math>
+ <semantics>
+  <mrow>
+   <msub>
+    <mi>U</mi>
+    <mrow>
+     <msup>
+      <mi>j</mi>
+      <mo>*</mo>
+     </msup>
+     </mrow>
+   </msub>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamyvamaaBa
+  aaleaacaWGQbWaaWbaaWqabeaacaGGQaaaaaWcbeaaaaa@38D3@
+  </annotation>
+ </semantics>
+</math> of the <abbr title="Primary sampling unit">PSU</abbr> <em>j*</em>.</p>
+
+<p>If the number of  random starts to use from <abbr title="Primary sampling unit">PSU</abbr> <em>j*</em> is <math>
+ <semantics>
+  <mrow>
+   <msub>
+    <mi>D</mi>
+    <mrow>
+     <msup>
+      <mi>j</mi>
+      <mo>*</mo>
+     </msup>
+     </mrow>
+   </msub>
+   <mo>=</mo><mn>1</mn></mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamiramaaBa
+  aaleaacaWGQbWaaWbaaWqabeaacaGGQaaaaaWcbeaakiabg2da9iaa
+  igdaaaa@3A8D@
+  </annotation>
+ </semantics>
+</math>
+, the second sample of dwellings will corres­pond to the  start <math>
+ <semantics>
+  <mrow>
+   <msub>
+    <mi>U</mi>
+    <mrow>
+     <msup>
+      <mi>j</mi>
+      <mo>*</mo>
+     </msup>
+     <mo>+</mo><mn>1</mn></mrow>
+   </msub>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamyvamaaBa
+  aaleaacaWGQbWaaWbaaWqabeaacaGGQaaaaSGaey4kaSIaaGymaaqa
+  baaaaa@3A70@
+  </annotation>
+ </semantics>
+</math> of the next <abbr title="Primary sampling unit">PSU</abbr>, <em>j*</em>+1, where <math>
+ <semantics>
+  <mrow>
+   <msub>
+    <mi>U</mi>
+    <mrow>
+     <msup>
+      <mi>j</mi>
+      <mo>*</mo>
+     </msup>
+     <mo>+</mo><mn>1</mn></mrow>
+   </msub>
+   <mo>&#x2208;</mo><mrow><mo>[</mo> <mrow>
+    <mn>1</mn><mo>,</mo><mi>I</mi><mi>S</mi><msubsup>
+     <mi>R</mi>
+     <mrow>
+      <mi>h</mi><mi>i</mi><mo stretchy='false'>(</mo><msup>
+       <mi>j</mi>
+       <mo>*</mo>
+      </msup>
+      <mo>+</mo><mn>1</mn><mo stretchy='false'>)</mo></mrow>
+     <mo>*</mo>
+    </msubsup>
+    </mrow> <mo>]</mo></mrow></mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamyvamaaBa
+  aaleaacaWGQbWaaWbaaWqabeaacaGGQaaaaSGaey4kaSIaaGymaaqa
+  baGccqGHiiIZdaWadaqaaiaaigdacaGGSaGaamysaiaadofacaWGsb
+  Waa0baaSqaaiaadIgacaWGPbGaaiikaiaacQgadaahaaadbeqaaiaa
+  cQcaaaWccqGHRaWkcaaIXaGaaiykaaqaaiaacQcaaaaakiaawUfaca
+  GLDbaaaaa@4963@
+  </annotation>
+ </semantics>
+</math>
+. Otherwise, if <math>
+ <semantics>
+  <mrow>
+   <msub>
+    <mi>D</mi>
+    <mrow>
+     <msup>
+      <mi>j</mi>
+      <mo>*</mo>
+     </msup>
+     </mrow>
+   </msub>
+   <mo>&#x003E;</mo><mn>1</mn></mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamiramaaBa
+  aaleaacaWGQbWaaWbaaWqabeaacaGGQaaaaaWcbeaaiiaakiab=5da
+  +iaaigdaaaa@3A92@
+  </annotation>
+ </semantics>
+</math>
+, the second sample will correspond to the start <math>
+ <semantics>
+  <mrow>
+   <msub>
+    <mi>U</mi>
+    <mrow>
+     <msup>
+      <mi>j</mi>
+      <mo>*</mo>
+     </msup>
+     </mrow>
+   </msub>
+   <mo>+</mo><mn>1</mn></mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamyvamaaBa
+  aaleaacaWGQbWaaWbaaWqabeaacaGGQaaaaaWcbeaakiabgUcaRiaa
+  igdaaaa@3A7A@
+  </annotation>
+ </semantics>
+</math> of <abbr title="Primary sampling unit">PSU</abbr> <em>j*</em> (<em><abbr title="that is to say">i.e</abbr>.</em>,  the neighbours of the previous sample). If <math>
+ <semantics>
+  <mrow>
+   <msub>
+    <mi>U</mi>
+    <mrow>
+     <msup>
+      <mi>j</mi>
+      <mo>*</mo>
+     </msup>
+     </mrow>
+   </msub>
+   <mo>+</mo><mn>1</mn><mo>&#x003E;</mo><mi>I</mi><mi>S</mi><msubsup>
+    <mi>R</mi>
+    <mrow>
+     <mi>h</mi><mi>i</mi><msup>
+      <mi>j</mi>
+      <mo>*</mo>
+     </msup>
+     </mrow>
+    <mo>*</mo>
+   </msubsup>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamyvamaaBa
+  aaleaacaWGQbWaaWbaaWqabeaacaGGQaaaaaWcbeaakiabgUcaRiaa
+  igdaiiaacqWF+aGpcaWGjbGaam4uaiaadkfadaqhaaWcbaGaamiAai
+  aadMgacaWGQbWaaWbaaWqabeaacaGGQaaaaaWcbaGaaiOkaaaaaaa@428E@
+  </annotation>
+ </semantics>
+</math>, the selection loops back to use start 1 of <abbr title="Primary sampling unit">PSU</abbr> <em>j*</em>. Generally speaking, with this  method, <abbr title="Primary sampling unit">PSU</abbr> <em>j</em> remains in the sample  for <math>
+ <semantics>
+  <mrow>
+   <msub>
+    <mi>D</mi>
+    <mi>j</mi>
+   </msub>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamiramaaBa
+  aaleaacaWGQbaabeaaaaa@37DB@
+  </annotation>
+ </semantics>
+</math>
+ periods of six months.  When it is necessary to replace the surveyed dwellings, the next random start  is used. After <math>
+ <semantics>
+  <mrow>
+   <msub>
+    <mi>D</mi>
+    <mi>j</mi>
+   </msub>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamiramaaBa
+  aaleaacaWGQbaabeaaaaa@37DB@
+  </annotation>
+ </semantics>
+</math>
+ periods, the sample  moves to the value <math>
+ <semantics>
+  <mrow>
+   <msub>
+    <mi>U</mi>
+    <mrow>
+     <mi>j</mi><mo>+</mo><mn>1</mn></mrow>
+   </msub>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamyvamaaBa
+  aaleaacaWGQbGaey4kaSIaaGymaaqabaaaaa@3989@
+  </annotation>
+ </semantics>
+</math> of <abbr title="Primary sampling unit">PSU</abbr> <em>j</em>+1. This <abbr title="Primary sampling unit">PSU</abbr> will remain in the sample until  all its random starts have been used. The same goes for the <abbr title="Primary sampling units">PSUs</abbr> that are added  to the sample at a later date.</p>
+<p>  This method produces the expected results: the  selection probabilities are always respected over time. Unfortunately, it has a  major inconvenience. As discussed, the first <abbr title="Primary sampling unit">PSU</abbr> remains in the sample for a  random number of periods, and sometimes this number is small. This rapid  rotation of the first <abbr title="Primary sampling unit">PSU</abbr> selected would lead to an inefficient use of the  survey&rsquo;s limited resources. In fact, adding a <abbr title="Primary sampling unit">PSU</abbr> to a sample requires a great  deal of work, including preparing the material, possibly listing the <abbr title="Primary sampling unit">PSU</abbr> and  sometimes hiring and training an interviewer. To be effective, it would be  preferable to amortize this invest­ment by avoiding a too-rapid rotation of the  first <abbr title="Primary sampling unit">PSU</abbr> as much as possible.</p>
+<p>  To overcome this  problem, the <abbr title="Labour Force Survey">LFS</abbr> developed a correction that increases the number of random  starts to use from the first <abbr title="Primary sampling unit">PSU</abbr> without introducing a bias into the selection  probabilities. When <math>
+ <semantics>
+  <mrow>
+   <msub>
+    <mi>D</mi>
+    <mrow>
+     <msup>
+      <mi>j</mi>
+      <mo>*</mo>
+     </msup>
+     </mrow>
+   </msub>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamiramaaBa
+  aaleaacaWGQbWaaWbaaWqabeaacaGGQaaaaaWcbeaaaaa@38C2@
+  </annotation>
+ </semantics>
+</math> is too small, based on  a pre-determined criterion, it is increased in order to keep this <abbr title="Primary sampling unit">PSU</abbr> in the  sample longer. In this case, the number of starts to use for <abbr title="Primary sampling unit">PSU</abbr> <em>j*</em>+1 must be reduced proportionally in  order to avoid introducing a bias into the selection probabilities. Some  constraints are required to ensure that the increase in the number of starts  associated with the first <abbr title="Primary sampling unit">PSU</abbr> will not reduce the number of starts to survey  from the second <abbr title="Primary sampling unit">PSU</abbr> by too much. Gray (1973) shows that this approach does not  bias the selection probabilities, while Laflamme (2003) provides explanations  on these constraints.</p>
+<p>  This method is applied separately to each rotation  group. However, the samples are not all rotated at the same time. An <abbr title="Rao-Hartley-Cochran">RHC</abbr> group  in rotation group 1 is rotated in January and July of every year. The <abbr title="Rao-Hartley-Cochran">RHC</abbr>  groups in rotation group 2 are rotated in February and August, and so on. By  using this method, at the start of the redesign, a list can be produced  containing all the starts that will be in the <abbr title="Labour Force Survey">LFS</abbr> sample for each month over  the next ten years.</p>
+
+<p><img src="fig/fig2.1-eng.jpg" class="brdr-all img-responsive" alt="Figure 2.1 LFS Sample Rotation" aria-describedby="fig2_1-eng"></p>
+    <details id="fig2_1-eng" class="desc">
+    <summary class="desc">Description for Figure 2.1</summary>
+    
+    <p>This diagram  illustrates the <abbr title="Labour Force Survey">LFS</abbr> sample rotation design. The colors indicate which rotation  group the dwellings belong to (Orange is rotation group 1, pink is rotation  group 2, blue is rotation group 3, green is rotation group 4, grey is rotation  group 5 and yellow is rotation group 6). The numbers in the boxes indicate the  number of months that the dwellings associated with a given rotation group have  been part of the survey. As shown by the diagram, one-sixth of the sample is  renewed monthly. So, say in April, dwellings from the blue rotation group are  in their second month of the survey, while dwellings from the grey rotation  panel are in their sixth and last month of participation.  Dwellings from the grey rotation panel will  be replaced by new dwellings in May, as seen in the diagram.  Dwellings that rotate-out are generally  replaced by dwellings from the same respective primary sampling units.</p>
+    </details>
+    
+    
+
+
+<h2 id="fn">Notes</h2>
+<aside class="wb-fnote" role="note">
+      <dl>
+       <dt>Footnote 1.</dt>
+         <dd id="n1">
+          <p>They can also be called rotation panels. This is commonly referred to as  a rotating panel survey design.</p>
+          <p class="fn-rtn"><a href="#n1-refa"><span class="wb-inv">Return to note </span>1<span class="wb-inv"> referrer</span></a></p>
+        </dd>
+        
+        <dt>Footnote 2.</dt>
+        <dd id="n2">
+          <p><abbr title="Labour Force Survey">LFS</abbr> samples dwellings and not households (occupied dwellings). However,  the allocation is expressed in terms of a targeted number of households. This  number is used to determine the sampling rate of households in a region. When  that sampling rate is applied to a list of dwellings, the number of dwellings  sampled should on average yield roughly the target number of households.  The precision will depend on the precision of  occupancy rate and coverage of the <abbr title="Dwelling Universe File">DUF</abbr>.</p>
+          <p class="fn-rtn"><a href="#n2-refa"><span class="wb-inv">Return to note </span>2<span class="wb-inv"> referrer</span></a></p>
+        </dd>
+        
+        <dt>Footnote 3.</dt>
+        <dd id="n3">
+          <p>There is a slight modification to the quality target when unemployment  is low, explained further below.</p>
+          <p class="fn-rtn"><a href="#n3-refa"><span class="wb-inv">Return to note </span>3<span class="wb-inv"> referrer</span></a></p>
+        </dd>
+        
+        <dt>Footnote 4.</dt>
+        <dd id="n4">
+          <p>It was expected that Lethbridge would become a <abbr title="Census Metropolitan Area">CMA</abbr> after the 2016  Census.</p>
+          <p class="fn-rtn"><a href="#n4-refa"><span class="wb-inv">Return to note </span>4<span class="wb-inv"> referrer</span></a></p>
+        </dd>
+        
+        <dt>Footnote 5.</dt>
+        <dd id="n5">
+          <p>The Northern Manitoba <abbr title="Employment Insurance Economic Region">EIER</abbr> is an exception. Despite having some <abbr title="Coefficient of Variations">CVs</abbr>  above 15%, this region has historically had unemployment rate far above 13%, so  better quality was not needed to determine EI benefits. Thus, to avoid high  collection costs in Northern Manitoba, the sample size was kept at the same  level as in the previous design.</p>
+          <p class="fn-rtn"><a href="#n5-refa"><span class="wb-inv">Return to note </span>5<span class="wb-inv"> referrer</span></a></p>
+        </dd>
+        
+        <dt>Footnote 6.</dt>
+        <dd id="n6">
+          <p><abbr title="Prince Edward Island">PEI</abbr>, which has a one-stage design, does not have clusters.</p>
+          <p class="fn-rtn"><a href="#n6-refa"><span class="wb-inv">Return to note </span>6<span class="wb-inv"> referrer</span></a></p>
+        </dd>
+        
+        <dt>Footnote 7.</dt>
+        <dd id="n7">
+          <p>Taking this argument to the extreme, the ideal solution would be to  create <abbr title="Primary sampling units">PSUs</abbr> containing one dwelling each. This is equivalent to one-stage  sampling. However, as discussed in <a href="#a22">Section 2.2</a>, one-stage sampling is currently  too expensive to implement outside of <abbr title="Prince Edward Island">PEI</abbr>.</p>
+          <p class="fn-rtn"><a href="#n7-refa"><span class="wb-inv">Return to note </span>7<span class="wb-inv"> referrer</span></a></p>
+        </dd>
+        
+        <dt>Footnote 8.</dt>
+        <dd id="n8">
+          <p><abbr title="Employment Insurance Economic Region">EIER</abbr> geography definitions date back to 2000. Due to urban sprawl, many <abbr title="Census Metropolitan Areas">CMAs</abbr>  that were once <abbr title="Employment Insurance Economic Regions">EIERs</abbr> have now grown beyond the <abbr title="Employment Insurance Economic Region">EIER</abbr> boundaries.</p>
+          <p class="fn-rtn"><a href="#n8-refa"><span class="wb-inv">Return to note </span>8<span class="wb-inv"> referrer</span></a></p>
+        </dd>
+        
+        <dt>Footnote 9</dt>
+        <dd id="n9">
+          <p>Since a <abbr title="T1 Family File">T1FF</abbr> record is not available for each household in a <abbr title="Primary sampling unit">PSU</abbr>, the  proportion of high income households had to be estimated from the proportion  among households with <abbr title="T1 Family File">T1FF</abbr> records in the <abbr title="Primary sampling unit">PSU</abbr>. In the majority of <abbr title="Primary sampling units">PSUs</abbr>, <abbr title="T1 Family File">T1FF</abbr>  records were available for 90% of households or more, so this estimate should  be reliable. <abbr title="Primary sampling units">PSUs</abbr> where only a few <abbr title="T1 Family File">T1FF</abbr> records were available were excluded.</p>
+          <p class="fn-rtn"><a href="#n9-refa"><span class="wb-inv">Return to note </span>9<span class="wb-inv"> referrer</span></a></p>
+        </dd>
+        
+        <dt>Footnote 10.</dt>
+        <dd id="n10">
+          <p><abbr title="Primary sampling units">PSUs</abbr> already assigned to high income strata were excluded. No Aboriginal  strata were created in Winnipeg.</p>
+          <p class="fn-rtn"><a href="#n10-refa"><span class="wb-inv">Return to note </span>10<span class="wb-inv"> referrer</span></a></p>
+        </dd>
+        
+        <dt>Footnote 11.</dt>
+        <dd id="n11">
+          <p>Stratification in  <abbr title="Prince Edward Island">PEI</abbr> is explained in <a href="#a256">Section  2.5.6</a></p>
+          <p class="fn-rtn"><a href="#n11-refa"><span class="wb-inv">Return to note </span>11<span class="wb-inv"> referrer</span></a></p>
+        </dd>
+        
+        <dt>Footnote 12.</dt>
+        <dd id="n12">
+          <p>In some cases this number was rounded down, usually if there were too  few <abbr title="Primary sampling units">PSUs</abbr> to create the extra stratum.</p>
+          <p class="fn-rtn"><a href="#n12-refa"><span class="wb-inv">Return to note </span>12<span class="wb-inv"> referrer</span></a></p>
+        </dd>
+        
+        <dt>Footnote 13.</dt>
+        <dd id="n13">
+          <p>This optimization method is known as random restart hill climbing.</p>
+          <p class="fn-rtn"><a href="#n13-refa"><span class="wb-inv">Return to note </span>13<span class="wb-inv"> referrer</span></a></p>
+        </dd>
+        
+        <dt>Footnote 14.</dt>
+        <dd id="n14">
+          <p>See <a href="#a261">Section 2.6.1</a> for how rotation groups are formed in the other  provinces.</p>
+          <p class="fn-rtn"><a href="#n14-refa"><span class="wb-inv">Return to note </span>14<span class="wb-inv"> referrer</span></a></p>
+        </dd>
+        
+        <dt>Footnote 15.</dt>
+        <dd id="n15">
+          <p>In practice, the size measurement used is the inverse sampling ratio,  which is derived from the number of households. More information on this calculation  is provided in <a href="#a271">Section 2.7.1</a>.</p>
+          <p class="fn-rtn"><a href="#n15-refa"><span class="wb-inv">Return to note </span>15<span class="wb-inv"> referrer</span></a></p>
+        </dd>
+        
+        <dt>Footnote 16.</dt>
+        <dd id="n16">
+          <p><a href="chapt3-eng.htm">Chapter 3</a> describes how the Address Register and field listing are used  to create the sample frame.</p>
+          <p class="fn-rtn"><a href="#n16-refa"><span class="wb-inv">Return to note </span>16<span class="wb-inv"> referrer</span></a></p>
+        </dd>
+        
+        <dt>Footnote 17.</dt>
+        <dd id="n17">
+          <p>This target corresponds to the number of households in the group divided  by the stratum inverse sampling ratio.</p>
+          <p class="fn-rtn"><a href="#n17-refa"><span class="wb-inv">Return to note </span>17<span class="wb-inv"> referrer</span></a></p>
+        </dd>
+        
+        <dt>Footnote 18.</dt>
+        <dd id="n18">
+          <p>This second random number has two functions.  It takes into account the fact that the sample size associated with the last random  start is sometimes smaller than that of the first starts. We therefore hope to  stabilize the global sample size over time. It also lays the groundwork for  applying the rule of the minimum number of starts to use.</p>
+          <p class="fn-rtn"><a href="#n18-refa"><span class="wb-inv">Return to note </span>18<span class="wb-inv"> referrer</span></a></p>
+        </dd>
+       
+      </dl>
+  </aside>
+    
+    <!--Footnote hover start--> 
+  <script>
+            $(document).ready(function() {
+             			
+    			 $('#n1-refa').tooltipster({
+    				 maxWidth:500,
+    				 touchDevices:false,
+                     interactive: true,
+                    content: $('<p>They can also be called rotation panels. This is commonly referred to as  a rotating panel survey design.</p>')
+                });
+				
+				$('#n2-refa').tooltipster({
+    				 maxWidth:500,
+    				 touchDevices:false,
+                     interactive: true,
+                    content: $('<p>LFS samples dwellings and not households (occupied dwellings). However,  the allocation is expressed in terms of a targeted number of households. This  number is used to determine the sampling rate of households in a region. When  that sampling rate is applied to a list of dwellings, the number of dwellings  sampled should on average yield roughly the target number of households.  The precision will depend on the precision of  occupancy rate and coverage of the DUF.</p>')
+                });
+				
+				$('#n3-refa').tooltipster({
+    				 maxWidth:500,
+    				 touchDevices:false,
+                     interactive: true,
+                    content: $('<p>There is a slight modification to the quality target when unemployment  is low, explained further below.</p>')
+                });
+				
+				$('#n4-refa').tooltipster({
+    				 maxWidth:500,
+    				 touchDevices:false,
+                     interactive: true,
+                    content: $('<p>It was expected that Lethbridge would become a CMA after the 2016  Census.</p>')
+                });
+				
+				$('#n5-refa').tooltipster({
+    				 maxWidth:500,
+    				 touchDevices:false,
+                     interactive: true,
+                    content: $('<p>The Northern Manitoba EIER is an exception. Despite having some CVs  above 15%, this region has historically had unemployment rate far above 13%, so  better quality was not needed to determine EI benefits. Thus, to avoid high  collection costs in Northern Manitoba, the sample size was kept at the same  level as in the previous design.</p>')
+                });
+				
+				$('#n6-refa').tooltipster({
+    				 maxWidth:500,
+    				 touchDevices:false,
+                     interactive: true,
+                    content: $('<p>PEI, which has a one-stage design, does not have clusters.</p>')
+                });
+				
+				$('#n7-refa').tooltipster({
+    				 maxWidth:500,
+    				 touchDevices:false,
+                     interactive: true,
+                    content: $('<p>Taking this argument to the extreme, the ideal solution would be to  create PSUs containing one dwelling each. This is equivalent to one-stage  sampling. However, as discussed in Section 2.2, one-stage sampling is currently  too expensive to implement outside of PEI.</p>')
+                });
+				
+				$('#n8-refa').tooltipster({
+    				 maxWidth:500,
+    				 touchDevices:false,
+                     interactive: true,
+                    content: $('<p>EIER geography definitions date back to 2000. Due to urban sprawl, many CMAs  that were once EIERs have now grown beyond the EIER boundaries.</p>')
+                });
+				
+				$('#n9-refa').tooltipster({
+    				 maxWidth:500,
+    				 touchDevices:false,
+                     interactive: true,
+                    content: $('<p>Since a T1FF record is not available for each household in a PSU, the  proportion of high income households had to be estimated from the proportion  among households with T1FF records in the PSU. In the majority of PSUs, T1FF  records were available for 90% of households or more, so this estimate should  be reliable. PSUs where only a few T1FF records were available were excluded.</p>')
+                });
+				
+				$('#n10-refa').tooltipster({
+    				 maxWidth:500,
+    				 touchDevices:false,
+                     interactive: true,
+                    content: $('<p>PSUs already assigned to high income strata were excluded. No Aboriginal  strata were created in Winnipeg.</p>')
+                });
+				
+				$('#n11-refa').tooltipster({
+    				 maxWidth:500,
+    				 touchDevices:false,
+                     interactive: true,
+                    content: $('<p>Stratification in PEI is explained in Section  2.5.6</p>')
+                });
+				
+				$('#n12-refa').tooltipster({
+    				 maxWidth:500,
+    				 touchDevices:false,
+                     interactive: true,
+                    content: $('<p>In some cases this number was rounded down, usually if there were too  few PSUs to create the extra stratum.</p>')
+                });
+				
+				$('#n13-refa').tooltipster({
+    				 maxWidth:500,
+    				 touchDevices:false,
+                     interactive: true,
+                    content: $('<p>This optimization method is known as random restart hill climbing.</p>')
+                });
+				
+				$('#n14-refa').tooltipster({
+    				 maxWidth:500,
+    				 touchDevices:false,
+                     interactive: true,
+                    content: $('<p>See Section 2.6.1 for how rotation groups are formed in the other  provinces.</p>')
+                });
+				
+				$('#n15-refa').tooltipster({
+    				 maxWidth:500,
+    				 touchDevices:false,
+                     interactive: true,
+                    content: $('<p>In practice, the size measurement used is the inverse sampling ratio,  which is derived from the number of households. More information on this calculation  is provided in Section 2.7.1.</p>')
+                });
+				
+				$('#n16-refa').tooltipster({
+    				 maxWidth:500,
+    				 touchDevices:false,
+                     interactive: true,
+                    content: $('<p>Chapter 3 describes how the Address Register and field listing are used  to create the sample frame.</p>')
+                });
+				
+				$('#n17-refa').tooltipster({
+    				 maxWidth:500,
+    				 touchDevices:false,
+                     interactive: true,
+                    content: $('<p>This target corresponds to the number of households in the group divided  by the stratum inverse sampling ratio.</p>')
+                });
+				
+				$('#n18-refa').tooltipster({
+    				 maxWidth:500,
+    				 touchDevices:false,
+                     interactive: true,
+                    content: $('<p>This second random number has two functions.  It takes into account the fact that the sample size associated with the last random  start is sometimes smaller than that of the first starts. We therefore hope to  stabilize the global sample size over time. It also lays the groundwork for  applying the rule of the minimum number of starts to use.</p>')
+                });
+				
+    		});
+        </script> 
+    <!--Footnote hoover end--> 
+    
+    
+
+ 
+ <ul class="pager">
+  <li class="previous"><a href="chapt1-eng.htm" rel="prev">Previous</a></li>
+  
+ <li><a href="/pub/71-526-x/71-526-x2017001-eng.htm"><span class="fa fa-home text-primary mrgn-rght-sm"></span>Main page</a></li> 
+ 
+  <li class="next"><a href="chapt3-eng.htm" rel="next">Next</a></li> 
+</ul>
+
+ 
+ 
+</section>
+
+
+ <!--END OF CONTENT-->
+ 
+ 
+
+<!-- More info button text -->  
+﻿    <!-- More info page -->
+    <section id="moreinfo" class="mfp-hide modal-dialog modal-content overlay-def">
+      <header class="modal-header">
+        <h2 class="modal-title">More information</h2>
+      </header>
+      <div class="modal-body">
+      
+      <div class="pstn-rght-lg pstn-rght-md pstn-lft-md pstn-lft-sm pstn-lft-xs mrgn-lft-md mrgn-rght-sm">
+        <span class="label label-primary">ISSN: </span>
+      </div>
+      <span class="clearfix"></span>
+      
+      <h2>Acknowledgement</h2>
+
+<p>Sincere thanks are due to the many people who contributed in various ways to this document.</p>
+
+<p>Our gratitude goes first to the primary authors of the various chapters: Lihua An, Justin Francis, Guy Laflamme, Yves Lafortune, Scott Meyer, Elisabeth Neusy, Steven Thomas and Sylvia White. These people worked on different aspects of the 2015 redesign of the methodology of the Labour Force Survey, and thus were the best people to write about it.</p>
+
+<p>Besides these, numerous people in Household Survey Methods Division, Labour Statistics Division, and elsewhere in Statistics Canada, were also involved in the planning, reviewing, verification, revision, translation and production of this document.  Sincere thanks are due to all of them.</p>
+
+        <h2>Note of appreciation </h2>
+        <p>Canada owes the success of its statistical system to a long-standing partnership between Statistics Canada, the citizens of Canada, its businesses, governments and other institutions. Accurate and timely statistical information could not be produced without their continued co-operation and goodwill.</p>
+        
+            
+                <h2>Standards of service to the public</h2>
+        <p>Statistics Canada is committed to serving its clients in a prompt, reliable and courteous manner. To this end, the Agency has developed <a href="https://www.statcan.gc.ca/eng/about/service/standards">standards of service</a> which its employees observe in serving its clients.</p>
+        <h2>Copyright</h2>
+        <p>Published by authority of the Minister responsible for Statistics Canada.</p>
+    	<p> © Minister of Industry, 2017</p>
+        <p>Use of this publication is governed by the <a href="https://www.statcan.gc.ca/eng/reference/licence">Statistics Canada Open Licence Agreement</a>.</p>
+    	<p>Catalogue <abbr title="number">no.</abbr> 71-526-X</p>
+    	<p> Frequency: Occasional</p>
+    	<p> Ottawa</p>
+        
+        <a class="btn btn-primary popup-modal-dismiss">close</a> </div>
+    </section>
+    <!-- END More info page -->  
+
+<!-- Table of contents button text --> 
+﻿    <!-- Table of contents page -->
+    <section id="toc-tdm" class="mfp-hide modal-dialog modal-content overlay-def">
+      <header class="modal-header">
+        <h2 class="modal-title">Table of contents</h2>
+      </header>
+      <div class="modal-body">
+      
+     
+<p><a href="/pub/71-526-x/71-526-x2017001-eng.htm">Abstract</a><strong> - Main page</strong><br>
+       
+<a href="/pub/71-526-x/2017001/chapt1-eng.htm">Chapter 1 Introduction and overview</a><br />
+         
+<a href="/pub/71-526-x/2017001/chapt2-eng.htm">Chapter 2 Sample design</a><br />
+
+<a href="/pub/71-526-x/2017001/chapt3-eng.htm">Chapter 3 Sampling frame creation and maintenance</a><br />
+
+<a href="/pub/71-526-x/2017001/chapt4-eng.htm">Chapter 4 Collection</a><br />
+
+<a href="/pub/71-526-x/2017001/chapt5-eng.htm">Chapter 5 Processing and imputation</a><br />
+
+<a href="/pub/71-526-x/2017001/chapt6-eng.htm">Chapter 6 Weighting and estimation</a><br />
+
+<a href="/pub/71-526-x/2017001/chapt7-eng.htm">Chapter 7 Variance estimation</a><br />
+
+<a href="/pub/71-526-x/2017001/chapt8-eng.htm">Chapter 8 Data quality</a><br />
+
+<a href="/pub/71-526-x/2017001/chapt9-eng.htm">Chapter 9 LFS frame for other surveys</a><br />
+
+<a href="/pub/71-526-x/2017001/app-ann-eng.htm">Appendices</a><br />
+
+
+<a href="/pub/71-526-x/2017001/ref-biblio-eng.htm">References</a></p>
+		
+       
+        
+        <a class="btn btn-primary popup-modal-dismiss">close</a> </div>
+    </section>
+    
+    
+    <!-- END Table of contents page --> 
+
+
+
+
+<div class="pagedetails">
+	<dl id="wb-dtmd">
+		<dt>Date modified:&#32;</dt>
+		<dd><time property="dateModified">
+  2017-12-21
+</time></dd>
+	</dl>
+</div>
+</main>
+
+<footer id="wb-info">
+	<h2 class="wb-inv">About this site</h2>
+	<div class="gc-contextual">
+		<div class="container">
+			<nav>
+				<h3>Statistics Canada</h3>
+				<ul class="list-unstyled colcount-sm-2 colcount-md-3">
+					<li><a href="https://www.statcan.gc.ca/en/reference/refcentre/index">Contact StatCan</a></li>
+					<li><a href="https://www.statcan.gc.ca/en/trust">Trust Centre</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+	<div class="gc-main-footer">
+		<div class="container">
+			<nav>
+				<h3>Government of Canada</h3>
+				<ul class="list-unstyled colcount-sm-2 colcount-md-3">
+					<li><a href="https://www.canada.ca/en/contact.html">All contacts</a></li>
+					<li><a href="https://www.canada.ca/en/government/dept.html">Departments and agencies</a></li>
+					<li><a href="https://www.canada.ca/en/government/system.html">About government</a></li>
+				</ul>
+				<h4><span class="wb-inv">Themes and topics</span></h4>
+				<ul class="list-unstyled colcount-sm-2 colcount-md-3">
+					<li><a href="https://www.canada.ca/en/services/jobs.html">Jobs</a></li>
+					<li><a href="https://www.canada.ca/en/services/immigration-citizenship.html">Immigration and citizenship</a></li>
+					<li><a href="https://travel.gc.ca/">Travel and tourism</a></li>
+					<li><a href="https://www.canada.ca/en/services/business.html">Business</a></li>
+					<li><a href="https://www.canada.ca/en/services/benefits.html">Benefits</a></li>
+					<li><a href="https://www.canada.ca/en/services/health.html">Health</a></li>
+					<li><a href="https://www.canada.ca/en/services/taxes.html">Taxes</a></li>
+					<li><a href="https://www.canada.ca/en/services/environment.html">Environment and natural resources</a></li>
+					<li><a href="https://www.canada.ca/en/services/defence.html">National security and defence</a></li>
+					<li><a href="https://www.canada.ca/en/services/culture.html">Culture, history and sport</a></li>
+					<li><a href="https://www.canada.ca/en/services/policing.html">Policing, justice and emergencies</a></li>
+					<li><a href="https://www.canada.ca/en/services/transport.html">Transport and infrastructure</a></li>
+					<li><a href="https://international.gc.ca/world-monde/index.aspx?lang=eng">Canada and the world</a></li>
+					<li><a href="https://www.canada.ca/en/services/finance.html">Money and finance</a></li>
+					<li><a href="https://www.canada.ca/en/services/science.html">Science and innovation</a></li>
+					<li><a href="https://www.canada.ca/en/services/indigenous-peoples.html">Indigenous peoples</a></li>
+					<li><a href="https://www.canada.ca/en/services/veterans.html">Veterans and military</a></li>
+					<li><a href="https://www.canada.ca/en/services/youth.html">Youth</a></li>
+					<li><a href="https://www.canada.ca/en/services/life-events.html">Manage life events</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+	<div class="gc-sub-footer">
+		<div class="container d-flex align-items-center">
+			<nav>
+				<h3 class="wb-inv">Government of Canada Corporate</h3>
+				<ul>
+					<li><a href="https://www.canada.ca/en/social.html">Social media</a></li>
+					<li><a href="https://www.canada.ca/en/mobile.html">Mobile applications</a></li>
+					<li><a href="https://www.canada.ca/en/government/about-canada-ca.html">About Canada.ca</a></li>
+					<li><a href="https://www.statcan.gc.ca/en/terms-conditions">Terms and conditions</a></li>
+					<li><a href="https://www.statcan.gc.ca/en/about/transparency/privacy">Privacy</a></li>
+				</ul>
+			</nav>
+			<div class="wtrmrk align-self-end">
+				<img src="/wet-boew4b/assets/wmms-blk.svg" alt="Symbol of the Government of Canada">
+			</div>
+		</div>
+	</div>
+</footer>
+
+<script>
+
+    modifyBreadCrum();
+    
+
+    function modifyBreadCrum(){
+        
+    let dailyEn = "n1/dai-quo/index-eng.htm";
+    let dailyFr = "n1/dai-quo/index-fra.htm";
+ 
+    let breadcrumb = document.querySelector("#wb-bc ol.breadcrumb");
+        
+    if(breadcrumb === undefined || breadcrumb === null || breadcrumb.children.length == 0){
+        return;
+    } 
+        
+    let lastListNode = breadcrumb.children[breadcrumb.children.length -1];
+    
+    if(window.location.href.indexOf("daily-quotidien") != -1 || window.location.href.indexOf("dai-quo") != -1){
+        let href = window.location.href;
+        let env = href.split("n1")[0];
+        href = href.indexOf("eng") != -1 ? env + dailyEn : env + dailyFr;
+
+        createBreadcrumAnchor(href);
+    }
+    else{
+        removeBreadcrumNotAnchor();
+    }
+
+    return;
+
+    function createBreadcrumAnchor(href){
+
+        let anchor = document.createElement("a");
+    
+        if(lastListNode.lastChild !== undefined && lastListNode.lastChild !== null){
+            if(lastListNode.lastChild.nodeName === anchor.nodeName){
+                return;
+            } 
+
+            anchor.innerHTML = lastListNode.innerHTML;
+            anchor.href = href;
+            lastListNode.innerHTML = anchor.outerHTML; 
+        }
+    }
+
+    function removeBreadcrumNotAnchor(){
+
+        let anchor = document.createElement("a");
+
+        if(lastListNode.lastChild !== undefined && lastListNode.lastChild !== null){
+            if(lastListNode.lastChild.nodeName === anchor.nodeName){
+                return;
+            } 
+        
+            breadcrumb.removeChild(lastListNode);
+        }
+
+    }
+
+    }
+
+</script>
+
+<!--[if gte IE 9 | !IE ]><!-->
+<script src="/wet-boew4b/js/wet-boew.min.js"></script>
+<script src="/wet-boew4b/js/theme.min.js"></script>
+<!--<![endif]-->
+<!--[if lt IE 9]>
+<script src="/wet-boew4b/js/ie8-wet-boew2.min.js"></script>
+<![endif]-->
+<!-- InvitationManager -->
+<script src="/wet-boew4b/invitation-manager/Overlay.js"></script>
+<script src="/wet-boew4b/invitation-manager/InvitationManager.js"></script>
+<!-- End InvitationManager -->
+<script type="text/javascript">_satellite.pageBottom();</script>
+
+<!-- CustomScriptsJSStart -->
+<!-- CustomScriptsJSEnd -->
+
+</body>
+</html>

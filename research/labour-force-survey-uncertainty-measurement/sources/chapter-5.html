@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 9]><html class="no-js lt-ie9" lang="en" dir="ltr"><![endif]--><!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+<!--<![endif]-->
+
+<head>
+<meta charset="utf-8">
+<link rel="schema.dc" href="http://purl.org/dc/elements/1.1/" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<!-- wet-boew.github.io/wet-boew/License-en.htm / wet-boew.github.io/wet-boew/Licence-en.htm -->
+
+
+<meta content="width=device-width,initial-scale=1" name="viewport" />
+
+<title>Chapter 5 Processing and imputation</title>
+<meta name="dcterms.title" content="Methodology of the Canadian Labour Force Survey. Chapter 5 Processing and imputation" />
+<meta name="dcterms.language" title="ISO639-2" content="eng" />
+<meta name="dcterms.creator" content="Government of Canada, Statistics Canada" />
+<meta name="dcterms.issued" title="W3CDTF" content="2017-03-29" />
+<meta name="dcterms.modified" title="W3CDTF" content="2017-03-29" />
+<meta name="dcterms.subject" title="gcstc" content="none" />
+<meta name="description" content="" />
+<meta name="keywords" content="none" />
+<meta name="STCtopic" content="Education, training and learning; Labour" />
+<meta name="STCtopicID" content="1821; 2621" />
+<meta name="STCsubtopic" content="Fields of study; Outcomes of education; Adult education and training; Job training and educational attainment" />
+<meta name="STCsubtopicID" content="1586; 3073; 966; 2624" />
+<meta name="STCtype" content="Survey documentation" />
+<meta name="STCthesaurus" content="none" />
+
+<meta property="dcterms:service" content="StatCan"/> 
+<meta property="dcterms:accessRights" content="2"/>
+
+<link href="/wet-boew4b/assets/favicon.ico" rel="icon" type="image/x-icon">
+<link rel="stylesheet" href="/wet-boew4b/css/wet-boew.min.css">
+<script src="/wet-boew4b/js/jquery.min.js"></script>
+
+<link rel="stylesheet" href="/wet-boew4b/css/theme.min.css">
+<link rel="stylesheet" href="/wet-boew4b/css/statcan.css">
+<link rel="stylesheet" href="/wet-boew4b/invitation-manager/Overlay.css"> 
+
+<noscript><link rel="stylesheet" href="/wet-boew4b/css/noscript.min.css" /></noscript>
+<!-- Adobe Analytics v5 production version --><!--script src="//assets.adobedtm.com/be5dfd287373/8cdb3d539c44/launch-6df9e9b447f9.min.js"></script-->
+<!-- Adobe Analytics v5 staging version --><!--script src="//assets.adobedtm.com/be5dfd287373/8cdb3d539c44/launch-dfa8abb35555-staging.min.js"></script-->
+<!-- Adobe Analytics v10 production version --><script src="//assets.adobedtm.com/be5dfd287373/8f0ead8a37e7/launch-09394abc039d.min.js"></script>
+
+<script>dataLayer1 = [];</script>
+
+
+
+<script src="/Framework/js/jquery.tooltipster.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/Framework/css/tooltipster.css">
+<link rel="stylesheet" type="text/css" href="/Framework/css/pubs_wet4.css">
+<link rel="stylesheet" type="text/css" href="/wet-boew4b/css/font-awesome.min.css">
+
+
+<!-- CustomScriptsCSSEnd -->
+</head>
+
+<body vocab="http://schema.org/" typeof="WebPage">
+
+<ul id="wb-tphp">
+<li class="wb-slc">
+<a class="wb-sl" href="#wb-cont">Skip to main content</a>
+</li>
+<li class="wb-slc visible-sm visible-md visible-lg">
+<a class="wb-sl" href="#wb-info">Skip to "About this site"</a>
+</li>
+</ul>
+<header role="banner">
+<div id="wb-bnr" class="container">
+<section id="wb-lng" class="visible-md visible-lg text-right">
+<h2 class="wb-inv">Language selection</h2>
+<div class="row">
+<div class="col-md-12">
+<ul class="list-inline margin-bottom-none">
+<li><a lang="fr" href="
+/cgi-bin/change.cgi
+">Fran&#231;ais</a></li>
+</ul>
+</div>
+</div>
+</section>
+<div class="row">
+<div class="brand col-xs-9 col-sm-5 col-md-4">
+<a href="https://www.canada.ca/en.html"><img src="/wet-boew4b/assets/sig-blk-gov-en.svg" alt="Government of Canada"><span class="wb-inv"> / <span lang="fr">Gouvernement du Canada</span></span></a>
+</div>
+<section class="wb-mb-links col-sm-offset-4 col-xs-4 col-sm-3 visible-sm visible-xs" id="wb-glb-mn">
+<h2>Search and menus</h2>
+<ul class="list-inline text-right chvrn">
+<li><a href="#mb-pnl" title="Search and menus" aria-controls="mb-pnl" class="overlay-lnk" role="button"><span class="glyphicon glyphicon-search"><span class="glyphicon glyphicon-th-list"><span class="wb-inv">Search and menus</span></span></span></a></li>
+</ul>
+<div id="mb-pnl"></div>
+</section>
+
+<section id="wb-srch" class="col-lg-offset-2 col-md-offset-2 col-xs-6 text-right visible-md visible-lg">
+<h2 class="wb-inv">Search</h2>
+<form action="https://www.statcan.gc.ca/search/results/site-search" method="get" name="cse-search-box" role="search" class="form-inline">
+<div class="form-group wb-srch-qry">
+<label for="wb-srch-q" class="wb-inv">Search Statistics Canada</label>
+<input type="hidden" name="fq" value="stclac:2" />
+<input id="wb-srch-q" list="wb-srch-q-ac" class="wb-srch-q form-control" name="q" type="search" value="" size="27" maxlength="150" placeholder="Search Statistics Canada">
+<datalist id="wb-srch-q-ac">
+</datalist>
+</div>
+<div class="form-group submit">
+<button type="submit" id="wb-srch-sub" class="btn btn-primary btn-small" name="wb-srch-sub"><span class="glyphicon-search glyphicon"></span><span class="wb-inv">Search</span></button>
+</div>
+</form>
+</section>
+</div>
+</div>
+
+<nav role="navigation" id="wb-sm" class="wb-menu visible-md visible-lg" data-trgt="mb-pnl" data-ajax-replace="/wet-boew4b/ajax/sitemenu-en.html" typeof="SiteNavigationElement">
+	<div class="container nvbar">
+		<h2 class="wb-inv">Topics menu</h2>
+		<div class="row">
+			<ul class="list-inline menu">
+				<li><a href="https://www150.statcan.gc.ca/n1/en/subjects?MM=1">Subjects</a></li>
+				<li><a href="https://www150.statcan.gc.ca/n1/en/type/data?MM=1">Data</a></li>
+				<li><a href="https://www150.statcan.gc.ca/n1/en/type/analysis?MM=1">Analysis</a></li>
+				<li><a href="https://www.statcan.gc.ca/en/reference?MM=1">Reference</a></li>
+				<li><a href="https://www.statcan.gc.ca/en/geography?MM=1">Geography</a></li>
+				<li><a href="https://www.statcan.gc.ca/en/census?MM=1">Census</a></li>
+				<li><a href="https://www.statcan.gc.ca/en/surveys?MM=1">Surveys and statistical programs</a></li>
+				<li><a href="https://www.statcan.gc.ca/en/about/statcan?MM=1">About StatCan</a></li>
+				<li><a href="https://www.canada.ca/en.html">Canada.ca</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<nav role="navigation" id="wb-bc" class="" property="breadcrumb">
+	<div class="container">
+		<div class="row">
+
+<!-- Breadcrumb trail -->
+<ol class="breadcrumb">
+<li><a href="http://www.statcan.gc.ca/eng/start" title="Main page of Statistics Canada">Home</a></li>
+<li><a href="/cgi-bin/IPS/display?cat_num=71-526-x" title="Online catalogue: 71-526-X">71-526-X</a></li>
+<li><a href="/pub/71-526-x/71-526-x2017001-eng.htm" title="Main page: Methodology of the Canadian Labour Force Survey">Main page</a></li>
+<li>Chapter 5 Processing and imputation</li>
+</ol>
+
+</div>
+</div>
+</nav>
+</header>
+
+<main role="main" property="mainContentOfPage" class="container">
+
+
+<!--H1 and logo start-->
+<section>
+  <h1 property="name" id="wb-cont">
+  <span class="hidden-xs hidden-sm"><span class="small">Methodology of the Canadian Labour Force Survey</span><br>
+    Chapter 5 Processing and imputation</span>
+  <small class="visible-sm visible-xs"><span class="small">Methodology of the Canadian Labour Force Survey</span><br/>
+  Chapter 5 Processing and imputation</small></h1>
+  
+  
+  
+
+<div class="row pstn-tp-sm pstn-rght-sm mrgn-tp-xl"> 
+     <a href="#toc-tdm" aria-controls="toc-tdm" class="btn btn-xs wb-lbx btn-primary mrgn-rght-sm"><span class="glyphicon glyphicon-list mrgn-rght-sm" title="Table of contents"></span>Table of contents</a>
+</div>
+
+
+<details class="hidden-xs hidden-sm rel-article mrgn-bttm-md hidden-print"><summary class="rel-article"><span class="h4">On this page</span></summary>
+
+<ul>
+ <li class="list-unstyled"><a href="#a50">5.0 Introduction</a></li>
+ <li class="list-unstyled"><a href="#a51">5.1 Receipt of data and Phase I editing</a></li>
+ <li class="list-unstyled"><a href="#a52">5.2 Phase II editing</a></li>
+ <li class="list-unstyled"><a href="#a53">5.3 Hot-deck imputation</a>
+	  <ul>
+        <li class="list-unstyled"><a href="#a531">5.3.1 Imputation pre-processing</a></li>
+        <li class="list-unstyled"><a href="#a532">5.3.2 Imputation for item nonresponse</a></li>
+        <li class="list-unstyled"><a href="#a533">5.3.3 Imputation for person nonresponse</a></li>
+      </ul></li>
+ <li class="list-unstyled"><a href="#a54">5.4 Post-imputation process</a>
+ 	
+</ul>
+</details>
+
+
+ <!--CONTENT-->
+ 
+<h2 id="a50" class="mrgn-tp-md">5.0 Introduction</h2>
+
+
+
+    <p>After  collection, the Labour Force Survey (LFS) data go through several steps of  processing before estimates are produced. To facilitate production of  estimates from a complete and consistent  microdata file, editing, imputation, and weight adjustments are used to  identify and compensate for invalid, inconsistent, and missing data. Data  processing  can be divided into the  following four steps:</p>
+  <ol>
+      <li>Receipt of data from the regional offices and Phase I  editing</li>
+      <li>Phase II editing</li>
+      <li>Hot-deck imputation</li>
+      <li>Post-imputation  processing</li>
+    </ol>
+    <p>Invalid and inconsistent data is identified  and replaced with valid, consistent data using edits and various imputation  methods, depending on the type of nonresponse. Item nonresponse, where one or  more questionnaire items is unknown, is treated by carry-forward imputation,  imputation by deduction, or hot-deck imputation, depending on the response  history of the respondent and what survey data was collected for the record.  Person nonresponse, where it is not possible to obtain any survey information  for a person, is treated by hot-deck imputation. Household nonresponse, where  it is not possible to obtain survey information for the entire household, is  treated by hot-deck imputation or a nonresponse weight adjustment (see <a href="chapt6-eng.htm">Chapter 6</a>), depending on the response history of the household.</p>
+    <p>      The following sections will explain the processing steps in  more detail, with much of the focus on the hot-deck imputation system.</p>
+    <h2 id="a51">5.1 Receipt of  data and Phase I editing</h2>
+  <p>During the collection  period, cases with completed interviews are transmitted from the regional  offices to the head office on a daily basis. Data are then processed at the  head office. The <abbr title="Labour Force Survey">LFS</abbr> collects socio-demographic (<abbr title="for example">e.g.</abbr>, age, sex, education, immigration status, and aboriginal  status) and labour force (<abbr title="for example">e.g.</abbr>,  labour force status, class of worker, industry, and earnings) data. Item/block  editing and consistency editing are performed in several stages. Phase I  editing includes four stages: record acceptance, demographic editing, Labour Force  Information (LFI) item acceptance, and industry/occupation editing.</p>
+  <p>      In the record  acceptance stage, each record is checked to ensure that all necessary  components were completed during the interview.   This involves checking that there is demographic data for each household  member and that there is labour force data for those who should have it based  on their final response code, age, household membership, etc. Missing and  inconsistent values of age and household membership are imputed at this stage  by either carry-forward imputation or imputation by deduction.</p>
+  <p>      Demographic editing  involves detailed editing of the demographic information and is the final stage  of editing at the household level. In this stage, all of the demographic data  for all individuals in the household are edited at both the individual and  within-family levels. A series of validity and consistency edits check for  consistency of responses across questions for each individual and between  household members. Both automated and manual corrections may be made at this  stage.</p>
+  <p>      The next stage of  editing is the <abbr title="Labour Force Information">LFI</abbr> item acceptance stage. In this stage, each record is run  through a pre-edit process to check the validity of the labour force data  received. The flow of the questions is checked to determine whether the  responses for the labour force data follow a single, consistent and correct  path. This process also checks the range and validity of the responses on the  path.</p>
+    <p>      The last stage in Phase  I editing is industry and occupation coding. Records requiring coding are  identified and coded using either an automated system or a manual system when  the automated system cannot assign a complete code. The codes are validated and  checked for consistency. Industry is coded to the North American Industry  Classification System (NAICS) standard and occupation is coded to the National  Occupation Classification – Statistics (NOC-S) standard.  <abbr title="North American Industry Classification System">NAICS</abbr> 2012 and <abbr title="National Occupation Classification">NOC</abbr> 2011 are currently used in  the <abbr title="Labour Force Survey">LFS</abbr> processing system. </p>
+    <h2 id="a52">5.2 Phase II  editing</h2>
+    <p>Phase II editing  includes resolution of &lsquo;Don&rsquo;t know&rsquo; and &lsquo;Refusal&rsquo; responses and detailed  consistency editing. During this phase of editing, each record is checked to  determine if it contains any entries of &lsquo;Don&rsquo;t know&rsquo; or &lsquo;Refusal&rsquo;. These  responses are considered item-level nonresponse.  All item-level nonresponse is identified and  treated with imputation by deduction or carry-forward imputation where  possible. Consistency edits are applied to ensure that each record is  internally consistent. If this process does not succeed then the missing or  inconsistent items are flagged for hot-deck imputation.</p>
+  <h2 id="a53">5.3 Hot-deck  imputation</h2>
+    <p>In hot-deck  imputation for the <abbr title="Labour Force Survey">LFS</abbr>, the missing values of a recipient are replaced by the  corresponding values of a randomly selected donor within the same imputation  class.  Imputation classes are defined  based on variables available for both recipients and potential donors. Two  separate sets of imputation classes are formed, one set of classes for item nonresponse,  and another set for person and household nonresponse and item nonresponse which  cannot be resolved through item imputation.</p>
+    <p>      In January 2005, a  longitudinal hot-deck imputation strategy was implemented based on research by  Bocci and Beaumont (2004). This strategy is primarily used to treat person and  household nonresponse. The strategy uses the previous month&rsquo;s values (possibly  imputed) of some variables together with some socio-demographic variables from  the current month as matching variables to form the imputation classes for both  donors and recipients. Recently, the effectiveness of these matching variables  for the treatment of person and household nonresponse was reviewed by White and  Benhin (2013). The study resulted in an improved set of matching variables that  was implemented in January 2015.</p>
+    <p>      The following  subsections describe the steps of <abbr title="Labour Force Survey">LFS</abbr> hot-deck imputation in more detail.  <a href="#fig5_1-eng">Figure 5.1</a>, at the end of this chapter, shows a general picture of the hot-deck  imputation system (HDIS) process. More detailed specifications of the <abbr title="Hot-Deck Imputation System">HDIS</abbr>  strategy can be found in Lorenz (1996).</p>
+    <h3 id="a531">5.3.1 Imputation  pre-processing</h3>
+    <p>Before the actual  hot-deck imputation of missing values can be performed, some pre-processing  steps must be completed.</p>
+    <p>      First, responses are  identified and each response record is assigned a preliminary imputation type.  The data extracted from the head office processing system (HOPS) are divided  into response and nonresponse files. The nonresponse records will be accounted  for with a nonresponse weighting adjustment, which is discussed in <a href="chapt6-eng.htm">Chapter 6</a>,  and the response records will undergo hot-deck imputation. The records in the  &lsquo;response&rsquo; file at this stage did not necessarily respond in the current month.  If the person had responded in the previous month, then it is defined as a  response in this step. All response records are initially divided into three  groups: A, B and C. Group A contains potential donors. These are all persons  for whom the reported data contain no missing values and are internally  consistent. Group B is formed by all persons who have no missing values and are  internally consistent after the first phase of editing, but do not belong in Group  A because they had one or more items imputed during editing. The remaining  persons form Group C and require imputation.</p>
+    <p>      The second pre-processing  step derives imputation matching variables. Some variables are not initially in  a form which can be used directly in imputation. For example, the two  occupation group variables OCC4 and OCC10 are derived from the <abbr title="National Occupation Classification">NOC</abbr> variable. Also  in this step, earnings data are converted to an hourly basis by dividing total earnings  for the time period by hours worked. This ensures that there is a uniform  measure of earnings and that the value imputed for earnings is consistent with  the value for the number of hours reported by a recipient.</p>
+    <p>      The third  pre-processing step is the identification of outlier earnings and the  finalization of Groups A, B, and C. Earnings values that are either extremely  high or low are deemed suspicious, and so they are set to missing and are  imputed. Individuals who reported earnings that are very high or very low  without being extreme keep those earnings values, but are excluded from being  potential donors by being assigned to Group B. Outlier detection classes are  formed by crossing the variables province-sex-age group, and occupation group.  Different threshold values based on the quartile method are set in each class.  The quartile method for outlier detection is described in <em>Survey Methods and Practice </em>published by  Statistics Canada (2003).</p>
+    <p>      After outlier  detection, records in Group A form the potential donor pool. Records in Group C  are the recipients and will be imputed by hot-deck imputation. The records in Group  B do not need to be imputed and are also not eligible as donors.</p>
+    <p>      The last step of  pre-processing is to assign a temporary path (TPATH) to each record, where  possible. This variable TPATH will be used as an important matching variable in  the imputation for item nonresponse.  The  use of TPATH will be explained in detail in the next section. </p>
+    <h3 id="a532">5.3.2 Imputation  for item nonresponse</h3>
+    <p>Once all of the  pre-processing steps have been completed, missing values can be imputed. Random  hot-deck imputation within classes is used to fill-in missing values. This  procedure is applied in such a way that the recipient data satisfy consistency  edit rules and validity edit rules after imputation. For example, variables  requiring non-blank values for a given recipient must be imputed using  non-blank values. In a given imputation class, each recipient is imputed by  selecting a series of donors using simple random sampling without replacement  until a donor that satisfies all the edit rules is found. Once a suitable donor  has been found, all of the recipient&rsquo;s missing items are imputed with data from  that donor.</p>
+    <p>      The initial  imputation classes are formed by crossing the following eighteen categorical  variables: </p>
+    <ol>
+      <li>TPATH (12 categories) </li>
+      <li>LMLFS3 (3 categories) </li>
+      <li>COW (3 categories) </li>
+      <li>OCC4 (4 categories) </li>
+      <li>PROV (10 categories) </li>
+      <li>AGEGP3 (3 categories) </li>
+      <li>ABQ1 (2 categories) </li>
+      <li>IMM (3 categories) </li>
+      <li>LMLFS7 (7 categories) </li>
+      <li>LMINDG (20 categories) </li>
+      <li>MULTJOB (2 categories)</li>
+      <li>AGEGP1 (5 categories)</li>
+      <li>SEX (2 categories) </li>
+      <li>OCC10 (10 categories) </li>
+      <li>AGEGP2 (8 categories) </li>
+      <li>STUD (2 categories) </li>
+      <li>EDUC (2 categories) </li>
+      <li>DWELRENT (2  categories). </li>
+  </ol>
+    <p>The order of these  variables reflects their importance in explaining the labour force variables as  determined by the empirical studies in White and Benhin (2013). A detailed  description of the values of the categories for each variable is given in <a href="app-ann_f-eng.htm">Appendix  F</a>.</p>
+    <p>      Note that the  variables LMLFS3, LMLFS7 and LMINDG refer to values from the last month.</p>
+    <p>      The variable TPATH has  an important role in the imputation system. The first seven possible values of  TPATH correspond to the seven possible values of the labour force status  variable, LFSSTAT. Each donor is assigned a value for LFSSTAT based on reported  data. For the recipients, the value of LFSSTAT may not be known; however, there  may be enough information to exclude one or more of the seven possible values.  The variable TPATH is used to ensure that only valid values for LFSSTAT are  imputed to recipients by replicating each donor by its number of valid TPATH  values and assigning only one value of TPATH to each recipient. At the end of  the imputation step, the replicated donors are removed. For example, assume  that a donor has LFSSTAT = 2. This donor then has three valid TPATH values: 2,  8, and 10 (see <a href="app-ann_f-eng.htm">Appendix F</a> for the definition of all possible TPATH values). The  donor is therefore replicated three times with each replicate given one of the  three valid TPATH values. When imputation classes are formed, each of the donor  replicates will be in a separate imputation class.</p>
+    <p>      Imputation is  performed in each class that contains enough donors to pass the following two  constraints:</p>
+    <ol class="lst-lwr-rmn">
+      <li>The number of donors  must be larger than the number of recipients of that class; </li>
+      <li>Each class must contain at least three donors.</li>
+  </ol>
+  <p>If either of these  constraints is not satisfied, then the least important variable (DWELRENT) is  removed from the list of imputation class variables and the imputation process  is attempted again for the remaining recipients. If after this second pass of  imputa­tion there are still some recipients that have not been imputed due to  classes that do not satisfy the above two constraints, then a third pass of  imputation is performed by removing the second-least important variable (EDUC).  This process of removing one variable followed by imputation continues until  all recipients have been imputed or until only the first five variables –  TPATH, LMLFS3, COW, OCC4 and PROV – remain. Any recipients not yet imputed at  that point are sent for whole record imputation, in which all labour force  variables of the recipient, including those that were reported, are replaced by  those of a randomly selected donor using a different set of matching variables  – see <a href="#a533">Section 5.3.3</a>.</p>
+    <p>      In a given imputation  class satisfying the above two constraints, each recipient is imputed by first  selecting a donor such that the validity edit rules are satisfied. If no such  donor can be found then the record is sent for whole record imputation as  described in <a href="#a533">Section 5.3.3</a>. If a suitable donor can be found (<em><abbr title="that is to say">i.e</abbr>.</em>, one that satisfies the validity  edit rules after imputing the missing values of the recipient), the missing  values of the recipient are replaced by the corresponding values from the donor  and consistency edit rules are checked. If all edit rules are satisfied then  the imputation process for this recipient is completed; otherwise, a second  suitable donor (<em><abbr title="that is to say">i.e</abbr>.</em>, satisfying the  validity edits) is attempted and the consistency edit rules are checked again.  If all edit rules are satisfied after this second attempt then the imputation  process for this recipient is completed; otherwise, the entire record will be  imputed using the values of the last attempted donor. This imputation for the  entire record is slightly different than the imputation process described below  in that it uses a different and more precise set of matching variables.</p>
+    <h3 id="a533">5.3.3 Imputation  for person nonresponse</h3>
+  <p>Person or household  nonresponse where previous month data is available and item nonresponse that  could not be treated with item nonresponse imputation is treated by whole record  (longitudinal) imputation. In this strategy, data from the previous month  (possibly imputed) for some variables and data from the current month for other  variables are used to form the imputation classes. This strategy is also used  for person and household nonresponse where there is no response in the previous  month but there was a response in the past. Donors and recipients for the whole  record imputation are both person-records, even when dealing with entire  household nonresponse. For households where this imputation is not possible, a  nonresponse weight adjustment is performed instead.</p>
+    <p>      The variables currently crossed to form initial  imputation classes for whole record imputation are given below in order of  importance:</p>
+    <ol>
+      <li> PROV (10  categories) </li>
+      <li>LMLFS3 (3 categories)</li>
+      <li>AGEGP1 (5 categories)</li>
+      <li>SEX (2 categories)</li>
+      <li>LMINDG (20 categories)</li>
+      <li>LMLFS7 (7 categories)</li>
+      <li><abbr title="Employment insurance economic region">EIER</abbr> (56 categories) </li>
+      <li>EDUC (2 categories)</li>
+      <li>ABQ1 (2 categories)</li>
+  </ol>
+  <p>The categories for  these variables are detailed in <a href="app-ann_f-eng.htm">Appendix F</a>.</p>
+    <p>      As with item  nonresponse imputation, the same two imputation constraints apply to the  imputation classes: </p>
+    <ol class="lst-lwr-rmn">
+      <li>The number of donors  must be larger than the number of recipients of that class; </li>
+      <li>Each class must contain at least three donors.</li>
+  </ol>
+    <p>If one of these  constraints is not satisfied, then classes are collapsed by removing the least  important variable. The process of removing one variable and reforming the  imputation classes continues until all recipients are imputed.</p>
+    <p>      Recipient records are  imputed using donor values from the current month, even though imputation  classes are based on values from both the current month and the previous month.  Also, validity and consistency edit checks are not needed when whole record  imputation is performed because the donors must already satisfy all validity  and consistency rules. </p>
+    <h2 id="a54">5.4 Post-imputation  process</h2>
+    <p>The post-imputation process includes eliminating the  replicates of donors that were created during the derivation of TPATH, setting  all of the group level output flags  to  indicate that imputation has taken place, and post-processing the earnings data  by calculating both hourly and weekly earnings for all employees based on  either reported or imputed hours and wages. The labour force status and some  other variables are also derived.</p>
+    
+     <p><img src="fig/fig5.1-eng.gif" class="brdr-all img-responsive" alt="Figure 5.1 Simplified Flowchart of the LFS Hot-Deck Imputation System" aria-describedby="fig5_1-eng"></p>
+  <details id="fig5_1-eng" class="desc">
+    <summary class="desc">Description for Figure 5.1</summary>
+    
+    
+  
+    
+  
+  
+  <p>This  diagram shows the general structure of the flow of records through the <abbr title="Labour Force survey">LFS</abbr>  hot-deck imputation system. The flowchart starts with the records being  returned from the region offices to the head office. The records flow to a  decision where the initial response status is determined. Records that are  nonresponse with no previous response flow to the nonresponse file. Records  that have a complete or partial current response, or that have a previous month  response flow to the response file. Records on the response file then go to  another decision called consistency editing. Records that are complete and  consistent with no edits required and no outliers flow to Group A, potential  donors. Records that are complete and consistent after edits or that have  outliers flow to Group B, ineligible as donors. The remaining incomplete  records flow to Group C, recipients. The recipient records flow to a decision  where it is determined whether the variable TPATH can be assigned. Records for  which TPATH cannot be assigned go to the process whole record imputation using  9 variables. Records for which TPATH can be assigned will be treated as item  nonresponse and flow to another decision where there is an attempt to find a  valid class and donor using the 18 variables used to form classes for item  imputation. Records for which either a valid class or a valid donor cannot be  found are sent to the process whole record imputation using 9 variables.  Records for which both a valid class and a valid donor are found are sent to a  consistency check decision. Records that pass the consistency check are sent to  the process item imputation using 18 variables. Records that fail the  consistency check are sent to the process whole record imputation using the  last attempted donor and 18 variables.</p>  
+  
+  
+   </details>
+    
+
+
+ 
+ <ul class="pager">
+  <li class="previous"><a href="chapt4-eng.htm" rel="prev">Previous</a></li>
+  
+ <li><a href="/pub/71-526-x/71-526-x2017001-eng.htm"><span class="fa fa-home text-primary mrgn-rght-sm"></span>Main page</a></li> 
+ 
+  <li class="next"><a href="chapt6-eng.htm" rel="next">Next</a></li> 
+</ul>
+
+ 
+ 
+</section>
+
+
+ <!--END OF CONTENT-->
+ 
+ 
+
+<!-- More info button text -->  
+﻿    <!-- More info page -->
+    <section id="moreinfo" class="mfp-hide modal-dialog modal-content overlay-def">
+      <header class="modal-header">
+        <h2 class="modal-title">More information</h2>
+      </header>
+      <div class="modal-body">
+      
+      <div class="pstn-rght-lg pstn-rght-md pstn-lft-md pstn-lft-sm pstn-lft-xs mrgn-lft-md mrgn-rght-sm">
+        <span class="label label-primary">ISSN: </span>
+      </div>
+      <span class="clearfix"></span>
+      
+      <h2>Acknowledgement</h2>
+
+<p>Sincere thanks are due to the many people who contributed in various ways to this document.</p>
+
+<p>Our gratitude goes first to the primary authors of the various chapters: Lihua An, Justin Francis, Guy Laflamme, Yves Lafortune, Scott Meyer, Elisabeth Neusy, Steven Thomas and Sylvia White. These people worked on different aspects of the 2015 redesign of the methodology of the Labour Force Survey, and thus were the best people to write about it.</p>
+
+<p>Besides these, numerous people in Household Survey Methods Division, Labour Statistics Division, and elsewhere in Statistics Canada, were also involved in the planning, reviewing, verification, revision, translation and production of this document.  Sincere thanks are due to all of them.</p>
+
+        <h2>Note of appreciation </h2>
+        <p>Canada owes the success of its statistical system to a long-standing partnership between Statistics Canada, the citizens of Canada, its businesses, governments and other institutions. Accurate and timely statistical information could not be produced without their continued co-operation and goodwill.</p>
+        
+            
+                <h2>Standards of service to the public</h2>
+        <p>Statistics Canada is committed to serving its clients in a prompt, reliable and courteous manner. To this end, the Agency has developed <a href="https://www.statcan.gc.ca/eng/about/service/standards">standards of service</a> which its employees observe in serving its clients.</p>
+        <h2>Copyright</h2>
+        <p>Published by authority of the Minister responsible for Statistics Canada.</p>
+    	<p> © Minister of Industry, 2017</p>
+        <p>Use of this publication is governed by the <a href="https://www.statcan.gc.ca/eng/reference/licence">Statistics Canada Open Licence Agreement</a>.</p>
+    	<p>Catalogue <abbr title="number">no.</abbr> 71-526-X</p>
+    	<p> Frequency: Occasional</p>
+    	<p> Ottawa</p>
+        
+        <a class="btn btn-primary popup-modal-dismiss">close</a> </div>
+    </section>
+    <!-- END More info page -->  
+
+<!-- Table of contents button text --> 
+﻿    <!-- Table of contents page -->
+    <section id="toc-tdm" class="mfp-hide modal-dialog modal-content overlay-def">
+      <header class="modal-header">
+        <h2 class="modal-title">Table of contents</h2>
+      </header>
+      <div class="modal-body">
+      
+     
+<p><a href="/pub/71-526-x/71-526-x2017001-eng.htm">Abstract</a><strong> - Main page</strong><br>
+       
+<a href="/pub/71-526-x/2017001/chapt1-eng.htm">Chapter 1 Introduction and overview</a><br />
+         
+<a href="/pub/71-526-x/2017001/chapt2-eng.htm">Chapter 2 Sample design</a><br />
+
+<a href="/pub/71-526-x/2017001/chapt3-eng.htm">Chapter 3 Sampling frame creation and maintenance</a><br />
+
+<a href="/pub/71-526-x/2017001/chapt4-eng.htm">Chapter 4 Collection</a><br />
+
+<a href="/pub/71-526-x/2017001/chapt5-eng.htm">Chapter 5 Processing and imputation</a><br />
+
+<a href="/pub/71-526-x/2017001/chapt6-eng.htm">Chapter 6 Weighting and estimation</a><br />
+
+<a href="/pub/71-526-x/2017001/chapt7-eng.htm">Chapter 7 Variance estimation</a><br />
+
+<a href="/pub/71-526-x/2017001/chapt8-eng.htm">Chapter 8 Data quality</a><br />
+
+<a href="/pub/71-526-x/2017001/chapt9-eng.htm">Chapter 9 LFS frame for other surveys</a><br />
+
+<a href="/pub/71-526-x/2017001/app-ann-eng.htm">Appendices</a><br />
+
+
+<a href="/pub/71-526-x/2017001/ref-biblio-eng.htm">References</a></p>
+		
+       
+        
+        <a class="btn btn-primary popup-modal-dismiss">close</a> </div>
+    </section>
+    
+    
+    <!-- END Table of contents page --> 
+
+
+
+
+<div class="pagedetails">
+	<dl id="wb-dtmd">
+		<dt>Date modified:&#32;</dt>
+		<dd><time property="dateModified">
+  2017-12-21
+</time></dd>
+	</dl>
+</div>
+</main>
+
+<footer id="wb-info">
+	<h2 class="wb-inv">About this site</h2>
+	<div class="gc-contextual">
+		<div class="container">
+			<nav>
+				<h3>Statistics Canada</h3>
+				<ul class="list-unstyled colcount-sm-2 colcount-md-3">
+					<li><a href="https://www.statcan.gc.ca/en/reference/refcentre/index">Contact StatCan</a></li>
+					<li><a href="https://www.statcan.gc.ca/en/trust">Trust Centre</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+	<div class="gc-main-footer">
+		<div class="container">
+			<nav>
+				<h3>Government of Canada</h3>
+				<ul class="list-unstyled colcount-sm-2 colcount-md-3">
+					<li><a href="https://www.canada.ca/en/contact.html">All contacts</a></li>
+					<li><a href="https://www.canada.ca/en/government/dept.html">Departments and agencies</a></li>
+					<li><a href="https://www.canada.ca/en/government/system.html">About government</a></li>
+				</ul>
+				<h4><span class="wb-inv">Themes and topics</span></h4>
+				<ul class="list-unstyled colcount-sm-2 colcount-md-3">
+					<li><a href="https://www.canada.ca/en/services/jobs.html">Jobs</a></li>
+					<li><a href="https://www.canada.ca/en/services/immigration-citizenship.html">Immigration and citizenship</a></li>
+					<li><a href="https://travel.gc.ca/">Travel and tourism</a></li>
+					<li><a href="https://www.canada.ca/en/services/business.html">Business</a></li>
+					<li><a href="https://www.canada.ca/en/services/benefits.html">Benefits</a></li>
+					<li><a href="https://www.canada.ca/en/services/health.html">Health</a></li>
+					<li><a href="https://www.canada.ca/en/services/taxes.html">Taxes</a></li>
+					<li><a href="https://www.canada.ca/en/services/environment.html">Environment and natural resources</a></li>
+					<li><a href="https://www.canada.ca/en/services/defence.html">National security and defence</a></li>
+					<li><a href="https://www.canada.ca/en/services/culture.html">Culture, history and sport</a></li>
+					<li><a href="https://www.canada.ca/en/services/policing.html">Policing, justice and emergencies</a></li>
+					<li><a href="https://www.canada.ca/en/services/transport.html">Transport and infrastructure</a></li>
+					<li><a href="https://international.gc.ca/world-monde/index.aspx?lang=eng">Canada and the world</a></li>
+					<li><a href="https://www.canada.ca/en/services/finance.html">Money and finance</a></li>
+					<li><a href="https://www.canada.ca/en/services/science.html">Science and innovation</a></li>
+					<li><a href="https://www.canada.ca/en/services/indigenous-peoples.html">Indigenous peoples</a></li>
+					<li><a href="https://www.canada.ca/en/services/veterans.html">Veterans and military</a></li>
+					<li><a href="https://www.canada.ca/en/services/youth.html">Youth</a></li>
+					<li><a href="https://www.canada.ca/en/services/life-events.html">Manage life events</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+	<div class="gc-sub-footer">
+		<div class="container d-flex align-items-center">
+			<nav>
+				<h3 class="wb-inv">Government of Canada Corporate</h3>
+				<ul>
+					<li><a href="https://www.canada.ca/en/social.html">Social media</a></li>
+					<li><a href="https://www.canada.ca/en/mobile.html">Mobile applications</a></li>
+					<li><a href="https://www.canada.ca/en/government/about-canada-ca.html">About Canada.ca</a></li>
+					<li><a href="https://www.statcan.gc.ca/en/terms-conditions">Terms and conditions</a></li>
+					<li><a href="https://www.statcan.gc.ca/en/about/transparency/privacy">Privacy</a></li>
+				</ul>
+			</nav>
+			<div class="wtrmrk align-self-end">
+				<img src="/wet-boew4b/assets/wmms-blk.svg" alt="Symbol of the Government of Canada">
+			</div>
+		</div>
+	</div>
+</footer>
+
+<script>
+
+    modifyBreadCrum();
+    
+
+    function modifyBreadCrum(){
+        
+    let dailyEn = "n1/dai-quo/index-eng.htm";
+    let dailyFr = "n1/dai-quo/index-fra.htm";
+ 
+    let breadcrumb = document.querySelector("#wb-bc ol.breadcrumb");
+        
+    if(breadcrumb === undefined || breadcrumb === null || breadcrumb.children.length == 0){
+        return;
+    } 
+        
+    let lastListNode = breadcrumb.children[breadcrumb.children.length -1];
+    
+    if(window.location.href.indexOf("daily-quotidien") != -1 || window.location.href.indexOf("dai-quo") != -1){
+        let href = window.location.href;
+        let env = href.split("n1")[0];
+        href = href.indexOf("eng") != -1 ? env + dailyEn : env + dailyFr;
+
+        createBreadcrumAnchor(href);
+    }
+    else{
+        removeBreadcrumNotAnchor();
+    }
+
+    return;
+
+    function createBreadcrumAnchor(href){
+
+        let anchor = document.createElement("a");
+    
+        if(lastListNode.lastChild !== undefined && lastListNode.lastChild !== null){
+            if(lastListNode.lastChild.nodeName === anchor.nodeName){
+                return;
+            } 
+
+            anchor.innerHTML = lastListNode.innerHTML;
+            anchor.href = href;
+            lastListNode.innerHTML = anchor.outerHTML; 
+        }
+    }
+
+    function removeBreadcrumNotAnchor(){
+
+        let anchor = document.createElement("a");
+
+        if(lastListNode.lastChild !== undefined && lastListNode.lastChild !== null){
+            if(lastListNode.lastChild.nodeName === anchor.nodeName){
+                return;
+            } 
+        
+            breadcrumb.removeChild(lastListNode);
+        }
+
+    }
+
+    }
+
+</script>
+
+<!--[if gte IE 9 | !IE ]><!-->
+<script src="/wet-boew4b/js/wet-boew.min.js"></script>
+<script src="/wet-boew4b/js/theme.min.js"></script>
+<!--<![endif]-->
+<!--[if lt IE 9]>
+<script src="/wet-boew4b/js/ie8-wet-boew2.min.js"></script>
+<![endif]-->
+<!-- InvitationManager -->
+<script src="/wet-boew4b/invitation-manager/Overlay.js"></script>
+<script src="/wet-boew4b/invitation-manager/InvitationManager.js"></script>
+<!-- End InvitationManager -->
+<script type="text/javascript">_satellite.pageBottom();</script>
+
+<!-- CustomScriptsJSStart -->
+<!-- CustomScriptsJSEnd -->
+
+</body>
+</html>

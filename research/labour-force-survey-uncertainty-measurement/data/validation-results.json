@@ -1,0 +1,208 @@
+[
+  {
+    "geography": "Canada",
+    "indicator": "Employment",
+    "change": -68.3,
+    "se_change": 33.2,
+    "lo": -133.370804286728,
+    "hi": -3.2291957132719915,
+    "z": -2.0572289156626504
+  },
+  {
+    "geography": "Canada",
+    "indicator": "Unemployment rate",
+    "change": 0.1,
+    "se_change": 0.1,
+    "lo": -0.09599639845400001,
+    "hi": 0.29599639845400005,
+    "z": 1.0
+  },
+  {
+    "geography": "Newfoundland and Labrador",
+    "indicator": "Employment",
+    "change": 1.8,
+    "se_change": 1.6,
+    "lo": -1.3359423752640003,
+    "hi": 4.935942375264,
+    "z": 1.125
+  },
+  {
+    "geography": "Newfoundland and Labrador",
+    "indicator": "Unemployment rate",
+    "change": 0.5,
+    "se_change": 0.5,
+    "lo": -0.47998199227000005,
+    "hi": 1.47998199227,
+    "z": 1.0
+  },
+  {
+    "geography": "Prince Edward Island",
+    "indicator": "Employment",
+    "change": 1.0,
+    "se_change": 0.9,
+    "lo": -0.763967586086,
+    "hi": 2.7639675860860002,
+    "z": 1.1111111111111112
+  },
+  {
+    "geography": "Prince Edward Island",
+    "indicator": "Unemployment rate",
+    "change": -0.6,
+    "se_change": 0.6,
+    "lo": -1.775978390724,
+    "hi": 0.575978390724,
+    "z": -1.0
+  },
+  {
+    "geography": "Nova Scotia",
+    "indicator": "Employment",
+    "change": 0.2,
+    "se_change": 2.9,
+    "lo": -5.483895555166,
+    "hi": 5.883895555166,
+    "z": 0.06896551724137931
+  },
+  {
+    "geography": "Nova Scotia",
+    "indicator": "Unemployment rate",
+    "change": 0.2,
+    "se_change": 0.4,
+    "lo": -0.5839855938160001,
+    "hi": 0.983985593816,
+    "z": 0.5
+  },
+  {
+    "geography": "New Brunswick",
+    "indicator": "Employment",
+    "change": -0.7,
+    "se_change": 2.1,
+    "lo": -4.815924367534,
+    "hi": 3.415924367534,
+    "z": -0.3333333333333333
+  },
+  {
+    "geography": "New Brunswick",
+    "indicator": "Unemployment rate",
+    "change": 0.1,
+    "se_change": 0.4,
+    "lo": -0.6839855938160001,
+    "hi": 0.8839855938160001,
+    "z": 0.25
+  },
+  {
+    "geography": "Quebec",
+    "indicator": "Employment",
+    "change": -49.4,
+    "se_change": 17.1,
+    "lo": -82.915384135634,
+    "hi": -15.884615864365998,
+    "z": -2.8888888888888884
+  },
+  {
+    "geography": "Quebec",
+    "indicator": "Unemployment rate",
+    "change": 0.4,
+    "se_change": 0.3,
+    "lo": -0.18798919536199998,
+    "hi": 0.987989195362,
+    "z": 1.3333333333333335
+  },
+  {
+    "geography": "Ontario",
+    "indicator": "Employment",
+    "change": -20.0,
+    "se_change": 21.3,
+    "lo": -61.74723287070201,
+    "hi": 21.747232870702007,
+    "z": -0.9389671361502347
+  },
+  {
+    "geography": "Ontario",
+    "indicator": "Unemployment rate",
+    "change": 0.1,
+    "se_change": 0.2,
+    "lo": -0.29199279690800006,
+    "hi": 0.491992796908,
+    "z": 0.5
+  },
+  {
+    "geography": "Manitoba",
+    "indicator": "Employment",
+    "change": -4.4,
+    "se_change": 3.5,
+    "lo": -11.25987394589,
+    "hi": 2.45987394589,
+    "z": -1.2571428571428573
+  },
+  {
+    "geography": "Manitoba",
+    "indicator": "Unemployment rate",
+    "change": 0.0,
+    "se_change": 0.4,
+    "lo": -0.7839855938160001,
+    "hi": 0.7839855938160001,
+    "z": 0.0
+  },
+  {
+    "geography": "Saskatchewan",
+    "indicator": "Employment",
+    "change": 0.3,
+    "se_change": 2.9,
+    "lo": -5.383895555166,
+    "hi": 5.983895555166,
+    "z": 0.10344827586206896
+  },
+  {
+    "geography": "Saskatchewan",
+    "indicator": "Unemployment rate",
+    "change": -0.6,
+    "se_change": 0.4,
+    "lo": -1.383985593816,
+    "hi": 0.1839855938160001,
+    "z": -1.4999999999999998
+  },
+  {
+    "geography": "Alberta",
+    "indicator": "Employment",
+    "change": 23.1,
+    "se_change": 13.0,
+    "lo": -2.3795317990200004,
+    "hi": 48.57953179902,
+    "z": 1.776923076923077
+  },
+  {
+    "geography": "Alberta",
+    "indicator": "Unemployment rate",
+    "change": -0.4,
+    "se_change": 0.4,
+    "lo": -1.1839855938160002,
+    "hi": 0.38398559381600006,
+    "z": -1.0
+  },
+  {
+    "geography": "British Columbia",
+    "indicator": "Employment",
+    "change": -20.2,
+    "se_change": 12.1,
+    "lo": -43.915564212934,
+    "hi": 3.5155642129340023,
+    "z": -1.6694214876033058
+  },
+  {
+    "geography": "British Columbia",
+    "indicator": "Unemployment rate",
+    "change": -0.1,
+    "se_change": 0.3,
+    "lo": -0.687989195362,
+    "hi": 0.48798919536200003,
+    "z": -0.33333333333333337
+  },
+  {
+    "synthetic_bootstrap": true,
+    "seed": 338,
+    "original_rate": 0.13,
+    "replicate_mean": 0.13058666666666668,
+    "variance": 0.0002746336,
+    "se": 0.016572072893877823
+  }
+]
