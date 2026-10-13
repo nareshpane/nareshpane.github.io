@@ -180,7 +180,7 @@
   document.querySelectorAll('#population .sampled').forEach(unit=>{const window=unit.querySelector('[data-dwelling]');if(window){window.setAttribute('fill','#f3bb62');window.setAttribute('stroke','#a65c2f');window.setAttribute('stroke-width','3');}});
   document.querySelectorAll('.environment-grid>div>span').forEach((span,i)=>{span.innerHTML=`<svg viewBox="0 0 1000 540" aria-hidden="true">${A.landscape(['urban','suburban','rural'][i])}</svg>`;});
   const guide=$('geographic-guide');
-  if(guide){guide.innerHTML=`<figure><svg viewBox="0 0 570 440" role="img" aria-label="Canada with actual provincial outlines, an Ontario PSU example and PEI and Yukon design exceptions"><rect width="570" height="440" rx="12" fill="#edf2e9"/>${map.replaceAll('id="film-geo-','id="static-geo-')}${labels}<path d="M350 388L275 385" stroke="#b96643" stroke-width="2"/>${T(80,381,'Ontario: PSU → dwellings',14)}<path d="M455 311L488 350" stroke="#b96643" stroke-width="1.5"/>${T(393,373,'PEI: one stage',14)}<path d="M102 155L38 124" stroke="#b96643" stroke-width="1.5"/>${T(18,111,'Yukon: quarterly',14)}</svg><figcaption>Actual provincial outlines; illustrative Ontario focus. PEI selects dwellings in one stage; territorial interviewing follows a separate quarterly rotation. Domains and PSU boundaries in the animation are conceptual.</figcaption></figure><figure class="weighting-figure"></figure>`;}
+  if(guide){guide.innerHTML='<figure class="weighting-figure"></figure>';}
   window.LFSVisuals.init();
   const links=[...document.querySelectorAll('.toc a')];
   // Track sections without attaching a scrolling listener.
