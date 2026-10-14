@@ -8,29 +8,44 @@
   const $=id=>document.getElementById(id),T=A.text;
   const reduced=matchMedia('(prefers-reduced-motion: reduce)'),narrow=matchMedia('(max-width:600px)');
   const openingTrim=2.5;
+  const term=(text,kind)=>({text,kind});
+  const caption=(...parts)=>({parts,text:parts.map(part=>typeof part==='string'?part:part.text).join('')});
   const scenes=[
-    [0,'Canada: a geography of households','The ten provinces contribute to national monthly totals. Territorial results are separate.'],
-    [5,'Toronto · high-density urban housing','Many apartment dwellings occupy a compact metropolitan area. A province contains several settlement environments, not just the one shown here.'],
-    [10,'Northern Ontario · sparsely settled areas','Forests, distance and small roads change collection logistics. This illustrative winter setting does not imply universal frame coverage or year-round snow.'],
-    [15,'Vancouver · coastal urban density','Coastal residential towers, parks and metropolitan streets illustrate one environment within British Columbia.'],
-    [20,'Kelowna · interior urban and suburban housing','An Interior BC city combines mid-rise apartments, townhouses and detached homes. This setting is distinct from the coastal metropolis.'],
-    [25,'Regina · urban residential areas','Urban apartments, residential streets and parks also form part of Saskatchewan’s dwelling frame.'],
-    [30,'Rural Saskatchewan · dispersed dwellings','Prairie farmhouses and small communities illustrate longer distances between dwellings within the same province.'],
-    [35,'Edmonton · mixed-density urban neighbourhoods','A substantial metropolitan setting combines downtown towers, wider roads, apartments and surrounding residential communities.'],
-    [40,'Prince Edward Island: one stage','Dwellings are selected directly from address lists within strata; there is no first-stage geographic PSU draw.'],
-    [45,'Yukon: a different rotation','Dwellings are interviewed every three months for two years: eight interviews, with about one-eighth entering each quarter.'],
+    [0,'Canada: a geography of households',caption("Canada's ten provinces contain ",term('geographic strata','teal'),'. Territorial estimates are published separately.')],
+    [5,'Toronto · high-density urban housing',caption(term('Dense urban sampling areas','teal'),' contain ',term('clusters within strata','orange'),'. Many apartment dwellings can occupy a compact geographic area inside one cluster.')],
+    [10,'Northern Ontario · sparsely settled areas',caption('Dispersed ',term('rural sampling areas','blue'),' may contain geographically larger ',term('clusters','orange'),' with fewer dwellings per square kilometre. Distance and accessibility affect data collection and frame coverage.')],
+    [15,'Vancouver · coastal urban density',caption("Vancouver's high-rise neighbourhoods illustrate dense urban sampling areas. Many ",term('apartment dwellings','rust'),' may be concentrated within a small ',term('geographic cluster','orange'),' whose boundaries follow survey-design rules.')],
+    [20,'Kelowna · interior urban and suburban housing',caption('Interior BC illustrates varied housing relevant to ',term('geographic stratification','teal'),'. A ',term('cluster','orange'),' may combine detached homes, townhouses and apartments; strata use more than housing density.')],
+    [25,'Regina · urban residential areas',caption("Regina's urban neighbourhoods illustrate residential ",term('clusters','orange'),' within ',term('geographic strata','teal'),'. After clusters are selected, their dwelling lists support the second stage of sampling.')],
+    [30,'Rural Saskatchewan · dispersed dwellings',caption('Some ',term('rural clusters','orange'),' span extensive areas with widely separated dwellings. ',term('Stratification','teal'),' and sample allocation balance geographic representation, statistical precision and collection costs.')],
+    [35,'Edmonton · mixed-density urban neighbourhoods',caption('Edmonton illustrates varied housing within one metropolitan region. ',term('Geographic strata','teal'),' organize sampling; ',term('clusters','orange'),' may contain high-rises, apartments and suburban dwellings.')],
+    [40,'Prince Edward Island: one stage',caption('Prince Edward Island uses ',term('one-stage dwelling sampling','sage'),' within strata. Dwellings are selected directly from address lists, without selecting geographic clusters first.')],
+    [45,'Yukon: a different rotation',caption(term('Territorial strata','teal'),' follow a separate design. Yukon ',term('dwellings','rust'),' receive eight interviews, three months apart over two years; about one-eighth of the sample enters each quarter.')],
     ...[
-    [25,'Ontario: from strata to a neighbourhood','Domains and strata organize the frame. The outlined neighbourhood is an illustrative geographic PSU.'],
-    [33,'A building contains dwellings','A selected PSU contains many dwellings. Illuminated windows illustrate selected dwellings, not whole selected buildings.'],
-    [41,'Six panels, one monthly handover','Each selected dwelling remains in the provincial sample for six consecutive months. The outgoing panel completes interview 6/6; five panels stay as a new panel enters. Household composition can change within a retained dwelling.'],
-    [53,'Inside a selected dwelling','Usual residents form a household. Labour force information concerns eligible civilian members aged 15+; household composition varies.'],
-    [61,'Questions become records','Visits and telephone interviews are computer assisted; eligible households can complete an electronic questionnaire. A knowledgeable respondent may report by proxy.'],
-    [72,'Missing values need treatment','Carry-forward uses an applicable prior value; a compatible donor supplies another record; a logical rule can determine status. Imputed values are estimates.'],
-    [84,'Weights, diagnostics and uncertainty','Final person weights, calibration and design-aware variance estimation support totals, rates and quality review.'],
-    [96,'From official release to public discussion','Statistics Canada publishes monthly labour market indicators. Media, researchers, policymakers and the public interpret and discuss the release.'],
-    [104,'How reliable are these estimates?','Continue into the article: sampling variance measures one source of uncertainty; nonsampling errors require separate scrutiny.']
+    [25,'Ontario: from strata to a neighbourhood',caption('In the usual two-stage design, a ',term('Primary Sampling Unit (PSU)','sage'),' is a geographic cluster. The 2025 guide describes about 100–400 dwellings per cluster, typically six selected clusters per stratum.')],
+    [33,'A building contains dwellings',caption('Within a selected PSU, individual ',term('dwellings','rust'),' are chosen as ',term('Secondary Sampling Units (SSUs)','blue'),'. Only a subset is sampled; apartments are dwelling units, not whole buildings.')],
+    [41,'Six panels, one monthly handover',caption('Selected provincial ',term('dwellings','rust'),' remain in the sample for ',term('six consecutive months','sage'),'. One-sixth rotates out each month while five-sixths remain; household composition can change.')],
+    [53,'Inside a selected dwelling',caption('A ',term('household','rust'),' consists of usual residents of a selected dwelling. ',term('Eligible household members','sage'),' aged 15+ supply person-level observations.')],
+    [61,'Questions become records',caption(term('Data collection','teal'),' uses computer-assisted in-person or telephone interviews and online questionnaires. A knowledgeable ',term('survey respondent','sage'),' may answer for other eligible household members.')],
+    [72,'Missing values need treatment',caption(term('Data validation','teal'),' flags missing or inconsistent responses. Carry-forward, donor and deterministic ',term('imputation','orange'),' use earlier observations, similar records or logical rules. Imputed values remain estimates.')],
+    [84,'Weights, diagnostics and uncertainty',caption(term('Survey weights','sage'),' reflect selection probabilities, nonresponse and population calibration. Design-aware bootstrap replicate weights estimate ',term('sampling variance','blue'),' and standard errors, supporting confidence intervals.')],
+    [96,'From official release to public discussion',caption(term('Dissemination','blue')," brings Statistics Canada's monthly estimates to the public. News media, researchers and policymakers interpret the findings and their uncertainty.")],
+    [104,'How reliable are these estimates?',caption('How reliable are these estimates? ',term('Sampling uncertainty','blue'),' and ',term('nonsampling errors','rust'),' both matter.')]
     ].map(([t,title,caption])=>[t+25,title,caption])
-  ].map(([t,title,caption])=>[t===0?0:t-openingTrim,title,caption]);
+  ].map(([t,title,caption])=>[t===0?0:t-openingTrim,title,caption.text,caption.parts]);
+  let captionTransition=null;
+  function renderCaption(parts,animate){
+    const element=$('journey-caption'),content=document.createDocumentFragment();
+    captionTransition?.cancel();
+    for(const part of parts){
+      if(typeof part==='string')content.appendChild(document.createTextNode(part));
+      else{const emphasis=document.createElement('strong');emphasis.className='caption-term caption-term--'+part.kind;emphasis.textContent=part.text;content.appendChild(emphasis);}
+    }
+    element.replaceChildren(content);
+    // New text is immediate; cancelled effects cannot restore a stale caption.
+    if(animate&&!reduced.matches&&element.animate)captionTransition=element.animate([{opacity:.65,transform:'translateY(3px)'},{opacity:1,transform:'translateY(0)'}],{duration:350,easing:'ease-out'});
+  }
+  reduced.addEventListener('change',()=>{if(reduced.matches)captionTransition?.cancel();});
   const duration=133-openingTrim,clamp=x=>Math.max(0,Math.min(1,x)),ease=x=>{x=clamp(x);return x*x*x*(x*(x*6-15)+10);};
   const ramp=(t,a,b)=>ease((t-a)/(b-a)),mix=(a,b,u)=>a+(b-a)*u;
   const alpha=(el,v)=>el.setAttribute('opacity',clamp(v).toFixed(4));
@@ -157,7 +172,7 @@
     alpha($('film-regions'),realTime<50?1:0);alpha(el.landscape,0);
     if(realTime<50){const regional=window.LFSRegions.state(realTime,ramp,mix);el.camera.setAttribute('viewBox',regional.box.join(' '));geoCode=regional.geo;geo.forEach(([c])=>$('film-geo-'+c).setAttribute('fill',c===geoCode?'#e8b87f':'#cedec6'));}
     else if(realTime<51.5){const from=window.LFSRegions.regions.at(-1).box,u=ramp(realTime,50,51.5);el.camera.setAttribute('viewBox',from.map((v,j)=>mix(v,box[j],u)).join(' '));}
-    if(stage!==current){current=stage;$('journey-heading').textContent=scenes[stage][1];$('journey-caption').textContent=scenes[stage][2];$('journey-scene-desc').textContent=scenes[stage][1]+'. '+scenes[stage][2];}
+    if(stage!==current){const animateCaption=current>=0;current=stage;$('journey-heading').textContent=scenes[stage][1];renderCaption(scenes[stage][3],animateCaption);$('journey-scene-desc').textContent=scenes[stage][1]+'. '+scenes[stage][2];}
     $('journey-progress').value=playbackTime;$('journey-time').textContent=`${Math.floor(playbackTime)} / ${duration} s · ${reduced.matches?'still scenes':playbackTime>=duration?'complete':frame?'playing':'paused'} · ${stage+1}/${scenes.length}`;
     $('journey-play').disabled=!!frame||reduced.matches;$('journey-pause').disabled=!frame;
     $('journey-prev').disabled=stage===0;$('journey-next').disabled=stage===scenes.length-1;
