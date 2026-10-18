@@ -1,0 +1,11 @@
+{
+  "revision_date": "2026-10-17",
+  "preserved_results_sha256": {
+    "data/results.json": "b508ff872886d9bf911fa810fc73ad7d4f8a5daef1bec87b085713b42dfb8b45",
+    "data/results.js": "51424f67a0dac35dd411d311c198281a1a160c5eaeb1d6f812af68bd457eaf91"
+  },
+  "evaluation_rows": 238836,
+  "example_rows": 20,
+  "methodology_change": false,
+  "supplement_command": "analyze.py --supplement-output uses the unchanged held-out evaluation frame and returns before writing original results."
+}

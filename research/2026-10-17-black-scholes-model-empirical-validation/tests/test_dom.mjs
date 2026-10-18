@@ -1,0 +1,165 @@
+/* Optional DOM integration QA, not a browser renderer. Download linkedom's
+   standalone worker.mjs to an EXTERNAL path and pass it as first argument. */
+import fs from 'node:fs';
+import path from 'node:path';
+import vm from 'node:vm';
+import {pathToFileURL,fileURLToPath} from 'node:url';
+import assert from 'node:assert/strict';
+const {parseHTML}=await import(pathToFileURL(process.argv[2]));
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../..');
+const assets=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const {window}=parseHTML(fs.readFileSync(path.join(root,'2026-10-17-black-scholes-model-empirical-validation.html'),'utf8'));
+const {document}=window;
+// LinkeDOM omits layout and several form IDL properties; supply only browser semantics.
+window.Element.prototype.getBoundingClientRect=function(){return {top:500,bottom:600};};
+const initialValues=new WeakMap();
+Object.defineProperty(window.HTMLInputElement.prototype,'defaultValue',{get(){return initialValues.get(this)??this.getAttribute('value')??'';}});
+Object.defineProperty(window.HTMLSelectElement.prototype,'value',{get(){return [...this.querySelectorAll('option')].find(o=>o.hasAttribute('selected'))?.getAttribute('value')||this.querySelector('option')?.getAttribute('value')||'';},set(v){this.querySelectorAll('option').forEach(o=>o.toggleAttribute('selected',o.getAttribute('value')===String(v)));}});
+Object.defineProperty(window.HTMLSelectElement.prototype,'selectedIndex',{get(){return [...this.querySelectorAll('option')].findIndex(o=>o.getAttribute('value')===this.value);},set(v){this.value=this.querySelectorAll('option')[v]?.getAttribute('value');}});
+const context=vm.createContext({window,document,console,innerHeight:900,scrollY:0,Event:window.Event,requestAnimationFrame:()=>0});
+for(const f of ['js/pricing.js','data/results.js','data/illustrative-observations.js','data/supplement.js','data/bitcoin-results.js'])vm.runInContext(fs.readFileSync(path.join(assets,f),'utf8'),context);
+context.BSM=window.BSM;
+vm.runInContext(fs.readFileSync(path.join(assets,'js/article.js'),'utf8'),context);
+vm.runInContext(fs.readFileSync(path.join(assets,'js/revision.js'),'utf8'),context);
+vm.runInContext(fs.readFileSync(path.join(assets,'js/studies.js'),'utf8'),context);
+vm.runInContext(fs.readFileSync(path.join(assets,'js/bitcoin.js'),'utf8'),context);
+vm.runInContext(fs.readFileSync(path.join(assets,'js/bitcoin_empirical.js'),'utf8'),context);
+const $=id=>document.getElementById(id),before=id=>$(id).innerHTML;
+document.querySelectorAll('input').forEach(e=>initialValues.set(e,e.getAttribute('value')));
+const change=(id,value)=>{$(id).value=value;$(id).dispatchEvent(new window.Event('input'));};
+assert.equal(document.querySelectorAll('#chapters a').length,9);
+assert.equal(document.querySelectorAll('.chart svg').length,38);
+assert.equal(document.querySelectorAll('#examples-table tbody tr').length,20);
+assert.equal(document.querySelectorAll('#examples-table thead th').length,41);
+assert.equal(document.querySelectorAll('.term-grid details').length,12);
+assert.equal(document.querySelectorAll('details[open]').length,0);
+assert.equal(document.querySelectorAll('details.study-disclosure').length,3);
+assert.equal(document.querySelectorAll('#spxw-study .study-part').length,4);
+assert.equal(document.querySelectorAll('#bitcoin-study .study-part').length,7);
+assert.equal(document.querySelectorAll('#bitcoin-study .chart').length,12);
+assert.ok($('bitcoin-status').textContent.includes('Market validation executed on independently recorded premiums'));
+assert.ok(document.querySelector('#bitcoin-status a[href$="BITCOIN_DATA_RIGHTS.md"]'));
+assert.ok(document.querySelector('.provenance').textContent.includes('GPT-6.1 Sol'));
+assert.ok(document.querySelector('.provenance').textContent.includes('High'));
+assert.equal(document.querySelectorAll('.hero .stamp').length,0);
+assert.equal(vm.runInContext("expandResearchTarget(document.getElementById('scatter-chart'))",context),true);
+assert.equal($('spxw-study').open,true);
+assert.equal(vm.runInContext("expandResearchTarget(document.getElementById('c07'))",context),true);
+assert.equal($('bitcoin-study').open,true);
+$('spxw-study').open=false;$('bitcoin-study').open=false;
+const lastNav=document.querySelector('#chapters a:last-child');assert.equal(lastNav.getAttribute('href'),'#c09');
+// Exercise delegated chapter links and hash-driven reveal, including scrolling.
+document.querySelector('#chapters a[href="#c06"]').dispatchEvent(new window.Event('click',{bubbles:true,cancelable:true}));
+assert.equal($('spxw-study').open,true);$('spxw-study').open=false;
+const scrolled=[];window.Element.prototype.scrollIntoView=function(){scrolled.push(this.id);};
+context.requestAnimationFrame=fn=>{fn();return 0;};window.location={hash:'#real-observations'};
+window.dispatchEvent(new window.Event('hashchange'));assert.equal($('spxw-study').open,true);assert.ok(scrolled.includes('real-observations'));
+window.location.hash='#bitcoin-status';window.dispatchEvent(new window.Event('hashchange'));assert.equal($('bitcoin-study').open,true);assert.ok(scrolled.includes('bitcoin-status'));
+// The comparison is now its own eighth chapter; old subsection anchors still reveal it.
+const btcComparison=$('bitcoin-comparison');assert.equal(btcComparison.tagName,'DETAILS');assert.equal(btcComparison.hasAttribute('open'),false);
+$('bitcoin-study').open=false;window.location.hash='#bitcoin-comparison';window.dispatchEvent(new window.Event('hashchange'));
+assert.equal($('bitcoin-study').open,false);assert.equal(btcComparison.open,true);assert.ok(scrolled.includes('bitcoin-comparison'));
+btcComparison.open=false;$('bitcoin-study').open=false;window.location.hash='#bitcoin-comparison-title';window.dispatchEvent(new window.Event('hashchange'));
+assert.equal($('bitcoin-study').open,false);assert.equal(btcComparison.open,true);btcComparison.open=false;
+assert.ok(btcComparison.querySelector('summary h2'));assert.equal(btcComparison.querySelectorAll('.btc-comparison-pair article').length,2);
+assert.equal(document.querySelectorAll('.btc-contract-steps>li').length,4);assert.ok(document.querySelector('.btc-network svg'));
+assert.equal(document.querySelectorAll('.bitcoin-workflow .process-symbol svg').length,6);assert.equal(document.querySelectorAll('.btc-symbol-strip dt').length,6);
+assert.equal(document.querySelectorAll('.btc-section-heading .btc-heading-illustration svg').length,2);
+window.location.hash='';$('spxw-study').open=false;$('bitcoin-study').open=false;
+$('c09').getBoundingClientRect=()=>({top:50,bottom:600});vm.runInContext('scrollUpdate()',context);
+assert.equal($('next').getAttribute('href'),'#top');assert.equal($('previous').getAttribute('href'),'#c08');
+assert.equal(lastNav.getAttribute('aria-current'),'location');delete $('c09').getBoundingClientRect;vm.runInContext('scrollUpdate()',context);
+// Nine chapters, a single final reference appendix, native disclosure and precise bar geometry.
+assert.deepEqual([...document.querySelectorAll('main > section')].map(s=>s.id),Array.from({length:9},(_,i)=>'c'+String(i+1).padStart(2,'0')));
+assert.deepEqual([...document.querySelectorAll('#chapters a')].map(a=>a.textContent),['01 Options','02 Price','03 Uncertainty','04 Derivation','05 Greeks','06 SPXW study','07 Bitcoin','08 Compare','09 Reproduce']);
+assert.ok($('c08').contains(btcComparison));assert.ok(!$('c07').contains(btcComparison));
+assert.equal(document.querySelectorAll('.bitcoin-references').length,1);assert.equal(document.querySelector('main').lastElementChild.id,'research-references');
+assert.ok($('research-references').contains($('bitcoin-references-title')));assert.ok(document.querySelector('#c07 .bitcoin-attribution'));
+assert.ok(!document.querySelector('#c07').textContent.includes('07.8 /'));
+btcComparison.open=false;btcComparison.dispatchEvent(new window.Event('toggle'));assert.equal(btcComparison.querySelector('summary').getAttribute('aria-expanded'),'false');
+window.location.hash='#c08';window.dispatchEvent(new window.Event('hashchange'));assert.equal(btcComparison.open,true);assert.equal(btcComparison.querySelector('summary').getAttribute('aria-expanded'),'true');
+for(const [id,values] of [['compare-spxw-bars',[window.EMPIRICAL.metrics.A.spot_bps,window.EMPIRICAL.metrics.B.spot_bps]],['compare-bitcoin-bars',['H30','H60','B'].map(k=>window.BITCOIN_RESULTS.metrics[k].spot_bps)]]){
+ const bars=[...$(id).querySelectorAll('rect[data-bps]')];assert.equal(bars.length,values.length);
+ bars.forEach((bar,i)=>{assert.equal(Number(bar.getAttribute('data-bps')),values[i]);assert.ok(Math.abs(Number(bar.getAttribute('width'))-values[i]/320*360)<1e-9);assert.ok(bar.getAttribute('aria-label').includes(Math.round(values[i])+' bp'));assert.equal(bar.getAttribute('x'),'150');});
+}
+assert.deepEqual([...document.querySelectorAll('.comparison-table strong')].map(e=>e.textContent),['30 bp','99 bp','83 bp','16 bp','284 bp']);
+assert.ok(!/\d+\.\d{4}/.test($('btc-metrics').textContent));
+assert.ok(vm.runInContext('stat(103.8,1)',context)==='103.8');assert.ok(vm.runInContext('stat(30,1)',context)==='30');assert.ok(vm.runInContext('stat(-.01)',context)==='0');
+$('c08').getBoundingClientRect=()=>({top:50,bottom:600});vm.runInContext('scrollUpdate()',context);
+assert.equal($('previous').getAttribute('href'),'#c07');assert.equal($('next').getAttribute('href'),'#c09');assert.equal(document.querySelector('#chapters a[aria-current]').getAttribute('href'),'#c08');
+delete $('c08').getBoundingClientRect;vm.runInContext('scrollUpdate()',context);
+
+// Targeted refinement structure; existing chart and empirical checks below stay intact.
+assert.equal(document.querySelectorAll('.story-cards .story-card').length,6);
+assert.equal(document.querySelectorAll('.story-route').length,0);
+assert.equal(document.querySelectorAll('.story-card .story-illustration svg').length,6);
+assert.equal(document.querySelectorAll('.story-card .story-formula').length,0);
+assert.ok(!document.querySelectorAll('.story-card')[2].textContent.includes('N(d_1)'));
+assert.equal(document.querySelectorAll('#c05 .greeks-heading .greeks-scholar').length,1);
+assert.equal(document.querySelectorAll('.math-roadmap .process-card').length,6);
+assert.equal(document.querySelectorAll('.data-workflow .process-card').length,6);
+assert.equal(document.querySelectorAll('#gbm-bridge .bridge-row').length,5);
+assert.equal(document.querySelectorAll('#gbm-bridge .notation-grid dt').length,9);
+const pricing=$('influence');
+assert.ok(pricing.classList.contains('pricing-system'));
+assert.equal(document.querySelectorAll('#c02 .lab').length,1);
+assert.equal(pricing.querySelector('h3').textContent,'Six inputs feed one pricing model');
+for(const id of ['influence-buttons','influence-result','bsm-controls','reset','bsm-result','sensitivity','price-chart'])assert.ok(pricing.contains($(id)),id);
+assert.equal(pricing.querySelectorAll('#bsm-controls input').length,6);
+assert.equal(pricing.querySelectorAll('#influence-buttons button').length,6);
+assert.equal(document.querySelectorAll('.math-interlude').length,6);
+for(const d of document.querySelectorAll('.math-interlude'))assert.ok(d.querySelector('figure')&&d.querySelector('figcaption'));
+for(const input of ['S','K','days','r','sigma','q']){
+ const button=document.querySelector(`#influence-buttons button[data-input="${input}"]`);
+ button.onclick();assert.equal($('sensitivity').value,input);assert.equal(button.getAttribute('aria-pressed'),'true');
+ assert.ok($('influence-result').textContent.startsWith(`Raise ${input} from`));
+ assert.ok($('price-chart').querySelectorAll('path').length>=2);
+}
+for(const card of document.querySelectorAll('.term-grid details')){
+ assert.ok(card.querySelector('.term-symbol'));assert.ok(card.querySelector('.term-meaning').textContent.length>20);
+ card.setAttribute('open','');assert.ok(card.hasAttribute('open'));card.removeAttribute('open');
+}
+for(const a of document.querySelectorAll('.story-route a,.math-roadmap a'))assert.ok(document.querySelector(a.getAttribute('href')));
+assert.ok(document.querySelector('.payoff-series-legend').textContent.includes('Call-option payoff'));
+assert.ok(document.querySelector('.payoff-series-legend').textContent.includes('Put-option payoff'));
+const note=document.querySelector('.payoff-note');
+assert.ok(note.textContent.includes('The diagrams subtract the original premium without interest.'));
+assert.ok(note.querySelector('.equation').textContent.includes('H_C=(S_T-K)^+'));
+assert.ok(note.querySelector('.equation').textContent.includes('\\Pi_{\\rm holder}=H-\\text{premium}'));
+const style=fs.readFileSync(path.join(assets,'css/revision.css'),'utf8');
+for(const rule of ['#begin-k{--slider:#806b9e','#begin-a{--slider:#087f80','#begin-b{--slider:#205492','grid-template-columns:repeat(3,minmax(0,1fr))','@media(max-width:540px)'])assert.ok(style.includes(rule));
+document.querySelector('#scatter-chart circle').dispatchEvent(new window.Event('mouseenter'));
+assert.ok(document.querySelector('#comparison-chart .linked-bin'),'Scatter hover must link to the price-bin bars');
+for(const c of document.querySelectorAll('.chart'))assert.ok(c.querySelector('svg'),`Empty chart ${c.id}`);
+function changes(control,v,output){const old=before(output);change(control,v);assert.notEqual(before(output),old,`${control} did not affect ${output}`);}
+changes('pay-kind','put','pay-chart');changes('pay-k','110','pay-chart');changes('pay-p','10','pay-result');changes('pay-s','80','pay-result');
+for(const [k,v] of [['S','4100'],['K','4200'],['days','60'],['r','4'],['sigma','30'],['q','2']])changes('bsm-'+k,v,'bsm-result');
+changes('sensitivity','sigma','price-chart');changes('greek','gamma','greek-chart');change('greek','delta');changes('greek-kind','put','greek-chart');changes('greek-axis','days','greek-chart');
+changes('sim-vol','40','path-chart');changes('sim-mu','10','distribution-chart');
+let old=before('path-chart');$('sim-seed').onclick();assert.notEqual(before('path-chart'),old);
+changes('hedge-n','5','hedge-result');changes('quality','0.02','quality-result');changes('test','B','scatter-chart');changes('breakdown','maturity','breakdown-table');changes('smile-term','46–90','smile-chart');
+changes('begin-k','110','two-outcome-chart');changes('begin-a','60','two-outcome-result');changes('begin-b','140','two-outcome-result');
+changes('walk-steps','63','walk-chart');changes('example-kind','put','example-count');assert.equal(document.querySelectorAll('#examples-table tbody tr').length,10);
+change('example-date','2022-09-19');assert.ok(document.querySelectorAll('#examples-table tbody tr').length<10);
+$('example-clear').onclick();assert.equal(document.querySelectorAll('#examples-table tbody tr').length,20);
+const order=[...document.querySelectorAll('#examples-table tbody tr')].map(r=>r.dataset.observation).join();
+const strikeHeader=[...document.querySelectorAll('#examples-table thead button')].find(b=>b.textContent.startsWith('Strike price'));
+strikeHeader.onclick();assert.notEqual([...document.querySelectorAll('#examples-table tbody tr')].map(r=>r.dataset.observation).join(),order);
+document.querySelector('#influence-buttons button[data-input="sigma"]').onclick();assert.ok($('influence-result').textContent.includes('sigma'));
+changes('empirical-side','put','moneyness-price-chart');changes('empirical-term','46–90','residual-moneyness-chart');
+changes('btc-kind','put','btc-payoff-btc');changes('btc-spot','12000','btc-model-result');changes('btc-strike','11000','btc-payoff-usd');
+changes('btc-premium','0.08','btc-currency-result');changes('btc-future','8000','btc-currency-result');changes('btc-days','60','btc-model-result');
+changes('btc-vol','90','btc-model-result');changes('btc-rate','4','btc-model-result');changes('btc-display-unit','btc','btc-benchmark-chart');
+$('btc-reset').dispatchEvent(new window.Event('click'));assert.equal($('btc-spot').value,'10000');assert.equal($('btc-kind').value,'call');assert.equal($('btc-display-unit').value,'usd');
+assert.ok($('btc-currency-result').textContent.includes('400.00'));
+const btcDefaultCall=Number(document.querySelector('#btc-model-result strong').textContent.match(/Call \$([\d,.]+)/)[1].replaceAll(',',''));assert.ok(Math.abs(btcDefaultCall-806.8536451089012)<.003,'Independent Python reference for the illustrative Bitcoin call: '+btcDefaultCall);
+changes('btc-emp-model','H60','btc-market');changes('btc-emp-side','put','btc-metrics');changes('btc-emp-term','(45.0, 90.0]','btc-emp-count');
+$('btc-emp-reset').dispatchEvent(new window.Event('click'));assert.ok($('btc-emp-count').textContent.includes('178,236'));assert.equal(document.querySelectorAll('#btc-examples tbody tr').length,20);
+change('btc-example-side','put');assert.equal(document.querySelectorAll('#btc-examples tbody tr').length,10);$('btc-example-clear').onclick();assert.equal(document.querySelectorAll('#btc-examples tbody tr').length,20);
+const btcRows=()=>[...document.querySelectorAll('#btc-examples tbody tr')].map(r=>r.textContent).join();const btcOrder=btcRows();document.querySelector('#btc-examples button[data-btc-sort="strike"]').onclick();assert.notEqual(btcRows(),btcOrder);
+$('run-checks').onclick();assert.ok(!$('browser-checks').textContent.includes('FAIL'));
+$('reset').dispatchEvent(new window.Event('click'));assert.equal($('pay-k').value,'100');assert.equal($('bsm-S').value,'4000');
+for(const [key,v] of [['S','4000'],['K','4000'],['days','30'],['r','3'],['sigma','25'],['q','1.5']])assert.equal($('bsm-'+key).value,v);
+assert.equal($('sensitivity').value,'S');assert.equal(document.querySelector('#influence-buttons button[data-input="S"]').getAttribute('aria-pressed'),'true');
+for(const a of document.querySelectorAll('.chart svg [d],.chart svg [x],.chart svg [cx]'))assert.ok(!/NaN|Infinity/.test(a.outerHTML),'Invalid chart coordinate');
+console.log(`PASS: ${document.querySelectorAll('.chart svg').length} populated SVG charts; all mathematical and empirical selectors/sliders, reset, chapter links and browser checks. Layout/rendering NOT tested by this DOM harness.`);

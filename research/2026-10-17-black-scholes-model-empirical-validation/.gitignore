@@ -1,0 +1,5 @@
+/bitcoin_data/
+__pycache__/
+*.pyc
+
+# These requested paths are inside the web repository, not external storage.
