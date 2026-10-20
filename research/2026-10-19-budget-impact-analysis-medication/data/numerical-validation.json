@@ -1,0 +1,281 @@
+{
+  "checks": 2769,
+  "status": "PASS",
+  "historicalTopDown": 121.73964804680003,
+  "syntheticUnion": 1350,
+  "caseDefinitionCounts": [
+    {
+      "definition": "broad",
+      "count": 1350
+    },
+    {
+      "definition": "repeated",
+      "count": 917
+    },
+    {
+      "definition": "strict",
+      "count": 270
+    }
+  ],
+  "retainedSynthetic": 379,
+  "fixedStocks": [
+    36,
+    48,
+    60
+  ],
+  "fixedNewSwitches": [
+    36,
+    12,
+    12
+  ],
+  "costs": {
+    "secFirst": {
+      "units": 32,
+      "events": 16,
+      "loading": 10,
+      "acquisition": 28242.88,
+      "extras": 0,
+      "total": 28242.88,
+      "induction": 8825.9
+    },
+    "secMaintenance": {
+      "units": 26,
+      "events": 13,
+      "loading": 0,
+      "acquisition": 22947.34,
+      "extras": 0,
+      "total": 22947.34,
+      "induction": 0
+    },
+    "adaFirst": {
+      "units": 54,
+      "events": 50,
+      "loading": 6,
+      "acquisition": 25448.579999999998,
+      "extras": 0,
+      "total": 25448.579999999998,
+      "induction": 2827.62
+    },
+    "adaMaintenance": {
+      "units": 52,
+      "events": 52,
+      "loading": 0,
+      "acquisition": 24506.04,
+      "extras": 0,
+      "total": 24506.04,
+      "induction": 0
+    }
+  },
+  "q2Costs": {
+    "secFirst": {
+      "units": 56,
+      "events": 28,
+      "loading": 10,
+      "acquisition": 49425.04,
+      "extras": 0,
+      "total": 49425.04,
+      "induction": 8825.9
+    },
+    "secMaintenance": {
+      "units": 52,
+      "events": 26,
+      "loading": 0,
+      "acquisition": 45894.68,
+      "extras": 0,
+      "total": 45894.68,
+      "induction": 0
+    },
+    "adaFirst": {
+      "units": 54,
+      "events": 50,
+      "loading": 6,
+      "acquisition": 25448.579999999998,
+      "extras": 0,
+      "total": 25448.579999999998,
+      "induction": 2827.62
+    },
+    "adaMaintenance": {
+      "units": 52,
+      "events": 52,
+      "loading": 0,
+      "acquisition": 24506.04,
+      "extras": 0,
+      "total": 24506.04,
+      "induction": 0
+    }
+  },
+  "main": {
+    "p": {
+      "n": 120,
+      "growth": 0.1,
+      "shares": [
+        0.3,
+        0.4,
+        0.5
+      ],
+      "secPrice": 882.59,
+      "adaPrice": 471.27,
+      "frequency": 4,
+      "escalation": 0,
+      "discount": 0,
+      "adaDiscount": 0,
+      "inflation": 0,
+      "fee": 0,
+      "markup": 0,
+      "admin": 0,
+      "publicPay": 1,
+      "discontinuation": 0,
+      "mortality": 0,
+      "loss": 0,
+      "back": 0,
+      "initiations": 0,
+      "delay": 0
+    },
+    "rows": [
+      {
+        "year": 1,
+        "n": 120,
+        "entrants": 0,
+        "removed": 0,
+        "sec": 36,
+        "ada": 84,
+        "newSwitch": 36,
+        "returned": 0,
+        "secPY": 36,
+        "referenceGross": 2940724.8000000003,
+        "newGross": 3075251.04,
+        "secGross": 1016743.68,
+        "reference": 2940724.8000000003,
+        "newCost": 3075251.04,
+        "impact": 134526.23999999976
+      },
+      {
+        "year": 2,
+        "n": 132,
+        "entrants": 12,
+        "removed": 0,
+        "sec": 52.800000000000004,
+        "ada": 79.19999999999999,
+        "newSwitch": 16.800000000000004,
+        "returned": 0,
+        "secPY": 52.800000000000004,
+        "referenceGross": 3246107.7600000002,
+        "newGross": 3250794.138,
+        "secGross": 1300584.624,
+        "reference": 3246107.7600000002,
+        "newCost": 3250794.138,
+        "impact": 4686.37799999956
+      },
+      {
+        "year": 3,
+        "n": 145.2,
+        "entrants": 13.200000000000001,
+        "removed": 0,
+        "sec": 72.59999999999998,
+        "ada": 72.60000000000001,
+        "newSwitch": 19.79999999999999,
+        "returned": 0,
+        "secPY": 72.6,
+        "referenceGross": 3570718.5360000003,
+        "newGross": 3559742.566285714,
+        "secGross": 1770828.5759999997,
+        "reference": 3570718.5360000003,
+        "newCost": 3559742.566285714,
+        "impact": -10975.969714286271
+      }
+    ],
+    "total": 128236.64828571305,
+    "reference": 9757551.096,
+    "newCost": 9885787.744285714
+  },
+  "fixedNoGrowth": {
+    "p": {
+      "n": 120,
+      "growth": 0,
+      "shares": [
+        0.3,
+        0.4,
+        0.5
+      ],
+      "secPrice": 882.59,
+      "adaPrice": 471.27,
+      "frequency": 4,
+      "escalation": 0,
+      "discount": 0,
+      "adaDiscount": 0,
+      "inflation": 0,
+      "fee": 0,
+      "markup": 0,
+      "admin": 0,
+      "publicPay": 1,
+      "discontinuation": 0,
+      "mortality": 0,
+      "loss": 0,
+      "back": 0,
+      "initiations": 0,
+      "delay": 0
+    },
+    "rows": [
+      {
+        "year": 1,
+        "n": 120,
+        "entrants": 0,
+        "removed": 0,
+        "sec": 36,
+        "ada": 84,
+        "newSwitch": 36,
+        "returned": 0,
+        "secPY": 36,
+        "referenceGross": 2940724.8000000003,
+        "newGross": 3075251.04,
+        "secGross": 1016743.68,
+        "reference": 2940724.8000000003,
+        "newCost": 3075251.04,
+        "impact": 134526.23999999976
+      },
+      {
+        "year": 2,
+        "n": 120,
+        "entrants": 0,
+        "removed": 0,
+        "sec": 48,
+        "ada": 72,
+        "newSwitch": 12,
+        "returned": 0,
+        "secPY": 48,
+        "referenceGross": 2940724.8000000003,
+        "newGross": 2929453.68,
+        "secGross": 1165018.8,
+        "reference": 2940724.8000000003,
+        "newCost": 2929453.68,
+        "impact": -11271.120000000112
+      },
+      {
+        "year": 3,
+        "n": 120,
+        "entrants": 0,
+        "removed": 0,
+        "sec": 60,
+        "ada": 60,
+        "newSwitch": 12,
+        "returned": 0,
+        "secPY": 60,
+        "referenceGross": 2940724.8000000003,
+        "newGross": 2910749.2800000003,
+        "secGross": 1440386.8800000001,
+        "reference": 2940724.8000000003,
+        "newCost": 2910749.2800000003,
+        "impact": -29975.52000000002
+      }
+    ],
+    "total": 93279.59999999963,
+    "reference": 8822174.4,
+    "newCost": 8915454
+  },
+  "monteCarlo80": {
+    "median": -50495.27877460886,
+    "p5": -1382023.9028642136,
+    "p95": 1369134.5087909224,
+    "positive": 0.4875
+  }
+}

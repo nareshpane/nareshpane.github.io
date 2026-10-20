@@ -1,0 +1,83 @@
+{
+  "status": "PASS",
+  "assets": [
+    {
+      "path": "2026-10-19-budget-impact-analysis-medication.html",
+      "status": 200,
+      "type": "text/html",
+      "bytes": 51330
+    },
+    {
+      "path": "css/style.css",
+      "status": 200,
+      "type": "text/css",
+      "bytes": 10304
+    },
+    {
+      "path": "js/app.js",
+      "status": 200,
+      "type": "application/javascript",
+      "bytes": 40187
+    },
+    {
+      "path": "js/model.js",
+      "status": 200,
+      "type": "application/javascript",
+      "bytes": 7559
+    },
+    {
+      "path": "js/art.js",
+      "status": 200,
+      "type": "application/javascript",
+      "bytes": 151
+    },
+    {
+      "path": "js/assumptions.js",
+      "status": 200,
+      "type": "application/javascript",
+      "bytes": 9491
+    },
+    {
+      "path": "figures/bc-outline.svg",
+      "status": 200,
+      "type": "image/svg+xml",
+      "bytes": 2880
+    },
+    {
+      "path": "css/revision.css",
+      "status": 200,
+      "type": "text/css",
+      "bytes": 7257
+    },
+    {
+      "path": "js/illustrations.js",
+      "status": 200,
+      "type": "application/javascript",
+      "bytes": 11959
+    },
+    {
+      "path": "js/storyboard.js",
+      "status": 200,
+      "type": "application/javascript",
+      "bytes": 14347
+    },
+    {
+      "path": "js/video.js",
+      "status": 200,
+      "type": "application/javascript",
+      "bytes": 2395
+    },
+    {
+      "path": "js/education.js",
+      "status": 200,
+      "type": "application/javascript",
+      "bytes": 13420
+    },
+    {
+      "path": "figures/canada-provinces.svg",
+      "status": 200,
+      "type": "image/svg+xml",
+      "bytes": 31814
+    }
+  ]
+}

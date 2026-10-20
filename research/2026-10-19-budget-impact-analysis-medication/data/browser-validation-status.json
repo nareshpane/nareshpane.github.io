@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "method": "Actual Chrome launched outside sandbox; desktop, tablet, mobile regressions and screenshot capture",
+  "report": "browser-validation.json",
+  "visualReview": "visual-revision-notes.md",
+  "priorLimitation": "Initial sandbox launch returned spawn EPERM; resolved through approved launch."
+}

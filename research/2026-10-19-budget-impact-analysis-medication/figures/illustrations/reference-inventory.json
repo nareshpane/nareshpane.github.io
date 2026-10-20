@@ -1,0 +1,382 @@
+[
+  {
+    "reference": 1,
+    "filename": "Screenshot 2026-10-20 014040.png",
+    "subject": "Clinician assisting wheelchair user",
+    "group": "Care",
+    "dimensions": [
+      403,
+      353
+    ],
+    "mode": "RGBA",
+    "transparent": false,
+    "nonwhiteBounds": [
+      70,
+      57,
+      338,
+      323
+    ],
+    "status": "Accessible; visually inspected; reference only. Republication rights unverified; not copied into repository."
+  },
+  {
+    "reference": 2,
+    "filename": "Screenshot 2026-10-20 014048.png",
+    "subject": "Nurse assisting wheelchair user",
+    "group": "Care",
+    "dimensions": [
+      343,
+      323
+    ],
+    "mode": "RGBA",
+    "transparent": false,
+    "nonwhiteBounds": [
+      63,
+      57,
+      296,
+      275
+    ],
+    "status": "Accessible; visually inspected; reference only. Republication rights unverified; not copied into repository."
+  },
+  {
+    "reference": 3,
+    "filename": "Screenshot 2026-10-20 014445.png",
+    "subject": "Two professionals at computers",
+    "group": "Analysis",
+    "dimensions": [
+      426,
+      184
+    ],
+    "mode": "RGBA",
+    "transparent": false,
+    "nonwhiteBounds": [
+      23,
+      0,
+      384,
+      128
+    ],
+    "status": "Accessible; visually inspected; reference only. Republication rights unverified; not copied into repository."
+  },
+  {
+    "reference": 4,
+    "filename": "Screenshot 2026-10-20 014500.png",
+    "subject": "Institutional buildings",
+    "group": "Administration",
+    "dimensions": [
+      435,
+      334
+    ],
+    "mode": "RGBA",
+    "transparent": false,
+    "nonwhiteBounds": [
+      27,
+      27,
+      388,
+      302
+    ],
+    "status": "Accessible; visually inspected; reference only. Republication rights unverified; not copied into repository."
+  },
+  {
+    "reference": 5,
+    "filename": "Screenshot 2026-10-20 014507.png",
+    "subject": "Professional with financial chart",
+    "group": "Analysis",
+    "dimensions": [
+      378,
+      349
+    ],
+    "mode": "RGBA",
+    "transparent": false,
+    "nonwhiteBounds": [
+      29,
+      42,
+      325,
+      324
+    ],
+    "status": "Accessible; visually inspected; reference only. Republication rights unverified; not copied into repository."
+  },
+  {
+    "reference": 6,
+    "filename": "Screenshot 2026-10-20 014514.png",
+    "subject": "Analyst and linked nodes",
+    "group": "Analysis",
+    "dimensions": [
+      422,
+      369
+    ],
+    "mode": "RGBA",
+    "transparent": false,
+    "nonwhiteBounds": [
+      24,
+      77,
+      413,
+      306
+    ],
+    "status": "Accessible; visually inspected; reference only. Republication rights unverified; not copied into repository."
+  },
+  {
+    "reference": 7,
+    "filename": "Screenshot 2026-10-20 014540.png",
+    "subject": "Two medical professionals and medication",
+    "group": "Clinical",
+    "dimensions": [
+      423,
+      353
+    ],
+    "mode": "RGBA",
+    "transparent": false,
+    "nonwhiteBounds": [
+      14,
+      42,
+      403,
+      313
+    ],
+    "status": "Accessible; visually inspected; reference only. Republication rights unverified; not copied into repository."
+  },
+  {
+    "reference": 8,
+    "filename": "Screenshot 2026-10-20 014548.png",
+    "subject": "Physician with diagnostic images",
+    "group": "Clinical",
+    "dimensions": [
+      437,
+      375
+    ],
+    "mode": "RGBA",
+    "transparent": false,
+    "nonwhiteBounds": [
+      34,
+      65,
+      423,
+      328
+    ],
+    "status": "Accessible; visually inspected; reference only. Republication rights unverified; not copied into repository."
+  },
+  {
+    "reference": 9,
+    "filename": "Screenshot 2026-10-20 014606.png",
+    "subject": "Programmer at computer",
+    "group": "Analysis",
+    "dimensions": [
+      463,
+      412
+    ],
+    "mode": "RGBA",
+    "transparent": false,
+    "nonwhiteBounds": [
+      96,
+      79,
+      394,
+      368
+    ],
+    "status": "Accessible; visually inspected; reference only. Republication rights unverified; not copied into repository."
+  },
+  {
+    "reference": 10,
+    "filename": "Screenshot 2026-10-20 014612.png",
+    "subject": "Profile analyst and charts",
+    "group": "Analysis",
+    "dimensions": [
+      470,
+      385
+    ],
+    "mode": "RGBA",
+    "transparent": false,
+    "nonwhiteBounds": [
+      83,
+      105,
+      416,
+      328
+    ],
+    "status": "Accessible; visually inspected; reference only. Republication rights unverified; not copied into repository."
+  },
+  {
+    "reference": 11,
+    "filename": "Screenshot 2026-10-20 014709.png",
+    "subject": "Professional and medical kit",
+    "group": "Clinical",
+    "dimensions": [
+      413,
+      366
+    ],
+    "mode": "RGBA",
+    "transparent": false,
+    "nonwhiteBounds": [
+      14,
+      79,
+      350,
+      328
+    ],
+    "status": "Accessible; visually inspected; reference only. Republication rights unverified; not copied into repository."
+  },
+  {
+    "reference": 12,
+    "filename": "Screenshot 2026-10-20 014719.png",
+    "subject": "Physician with clipboard",
+    "group": "Clinical",
+    "dimensions": [
+      447,
+      390
+    ],
+    "mode": "RGBA",
+    "transparent": false,
+    "nonwhiteBounds": [
+      123,
+      52,
+      369,
+      317
+    ],
+    "status": "Accessible; visually inspected; reference only. Republication rights unverified; not copied into repository."
+  },
+  {
+    "reference": 13,
+    "filename": "Screenshot 2026-10-20 014727.png",
+    "subject": "Nurse with tablet",
+    "group": "Clinical",
+    "dimensions": [
+      419,
+      443
+    ],
+    "mode": "RGBA",
+    "transparent": false,
+    "nonwhiteBounds": [
+      110,
+      67,
+      328,
+      401
+    ],
+    "status": "Accessible; visually inspected; reference only. Republication rights unverified; not copied into repository."
+  },
+  {
+    "reference": 14,
+    "filename": "Screenshot 2026-10-20 014753.png",
+    "subject": "Reception and service desk",
+    "group": "Administration",
+    "dimensions": [
+      416,
+      404
+    ],
+    "mode": "RGBA",
+    "transparent": false,
+    "nonwhiteBounds": [
+      84,
+      77,
+      379,
+      326
+    ],
+    "status": "Accessible; visually inspected; reference only. Republication rights unverified; not copied into repository."
+  },
+  {
+    "reference": 15,
+    "filename": "Screenshot 2026-10-20 014903.png",
+    "subject": "Hospital patient with visitors",
+    "group": "Care",
+    "dimensions": [
+      421,
+      406
+    ],
+    "mode": "RGBA",
+    "transparent": false,
+    "nonwhiteBounds": [
+      74,
+      70,
+      389,
+      341
+    ],
+    "status": "Accessible; visually inspected; reference only. Republication rights unverified; not copied into repository."
+  },
+  {
+    "reference": 16,
+    "filename": "Screenshot 2026-10-20 014910.png",
+    "subject": "Hospital patient and family",
+    "group": "Care",
+    "dimensions": [
+      457,
+      433
+    ],
+    "mode": "RGBA",
+    "transparent": false,
+    "nonwhiteBounds": [
+      75,
+      99,
+      426,
+      431
+    ],
+    "status": "Accessible; visually inspected; reference only. Republication rights unverified; not copied into repository."
+  },
+  {
+    "reference": 17,
+    "filename": "Screenshot 2026-10-20 014921.png",
+    "subject": "Hospital patient with family",
+    "group": "Care",
+    "dimensions": [
+      496,
+      394
+    ],
+    "mode": "RGBA",
+    "transparent": false,
+    "nonwhiteBounds": [
+      83,
+      116,
+      433,
+      347
+    ],
+    "status": "Accessible; visually inspected; reference only. Republication rights unverified; not copied into repository."
+  },
+  {
+    "reference": 18,
+    "filename": "Screenshot 2026-10-20 014942.png",
+    "subject": "Pharmacy shelves and pharmacist",
+    "group": "Pharmacy",
+    "dimensions": [
+      494,
+      381
+    ],
+    "mode": "RGBA",
+    "transparent": false,
+    "nonwhiteBounds": [
+      51,
+      53,
+      406,
+      359
+    ],
+    "status": "Accessible; visually inspected; reference only. Republication rights unverified; not copied into repository."
+  },
+  {
+    "reference": 19,
+    "filename": "Screenshot 2026-10-20 014952.png",
+    "subject": "Pharmacist at counter",
+    "group": "Pharmacy",
+    "dimensions": [
+      460,
+      435
+    ],
+    "mode": "RGBA",
+    "transparent": false,
+    "nonwhiteBounds": [
+      68,
+      70,
+      393,
+      387
+    ],
+    "status": "Accessible; visually inspected; reference only. Republication rights unverified; not copied into repository."
+  },
+  {
+    "reference": 20,
+    "filename": "Screenshot 2026-10-20 015000.png",
+    "subject": "Pharmacist dispensing medication",
+    "group": "Pharmacy",
+    "dimensions": [
+      446,
+      378
+    ],
+    "mode": "RGBA",
+    "transparent": false,
+    "nonwhiteBounds": [
+      81,
+      64,
+      396,
+      335
+    ],
+    "status": "Accessible; visually inspected; reference only. Republication rights unverified; not copied into repository."
+  }
+]

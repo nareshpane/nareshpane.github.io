@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-20",
+  "scope": "In-place revision; no changes outside this dedicated project folder",
+  "modified": [
+    "2026-10-19-budget-impact-analysis-medication.html",
+    "README.md",
+    "js/app.js",
+    "js/art.js",
+    "js/assumptions.js",
+    "scripts/test-browser.mjs",
+    "scripts/test-presentation.mjs",
+    "scripts/test-site.py",
+    "data/browser-validation-status.json",
+    "data/presentation-validation.json",
+    "data/static-validation.json",
+    "data/http-validation.json"
+  ],
+  "created": [
+    "css/revision.css",
+    "js/illustrations.js",
+    "js/storyboard.js",
+    "js/video.js",
+    "js/education.js",
+    "figures/canada-provinces.svg",
+    "scripts/extract-canada-map.py",
+    "scripts/review-storyboard.mjs",
+    "scripts/test-revision.mjs",
+    "data/revision-notes.md",
+    "data/revision-validation.json",
+    "data/revision-file-manifest.json",
+    "figures/qa/clinical-decision.png",
+    "figures/qa/dose-equation.png",
+    "figures/qa/scene-1.png",
+    "figures/qa/scene-10.png",
+    "figures/qa/scene-12.png",
+    "figures/qa/scene-5.png",
+    "figures/qa/storyboard-contact.png"
+  ],
+  "preserved": [
+    "js/model.js",
+    "SR0781-Cosentyx_Combined_Review CADTH Pharmacoeconomic Review - BIA.pdf",
+    "css/style.css",
+    "scripts/test-model.mjs",
+    "data/evidence-notes.md",
+    "figures/bc-outline.svg"
+  ],
+  "gitNote": "The project folder was already untracked at the start of this revision; ordinary git diff cannot show a before/after comparison for those files. File lists reflect operations in this revision."
+}

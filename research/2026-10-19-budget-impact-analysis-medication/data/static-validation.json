@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "htmlIDs": 154,
+  "sections": 19,
+  "localLinksChecked": [
+    "css/style.css",
+    "css/revision.css",
+    "js/app.js",
+    "js/model.js",
+    "js/assumptions.js",
+    "scripts/test-model.mjs",
+    "README.md",
+    "../../research.html",
+    "README.md",
+    "figures/bc-outline.svg",
+    "figures/canada-provinces.svg",
+    "scripts/extract-bc-map.py",
+    "figures/illustrations/professional-cast.png",
+    "figures/bc-centred.svg"
+  ],
+  "originalPDFSHA256": "A457422B67B5792E57854BE310084DAA53D0D183D325B48B72E671A3B0439A45",
+  "calculationEngineSHA256": "4AD3930F3EEB7BC11177BD47C97731935F0718EAEFFACC3A64C7D7886DDA91C0",
+  "browserVisualQA": "PASS: actual desktop/tablet/mobile browser regression and screenshot capture"
+}

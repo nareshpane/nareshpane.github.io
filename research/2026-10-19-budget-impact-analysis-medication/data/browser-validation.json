@@ -1,0 +1,26 @@
+[
+  {
+    "name": "desktop",
+    "width": 1440,
+    "height": 1000,
+    "status": "PASS",
+    "consoleErrors": [],
+    "externalRequests": []
+  },
+  {
+    "name": "tablet",
+    "width": 820,
+    "height": 1180,
+    "status": "PASS",
+    "consoleErrors": [],
+    "externalRequests": []
+  },
+  {
+    "name": "mobile",
+    "width": 390,
+    "height": 844,
+    "status": "PASS",
+    "consoleErrors": [],
+    "externalRequests": []
+  }
+]

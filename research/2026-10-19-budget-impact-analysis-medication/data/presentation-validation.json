@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "checks": 46,
+  "videoScenesVisited": 13,
+  "simulatedPlaybackSeconds": 51,
+  "scope": "DOM-stub initialization and handlers plus deterministic simulated-clock video tests (speed, pause/resume, replay, scrub, scene jump, all scenes, final hold). Not browser rendering, keyboard or real download verification."
+}

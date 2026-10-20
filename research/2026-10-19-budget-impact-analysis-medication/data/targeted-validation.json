@@ -1,0 +1,109 @@
+{
+  "status": "PASS",
+  "checks": [
+    "<h1>.*?</h1> preserved",
+    "<p class=\"lead\">.*?</p> preserved",
+    "<p class=\"context-related\">.*?</p> preserved",
+    "All eight domain labels and keywords unchanged",
+    "Requested visible animation sentence removed",
+    "All severity copy retained",
+    "Protected model, video controller, illustration data and source PDF hashes unchanged",
+    "All controls, defaults and assumption definitions unchanged",
+    "Every individual scene duration unchanged",
+    "Measured compactness targets, mobile containment and console checks pass"
+  ],
+  "measurements": {
+    "before": {
+      "context": {
+        "width": 1164,
+        "height": 711.9375
+      },
+      "cards": [
+        {
+          "width": 355.328125,
+          "height": 370.359375
+        },
+        {
+          "width": 355.328125,
+          "height": 370.359375
+        },
+        {
+          "width": 355.34375,
+          "height": 370.359375
+        }
+      ],
+      "severityIllustrations": [
+        {
+          "width": 240,
+          "height": 184.609375
+        },
+        {
+          "width": 240,
+          "height": 184.609375
+        },
+        {
+          "width": 240,
+          "height": 184.609375
+        }
+      ],
+      "venn": {
+        "width": 1102,
+        "height": 405.59375
+      },
+      "metadata": {
+        "width": 252,
+        "height": 141.1875
+      },
+      "viewport": 1440,
+      "documentWidth": 1440
+    },
+    "after": {
+      "context": {
+        "width": 1164,
+        "height": 604.40625
+      },
+      "cards": [
+        {
+          "width": 355.328125,
+          "height": 205
+        },
+        {
+          "width": 355.328125,
+          "height": 205
+        },
+        {
+          "width": 355.34375,
+          "height": 205
+        }
+      ],
+      "severityIllustrations": [
+        {
+          "width": 144,
+          "height": 110.765625
+        },
+        {
+          "width": 144,
+          "height": 110.765625
+        },
+        {
+          "width": 144,
+          "height": 110.765625
+        }
+      ],
+      "venn": {
+        "width": 780,
+        "height": 253.96875
+      },
+      "vennShape": {
+        "width": 780,
+        "height": 159.078125
+      },
+      "metadata": {
+        "width": 238.21875,
+        "height": 115.9375
+      },
+      "viewport": 1440,
+      "documentWidth": 1440
+    }
+  }
+}

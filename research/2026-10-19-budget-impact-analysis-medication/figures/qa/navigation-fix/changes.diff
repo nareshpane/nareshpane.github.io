@@ -1,0 +1,92 @@
+diff --git "a/D:\\GitHub\\nareshpane.github.io\\research\\2026-10-19-budget-impact-analysis-medication\\.nav-fix-baseline\\2026-10-19-budget-impact-analysis-medication.html" "b/D:\\GitHub\\nareshpane.github.io\\research\\2026-10-19-budget-impact-analysis-medication\\2026-10-19-budget-impact-analysis-medication.html"
+index 3852f26..704ea26 100644
+--- "a/D:\\GitHub\\nareshpane.github.io\\research\\2026-10-19-budget-impact-analysis-medication\\.nav-fix-baseline\\2026-10-19-budget-impact-analysis-medication.html"
++++ "b/D:\\GitHub\\nareshpane.github.io\\research\\2026-10-19-budget-impact-analysis-medication\\2026-10-19-budget-impact-analysis-medication.html"
+@@ -1,5 +1,5 @@
+ <!doctype html>
+-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="An interactive, reproducible educational budget impact model for secukinumab in British Columbia: patient identification, dosing, switching and public expenditure."><title>Budget Impact Analysis: A Health Economics Study for Prescription Drugs</title><meta property="og:title" content="Budget Impact Analysis: A Health Economics Study for Prescription Drugs"><meta name="twitter:title" content="Budget Impact Analysis: A Health Economics Study for Prescription Drugs"><meta property="og:type" content="article"><meta property="og:description" content="An interactive BC health-economics study using public information and clinical assumptions."><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%2328634e%27/%3E%3Cpath d=%27M16 7v18M7 16h18%27 stroke=%27white%27 stroke-width=%275%27/%3E%3C/svg%3E"><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/revision.css"><script type="module" src="js/app.js"></script><script type="module" src="js/navigation.js"></script></head>
++<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="An interactive, reproducible educational budget impact model for secukinumab in British Columbia: patient identification, dosing, switching and public expenditure."><title>Budget Impact Analysis: A Health Economics Study for Prescription Drugs</title><meta property="og:title" content="Budget Impact Analysis: A Health Economics Study for Prescription Drugs"><meta name="twitter:title" content="Budget Impact Analysis: A Health Economics Study for Prescription Drugs"><meta property="og:type" content="article"><meta property="og:description" content="An interactive BC health-economics study using public information and clinical assumptions."><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%2328634e%27/%3E%3Cpath d=%27M16 7v18M7 16h18%27 stroke=%27white%27 stroke-width=%275%27/%3E%3C/svg%3E"><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/revision.css"><script type="module" src="js/app.js"></script><script defer src="js/navigation.js"></script></head>
+ <body id="top"><a class="skip" href="#main">Skip to content</a><div class="page">
+ <header class="hero"><div><div class="eyebrow">Health economics · Budget Impact Analysis</div><h1>Budget Impact Analysis: A Health Economics Study for Prescription Drugs</h1><p class="lead">An evaluation of the financial and demographic implications of listing new prescription drugs under a provincial publicly funded drug program.</p></div><aside class="provenance" aria-label="Creation information"><div><span aria-hidden="true">📅</span><strong>Created:</strong><small>October 19, 2026</small></div><div><span aria-hidden="true">💼</span><strong>Harness:</strong><small>Codex on Windows</small></div><div><span aria-hidden="true">📑</span><strong>Model:</strong><small>GPT-6.1 Codex</small></div><div><span aria-hidden="true">🧠</span><strong>Reasoning:</strong><small>High</small></div></aside></header>
+ <main id="main"><noscript><p class="no-js">Enable JavaScript to use the calculation tools. The evidence, methods and limitations remain readable below; no external scripts or services are required.</p></noscript>
+
+diff --git "a/D:\\GitHub\\nareshpane.github.io\\research\\2026-10-19-budget-impact-analysis-medication\\.nav-fix-baseline\\css\\style.css" "b/D:\\GitHub\\nareshpane.github.io\\research\\2026-10-19-budget-impact-analysis-medication\\css\\style.css"
+index 4069a3e..c604097 100644
+--- "a/D:\\GitHub\\nareshpane.github.io\\research\\2026-10-19-budget-impact-analysis-medication\\.nav-fix-baseline\\css\\style.css"
++++ "b/D:\\GitHub\\nareshpane.github.io\\research\\2026-10-19-budget-impact-analysis-medication\\css\\style.css"
+@@ -26,10 +26,11 @@ p{margin:0 0 16px}
+ .provenance{border:1.5px solid var(--green);border-radius:12px;padding:17px;font-size:.79rem;background:var(--card)}
+ .provenance p{margin:0 0 6px}
+ .notice{border-left:4px solid var(--green);padding:16px 20px;background:#edf3e5;border-radius:0 10px 10px 0;font-size:.9rem;margin:18px 0 26px}
+-.nav{position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;gap:2px;overflow-x:auto;overflow-y:hidden;background:#fff3e9f5;backdrop-filter:blur(8px);border-block:1px solid #dfceb9;padding:10px 0;margin:20px 0 30px}
+-.nav a{flex:0 0 auto;white-space:nowrap;font-size:.78rem;padding:5px 5px;border-radius:7px;text-decoration:none;color:var(--green);transition:background-color .15s,color .15s}
++.nav{position:sticky;top:0;z-index:20;display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 2px;background:#fff3e9f5;backdrop-filter:blur(8px);border-block:1px solid #dfceb9;padding:10px 0;margin:20px 0 30px}
++.nav a{flex:0 0 auto;white-space:nowrap;font-size:.78rem;padding:5px;border:1px solid transparent;border-radius:7px;text-decoration:none;color:var(--green);transition:background-color .15s,color .15s}
+ .nav a:hover{background:#deead5}
+-.nav a[aria-current="location"]{background:var(--green);color:#fff;font-weight:600}
++.nav a[aria-current="location"]{background:#deead5;border-color:#8fac80;color:var(--green);font-weight:600}
++@media(max-width:1100px){.nav{justify-content:flex-start}}
+ section.card{margin-bottom:28px;padding:30px}
+ .card,.panel{background:var(--card);border:1px solid var(--line);border-radius:17px;box-shadow:0 5px 22px #334b3405}
+ .panel{padding:20px}
+
+diff --git "a/D:\\GitHub\\nareshpane.github.io\\research\\2026-10-19-budget-impact-analysis-medication\\.nav-fix-baseline\\css\\revision.css" "b/D:\\GitHub\\nareshpane.github.io\\research\\2026-10-19-budget-impact-analysis-medication\\css\\revision.css"
+index 96ec1b2..5718b06 100644
+--- "a/D:\\GitHub\\nareshpane.github.io\\research\\2026-10-19-budget-impact-analysis-medication\\.nav-fix-baseline\\css\\revision.css"
++++ "b/D:\\GitHub\\nareshpane.github.io\\research\\2026-10-19-budget-impact-analysis-medication\\css\\revision.css"
+@@ -55,7 +55,9 @@ section.card:not(.broad-context)>p:not(.caption):not(.small):not(.notice):not(.u
+ /* Short cross-sector orientation, with a responsive hub and eight branches. */
+ h1{font-size:clamp(1.85rem,3vw,2.45rem);text-wrap:balance}
+ .case-question{font-size:1.02rem;color:#3b735c;line-height:1.6;max-width:88ch}
+-.broad-context>p{font-size:.91rem}.broad-context h2{font-size:1.7rem}
++.broad-context>p{font-size:.91rem}
++.broad-context>p:first-of-type,.broad-context>.context-related{max-width:none}
++.broad-context h2{font-size:1.7rem}
+ .context-network{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(3,minmax(80px,auto));gap:22px 35px;margin:23px 0}
+ .context-branches{position:absolute;inset:0;width:100%;height:100%;fill:none;stroke:#a5bd9b;stroke-width:2;pointer-events:none}
+ .context-domain,.context-hub{position:relative;z-index:1;border:1px solid #c7d5bf;border-radius:12px;background:#f4f7ec;padding:12px;display:flex;gap:11px;align-items:center;min-width:0}
+
+diff --git "a/D:\\GitHub\\nareshpane.github.io\\research\\2026-10-19-budget-impact-analysis-medication\\.nav-fix-baseline\\js\\navigation.js" "b/D:\\GitHub\\nareshpane.github.io\\research\\2026-10-19-budget-impact-analysis-medication\\js\\navigation.js"
+index 499c0f4..da30ff9 100644
+--- "a/D:\\GitHub\\nareshpane.github.io\\research\\2026-10-19-budget-impact-analysis-medication\\.nav-fix-baseline\\js\\navigation.js"
++++ "b/D:\\GitHub\\nareshpane.github.io\\research\\2026-10-19-budget-impact-analysis-medication\\js\\navigation.js"
+@@ -1,23 +1,17 @@
++// A deferred classic script also runs when this standalone page opens via file://.
+ // Keep section tracking independent of the economic model and animation clock.
++(() => {
+ const nav = document.querySelector('nav.nav');
+ if (nav) {
+-  const links = [...nav.querySelectorAll('a[href^="#"]')];
++  const links = [...nav.querySelectorAll('a[href^="#"]')].filter(link => document.getElementById(link.hash.slice(1)));
+   const sections = links.map(link => document.getElementById(link.hash.slice(1)));
+-  let tops = [], offset = 76, active, frame, measure = true, manualUntil = 0;
+-
+-  function reveal(link) {
+-    if (performance.now() < manualUntil || nav.scrollWidth <= nav.clientWidth) return;
+-    const left = link.offsetLeft, right = left + link.offsetWidth;
+-    if (left < nav.scrollLeft) nav.scrollLeft = Math.max(0, left - 8);
+-    else if (right > nav.scrollLeft + nav.clientWidth) nav.scrollLeft = right - nav.clientWidth + 8;
+-  }
++  let tops = [], offset = 76, active, frame, measure = true;
+ 
+   function activate(link) {
+     if (active === link) return;
+     active?.removeAttribute('aria-current');
+     active = link;
+     active.setAttribute('aria-current', 'location');
+-    reveal(active);
+   }
+ 
+   function update() {
+@@ -53,9 +47,7 @@ if (nav) {
+     const link = event.target.closest('a');
+     if (links.includes(link) && !event.ctrlKey && !event.metaKey && !event.shiftKey && !event.altKey) activate(link);
+   });
+-  // Do not fight touch, trackpad or keyboard exploration of the mobile strip.
+-  for (const type of ['pointerdown', 'wheel', 'keydown']) {
+-    nav.addEventListener(type, () => { manualUntil = performance.now() + 1800; }, {passive:true});
+-  }
+   schedule(true);
+ }
++
++})();

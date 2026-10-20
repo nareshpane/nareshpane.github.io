@@ -1,0 +1,114 @@
+[
+  {
+    "name": "desktop",
+    "geometry": {
+      "context": {
+        "width": 1164,
+        "height": 604.40625
+      },
+      "cards": [
+        {
+          "width": 355.328125,
+          "height": 205
+        },
+        {
+          "width": 355.328125,
+          "height": 205
+        },
+        {
+          "width": 355.34375,
+          "height": 205
+        }
+      ],
+      "severityIllustrations": [
+        {
+          "width": 144,
+          "height": 110.765625
+        },
+        {
+          "width": 144,
+          "height": 110.765625
+        },
+        {
+          "width": 144,
+          "height": 110.765625
+        }
+      ],
+      "venn": {
+        "width": 780,
+        "height": 253.96875
+      },
+      "vennShape": {
+        "width": 780,
+        "height": 159.078125
+      },
+      "metadata": {
+        "width": 238.21875,
+        "height": 115.9375
+      },
+      "viewport": 1440,
+      "documentWidth": 1440
+    },
+    "consoleErrors": [],
+    "functionalChecks": [
+      "Special Authority age response and restoration",
+      "Prevalence input response and restoration"
+    ]
+  },
+  {
+    "name": "mobile",
+    "geometry": {
+      "context": {
+        "width": 366,
+        "height": 1014.3125
+      },
+      "cards": [
+        {
+          "width": 332,
+          "height": 185
+        },
+        {
+          "width": 332,
+          "height": 185
+        },
+        {
+          "width": 332,
+          "height": 185
+        }
+      ],
+      "severityIllustrations": [
+        {
+          "width": 144,
+          "height": 110.765625
+        },
+        {
+          "width": 144,
+          "height": 110.765625
+        },
+        {
+          "width": 144,
+          "height": 110.765625
+        }
+      ],
+      "venn": {
+        "width": 332,
+        "height": 265.53125
+      },
+      "vennShape": {
+        "width": 332,
+        "height": 67.703125
+      },
+      "metadata": {
+        "width": 238.21875,
+        "height": 115.9375
+      },
+      "viewport": 390,
+      "documentWidth": 390
+    },
+    "consoleErrors": [],
+    "functionalChecks": [
+      "Special Authority age response and restoration",
+      "Prevalence input response and restoration"
+    ]
+  }
+]
