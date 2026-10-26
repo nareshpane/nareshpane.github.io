@@ -17,7 +17,6 @@ h1{color:#204c3b;font-size:clamp(1.9rem,3.2vw,2.6rem);line-height:1.18;max-width
 #intro .chart text{font-size:16px}#intro .video-explanation{min-height:190px;background:#fffdf5;border:1px solid #c3d2b7;border-radius:12px;padding:18px 22px;margin-top:14px}
 #intro .sql-type text{font-family:Consolas,ui-monospace,monospace}
 #intro .video-explanation h3{font-size:1.12rem;margin:8px 0}#intro .scene-caption{min-height:0;margin:0;font-size:.9rem;max-width:1000px}
-#video-progress{display:block;width:100%;height:5px;accent-color:#70a771;margin:10px 0}
 .video-controls{margin:14px 0 0;gap:10px}.video-seek{flex:1;min-width:250px}.video-seek input{flex:1;min-width:80px}.video-seek output{font-size:.72rem;white-space:nowrap;min-width:95px}
 .illustration-scroll{overflow-x:auto;max-width:100%;margin:18px 0}.illustration-scroll>.chart{min-width:650px}.illustration-scroll .chart text{font-size:16px}
 #clinical-tree{max-width:970px;margin:20px auto}#clinical-tree>.chart{min-width:720px}
@@ -101,3 +100,46 @@ abbr[title]{text-decoration:underline dotted #a5b9a0;text-underline-offset:3px;c
 @media(max-width:900px){.severity-grid .panel{grid-template-columns:144px minmax(0,1fr);min-height:185px}}
 @media(max-width:700px){.provenance{justify-self:start;display:block;max-width:100%}.broad-context{padding:18px 16px}.set-regions{grid-template-columns:1fr;gap:5px}}
 @media(max-width:650px){.context-network{grid-template-rows:auto;gap:8px}.context-domain{padding:8px}.context-domain svg{width:36px;height:36px;flex-basis:36px}.context-hub{padding:10px}.set-definitions{gap:12px}.terminology dl{grid-template-columns:1fr;gap:4px}.terminology dd{margin-bottom:8px}}
+
+/* October 26: balanced instructional palette and more spacious policy network. */
+:root{--bg:#fff0e2;--card:#fffdf7;--ink:#234139;--spring:#a8df91;--soft:#effbe9;--teal:#398f8b;--terracotta:#a65330}
+.broad-context{padding-block:34px!important}
+.context-network{grid-template-rows:repeat(3,minmax(100px,auto));gap:22px 24px;max-width:1020px;margin:24px auto}
+.context-domain{padding:14px 12px;background:#effbe9;border-color:#bed7b4}
+.context-domain:nth-of-type(even){background:#fff0e2;border-color:#decbb7}
+.context-domain svg{width:58px;height:54px;flex-basis:58px}
+.context-domain strong{font-size:.85rem}
+.context-hub{background:#beefa7;border:2px solid #70c77a;color:#234139;display:flex;flex-direction:column;justify-content:center;padding:15px 8px;gap:0}
+.context-hub strong{font-size:1.4rem}.context-hub small{color:#234139;font-size:.76rem}
+.context-branches{stroke:#398f8b;stroke-width:1.7}
+#intro{border:2px solid #285c46;background:#fffaf2}
+.scene-nav .active{background:#d9f2cb;color:#234139;border-color:#285c46}
+.video-timeline{border-top:1px solid #d7dfce;margin-top:12px;padding-top:12px}
+.video-timeline .video-seek{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:12px;min-width:0;width:100%}
+.video-seek input{width:100%;min-width:0;margin:0;touch-action:pan-y}
+.video-seek output{min-width:85px;font-variant-numeric:tabular-nums;text-align:right}
+.panel:has(>.toolbar),.coverage-phase:nth-child(2){background:#effbe9}
+.schedule-primer{margin:26px 0 32px}.schedule-primer>h3{font:normal 1.5rem Georgia,serif;color:#a65330}
+.schedule-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin:18px 0}
+.schedule-card{border:2px solid #c84b45;border-radius:15px;padding:22px;display:flex;flex-direction:column;background:#fff0e2;min-width:0}
+.schedule-card.dispensing{background:#effbe9}
+.schedule-card-heading{display:flex;align-items:center;gap:18px;margin-bottom:14px}
+.schedule-icon{width:144px;height:88px;flex:0 0 144px}.schedule-card h4{font:normal 1.3rem Georgia,serif;color:#234139;margin:0}
+.schedule-card>p{font-size:.86rem;min-height:3em}.schedule-equations{margin:0 0 14px;display:grid;gap:10px;flex:1}
+.schedule-equations>div{background:#fffdf7;border:1px solid #e2ddcc;border-radius:9px;padding:10px 12px}
+.schedule-equations dt{font-size:.75rem;color:#a65330;font-weight:650;margin-bottom:4px}
+.schedule-equations dd{margin:0;font-size:.87rem;line-height:1.6}.schedule-equations strong{white-space:nowrap;color:#285c46}
+.schedule-card .schedule-total{font-size:.78rem;min-height:0;margin:0;border-top:1px solid #ccbca8;padding-top:12px}
+.schedule-connection{padding:14px 18px;background:#fff7eb;border-left:3px solid #398f8b;border-radius:0 9px 9px 0;font-size:.88rem}
+@media(max-width:900px){.schedule-card-heading{gap:10px}.schedule-icon{width:100px;height:70px;flex-basis:100px}.schedule-card{padding:16px}}
+@media(max-width:700px){.schedule-pair{grid-template-columns:1fr}.video-controls label{flex-wrap:wrap}.video-controls [data-budget-view]{max-width:100%}.video-timeline .video-seek{gap:8px}.schedule-card>p{min-height:0}}
+@media(max-width:650px){.context-network{grid-template-rows:auto;gap:12px;margin:20px 0}.context-domain{padding:12px 8px;flex-direction:column;align-items:flex-start;gap:8px}.context-domain svg{width:52px;height:48px;flex-basis:48px}.context-domain strong{font-size:.78rem}.context-hub{align-items:center;padding:18px}.broad-context{padding-block:24px!important}}
+
+/* Focused follow-up: text-led indication and coordinated methodology motifs. */
+.indication-copy{max-width:none;margin-bottom:24px}
+.indication-copy p:last-child{margin-bottom:0}
+.methodology-grid>.panel{border:1.5px solid #e4b58f;background:#fffdf7}
+.method-heading{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:18px}
+.method-heading h3{margin:0;line-height:1.35}
+.method-icon{display:block;width:100px;height:79px;flex:0 0 100px}
+@media(max-width:600px){.method-heading{gap:12px;margin-bottom:14px}.method-icon{width:84px;height:66px;flex-basis:84px}}

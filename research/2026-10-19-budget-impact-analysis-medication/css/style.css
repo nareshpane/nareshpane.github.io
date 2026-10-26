@@ -164,12 +164,11 @@ body{background:white}
 @media(prefers-reduced-motion:reduce){.motion .walking{animation:none}
 }
 
-:is(#care-art,#mechanism-art,#pharmacy-art,#payer-donut){overflow-x:auto}
+:is(#mechanism-art,#pharmacy-art,#payer-donut){overflow-x:auto}
 
 @media(max-width:600px){#tornado>.chart{min-width:830px}
 #waterfall>.chart{min-width:890px}
 #stock-chart>.chart{min-width:710px}
-#care-art>.chart{min-width:550px}
 #mechanism-art>.chart{min-width:550px}
 #pharmacy-art>.chart,#payer-donut>.chart{min-width:470px}
 }

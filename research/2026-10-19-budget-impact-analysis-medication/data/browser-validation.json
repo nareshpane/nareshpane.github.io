@@ -8,8 +8,16 @@
     "externalRequests": []
   },
   {
+    "name": "laptop",
+    "width": 1280,
+    "height": 900,
+    "status": "PASS",
+    "consoleErrors": [],
+    "externalRequests": []
+  },
+  {
     "name": "tablet",
-    "width": 820,
+    "width": 768,
     "height": 1180,
     "status": "PASS",
     "consoleErrors": [],

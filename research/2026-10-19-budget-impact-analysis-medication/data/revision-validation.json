@@ -1,9 +1,9 @@
 {
   "status": "PASS",
-  "checks": 114,
+  "checks": 121,
   "engineByteIdentical": true,
-  "videoDuration": 51,
-  "videoScenes": 13,
+  "videoDuration": 56,
+  "videoScenes": 14,
   "aggregateUnit": "CAD $000; zero decimals; underlying CAD retained",
   "baselineThreeYearCAD": 128236.64828571305
 }

@@ -6,11 +6,21 @@ Revised October 20, 2026. See [revision notes](data/revision-notes.md) for the c
 
 Targeted refinements completed October 20, 2026: compact coloured policy symbols, smaller Hurley cards, a redesigned prevalence overlap, expanded terminology, national-versus-provincial context and a compact metadata panel. See [targeted revision report](data/targeted-refinements.md) and [focused source diff](data/targeted-refinements.patch).
 
-## Location decision
+## Current layout
 
-The request contained conflicting instructions: an exact HTML path inside this dedicated folder, but also text saying the primary page must be directly in `research/`. The implementation uses the **exact requested path**, inside the permitted writable folder, without creating a duplicate or redirect:
+The primary page is `research/2026-10-19-budget-impact-analysis-medication.html`.
+All supporting assets remain in `research/2026-10-19-budget-impact-analysis-medication/`.
 
-`research/2026-10-19-budget-impact-analysis-medication/2026-10-19-budget-impact-analysis-medication.html`
+## October 26, 2026 presentation revision
+
+- Enlarged the eight policy-domain SVG compositions and replaced the central dark fill with spring green; added peach/green instructional surfaces and a separate full-width timeline row.
+- Revised the requested scene labels and added an integrated vector pharmacy, a secure database, and a five-second data-to-policy workflow. The 14-scene sequence lasts 56 seconds. The original final scene body is unchanged and now starts at 52 seconds.
+- Added the separate hypothetical tablet primer: 6 tablets/day, 2,184 tablets over 52 weeks (364 days), CAD $21,840 acquisition cost, and 26 two-week dispensings. No clinical dosing or model assumptions changed.
+- `js/teaching-art.js` contains the new editable SVG compositions. Existing artwork is reused; no additional raster assets or runtime dependencies were added.
+- The expenditure scene describes the payer split conceptually and points to the separate Section 09 patient example. Its bars remain public expenditure. The new workbook uses rounded live-model counts, gross medication costs and incremental public impact; its miniature bars show gross medication costs.
+- Actual headless Chrome regression covers widths 1440, 1280, 768 and 390, playback/pause/replay, pointer seeking, chapter selection, speed, budget selection, automatic transitions, the additional and final scenes, clinical/cohort controls, dosing, Monte Carlo reproducibility and CSV export. Normal motion is exercised on desktop and reduced motion at the other widths. No console errors, missing requests or page overflow were observed. Complex animation scenes retain the existing internal horizontal scroll on narrow screens.
+- Numerical checks: 2,769 model checks and 121 revision assertions pass. The calculation engine and supplied review PDF retain their original SHA-256 hashes. All changed HTML paths and module imports pass the static audit. External source URLs were preserved; remote availability was not retested.
+- QA screenshots can be redirected outside the publication using `BIA_QA_DIR`; `data/browser-validation.json`, `data/revision-validation.json` and `data/static-validation.json` record the checks. No index edits, commit or push.
 
 ## Run
 
@@ -22,13 +32,13 @@ python -m http.server 8000
 
 Open:
 
-`http://localhost:8000/research/2026-10-19-budget-impact-analysis-medication/2026-10-19-budget-impact-analysis-medication.html`
+`http://localhost:8000/research/2026-10-19-budget-impact-analysis-medication.html`
 
 Do not open as `file://`: browsers restrict ES module loading under that scheme.
 
 ## Files
 
-- `2026-10-19-budget-impact-analysis-medication.html`: all twelve teaching sections, citations, navigation, controls and explanatory content.
+- `../2026-10-19-budget-impact-analysis-medication.html`: all twelve teaching sections, citations, navigation, controls and explanatory content.
 - `css/style.css`: peach/cream/green responsive design, chart overflow, focus and reduced-motion styles.
 - `js/model.js`: pure population, deterministic synthetic records, case definition, dose-event costing, treatment transitions, payer split, sensitivity decomposition and seeded Monte Carlo calculations.
 - `js/assumptions.js`: source registry and structured editable defaults with evidence labels, dates, units and descriptions.
@@ -38,7 +48,7 @@ Do not open as `file://`: browsers restrict ES module loading under that scheme.
 - `figures/bc-centred.svg`, `scripts/recenter-bc-map.py`: existing BC geometry recentered on a 126°W central meridian for the standalone BC scene.
 - `js/editorial-art.js`, `figures/illustrations/`: centrally referenced original artwork atlas, accessible role descriptions, complete reference inventory and generation prompt.
 - `scripts/review-illustrations.mjs`, `scripts/illustration-contact-sheets.mjs`: actual browser scene/subsection captures and screenshot contact sheets.
-- `js/storyboard.js`, `js/video.js`: 13 illustrated scenes, 51-second timeline at 1× and synchronized playback controls.
+- `js/storyboard.js`, `js/video.js`: 14 illustrated scenes, 56-second timeline at 1× and synchronized playback controls.
 - `js/terminology.js`: accessible full-name expansions for compact SVG labels; a closed terminology reference also appears near methodology.
 - `scripts/review-targeted-refinements.mjs`: desktop/mobile before-and-after measurements and captures of the targeted changes.
 - `js/education.js`: prevalence/clinical teaching aids, decision tree, reimbursement storyboard, cost equation, payer examples and live limitation scenarios.

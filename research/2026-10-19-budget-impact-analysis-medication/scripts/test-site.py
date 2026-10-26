@@ -5,7 +5,7 @@ from urllib.parse import unquote, urlsplit
 import hashlib, json, re
 import sys
 root = Path(__file__).resolve().parents[1]
-html = root / '2026-10-19-budget-impact-analysis-medication.html'
+html = root.parent / '2026-10-19-budget-impact-analysis-medication.html'
 class Audit(HTMLParser):
     def __init__(self):
         super().__init__(); self.ids=[]; self.links=[]; self.sections=0
@@ -22,7 +22,7 @@ for link in a.links:
     if link.startswith('#'):
         assert link[1:] in a.ids, link
     elif not urlsplit(link).scheme:
-        file=(root / unquote(urlsplit(link).path)).resolve()
+        file=(html.parent / unquote(urlsplit(link).path)).resolve()
         assert file.exists(), str(file)
         checked.append(link)
 js=(root/'js/app.js').read_text(encoding='utf-8')
@@ -31,12 +31,12 @@ for id in re.findall(r"\$\('([^']+)'\)",js):
     assert id in a.ids or id in dynamic, f'Unresolved DOM ID {id}'
 for path in root.glob('js/*.js'):
     for dep in re.findall(r"from\s+'(\.[^']+)'",path.read_text(encoding='utf-8')):
-        assert (path.parent/dep).exists(),dep
+        assert (path.parent/urlsplit(dep).path).exists(),dep
 # Include local assets referenced by dynamically rendered SVG artwork.
 for path in root.glob('js/*.js'):
     for link in re.findall(r'(?:href|src)="([^"$]+)"',path.read_text(encoding='utf-8')):
         if not urlsplit(link).scheme and not link.startswith('#'):
-            assert (root / link.split('#')[0]).exists(), link
+            assert (html.parent / link.split('#')[0]).exists(), link
             checked.append(link)
 assert '<svg' in (root/'figures/bc-outline.svg').read_text(encoding='utf-8')
 engine=hashlib.sha256((root/'js/model.js').read_bytes()).hexdigest().upper()
