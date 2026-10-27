@@ -1,0 +1,356 @@
+[
+  {
+    "filename": "1a.png",
+    "group": 1,
+    "topic": "Spanning forests directed toward roots",
+    "anchor": "source-1a",
+    "paragraphs": 3,
+    "definitions": [
+      "digraph",
+      "initial/terminal nodes",
+      "outgoing/incoming degree",
+      "regular",
+      "symmetric",
+      "subgraph (continued)"
+    ],
+    "equations": [
+      "rho(i)=rho*(i)=k"
+    ],
+    "claims": [],
+    "assumptions": [
+      "ordered endpoint pairs"
+    ],
+    "references": [],
+    "figures": [],
+    "boundary": "Final sentence continues in 1b."
+  },
+  {
+    "filename": "1b.png",
+    "group": 1,
+    "topic": "Spanning forests directed toward roots",
+    "anchor": "source-1b",
+    "paragraphs": 1,
+    "definitions": [
+      "empty graph",
+      "isolated node",
+      "null graph",
+      "directed circuit",
+      "disjoint subgraphs",
+      "spanning",
+      "directed path",
+      "simple path",
+      "length"
+    ],
+    "equations": [
+      "P_ij edge sequence"
+    ],
+    "claims": [],
+    "assumptions": [
+      "paths may repeat nodes"
+    ],
+    "references": [],
+    "figures": [],
+    "boundary": "Begins with completion of 1a."
+  },
+  {
+    "filename": "1c.png",
+    "group": 1,
+    "topic": "Spanning forests directed toward roots",
+    "anchor": "source-1c",
+    "paragraphs": 2,
+    "definitions": [
+      "undirected edge/graph",
+      "underlying graph",
+      "duplication",
+      "connected",
+      "component",
+      "sectional graph (continued)"
+    ],
+    "equations": [
+      "V_u=V",
+      "(i,j)=(j,i) in E_u"
+    ],
+    "claims": [
+      "Multiplicity extension asserted by author, not implemented"
+    ],
+    "assumptions": [
+      "edge multiplicity excluded"
+    ],
+    "references": [],
+    "figures": [],
+    "boundary": "Sectional-graph sentence continues in 1d."
+  },
+  {
+    "filename": "1d.png",
+    "group": 1,
+    "topic": "Spanning forests directed toward roots",
+    "anchor": "source-1d",
+    "paragraphs": 2,
+    "definitions": [
+      "sectional graph",
+      "tree",
+      "k-tree",
+      "reference node",
+      "directed tree",
+      "directed 2-tree",
+      "directed k-tree"
+    ],
+    "equations": [
+      "rho(i)=1 outside r",
+      "rho(r)=0"
+    ],
+    "claims": [
+      "extension from 2 to k components"
+    ],
+    "assumptions": [
+      "spanning",
+      "acyclic underlying graph",
+      "one reference per component"
+    ],
+    "references": [],
+    "figures": [],
+    "boundary": "Complete end of definition paragraph."
+  },
+  {
+    "filename": "1f.png",
+    "group": 1,
+    "topic": "Spanning forests directed toward roots",
+    "anchor": "source-1f",
+    "paragraphs": 1,
+    "definitions": [
+      "mu cardinality",
+      "edge product",
+      "union",
+      "intersection"
+    ],
+    "equations": [
+      "g1 union g2=e1e2e3e4e5e6",
+      "g1 intersection g2=e1e4"
+    ],
+    "claims": [],
+    "assumptions": [
+      "edge products omit isolated nodes"
+    ],
+    "references": [],
+    "figures": [],
+    "boundary": "No 1e file supplied; the full PDF confirms the paragraph order."
+  },
+  {
+    "filename": "2a.png",
+    "group": 2,
+    "topic": "Ring-sum and edge-disjoint star products",
+    "anchor": "source-2a",
+    "paragraphs": 1,
+    "definitions": [
+      "D",
+      "H",
+      "ring-sum",
+      "star (continued)"
+    ],
+    "equations": [],
+    "claims": [],
+    "assumptions": [
+      "families of subgraphs"
+    ],
+    "references": [],
+    "figures": [],
+    "boundary": "Continues in 2b."
+  },
+  {
+    "filename": "2b.png",
+    "group": 2,
+    "topic": "Ring-sum and edge-disjoint star products",
+    "anchor": "source-2b",
+    "paragraphs": 4,
+    "definitions": [
+      "ring-sum",
+      "star",
+      "zero",
+      "identity"
+    ],
+    "equations": [
+      "symmetric difference",
+      "disjoint-union star",
+      "h0*h=h0",
+      "h xor h=h0"
+    ],
+    "claims": [
+      "commutativity",
+      "associativity",
+      "abelian group",
+      "commutative semigroup with unity"
+    ],
+    "assumptions": [
+      "intersection-empty condition; interpretation discussed separately"
+    ],
+    "references": [],
+    "figures": [],
+    "boundary": "All symbols readable; set-valued versus occurrence-valued expansion is an interpretive limitation, not an illegible symbol."
+  },
+  {
+    "filename": "3a.png",
+    "group": 3,
+    "topic": "Generating directed trees by cancellation",
+    "anchor": "source-3a",
+    "paragraphs": 10,
+    "definitions": [
+      "S_k",
+      "C1",
+      "M1",
+      "M2",
+      "M3"
+    ],
+    "equations": [
+      "C1=product S_k over k not r"
+    ],
+    "claims": [
+      "Lemma 1: repeated underlying edges vanish",
+      "Lemma 2: longer cycles cancel"
+    ],
+    "assumptions": [
+      "symmetric digraph",
+      "fixed root r",
+      "identify opposite orientations"
+    ],
+    "references": [
+      "[7]"
+    ],
+    "figures": [],
+    "boundary": "Lemma 2 proof not included in images; read from full PDF p.554."
+  },
+  {
+    "filename": "3b.png",
+    "group": 3,
+    "topic": "Generating directed trees by cancellation",
+    "anchor": "source-3b",
+    "paragraphs": 2,
+    "definitions": [
+      "X1",
+      "T^r"
+    ],
+    "equations": [
+      "T^r=ring-sum of expansion occurrences"
+    ],
+    "claims": [
+      "Theorem 1",
+      "proof using Lemmas 1 and 2"
+    ],
+    "assumptions": [
+      "symmetric digraph",
+      "opposite arcs identified"
+    ],
+    "references": [
+      "Lemmas 1 and 2"
+    ],
+    "figures": [],
+    "boundary": "The next supplied image skips PDF subsection 4(b)."
+  },
+  {
+    "filename": "3c.png",
+    "group": 3,
+    "topic": "Generating directed trees by cancellation",
+    "anchor": "source-3c",
+    "paragraphs": 3,
+    "definitions": [
+      "labelled completion example"
+    ],
+    "equations": [
+      "S1*S2*S3*S4",
+      "first six T-prime products"
+    ],
+    "claims": [],
+    "assumptions": [
+      "Fig.1",
+      "r fixed"
+    ],
+    "references": [
+      "Fig.1a",
+      "Fig.1b"
+    ],
+    "figures": [],
+    "boundary": "T-prime list continues in 3d; arbitrary-digraph construction supplied separately from PDF section 4(b)."
+  },
+  {
+    "filename": "3d.png",
+    "group": 3,
+    "topic": "Generating directed trees by cancellation",
+    "anchor": "source-3d",
+    "paragraphs": 4,
+    "definitions": [],
+    "equations": [
+      "last ten T-prime products",
+      "12 T products"
+    ],
+    "claims": [
+      "root outgoing arcs irrelevant",
+      "early repeated-index rejection",
+      "early cancellation"
+    ],
+    "assumptions": [
+      "edge-label expansion"
+    ],
+    "references": [
+      "S1*S2 and S3*S4"
+    ],
+    "figures": [],
+    "boundary": "Ends at greatly, mid-sentence; retained exactly and continuation labelled separately."
+  },
+  {
+    "filename": "4a.png",
+    "group": 4,
+    "topic": "Generating k rooted components",
+    "anchor": "source-4a",
+    "paragraphs": 5,
+    "definitions": [
+      "C2"
+    ],
+    "equations": [
+      "C2=product S_j outside k prescribed roots"
+    ],
+    "claims": [],
+    "assumptions": [
+      "symmetric digraph",
+      "specified root set"
+    ],
+    "references": [
+      "Fig.1"
+    ],
+    "figures": [
+      "Fig.1a original G",
+      "Fig.1b symmetric completion G-prime"
+    ],
+    "boundary": "Text interrupted by figure; sentence continues in 4b. All figure topology and edge labels audited."
+  },
+  {
+    "filename": "4b.png",
+    "group": 4,
+    "topic": "Generating k rooted components",
+    "anchor": "source-4b",
+    "paragraphs": 5,
+    "definitions": [
+      "X2",
+      "T_k^r"
+    ],
+    "equations": [
+      "root-excluded expansion",
+      "8 completion 2-trees",
+      "6 original 2-trees"
+    ],
+    "claims": [
+      "Theorem 2",
+      "arbitrary-digraph filtering"
+    ],
+    "assumptions": [
+      "fixed nonempty root set",
+      "opposite orientations identified before parity",
+      "remove double-primed arcs after generation"
+    ],
+    "references": [
+      "section 4(b)",
+      "Theorem 2",
+      "Fig.1"
+    ],
+    "figures": [],
+    "boundary": "Complete end of section 5; no unreadable notation remains."
+  }
+]

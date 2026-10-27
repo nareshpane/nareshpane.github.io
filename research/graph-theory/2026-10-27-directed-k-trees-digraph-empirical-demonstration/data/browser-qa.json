@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-27",
+  "transport": "HTTP localhost:8000",
+  "browser": "Codex in-app browser",
+  "viewports": [
+    {"width": 1280, "height": 900, "pageHorizontalOverflow": false},
+    {"width": 390, "height": 844, "pageHorizontalOverflow": false}
+  ],
+  "mathJaxRenderedExpressions": 327,
+  "mathJaxErrors": 0,
+  "consoleErrorsOrWarnings": 0,
+  "checks": [
+    "Triangle: three valid forests from four candidates; invalid reciprocal cycle and valid candidate inspected.",
+    "Adjacency arc edit updates graph, Laplacian and all method counts.",
+    "All vertices roots: one empty-edge forest and determinant one.",
+    "Edgeless graph with a non-root: zero forests.",
+    "Chen graph with root r: twelve forests.",
+    "Keyboard checkbox selection of roots 3 and r: six forests.",
+    "Keyboard candidate next/previous restores the selected forest; reset restores the paper preset with root r and twelve forests.",
+    "Completion mode for roots 3 and r: eight forests before filtering and six after.",
+    "Complete six-vertex digraph: 1296 rooted trees, 3125 outgoing assignments.",
+    "Three incremental derivation reveals; final button disabled; Enter key works.",
+    "Animation next, previous, restart, play, pause, speed and progress endpoint.",
+    "Sixth source forest product and both corresponding component sets.",
+    "Expanded Group 4 source images loaded.",
+    "Keyboard expansion of Graph Theory on research.html; entry opens intended page."
+  ],
+  "visualCorrection": "Graph SVG sizing is scoped with aria-labelledby so it cannot resize MathJax SVG equations.",
+  "preview": "../figures/laboratory-preview.jpg",
+  "limits": "These are observed UI checks, not a reusable browser test runner. Mathematical test programs and static HTML checks are retained separately."
+}

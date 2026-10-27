@@ -1,0 +1,6 @@
+{
+  "cases": 463,
+  "sourceProducts": 18,
+  "multipleCycleCancellation": "pass",
+  "failures": 0
+}
