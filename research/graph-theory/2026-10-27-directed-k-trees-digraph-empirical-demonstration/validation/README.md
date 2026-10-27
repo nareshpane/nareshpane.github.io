@@ -8,6 +8,9 @@ From research/graph-theory, run:
 
     python 2026-10-27-directed-k-trees-digraph-empirical-demonstration/validation/validate.py
     node 2026-10-27-directed-k-trees-digraph-empirical-demonstration/validation/test_math.js
+    node 2026-10-27-directed-k-trees-digraph-empirical-demonstration/validation/test_learning.js
+    python 2026-10-27-directed-k-trees-digraph-empirical-demonstration/validation/test_transcription.py
+    python 2026-10-27-directed-k-trees-digraph-empirical-demonstration/validation/test_math_layout.py
     python 2026-10-27-directed-k-trees-digraph-empirical-demonstration/validation/build_page.py
     python -m http.server 8000 --directory ../..
 
@@ -32,7 +35,7 @@ The determinant counts fixed-root directed forests; it does not count forests wi
 
 All 13 excerpts are preserved unchanged. transcriptions.json is the editable transcription source, with filename anchors mapped in data/content-inventory.json. The builder assembles the main page; retain both its explanatory text and the source JSON.
 
-Only physical line-break hyphenation is normalized. Images 3d and 4a cut text mid-sentence; the source boundaries remain visible. No 1e file was present. All notation was readable after comparison with the full PDF; no missing equation numbers were invented.
+Physical line-break hyphenation is normalized. Sentence and equation continuations are joined across the image boundaries, without visible filenames or scan galleries. The final paragraph cropped in 3d is completed from the supplied full paper, printed p.555, with a disclosure below its panel. Raw transcription data and all source images are unchanged. No 1e file was present. All notation was readable after comparison with the full PDF; no missing equation numbers were invented.
 
 The paper's set-valued star definition and its operational multiplicity cancellation require a distinction: this implementation retains expansion occurrences until ring-sum. Edge-disjointness in products means edge identifiers, not vertex-disjoint subgraphs. These interpretive issues are explicitly disclosed on the page. The multi-cycle involution explanation strengthens the single-cycle wording in the PDF's Lemma 2 proof.
 
@@ -40,4 +43,24 @@ The paper's set-valued star definition and its operational multiplicity cancella
 
 data/validation-results.json contains actual Python outputs and SHA-256 hashes of all supplied PNGs. The full paper is chen1966.pdf, with printed pages 550-560. Figure 1's topology comes from 4a; its ten original arcs and four artificial reversals are listed on the page. The implementation excludes loops and parallel copies.
 
-No finite experiment is claimed as a general proof. No files are staged, committed or pushed.
+No finite experiment is claimed as a general proof. Publication and version-control
+actions are performed only under the user's explicit authorization.
+
+## Refinement lessons
+
+The page builder imports learning_content.py for scoped educational additions. Browser learning.js adds pure path-tracing and Laplacian helpers alongside the new controls. test_learning.js checks 15 trace/start combinations, invalid inputs, all six arc contributions, the four primer examples and the three triangle root sets. test_transcription.py compares all original transcription tokens with the continuous panels.
+
+Metadata model/reasoning values are supplied explicitly by the user for this refinement. The page uses the requested GPT-6.1 Sol / Medium labels; they are not inferred from runtime information.
+
+## Scrollbar correction
+
+math_layout.py formats long formulas as mathematical units separated at relations,
+set conditions, list separators and adjacent path edges. The browser wraps between
+these units while MathJax 3 SVG retains scripts, matrices and cases intact.
+Explanatory text inside set definitions wraps as ordinary prose. No overflowing
+content is hidden, clipped or reduced to a tiny font. Non-numeric tables become
+labelled records on narrow screens; matrix buttons remain a compact grid. Code
+and computational traces wrap within their panels.
+
+test_math_layout.py checks every source formula's content/order and verifies that
+matrix entries, cases, and MathJax configuration are unchanged by formatting.

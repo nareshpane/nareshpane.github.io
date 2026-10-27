@@ -1,7 +1,7 @@
 {
   "2026-10-27-directed-k-trees-digraph-empirical-demonstration.html": {
-    "localLinks": 35,
-    "ids": 68,
+    "localLinks": 26,
+    "ids": 117,
     "structure": "pass"
   },
   "research.html": {
@@ -10,5 +10,5 @@
     "structure": "pass"
   },
   "sourceIntegrity": "13 original PNG hashes unchanged",
-  "existingResearchIndex": "pre-existing text preserved except four relocation links"
+  "existingResearchIndex": "unchanged from HEAD"
 }

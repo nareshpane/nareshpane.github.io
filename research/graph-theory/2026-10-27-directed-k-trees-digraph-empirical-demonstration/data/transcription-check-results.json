@@ -1,0 +1,16 @@
+{
+  "sourceGroups": 4,
+  "sourceFiles": 13,
+  "originalTranscriptionTokens": "unchanged in order",
+  "paragraphJoins": [
+    "1a\u20131b",
+    "1c\u20131d",
+    "2a\u20132b",
+    "4a\u20134b"
+  ],
+  "equationJoin": "3c\u20133d",
+  "supplement": "Final paragraph completed from supplied PDF p.555; disclosed outside verbatim",
+  "visibleSourceFilenames": 0,
+  "scanGalleries": 0,
+  "failures": 0
+}

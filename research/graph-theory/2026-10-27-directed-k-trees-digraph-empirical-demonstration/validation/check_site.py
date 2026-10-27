@@ -43,20 +43,12 @@ def run():
     saved=json.loads((BASE/'data/validation-results.json').read_text())
     for name,digest in saved['source_sha256'].items():
         assert hashlib.sha256((BASE/'Verbatim'/name).read_bytes()).hexdigest()==digest,name
-    # Preserve the existing index text, allowing this publication section and
-    # the four link corrections required by the graph-theory relocation.
+    # This refinement must not modify any part of the existing landing page.
     current=(ROOT/'research.html').read_text(encoding='utf-8-sig')
     before=subprocess.check_output(['git','show','HEAD:research.html'],cwd=ROOT).decode('utf-8')
-    for name in ('nauty-ramsey.html','basic-graph-animations.html',
-                 'plantri-linux-four-color-theorem.html',
-                 'computational-burden-graph-generation-nodes.html'):
-        before=before.replace('href="'+name+'"','href="research/graph-theory/'+name+'"')
-    def without_section(text):
-        return re.sub(r'\n\n      <details class="graph-theory-section".*?      </details>',
-                      '',text,flags=re.S)
-    assert without_section(current)==without_section(before)
+    assert current==before
     report['sourceIntegrity']='13 original PNG hashes unchanged'
-    report['existingResearchIndex']='pre-existing text preserved except four relocation links'
+    report['existingResearchIndex']='unchanged from HEAD'
     (BASE/'data/site-check-results.json').write_text(json.dumps(report,indent=2),encoding='utf-8')
     print(json.dumps(report,indent=2))
 if __name__=='__main__':run()

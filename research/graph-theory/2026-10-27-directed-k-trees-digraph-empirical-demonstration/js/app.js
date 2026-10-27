@@ -4,26 +4,40 @@ const M=TreeMath, $=id=>document.getElementById(id);
 let serial=0;
 function svgGraph(n,edges,roots,options={}){
  const id='arrow'+serial++, names=options.names||Array.from({length:n},(_,i)=>String(i+1));
- const pos=options.paper?[[40,282],[145,140],[295,40],[460,140],[300,290]]:
-   Array.from({length:n},(_,i)=>[250+160*Math.cos(-Math.PI/2+i*2*Math.PI/n),175+125*Math.sin(-Math.PI/2+i*2*Math.PI/n)]);
+ const width=options.width||510,height=options.height||345,radius=options.radius||17;
+ const pos=options.positions||(options.paper?[[40,282],[145,140],[295,40],[460,140],[300,290]]:
+   Array.from({length:n},(_,i)=>[width/2+width*.31*Math.cos(-Math.PI/2+i*2*Math.PI/n),height/2+height*.36*Math.sin(-Math.PI/2+i*2*Math.PI/n)]));
  const selected=options.selected&&new Set(options.selected.map(e=>e.join(',')));
- let s='<svg viewBox="0 0 510 345" role="img" aria-labelledby="'+id+'-title '+id+'-desc"><title id="'+id+'-title">'+(options.title||'Directed graph')+'</title><desc id="'+id+'-desc">Vertices '+names.join(', ')+'. Square roots: '+roots.map(i=>names[i]).join(', ')+'. Arcs: '+edges.map(([u,v])=>names[u]+' to '+names[v]).join('; ')+'.</desc><defs><marker id="'+id+'" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#52625b"/></marker></defs>';
+ let s='<svg viewBox="0 0 '+width+' '+height+'" role="img" aria-labelledby="'+id+'-title '+id+'-desc"><title id="'+id+'-title">'+(options.title||'Directed graph')+'</title><desc id="'+id+'-desc">Vertices '+names.join(', ')+'. Square roots: '+roots.map(i=>names[i]).join(', ')+'. Arcs: '+edges.map(([u,v])=>names[u]+' to '+names[v]).join('; ')+'.</desc><defs><marker id="'+id+'" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="'+(radius<17?5:7)+'" markerHeight="'+(radius<17?5:7)+'" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#52625b"/></marker></defs>';
  const original=new Set(M.paper.map(e=>e.join(',')));
  for(const [u,v] of edges){
    const [x1,y1]=pos[u],[x2,y2]=pos[v],dx=x2-x1,dy=y2-y1,len=Math.hypot(dx,dy);
-   const reciprocal=edges.some(e=>e[0]===v&&e[1]===u),bend=reciprocal?27:0;
+   const reciprocal=edges.some(e=>e[0]===v&&e[1]===u),bend=reciprocal?radius*1.6:0;
    const nx=-dy/len,ny=dx/len,mx=(x1+x2)/2+nx*bend,my=(y1+y2)/2+ny*bend;
    const ux=mx-x1,uy=my-y1,ul=Math.hypot(ux,uy),vx=x2-mx,vy=y2-my,vl=Math.hypot(vx,vy);
-   const sx=x1+ux/ul*18,sy=y1+uy/ul*18,tx=x2-vx/vl*22,ty=y2-vy/vl*22;
+   const sx=x1+ux/ul*(radius+1),sy=y1+uy/ul*(radius+1),tx=x2-vx/vl*(radius+5),ty=y2-vy/vl*(radius+5);
    let cls='edge';
    if(options.completion&&!original.has([u,v].join(',')))cls+=' added';
    if(selected)cls+=selected.has([u,v].join(','))?' selected':' muted';
    s+='<path data-arc="'+u+','+v+'" class="'+cls+'" d="M'+sx+','+sy+' Q'+mx+','+my+' '+tx+','+ty+'" marker-end="url(#'+id+')"><title>'+names[u]+' → '+names[v]+'</title></path>';
-   if(options.labels){const lx=(x1+2*mx+x2)/4+nx*11,ly=(y1+2*my+y2)/4+ny*11;s+='<text class="edge-label" x="'+lx+'" y="'+ly+'" text-anchor="middle">'+(options.paper?M.labels[[u,v].join(',')]:names[u]+'→'+names[v])+'</text>';}
+   if(options.labels){
+     let lx=(x1+2*mx+x2)/4+nx*11,ly=(y1+2*my+y2)/4+ny*11;
+     // Separate the labels around Figure 1's central crossing.
+     const paperLabels={'2,4':[282,218],'4,2':[326,219],'3,1':[365,126],'1,3':[368,165]};
+     if(options.paper&&paperLabels[[u,v].join(',')])[lx,ly]=paperLabels[[u,v].join(',')];
+     s+='<text class="edge-label" x="'+lx+'" y="'+ly+'" text-anchor="middle">'+(options.paper?M.labels[[u,v].join(',')]:names[u]+'→'+names[v])+'</text>';
+   }
  }
  pos.forEach(([x,y],i)=>{
-   s+=roots.includes(i)?'<rect class="root" x="'+(x-17)+'" y="'+(y-17)+'" width="34" height="34" rx="3"/>':'<circle class="node" cx="'+x+'" cy="'+y+'" r="17"/>';
-   s+='<text x="'+x+'" y="'+(y+5)+'" text-anchor="middle" font-size="15">'+names[i]+'</text>';
+   let colour='';
+   if(options.components){
+     let v=i,seen=new Set();
+     while(!roots.includes(v)&&!seen.has(v)){seen.add(v);const e=edges.find(a=>a[0]===v);if(!e)break;v=e[1];}
+     const colours=['#d8ead0','#dce9f3','#eadcf0'];
+     if(roots.includes(v))colour=' style="fill:'+colours[roots.indexOf(v)%3]+'"';
+   }
+   s+=roots.includes(i)?'<rect data-node="'+i+'" class="root"'+colour+' x="'+(x-radius)+'" y="'+(y-radius)+'" width="'+radius*2+'" height="'+radius*2+'" rx="3"/>':'<circle data-node="'+i+'" class="node"'+colour+' cx="'+x+'" cy="'+y+'" r="'+radius+'"/>';
+   s+='<text data-node-label="'+i+'" x="'+x+'" y="'+(y+radius*.3)+'" text-anchor="middle" font-size="'+(radius<17?12:15)+'">'+names[i]+'</text>';
  });
  return s+'</svg>';
 }
@@ -31,9 +45,10 @@ const names=['1','2','3','4','r'];
 const complete=(n)=>Array.from({length:n},(_,u)=>Array.from({length:n},(_,v)=>[u,v])).flat().filter(e=>e[0]!==e[1]);
 const completion=Array.from(new Map(M.paper.flatMap(([u,v])=>[[[u,v].join(','),[u,v]],[[v,u].join(','),[v,u]]])).values());
 const put=(id,n,e,r,o={})=>$(id).innerHTML=svgGraph(n,e,r,o);
-put('intro-tree',5,[[0,1],[1,2],[2,3],[3,4]],[4],{names,title:'Valid directed tree toward r'});
-put('intro-cycle',5,[[0,1],[1,2],[2,0],[3,4]],[4],{names,title:'Invalid selection with a directed triangle'});
-put('intro-forest',5,[[0,1],[1,2],[3,4]],[2,4],{names,title:'Two components directed toward 3 and r'});
+const introOptions={names,width:360,height:220,radius:13};
+put('intro-tree',5,[[0,1],[1,2],[2,3],[3,4]],[4],{...introOptions,title:'Valid directed tree toward r'});
+put('intro-cycle',5,[[0,1],[1,2],[2,0],[3,4]],[4],{...introOptions,title:'Invalid selection with a directed triangle'});
+put('intro-forest',5,[[0,1],[1,2],[3,4]],[2,4],{...introOptions,components:true,title:'Two components directed toward 3 and r'});
 put('paper-original',5,M.paper,[4],{paper:true,names,labels:true,title:'Reconstruction of original Figure 1a'});
 put('paper-completed',5,completion,[4],{paper:true,names,labels:true,completion:true,title:'Reconstruction of Figure 1b with added reverse arcs'});
 let flipped=false;
@@ -66,7 +81,8 @@ const stages=[
 ];
 function algorithm(){
  const [title,text,expr,edges]=stages[step];$('algorithm-title').textContent=title;$('algorithm-text').textContent=text;$('algorithm-expression').textContent=expr;
- put('algorithm-graph',5,edges,[4],{paper:true,names,labels:true,completion:step>0&&step<5,selected:step===5?P.forests[0]:null,title:'Construction step '+(step+1)});
+ const selection=step===2?allCandidates[0].arcs:step===3?P.groups[0].term.arcs:step>=4?P.forests[0]:null;
+ put('algorithm-graph',5,edges,[4],{paper:true,names,labels:true,completion:step>0&&step<5,selected:selection,title:'Construction step '+(step+1)});
  $('alg-counter').textContent='Step '+(step+1)+' of '+stages.length;$('alg-progress').value=step;$('alg-prev').disabled=step===0;$('alg-next').disabled=step===5;
 }
 function pause(){clearInterval(timer);timer=null;$('alg-play').textContent='Play';}

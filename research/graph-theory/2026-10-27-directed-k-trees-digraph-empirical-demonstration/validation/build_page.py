@@ -1,6 +1,8 @@
 """Assemble accessible HTML from audited source text and editorial explanations."""
 from pathlib import Path
 import json, html
+from learning_content import refine_page
+from math_layout import fit_math
 BASE=Path(__file__).resolve().parents[1]
 SLUG=BASE.name
 sources=json.loads((BASE/'validation/transcriptions.json').read_text(encoding='utf-8'))
@@ -18,21 +20,48 @@ AUDIT={
  '3a':dict(definitions=['S_k','C1','M1','M2','M3'],equations=['C1=product S_k over k not r'],claims=['Lemma 1: repeated underlying edges vanish','Lemma 2: longer cycles cancel'],assumptions=['symmetric digraph','fixed root r','identify opposite orientations'],references=['[7]'],figures=[],boundary='Lemma 2 proof not included in images; read from full PDF p.554.'),
  '3b':dict(definitions=['X1','T^r'],equations=['T^r=ring-sum of expansion occurrences'],claims=['Theorem 1','proof using Lemmas 1 and 2'],assumptions=['symmetric digraph','opposite arcs identified'],references=['Lemmas 1 and 2'],figures=[],boundary='The next supplied image skips PDF subsection 4(b).'),
  '3c':dict(definitions=['labelled completion example'],equations=['S1*S2*S3*S4','first six T-prime products'],claims=[],assumptions=['Fig.1','r fixed'],references=['Fig.1a','Fig.1b'],figures=[],boundary='T-prime list continues in 3d; arbitrary-digraph construction supplied separately from PDF section 4(b).'),
- '3d':dict(definitions=[],equations=['last ten T-prime products','12 T products'],claims=['root outgoing arcs irrelevant','early repeated-index rejection','early cancellation'],assumptions=['edge-label expansion'],references=['S1*S2 and S3*S4'],figures=[],boundary='Ends at greatly, mid-sentence; retained exactly and continuation labelled separately.'),
+ '3d':dict(definitions=[],equations=['last ten T-prime products','12 T products'],claims=['root outgoing arcs irrelevant','early repeated-index rejection','early cancellation'],assumptions=['edge-label expansion'],references=['S1*S2 and S3*S4'],figures=[],boundary='Raw excerpt ends at greatly, mid-sentence. Displayed paragraph completed from the supplied PDF p.555; disclosed below panel; raw transcription unchanged.'),
  '4a':dict(definitions=['C2'],equations=['C2=product S_j outside k prescribed roots'],claims=[],assumptions=['symmetric digraph','specified root set'],references=['Fig.1'],figures=['Fig.1a original G','Fig.1b symmetric completion G-prime'],boundary='Text interrupted by figure; sentence continues in 4b. All figure topology and edge labels audited.'),
  '4b':dict(definitions=['X2','T_k^r'],equations=['root-excluded expansion','8 completion 2-trees','6 original 2-trees'],claims=['Theorem 2','arbitrary-digraph filtering'],assumptions=['fixed nonempty root set','opposite orientations identified before parity','remove double-primed arcs after generation'],references=['section 4(b)','Theorem 2','Fig.1'],figures=[],boundary='Complete end of section 5; no unreadable notation remains.')
 }
 def verbatim(i):
     names=groups[i-1]
-    text='<div class="verbatim"><h3>Original Research — Verbatim</h3><p class="source-list">Source excerpts: '+', '.join(names)+'</p><div class="transcript">'
+    text='<div class="verbatim"><h3>Original Research — Verbatim</h3><p class="source-list">From <cite>On Directed Trees and Directed k-Trees of a Digraph and Their Generation</cite> (1966), by Wai-Kai Chen</p><div class="transcript">'
     for name in names:
         inventory.append(dict(filename=name+'.png',group=i,topic=topics[i-1],anchor='source-'+name,paragraphs=len(sources[name]),**AUDIT[name]))
-        text+=f'<div id="source-{name}"><span class="source-tag">{name}.png</span>'
-        text+=''.join('<div class="math-scroll"><p>'+p+'</p></div>' for p in sources[name])+'</div>'
-    text+='</div><details><summary>View Original Scanned Excerpts</summary><div class="scans">'
+    parts=[]
     for name in names:
-        text+=f'<figure><img loading="lazy" src="{SLUG}/Verbatim/{name}.png" alt="Original Chen excerpt {name}: {topics[i-1]}"><figcaption>{name}.png — original, unchanged.</figcaption></figure>'
-    return text+'</div></details></div>'
+        chunks=list(sources[name])
+        if name in ('1b','1d','2b'):
+            # These image boundaries split an actual sentence, not a paragraph.
+            parts[-1]+=' '+chunks.pop(0)
+        if name=='3d':
+            # The completed-tree list spans two scanned images.
+            first=chunks.pop(0).removeprefix(r'\[\begin{gathered}').removesuffix(r'\end{gathered}\]')
+            previous=parts.pop().removeprefix(r'\[').removesuffix(r'\]')
+            parts.append(r'\[\begin{gathered}'+previous+r'\\'+first+r'\end{gathered}\]')
+        if name=='4a':
+            # Place the original caption after the continued source paragraph.
+            caption=chunks.pop()
+        if name=='4b':
+            parts[-1]+=' '+chunks.pop(0)
+        parts.extend(chunks)
+    if i==3:
+        # Completed from the supplied full PDF, visually checked on printed p.555.
+        parts[-1]+=r' simplified by eliminating those elements with same subscripts at an earlier stage; for example, if in \(S_1*S_2\) there are two elements with the same subscripts then they can be eliminated from \(S_1*S_2\) before one forms the star operation with \(S_3*S_4\).'
+    if i==4:
+        parts.append(caption.replace('<span class=\'editorial\'>[Original Fig. 1 is reproduced below the transcription. Its printed caption reads:]</span> ',''))
+    for part in parts:
+        if part.startswith(r'\['):
+            text+='<div class="math-scroll source-equation">'+part+'</div>'
+        else:
+            text+='<p>'+part+'</p>'
+    # Keep source anchors machine-readable without visible filename dividers.
+    text+=''.join(f'<span id="source-{name}" hidden></span>' for name in names)
+    text+='</div></div>'
+    if i==3:
+        text+='<p class="small source-completion">The final source paragraph is completed from the supplied full paper, printed page 555, where the cropped excerpt ends mid-sentence. The original excerpt data remain unchanged.</p>'
+    return text
 
 INTRO=r'''
 <a class="skip" href="#introduction">Skip to article</a><main>
@@ -176,6 +205,7 @@ def build():
     page+=LAB.replace('ASSET',SLUG)+'</body></html>'
     # The title as printed in the source masthead is authoritative.
     page=page.replace('<i>Journal of the Society for Industrial and Applied Mathematics, Series A: Control / Applied Mathematics</i>: the supplied scan’s masthead reads <i>J. SIAM Appl. Math.</i>', '<i>J. SIAM Appl. Math.</i> (journal abbreviation as printed)')
+    page=fit_math(refine_page(page,SLUG))
     (BASE.parent/(SLUG+'.html')).write_text(page,encoding='utf-8')
     (BASE/'data/content-inventory.json').write_text(json.dumps(inventory,indent=2),encoding='utf-8')
     print('Built page; inventoried',len(inventory),'source excerpts.')

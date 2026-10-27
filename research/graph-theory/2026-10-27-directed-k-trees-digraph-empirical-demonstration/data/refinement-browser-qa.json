@@ -1,0 +1,72 @@
+{
+  "date": "2026-10-27",
+  "browser": "Codex in-app browser",
+  "transport": "HTTP localhost:8765",
+  "viewports": [
+    {
+      "clippedFormulaSVGs": 0,
+      "mathErrors": 0,
+      "pageWidth": 1905,
+      "primerColumns": 4,
+      "verticalScrollbars": 0,
+      "width": 1920
+    },
+    {
+      "clippedFormulaSVGs": 0,
+      "mathErrors": 0,
+      "pageWidth": 1425,
+      "primerColumns": 4,
+      "verticalScrollbars": 0,
+      "width": 1440
+    },
+    {
+      "clippedFormulaSVGs": 0,
+      "mathErrors": 0,
+      "pageWidth": 1351,
+      "primerColumns": 4,
+      "verticalScrollbars": 0,
+      "width": 1366
+    },
+    {
+      "clippedFormulaSVGs": 0,
+      "mathErrors": 0,
+      "pageWidth": 1009,
+      "primerColumns": 2,
+      "verticalScrollbars": 0,
+      "width": 1024
+    },
+    {
+      "clippedFormulaSVGs": 0,
+      "mathErrors": 0,
+      "pageWidth": 753,
+      "primerColumns": 2,
+      "verticalScrollbars": 0,
+      "width": 768
+    },
+    {
+      "clippedFormulaSVGs": 0,
+      "mathErrors": 0,
+      "pageWidth": 375,
+      "primerColumns": 1,
+      "verticalScrollbars": 0,
+      "width": 390
+    }
+  ],
+  "mathExpressions": 331,
+  "consoleMessages": [],
+  "controlsChecked": [
+    "Collapsed notation; keyboard expansion; three-column table with Role only",
+    "Trace reaches r, detects cycle, stops immediately when starting at a root; previous, restart, play, pause, speed",
+    "Four triangle assignments; valid/invalid distinctions",
+    "Determinant next/previous/restart and small tree browsing",
+    "Arc selection highlights full/reduced entries; add/remove/reset recalculates determinant and enumeration",
+    "k=1,2,3 triangle forest counts 3,2,1; k=3 has no selected arcs",
+    "Existing animation endpoints, previous/next/restart; source labels",
+    "Existing lab: 12 and 6 source counts, completion 8 to 6, edge edit to zero, reset to 12"
+  ],
+  "screenshots": [
+    "../figures/refined-overview.jpg",
+    "../figures/matrix-lesson-preview.jpg"
+  ],
+  "limits": "Reduced-motion fallback is implemented and reviewed; browser media emulation was unavailable. Wide source formulas use local horizontal scrolling."
+}

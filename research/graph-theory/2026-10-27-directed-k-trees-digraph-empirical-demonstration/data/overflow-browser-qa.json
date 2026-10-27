@@ -1,0 +1,178 @@
+{
+  "date": "2026-10-27",
+  "renderer": "MathJax 3 SVG",
+  "viewports": [
+    {
+      "document": {
+        "client": 1905,
+        "scroll": 1905
+      },
+      "horizontalScrollPanels": 0,
+      "mathErrors": 0,
+      "mathOutsidePanel": 0,
+      "verbatim": [
+        {
+          "client": 998,
+          "scroll": 998
+        },
+        {
+          "client": 998,
+          "scroll": 998
+        },
+        {
+          "client": 998,
+          "scroll": 998
+        },
+        {
+          "client": 998,
+          "scroll": 998
+        }
+      ],
+      "width": 1920
+    },
+    {
+      "document": {
+        "client": 1425,
+        "scroll": 1425
+      },
+      "horizontalScrollPanels": 0,
+      "mathErrors": 0,
+      "mathOutsidePanel": 0,
+      "verbatim": [
+        {
+          "client": 998,
+          "scroll": 998
+        },
+        {
+          "client": 998,
+          "scroll": 998
+        },
+        {
+          "client": 998,
+          "scroll": 998
+        },
+        {
+          "client": 998,
+          "scroll": 998
+        }
+      ],
+      "width": 1440
+    },
+    {
+      "document": {
+        "client": 1351,
+        "scroll": 1351
+      },
+      "horizontalScrollPanels": 0,
+      "mathErrors": 0,
+      "mathOutsidePanel": 0,
+      "verbatim": [
+        {
+          "client": 998,
+          "scroll": 998
+        },
+        {
+          "client": 998,
+          "scroll": 998
+        },
+        {
+          "client": 998,
+          "scroll": 998
+        },
+        {
+          "client": 998,
+          "scroll": 998
+        }
+      ],
+      "width": 1366
+    },
+    {
+      "document": {
+        "client": 1009,
+        "scroll": 1009
+      },
+      "horizontalScrollPanels": 0,
+      "mathErrors": 0,
+      "mathOutsidePanel": 0,
+      "verbatim": [
+        {
+          "client": 898,
+          "scroll": 898
+        },
+        {
+          "client": 898,
+          "scroll": 898
+        },
+        {
+          "client": 898,
+          "scroll": 898
+        },
+        {
+          "client": 898,
+          "scroll": 898
+        }
+      ],
+      "width": 1024
+    },
+    {
+      "document": {
+        "client": 753,
+        "scroll": 753
+      },
+      "horizontalScrollPanels": 0,
+      "mathErrors": 0,
+      "mathOutsidePanel": 0,
+      "verbatim": [
+        {
+          "client": 682,
+          "scroll": 682
+        },
+        {
+          "client": 682,
+          "scroll": 682
+        },
+        {
+          "client": 682,
+          "scroll": 682
+        },
+        {
+          "client": 682,
+          "scroll": 682
+        }
+      ],
+      "width": 768
+    },
+    {
+      "document": {
+        "client": 375,
+        "scroll": 375
+      },
+      "horizontalScrollPanels": 0,
+      "mathErrors": 0,
+      "mathOutsidePanel": 0,
+      "verbatim": [
+        {
+          "client": 304,
+          "scroll": 304
+        },
+        {
+          "client": 304,
+          "scroll": 304
+        },
+        {
+          "client": 304,
+          "scroll": 304
+        },
+        {
+          "client": 304,
+          "scroll": 304
+        }
+      ],
+      "width": 390
+    }
+  ],
+  "expandedContent": true,
+  "sixVertexLabAlsoAudited": true,
+  "rawOverflowExplanation": "Small 2–15 px scrollWidth overhangs in some inline MathJax parents are internal painting/assistive metrics wholly within manuscript padding. All visible mathematical SVGs fit their panels; no parent clips or scrolls.",
+  "console": []
+}

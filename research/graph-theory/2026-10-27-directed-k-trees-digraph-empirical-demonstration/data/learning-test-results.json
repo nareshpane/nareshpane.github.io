@@ -1,0 +1,12 @@
+{
+  "traceExamples": 15,
+  "edgeContributionChecks": 6,
+  "rootSetCounts": [
+    3,
+    2,
+    1
+  ],
+  "primerExamples": 4,
+  "invalidInputs": "pass",
+  "failures": 0
+}
