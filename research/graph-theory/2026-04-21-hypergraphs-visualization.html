@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="icon" type="image/svg+xml" href="2026-04-21-hypergraphs-visualization/favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="An interactive mathematical tutorial on hypergraphs, from incidence structures to combinatorial theorems.">
+<title>Hypergraphs: From Intuitive Visualizations to Combinatorial Theorems</title>
+<link rel="stylesheet" href="2026-04-21-hypergraphs-visualization/style.css">
+<script defer src="2026-04-21-hypergraphs-visualization/math.js">
+</script>
+<script defer src="2026-04-21-hypergraphs-visualization/tutorial.js">
+</script>
+</head>
+<body>
+<main id="top">
+<header>
+<div class="hero">
+<div>
+<div class="eyebrow">Graph theory · an interactive research tutorial</div>
+<h1>Hypergraphs: From Intuitive Visualizations to Combinatorial Theorems</h1>
+<p class="subtitle">Understanding higher-order relationships through set systems, incidence structures, mathematical proofs, animated constructions, and computational experiments.</p>
+</div>
+<aside class="meta" aria-label="Research metadata">
+<div>
+<span>📅</span>
+<b class="created">Created:</b>
+<span>April 21, 2026</span>
+</div>
+<div>
+<span>🛠️</span>
+<b class="modified">Modified:</b>
+<span>October 27, 2026</span>
+</div>
+<div>
+<span>💻</span>
+<b class="harness">Harness:</b>
+<span>Codex on Windows</span>
+</div>
+<div>
+<span>🤖</span>
+<b class="model">Model:</b>
+<span>GPT-6.1 Sol</span>
+</div>
+<div>
+<span>🧠</span>
+<b class="reasoning">Reasoning:</b>
+<span>Medium</span>
+</div>
+</aside>
+</div>
+<nav class="toc" aria-label="Tutorial contents">
+<a href="#ordinary">01 · Beyond pairs</a>
+<a href="#builder">02 · Build a hypergraph</a>
+<a href="#definitions">03 · Definitions</a>
+<a href="#incidence">04 · Count incidences</a>
+<a href="#representations">05 · Representations</a>
+<a href="#uniform">06 · Uniform families</a>
+<a href="#intersections">07 · Intersections</a>
+<a href="#duality">08 · Duality</a>
+<a href="#paths">09 · Paths &amp; cycles</a>
+<a href="#optimization">10 · Match &amp; cover</a>
+<a href="#colouring">11 · Property B</a>
+<a href="#sperner">12 · Sperner’s theorem</a>
+<a href="#ekr">13 · Erdős–Ko–Rado</a>
+<a href="#helly">14 · Interval Helly</a>
+<a href="#random">15 · Random hypergraphs</a>
+<a href="#applications">16 · Applications</a>
+</nav>
+</header>
+<noscript>The definitions, proofs, and original gallery are readable without JavaScript. Enable JavaScript for the interactive SVG constructions and computed examples.</noscript>
+<section class="lesson" id="ordinary">
+<div class="eyebrow">01 · Begin with a picture</div>
+<h2>What changes when an edge can contain more than two vertices?</h2>
+<div class="two">
+<figure>
+<div id="intro-graph" class="diagram">
+</div>
+<figcaption>Ordinary graph: an edge records a relationship between exactly two vertices.</figcaption>
+</figure>
+<figure>
+<div id="intro-hyper" class="diagram">
+</div>
+<figcaption>Hypergraph: a labelled region records one group. These four vertices keep their positions throughout the story.</figcaption>
+</figure>
+</div>
+<div class="controls">
+<button id="intro-play">Play 54-second story</button>
+<button id="intro-restart">Restart</button>
+<label for="timeline">Timeline</label>
+<input id="timeline" type="range" min="0" max="54" step="0.1" value="0" aria-label="Guided story timeline in seconds">
+<label>Speed <select id="intro-speed">
+<option value="0.5">0.5×</option>
+<option value="1" selected>1×</option>
+<option value="2">2×</option>
+</select>
+</label>
+</div>
+<div id="intro-stage" class="stage" aria-live="polite">
+</div>
+<p>Suppose A, B, and C write <em>one paper together</em>. The set {A,B,C} preserves that collaboration as one event. Three pairwise links record who met whom, but cannot tell us whether there was one joint paper or three separate two-author papers.</p>
+<div class="definition box">
+<strong>Formal comparison.</strong> A simple undirected graph is <span class="math">G=(V,E), E⊆{e⊆V: |e|=2}</span>. A hypergraph is <span class="math">H=(V,ℰ)</span>, where hyperedges are subsets of V. Simple undirected graphs are exactly the 2-uniform hypergraphs under the conventions below.</div>
+</section>
+<section class="lesson" id="builder">
+<div class="eyebrow">02 · A running example</div>
+<h2>Build a hypergraph from scratch</h2>
+<p>Start with <span class="math">V={A,B,C,D,E,F}</span> and edges {A,B,C}, {B,D}, {C,D,E}, {A,E,F}. Every display marked “live example” uses this same editable object.</p>
+<div class="two">
+<div>
+<div id="builder-diagram" class="diagram">
+</div>
+<p class="caption">A coloured hub is one hyperedge. A spoke and small endpoint ring mean membership; line crossings and background regions carry no membership information.</p>
+</div>
+<div>
+<h3>Select members</h3>
+<div id="vertex-select" class="controls" aria-label="Choose vertices for an edge">
+</div>
+<p id="selection">Selected: ∅</p>
+<div class="controls">
+<button id="add-edge">Create hyperedge</button>
+<button id="replace-edge">Replace highlighted edge</button>
+<button id="remove-edge">Remove highlighted edge</button>
+</div>
+<div class="controls">
+<label>
+<input type="checkbox" id="labels" checked> Show diagram labels</label>
+<button id="reset">Reset example</button>
+</div>
+<p id="builder-message" role="status">
+</p>
+<h3>Exact set representation</h3>
+<div id="edge-list" class="set-list">
+</div>
+<p class="hint">Select an edge here, at a hub, or in a matrix column. A vertex selected in the incidence graph or matrix row highlights its memberships everywhere.</p>
+<div id="builder-stats" class="stats">
+</div>
+</div>
+</div>
+</section>
+<section class="lesson" id="definitions">
+<div class="eyebrow">03 · A precise language</div>
+<h2>Definitions are modelling choices</h2>
+<div class="definition box">
+<strong>Convention.</strong> V is finite; ℰ is a set of distinct, nonempty subsets of V. Singletons, nested edges, isolated vertices, and the empty family are allowed. “Simple” here means no repeated edges; some authors also forbid containment, giving a clutter or Sperner family. These are definitions and structural assumptions, rather than extra set-theoretic axioms.</div>
+<div class="three">
+<div>
+<h3>Order, size, degree</h3>
+<p>The <em>order</em> is |V|; the <em>size</em> is |ℰ|. The cardinality |e| counts an edge’s members. The degree deg(v)=|{e∈ℰ:v∈e}| counts edges containing v.</p>
+<p>Initially, order=6, size=4, |e₂|=2, deg(B)=2, and deg(F)=1.</p>
+</div>
+<div>
+<h3>Uniformity and rank</h3>
+<p>A k-uniform hypergraph has |e|=k for every edge. A pair is 2-uniform; a triple is 3-uniform. Our example is non-uniform, with sizes 3,2,3,3.</p>
+<p>Rank is max{|e|:e∈ℰ}, initially 3; we set the empty family’s rank to 0.</p>
+</div>
+<div>
+<h3>Isolation and substructure</h3>
+<p>A vertex is isolated when deg(v)=0. Remove e₄: F becomes isolated, while the order stays 6.</p>
+<p>A subhypergraph has V′⊆V and ℰ′⊆ℰ, with all retained edges contained in V′. Our vertex-induced version retains original edges wholly contained in V′; it does not truncate them.</p>
+</div>
+</div>
+<p class="limitation">An indexed-edge model permits distinct edge labels with identical members. This extension matters in duality. The builder rejects duplicates. Create {A}, then {A,B}, to see a singleton and nested edges; neither violates our simple convention.</p>
+</section>
+<section class="lesson" id="incidence">
+<div class="eyebrow">04 · One incidence, two counts</div>
+<h2>The matrix is a membership ledger</h2>
+<p>Rows are vertices, columns are edges. Define <span class="math">B<sub>ve</sub>=1{v∈e}</span>: 1 means membership, 0 means absence. Row sums are degrees; column sums are cardinalities.</p>
+<div class="two">
+<div>
+<div id="matrix" class="matrix-wrap">
+</div>
+<div class="controls">
+<button id="count-next">Count next incidence</button>
+<button id="count-reset">Restart count</button>
+</div>
+</div>
+<div>
+<div id="count-output" class="result" aria-live="polite">
+</div>
+<div class="theorem box">
+<strong>Proposition · incidence counting.</strong>
+<div class="formula">∑<sub>v∈V</sub> deg(v) = ∑<sub>e∈ℰ</sub> |e|.</div>
+</div>
+<div class="proof box">
+<strong>Double-counting proof.</strong> Let I={(v,e):v∈e}. Partition I by vertex: its parts have sizes deg(v). Partition I by hyperedge: its parts have sizes |e|. Both sums equal |I|, counting every incidence once.</div>
+</div>
+</div>
+<p>Initially the degrees are (2,2,2,2,2,1), the sizes are (3,2,3,3), and both sums equal 11. All live values recompute after edits. Step through the 1s to connect algebra with individual memberships.</p>
+</section>
+<section class="lesson" id="representations">
+<div class="eyebrow">05 · Same object, different lenses</div>
+<h2>Keep the incidence information</h2>
+<div class="two">
+<figure>
+<div id="incidence-graph" class="diagram">
+</div>
+<figcaption>Live example: circles are vertices; squares are hyperedges. Select either to synchronize the set diagram, matrix, and degree calculations.</figcaption>
+</figure>
+<div>
+<div id="representation-matrix" class="matrix-wrap">
+</div>
+<p>The set diagram in §2, this bipartite graph, and the matrix encode the same labelled relation. Every incidence graph is bipartite, because each link joins a vertex node to an edge node. This says nothing about Property B in §11.</p>
+<div class="controls">
+<button id="reveal-incidence">Reveal next incidence link</button>
+<button id="reveal-all">Show all links</button>
+</div>
+<p id="reveal-status" class="hint">
+</p>
+</div>
+</div>
+<h3>A projection with irreversible loss</h3>
+<p>The <em>2-section</em> joins distinct u,v when they lie together in some hyperedge. A k-edge becomes a clique of C(k,2) pairs.</p>
+<div id="projection" class="diagram">
+</div>
+<div class="example box">
+<strong>Counterexample.</strong> On {A,B,C}, ℰ₁={{A,B,C}} and ℰ₂={{A,B},{B,C},{A,C}} differ, yet both have 2-section K₃. The projection is not injective. A singleton leaves no pairwise edge.</div>
+</section>
+<section class="lesson" id="uniform">
+<div class="eyebrow">06 · All possible groups of a fixed size</div>
+<h2>Uniform hypergraphs and exact counting</h2>
+<p>A k-uniform family uses pairs for k=2, triples for k=3, or quadruples for k=4. The complete family K<sup>(k)</sup>
+<sub>n</sub> contains every k-subset. Here C(n,k)=n!/[k!(n−k)!] is the binomial coefficient; [n]={1,…,n}. We use C(n,k)=0 outside 0≤k≤n.</p>
+<div class="two">
+<div>
+<div class="controls">
+<label>n <input id="uniform-n" type="number" min="2" max="8" value="5">
+</label>
+<label>k <input id="uniform-k" type="number" min="1" max="5" value="3">
+</label>
+<button id="uniform-next">Next subset</button>
+<button id="uniform-reset">Restart enumeration</button>
+</div>
+<div id="uniform-diagram" class="diagram">
+</div>
+<output id="uniform-output">
+</output>
+</div>
+<div>
+<div class="theorem box">
+<strong>Exact counts, 1≤k≤n.</strong>
+<div class="formula">|ℰ|=C(n,k),<br>deg(v)=C(n−1,k−1).</div>
+</div>
+<div class="proof box">
+<strong>Derivation.</strong> Choose k of n vertices for an edge. For an edge containing v, choose k−1 others from n−1. Counting incident pairs also gives nC(n−1,k−1)=kC(n,k).</div>
+<p>For n=5,k=3 there are 10 edges, degree 6 at every vertex, and 30 incidences. The explorer lists exact counts for the full family, while drawing one subset at a time.</p>
+</div>
+</div>
+</section>
+<section class="lesson" id="intersections">
+<div class="eyebrow">07 · Overlap has several meanings</div>
+<h2>Pairwise does not mean all together</h2>
+<div class="controls">
+<label>Configuration <select id="overlap-case">
+<option value="disjoint">Disjoint edges</option>
+<option value="star">Common vertex</option>
+<option value="triangle">Pairwise, no common vertex</option>
+<option value="nested">Nested edges</option>
+</select>
+</label>
+</div>
+<div class="two">
+<div id="overlap-diagram" class="diagram">
+</div>
+<div>
+<div id="overlap-output" class="result">
+</div>
+<div id="intersection-matrix" class="matrix-wrap">
+</div>
+</div>
+</div>
+<p>The intersection matrix has entry |eᵢ∩eⱼ|; the diagonal is |eᵢ|. Pairwise intersecting means every two distinct edges meet. The family {{A,B},{B,C},{A,C}} meets pairwise but has empty total intersection. A star has a common vertex. A nested family has containments, which an antichain forbids.</p>
+<p>Extremal set theory asks how large a family can be under a specified overlap condition. Sections 12–14 compare three different restrictions.</p>
+</section>
+<section class="lesson" id="duality">
+<div class="eyebrow">08 · Exchange the roles</div>
+<h2>Duality is transposition</h2>
+<p>Make one dual vertex eᵢ per original edge, and one <em>indexed</em> dual edge e*<sub>v</sub>={eᵢ:v∈eᵢ} per original vertex v.</p>
+<div class="controls">
+<button id="dual-toggle" aria-pressed="false">Show dual</button>
+<button id="dual-step">Transpose next row</button>
+<button id="dual-reset">Restart transposition</button>
+</div>
+<div class="two">
+<div id="dual-diagram" class="diagram">
+</div>
+<div>
+<div id="dual-matrix" class="matrix-wrap">
+</div>
+<output id="dual-output">
+</output>
+</div>
+</div>
+<div class="definition box">
+<span class="math">B(H*)=B(H)<sup>T</sup>
+</span>. Hence <span class="math">|e*<sub>v</sub>|=deg<sub>H</sub>(v)</span> and dual vertex eᵢ has degree |eᵢ|. Transposing twice recovers the labelled incidence structure.</div>
+<p class="limitation">Identical incidence neighbourhoods yield repeated dual edges; isolated vertices yield empty dual edges. Our dual display retains indexed edges including empties, extending the simple convention. Collapsing them could destroy double-duality.</p>
+</section>
+<section class="lesson" id="paths">
+<div class="eyebrow">09 · Travel through memberships</div>
+<h2>Paths, cycles, and connectivity</h2>
+<p>A <em>Berge path</em> is v₀,e₁,v₁,…,eℓ,vℓ with distinct vertices, distinct edges, and {vᵢ₋₁,vᵢ}⊆eᵢ. A Berge cycle has distinct v₀,…,vℓ₋₁ and edges e₁,…,eℓ, with vℓ=v₀; we allow ℓ≥2. A length-2 cycle needs two distinct edges sharing two vertices.</p>
+<div class="controls">
+<label>From <select id="path-from">
+</select>
+</label>
+<label>To <select id="path-to">
+</select>
+</label>
+<button id="path-find">Find shortest Berge path</button>
+<button id="path-next">Trace next step</button>
+</div>
+<div class="two">
+<div id="path-diagram" class="diagram">
+</div>
+<output id="path-output">
+</output>
+</div>
+<div class="proof box">
+<strong>Connectivity criterion.</strong> Two original vertices are connected exactly when they lie in one incidence-graph component. A shortest incidence-graph path repeats no node; its alternating nodes give a Berge path. The reverse conversion is immediate. An isolated vertex forms its own component.</div>
+<p>Initially A,e₁,C,e₃,E,e₄,A is a Berge cycle of length 3. Loose and tight uniform paths impose other overlap conditions; these notions are not interchangeable.</p>
+</section>
+<section class="lesson" id="optimization">
+<div class="eyebrow">10 · Pack groups or hit them</div>
+<h2>Matchings, covers, and hitting sets</h2>
+<div class="two">
+<div>
+<div class="definition box">A <em>matching</em> consists of pairwise vertex-disjoint edges; ν(H) is its maximum size. A <em>transversal</em> T⊆V meets every edge; τ(H) is its minimum size.</div>
+<div class="theorem box">
+<strong>Proposition.</strong> For a finite hypergraph with nonempty edges and rank at most r,<div class="formula">ν(H) ≤ τ(H) ≤ rν(H).</div>
+</div>
+<div class="proof box">
+<strong>Proof.</strong> A transversal needs different vertices for disjoint matching edges. For the other bound take a maximum matching M. An edge avoiding its union could be added, contradicting maximality. This union is a transversal with at most r|M| vertices. For an empty family both parameters are zero.</div>
+</div>
+<div>
+<div class="controls">
+<button id="solve">Solve live example</button>
+<button id="optimization-next">Next solution view</button>
+</div>
+<div id="optimization-diagram" class="diagram">
+</div>
+<output id="optimization-output">
+</output>
+</div>
+</div>
+<p class="caption">Exact finite enumeration searches vertex subsets for a minimum cover and edge subsets for a maximum matching. Greedy chooses a vertex meeting the most uncovered edges, breaking ties in vertex order. It is feasible but need not be optimal. “Maximum” means largest; “maximal” means no further edge can be added.</p>
+<p>Initially ν=2 (e₂,e₄), τ=2 (for example {A,D}), so 2≤2≤6. Empty edges, excluded here, cannot be hit.</p>
+</section>
+<section class="lesson" id="colouring">
+<div class="eyebrow">11 · A constraint on every group</div>
+<h2>Colouring and Property B</h2>
+<p>A weak proper 2-colouring assigns two colours so that no hyperedge is monochromatic. Existence of such a colouring is <em>Property B</em>. In 2-uniform graphs this is bipartiteness; in larger edges vertices of the same colour may share an edge.</p>
+<div class="controls">
+<label>Example <select id="colour-example">
+<option value="toy">Live running example (default colourable)</option>
+<option value="fano">Fano plane: 7 points, 7 lines</option>
+</select>
+</label>
+<button id="colour-test">Test all colourings</button>
+<button id="colour-next">Next binary colouring</button>
+<button id="colour-reset">Reset colours</button>
+</div>
+<div class="two">
+<div id="colour-diagram" class="diagram">
+</div>
+<div>
+<div id="colour-buttons" class="controls" aria-label="Toggle a vertex colour">
+</div>
+<output id="colour-output" aria-live="polite">
+</output>
+</div>
+</div>
+<div class="example box">
+<strong>Fixed Fano family.</strong> {123,145,167,246,257,347,356}, where “123” means {1,2,3}. Each pair is on exactly one line and each point is on three lines. The figure uses explicit membership, rather than Euclidean straight lines.</div>
+<div class="theorem box">
+<strong>Proposition.</strong> The Fano plane has no proper 2-colouring. <a href="#ref-fano">[3]</a>
+</div>
+<div class="proof box">
+<strong>Counting proof.</strong> If all seven lines were mixed, each would contain exactly one same-colour pair. Each pair belongs to a unique line, so there would be 7 same-colour pairs. With a blue points, the actual number is C(a,2)+C(7−a,2), whose integer minimum is 9 at a=3 or 4. Contradiction.</div>
+<p class="limitation">Its incidence graph is bipartite, but that does not colour its original vertices properly. Exhaustively checking all 128 colourings verifies this finite example; the counting argument is the proof. A singleton prevents any weak proper colouring.</p>
+</section>
+<section class="lesson" id="sperner">
+<div class="eyebrow">12 · Extremal sets I</div>
+<h2>Sperner’s theorem: a widest layer</h2>
+<p>An <em>antichain</em> ℱ⊆2<sup>[n]</sup> has no distinct members related by inclusion. {{1,2},{1,3},{2,3}} is one; {{1},{1,2}} is not. {{1},{2}} is an antichain of disjoint sets, showing that antichain and intersecting are different properties.</p>
+<div class="two">
+<div>
+<div class="controls">
+<button id="lattice-next">Highlight next level</button>
+<button id="lattice-middle">Select middle layer</button>
+<button id="lattice-clear">Clear selection</button>
+</div>
+<div id="lattice-diagram" class="diagram">
+</div>
+<div id="lattice-choices" aria-label="Select subsets of a four-element set">
+</div>
+<output id="lattice-output">
+</output>
+</div>
+<div>
+<div class="theorem box">
+<strong>Sperner’s theorem.</strong> For an antichain ℱ on an n-element set, n≥0,<div class="formula">|ℱ| ≤ C(n,⌊n/2⌋).</div>A middle layer attains equality. <a href="#ref-sperner">[1]</a>
+</div>
+<div class="proof box">
+<strong>Proof via maximal chains.</strong> A permutation gives a chain of initial segments, meeting an antichain at most once. A set A of size a appears in a!(n−a)! of the n! permutation chains. Counting yields the LYM inequality<div class="formula">∑<sub>A∈ℱ</sub> 1/C(n,|A|) ≤ 1.</div>All denominators are at most C(n,⌊n/2⌋), so |ℱ| divided by this maximum is at most 1.</div>
+<p>At n=4 the lattice levels have sizes 1,4,6,4,1. All six pairs form a largest antichain. Select a singleton and a containing pair to violate the condition.</p>
+<p class="limitation">A Lubell sum ≤1 alone does not certify an antichain; the explorer checks containment directly.</p>
+</div>
+</div>
+</section>
+<section class="lesson" id="ekr">
+<div class="eyebrow">13 · Extremal sets II</div>
+<h2>Erdős–Ko–Rado: how large can an intersecting family be?</h2>
+<p>A <em>star</em> consists of all k-subsets containing one fixed vertex. Its members intersect and its size is C(n−1,k−1).</p>
+<div class="theorem box">
+<strong>Erdős–Ko–Rado theorem.</strong> For integers k≥1 and n≥2k, any pairwise intersecting family ℱ of k-subsets of [n] satisfies <span class="math">|ℱ|≤C(n−1,k−1)</span>. Stars attain equality. <a href="#ref-ekr">[2]</a>
+</div>
+<div class="two">
+<div>
+<div class="controls">
+<label>Small exact case <select id="ekr-case">
+<option value="4,2">n=4, k=2</option>
+<option value="5,2">n=5, k=2</option>
+<option value="6,2">n=6, k=2</option>
+</select>
+</label>
+<button id="ekr-verify">Enumerate intersecting families</button>
+</div>
+<div id="ekr-diagram" class="diagram">
+</div>
+<output id="ekr-output">
+</output>
+</div>
+<div class="proof box">
+<strong>Proof sketch · Katona’s circle method.</strong> Arrange [n] cyclically. The key circle lemma says an intersecting collection of length-k cyclic intervals has at most k members when n≥2k. There are (n−1)! cyclic orders; each fixed k-set is an interval in k!(n−k)! orders. Count pairs (order, member of ℱ appearing as an interval):<div class="formula">|ℱ| k!(n−k)! ≤ k(n−1)!.</div>Rearrangement gives the bound. The nontrivial circle lemma is proved in Katona’s paper; this is a proof sketch, not a complete proof of that ingredient.</div>
+</div>
+<p>At n=4,k=2, the star {12,13,14} and triangle {12,13,23} both have size 3. Equality therefore need not specify a unique star at n=2k. If n&lt;2k, all k-subsets intersect and the stated bound need not hold.</p>
+<p class="caption">The exact include/exclude search uses at most 15 candidate edges. It prunes only when a branch cannot improve the optimum. Finite enumeration verifies the selected instance, not the general theorem.</p>
+</section>
+<section class="lesson" id="helly">
+<div class="eyebrow">14 · Geometry adds an assumption</div>
+<h2>The interval Helly property</h2>
+<div class="two">
+<div>
+<div class="controls">
+<label>Third interval shift <input id="interval-shift" type="range" min="0" max="6" step="0.1" value="1">
+</label>
+<button id="interval-next">Step the interval</button>
+</div>
+<div id="helly-diagram" class="diagram">
+</div>
+<output id="helly-output">
+</output>
+</div>
+<div>
+<div class="theorem box">
+<strong>Interval Helly theorem.</strong> A finite nonempty family of nonempty closed real intervals meeting pairwise has nonempty total intersection. <a href="#ref-helly">[4]</a>
+</div>
+<div class="proof box">
+<strong>Endpoint proof.</strong> Put L=max aᵢ and R=min bᵢ for intervals [aᵢ,bᵢ]. Intervals attaining these extrema exist by finiteness. Their intersection forces L≤R. Every interval contains [L,R], which is precisely the common intersection.</div>
+</div>
+</div>
+<p>Intervals form a set system on ℝ. For a finite hypergraph take consecutive blocks of a finite ordered vertex set; the endpoint proof still applies. Arbitrary families such as {AB,BC,AC} need not be Helly. Finiteness matters: [m,∞), m=1,2,…, meet pairwise but have empty total intersection.</p>
+</section>
+<section class="lesson" id="random">
+<div class="eyebrow">15 · Theory meets simulation</div>
+<h2>Random hypergraphs H<sup>(k)</sup>(n,p)</h2>
+<p>Fix n labelled vertices and edge size k. Include each of the C(n,k) candidates independently with probability p. Increasing p changes the density of group relationships.</p>
+<div class="controls">
+<label>n <input id="random-n" type="number" min="3" max="8" value="6">
+</label>
+<label>k <input id="random-k" type="number" min="1" max="4" value="3">
+</label>
+<label>p <input id="random-p" type="range" min="0" max="1" step="0.05" value="0.3">
+<span id="p-value">0.3</span>
+</label>
+<label>Seed <input id="random-seed" type="number" min="0" max="4294967295" value="42">
+</label>
+<button id="random-generate">Generate</button>
+<button id="random-next">Reveal next edge</button>
+<button id="random-trials">Run 500 trials</button>
+</div>
+<div class="two">
+<div id="random-diagram" class="diagram">
+</div>
+<div>
+<output id="random-output">
+</output>
+<div class="theorem box">
+<strong>Exact expectations.</strong>
+<div class="formula">𝔼[|ℰ|]=p C(n,k),<br>𝔼[deg(v)]=p C(n−1,k−1).</div>
+</div>
+<div class="proof box">
+<strong>Derivation.</strong> Express each count as a sum of edge-inclusion indicators, each of mean p. For deg(v), only candidates containing v contribute. Linearity of expectation yields both formulas. Independence defines this model, though linearity itself does not require it.</div>
+</div>
+</div>
+<p class="caption">Simulation estimate: a reproducible 32-bit linear congruential generator supplies pseudorandom variates for this teaching example. Holding n,k,seed fixed couples samples across p, so increasing p only adds edges. The diagram displays at most 16 edge hubs and reports full counts. Trial means include every sampled edge. Display precision is at most four decimals, with no intermediate rounding.</p>
+</section>
+<section class="lesson" id="applications">
+<div class="eyebrow">16 · Choose a model for a question</div>
+<h2>Where the group itself matters</h2>
+<div class="three">
+<div>
+<h3>People and projects</h3>
+<p>Vertices are researchers; an edge is one paper’s author list or a project’s participants. Repeated collaborations need indexed edges or weights. Pairwise graphs suffice for questions about who has collaborated with whom.</p>
+</div>
+<div>
+<h3>Communication and biology</h3>
+<p>A group message can be an edge over recipients; a proposed protein complex an edge over proteins. These are synthetic modelling examples, not empirical findings. Membership alone encodes neither direction nor causal influence.</p>
+</div>
+<div>
+<h3>Covering resources</h3>
+<p>Vertices are resources; each edge lists resources capable of satisfying one requirement. A transversal meets every requirement. Reversing the incidence viewpoint gives the usual set-cover formulation.</p>
+</div>
+</div>
+<div class="example box">
+<strong>A modelling decision.</strong> If A,B,C coauthor one paper and A,E,F coauthor another, retaining the two edges lets us find a smallest group of researchers meeting every paper. A 2-section may suffice if only pairwise coauthorship matters.</div>
+<h3>From pictures to theorems</h3>
+<p>Incidence counting changes perspective; duality exchanges roles. Matchings compare packing and covering. Sperner and Erdős–Ko–Rado impose different set constraints; interval Helly adds geometry. Identify the exact assumption before interpreting a drawing or computation.</p>
+</section>
+<section class="lesson" id="gallery">
+<div class="eyebrow">Preserved material · ten original examples</div>
+<h2>A visual reference gallery</h2>
+<p>All ten original PNGs and their Python generator are retained. They progress from one pair to mixed families with singletons, isolation, and dense overlap. Each compares regions, bipartite incidence, vertical incidence, and the 2-section.</p>
+<p class="limitation">The original region panels use smoothed hulls: enclosure may include a nonmember or miss a boundary point. Their set definitions and incidence panels are authoritative. New figures use explicit memberships. Each gallery example is a separate hypergraph, rather than an edit of the running example.</p>
+<details>
+<summary>Open ten original examples and their exact set descriptions</summary>
+<section class="example-card" id="sec01">
+  <h3>1. Single Pair</h3>
+  <p class="small-intro">
+<strong>Algebraic example.</strong> X={v1, v2, v3} and E={e1}, where e1={v1, v2}.</p>
+  <div class="panel note">
+    <strong>Set-family form.</strong>
+<br/>
+    H=(X,E),  ·  X={v1, v2, v3},  ·  E={{v1, v2}}.
+  </div>
+  <p>One ordinary edge on three vertices.</p>
+  <div class="center-figure">
+    <img loading="lazy" src="2026-04-21-hypergraphs-visualization/hypergraph_01_single_pair.png" alt="Single Pair hypergraph figure"/>
+    <div class="figcaption">
+<strong>Original gallery.</strong> One ordinary edge on three vertices. File path: <code>2026-04-21-hypergraphs-visualization/hypergraph_01_single_pair.png</code>.</div>
+  </div>
+</section>
+
+<section class="example-card" id="sec02">
+  <h3>2. Two-Pair Chain</h3>
+  <p class="small-intro">
+<strong>Algebraic example.</strong> X={v1, v2, v3, v4} and E={e1, e2}, where e1={v1, v2};  e2={v2, v3}.</p>
+  <div class="panel note">
+    <strong>Set-family form.</strong>
+<br/>
+    H=(X,E),  ·  X={v1, v2, v3, v4},  ·  E={{v1, v2}, {v2, v3}}.
+  </div>
+  <p>Two size-2 edges sharing one vertex.</p>
+  <div class="center-figure">
+    <img loading="lazy" src="2026-04-21-hypergraphs-visualization/hypergraph_02_two_pairs_chain.png" alt="Two-Pair Chain hypergraph figure"/>
+    <div class="figcaption">
+<strong>Original gallery.</strong> Two size-2 edges sharing one vertex. File path: <code>2026-04-21-hypergraphs-visualization/hypergraph_02_two_pairs_chain.png</code>.</div>
+  </div>
+</section>
+
+<section class="example-card" id="sec03">
+  <h3>3. First True Hyperedge</h3>
+  <p class="small-intro">
+<strong>Algebraic example.</strong> X={v1, v2, v3, v4} and E={e1, e2}, where e1={v1, v2, v3};  e2={v3, v4}.</p>
+  <div class="panel note">
+    <strong>Set-family form.</strong>
+<br/>
+    H=(X,E),  ·  X={v1, v2, v3, v4},  ·  E={{v1, v2, v3}, {v3, v4}}.
+  </div>
+  <p>A three-vertex hyperedge appears for the first time.</p>
+  <div class="center-figure">
+    <img loading="lazy" src="2026-04-21-hypergraphs-visualization/hypergraph_03_first_true_hyperedge.png" alt="First True Hyperedge hypergraph figure"/>
+    <div class="figcaption">
+<strong>Original gallery.</strong> A three-vertex hyperedge appears for the first time. File path: <code>2026-04-21-hypergraphs-visualization/hypergraph_03_first_true_hyperedge.png</code>.</div>
+  </div>
+</section>
+
+<section class="example-card" id="sec04">
+  <h3>4. Overlap and Singleton</h3>
+  <p class="small-intro">
+<strong>Algebraic example.</strong> X={v1, v2, v3, v4, v5} and E={e1, e2, e3}, where e1={v1, v2, v3};  e2={v3, v4};  e3={v5}.</p>
+  <div class="panel note">
+    <strong>Set-family form.</strong>
+<br/>
+    H=(X,E),  ·  X={v1, v2, v3, v4, v5},  ·  E={{v1, v2, v3}, {v3, v4}, {v5}}.
+  </div>
+  <p>One overlap at v3 and one singleton edge.</p>
+  <div class="center-figure">
+    <img loading="lazy" src="2026-04-21-hypergraphs-visualization/hypergraph_04_overlap_and_singleton.png" alt="Overlap and Singleton hypergraph figure"/>
+    <div class="figcaption">
+<strong>Original gallery.</strong> One overlap at v3 and one singleton edge. File path: <code>2026-04-21-hypergraphs-visualization/hypergraph_04_overlap_and_singleton.png</code>.</div>
+  </div>
+</section>
+
+<section class="example-card" id="sec05">
+  <h3>5. Two Overlapping Triples</h3>
+  <p class="small-intro">
+<strong>Algebraic example.</strong> X={v1, v2, v3, v4, v5} and E={e1, e2, e3}, where e1={v1, v2, v3};  e2={v2, v3, v4};  e3={v4, v5}.</p>
+  <div class="panel note">
+    <strong>Set-family form.</strong>
+<br/>
+    H=(X,E),  ·  X={v1, v2, v3, v4, v5},  ·  E={{v1, v2, v3}, {v2, v3, v4}, {v4, v5}}.
+  </div>
+  <p>Two 3-edges overlap in two vertices.</p>
+  <div class="center-figure">
+    <img loading="lazy" src="2026-04-21-hypergraphs-visualization/hypergraph_05_two_overlapping_triples.png" alt="Two Overlapping Triples hypergraph figure"/>
+    <div class="figcaption">
+<strong>Original gallery.</strong> Two 3-edges overlap in two vertices. File path: <code>2026-04-21-hypergraphs-visualization/hypergraph_05_two_overlapping_triples.png</code>.</div>
+  </div>
+</section>
+
+<section class="example-card" id="sec06">
+  <h3>6. A Size-Four Hyperedge</h3>
+  <p class="small-intro">
+<strong>Algebraic example.</strong> X={v1, v2, v3, v4, v5, v6} and E={e1, e2, e3}, where e1={v1, v2, v3, v4};  e2={v3, v5};  e3={v4, v6}.</p>
+  <div class="panel note">
+    <strong>Set-family form.</strong>
+<br/>
+    H=(X,E),  ·  X={v1, v2, v3, v4, v5, v6},  ·  E={{v1, v2, v3, v4}, {v3, v5}, {v4, v6}}.
+  </div>
+  <p>A 4-edge creates a larger clique in the simple-graph translation.</p>
+  <div class="center-figure">
+    <img loading="lazy" src="2026-04-21-hypergraphs-visualization/hypergraph_06_size_four_edge.png" alt="A Size-Four Hyperedge hypergraph figure"/>
+    <div class="figcaption">
+<strong>Original gallery.</strong> A 4-edge creates a larger clique in the simple-graph translation. File path: <code>2026-04-21-hypergraphs-visualization/hypergraph_06_size_four_edge.png</code>.</div>
+  </div>
+</section>
+
+<section class="example-card" id="sec07">
+  <h3>7. Three-Way Overlap</h3>
+  <p class="small-intro">
+<strong>Algebraic example.</strong> X={v1, v2, v3, v4, v5, v6} and E={e1, e2, e3}, where e1={v1, v2, v3};  e2={v2, v3, v4};  e3={v3, v4, v5, v6}.</p>
+  <div class="panel note">
+    <strong>Set-family form.</strong>
+<br/>
+    H=(X,E),  ·  X={v1, v2, v3, v4, v5, v6},  ·  E={{v1, v2, v3}, {v2, v3, v4}, {v3, v4, v5, v6}}.
+  </div>
+  <p>Several edges meet around the same central vertices.</p>
+  <div class="center-figure">
+    <img loading="lazy" src="2026-04-21-hypergraphs-visualization/hypergraph_07_three_way_overlap.png" alt="Three-Way Overlap hypergraph figure"/>
+    <div class="figcaption">
+<strong>Original gallery.</strong> Several edges meet around the same central vertices. File path: <code>2026-04-21-hypergraphs-visualization/hypergraph_07_three_way_overlap.png</code>.</div>
+  </div>
+</section>
+
+<section class="example-card" id="sec08">
+  <h3>8. Mixed Sizes with an Isolated Vertex</h3>
+  <p class="small-intro">
+<strong>Algebraic example.</strong> X={v1, v2, v3, v4, v5, v6, v7} and E={e1, e2, e3, e4}, where e1={v1, v2, v3};  e2={v2, v4, v5};  e3={v3, v5, v6};  e4={v4}.</p>
+  <div class="panel note">
+    <strong>Set-family form.</strong>
+<br/>
+    H=(X,E),  ·  X={v1, v2, v3, v4, v5, v6, v7},  ·  E={{v1, v2, v3}, {v2, v4, v5}, {v3, v5, v6}, {v4}}.
+  </div>
+  <p>Mixed edge sizes appear while v7 stays isolated.</p>
+  <div class="center-figure">
+    <img loading="lazy" src="2026-04-21-hypergraphs-visualization/hypergraph_08_with_isolated_vertex.png" alt="Mixed Sizes with an Isolated Vertex hypergraph figure"/>
+    <div class="figcaption">
+<strong>Original gallery.</strong> Mixed edge sizes appear while v7 stays isolated. File path: <code>2026-04-21-hypergraphs-visualization/hypergraph_08_with_isolated_vertex.png</code>.</div>
+  </div>
+</section>
+
+<section class="example-card" id="sec09">
+  <h3>9. Dense Overlap</h3>
+  <p class="small-intro">
+<strong>Algebraic example.</strong> X={v1, v2, v3, v4, v5, v6, v7} and E={e1, e2, e3, e4}, where e1={v1, v2, v3, v4};  e2={v2, v3, v5};  e3={v3, v4, v6};  e4={v4, v5, v6, v7}.</p>
+  <div class="panel note">
+    <strong>Set-family form.</strong>
+<br/>
+    H=(X,E),  ·  X={v1, v2, v3, v4, v5, v6, v7},  ·  E={{v1, v2, v3, v4}, {v2, v3, v5}, {v3, v4, v6}, {v4, v5, v6, v7}}.
+  </div>
+  <p>Multiple medium and large edges now overlap heavily.</p>
+  <div class="center-figure">
+    <img loading="lazy" src="2026-04-21-hypergraphs-visualization/hypergraph_09_dense_overlap.png" alt="Dense Overlap hypergraph figure"/>
+    <div class="figcaption">
+<strong>Original gallery.</strong> Multiple medium and large edges now overlap heavily. File path: <code>2026-04-21-hypergraphs-visualization/hypergraph_09_dense_overlap.png</code>.</div>
+  </div>
+</section>
+
+<section class="example-card" id="sec10">
+  <h3>10. Largest Mixed Example</h3>
+  <p class="small-intro">
+<strong>Algebraic example.</strong> X={v1, v2, v3, v4, v5, v6, v7, v8} and E={e1, e2, e3, e4, e5}, where e1={v1, v2, v3, v4};  e2={v2, v4, v5, v6};  e3={v3, v6, v7};  e4={v1, v7, v8};  e5={v5, v8}.</p>
+  <div class="panel note">
+    <strong>Set-family form.</strong>
+<br/>
+    H=(X,E),  ·  X={v1, v2, v3, v4, v5, v6, v7, v8},  ·  E={{v1, v2, v3, v4}, {v2, v4, v5, v6}, {v3, v6, v7}, {v1, v7, v8}, {v5, v8}}.
+  </div>
+  <p>The final example mixes several overlaps and edge sizes.</p>
+  <div class="center-figure">
+    <img loading="lazy" src="2026-04-21-hypergraphs-visualization/hypergraph_10_largest_mixed_example.png" alt="Largest Mixed Example hypergraph figure"/>
+    <div class="figcaption">
+<strong>Original gallery.</strong> The final example mixes several overlaps and edge sizes. File path: <code>2026-04-21-hypergraphs-visualization/hypergraph_10_largest_mixed_example.png</code>.</div>
+  </div>
+</section>
+</details>
+<p>
+<a href="2026-04-21-hypergraphs-visualization/hypergraph_gallery_animation(3).py">Original figure generator</a> · <a href="2026-04-21-hypergraphs-visualization/validate_math.js">Reproducible mathematical assertions</a>
+</p>
+</section>
+<section class="lesson" id="references">
+<div class="eyebrow">Sources &amp; reproducibility</div>
+<h2>References and further reading</h2>
+<p>The SVG constructions are original. These sources support the named results; elementary counting and endpoint proofs are presented above.</p>
+<ol class="references">
+<li id="ref-sperner">Peter J. Cameron, <a href="https://maths.qmul.ac.uk/~pjc/notes/comb.pdf">
+<em>Notes on Combinatorics</em>
+</a>, §7.1 (Sperner and LYM), §§7.2, 7.5 (intersecting families). Author’s course notes.</li>
+<li id="ref-ekr">G. O. H. Katona (1972), <a href="https://real.mtak.hu/21117/">“A simple proof of the Erdös–Chao Ko–Rado theorem”</a>, <em>Journal of Combinatorial Theory, Series B</em> 13(2), 183–184. Source of the cyclic-order method.</li>
+<li id="ref-fano">Yury Person and Mathias Schacht, <a href="https://epubs.siam.org/doi/abs/10.1137/1.9781611973068.25">“Almost all hypergraphs without Fano planes are bipartite”</a>, SODA 2009, 217–226. Its abstract identifies the Fano incidence structure and failure of 2-colourability; its asymptotic theorem is beyond this tutorial.</li>
+<li id="ref-helly">László Babai, <a href="https://people.cs.uchicago.edu/~laci/REU07/a6.pdf">REU 2007, Apprentice Program, Lecture 6</a>. Interval Helly theorem and Helly-type ideas.</li>
+<li>Claude Berge, <em>Hypergraphs: Combinatorics of Finite Sets</em>, North-Holland, 1989. Further reading on incidence structures, paths, and transversals; compare conventions carefully.</li>
+</ol>
+<p class="caption">Computations are bounded: builder ≤12 edges; exact cover ≤12 vertices; exact matching ≤16 edges; EKR ≤15 candidates; uniform n≤8; random trials=500. The page needs no build step or external library. Semantic HTML and Unicode mathematics remain readable offline.</p>
+</section>
+<footer>
+<a href="../../research.html">Research</a> · <a href="../../index.html">Home</a> · <a href="#top">Back to top</a>
+</footer>
+</main>
+</body>
+</html>

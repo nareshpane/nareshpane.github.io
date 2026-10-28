@@ -555,7 +555,7 @@ def save_animation(examples: List[HypergraphExample], out_dir: Path, fps: int = 
 
 
 def main() -> None:
-    out_dir = Path.cwd() / "hypergraph_outputs"
+    out_dir = Path(__file__).resolve().parent
     ensure_output_dir(out_dir)
     clear_generated_files(out_dir)
 

@@ -1,0 +1,13 @@
+{
+  "checks": 69461,
+  "allThreeVertexHypergraphs": 128,
+  "allFourElementFamilies": 65536,
+  "antichains": 168,
+  "maximumAntichain": 6,
+  "fanoProperColourings": 0,
+  "random500": {
+    "edges": 5.96,
+    "degree": 2.984
+  },
+  "status": "PASS"
+}
