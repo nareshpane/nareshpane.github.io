@@ -42,7 +42,7 @@ def validate(assets,page):
         if link.startswith(('https:','http:','mailto:')):continue
         if link.startswith('#'):
             assert link[1:] in p.ids,link
-        elif not (page.parent/link.split('#')[0]).exists():missing.append(link)
+        elif not ((page.parents[2]/link.lstrip('/').split('#')[0]) if link.startswith('/') else (page.parent/link.split('#')[0])).exists():missing.append(link)
     assert not missing, missing
     paths=[path for path in assets.rglob('*.py') if '__pycache__' not in path.parts]
     assert len(p.sources)==len(paths),(len(p.sources),len(paths))
@@ -82,7 +82,7 @@ def main():
     p.add_argument('--assets',type=Path,default=Path(__file__).resolve().parents[1])
     p.add_argument('--page',type=Path)
     a=p.parse_args();assets=a.assets.resolve()
-    validate(assets,a.page or assets.parent/'giant-components.html')
+    validate(assets,a.page or assets.parent/'giant-component-1993.html')
 
 
 if __name__=='__main__':main()

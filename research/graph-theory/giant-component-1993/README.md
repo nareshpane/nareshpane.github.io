@@ -3,7 +3,7 @@
 Primary paper: Svante Janson, Donald E. Knuth, Tomasz Łuczak and Boris Pittel
 (1993), DOI 10.1002/rsa.3240040303, https://arxiv.org/abs/math/9310236.
 
-The main page remains `../giant-components.html`. No changes are needed to site
+The main page is `../giant-component-1993.html`. No changes are needed to site
 configuration or other research pages. It runs as static HTML, CSS and JavaScript;
 MathJax 3.2.2 is loaded from jsDelivr. The static tables, SVG charts and source
 blocks work without a data fetch, including on `file:` URLs.
@@ -78,8 +78,8 @@ and browser sequences are not identical for the same numeric seed.
 Build and verify the page after replacing `data` with a complete research run:
 
 ```powershell
-python -m scripts.build_page --assets . --output ../giant-components.html
-python -m scripts.validate_page --assets . --page ../giant-components.html
+python -m scripts.build_page --assets . --output ../giant-component-1993.html
+python -m scripts.validate_page --assets . --page ../giant-component-1993.html
 ```
 
 The article builder requires both models, both events and all 15 sizes. Aggregate
