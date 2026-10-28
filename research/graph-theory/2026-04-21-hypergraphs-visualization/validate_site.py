@@ -53,14 +53,11 @@ def run():
     assert len(preserved)==10
     index=(ROOT/'research.html').read_text(encoding='utf-8')
     before=git('show','HEAD:research.html').decode('utf-8')
-    # Remove the single hypergraph list item and require the rest of the index to match exactly.
-    pattern=r'<li>\s*<a class="project-title" href="research/graph-theory/(?:hypergraph_demo|2026-04-21-hypergraphs-visualization)\.html">.*?</li>'
-    assert len(re.findall(pattern,index,re.S))==1
-    assert re.sub(pattern,'HYPERGRAPH_ENTRY',index,flags=re.S)==re.sub(pattern,'HYPERGRAPH_ENTRY',before,flags=re.S)
+    assert index==before, 'research.html changed during refinement'
     pos=index.index('research/graph-theory/'+PAGE.name)
     assert index.rfind('<details',0,pos)>index.rfind('</details>',0,pos), 'Not in collapsible subsection'
-    report=dict(status='PASS',localLinks=local,uniqueIDs=len(parser.ids),originalImagesUnchanged=len(preserved),researchIndex='Only the single Hypergraph list item changed; still in details',oldNames='Absent',htmlStructure='Balanced',externalRuntimeDependencies=0)
-    (ASSETS/'site-audit.json').write_text(json.dumps(report,indent=2),encoding='utf-8')
+    report=dict(status='PASS',localLinks=local,uniqueIDs=len(parser.ids),originalImagesUnchanged=len(preserved),researchIndex='Unchanged from HEAD; link still resolves in details',oldNames='Absent',htmlStructure='Balanced',externalRuntimeDependencies=0)
+    (ASSETS/'refinement-site-audit.json').write_text(json.dumps(report,indent=2),encoding='utf-8')
     print(json.dumps(report,indent=2))
 
 if __name__=='__main__':run()

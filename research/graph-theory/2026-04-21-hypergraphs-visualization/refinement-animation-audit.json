@@ -1,0 +1,71 @@
+{
+  "status": "PASS",
+  "checks": [
+    "Every stage and column scan synchronized in both directions; exact 24 matrix entries, stable shared positions, edge colours, previous/next stages",
+    "C in e3 highlights exactly its membership link and matrix entry; keyboard focus retained; builder and animation state independent",
+    "Real 1x playback completes all eight stages in 18.030 seconds from click to final frame",
+    "Four playback rates and pause verified with virtual clock; offscreen pause; simulated hidden-document event; reduced-motion reveals complete step",
+    "Six requested viewports: no document overflow, paragraph/formula clipping, or SVG label clipping"
+  ],
+  "timing": {
+    "elapsedSeconds": 18.03040000000596,
+    "stages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  "layout": [
+    {
+      "viewport": 1920,
+      "document": 1920,
+      "clipped": [],
+      "svgClips": [],
+      "paragraphMaxWidth": "none"
+    },
+    {
+      "viewport": 1440,
+      "document": 1440,
+      "clipped": [],
+      "svgClips": [],
+      "paragraphMaxWidth": "none"
+    },
+    {
+      "viewport": 1366,
+      "document": 1366,
+      "clipped": [],
+      "svgClips": [],
+      "paragraphMaxWidth": "none"
+    },
+    {
+      "viewport": 1024,
+      "document": 1024,
+      "clipped": [],
+      "svgClips": [],
+      "paragraphMaxWidth": "none"
+    },
+    {
+      "viewport": 768,
+      "document": 768,
+      "clipped": [],
+      "svgClips": [],
+      "paragraphMaxWidth": "none"
+    },
+    {
+      "viewport": 390,
+      "document": 390,
+      "clipped": [],
+      "svgClips": [],
+      "paragraphMaxWidth": "none"
+    }
+  ],
+  "errors": [],
+  "limitations": [
+    "Installed Edge only; hidden-tab handler tested by simulated visibility event."
+  ]
+}

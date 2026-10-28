@@ -2,29 +2,31 @@
 (() => {
  'use strict';
  const M=window.HyperMath,$=id=>document.getElementById(id),set=(id,s)=>$(id).innerHTML=s;
- const colours=['#b5683e','#30785e','#5367a6','#986099','#8a7521','#327b88','#9a4b55','#607e30','#6d65a3','#a26429','#41766c','#8b5371'];
- function rememberFocus(){const el=document.activeElement,ids=['vertex-select','builder-diagram','edge-list','matrix','representation-matrix','incidence-graph','colour-buttons','lattice-choices','lattice-diagram'];const container=ids.find(id=>$(id).contains(el));if(!container)return null;const attributes=['data-v','data-kind','data-index','data-i','data-subset'].filter(a=>el.hasAttribute(a)).map(a=>`[${a}="${el.getAttribute(a)}"]`).join('');return attributes?{container,attributes}:null;}
+ const colours=window.HyperStory.colours;
+ function rememberFocus(){const el=document.activeElement,ids=['vertex-select','builder-diagram','edge-list','matrix','representation-matrix','incidence-graph','membership-flow','colour-buttons','lattice-choices','lattice-diagram'];const container=ids.find(id=>$(id).contains(el));if(!container)return null;const attributes=['data-v','data-kind','data-index','data-i','data-subset'].filter(a=>el.hasAttribute(a)).map(a=>`[${a}="${el.getAttribute(a)}"]`).join('');return attributes?{container,attributes}:null;}
  function restoreFocus(snapshot){if(snapshot)$(snapshot.container).querySelector(snapshot.attributes)?.focus({preventScroll:true});}
  const fmt=x=>Number(x.toFixed(4)).toString(),subset=a=>a.length?'{'+a.join(',')+'}':'∅';
  const svg=(s,title,w=440,h=320)=>`<svg viewBox="0 0 ${w} ${h}" role="group" aria-label="${title}"><title>${title}</title>${s}</svg>`;
  const text=(x,y,s,cls='')=>`<text x="${x}" y="${y}" text-anchor="middle" class="${cls}">${s}</text>`;
- const line=(a,b,c,width=2,opacity=1)=>`<line x1="${a[0]}" y1="${a[1]}" x2="${b[0]}" y2="${b[1]}" stroke="${c}" stroke-width="${width}" opacity="${opacity}"/>`;
+ const line=(a,b,c,width=2,opacity=1,extra='')=>`<line x1="${a[0]}" y1="${a[1]}" x2="${b[0]}" y2="${b[1]}" stroke="${c}" stroke-width="${width}" opacity="${opacity}" ${extra}/>`;
  const point=(p,label,fill='#fffdf9',stroke='#38664c',extra='')=>`<g ${extra}><circle cx="${p[0]}" cy="${p[1]}" r="17" fill="${fill}" stroke="${stroke}" stroke-width="2"/>${text(p[0],p[1]+5,label)}</g>`;
  const interactive=(kind,index,label)=>`role="button" tabindex="0" data-kind="${kind}" data-index="${index}" aria-label="${label}"`;
  let state={h:M.example(),members:new Set(),focus:{v:null,e:null},count:0,labels:true,reveal:Infinity,dual:false,dualStep:0};
  const edgesLabel=h=>h.edges.map((_,i)=>'e'+(i+1));
+ const radialPositions=h=>h.vertices.map((_,i)=>[220+165*Math.cos(-Math.PI/2+i*2*Math.PI/Math.max(1,h.vertices.length)),160+115*Math.sin(-Math.PI/2+i*2*Math.PI/Math.max(1,h.vertices.length))]);
  function diagram(h,opt={}){
    const {bipartite:requestedBipartite=false,focus={},click=false,labels=true,limit=Infinity,edgeNames=edgesLabel(h),vertexFill={},markedEdges=[],markedVertices=[],path=[],cap=16}=opt;
    const bipartite=requestedBipartite||h.edges.length>5,shown=Math.min(cap,h.edges.length),height=bipartite?Math.max(320,shown*37+60,h.vertices.length*37+60):320;
-   const vp=h.vertices.map((_,i)=>bipartite?[80,42+i*(height-85)/Math.max(1,h.vertices.length-1)]:[220+165*Math.cos(-Math.PI/2+i*2*Math.PI/Math.max(1,h.vertices.length)),160+115*Math.sin(-Math.PI/2+i*2*Math.PI/Math.max(1,h.vertices.length))]);
+   const vp=bipartite?h.vertices.map((_,i)=>[80,42+i*(height-85)/Math.max(1,h.vertices.length-1)]):radialPositions(h);
    const ep=h.edges.slice(0,shown).map((_,i)=>bipartite?[350,42+i*(height-85)/Math.max(1,shown-1)]:[220+60*Math.cos(i*2*Math.PI/Math.max(1,shown)),160+45*Math.sin(i*2*Math.PI/Math.max(1,shown))]);
    let s='',inc=0;
    h.edges.slice(0,shown).forEach((e,j)=>e.forEach(v=>{const i=h.vertices.indexOf(v);const active=focus.e===j||focus.v===v||markedEdges.includes(j)||markedVertices.includes(v);let onPath=false;for(let z=1;z<path.length;z+=2)if(path[z]==='e'+(j+1)&&(path[z-1]===v||path[z+1]===v))onPath=true;
-     s+=line(vp[i],ep[j],onPath?'#a14728':colours[j%colours.length],active||onPath?4:1.7,inc++<limit?(active||onPath?1:.48):.08);
-     if(!bipartite)s+=`<circle cx="${vp[i][0]+(ep[j][0]-vp[i][0])*.17}" cy="${vp[i][1]+(ep[j][1]-vp[i][1])*.17}" r="3" fill="${colours[j%colours.length]}"/>`;
+     const exact=focus.v!=null&&focus.e!=null,hit=focus.v===v&&focus.e===j;
+     s+=line(vp[i],ep[j],onPath?'#a14728':colours[j%colours.length],hit?5:active||onPath?4:1.7,inc++<limit?(exact?(hit?1:.22):(active||onPath?1:.55)):.08,`class="incidence-link" data-edge="${j}" data-vertex="${v}" pathLength="1"`);
+     if(!bipartite)s+=`<circle data-edge="${j}" cx="${vp[i][0]+(ep[j][0]-vp[i][0])*.17}" cy="${vp[i][1]+(ep[j][1]-vp[i][1])*.17}" r="3" fill="${colours[j%colours.length]}"/>`;
    }));
-   ep.forEach((p,j)=>{s+=`<g ${click?interactive('edge',j,'Select edge '+edgeNames[j]):''}><rect x="${p[0]-18}" y="${p[1]-14}" width="36" height="28" rx="7" fill="${focus.e===j||markedEdges.includes(j)?'#ffdaa5':'#fff8e9'}" stroke="${colours[j%colours.length]}" stroke-width="${focus.e===j||markedEdges.includes(j)?3:2}"/>${labels?text(p[0],p[1]+5,edgeNames[j],'tiny'):''}</g>`;});
-   vp.forEach((p,i)=>{const v=h.vertices[i],active=focus.v===v||markedVertices.includes(v)||(focus.e!==null&&focus.e!==undefined&&h.edges[focus.e]?.includes(v));s+=point(p,labels?v:'',vertexFill[v]||(active?'#e6efb5':'#fffdf9'),active?'#7d5025':'#38664c',click?interactive('vertex',i,'Select vertex '+v):'');});
+   ep.forEach((p,j)=>{s+=`<g class="edge-node" data-edge="${j}" ${click?interactive('edge',j,'Select edge '+edgeNames[j]):''}><rect x="${p[0]-18}" y="${p[1]-14}" width="36" height="28" rx="7" fill="${focus.e===j||markedEdges.includes(j)?'#ffdaa5':'#fff8e9'}" stroke="${colours[j%colours.length]}" stroke-width="${focus.e===j||markedEdges.includes(j)?3:2}"/>${labels?text(p[0],p[1]+5,edgeNames[j],'tiny'):''}</g>`;});
+   vp.forEach((p,i)=>{const v=h.vertices[i],active=focus.v===v||markedVertices.includes(v)||(focus.v==null&&focus.e!==null&&focus.e!==undefined&&h.edges[focus.e]?.includes(v));s+=point(p,labels?v:'',vertexFill[v]||(active?'#e6efb5':'#fffdf9'),active?'#7d5025':'#38664c',`class="vertex-node" data-vertex="${v}" `+(click?interactive('vertex',i,'Select vertex '+v):''));});
    if(h.edges.length>shown)s+=text(220,height-10,`Showing ${shown} of ${h.edges.length} edge hubs`,'tiny');
    if(!h.edges.length)s+=text(220,165,'No hyperedges','tiny');
    return svg(s,'Labelled hypergraph: '+h.vertices.length+' vertices, '+h.edges.length+' edges. Membership is given by explicit links.',440,height);
@@ -32,8 +34,8 @@
  function matrix(h,focus={},click=false,transposed=false,partial=Infinity){
    const b=M.incidence(h),rows=transposed?M.transpose(b):b,rn=transposed?edgesLabel(h):h.vertices,cn=transposed?h.vertices:edgesLabel(h);
    let s=`<table aria-label="${transposed?'Transposed incidence':'Incidence'} matrix"><thead><tr><th scope="col">${transposed?'edge / vertex':'vertex / edge'}</th>`;
-   cn.forEach((n,j)=>s+=`<th scope="col">${click?`<button data-kind="edge" data-index="${j}" aria-label="Select edge ${n}">${n}</button>`:n}</th>`);s+='<th scope="col">Σ</th></tr></thead><tbody>';
-   rows.forEach((r,i)=>{s+=`<tr><th scope="row">${click?`<button data-kind="vertex" data-index="${i}" aria-label="Select vertex ${rn[i]}">${rn[i]}</button>`:rn[i]}</th>`;r.forEach((x,j)=>{const hilite=transposed?j<partial:(focus.e===j||focus.v===rn[i]);s+=`<td class="${x?'on ':''}${hilite?'focus':''}">${click?`<button data-kind="cell" data-index="${i},${j}" aria-label="${rn[i]} in ${cn[j]}: ${x}">${x}</button>`:(transposed&&j>=partial?'·':x)}</td>`;});s+=`<th>${r.reduce((a,x)=>a+x,0)}</th></tr>`;});
+   cn.forEach((n,j)=>s+=`<th scope="col" ${transposed?'':`class="edge-column" style="--edge-colour:${colours[j%colours.length]}"`}>${click?`<button data-kind="edge" data-index="${j}" aria-label="Select edge ${n}">${n}</button>`:n}</th>`);s+='<th scope="col">Σ</th></tr></thead><tbody>';
+   rows.forEach((r,i)=>{s+=`<tr><th scope="row">${click?`<button data-kind="vertex" data-index="${i}" aria-label="Select vertex ${rn[i]}">${rn[i]}</button>`:rn[i]}</th>`;r.forEach((x,j)=>{const hilite=transposed?j<partial:(focus.e!=null&&focus.v!=null?(focus.e===j&&focus.v===rn[i]):(focus.e===j||focus.v===rn[i]));s+=`<td style="--edge-colour:${colours[(transposed?i:j)%colours.length]}" class="${x?'on ':''}${hilite?'focus':''}">${click?`<button data-kind="cell" data-index="${i},${j}" aria-label="${rn[i]} in ${cn[j]}: ${x}">${x}</button>`:(transposed&&j>=partial?'·':x)}</td>`;});s+=`<th>${r.reduce((a,x)=>a+x,0)}</th></tr>`;});
    s+='<tr><th>Σ</th>';cn.forEach((_,j)=>s+=`<th>${rows.reduce((a,r)=>a+r[j],0)}</th>`);s+=`<th>${h.edges.reduce((a,e)=>a+e.length,0)}</th></tr></tbody></table>`;return s;
  }
  function selectEvent(event){const el=event.target.closest('[data-kind]');if(!el)return;const {kind,index}=el.dataset;
@@ -42,8 +44,8 @@
    if(kind==='cell'){const [i,j]=index.split(',').map(Number);state.focus={v:state.h.vertices[i],e:j};}
    renderLive();
  }
- ['builder-diagram','edge-list','matrix','representation-matrix','incidence-graph'].forEach(id=>{$(id).addEventListener('click',selectEvent);$(id).addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.tagName.toLowerCase()!=='button'){e.preventDefault();selectEvent(e);}});});
- function renderSelection(){const focus=rememberFocus();set('vertex-select',state.h.vertices.map(v=>`<button data-v="${v}" aria-pressed="${state.members.has(v)}">${state.members.has(v)?'✓ ':''}${v}</button>`).join(''));$('selection').textContent='Selected: '+subset([...state.members].sort());restoreFocus(focus);}
+ ['builder-diagram','edge-list','matrix','representation-matrix','incidence-graph','membership-flow'].forEach(id=>{$(id).addEventListener('click',selectEvent);$(id).addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.tagName.toLowerCase()!=='button'){e.preventDefault();selectEvent(e);}});});
+ function renderSelection(){const focus=rememberFocus();set('vertex-select',state.h.vertices.map(v=>`<button data-v="${v}" aria-pressed="${state.members.has(v)}">${state.members.has(v)?'✓ ':''}${v}</button>`).join(''));$('selection').textContent='Draft edge: '+subset([...state.members].sort())+' · cardinality '+state.members.size+' · not yet added';restoreFocus(focus);}
  $('vertex-select').onclick=e=>{const v=e.target.dataset.v;if(!v)return;state.members.has(v)?state.members.delete(v):state.members.add(v);renderSelection();set('builder-diagram',diagram(state.h,{focus:state.focus,click:true,labels:state.labels,markedVertices:[...state.members]}));};
  function mutate(mode){try{let es=state.h.edges.map(e=>[...e]),j=state.focus.e;if(mode==='add'){if(es.length>=12)throw Error('Builder cap: 12 edges. Remove an edge before adding another.');es.push([...state.members].sort());j=es.length-1;}else{if(j===null)throw Error('Highlight an edge first.');if(mode==='replace')es[j]=[...state.members].sort();else{es.splice(j,1);j=null;}}
      state.h=M.create(state.h.vertices,es);state.focus={v:null,e:j};state.members.clear();state.count=0;state.reveal=Infinity;state.dualStep=0;colourResult='';pathResult=null;set('builder-message','Hypergraph updated; all live representations recomputed.');renderLive();
@@ -56,37 +58,56 @@
  $('reveal-incidence').onclick=()=>{const n=incidences().length;state.reveal=state.reveal>=n?1:state.reveal+1;renderLive();};$('reveal-all').onclick=()=>{state.reveal=Infinity;renderLive();};
  function renderLive(){const focus=rememberFocus(),h=state.h,d=M.degrees(h),sizes=h.edges.map(e=>e.length),total=sizes.reduce((a,b)=>a+b,0);
    renderSelection();set('builder-diagram',diagram(h,{focus:state.focus,click:true,labels:state.labels,markedVertices:[...state.members]}));
-   set('edge-list',h.edges.map((e,i)=>`<button data-kind="edge" data-index="${i}" aria-pressed="${state.focus.e===i}">e${i+1}=${subset(e)}</button>`).join('')||'ℰ=∅');
+   set('edge-list',h.edges.map((e,i)=>`<button class="edge-token" style="--edge-colour:${colours[i%colours.length]}" data-kind="edge" data-index="${i}" aria-pressed="${state.focus.e===i}">e${i+1}=${subset(e)}</button>`).join('')||'ℰ=∅');
    set('builder-stats',`<span>Order ${h.vertices.length}</span><span>Size ${h.edges.length}</span><span>Rank ${Math.max(0,...sizes)}</span><span>${d.filter(x=>!x).length} isolated</span>`);
    set('matrix',matrix(h,state.focus,true));set('representation-matrix',matrix(h,state.focus,true));set('incidence-graph',diagram(h,{bipartite:true,focus:state.focus,click:true,limit:state.reveal}));
    $('reveal-status').textContent=`${Math.min(state.reveal,total)} of ${total} incidence links revealed. Faded guides retain the complete relation.`;
    set('count-output',`Live degrees: ${h.vertices.map((v,i)=>`${v}:${d[i]}`).join(' · ')}<br>Edge sizes: ${sizes.join(', ')||'none'}<br>Vertex sum ${d.reduce((a,b)=>a+b,0)} = edge sum ${total}.<br>Counted ${state.count} of ${total} incidences.${state.focus.e!==null?'<br>Selected e'+(state.focus.e+1)+' has size '+sizes[state.focus.e]+'.':''}${state.focus.v?'<br>Selected '+state.focus.v+' has degree '+d[h.vertices.indexOf(state.focus.v)]+'.':''}`);
-   renderDual();renderPath();renderOptimization();if($('colour-example').value==='toy')renderColour();restoreFocus(focus);
+   renderMembershipFlow();renderProjectionData();renderDual();renderPath();renderOptimization();renderCandidates();if($('colour-example').value==='toy')renderColour();restoreFocus(focus);
  }
- // Introductory 54-second guided sequence. No auto-play; no animation work while paused.
- const stages=[['Four isolated vertices','A vertex is an object. No relationships have been specified.'],['Add the first pair','The ordinary edge {A,B} contains exactly two vertices.'],['Add a second pair','The edge {B,C} records a second pairwise relationship.'],['Build a three-person group','One edge {A,B,C} records one joint collaboration, not three independent events.'],['Include a four-person group','The edge {A,B,C,D} includes D in a group of four. Edge cardinality can vary.'],['Read the distinction','The triangle of pairwise links forgets whether there was one triple or three separate pairs. Incidence preserves that distinction.']];
- let introT=0,playing=false,lastTime=0,raf=0,lastStage=-1;
- function renderIntro(){const stage=Math.min(5,Math.floor(introT/9)),p=[[100,95],[320,95],[320,235],[100,235]],v=['A','B','C','D'];let g='',h='';if(stage>=1)g+=line(p[0],p[1],'#477d62',4);if(stage>=2)g+=line(p[1],p[2],'#477d62',4);if(stage===5)g+=line(p[0],p[2],'#477d62',4);
-   if(stage>=3)h+=`<path d="M75 70 Q200 30 345 70 L345 255 Q310 280 290 245 L75 120 Q55 95 75 70Z" fill="#f7cfa5" fill-opacity=".65" stroke="#b5683e" stroke-width="2"/>${text(220,55,'e₁={A,B,C}','tiny')}`;
-   if(stage>=4)h+=`<rect x="64" y="64" width="292" height="202" rx="40" fill="#bddfaa" fill-opacity=".25" stroke="#47815d" stroke-width="2" stroke-dasharray="7 4"/>${text(220,297,'e₂={A,B,C,D}','tiny')}`;
-   p.forEach((p,i)=>{g+=point(p,v[i]);h+=point(p,v[i]);});set('intro-graph',svg(g,'Ordinary graph on A, B, C, D'));set('intro-hyper',svg(h,'Group relationships on the same four vertices'));
-   if(stage!==lastStage){set('intro-stage',`<strong>Stage ${stage+1} / 6 · ${stages[stage][0]}</strong>${stages[stage][1]}<br><span class="hint">${stage*9}–${(stage+1)*9} seconds · scrub the single timeline to inspect this step.</span>`);lastStage=stage;}
-   $('timeline').value=introT;
+
+ function renderProjectionData(){
+   const h=state.h,pairs=M.twoSection(h),contributions=h.edges.reduce((sum,e)=>sum+M.choose(e.length,2),0);
+   $('projection-output').textContent=`Live E₂(H)=${subset(pairs.map(subset))}. ${pairs.length} distinct pairs from ${contributions} pair contributions; ${contributions-pairs.length} repeated contributions removed.`;
  }
- function pause(){playing=false;cancelAnimationFrame(raf);$('intro-play').textContent='Play 54-second story';}
- function tick(t){if(!playing)return;if(lastTime)introT=Math.min(54,introT+(t-lastTime)/1000*+$('intro-speed').value);lastTime=t;renderIntro();if(introT>=54)pause();else raf=requestAnimationFrame(tick);}
- $('intro-play').onclick=()=>{if(playing)return pause();if(introT>=54)introT=0;playing=true;lastTime=0;$('intro-play').textContent='Pause story';raf=requestAnimationFrame(tick);};
- $('intro-restart').onclick=()=>{pause();introT=0;renderIntro();};$('timeline').oninput=e=>{introT=+e.target.value;renderIntro();};
- document.addEventListener('visibilitychange',()=>{if(document.hidden)pause();});new IntersectionObserver(es=>{if(!es[0].isIntersecting)pause();},{threshold:.05}).observe($('ordinary'));
- const reduced=matchMedia('(prefers-reduced-motion: reduce)');reduced.addEventListener('change',()=>{if(reduced.matches)pause();});
- // Projection counterexample: exact regions in the small, unambiguous triangle.
- function projection(){let s='';[70,290,510].forEach((x,j)=>{const p=[[x,65],[x+85,65],[x+42,145]];if(j===0)s+=`<path d="M${x-20} 45 L${x+105} 45 L${x+42} 175Z" fill="#f6d7b5" stroke="#b5683e"/>`;else [[0,1],[1,2],[2,0]].forEach(([a,b])=>s+=line(p[a],p[b],j===1?'#386d55':'#5c70a2',4));p.forEach((p,i)=>s+=point(p,'ABC'[i]));s+=text(x+42,205,['One triple','Three pairs','Same 2-section K₃'][j],'tiny');});set('projection',svg(s,'One triple and three pairs have the same triangle 2-section',700,230));}
+ function renderCandidates(){
+   const h=state.h,m=M.matching(h),t=M.transversal(h);
+   const matchings=M.combinations(h.edges.map((_,i)=>i),m.length).filter(ids=>{const members=ids.flatMap(i=>h.edges[i]);return new Set(members).size===members.length;});
+   const covers=M.combinations(h.vertices,t.length).filter(vs=>h.edges.every(e=>e.some(v=>vs.includes(v))));
+   const list=values=>'<div class="candidate-list">'+values.slice(0,12).map(v=>'<span>'+v+'</span>').join('')+'</div>'+(values.length>12?`Showing 12 of ${values.length} exact witnesses.`:'');
+   set('optimization-candidates',`<p><strong>Maximum matching witnesses, size ${m.length}:</strong></p>${list(matchings.map(ids=>subset(ids.map(i=>'e'+(i+1)))))}<p><strong>Minimum transversal witnesses, size ${t.length}:</strong></p>${list(covers.map(subset))}<p>${t.length===0?'The empty family needs no vertices.':`All candidate vertex sets of size less than ${t.length} fail to meet at least one edge.`} A candidate matching is accepted only when its edge sizes sum to the size of their union.</p>`);
+ }
+
+ function renderMembershipFlow(){
+   const h=state.h;if(!h.edges.length){set('membership-flow','V='+subset(h.vertices)+' → ℰ=∅ → I=∅ → B has zero columns.');return;}
+   const v=state.focus.v||'C',j=state.focus.e??Math.min(2,h.edges.length-1),entry=M.incidence(h)[h.vertices.indexOf(v)][j];
+   set('membership-flow',`<span><small>Vertex set</small>V=${subset(h.vertices)}<br>Choose ${v}∈V</span><span style="--edge-colour:${colours[j%colours.length]}" class="edge-token"><small>Hyperedge subset</small>e${j+1}=${subset(h.edges[j])}</span><button data-kind="cell" data-index="${h.vertices.indexOf(v)},${j}" aria-label="Highlight ${v} in e${j+1}: ${entry}"><small>Incidence relation</small>${v}${entry?'∈':'∉'}e${j+1}<br>(${v},e${j+1})${entry?'∈':'∉'}I</button><span><small>Matrix entry</small>B<sub>${v},${j+1}</sub>=${entry}</span>`);
+ }
+ // Compact original figures, all generated from exact set families.
+ function miniature(h,projection=false){
+   const vp=[[65,40],[195,40],[130,145]],ep=[[130,85],[175,105],[85,105]];
+   let out='';
+   if(projection)M.twoSection(h).forEach(pair=>out+=line(vp[h.vertices.indexOf(pair[0])],vp[h.vertices.indexOf(pair[1])],'#477d62',2));
+   else if(h.edges.length===1){const e=h.edges[0];e.forEach(v=>out+=line(vp[h.vertices.indexOf(v)],ep[0],colours[0],2));out+=`<rect x="112" y="71" width="36" height="28" rx="6" fill="#fff1de" stroke="${colours[0]}"/>`+text(130,90,'e1','tiny');}
+   else h.edges.forEach((e,i)=>{const pair=e.map(v=>vp[h.vertices.indexOf(v)]);out+=line(pair[0],pair[1],colours[i],2);const labels=[[130,27],[178,115],[82,115]];out+=text(...labels[i],'e'+(i+1),'tiny');});
+   h.vertices.forEach((v,i)=>out+=point(vp[i],v));
+   return svg(out,projection?'Triangle projection: AB, AC, BC':h.edges.map((e,i)=>'e'+(i+1)+'='+subset(e)).join('; '),260,180);
+ }
+ function counterexampleFigures(){
+   const one=M.create(['A','B','C'],[['A','B','C']]),three=M.create(['A','B','C'],[['A','B'],['B','C'],['A','C']]);
+   return `<figure><div class="diagram">${miniature(one)}</div><figcaption><strong>One three-member edge</strong><span class="math">ℰ₁={{A,B,C}}</span></figcaption></figure><figure><div class="diagram">${miniature(three)}</div><figcaption><strong>Three separate pair edges</strong><span class="math">ℰ₂={{A,B},{B,C},{A,C}}</span></figcaption></figure><figure><div class="diagram">${miniature(one,true)}</div><figcaption><strong>Identical projection K₃</strong><span class="math">E₂=${subset(M.twoSection(one).map(subset))}</span></figcaption></figure>`;
+ }
+ function projection(){set('projection',counterexampleFigures());}
+ function progressiveExamples(){
+   const base=M.example(),examples=[{name:'A · A pair',h:M.create(['A','B'],[['A','B']]),math:'e={A,B}, |e|=2.'},{name:'B · A triple',h:M.create(['A','B','C'],[base.edges[0]]),math:'e={A,B,C}, |e|=3.'},{name:'C · Overlapping groups',h:M.create(base.vertices,base.edges.slice(0,3)),math:'ℰ={{A,B,C},{B,D},{C,D,E}}.'}];
+   set('intro-examples',examples.map((ex,i)=>`<figure><div class="diagram">${i<2?miniature(ex.h):diagram(ex.h)}</div><figcaption><strong>${ex.name}</strong><span class="math">${ex.math}</span>${i===2?'F is still isolated at this stage.':''}</figcaption></figure>`).join(''));
+ }
  let uniformIndex=0;
  function numeric(id,min,max){let x=Number($(id).value);if(!Number.isFinite(x))x=min;x=Math.max(min,Math.min(max,Math.round(x)));$(id).value=x;return x;}
  function uniform(){const n=numeric('uniform-n',2,8),k=numeric('uniform-k',1,Math.min(5,n)),v=Array.from({length:n},(_,i)=>String(i+1)),es=M.combinations(v,k);uniformIndex%=es.length;set('uniform-diagram',diagram({vertices:v,edges:[es[uniformIndex]]},{edgeNames:['e']}));$('uniform-output').textContent=`Exact enumeration: C(${n},${k})=${es.length} edges. Fixed-vertex degree C(${n-1},${k-1})=${M.choose(n-1,k-1)}. Displaying edge ${uniformIndex+1}/${es.length}: ${subset(es[uniformIndex])}. ${uniformIndex+1} enumerated so far; picture shows one edge, not the whole family.`;}
  ['uniform-n','uniform-k'].forEach(id=>$(id).onchange=()=>{uniformIndex=0;uniform();});$('uniform-next').onclick=()=>{uniformIndex++;uniform();};$('uniform-reset').onclick=()=>{uniformIndex=0;uniform();};
  function overlap(){const cases={disjoint:[['A','B'],['C','D']],star:[['A','B'],['A','C'],['A','D']],triangle:[['A','B'],['B','C'],['A','C']],nested:[['A'],['A','B'],['A','B','C']]},h=M.create(['A','B','C','D'],cases[$('overlap-case').value]);set('overlap-diagram',diagram(h));const common=h.vertices.filter(v=>h.edges.every(e=>e.includes(v)));$('overlap-output').textContent=`Pairwise intersecting: ${M.intersecting(h.edges)?'yes':'no'}. Common intersection: ${subset(common)}. Antichain: ${M.antichain(h.edges)?'yes':'no'}.`;
-   set('intersection-matrix','<table aria-label="Edge intersection cardinalities"><tr><th>|eᵢ∩eⱼ|</th>'+edgesLabel(h).map(e=>`<th>${e}</th>`).join('')+'</tr>'+h.edges.map((e,i)=>'<tr><th>e'+(i+1)+'</th>'+h.edges.map(f=>'<td>'+e.filter(v=>f.includes(v)).length+'</td>').join('')+'</tr>').join('')+'</table>');}
+   set('intersection-matrix','<table aria-label="Edge intersection cardinalities"><tr><th>|eᵢ∩eⱼ|</th>'+edgesLabel(h).map(e=>`<th>${e}</th>`).join('')+'</tr>'+h.edges.map((e,i)=>'<tr><th>e'+(i+1)+'</th>'+M.edgeIntersections(h)[i].map(value=>'<td>'+value+'</td>').join('')+'</tr>').join('')+'</table>');}
  $('overlap-case').onchange=overlap;
  function renderDual(){const h=state.h,d=M.dual(h);set('dual-diagram',diagram(state.dual?d:h,{bipartite:true,edgeNames:state.dual?h.vertices.map(v=>'d'+v):edgesLabel(h)}));set('dual-matrix',matrix(h,{},false,state.dual,state.dualStep||Infinity));$('dual-toggle').setAttribute('aria-pressed',state.dual);$('dual-toggle').textContent=state.dual?'Show original':'Show dual';$('dual-output').textContent=`Original B: ${h.vertices.length} × ${h.edges.length}; transposed B: ${h.edges.length} × ${h.vertices.length}. ${state.dualStep?state.dualStep+' original rows moved to dual columns. ':''}Dual indexed edges: ${h.vertices.map((v,i)=>v+'*='+subset(d.edges[i])).join('; ')}.`;}
  $('dual-toggle').onclick=()=>{state.dual=!state.dual;state.dualStep=0;renderDual();};$('dual-step').onclick=()=>{state.dual=true;state.dualStep=state.dualStep%state.h.vertices.length+1;renderDual();};$('dual-reset').onclick=()=>{state.dual=false;state.dualStep=0;renderDual();};
@@ -122,5 +143,5 @@
  function generate(){const {n,k,p,seed}=randomParams();randomH=M.random(n,k,p,seed);randomShown=Infinity;randomReport='';randomDraw();}
  ['random-n','random-k','random-seed'].forEach(id=>$(id).onchange=generate);$('random-p').oninput=generate;$('random-generate').onclick=generate;$('random-next').onclick=()=>{randomShown=randomShown>=Math.min(randomH.edges.length,16)?1:randomShown+1;randomDraw();};
  $('random-trials').onclick=()=>{const {n,k,p,seed}=randomParams(),v=Array.from({length:n},(_,i)=>String(i+1)),candidates=M.combinations(v,k),r=M.rng(seed);let count=0,degree=0;for(let t=0;t<500;t++)for(const e of candidates)if(r()<p){count++;if(e.includes('1'))degree++;}randomReport=`Simulation estimate, 500 trials: mean edges=${fmt(count/500)}, mean degree(1)=${fmt(degree/500)}. These are sample means, not exact expectations.`;randomDraw();};
- renderIntro();projection();uniform();overlap();lattice();ekr();helly();generate();renderLive();
+ window.HyperIntro.init({svg,text,line,point,diagram,subset,radialPositions,counterexampleFigures});progressiveExamples();projection();uniform();overlap();lattice();ekr();helly();generate();renderLive();
 })();

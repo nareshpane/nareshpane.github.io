@@ -9,6 +9,8 @@
 <link rel="stylesheet" href="2026-04-21-hypergraphs-visualization/style.css">
 <script defer src="2026-04-21-hypergraphs-visualization/math.js">
 </script>
+<script defer src="2026-04-21-hypergraphs-visualization/story.js"></script>
+<script defer src="2026-04-21-hypergraphs-visualization/intro.js"></script>
 <script defer src="2026-04-21-hypergraphs-visualization/tutorial.js">
 </script>
 </head>
@@ -72,51 +74,78 @@
 <section class="lesson" id="ordinary">
 <div class="eyebrow">01 · Begin with a picture</div>
 <h2>What changes when an edge can contain more than two vertices?</h2>
-<div class="two">
+<h3 class="animation-heading">Animation Video for Hypergraphs</h3>
+<div id="story" aria-label="Eighteen-second hypergraph story">
+<div class="two story-panels">
 <figure>
+<h4 id="intro-left-title">Ordinary graph · G₂(H)=(V,E₂(H))</h4>
 <div id="intro-graph" class="diagram">
 </div>
-<figcaption>Ordinary graph: an edge records a relationship between exactly two vertices.</figcaption>
+<figcaption>Each line is one unordered pair. Two vertices are adjacent exactly when a current hyperedge contains both.</figcaption>
 </figure>
 <figure>
+<h4>Hypergraph · H=(V,ℰ)</h4>
 <div id="intro-hyper" class="diagram">
 </div>
-<figcaption>Hypergraph: a labelled region records one group. These four vertices keep their positions throughout the story.</figcaption>
+<figcaption>Each labelled hub is one subset. Coloured spokes specify its members; crossings have no mathematical meaning.</figcaption>
 </figure>
 </div>
-<div class="controls">
-<button id="intro-play">Play 54-second story</button>
+<div class="controls story-controls">
+<button id="intro-play" aria-pressed="false">Play 18-second story</button>
 <button id="intro-restart">Restart</button>
+<button id="intro-prev">Previous step</button>
+<button id="intro-next">Next step</button>
 <label for="timeline">Timeline</label>
-<input id="timeline" type="range" min="0" max="54" step="0.1" value="0" aria-label="Guided story timeline in seconds">
+<input id="timeline" type="range" min="0" max="18" step="0.01" value="0" aria-label="Guided story timeline in seconds">
 <label>Speed <select id="intro-speed">
 <option value="0.5">0.5×</option>
 <option value="1" selected>1×</option>
+<option value="1.5">1.5×</option>
 <option value="2">2×</option>
 </select>
 </label>
 </div>
-<div id="intro-stage" class="stage" aria-live="polite">
+<div id="intro-details" class="story-details">
+<div class="story-explanation">
+<div id="intro-stage" class="stage" aria-live="polite" aria-atomic="true"></div>
+<div id="intro-sets" class="set-list story-sets" aria-label="Current hyperedge family"></div>
+<p id="intro-counts" class="caption"></p>
 </div>
+<figure id="intro-matrix-panel" hidden>
+<div id="intro-matrix" class="matrix-wrap"></div>
+<figcaption id="intro-matrix-caption"></figcaption>
+</figure>
+</div>
+<div id="intro-counterexample" class="comparison-cards" hidden></div>
+</div>
+<p class="hint">Pause or use Previous / Next step to read any frame. The six vertex positions and the four edge colours continue into the builder below. Playback changes only this illustration.</p>
 <p>Suppose A, B, and C write <em>one paper together</em>. The set {A,B,C} preserves that collaboration as one event. Three pairwise links record who met whom, but cannot tell us whether there was one joint paper or three separate two-author papers.</p>
-<div class="definition box">
-<strong>Formal comparison.</strong> A simple undirected graph is <span class="math">G=(V,E), E⊆{e⊆V: |e|=2}</span>. A hypergraph is <span class="math">H=(V,ℰ)</span>, where hyperedges are subsets of V. Simple undirected graphs are exactly the 2-uniform hypergraphs under the conventions below.</div>
+<div class="two formal-comparison">
+<div class="definition box"><strong>An ordinary simple undirected graph</strong>
+<div class="formula">G=(V,E), E⊆C(V,2).</div>
+<p>C(V,2), also written <span class="math">(V choose 2)</span>, is the family of all two-element subsets of V. Thus an edge has two distinct endpoints, with no order and no repeated copy.</p></div>
+<div class="definition box"><strong>A finite simple hypergraph, by our convention</strong>
+<div class="formula">H=(V,ℰ), ℰ⊆2<sup>V</sup>∖{∅}.</div>
+<p>The power set 2<sup>V</sup> contains every subset of V. We allow distinct nonempty hyperedges, including singletons. Ordinary simple undirected graphs are exactly the 2-uniform case.</p></div>
+</div>
+<h3>From a pair to overlapping groups</h3>
+<div id="intro-examples" class="comparison-cards" aria-label="Three progressive hypergraph examples"></div>
 </section>
 <section class="lesson" id="builder">
 <div class="eyebrow">02 · A running example</div>
 <h2>Build a hypergraph from scratch</h2>
-<p>Start with <span class="math">V={A,B,C,D,E,F}</span> and edges {A,B,C}, {B,D}, {C,D,E}, {A,E,F}. Every display marked “live example” uses this same editable object.</p>
+<p>The animation introduced a six-vertex hypergraph. We now construct and modify the same object, one hyperedge at a time. It starts with <span class="math">V={A,B,C,D,E,F}</span> and the same four groups, positions, and colours. Every display marked “live example” shares your edits; the introductory animation keeps its own fixed example.</p>
 <div class="two">
 <div>
 <div id="builder-diagram" class="diagram">
 </div>
-<p class="caption">A coloured hub is one hyperedge. A spoke and small endpoint ring mean membership; line crossings and background regions carry no membership information.</p>
+<p class="caption">A coloured hub is one hyperedge. A spoke and small endpoint ring mean membership; line crossings and background regions carry no membership information. Above five edges, the builder separates vertices and hubs into two columns to keep memberships readable.</p>
 </div>
 <div>
 <h3>Select members</h3>
 <div id="vertex-select" class="controls" aria-label="Choose vertices for an edge">
 </div>
-<p id="selection">Selected: ∅</p>
+<p id="selection">Draft edge: ∅ · cardinality 0 · not yet added</p>
 <div class="controls">
 <button id="add-edge">Create hyperedge</button>
 <button id="replace-edge">Replace highlighted edge</button>
@@ -161,11 +190,14 @@
 </div>
 </div>
 <p class="limitation">An indexed-edge model permits distinct edge labels with identical members. This extension matters in duality. The builder rejects duplicates. Create {A}, then {A,B}, to see a singleton and nested edges; neither violates our simple convention.</p>
+<div class="example box"><strong>A subhypergraph is not a cropped picture.</strong> With V′={A,B,C,D}, the original edges wholly contained in V′ are e₁={A,B,C} and e₂={B,D}. Our induced subhypergraph discards e₃ and e₄. Intersecting every edge with V′ instead would produce a different set system, including {C,D} and {A}.</div>
 </section>
 <section class="lesson" id="incidence">
 <div class="eyebrow">04 · One incidence, two counts</div>
 <h2>The matrix is a membership ledger</h2>
 <p>Rows are vertices, columns are edges. Define <span class="math">B<sub>ve</sub>=1{v∈e}</span>: 1 means membership, 0 means absence. Row sums are degrees; column sums are cardinalities.</p>
+<div id="membership-flow" class="membership-flow" aria-label="From a vertex and subset to an incidence matrix entry"></div>
+<p class="hint">Select the membership statement to highlight its vertex, edge, spoke, and matrix cell together. This chain follows your current matrix selection and builder edits.</p>
 <div class="two">
 <div>
 <div id="matrix" class="matrix-wrap">
@@ -187,6 +219,9 @@
 </div>
 </div>
 <p>Initially the degrees are (2,2,2,2,2,1), the sizes are (3,2,3,3), and both sums equal 11. All live values recompute after edits. Step through the 1s to connect algebra with individual memberships.</p>
+<div class="example box derivation"><strong>Read the sums in either order.</strong>
+<div class="math-lines"><span>deg(C)=B<sub>C,1</sub>+B<sub>C,2</sub>+B<sub>C,3</sub>+B<sub>C,4</sub>=1+0+1+0=2.</span><span>∑<sub>v</sub>∑<sub>j</sub> B<sub>v,j</sub>=2+2+2+2+2+1=11.</span><span>∑<sub>j</sub>∑<sub>v</sub> B<sub>v,j</sub>=3+2+3+3=11.</span></div>
+<p>These are finite sums, so exchanging their order leaves the value unchanged. The matrix’s eleven 1s are the eleven spokes of the original hypergraph.</p></div>
 </section>
 <section class="lesson" id="representations">
 <div class="eyebrow">05 · Same object, different lenses</div>
@@ -211,10 +246,15 @@
 </div>
 <h3>A projection with irreversible loss</h3>
 <p>The <em>2-section</em> joins distinct u,v when they lie together in some hyperedge. A k-edge becomes a clique of C(k,2) pairs.</p>
-<div id="projection" class="diagram">
+<div class="definition box"><strong>Precise projection rule.</strong>
+<div class="math-lines"><span>E₂(H)={{u,v}: u≠v and there exists e∈ℰ with {u,v}⊆e}.</span><span>G₂(H)=(V,E₂(H)), with each unordered pair retained once.</span><span>(BB<sup>T</sup>)<sub>uv</sub>=∑<sub>j</sub>B<sub>u,j</sub>B<sub>v,j</sub> counts shared hyperedges.</span></div>
+<p>For u≠v, adjacency is the condition (BB<sup>T</sup>)<sub>uv</sub>&gt;0; the diagonal records degrees and is excluded from the simple graph’s edges.</p></div>
+<output id="projection-output" aria-label="Live 2-section pairs"></output>
+<div id="projection" class="comparison-cards">
 </div>
 <div class="example box">
 <strong>Counterexample.</strong> On {A,B,C}, ℰ₁={{A,B,C}} and ℰ₂={{A,B},{B,C},{A,C}} differ, yet both have 2-section K₃. The projection is not injective. A singleton leaves no pairwise edge.</div>
+<p class="limitation">In general |E₂(H)|≤∑<sub>e∈ℰ</sub>C(|e|,2), because different groups may contain the same pair. For {{A,B,C},{A,B,D}}, the six pair contributions produce only five distinct edges: AB occurs twice. The running example’s contributions do not overlap, so 3+1+3+3=10 distinct pairs.</p>
 </section>
 <section class="lesson" id="uniform">
 <div class="eyebrow">06 · All possible groups of a fixed size</div>
@@ -244,6 +284,7 @@
 <div class="proof box">
 <strong>Derivation.</strong> Choose k of n vertices for an edge. For an edge containing v, choose k−1 others from n−1. Counting incident pairs also gives nC(n−1,k−1)=kC(n,k).</div>
 <p>For n=5,k=3 there are 10 edges, degree 6 at every vertex, and 30 incidences. The explorer lists exact counts for the full family, while drawing one subset at a time.</p>
+<div class="example box"><strong>Count ordered choices, then remove their order.</strong><div class="math-lines"><span>C(5,3)=(5·4·3)/(3·2·1)=10.</span><span>deg(1)=C(4,2)=(4·3)/(2·1)=6.</span><span>5·6=3·10=30 incidences.</span></div><p>Every triple appears 3! times among ordered selections. Fixing vertex 1 leaves two places to fill from four others. These degree formulas apply to the <em>complete</em> uniform family; an arbitrary 3-uniform family may have unequal degrees.</p></div>
 </div>
 </div>
 </section>
@@ -271,6 +312,7 @@
 </div>
 <p>The intersection matrix has entry |eᵢ∩eⱼ|; the diagonal is |eᵢ|. Pairwise intersecting means every two distinct edges meet. The family {{A,B},{B,C},{A,C}} meets pairwise but has empty total intersection. A star has a common vertex. A nested family has containments, which an antichain forbids.</p>
 <p>Extremal set theory asks how large a family can be under a specified overlap condition. Sections 12–14 compare three different restrictions.</p>
+<div class="example box"><strong>Intersections as a matrix product.</strong><div class="formula">(B<sup>T</sup>B)<sub>ij</sub>=∑<sub>v</sub>B<sub>v,i</sub>B<sub>v,j</sub>=|eᵢ∩eⱼ|.</div><p>A term contributes 1 exactly when v belongs to both edges. In the original example e₁∩e₃={C}, giving entry 1; e₁∩e₄={A}; the diagonal entries are 3,2,3,3. This product counts intersections, while the explicit set family identifies the shared vertices.</p></div>
 </section>
 <section class="lesson" id="duality">
 <div class="eyebrow">08 · Exchange the roles</div>
@@ -295,6 +337,7 @@
 <span class="math">B(H*)=B(H)<sup>T</sup>
 </span>. Hence <span class="math">|e*<sub>v</sub>|=deg<sub>H</sub>(v)</span> and dual vertex eᵢ has degree |eᵢ|. Transposing twice recovers the labelled incidence structure.</div>
 <p class="limitation">Identical incidence neighbourhoods yield repeated dual edges; isolated vertices yield empty dual edges. Our dual display retains indexed edges including empties, extending the simple convention. Collapsing them could destroy double-duality.</p>
+<div class="example box"><strong>One row becomes one column.</strong><div class="math-lines"><span>B<sub>C,·</sub>=(1,0,1,0) → e*<sub>C</sub>={e₁,e₃}.</span><span>B(H*)<sub>e₁,C</sub>=B(H)<sub>C,e₁</sub>=1.</span><span>|e*<sub>C</sub>|=deg<sub>H</sub>(C)=2; deg<sub>H*</sub>(e₁)=|e₁|=3.</span></div><p>The two sides of every equality name the same incidence in opposite roles. The explorer retains all labels, even if two resulting dual edges have equal members.</p></div>
 </section>
 <section class="lesson" id="paths">
 <div class="eyebrow">09 · Travel through memberships</div>
@@ -319,6 +362,7 @@
 <div class="proof box">
 <strong>Connectivity criterion.</strong> Two original vertices are connected exactly when they lie in one incidence-graph component. A shortest incidence-graph path repeats no node; its alternating nodes give a Berge path. The reverse conversion is immediate. An isolated vertex forms its own component.</div>
 <p>Initially A,e₁,C,e₃,E,e₄,A is a Berge cycle of length 3. Loose and tight uniform paths impose other overlap conditions; these notions are not interchangeable.</p>
+<div class="example box"><strong>Check a path one membership at a time.</strong> A,e₁,B,e₂,D is a Berge path: {A,B}⊆e₁ and {B,D}⊆e₂, with no vertex or edge repeated. Its Berge length is 2; the corresponding incidence-graph path has 4 links. In general, a length-ℓ Berge path traverses 2ℓ incidence links.</div>
 </section>
 <section class="lesson" id="optimization">
 <div class="eyebrow">10 · Pack groups or hit them</div>
@@ -345,6 +389,8 @@
 </div>
 <p class="caption">Exact finite enumeration searches vertex subsets for a minimum cover and edge subsets for a maximum matching. Greedy chooses a vertex meeting the most uncovered edges, breaking ties in vertex order. It is feasible but need not be optimal. “Maximum” means largest; “maximal” means no further edge can be added.</p>
 <p>Initially ν=2 (e₂,e₄), τ=2 (for example {A,D}), so 2≤2≤6. Empty edges, excluded here, cannot be hit.</p>
+<details><summary>Inspect the live matching and transversal witnesses</summary><div id="optimization-candidates"></div></details>
+<div class="example box"><strong>Why {A,D} works in the initial example.</strong> A meets e₁ and e₄; D meets e₂ and e₃. No single vertex meets every edge. The disjoint edges e₂={B,D} and e₄={A,E,F} force any transversal to use at least two vertices, so this two-vertex cover is optimal.</div>
 </section>
 <section class="lesson" id="colouring">
 <div class="eyebrow">11 · A constraint on every group</div>
@@ -378,6 +424,7 @@
 <div class="proof box">
 <strong>Counting proof.</strong> If all seven lines were mixed, each would contain exactly one same-colour pair. Each pair belongs to a unique line, so there would be 7 same-colour pairs. With a blue points, the actual number is C(a,2)+C(7−a,2), whose integer minimum is 9 at a=3 or 4. Contradiction.</div>
 <p class="limitation">Its incidence graph is bipartite, but that does not colour its original vertices properly. Exhaustively checking all 128 colourings verifies this finite example; the counting argument is the proof. A singleton prevents any weak proper colouring.</p>
+<div class="example box"><strong>The contradiction numerically.</strong> The most balanced split is three blue and four orange vertices: C(3,2)+C(4,2)=3+6=9 same-colour pairs. A mixed triple accounts for only one such pair, so seven mixed Fano lines could account for only seven. Unbalanced colour classes increase the count. This argument uses the Fano family’s unique line through each pair.</div>
 </section>
 <section class="lesson" id="sperner">
 <div class="eyebrow">12 · Extremal sets I</div>
@@ -405,6 +452,7 @@
 <strong>Proof via maximal chains.</strong> A permutation gives a chain of initial segments, meeting an antichain at most once. A set A of size a appears in a!(n−a)! of the n! permutation chains. Counting yields the LYM inequality<div class="formula">∑<sub>A∈ℱ</sub> 1/C(n,|A|) ≤ 1.</div>All denominators are at most C(n,⌊n/2⌋), so |ℱ| divided by this maximum is at most 1.</div>
 <p>At n=4 the lattice levels have sizes 1,4,6,4,1. All six pairs form a largest antichain. Select a singleton and a containing pair to violate the condition.</p>
 <p class="limitation">A Lubell sum ≤1 alone does not certify an antichain; the explorer checks containment directly.</p>
+<div class="example box"><strong>LYM at n=4.</strong> Each pair occurs in 2!·2!=4 of the 4!=24 permutation chains. All six pairs therefore give 6·4=24 incidences with chains and Lubell sum 6/C(4,2)=1. By contrast {{1},{1,2}} has Lubell sum 1/4+1/6=5/12&lt;1 but is not an antichain.</div>
 </div>
 </div>
 </section>
@@ -436,6 +484,7 @@
 </div>
 <p>At n=4,k=2, the star {12,13,14} and triangle {12,13,23} both have size 3. Equality therefore need not specify a unique star at n=2k. If n&lt;2k, all k-subsets intersect and the stated bound need not hold.</p>
 <p class="caption">The exact include/exclude search uses at most 15 candidate edges. It prunes only when a branch cannot improve the optimum. Finite enumeration verifies the selected instance, not the general theorem.</p>
+<div class="example box"><strong>See the assumption in action.</strong> At n=5,k=2, the star {12,13,14,15} has C(4,1)=4 members and meets the bound. At n=3,k=2, all three pairs intersect, exceeding C(2,1)=2. The hypothesis <strong>n≥2k</strong> excludes that counterexample.</div>
 </section>
 <section class="lesson" id="helly">
 <div class="eyebrow">14 · Geometry adds an assumption</div>
@@ -461,6 +510,7 @@
 </div>
 </div>
 <p>Intervals form a set system on ℝ. For a finite hypergraph take consecutive blocks of a finite ordered vertex set; the endpoint proof still applies. Arbitrary families such as {AB,BC,AC} need not be Helly. Finiteness matters: [m,∞), m=1,2,…, meet pairwise but have empty total intersection.</p>
+<div class="example box"><strong>Initial endpoint calculation.</strong> For [1,6], [3,8], and [3,6], L=max(1,3,3)=3 and R=min(6,8,6)=6. Their common intersection is [3,6]. If L&gt;R, the interval attaining L and the one attaining R are already a disjoint pair, so pairwise intersection fails.</div>
 </section>
 <section class="lesson" id="random">
 <div class="eyebrow">15 · Theory meets simulation</div>
@@ -492,6 +542,8 @@
 </div>
 <div class="proof box">
 <strong>Derivation.</strong> Express each count as a sum of edge-inclusion indicators, each of mean p. For deg(v), only candidates containing v contribute. Linearity of expectation yields both formulas. Independence defines this model, though linearity itself does not require it.</div>
+<div class="example box"><strong>Expand the indicator calculation.</strong>
+<div class="math-lines"><span>X<sub>e</sub>=1 if candidate e is included, and 0 otherwise.</span><span>𝔼[X<sub>e</sub>]=1·p+0·(1−p)=p.</span><span>|ℰ|=∑<sub>e∈C(V,k)</sub>X<sub>e</sub>.</span><span>𝔼[|ℰ|]=∑<sub>e</sub>𝔼[X<sub>e</sub>]=∑<sub>e</sub>p=pC(n,k).</span></div><p>For n=6,k=3,p=0.3, the expectations are 0.3·20=6 edges and 0.3·10=3 edges at a fixed vertex. These are ensemble averages, not requirements on each sample.</p></div>
 </div>
 </div>
 <p class="caption">Simulation estimate: a reproducible 32-bit linear congruential generator supplies pseudorandom variates for this teaching example. Holding n,k,seed fixed couples samples across p, so increasing p only adds edges. The diagram displays at most 16 edge hubs and reports full counts. Trial means include every sampled edge. Display precision is at most four decimals, with no intermediate rounding.</p>

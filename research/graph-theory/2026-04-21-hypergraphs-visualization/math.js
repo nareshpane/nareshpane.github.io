@@ -11,6 +11,11 @@
   }
   const incidence=h=>h.vertices.map(v=>h.edges.map(e=>+e.includes(v)));
   const degrees=h=>incidence(h).map(row=>row.reduce((s,x)=>s+x,0));
+  // A simple 2-section records each unordered pair once, even when several edges contain it.
+  function twoSection(h) {
+    return combinations(h.vertices,2).filter(pair=>h.edges.some(e=>pair.every(v=>e.includes(v))));
+  }
+  const edgeIntersections=h=>h.edges.map(e=>h.edges.map(f=>e.filter(v=>f.includes(v)).length));
   const transpose=b=>b.length?Array.from({length:b[0].length},(_,i)=>b.map(r=>r[i])):[];
   const dual=h=>({vertices:h.edges.map((_,i)=>'e'+(i+1)),edges:h.vertices.map(v=>h.edges.flatMap((e,i)=>e.includes(v)?['e'+(i+1)]:[]))});
   function matching(h){if(h.edges.length>16)throw Error('Exact matching capped at 16 edges');let best=[];
@@ -28,6 +33,6 @@
   function random(n,k,p,seed){const vertices=Array.from({length:n},(_,i)=>String(i+1)),r=rng(seed);return create(vertices,combinations(vertices,k).filter(()=>r()<p));}
   const fano=create(['1','2','3','4','5','6','7'],[['1','2','3'],['1','4','5'],['1','6','7'],['2','4','6'],['2','5','7'],['3','4','7'],['3','5','6']]);
   const example=()=>create(['A','B','C','D','E','F'],[['A','B','C'],['B','D'],['C','D','E'],['A','E','F']]);
-  const api={choose,combinations,create,incidence,degrees,transpose,dual,matching,transversal,greedy,path,mono,colourings,antichain,intersecting,intersectingMaximum,rng,random,fano,example};
+  const api={choose,combinations,create,incidence,degrees,twoSection,edgeIntersections,transpose,dual,matching,transversal,greedy,path,mono,colourings,antichain,intersecting,intersectingMaximum,rng,random,fano,example};
   if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.HyperMath=api;
 })(typeof globalThis!=='undefined'?globalThis:this);
