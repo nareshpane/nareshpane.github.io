@@ -185,7 +185,7 @@ def make_plot(spec: FunctionSpec, output_dir: Path) -> None:
 
 def main() -> None:
     script_dir = Path(__file__).resolve().parent
-    output_dir = script_dir / "taylor_about_a_pngs"
+    output_dir = script_dir
     output_dir.mkdir(parents=True, exist_ok=True)
 
     for spec in FUNCTIONS:

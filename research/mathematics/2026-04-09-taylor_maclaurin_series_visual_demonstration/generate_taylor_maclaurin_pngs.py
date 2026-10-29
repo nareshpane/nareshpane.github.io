@@ -404,7 +404,7 @@ def make_nonexistent_maclaurin_plot(spec: Dict, output_dir: Path) -> None:
 
 def main() -> None:
     script_dir = Path(__file__).resolve().parent
-    output_dir = script_dir / "taylor_maclaurin_pngs"
+    output_dir = script_dir
     output_dir.mkdir(parents=True, exist_ok=True)
 
     print(f"Saving PNG files into: {output_dir}")
