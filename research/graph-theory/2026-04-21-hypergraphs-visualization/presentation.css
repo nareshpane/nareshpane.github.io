@@ -1,0 +1,54 @@
+/* Presentation refinements are local to this research page. */
+html{scroll-padding-top:64px}
+.hypergraph-main-title{font-size:clamp(1.56rem,2.964vw,2.535rem);line-height:1.13;letter-spacing:-.015em;margin:10px 0 12px}
+.study-subtitle{font-size:1rem;line-height:1.65;margin-bottom:0}
+.study-subtitle a{text-decoration-color:#bd9867;text-decoration-thickness:1px}
+header{margin-bottom:14px}
+.reading-nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:16px;height:52px;padding:0 16px;margin:0 0 22px;border:1px solid #bdcdb0;border-radius:10px;background:#f0f6e8;font:13px/1.4 'Segoe UI',sans-serif}
+.reading-nav.is-stuck{box-shadow:0 4px 14px #304b3220;border-radius:0 0 10px 10px;background:#e8f2dc}
+.reading-brand{font-family:Georgia,serif;font-size:15px;text-decoration:none}
+.current-section{flex:1;min-width:0;font-weight:600;text-decoration:none;line-height:1.3}
+.reading-nav progress{width:70px;height:4px;accent-color:#578144;flex:none}
+.section-menu{position:static;margin:0;padding:0;border:0;flex:none}
+.section-menu>summary{padding:7px 10px;border:1px solid #adc398;border-radius:7px;background:#fffaf1;font-size:13px}
+.section-links{position:absolute;right:0;top:calc(100% + 6px);width:min(690px,100%);max-height:70vh;overflow:auto;overscroll-behavior:contain;display:grid;grid-template-columns:1fr 1fr;gap:15px;padding:19px;background:#fffdf9;border:1px solid #bdcbb0;box-shadow:0 8px 28px #33462e30;border-radius:12px}
+.section-links strong{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.055em;color:#705436;margin:0 0 6px}
+.section-links a{display:block;padding:5px 7px;border-radius:5px;text-decoration:none;font-weight:400}
+.section-links a[aria-current=location]{background:#e0edcd;font-weight:600;border-left:3px solid #577f43}
+.lesson,[id^=bitcoin-source],#original-april-2026,#four-representations,#bitcoin-replication,#bitcoin-lab,#bitcoin-evidence,#april-snapshot [id]{scroll-margin-top:64px}
+.archive-section>details{margin-top:12px;padding-top:0;border:0}
+.archive-section>details>summary h2{display:inline;font-size:clamp(1.4rem,2.2vw,1.9rem)}
+.archive-provenance{font-size:14px;background:#f2f6e9;border-left:3px solid #86a46c;padding:10px 17px;margin:20px 0}
+.uniform-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:22px auto;align-items:stretch}
+.uniform-card{display:grid;grid-template-rows:36px 210px 105px 1fr;min-width:0;border:1px solid var(--uniform-border);border-radius:12px;padding:15px;background:var(--uniform-bg);margin:0}
+.uniform-card h3{font:600 1.12rem/1.4 Georgia,serif;margin:0;text-align:center}
+.uniform-card svg{width:100%;height:210px;border:0;background:transparent}
+.uniform-card svg text{font-size:14px}
+.uniform-card .uniform-sets{font:14px/1.7 Cambria,serif;display:flex;flex-wrap:wrap;align-content:start;gap:4px 6px;margin:8px 0}
+.uniform-sets>span{flex-basis:100%}
+.uniform-sets button{padding:3px 7px;font:14px/1.4 Cambria,serif;border-color:var(--uniform-border)}
+.uniform-card figcaption{margin:0;font-size:13px}
+.uniform-card figcaption strong{display:block;font:1rem/1.6 Cambria,serif;margin:0 0 7px;color:#30482d}
+.uniform-card .uniform-counts{display:block;margin-top:8px;font:13px/1.7 Cambria,serif;color:#344c3c}
+.uniform-card .uniform-incidence{opacity:.7}
+.uniform-card[data-active] .uniform-incidence{opacity:.17}
+.uniform-card[data-active] .uniform-incidence.active{opacity:1;stroke-width:4px}
+.uniform-card[data-active] .uniform-hub.active{stroke-width:3px;fill:#ffe2b8}
+.uniform-totals{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:center;font:1.08rem/1.8 Cambria,serif}
+/* The old 96ch source rule also reached 13px captions, shrinking them to 673px.
+   Pixels keep the narrative measure independent of a child's smaller type. */
+.bitcoin-study>.bitcoin-source-group>p,.bitcoin-evidence>p{max-width:1000px}
+.bitcoin-study>.bitcoin-source-group>p.caption,.bitcoin-study>.bitcoin-source-group>p.hint,.bitcoin-evidence>p.caption{max-width:none;width:auto}
+.bitcoin-verbatim,.source-attribution{max-width:1000px}
+.source-figure-wide{max-width:940px}
+.source-attribution h4{font-size:1rem}
+.source-attribution p{font-size:12px}
+.source-explanation-label{font:700 11px/1.6 'Segoe UI',sans-serif;text-transform:uppercase;letter-spacing:.06em;color:#577345;margin:22px 0 8px}
+.directed-node[role=button]{cursor:pointer}
+.directed-node.selected-transaction rect{stroke:#ac653b;stroke-width:4px;fill:#ffe1b9}
+.directed-node.shared-address circle{stroke:#ab542b;stroke-width:4px;fill:#ffe0b9}
+#btc-sets .selected-set,#bitcoin-motif-algebra .active-condition{background:#ffe8c9;border-left:3px solid #ab6334;padding:3px 8px;border-radius:4px}
+.source-version{font-size:13px;line-height:1.7}
+@media(max-width:1100px){.uniform-card{padding:11px;grid-template-rows:52px 190px 140px 1fr}.uniform-card svg{height:190px}.uniform-card h3{font-size:1rem}}
+@media(max-width:900px){.uniform-cards{grid-template-columns:1fr;max-width:430px}.uniform-card{grid-template-rows:36px 210px 110px 1fr;padding:15px;min-height:540px}.uniform-card svg{height:210px}.uniform-card h3{font-size:1.12rem}}
+@media(max-width:720px){.reading-nav{gap:10px;padding:0 10px}.reading-brand,.reading-nav progress{display:none}.current-section{font-size:12px}.section-links{grid-template-columns:1fr;padding:14px}}

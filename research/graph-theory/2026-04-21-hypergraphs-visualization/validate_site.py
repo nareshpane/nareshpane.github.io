@@ -39,7 +39,9 @@ def run():
         if url.fragment and target==PAGE: assert url.fragment in parser.ids,link
         local+=1
     assert '<!-- ORIGINAL_GALLERY -->' not in content
-    assert 'hypergraph_outputs' not in content and 'hypergraph_demo.html' not in content
+    # Historic source path prose is preserved inside the April snapshot; no runtime
+    # asset or navigation may still request either obsolete public path.
+    assert all('hypergraph_outputs' not in link and 'hypergraph_demo.html' not in link for link in parser.links)
     assert not (PAGE.parent/'hypergraph_demo.html').exists()
     assert not (PAGE.parent/'hypergraph_outputs').exists()
     # Compare images to the pre-redesign tracked names, or their preserved names after commit.
@@ -56,8 +58,9 @@ def run():
     assert index==before, 'research.html changed during refinement'
     pos=index.index('research/graph-theory/'+PAGE.name)
     assert index.rfind('<details',0,pos)>index.rfind('</details>',0,pos), 'Not in collapsible subsection'
-    report=dict(status='PASS',localLinks=local,uniqueIDs=len(parser.ids),originalImagesUnchanged=len(preserved),researchIndex='Unchanged from HEAD; link still resolves in details',oldNames='Absent',htmlStructure='Balanced',externalRuntimeDependencies=0)
-    (ASSETS/'refinement-site-audit.json').write_text(json.dumps(report,indent=2),encoding='utf-8')
+    report=dict(status='PASS',localLinks=local,uniqueIDs=len(parser.ids),originalImagesUnchanged=len(preserved),researchIndex='Unchanged from HEAD; link still resolves in details',oldNames='Absent from runtime paths; historical prose preserved',htmlStructure='Balanced',externalRuntimeDependencies=0)
+    (ASSETS/'qa').mkdir(exist_ok=True)
+    (ASSETS/'qa'/'research-site-audit.json').write_text(json.dumps(report,indent=2),encoding='utf-8')
     print(json.dumps(report,indent=2))
 
 if __name__=='__main__':run()

@@ -1,0 +1,222 @@
+<!-- ARCHIVE_SNAPSHOT_START -->
+<section class="lesson archive-section" id="gallery">
+<div class="eyebrow">Research history · recovered source</div>
+<details id="original-april-2026">
+<summary><h2>Original Hypergraph Exploration — April 21, 2026</h2></summary>
+<div class="archive-provenance">
+<p>An archived presentation of the original study, preserving its mathematical explanations, visual demonstrations, and model-era approach. Recovered from Git commit <a href="https://github.com/nareshpane/nareshpane.github.io/commit/859ef8a7e2899211e1b96c52455999557e6e993c">859ef8a, April 21, 2026</a>.</p>
+<p>The recovered page contains ten static examples, in-page navigation, and mathematical typesetting. It has no animated builder and records no model name or reasoning configuration. Its original wording and limitations are retained here. This offline reading view updates asset paths, scopes the original styling, and renders its simple set formulas in HTML; the preserved source download is exact.</p>
+<p><a href="2026-04-21-hypergraphs-visualization/archive/april-21-2026-original.html.txt" download>Download the unchanged April 21 HTML source</a> · <a href="2026-04-21-hypergraphs-visualization/archive/provenance.json">Source provenance</a> · <a href="2026-04-21-hypergraphs-visualization/hypergraph_gallery_animation(3).py">Original figure generator</a></p>
+</div>
+<div id="april-snapshot">
+<div class="page">
+    <section class="card" id="april-top">
+      <h1>Hypergraph Demo</h1>
+      <p class="lead">
+        A hypergraph is a generalization of an ordinary graph. In a graph, every edge joins exactly two vertices.
+        In a hypergraph, a single hyperedge may join two vertices, three vertices, four vertices, or more.
+      </p>
+
+      <div class="panel note">
+        <strong>Analytical definition.</strong><br/>
+        A hypergraph is a pair <span class="april-math">H=(X,E)</span> where <span class="april-math">X</span> is a finite vertex set and <span class="april-math">E</span> is a family of subsets of <span class="april-math">X</span>.
+        Each element of <span class="april-math">E</span> is called a <em>hyperedge</em>.
+        Thus ordinary graphs are the special case in which every hyperedge has size <span class="april-math">2</span>.
+      </div>
+
+      <div class="panel warn">
+        <strong>Algebraic notation.</strong><br/>
+        If <span class="april-math">X={v<sub>1</sub>,v<sub>2</sub>,v<sub>3</sub>,v<sub>4</sub>}</span> and <span class="april-math">E={e<sub>1</sub>,e<sub>2</sub>}</span> with
+        <span class="april-math">e<sub>1</sub>={v<sub>1</sub>,v<sub>2</sub>,v<sub>3</sub>}</span> and <span class="april-math">e<sub>2</sub>={v<sub>3</sub>,v<sub>4</sub>}</span>, then the same hypergraph may also be written as
+        <div class="april-equation">H=(X,E), <wbr> · X={v<sub>1</sub>,v<sub>2</sub>,v<sub>3</sub>,v<sub>4</sub>}, <wbr> · E={{v<sub>1</sub>,v<sub>2</sub>,v<sub>3</sub>},{v<sub>3</sub>,v<sub>4</sub>}}.</div>
+      </div>
+
+      <div class="mini-grid">
+        <div class="mini-box">
+          <div class="k">How to read each PNG</div>
+          <div class="v">Each picture shows one hypergraph in four views, ending with a simple-graph translation.</div>
+        </div>
+        <div class="mini-box">
+          <div class="k">Simple-graph translation</div>
+          <div class="v">The last panel uses the 2-section: vertices are adjacent when they lie in a common hyperedge.</div>
+        </div>
+      </div>
+
+      <h2>How the examples are organized</h2>
+      <p>
+        The ten PNGs below are ordered from simpler to more structurally involved examples.
+        Early examples are graph-like, while later ones show larger hyperedges, overlaps, singleton edges, and isolated vertices.
+      </p>
+      <ul class="tight-list">
+        <li>The folder placeholder used throughout is <code>hypergraph_outputs/</code>.</li>
+        <li>Each example lists the hypergraph algebraically before showing the PNG path.</li>
+        <li>The captions are intentionally short so the page stays clean and easy to scan.</li>
+      </ul>
+
+      <h2>Contents</h2>
+      <ul class="toc">
+        <li><a href="#sec01">1. Single Pair</a></li>
+<li><a href="#sec02">2. Two-Pair Chain</a></li>
+<li><a href="#sec03">3. First True Hyperedge</a></li>
+<li><a href="#sec04">4. Overlap and Singleton</a></li>
+<li><a href="#sec05">5. Two Overlapping Triples</a></li>
+<li><a href="#sec06">6. A Size-Four Hyperedge</a></li>
+<li><a href="#sec07">7. Three-Way Overlap</a></li>
+<li><a href="#sec08">8. Mixed Sizes with an Isolated Vertex</a></li>
+<li><a href="#sec09">9. Dense Overlap</a></li>
+<li><a href="#sec10">10. Largest Mixed Example</a></li>
+      </ul>
+
+      <h2>Ten hypergraph examples</h2>
+
+<section class="example-card" id="sec01">
+  <h3>1. Single Pair</h3>
+  <p class="small-intro"><strong>Algebraic example.</strong> <span class="april-math">X={v1, v2, v3}</span> and <span class="april-math">E={e1}</span>, where <span class="april-math">e1={v1, v2}</span>.</p>
+  <div class="panel note">
+    <strong>Set-family form.</strong><br/>
+    <div class="april-equation">H=(X,E), <wbr> · X={v1, v2, v3}, <wbr> · E={{v1, v2}}.</div>
+  </div>
+  <p>One ordinary edge on three vertices.</p>
+  <div class="center-figure">
+    <img src="2026-04-21-hypergraphs-visualization/hypergraph_01_single_pair.png" loading="lazy" width="2640" height="2640" alt="Single Pair hypergraph figure"/>
+    <div class="figcaption"><strong>PNG placeholder.</strong> One ordinary edge on three vertices. File path: <code>hypergraph_outputs/hypergraph_01_single_pair.png</code>.</div>
+  </div>
+</section>
+
+<section class="example-card" id="sec02">
+  <h3>2. Two-Pair Chain</h3>
+  <p class="small-intro"><strong>Algebraic example.</strong> <span class="april-math">X={v1, v2, v3, v4}</span> and <span class="april-math">E={e1, e2}</span>, where <span class="april-math">e1={v1, v2};  e2={v2, v3}</span>.</p>
+  <div class="panel note">
+    <strong>Set-family form.</strong><br/>
+    <div class="april-equation">H=(X,E), <wbr> · X={v1, v2, v3, v4}, <wbr> · E={{v1, v2}, {v2, v3}}.</div>
+  </div>
+  <p>Two size-2 edges sharing one vertex.</p>
+  <div class="center-figure">
+    <img src="2026-04-21-hypergraphs-visualization/hypergraph_02_two_pairs_chain.png" loading="lazy" width="2640" height="2640" alt="Two-Pair Chain hypergraph figure"/>
+    <div class="figcaption"><strong>PNG placeholder.</strong> Two size-2 edges sharing one vertex. File path: <code>hypergraph_outputs/hypergraph_02_two_pairs_chain.png</code>.</div>
+  </div>
+</section>
+
+<section class="example-card" id="sec03">
+  <h3>3. First True Hyperedge</h3>
+  <p class="small-intro"><strong>Algebraic example.</strong> <span class="april-math">X={v1, v2, v3, v4}</span> and <span class="april-math">E={e1, e2}</span>, where <span class="april-math">e1={v1, v2, v3};  e2={v3, v4}</span>.</p>
+  <div class="panel note">
+    <strong>Set-family form.</strong><br/>
+    <div class="april-equation">H=(X,E), <wbr> · X={v1, v2, v3, v4}, <wbr> · E={{v1, v2, v3}, {v3, v4}}.</div>
+  </div>
+  <p>A three-vertex hyperedge appears for the first time.</p>
+  <div class="center-figure">
+    <img src="2026-04-21-hypergraphs-visualization/hypergraph_03_first_true_hyperedge.png" loading="lazy" width="2640" height="2640" alt="First True Hyperedge hypergraph figure"/>
+    <div class="figcaption"><strong>PNG placeholder.</strong> A three-vertex hyperedge appears for the first time. File path: <code>hypergraph_outputs/hypergraph_03_first_true_hyperedge.png</code>.</div>
+  </div>
+</section>
+
+<section class="example-card" id="sec04">
+  <h3>4. Overlap and Singleton</h3>
+  <p class="small-intro"><strong>Algebraic example.</strong> <span class="april-math">X={v1, v2, v3, v4, v5}</span> and <span class="april-math">E={e1, e2, e3}</span>, where <span class="april-math">e1={v1, v2, v3};  e2={v3, v4};  e3={v5}</span>.</p>
+  <div class="panel note">
+    <strong>Set-family form.</strong><br/>
+    <div class="april-equation">H=(X,E), <wbr> · X={v1, v2, v3, v4, v5}, <wbr> · E={{v1, v2, v3}, {v3, v4}, {v5}}.</div>
+  </div>
+  <p>One overlap at v3 and one singleton edge.</p>
+  <div class="center-figure">
+    <img src="2026-04-21-hypergraphs-visualization/hypergraph_04_overlap_and_singleton.png" loading="lazy" width="2640" height="2640" alt="Overlap and Singleton hypergraph figure"/>
+    <div class="figcaption"><strong>PNG placeholder.</strong> One overlap at v3 and one singleton edge. File path: <code>hypergraph_outputs/hypergraph_04_overlap_and_singleton.png</code>.</div>
+  </div>
+</section>
+
+<section class="example-card" id="sec05">
+  <h3>5. Two Overlapping Triples</h3>
+  <p class="small-intro"><strong>Algebraic example.</strong> <span class="april-math">X={v1, v2, v3, v4, v5}</span> and <span class="april-math">E={e1, e2, e3}</span>, where <span class="april-math">e1={v1, v2, v3};  e2={v2, v3, v4};  e3={v4, v5}</span>.</p>
+  <div class="panel note">
+    <strong>Set-family form.</strong><br/>
+    <div class="april-equation">H=(X,E), <wbr> · X={v1, v2, v3, v4, v5}, <wbr> · E={{v1, v2, v3}, {v2, v3, v4}, {v4, v5}}.</div>
+  </div>
+  <p>Two 3-edges overlap in two vertices.</p>
+  <div class="center-figure">
+    <img src="2026-04-21-hypergraphs-visualization/hypergraph_05_two_overlapping_triples.png" loading="lazy" width="2640" height="2640" alt="Two Overlapping Triples hypergraph figure"/>
+    <div class="figcaption"><strong>PNG placeholder.</strong> Two 3-edges overlap in two vertices. File path: <code>hypergraph_outputs/hypergraph_05_two_overlapping_triples.png</code>.</div>
+  </div>
+</section>
+
+<section class="example-card" id="sec06">
+  <h3>6. A Size-Four Hyperedge</h3>
+  <p class="small-intro"><strong>Algebraic example.</strong> <span class="april-math">X={v1, v2, v3, v4, v5, v6}</span> and <span class="april-math">E={e1, e2, e3}</span>, where <span class="april-math">e1={v1, v2, v3, v4};  e2={v3, v5};  e3={v4, v6}</span>.</p>
+  <div class="panel note">
+    <strong>Set-family form.</strong><br/>
+    <div class="april-equation">H=(X,E), <wbr> · X={v1, v2, v3, v4, v5, v6}, <wbr> · E={{v1, v2, v3, v4}, {v3, v5}, {v4, v6}}.</div>
+  </div>
+  <p>A 4-edge creates a larger clique in the simple-graph translation.</p>
+  <div class="center-figure">
+    <img src="2026-04-21-hypergraphs-visualization/hypergraph_06_size_four_edge.png" loading="lazy" width="2640" height="2640" alt="A Size-Four Hyperedge hypergraph figure"/>
+    <div class="figcaption"><strong>PNG placeholder.</strong> A 4-edge creates a larger clique in the simple-graph translation. File path: <code>hypergraph_outputs/hypergraph_06_size_four_edge.png</code>.</div>
+  </div>
+</section>
+
+<section class="example-card" id="sec07">
+  <h3>7. Three-Way Overlap</h3>
+  <p class="small-intro"><strong>Algebraic example.</strong> <span class="april-math">X={v1, v2, v3, v4, v5, v6}</span> and <span class="april-math">E={e1, e2, e3}</span>, where <span class="april-math">e1={v1, v2, v3};  e2={v2, v3, v4};  e3={v3, v4, v5, v6}</span>.</p>
+  <div class="panel note">
+    <strong>Set-family form.</strong><br/>
+    <div class="april-equation">H=(X,E), <wbr> · X={v1, v2, v3, v4, v5, v6}, <wbr> · E={{v1, v2, v3}, {v2, v3, v4}, {v3, v4, v5, v6}}.</div>
+  </div>
+  <p>Several edges meet around the same central vertices.</p>
+  <div class="center-figure">
+    <img src="2026-04-21-hypergraphs-visualization/hypergraph_07_three_way_overlap.png" loading="lazy" width="2640" height="2640" alt="Three-Way Overlap hypergraph figure"/>
+    <div class="figcaption"><strong>PNG placeholder.</strong> Several edges meet around the same central vertices. File path: <code>hypergraph_outputs/hypergraph_07_three_way_overlap.png</code>.</div>
+  </div>
+</section>
+
+<section class="example-card" id="sec08">
+  <h3>8. Mixed Sizes with an Isolated Vertex</h3>
+  <p class="small-intro"><strong>Algebraic example.</strong> <span class="april-math">X={v1, v2, v3, v4, v5, v6, v7}</span> and <span class="april-math">E={e1, e2, e3, e4}</span>, where <span class="april-math">e1={v1, v2, v3};  e2={v2, v4, v5};  e3={v3, v5, v6};  e4={v4}</span>.</p>
+  <div class="panel note">
+    <strong>Set-family form.</strong><br/>
+    <div class="april-equation">H=(X,E), <wbr> · X={v1, v2, v3, v4, v5, v6, v7}, <wbr> · E={{v1, v2, v3}, {v2, v4, v5}, {v3, v5, v6}, {v4}}.</div>
+  </div>
+  <p>Mixed edge sizes appear while v7 stays isolated.</p>
+  <div class="center-figure">
+    <img src="2026-04-21-hypergraphs-visualization/hypergraph_08_with_isolated_vertex.png" loading="lazy" width="2640" height="2640" alt="Mixed Sizes with an Isolated Vertex hypergraph figure"/>
+    <div class="figcaption"><strong>PNG placeholder.</strong> Mixed edge sizes appear while v7 stays isolated. File path: <code>hypergraph_outputs/hypergraph_08_with_isolated_vertex.png</code>.</div>
+  </div>
+</section>
+
+<section class="example-card" id="sec09">
+  <h3>9. Dense Overlap</h3>
+  <p class="small-intro"><strong>Algebraic example.</strong> <span class="april-math">X={v1, v2, v3, v4, v5, v6, v7}</span> and <span class="april-math">E={e1, e2, e3, e4}</span>, where <span class="april-math">e1={v1, v2, v3, v4};  e2={v2, v3, v5};  e3={v3, v4, v6};  e4={v4, v5, v6, v7}</span>.</p>
+  <div class="panel note">
+    <strong>Set-family form.</strong><br/>
+    <div class="april-equation">H=(X,E), <wbr> · X={v1, v2, v3, v4, v5, v6, v7}, <wbr> · E={{v1, v2, v3, v4}, {v2, v3, v5}, {v3, v4, v6}, {v4, v5, v6, v7}}.</div>
+  </div>
+  <p>Multiple medium and large edges now overlap heavily.</p>
+  <div class="center-figure">
+    <img src="2026-04-21-hypergraphs-visualization/hypergraph_09_dense_overlap.png" loading="lazy" width="2640" height="2640" alt="Dense Overlap hypergraph figure"/>
+    <div class="figcaption"><strong>PNG placeholder.</strong> Multiple medium and large edges now overlap heavily. File path: <code>hypergraph_outputs/hypergraph_09_dense_overlap.png</code>.</div>
+  </div>
+</section>
+
+<section class="example-card" id="sec10">
+  <h3>10. Largest Mixed Example</h3>
+  <p class="small-intro"><strong>Algebraic example.</strong> <span class="april-math">X={v1, v2, v3, v4, v5, v6, v7, v8}</span> and <span class="april-math">E={e1, e2, e3, e4, e5}</span>, where <span class="april-math">e1={v1, v2, v3, v4};  e2={v2, v4, v5, v6};  e3={v3, v6, v7};  e4={v1, v7, v8};  e5={v5, v8}</span>.</p>
+  <div class="panel note">
+    <strong>Set-family form.</strong><br/>
+    <div class="april-equation">H=(X,E), <wbr> · X={v1, v2, v3, v4, v5, v6, v7, v8}, <wbr> · E={{v1, v2, v3, v4}, {v2, v4, v5, v6}, {v3, v6, v7}, {v1, v7, v8}, {v5, v8}}.</div>
+  </div>
+  <p>The final example mixes several overlaps and edge sizes.</p>
+  <div class="center-figure">
+    <img src="2026-04-21-hypergraphs-visualization/hypergraph_10_largest_mixed_example.png" loading="lazy" width="2640" height="2640" alt="Largest Mixed Example hypergraph figure"/>
+    <div class="figcaption"><strong>PNG placeholder.</strong> The final example mixes several overlaps and edge sizes. File path: <code>hypergraph_outputs/hypergraph_10_largest_mixed_example.png</code>.</div>
+  </div>
+</section>
+    </section>
+
+    <div class="footer-nav">
+      <a href="../../index.html">Home</a>
+      <span class="sep">|</span>
+      <a href="#april-top">Back to top</a>
+    </div>
+  </div>
+</div>
+</details>
+</section>
+<!-- ARCHIVE_SNAPSHOT_END -->

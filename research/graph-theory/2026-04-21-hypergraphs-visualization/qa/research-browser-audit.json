@@ -1,0 +1,362 @@
+{
+  "status": "PASS",
+  "browser": "Installed Microsoft Edge",
+  "checks": [
+    "Exactly twelve panels inside Section 03; shared incidence payloads; geometric enclosure membership; Venn region positions; PAOH marks; atom contents; deduplicated pairs; keyboard-linked e2 selection and reset",
+    "Four short attributed source excerpts; no screenshot embeds; Fig. 1–2 arc counts and consolidation; Fig. 4 source topologies satisfy Definition 1; every motif preset tested",
+    "Five lab levels; exact input/output matrix cells; transaction/address identity; editable exchange exclusions; exact arrow selection; invalid empty side; reuse policy; save/add; transaction/address caps; exhaustive experiment output",
+    "Four-phase transaction animation finishes and pauses offscreen; reduced motion advances one readable phase",
+    "Vector magnifier enlarges source labels without raster images or duplicate SVG marker IDs",
+    "All six requested widths; equal twelve-card dimensions; 4/2/1 columns; no page overflow, clipping, duplicate IDs, console errors, or missing resources"
+  ],
+  "layout": [
+    {
+      "width": 1920,
+      "document": 1920,
+      "cardDimensions": [
+        {
+          "width": 263.5,
+          "height": 420
+        },
+        {
+          "width": 263.5,
+          "height": 420
+        },
+        {
+          "width": 263.5,
+          "height": 420
+        },
+        {
+          "width": 263.5,
+          "height": 420
+        },
+        {
+          "width": 263.5,
+          "height": 420
+        },
+        {
+          "width": 263.5,
+          "height": 420
+        },
+        {
+          "width": 263.5,
+          "height": 420
+        },
+        {
+          "width": 263.5,
+          "height": 420
+        },
+        {
+          "width": 263.5,
+          "height": 420
+        },
+        {
+          "width": 263.5,
+          "height": 420
+        },
+        {
+          "width": 263.5,
+          "height": 420
+        },
+        {
+          "width": 263.5,
+          "height": 420
+        }
+      ],
+      "clipped": [],
+      "svgText": [],
+      "columns": 4
+    },
+    {
+      "width": 1440,
+      "document": 1440,
+      "cardDimensions": [
+        {
+          "width": 263.5,
+          "height": 420
+        },
+        {
+          "width": 263.5,
+          "height": 420
+        },
+        {
+          "width": 263.5,
+          "height": 420
+        },
+        {
+          "width": 263.5,
+          "height": 420
+        },
+        {
+          "width": 263.5,
+          "height": 420
+        },
+        {
+          "width": 263.5,
+          "height": 420
+        },
+        {
+          "width": 263.5,
+          "height": 420
+        },
+        {
+          "width": 263.5,
+          "height": 420
+        },
+        {
+          "width": 263.5,
+          "height": 420
+        },
+        {
+          "width": 263.5,
+          "height": 420
+        },
+        {
+          "width": 263.5,
+          "height": 420
+        },
+        {
+          "width": 263.5,
+          "height": 420
+        }
+      ],
+      "clipped": [],
+      "svgText": [],
+      "columns": 4
+    },
+    {
+      "width": 1366,
+      "document": 1366,
+      "cardDimensions": [
+        {
+          "width": 263.5,
+          "height": 420
+        },
+        {
+          "width": 263.5,
+          "height": 420
+        },
+        {
+          "width": 263.5,
+          "height": 420
+        },
+        {
+          "width": 263.5,
+          "height": 420
+        },
+        {
+          "width": 263.5,
+          "height": 420
+        },
+        {
+          "width": 263.5,
+          "height": 420
+        },
+        {
+          "width": 263.5,
+          "height": 420
+        },
+        {
+          "width": 263.5,
+          "height": 420
+        },
+        {
+          "width": 263.5,
+          "height": 420
+        },
+        {
+          "width": 263.5,
+          "height": 420
+        },
+        {
+          "width": 263.5,
+          "height": 420
+        },
+        {
+          "width": 263.5,
+          "height": 420
+        }
+      ],
+      "clipped": [],
+      "svgText": [],
+      "columns": 4
+    },
+    {
+      "width": 1024,
+      "document": 1024,
+      "cardDimensions": [
+        {
+          "width": 451,
+          "height": 420
+        },
+        {
+          "width": 451,
+          "height": 420
+        },
+        {
+          "width": 451,
+          "height": 420
+        },
+        {
+          "width": 451,
+          "height": 420
+        },
+        {
+          "width": 451,
+          "height": 420
+        },
+        {
+          "width": 451,
+          "height": 420
+        },
+        {
+          "width": 451,
+          "height": 420
+        },
+        {
+          "width": 451,
+          "height": 420
+        },
+        {
+          "width": 451,
+          "height": 420
+        },
+        {
+          "width": 451,
+          "height": 420
+        },
+        {
+          "width": 451,
+          "height": 420
+        },
+        {
+          "width": 451,
+          "height": 420
+        }
+      ],
+      "clipped": [],
+      "svgText": [],
+      "columns": 2
+    },
+    {
+      "width": 768,
+      "document": 768,
+      "cardDimensions": [
+        {
+          "width": 323,
+          "height": 420
+        },
+        {
+          "width": 323,
+          "height": 420
+        },
+        {
+          "width": 323,
+          "height": 420
+        },
+        {
+          "width": 323,
+          "height": 420
+        },
+        {
+          "width": 323,
+          "height": 420
+        },
+        {
+          "width": 323,
+          "height": 420
+        },
+        {
+          "width": 323,
+          "height": 420
+        },
+        {
+          "width": 323,
+          "height": 420
+        },
+        {
+          "width": 323,
+          "height": 420
+        },
+        {
+          "width": 323,
+          "height": 420
+        },
+        {
+          "width": 323,
+          "height": 420
+        },
+        {
+          "width": 323,
+          "height": 420
+        }
+      ],
+      "clipped": [],
+      "svgText": [],
+      "columns": 2
+    },
+    {
+      "width": 390,
+      "document": 390,
+      "cardDimensions": [
+        {
+          "width": 332,
+          "height": 420
+        },
+        {
+          "width": 332,
+          "height": 420
+        },
+        {
+          "width": 332,
+          "height": 420
+        },
+        {
+          "width": 332,
+          "height": 420
+        },
+        {
+          "width": 332,
+          "height": 420
+        },
+        {
+          "width": 332,
+          "height": 420
+        },
+        {
+          "width": 332,
+          "height": 420
+        },
+        {
+          "width": 332,
+          "height": 420
+        },
+        {
+          "width": 332,
+          "height": 420
+        },
+        {
+          "width": 332,
+          "height": 420
+        },
+        {
+          "width": 332,
+          "height": 420
+        },
+        {
+          "width": 332,
+          "height": 420
+        }
+      ],
+      "clipped": [],
+      "svgText": [],
+      "columns": 1
+    }
+  ],
+  "errors": [],
+  "missing": [],
+  "limitations": [
+    "No cross-browser matrix",
+    "Hidden-document handler remains covered by existing simulated visibility-event test"
+  ]
+}

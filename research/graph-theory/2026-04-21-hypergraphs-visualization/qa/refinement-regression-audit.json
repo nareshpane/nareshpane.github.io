@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "browser": "Installed Microsoft Edge via existing Playwright",
+  "checks": [
+    "Initial render: 16 sections, five metadata rows, one intro timeline, original and supplementary SVGs",
+    "Create, replace, remove, invalid empty/duplicate, selection, cross-highlighting, labels, reset",
+    "Incidence stepping, reveal, dual transpose, path tracing, exact and greedy optimization",
+    "Uniform full counts, overlap counterexamples, all Fano colourings, lattice containment, three EKR searches, interval endpoints",
+    "Random p=0 and p=1, 16-edge cap, reveal, seeded 500-trial means",
+    "Play, pause, restart, scrub, speed and offscreen pause",
+    "Empty edge family, isolated vertices, empty dual, disconnected path, restore",
+    "Keyboard activation and focus retained through shared-state redraw",
+    "12-edge builder cap, dense incidence layout, expanded gallery without overflow at 320 px",
+    "Reduced motion: no autoplay; steps remain available",
+    "All ten preserved gallery images decode"
+  ],
+  "layout": [
+    {
+      "width": 1440,
+      "viewport": 1440,
+      "document": 1440
+    },
+    {
+      "width": 768,
+      "viewport": 768,
+      "document": 768
+    },
+    {
+      "width": 390,
+      "viewport": 390,
+      "document": 390
+    },
+    {
+      "width": 320,
+      "viewport": 320,
+      "document": 320
+    }
+  ],
+  "consoleErrors": [],
+  "missingResources": []
+}

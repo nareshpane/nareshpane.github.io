@@ -1,0 +1,498 @@
+[
+  {
+    "width": 1920,
+    "titleSize": 52,
+    "headerHeight": 555.609375,
+    "tocHeight": 166.75,
+    "candidates": [
+      {
+        "selector": "source-attribution",
+        "maxWidth": "860px",
+        "width": 860,
+        "parent": 1090
+      },
+      {
+        "selector": "bitcoin-verbatim",
+        "maxWidth": "860px",
+        "width": 860,
+        "parent": 1090
+      },
+      {
+        "selector": "P",
+        "maxWidth": "828px",
+        "width": 828,
+        "parent": 1090
+      },
+      {
+        "selector": "caption",
+        "maxWidth": "672.75px",
+        "width": 673,
+        "parent": 1090
+      },
+      {
+        "selector": "P",
+        "maxWidth": "828px",
+        "width": 828,
+        "parent": 1090
+      },
+      {
+        "selector": "P",
+        "maxWidth": "828px",
+        "width": 828,
+        "parent": 1090
+      },
+      {
+        "selector": "source-attribution",
+        "maxWidth": "860px",
+        "width": 860,
+        "parent": 1090
+      },
+      {
+        "selector": "bitcoin-verbatim",
+        "maxWidth": "860px",
+        "width": 860,
+        "parent": 1090
+      },
+      {
+        "selector": "P",
+        "maxWidth": "828px",
+        "width": 828,
+        "parent": 1090
+      },
+      {
+        "selector": "P",
+        "maxWidth": "828px",
+        "width": 828,
+        "parent": 1090
+      },
+      {
+        "selector": "source-attribution",
+        "maxWidth": "860px",
+        "width": 860,
+        "parent": 1090
+      },
+      {
+        "selector": "bitcoin-verbatim",
+        "maxWidth": "860px",
+        "width": 860,
+        "parent": 1090
+      },
+      {
+        "selector": "P",
+        "maxWidth": "828px",
+        "width": 828,
+        "parent": 1090
+      },
+      {
+        "selector": "caption",
+        "maxWidth": "672.75px",
+        "width": 673,
+        "parent": 1090
+      },
+      {
+        "selector": "limitation",
+        "maxWidth": "828px",
+        "width": 828,
+        "parent": 1090
+      },
+      {
+        "selector": "source-attribution",
+        "maxWidth": "860px",
+        "width": 860,
+        "parent": 1090
+      },
+      {
+        "selector": "bitcoin-verbatim",
+        "maxWidth": "860px",
+        "width": 860,
+        "parent": 1090
+      },
+      {
+        "selector": "P",
+        "maxWidth": "828px",
+        "width": 828,
+        "parent": 1090
+      },
+      {
+        "selector": "P",
+        "maxWidth": "828px",
+        "width": 828,
+        "parent": 1090
+      },
+      {
+        "selector": "P",
+        "maxWidth": "828px",
+        "width": 828,
+        "parent": 1090
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "titleSize": 52,
+    "headerHeight": 555.609375,
+    "tocHeight": 166.75,
+    "candidates": [
+      {
+        "selector": "source-attribution",
+        "maxWidth": "860px",
+        "width": 860,
+        "parent": 1090
+      },
+      {
+        "selector": "bitcoin-verbatim",
+        "maxWidth": "860px",
+        "width": 860,
+        "parent": 1090
+      },
+      {
+        "selector": "P",
+        "maxWidth": "828px",
+        "width": 828,
+        "parent": 1090
+      },
+      {
+        "selector": "caption",
+        "maxWidth": "672.75px",
+        "width": 673,
+        "parent": 1090
+      },
+      {
+        "selector": "P",
+        "maxWidth": "828px",
+        "width": 828,
+        "parent": 1090
+      },
+      {
+        "selector": "P",
+        "maxWidth": "828px",
+        "width": 828,
+        "parent": 1090
+      },
+      {
+        "selector": "source-attribution",
+        "maxWidth": "860px",
+        "width": 860,
+        "parent": 1090
+      },
+      {
+        "selector": "bitcoin-verbatim",
+        "maxWidth": "860px",
+        "width": 860,
+        "parent": 1090
+      },
+      {
+        "selector": "P",
+        "maxWidth": "828px",
+        "width": 828,
+        "parent": 1090
+      },
+      {
+        "selector": "P",
+        "maxWidth": "828px",
+        "width": 828,
+        "parent": 1090
+      },
+      {
+        "selector": "source-attribution",
+        "maxWidth": "860px",
+        "width": 860,
+        "parent": 1090
+      },
+      {
+        "selector": "bitcoin-verbatim",
+        "maxWidth": "860px",
+        "width": 860,
+        "parent": 1090
+      },
+      {
+        "selector": "P",
+        "maxWidth": "828px",
+        "width": 828,
+        "parent": 1090
+      },
+      {
+        "selector": "caption",
+        "maxWidth": "672.75px",
+        "width": 673,
+        "parent": 1090
+      },
+      {
+        "selector": "limitation",
+        "maxWidth": "828px",
+        "width": 828,
+        "parent": 1090
+      },
+      {
+        "selector": "source-attribution",
+        "maxWidth": "860px",
+        "width": 860,
+        "parent": 1090
+      },
+      {
+        "selector": "bitcoin-verbatim",
+        "maxWidth": "860px",
+        "width": 860,
+        "parent": 1090
+      },
+      {
+        "selector": "P",
+        "maxWidth": "828px",
+        "width": 828,
+        "parent": 1090
+      },
+      {
+        "selector": "P",
+        "maxWidth": "828px",
+        "width": 828,
+        "parent": 1090
+      },
+      {
+        "selector": "P",
+        "maxWidth": "828px",
+        "width": 828,
+        "parent": 1090
+      }
+    ]
+  },
+  {
+    "width": 1366,
+    "titleSize": 51.908,
+    "headerHeight": 555.234375,
+    "tocHeight": 166.75,
+    "candidates": [
+      {
+        "selector": "source-attribution",
+        "maxWidth": "860px",
+        "width": 860,
+        "parent": 1090
+      },
+      {
+        "selector": "bitcoin-verbatim",
+        "maxWidth": "860px",
+        "width": 860,
+        "parent": 1090
+      },
+      {
+        "selector": "P",
+        "maxWidth": "828px",
+        "width": 828,
+        "parent": 1090
+      },
+      {
+        "selector": "caption",
+        "maxWidth": "672.75px",
+        "width": 673,
+        "parent": 1090
+      },
+      {
+        "selector": "P",
+        "maxWidth": "828px",
+        "width": 828,
+        "parent": 1090
+      },
+      {
+        "selector": "P",
+        "maxWidth": "828px",
+        "width": 828,
+        "parent": 1090
+      },
+      {
+        "selector": "source-attribution",
+        "maxWidth": "860px",
+        "width": 860,
+        "parent": 1090
+      },
+      {
+        "selector": "bitcoin-verbatim",
+        "maxWidth": "860px",
+        "width": 860,
+        "parent": 1090
+      },
+      {
+        "selector": "P",
+        "maxWidth": "828px",
+        "width": 828,
+        "parent": 1090
+      },
+      {
+        "selector": "P",
+        "maxWidth": "828px",
+        "width": 828,
+        "parent": 1090
+      },
+      {
+        "selector": "source-attribution",
+        "maxWidth": "860px",
+        "width": 860,
+        "parent": 1090
+      },
+      {
+        "selector": "bitcoin-verbatim",
+        "maxWidth": "860px",
+        "width": 860,
+        "parent": 1090
+      },
+      {
+        "selector": "P",
+        "maxWidth": "828px",
+        "width": 828,
+        "parent": 1090
+      },
+      {
+        "selector": "caption",
+        "maxWidth": "672.75px",
+        "width": 673,
+        "parent": 1090
+      },
+      {
+        "selector": "limitation",
+        "maxWidth": "828px",
+        "width": 828,
+        "parent": 1090
+      },
+      {
+        "selector": "source-attribution",
+        "maxWidth": "860px",
+        "width": 860,
+        "parent": 1090
+      },
+      {
+        "selector": "bitcoin-verbatim",
+        "maxWidth": "860px",
+        "width": 860,
+        "parent": 1090
+      },
+      {
+        "selector": "P",
+        "maxWidth": "828px",
+        "width": 828,
+        "parent": 1090
+      },
+      {
+        "selector": "P",
+        "maxWidth": "828px",
+        "width": 828,
+        "parent": 1090
+      },
+      {
+        "selector": "P",
+        "maxWidth": "828px",
+        "width": 828,
+        "parent": 1090
+      }
+    ]
+  },
+  {
+    "width": 1024,
+    "titleSize": 38.912,
+    "headerHeight": 538.640625,
+    "tocHeight": 166.75,
+    "candidates": [
+      {
+        "selector": "P",
+        "maxWidth": "828px",
+        "width": 828,
+        "parent": 914
+      },
+      {
+        "selector": "caption",
+        "maxWidth": "672.75px",
+        "width": 673,
+        "parent": 914
+      },
+      {
+        "selector": "P",
+        "maxWidth": "828px",
+        "width": 828,
+        "parent": 914
+      },
+      {
+        "selector": "P",
+        "maxWidth": "828px",
+        "width": 828,
+        "parent": 914
+      },
+      {
+        "selector": "P",
+        "maxWidth": "828px",
+        "width": 828,
+        "parent": 914
+      },
+      {
+        "selector": "P",
+        "maxWidth": "828px",
+        "width": 828,
+        "parent": 914
+      },
+      {
+        "selector": "P",
+        "maxWidth": "828px",
+        "width": 828,
+        "parent": 914
+      },
+      {
+        "selector": "caption",
+        "maxWidth": "672.75px",
+        "width": 673,
+        "parent": 914
+      },
+      {
+        "selector": "limitation",
+        "maxWidth": "828px",
+        "width": 828,
+        "parent": 914
+      },
+      {
+        "selector": "P",
+        "maxWidth": "828px",
+        "width": 828,
+        "parent": 914
+      },
+      {
+        "selector": "P",
+        "maxWidth": "828px",
+        "width": 828,
+        "parent": 914
+      },
+      {
+        "selector": "P",
+        "maxWidth": "828px",
+        "width": 828,
+        "parent": 914
+      },
+      {
+        "selector": "P",
+        "maxWidth": "828px",
+        "width": 828,
+        "parent": 914
+      },
+      {
+        "selector": "P",
+        "maxWidth": "828px",
+        "width": 828,
+        "parent": 914
+      },
+      {
+        "selector": "caption",
+        "maxWidth": "672.75px",
+        "width": 673,
+        "parent": 914
+      }
+    ]
+  },
+  {
+    "width": 768,
+    "titleSize": 32,
+    "headerHeight": 623.0625,
+    "tocHeight": 228.25,
+    "candidates": []
+  },
+  {
+    "width": 390,
+    "titleSize": 32,
+    "headerHeight": 926.15625,
+    "tocHeight": 303,
+    "candidates": []
+  }
+]

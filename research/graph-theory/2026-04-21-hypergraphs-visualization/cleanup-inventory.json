@@ -1,0 +1,196 @@
+{
+  "state": "completed after all four mathematical/browser audits passed and all 21 current replacements were verified",
+  "candidates": [
+    {
+      "path": "preview-1440.jpg",
+      "bytes": 110529,
+      "sha256": "8bc8f1c5cc776502ee24628ef05c0e0fad18e8bb4350d65703c601c2e2dab5c6",
+      "replacement": "qa/refinement-preview-1440.jpg",
+      "reason": "Superseded generated preview; current validation scripts now write fresh captures under qa/. Not an HTML/CSS/JS runtime asset or a reproduction-script input.",
+      "deleted": true,
+      "replacementSha256": "90e383c5fa6858081754c05a493228a7f0fc410dc8d3f54ff724fe2870eb7a27"
+    },
+    {
+      "path": "preview-390.jpg",
+      "bytes": 63161,
+      "sha256": "58a445db7aa876363d5e88e923f3bf7fd320672d27ef14127f10f7664064f062",
+      "replacement": "qa/refinement-preview-390.jpg",
+      "reason": "Superseded generated preview; current validation scripts now write fresh captures under qa/. Not an HTML/CSS/JS runtime asset or a reproduction-script input.",
+      "deleted": true,
+      "replacementSha256": "75a063605afd17cd3cc0abb1a2cd8d61f92b9af1567374c14072f924ac702467"
+    },
+    {
+      "path": "preview-768.jpg",
+      "bytes": 82114,
+      "sha256": "46964fd5d6b6ee98b5f28301a1ddef3878ae762e1cd2957d0922290f6e8cf724",
+      "replacement": "qa/refinement-preview-768.jpg",
+      "reason": "Superseded generated preview; current validation scripts now write fresh captures under qa/. Not an HTML/CSS/JS runtime asset or a reproduction-script input.",
+      "deleted": true,
+      "replacementSha256": "dd77513300fae39412eba83de8f993e0a2d659be99c8fa632c779e33849345ec"
+    },
+    {
+      "path": "preview-builder.jpg",
+      "bytes": 92854,
+      "sha256": "45da46c56ece50e8c0d2365e01b2e8a1ea2d57764f151077fdb562e3aefd2e5d",
+      "replacement": "qa/refinement-preview-builder.jpg",
+      "reason": "Superseded generated preview; current validation scripts now write fresh captures under qa/. Not an HTML/CSS/JS runtime asset or a reproduction-script input.",
+      "deleted": true,
+      "replacementSha256": "5cf1220bf9e37e1c9e91576d73f8d4d4154bd6adc743c0a7476beb1217e278fe"
+    },
+    {
+      "path": "preview-colouring.jpg",
+      "bytes": 156028,
+      "sha256": "37980c26dc951ae1bed8b218ea4f5d04ab0016154f903f1a4030cb393abd7d62",
+      "replacement": "qa/refinement-preview-colouring.jpg",
+      "reason": "Superseded generated preview; current validation scripts now write fresh captures under qa/. Not an HTML/CSS/JS runtime asset or a reproduction-script input.",
+      "deleted": true,
+      "replacementSha256": "5d99865398dbabf0c8c78b21c1f7eb156272117c90a5507663dca6218f9b2509"
+    },
+    {
+      "path": "preview-sperner.jpg",
+      "bytes": 144466,
+      "sha256": "3978e9d82ad777563bb02bbd882bf89af82ae01cd9b270fcc8789af802a41af4",
+      "replacement": "qa/refinement-preview-sperner.jpg",
+      "reason": "Superseded generated preview; current validation scripts now write fresh captures under qa/. Not an HTML/CSS/JS runtime asset or a reproduction-script input.",
+      "deleted": true,
+      "replacementSha256": "118d1ed3512951edd92c37f4b5d8e85995e78de4fa2bff9be71693768cc169c9"
+    },
+    {
+      "path": "refinement-counterexample.png",
+      "bytes": 22630,
+      "sha256": "fa3047cf4f2f7b4aa7828900e393691f75f10b8b64664603483e03487cad5a43",
+      "replacement": "qa/refinement-counterexample.png",
+      "reason": "Superseded generated preview; current validation scripts now write fresh captures under qa/. Not an HTML/CSS/JS runtime asset or a reproduction-script input.",
+      "deleted": true,
+      "replacementSha256": "c058fa2b90a3b5e884d5734135e3988fbb40ad67145661f1b34a0048f1d65cce"
+    },
+    {
+      "path": "refinement-examples.png",
+      "bytes": 26419,
+      "sha256": "e0205d0df9ae58091a3716bee47254ce5b701db5e53e11d0dc1045d8be3f54fe",
+      "replacement": "qa/refinement-examples.png",
+      "reason": "Superseded generated preview; current validation scripts now write fresh captures under qa/. Not an HTML/CSS/JS runtime asset or a reproduction-script input.",
+      "deleted": true,
+      "replacementSha256": "3d49181901420f2b98a6fa9a724bdf6f123a414b5bbc37726177f6feec507aa4"
+    },
+    {
+      "path": "refinement-incidence-1440.png",
+      "bytes": 97236,
+      "sha256": "f2650e25afb1032ea4e816b9c05d6ad02351186f40a509cbaff2f0ae02eb2552",
+      "replacement": "qa/refinement-incidence-1440.png",
+      "reason": "Superseded generated preview; current validation scripts now write fresh captures under qa/. Not an HTML/CSS/JS runtime asset or a reproduction-script input.",
+      "deleted": true,
+      "replacementSha256": "1baf4ac19cf2661f0d705b10d4570a52d23119ee791cdcd722623a982156da39"
+    },
+    {
+      "path": "refinement-incidence-390.png",
+      "bytes": 86957,
+      "sha256": "fa1591e5e706b3204ae79a1a7e72a74709dacbdc8dd3ccfb8c2339b0f6b15991",
+      "replacement": "qa/refinement-incidence-390.png",
+      "reason": "Superseded generated preview; current validation scripts now write fresh captures under qa/. Not an HTML/CSS/JS runtime asset or a reproduction-script input.",
+      "deleted": true,
+      "replacementSha256": "ed0669bddc27e31b3afd4fb0c9dbb8d0b537ddd14108e91aa3220ded8a05f0f8"
+    },
+    {
+      "path": "refinement-incidence-768.png",
+      "bytes": 98167,
+      "sha256": "078095b9ddeae0fc694edbfb91ef9d89850b9ff30fe344859f7c0fee6647fe6e",
+      "replacement": "qa/refinement-incidence-768.png",
+      "reason": "Superseded generated preview; current validation scripts now write fresh captures under qa/. Not an HTML/CSS/JS runtime asset or a reproduction-script input.",
+      "deleted": true,
+      "replacementSha256": "d21c412d5bc330b41e2b2d6cf37896261dfa8639e2f48fab1788057438117639"
+    },
+    {
+      "path": "refinement-preview-1440.jpg",
+      "bytes": 120022,
+      "sha256": "8ee10aa2b28c478b178522e99faa77165d2c7a1f4139730adc0b62025470b04a",
+      "replacement": "qa/refinement-preview-1440.jpg",
+      "reason": "Superseded generated preview; current validation scripts now write fresh captures under qa/. Not an HTML/CSS/JS runtime asset or a reproduction-script input.",
+      "deleted": true,
+      "replacementSha256": "90e383c5fa6858081754c05a493228a7f0fc410dc8d3f54ff724fe2870eb7a27"
+    },
+    {
+      "path": "refinement-preview-390.jpg",
+      "bytes": 63161,
+      "sha256": "58a445db7aa876363d5e88e923f3bf7fd320672d27ef14127f10f7664064f062",
+      "replacement": "qa/refinement-preview-390.jpg",
+      "reason": "Superseded generated preview; current validation scripts now write fresh captures under qa/. Not an HTML/CSS/JS runtime asset or a reproduction-script input.",
+      "deleted": true,
+      "replacementSha256": "75a063605afd17cd3cc0abb1a2cd8d61f92b9af1567374c14072f924ac702467"
+    },
+    {
+      "path": "refinement-preview-768.jpg",
+      "bytes": 88840,
+      "sha256": "846dc890271699e8f5d31cd8d76fac91e39eaa1a9fd6743660d908a67882d3fa",
+      "replacement": "qa/refinement-preview-768.jpg",
+      "reason": "Superseded generated preview; current validation scripts now write fresh captures under qa/. Not an HTML/CSS/JS runtime asset or a reproduction-script input.",
+      "deleted": true,
+      "replacementSha256": "dd77513300fae39412eba83de8f993e0a2d659be99c8fa632c779e33849345ec"
+    },
+    {
+      "path": "refinement-preview-builder.jpg",
+      "bytes": 107296,
+      "sha256": "2df46f69e43fc5f886eb8f6827c358fd7b9dd653914436cac8c8fbb1d70f5d57",
+      "replacement": "qa/refinement-preview-builder.jpg",
+      "reason": "Superseded generated preview; current validation scripts now write fresh captures under qa/. Not an HTML/CSS/JS runtime asset or a reproduction-script input.",
+      "deleted": true,
+      "replacementSha256": "5cf1220bf9e37e1c9e91576d73f8d4d4154bd6adc743c0a7476beb1217e278fe"
+    },
+    {
+      "path": "refinement-preview-colouring.jpg",
+      "bytes": 190685,
+      "sha256": "b6c634f6cb76957a9887baca4171bf325f9ea39970b11982f0715091de8133b7",
+      "replacement": "qa/refinement-preview-colouring.jpg",
+      "reason": "Superseded generated preview; current validation scripts now write fresh captures under qa/. Not an HTML/CSS/JS runtime asset or a reproduction-script input.",
+      "deleted": true,
+      "replacementSha256": "5d99865398dbabf0c8c78b21c1f7eb156272117c90a5507663dca6218f9b2509"
+    },
+    {
+      "path": "refinement-preview-sperner.jpg",
+      "bytes": 167185,
+      "sha256": "bedb45c766f57e649317bcfc451228fb764aa237b354a7e4df93499f146a8651",
+      "replacement": "qa/refinement-preview-sperner.jpg",
+      "reason": "Superseded generated preview; current validation scripts now write fresh captures under qa/. Not an HTML/CSS/JS runtime asset or a reproduction-script input.",
+      "deleted": true,
+      "replacementSha256": "118d1ed3512951edd92c37f4b5d8e85995e78de4fa2bff9be71693768cc169c9"
+    },
+    {
+      "path": "refinement-story-1440.png",
+      "bytes": 164438,
+      "sha256": "c784538ef2bf2ff1a18e67522c92ba1bc4728c40614ab719dc861e5bc4967b7a",
+      "replacement": "qa/refinement-story-1440.png",
+      "reason": "Superseded generated preview; current validation scripts now write fresh captures under qa/. Not an HTML/CSS/JS runtime asset or a reproduction-script input.",
+      "deleted": true,
+      "replacementSha256": "733b3835342baaef0f6815fad32b568cd8e9b15f965a69e39d22fbc1ce0ba773"
+    },
+    {
+      "path": "refinement-story-390.png",
+      "bytes": 127112,
+      "sha256": "e8f915c7f68881eaa2c4bdda59eb74c63da68bbfe81e39416e2745e2d85e6a12",
+      "replacement": "qa/refinement-story-390.png",
+      "reason": "Superseded generated preview; current validation scripts now write fresh captures under qa/. Not an HTML/CSS/JS runtime asset or a reproduction-script input.",
+      "deleted": true,
+      "replacementSha256": "dd585c439f038de311c4321e697a93a8cb7eaa51685d9ec65d94235e4d319d08"
+    },
+    {
+      "path": "refinement-story-768.png",
+      "bytes": 109399,
+      "sha256": "35373a4ebf86d26b674b7ee09e1bbccfb058aa79ca8b08f63a0ba677e0f9e64c",
+      "replacement": "qa/refinement-story-768.png",
+      "reason": "Superseded generated preview; current validation scripts now write fresh captures under qa/. Not an HTML/CSS/JS runtime asset or a reproduction-script input.",
+      "deleted": true,
+      "replacementSha256": "2668724f177907b32083bbbc6583969772fe478186e9e75a6219231f91cf4d79"
+    },
+    {
+      "path": "refinement-story-desktop.png",
+      "bytes": 163784,
+      "sha256": "1cf767af535f379189162b1e055cf745d66484a1eb05e8cd0aa123fe3d01ce5b",
+      "replacement": "qa/refinement-story-1440.png",
+      "reason": "Superseded generated preview; current validation scripts now write fresh captures under qa/. Not an HTML/CSS/JS runtime asset or a reproduction-script input.",
+      "deleted": true,
+      "replacementSha256": "733b3835342baaef0f6815fad32b568cd8e9b15f965a69e39d22fbc1ce0ba773"
+    }
+  ],
+  "filesDeleted": 21,
+  "bytesRemoved": 2282483
+}

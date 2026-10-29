@@ -1,0 +1,297 @@
+{
+  "status": "PASS",
+  "assertions": 207,
+  "checks": [
+    "Exact source-byte preservation; initially collapsed historical view; ten decoded original images; hash links, subtitle, direct targets, history, menu keyboard/Escape and aria-current",
+    "Uniform sizes, exact memberships, six stable vertex identities, incidence counts, degree identities, edge highlighting, and toggle reset",
+    "Source Fig.2 transaction selection derives tail/head and quantity sums; motif highlights equal computed shared sets; lab transaction selection synchronizes arrows, both matrix columns, sets and draft",
+    "Six widths: title 22% reduction; 52px nav; sticky only after header; exact anchor clearance; equal cards; whole-page nested overflow/viewport/SVG-label audits with historical content expanded"
+  ],
+  "layout": [
+    {
+      "width": 1920,
+      "header": {
+        "title": 40.56,
+        "header": 246.4375,
+        "nav": 52,
+        "stuck": false
+      },
+      "dimensions": [
+        {
+          "width": 352.65625,
+          "height": 533.078125
+        },
+        {
+          "width": 352.671875,
+          "height": 533.078125
+        },
+        {
+          "width": 352.65625,
+          "height": 533.078125
+        }
+      ],
+      "document": 1920,
+      "scrolling": [],
+      "connectors": [
+        {
+          "tag": "SPAN",
+          "id": "",
+          "cls": "",
+          "client": 257,
+          "scroll": 274,
+          "overflow": "visible",
+          "text": "Vertex setV={A,B,C,D,E,F}Choose C∈V",
+          "parent": "membership-flow"
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "cls": "edge-token",
+          "client": 257,
+          "scroll": 274,
+          "overflow": "visible",
+          "text": "Hyperedge subsete3={C,D,E}",
+          "parent": "membership-flow"
+        }
+      ],
+      "clipped": [],
+      "outside": [],
+      "svgText": []
+    },
+    {
+      "width": 1440,
+      "header": {
+        "title": 40.56,
+        "header": 246.4375,
+        "nav": 52,
+        "stuck": false
+      },
+      "dimensions": [
+        {
+          "width": 352.65625,
+          "height": 533.078125
+        },
+        {
+          "width": 352.671875,
+          "height": 533.078125
+        },
+        {
+          "width": 352.65625,
+          "height": 533.078125
+        }
+      ],
+      "document": 1440,
+      "scrolling": [],
+      "connectors": [
+        {
+          "tag": "SPAN",
+          "id": "",
+          "cls": "",
+          "client": 257,
+          "scroll": 274,
+          "overflow": "visible",
+          "text": "Vertex setV={A,B,C,D,E,F}Choose C∈V",
+          "parent": "membership-flow"
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "cls": "edge-token",
+          "client": 257,
+          "scroll": 274,
+          "overflow": "visible",
+          "text": "Hyperedge subsete3={C,D,E}",
+          "parent": "membership-flow"
+        }
+      ],
+      "clipped": [],
+      "outside": [],
+      "svgText": []
+    },
+    {
+      "width": 1366,
+      "header": {
+        "title": 40.4882,
+        "header": 246.25,
+        "nav": 52,
+        "stuck": false
+      },
+      "dimensions": [
+        {
+          "width": 352.65625,
+          "height": 533.078125
+        },
+        {
+          "width": 352.671875,
+          "height": 533.078125
+        },
+        {
+          "width": 352.65625,
+          "height": 533.078125
+        }
+      ],
+      "document": 1366,
+      "scrolling": [],
+      "connectors": [
+        {
+          "tag": "SPAN",
+          "id": "",
+          "cls": "",
+          "client": 257,
+          "scroll": 274,
+          "overflow": "visible",
+          "text": "Vertex setV={A,B,C,D,E,F}Choose C∈V",
+          "parent": "membership-flow"
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "cls": "edge-token",
+          "client": 257,
+          "scroll": 274,
+          "overflow": "visible",
+          "text": "Hyperedge subsete3={C,D,E}",
+          "parent": "membership-flow"
+        }
+      ],
+      "clipped": [],
+      "outside": [],
+      "svgText": []
+    },
+    {
+      "width": 1024,
+      "header": {
+        "title": 30.3514,
+        "header": 223.34375,
+        "nav": 52,
+        "stuck": false
+      },
+      "dimensions": [
+        {
+          "width": 294,
+          "height": 556.078125
+        },
+        {
+          "width": 294,
+          "height": 556.078125
+        },
+        {
+          "width": 294,
+          "height": 556.078125
+        }
+      ],
+      "document": 1024,
+      "scrolling": [],
+      "connectors": [
+        {
+          "tag": "SPAN",
+          "id": "",
+          "cls": "",
+          "client": 213,
+          "scroll": 230,
+          "overflow": "visible",
+          "text": "Vertex setV={A,B,C,D,E,F}Choose C∈V",
+          "parent": "membership-flow"
+        },
+        {
+          "tag": "SPAN",
+          "id": "",
+          "cls": "edge-token",
+          "client": 213,
+          "scroll": 230,
+          "overflow": "visible",
+          "text": "Hyperedge subsete3={C,D,E}",
+          "parent": "membership-flow"
+        }
+      ],
+      "clipped": [],
+      "outside": [],
+      "svgText": []
+    },
+    {
+      "width": 768,
+      "header": {
+        "title": 24.96,
+        "header": 310.125,
+        "nav": 52,
+        "stuck": false
+      },
+      "dimensions": [
+        {
+          "width": 430,
+          "height": 540
+        },
+        {
+          "width": 430,
+          "height": 540
+        },
+        {
+          "width": 430,
+          "height": 540
+        }
+      ],
+      "document": 768,
+      "scrolling": [
+        {
+          "tag": "DIV",
+          "id": "matrix",
+          "cls": "matrix-wrap",
+          "client": 318,
+          "scroll": 329,
+          "overflow": "auto",
+          "text": "vertex / edgee1e2e3e4ΣA10012B11002C10102D01102E00112F00011Σ323311",
+          "parent": ""
+        },
+        {
+          "tag": "DIV",
+          "id": "representation-matrix",
+          "cls": "matrix-wrap",
+          "client": 318,
+          "scroll": 329,
+          "overflow": "auto",
+          "text": "vertex / edgee1e2e3e4ΣA10012B11002C10102D01102E00112F00011Σ323311",
+          "parent": ""
+        }
+      ],
+      "connectors": [],
+      "clipped": [],
+      "outside": [],
+      "svgText": []
+    },
+    {
+      "width": 390,
+      "header": {
+        "title": 24.96,
+        "header": 467.109375,
+        "nav": 52,
+        "stuck": false
+      },
+      "dimensions": [
+        {
+          "width": 332,
+          "height": 540
+        },
+        {
+          "width": 332,
+          "height": 540
+        },
+        {
+          "width": 332,
+          "height": 540
+        }
+      ],
+      "document": 390,
+      "scrolling": [],
+      "connectors": [],
+      "clipped": [],
+      "outside": [],
+      "svgText": []
+    }
+  ],
+  "errors": [],
+  "missing": [],
+  "limitations": [
+    "Installed Edge only; no second browser engine tested.",
+    "No open reuse license established: brief source excerpts and attributed vector reconstructions retained."
+  ]
+}

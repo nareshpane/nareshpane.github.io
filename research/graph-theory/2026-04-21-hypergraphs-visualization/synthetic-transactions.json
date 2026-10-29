@@ -1,0 +1,360 @@
+{
+  "kind": "Synthetic educational examples; no real Bitcoin data",
+  "examples": {
+    "one": {
+      "addresses": [
+        "A1",
+        "A2",
+        "A3",
+        "A4"
+      ],
+      "arcs": [
+        {
+          "id": "E1",
+          "tail": [
+            "A1",
+            "A2"
+          ],
+          "head": [
+            "A3",
+            "A4"
+          ]
+        }
+      ],
+      "exchanges": []
+    },
+    "chain": {
+      "addresses": [
+        "A1",
+        "A2",
+        "A3",
+        "A4",
+        "A5"
+      ],
+      "arcs": [
+        {
+          "id": "E1",
+          "tail": [
+            "A1",
+            "A2"
+          ],
+          "head": [
+            "A3"
+          ]
+        },
+        {
+          "id": "E2",
+          "tail": [
+            "A3"
+          ],
+          "head": [
+            "A4",
+            "A5"
+          ]
+        }
+      ],
+      "exchanges": []
+    },
+    "mixed": {
+      "addresses": [
+        "A1",
+        "A2",
+        "A3",
+        "A4",
+        "A5",
+        "A6"
+      ],
+      "arcs": [
+        {
+          "id": "E1",
+          "tail": [
+            "A1",
+            "A2"
+          ],
+          "head": [
+            "A2",
+            "A3"
+          ]
+        },
+        {
+          "id": "E2",
+          "tail": [
+            "A2",
+            "A3"
+          ],
+          "head": [
+            "A1",
+            "A4"
+          ]
+        },
+        {
+          "id": "E3",
+          "tail": [
+            "A4"
+          ],
+          "head": [
+            "A5",
+            "A6"
+          ]
+        }
+      ],
+      "exchanges": [
+        "A1",
+        "A6"
+      ]
+    },
+    "linear": {
+      "addresses": [
+        "X1",
+        "A1",
+        "A2",
+        "A3",
+        "X2"
+      ],
+      "arcs": [
+        {
+          "id": "E1",
+          "tail": [
+            "X1",
+            "A1"
+          ],
+          "head": [
+            "A2",
+            "A3"
+          ]
+        },
+        {
+          "id": "E2",
+          "tail": [
+            "A2",
+            "A3"
+          ],
+          "head": [
+            "X2"
+          ]
+        }
+      ],
+      "exchanges": [
+        "X1",
+        "X2"
+      ]
+    },
+    "circular": {
+      "addresses": [
+        "X1",
+        "A1",
+        "A2",
+        "A3"
+      ],
+      "arcs": [
+        {
+          "id": "E1",
+          "tail": [
+            "X1",
+            "A1"
+          ],
+          "head": [
+            "A2",
+            "A3"
+          ]
+        },
+        {
+          "id": "E2",
+          "tail": [
+            "A2",
+            "A3"
+          ],
+          "head": [
+            "X1"
+          ]
+        }
+      ],
+      "exchanges": [
+        "X1"
+      ]
+    }
+  },
+  "sourceFigure2": {
+    "kind": "Transcribed mathematical figure, not blockchain observations",
+    "addresses": [
+      "src",
+      "a1",
+      "a2",
+      "a3",
+      "a4",
+      "a5",
+      "a6"
+    ],
+    "arcs": [
+      {
+        "id": "T0",
+        "tail": [
+          "src"
+        ],
+        "head": [
+          "a3"
+        ]
+      },
+      {
+        "id": "T1",
+        "tail": [
+          "src"
+        ],
+        "head": [
+          "a1",
+          "a2",
+          "a3"
+        ]
+      },
+      {
+        "id": "T2",
+        "tail": [
+          "a2",
+          "a3"
+        ],
+        "head": [
+          "a3",
+          "a6"
+        ]
+      },
+      {
+        "id": "T3",
+        "tail": [
+          "a1",
+          "a2"
+        ],
+        "head": [
+          "a4",
+          "a5"
+        ]
+      }
+    ],
+    "links": [
+      [
+        "src",
+        "T0",
+        50
+      ],
+      [
+        "src",
+        "T1",
+        50
+      ],
+      [
+        "T0",
+        "a3",
+        50
+      ],
+      [
+        "T1",
+        "a1",
+        10
+      ],
+      [
+        "T1",
+        "a2",
+        35
+      ],
+      [
+        "T1",
+        "a3",
+        5
+      ],
+      [
+        "a1",
+        "T3",
+        10
+      ],
+      [
+        "a2",
+        "T3",
+        7
+      ],
+      [
+        "a2",
+        "T2",
+        28
+      ],
+      [
+        "a3",
+        "T2",
+        55
+      ],
+      [
+        "T2",
+        "a3",
+        10
+      ],
+      [
+        "T2",
+        "a6",
+        73
+      ],
+      [
+        "T3",
+        "a4",
+        10
+      ],
+      [
+        "T3",
+        "a5",
+        7
+      ]
+    ]
+  },
+  "sourceFigure4": {
+    "kind": "Source topology, address labels added, not blockchain observations",
+    "addresses": [
+      "b1",
+      "b2",
+      "b3",
+      "c1",
+      "c2",
+      "c3",
+      "c4",
+      "d1",
+      "d2",
+      "d3"
+    ],
+    "arcs": [
+      {
+        "id": "E1",
+        "tail": [
+          "b1",
+          "b2",
+          "b3",
+          "d1"
+        ],
+        "head": [
+          "b1",
+          "c2",
+          "c3",
+          "c4",
+          "d3"
+        ]
+      },
+      {
+        "id": "E2",
+        "tail": [
+          "c1",
+          "c2",
+          "c3",
+          "b3"
+        ],
+        "head": [
+          "c1",
+          "d1",
+          "d2",
+          "d3",
+          "c3",
+          "b2"
+        ]
+      }
+    ],
+    "exchanges": [
+      "b1",
+      "b2",
+      "d1"
+    ]
+  }
+}

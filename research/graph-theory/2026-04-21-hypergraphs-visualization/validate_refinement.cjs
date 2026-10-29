@@ -3,6 +3,7 @@ const {chromium}=require('playwright');
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
 const S=require('./story.js'),M=require('./math.js');
 const url=process.env.HYPERGRAPH_TEST_URL||'http://127.0.0.1:8765/research/graph-theory/2026-04-21-hypergraphs-visualization.html';
+const OUT=path.join(__dirname,'qa');fs.mkdirSync(OUT,{recursive:true});
 (async()=>{
   const browser=await chromium.launch({headless:true,channel:'msedge'});
   const page=await browser.newPage({viewport:{width:1440,height:1000}}),errors=[],checks=[],layout=[];
@@ -84,11 +85,12 @@ const url=process.env.HYPERGRAPH_TEST_URL||'http://127.0.0.1:8765/research/graph
     });
     assert.ok(metrics.document<=width,'Page overflow '+width);assert.deepEqual(metrics.clipped,[],'Text clipping '+width);assert.deepEqual(metrics.svgClips,[],'SVG label clipping '+width);assert.equal(metrics.paragraphMaxWidth,'none');layout.push(metrics);
     if([1440,768,390].includes(width)){
-      await seek(11.8);await page.locator('#story').screenshot({path:path.join(__dirname,`refinement-story-${width}.png`)});
-      await page.locator('#incidence').screenshot({path:path.join(__dirname,`refinement-incidence-${width}.png`)});await seek(18);
+      await seek(11.8);await page.locator('#story').screenshot({path:path.join(OUT,`refinement-story-${width}.png`)});
+      await page.locator('#incidence').screenshot({path:path.join(OUT,`refinement-incidence-${width}.png`)});await seek(18);
     }
   }
+  await page.setViewportSize({width:1440,height:1000});await seek(18);await page.locator('#intro-counterexample').screenshot({path:path.join(OUT,'refinement-counterexample.png')});await page.locator('#intro-examples').screenshot({path:path.join(OUT,'refinement-examples.png')});
   assert.deepEqual(errors,[]);checks.push('Six requested viewports: no document overflow, paragraph/formula clipping, or SVG label clipping');
   const report={status:'PASS',checks,timing,layout,errors,limitations:['Installed Edge only; hidden-tab handler tested by simulated visibility event.']};
-  fs.writeFileSync(path.join(__dirname,'refinement-animation-audit.json'),JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));await browser.close();
+  fs.writeFileSync(path.join(OUT,'refinement-animation-audit.json'),JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));await browser.close();
 })().catch(e=>{console.error(e);process.exit(1);});

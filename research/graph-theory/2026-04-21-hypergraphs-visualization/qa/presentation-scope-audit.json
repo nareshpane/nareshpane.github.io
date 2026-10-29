@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "outsideScopeStatus": "Matches task-start snapshot",
+  "stagedFiles": 0,
+  "diffWhitespace": "PASS",
+  "priorDeletedPreviews": "Preserved from task-start status",
+  "unrelatedUntrackedDirectories": "Preserved"
+}

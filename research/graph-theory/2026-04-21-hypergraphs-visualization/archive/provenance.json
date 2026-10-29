@@ -1,0 +1,16 @@
+{
+  "commit": "859ef8a7e2899211e1b96c52455999557e6e993c",
+  "sourcePath": "research/hypergraph_demo.html",
+  "date": "2026-04-21",
+  "originalSha256": "a541c69f879c37532bc8bb4428a79f6d8669814a67a5a28eabb465876b55438c",
+  "bytes": 15633,
+  "modelMetadata": "Not recorded in recovered source",
+  "originalInteractivity": "In-page anchors and MathJax typesetting; no animated builder",
+  "bitcoinSource": {
+    "officialUrl": "https://fc17.ifca.ai/bitcoin/papers/bitcoin17-final17.pdf",
+    "sha256": "d4c0ad3adc8e0749b8b07cd148343a9a049170c9839d703f604fcbb5590d9ef3",
+    "bytes": 1198276,
+    "byteIdentical": true,
+    "version": "Conference-hosted manuscript; no arXiv identifier or explicit reuse license established"
+  }
+}

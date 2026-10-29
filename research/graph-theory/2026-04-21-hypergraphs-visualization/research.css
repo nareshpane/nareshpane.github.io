@@ -1,0 +1,115 @@
+/* Component-specific additions; the original sixteen-section tutorial keeps its layout. */
+:root{--rep-peach-bg:#fff0e5;--rep-peach-edge:#dc9369;--rep-green-bg:#f0fae8;--rep-green-edge:#75a868;--rep-red-bg:#fff0f1;--rep-red-edge:#cf777f;--rep-blue-bg:#edf5ff;--rep-blue-edge:#6e9acb;--bitcoin-verbatim-bg:#fff0e4;--bitcoin-verbatim-border:#b84f4a}
+.representation-study{border-top:1px solid var(--line);margin-top:28px;padding-top:12px}
+.representation-row{margin:24px 0 32px}
+.representation-row h4{font:600 1.16rem/1.4 Georgia,serif;margin:0 0 9px}
+.rep-definition{font-size:1rem;margin:7px 0}
+.rep-selectors{gap:7px}
+.rep-selectors button{font-size:13px;padding:6px 9px}
+.rep-panels{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;align-items:stretch}
+.rep-panel{height:420px;min-width:0;margin:0;padding:10px;border:1.5px solid;border-radius:12px;display:grid;grid-template-rows:44px 240px 1fr;gap:6px}
+.rep-panel h5{margin:0;font:600 16px/1.35 Georgia,serif;text-align:center;align-self:center}
+.rep-panel .rep-figure{min-width:0;display:flex;align-items:center;justify-content:center}
+.rep-panel .rep-figure svg{width:100%;height:240px;background:none;border:0;border-radius:0}
+.rep-panel figcaption{font:12px/1.55 'Segoe UI',sans-serif;margin:4px 0 0;color:#3e5148}
+.rep-type-0{background:var(--rep-peach-bg);border-color:var(--rep-peach-edge)}
+.rep-type-1{background:var(--rep-green-bg);border-color:var(--rep-green-edge)}
+.rep-type-2{background:var(--rep-red-bg);border-color:var(--rep-red-edge)}
+.rep-type-3{background:var(--rep-blue-bg);border-color:var(--rep-blue-edge)}
+.rep-svg text,.research-svg text{font:15px 'Segoe UI',sans-serif;fill:#283f34}
+.research-svg .v-label{font-size:17px}
+.research-svg .edge-label{font:16px Cambria,serif;fill:#2a3b31}
+.research-svg .atom-label{font:15px Cambria,serif;paint-order:stroke;stroke:#fff9f4;stroke-width:3px;stroke-linejoin:round}
+.research-svg .atom-key{font:14px Consolas,monospace}
+.rep-edge,.projected-pair{cursor:pointer}
+.rep-edge:focus-visible{outline:none;filter:drop-shadow(0 0 2px #825520)}
+.rep-edge:focus-visible path,.rep-edge:focus-visible circle{stroke-width:4px}
+.rep-selection-output{margin-top:12px;font-size:13px}
+.rep-summary{background:#f6f7ec;padding:10px 12px;border-radius:8px;line-height:1.7}
+.research-svg{display:block;width:100%;height:auto;border:1px solid #d7dec9;border-radius:12px;background:#fbfcf5}
+.bitcoin-study h3{margin-top:28px}
+.bitcoin-study h4{font:600 1.05rem/1.5 Georgia,serif;margin:22px 0 10px}
+.paper-citation{border:1px solid #c8b49d;border-left:4px solid #a66c43;padding:17px 21px;border-radius:10px;background:#fff7e9}
+.paper-citation h3{margin:0 0 12px;font-size:1.45rem}
+.paper-citation p{margin:7px 0}
+.paper-authors{font:1rem/1.7 Georgia,serif}
+.paper-citation p:last-child{font-size:13px}
+.research-evidence{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:22px 0}
+.research-evidence>span{display:block;background:#edf4e4;border:1px solid #cfdbbe;border-radius:9px;padding:12px;font-size:13px}
+.research-evidence b{display:block;margin-bottom:6px}
+.bitcoin-nav{display:flex;flex-wrap:wrap;gap:8px 17px;padding:14px 0;border-block:1px solid var(--line);font-size:13px}
+.bitcoin-bridge svg{height:300px;background:#f6faee}
+.bitcoin-source-group{border-top:1px solid var(--line);margin-top:30px;padding-top:8px}
+.source-attribution{max-width:860px;margin:20px auto 10px;text-align:center}
+.source-attribution h4{font:600 1.08rem/1.45 Garamond,Georgia,serif;margin:0}
+.source-attribution p{font:13px/1.6 Georgia,serif;margin:5px 0}
+.bitcoin-verbatim{box-sizing:border-box;width:100%;max-width:860px;margin:10px auto 24px;padding:19px 25px;border:2px solid var(--bitcoin-verbatim-border);border-radius:10px;background:var(--bitcoin-verbatim-bg);color:#2d302c;font:22px/1.55 'EB Garamond',Garamond,Georgia,serif}
+.bitcoin-verbatim p{margin:9px 0}
+.bitcoin-verbatim .verbatim-label{font:700 12px/1.5 'Segoe UI',sans-serif;letter-spacing:.035em;color:#8d3d35}
+.bitcoin-verbatim cite{display:block;font:13px/1.6 'Segoe UI',sans-serif;font-style:normal;margin-top:12px}
+.bitcoin-study>.bitcoin-source-group>p,.bitcoin-evidence>p{max-width:96ch}
+.source-figure-wide{max-width:800px;margin:18px auto}
+.source-figure-pair{gap:18px}
+.source-figure-pair figure{min-width:0}
+.source-figure-pair svg{height:350px}
+.source-figure-pair figcaption{font-size:12px}
+.directed-svg .quantity{font:13px Cambria,serif;fill:#a33c32;paint-order:stroke;stroke:#fbfcf5;stroke-width:3px;stroke-linejoin:round}
+.directed-svg .exchange-label{fill:#fffdf9;font-weight:600}
+.role-legend{display:flex;gap:8px 14px;flex-wrap:wrap;font:12px/1.7 'Segoe UI',sans-serif;margin-top:9px}
+.role-legend span{border-left:4px solid var(--role-colour);padding-left:6px}
+#bitcoin-fig3{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.graph-motif-card{border:1px solid #ccd8bd;border-radius:10px;padding:8px;background:#f5f8ec;min-width:0}
+.graph-motif-card h5{text-align:center;font:600 14px/1.4 Georgia,serif;margin:5px 0}
+.graph-motif-card svg{border:0;background:transparent;height:320px}
+.research-svg .small-graph-label{font:11px 'Segoe UI',sans-serif}
+.pattern-table{width:100%;font:14px/1.6 Cambria,serif;border-spacing:0;margin:12px auto}
+.pattern-table caption,.evidence-table caption{text-align:left;font:600 13px/1.6 'Segoe UI',sans-serif;margin-bottom:8px}
+.pattern-table th,.pattern-table td{border-bottom:1px solid #d7dfc9;padding:8px;text-align:left}
+.pattern-table th{background:#f0f5e7}
+.pattern-table .condition-true td{background:#e5f1da}
+.bitcoin-laboratory{background:#fcfbf5;border:1px solid #ced6bf;border-radius:13px;padding:22px;margin-top:30px}
+.bitcoin-laboratory h3{margin-top:4px}
+.lab-editor label{font-size:14px}
+.lab-editor>div,.lab-representations>div{min-width:0}
+.lab-editor>div>select{margin-left:10px;font-size:14px}
+.bitcoin-laboratory fieldset{min-width:0;border:1px solid #c4d2b6;border-radius:9px;padding:12px;margin:15px 0}
+.bitcoin-laboratory legend{font:600 13px/1.5 'Segoe UI',sans-serif;padding:0 5px}
+.address-choices{display:flex;flex-wrap:wrap;gap:7px}
+.address-choices button{font-size:13px;padding:7px 10px}
+#btc-exchanges button[aria-pressed=true]{background:#2d4636;color:#fffdf9}
+#btc-outputs button[aria-pressed=true]{background:#e2edf8;border-color:#5083a5}
+.reuse-option{display:flex;gap:9px;align-items:center}
+#btc-draft{font-size:1rem;overflow-wrap:anywhere}
+#btc-message{font-size:13px;color:#7c4025;min-height:26px}
+.lab-representations{margin-top:20px}
+.lab-representations svg{max-height:510px}
+.lab-matrices{margin-top:20px}
+.lab-matrices figure{min-width:0;padding:12px;background:#edf5fc;border:1px solid #b7cbdd;border-radius:10px}
+.lab-matrices h4{margin:0 0 10px;font-size:1rem}
+.lab-matrices table{border-spacing:2px;font-size:13px}
+.lab-matrices th{padding:3px 4px}
+.lab-matrices td button{font-size:13px;min-width:28px;padding:4px 6px}
+.lab-matrices .selected-cell button{outline:2px solid #ac653b;background:#ffe0bd}
+.directed-link{transition:opacity .2s}
+.directed-link.future-phase{opacity:.16}
+.directed-link.current-phase path{stroke-width:4px}
+.directed-link.selected-incidence path{stroke:#a14e24;stroke-width:5px}
+#btc-stats,#btc-detection,#btc-experiment{font-size:13px;line-height:1.8}
+#btc-detection{margin:14px 0}
+.bitcoin-evidence{border-top:1px solid var(--line);margin-top:28px;padding-top:8px}
+.evidence-table{width:100%;border-spacing:0;font-size:14px}
+.evidence-table th,.evidence-table td{text-align:left;vertical-align:top;padding:10px;border-bottom:1px solid #d7dfc9}
+.evidence-table thead{background:#eef3e5}
+.bitcoin-study .derivation{background:#f1f7e8;padding:16px;border-radius:10px}
+.enlarge-vector{font-size:12px;margin-top:8px;padding:5px 9px}
+.figure-zoom{max-width:1000px;width:calc(100% - 24px);max-height:90vh;border:1px solid #9baf91;border-radius:13px;padding:16px;background:#fffdf9;color:var(--ink)}
+.figure-zoom::backdrop{background:#263c32a8}
+.figure-zoom form{display:flex;justify-content:flex-end}
+.figure-zoom>p{font-size:14px;margin:10px 0}
+.figure-zoom>label{display:flex;align-items:center;gap:12px;font-size:13px}
+.figure-zoom-body{overflow:auto;max-height:65vh;margin-top:14px;border:1px solid #d9dfcf;border-radius:8px}
+.figure-zoom-body .research-svg{max-width:none;height:auto;border:0}
+@media(max-width:1100px){.rep-panels{grid-template-columns:repeat(2,minmax(0,1fr))}.rep-panel{grid-template-rows:44px 240px 1fr}.rep-panel figcaption{font-size:13px}.research-evidence{grid-template-columns:1fr}.research-evidence>span{padding:10px 13px}#bitcoin-fig3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:720px){.rep-panels{gap:10px}.rep-panel{padding:9px}.source-figure-pair svg{height:auto}.bitcoin-verbatim{padding:15px 17px;font-size:20px}.bitcoin-laboratory{padding:15px}.bitcoin-study .two{grid-template-columns:1fr}.lab-matrices th{padding:2px 3px}.pattern-table{font-size:13px}.pattern-table td,.pattern-table th{padding:6px}.bitcoin-bridge svg{height:280px}}
+@media(max-width:560px){.rep-panels{grid-template-columns:1fr}.rep-panel{height:420px;grid-template-rows:44px 240px 1fr}.rep-panel .rep-figure svg{max-width:300px}.source-figure-pair .directed-svg text,.source-figure-wide .directed-svg text{font-size:23px}.source-figure-pair .directed-svg .quantity,.source-figure-wide .directed-svg .quantity{font-size:18px}.research-svg .atom-label{font-size:16px}#bitcoin-fig3{grid-template-columns:1fr}.graph-motif-card{max-width:330px;width:100%;margin:auto}.graph-motif-card svg{height:300px}.bitcoin-nav{display:grid;grid-template-columns:1fr 1fr;font-size:12px}.paper-citation{padding:14px}.paper-citation h3{font-size:1.25rem}.evidence-table{font-size:13px}.evidence-table th,.evidence-table td{padding:7px}.lab-matrices{gap:10px}}
+@media(prefers-reduced-motion:reduce){.directed-link{transition:none}}

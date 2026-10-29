@@ -1,0 +1,62 @@
+#april-snapshot{
+      --bg: #f7f4ee;
+      --card: #fffdf9;
+      --ink: #1b1b1b;
+      --muted: #666;
+      --line: #ddd5c7;
+      --accent: #1d4f91;
+      --note: #f5efe3;
+      --warn: #fbf6ea;
+      --shadow: 0 14px 32px rgba(0,0,0,0.06);
+      --radius: 22px;
+    }
+#april-snapshot *{ box-sizing: border-box; }
+#april-snapshot{ scroll-behavior: smooth; }
+#april-snapshot{ margin: 0; background: var(--bg); color: var(--ink); font-family: "Inter", "Segoe UI", Arial, sans-serif; line-height: 1.72; }
+#april-snapshot .page{ max-width: 1120px; margin: 0 auto; padding: 34px 20px 56px; }
+#april-snapshot .card{ background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 34px 34px 30px; }
+#april-snapshot h1,#april-snapshot h2,#april-snapshot h3{ font-family: "Cormorant Garamond", Garamond, Georgia, serif; line-height: 1.08; margin: 0 0 12px; color: #151515; }
+#april-snapshot h1{ font-size: 3.05rem; margin-bottom: 14px; }
+#april-snapshot h2{ font-size: 2rem; margin-top: 34px; padding-bottom: 8px; border-bottom: 1px solid var(--line); }
+#april-snapshot h3{ font-size: 1.58rem; margin-top: 8px; }
+#april-snapshot p{ margin: 0 0 14px; font-size: 1.02rem; }
+#april-snapshot a{ color: var(--accent); text-decoration: none; }
+#april-snapshot a:hover{ text-decoration: underline; }
+#april-snapshot .lead{ font-size: 1.1rem; }
+#april-snapshot .panel{ border: 1px solid var(--line); border-radius: 16px; padding: 16px 18px; margin: 18px 0; background: #fcfaf6; }
+#april-snapshot .note{ background: var(--note); border-left: 4px solid var(--accent); }
+#april-snapshot .warn{ background: var(--warn); border-left: 4px solid #b7791f; }
+#april-snapshot .mini-grid{ display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin: 18px 0 22px; }
+#april-snapshot .mini-box{ background: #fcfaf6; border: 1px solid var(--line); border-radius: 16px; padding: 14px 16px; }
+#april-snapshot .mini-box .k{ font-size: 0.88rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; font-weight: 700; }
+#april-snapshot .mini-box .v{ font-size: 1rem; font-weight: 600; }
+#april-snapshot ul{ margin: 0 0 14px 20px; padding: 0; }
+#april-snapshot li{ margin-bottom: 8px; }
+#april-snapshot .tight-list li{ margin-bottom: 5px; }
+#april-snapshot .toc{ columns: 2; column-gap: 40px; margin-top: 10px; }
+#april-snapshot .toc li{ break-inside: avoid; margin-bottom: 7px; }
+#april-snapshot .center-figure{ margin: 16px 0 18px; }
+#april-snapshot .center-figure img{ width: 100%; border-radius: 14px; display: block; background: #eee8de; border: 1px solid var(--line); }
+#april-snapshot .figcaption{ margin-top: 10px; color: var(--muted); font-size: 0.95rem; }
+#april-snapshot .small,#april-snapshot .small-intro{ color: var(--muted); }
+#april-snapshot .example-card{ margin-top: 28px; padding-top: 6px; }
+#april-snapshot code{ font-family: "Source Code Pro", Consolas, monospace; font-size: 0.92rem; background: #f3efe8; padding: 2px 6px; border-radius: 8px; }
+#april-snapshot .footer-nav{ margin-top: 22px; text-align: center; color: var(--muted); font-size: 0.98rem; }
+#april-snapshot .footer-nav a{ font-weight: 600; }
+#april-snapshot .sep{ margin: 0 8px; color: #8a8a8a; }
+@media (max-width: 860px){#april-snapshot .card{ padding: 24px 18px; }
+#april-snapshot h1{ font-size: 2.35rem; }
+#april-snapshot h2{ font-size: 1.65rem; }
+#april-snapshot .mini-grid,#april-snapshot .toc{ grid-template-columns: 1fr; columns: 1; }}
+/* Reading-view adaptations; the exact original CSS is retained in the source download. */
+#april-snapshot{min-width:0;margin-top:18px}
+#april-snapshot .page{padding:0;max-width:none}
+#april-snapshot .page>.card{padding:14px 0;border:0;box-shadow:none}
+#april-snapshot .toc{display:block;border:0;padding:0;margin:10px 0 14px 20px;columns:2;column-gap:30px}
+#april-snapshot .example-card{border-top:0}
+#april-snapshot .april-math,#april-snapshot .april-equation{font-family:Cambria,"Times New Roman",serif}
+#april-snapshot .april-equation{margin:12px 0;line-height:1.8;overflow-wrap:break-word}
+#april-snapshot .april-math{overflow-wrap:break-word}
+#april-snapshot .center-figure img{height:auto}
+#april-snapshot .figcaption{width:auto;max-width:none}
+@media(max-width:720px){#april-snapshot .toc{columns:1}#april-snapshot .panel{padding:13px}#april-snapshot .card{padding:0}}

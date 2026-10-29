@@ -1,0 +1,55 @@
+ M 2026-04-21-hypergraphs-visualization.html
+ D 2026-04-21-hypergraphs-visualization/preview-1440.jpg
+ D 2026-04-21-hypergraphs-visualization/preview-390.jpg
+ D 2026-04-21-hypergraphs-visualization/preview-768.jpg
+ D 2026-04-21-hypergraphs-visualization/preview-builder.jpg
+ D 2026-04-21-hypergraphs-visualization/preview-colouring.jpg
+ D 2026-04-21-hypergraphs-visualization/preview-sperner.jpg
+ D 2026-04-21-hypergraphs-visualization/refinement-counterexample.png
+ D 2026-04-21-hypergraphs-visualization/refinement-examples.png
+ D 2026-04-21-hypergraphs-visualization/refinement-incidence-1440.png
+ D 2026-04-21-hypergraphs-visualization/refinement-incidence-390.png
+ D 2026-04-21-hypergraphs-visualization/refinement-incidence-768.png
+ D 2026-04-21-hypergraphs-visualization/refinement-preview-1440.jpg
+ D 2026-04-21-hypergraphs-visualization/refinement-preview-390.jpg
+ D 2026-04-21-hypergraphs-visualization/refinement-preview-768.jpg
+ D 2026-04-21-hypergraphs-visualization/refinement-preview-builder.jpg
+ D 2026-04-21-hypergraphs-visualization/refinement-preview-colouring.jpg
+ D 2026-04-21-hypergraphs-visualization/refinement-preview-sperner.jpg
+ D 2026-04-21-hypergraphs-visualization/refinement-story-1440.png
+ D 2026-04-21-hypergraphs-visualization/refinement-story-390.png
+ D 2026-04-21-hypergraphs-visualization/refinement-story-768.png
+ D 2026-04-21-hypergraphs-visualization/refinement-story-desktop.png
+ M 2026-04-21-hypergraphs-visualization/validate_browser.cjs
+ M 2026-04-21-hypergraphs-visualization/validate_refinement.cjs
+ M 2026-04-21-hypergraphs-visualization/validate_site.py
+?? ../2026-10-21-causal-inference-three-datasets-three-econometric-techniques/
+?? ../gdp-seasonality-project/
+?? 2026-04-21-hypergraphs-visualization/CLEANUP_INVENTORY.md
+?? 2026-04-21-hypergraphs-visualization/PRESENTATION_REFINEMENT_REPORT.md
+?? 2026-04-21-hypergraphs-visualization/RESEARCH_EXTENSION_REPORT.md
+?? 2026-04-21-hypergraphs-visualization/SOURCE_INVENTORY.md
+?? 2026-04-21-hypergraphs-visualization/Verbatim/
+?? 2026-04-21-hypergraphs-visualization/archive/
+?? 2026-04-21-hypergraphs-visualization/bitcoin.js
+?? 2026-04-21-hypergraphs-visualization/cleanup-inventory.json
+?? 2026-04-21-hypergraphs-visualization/hypergraph_bitcoin.pdf
+?? 2026-04-21-hypergraphs-visualization/prepare_archive.py
+?? 2026-04-21-hypergraphs-visualization/presentation.css
+?? 2026-04-21-hypergraphs-visualization/presentation.js
+?? 2026-04-21-hypergraphs-visualization/qa/
+?? 2026-04-21-hypergraphs-visualization/refine_presentation.py
+?? 2026-04-21-hypergraphs-visualization/representations.js
+?? 2026-04-21-hypergraphs-visualization/research-math.js
+?? 2026-04-21-hypergraphs-visualization/research-svg.js
+?? 2026-04-21-hypergraphs-visualization/research.css
+?? 2026-04-21-hypergraphs-visualization/source-inventory.json
+?? 2026-04-21-hypergraphs-visualization/synthetic-transactions.json
+?? 2026-04-21-hypergraphs-visualization/uniform-math.js
+?? 2026-04-21-hypergraphs-visualization/validate_presentation.cjs
+?? 2026-04-21-hypergraphs-visualization/validate_presentation_scope.py
+?? 2026-04-21-hypergraphs-visualization/validate_research.cjs
+?? 2026-04-21-hypergraphs-visualization/validate_research_browser.cjs
+?? ../input-output-tables/
+?? ../machine-learning/
+?? ../mathematics/

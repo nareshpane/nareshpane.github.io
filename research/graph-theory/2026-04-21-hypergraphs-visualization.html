@@ -13,6 +13,15 @@
 <script defer src="2026-04-21-hypergraphs-visualization/intro.js"></script>
 <script defer src="2026-04-21-hypergraphs-visualization/tutorial.js">
 </script>
+<link rel="stylesheet" href="2026-04-21-hypergraphs-visualization/research.css">
+<script defer src="2026-04-21-hypergraphs-visualization/research-math.js"></script>
+<script defer src="2026-04-21-hypergraphs-visualization/research-svg.js"></script>
+<script defer src="2026-04-21-hypergraphs-visualization/representations.js"></script>
+<script defer src="2026-04-21-hypergraphs-visualization/bitcoin.js"></script>
+<link rel="stylesheet" href="2026-04-21-hypergraphs-visualization/archive/april-21-2026.css">
+<link rel="stylesheet" href="2026-04-21-hypergraphs-visualization/presentation.css">
+<script defer src="2026-04-21-hypergraphs-visualization/uniform-math.js"></script>
+<script defer src="2026-04-21-hypergraphs-visualization/presentation.js"></script>
 </head>
 <body>
 <main id="top">
@@ -20,8 +29,8 @@
 <div class="hero">
 <div>
 <div class="eyebrow">Graph theory · an interactive research tutorial</div>
-<h1>Hypergraphs: From Intuitive Visualizations to Combinatorial Theorems</h1>
-<p class="subtitle">Understanding higher-order relationships through set systems, incidence structures, mathematical proofs, animated constructions, and computational experiments.</p>
+<h1 class="hypergraph-main-title">Hypergraphs: From Intuitive Visualizations to Combinatorial Theorems</h1>
+<p class="subtitle study-subtitle">An expanded study retaining the <a href="#original-april-2026">April 21, 2026 original exploration</a> and investigating <a href="#bitcoin-replication">Exchange Pattern Mining in the Bitcoin Transaction Directed Hypergraph</a>.</p>
 </div>
 <aside class="meta" aria-label="Research metadata">
 <div>
@@ -32,7 +41,7 @@
 <div>
 <span>🛠️</span>
 <b class="modified">Modified:</b>
-<span>October 27, 2026</span>
+<span>October 28, 2026</span>
 </div>
 <div>
 <span>💻</span>
@@ -51,25 +60,19 @@
 </div>
 </aside>
 </div>
-<nav class="toc" aria-label="Tutorial contents">
-<a href="#ordinary">01 · Beyond pairs</a>
-<a href="#builder">02 · Build a hypergraph</a>
-<a href="#definitions">03 · Definitions</a>
-<a href="#incidence">04 · Count incidences</a>
-<a href="#representations">05 · Representations</a>
-<a href="#uniform">06 · Uniform families</a>
-<a href="#intersections">07 · Intersections</a>
-<a href="#duality">08 · Duality</a>
-<a href="#paths">09 · Paths &amp; cycles</a>
-<a href="#optimization">10 · Match &amp; cover</a>
-<a href="#colouring">11 · Property B</a>
-<a href="#sperner">12 · Sperner’s theorem</a>
-<a href="#ekr">13 · Erdős–Ko–Rado</a>
-<a href="#helly">14 · Interval Helly</a>
-<a href="#random">15 · Random hypergraphs</a>
-<a href="#applications">16 · Applications</a>
-</nav>
 </header>
+<div id="nav-sentinel" aria-hidden="true"></div>
+<nav id="reading-nav" class="reading-nav" aria-label="Research section navigation">
+<a class="reading-brand" href="#top">Hypergraphs</a>
+<a id="current-section" class="current-section" href="#ordinary">01 · Beyond pairs</a>
+<details id="section-menu" class="section-menu"><summary>Sections</summary><div class="section-links">
+<div><strong>Foundations</strong><a href="#ordinary">01 · Beyond pairs</a><a href="#builder">02 · Build a hypergraph</a><a href="#definitions">03 · Definitions</a><a href="#incidence">04 · Count incidences</a></div>
+<div><strong>Representations and combinatorics</strong><a href="#four-representations">Twelve views · compare</a><a href="#representations">05 · Representations</a><a href="#uniform">06 · Uniform families</a><a href="#uniform-introduction">06A · Uniform hypergraphs</a><a href="#intersections">07 · Intersections</a><a href="#duality">08 · Duality</a><a href="#paths">09 · Paths &amp; cycles</a><a href="#optimization">10 · Match &amp; cover</a></div>
+<div><strong>Theorems and applications</strong><a href="#colouring">11 · Property B</a><a href="#sperner">12 · Sperner’s theorem</a><a href="#ekr">13 · Erdős–Ko–Rado</a><a href="#helly">14 · Interval Helly</a><a href="#random">15 · Random hypergraphs</a><a href="#applications">16 · Applications</a></div>
+<div><strong>Original April 2026 study</strong><a href="#original-april-2026">April 21 · Historical snapshot</a></div>
+<div><strong>Bitcoin research</strong><a href="#bitcoin-replication">Bitcoin · Research introduction</a><a href="#bitcoin-source-1">Bitcoin · 1 · Transactions</a><a href="#bitcoin-source-2">Bitcoin · 2 · Directed hypergraphs</a><a href="#bitcoin-source-3">Bitcoin · 3 · Motifs</a><a href="#bitcoin-source-4">Bitcoin · 4 · Short thick bands</a><a href="#bitcoin-lab">Bitcoin · Transaction laboratory</a><a href="#bitcoin-evidence">Bitcoin · Evidence &amp; limits</a><a href="#references">References</a></div>
+</div></details><progress id="reading-progress" max="100" value="0" aria-label="Page reading progress"></progress>
+</nav>
 <noscript>The definitions, proofs, and original gallery are readable without JavaScript. Enable JavaScript for the interactive SVG constructions and computed examples.</noscript>
 <section class="lesson" id="ordinary">
 <div class="eyebrow">01 · Begin with a picture</div>
@@ -191,6 +194,14 @@
 </div>
 <p class="limitation">An indexed-edge model permits distinct edge labels with identical members. This extension matters in duality. The builder rejects duplicates. Create {A}, then {A,B}, to see a singleton and nested edges; neither violates our simple convention.</p>
 <div class="example box"><strong>A subhypergraph is not a cropped picture.</strong> With V′={A,B,C,D}, the original edges wholly contained in V′ are e₁={A,B,C} and e₂={B,D}. Our induced subhypergraph discards e₃ and e₄. Intersecting every edge with V′ instead would produce a different set system, including {C,D} and {A}.</div>
+<div id="four-representations" class="representation-study">
+<h3>Four Representations of the Same Hypergraph</h3>
+<p class="subtitle">From enclosed regions and parallel membership diagrams to Venn representations and ordinary graph projections.</p>
+<p>Read across a row to compare one object in four visual languages. The first three views retain the edge memberships. The fourth retains only pairs that occur together in at least one edge. Each row has its own selection controls.</p>
+<div id="representation-gallery" aria-label="Three hypergraphs in four representations each"></div>
+<div class="definition box"><strong>Read the marks precisely.</strong> A PAOH dot records membership; a vertical line passing a row without a dot does not. This is a static adaptation of <a href="https://doi.org/10.1109/TVCG.2019.2933196">Parallel Aggregated Ordered Hypergraph visualization</a>, with no time axis. In the Euler views an ∅ label denotes an empty region; the third row instead partitions the vertices into exact membership atoms.</div>
+<p class="limitation">The 2-section is a projection. In H₃, selecting e₂ shows that its only pair is already supplied by e₁. The singleton e₄ leaves no pair at all: v₄, which belongs to an edge, and v₇, which belongs to none, both appear isolated in the ordinary graph. The projection cannot distinguish those cases. In H₂ every two edges meet but their three-way intersection is empty.</p>
+</div>
 </section>
 <section class="lesson" id="incidence">
 <div class="eyebrow">04 · One incidence, two counts</div>
@@ -287,6 +298,19 @@
 <div class="example box"><strong>Count ordered choices, then remove their order.</strong><div class="math-lines"><span>C(5,3)=(5·4·3)/(3·2·1)=10.</span><span>deg(1)=C(4,2)=(4·3)/(2·1)=6.</span><span>5·6=3·10=30 incidences.</span></div><p>Every triple appears 3! times among ordered selections. Fixing vertex 1 leaves two places to fill from four others. These degree formulas apply to the <em>complete</em> uniform family; an arbitrary 3-uniform family may have unequal degrees.</p></div>
 </div>
 </div>
+</section>
+<section class="lesson" id="uniform-introduction">
+<div class="eyebrow">06A · Uniform Hypergraphs</div>
+<h2>When Every Hyperedge Has the Same Size</h2>
+<p class="subtitle">From pairwise relationships to uniform three-member and four-member groups.</p>
+<p>A finite hypergraph <span class="math">H=(V,ℰ)</span> is <em>k-uniform</em> when every hyperedge contains exactly k vertices:</p>
+<div class="formula">|e|=k for every e∈ℰ.</div>
+<p>Uniformity concerns the number of vertices in each hyperedge, not the number of hyperedges or the number incident to each vertex. In particular, 3-uniform does not mean degree three. The complete-uniform explorer in Section 06 considers all k-subsets; these smaller families need not be complete.</p>
+<div class="formula">Σ<sub>e∈ℰ</sub>|e| = k|ℰ| = Σ<sub>v∈V</sub>deg(v).</div>
+<p>For a simple k-uniform hypergraph on n vertices, <span class="math">|ℰ|≤C(n,k)=n!/[k!(n−k)!]</span> (1≤k≤n). Equality holds for the complete k-uniform hypergraph.</p>
+<div id="uniform-cards" class="uniform-cards" aria-label="Three exact uniform hypergraph examples"></div>
+<div id="uniform-totals" class="uniform-totals" aria-label="Computed uniform incidence totals"></div>
+<p class="caption">Each family has three hyperedges on the same universe V={A,B,C,D,E,F}. Select an edge label to trace precisely its incidences; select it again to show the whole family. Coloured squares in the 3- and 4-uniform diagrams are edge hubs, not additional vertices.</p>
 </section>
 <section class="lesson" id="intersections">
 <div class="eyebrow">07 · Overlap has several meanings</div>
@@ -570,186 +594,331 @@
 <h3>From pictures to theorems</h3>
 <p>Incidence counting changes perspective; duality exchanges roles. Matchings compare packing and covering. Sperner and Erdős–Ko–Rado impose different set constraints; interval Helly adds geometry. Identify the exact assumption before interpreting a drawing or computation.</p>
 </section>
-<section class="lesson" id="gallery">
-<div class="eyebrow">Preserved material · ten original examples</div>
-<h2>A visual reference gallery</h2>
-<p>All ten original PNGs and their Python generator are retained. They progress from one pair to mixed families with singletons, isolation, and dense overlap. Each compares regions, bipartite incidence, vertical incidence, and the 2-section.</p>
-<p class="limitation">The original region panels use smoothed hulls: enclosure may include a nonmember or miss a boundary point. Their set definitions and incidence panels are authoritative. New figures use explicit memberships. Each gallery example is a separate hypergraph, rather than an edit of the running example.</p>
-<details>
-<summary>Open ten original examples and their exact set descriptions</summary>
+<!-- ARCHIVE_SNAPSHOT_START -->
+<section class="lesson archive-section" id="gallery">
+<div class="eyebrow">Research history · recovered source</div>
+<details id="original-april-2026">
+<summary><h2>Original Hypergraph Exploration — April 21, 2026</h2></summary>
+<div class="archive-provenance">
+<p>An archived presentation of the original study, preserving its mathematical explanations, visual demonstrations, and model-era approach. Recovered from Git commit <a href="https://github.com/nareshpane/nareshpane.github.io/commit/859ef8a7e2899211e1b96c52455999557e6e993c">859ef8a, April 21, 2026</a>.</p>
+<p>The recovered page contains ten static examples, in-page navigation, and mathematical typesetting. It has no animated builder and records no model name or reasoning configuration. Its original wording and limitations are retained here. This offline reading view updates asset paths, scopes the original styling, and renders its simple set formulas in HTML; the preserved source download is exact.</p>
+<p><a href="2026-04-21-hypergraphs-visualization/archive/april-21-2026-original.html.txt" download>Download the unchanged April 21 HTML source</a> · <a href="2026-04-21-hypergraphs-visualization/archive/provenance.json">Source provenance</a> · <a href="2026-04-21-hypergraphs-visualization/hypergraph_gallery_animation(3).py">Original figure generator</a></p>
+</div>
+<div id="april-snapshot">
+<div class="page">
+    <section class="card" id="april-top">
+      <h1>Hypergraph Demo</h1>
+      <p class="lead">
+        A hypergraph is a generalization of an ordinary graph. In a graph, every edge joins exactly two vertices.
+        In a hypergraph, a single hyperedge may join two vertices, three vertices, four vertices, or more.
+      </p>
+
+      <div class="panel note">
+        <strong>Analytical definition.</strong><br/>
+        A hypergraph is a pair <span class="april-math">H=(X,E)</span> where <span class="april-math">X</span> is a finite vertex set and <span class="april-math">E</span> is a family of subsets of <span class="april-math">X</span>.
+        Each element of <span class="april-math">E</span> is called a <em>hyperedge</em>.
+        Thus ordinary graphs are the special case in which every hyperedge has size <span class="april-math">2</span>.
+      </div>
+
+      <div class="panel warn">
+        <strong>Algebraic notation.</strong><br/>
+        If <span class="april-math">X={v<sub>1</sub>,v<sub>2</sub>,v<sub>3</sub>,v<sub>4</sub>}</span> and <span class="april-math">E={e<sub>1</sub>,e<sub>2</sub>}</span> with
+        <span class="april-math">e<sub>1</sub>={v<sub>1</sub>,v<sub>2</sub>,v<sub>3</sub>}</span> and <span class="april-math">e<sub>2</sub>={v<sub>3</sub>,v<sub>4</sub>}</span>, then the same hypergraph may also be written as
+        <div class="april-equation">H=(X,E), <wbr> · X={v<sub>1</sub>,v<sub>2</sub>,v<sub>3</sub>,v<sub>4</sub>}, <wbr> · E={{v<sub>1</sub>,v<sub>2</sub>,v<sub>3</sub>},{v<sub>3</sub>,v<sub>4</sub>}}.</div>
+      </div>
+
+      <div class="mini-grid">
+        <div class="mini-box">
+          <div class="k">How to read each PNG</div>
+          <div class="v">Each picture shows one hypergraph in four views, ending with a simple-graph translation.</div>
+        </div>
+        <div class="mini-box">
+          <div class="k">Simple-graph translation</div>
+          <div class="v">The last panel uses the 2-section: vertices are adjacent when they lie in a common hyperedge.</div>
+        </div>
+      </div>
+
+      <h2>How the examples are organized</h2>
+      <p>
+        The ten PNGs below are ordered from simpler to more structurally involved examples.
+        Early examples are graph-like, while later ones show larger hyperedges, overlaps, singleton edges, and isolated vertices.
+      </p>
+      <ul class="tight-list">
+        <li>The folder placeholder used throughout is <code>hypergraph_outputs/</code>.</li>
+        <li>Each example lists the hypergraph algebraically before showing the PNG path.</li>
+        <li>The captions are intentionally short so the page stays clean and easy to scan.</li>
+      </ul>
+
+      <h2>Contents</h2>
+      <ul class="toc">
+        <li><a href="#sec01">1. Single Pair</a></li>
+<li><a href="#sec02">2. Two-Pair Chain</a></li>
+<li><a href="#sec03">3. First True Hyperedge</a></li>
+<li><a href="#sec04">4. Overlap and Singleton</a></li>
+<li><a href="#sec05">5. Two Overlapping Triples</a></li>
+<li><a href="#sec06">6. A Size-Four Hyperedge</a></li>
+<li><a href="#sec07">7. Three-Way Overlap</a></li>
+<li><a href="#sec08">8. Mixed Sizes with an Isolated Vertex</a></li>
+<li><a href="#sec09">9. Dense Overlap</a></li>
+<li><a href="#sec10">10. Largest Mixed Example</a></li>
+      </ul>
+
+      <h2>Ten hypergraph examples</h2>
+
 <section class="example-card" id="sec01">
   <h3>1. Single Pair</h3>
-  <p class="small-intro">
-<strong>Algebraic example.</strong> X={v1, v2, v3} and E={e1}, where e1={v1, v2}.</p>
+  <p class="small-intro"><strong>Algebraic example.</strong> <span class="april-math">X={v1, v2, v3}</span> and <span class="april-math">E={e1}</span>, where <span class="april-math">e1={v1, v2}</span>.</p>
   <div class="panel note">
-    <strong>Set-family form.</strong>
-<br/>
-    H=(X,E),  ·  X={v1, v2, v3},  ·  E={{v1, v2}}.
+    <strong>Set-family form.</strong><br/>
+    <div class="april-equation">H=(X,E), <wbr> · X={v1, v2, v3}, <wbr> · E={{v1, v2}}.</div>
   </div>
   <p>One ordinary edge on three vertices.</p>
   <div class="center-figure">
-    <img loading="lazy" src="2026-04-21-hypergraphs-visualization/hypergraph_01_single_pair.png" alt="Single Pair hypergraph figure"/>
-    <div class="figcaption">
-<strong>Original gallery.</strong> One ordinary edge on three vertices. File path: <code>2026-04-21-hypergraphs-visualization/hypergraph_01_single_pair.png</code>.</div>
+    <img src="2026-04-21-hypergraphs-visualization/hypergraph_01_single_pair.png" loading="lazy" width="2640" height="2640" alt="Single Pair hypergraph figure"/>
+    <div class="figcaption"><strong>PNG placeholder.</strong> One ordinary edge on three vertices. File path: <code>hypergraph_outputs/hypergraph_01_single_pair.png</code>.</div>
   </div>
 </section>
 
 <section class="example-card" id="sec02">
   <h3>2. Two-Pair Chain</h3>
-  <p class="small-intro">
-<strong>Algebraic example.</strong> X={v1, v2, v3, v4} and E={e1, e2}, where e1={v1, v2};  e2={v2, v3}.</p>
+  <p class="small-intro"><strong>Algebraic example.</strong> <span class="april-math">X={v1, v2, v3, v4}</span> and <span class="april-math">E={e1, e2}</span>, where <span class="april-math">e1={v1, v2};  e2={v2, v3}</span>.</p>
   <div class="panel note">
-    <strong>Set-family form.</strong>
-<br/>
-    H=(X,E),  ·  X={v1, v2, v3, v4},  ·  E={{v1, v2}, {v2, v3}}.
+    <strong>Set-family form.</strong><br/>
+    <div class="april-equation">H=(X,E), <wbr> · X={v1, v2, v3, v4}, <wbr> · E={{v1, v2}, {v2, v3}}.</div>
   </div>
   <p>Two size-2 edges sharing one vertex.</p>
   <div class="center-figure">
-    <img loading="lazy" src="2026-04-21-hypergraphs-visualization/hypergraph_02_two_pairs_chain.png" alt="Two-Pair Chain hypergraph figure"/>
-    <div class="figcaption">
-<strong>Original gallery.</strong> Two size-2 edges sharing one vertex. File path: <code>2026-04-21-hypergraphs-visualization/hypergraph_02_two_pairs_chain.png</code>.</div>
+    <img src="2026-04-21-hypergraphs-visualization/hypergraph_02_two_pairs_chain.png" loading="lazy" width="2640" height="2640" alt="Two-Pair Chain hypergraph figure"/>
+    <div class="figcaption"><strong>PNG placeholder.</strong> Two size-2 edges sharing one vertex. File path: <code>hypergraph_outputs/hypergraph_02_two_pairs_chain.png</code>.</div>
   </div>
 </section>
 
 <section class="example-card" id="sec03">
   <h3>3. First True Hyperedge</h3>
-  <p class="small-intro">
-<strong>Algebraic example.</strong> X={v1, v2, v3, v4} and E={e1, e2}, where e1={v1, v2, v3};  e2={v3, v4}.</p>
+  <p class="small-intro"><strong>Algebraic example.</strong> <span class="april-math">X={v1, v2, v3, v4}</span> and <span class="april-math">E={e1, e2}</span>, where <span class="april-math">e1={v1, v2, v3};  e2={v3, v4}</span>.</p>
   <div class="panel note">
-    <strong>Set-family form.</strong>
-<br/>
-    H=(X,E),  ·  X={v1, v2, v3, v4},  ·  E={{v1, v2, v3}, {v3, v4}}.
+    <strong>Set-family form.</strong><br/>
+    <div class="april-equation">H=(X,E), <wbr> · X={v1, v2, v3, v4}, <wbr> · E={{v1, v2, v3}, {v3, v4}}.</div>
   </div>
   <p>A three-vertex hyperedge appears for the first time.</p>
   <div class="center-figure">
-    <img loading="lazy" src="2026-04-21-hypergraphs-visualization/hypergraph_03_first_true_hyperedge.png" alt="First True Hyperedge hypergraph figure"/>
-    <div class="figcaption">
-<strong>Original gallery.</strong> A three-vertex hyperedge appears for the first time. File path: <code>2026-04-21-hypergraphs-visualization/hypergraph_03_first_true_hyperedge.png</code>.</div>
+    <img src="2026-04-21-hypergraphs-visualization/hypergraph_03_first_true_hyperedge.png" loading="lazy" width="2640" height="2640" alt="First True Hyperedge hypergraph figure"/>
+    <div class="figcaption"><strong>PNG placeholder.</strong> A three-vertex hyperedge appears for the first time. File path: <code>hypergraph_outputs/hypergraph_03_first_true_hyperedge.png</code>.</div>
   </div>
 </section>
 
 <section class="example-card" id="sec04">
   <h3>4. Overlap and Singleton</h3>
-  <p class="small-intro">
-<strong>Algebraic example.</strong> X={v1, v2, v3, v4, v5} and E={e1, e2, e3}, where e1={v1, v2, v3};  e2={v3, v4};  e3={v5}.</p>
+  <p class="small-intro"><strong>Algebraic example.</strong> <span class="april-math">X={v1, v2, v3, v4, v5}</span> and <span class="april-math">E={e1, e2, e3}</span>, where <span class="april-math">e1={v1, v2, v3};  e2={v3, v4};  e3={v5}</span>.</p>
   <div class="panel note">
-    <strong>Set-family form.</strong>
-<br/>
-    H=(X,E),  ·  X={v1, v2, v3, v4, v5},  ·  E={{v1, v2, v3}, {v3, v4}, {v5}}.
+    <strong>Set-family form.</strong><br/>
+    <div class="april-equation">H=(X,E), <wbr> · X={v1, v2, v3, v4, v5}, <wbr> · E={{v1, v2, v3}, {v3, v4}, {v5}}.</div>
   </div>
   <p>One overlap at v3 and one singleton edge.</p>
   <div class="center-figure">
-    <img loading="lazy" src="2026-04-21-hypergraphs-visualization/hypergraph_04_overlap_and_singleton.png" alt="Overlap and Singleton hypergraph figure"/>
-    <div class="figcaption">
-<strong>Original gallery.</strong> One overlap at v3 and one singleton edge. File path: <code>2026-04-21-hypergraphs-visualization/hypergraph_04_overlap_and_singleton.png</code>.</div>
+    <img src="2026-04-21-hypergraphs-visualization/hypergraph_04_overlap_and_singleton.png" loading="lazy" width="2640" height="2640" alt="Overlap and Singleton hypergraph figure"/>
+    <div class="figcaption"><strong>PNG placeholder.</strong> One overlap at v3 and one singleton edge. File path: <code>hypergraph_outputs/hypergraph_04_overlap_and_singleton.png</code>.</div>
   </div>
 </section>
 
 <section class="example-card" id="sec05">
   <h3>5. Two Overlapping Triples</h3>
-  <p class="small-intro">
-<strong>Algebraic example.</strong> X={v1, v2, v3, v4, v5} and E={e1, e2, e3}, where e1={v1, v2, v3};  e2={v2, v3, v4};  e3={v4, v5}.</p>
+  <p class="small-intro"><strong>Algebraic example.</strong> <span class="april-math">X={v1, v2, v3, v4, v5}</span> and <span class="april-math">E={e1, e2, e3}</span>, where <span class="april-math">e1={v1, v2, v3};  e2={v2, v3, v4};  e3={v4, v5}</span>.</p>
   <div class="panel note">
-    <strong>Set-family form.</strong>
-<br/>
-    H=(X,E),  ·  X={v1, v2, v3, v4, v5},  ·  E={{v1, v2, v3}, {v2, v3, v4}, {v4, v5}}.
+    <strong>Set-family form.</strong><br/>
+    <div class="april-equation">H=(X,E), <wbr> · X={v1, v2, v3, v4, v5}, <wbr> · E={{v1, v2, v3}, {v2, v3, v4}, {v4, v5}}.</div>
   </div>
   <p>Two 3-edges overlap in two vertices.</p>
   <div class="center-figure">
-    <img loading="lazy" src="2026-04-21-hypergraphs-visualization/hypergraph_05_two_overlapping_triples.png" alt="Two Overlapping Triples hypergraph figure"/>
-    <div class="figcaption">
-<strong>Original gallery.</strong> Two 3-edges overlap in two vertices. File path: <code>2026-04-21-hypergraphs-visualization/hypergraph_05_two_overlapping_triples.png</code>.</div>
+    <img src="2026-04-21-hypergraphs-visualization/hypergraph_05_two_overlapping_triples.png" loading="lazy" width="2640" height="2640" alt="Two Overlapping Triples hypergraph figure"/>
+    <div class="figcaption"><strong>PNG placeholder.</strong> Two 3-edges overlap in two vertices. File path: <code>hypergraph_outputs/hypergraph_05_two_overlapping_triples.png</code>.</div>
   </div>
 </section>
 
 <section class="example-card" id="sec06">
   <h3>6. A Size-Four Hyperedge</h3>
-  <p class="small-intro">
-<strong>Algebraic example.</strong> X={v1, v2, v3, v4, v5, v6} and E={e1, e2, e3}, where e1={v1, v2, v3, v4};  e2={v3, v5};  e3={v4, v6}.</p>
+  <p class="small-intro"><strong>Algebraic example.</strong> <span class="april-math">X={v1, v2, v3, v4, v5, v6}</span> and <span class="april-math">E={e1, e2, e3}</span>, where <span class="april-math">e1={v1, v2, v3, v4};  e2={v3, v5};  e3={v4, v6}</span>.</p>
   <div class="panel note">
-    <strong>Set-family form.</strong>
-<br/>
-    H=(X,E),  ·  X={v1, v2, v3, v4, v5, v6},  ·  E={{v1, v2, v3, v4}, {v3, v5}, {v4, v6}}.
+    <strong>Set-family form.</strong><br/>
+    <div class="april-equation">H=(X,E), <wbr> · X={v1, v2, v3, v4, v5, v6}, <wbr> · E={{v1, v2, v3, v4}, {v3, v5}, {v4, v6}}.</div>
   </div>
   <p>A 4-edge creates a larger clique in the simple-graph translation.</p>
   <div class="center-figure">
-    <img loading="lazy" src="2026-04-21-hypergraphs-visualization/hypergraph_06_size_four_edge.png" alt="A Size-Four Hyperedge hypergraph figure"/>
-    <div class="figcaption">
-<strong>Original gallery.</strong> A 4-edge creates a larger clique in the simple-graph translation. File path: <code>2026-04-21-hypergraphs-visualization/hypergraph_06_size_four_edge.png</code>.</div>
+    <img src="2026-04-21-hypergraphs-visualization/hypergraph_06_size_four_edge.png" loading="lazy" width="2640" height="2640" alt="A Size-Four Hyperedge hypergraph figure"/>
+    <div class="figcaption"><strong>PNG placeholder.</strong> A 4-edge creates a larger clique in the simple-graph translation. File path: <code>hypergraph_outputs/hypergraph_06_size_four_edge.png</code>.</div>
   </div>
 </section>
 
 <section class="example-card" id="sec07">
   <h3>7. Three-Way Overlap</h3>
-  <p class="small-intro">
-<strong>Algebraic example.</strong> X={v1, v2, v3, v4, v5, v6} and E={e1, e2, e3}, where e1={v1, v2, v3};  e2={v2, v3, v4};  e3={v3, v4, v5, v6}.</p>
+  <p class="small-intro"><strong>Algebraic example.</strong> <span class="april-math">X={v1, v2, v3, v4, v5, v6}</span> and <span class="april-math">E={e1, e2, e3}</span>, where <span class="april-math">e1={v1, v2, v3};  e2={v2, v3, v4};  e3={v3, v4, v5, v6}</span>.</p>
   <div class="panel note">
-    <strong>Set-family form.</strong>
-<br/>
-    H=(X,E),  ·  X={v1, v2, v3, v4, v5, v6},  ·  E={{v1, v2, v3}, {v2, v3, v4}, {v3, v4, v5, v6}}.
+    <strong>Set-family form.</strong><br/>
+    <div class="april-equation">H=(X,E), <wbr> · X={v1, v2, v3, v4, v5, v6}, <wbr> · E={{v1, v2, v3}, {v2, v3, v4}, {v3, v4, v5, v6}}.</div>
   </div>
   <p>Several edges meet around the same central vertices.</p>
   <div class="center-figure">
-    <img loading="lazy" src="2026-04-21-hypergraphs-visualization/hypergraph_07_three_way_overlap.png" alt="Three-Way Overlap hypergraph figure"/>
-    <div class="figcaption">
-<strong>Original gallery.</strong> Several edges meet around the same central vertices. File path: <code>2026-04-21-hypergraphs-visualization/hypergraph_07_three_way_overlap.png</code>.</div>
+    <img src="2026-04-21-hypergraphs-visualization/hypergraph_07_three_way_overlap.png" loading="lazy" width="2640" height="2640" alt="Three-Way Overlap hypergraph figure"/>
+    <div class="figcaption"><strong>PNG placeholder.</strong> Several edges meet around the same central vertices. File path: <code>hypergraph_outputs/hypergraph_07_three_way_overlap.png</code>.</div>
   </div>
 </section>
 
 <section class="example-card" id="sec08">
   <h3>8. Mixed Sizes with an Isolated Vertex</h3>
-  <p class="small-intro">
-<strong>Algebraic example.</strong> X={v1, v2, v3, v4, v5, v6, v7} and E={e1, e2, e3, e4}, where e1={v1, v2, v3};  e2={v2, v4, v5};  e3={v3, v5, v6};  e4={v4}.</p>
+  <p class="small-intro"><strong>Algebraic example.</strong> <span class="april-math">X={v1, v2, v3, v4, v5, v6, v7}</span> and <span class="april-math">E={e1, e2, e3, e4}</span>, where <span class="april-math">e1={v1, v2, v3};  e2={v2, v4, v5};  e3={v3, v5, v6};  e4={v4}</span>.</p>
   <div class="panel note">
-    <strong>Set-family form.</strong>
-<br/>
-    H=(X,E),  ·  X={v1, v2, v3, v4, v5, v6, v7},  ·  E={{v1, v2, v3}, {v2, v4, v5}, {v3, v5, v6}, {v4}}.
+    <strong>Set-family form.</strong><br/>
+    <div class="april-equation">H=(X,E), <wbr> · X={v1, v2, v3, v4, v5, v6, v7}, <wbr> · E={{v1, v2, v3}, {v2, v4, v5}, {v3, v5, v6}, {v4}}.</div>
   </div>
   <p>Mixed edge sizes appear while v7 stays isolated.</p>
   <div class="center-figure">
-    <img loading="lazy" src="2026-04-21-hypergraphs-visualization/hypergraph_08_with_isolated_vertex.png" alt="Mixed Sizes with an Isolated Vertex hypergraph figure"/>
-    <div class="figcaption">
-<strong>Original gallery.</strong> Mixed edge sizes appear while v7 stays isolated. File path: <code>2026-04-21-hypergraphs-visualization/hypergraph_08_with_isolated_vertex.png</code>.</div>
+    <img src="2026-04-21-hypergraphs-visualization/hypergraph_08_with_isolated_vertex.png" loading="lazy" width="2640" height="2640" alt="Mixed Sizes with an Isolated Vertex hypergraph figure"/>
+    <div class="figcaption"><strong>PNG placeholder.</strong> Mixed edge sizes appear while v7 stays isolated. File path: <code>hypergraph_outputs/hypergraph_08_with_isolated_vertex.png</code>.</div>
   </div>
 </section>
 
 <section class="example-card" id="sec09">
   <h3>9. Dense Overlap</h3>
-  <p class="small-intro">
-<strong>Algebraic example.</strong> X={v1, v2, v3, v4, v5, v6, v7} and E={e1, e2, e3, e4}, where e1={v1, v2, v3, v4};  e2={v2, v3, v5};  e3={v3, v4, v6};  e4={v4, v5, v6, v7}.</p>
+  <p class="small-intro"><strong>Algebraic example.</strong> <span class="april-math">X={v1, v2, v3, v4, v5, v6, v7}</span> and <span class="april-math">E={e1, e2, e3, e4}</span>, where <span class="april-math">e1={v1, v2, v3, v4};  e2={v2, v3, v5};  e3={v3, v4, v6};  e4={v4, v5, v6, v7}</span>.</p>
   <div class="panel note">
-    <strong>Set-family form.</strong>
-<br/>
-    H=(X,E),  ·  X={v1, v2, v3, v4, v5, v6, v7},  ·  E={{v1, v2, v3, v4}, {v2, v3, v5}, {v3, v4, v6}, {v4, v5, v6, v7}}.
+    <strong>Set-family form.</strong><br/>
+    <div class="april-equation">H=(X,E), <wbr> · X={v1, v2, v3, v4, v5, v6, v7}, <wbr> · E={{v1, v2, v3, v4}, {v2, v3, v5}, {v3, v4, v6}, {v4, v5, v6, v7}}.</div>
   </div>
   <p>Multiple medium and large edges now overlap heavily.</p>
   <div class="center-figure">
-    <img loading="lazy" src="2026-04-21-hypergraphs-visualization/hypergraph_09_dense_overlap.png" alt="Dense Overlap hypergraph figure"/>
-    <div class="figcaption">
-<strong>Original gallery.</strong> Multiple medium and large edges now overlap heavily. File path: <code>2026-04-21-hypergraphs-visualization/hypergraph_09_dense_overlap.png</code>.</div>
+    <img src="2026-04-21-hypergraphs-visualization/hypergraph_09_dense_overlap.png" loading="lazy" width="2640" height="2640" alt="Dense Overlap hypergraph figure"/>
+    <div class="figcaption"><strong>PNG placeholder.</strong> Multiple medium and large edges now overlap heavily. File path: <code>hypergraph_outputs/hypergraph_09_dense_overlap.png</code>.</div>
   </div>
 </section>
 
 <section class="example-card" id="sec10">
   <h3>10. Largest Mixed Example</h3>
-  <p class="small-intro">
-<strong>Algebraic example.</strong> X={v1, v2, v3, v4, v5, v6, v7, v8} and E={e1, e2, e3, e4, e5}, where e1={v1, v2, v3, v4};  e2={v2, v4, v5, v6};  e3={v3, v6, v7};  e4={v1, v7, v8};  e5={v5, v8}.</p>
+  <p class="small-intro"><strong>Algebraic example.</strong> <span class="april-math">X={v1, v2, v3, v4, v5, v6, v7, v8}</span> and <span class="april-math">E={e1, e2, e3, e4, e5}</span>, where <span class="april-math">e1={v1, v2, v3, v4};  e2={v2, v4, v5, v6};  e3={v3, v6, v7};  e4={v1, v7, v8};  e5={v5, v8}</span>.</p>
   <div class="panel note">
-    <strong>Set-family form.</strong>
-<br/>
-    H=(X,E),  ·  X={v1, v2, v3, v4, v5, v6, v7, v8},  ·  E={{v1, v2, v3, v4}, {v2, v4, v5, v6}, {v3, v6, v7}, {v1, v7, v8}, {v5, v8}}.
+    <strong>Set-family form.</strong><br/>
+    <div class="april-equation">H=(X,E), <wbr> · X={v1, v2, v3, v4, v5, v6, v7, v8}, <wbr> · E={{v1, v2, v3, v4}, {v2, v4, v5, v6}, {v3, v6, v7}, {v1, v7, v8}, {v5, v8}}.</div>
   </div>
   <p>The final example mixes several overlaps and edge sizes.</p>
   <div class="center-figure">
-    <img loading="lazy" src="2026-04-21-hypergraphs-visualization/hypergraph_10_largest_mixed_example.png" alt="Largest Mixed Example hypergraph figure"/>
-    <div class="figcaption">
-<strong>Original gallery.</strong> The final example mixes several overlaps and edge sizes. File path: <code>2026-04-21-hypergraphs-visualization/hypergraph_10_largest_mixed_example.png</code>.</div>
+    <img src="2026-04-21-hypergraphs-visualization/hypergraph_10_largest_mixed_example.png" loading="lazy" width="2640" height="2640" alt="Largest Mixed Example hypergraph figure"/>
+    <div class="figcaption"><strong>PNG placeholder.</strong> The final example mixes several overlaps and edge sizes. File path: <code>hypergraph_outputs/hypergraph_10_largest_mixed_example.png</code>.</div>
   </div>
 </section>
+    </section>
+
+    <div class="footer-nav">
+      <a href="../../index.html">Home</a>
+      <span class="sep">|</span>
+      <a href="#april-top">Back to top</a>
+    </div>
+  </div>
+</div>
 </details>
-<p>
-<a href="2026-04-21-hypergraphs-visualization/hypergraph_gallery_animation(3).py">Original figure generator</a> · <a href="2026-04-21-hypergraphs-visualization/validate_math.js">Reproducible mathematical assertions</a>
-</p>
+</section>
+<!-- ARCHIVE_SNAPSHOT_END -->
+<section class="lesson bitcoin-study" id="bitcoin">
+<div id="bitcoin-replication"></div>
+<div class="eyebrow">Advanced research application · directed hypergraphs</div>
+<h2>Bitcoin Transactions as Directed Hypergraphs: An Empirical Research Demonstration</h2>
+<p class="subtitle">From multi-input and multi-output transactions to directed hypergraph motifs, exchange patterns, and computational analysis.</p>
+<div class="paper-citation">
+<h3>Exchange Pattern Mining in the Bitcoin Transaction Directed Hypergraph</h3>
+<p class="paper-authors">Stephen Ranshous, Cliff A. Joslyn, Sean Kreyling, Kathleen Nowak, Nagiza F. Samatova, Curtis L. West, and Samuel Winters.</p>
+<p><em>Financial Cryptography and Data Security</em>, FC Workshops 2017, LNCS 10323, pp. 248–263. <a href="https://doi.org/10.1007/978-3-319-70278-0_16">DOI and publisher record</a> · <a href="2026-04-21-hypergraphs-visualization/hypergraph_bitcoin.pdf">Supplied research manuscript</a>.</p>
+</div>
+<p>The authors study Bitcoin transactions as directed hypergraphs and investigate patterns involving addresses and exchanges. Here their model is developed through exact reconstructions and smaller interactive examples. This tutorial is an independent educational study; the original research and its reported measurements remain attributed to the authors.</p>
+<div class="research-evidence"><span><b>Original paper results</b>Historical measurements reported in the manuscript.</span><span><b>Illustrative computations</b>Synthetic address sets that you can inspect and edit.</span><span><b>Empirical replication</b>Not claimed: the underlying blockchain records, label snapshot, and feature matrices are not supplied.</span></div>
+<nav class="bitcoin-nav" aria-label="Bitcoin research contents"><a href="#bitcoin-source-1">1 · Addresses and transactions</a><a href="#bitcoin-source-2">2 · Hyperarcs and consolidation</a><a href="#bitcoin-source-3">3 · Intersections and motifs</a><a href="#bitcoin-source-4">4 · Short thick bands</a><a href="#bitcoin-lab">Build and test</a><a href="#bitcoin-evidence">Evidence and replication</a></nav>
+<h3>A subset becomes an ordered pair of subsets</h3>
+<p>The earlier <a href="#definitions">undirected model</a> uses H=(V,ℰ), with each edge an unordered subset. In a directed hypergraph 𝓗=(V,𝒜), a hyperarc aⱼ=(Tⱼ,Hⱼ) distinguishes its tail set Tⱼ from its head set Hⱼ. Here Hⱼ is a head set, while 𝓗 names the whole directed hypergraph. One ordinary directed edge has one source and one destination; a transaction can have several of each.</p>
+<details class="source-version"><summary>Exact source version and reuse review</summary>
+<p>The local 16-page PDF is byte-for-byte identical to the <a href="https://fc17.ifca.ai/bitcoin/papers/bitcoin17-final17.pdf">official BITCOIN 2017 conference manuscript</a> (1,198,276 bytes; SHA-256 <code>d4c0ad3adc8e0749b8b07cd148343a9a049170c9839d703f604fcbb5590d9ef3</code>). It is the conference-hosted version, distinguished from the later Springer chapter, pp. 248–263.</p>
+<p>No explicit open reuse license appears in this PDF or its conference listing. The <a href="https://doi.org/10.1007/978-3-319-70278-0_16">publisher record</a> identifies IFCA copyright, 2017. Public availability does not establish permission for extended verbatim reuse. Accordingly, the four boxes below retain only brief exact excerpts. The surrounding explanations are source-based paraphrases; the SVGs are attributed mathematical reconstructions with added labels documented in their captions. No extended passages or source screenshots are republished.</p>
+</details>
+<div class="two bitcoin-bridge"><figure><div id="bitcoin-undirected"></div><figcaption>Undirected subset {A1,A2,A3,A4}: it records joint membership, without input/output roles.</figcaption></figure><figure><div id="bitcoin-minimal"></div><figcaption>Synthetic E₁=⟨{A1,A2},{A3,A4}⟩. Circles are addresses; the square is one transaction. Follow arrows into and out of the square.</figcaption></figure></div>
+<p class="limitation">This is an address-level abstraction of a UTXO transaction. Inputs consume earlier outputs and outputs create new ones; address sets omit output indices, scripts, fees, quantities, and timing. Reusing an address on both sides is an address-level loop, not a transaction spending its own newly created output.</p>
+
+<section class="bitcoin-source-group" id="bitcoin-source-1">
+<h3>1 · Give addresses their own vertices</h3>
+<div class="source-attribution"><h4>Exchange Pattern Mining in the Bitcoin Transaction Directed Hypergraph</h4><p>Stephen Ranshous, Cliff A. Joslyn, Sean Kreyling, Kathleen Nowak, Nagiza F. Samatova, Curtis L. West, and Samuel Winters.</p></div>
+<blockquote class="bitcoin-verbatim"><p class="verbatim-label">Original Research — Verbatim · short excerpt</p><p>Bitcoin transactions have a natural graphical structure, one form of which is shown on the left of Fig. 1.</p><cite>§2, local manuscript p. 2. <a href="2026-04-21-hypergraphs-visualization/hypergraph_bitcoin.pdf#page=2">Read the source</a>.</cite></blockquote>
+<div class="source-explanation-label">Source-Based Research Explanation</div>
+<p>First ask what a vertex represents. In the transaction multigraph, a vertex is a transaction and an arc carries an address label and quantity. The same address can label several arcs. In the bipartite view each distinct address gets one circle, while transactions remain squares. This exposes address reuse as a structural relationship.</p>
+<div class="two source-figure-pair"><figure><div id="bitcoin-fig1-tx"></div><figcaption>Mathematical reconstruction based on Fig. 1 (left): SRC, E₀–E₃, and UTXO retain the source identities, directed arcs, address labels, and quantities.</figcaption></figure><figure><div id="bitcoin-fig1-incidence"></div><figcaption>Mathematical reconstruction based on Fig. 1 (right): address circles and transaction squares. Parallel quantity arcs remain separate. Red-outlined address circles mark source UTXO addresses.</figcaption></figure></div>
+<p class="caption">SRC is the paper’s coinbase source sentinel, not an ordinary spendable address. The transaction view combines unspent outputs into UTXO, a sink sentinel. These are the paper’s schematic quantities, not transaction records independently collected for this tutorial.</p>
+<div class="example box"><strong>A minimal correspondence.</strong> E₁=⟨{A1,A2},{A3,A4}⟩ becomes four incidence arrows: A1→E₁, A2→E₁, E₁→A3, E₁→A4. Direction identifies whether the address belongs to the tail or head. In the laboratory, select a matrix 1 to identify its exact arrow.</div>
+<div class="math-lines derivation"><span>B<sup>in</sup><sub>ij</sub>=1{aᵢ∈Tⱼ}, B<sup>out</sup><sub>ij</sub>=1{aᵢ∈Hⱼ}.</span><span>For the minimal example: B<sup>in</sup>=(1,1,0,0)<sup>T</sup>, B<sup>out</sup>=(0,0,1,1)<sup>T</sup>.</span><span>∑ᵢ B<sup>in</sup><sub>ij</sub>=|Tⱼ|; ∑ᵢ B<sup>out</sup><sub>ij</sub>=|Hⱼ|.</span></div>
+<p>An address’s graph in-degree counts transactions that output to it, while its out-degree counts transactions that use it as input. This is the directed analogue of <a href="#incidence">counting memberships</a>. The model retains transaction identity; a direct address-to-address expansion would replace one joint transfer by several pairwise possibilities.</p>
+<p><a href="#bitcoin-lab">Try Level 1 in the transaction laboratory</a> to inspect both matrices and step through the four arrows.</p>
+</section>
+
+<section class="bitcoin-source-group" id="bitcoin-source-2">
+<h3>2 · Consolidate quantities, preserve hyperarc identity</h3>
+<div class="source-attribution"><h4>Exchange Pattern Mining in the Bitcoin Transaction Directed Hypergraph</h4><p>Stephen Ranshous, Cliff A. Joslyn, Sean Kreyling, Kathleen Nowak, Nagiza F. Samatova, Curtis L. West, and Samuel Winters.</p></div>
+<blockquote class="bitcoin-verbatim"><p class="verbatim-label">Original Research — Verbatim · short excerpt</p><p>For us, transaction (square) vertices act as directed hyperarcs.</p><cite>§2, local manuscript p. 3. <a href="2026-04-21-hypergraphs-visualization/hypergraph_bitcoin.pdf#page=3">Read the source</a>.</cite></blockquote>
+<div class="source-explanation-label">Source-Based Research Explanation</div>
+<p>Several quantity arcs can have the same address and transaction endpoints. Adding their weights combines those repeated incidences without merging different addresses or transactions. The resulting input and output sets define one directed hyperarc. A tail can contain several addresses, and so can a head.</p>
+<figure class="source-figure-wide"><div id="bitcoin-fig2"></div><figcaption>Mathematical reconstruction based on Fig. 2 of Ranshous et al. Transaction labels T₀–T₃ follow that figure; these labels name transactions, not tail sets. Every displayed quantity is transcribed from the source figure. Select a transaction square to compute its tail, head, and quantity sums.</figcaption></figure>
+<div class="controls"><button id="bitcoin-consolidation">Inspect parallel arcs</button></div><output id="bitcoin-consolidation-output" aria-live="polite"></output>
+<div class="example box"><strong>Work through one consolidation.</strong><div class="math-lines"><span>T₁→a₂: 7+20+8=35.</span><span>a₂→T₂: 20+8=28; a₃→T₂: 5+50=55.</span><span>At T₂: 28+55=83 on inputs, 73+10=83 on outputs.</span></div><p>The quantities add; binary incidence records only whether the address occurs. In this source example a₃ is both a tail and a head of T₂. Thus direction needs two matrices: a single signed difference could cancel the two memberships.</p></div>
+<h4>From small graph shapes to directed patterns</h4>
+<figure><div id="bitcoin-fig3"></div><figcaption>Topological reconstruction based on Fig. 3. Connected two-edge graphs have one undirected shape; direction gives a chain, an inward star, or an outward star. The three connected three-edge shapes shown in the paper are a path, a star, and a triangle, with their direction classes below.</figcaption></figure>
+<p>The figures motivate a question about transactions rather than isolated pairwise transfers: which addresses occupy the tail or head of both hyperarcs? The next group answers it by exact set intersections. A structural pattern alone does not establish statistical overrepresentation; that requires an explicit null model and transaction data.</p>
+</section>
+
+<section class="bitcoin-source-group" id="bitcoin-source-3">
+<h3>3 · Two transactions, six address roles</h3>
+<div class="source-attribution"><h4>Exchange Pattern Mining in the Bitcoin Transaction Directed Hypergraph</h4><p>Stephen Ranshous, Cliff A. Joslyn, Sean Kreyling, Kathleen Nowak, Nagiza F. Samatova, Curtis L. West, and Samuel Winters.</p></div>
+<blockquote class="bitcoin-verbatim"><p class="verbatim-label">Original Research — Verbatim · short excerpt</p><p>Note that any particular address can sit on either the tails (inputs) or heads (outputs) of any transaction, and indeed, more than one transaction.</p><cite>§2, local manuscript p. 4. <a href="2026-04-21-hypergraphs-visualization/hypergraph_bitcoin.pdf#page=4">Read the source</a>.</cite></blockquote>
+<div class="source-explanation-label">Source-Based Research Explanation</div>
+<p>Start with E₁=⟨{A1},{A2}⟩ and E₂=⟨{A2},{A3}⟩. The shared address A2 lies in H₁∩T₂, so the first transaction can precede the second in an address-level chain. If both transactions instead output to A2, the intersection is H₁∩H₂. The shape changes even though two transactions still share an address.</p>
+<div class="definition box"><strong>Connected two-hyperarc pattern.</strong> Let A be finite and nonempty, and Eⱼ=⟨Tⱼ,Hⱼ⟩ with nonempty Tⱼ,Hⱼ⊆A. The pair is connected precisely when<div class="formula">⋃<sub>X,Y∈{T,H}</sub>(X₁∩Y₂) ≠ ∅.</div><p>The union tests all four cross-transaction intersections. Within-transaction loops are additional roles; two separate loops do not by themselves connect the two transactions.</p></div>
+<div id="bitcoin-pattern-table" class="matrix-wrap"></div>
+<p class="caption">Set conditions reconstructed from Table 1. The four-role palette follows T₁ (red), H₁ (blue), T₂ (green), H₂ (purple); labels make the roles legible without colour. Fig. 4 uses different palettes in its generic and STB panels; these reconstructions use one consistent palette for the same labelled sets.</p>
+<figure class="source-figure-wide"><div id="bitcoin-fig4-generic"></div><figcaption>Topology reconstructed from Fig. 4 (left): ten address circles and nineteen directed incidences. Added labels identify the source’s unlabelled addresses; black circles retain its exchange markings. This complete mixed example is distinct from the smaller educational presets below.</figcaption></figure>
+<div class="motif-controls controls"><label>Explore a pattern <select id="bitcoin-motif"><option value="alpha">α · forward chain</option><option value="alphaPrime">α′ · reverse chain</option><option value="beta">β · inward star</option><option value="gamma">γ · outward star</option><option value="L1">L₁ · first self-loop</option><option value="L2">L₂ · second self-loop</option><option value="mixed">Several conditions at once</option></select></label></div>
+<div class="two"><figure><div id="bitcoin-motif-diagram"></div><figcaption>Synthetic two-transaction example. Identically named addresses are the same vertex, even when they serve several roles.</figcaption></figure><div><output id="bitcoin-motif-output" aria-live="polite"></output><div id="bitcoin-motif-algebra" class="math-lines example box"></div><p>Every true condition is reported. “Pure” means exactly one of the six roles is present; mixed examples must not be forced into a single label. Self-loop presets deliberately demonstrate why a loop alone is insufficient for a connected pair.</p></div></div>
+<h4>The paper’s role abstraction</h4>
+<div class="two"><figure><div id="bitcoin-fig5-generic"></div><figcaption>Mathematical reconstruction based on Fig. 5 (left). A circle stands for an entire address role; squares remain transactions. It is not one circle per address.</figcaption></figure><figure><div id="bitcoin-fig5-counts"></div><figcaption>Mathematical reconstruction based on Fig. 5 (right). The labels are <strong>original paper results</strong> for days 2200–2299 (Jan. 12–Apr. 21, 2015), not newly computed counts. M denotes millions.</figcaption></figure></div>
+<p class="limitation">Footnote 5 restricts that abstraction to addresses in exactly one of the six intersections, excluding addresses in only one tail/head and those in more than two intersections. The full laboratory reports all intersections, including simultaneous roles, and therefore does not claim to reproduce the source’s aggregated counts.</p>
+<div class="example box"><strong>Derive a role count from incidence.</strong><div class="math-lines"><span>|H₁∩T₂|=∑ᵢ B<sup>out</sup><sub>i1</sub>B<sup>in</sup><sub>i2</sub>.</span><span>For H₁={A2,A3} and T₂={A3,A4}, the products for A2,A3,A4 are 0,1,0; the count is 1.</span><span>Thus α is present if this sum is positive.</span></div><p>This is the directed counterpart of <a href="#intersections">intersection counting with BᵀB</a>. It preserves the direction of each membership.</p></div>
+</section>
+
+<section class="bitcoin-source-group" id="bitcoin-source-4">
+<h3>4 · Short thick bands: endpoints and exclusions</h3>
+<div class="source-attribution"><h4>Exchange Pattern Mining in the Bitcoin Transaction Directed Hypergraph</h4><p>Stephen Ranshous, Cliff A. Joslyn, Sean Kreyling, Kathleen Nowak, Nagiza F. Samatova, Curtis L. West, and Samuel Winters.</p></div>
+<blockquote class="bitcoin-verbatim"><p class="verbatim-label">Original Research — Verbatim · short excerpt</p><p>Note that no STB can have a self-loop.</p><cite>§2, local manuscript p. 5, following Definition 1. <a href="2026-04-21-hypergraphs-visualization/hypergraph_bitcoin.pdf#page=5">Read the source</a>.</cite></blockquote>
+<div class="source-explanation-label">Source-Based Research Explanation</div>
+<p>Imagine Bitcoin leaving an exchange-labelled address, passing through a non-exchange address set, and reaching an exchange-labelled address. A linear band has different exchange endpoints; a circular band returns to a shared exchange address. Those interpretations need the paper’s exclusions: an arbitrary chain with exchanges nearby is not automatically an STB.</p>
+<div class="two source-figure-pair"><figure><div id="bitcoin-fig4-linear"></div><figcaption>Topology reconstructed from Fig. 4 (center): two input addresses, three intermediate addresses, and two output addresses. Black circles denote exchanges. Added letter labels identify otherwise unlabelled source vertices.</figcaption></figure><figure><div id="bitcoin-fig4-circular"></div><figcaption>Topology reconstructed from Fig. 4 (right): a shared exchange address is both an input of E₁ and output of E₂. Its reverse intersection coexists with the forward non-exchange chain.</figcaption></figure></div>
+<div class="definition box"><strong>Formal test derived from Definition 1.</strong> Write e(S) for “S contains at least one exchange-labelled address.”<div class="math-lines"><span>Forward linear: only α is present, and e(T₁) ∧ e(H₂) ∧ ¬e(H₁∩T₂).</span><span>Reverse linear: only α′ is present, and e(H₁) ∧ e(T₂) ∧ ¬e(T₁∩H₂).</span><span>Circular, E₁ then E₂: exactly α and α′, and e(T₁∩H₂) ∧ ¬e(H₁∩T₂).</span><span>Circular, E₂ then E₁: exactly α and α′, and e(H₁∩T₂) ∧ ¬e(T₁∩H₂).</span></div><p>Exactly one orientation must qualify. β, γ, L₁, and L₂ are excluded in both STB types. The earlier informal “chain only” description is therefore refined by the circular case’s mixed α/α′ condition.</p></div>
+<div class="example box"><strong>Positive example and a falsification.</strong> Set T₁={X1}, H₁={A1,A2}, T₂={A1,A2}, H₂={X2}, with exchange labels X1,X2. Only α is present and the intermediate set has no exchange: a linear STB. Add A1 to the exchange labels and it fails. Replace X2 with X1 and only α,α′ remain: the circular test succeeds.</div>
+<p><a href="#bitcoin-lab">Load either STB example below</a>, animate the memberships, then change an exchange label or reuse an input address as an output. The computed predicates explain exactly why a test passes or fails. Motifs describe structure; the paper explicitly discusses several benign reasons for STBs and does not establish wrongdoing from the motif alone.</p>
+</section>
+
+<section id="bitcoin-lab" class="bitcoin-laboratory">
+<div class="eyebrow">Interactive computation · synthetic addresses only</div>
+<h3>Bitcoin Directed-Hypergraph Laboratory</h3>
+<p>Choose a learning level, then edit one transaction’s tail and head sets. A selected address on both sides represents address reuse. Exchange labels are editable synthetic annotations used solely to test the STB predicates.</p>
+<div class="controls"><label>Example <select id="btc-example"></select></label><button id="btc-reset">Reset example</button><button id="btc-address">Add address</button></div>
+<div class="two lab-editor"><div><label for="btc-transaction">Transaction to edit</label><select id="btc-transaction"></select><fieldset><legend>Input / tail addresses</legend><div id="btc-inputs" class="address-choices"></div></fieldset><fieldset><legend>Output / head addresses</legend><div id="btc-outputs" class="address-choices"></div></fieldset><label class="reuse-option"><input id="btc-allow-reuse" type="checkbox" checked> Allow one address on both sides</label><div class="controls"><button id="btc-save">Save transaction</button><button id="btc-add">Add as new transaction</button></div><p id="btc-draft" class="math"></p><p id="btc-message" role="status"></p></div><div><fieldset><legend>Synthetic exchange labels · black circles</legend><div id="btc-exchanges" class="address-choices"></div></fieldset><p class="hint">Click an address to toggle its exchange label. This changes STB eligibility, not its input/output membership.</p><div class="controls"><label>First transaction <select id="btc-first"></select></label><label>Second transaction <select id="btc-second"></select></label></div><output id="btc-stats"></output></div></div>
+<div class="two lab-representations"><figure><div id="btc-graph"></div><figcaption>Synthetic directed bipartite incidence graph. Input arrows point into squares; output arrows point toward address circles. Reused addresses retain one identity.</figcaption></figure><div><h4>Ordered set pairs</h4><div id="btc-sets" class="math-lines"></div><div class="controls"><button id="btc-play" aria-pressed="false">Animate memberships</button><button id="btc-step">Next incidence phase</button><button id="btc-animation-reset">Restart phases</button></div><output id="btc-phase" aria-live="polite"></output><div id="btc-incidence-selection" class="caption" aria-live="polite">Select a matrix entry to identify its exact arrow.</div></div></div>
+<div class="two lab-matrices"><figure><h4>Input incidence B<sup>in</sup></h4><div id="btc-in-matrix" class="matrix-wrap"></div><figcaption>A 1 means address aᵢ points into transaction Eⱼ.</figcaption></figure><figure><h4>Output incidence B<sup>out</sup></h4><div id="btc-out-matrix" class="matrix-wrap"></div><figcaption>A 1 means transaction Eⱼ points to address aᵢ.</figcaption></figure></div>
+<div id="btc-intersections" class="matrix-wrap"></div><output id="btc-detection" aria-live="polite"></output>
+<h4>A complete, small combinatorial experiment</h4><p>For the synthetic universe {A1,A2,A3}, there are 2³−1=7 nonempty choices for each tail or head, hence 49 possible hyperarcs and 49²=2401 ordered choices for two labelled transactions. Enumerate every pair, allowing identical address sets on distinct transactions. Check all six intersections; exchange labels for this experiment are fixed to {A1,A3}.</p>
+<button id="btc-enumerate">Enumerate all 2401 synthetic pairs</button><output id="btc-experiment" aria-live="polite">The experiment runs only when requested.</output>
+<p class="limitation">These counts are an exact finite synthetic enumeration, not blockchain motif frequencies or evidence of statistical significance. The laboratory caps networks at eight addresses and four transactions to keep every displayed set and matrix inspectable.</p>
+</section>
+
+<section id="bitcoin-evidence" class="bitcoin-evidence">
+<h3>What the paper reports, and what can be reproduced here</h3>
+<p>The supplied manuscript reports a blockchain study through April 22, 2015: 72.7 million addresses and 66.3 million transactions, with exchange labels from WalletExplorer (local manuscript §3). Those records and labels are not included with this page. The source figures above reconstruct published structures; they are not downloads of live transaction data.</p>
+<div class="matrix-wrap"><table class="evidence-table"><caption>Original paper results · source locators refer to the supplied manuscript</caption><thead><tr><th>Reported result</th><th>Value / setting</th><th>Source</th></tr></thead><tbody><tr><th>Labelled addresses</th><td>2.44M; 3.36% of addresses</td><td>§3, p. 6</td></tr><tr><th>STBs</th><td>About 741K, including 727K linear and 13.4K circular; rounded source figures</td><td>§3, p. 8</td></tr><tr><th>Random forest with label-related features</th><td>F1=0.9973 ± 0.0001</td><td>Table 3, p. 9</td></tr><tr><th>Random forest without label-related features</th><td>F1=0.8200 ± 0.0004</td><td>Table 4, p. 10</td></tr></tbody></table></div>
+<p>The classifier experiments balanced sampled labelled and unlabelled addresses and averaged ten trials. F1 is a precision/recall measure, not the proportion of all network addresses identified correctly. The contrast between the two feature settings matters: exchange-label-derived features can exploit label relationships and may not generalize to unlabelled exchanges. The authors interpret the STB findings primarily as inter-exchange activity.</p>
+<div class="definition box"><strong>A reproducible empirical extension would need:</strong> transaction IDs and output references, address/script resolution rules, block/time bounds, quantities, coinbase and missing-data policies, the dated exchange-label snapshot and ownership aggregation rules, and the original feature definitions. Preserve time ordering and split by entities or time before deriving label-related features. Document uncertainty in unlabelled addresses and evaluate precision, recall, F1, and calibration on held-out data. No classifier is fitted to the synthetic examples here.</div>
+<p>What is reproduced here is mathematical: directed incidences, intersections, the source’s Figure 1–2 consolidation, Figure 3’s small graph topologies, Figure 4’s two STB topologies, Figure 5’s labelled role abstraction, and Definition 1’s predicates. The small exhaustive experiment independently validates the implementation’s logic; it does not replicate the original empirical sample.</p>
+<p class="caption">The four source groups retain brief exact quotations. Extended republication permission was not established from the supplied material or publisher record, so the surrounding discussion is original explanatory prose. The source PDF and original excerpt images remain preserved. See <a href="2026-04-21-hypergraphs-visualization/SOURCE_INVENTORY.md">source mapping and reconstruction notes</a>, <a href="2026-04-21-hypergraphs-visualization/synthetic-transactions.json">synthetic examples</a>, and <a href="2026-04-21-hypergraphs-visualization/validate_research.cjs">reproducible mathematical checks</a>.</p>
+</section>
 </section>
 <section class="lesson" id="references">
 <div class="eyebrow">Sources &amp; reproducibility</div>
@@ -763,6 +932,8 @@
 <li id="ref-fano">Yury Person and Mathias Schacht, <a href="https://epubs.siam.org/doi/abs/10.1137/1.9781611973068.25">“Almost all hypergraphs without Fano planes are bipartite”</a>, SODA 2009, 217–226. Its abstract identifies the Fano incidence structure and failure of 2-colourability; its asymptotic theorem is beyond this tutorial.</li>
 <li id="ref-helly">László Babai, <a href="https://people.cs.uchicago.edu/~laci/REU07/a6.pdf">REU 2007, Apprentice Program, Lecture 6</a>. Interval Helly theorem and Helly-type ideas.</li>
 <li>Claude Berge, <em>Hypergraphs: Combinatorics of Finite Sets</em>, North-Holland, 1989. Further reading on incidence structures, paths, and transversals; compare conventions carefully.</li>
+<li id="ref-bitcoin">Stephen Ranshous, Cliff A. Joslyn, Sean Kreyling, Kathleen Nowak, Nagiza F. Samatova, Curtis L. West, and Samuel Winters (2017). <a href="https://doi.org/10.1007/978-3-319-70278-0_16"><em>Exchange Pattern Mining in the Bitcoin Transaction Directed Hypergraph</em></a>, FC Workshops, LNCS 10323, pp. 248–263. Primary source: <a href="2026-04-21-hypergraphs-visualization/hypergraph_bitcoin.pdf">supplied manuscript</a>, especially §2 and Figs. 1–5.</li>
+<li id="ref-paoh">Paola Valdivia, Paolo Buono, Catherine Plaisant, Nicole Dufournaud, and Jean-Daniel Fekete (2021). <a href="https://doi.org/10.1109/TVCG.2019.2933196"><em>Analyzing Dynamic Hypergraphs with Parallel Aggregated Ordered Hypergraph Visualization</em></a>, IEEE TVCG 27(1), 1–13. The gallery uses a static adaptation of its row/column incidence encoding.</li>
 </ol>
 <p class="caption">Computations are bounded: builder ≤12 edges; exact cover ≤12 vertices; exact matching ≤16 edges; EKR ≤15 candidates; uniform n≤8; random trials=500. The page needs no build step or external library. Semantic HTML and Unicode mathematics remain readable offline.</p>
 </section>
