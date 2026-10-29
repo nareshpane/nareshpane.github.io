@@ -1,0 +1,124 @@
+{
+  "date": "2026-10-29",
+  "python": "3.12.14",
+  "method": "Independent Python standard-library exhaustive permutations, Burnside edge-orbits, and direct structural checks.",
+  "burnside": {
+    "1": 1,
+    "2": 2,
+    "3": 4,
+    "4": 11,
+    "5": 34,
+    "6": 156,
+    "7": 1044,
+    "8": 12346
+  },
+  "exhaustive_counts": {
+    "1": 1,
+    "2": 2,
+    "3": 4,
+    "4": 11,
+    "5": 34
+  },
+  "catalogues": {
+    "6": {
+      "count": 156,
+      "sha256": "3e854c54447bbde07316b94338a0b39ddb7d2c094dd63fb8867df829fdcc8043",
+      "source": "https://users.cecs.anu.edu.au/~bdm/data/graph6.g6",
+      "independent_exhaustive_S6_unique_keys": 156
+    },
+    "7": {
+      "count": 1044,
+      "sha256": "5a878f1a46606da4733df250bf9a412d6ae0b3c73c2112e25d66ba00ae565b56",
+      "source": "https://users.cecs.anu.edu.au/~bdm/data/graph7.g6"
+    },
+    "8": {
+      "count": 12346,
+      "sha256": "546a249902101c97d3aa590f93e53366854bd0a6f405aa59bdb32d25c57f845a",
+      "source": "https://users.cecs.anu.edu.au/~bdm/data/graph8.g6"
+    }
+  },
+  "checks": [
+    "Independent Burnside counts n=1..8",
+    "Independent exhaustive canonical counts n=1..5",
+    "Independent exhaustive pairwise distinction of all 156 order-six catalogue representatives",
+    "All reported small-family automorphisms preserve adjacency",
+    "II Figure 1 quotient checked",
+    "Both SRG(16,6,2,2) constructions and 4-clique distinction checked",
+    "All 3840 cube coordinate/translation maps verified",
+    "Lexicographic-product block characterization checked",
+    "Original asset hashes unchanged, including both PDFs"
+  ],
+  "automorphism_orders": {
+    "path4": 2,
+    "cycle4": 8,
+    "cycle6": 12,
+    "complete5": 120,
+    "star6": 120,
+    "asymmetric7": 1,
+    "prism6": 12,
+    "prism12": 24,
+    "paper9": 8
+  },
+  "paper9_quotient": [
+    [
+      0,
+      2,
+      0
+    ],
+    [
+      2,
+      2,
+      1
+    ],
+    [
+      0,
+      4,
+      0
+    ]
+  ],
+  "strongly_regular": {
+    "rook": {
+      "n": 16,
+      "degrees": [
+        6
+      ],
+      "adjacent_common": [
+        2
+      ],
+      "nonadjacent_common": [
+        2
+      ],
+      "triangles": 32,
+      "cliques4": 8
+    },
+    "shrikhande": {
+      "n": 16,
+      "degrees": [
+        6
+      ],
+      "adjacent_common": [
+        2
+      ],
+      "nonadjacent_common": [
+        2
+      ],
+      "triangles": 32,
+      "cliques4": 0
+    }
+  },
+  "cube5": {
+    "vertices": 32,
+    "edges": 80,
+    "verified_distinct_coordinate_translation_automorphisms": 3840,
+    "group_order": 3840
+  },
+  "lex25": {
+    "vertices": 25,
+    "edges": 150,
+    "degree": 12,
+    "internal_edge_common_neighbours": 10,
+    "interblock_edge_common_neighbours": 4,
+    "proved_wreath_product_order": 1000000
+  },
+  "preserved_original_assets": 64
+}

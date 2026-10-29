@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-29",
+  "local_references_checked": 90,
+  "unique_ids": 274,
+  "retained_images": 58,
+  "retained_notebook_entries": 29,
+  "main_sections": 20,
+  "pdfs": [
+    {
+      "name": "1-brendan-mckay-practical-graph-isomorphism-1981.pdf",
+      "sha256": "9d7e7d0cb60e19fa29fecebf1c9cd2e62506acc3db7cf78dd7d9e93eb43608a0"
+    },
+    {
+      "name": "2-brendan-mckay-adolfo-piperno-practical-graph-isomorphism-ii-2013.pdf",
+      "sha256": "2173fcd10d99c269eec4d28d2089887452eb972456c52a1b961a2bf186194029"
+    }
+  ],
+  "all_checks_passed": true
+}

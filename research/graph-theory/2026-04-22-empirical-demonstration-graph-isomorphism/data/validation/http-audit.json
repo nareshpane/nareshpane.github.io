@@ -1,0 +1,437 @@
+{
+  "date": "2026-10-29",
+  "references": 86,
+  "all_http_200": true,
+  "requests": [
+    {
+      "path": "/index.html",
+      "status": 200,
+      "bytes": 4773
+    },
+    {
+      "path": "/research.html",
+      "status": 200,
+      "bytes": 21822
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/1-brendan-mckay-practical-graph-isomorphism-1981.pdf",
+      "status": 200,
+      "bytes": 2298221
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/2-brendan-mckay-adolfo-piperno-practical-graph-isomorphism-ii-2013.pdf",
+      "status": 200,
+      "bytes": 4036949
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/README.md",
+      "status": 200,
+      "bytes": 11579
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/css/research-page.css",
+      "status": 200,
+      "bytes": 25979
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/data/historical/automorphism_demo_nauty_data.txt",
+      "status": 200,
+      "bytes": 4946
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/data/historical/prism12_all_automorphisms.txt",
+      "status": 200,
+      "bytes": 2978
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/data/validation/javascript-validation.json",
+      "status": 200,
+      "bytes": 3154
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/data/validation/matrix-validation.json",
+      "status": 200,
+      "bytes": 1184
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/data/validation/paper-coverage-audit.md",
+      "status": 200,
+      "bytes": 7429
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/data/validation/python-validation.json",
+      "status": 200,
+      "bytes": 2916
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/graph-views/01_graph_view.png",
+      "status": 200,
+      "bytes": 109585
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/graph-views/02_graph_view.png",
+      "status": 200,
+      "bytes": 138504
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/graph-views/03_graph_view.png",
+      "status": 200,
+      "bytes": 139117
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/graph-views/04_graph_view.png",
+      "status": 200,
+      "bytes": 109577
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/graph-views/05_graph_view.png",
+      "status": 200,
+      "bytes": 110011
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/graph-views/06_graph_view.png",
+      "status": 200,
+      "bytes": 109830
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/graph-views/07_graph_view.png",
+      "status": 200,
+      "bytes": 140739
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/graph-views/08_graph_view.png",
+      "status": 200,
+      "bytes": 95106
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/graph-views/09_graph_view.png",
+      "status": 200,
+      "bytes": 120119
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/graph-views/10_graph_view.png",
+      "status": 200,
+      "bytes": 136884
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/graph-views/11_graph_view.png",
+      "status": 200,
+      "bytes": 136884
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/graph-views/12_graph_view.png",
+      "status": 200,
+      "bytes": 113686
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/graph-views/13_graph_view.png",
+      "status": 200,
+      "bytes": 151864
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/graph-views/14_graph_view.png",
+      "status": 200,
+      "bytes": 111738
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/graph-views/15_graph_view.png",
+      "status": 200,
+      "bytes": 156791
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/graph-views/16_graph_view.png",
+      "status": 200,
+      "bytes": 157460
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/graph-views/17_graph_view.png",
+      "status": 200,
+      "bytes": 147713
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/graph-views/18_graph_view.png",
+      "status": 200,
+      "bytes": 145349
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/graph-views/19_graph_view.png",
+      "status": 200,
+      "bytes": 143643
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/graph-views/20_graph_view.png",
+      "status": 200,
+      "bytes": 139654
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/graph-views/21_graph_view.png",
+      "status": 200,
+      "bytes": 118562
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/graph-views/22_graph_view.png",
+      "status": 200,
+      "bytes": 146420
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/graph-views/23_graph_view.png",
+      "status": 200,
+      "bytes": 148642
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/graph-views/24_graph_view.png",
+      "status": 200,
+      "bytes": 141775
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/graph-views/25_graph_view.png",
+      "status": 200,
+      "bytes": 144075
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/graph-views/26_graph_view.png",
+      "status": 200,
+      "bytes": 108121
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/graph-views/27_graph_view.png",
+      "status": 200,
+      "bytes": 147398
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/graph-views/28_graph_view.png",
+      "status": 200,
+      "bytes": 149642
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/graph-views/29_graph_view.png",
+      "status": 200,
+      "bytes": 145797
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/partition-views/01_automorphism_or_partition_view.png",
+      "status": 200,
+      "bytes": 779891
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/partition-views/02_automorphism_or_partition_view.png",
+      "status": 200,
+      "bytes": 781308
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/partition-views/03_automorphism_or_partition_view.png",
+      "status": 200,
+      "bytes": 783861
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/partition-views/04_automorphism_or_partition_view.png",
+      "status": 200,
+      "bytes": 780645
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/partition-views/05_automorphism_or_partition_view.png",
+      "status": 200,
+      "bytes": 90621
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/partition-views/06_automorphism_or_partition_view.png",
+      "status": 200,
+      "bytes": 90383
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/partition-views/07_automorphism_or_partition_view.png",
+      "status": 200,
+      "bytes": 88324
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/partition-views/08_automorphism_or_partition_view.png",
+      "status": 200,
+      "bytes": 97256
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/partition-views/09_automorphism_or_partition_view.png",
+      "status": 200,
+      "bytes": 100353
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/partition-views/10_automorphism_or_partition_view.png",
+      "status": 200,
+      "bytes": 90870
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/partition-views/11_automorphism_or_partition_view.png",
+      "status": 200,
+      "bytes": 94063
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/partition-views/12_automorphism_or_partition_view.png",
+      "status": 200,
+      "bytes": 94262
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/partition-views/13_automorphism_or_partition_view.png",
+      "status": 200,
+      "bytes": 93115
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/partition-views/14_automorphism_or_partition_view.png",
+      "status": 200,
+      "bytes": 91841
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/partition-views/15_automorphism_or_partition_view.png",
+      "status": 200,
+      "bytes": 778619
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/partition-views/16_automorphism_or_partition_view.png",
+      "status": 200,
+      "bytes": 780396
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/partition-views/17_automorphism_or_partition_view.png",
+      "status": 200,
+      "bytes": 783366
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/partition-views/18_automorphism_or_partition_view.png",
+      "status": 200,
+      "bytes": 785205
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/partition-views/19_automorphism_or_partition_view.png",
+      "status": 200,
+      "bytes": 778062
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/partition-views/20_automorphism_or_partition_view.png",
+      "status": 200,
+      "bytes": 777620
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/partition-views/21_automorphism_or_partition_view.png",
+      "status": 200,
+      "bytes": 99254
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/partition-views/22_automorphism_or_partition_view.png",
+      "status": 200,
+      "bytes": 90011
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/partition-views/23_automorphism_or_partition_view.png",
+      "status": 200,
+      "bytes": 92364
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/partition-views/24_automorphism_or_partition_view.png",
+      "status": 200,
+      "bytes": 93457
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/partition-views/25_automorphism_or_partition_view.png",
+      "status": 200,
+      "bytes": 93276
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/partition-views/26_automorphism_or_partition_view.png",
+      "status": 200,
+      "bytes": 778960
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/partition-views/27_automorphism_or_partition_view.png",
+      "status": 200,
+      "bytes": 87915
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/partition-views/28_automorphism_or_partition_view.png",
+      "status": 200,
+      "bytes": 94560
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/figures/historical/partition-views/29_automorphism_or_partition_view.png",
+      "status": 200,
+      "bytes": 96719
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/js/animations.js",
+      "status": 200,
+      "bytes": 7761
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/js/automorphisms.js",
+      "status": 200,
+      "bytes": 1050
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/js/canonical-labeling.js",
+      "status": 200,
+      "bytes": 1424
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/js/graph-core.js",
+      "status": 200,
+      "bytes": 5786
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/js/graph-generation.js",
+      "status": 200,
+      "bytes": 1340
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/js/graph-renderer.js",
+      "status": 200,
+      "bytes": 5654
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/js/interactions.js",
+      "status": 200,
+      "bytes": 27913
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/js/isomorphism.js",
+      "status": 200,
+      "bytes": 1475
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/js/matrix-labs.js",
+      "status": 200,
+      "bytes": 23948
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/js/matrix-operations.js",
+      "status": 200,
+      "bytes": 1987
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/js/matrix-renderer.js",
+      "status": 200,
+      "bytes": 4257
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/js/partition-refinement.js",
+      "status": 200,
+      "bytes": 3116
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/js/search-tree.js",
+      "status": 200,
+      "bytes": 1672
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/js/validate-mathematics.cjs",
+      "status": 200,
+      "bytes": 7317
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/js/vendor/tex-svg.js",
+      "status": 200,
+      "bytes": 2108580
+    },
+    {
+      "path": "/research/graph-theory/2026-04-22-empirical-demonstration-graph-isomorphism/python/validate_examples.py",
+      "status": 200,
+      "bytes": 5795
+    }
+  ]
+}

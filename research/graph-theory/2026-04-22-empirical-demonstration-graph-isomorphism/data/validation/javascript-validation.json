@@ -1,0 +1,123 @@
+{
+  "date": "2026-10-29",
+  "node": "v24.19.0",
+  "assertions": 51830,
+  "checks": [
+    "Every labelled graph through n=5: refinement, automorphisms, relabellings, P_C, independent S_n convention, and two generation strategies",
+    "Tree target, singleton, equitable, stabilizer-witness, and canonical preservation checks across nine graph families",
+    "Every official catalogue representative n=6,7,8 has a completed unique IR key; seeded sample relabellings retain keys"
+  ],
+  "live_counts": {
+    "1": 1,
+    "2": 2,
+    "3": 4,
+    "4": 11,
+    "5": 34
+  },
+  "families": {
+    "path4": {
+      "automorphisms": 2,
+      "generators": 1,
+      "full_nodes": 3,
+      "full_leaves": 2,
+      "pruned_nodes_including_witnesses": 3,
+      "pruned_witnesses": 1,
+      "canonical_nodes": 3,
+      "canonical_leaves": 2
+    },
+    "cycle4": {
+      "automorphisms": 8,
+      "generators": 2,
+      "full_nodes": 13,
+      "full_leaves": 8,
+      "pruned_nodes_including_witnesses": 7,
+      "pruned_witnesses": 4,
+      "canonical_nodes": 13,
+      "canonical_leaves": 8
+    },
+    "cycle6": {
+      "automorphisms": 12,
+      "generators": 2,
+      "full_nodes": 19,
+      "full_leaves": 12,
+      "pruned_nodes_including_witnesses": 9,
+      "pruned_witnesses": 6,
+      "canonical_nodes": 19,
+      "canonical_leaves": 12
+    },
+    "complete5": {
+      "automorphisms": 120,
+      "generators": 4,
+      "full_nodes": 206,
+      "full_leaves": 120,
+      "pruned_nodes_including_witnesses": 15,
+      "pruned_witnesses": 10,
+      "canonical_nodes": 206,
+      "canonical_leaves": 120
+    },
+    "star6": {
+      "automorphisms": 120,
+      "generators": 4,
+      "full_nodes": 206,
+      "full_leaves": 120,
+      "pruned_nodes_including_witnesses": 15,
+      "pruned_witnesses": 10,
+      "canonical_nodes": 206,
+      "canonical_leaves": 120
+    },
+    "asymmetric7": {
+      "automorphisms": 1,
+      "generators": 0,
+      "full_nodes": 1,
+      "full_leaves": 1,
+      "pruned_nodes_including_witnesses": 1,
+      "pruned_witnesses": 0,
+      "canonical_nodes": 1,
+      "canonical_leaves": 1
+    },
+    "prism6": {
+      "automorphisms": 12,
+      "generators": 3,
+      "full_nodes": 19,
+      "full_leaves": 12,
+      "pruned_nodes_including_witnesses": 9,
+      "pruned_witnesses": 6,
+      "canonical_nodes": 19,
+      "canonical_leaves": 12
+    },
+    "prism12": {
+      "automorphisms": 24,
+      "generators": 3,
+      "full_nodes": 37,
+      "full_leaves": 24,
+      "pruned_nodes_including_witnesses": 15,
+      "pruned_witnesses": 12,
+      "canonical_nodes": 37,
+      "canonical_leaves": 24
+    },
+    "paper9": {
+      "automorphisms": 8,
+      "generators": 2,
+      "full_nodes": 13,
+      "full_leaves": 8,
+      "pruned_nodes_including_witnesses": 7,
+      "pruned_witnesses": 4,
+      "canonical_nodes": 13,
+      "canonical_leaves": 8
+    }
+  },
+  "catalogues": {
+    "6": {
+      "representatives": 156,
+      "unique_exact_IR_keys": 156
+    },
+    "7": {
+      "representatives": 1044,
+      "unique_exact_IR_keys": 1044
+    },
+    "8": {
+      "representatives": 12346,
+      "unique_exact_IR_keys": 12346
+    }
+  }
+}

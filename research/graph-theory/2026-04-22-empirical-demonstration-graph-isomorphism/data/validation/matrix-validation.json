@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-29",
+  "assertions": 4033,
+  "checks": [
+    "Specified six-vertex witness, both original rows, reordered row, all 15 pairs, and explicit P convention",
+    "All 720 proposals on the triangular prism: direct indexing versus multiplication versus pair check",
+    "Exact prism groups, all block entries, square and invalid map, all square matrix products, twelve distinct/exhaustive h∘a witnesses",
+    "Degree, all two-walk entries, trace triangles, strongly regular parameters, full clique enumeration, shared spectral identity",
+    "C4 node and witness counts, pointwise witnesses, retained canonical output, selected rows/columns, reordered matrix markup, fit trees, heatmap detail"
+  ],
+  "six_vertex_mapping": [
+    1,
+    5,
+    6,
+    3,
+    2,
+    4
+  ],
+  "permutations_checked": 720,
+  "prisms": {
+    "6": {
+      "vertices": 6,
+      "edges": 9,
+      "automorphisms": 12
+    },
+    "12": {
+      "vertices": 12,
+      "edges": 18,
+      "automorphisms": 24
+    }
+  },
+  "pruning": {
+    "full_states": 13,
+    "full_leaves": 8,
+    "displayed_pruned_states": 7,
+    "witnesses": 4,
+    "expanded_internal_states": 2,
+    "retained_leaves": 1
+  }
+}

@@ -1,0 +1,222 @@
+{
+  "date": "2026-10-29",
+  "engine": "Codex in-app browser",
+  "responsive": [
+    {
+      "requested": 1920,
+      "client": 1905,
+      "equationHorizontal": [],
+      "equationVertical": 0,
+      "mathErrors": 0,
+      "scroll": 1905,
+      "treeOverflow": false
+    },
+    {
+      "requested": 1440,
+      "client": 1425,
+      "equationHorizontal": [],
+      "equationVertical": 0,
+      "mathErrors": 0,
+      "scroll": 1425,
+      "treeOverflow": false
+    },
+    {
+      "requested": 1280,
+      "client": 1265,
+      "equationHorizontal": [],
+      "equationVertical": 0,
+      "mathErrors": 0,
+      "scroll": 1265,
+      "treeOverflow": false
+    },
+    {
+      "requested": 1024,
+      "client": 1009,
+      "equationHorizontal": [],
+      "equationVertical": 0,
+      "mathErrors": 0,
+      "scroll": 1009,
+      "treeOverflow": false
+    },
+    {
+      "requested": 768,
+      "client": 753,
+      "equationHorizontal": [],
+      "equationVertical": 0,
+      "mathErrors": 0,
+      "scroll": 753,
+      "treeOverflow": false
+    },
+    {
+      "requested": 390,
+      "client": 375,
+      "equationHorizontal": [
+        "prism-notebook"
+      ],
+      "equationVertical": 0,
+      "mathErrors": 0,
+      "scroll": 375,
+      "treeOverflow": false
+    },
+    {
+      "requested": 1152,
+      "client": 1137,
+      "equationHorizontal": [],
+      "equationVertical": 0,
+      "mathErrors": 0,
+      "scroll": 1137,
+      "treeOverflow": false
+    },
+    {
+      "requested": 960,
+      "client": 945,
+      "equationHorizontal": [],
+      "equationVertical": 0,
+      "mathErrors": 0,
+      "scroll": 945,
+      "treeOverflow": false
+    }
+  ],
+  "selected_vertex_and_matrix_checks": [
+    {
+      "vertex": 1,
+      "highlightCorrect": true,
+      "permutationCorrect": true,
+      "productCorrect": true,
+      "zeroDifference": true
+    },
+    {
+      "vertex": 2,
+      "highlightCorrect": true,
+      "permutationCorrect": true,
+      "productCorrect": true,
+      "zeroDifference": true
+    },
+    {
+      "vertex": 3,
+      "highlightCorrect": true,
+      "permutationCorrect": true,
+      "productCorrect": true,
+      "zeroDifference": true
+    },
+    {
+      "vertex": 4,
+      "highlightCorrect": true,
+      "permutationCorrect": true,
+      "productCorrect": true,
+      "zeroDifference": true
+    },
+    {
+      "vertex": 5,
+      "highlightCorrect": true,
+      "permutationCorrect": true,
+      "productCorrect": true,
+      "zeroDifference": true
+    },
+    {
+      "vertex": 6,
+      "highlightCorrect": true,
+      "permutationCorrect": true,
+      "productCorrect": true,
+      "zeroDifference": true
+    }
+  ],
+  "mobile_overview_chapters": [
+    {
+      "h": 470,
+      "scene": "0",
+      "sh": 470,
+      "sw": 350,
+      "w": 350
+    },
+    {
+      "h": 470,
+      "scene": "1",
+      "sh": 470,
+      "sw": 350,
+      "w": 350
+    },
+    {
+      "h": 470,
+      "scene": "2",
+      "sh": 470,
+      "sw": 350,
+      "w": 350
+    },
+    {
+      "h": 470,
+      "scene": "3",
+      "sh": 470,
+      "sw": 350,
+      "w": 350
+    },
+    {
+      "h": 470,
+      "scene": "4",
+      "sh": 470,
+      "sw": 350,
+      "w": 350
+    },
+    {
+      "h": 470,
+      "scene": "5",
+      "sh": 470,
+      "sw": 350,
+      "w": 350
+    },
+    {
+      "h": 470,
+      "scene": "6",
+      "sh": 470,
+      "sw": 350,
+      "w": 350
+    },
+    {
+      "h": 470,
+      "scene": "7",
+      "sh": 470,
+      "sw": 350,
+      "w": 350
+    },
+    {
+      "h": 470,
+      "scene": "8",
+      "sh": 470,
+      "sw": 350,
+      "w": 350
+    },
+    {
+      "h": 470,
+      "scene": "9",
+      "sh": 470,
+      "sw": 350,
+      "w": 350
+    }
+  ],
+  "interaction_evidence": {
+    "builder": "ISOMORPHIC: A verified adjacency-preserving bijection was found.\nSearch nodes: 5. Witness: 1→1, 2→3, 3→2, 4→4",
+    "catalogue": "Precomputed McKay catalogue (not live enumeration): 156 representatives; expected 156; count agrees: true. Completed.",
+    "clique": "Subset {1,2,3,4}: rook K₄ = true; Shrikhande K₄ = false.\nExhaustive 1820 four-subset checks: rook 8, Shrikhande 0. Rook cliques: {1,2,3,4} {1,5,9,13} {2,6,10,14} {3,7,11,15} {4,8,12,16} {5,6,7,8} {9,10,11,12} {13,14,15,16}.\nSelected vertex 1: rook row sum 6, Shrikhande row sum 6.",
+    "composition": "First p: 1→2, 2→3, 3→4, 4→1. Then q: 1→1, 2→4, 3→3, 4→2.\nq ∘ p: 1→4, 2→3, 3→2, 4→1. Product equals its permutation matrix: true. Adjacency preserved: true.",
+    "hexConstruction": "Step 5/5. Complete all six connectors. C₆ □ K₂ has 12 vertices and 18 edges.",
+    "pruning": "Selected sequence (2,1). Absent below a pruned witness in the second tree.\nP_C: (1 2)(3 4) fixes the prefix pointwise and maps 1 to 2. The earlier sibling has an equivalent subtree.\nWitness adjacency equation verified: true. Known group size: 8, supplied before search.",
+    "refinement": "Step 2/2. Active splitter W={2,3}. Queue: ().\n({1,4} | {2,3})\nEquitable now: true. Order-preserving refinement: true.\nTrace events: []"
+  },
+  "additional_checks": [
+    "Invalid six-vertex mapping produced 16 nonzero red difference entries, immediately recomputed",
+    "Square invalid permutation rejected; quarter-turn accepted",
+    "Triangular-prism atlas selection and hexagonal reflection with layer exchange verified",
+    "Refinement playback completed and reset aria-pressed; hex construction completed with 18 edges",
+    "Candidate mask 1023 produced K5 canonical code 1111111111, synchronized below",
+    "All six specified viewport widths visually inspected; no page overflow or vertical equation scrollbars",
+    "All ten mobile overview chapters fit the player",
+    "Canonical terminal-order matrix identity verified in browser",
+    "Final phone-width six-vertex witness: all 15 pairs verified"
+  ],
+  "console": [],
+  "native_zoom": "Shortcut unavailable in preview; checked approximate 1440px 125% and 150% layout equivalents at 1152px and 960px",
+  "limitations": [
+    "Long historical permutation display intentionally scrolls horizontally on a phone",
+    "Large matrix numerical detail tables may scroll on narrow screens; labelled heatmaps are primary views"
+  ]
+}

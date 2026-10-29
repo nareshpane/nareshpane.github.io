@@ -1,0 +1,386 @@
+[
+  {
+    "original": "01_automorphism_or_partition_view.png",
+    "bytes": 779891,
+    "sha256": "bc030e6301dcb6a3652318a2f9b16da6d0bebcf0fd47ea5561a0fdf11b800b8a",
+    "destination": "figures/historical/partition-views/01_automorphism_or_partition_view.png"
+  },
+  {
+    "original": "01_graph_view.png",
+    "bytes": 109585,
+    "sha256": "52436dd2326242229904d4e7ff54277b65a47bbe3bbf0b5bb4c187013fc4c802",
+    "destination": "figures/historical/graph-views/01_graph_view.png"
+  },
+  {
+    "original": "02_automorphism_or_partition_view.png",
+    "bytes": 781308,
+    "sha256": "1f05736c7521f3fdad65dd5b80e9719f9a63bbbca61f3a17bc7b5611e54fe97e",
+    "destination": "figures/historical/partition-views/02_automorphism_or_partition_view.png"
+  },
+  {
+    "original": "02_graph_view.png",
+    "bytes": 138504,
+    "sha256": "5db5e611c1fe1877a5cda16fa911f8a3777c9eeafa37ef41e39fd6775cc91c06",
+    "destination": "figures/historical/graph-views/02_graph_view.png"
+  },
+  {
+    "original": "03_automorphism_or_partition_view.png",
+    "bytes": 783861,
+    "sha256": "db3d8c21bc81f957b885e5e3c6b6beedff8e6dd76c54455e86d4713f38ecd1f9",
+    "destination": "figures/historical/partition-views/03_automorphism_or_partition_view.png"
+  },
+  {
+    "original": "03_graph_view.png",
+    "bytes": 139117,
+    "sha256": "e436c30422725b21eb0c0e80eadfd2eeae63685b0e3b98024356048ed1a48592",
+    "destination": "figures/historical/graph-views/03_graph_view.png"
+  },
+  {
+    "original": "04_automorphism_or_partition_view.png",
+    "bytes": 780645,
+    "sha256": "46b71e205e6d538b1084fa05a2a62c4038ac1b970b5b9b463f307b47ce0baaa5",
+    "destination": "figures/historical/partition-views/04_automorphism_or_partition_view.png"
+  },
+  {
+    "original": "04_graph_view.png",
+    "bytes": 109577,
+    "sha256": "7986772ec475ccc27025cf994274c4b0bd0fc14c4c58c892be75915bfd8687f6",
+    "destination": "figures/historical/graph-views/04_graph_view.png"
+  },
+  {
+    "original": "05_automorphism_or_partition_view.png",
+    "bytes": 90621,
+    "sha256": "8cbdb261a452201c0f6ab8560b0e478be9663d13c90c7a8b3c30d53671b79383",
+    "destination": "figures/historical/partition-views/05_automorphism_or_partition_view.png"
+  },
+  {
+    "original": "05_graph_view.png",
+    "bytes": 110011,
+    "sha256": "597e603c07945f50b518b3b3616ee6a397fceab9ff6bc15c6613ef6a9af98b79",
+    "destination": "figures/historical/graph-views/05_graph_view.png"
+  },
+  {
+    "original": "06_automorphism_or_partition_view.png",
+    "bytes": 90383,
+    "sha256": "e96628e9c15d290b7b723dc918ace6e050a977ee1a4a588454b710d5629484f1",
+    "destination": "figures/historical/partition-views/06_automorphism_or_partition_view.png"
+  },
+  {
+    "original": "06_graph_view.png",
+    "bytes": 109830,
+    "sha256": "bc9820a4a539f4ba6bc6d30869ee80d5b66dd1f3fcb46e8ba929b0ecb252a242",
+    "destination": "figures/historical/graph-views/06_graph_view.png"
+  },
+  {
+    "original": "07_automorphism_or_partition_view.png",
+    "bytes": 88324,
+    "sha256": "580bc77a1638d59f0555fc1910c3e61b28a922652e1031a89e009e5d5abbbd8c",
+    "destination": "figures/historical/partition-views/07_automorphism_or_partition_view.png"
+  },
+  {
+    "original": "07_graph_view.png",
+    "bytes": 140739,
+    "sha256": "99265849eee636b57de6ee88670b9ed1eae8982f95a73f8a2c9c72c55b88f157",
+    "destination": "figures/historical/graph-views/07_graph_view.png"
+  },
+  {
+    "original": "08_automorphism_or_partition_view.png",
+    "bytes": 97256,
+    "sha256": "4797385149fcd26e7eca7a7af59019a97a8af80691508c59ab453505acdac337",
+    "destination": "figures/historical/partition-views/08_automorphism_or_partition_view.png"
+  },
+  {
+    "original": "08_graph_view.png",
+    "bytes": 95106,
+    "sha256": "caad37ccc75ba3493990bcfb29a4048a92c9768a829fff80c471c3fc7be541b9",
+    "destination": "figures/historical/graph-views/08_graph_view.png"
+  },
+  {
+    "original": "09_automorphism_or_partition_view.png",
+    "bytes": 100353,
+    "sha256": "c64985b16586b2d5786b00d2b52cfe6ec44a3144f0b436079d8484411ffc423a",
+    "destination": "figures/historical/partition-views/09_automorphism_or_partition_view.png"
+  },
+  {
+    "original": "09_graph_view.png",
+    "bytes": 120119,
+    "sha256": "ffef0671234f7733708328c91e5665e2541abfd0311e78b4578b4f0daa4bca62",
+    "destination": "figures/historical/graph-views/09_graph_view.png"
+  },
+  {
+    "original": "1-brendan-mckay-practical-graph-isomorphism-1981.pdf",
+    "bytes": 2298221,
+    "sha256": "9d7e7d0cb60e19fa29fecebf1c9cd2e62506acc3db7cf78dd7d9e93eb43608a0",
+    "destination": "1-brendan-mckay-practical-graph-isomorphism-1981.pdf"
+  },
+  {
+    "original": "10_automorphism_or_partition_view.png",
+    "bytes": 90870,
+    "sha256": "469a225de6bb2d56fcd43e1df3a3cf42edf1298796074dde48e5add19e3bf048",
+    "destination": "figures/historical/partition-views/10_automorphism_or_partition_view.png"
+  },
+  {
+    "original": "10_graph_view.png",
+    "bytes": 136884,
+    "sha256": "0ac23a72b72ad835cd13f2a17acd579a6bccf3f923c60cd3ceb42037a88bdf72",
+    "destination": "figures/historical/graph-views/10_graph_view.png"
+  },
+  {
+    "original": "11_automorphism_or_partition_view.png",
+    "bytes": 94063,
+    "sha256": "dd31d6635d708ccc03a5d31ab50ac867744689f350473eacfe57671a2fd2a489",
+    "destination": "figures/historical/partition-views/11_automorphism_or_partition_view.png"
+  },
+  {
+    "original": "11_graph_view.png",
+    "bytes": 136884,
+    "sha256": "0ac23a72b72ad835cd13f2a17acd579a6bccf3f923c60cd3ceb42037a88bdf72",
+    "destination": "figures/historical/graph-views/11_graph_view.png"
+  },
+  {
+    "original": "12_automorphism_or_partition_view.png",
+    "bytes": 94262,
+    "sha256": "e914ab472ec855aed22477a2a1de36d503111a0a2d34f4ed0e77bc737a5fc000",
+    "destination": "figures/historical/partition-views/12_automorphism_or_partition_view.png"
+  },
+  {
+    "original": "12_graph_view.png",
+    "bytes": 113686,
+    "sha256": "bf655f82e8db4f1226ac885d0318b52f3e6818feed1500c84b4f6b4b4ce2199b",
+    "destination": "figures/historical/graph-views/12_graph_view.png"
+  },
+  {
+    "original": "13_automorphism_or_partition_view.png",
+    "bytes": 93115,
+    "sha256": "f7dfb15c1651414425af501f0bc5152a948d748cdb7ea2f2adc161976e1484a0",
+    "destination": "figures/historical/partition-views/13_automorphism_or_partition_view.png"
+  },
+  {
+    "original": "13_graph_view.png",
+    "bytes": 151864,
+    "sha256": "3f3e11c547dfb87ce4fc382ea30b014ae4a7d75e205d0a63a07ee0d17253957e",
+    "destination": "figures/historical/graph-views/13_graph_view.png"
+  },
+  {
+    "original": "14_automorphism_or_partition_view.png",
+    "bytes": 91841,
+    "sha256": "a2f3bc0624d6eb810387e843738a7c730c972a4202a5cacdd9c95b2f915ba26f",
+    "destination": "figures/historical/partition-views/14_automorphism_or_partition_view.png"
+  },
+  {
+    "original": "14_graph_view.png",
+    "bytes": 111738,
+    "sha256": "1c9d419d868a50bcdf7f590cc1d7f965b96ae63f8508665e91ebdddf13f7e92a",
+    "destination": "figures/historical/graph-views/14_graph_view.png"
+  },
+  {
+    "original": "15_automorphism_or_partition_view.png",
+    "bytes": 778619,
+    "sha256": "c35313f48e7a043e03ea3e9744493a0c284873edd8bda78145cbfca3ac0d9a9b",
+    "destination": "figures/historical/partition-views/15_automorphism_or_partition_view.png"
+  },
+  {
+    "original": "15_graph_view.png",
+    "bytes": 156791,
+    "sha256": "71bbc0a6c0a6da266892fb6e9a4c4be165007e35f757c4c0fddb46cff4bb7938",
+    "destination": "figures/historical/graph-views/15_graph_view.png"
+  },
+  {
+    "original": "16_automorphism_or_partition_view.png",
+    "bytes": 780396,
+    "sha256": "40e8df053e99f4071e99e6375bc1b98e59cc6e02711c402598b01df3e9b0f204",
+    "destination": "figures/historical/partition-views/16_automorphism_or_partition_view.png"
+  },
+  {
+    "original": "16_graph_view.png",
+    "bytes": 157460,
+    "sha256": "14d39f030bb86d3d0faef3ec3b12294fc5e8c8086c1c4f6150d58387ccddfcd9",
+    "destination": "figures/historical/graph-views/16_graph_view.png"
+  },
+  {
+    "original": "17_automorphism_or_partition_view.png",
+    "bytes": 783366,
+    "sha256": "e9d9a6af0f9097c55cce9595ec26f9a6231f16cd9f5f054be170184e04415d16",
+    "destination": "figures/historical/partition-views/17_automorphism_or_partition_view.png"
+  },
+  {
+    "original": "17_graph_view.png",
+    "bytes": 147713,
+    "sha256": "f5ecfabe2196ffec2d8c6bdcd8019fcf25995c23efcba6a7a6a9b0ccedc1054a",
+    "destination": "figures/historical/graph-views/17_graph_view.png"
+  },
+  {
+    "original": "18_automorphism_or_partition_view.png",
+    "bytes": 785205,
+    "sha256": "e3b559ae509f9f7419b0934f92408c0061e8d5062bf6484b450d0f790272c1f3",
+    "destination": "figures/historical/partition-views/18_automorphism_or_partition_view.png"
+  },
+  {
+    "original": "18_graph_view.png",
+    "bytes": 145349,
+    "sha256": "020e55ebc8b2f27e35ee63b8b5a4a3f61c0d9ec9298bcfdf527b658ef91cd45d",
+    "destination": "figures/historical/graph-views/18_graph_view.png"
+  },
+  {
+    "original": "19_automorphism_or_partition_view.png",
+    "bytes": 778062,
+    "sha256": "8f0c5b53907d954bdd01bb105895f4ec4ae32d9f43a15226132cbd571df14b0d",
+    "destination": "figures/historical/partition-views/19_automorphism_or_partition_view.png"
+  },
+  {
+    "original": "19_graph_view.png",
+    "bytes": 143643,
+    "sha256": "5bb38522abb8b7a2599834b53edad4d64c486e675696af5cb93cffce5c28ffe7",
+    "destination": "figures/historical/graph-views/19_graph_view.png"
+  },
+  {
+    "original": "2-brendan-mckay-adolfo-piperno-practical-graph-isomorphism-ii-2013.pdf",
+    "bytes": 4036949,
+    "sha256": "2173fcd10d99c269eec4d28d2089887452eb972456c52a1b961a2bf186194029",
+    "destination": "2-brendan-mckay-adolfo-piperno-practical-graph-isomorphism-ii-2013.pdf"
+  },
+  {
+    "original": "20_automorphism_or_partition_view.png",
+    "bytes": 777620,
+    "sha256": "482f17412088004de897194f36b2f051231446339ccdb7e7f7c8c625594e2879",
+    "destination": "figures/historical/partition-views/20_automorphism_or_partition_view.png"
+  },
+  {
+    "original": "20_graph_view.png",
+    "bytes": 139654,
+    "sha256": "7990145b71a1b0e4005bf97f8dce8699c7256010e8f355ded9b1db9bcd8c4801",
+    "destination": "figures/historical/graph-views/20_graph_view.png"
+  },
+  {
+    "original": "21_automorphism_or_partition_view.png",
+    "bytes": 99254,
+    "sha256": "75eb66b6ced02952cc9238d26190fbe8fd861c9c2910da57960c470e3d723d08",
+    "destination": "figures/historical/partition-views/21_automorphism_or_partition_view.png"
+  },
+  {
+    "original": "21_graph_view.png",
+    "bytes": 118562,
+    "sha256": "7f66f3fd36691e9ce41136684138c608e0ba290af132f7cb44bb82ace72a7056",
+    "destination": "figures/historical/graph-views/21_graph_view.png"
+  },
+  {
+    "original": "22_automorphism_or_partition_view.png",
+    "bytes": 90011,
+    "sha256": "f4feffb8590803f9841662bb37f61f37e15564f15ca4f7c7b2a2c1600f54dd87",
+    "destination": "figures/historical/partition-views/22_automorphism_or_partition_view.png"
+  },
+  {
+    "original": "22_graph_view.png",
+    "bytes": 146420,
+    "sha256": "e706c65eb787297ca5f387eba13822a70888f4c6ca83d940b60cc59ce49b3373",
+    "destination": "figures/historical/graph-views/22_graph_view.png"
+  },
+  {
+    "original": "23_automorphism_or_partition_view.png",
+    "bytes": 92364,
+    "sha256": "5bddfca731f9b781bdb613169e2512e093e0d72a21c438266b4ad04aaaaf7b71",
+    "destination": "figures/historical/partition-views/23_automorphism_or_partition_view.png"
+  },
+  {
+    "original": "23_graph_view.png",
+    "bytes": 148642,
+    "sha256": "2727a1cbf3a631feb4744f5759367d960472528e04767df4ae796b610856a3ca",
+    "destination": "figures/historical/graph-views/23_graph_view.png"
+  },
+  {
+    "original": "24_automorphism_or_partition_view.png",
+    "bytes": 93457,
+    "sha256": "a61833e5611058cd57cabe89a09250a7ef2726d2b1dc68010b6a829e6f7fc18f",
+    "destination": "figures/historical/partition-views/24_automorphism_or_partition_view.png"
+  },
+  {
+    "original": "24_graph_view.png",
+    "bytes": 141775,
+    "sha256": "1223674a968aeb8f6f57d77275d879fba7c1ff80aa3f0f8d106f2eeccfbb14c6",
+    "destination": "figures/historical/graph-views/24_graph_view.png"
+  },
+  {
+    "original": "25_automorphism_or_partition_view.png",
+    "bytes": 93276,
+    "sha256": "a56952137a6f7ff0c80e7390e610a9a13a32e418802fd7b91799c6187719e0b1",
+    "destination": "figures/historical/partition-views/25_automorphism_or_partition_view.png"
+  },
+  {
+    "original": "25_graph_view.png",
+    "bytes": 144075,
+    "sha256": "306a51ae51596d1c4d066240822baa8df8f4a15004ef135d97f9c6206c2cb43b",
+    "destination": "figures/historical/graph-views/25_graph_view.png"
+  },
+  {
+    "original": "26_automorphism_or_partition_view.png",
+    "bytes": 778960,
+    "sha256": "0220e9ce2633aa4258cb26067e0df181de9601780a8a2f7e60e7fa4cce253452",
+    "destination": "figures/historical/partition-views/26_automorphism_or_partition_view.png"
+  },
+  {
+    "original": "26_graph_view.png",
+    "bytes": 108121,
+    "sha256": "bbe26712efa433d275c0f7170ee9b17563c4a656b873b8d632682bcceb32a15d",
+    "destination": "figures/historical/graph-views/26_graph_view.png"
+  },
+  {
+    "original": "27_automorphism_or_partition_view.png",
+    "bytes": 87915,
+    "sha256": "0634d7b3d4f4209c569b9ac7ef502d36d78b718ac095f08a889cf88747ef970e",
+    "destination": "figures/historical/partition-views/27_automorphism_or_partition_view.png"
+  },
+  {
+    "original": "27_graph_view.png",
+    "bytes": 147398,
+    "sha256": "68809440eff51f6b54553de957fcd840d82cca27228861a1e9ea5c798e5ad8b6",
+    "destination": "figures/historical/graph-views/27_graph_view.png"
+  },
+  {
+    "original": "28_automorphism_or_partition_view.png",
+    "bytes": 94560,
+    "sha256": "cda5c6b936a83182b2cacac3cf78ca17050ceb3707e4c6bf2734fff82cee1fae",
+    "destination": "figures/historical/partition-views/28_automorphism_or_partition_view.png"
+  },
+  {
+    "original": "28_graph_view.png",
+    "bytes": 149642,
+    "sha256": "6af7c7922ffbc71f8d8036940e032f959e5a3b86b09a32b976c408cef081e9b1",
+    "destination": "figures/historical/graph-views/28_graph_view.png"
+  },
+  {
+    "original": "29_automorphism_or_partition_view.png",
+    "bytes": 96719,
+    "sha256": "ee4fc3893e9852b149f974ce5c1e847122e03d6fbddd3ebacf687cad4e99eb9e",
+    "destination": "figures/historical/partition-views/29_automorphism_or_partition_view.png"
+  },
+  {
+    "original": "29_graph_view.png",
+    "bytes": 145797,
+    "sha256": "9ae4c2fbbec68f696ae8548d85f5cdc5b30ae08fc8256669cacac516a3ae7029",
+    "destination": "figures/historical/graph-views/29_graph_view.png"
+  },
+  {
+    "original": "automorphism_demo_nauty_data.txt",
+    "bytes": 4946,
+    "sha256": "3ae4b3603e6d5ba398537c83bc2af2a01bc88cd82eba2edc83ed0aa35577a869",
+    "destination": "data/historical/automorphism_demo_nauty_data.txt"
+  },
+  {
+    "original": "generate_automorphism_demo.py",
+    "bytes": 25997,
+    "sha256": "012bdb1e70921db6c52741af3841a12e57c8fea8cc0853c311748f8b7724e356",
+    "destination": "python/historical/generate_automorphism_demo.py"
+  },
+  {
+    "original": "generate_automorphism_demo_placeholders_fixed.py",
+    "bytes": 31634,
+    "sha256": "deb8f0e21d58d36c0e77c5a25e9c899fd09b63b8b1b61ac3f83c5e1e07ad1732",
+    "destination": "python/historical/generate_automorphism_demo_placeholders_fixed.py"
+  },
+  {
+    "original": "prism12_all_automorphisms.txt",
+    "bytes": 2978,
+    "sha256": "b6e7b029a1342fafe1b32c4799f21e31424486ef5e050f6e22b944d4aa66f820",
+    "destination": "data/historical/prism12_all_automorphisms.txt"
+  }
+]

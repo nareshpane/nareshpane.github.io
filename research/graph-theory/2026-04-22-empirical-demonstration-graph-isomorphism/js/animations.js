@@ -1,0 +1,38 @@
+(function(L){
+ 'use strict';
+ L.initFilm=function(){
+   const box=document.getElementById('overview-player');if(!box)return;
+   const stage=document.getElementById('film-stage'),slider=document.getElementById('film-timeline'),clock=document.getElementById('film-clock'),play=document.getElementById('film-play'),speed=document.getElementById('film-speed');
+   const chapters=['Graphs & matrices','Symmetry','Factorials','Refinement','Individualize','Search','Canonical form','Two papers','Generation','Research map'];
+   let time=0,playing=false,last=null,frame=0,lastPaint=-Infinity;const duration=90;
+   const g=L.examples('path4'),p=[2,0,3,1],h=L.relabel(g,p),cycle=L.examples('cycle4'),tree=L.searchTree(L.examples('cycle6'),{limit:60,prune:true,automorphisms:L.automorphisms(L.examples('cycle6')).maps}),canon=L.canonical(g),ref=L.refine(L.examples('path7'),[L.range(7)]),groups=L.generate(3);
+   const names=document.getElementById('film-chapters');
+   chapters.forEach((name,i)=>{let b=document.createElement('button');b.textContent=`${i*9}s · ${name}`;b.addEventListener('click',()=>seek(i*9));names.append(b);});
+   function pair(a,b,oa={},ob={},arrow='≅'){return `<div class="film-graphs"><div>${L.svg(a,oa)}</div><div class="film-arrow">${arrow}</div><div>${L.svg(b,ob)}</div></div>`;}
+   function draw(){
+     const i=Math.min(9,Math.floor(time/9)),t=(time-i*9)/9;let visual='',caption='',callout='';
+     if(i===0){let a=L.positions(4),b=L.positions(4),q=b.map((xy,v)=>{let dst=a[L.inverse(p)[v]];return [xy[0]*(1-t)+dst[0]*t,xy[1]*(1-t)+dst[1]*t];});visual=pair(g,h,{}, {positions:q});visual+=`<div class="two film-permutation-matrices">${L.matrix(g,L.range(4),[],{caption:'Adjacency A_G'})}${L.matrixView(L.permutationMatrix(p),{caption:'P: row i selects column f(i)'})}</div>`;caption='Graph → adjacency matrix → permutation. With P[i,f(i)]=1, A_G = P A_H Pᵀ checks every pair.';callout='1 → 3 · 2 → 1 · 3 → 4 · 4 → 2';}
+     if(i===1){let pos=L.positions(4).map(x=>{let angle=t*Math.PI*2,dx=x[0]-160,dy=x[1]-150;return [160+dx*Math.cos(angle)-dy*Math.sin(angle),150+dx*Math.sin(angle)+dy*Math.cos(angle)];});visual=pair(cycle,cycle,{}, {positions:pos});caption='Rotations and reflections of the square form eight adjacency-preserving permutations.';callout='Aut(C₄) ≅ D₈ · group order 8';}
+     if(i===2){let n=4+Math.floor(t*7),f=1;for(let j=2;j<=n;j++)f*=j;visual=pair(L.examples('cycle6'),L.examples('cycle6'),{}, {mapping:L.shuffle(6,Math.floor(t*5)+1981)},'n!');caption='n! counts candidate bijections. The number of distinct labelled copies is n! / |Aut(G)|.';callout=`${n}! = ${f.toLocaleString()} possible bijections`;}
+     if(i===3){let k=Math.min(ref.steps.length,Math.floor(t*(ref.steps.length+1))),cells=k?ref.steps[k-1].cells:[L.range(7)];visual=pair(L.examples('path7'),L.examples('path7'),{}, {cells},'split');caption='Count neighbours into an active cell; split existing cells by those counts. Repeat until equitable.';callout=L.partitionText(cells);}
+     if(i===4){let r=L.refine(cycle,L.individualize([L.range(4)],0),[[0]]),cells=t<.4?[[0],[1,2,3]]:r.cells;visual=pair(cycle,cycle,{}, {cells,selected:[0]},'fix 1');caption='One vertex receives a unique colour. Equitable refinement then propagates that information.';callout=L.partitionText(cells);}
+     if(i===5){let order=L.traversal(tree),k=Math.floor(t*order.length);visual=`<div class="tree-scroll" style="max-height:250px">${L.treeSVG(tree,{selected:order[Math.min(k,order.length-1)],visited:new Set(order.slice(0,k+1))})}</div>`;caption='Each node is an individualization sequence. Red × branches are certified equivalent by known automorphisms.';callout=`${Math.min(k+1,order.length)} / ${order.length} nodes of this exact P_C-pruned C₆ tree`;}
+     if(i===6){let left=t<.45?g:canon.graph,right=t<.45?h:canon.graph;visual=pair(left,right,{}, {},t<.45?'≅':'=');caption='The original adjacency matrices converge to the same exact IR canonical representative.';callout=`canonical upper-triangle code: ${canon.code}`;visual+=`<div class="two film-matrices" style="max-width:500px;margin:auto">${L.matrix(left)}${L.matrix(right)}</div>`;}
+     if(i===7){visual='<div class="two" style="padding:50px 20px"><div class="panel"><h3>McKay · 1981</h3><p>Partition nests<br>Indicator functions<br>Automorphism pruning<br>Canonical labels</p></div><div class="panel"><h3>McKay–Piperno · 2014</h3><p>Explicit R, T, φ axioms<br>Unified pruning theory<br>Updated nauty<br>Traces and experimental paths</p></div></div>';caption='Shared mathematical foundations; different formal interfaces and major later implementation developments.';}
+     if(i===8){let k=Math.min(groups.reps.length,1+Math.floor(t*groups.reps.length));visual='<div class="film-map">'+groups.reps.slice(0,k).map((g,j)=>'<div>'+L.svg(g,{mini:true})+'<small>Class '+(j+1)+'</small></div>').join('')+'</div>';caption='Eight labelled graphs on three vertices collapse to four isomorphism classes.';callout='2^(3 choose 2) = 8 candidates → 4 structures';}
+     if(i===9){visual='<div class="film-map">'+['Graphs','Invariants','Groups','Partitions','Refinement','Search','Canonization','Pruning','Generation','Validation'].map((x,j)=>`<span style="background:${j<=Math.floor(t*10)?'#c9e4b8':'#e6ebdd'}">${String(j+1).padStart(2,'0')}<br>${x}</span>`).join('')+'</div>';caption='Follow the same operations from a four-vertex path to regular graphs, exact small-graph atlases, and the limits of exhaustive search.';callout='One mathematical narrative · two landmark papers';}
+     stage.dataset.scene=i;stage.innerHTML=`<div class="scene-kicker">Scene ${i+1} / 10 · deterministic explanatory animation</div><h3>${chapters[i]}</h3>${visual}<div class="film-callout">${L.escape(callout)}</div><p class="film-caption">${caption}</p>`;
+     slider.value=time;clock.value=`${Math.floor(time/60)}:${String(Math.floor(time%60)).padStart(2,'0')} / 1:30`;slider.setAttribute('aria-valuetext',`${time.toFixed(1)} seconds, ${chapters[i]}`);names.querySelectorAll('button').forEach((b,k)=>b.setAttribute('aria-current',String(k===i)));
+   }
+   function seek(t){time=Math.max(0,Math.min(duration,Number(t)));last=null;draw();}
+   function tick(now){if(!playing)return;if(last!==null)time=Math.min(duration,time+(now-last)/1000*Number(speed.value));last=now;if(now-lastPaint>75||time===duration){draw();lastPaint=now;}if(time>=duration){playing=false;play.textContent='Play';play.setAttribute('aria-pressed','false');}else frame=requestAnimationFrame(tick);}
+   play.addEventListener('click',()=>{playing=!playing;if(playing){if(time>=duration)time=0;last=null;frame=requestAnimationFrame(tick);}else cancelAnimationFrame(frame);play.textContent=playing?'Pause':'Play';play.setAttribute('aria-pressed',String(playing));});
+   document.getElementById('film-restart').addEventListener('click',()=>seek(0));slider.addEventListener('input',()=>seek(slider.value));
+   document.getElementById('film-fullscreen').addEventListener('click',async()=>{try{if(!document.fullscreenElement){if(box.requestFullscreen)await box.requestFullscreen();}else await document.exitFullscreen();}catch(e){document.getElementById('film-fullscreen').title='Fullscreen is unavailable in this browser context.';}});
+   document.addEventListener('fullscreenchange',()=>{document.getElementById('film-fullscreen').textContent=document.fullscreenElement?'Exit full screen':'Full screen';});
+   document.addEventListener('visibilitychange',()=>{last=null;});
+   if(!box.requestFullscreen)document.getElementById('film-fullscreen').hidden=true;
+   draw(); // Starts paused, including when reduced motion is requested.
+   L.film={seek,get time(){return time;},duration};
+ };
+})(GraphLab);

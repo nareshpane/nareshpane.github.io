@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-29",
+  "browser": "Codex in-app browser, local HTTP preview",
+  "viewports": [
+    {"width": 1280, "height": 900, "document_scroll_width": 1265, "horizontal_page_overflow": false},
+    {"width": 390, "height": 844, "document_scroll_width": 375, "horizontal_page_overflow": false}
+  ],
+  "math_containers": 422,
+  "math_typesetting_errors": 0,
+  "console_errors_or_warnings_observed": [],
+  "checks": [
+    "Mapping solver returns a verified six-pair adjacency/non-adjacency certificate on P4",
+    "Keyboard Enter on an interactive graph vertex updates the selected mathematical representation",
+    "Prism12 group explorer reports 24 automorphisms, exact closure, and stabilizer of vertices 1,2 of order 1",
+    "Ordered partition input for reconstructed Figure 1 remains equitable in three cells",
+    "Active-cell step updates counts, queue, partition, and graph",
+    "Individualization on C6 updates sequence, singleton, stable partition, and path display",
+    "Selecting a pruned search node reveals its actual prefix-fixing automorphism witness",
+    "Both worker-based order-five generation methods complete with 34 classes",
+    "Connected-only filtering at order five returns 21 classes and updates the selected graph",
+    "Official order-eight catalogue loads 12346 representatives; connected-only filtering returns 11117",
+    "Exhaustive P4 baseline completes all 24 permutations; different IR/all-Sn conventions are displayed accurately",
+    "Imported-graph isomorphism worker returns a concrete witness",
+    "Asymmetric adjacency matrix import is rejected with a specific message",
+    "Canonical search on an imported complete twelve-vertex graph can be cancelled without claiming completion",
+    "Explicit exhaustive-baseline cancellation control clears the claimed result",
+    "Animation chapter seeking reaches 81 seconds and End reaches 90 seconds exactly",
+    "Animation restart returns to zero; two-times playback advances; pause stops it",
+    "All ten desktop scenes fit the same 500-pixel stage; all ten mobile scenes fit the same 470-pixel stage",
+    "Animation player has exactly one timeline slider",
+    "Fullscreen entry verified with one :fullscreen element and visual inspection; exit verified with zero",
+    "Strategy comparison playback advances both actual traversal orders and can be reset",
+    "Compact mobile navigation and desktop active-section navigation update correctly",
+    "Retained notebook entry 26 opens both original PNGs with nonzero natural dimensions"
+  ],
+  "http_audit": "http-audit.json",
+  "asset_audit": "asset-audit.json",
+  "technical_limits": [
+    "Worker and catalogue features require HTTP rather than restrictive file URLs",
+    "Reduced-motion behavior is implemented through paused arrival and CSS; no browser media-emulation API was used",
+    "This report records representative UI verification, not an automated exhaustive browser test suite"
+  ],
+  "all_recorded_checks_passed": true
+}
