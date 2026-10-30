@@ -1,0 +1,108 @@
+{
+  "checked_at_utc": "2026-10-30T13:10:22.542898+00:00",
+  "method": "HEAD with redirects; certificate verification enabled",
+  "links": [
+    {
+      "url": "https://doi.org/10.25318/1810000401-eng",
+      "status": 200,
+      "effective_url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000401",
+      "error": null
+    },
+    {
+      "url": "https://doi.org/10.25318/1810000501-eng",
+      "status": 200,
+      "effective_url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000501",
+      "error": null
+    },
+    {
+      "url": "https://doi.org/10.25318/1810000601-eng",
+      "status": 200,
+      "effective_url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000601",
+      "error": null
+    },
+    {
+      "url": "https://doi.org/10.25318/1810000701-eng",
+      "status": 200,
+      "effective_url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000701",
+      "error": null
+    },
+    {
+      "url": "https://doi.org/10.25318/1810025601-eng",
+      "status": 200,
+      "effective_url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810025601",
+      "error": null
+    },
+    {
+      "url": "https://www.bankofcanada.ca/rates/price-indexes/cpi/",
+      "status": 200,
+      "effective_url": "https://www.bankofcanada.ca/rates/price-indexes/cpi/",
+      "error": null
+    },
+    {
+      "url": "https://www.statcan.gc.ca/en/statistical-programs/document/2301_D66_V1",
+      "status": 200,
+      "effective_url": "https://www.statcan.gc.ca/en/statistical-programs/document/2301_D66_V1",
+      "error": null
+    },
+    {
+      "url": "https://www.statcan.gc.ca/en/subjects-start/prices_and_price_indexes/consumer_price_indexes",
+      "status": 200,
+      "effective_url": "https://www.statcan.gc.ca/en/subjects-start/prices_and_price_indexes/consumer_price_indexes",
+      "error": null
+    },
+    {
+      "url": "https://www150.statcan.gc.ca/n1/daily-quotidien/260615/dq260615c-eng.htm",
+      "status": 200,
+      "effective_url": "https://www150.statcan.gc.ca/n1/daily-quotidien/260615/dq260615c-eng.htm",
+      "error": null
+    },
+    {
+      "url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261019/dq261019a-eng.htm",
+      "status": 200,
+      "effective_url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261019/dq261019a-eng.htm",
+      "error": null
+    },
+    {
+      "url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261019/t001a-eng.htm",
+      "status": 200,
+      "effective_url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261019/t001a-eng.htm",
+      "error": null
+    },
+    {
+      "url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261019/t002a-eng.htm",
+      "status": 200,
+      "effective_url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261019/t002a-eng.htm",
+      "error": null
+    },
+    {
+      "url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261019/t003a-eng.htm",
+      "status": 200,
+      "effective_url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261019/t003a-eng.htm",
+      "error": null
+    },
+    {
+      "url": "https://www150.statcan.gc.ca/n1/pub/62-553-x/2023001/chap-5-eng.htm",
+      "status": 200,
+      "effective_url": "https://www150.statcan.gc.ca/n1/pub/62-553-x/2023001/chap-5-eng.htm",
+      "error": null
+    },
+    {
+      "url": "https://www150.statcan.gc.ca/n1/pub/62-553-x/2023001/chap-6-eng.htm",
+      "status": 200,
+      "effective_url": "https://www150.statcan.gc.ca/n1/pub/62-553-x/2023001/chap-6-eng.htm",
+      "error": null
+    },
+    {
+      "url": "https://www150.statcan.gc.ca/n1/pub/62-553-x/2023001/chap-8-eng.htm",
+      "status": 200,
+      "effective_url": "https://www150.statcan.gc.ca/n1/pub/62-553-x/2023001/chap-8-eng.htm",
+      "error": null
+    },
+    {
+      "url": "https://www150.statcan.gc.ca/n1/pub/62f0014m/62f0014m2026005-eng.htm",
+      "status": 200,
+      "effective_url": "https://www150.statcan.gc.ca/n1/pub/62f0014m/62f0014m2026005-eng.htm",
+      "error": null
+    }
+  ]
+}

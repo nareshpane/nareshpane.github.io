@@ -1,0 +1,611 @@
+{
+  "checks": 121,
+  "failures": 0,
+  "results": [
+    {
+      "name": "Annual headline",
+      "actual": 3.092783505154628,
+      "expected": 3.09278350515465
+    },
+    {
+      "name": "Monthly headline",
+      "actual": 0.11778563015312216,
+      "expected": 0.1177856301531
+    },
+    {
+      "name": "Adjusted monthly headline",
+      "actual": 0.35419126328217754,
+      "expected": 0.35419126328217
+    },
+    {
+      "name": "Fixed quantities / weighted relatives, milk 3",
+      "actual": 1.0171545268850009,
+      "expected": 1.0171545268850009
+    },
+    {
+      "name": "Updated shares sum to one, milk 3",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Equal explicit weights recover Jevons, milk 3",
+      "actual": 0.812403840463596,
+      "expected": 0.812403840463596
+    },
+    {
+      "name": "Linked level recovers growth, milk 3",
+      "actual": 1.7154526885000854,
+      "expected": 1.7154526885000854
+    },
+    {
+      "name": "Fixed quantities / weighted relatives, milk 5.25",
+      "actual": 1.0696156113943287,
+      "expected": 1.0696156113943285
+    },
+    {
+      "name": "Updated shares sum to one, milk 5.25",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Equal explicit weights recover Jevons, milk 5.25",
+      "actual": 1.074709263010234,
+      "expected": 1.074709263010234
+    },
+    {
+      "name": "Linked level recovers growth, milk 5.25",
+      "actual": 6.961561139432848,
+      "expected": 6.961561139432848
+    },
+    {
+      "name": "Fixed quantities / weighted relatives, milk 8",
+      "actual": 1.1200037420207136,
+      "expected": 1.1200037420207138
+    },
+    {
+      "name": "Updated shares sum to one, milk 8",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Equal explicit weights recover Jevons, milk 8",
+      "actual": 1.32664991614216,
+      "expected": 1.32664991614216
+    },
+    {
+      "name": "Linked level recovers growth, milk 8",
+      "actual": 12.000374202071384,
+      "expected": 12.000374202071384
+    },
+    {
+      "name": "Laptop adjustment: assumed $80",
+      "actual": 2.2222222222222143,
+      "expected": 2.22222222222222
+    },
+    {
+      "name": "Synthetic regional aggregation",
+      "actual": 3.025000000000011,
+      "expected": 3.025
+    },
+    {
+      "name": "Official food starting weight",
+      "actual": 16.93,
+      "expected": 16.93
+    },
+    {
+      "name": "Official shelter starting weight",
+      "actual": 28.3,
+      "expected": 28.3
+    },
+    {
+      "name": "Official raw published total",
+      "actual": 100.01,
+      "expected": 100.01
+    },
+    {
+      "name": "Official normalized total",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Fictional food share",
+      "actual": 0.22,
+      "expected": 0.22
+    },
+    {
+      "name": "Full-precision official food shock",
+      "actual": 0.8464153584641536,
+      "expected": 0.8464153584641536
+    },
+    {
+      "name": "Scenario sum / official / 0 / 0",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Selected share / 0 / 0",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "Scenario sum / official / 0 / 0.5",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Selected share / 0 / 0.5",
+      "actual": 0.5,
+      "expected": 0.5
+    },
+    {
+      "name": "Scenario sum / official / 0 / 1",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Selected share / 0 / 1",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Scenario sum / official / 1 / 0",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Selected share / 1 / 0",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "Scenario sum / official / 1 / 0.5",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Selected share / 1 / 0.5",
+      "actual": 0.5,
+      "expected": 0.5
+    },
+    {
+      "name": "Scenario sum / official / 1 / 1",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Selected share / 1 / 1",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Scenario sum / official / 2 / 0",
+      "actual": 1.0000000000000002,
+      "expected": 1
+    },
+    {
+      "name": "Selected share / 2 / 0",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "Scenario sum / official / 2 / 0.5",
+      "actual": 1.0000000000000002,
+      "expected": 1
+    },
+    {
+      "name": "Selected share / 2 / 0.5",
+      "actual": 0.5,
+      "expected": 0.5
+    },
+    {
+      "name": "Scenario sum / official / 2 / 1",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Selected share / 2 / 1",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Scenario sum / official / 3 / 0",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Selected share / 3 / 0",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "Scenario sum / official / 3 / 0.5",
+      "actual": 1.0000000000000002,
+      "expected": 1
+    },
+    {
+      "name": "Selected share / 3 / 0.5",
+      "actual": 0.5,
+      "expected": 0.5
+    },
+    {
+      "name": "Scenario sum / official / 3 / 1",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Selected share / 3 / 1",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Scenario sum / official / 4 / 0",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Selected share / 4 / 0",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "Scenario sum / official / 4 / 0.5",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Selected share / 4 / 0.5",
+      "actual": 0.5,
+      "expected": 0.5
+    },
+    {
+      "name": "Scenario sum / official / 4 / 1",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Selected share / 4 / 1",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Scenario sum / official / 5 / 0",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Selected share / 5 / 0",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "Scenario sum / official / 5 / 0.5",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Selected share / 5 / 0.5",
+      "actual": 0.5,
+      "expected": 0.5
+    },
+    {
+      "name": "Scenario sum / official / 5 / 1",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Selected share / 5 / 1",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Scenario sum / official / 6 / 0",
+      "actual": 0.9999999999999999,
+      "expected": 1
+    },
+    {
+      "name": "Selected share / 6 / 0",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "Scenario sum / official / 6 / 0.5",
+      "actual": 0.9999999999999999,
+      "expected": 1
+    },
+    {
+      "name": "Selected share / 6 / 0.5",
+      "actual": 0.5,
+      "expected": 0.5
+    },
+    {
+      "name": "Scenario sum / official / 6 / 1",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Selected share / 6 / 1",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Scenario sum / official / 7 / 0",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Selected share / 7 / 0",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "Scenario sum / official / 7 / 0.5",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Selected share / 7 / 0.5",
+      "actual": 0.5,
+      "expected": 0.5
+    },
+    {
+      "name": "Scenario sum / official / 7 / 1",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Selected share / 7 / 1",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Scenario sum / fictional / 0 / 0",
+      "actual": 0.9999999999999999,
+      "expected": 1
+    },
+    {
+      "name": "Selected share / 0 / 0",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "Scenario sum / fictional / 0 / 0.5",
+      "actual": 0.9999999999999999,
+      "expected": 1
+    },
+    {
+      "name": "Selected share / 0 / 0.5",
+      "actual": 0.5,
+      "expected": 0.5
+    },
+    {
+      "name": "Scenario sum / fictional / 0 / 1",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Selected share / 0 / 1",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Scenario sum / fictional / 1 / 0",
+      "actual": 0.9999999999999997,
+      "expected": 1
+    },
+    {
+      "name": "Selected share / 1 / 0",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "Scenario sum / fictional / 1 / 0.5",
+      "actual": 0.9999999999999999,
+      "expected": 1
+    },
+    {
+      "name": "Selected share / 1 / 0.5",
+      "actual": 0.5,
+      "expected": 0.5
+    },
+    {
+      "name": "Scenario sum / fictional / 1 / 1",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Selected share / 1 / 1",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Scenario sum / fictional / 2 / 0",
+      "actual": 0.9999999999999999,
+      "expected": 1
+    },
+    {
+      "name": "Selected share / 2 / 0",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "Scenario sum / fictional / 2 / 0.5",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Selected share / 2 / 0.5",
+      "actual": 0.5,
+      "expected": 0.5
+    },
+    {
+      "name": "Scenario sum / fictional / 2 / 1",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Selected share / 2 / 1",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Scenario sum / fictional / 3 / 0",
+      "actual": 0.9999999999999999,
+      "expected": 1
+    },
+    {
+      "name": "Selected share / 3 / 0",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "Scenario sum / fictional / 3 / 0.5",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Selected share / 3 / 0.5",
+      "actual": 0.5,
+      "expected": 0.5
+    },
+    {
+      "name": "Scenario sum / fictional / 3 / 1",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Selected share / 3 / 1",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Scenario sum / fictional / 4 / 0",
+      "actual": 0.9999999999999999,
+      "expected": 1
+    },
+    {
+      "name": "Selected share / 4 / 0",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "Scenario sum / fictional / 4 / 0.5",
+      "actual": 0.9999999999999999,
+      "expected": 1
+    },
+    {
+      "name": "Selected share / 4 / 0.5",
+      "actual": 0.5,
+      "expected": 0.5
+    },
+    {
+      "name": "Scenario sum / fictional / 4 / 1",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Selected share / 4 / 1",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Scenario sum / fictional / 5 / 0",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Selected share / 5 / 0",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "Scenario sum / fictional / 5 / 0.5",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Selected share / 5 / 0.5",
+      "actual": 0.5,
+      "expected": 0.5
+    },
+    {
+      "name": "Scenario sum / fictional / 5 / 1",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Selected share / 5 / 1",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Scenario sum / fictional / 6 / 0",
+      "actual": 1.0000000000000002,
+      "expected": 1
+    },
+    {
+      "name": "Selected share / 6 / 0",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "Scenario sum / fictional / 6 / 0.5",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Selected share / 6 / 0.5",
+      "actual": 0.5,
+      "expected": 0.5
+    },
+    {
+      "name": "Scenario sum / fictional / 6 / 1",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Selected share / 6 / 1",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Scenario sum / fictional / 7 / 0",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Selected share / 7 / 0",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "Scenario sum / fictional / 7 / 0.5",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Selected share / 7 / 0.5",
+      "actual": 0.5,
+      "expected": 0.5
+    },
+    {
+      "name": "Scenario sum / fictional / 7 / 1",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Selected share / 7 / 1",
+      "actual": 1,
+      "expected": 1
+    },
+    {
+      "name": "Reopened food endpoint",
+      "actual": 0.2,
+      "expected": 0.2
+    },
+    {
+      "name": "Restored other proportions",
+      "actual": 2.2109374999999996,
+      "expected": 2.2109375
+    }
+  ]
+}

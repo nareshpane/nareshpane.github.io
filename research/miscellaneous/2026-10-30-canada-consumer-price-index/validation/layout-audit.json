@@ -1,0 +1,765 @@
+[
+  {
+    "chapters": [
+      {
+        "id": "s01",
+        "overflow": false
+      },
+      {
+        "id": "s02",
+        "overflow": false
+      },
+      {
+        "id": "s03",
+        "overflow": false
+      },
+      {
+        "id": "s04",
+        "overflow": false
+      },
+      {
+        "id": "s05",
+        "overflow": false
+      },
+      {
+        "id": "s06",
+        "overflow": false
+      },
+      {
+        "id": "s07",
+        "overflow": false
+      },
+      {
+        "id": "s08",
+        "overflow": false
+      },
+      {
+        "id": "s09",
+        "overflow": false
+      },
+      {
+        "id": "s10",
+        "overflow": false
+      },
+      {
+        "id": "s11",
+        "overflow": false
+      },
+      {
+        "id": "s12",
+        "overflow": false
+      },
+      {
+        "id": "s13",
+        "overflow": false
+      },
+      {
+        "id": "s14",
+        "overflow": false
+      },
+      {
+        "id": "s15",
+        "overflow": false
+      },
+      {
+        "id": "s16",
+        "overflow": false
+      },
+      {
+        "id": "s17",
+        "overflow": false
+      },
+      {
+        "id": "s18",
+        "overflow": false
+      }
+    ],
+    "clientWidth": 1905,
+    "containedChartScroll": 0,
+    "containedMathScroll": 0,
+    "headlineCards": [
+      {
+        "height": 170,
+        "top": 448,
+        "width": 343
+      },
+      {
+        "height": 170,
+        "top": 448,
+        "width": 343
+      },
+      {
+        "height": 170,
+        "top": 448,
+        "width": 343
+      },
+      {
+        "height": 170,
+        "top": 448,
+        "width": 343
+      }
+    ],
+    "mathErrors": 0,
+    "metadataRows": 4,
+    "scrollWidth": 1905,
+    "titleLines": [
+      1,
+      1
+    ],
+    "width": 1920
+  },
+  {
+    "chapters": [
+      {
+        "id": "s01",
+        "overflow": false
+      },
+      {
+        "id": "s02",
+        "overflow": false
+      },
+      {
+        "id": "s03",
+        "overflow": false
+      },
+      {
+        "id": "s04",
+        "overflow": false
+      },
+      {
+        "id": "s05",
+        "overflow": false
+      },
+      {
+        "id": "s06",
+        "overflow": false
+      },
+      {
+        "id": "s07",
+        "overflow": false
+      },
+      {
+        "id": "s08",
+        "overflow": false
+      },
+      {
+        "id": "s09",
+        "overflow": false
+      },
+      {
+        "id": "s10",
+        "overflow": false
+      },
+      {
+        "id": "s11",
+        "overflow": false
+      },
+      {
+        "id": "s12",
+        "overflow": false
+      },
+      {
+        "id": "s13",
+        "overflow": false
+      },
+      {
+        "id": "s14",
+        "overflow": false
+      },
+      {
+        "id": "s15",
+        "overflow": false
+      },
+      {
+        "id": "s16",
+        "overflow": false
+      },
+      {
+        "id": "s17",
+        "overflow": false
+      },
+      {
+        "id": "s18",
+        "overflow": false
+      }
+    ],
+    "clientWidth": 1585,
+    "containedChartScroll": 0,
+    "containedMathScroll": 0,
+    "headlineCards": [
+      {
+        "height": 170,
+        "top": 447,
+        "width": 343
+      },
+      {
+        "height": 170,
+        "top": 447,
+        "width": 343
+      },
+      {
+        "height": 170,
+        "top": 447,
+        "width": 343
+      },
+      {
+        "height": 170,
+        "top": 447,
+        "width": 343
+      }
+    ],
+    "mathErrors": 0,
+    "metadataRows": 4,
+    "scrollWidth": 1585,
+    "titleLines": [
+      1,
+      1
+    ],
+    "width": 1600
+  },
+  {
+    "chapters": [
+      {
+        "id": "s01",
+        "overflow": false
+      },
+      {
+        "id": "s02",
+        "overflow": false
+      },
+      {
+        "id": "s03",
+        "overflow": false
+      },
+      {
+        "id": "s04",
+        "overflow": false
+      },
+      {
+        "id": "s05",
+        "overflow": false
+      },
+      {
+        "id": "s06",
+        "overflow": false
+      },
+      {
+        "id": "s07",
+        "overflow": false
+      },
+      {
+        "id": "s08",
+        "overflow": false
+      },
+      {
+        "id": "s09",
+        "overflow": false
+      },
+      {
+        "id": "s10",
+        "overflow": false
+      },
+      {
+        "id": "s11",
+        "overflow": false
+      },
+      {
+        "id": "s12",
+        "overflow": false
+      },
+      {
+        "id": "s13",
+        "overflow": false
+      },
+      {
+        "id": "s14",
+        "overflow": false
+      },
+      {
+        "id": "s15",
+        "overflow": false
+      },
+      {
+        "id": "s16",
+        "overflow": false
+      },
+      {
+        "id": "s17",
+        "overflow": false
+      },
+      {
+        "id": "s18",
+        "overflow": false
+      }
+    ],
+    "clientWidth": 1425,
+    "containedChartScroll": 0,
+    "containedMathScroll": 0,
+    "headlineCards": [
+      {
+        "height": 170,
+        "top": 436,
+        "width": 331
+      },
+      {
+        "height": 170,
+        "top": 436,
+        "width": 331
+      },
+      {
+        "height": 170,
+        "top": 436,
+        "width": 331
+      },
+      {
+        "height": 170,
+        "top": 436,
+        "width": 331
+      }
+    ],
+    "mathErrors": 0,
+    "metadataRows": 4,
+    "scrollWidth": 1425,
+    "titleLines": [
+      1,
+      1
+    ],
+    "width": 1440
+  },
+  {
+    "chapters": [
+      {
+        "id": "s01",
+        "overflow": false
+      },
+      {
+        "id": "s02",
+        "overflow": false
+      },
+      {
+        "id": "s03",
+        "overflow": false
+      },
+      {
+        "id": "s04",
+        "overflow": false
+      },
+      {
+        "id": "s05",
+        "overflow": false
+      },
+      {
+        "id": "s06",
+        "overflow": false
+      },
+      {
+        "id": "s07",
+        "overflow": false
+      },
+      {
+        "id": "s08",
+        "overflow": false
+      },
+      {
+        "id": "s09",
+        "overflow": false
+      },
+      {
+        "id": "s10",
+        "overflow": false
+      },
+      {
+        "id": "s11",
+        "overflow": false
+      },
+      {
+        "id": "s12",
+        "overflow": false
+      },
+      {
+        "id": "s13",
+        "overflow": false
+      },
+      {
+        "id": "s14",
+        "overflow": false
+      },
+      {
+        "id": "s15",
+        "overflow": false
+      },
+      {
+        "id": "s16",
+        "overflow": false
+      },
+      {
+        "id": "s17",
+        "overflow": false
+      },
+      {
+        "id": "s18",
+        "overflow": false
+      }
+    ],
+    "clientWidth": 1265,
+    "containedChartScroll": 0,
+    "containedMathScroll": 0,
+    "headlineCards": [
+      {
+        "height": 170,
+        "top": 427,
+        "width": 291
+      },
+      {
+        "height": 170,
+        "top": 427,
+        "width": 291
+      },
+      {
+        "height": 170,
+        "top": 427,
+        "width": 291
+      },
+      {
+        "height": 170,
+        "top": 427,
+        "width": 291
+      }
+    ],
+    "mathErrors": 0,
+    "metadataRows": 4,
+    "scrollWidth": 1265,
+    "titleLines": [
+      1,
+      1
+    ],
+    "width": 1280
+  },
+  {
+    "chapters": [
+      {
+        "id": "s01",
+        "overflow": false
+      },
+      {
+        "id": "s02",
+        "overflow": false
+      },
+      {
+        "id": "s03",
+        "overflow": false
+      },
+      {
+        "id": "s04",
+        "overflow": false
+      },
+      {
+        "id": "s05",
+        "overflow": false
+      },
+      {
+        "id": "s06",
+        "overflow": false
+      },
+      {
+        "id": "s07",
+        "overflow": false
+      },
+      {
+        "id": "s08",
+        "overflow": false
+      },
+      {
+        "id": "s09",
+        "overflow": false
+      },
+      {
+        "id": "s10",
+        "overflow": false
+      },
+      {
+        "id": "s11",
+        "overflow": false
+      },
+      {
+        "id": "s12",
+        "overflow": false
+      },
+      {
+        "id": "s13",
+        "overflow": false
+      },
+      {
+        "id": "s14",
+        "overflow": false
+      },
+      {
+        "id": "s15",
+        "overflow": false
+      },
+      {
+        "id": "s16",
+        "overflow": false
+      },
+      {
+        "id": "s17",
+        "overflow": false
+      },
+      {
+        "id": "s18",
+        "overflow": false
+      }
+    ],
+    "clientWidth": 1009,
+    "containedChartScroll": 0,
+    "containedMathScroll": 0,
+    "headlineCards": [
+      {
+        "height": 170,
+        "top": 447,
+        "width": 218
+      },
+      {
+        "height": 170,
+        "top": 447,
+        "width": 218
+      },
+      {
+        "height": 170,
+        "top": 447,
+        "width": 218
+      },
+      {
+        "height": 170,
+        "top": 447,
+        "width": 218
+      }
+    ],
+    "mathErrors": 0,
+    "metadataRows": 4,
+    "scrollWidth": 1009,
+    "titleLines": [
+      1,
+      1
+    ],
+    "width": 1024
+  },
+  {
+    "chapters": [
+      {
+        "id": "s01",
+        "overflow": false
+      },
+      {
+        "id": "s02",
+        "overflow": false
+      },
+      {
+        "id": "s03",
+        "overflow": false
+      },
+      {
+        "id": "s04",
+        "overflow": false
+      },
+      {
+        "id": "s05",
+        "overflow": false
+      },
+      {
+        "id": "s06",
+        "overflow": false
+      },
+      {
+        "id": "s07",
+        "overflow": false
+      },
+      {
+        "id": "s08",
+        "overflow": false
+      },
+      {
+        "id": "s09",
+        "overflow": false
+      },
+      {
+        "id": "s10",
+        "overflow": false
+      },
+      {
+        "id": "s11",
+        "overflow": false
+      },
+      {
+        "id": "s12",
+        "overflow": false
+      },
+      {
+        "id": "s13",
+        "overflow": false
+      },
+      {
+        "id": "s14",
+        "overflow": false
+      },
+      {
+        "id": "s15",
+        "overflow": false
+      },
+      {
+        "id": "s16",
+        "overflow": false
+      },
+      {
+        "id": "s17",
+        "overflow": false
+      },
+      {
+        "id": "s18",
+        "overflow": false
+      }
+    ],
+    "clientWidth": 753,
+    "containedChartScroll": 0,
+    "containedMathScroll": 0,
+    "headlineCards": [
+      {
+        "height": 170,
+        "top": 635,
+        "width": 329
+      },
+      {
+        "height": 170,
+        "top": 635,
+        "width": 329
+      },
+      {
+        "height": 170,
+        "top": 819,
+        "width": 329
+      },
+      {
+        "height": 170,
+        "top": 819,
+        "width": 329
+      }
+    ],
+    "mathErrors": 0,
+    "metadataRows": 4,
+    "scrollWidth": 753,
+    "titleLines": [
+      1,
+      1
+    ],
+    "width": 768
+  },
+  {
+    "chapters": [
+      {
+        "id": "s01",
+        "overflow": false
+      },
+      {
+        "id": "s02",
+        "overflow": false
+      },
+      {
+        "id": "s03",
+        "overflow": false
+      },
+      {
+        "id": "s04",
+        "overflow": false
+      },
+      {
+        "id": "s05",
+        "overflow": false
+      },
+      {
+        "id": "s06",
+        "overflow": false
+      },
+      {
+        "id": "s07",
+        "overflow": false
+      },
+      {
+        "id": "s08",
+        "overflow": false
+      },
+      {
+        "id": "s09",
+        "overflow": false
+      },
+      {
+        "id": "s10",
+        "overflow": false
+      },
+      {
+        "id": "s11",
+        "overflow": false
+      },
+      {
+        "id": "s12",
+        "overflow": false
+      },
+      {
+        "id": "s13",
+        "overflow": false
+      },
+      {
+        "id": "s14",
+        "overflow": false
+      },
+      {
+        "id": "s15",
+        "overflow": false
+      },
+      {
+        "id": "s16",
+        "overflow": false
+      },
+      {
+        "id": "s17",
+        "overflow": false
+      },
+      {
+        "id": "s18",
+        "overflow": false
+      }
+    ],
+    "clientWidth": 375,
+    "containedChartScroll": 21,
+    "containedMathScroll": 11,
+    "headlineCards": [
+      {
+        "height": 135,
+        "top": 870,
+        "width": 308
+      },
+      {
+        "height": 135,
+        "top": 1020,
+        "width": 308
+      },
+      {
+        "height": 135,
+        "top": 1169,
+        "width": 308
+      },
+      {
+        "height": 135,
+        "top": 1319,
+        "width": 308
+      }
+    ],
+    "mathErrors": 0,
+    "metadataRows": 4,
+    "scrollWidth": 375,
+    "titleLines": [
+      2,
+      2
+    ],
+    "width": 390
+  }
+]

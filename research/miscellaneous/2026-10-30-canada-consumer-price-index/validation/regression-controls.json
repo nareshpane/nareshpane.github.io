@@ -1,0 +1,106 @@
+[
+  {
+    "control": "normal-cost",
+    "derivedTextChanged": true
+  },
+  {
+    "control": "shock-size",
+    "derivedTextChanged": true
+  },
+  {
+    "control": "package-size",
+    "derivedTextChanged": true
+  },
+  {
+    "control": "season-amplitude",
+    "derivedTextChanged": true
+  },
+  {
+    "control": "gas-shock",
+    "derivedTextChanged": true
+  },
+  {
+    "control": "core-outlier",
+    "derivedTextChanged": true
+  },
+  {
+    "control": "sample-size",
+    "derivedTextChanged": true
+  },
+  {
+    "control": "weight-period",
+    "derivedTextChanged": true
+  },
+  {
+    "control": "shock-category",
+    "derivedTextChanged": true
+  },
+  {
+    "control": "trace-select",
+    "derivedTextChanged": true
+  },
+  {
+    "control": "chain-basket",
+    "derivedTextChanged": false,
+    "expected": "The initial explanatory stage does not depend on basket choice. The final calculation-stage change is verified in the later entry.",
+    "passed": true
+  },
+  {
+    "control": "history-series",
+    "derivedTextChanged": true
+  },
+  {
+    "control": "history-metric",
+    "derivedTextChanged": true
+  },
+  {
+    "control": "history-start",
+    "derivedTextChanged": true
+  },
+  {
+    "control": "season-series",
+    "derivedTextChanged": true
+  },
+  {
+    "control": "geo-select",
+    "derivedTextChanged": true
+  },
+  {
+    "control": "money-context",
+    "derivedTextChanged": true
+  },
+  {
+    "control": "money-base",
+    "derivedTextChanged": true
+  },
+  {
+    "control": "audit-level",
+    "derivedTextChanged": true
+  },
+  {
+    "control": "audit-metric",
+    "derivedTextChanged": true
+  },
+  {
+    "control": "Basket quantities",
+    "result": "THE SAME SHOPPING LIST\n4 \u00d7 Milk\n$16.00 \u2192 $17.60\n3 \u00d7 Bread\n$9.00 \u2192 $9.90\n2 \u00d7 Apples\n$10.00 \u2192 $11.00\n$35.00\n$38.50\n\n+10.0000%\n($38.50 \u2212 $35.00) \u00f7 $35.00 \u00d7 100"
+  },
+  {
+    "control": "Purchasing power amount",
+    "result": "Household expenditure comparison: CPI(2026-09) = 170.0; CPI(2026-09) = 170.0.\n\n$70,000.00 in 2026-09 requires $70,000.00 in 2026-09 for CPI-equivalent purchasing power: $70,000.00 \u00d7 1.0000.\n\nIf the nominal amount stays at $70,000.00 in 2026-09, it buys $70,000.00 in 2026-09 purchasing-power dollars. Period inflation: 0.0000%."
+  },
+  {
+    "control": "Audit search",
+    "result": 1
+  },
+  {
+    "control": "Basket link: calculation stage",
+    "derivedTextChanged": true,
+    "new": "Published linked index = 120 \u00d7 1.0160 = 121.9200. Growth after the link is +1.6000%; the update itself caused no jump.",
+    "old": "Published linked index = 120 \u00d7 1.0640 = 127.6800. Growth after the link is +6.4000%; the update itself caused no jump."
+  },
+  {
+    "control": "Audit search with unrestricted filters",
+    "result": "12 of 288 audit rows. Calculations without a release comparator remain explicitly labelled. Horizontally scroll the contained table for all columns."
+  }
+]

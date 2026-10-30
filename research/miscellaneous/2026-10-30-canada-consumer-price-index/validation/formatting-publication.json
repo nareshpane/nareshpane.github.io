@@ -1,0 +1,233 @@
+{
+  "scope": "Display precision and research index entry only",
+  "checks": [
+    {
+      "test": "Default four formula results",
+      "state": {
+        "cards": [
+          "Laspeyres\n127.5\n+27.5%",
+          "Paasche\n117.3\n+17.3%",
+          "Fisher\n122.3\n+22.3%",
+          "Lowe\n123.0\n+23.0%"
+        ],
+        "derivation": "Earlier quantities: [10.0, 5.0]; later quantities: [6.0, 8.0]; separate basket: [8.0, 6.0].\n\nL = (3 × 10 + 4.2 × 5) / (2 × 10 + 4 × 5) = 51.0000 / 40.0000 = 1.2750.\n\nP = 51.6000 / 44.0000 = 1.1727. Fisher = √(1.2750 × 1.1727) = 1.2228.\n\nLowe = 49.2000 / 40.0000 = 1.2300. Ratios become indices after multiplication by 100.",
+        "labels": [
+          "Laspeyres",
+          "127.5",
+          "Paasche",
+          "117.3",
+          "Fisher",
+          "122.3",
+          "Lowe",
+          "123.0"
+        ],
+        "tooltips": [
+          "Laspeyres: 127.5",
+          "Paasche: 117.3",
+          "Fisher: 122.3",
+          "Lowe: 123.0"
+        ]
+      }
+    },
+    {
+      "test": "Formula input recalculates at full precision",
+      "state": "Laspeyres\n152.5\n+52.5%\nPaasche\n130.9\n+30.9%\nFisher\n141.3\n+41.3%\nLowe\n143.0\n+43.0%"
+    },
+    {
+      "test": "Synthetic household mode",
+      "state": "Original basket\n\nFood\n\nExpenditure share\n22.0%\nPrice change\n0.0%\nModel contribution\n0.00 pp\nModified scenario\n\nFood\n\nExpenditure share\n22.0%\nPrice change\n+5.0%\nModel contribution\n+1.10 pp"
+    },
+    {
+      "test": "Household normalization and recalculation",
+      "state": {
+        "status": "Synthetic household scenario. Updated share total: 100.0%.",
+        "result": "One-period fixed-share model: P = Σ wⱼ(1 + gⱼ/100), with only food changing. Thus 100(P − 1) = wₖgₖ = 0.3000 × 5.0 = +1.50 pp. Model aggregate change = +1.5%; factor = 1.0150. Rounded display values may not reproduce the last decimal; calculations retain full precision."
+      }
+    },
+    {
+      "test": "Offer selection updates index; small differences retain two decimals",
+      "state": {
+        "status": "Selected observations: 59 / 60\n60 eligible under the filters · 59 saved selections in the full grid",
+        "comparison": "Complete population versus selected offers\nComplete population index\n108.55\nSelected-offer index\n108.53\n\nEarlier prices = 100. Bar scale: 0–130 index points; the thin marker indicates 100. Equal offer weights are used, not expenditure weights.",
+        "calculation": "Selected-offer growth: +8.5% · Complete-population growth: +8.6%.\n\nGeometric calculation: G = exp[(1/n) Σ log rᵢ]. For the 59 included offers, Σ log rᵢ = 4.8293; mean log = 0.0819; G = 1.0853. The index is 100G = 108.5296.\n\nSubset minus complete population: -0.02 percentage points. Each selected offer has weight 1/59. This user-chosen subset is not a representative probability sample or an official CPI sampling-error estimate."
+      }
+    },
+    {
+      "test": "Research entry opens the CPI page",
+      "url": "http://127.0.0.1:8766/research/miscellaneous/2026-10-30-canada-consumer-price-index.html",
+      "images": [
+        {
+          "file": "2026-10-30-canada-consumer-price-index/images/shopper-trolley.png",
+          "loaded": true
+        },
+        {
+          "file": "2026-10-30-canada-consumer-price-index/images/food-service.png",
+          "loaded": true
+        },
+        {
+          "file": "2026-10-30-canada-consumer-price-index/images/digital-wallet.png",
+          "loaded": true
+        },
+        {
+          "file": "2026-10-30-canada-consumer-price-index/images/shopper-market.png",
+          "loaded": true
+        },
+        {
+          "file": "2026-10-30-canada-consumer-price-index/images/residential-neighbourhood.png",
+          "loaded": true
+        }
+      ]
+    }
+  ],
+  "animationChecks": [
+    {
+      "player": "collection-player",
+      "stage": 3,
+      "text": "Next package: 450 g, $5.00. Compare consistent units: $5 ÷ 0.45 kg = $11.11/kg. Review the 11.1% movement and any quality change."
+    },
+    {
+      "player": "collection-player",
+      "stage": 5,
+      "text": "If this group has a synthetic 2% reference share and everything else is unchanged, factor = 0.02 × 1.1111 + 0.98 × 1 = 1.002222: a 0.2% increase."
+    },
+    {
+      "player": "aggregation-player",
+      "stage": 5,
+      "text": "0.20 × 1.0747 + 0.50 × 1.0200 + 0.30 × 1.1489 = 1.0696. 120 × this factor = 128.4; inflation = 7.0%. Synthetic result only."
+    },
+    {
+      "player": "chain-player",
+      "stage": 4,
+      "text": "Published linked index = 120 × 1.0160 = 121.9. Growth after the link is +1.6%; the update itself caused no jump."
+    },
+    {
+      "player": "disinflation-player",
+      "stage": 4,
+      "text": "109.18 × 1.01 = 110.3. Inflation slowed further; prices are still rising. Cumulative increase: 10.3%."
+    },
+    {
+      "player": "synthesis-player",
+      "stage": 7,
+      "text": "Synthetic Lowe factor: 0.20 × 1.0747 + 0.50 × 1.0200 + 0.30 × 1.1489 = 1.0696. From a hypothetical earlier level 120, the later level is 128.4. The miniature growth is 7.0%."
+    },
+    {
+      "player": "synthesis-player",
+      "stage": 10,
+      "text": "170.0 / 164.9 − 1 → 3.0928%, reported 3.1%. Adjacent-month unadjusted rate → 0.1178%, reported 0.1%. These are Level A arithmetic checks, not microdata reconstruction."
+    }
+  ],
+  "chapterAudit": [
+    {
+      "chapter": "s01",
+      "longMainDisplays": []
+    },
+    {
+      "chapter": "s02",
+      "longMainDisplays": []
+    },
+    {
+      "chapter": "s03",
+      "longMainDisplays": []
+    },
+    {
+      "chapter": "s04",
+      "longMainDisplays": []
+    },
+    {
+      "chapter": "s05",
+      "longMainDisplays": []
+    },
+    {
+      "chapter": "s06",
+      "longMainDisplays": [
+        "Offer A: 1.1000",
+        "Offer B: 1.0500",
+        "Weighted G: 1.0797"
+      ]
+    },
+    {
+      "chapter": "s07",
+      "longMainDisplays": []
+    },
+    {
+      "chapter": "s08",
+      "longMainDisplays": [
+        "1.0747",
+        "0.20 × 1.0747"
+      ]
+    },
+    {
+      "chapter": "s09",
+      "longMainDisplays": []
+    },
+    {
+      "chapter": "s10",
+      "longMainDisplays": []
+    },
+    {
+      "chapter": "s11",
+      "longMainDisplays": []
+    },
+    {
+      "chapter": "s12",
+      "longMainDisplays": []
+    },
+    {
+      "chapter": "s13",
+      "longMainDisplays": []
+    },
+    {
+      "chapter": "s14",
+      "longMainDisplays": []
+    },
+    {
+      "chapter": "s15",
+      "longMainDisplays": []
+    },
+    {
+      "chapter": "s16",
+      "longMainDisplays": [
+        "2.1772 / 2.2",
+        "1.7535 / 1.8",
+        "0.4474 / 0.4",
+        "1.7112 / 1.7",
+        "8.4400 / 8.4",
+        "1.7330 / 1.7",
+        "4.6296 / 4.6",
+        "1.6434 / 1.6"
+      ]
+    },
+    {
+      "chapter": "s17",
+      "longMainDisplays": []
+    },
+    {
+      "chapter": "s18",
+      "longMainDisplays": []
+    }
+  ],
+  "mobile": {
+    "chartLabels": [
+      "Laspeyres",
+      "127.5",
+      "Paasche",
+      "117.3",
+      "Fisher",
+      "122.3",
+      "Lowe",
+      "123.0"
+    ],
+    "documentWidth": 375,
+    "results": "Laspeyres\n127.5\n+27.5%\nPaasche\n117.3\n+17.3%\nFisher\n122.3\n+22.3%\nLowe\n123.0\n+23.0%",
+    "width": 390
+  },
+  "console": [],
+  "exceptions": [
+    "Official source weights: 2 decimals",
+    "Money: 2 decimals",
+    "Price relatives, logs and worked derivations: 3–8 decimals as needed",
+    "Small subset-index and contribution differences: 2 decimals",
+    "Source-comparison audit: detailed precision retained"
+  ],
+  "htmlStructureUnchanged": true
+}

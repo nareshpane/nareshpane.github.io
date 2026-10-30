@@ -1,0 +1,1848 @@
+{
+  "CL_DGUID": {
+    "2016A000011124": {
+      "label": "2016A000011124",
+      "parent": null
+    },
+    "2016A000210": {
+      "label": "2016A000210",
+      "parent": null
+    },
+    "2011S0503001": {
+      "label": "2011S0503001",
+      "parent": null
+    },
+    "2016A000211": {
+      "label": "2016A000211",
+      "parent": null
+    },
+    "2016A000212": {
+      "label": "2016A000212",
+      "parent": null
+    },
+    "2011S0503205": {
+      "label": "2011S0503205",
+      "parent": null
+    },
+    "2016A000213": {
+      "label": "2016A000213",
+      "parent": null
+    },
+    "2011S0503310": {
+      "label": "2011S0503310",
+      "parent": null
+    },
+    "2016A000224": {
+      "label": "2016A000224",
+      "parent": null
+    },
+    "2011S0503421": {
+      "label": "2011S0503421",
+      "parent": null
+    },
+    "2011S0503462": {
+      "label": "2011S0503462",
+      "parent": null
+    },
+    "2016A000235": {
+      "label": "2016A000235",
+      "parent": null
+    },
+    "2011S050535505": {
+      "label": "2011S050535505",
+      "parent": null
+    },
+    "2011S0503535": {
+      "label": "2011S0503535",
+      "parent": null
+    },
+    "2011S0503595": {
+      "label": "2011S0503595",
+      "parent": null
+    },
+    "2016A000246": {
+      "label": "2016A000246",
+      "parent": null
+    },
+    "2011S0503602": {
+      "label": "2011S0503602",
+      "parent": null
+    },
+    "2016A000247": {
+      "label": "2016A000247",
+      "parent": null
+    },
+    "2011S0503705": {
+      "label": "2011S0503705",
+      "parent": null
+    },
+    "2011S0503725": {
+      "label": "2011S0503725",
+      "parent": null
+    },
+    "2016A000248": {
+      "label": "2016A000248",
+      "parent": null
+    },
+    "2011S0503835": {
+      "label": "2011S0503835",
+      "parent": null
+    },
+    "2011S0503825": {
+      "label": "2011S0503825",
+      "parent": null
+    },
+    "2016A000259": {
+      "label": "2016A000259",
+      "parent": null
+    },
+    "2011S0503933": {
+      "label": "2011S0503933",
+      "parent": null
+    },
+    "2011S0503935": {
+      "label": "2011S0503935",
+      "parent": null
+    },
+    "2011A00056001009": {
+      "label": "2011A00056001009",
+      "parent": null
+    },
+    "2011A00056106023": {
+      "label": "2011A00056106023",
+      "parent": null
+    },
+    "2011A00056204003": {
+      "label": "2011A00056204003",
+      "parent": null
+    }
+  },
+  "CL_Geography": {
+    "2": {
+      "label": "Canada",
+      "parent": null
+    },
+    "3": {
+      "label": "Newfoundland and Labrador",
+      "parent": "2"
+    },
+    "4": {
+      "label": "St. John's, Newfoundland and Labrador",
+      "parent": "3"
+    },
+    "5": {
+      "label": "Prince Edward Island",
+      "parent": "2"
+    },
+    "6": {
+      "label": "Charlottetown and Summerside, Prince Edward Island",
+      "parent": "5"
+    },
+    "7": {
+      "label": "Nova Scotia",
+      "parent": "2"
+    },
+    "8": {
+      "label": "Halifax, Nova Scotia",
+      "parent": "7"
+    },
+    "9": {
+      "label": "New Brunswick",
+      "parent": "2"
+    },
+    "10": {
+      "label": "Saint John, New Brunswick",
+      "parent": "9"
+    },
+    "11": {
+      "label": "Quebec",
+      "parent": "2"
+    },
+    "12": {
+      "label": "Québec, Quebec",
+      "parent": "11"
+    },
+    "13": {
+      "label": "Montréal, Quebec",
+      "parent": "11"
+    },
+    "14": {
+      "label": "Ontario",
+      "parent": "2"
+    },
+    "15": {
+      "label": "Ottawa-Gatineau, Ontario part, Ontario/Quebec",
+      "parent": "14"
+    },
+    "16": {
+      "label": "Toronto, Ontario",
+      "parent": "14"
+    },
+    "17": {
+      "label": "Thunder Bay, Ontario",
+      "parent": "14"
+    },
+    "18": {
+      "label": "Manitoba",
+      "parent": "2"
+    },
+    "19": {
+      "label": "Winnipeg, Manitoba",
+      "parent": "18"
+    },
+    "20": {
+      "label": "Saskatchewan",
+      "parent": "2"
+    },
+    "21": {
+      "label": "Regina, Saskatchewan",
+      "parent": "20"
+    },
+    "22": {
+      "label": "Saskatoon, Saskatchewan",
+      "parent": "20"
+    },
+    "23": {
+      "label": "Alberta",
+      "parent": "2"
+    },
+    "24": {
+      "label": "Edmonton, Alberta",
+      "parent": "23"
+    },
+    "25": {
+      "label": "Calgary, Alberta",
+      "parent": "23"
+    },
+    "26": {
+      "label": "British Columbia",
+      "parent": "2"
+    },
+    "27": {
+      "label": "Vancouver, British Columbia",
+      "parent": "26"
+    },
+    "28": {
+      "label": "Victoria, British Columbia",
+      "parent": "26"
+    },
+    "29": {
+      "label": "Whitehorse, Yukon",
+      "parent": "2"
+    },
+    "30": {
+      "label": "Yellowknife, Northwest Territories",
+      "parent": "2"
+    },
+    "31": {
+      "label": "Iqaluit, Nunavut",
+      "parent": "2"
+    }
+  },
+  "CL_Products_and_product_groups": {
+    "2": {
+      "label": "All-items",
+      "parent": null
+    },
+    "3": {
+      "label": "Food",
+      "parent": "2"
+    },
+    "4": {
+      "label": "Food purchased from stores",
+      "parent": "3"
+    },
+    "5": {
+      "label": "Meat",
+      "parent": "4"
+    },
+    "6": {
+      "label": "Fresh or frozen meat (excluding poultry)",
+      "parent": "5"
+    },
+    "7": {
+      "label": "Fresh or frozen beef",
+      "parent": "6"
+    },
+    "382": {
+      "label": "Fresh or frozen beef hip cuts (202404=100)",
+      "parent": "7"
+    },
+    "383": {
+      "label": "Fresh or frozen beef loin cuts (202404=100)",
+      "parent": "7"
+    },
+    "384": {
+      "label": "Fresh or frozen beef rib cuts (202404=100)",
+      "parent": "7"
+    },
+    "385": {
+      "label": "Fresh or frozen beef chuck cuts (202404=100)",
+      "parent": "7"
+    },
+    "386": {
+      "label": "Fresh stewing beef (202404=100)",
+      "parent": "7"
+    },
+    "387": {
+      "label": "Fresh or frozen ground beef (202404=100)",
+      "parent": "7"
+    },
+    "388": {
+      "label": "Other fresh or frozen beef (202404=100)",
+      "parent": "7"
+    },
+    "8": {
+      "label": "Fresh or frozen pork",
+      "parent": "6"
+    },
+    "389": {
+      "label": "Fresh or frozen pork loin cuts (202404=100)",
+      "parent": "8"
+    },
+    "390": {
+      "label": "Fresh or frozen pork shoulder cuts (202404=100)",
+      "parent": "8"
+    },
+    "391": {
+      "label": "Other fresh or frozen pork (202404=100)",
+      "parent": "8"
+    },
+    "9": {
+      "label": "Other fresh or frozen meat (excluding poultry)",
+      "parent": "6"
+    },
+    "10": {
+      "label": "Fresh or frozen poultry",
+      "parent": "5"
+    },
+    "11": {
+      "label": "Fresh or frozen chicken",
+      "parent": "10"
+    },
+    "392": {
+      "label": "Fresh or frozen chicken breasts (202404=100)",
+      "parent": "11"
+    },
+    "393": {
+      "label": "Fresh or frozen chicken thighs (202404=100)",
+      "parent": "11"
+    },
+    "394": {
+      "label": "Fresh or frozen chicken drumsticks (202404=100)",
+      "parent": "11"
+    },
+    "395": {
+      "label": "Fresh or frozen whole chicken (202404=100)",
+      "parent": "11"
+    },
+    "396": {
+      "label": "Other fresh or frozen chicken (202404=100)",
+      "parent": "11"
+    },
+    "12": {
+      "label": "Other fresh or frozen poultry",
+      "parent": "10"
+    },
+    "13": {
+      "label": "Processed meat",
+      "parent": "5"
+    },
+    "14": {
+      "label": "Ham and bacon",
+      "parent": "13"
+    },
+    "316": {
+      "label": "Bacon (2013=100)",
+      "parent": "14"
+    },
+    "317": {
+      "label": "Ham excluding deli ham (2013=100)",
+      "parent": "14"
+    },
+    "15": {
+      "label": "Other processed meat",
+      "parent": "13"
+    },
+    "16": {
+      "label": "Fish, seafood and other marine products",
+      "parent": "4"
+    },
+    "17": {
+      "label": "Fish",
+      "parent": "16"
+    },
+    "18": {
+      "label": "Fresh or frozen fish (including portions and fish sticks)",
+      "parent": "17"
+    },
+    "19": {
+      "label": "Canned and other preserved fish",
+      "parent": "17"
+    },
+    "318": {
+      "label": "Canned salmon (2013=100)",
+      "parent": "19"
+    },
+    "319": {
+      "label": "Canned tuna (2013=100)",
+      "parent": "19"
+    },
+    "20": {
+      "label": "Seafood and other marine products",
+      "parent": "16"
+    },
+    "320": {
+      "label": "Shrimps and prawns (2013=100)",
+      "parent": "20"
+    },
+    "321": {
+      "label": "Other shellfish (2013=100)",
+      "parent": "20"
+    },
+    "21": {
+      "label": "Dairy products and eggs",
+      "parent": "4"
+    },
+    "22": {
+      "label": "Dairy products",
+      "parent": "21"
+    },
+    "23": {
+      "label": "Fresh milk",
+      "parent": "22"
+    },
+    "322": {
+      "label": "Whole milk (2013=100)",
+      "parent": "23"
+    },
+    "323": {
+      "label": "Low-fat milk (2013=100)",
+      "parent": "23"
+    },
+    "24": {
+      "label": "Butter",
+      "parent": "22"
+    },
+    "25": {
+      "label": "Cheese",
+      "parent": "22"
+    },
+    "324": {
+      "label": "Cheddar cheese (2013=100)",
+      "parent": "25"
+    },
+    "325": {
+      "label": "Processed cheese (2013=100)",
+      "parent": "25"
+    },
+    "326": {
+      "label": "Unripened or fresh cheese (2013=100)",
+      "parent": "25"
+    },
+    "327": {
+      "label": "Mozzarella cheese (2013=100)",
+      "parent": "25"
+    },
+    "26": {
+      "label": "Ice cream and related products",
+      "parent": "22"
+    },
+    "27": {
+      "label": "Other dairy products",
+      "parent": "22"
+    },
+    "28": {
+      "label": "Eggs",
+      "parent": "21"
+    },
+    "29": {
+      "label": "Bakery and cereal products (excluding baby food)",
+      "parent": "4"
+    },
+    "30": {
+      "label": "Bakery products",
+      "parent": "29"
+    },
+    "31": {
+      "label": "Bread, rolls and buns",
+      "parent": "30"
+    },
+    "32": {
+      "label": "Cookies and crackers",
+      "parent": "30"
+    },
+    "328": {
+      "label": "Crackers and crisp breads (2013=100)",
+      "parent": "32"
+    },
+    "329": {
+      "label": "Cookies and sweet biscuits (2013=100)",
+      "parent": "32"
+    },
+    "33": {
+      "label": "Other bakery products",
+      "parent": "30"
+    },
+    "34": {
+      "label": "Cereal products (excluding baby food)",
+      "parent": "29"
+    },
+    "35": {
+      "label": "Rice and rice-based mixes",
+      "parent": "34"
+    },
+    "36": {
+      "label": "Breakfast cereal and other cereal products (excluding baby food)",
+      "parent": "34"
+    },
+    "37": {
+      "label": "Pasta products",
+      "parent": "34"
+    },
+    "330": {
+      "label": "Dry or fresh pasta (2013=100)",
+      "parent": "37"
+    },
+    "331": {
+      "label": "Pasta mixes (2013=100)",
+      "parent": "37"
+    },
+    "38": {
+      "label": "Flour and flour-based mixes",
+      "parent": "34"
+    },
+    "39": {
+      "label": "Fruit, fruit preparations and nuts",
+      "parent": "4"
+    },
+    "40": {
+      "label": "Fresh fruit",
+      "parent": "39"
+    },
+    "41": {
+      "label": "Apples",
+      "parent": "40"
+    },
+    "42": {
+      "label": "Oranges",
+      "parent": "40"
+    },
+    "43": {
+      "label": "Bananas",
+      "parent": "40"
+    },
+    "373": {
+      "label": "Citrus (excluding oranges) (202304=100)",
+      "parent": "40"
+    },
+    "374": {
+      "label": "Grapes (202304=100)",
+      "parent": "40"
+    },
+    "375": {
+      "label": "Berries (including cherries) (202304=100)",
+      "parent": "40"
+    },
+    "44": {
+      "label": "Other fresh fruit",
+      "parent": "40"
+    },
+    "45": {
+      "label": "Preserved fruit and fruit preparations",
+      "parent": "39"
+    },
+    "46": {
+      "label": "Fruit juices",
+      "parent": "45"
+    },
+    "47": {
+      "label": "Other preserved fruit and fruit preparations",
+      "parent": "45"
+    },
+    "332": {
+      "label": "Canned fruit (2013=100)",
+      "parent": "47"
+    },
+    "333": {
+      "label": "Jam, jelly and other preserves (2013=100)",
+      "parent": "47"
+    },
+    "334": {
+      "label": "Dried and dehydrated fruit (2013=100)",
+      "parent": "47"
+    },
+    "335": {
+      "label": "Frozen fruit (2013=100)",
+      "parent": "47"
+    },
+    "48": {
+      "label": "Nuts and seeds",
+      "parent": "39"
+    },
+    "49": {
+      "label": "Vegetables and vegetable preparations",
+      "parent": "4"
+    },
+    "50": {
+      "label": "Fresh vegetables",
+      "parent": "49"
+    },
+    "51": {
+      "label": "Potatoes",
+      "parent": "50"
+    },
+    "52": {
+      "label": "Tomatoes",
+      "parent": "50"
+    },
+    "53": {
+      "label": "Lettuce",
+      "parent": "50"
+    },
+    "376": {
+      "label": "Carrots (202304=100)",
+      "parent": "50"
+    },
+    "377": {
+      "label": "Onions (202304=100)",
+      "parent": "50"
+    },
+    "378": {
+      "label": "Peppers (202304=100)",
+      "parent": "50"
+    },
+    "379": {
+      "label": "Cucumber (202304=100)",
+      "parent": "50"
+    },
+    "380": {
+      "label": "Mushrooms (202304=100)",
+      "parent": "50"
+    },
+    "54": {
+      "label": "Other fresh vegetables",
+      "parent": "50"
+    },
+    "55": {
+      "label": "Preserved vegetables and vegetable preparations",
+      "parent": "49"
+    },
+    "56": {
+      "label": "Frozen and dried vegetables",
+      "parent": "55"
+    },
+    "57": {
+      "label": "Canned vegetables and other vegetable preparations",
+      "parent": "55"
+    },
+    "58": {
+      "label": "Other food products and non-alcoholic beverages",
+      "parent": "4"
+    },
+    "59": {
+      "label": "Sugar and confectionery",
+      "parent": "58"
+    },
+    "60": {
+      "label": "Sugar and syrup",
+      "parent": "59"
+    },
+    "61": {
+      "label": "Confectionery",
+      "parent": "59"
+    },
+    "62": {
+      "label": "Edible fats and oils",
+      "parent": "58"
+    },
+    "63": {
+      "label": "Margarine",
+      "parent": "62"
+    },
+    "64": {
+      "label": "Other edible fats and oils",
+      "parent": "62"
+    },
+    "65": {
+      "label": "Coffee and tea",
+      "parent": "58"
+    },
+    "66": {
+      "label": "Coffee",
+      "parent": "65"
+    },
+    "336": {
+      "label": "Roasted or ground coffee (2013=100)",
+      "parent": "66"
+    },
+    "337": {
+      "label": "Instant and other coffee (2013=100)",
+      "parent": "66"
+    },
+    "67": {
+      "label": "Tea",
+      "parent": "65"
+    },
+    "68": {
+      "label": "Condiments, spices and vinegars",
+      "parent": "58"
+    },
+    "338": {
+      "label": "Fermented or pickled vegetables (2013=100)",
+      "parent": "68"
+    },
+    "339": {
+      "label": "Sauces, condiments and dips (2013=100)",
+      "parent": "68"
+    },
+    "340": {
+      "label": "Herbs, spices and seasonings (2013=100)",
+      "parent": "68"
+    },
+    "69": {
+      "label": "Other food preparations",
+      "parent": "58"
+    },
+    "70": {
+      "label": "Soup",
+      "parent": "69"
+    },
+    "71": {
+      "label": "Baby foods",
+      "parent": "69"
+    },
+    "341": {
+      "label": "Canned infant or junior foods (2013=100)",
+      "parent": "71"
+    },
+    "342": {
+      "label": "Infant formula (2013=100)",
+      "parent": "71"
+    },
+    "72": {
+      "label": "Frozen food preparations",
+      "parent": "69"
+    },
+    "73": {
+      "label": "All other food preparations",
+      "parent": "69"
+    },
+    "343": {
+      "label": "Nut butter (2013=100)",
+      "parent": "73"
+    },
+    "344": {
+      "label": "Potato chips and other snack products n.e.c. (2013=100)",
+      "parent": "73"
+    },
+    "345": {
+      "label": "All other miscellaneous food preparations (2013=100)",
+      "parent": "73"
+    },
+    "74": {
+      "label": "Non-alcoholic beverages",
+      "parent": "58"
+    },
+    "75": {
+      "label": "Food purchased from restaurants",
+      "parent": "3"
+    },
+    "76": {
+      "label": "Food purchased from table-service restaurants",
+      "parent": "75"
+    },
+    "77": {
+      "label": "Food purchased from fast food and take-out restaurants",
+      "parent": "75"
+    },
+    "78": {
+      "label": "Food purchased from cafeterias and other restaurants",
+      "parent": "75"
+    },
+    "79": {
+      "label": "Shelter",
+      "parent": "2"
+    },
+    "80": {
+      "label": "Rented accommodation",
+      "parent": "79"
+    },
+    "81": {
+      "label": "Rent",
+      "parent": "80"
+    },
+    "82": {
+      "label": "Tenants' insurance premiums",
+      "parent": "80"
+    },
+    "83": {
+      "label": "Tenants' maintenance, repairs and other expenses",
+      "parent": "80"
+    },
+    "84": {
+      "label": "Owned accommodation",
+      "parent": "79"
+    },
+    "85": {
+      "label": "Mortgage interest cost",
+      "parent": "84"
+    },
+    "86": {
+      "label": "Homeowners' replacement cost",
+      "parent": "84"
+    },
+    "87": {
+      "label": "Property taxes and other special charges",
+      "parent": "84"
+    },
+    "88": {
+      "label": "Homeowners' home and mortgage insurance",
+      "parent": "84"
+    },
+    "89": {
+      "label": "Homeowners' maintenance and repairs",
+      "parent": "84"
+    },
+    "90": {
+      "label": "Other owned accommodation expenses",
+      "parent": "84"
+    },
+    "91": {
+      "label": "Water, fuel and electricity",
+      "parent": "79"
+    },
+    "92": {
+      "label": "Electricity",
+      "parent": "91"
+    },
+    "93": {
+      "label": "Water",
+      "parent": "91"
+    },
+    "94": {
+      "label": "Natural gas",
+      "parent": "91"
+    },
+    "95": {
+      "label": "Fuel oil and other fuels",
+      "parent": "91"
+    },
+    "96": {
+      "label": "Household operations, furnishings and equipment",
+      "parent": "2"
+    },
+    "97": {
+      "label": "Household operations",
+      "parent": "96"
+    },
+    "98": {
+      "label": "Communications",
+      "parent": "97"
+    },
+    "99": {
+      "label": "Telephone services",
+      "parent": "98"
+    },
+    "368": {
+      "label": "Cellular services (2017=100)",
+      "parent": "99"
+    },
+    "381": {
+      "label": "Cellular services (202304=100)",
+      "parent": "99"
+    },
+    "100": {
+      "label": "Postal and other communications services",
+      "parent": "98"
+    },
+    "297": {
+      "label": "Internet access services (200212=100)",
+      "parent": "98"
+    },
+    "313": {
+      "label": "Telephone equipment (201104=100)",
+      "parent": "98"
+    },
+    "101": {
+      "label": "Child care and housekeeping services",
+      "parent": "97"
+    },
+    "102": {
+      "label": "Child care services",
+      "parent": "101"
+    },
+    "103": {
+      "label": "Housekeeping services",
+      "parent": "101"
+    },
+    "104": {
+      "label": "Household cleaning products",
+      "parent": "97"
+    },
+    "105": {
+      "label": "Detergents and soaps (other than personal care)",
+      "parent": "104"
+    },
+    "346": {
+      "label": "Laundry detergents and soaps (2013=100)",
+      "parent": "105"
+    },
+    "347": {
+      "label": "Detergents and rinse agents for dish washing (2013=100)",
+      "parent": "105"
+    },
+    "106": {
+      "label": "Other household cleaning products",
+      "parent": "104"
+    },
+    "348": {
+      "label": "Household cleaning and polishing products (2013=100)",
+      "parent": "106"
+    },
+    "349": {
+      "label": "Bleach and other household chemical products (2013=100)",
+      "parent": "106"
+    },
+    "350": {
+      "label": "Fabric softener (2013=100)",
+      "parent": "106"
+    },
+    "107": {
+      "label": "Paper, plastic and aluminum foil supplies",
+      "parent": "97"
+    },
+    "108": {
+      "label": "Paper supplies",
+      "parent": "107"
+    },
+    "351": {
+      "label": "Household paper supplies (2013=100)",
+      "parent": "108"
+    },
+    "352": {
+      "label": "Stationery (2013=100)",
+      "parent": "108"
+    },
+    "109": {
+      "label": "Plastic and aluminum foil supplies",
+      "parent": "107"
+    },
+    "353": {
+      "label": "Plastic supplies (2013=100)",
+      "parent": "109"
+    },
+    "354": {
+      "label": "Foil supplies (2013=100)",
+      "parent": "109"
+    },
+    "110": {
+      "label": "Other household goods and services",
+      "parent": "97"
+    },
+    "111": {
+      "label": "Pet food and supplies",
+      "parent": "110"
+    },
+    "112": {
+      "label": "Seeds, plants and cut flowers",
+      "parent": "110"
+    },
+    "113": {
+      "label": "Other horticultural goods",
+      "parent": "110"
+    },
+    "114": {
+      "label": "Other household supplies",
+      "parent": "110"
+    },
+    "115": {
+      "label": "Other household services",
+      "parent": "110"
+    },
+    "298": {
+      "label": "Financial services (200212=100)",
+      "parent": "110"
+    },
+    "116": {
+      "label": "Household furnishings and equipment",
+      "parent": "96"
+    },
+    "117": {
+      "label": "Furniture and household textiles",
+      "parent": "116"
+    },
+    "118": {
+      "label": "Furniture",
+      "parent": "117"
+    },
+    "119": {
+      "label": "Upholstered furniture",
+      "parent": "118"
+    },
+    "120": {
+      "label": "Wooden furniture",
+      "parent": "118"
+    },
+    "121": {
+      "label": "Other furniture",
+      "parent": "118"
+    },
+    "122": {
+      "label": "Household textiles",
+      "parent": "117"
+    },
+    "123": {
+      "label": "Window coverings",
+      "parent": "122"
+    },
+    "124": {
+      "label": "Bedding and other household textiles",
+      "parent": "122"
+    },
+    "125": {
+      "label": "Area rugs and mats",
+      "parent": "122"
+    },
+    "126": {
+      "label": "Household equipment",
+      "parent": "116"
+    },
+    "127": {
+      "label": "Household appliances",
+      "parent": "126"
+    },
+    "128": {
+      "label": "Cooking appliances",
+      "parent": "127"
+    },
+    "129": {
+      "label": "Refrigerators and freezers",
+      "parent": "127"
+    },
+    "130": {
+      "label": "Laundry and dishwashing appliances",
+      "parent": "127"
+    },
+    "131": {
+      "label": "Other household appliances",
+      "parent": "127"
+    },
+    "132": {
+      "label": "Non-electric kitchen utensils, tableware and cookware",
+      "parent": "126"
+    },
+    "135": {
+      "label": "Tools and other household equipment",
+      "parent": "126"
+    },
+    "136": {
+      "label": "Household tools (including lawn, garden and snow removal equipment)",
+      "parent": "135"
+    },
+    "137": {
+      "label": "Other household equipment",
+      "parent": "135"
+    },
+    "138": {
+      "label": "Services related to household furnishings and equipment",
+      "parent": "116"
+    },
+    "139": {
+      "label": "Clothing and footwear",
+      "parent": "2"
+    },
+    "140": {
+      "label": "Clothing",
+      "parent": "139"
+    },
+    "141": {
+      "label": "Women's clothing",
+      "parent": "140"
+    },
+    "148": {
+      "label": "Men's clothing",
+      "parent": "140"
+    },
+    "155": {
+      "label": "Children's clothing",
+      "parent": "140"
+    },
+    "161": {
+      "label": "Footwear",
+      "parent": "139"
+    },
+    "162": {
+      "label": "Women's footwear (excluding athletic)",
+      "parent": "161"
+    },
+    "163": {
+      "label": "Men's footwear (excluding athletic)",
+      "parent": "161"
+    },
+    "164": {
+      "label": "Children's footwear (excluding athletic)",
+      "parent": "161"
+    },
+    "165": {
+      "label": "Athletic footwear",
+      "parent": "161"
+    },
+    "166": {
+      "label": "Clothing accessories, watches and jewellery",
+      "parent": "139"
+    },
+    "167": {
+      "label": "Leather clothing accessories",
+      "parent": "166"
+    },
+    "170": {
+      "label": "Other clothing accessories",
+      "parent": "166"
+    },
+    "369": {
+      "label": "Clothing accessories (2013=100)",
+      "parent": "166"
+    },
+    "168": {
+      "label": "Watches",
+      "parent": "166"
+    },
+    "169": {
+      "label": "Jewellery",
+      "parent": "166"
+    },
+    "171": {
+      "label": "Clothing material, notions and services",
+      "parent": "139"
+    },
+    "172": {
+      "label": "Clothing material and notions",
+      "parent": "171"
+    },
+    "173": {
+      "label": "Laundry services",
+      "parent": "171"
+    },
+    "174": {
+      "label": "Dry cleaning services",
+      "parent": "171"
+    },
+    "175": {
+      "label": "Other clothing services",
+      "parent": "171"
+    },
+    "176": {
+      "label": "Transportation",
+      "parent": "2"
+    },
+    "177": {
+      "label": "Private transportation",
+      "parent": "176"
+    },
+    "178": {
+      "label": "Purchase, leasing and rental of passenger vehicles",
+      "parent": "177"
+    },
+    "179": {
+      "label": "Purchase and leasing of passenger vehicles",
+      "parent": "178"
+    },
+    "180": {
+      "label": "Purchase of passenger vehicles",
+      "parent": "179"
+    },
+    "358": {
+      "label": "Purchase of automobiles (2013=100)",
+      "parent": "180"
+    },
+    "359": {
+      "label": "Purchase of trucks, vans and sport utility vehicles (2013=100)",
+      "parent": "180"
+    },
+    "371": {
+      "label": "Purchase of new passenger vehicles (202204=100)",
+      "parent": "180"
+    },
+    "372": {
+      "label": "Purchase of used passenger vehicles (202204=100)",
+      "parent": "180"
+    },
+    "181": {
+      "label": "Leasing of passenger vehicles",
+      "parent": "179"
+    },
+    "182": {
+      "label": "Rental of passenger vehicles",
+      "parent": "178"
+    },
+    "183": {
+      "label": "Operation of passenger vehicles",
+      "parent": "177"
+    },
+    "184": {
+      "label": "Gasoline",
+      "parent": "183"
+    },
+    "185": {
+      "label": "Passenger vehicle parts, maintenance and repairs",
+      "parent": "183"
+    },
+    "186": {
+      "label": "Passenger vehicle parts, accessories and supplies",
+      "parent": "185"
+    },
+    "187": {
+      "label": "Passenger vehicle maintenance and repair services",
+      "parent": "185"
+    },
+    "188": {
+      "label": "Other passenger vehicle operating expenses",
+      "parent": "183"
+    },
+    "189": {
+      "label": "Passenger vehicle insurance premiums",
+      "parent": "188"
+    },
+    "190": {
+      "label": "Passenger vehicle registration fees",
+      "parent": "188"
+    },
+    "191": {
+      "label": "Drivers' licences",
+      "parent": "188"
+    },
+    "192": {
+      "label": "Parking fees",
+      "parent": "188"
+    },
+    "193": {
+      "label": "All other passenger vehicle operating expenses",
+      "parent": "188"
+    },
+    "194": {
+      "label": "Public transportation",
+      "parent": "176"
+    },
+    "195": {
+      "label": "Local and commuter transportation",
+      "parent": "194"
+    },
+    "196": {
+      "label": "City bus and subway transportation",
+      "parent": "195"
+    },
+    "197": {
+      "label": "Taxi and other local and commuter transportation services",
+      "parent": "195"
+    },
+    "198": {
+      "label": "Inter-city transportation",
+      "parent": "194"
+    },
+    "199": {
+      "label": "Air transportation",
+      "parent": "198"
+    },
+    "200": {
+      "label": "Rail, highway bus and other inter-city transportation",
+      "parent": "198"
+    },
+    "201": {
+      "label": "Health and personal care",
+      "parent": "2"
+    },
+    "202": {
+      "label": "Health care",
+      "parent": "201"
+    },
+    "310": {
+      "label": "Health care goods",
+      "parent": "202"
+    },
+    "204": {
+      "label": "Medicinal and pharmaceutical products",
+      "parent": "310"
+    },
+    "205": {
+      "label": "Prescribed medicines (excluding medicinal cannabis)",
+      "parent": "204"
+    },
+    "366": {
+      "label": "Medicinal cannabis (201812=100)",
+      "parent": "204"
+    },
+    "206": {
+      "label": "Non-prescribed medicines",
+      "parent": "204"
+    },
+    "209": {
+      "label": "Eye care goods",
+      "parent": "310"
+    },
+    "360": {
+      "label": "Prescription eyeglasses (2013=100)",
+      "parent": "209"
+    },
+    "361": {
+      "label": "Contact lenses (2013=100)",
+      "parent": "209"
+    },
+    "362": {
+      "label": "Other eye care goods (2013=100)",
+      "parent": "209"
+    },
+    "207": {
+      "label": "Other health care goods",
+      "parent": "310"
+    },
+    "311": {
+      "label": "Health care services",
+      "parent": "202"
+    },
+    "301": {
+      "label": "Eye care services (200704=100)",
+      "parent": "311"
+    },
+    "210": {
+      "label": "Dental care services",
+      "parent": "311"
+    },
+    "211": {
+      "label": "Other health care services",
+      "parent": "311"
+    },
+    "212": {
+      "label": "Personal care",
+      "parent": "201"
+    },
+    "213": {
+      "label": "Personal care supplies and equipment",
+      "parent": "212"
+    },
+    "214": {
+      "label": "Personal soap",
+      "parent": "213"
+    },
+    "215": {
+      "label": "Toiletry items and cosmetics",
+      "parent": "213"
+    },
+    "363": {
+      "label": "Creams, lotions and cosmetics (2013=100)",
+      "parent": "215"
+    },
+    "364": {
+      "label": "Perfume and cologne (2013=100)",
+      "parent": "215"
+    },
+    "365": {
+      "label": "Hair preparations and other toilet preparations (2013=100)",
+      "parent": "215"
+    },
+    "216": {
+      "label": "Oral-hygiene products",
+      "parent": "213"
+    },
+    "217": {
+      "label": "Other personal care supplies and equipment",
+      "parent": "213"
+    },
+    "218": {
+      "label": "Personal care services",
+      "parent": "212"
+    },
+    "219": {
+      "label": "Recreation, education and reading",
+      "parent": "2"
+    },
+    "220": {
+      "label": "Recreation",
+      "parent": "219"
+    },
+    "221": {
+      "label": "Recreational equipment and services (excluding recreational vehicles)",
+      "parent": "220"
+    },
+    "222": {
+      "label": "Sporting and exercise equipment",
+      "parent": "221"
+    },
+    "304": {
+      "label": "Toys, games (excluding video games) and hobby supplies",
+      "parent": "221"
+    },
+    "224": {
+      "label": "Digital computing equipment and devices",
+      "parent": "221"
+    },
+    "314": {
+      "label": "Computer equipment, software and supplies (201104=100)",
+      "parent": "224"
+    },
+    "315": {
+      "label": "Multipurpose digital devices (201104=100)",
+      "parent": "224"
+    },
+    "305": {
+      "label": "Photographic equipment and supplies",
+      "parent": "221"
+    },
+    "227": {
+      "label": "Other recreational equipment",
+      "parent": "221"
+    },
+    "306": {
+      "label": "Recreational services",
+      "parent": "221"
+    },
+    "228": {
+      "label": "Purchase and operation of recreational vehicles",
+      "parent": "220"
+    },
+    "229": {
+      "label": "Purchase of recreational vehicles and outboard motors",
+      "parent": "228"
+    },
+    "230": {
+      "label": "Operation of recreational vehicles",
+      "parent": "228"
+    },
+    "231": {
+      "label": "Fuel, parts and accessories for recreational vehicles",
+      "parent": "230"
+    },
+    "232": {
+      "label": "Insurance, licences and other services for recreational vehicles",
+      "parent": "230"
+    },
+    "233": {
+      "label": "Home entertainment equipment, parts and services",
+      "parent": "220"
+    },
+    "234": {
+      "label": "Audio equipment",
+      "parent": "233"
+    },
+    "236": {
+      "label": "Video equipment",
+      "parent": "233"
+    },
+    "307": {
+      "label": "Rental of digital media",
+      "parent": "233"
+    },
+    "308": {
+      "label": "Purchase of digital media",
+      "parent": "233"
+    },
+    "239": {
+      "label": "Other home entertainment equipment, parts and services",
+      "parent": "233"
+    },
+    "240": {
+      "label": "Travel services",
+      "parent": "220"
+    },
+    "241": {
+      "label": "Traveller accommodation",
+      "parent": "240"
+    },
+    "242": {
+      "label": "Travel tours",
+      "parent": "240"
+    },
+    "243": {
+      "label": "Other cultural and recreational services",
+      "parent": "220"
+    },
+    "244": {
+      "label": "Spectator entertainment (excluding video and audio subscription services)",
+      "parent": "243"
+    },
+    "245": {
+      "label": "Video and audio subscription services",
+      "parent": "243"
+    },
+    "246": {
+      "label": "Use of recreational facilities and services",
+      "parent": "243"
+    },
+    "247": {
+      "label": "Education and reading",
+      "parent": "219"
+    },
+    "248": {
+      "label": "Education",
+      "parent": "247"
+    },
+    "249": {
+      "label": "Tuition fees",
+      "parent": "248"
+    },
+    "250": {
+      "label": "School textbooks and supplies",
+      "parent": "248"
+    },
+    "251": {
+      "label": "Other lessons, courses and education services",
+      "parent": "248"
+    },
+    "252": {
+      "label": "Reading material (excluding textbooks)",
+      "parent": "247"
+    },
+    "253": {
+      "label": "Newspapers",
+      "parent": "252"
+    },
+    "254": {
+      "label": "Magazines and periodicals",
+      "parent": "252"
+    },
+    "255": {
+      "label": "Books and reading material (excluding textbooks)",
+      "parent": "252"
+    },
+    "256": {
+      "label": "Alcoholic beverages, tobacco products and recreational cannabis",
+      "parent": "2"
+    },
+    "257": {
+      "label": "Alcoholic beverages",
+      "parent": "256"
+    },
+    "258": {
+      "label": "Alcoholic beverages served in licensed establishments",
+      "parent": "257"
+    },
+    "259": {
+      "label": "Beer served in licensed establishments",
+      "parent": "258"
+    },
+    "260": {
+      "label": "Wine served in licensed establishments",
+      "parent": "258"
+    },
+    "261": {
+      "label": "Liquor served in licensed establishments",
+      "parent": "258"
+    },
+    "262": {
+      "label": "Alcoholic beverages purchased from stores",
+      "parent": "257"
+    },
+    "263": {
+      "label": "Beer purchased from stores",
+      "parent": "262"
+    },
+    "264": {
+      "label": "Wine purchased from stores",
+      "parent": "262"
+    },
+    "265": {
+      "label": "Liquor purchased from stores",
+      "parent": "262"
+    },
+    "266": {
+      "label": "Tobacco products and smokers' supplies",
+      "parent": "256"
+    },
+    "267": {
+      "label": "Cigarettes",
+      "parent": "266"
+    },
+    "268": {
+      "label": "Other tobacco products and smokers' supplies",
+      "parent": "266"
+    },
+    "367": {
+      "label": "Recreational cannabis (201812=100)",
+      "parent": "256"
+    },
+    "309": {
+      "label": "All-items (1992=100)",
+      "parent": null
+    },
+    "284": {
+      "label": "All-items excluding food",
+      "parent": null
+    },
+    "285": {
+      "label": "All-items excluding food and energy",
+      "parent": null
+    },
+    "289": {
+      "label": "All-items excluding mortgage interest cost",
+      "parent": null
+    },
+    "290": {
+      "label": "All-items excluding alcoholic beverages, tobacco products and smokers' supplies and recreational cannabis",
+      "parent": null
+    },
+    "291": {
+      "label": "All-items excluding alcoholic beverages and recreational cannabis",
+      "parent": null
+    },
+    "292": {
+      "label": "All-items excluding tobacco products and smokers' supplies and recreational cannabis",
+      "parent": null
+    },
+    "293": {
+      "label": "All-items excluding shelter",
+      "parent": null
+    },
+    "287": {
+      "label": "All-items excluding energy",
+      "parent": null
+    },
+    "302": {
+      "label": "All-items excluding gasoline",
+      "parent": null
+    },
+    "303": {
+      "label": "All-items excluding shelter, insurance and financial services",
+      "parent": null
+    },
+    "312": {
+      "label": "Private transportation excluding gasoline",
+      "parent": null
+    },
+    "286": {
+      "label": "Food and energy",
+      "parent": null
+    },
+    "294": {
+      "label": "Fresh fruit and vegetables",
+      "parent": null
+    },
+    "288": {
+      "label": "Energy",
+      "parent": null
+    },
+    "271": {
+      "label": "Housing (1986 definition)",
+      "parent": null
+    },
+    "272": {
+      "label": "Shelter (1986 definition)",
+      "parent": null
+    },
+    "273": {
+      "label": "Goods and services",
+      "parent": null
+    },
+    "274": {
+      "label": "Goods",
+      "parent": "273"
+    },
+    "275": {
+      "label": "Durable goods",
+      "parent": "274"
+    },
+    "276": {
+      "label": "Semi-durable goods",
+      "parent": "274"
+    },
+    "277": {
+      "label": "Non-durable goods",
+      "parent": "274"
+    },
+    "278": {
+      "label": "Non-durable goods excluding food purchased from stores",
+      "parent": "277"
+    },
+    "279": {
+      "label": "Non-durable goods excluding food purchased from stores and energy",
+      "parent": "277"
+    },
+    "280": {
+      "label": "Goods excluding food purchased from stores",
+      "parent": "274"
+    },
+    "281": {
+      "label": "Goods excluding food purchased from stores and energy",
+      "parent": "274"
+    },
+    "282": {
+      "label": "Services",
+      "parent": "273"
+    },
+    "283": {
+      "label": "Services excluding shelter services",
+      "parent": "282"
+    },
+    "370": {
+      "label": "Digital economy services (201812=100)",
+      "parent": "282"
+    }
+  },
+  "CL_SCALAR_FACTOR": {
+    "0": {
+      "label": "units",
+      "parent": null
+    },
+    "1": {
+      "label": "tens",
+      "parent": null
+    },
+    "2": {
+      "label": "hundreds",
+      "parent": null
+    },
+    "3": {
+      "label": "thousands",
+      "parent": null
+    },
+    "4": {
+      "label": "tens of thousands",
+      "parent": null
+    },
+    "5": {
+      "label": "hundreds of thousands",
+      "parent": null
+    },
+    "6": {
+      "label": "millions",
+      "parent": null
+    },
+    "7": {
+      "label": "tens of millions",
+      "parent": null
+    },
+    "8": {
+      "label": "hundreds of millions",
+      "parent": null
+    },
+    "9": {
+      "label": "billions",
+      "parent": null
+    }
+  },
+  "CL_SECURITY_LEVEL": {
+    "0": {
+      "label": "0 = public",
+      "parent": null
+    },
+    "1": {
+      "label": "x = suppressed to meet the confidentiality requirements of the Statistics Act",
+      "parent": null
+    }
+  },
+  "CL_STATUS_CAN": {
+    "0": {
+      "label": "0 = normal",
+      "parent": null
+    },
+    "1": {
+      "label": ".. = not available for a specific reference period",
+      "parent": null
+    },
+    "2": {
+      "label": "0s = value rounded to 0 (zero) where there is a meaningful distinction between true zero and the value that was rounded",
+      "parent": null
+    },
+    "3": {
+      "label": "A = data quality: excellent",
+      "parent": null
+    },
+    "4": {
+      "label": "B = data quality: very good",
+      "parent": null
+    },
+    "5": {
+      "label": "C = data quality: good",
+      "parent": null
+    },
+    "6": {
+      "label": "D = data quality: acceptable",
+      "parent": null
+    },
+    "7": {
+      "label": "E = use with caution",
+      "parent": null
+    },
+    "8": {
+      "label": "F = too unreliable to be published",
+      "parent": null
+    },
+    "9": {
+      "label": "... = not applicable",
+      "parent": null
+    },
+    "10": {
+      "label": "<LOD = less than the limit of detection",
+      "parent": null
+    }
+  },
+  "CL_SYMBOL": {
+    "0": {
+      "label": "0 = none",
+      "parent": null
+    },
+    "1": {
+      "label": "p = preliminary",
+      "parent": null
+    },
+    "3": {
+      "label": "r = revised",
+      "parent": null
+    }
+  },
+  "CL_TERMINATED": {
+    "0": {
+      "label": "0 = active",
+      "parent": null
+    },
+    "1": {
+      "label": "t = terminated",
+      "parent": null
+    }
+  },
+  "CL_UOM": {
+    "17": {
+      "label": "2002=100",
+      "parent": null
+    },
+    "452": {
+      "label": "202404=100",
+      "parent": null
+    },
+    "25": {
+      "label": "2013=100",
+      "parent": null
+    },
+    "438": {
+      "label": "202304=100",
+      "parent": null
+    },
+    "402": {
+      "label": "2017=100",
+      "parent": null
+    },
+    "16": {
+      "label": "200212=100",
+      "parent": null
+    },
+    "22": {
+      "label": "201104=100",
+      "parent": null
+    },
+    "427": {
+      "label": "202204=100",
+      "parent": null
+    },
+    "388": {
+      "label": "201812=100",
+      "parent": null
+    },
+    "19": {
+      "label": "200704=100",
+      "parent": null
+    },
+    "7": {
+      "label": "1992=100",
+      "parent": null
+    }
+  }
+}

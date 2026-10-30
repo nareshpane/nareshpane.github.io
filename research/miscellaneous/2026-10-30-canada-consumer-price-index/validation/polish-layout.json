@@ -1,0 +1,1004 @@
+[
+  {
+    "captions": 0,
+    "cards": [
+      {
+        "border": "rgb(188, 201, 187)",
+        "height": 131.60000610351562,
+        "icon": 1
+      },
+      {
+        "border": "rgb(188, 201, 187)",
+        "height": 131.60000610351562,
+        "icon": 1
+      },
+      {
+        "border": "rgb(188, 201, 187)",
+        "height": 131.60000610351562,
+        "icon": 1
+      },
+      {
+        "border": "rgb(188, 201, 187)",
+        "height": 131.60000610351562,
+        "icon": 1
+      }
+    ],
+    "chapters": [
+      {
+        "id": "s01",
+        "overflow": false
+      },
+      {
+        "id": "s02",
+        "overflow": false
+      },
+      {
+        "id": "s03",
+        "overflow": false
+      },
+      {
+        "id": "s04",
+        "overflow": false
+      },
+      {
+        "id": "s05",
+        "overflow": false
+      },
+      {
+        "id": "s06",
+        "overflow": false
+      },
+      {
+        "id": "s07",
+        "overflow": false
+      },
+      {
+        "id": "s08",
+        "overflow": false
+      },
+      {
+        "id": "s09",
+        "overflow": false
+      },
+      {
+        "id": "s10",
+        "overflow": false
+      },
+      {
+        "id": "s11",
+        "overflow": false
+      },
+      {
+        "id": "s12",
+        "overflow": false
+      },
+      {
+        "id": "s13",
+        "overflow": false
+      },
+      {
+        "id": "s14",
+        "overflow": false
+      },
+      {
+        "id": "s15",
+        "overflow": false
+      },
+      {
+        "id": "s16",
+        "overflow": false
+      },
+      {
+        "id": "s17",
+        "overflow": false
+      },
+      {
+        "id": "s18",
+        "overflow": false
+      }
+    ],
+    "client": 1905,
+    "heroLinks": 0,
+    "mathErrors": 0,
+    "navFont": "12.3px",
+    "scroll": 1905,
+    "titleLines": [
+      1,
+      1
+    ],
+    "treemap": [
+      {
+        "label": "Food",
+        "labelOverflow": false,
+        "value": "16.8%",
+        "valueOverflow": false,
+        "visible": true
+      },
+      {
+        "label": "Shelter",
+        "labelOverflow": false,
+        "value": "28.5%",
+        "valueOverflow": false,
+        "visible": true
+      },
+      {
+        "label": "Household",
+        "labelOverflow": false,
+        "value": "13.2%",
+        "valueOverflow": false,
+        "visible": true
+      },
+      {
+        "label": "Clothes",
+        "labelOverflow": false,
+        "value": "4.5%",
+        "valueOverflow": false,
+        "visible": true
+      },
+      {
+        "label": "Transport",
+        "labelOverflow": false,
+        "value": "17.9%",
+        "valueOverflow": false,
+        "visible": true
+      },
+      {
+        "label": "Health",
+        "labelOverflow": false,
+        "value": "5.4%",
+        "valueOverflow": false,
+        "visible": true
+      },
+      {
+        "label": "Recreation",
+        "labelOverflow": false,
+        "value": "10.0%",
+        "valueOverflow": false,
+        "visible": true
+      },
+      {
+        "label": "Alcohol",
+        "labelOverflow": false,
+        "value": "3.8%",
+        "valueOverflow": false,
+        "visible": true
+      }
+    ],
+    "width": 1920
+  },
+  {
+    "captions": 0,
+    "cards": [
+      {
+        "border": "rgb(188, 201, 187)",
+        "height": 131.60000610351562,
+        "icon": 1
+      },
+      {
+        "border": "rgb(188, 201, 187)",
+        "height": 131.60000610351562,
+        "icon": 1
+      },
+      {
+        "border": "rgb(188, 201, 187)",
+        "height": 131.60000610351562,
+        "icon": 1
+      },
+      {
+        "border": "rgb(188, 201, 187)",
+        "height": 131.60000610351562,
+        "icon": 1
+      }
+    ],
+    "chapters": [
+      {
+        "id": "s01",
+        "overflow": false
+      },
+      {
+        "id": "s02",
+        "overflow": false
+      },
+      {
+        "id": "s03",
+        "overflow": false
+      },
+      {
+        "id": "s04",
+        "overflow": false
+      },
+      {
+        "id": "s05",
+        "overflow": false
+      },
+      {
+        "id": "s06",
+        "overflow": false
+      },
+      {
+        "id": "s07",
+        "overflow": false
+      },
+      {
+        "id": "s08",
+        "overflow": false
+      },
+      {
+        "id": "s09",
+        "overflow": false
+      },
+      {
+        "id": "s10",
+        "overflow": false
+      },
+      {
+        "id": "s11",
+        "overflow": false
+      },
+      {
+        "id": "s12",
+        "overflow": false
+      },
+      {
+        "id": "s13",
+        "overflow": false
+      },
+      {
+        "id": "s14",
+        "overflow": false
+      },
+      {
+        "id": "s15",
+        "overflow": false
+      },
+      {
+        "id": "s16",
+        "overflow": false
+      },
+      {
+        "id": "s17",
+        "overflow": false
+      },
+      {
+        "id": "s18",
+        "overflow": false
+      }
+    ],
+    "client": 1425,
+    "heroLinks": 0,
+    "mathErrors": 0,
+    "navFont": "12.3px",
+    "scroll": 1425,
+    "titleLines": [
+      1,
+      1
+    ],
+    "treemap": [
+      {
+        "label": "Food",
+        "labelOverflow": false,
+        "value": "16.8%",
+        "valueOverflow": false,
+        "visible": true
+      },
+      {
+        "label": "Shelter",
+        "labelOverflow": false,
+        "value": "28.5%",
+        "valueOverflow": false,
+        "visible": true
+      },
+      {
+        "label": "Household",
+        "labelOverflow": false,
+        "value": "13.2%",
+        "valueOverflow": false,
+        "visible": true
+      },
+      {
+        "label": "Clothes",
+        "labelOverflow": false,
+        "value": "4.5%",
+        "valueOverflow": false,
+        "visible": true
+      },
+      {
+        "label": "Transport",
+        "labelOverflow": false,
+        "value": "17.9%",
+        "valueOverflow": false,
+        "visible": true
+      },
+      {
+        "label": "Health",
+        "labelOverflow": false,
+        "value": "5.4%",
+        "valueOverflow": false,
+        "visible": true
+      },
+      {
+        "label": "Recreation",
+        "labelOverflow": false,
+        "value": "10.0%",
+        "valueOverflow": false,
+        "visible": true
+      },
+      {
+        "label": "Alcohol",
+        "labelOverflow": false,
+        "value": "3.8%",
+        "valueOverflow": false,
+        "visible": true
+      }
+    ],
+    "width": 1440
+  },
+  {
+    "captions": 0,
+    "cards": [
+      {
+        "border": "rgb(188, 201, 187)",
+        "height": 131.60000610351562,
+        "icon": 1
+      },
+      {
+        "border": "rgb(188, 201, 187)",
+        "height": 131.60000610351562,
+        "icon": 1
+      },
+      {
+        "border": "rgb(188, 201, 187)",
+        "height": 131.60000610351562,
+        "icon": 1
+      },
+      {
+        "border": "rgb(188, 201, 187)",
+        "height": 131.60000610351562,
+        "icon": 1
+      }
+    ],
+    "chapters": [
+      {
+        "id": "s01",
+        "overflow": false
+      },
+      {
+        "id": "s02",
+        "overflow": false
+      },
+      {
+        "id": "s03",
+        "overflow": false
+      },
+      {
+        "id": "s04",
+        "overflow": false
+      },
+      {
+        "id": "s05",
+        "overflow": false
+      },
+      {
+        "id": "s06",
+        "overflow": false
+      },
+      {
+        "id": "s07",
+        "overflow": false
+      },
+      {
+        "id": "s08",
+        "overflow": false
+      },
+      {
+        "id": "s09",
+        "overflow": false
+      },
+      {
+        "id": "s10",
+        "overflow": false
+      },
+      {
+        "id": "s11",
+        "overflow": false
+      },
+      {
+        "id": "s12",
+        "overflow": false
+      },
+      {
+        "id": "s13",
+        "overflow": false
+      },
+      {
+        "id": "s14",
+        "overflow": false
+      },
+      {
+        "id": "s15",
+        "overflow": false
+      },
+      {
+        "id": "s16",
+        "overflow": false
+      },
+      {
+        "id": "s17",
+        "overflow": false
+      },
+      {
+        "id": "s18",
+        "overflow": false
+      }
+    ],
+    "client": 1265,
+    "heroLinks": 0,
+    "mathErrors": 0,
+    "navFont": "12.3px",
+    "scroll": 1265,
+    "titleLines": [
+      1,
+      1
+    ],
+    "treemap": [
+      {
+        "label": "Food",
+        "labelOverflow": false,
+        "value": "16.8%",
+        "valueOverflow": false,
+        "visible": true
+      },
+      {
+        "label": "Shelter",
+        "labelOverflow": false,
+        "value": "28.5%",
+        "valueOverflow": false,
+        "visible": true
+      },
+      {
+        "label": "Household",
+        "labelOverflow": false,
+        "value": "13.2%",
+        "valueOverflow": false,
+        "visible": true
+      },
+      {
+        "label": "Clothes",
+        "labelOverflow": false,
+        "value": "4.5%",
+        "valueOverflow": false,
+        "visible": true
+      },
+      {
+        "label": "Transport",
+        "labelOverflow": false,
+        "value": "17.9%",
+        "valueOverflow": false,
+        "visible": true
+      },
+      {
+        "label": "Health",
+        "labelOverflow": false,
+        "value": "5.4%",
+        "valueOverflow": false,
+        "visible": true
+      },
+      {
+        "label": "Recreation",
+        "labelOverflow": false,
+        "value": "10.0%",
+        "valueOverflow": false,
+        "visible": true
+      },
+      {
+        "label": "Alcohol",
+        "labelOverflow": false,
+        "value": "3.8%",
+        "valueOverflow": false,
+        "visible": true
+      }
+    ],
+    "width": 1280
+  },
+  {
+    "captions": 0,
+    "cards": [
+      {
+        "border": "rgb(188, 201, 187)",
+        "height": 131.60000610351562,
+        "icon": 1
+      },
+      {
+        "border": "rgb(188, 201, 187)",
+        "height": 131.60000610351562,
+        "icon": 1
+      },
+      {
+        "border": "rgb(188, 201, 187)",
+        "height": 131.60000610351562,
+        "icon": 1
+      },
+      {
+        "border": "rgb(188, 201, 187)",
+        "height": 131.60000610351562,
+        "icon": 1
+      }
+    ],
+    "chapters": [
+      {
+        "id": "s01",
+        "overflow": false
+      },
+      {
+        "id": "s02",
+        "overflow": false
+      },
+      {
+        "id": "s03",
+        "overflow": false
+      },
+      {
+        "id": "s04",
+        "overflow": false
+      },
+      {
+        "id": "s05",
+        "overflow": false
+      },
+      {
+        "id": "s06",
+        "overflow": false
+      },
+      {
+        "id": "s07",
+        "overflow": false
+      },
+      {
+        "id": "s08",
+        "overflow": false
+      },
+      {
+        "id": "s09",
+        "overflow": false
+      },
+      {
+        "id": "s10",
+        "overflow": false
+      },
+      {
+        "id": "s11",
+        "overflow": false
+      },
+      {
+        "id": "s12",
+        "overflow": false
+      },
+      {
+        "id": "s13",
+        "overflow": false
+      },
+      {
+        "id": "s14",
+        "overflow": false
+      },
+      {
+        "id": "s15",
+        "overflow": false
+      },
+      {
+        "id": "s16",
+        "overflow": false
+      },
+      {
+        "id": "s17",
+        "overflow": false
+      },
+      {
+        "id": "s18",
+        "overflow": false
+      }
+    ],
+    "client": 1009,
+    "heroLinks": 0,
+    "mathErrors": 0,
+    "navFont": "11.3px",
+    "scroll": 1009,
+    "titleLines": [
+      1,
+      1
+    ],
+    "treemap": [
+      {
+        "label": "Food",
+        "labelOverflow": false,
+        "value": "16.8%",
+        "valueOverflow": false,
+        "visible": true
+      },
+      {
+        "label": "Shelter",
+        "labelOverflow": false,
+        "value": "28.5%",
+        "valueOverflow": false,
+        "visible": true
+      },
+      {
+        "label": "Household",
+        "labelOverflow": false,
+        "value": "13.2%",
+        "valueOverflow": false,
+        "visible": true
+      },
+      {
+        "label": "Clothes",
+        "labelOverflow": false,
+        "value": "4.5%",
+        "valueOverflow": false,
+        "visible": true
+      },
+      {
+        "label": "Transport",
+        "labelOverflow": false,
+        "value": "17.9%",
+        "valueOverflow": false,
+        "visible": true
+      },
+      {
+        "label": "Health",
+        "labelOverflow": false,
+        "value": "5.4%",
+        "valueOverflow": false,
+        "visible": true
+      },
+      {
+        "label": "Recreation",
+        "labelOverflow": false,
+        "value": "10.0%",
+        "valueOverflow": false,
+        "visible": true
+      },
+      {
+        "label": "Alcohol",
+        "labelOverflow": false,
+        "value": "3.8%",
+        "valueOverflow": false,
+        "visible": true
+      }
+    ],
+    "width": 1024
+  },
+  {
+    "captions": 0,
+    "cards": [
+      {
+        "border": "rgb(188, 201, 187)",
+        "height": 131.60000610351562,
+        "icon": 1
+      },
+      {
+        "border": "rgb(188, 201, 187)",
+        "height": 131.60000610351562,
+        "icon": 1
+      },
+      {
+        "border": "rgb(188, 201, 187)",
+        "height": 131.60000610351562,
+        "icon": 1
+      },
+      {
+        "border": "rgb(188, 201, 187)",
+        "height": 131.60000610351562,
+        "icon": 1
+      }
+    ],
+    "chapters": [
+      {
+        "id": "s01",
+        "overflow": false
+      },
+      {
+        "id": "s02",
+        "overflow": false
+      },
+      {
+        "id": "s03",
+        "overflow": false
+      },
+      {
+        "id": "s04",
+        "overflow": false
+      },
+      {
+        "id": "s05",
+        "overflow": false
+      },
+      {
+        "id": "s06",
+        "overflow": false
+      },
+      {
+        "id": "s07",
+        "overflow": false
+      },
+      {
+        "id": "s08",
+        "overflow": false
+      },
+      {
+        "id": "s09",
+        "overflow": false
+      },
+      {
+        "id": "s10",
+        "overflow": false
+      },
+      {
+        "id": "s11",
+        "overflow": false
+      },
+      {
+        "id": "s12",
+        "overflow": false
+      },
+      {
+        "id": "s13",
+        "overflow": false
+      },
+      {
+        "id": "s14",
+        "overflow": false
+      },
+      {
+        "id": "s15",
+        "overflow": false
+      },
+      {
+        "id": "s16",
+        "overflow": false
+      },
+      {
+        "id": "s17",
+        "overflow": false
+      },
+      {
+        "id": "s18",
+        "overflow": false
+      }
+    ],
+    "client": 753,
+    "heroLinks": 0,
+    "mathErrors": 0,
+    "navFont": "11.3px",
+    "scroll": 753,
+    "titleLines": [
+      1,
+      1
+    ],
+    "treemap": [
+      {
+        "label": "Food",
+        "labelOverflow": false,
+        "value": "16.8%",
+        "valueOverflow": false,
+        "visible": true
+      },
+      {
+        "label": "Shelter",
+        "labelOverflow": false,
+        "value": "28.5%",
+        "valueOverflow": false,
+        "visible": true
+      },
+      {
+        "label": "Household",
+        "labelOverflow": false,
+        "value": "13.2%",
+        "valueOverflow": false,
+        "visible": true
+      },
+      {
+        "label": "Clothes",
+        "labelOverflow": false,
+        "value": "4.5%",
+        "valueOverflow": false,
+        "visible": true
+      },
+      {
+        "label": "Transport",
+        "labelOverflow": false,
+        "value": "17.9%",
+        "valueOverflow": false,
+        "visible": true
+      },
+      {
+        "label": "Health",
+        "labelOverflow": false,
+        "value": "5.4%",
+        "valueOverflow": false,
+        "visible": true
+      },
+      {
+        "label": "Recreation",
+        "labelOverflow": false,
+        "value": "10.0%",
+        "valueOverflow": false,
+        "visible": true
+      },
+      {
+        "label": "Alcohol",
+        "labelOverflow": false,
+        "value": "3.8%",
+        "valueOverflow": false,
+        "visible": true
+      }
+    ],
+    "width": 768
+  },
+  {
+    "captions": 0,
+    "cards": [
+      {
+        "border": "rgb(188, 201, 187)",
+        "height": 129.60000610351562,
+        "icon": 1
+      },
+      {
+        "border": "rgb(188, 201, 187)",
+        "height": 129.60000610351562,
+        "icon": 1
+      },
+      {
+        "border": "rgb(188, 201, 187)",
+        "height": 129.60000610351562,
+        "icon": 1
+      },
+      {
+        "border": "rgb(188, 201, 187)",
+        "height": 129.60000610351562,
+        "icon": 1
+      }
+    ],
+    "chapters": [
+      {
+        "id": "s01",
+        "overflow": false
+      },
+      {
+        "id": "s02",
+        "overflow": false
+      },
+      {
+        "id": "s03",
+        "overflow": false
+      },
+      {
+        "id": "s04",
+        "overflow": false
+      },
+      {
+        "id": "s05",
+        "overflow": false
+      },
+      {
+        "id": "s06",
+        "overflow": false
+      },
+      {
+        "id": "s07",
+        "overflow": false
+      },
+      {
+        "id": "s08",
+        "overflow": false
+      },
+      {
+        "id": "s09",
+        "overflow": false
+      },
+      {
+        "id": "s10",
+        "overflow": false
+      },
+      {
+        "id": "s11",
+        "overflow": false
+      },
+      {
+        "id": "s12",
+        "overflow": false
+      },
+      {
+        "id": "s13",
+        "overflow": false
+      },
+      {
+        "id": "s14",
+        "overflow": false
+      },
+      {
+        "id": "s15",
+        "overflow": false
+      },
+      {
+        "id": "s16",
+        "overflow": false
+      },
+      {
+        "id": "s17",
+        "overflow": false
+      },
+      {
+        "id": "s18",
+        "overflow": false
+      }
+    ],
+    "client": 375,
+    "heroLinks": 0,
+    "mathErrors": 0,
+    "navFont": "11.3px",
+    "scroll": 375,
+    "titleLines": [
+      2,
+      2
+    ],
+    "treemap": [
+      {
+        "label": "Food",
+        "labelOverflow": false,
+        "value": "16.8%",
+        "valueOverflow": true,
+        "visible": false
+      },
+      {
+        "label": "Shelter",
+        "labelOverflow": false,
+        "value": "28.5%",
+        "valueOverflow": true,
+        "visible": false
+      },
+      {
+        "label": "Household",
+        "labelOverflow": false,
+        "value": "13.2%",
+        "valueOverflow": true,
+        "visible": false
+      },
+      {
+        "label": "Clothes",
+        "labelOverflow": false,
+        "value": "4.5%",
+        "valueOverflow": true,
+        "visible": false
+      },
+      {
+        "label": "Transport",
+        "labelOverflow": false,
+        "value": "17.9%",
+        "valueOverflow": true,
+        "visible": false
+      },
+      {
+        "label": "Health",
+        "labelOverflow": false,
+        "value": "5.4%",
+        "valueOverflow": true,
+        "visible": false
+      },
+      {
+        "label": "Recreation",
+        "labelOverflow": false,
+        "value": "10.0%",
+        "valueOverflow": true,
+        "visible": false
+      },
+      {
+        "label": "Alcohol",
+        "labelOverflow": false,
+        "value": "3.8%",
+        "valueOverflow": true,
+        "visible": false
+      }
+    ],
+    "width": 390
+  }
+]

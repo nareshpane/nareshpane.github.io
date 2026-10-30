@@ -1,0 +1,289 @@
+series,geography,reference_period,metric,official,calculated,difference,tolerance,category,result,source
+All-items,Canada,2025-09,NSA index,164.9,164.9,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+All-items,Canada,2026-08,NSA index,169.8,169.8,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+All-items,Canada,2026-09,NSA index,170.0,170.0,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+All-items,Canada,2026-09,MoM,0.1,0.11778563015312216,0.01778563015312215,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.7
+All-items,Canada,2026-09,YoY,3.1,3.092783505154628,-0.007216494845371901,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.7
+Food,Canada,2025-09,NSA index,197.5,197.5,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+Food,Canada,2026-08,NSA index,202.4,202.4,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+Food,Canada,2026-09,NSA index,201.8,201.8,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+Food,Canada,2026-09,MoM,-0.3,-0.29644268774703386,0.003557312252966127,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.7
+Food,Canada,2026-09,YoY,2.2,2.177215189873416,-0.022784810126584176,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.7
+Shelter,Canada,2025-09,NSA index,188.2,188.2,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+Shelter,Canada,2026-08,NSA index,190.9,190.9,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+Shelter,Canada,2026-09,NSA index,191.5,191.5,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+Shelter,Canada,2026-09,MoM,0.3,0.3143006809848137,0.014300680984813685,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.7
+Shelter,Canada,2026-09,YoY,1.8,1.7534537725823585,-0.046546227417641584,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.7
+"Household operations, furnishings and equipment",Canada,2025-09,NSA index,134.1,134.1,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+"Household operations, furnishings and equipment",Canada,2026-08,NSA index,134.4,134.4,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+"Household operations, furnishings and equipment",Canada,2026-09,NSA index,134.7,134.7,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+"Household operations, furnishings and equipment",Canada,2026-09,MoM,0.2,0.22321428571427937,0.02321428571427936,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.7
+"Household operations, furnishings and equipment",Canada,2026-09,YoY,0.4,0.4474272930648837,0.04742729306488369,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.7
+Clothing and footwear,Canada,2025-09,NSA index,93.5,93.5,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+Clothing and footwear,Canada,2026-08,NSA index,94.7,94.7,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+Clothing and footwear,Canada,2026-09,NSA index,95.1,95.1,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+Clothing and footwear,Canada,2026-09,MoM,0.4,0.42238648363250864,0.022386483632508614,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.7
+Clothing and footwear,Canada,2026-09,YoY,1.7,1.7112299465240621,0.011229946524062173,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.7
+Transportation,Canada,2025-09,NSA index,171.8,171.8,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+Transportation,Canada,2026-08,NSA index,185.7,185.7,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+Transportation,Canada,2026-09,NSA index,186.3,186.3,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+Transportation,Canada,2026-09,MoM,0.3,0.3231017770597866,0.02310177705978661,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.7
+Transportation,Canada,2026-09,YoY,8.4,8.44004656577415,0.040046565774149556,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.7
+Gasoline,Canada,2025-09,NSA index,209.4,209.4,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+Gasoline,Canada,2026-08,NSA index,252.2,252.2,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+Gasoline,Canada,2026-09,NSA index,267.6,267.6,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+Gasoline,Canada,2026-09,MoM,6.1,6.10626486915149,0.00626486915149016,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.7
+Gasoline,Canada,2026-09,YoY,27.8,27.793696275071646,-0.006303724928354626,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.7
+Health and personal care,Canada,2025-09,NSA index,155.8,155.8,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+Health and personal care,Canada,2026-08,NSA index,158.8,158.8,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+Health and personal care,Canada,2026-09,NSA index,158.5,158.5,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+Health and personal care,Canada,2026-09,MoM,-0.2,-0.18891687657431877,0.01108312342568124,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.7
+Health and personal care,Canada,2026-09,YoY,1.7,1.732991014120655,0.03299101412065508,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.7
+"Recreation, education and reading",Canada,2025-09,NSA index,129.6,129.6,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+"Recreation, education and reading",Canada,2026-08,NSA index,135.9,135.9,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+"Recreation, education and reading",Canada,2026-09,NSA index,135.6,135.6,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+"Recreation, education and reading",Canada,2026-09,MoM,-0.2,-0.22075055187639192,-0.02075055187639191,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.7
+"Recreation, education and reading",Canada,2026-09,YoY,4.6,4.629629629629628,0.02962962962962834,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.7
+"Alcoholic beverages, tobacco products and recreational cannabis",Canada,2025-09,NSA index,200.8,200.8,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+"Alcoholic beverages, tobacco products and recreational cannabis",Canada,2026-08,NSA index,203.9,203.9,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+"Alcoholic beverages, tobacco products and recreational cannabis",Canada,2026-09,NSA index,204.1,204.1,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+"Alcoholic beverages, tobacco products and recreational cannabis",Canada,2026-09,MoM,0.1,0.09808729769493763,-0.0019127023050623804,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.7
+"Alcoholic beverages, tobacco products and recreational cannabis",Canada,2026-09,YoY,1.6,1.6434262948207046,0.04342629482070448,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.7
+All-items excluding food,Canada,2025-09,NSA index,159.1,159.1,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+All-items excluding food,Canada,2026-08,NSA index,163.9,163.9,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+All-items excluding food,Canada,2026-09,NSA index,164.2,164.2,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+All-items excluding food,Canada,2026-09,MoM,0.2,0.18303843807199183,-0.016961561928008184,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.7
+All-items excluding food,Canada,2026-09,YoY,3.2,3.2055311125078534,0.005531112507853209,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.7
+All-items excluding food and energy,Canada,2025-09,NSA index,155.4,155.4,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+All-items excluding food and energy,Canada,2026-08,NSA index,158.8,158.8,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+All-items excluding food and energy,Canada,2026-09,NSA index,158.6,158.6,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+All-items excluding food and energy,Canada,2026-09,MoM,-0.1,-0.12594458438288658,-0.025944584382886576,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.7
+All-items excluding food and energy,Canada,2026-09,YoY,2.1,2.0592020592020477,-0.0407979407979524,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.7
+"All-items excluding alcoholic beverages, tobacco products and smokers' supplies and recreational cannabis",Canada,2025-09,NSA index,163.8,163.8,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+"All-items excluding alcoholic beverages, tobacco products and smokers' supplies and recreational cannabis",Canada,2026-08,NSA index,168.7,168.7,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+"All-items excluding alcoholic beverages, tobacco products and smokers' supplies and recreational cannabis",Canada,2026-09,NSA index,168.9,168.9,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+"All-items excluding alcoholic beverages, tobacco products and smokers' supplies and recreational cannabis",Canada,2026-09,MoM,0.1,0.11855364552459946,0.018553645524599455,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.7
+"All-items excluding alcoholic beverages, tobacco products and smokers' supplies and recreational cannabis",Canada,2026-09,YoY,3.1,3.1135531135531025,0.013553113553102403,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.7
+All-items excluding energy,Canada,2025-09,NSA index,162.4,162.4,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+All-items excluding energy,Canada,2026-08,NSA index,166.0,166.0,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+All-items excluding energy,Canada,2026-09,NSA index,165.8,165.8,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+All-items excluding energy,Canada,2026-09,MoM,-0.1,-0.12048192771083599,-0.020481927710835984,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.7
+All-items excluding energy,Canada,2026-09,YoY,2.1,2.0935960591133007,-0.0064039408866993774,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.7
+All-items excluding gasoline,Canada,2025-09,NSA index,163.2,163.2,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+All-items excluding gasoline,Canada,2026-08,NSA index,167.0,167.0,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+All-items excluding gasoline,Canada,2026-09,NSA index,166.8,166.8,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+All-items excluding gasoline,Canada,2026-09,MoM,-0.1,-0.11976047904190823,-0.019760479041908224,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.7
+All-items excluding gasoline,Canada,2026-09,YoY,2.2,2.205882352941191,0.0058823529411906605,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.7
+Energy,Canada,2025-09,NSA index,193.1,193.1,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+Energy,Canada,2026-08,NSA index,220.5,220.5,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+Energy,Canada,2026-09,NSA index,229.7,229.7,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+Energy,Canada,2026-09,MoM,4.2,4.172335600907018,-0.02766439909298235,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.7
+Energy,Canada,2026-09,YoY,19.0,18.953909891248056,-0.04609010875194386,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.7
+Goods,Canada,2025-09,NSA index,146.0,146.0,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+Goods,Canada,2026-08,NSA index,150.5,150.5,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+Goods,Canada,2026-09,NSA index,151.4,151.4,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+Goods,Canada,2026-09,MoM,0.6,0.5980066445182786,-0.001993355481721415,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.7
+Goods,Canada,2026-09,YoY,3.7,3.698630136986303,-0.0013698630136973478,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.7
+Durable goods,Canada,2025-09,NSA index,105.5,105.5,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+Durable goods,Canada,2026-08,NSA index,107.4,107.4,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+Durable goods,Canada,2026-09,NSA index,107.6,107.6,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+Durable goods,Canada,2026-09,MoM,0.2,0.18621973929235924,-0.013780260707640768,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.7
+Durable goods,Canada,2026-09,YoY,2.0,1.9905213270142053,-0.009478672985794745,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.7
+Semi-durable goods,Canada,2025-09,NSA index,103.2,103.2,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+Semi-durable goods,Canada,2026-08,NSA index,103.1,103.1,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+Semi-durable goods,Canada,2026-09,NSA index,103.6,103.6,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+Semi-durable goods,Canada,2026-09,MoM,0.5,0.4849660523763344,-0.015033947623665611,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.7
+Semi-durable goods,Canada,2026-09,YoY,0.4,0.3875968992248069,-0.012403100775193132,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.7
+Non-durable goods,Canada,2025-09,NSA index,184.6,184.6,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+Non-durable goods,Canada,2026-08,NSA index,193.2,193.2,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+Non-durable goods,Canada,2026-09,NSA index,194.9,194.9,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+Non-durable goods,Canada,2026-09,MoM,0.9,0.8799171842650111,-0.020082815734988935,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.7
+Non-durable goods,Canada,2026-09,YoY,5.6,5.579631635969662,-0.020368364030337816,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.7
+Services,Canada,2025-09,NSA index,183.5,183.5,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+Services,Canada,2026-08,NSA index,188.7,188.7,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+Services,Canada,2026-09,NSA index,188.2,188.2,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.7
+Services,Canada,2026-09,MoM,-0.3,-0.2649708532061479,0.035029146793852106,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.7
+Services,Canada,2026-09,YoY,2.6,2.5613079019073615,-0.03869209809263863,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.7
+All-items,Canada,2025-09,NSA index,164.9,164.9,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Canada,2026-08,NSA index,169.8,169.8,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Canada,2026-09,NSA index,170.0,170.0,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Canada,2026-09,MoM,0.1,0.11778563015312216,0.01778563015312215,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Canada,2026-09,YoY,3.1,3.092783505154628,-0.007216494845371901,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Newfoundland and Labrador,2025-09,NSA index,165.2,165.2,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Newfoundland and Labrador,2026-08,NSA index,172.4,172.4,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Newfoundland and Labrador,2026-09,NSA index,173.0,173.0,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Newfoundland and Labrador,2026-09,MoM,0.3,0.34802784222738303,0.048027842227383044,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Newfoundland and Labrador,2026-09,YoY,4.7,4.72154963680389,0.021549636803889882,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Prince Edward Island,2025-09,NSA index,168.1,168.1,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Prince Edward Island,2026-08,NSA index,176.1,176.1,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Prince Edward Island,2026-09,NSA index,177.6,177.6,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Prince Edward Island,2026-09,MoM,0.9,0.8517887563884052,-0.04821124361159479,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Prince Edward Island,2026-09,YoY,5.7,5.651397977394401,-0.04860202260559898,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Nova Scotia,2025-09,NSA index,168.6,168.6,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Nova Scotia,2026-08,NSA index,177.2,177.2,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Nova Scotia,2026-09,NSA index,178.1,178.1,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Nova Scotia,2026-09,MoM,0.5,0.5079006772009009,0.00790067720090093,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Nova Scotia,2026-09,YoY,5.6,5.634638196915787,0.034638196915786956,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.8
+All-items,New Brunswick,2025-09,NSA index,164.4,164.4,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.8
+All-items,New Brunswick,2026-08,NSA index,171.9,171.9,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.8
+All-items,New Brunswick,2026-09,NSA index,172.6,172.6,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.8
+All-items,New Brunswick,2026-09,MoM,0.4,0.40721349621872793,0.007213496218727911,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.8
+All-items,New Brunswick,2026-09,YoY,5.0,4.987834549878345,-0.012165450121655041,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Quebec,2025-09,NSA index,162.6,162.6,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Quebec,2026-08,NSA index,166.9,166.9,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Quebec,2026-09,NSA index,167.7,167.7,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Quebec,2026-09,MoM,0.5,0.47932893948470223,-0.020671060515297768,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Quebec,2026-09,YoY,3.1,3.136531365313644,0.03653136531364387,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Ontario,2025-09,NSA index,166.1,166.1,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Ontario,2026-08,NSA index,170.0,170.0,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Ontario,2026-09,NSA index,170.3,170.3,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Ontario,2026-09,MoM,0.2,0.17647058823531125,-0.023529411764688757,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Ontario,2026-09,YoY,2.5,2.5285972305840065,0.02859723058400654,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Manitoba,2025-09,NSA index,165.0,165.0,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Manitoba,2026-08,NSA index,172.1,172.1,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Manitoba,2026-09,NSA index,172.2,172.2,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Manitoba,2026-09,MoM,0.1,0.05810575246949501,-0.041894247530505,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Manitoba,2026-09,YoY,4.4,4.363636363636347,-0.03636363636365303,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Saskatchewan,2025-09,NSA index,166.5,166.5,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Saskatchewan,2026-08,NSA index,172.0,172.0,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Saskatchewan,2026-09,NSA index,172.0,172.0,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Saskatchewan,2026-09,MoM,0.0,0.0,0.0,0.05,A,Matched,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Saskatchewan,2026-09,YoY,3.3,3.3033033033033066,0.0033033033033067483,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Alberta,2025-09,NSA index,172.4,172.4,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Alberta,2026-08,NSA index,179.2,179.2,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Alberta,2026-09,NSA index,178.6,178.6,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Alberta,2026-09,MoM,-0.3,-0.33482142857143016,-0.03482142857143017,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Alberta,2026-09,YoY,3.6,3.596287703016232,-0.00371229698376796,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.8
+All-items,British Columbia,2025-09,NSA index,158.8,158.8,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.8
+All-items,British Columbia,2026-08,NSA index,163.8,163.8,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.8
+All-items,British Columbia,2026-09,NSA index,163.5,163.5,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.8
+All-items,British Columbia,2026-09,MoM,-0.2,-0.1831501831501936,0.01684981684980641,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.8
+All-items,British Columbia,2026-09,YoY,3.0,2.9596977329974683,-0.0403022670025317,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Whitehorse,2025-09,NSA index,164.4,164.4,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Whitehorse,2026-08,NSA index,175.0,175.0,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Whitehorse,2026-09,NSA index,174.4,174.4,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Whitehorse,2026-09,MoM,-0.3,-0.34285714285714475,-0.04285714285714476,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Whitehorse,2026-09,YoY,6.1,6.082725060827254,-0.017274939172745363,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Yellowknife,2025-09,NSA index,162.4,162.4,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Yellowknife,2026-08,NSA index,170.8,170.8,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Yellowknife,2026-09,NSA index,170.0,170.0,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Yellowknife,2026-09,MoM,-0.5,-0.4683840749414636,0.03161592505853639,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Yellowknife,2026-09,YoY,4.7,4.679802955665013,-0.020197044334986813,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Iqaluit,2025-09,NSA index,145.2,145.2,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Iqaluit,2026-08,NSA index,150.6,150.6,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Iqaluit,2026-09,NSA index,149.6,149.6,0.0,1e-08,B,Matched,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Iqaluit,2026-09,MoM,-0.7,-0.6640106241699861,0.035989375830013826,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Iqaluit,2026-09,YoY,3.0,3.0303030303030276,0.03030303030302761,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.8
+All-items,Canada,2026-07,SA index,168.9,168.9,0.0,1e-08,B,Matched,18-10-0006-01 CSV vs release PDF p.8
+All-items,Canada,2026-08,SA index,169.4,169.4,0.0,1e-08,B,Matched,18-10-0006-01 CSV vs release PDF p.8
+All-items,Canada,2026-09,SA index,170.0,170.0,0.0,1e-08,B,Matched,18-10-0006-01 CSV vs release PDF p.8
+All-items,Canada,2026-09,SA MoM,0.4,0.35419126328217754,-0.045808736717822485,0.05,A,Within rounding tolerance,18-10-0006-01 CSV vs release PDF p.8
+Food,Canada,2026-07,SA index,202.4,202.4,0.0,1e-08,B,Matched,18-10-0006-01 CSV vs release PDF p.8
+Food,Canada,2026-08,SA index,202.6,202.6,0.0,1e-08,B,Matched,18-10-0006-01 CSV vs release PDF p.8
+Food,Canada,2026-09,SA index,202.4,202.4,0.0,1e-08,B,Matched,18-10-0006-01 CSV vs release PDF p.8
+Food,Canada,2026-09,SA MoM,-0.1,-0.09871668311943749,0.0012833168805625184,0.05,A,Within rounding tolerance,18-10-0006-01 CSV vs release PDF p.8
+Shelter,Canada,2026-07,SA index,190.3,190.3,0.0,1e-08,B,Matched,18-10-0006-01 CSV vs release PDF p.8
+Shelter,Canada,2026-08,SA index,190.9,190.9,0.0,1e-08,B,Matched,18-10-0006-01 CSV vs release PDF p.8
+Shelter,Canada,2026-09,SA index,191.5,191.5,0.0,1e-08,B,Matched,18-10-0006-01 CSV vs release PDF p.8
+Shelter,Canada,2026-09,SA MoM,0.3,0.3143006809848137,0.014300680984813685,0.05,A,Within rounding tolerance,18-10-0006-01 CSV vs release PDF p.8
+"Household operations, furnishings and equipment",Canada,2026-07,SA index,133.4,133.4,0.0,1e-08,B,Matched,18-10-0006-01 CSV vs release PDF p.8
+"Household operations, furnishings and equipment",Canada,2026-08,SA index,133.8,133.8,0.0,1e-08,B,Matched,18-10-0006-01 CSV vs release PDF p.8
+"Household operations, furnishings and equipment",Canada,2026-09,SA index,134.1,134.1,0.0,1e-08,B,Matched,18-10-0006-01 CSV vs release PDF p.8
+"Household operations, furnishings and equipment",Canada,2026-09,SA MoM,0.2,0.22421524663676085,0.024215246636760834,0.05,A,Within rounding tolerance,18-10-0006-01 CSV vs release PDF p.8
+Clothing and footwear,Canada,2026-07,SA index,95.7,95.7,0.0,1e-08,B,Matched,18-10-0006-01 CSV vs release PDF p.8
+Clothing and footwear,Canada,2026-08,SA index,95.3,95.3,0.0,1e-08,B,Matched,18-10-0006-01 CSV vs release PDF p.8
+Clothing and footwear,Canada,2026-09,SA index,95.4,95.4,0.0,1e-08,B,Matched,18-10-0006-01 CSV vs release PDF p.8
+Clothing and footwear,Canada,2026-09,SA MoM,0.1,0.10493179433368471,0.004931794333684708,0.05,A,Within rounding tolerance,18-10-0006-01 CSV vs release PDF p.8
+Transportation,Canada,2026-07,SA index,183.8,183.8,0.0,1e-08,B,Matched,18-10-0006-01 CSV vs release PDF p.8
+Transportation,Canada,2026-08,SA index,184.7,184.7,0.0,1e-08,B,Matched,18-10-0006-01 CSV vs release PDF p.8
+Transportation,Canada,2026-09,SA index,186.9,186.9,0.0,1e-08,B,Matched,18-10-0006-01 CSV vs release PDF p.8
+Transportation,Canada,2026-09,SA MoM,1.2,1.1911207363291876,-0.008879263670812376,0.05,A,Within rounding tolerance,18-10-0006-01 CSV vs release PDF p.8
+Health and personal care,Canada,2026-07,SA index,158.3,158.3,0.0,1e-08,B,Matched,18-10-0006-01 CSV vs release PDF p.8
+Health and personal care,Canada,2026-08,SA index,158.4,158.4,0.0,1e-08,B,Matched,18-10-0006-01 CSV vs release PDF p.8
+Health and personal care,Canada,2026-09,SA index,158.1,158.1,0.0,1e-08,B,Matched,18-10-0006-01 CSV vs release PDF p.8
+Health and personal care,Canada,2026-09,SA MoM,-0.2,-0.18939393939394478,0.010606060606055234,0.05,A,Within rounding tolerance,18-10-0006-01 CSV vs release PDF p.8
+"Recreation, education and reading",Canada,2026-07,SA index,133.8,133.8,0.0,1e-08,B,Matched,18-10-0006-01 CSV vs release PDF p.8
+"Recreation, education and reading",Canada,2026-08,SA index,134.7,134.7,0.0,1e-08,B,Matched,18-10-0006-01 CSV vs release PDF p.8
+"Recreation, education and reading",Canada,2026-09,SA index,134.7,134.7,0.0,1e-08,B,Matched,18-10-0006-01 CSV vs release PDF p.8
+"Recreation, education and reading",Canada,2026-09,SA MoM,0.0,0.0,0.0,0.05,A,Matched,18-10-0006-01 CSV vs release PDF p.8
+"Alcoholic beverages, tobacco products and recreational cannabis",Canada,2026-07,SA index,203.9,203.9,0.0,1e-08,B,Matched,18-10-0006-01 CSV vs release PDF p.8
+"Alcoholic beverages, tobacco products and recreational cannabis",Canada,2026-08,SA index,203.7,203.7,0.0,1e-08,B,Matched,18-10-0006-01 CSV vs release PDF p.8
+"Alcoholic beverages, tobacco products and recreational cannabis",Canada,2026-09,SA index,204.1,204.1,0.0,1e-08,B,Matched,18-10-0006-01 CSV vs release PDF p.8
+"Alcoholic beverages, tobacco products and recreational cannabis",Canada,2026-09,SA MoM,0.2,0.19636720667648433,-0.0036327933235156817,0.05,A,Within rounding tolerance,18-10-0006-01 CSV vs release PDF p.8
+All-items excluding food,Canada,2026-07,SA index,163.0,163.0,0.0,1e-08,B,Matched,18-10-0006-01 CSV vs release PDF p.8
+All-items excluding food,Canada,2026-08,SA index,163.4,163.4,0.0,1e-08,B,Matched,18-10-0006-01 CSV vs release PDF p.8
+All-items excluding food,Canada,2026-09,SA index,164.1,164.1,0.0,1e-08,B,Matched,18-10-0006-01 CSV vs release PDF p.8
+All-items excluding food,Canada,2026-09,SA MoM,0.4,0.4283965728274053,0.028396572827405264,0.05,A,Within rounding tolerance,18-10-0006-01 CSV vs release PDF p.8
+All-items excluding food and energy,Canada,2026-07,SA index,158.1,158.1,0.0,1e-08,B,Matched,18-10-0006-01 CSV vs release PDF p.8
+All-items excluding food and energy,Canada,2026-08,SA index,158.5,158.5,0.0,1e-08,B,Matched,18-10-0006-01 CSV vs release PDF p.8
+All-items excluding food and energy,Canada,2026-09,SA index,158.7,158.7,0.0,1e-08,B,Matched,18-10-0006-01 CSV vs release PDF p.8
+All-items excluding food and energy,Canada,2026-09,SA MoM,0.1,0.12618296529967044,0.02618296529967043,0.05,A,Within rounding tolerance,18-10-0006-01 CSV vs release PDF p.8
+Gasoline,Canada,2026-09,YoY,27.8,27.793696275071646,-0.006303724928354626,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.10
+Rent,Canada,2026-09,YoY,2.8,2.7963525835866143,-0.003647416413385507,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.10
+Air transportation,Canada,2026-09,YoY,19.4,19.358893777498444,-0.04110622250155416,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.10
+Food purchased from restaurants,Canada,2026-09,YoY,3.1,3.063241106719361,-0.03675889328063908,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.10
+Property taxes and other special charges,Canada,2026-09,YoY,5.6,5.575087895529873,-0.024912104470126373,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.10
+Homeowners' replacement cost,Canada,2026-09,YoY,-1.9,-1.9005847953216248,-0.0005847953216249202,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.10
+Natural gas,Canada,2026-09,YoY,-6.8,-6.782106782106789,0.017893217893210966,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.10
+Other owned accommodation expenses,Canada,2026-09,YoY,-1.5,-1.492537313432829,0.007462686567170973,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.10
+Fresh vegetables,Canada,2026-09,YoY,-2.9,-2.8750653423941452,0.02493465760585467,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.10
+Financial services,Canada,2026-09,YoY,-0.8,-0.7896221094190636,0.01037789058093641,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.10
+Gasoline,Canada,2026-09,MoM,6.1,6.10626486915149,0.00626486915149016,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.10
+Tuition fees,Canada,2026-09,MoM,2.4,2.3749368367862456,-0.025063163213754347,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.10
+Rent,Canada,2026-09,MoM,0.5,0.4753416518122222,-0.02465834818777779,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.10
+Fuel oil and other fuels,Canada,2026-09,MoM,10.5,10.471087296271486,-0.028912703728513733,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.10
+Purchase of digital media,Canada,2026-09,MoM,23.0,23.026315789473696,0.026315789473695617,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.10
+Air transportation,Canada,2026-09,MoM,-10.0,-9.957325746799429,0.0426742532005715,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.10
+Travel tours,Canada,2026-09,MoM,-6.3,-6.254653760238272,0.045346239761728135,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.10
+Traveller accommodation,Canada,2026-09,MoM,-7.4,-7.430830039525693,-0.030830039525692854,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.10
+Fresh vegetables,Canada,2026-09,MoM,-3.1,-3.1282586027111536,-0.028258602711153546,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.10
+Sugar and confectionery,Canada,2026-09,MoM,-3.8,-3.8481012658227787,-0.04810126582277885,0.05,A,Within rounding tolerance,18-10-0004-01 SDMX vs release PDF p.10
+CPI-trim,Canada,2026-09,Core YoY (source match),1.8,1.8,0.0,1e-08,B,Matched,Bank of Canada HTML vs Statistics Canada release PDF p.9
+CPI-median,Canada,2026-09,Core YoY (source match),1.9,1.9,0.0,1e-08,B,Matched,Bank of Canada HTML vs Statistics Canada release PDF p.9
+CPI-common,Canada,2026-09,Core YoY (source match),2.4,2.4,0.0,1e-08,B,Matched,Bank of Canada HTML vs Statistics Canada release PDF p.9
+All-items,"St. John's, Newfoundland and Labrador",2026-09,MoM,,0.2328288707799553,,0.05,A,Calculated; no release comparator,18-10-0004-01 SDMX; no release-table comparator
+All-items,"St. John's, Newfoundland and Labrador",2026-09,YoY,,4.617253948967193,,0.05,A,Calculated; no release comparator,18-10-0004-01 SDMX; no release-table comparator
+All-items,"Charlottetown and Summerside, Prince Edward Island",2026-09,MoM,,0.8474576271186418,,0.05,A,Calculated; no release comparator,18-10-0004-01 SDMX; no release-table comparator
+All-items,"Charlottetown and Summerside, Prince Edward Island",2026-09,YoY,,5.55884092253105,,0.05,A,Calculated; no release comparator,18-10-0004-01 SDMX; no release-table comparator
+All-items,"Halifax, Nova Scotia",2026-09,MoM,,0.3981797497155881,,0.05,A,Calculated; no release comparator,18-10-0004-01 SDMX; no release-table comparator
+All-items,"Halifax, Nova Scotia",2026-09,YoY,,5.37313432835822,,0.05,A,Calculated; no release comparator,18-10-0004-01 SDMX; no release-table comparator
+All-items,"Saint John, New Brunswick",2026-09,MoM,,0.2912055911473477,,0.05,A,Calculated; no release comparator,18-10-0004-01 SDMX; no release-table comparator
+All-items,"Saint John, New Brunswick",2026-09,YoY,,4.808277541083372,,0.05,A,Calculated; no release comparator,18-10-0004-01 SDMX; no release-table comparator
+All-items,"Québec, Quebec",2026-09,MoM,,0.4842615012106588,,0.05,A,Calculated; no release comparator,18-10-0004-01 SDMX; no release-table comparator
+All-items,"Québec, Quebec",2026-09,YoY,,3.2980709396390973,,0.05,A,Calculated; no release comparator,18-10-0004-01 SDMX; no release-table comparator
+All-items,"Montréal, Quebec",2026-09,MoM,,0.4711425206124664,,0.05,A,Calculated; no release comparator,18-10-0004-01 SDMX; no release-table comparator
+All-items,"Montréal, Quebec",2026-09,YoY,,3.0193236714975757,,0.05,A,Calculated; no release comparator,18-10-0004-01 SDMX; no release-table comparator
+All-items,"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2026-09,MoM,,0.2331002331002363,,0.05,A,Calculated; no release comparator,18-10-0004-01 SDMX; no release-table comparator
+All-items,"Ottawa-Gatineau, Ontario part, Ontario/Quebec",2026-09,YoY,,2.9940119760478945,,0.05,A,Calculated; no release comparator,18-10-0004-01 SDMX; no release-table comparator
+All-items,"Toronto, Ontario",2026-09,MoM,,-0.058241118229462874,,0.05,A,Calculated; no release comparator,18-10-0004-01 SDMX; no release-table comparator
+All-items,"Toronto, Ontario",2026-09,YoY,,2.0820939916716297,,0.05,A,Calculated; no release comparator,18-10-0004-01 SDMX; no release-table comparator
+All-items,"Thunder Bay, Ontario",2026-09,MoM,,-0.1260239445494582,,0.05,A,Calculated; no release comparator,18-10-0004-01 SDMX; no release-table comparator
+All-items,"Thunder Bay, Ontario",2026-09,YoY,,2.7885862516212834,,0.05,A,Calculated; no release comparator,18-10-0004-01 SDMX; no release-table comparator
+All-items,"Winnipeg, Manitoba",2026-09,MoM,,0.05820721769498327,,0.05,A,Calculated; no release comparator,18-10-0004-01 SDMX; no release-table comparator
+All-items,"Winnipeg, Manitoba",2026-09,YoY,,4.244996967859316,,0.05,A,Calculated; no release comparator,18-10-0004-01 SDMX; no release-table comparator
+All-items,"Regina, Saskatchewan",2026-09,MoM,,0.23108030040439598,,0.05,A,Calculated; no release comparator,18-10-0004-01 SDMX; no release-table comparator
+All-items,"Regina, Saskatchewan",2026-09,YoY,,3.396901072705605,,0.05,A,Calculated; no release comparator,18-10-0004-01 SDMX; no release-table comparator
+All-items,"Saskatoon, Saskatchewan",2026-09,MoM,,-0.11507479861910808,,0.05,A,Calculated; no release comparator,18-10-0004-01 SDMX; no release-table comparator
+All-items,"Saskatoon, Saskatchewan",2026-09,YoY,,3.0878859857482066,,0.05,A,Calculated; no release comparator,18-10-0004-01 SDMX; no release-table comparator
+All-items,"Edmonton, Alberta",2026-09,MoM,,-0.3386004514672636,,0.05,A,Calculated; no release comparator,18-10-0004-01 SDMX; no release-table comparator
+All-items,"Edmonton, Alberta",2026-09,YoY,,3.5169988276670505,,0.05,A,Calculated; no release comparator,18-10-0004-01 SDMX; no release-table comparator
+All-items,"Calgary, Alberta",2026-09,MoM,,-0.38398244651673963,,0.05,A,Calculated; no release comparator,18-10-0004-01 SDMX; no release-table comparator
+All-items,"Calgary, Alberta",2026-09,YoY,,3.3579965850882187,,0.05,A,Calculated; no release comparator,18-10-0004-01 SDMX; no release-table comparator
+All-items,"Vancouver, British Columbia",2026-09,MoM,,-0.11976047904190823,,0.05,A,Calculated; no release comparator,18-10-0004-01 SDMX; no release-table comparator
+All-items,"Vancouver, British Columbia",2026-09,YoY,,3.0265596046942678,,0.05,A,Calculated; no release comparator,18-10-0004-01 SDMX; no release-table comparator
+All-items,"Victoria, British Columbia",2026-09,MoM,,-0.24798512089274638,,0.05,A,Calculated; no release comparator,18-10-0004-01 SDMX; no release-table comparator
+All-items,"Victoria, British Columbia",2026-09,YoY,,3.4061696658097773,,0.05,A,Calculated; no release comparator,18-10-0004-01 SDMX; no release-table comparator
+Food purchased from stores,Canada,2026-09,MoM,,-0.6513026052104132,,0.05,A,Calculated; no release comparator,18-10-0004-01 SDMX
+Food purchased from stores,Canada,2026-09,YoY,,1.692307692307704,,0.05,A,Calculated; no release comparator,18-10-0004-01 SDMX
+Rent,Canada,2026-09,MoM,,0.4753416518122222,,0.05,A,Calculated; no release comparator,18-10-0004-01 SDMX
+Rent,Canada,2026-09,YoY,,2.7963525835866143,,0.05,A,Calculated; no release comparator,18-10-0004-01 SDMX
+Air transportation,Canada,2026-09,MoM,,-9.957325746799429,,0.05,A,Calculated; no release comparator,18-10-0004-01 SDMX
+Air transportation,Canada,2026-09,YoY,,19.358893777498444,,0.05,A,Calculated; no release comparator,18-10-0004-01 SDMX
+Fresh vegetables,Canada,2026-09,MoM,,-3.1282586027111536,,0.05,A,Calculated; no release comparator,18-10-0004-01 SDMX
+Fresh vegetables,Canada,2026-09,YoY,,-2.8750653423941452,,0.05,A,Calculated; no release comparator,18-10-0004-01 SDMX
+Natural gas,Canada,2026-09,MoM,,-0.8442056792018593,,0.05,A,Calculated; no release comparator,18-10-0004-01 SDMX
+Natural gas,Canada,2026-09,YoY,,-6.782106782106789,,0.05,A,Calculated; no release comparator,18-10-0004-01 SDMX
+Homeowners' replacement cost,Canada,2026-09,MoM,,-0.09925558312654514,,0.05,A,Calculated; no release comparator,18-10-0004-01 SDMX
+Homeowners' replacement cost,Canada,2026-09,YoY,,-1.9005847953216248,,0.05,A,Calculated; no release comparator,18-10-0004-01 SDMX
+Eight-component Lowe reconstruction,Canada,2026-09,NSA index,170,169.92945615087487,-0.07054384912513001,0,C,Approximate,18-10-0004-01 + 18-10-0007-01
+Product-offer construction,Canada,2026-09,NSA index,170,,,1e-08,D,Not independently reproducible,"Unpublished microdata, full internal weights, imputations and quality adjustments"

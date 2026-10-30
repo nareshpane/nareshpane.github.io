@@ -1,0 +1,2437 @@
+﻿<!DOCTYPE html>
+
+<!--[if lt IE 9]><html class="no-js lt-ie9" lang="en" dir="ltr"><![endif]--><!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+<!--<![endif]-->
+<!-- Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW)
+     wet-boew.github.io/wet-boew/License-en.htm / wet-boew.github.io/wet-boew/Licence-fr.htm -->
+
+<!-- METADATA BEGINS | DEBUT DES METADONNEES -->
+<head prefix="dcterms: http://purl.org/dc/terms/">
+<meta charset="utf-8">
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta name="description" content="This Canadian Consumer Price Index (CPI) Reference Paper provides an overview the Canadian CPI. It is intended for a varied audience, ranging from users interested in general information to those requiring more technical or theoretical details. As such, it explains all the important aspects of the Canadian CPI: uses and interpretations, scope, classifications, sample strategy, price collection, index calculation, quality change, weights, basket updates, reliability and uncertainty, special cases and treatments and history."/>
+<meta name="keywords" content="Chewing tobacco, Cigarettes, Cigars, Technical papers, Reference guide, Leisure, Leisure activities, Price movements, Indices, Household goods, Household furniture, Household equipment, Household facilities, Household facilities and equipment, Medical care, Medicare, Guides, Manuals, Boots, Shoes, Slippers, Waterproof footwear, Food products, Expenses, Spending, DW, Dwelling units, Houses, Retail prices, Core inflation, Cost of living, Cost of living index, CPI, Consumer goods, Goods, Goods and services, Apparel, Garments, Alcohol, Liquor"/>
+
+<!-- Page Title -->
+<title>Chapter 8 – Weights and Basket Updates</title>
+
+<!--Dublin Core Metadata-->
+<meta property="dcterms:title" content="Chapter 8 – Weights and Basket Updates"/>
+<meta property="dcterms:language" title="ISO639-2/T" content="eng"/>
+<meta property="dcterms:creator" content="Government of Canada, Statistics Canada"/>
+<meta property="dcterms:issued" title="W3CDTF" content="2023-02-27"/>
+<meta property="dcterms:modified" title="W3CDTF" content="2023-02-27"/>
+<meta property="dcterms:subject" title="gcstc" content="Alcoholic beverages, Clothing, Commodities, Comparisons, Consumer goods and services, Consumer price index, Consumer prices, Dwellings, Expenditures, Food, Footwear, Handbooks, Health care, Household amenities, Household furnishings, Household property, Indexes, Price changes, Prices, Recreation, Reference guides, Technical reports, Tobacco products, Transportation services"/>
+
+<!--Additional Metadata-->
+<script type="application/ld+json">
+{ 
+    "@context" : "http://schema.org",
+    "@type" : "CreativeWork",
+    "additionalType" : "ScholarlyArticle",
+    "name" : "The Canadian Consumer Price Index Reference Paper",
+    "alternateName" : "62-553-X2023001",
+    "headline" : "This Canadian Consumer Price Index (CPI) Reference Paper provides an overview the Canadian CPI. It is intended for a varied audience, ranging from users interested in general information to those requiring more technical or theoretical details. As such, it explains all the important aspects of the Canadian CPI: uses and interpretations, scope, classifications, sample strategy, price collection, index calculation, quality change, weights, basket updates, reliability and uncertainty, special cases and treatments and history.",
+    "url" : "https://www150.statcan.gc.ca/n1/pub/62-553-x/62-553-x2023001-eng.htm",
+    "sameAs" : "https://www150.statcan.gc.ca/n1/pub/62-553-x/62-553-x2023001-fra.htm",
+    "keywords" : "Chewing tobacco, Cigarettes, Cigars, Technical papers, Reference guide, Leisure, Leisure activities, Price movements, Indices, Household goods, Household furniture, Household equipment, Household facilities, Household facilities and equipment, Medical care, Medicare, Guides, Manuals, Boots, Shoes, Slippers, Waterproof footwear, Food products, Expenses, Spending, DW, Dwelling units, Houses, Retail prices, Core inflation, Cost of living, Cost of living index, CPI, Consumer goods, Goods, Goods and services, Apparel, Garments, Alcohol, Liquor",
+    "about" : ["Catalogues and guides", "Consumer price indexes"],
+    "isBasedOn" : "http://www23.statcan.gc.ca/imdb/p2SV.pl?Function=getSurvey&amp;SDDS=2301", 
+    "datePublished" : "2023-02-27",
+    "spatialCoverage" : "Canada",
+    "publisher" : {
+        "@type" : "Organization",
+        "additionalType" : "GovernmentOrganization",
+        "url" : "https://www.statcan.gc.ca/eng/start",
+        "name" : "Government of Canada, Statistics Canada",
+        "sameAs" : ["https://en.wikipedia.org/wiki/Statistics_Canada", "https://twitter.com/statcan_eng", "https://www.facebook.com/StatisticsCanada/"]
+    }
+}
+</script>
+<!-- METADATA ENDS | FIN DES METADONNEES -->
+
+
+
+
+<meta property="dcterms:service" content="StatCan"/> 
+<meta property="dcterms:accessRights" content="2"/>
+
+<link href="/wet-boew4b/assets/favicon.ico" rel="icon" type="image/x-icon">
+<link rel="stylesheet" href="/wet-boew4b/css/wet-boew.min.css">
+<script src="/wet-boew4b/js/jquery.min.js"></script>
+
+<link rel="stylesheet" href="/wet-boew4b/css/theme.min.css">
+<link rel="stylesheet" href="/wet-boew4b/css/statcan.css">
+<link rel="stylesheet" href="/wet-boew4b/invitation-manager/Overlay.css"> 
+
+<noscript><link rel="stylesheet" href="/wet-boew4b/css/noscript.min.css" /></noscript>
+<!-- Adobe Analytics v5 production version --><!--script src="//assets.adobedtm.com/be5dfd287373/8cdb3d539c44/launch-6df9e9b447f9.min.js"></script-->
+<!-- Adobe Analytics v5 staging version --><!--script src="//assets.adobedtm.com/be5dfd287373/8cdb3d539c44/launch-dfa8abb35555-staging.min.js"></script-->
+<!-- Adobe Analytics v10 production version --><script src="//assets.adobedtm.com/be5dfd287373/8f0ead8a37e7/launch-09394abc039d.min.js"></script>
+
+<script>dataLayer1 = [];</script>
+
+<script src="/Framework/js/jquery.tooltipster.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/Framework/css/tooltipster.css" />
+<link rel="stylesheet" type="text/css" href="/Framework/css/pubs_wet4.css" />
+<link rel="stylesheet" type="text/css" href="/wet-boew4b/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="/Framework/css/auto-footnotes.css">
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+ config: ["MMLorHTML.js"],
+ jax: ["input/MathML","output/HTML-CSS","output/NativeMML"],
+ extensions: ["mml2jax.js","MathMenu.js","MathZoom.js"]
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js">
+</script>
+<script>!window.MathJax && document.write(unescape('%3Cscript src="/mathjax/MathJax.js"%3E%3C/script%3E'))</script>
+
+<!-- CustomScriptsCSSEnd -->
+</head>
+
+<body vocab="http://schema.org/" typeof="WebPage">
+
+<ul id="wb-tphp">
+<li class="wb-slc">
+<a class="wb-sl" href="#wb-cont">Skip to main content</a>
+</li>
+<li class="wb-slc visible-sm visible-md visible-lg">
+<a class="wb-sl" href="#wb-info">Skip to "About this site"</a>
+</li>
+</ul>
+<header role="banner">
+<div id="wb-bnr" class="container">
+<section id="wb-lng" class="visible-md visible-lg text-right">
+<h2 class="wb-inv">Language selection</h2>
+<div class="row">
+<div class="col-md-12">
+<ul class="list-inline margin-bottom-none">
+<li><a lang="fr" href="/cgi-bin/change.cgi">Fran&#231;ais</a></li>
+</ul>
+</div>
+</div>
+</section>
+<div class="row">
+<div class="brand col-xs-9 col-sm-5 col-md-4">
+<a href="https://www.canada.ca/en.html"><img src="/wet-boew4b/assets/sig-blk-gov-en.svg" alt="Government of Canada"><span class="wb-inv"> / <span lang="fr">Gouvernement du Canada</span></span></a>
+</div>
+<section class="wb-mb-links col-sm-offset-4 col-xs-4 col-sm-3 visible-sm visible-xs" id="wb-glb-mn">
+<h2>Search and menus</h2>
+<ul class="list-inline text-right chvrn">
+<li><a href="#mb-pnl" title="Search and menus" aria-controls="mb-pnl" class="overlay-lnk" role="button"><span class="glyphicon glyphicon-search"><span class="glyphicon glyphicon-th-list"><span class="wb-inv">Search and menus</span></span></span></a></li>
+</ul>
+<div id="mb-pnl"></div>
+</section>
+
+<section id="wb-srch" class="col-lg-offset-2 col-md-offset-2 col-xs-6 text-right visible-md visible-lg">
+<h2 class="wb-inv">Search</h2>
+<form action="https://www.statcan.gc.ca/search/results/site-search" method="get" name="cse-search-box" role="search" class="form-inline">
+<div class="form-group wb-srch-qry">
+<label for="wb-srch-q" class="wb-inv">Search Statistics Canada</label>
+<input type="hidden" name="fq" value="stclac:2" />
+<input id="wb-srch-q" list="wb-srch-q-ac" class="wb-srch-q form-control" name="q" type="search" value="" size="27" maxlength="150" placeholder="Search Statistics Canada">
+<datalist id="wb-srch-q-ac">
+</datalist>
+</div>
+<div class="form-group submit">
+<button type="submit" id="wb-srch-sub" class="btn btn-primary btn-small" name="wb-srch-sub"><span class="glyphicon-search glyphicon"></span><span class="wb-inv">Search</span></button>
+</div>
+</form>
+</section>
+</div>
+</div>
+
+<nav role="navigation" id="wb-sm" class="wb-menu visible-md visible-lg" data-trgt="mb-pnl" data-ajax-replace="/wet-boew4b/ajax/sitemenu-en.html" typeof="SiteNavigationElement">
+	<div class="container nvbar">
+		<h2 class="wb-inv">Topics menu</h2>
+		<div class="row">
+			<ul class="list-inline menu">
+				<li><a href="https://www150.statcan.gc.ca/n1/en/subjects?MM=1">Subjects</a></li>
+				<li><a href="https://www150.statcan.gc.ca/n1/en/type/data?MM=1">Data</a></li>
+				<li><a href="https://www150.statcan.gc.ca/n1/en/type/analysis?MM=1">Analysis</a></li>
+				<li><a href="https://www.statcan.gc.ca/en/reference?MM=1">Reference</a></li>
+				<li><a href="https://www.statcan.gc.ca/en/geography?MM=1">Geography</a></li>
+				<li><a href="https://www.statcan.gc.ca/en/census?MM=1">Census</a></li>
+				<li><a href="https://www.statcan.gc.ca/en/surveys?MM=1">Surveys and statistical programs</a></li>
+				<li><a href="https://www.statcan.gc.ca/en/about/statcan?MM=1">About StatCan</a></li>
+				<li><a href="https://www.canada.ca/en.html">Canada.ca</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<nav role="navigation" id="wb-bc" class="" property="breadcrumb">
+	<div class="container">
+		<div class="row"> 
+
+<!-- Breadcrumb trail -->
+<ol class="breadcrumb">
+  <li><a href="/eng/start">Home</a></li>
+  <li><a href="/cgi-bin/IPS/display?cat_num=62553x" title="Online catalogue: 62-553-X">62-553-X</a></li>
+  <li><a href="/pub/62-553-x/62-553-x2023001-eng.htm">Main page</a></li>
+  <li>Chapter 8</li>
+</ol>
+
+</div>
+</div>
+</nav>
+</header>
+
+<main role="main" property="mainContentOfPage" class="container">
+
+<section>
+  <div class="row">
+    <div class="col-md-12">
+      <h1 property="name" id="wb-cont"><small>The Canadian Consumer Price Index Reference Paper</small><br/>
+        Chapter 8 – Weights and Basket Updates
+</h1>
+<div class="row"> 
+ <div class="col-md-12 mrgn-bttm-sm mrgn-tp-sm">
+ <div class="pull-right">
+<a href="#toc-tdm" aria-controls="toc-tdm" class="btn btn-xs wb-lbx btn-primary mrgn-rght-sm"><span class="glyphicon glyphicon-list mrgn-rght-sm"></span>Table of contents</a>
+
+ 	</div>
+ </div>
+</div></div></div>
+
+
+  <details class="hidden-xs hidden-sm rel-article mrgn-bttm-md hidden-print">
+    <summary class="rel-article"><span class="h4">On this page</span></summary>
+
+    <ul class="list-unstyled">
+      <li><a href="#a1">Meaning and Construction of the Consumer Price Index Weights</a></li>
+      <li><a href="#a2">Updating the Consumer Price Index Basket</a></li>
+      <li><a href="#a3">Chain-linking Indices Across Baskets</a></li>
+      <li><a href="#a4">Contributions to Index Percentage Change Across Baskets</a></li>
+      <li><a href="#a5">Rebasing an Index</a></li>
+      <li><a href="#fn">Notes</a></li>
+    </ul>
+  </details>
+
+  <!-- ========== CONTENT GOES HERE ========== -->
+  
+
+  <h2 id="a1">Meaning and Construction of
+  the Consumer Price Index Weights</h2>
+
+
+
+<p><strong>8.1&nbsp;</strong>The Consumer Price Index (CPI) <a href="glos-eng.htm#b3">basket weights</a> are expenditures derived
+primarily from the Survey of
+Household
+Spending (SHS)<sup id="n1-refa"><a class="fn-lnk" href="#n1"><span class="wb-inv">Note&nbsp;</span></a></sup> or  from the national/provincial <a href="https://www23.statcan.gc.ca/imdb/p2SV.pl?Function=getSurvey&SDDS=1901">Household  Final Consumption Expenditure (HFCE)</a><sup id="n2-refa"><a class="fn-lnk" href="#n2"><span class="wb-inv">Note&nbsp;</span></a></sup> series for a given reference year.<sup id="n3-refa"><a class="fn-lnk" href="#n3"><span class="wb-inv">Note&nbsp;</span></a></sup>  The basket weights are actually <a href="glos-eng.htm#h2">hybrid expenditures</a>, meaning that the prices and
+  quantities of the expenditures come from different periods. Hybrid expenditure weights are essential to the fixed basket
+  concept of the <abbr title="Consumer Price Index">CPI</abbr>.<sup id="n4-refa"><a class="fn-lnk" href="#n4"><span class="wb-inv">Note&nbsp;</span></a></sup> 
+</p>
+
+
+
+<p><strong>8.2&nbsp;</strong>The <abbr title="Consumer Price Index">CPI</abbr> weights
+are constructed from aggregate household expenditures.
+This type of weighting, known as <a href="glos-eng.htm#p1">plutocratic</a>, implies that each household contributes to the total weight of an
+elementary aggregate proportionally to their respective spending.<sup id="n5-refa"><a class="fn-lnk" href="#n5"><span class="wb-inv">Note&nbsp;</span></a></sup> </p>
+
+
+
+<p><strong>8.3&nbsp;</strong>The <abbr title="Household Final Consumption Expenditure">HFCE</abbr> data is used to derive the basket  weights for higher level commodity classes, and <abbr title="Survey of Household spending">SHS</abbr> data used to derive the  proportions for the <a href="glos-eng.htm#e3">elementary aggregates</a> by mapping  the <abbr title="Household Final Consumption Expenditure">HFCE</abbr> and <abbr title="Survey of Household Spending">SHS</abbr> estimates to the product and
+geographical <a href="glos-eng.htm#c4">classifications</a> of the <abbr title="Consumer Price Index">CPI</abbr>. However, the <abbr title="Survey of Household Spending">SHS</abbr> sometimes does not provide sufficient detail and thus
+basket weights are in some instances constructed from
+alternative sources.</p>
+
+
+
+<p><strong>8.4&nbsp;</strong>The basket weights for the homeowners’ replacement cost and mortgage
+interest cost elementary indices are two examples for which supplementary data are
+required to construct the weight.<sup id="n6-refa"><a class="fn-lnk" href="#n6"><span class="wb-inv">Note&nbsp;</span></a></sup>  Additionally, alternative data sources which include other Statistics Canada
+surveys, administrative data, and scanner data received from retailers are  used to break down aggregate expenditures further for product classes in which the SHS does not provide  sufficient detail.<sup id="n7-refa"><a class="fn-lnk" href="#n7"><span class="wb-inv">Note&nbsp;</span></a></sup></p>
+
+<p><strong>8.5&nbsp;</strong>Supplementary data are also used to confront specific  <abbr title="Household Final Consumption Expenditure">HFCE</abbr> or <abbr title="Survey of Household Spending">SHS</abbr>
+  expenditure estimates which may be suspected of <a href="glos-eng.htm#b5">bias</a>. For example, expenditures for alcohol and
+  tobacco are often thought to be under-reported in household expenditure surveys, as the survey
+  estimates are typically lower than reported in retail sales and government excise tax revenue data.<sup id="n8-refa"><a class="fn-lnk" href="#n8"><span class="wb-inv">Note&nbsp;</span></a></sup>  </p>
+
+
+
+<p><strong>8.6&nbsp;</strong>At the time of a <a href="glos-eng.htm#b2">basket update</a>, Statistics Canada also uses the
+Bortkiewicz-Szulc decomposition to evaluate expenditures used as basket weights.<sup id="n9-refa"><a class="fn-lnk" href="#n9"><span class="wb-inv">Note&nbsp;</span></a></sup>  This method compares relative
+changes in quantities with the
+corresponding
+relative changes in prices in order to assess the reliability of the expenditure
+weights. </p>
+
+
+
+<p><strong>8.7&nbsp;</strong>Assessing the quality of expenditure data also helps Statistics
+Canada determine the number of <a href="glos-eng.htm#b1">basic classes</a> in the <abbr title="Consumer Price Index">CPI</abbr>
+(that is, the levels in the product and geographical classifications at which
+the quantity weights are fixed for the duration of a
+basket).<sup id="n10-refa"><a class="fn-lnk" href="#n10"><span class="wb-inv">Note&nbsp;</span></a></sup>  </p>
+
+
+
+<p><strong>8.8&nbsp;</strong>Basic classes are determined based on the availability and quality
+of the consumer expenditure data as well as the stability of the distribution of
+spending within elementary aggregates. For example, if the distribution of consumer spending within a given
+elementary aggregate changes frequently, then it may be advantageous to allow the quantities in the
+expenditure weight to be updated when new information on consumer spending is available. In such a
+case Statistics Canada will designate the basic class to be
+the one above the elementary
+aggregates where quantities may be updated during the life of the basket.</p>
+
+
+
+<p><strong>8.9&nbsp;</strong>The practice of changing the quantities below the basic class
+level between basket updates provides benefits in that it allows for new information on
+consumer spending to be incorporated into the <abbr title="Consumer Price Index">CPI</abbr> in a timely manner.</p>
+
+
+
+
+
+<h2 id="a2">Updating the Consumer Price
+  Index Basket</h2>
+
+
+
+<p><strong>8.10&nbsp;</strong>The process of updating the <abbr title="Consumer Price Index">CPI</abbr> basket is to make the weights
+assigned to elementary aggregates representative of current consumer spending
+patterns. In the past, the basket for the <abbr title="Consumer Price Index">CPI</abbr> was updated every four to five years<sup id="n11-refa"><a class="fn-lnk" href="#n11"><span class="wb-inv">Note&nbsp;</span></a></sup>  using new expenditure data from
+the most recent <abbr title="Survey of Household Spending">SHS</abbr>. Starting with the 2011 basket update, the <abbr title="Consumer Price Index">CPI</abbr> weights  were updated biennially until the 2021 basket update, from which point the  basket update is performed on an annual basis. While there is no rule as to how often a <abbr title="Consumer Price Index">CPI</abbr> basket should be updated, there is general agreement among
+<abbr title="Consumer Price Index">CPI</abbr> compilers that more frequent basket updates are preferred.<sup id="n12-refa"><a class="fn-lnk" href="#n12"><span class="wb-inv">Note&nbsp;</span></a></sup>  </p>
+
+
+
+<p><strong>8.11&nbsp;</strong>In addition to updating and assuring the
+quality of the weights, the exercise of a basket update also provides an opportunity to review and update other
+aspects of the indices which may include:</p>
+
+
+<ul class="lst-none">
+<li><strong>8.11.1&nbsp;</strong>Changing the product and/or geographical
+classifications to be more representative.</li>
+
+<li><strong>8.11.2&nbsp;</strong>Reviewing and updating the <a href="glos-eng.htm#s1">sample</a> of <a href="glos-eng.htm#r3">representative products (RP)</a> and <a href="glos-eng.htm#o1">outlets</a>.</li>
+
+<li><strong>8.11.3&nbsp;</strong>Updating weights below the elementary
+aggregate level.</li>
+
+<li><strong>8.11.4&nbsp;</strong>Reviewing methods and concepts for the
+elementary indices.</li>
+
+<li><strong>8.11.5&nbsp;</strong>Updating documentation and products for
+dissemination.</li></ul>
+
+
+
+<p><strong>8.12&nbsp;</strong>The final stage of a basket update is to chain-link the new
+fixed-quantity basket to the old fixed-quantity basket in order to produce
+indices that are a continuous time series. For this reason, the <abbr title="Consumer Price Index">CPI</abbr> is referred
+to as a chain of fixed-basket indices.</p>
+
+
+
+<h2 id="a3">Chain-linking Indices Across Baskets</h2>
+
+
+
+<p><strong>8.13&nbsp;</strong>Published
+consumer price indices are calculated as a chain of fixed-basket indices. This
+means that a sequence of fixed-basket indices have been
+chained together to create a continuous time series. This type of chaining is not to be confused with the calculation of monthly
+chained indices<sup id="n13-refa"><a class="fn-lnk" href="#n13"><span class="wb-inv">Note&nbsp;</span></a></sup>  but rather refers to the process of chaining indices across baskets. This is necessary to
+avoid having breaks in an index when a
+basket update is performed.</p>
+
+
+
+<p><strong>8.14&nbsp;</strong><a href="glos-eng.htm#c3">Chain-linking</a> indices across baskets takes
+place at the time of a basket update. In order to chain indices across baskets, hybrid expenditure weights for the old and new
+baskets must be expressed at the prices of a common period. This common period is called
+the <a href="glos-eng.htm#l1">link month</a>. </p>
+
+
+
+<p><strong>8.15&nbsp;</strong>Link month
+weights are obtained by <a href="glos-eng.htm#p4">price-updating</a> the original expenditure weights
+to obtain the hybrid expenditures expressed at prices of the link
+month. </p>
+
+
+
+<p><strong>8.16&nbsp;</strong>Since the <a href="glos-eng.htm#w1">basket reference period</a> <em>b</em> of the <abbr title="Consumer Price Index">CPI</abbr> is a <em>full year</em>, a process called <a href="glos-eng.htm#w2">weight adjustment</a> is
+necessary to obtain <em>monthly
+</em>hybrid expenditures for the link month. Monthly hybrid expenditures for the
+link month are calculated in two steps.</p>
+
+
+
+<p><strong>8.17&nbsp;</strong>First, the
+annual expenditures for the basket reference year <em>b</em> are divided by the average price change for the basket reference year. This calculation provides a monthly
+expenditure, called the initial value, for the month preceding the basket reference year <em>b</em>. This first step implicitly assumes that the quantities of the basket are constant for each month of the
+basket reference year. </p>
+
+
+
+<p><strong>8.18&nbsp;</strong>In the
+second step, the initial values are price updated to the link month in order to
+express the value of the fixed quantities of the
+basket at the prices of the link month.<sup id="n14-refa"><a class="fn-lnk" href="#n14"><span class="wb-inv">Note&nbsp;</span></a></sup> 
+Once the link month hybrid expenditures for the new basket are obtained,
+aggregate indices can be calculated using the new basket.</p>
+
+
+
+<p><strong>8.19&nbsp;</strong>In the month
+following the basket link month, price indices calculated using the new basket
+are multiplied by the index levels previously
+published for the old basket.</p>
+
+
+
+<p><strong>8.20&nbsp;</strong>Chain-linking
+of indices is done separately for each basic class.<sup id="n15-refa"><a class="fn-lnk" href="#n15"><span class="wb-inv">Note&nbsp;</span></a></sup>  Currently the <abbr title="Consumer Price Index">CPI</abbr> is published
+with an <a href="glos-eng.htm#i2">index reference period</a> of 2002=100. In 2002 the <abbr title="Consumer Price Index">CPI</abbr> was based on
+the 1996 basket. Between  the 1996 basket and June 2022, there have been ten basket  updates with the following link months:</p>
+
+
+<ul>
+<li>2001 basket linked in December
+2002;</li>
+
+<li>2001 revised basket linked in
+June 2004;</li>
+
+<li>2005 basket linked in April 2007;</li>
+
+<li>2009 basket linked in April 2011; </li>
+
+<li>2011 basket linked in January
+2013;</li>
+
+<li>2013 basket linked in December
+2014; </li>
+
+<li>2015 basket linked in December 2016; </li>
+
+<li>2017 basket linked in December 2018;</li>
+<li>2020  basket linked in May 2021; and</li>
+<li>2021  basket linked in April 2022.</li>
+</ul>
+<p><strong>8.21&nbsp;</strong>For example, following the introduction of the 2017 basket  until the next basket, any  <a href="glos-eng.htm#c2">chain-linked index</a> with an index reference period
+  of 2002=100 is a chain of nine fixed baskets (8.1).
+</p>
+
+
+
+
+
+<p><math display="block" xmlns='http://www.w3.org/1998/Math/MathML' style='background-color:#'>
+ <semantics>
+  <mtable columnalign='left'>
+   <mtr>
+    <mtd>
+     <msubsup>
+      <mi>I</mi>
+      <mrow>
+       <mi>c</mi><mi>h</mi><mi>a</mi><mi>i</mi><mi>n</mi><mi>e</mi><mi>d</mi></mrow>
+      <mrow>
+       <mn>2002</mn><mo>:</mo><mi>t</mi></mrow>
+     </msubsup>
+     <mo>=</mo><msubsup>
+      <mi>I</mi>
+      <mrow>
+       <mn>2017</mn></mrow>
+      <mrow>
+       <mi>D</mi><mi>e</mi><mi>c</mi><mn>2018</mn><mo>:</mo><mi>t</mi></mrow>
+     </msubsup>
+     <mo>&#x00D7;</mo><msubsup>
+      <mi>I</mi>
+      <mrow>
+       <mn>2015</mn></mrow>
+      <mrow>
+       <mi>D</mi><mi>e</mi><mi>c</mi><mn>2016</mn><mo>:</mo><mi>D</mi><mi>e</mi><mi>c</mi><mn>2018</mn></mrow>
+     </msubsup>
+     <mo>&#x00D7;</mo><msubsup>
+      <mi>I</mi>
+      <mrow>
+       <mn>2013</mn></mrow>
+      <mrow>
+       <mi>D</mi><mi>e</mi><mi>c</mi><mn>2014</mn><mo>:</mo><mi>D</mi><mi>e</mi><mi>c</mi><mn>2016</mn></mrow>
+     </msubsup>
+     <mo>&#x00D7;</mo><msubsup>
+      <mi>I</mi>
+      <mrow>
+       <mn>2011</mn></mrow>
+      <mrow>
+       <mi>J</mi><mi>a</mi><mi>n</mi><mn>2013</mn><mo>:</mo><mi>D</mi><mi>e</mi><mi>c</mi><mn>2014</mn></mrow>
+     </msubsup>
+     <mo>&#x00D7;</mo><msubsup>
+      <mi>I</mi>
+      <mrow>
+       <mn>2009</mn></mrow>
+      <mrow>
+       <mi>A</mi><mi>p</mi><mi>r</mi><mn>2011</mn><mo>:</mo><mi>J</mi><mi>a</mi><mi>n</mi><mn>2013</mn></mrow>
+     </msubsup>
+     <mo>&#x00D7;</mo><msubsup>
+      <mi>I</mi>
+      <mrow>
+       <mn>2005</mn></mrow>
+      <mrow>
+       <mi>A</mi><mi>p</mi><mi>r</mi><mn>2007</mn><mo>:</mo><mi>A</mi><mi>p</mi><mi>r</mi><mn>2011</mn></mrow>
+     </msubsup>
+     <mo>&#x00D7;</mo>
+    </mtd>
+   </mtr>
+   <mtr>
+    <mtd>
+     <msubsup>
+      <mi>I</mi>
+      <mrow>
+       <mn>2001</mn><mi>r</mi></mrow>
+      <mrow>
+       <mi>J</mi><mi>u</mi><mi>n</mi><mn>2004</mn><mo>:</mo><mi>A</mi><mi>p</mi><mi>r</mi><mn>2007</mn></mrow>
+     </msubsup>
+     <mo>&#x00D7;</mo><msubsup>
+      <mi>I</mi>
+      <mrow>
+       <mn>2001</mn></mrow>
+      <mrow>
+       <mi>D</mi><mi>e</mi><mi>c</mi><mn>2002</mn><mo>:</mo><mi>J</mi><mi>u</mi><mi>n</mi><mn>2004</mn></mrow>
+     </msubsup>
+     <mo>&#x00D7;</mo><msubsup>
+      <mi>I</mi>
+      <mrow>
+       <mn>1996</mn></mrow>
+      <mrow>
+       <mn>2002</mn><mo>:</mo><mi>D</mi><mi>e</mi><mi>c</mi><mn>2002</mn><mtext>&#x2003;&#x2003;&#x2003;(8.1)</mtext></mrow>
+     </msubsup>
+     
+    </mtd>
+   </mtr>
+  </mtable>
+  
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGceaqabeaacaWGjb
+  Waa0baaSqaaiaadogacaWGObGaamyyaiaadMgacaWGUbGaamyzaiaa
+  dsgaaeaacaaIYaGaaGimaiaaicdacaaIYaGaaiOoaiaadshaaaGccq
+  GH9aqpcaWGjbWaa0baaSqaaiaaikdacaaIWaGaaGymaiaaiEdaaeaa
+  caWGebGaamyzaiaadogacaaIYaGaaGimaiaaigdacaaI4aGaaiOoai
+  aadshaaaGccqGHxdaTcaWGjbWaa0baaSqaaiaaikdacaaIWaGaaGym
+  aiaaiwdaaeaacaWGebGaamyzaiaadogacaaIYaGaaGimaiaaigdaca
+  aI2aGaaiOoaiaadseacaWGLbGaam4yaiaaikdacaaIWaGaaGymaiaa
+  iIdaaaGccqGHxdaTcaWGjbWaa0baaSqaaiaaikdacaaIWaGaaGymai
+  aaiodaaeaacaWGebGaamyzaiaadogacaaIYaGaaGimaiaaigdacaaI
+  0aGaaiOoaiaadseacaWGLbGaam4yaiaaikdacaaIWaGaaGymaiaaiA
+  daaaGccqGHxdaTcaWGjbWaa0baaSqaaiaaikdacaaIWaGaaGymaiaa
+  igdaaeaacaWGkbGaamyyaiaad6gacaaIYaGaaGimaiaaigdacaaIZa
+  GaaiOoaiaadseacaWGLbGaam4yaiaaikdacaaIWaGaaGymaiaaisda
+  aaGccqGHxdaTcaGGjbWaa0baaSqaaiaaikdacaaIWaGaaGimaiaaiM
+  daaeaacaWGbbGaamiCaiaadkhacaaIYaGaaGimaiaaigdacaaIXaGa
+  aiOoaiaadQeacaWGHbGaamOBaiaaikdacaaIWaGaaGymaiaaiodaaa
+  GccqGHxdaTcaWGjbWaa0baaSqaaiaaikdacaaIWaGaaGimaiaaiwda
+  aeaacaWGbbGaamiCaiaadkhacaaIYaGaaGimaiaaicdacaaI3aGaai
+  OoaiaadgeacaWGWbGaamOCaiaaikdacaaIWaGaaGymaiaaigdaaaGc
+  cqGHxdaTaeaacaWGjbWaa0baaSqaaiaaikdacaaIWaGaaGimaiaaig
+  dacaWGYbaabaGaamOsaiaadwhacaWGUbGaaGOmaiaaicdacaaIWaGa
+  aGinaiaacQdacaWGbbGaamiCaiaadkhacaaIYaGaaGimaiaaicdaca
+  aI3aaaaOGaey41aqRaamysamaaDaaaleaacaaIYaGaaGimaiaaicda
+  caaIXaaabaGaamiraiaadwgacaWGJbGaaGOmaiaaicdacaaIWaGaaG
+  OmaiaacQdacaWGkbGaamyDaiaad6gacaaIYaGaaGimaiaaicdacaaI
+  0aaaaOGaey41aqRaamysamaaDaaaleaacaaIXaGaaGyoaiaaiMdaca
+  aI2aaabaGaaGOmaiaaicdacaaIWaGaaGOmaiaacQdacaWGebGaamyz
+  aiaadogacaaIYaGaaGimaiaaicdacaaIYaaaaaaaaa@DC4B@
+  </annotation>
+ </semantics>
+</math></p>
+
+
+
+<p>where:</p>
+
+
+
+<p><math xmlns='http://www.w3.org/1998/Math/MathML' style='background-color:#'>
+ <semantics>
+  <mrow>
+   <msubsup>
+    <mi>I</mi>
+    <mrow>
+     <mi>c</mi><mi>h</mi><mi>a</mi><mi>i</mi><mi>n</mi><mi>e</mi><mi>d</mi></mrow>
+    <mrow>
+     <mn>2002</mn><mo>:</mo><mi>t</mi></mrow>
+   </msubsup>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamysamaaDa
+  aaleaacaWGJbGaamiAaiaadggacaWGPbGaamOBaiaadwgacaWGKbaa
+  baGaaGOmaiaaicdacaaIWaGaaGOmaiaacQdacaWG0baaaaaa@4203@
+  </annotation>
+ </semantics>
+</math> is a chained index for the <a href="glos-eng.htm#p2">price observation period</a> <strong><em>t</em></strong>
+with a <a href="glos-eng.htm#p3">price reference period</a> equal to 2002;</p>
+
+
+
+<p><math xmlns='http://www.w3.org/1998/Math/MathML' style='background-color:#'>
+ <semantics>
+  <mrow>
+   <msubsup>
+    <mi>I</mi>
+    <mrow>
+     <mn>2017</mn></mrow>
+    <mrow>
+     <mi>D</mi><mi>e</mi><mi>c</mi><mn>2018</mn><mo>:</mo><mi>t</mi></mrow>
+   </msubsup>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamysamaaDa
+  aaleaacaaIYaGaaGimaiaaigdacaaI3aaabaGaamiraiaadwgacaWG
+  JbGaaGOmaiaaicdacaaIXaGaaGioaiaacQdacaWG0baaaaaa@4128@
+  </annotation>
+ </semantics>
+</math> is an index for the price observation period <em>t</em> with December 2018 as the price reference
+period,
+calculated using the 2017 basket;</p>
+
+
+
+<p><math xmlns='http://www.w3.org/1998/Math/MathML' style='background-color:#'>
+ <semantics>
+  <mrow>
+   <msubsup>
+    <mi>I</mi>
+    <mrow>
+     <mn>2015</mn></mrow>
+    <mrow>
+     <mi>D</mi><mi>e</mi><mi>c</mi><mn>2016</mn><mo>:</mo><mi>D</mi><mi>e</mi><mi>c</mi><mn>2018</mn></mrow>
+   </msubsup>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamysamaaDa
+  aaleaacaaIYaGaaGimaiaaigdacaaI1aaabaGaamiraiaadwgacaWG
+  JbGaaGOmaiaaicdacaaIXaGaaGOnaiaacQdacaWGebGaamyzaiaado
+  gacaaIYaGaaGimaiaaigdacaaI4aaaaaaa@45B9@
+  </annotation>
+ </semantics>
+</math> is an
+index for December 2018 with December 2016 as the price reference period,
+calculated using the 2015 basket;</p>
+
+
+
+<p><math xmlns='http://www.w3.org/1998/Math/MathML' style='background-color:#'>
+ <semantics>
+  <mrow>
+   <msubsup>
+    <mi>I</mi>
+    <mrow>
+     <mn>2013</mn></mrow>
+    <mrow>
+     <mi>D</mi><mi>e</mi><mi>c</mi><mn>2014</mn><mo>:</mo><mi>D</mi><mi>e</mi><mi>c</mi><mn>2016</mn></mrow>
+   </msubsup>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamysamaaDa
+  aaleaacaaIYaGaaGimaiaaigdacaaIZaaabaGaamiraiaadwgacaWG
+  JbGaaGOmaiaaicdacaaIXaGaaGinaiaacQdacaWGebGaamyzaiaado
+  gacaaIYaGaaGimaiaaigdacaaI2aaaaaaa@45B3@
+  </annotation>
+ </semantics>
+</math> is an
+index for December 2016 with December 2014 as the price reference period,
+calculated using the 2013 basket;</p>
+
+
+
+<p><math xmlns='http://www.w3.org/1998/Math/MathML' style='background-color:#'>
+ <semantics>
+  <mrow>
+   <msubsup>
+    <mi>I</mi>
+    <mrow>
+     <mn>2011</mn></mrow>
+    <mrow>
+     <mi>J</mi><mi>a</mi><mi>n</mi><mn>2013</mn><mo>:</mo><mi>D</mi><mi>e</mi><mi>c</mi><mn>2014</mn></mrow>
+   </msubsup>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamysamaaDa
+  aaleaacaaIYaGaaGimaiaaigdacaaIXaaabaGaamOsaiaadggacaWG
+  UbGaaGOmaiaaicdacaaIXaGaaG4maiaacQdacaWGebGaamyzaiaado
+  gacaaIYaGaaGimaiaaigdacaaI0aaaaaaa@45BB@
+  </annotation>
+ </semantics>
+</math> is an index for December 2014 with January
+2013 as the price reference period,
+calculated using the 2011 basket;</p>
+
+
+
+<p><math xmlns='http://www.w3.org/1998/Math/MathML' style='background-color:#'>
+ <semantics>
+  <mrow>
+   <msubsup>
+    <mi>I</mi>
+    <mrow>
+     <mn>2009</mn></mrow>
+    <mrow>
+     <mi>A</mi><mi>p</mi><mi>r</mi><mn>2011</mn><mo>:</mo><mi>J</mi><mi>a</mi><mi>n</mi><mn>2013</mn></mrow>
+   </msubsup>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamysamaaDa
+  aaleaacaaIYaGaaGimaiaaicdacaaI5aaabaGaamyqaiaadchacaWG
+  YbGaaGOmaiaaicdacaaIXaGaaGymaiaacQdacaWGkbGaamyyaiaad6
+  gacaaIYaGaaGimaiaaigdacaaIZaaaaaaa@45D6@
+  </annotation>
+ </semantics>
+</math> is an index for January 2013 with April 2011
+as the price reference period, calculated using the 2009
+basket;</p>
+
+
+
+<p><math xmlns='http://www.w3.org/1998/Math/MathML' style='background-color:#'>
+ <semantics>
+  <mrow>
+   <msubsup>
+    <mi>I</mi>
+    <mrow>
+     <mn>2005</mn></mrow>
+    <mrow>
+     <mi>A</mi><mi>p</mi><mi>r</mi><mn>2007</mn><mo>:</mo><mi>A</mi><mi>p</mi><mi>r</mi><mn>2011</mn></mrow>
+   </msubsup>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamysamaaDa
+  aaleaacaaIYaGaaGimaiaaicdacaaI1aaabaGaamyqaiaadchacaWG
+  YbGaaGOmaiaaicdacaaIWaGaaG4naiaacQdacaWGbbGaamiCaiaadk
+  hacaaIYaGaaGimaiaaigdacaaIXaaaaaaa@45DF@
+  </annotation>
+ </semantics>
+</math> is an index for April 2011 with
+April 2007 as the price reference period, calculated using the 2005 basket;</p>
+
+
+
+<p><math xmlns='http://www.w3.org/1998/Math/MathML' style='background-color:#'>
+ <semantics>
+  <mrow>
+   <msubsup>
+    <mi>I</mi>
+    <mrow>
+     <mn>2001</mn><mi>r</mi></mrow>
+    <mrow>
+     <mi>J</mi><mi>u</mi><mi>n</mi><mn>2004</mn><mo>:</mo><mi>A</mi><mi>p</mi><mi>r</mi><mn>2007</mn></mrow>
+   </msubsup>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamysamaaDa
+  aaleaacaaIYaGaaGimaiaaicdacaaIXaGaamOCaaqaaiaadQeacaWG
+  1bGaamOBaiaaikdacaaIWaGaaGimaiaaisdacaGG6aGaamyqaiaadc
+  hacaWGYbGaaGOmaiaaicdacaaIWaGaaG4naaaaaaa@46DE@
+  </annotation>
+ </semantics>
+</math> is an index for April 2007 with June 2004 as
+the price reference period, calculated
+using the
+2001 revised basket; <sup id="n16-refa"><a class="fn-lnk" href="#n16"><span class="wb-inv">Note&nbsp;</span></a></sup> </p>
+
+
+
+<p><math xmlns='http://www.w3.org/1998/Math/MathML' style='background-color:#'>
+ <semantics>
+  <mrow>
+   <msubsup>
+    <mi>I</mi>
+    <mrow>
+     <mn>2001</mn></mrow>
+    <mrow>
+     <mi>D</mi><mi>e</mi><mi>c</mi><mn>2002</mn><mo>:</mo><mi>J</mi><mi>u</mi><mi>n</mi><mn>2004</mn></mrow>
+   </msubsup>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamysamaaDa
+  aaleaacaaIYaGaaGimaiaaicdacaaIXaaabaGaamiraiaadwgacaWG
+  JbGaaGOmaiaaicdacaaIWaGaaGOmaiaacQdacaWGkbGaamyDaiaad6
+  gacaaIYaGaaGimaiaaicdacaaI0aaaaaaa@45CB@
+  </annotation>
+ </semantics>
+</math> is an index for June 2004 with December 2002
+as the price reference period, calculated using the 2001 basket;</p>
+
+
+
+<p><math xmlns='http://www.w3.org/1998/Math/MathML' style='background-color:#'>
+ <semantics>
+  <mrow>
+   <msubsup>
+    <mi>I</mi>
+    <mrow>
+     <mn>1996</mn></mrow>
+
+    <mrow>
+     <mn>2002</mn><mo>:</mo><mi>D</mi><mi>e</mi><mi>c</mi><mn>2002</mn></mrow>
+   </msubsup>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamysamaaDa
+  aaleaacaaIXaGaaGyoaiaaiMdacaaI2aaabaGaaGOmaiaaicdacaaI
+  WaGaaGOmaiaacQdacaWGebGaamyzaiaadogacaaIYaGaaGimaiaaic
+  dacaaIYaaaaaaa@4323@
+  </annotation>
+ </semantics>
+</math> is an
+index for December 2002 with 2002 as the price reference period, calculated
+using the 1996 basket.</p>
+
+
+
+
+
+<h2 id="a4">Contributions to Index Percentage Change Across
+  Baskets</h2>
+
+<p><strong>8.22&nbsp;</strong>The calculation of <a href="glos-eng.htm#c9">contributions to
+    percentage change</a> must be modified when the 12-month percentage change of an index spans two baskets, that
+  is, when a basket update was performed between the two periods of comparison (period <em>t</em> and period <em>t</em>-12). This
+  is because indices chained across baskets are computed using more than one fixed basket. Hence there can
+  be no single expression of the importance (weight) of each sub-aggregate.<sup id="n17-refa"><a class="fn-lnk" href="#n17"><span class="wb-inv">Note&nbsp;</span></a></sup> </p>
+
+
+
+<p><strong>8.23&nbsp;</strong>The 12-month contribution to change for a <a href="glos-eng.htm#c6">composite price index</a> that is
+chained across two baskets
+<math xmlns='http://www.w3.org/1998/Math/MathML' style='background-color:#'>
+ <semantics>
+  <mrow>
+   <mrow><mo>(</mo>
+    <mrow>
+     <mfrac>
+      <mrow>
+       <msubsup>
+        <mi>I</mi>
+        <mi>A</mi>
+        <mrow>
+         <mn>0</mn><mo>:</mo><mi>t</mi></mrow>
+       </msubsup>
+       </mrow>
+      <mrow>
+       <msubsup>
+        <mi>I</mi>
+        <mi>A</mi>
+        <mrow>
+         <mn>0</mn><mo>:</mo><mi>t</mi><mo>&#x2212;</mo><mn>12</mn></mrow>
+       </msubsup>
+       </mrow>
+     </mfrac>
+     <mo>&#x2212;</mo><mn>1</mn></mrow>
+   <mo>)</mo></mrow></mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaWaaeWaaeaada
+  WcaaqaaiaadMeadaqhaaWcbaGaamyqaaqaaiaaicdacaGG6aGaamiD
+  aaaaaOqaaiaadMeadaqhaaWcbaGaamyqaaqaaiaaicdacaGG6aGaam
+  iDaiabgkHiTiaaigdacaaIYaaaaaaakiabgkHiTiaaigdaaiaawIca
+  caGLPaaaaaa@4413@
+  </annotation>
+ </semantics>
+</math> is calculated in two parts. The
+first relates to the old basket and the second to the new basket. Unchained indices must be used to derive
+contributions across baskets (8.2).</p>
+
+
+
+
+
+
+
+<p><math display="block" xmlns='http://www.w3.org/1998/Math/MathML' style='background-color:#'>
+ <semantics>
+  <mtable columnalign='left'>
+   <mtr>
+    <mtd>
+     <mrow><mo>(</mo>
+      <mrow>
+       <mfrac>
+        <mrow>
+         <msubsup>
+          <mi>I</mi>
+          <mi>A</mi>
+          <mrow>
+           <mn>0</mn><mo>:</mo><mi>t</mi></mrow>
+         </msubsup>
+         </mrow>
+        <mrow>
+         <msubsup>
+          <mi>I</mi>
+          <mi>A</mi>
+          <mrow>
+           <mn>0</mn><mo>:</mo><mi>t</mi><mo>&#x2212;</mo><mn>12</mn></mrow>
+         </msubsup>
+         </mrow>
+       </mfrac>
+       <mo>&#x2212;</mo><mn>1</mn></mrow>
+     <mo>)</mo></mrow><mo>=</mo><munder>
+      <munder>
+       <mrow>
+        <mrow><mo>[</mo> <mrow>
+         <mstyle displaystyle='true'>
+          <munder>
+           <mo>&#x2211;</mo>
+           <mi>i</mi>
+          </munder>
+          <mrow>
+           <mrow><mo>(</mo>
+            <mrow>
+             <mfrac>
+              <mrow>
+               <msubsup>
+                <mi>I</mi>
+                <mi>i</mi>
+                <mrow>
+                 <mn>0</mn><mo>:</mo><mi>l</mi><mi>i</mi><mi>n</mi><mi>k</mi></mrow>
+               </msubsup>
+               </mrow>
+              <mrow>
+               <msubsup>
+                <mi>I</mi>
+                <mi>i</mi>
+                <mrow>
+                 <mn>0</mn><mo>:</mo><mi>t</mi><mo>&#x2212;</mo><mn>12</mn></mrow>
+               </msubsup>
+               </mrow>
+             </mfrac>
+             <mo>&#x2212;</mo><mn>1</mn></mrow>
+           <mo>)</mo></mrow><mo>&#x00D7;</mo><msubsup>
+            <mi>w</mi>
+            <mi>i</mi>
+            <mrow>
+             <mi>t</mi><mo>&#x2212;</mo><mn>12</mn><mo>&#x005F;</mo><mi>o</mi><mi>l</mi><mi>d</mi></mrow>
+           </msubsup>
+           </mrow>
+         </mstyle></mrow> <mo>]</mo></mrow></mrow>
+       <mo stretchy='true'>&#xFE38;</mo>
+      </munder>
+      <mrow>
+       <mtext>old&#x00A0;basket&#x00A0;contributions</mtext></mrow>
+     </munder>
+     <mo>+</mo><mrow><mo>[</mo> <mrow>
+      <munder>
+       <munder>
+        <mrow>
+         <mstyle displaystyle='true'>
+          <munder>
+           <mo>&#x2211;</mo>
+           <mi>i</mi>
+          </munder>
+          <mrow>
+           <mrow><mo>(</mo>
+            <mrow>
+             <mfrac>
+              <mrow>
+               <msubsup>
+                <mi>I</mi>
+                <mi>i</mi>
+                <mrow>
+                 <mi>l</mi><mi>i</mi><mi>n</mi><mi>k</mi><mo>:</mo><mi>t</mi></mrow>
+               </msubsup>
+               </mrow>
+              <mrow>
+               <msubsup>
+                <mi>I</mi>
+                <mi>i</mi>
+                <mrow>
+                 <mi>l</mi><mi>i</mi><mi>n</mi><mi>k</mi><mo>:</mo><mi>l</mi><mi>i</mi><mi>n</mi><mi>k</mi></mrow>
+               </msubsup>
+               </mrow>
+             </mfrac>
+             <mo>&#x2212;</mo><mn>1</mn></mrow>
+           <mo>)</mo></mrow><mo>&#x00D7;</mo><msubsup>
+            <mi>w</mi>
+            <mi>i</mi>
+            <mrow>
+             <mi>l</mi><mi>i</mi><mi>n</mi><mi>k</mi><mo>&#x005F;</mo><mi>n</mi><mi>e</mi><mi>w</mi></mrow>
+           </msubsup>
+           </mrow>
+         </mstyle></mrow>
+        <mo stretchy='true'>&#xFE38;</mo>
+       </munder>
+       <mrow>
+        <mtext>new&#x00A0;basket&#x00A0;contributions</mtext></mrow>
+      </munder>
+      <mo>&#x00D7;</mo><msubsup>
+       <mi>I</mi>
+       <mi>A</mi>
+       <mrow>
+        <mi>t</mi><mo>&#x2212;</mo><mn>12</mn><mo>:</mo><mi>l</mi><mi>i</mi><mi>n</mi><mi>k</mi></mrow>
+      </msubsup>
+      </mrow> <mo>]</mo></mrow>
+    </mtd>
+   </mtr>
+   <mtr>
+    <mtd>
+     <mrow></mrow>
+    </mtd>
+   </mtr>
+   <mtr>
+    <mtd>
+     <mtext>with&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;</mtext><msubsup>
+      <mi>I</mi>
+      <mi>i</mi>
+      <mrow>
+       <mi>l</mi><mi>i</mi><mi>n</mi><mi>k</mi><mo>:</mo><mi>l</mi><mi>i</mi><mi>n</mi><mi>k</mi></mrow>
+     </msubsup>
+     <mo>=</mo><mn>100</mn>
+    </mtd><mtext>&#x2003;&#x2003;&#x2003;(8.2)</mtext>
+   </mtr>
+  </mtable>
+  
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGceaqabeaadaqada
+  qaamaalaaabaGaamysamaaDaaaleaacaWGbbaabaGaaGimaiaacQda
+  caWG0baaaaGcbaGaamysamaaDaaaleaacaWGbbaabaGaaGimaiaacQ
+  dacaWG0bGaeyOeI0IaaGymaiaaikdaaaaaaOGaeyOeI0IaaGymaaGa
+  ayjkaiaawMcaaiabg2da9maayaaabaWaamWaaeaadaaeqbqaamaabm
+  aabaWaaSaaaeaacaWGjbWaa0baaSqaaiaadMgaaeaacaaIWaGaaiOo
+  aiaadYgacaWGPbGaamOBaiaadUgaaaaakeaacaWGjbWaa0baaSqaai
+  aadMgaaeaacaaIWaGaaiOoaiaadshacqGHsislcaaIXaGaaGOmaaaa
+  aaGccqGHsislcaaIXaaacaGLOaGaayzkaaGaey41aqRaam4DamaaDa
+  aaleaacaWGPbaabaGaamiDaiabgkHiTiaaigdacaaIYaGaai4xaiaa
+  d+gacaWGSbGaamizaaaaaeaacaWGPbaabeqdcqGHris5aaGccaGLBb
+  GaayzxaaaaleaacaqGVbGaaeiBaiaabsgacaqGGaGaaeOyaiaabgga
+  caqGZbGaae4AaiaabwgacaqG0bGaaeiiaiaabogacaqGVbGaaeOBai
+  aabshacaqGYbGaaeyAaiaabkgacaqG1bGaaeiDaiaabMgacaqGVbGa
+  aeOBaiaabohaaOGaayjo+dGaey4kaSYaamWaaeaadaagaaqaamaaqa
+  fabaWaaeWaaeaadaWcaaqaaiaadMeadaqhaaWcbaGaamyAaaqaaiaa
+  dYgacaWGPbGaamOBaiaadUgacaGG6aGaamiDaaaaaOqaaiaadMeada
+  qhaaWcbaGaamyAaaqaaiaadYgacaWGPbGaamOBaiaadUgacaGG6aGa
+  amiBaiaadMgacaWGUbGaam4AaaaaaaGccqGHsislcaaIXaaacaGLOa
+  GaayzkaaGaey41aqRaam4DamaaDaaaleaacaWGPbaabaGaamiBaiaa
+  dMgacaWGUbGaam4Aaiaac+facaWGUbGaamyzaiaadEhaaaaabaGaam
+  yAaaqab0GaeyyeIuoaaSqaaiaab6gacaqGLbGaae4DaiaabccacaqG
+  IbGaaeyyaiaabohacaqGRbGaaeyzaiaabshacaqGGaGaae4yaiaab+
+  gacaqGUbGaaeiDaiaabkhacaqGPbGaaeOyaiaabwhacaqG0bGaaeyA
+  aiaab+gacaqGUbGaae4CaaGccaGL44pacqGHxdaTcaWGjbWaa0baaS
+  qaaiaadgeaaeaacaWG0bGaeyOeI0IaaGymaiaaikdacaGG6aGaamiB
+  aiaadMgacaWGUbGaam4AaaaaaOGaay5waiaaw2faaaqaaaqaaiaabE
+  hacaqGPbGaaeiDaiaabIgacaqGGaGaaeiiaiaabccacaqGGaGaaeii
+  aiaabccacaWGjbWaa0baaSqaaiaadMgaaeaacaWGSbGaamyAaiaad6
+  gacaWGRbGaaiOoaiaadYgacaWGPbGaamOBaiaadUgaaaGccqGH9aqp
+  caaIXaGaaGimaiaaicdaaaaa@DD73@
+  </annotation>
+ </semantics>
+</math></p>
+
+<p>where:</p>
+
+
+
+<p><math xmlns='http://www.w3.org/1998/Math/MathML' style='background-color:#'>
+ <semantics>
+  <mrow>
+   <msubsup>
+    <mi>w</mi>
+    <mi>i</mi>
+    <mrow>
+     <mi>t</mi><mo>&#x2212;</mo><mn>12</mn><mo>&#x005F;</mo><mi>o</mi><mi>l</mi><mi>d</mi></mrow>
+   </msubsup>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaam4DamaaDa
+  aaleaacaWGPbaabaGaamiDaiabgkHiTiaaigdacaaIYaGaai4xaiaa
+  d+gacaWGSbGaamizaaaaaaa@3F1B@
+  </annotation>
+ </semantics>
+</math> is the weight of component <math xmlns='http://www.w3.org/1998/Math/MathML' style='background-color:#'>
+ <semantics>
+  <mi>i</mi>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamyAaaaa@36E5@
+  </annotation>
+ </semantics>
+</math>   according to the old basket valued at the <math xmlns='http://www.w3.org/1998/Math/MathML' style='background-color:#'>
+ <semantics>
+  <mrow>
+   <mi>t</mi><mo>&#x2212;</mo><mn>12</mn></mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamiDaiabgk
+  HiTiaaigdacaaIYaaaaa@3954@
+  </annotation>
+ </semantics>
+</math> period price;</p>
+
+<p><math xmlns='http://www.w3.org/1998/Math/MathML' style='background-color:#'>
+ <semantics>
+  <mrow>
+   <msubsup>
+    <mi>w</mi>
+    <mi>i</mi>
+    <mrow>
+     <mi>l</mi><mi>i</mi><mi>n</mi><mi>k</mi><mo>&#x005F;</mo><mi>n</mi><mi>e</mi><mi>w</mi></mrow>
+   </msubsup>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaam4DamaaDa
+  aaleaacaWGPbaabaGaamiBaiaadMgacaWGUbGaam4Aaiaac+facaWG
+  UbGaamyzaiaadEhaaaaaaa@3F8B@
+  </annotation>
+ </semantics>
+</math> is the weight of component <math xmlns='http://www.w3.org/1998/Math/MathML' style='background-color:#'>
+ <semantics>
+  <mi>i</mi>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamyAaaaa@36E5@
+  </annotation>
+ </semantics>
+</math> according to the new basket valued at the link
+month period price; and</p>
+
+<p><math xmlns='http://www.w3.org/1998/Math/MathML' style='background-color:#'>
+ <semantics>
+  <mrow>
+   <msubsup>
+    <mi>I</mi>
+    <mi>A</mi>
+    <mrow>
+     <mi>t</mi><mo>&#x2212;</mo><mn>12</mn><mo>:</mo><mi>l</mi><mi>i</mi><mi>n</mi><mi>k</mi></mrow>
+   </msubsup>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamysamaaDa
+  aaleaacaWGbbaabaGaamiDaiabgkHiTiaaigdacaaIYaGaaiOoaiaa
+  dYgacaWGPbGaamOBaiaadUgaaaaaaa@3F94@
+  </annotation>
+ </semantics>
+</math> is the aggregate index in the
+link month with price reference period <math xmlns='http://www.w3.org/1998/Math/MathML' style='background-color:#'>
+ <semantics>
+  <mrow>
+   <mi>t</mi><mo>&#x2212;</mo><mn>12</mn></mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamiDaiabgk
+  HiTiaaigdacaaIYaaaaa@3954@
+  </annotation>
+ </semantics>
+</math>.</p>
+
+
+
+<p><strong>8.24&nbsp;</strong>When calculating
+contributions to 12-month percentage change on an index that spans across two
+baskets, it is possible that the summed old basket
+contributions and summed new basket contributions have opposite signs (+/-). The resulting contribution to the 12-month percentage
+change in the aggregate index could
+therefore
+have the opposite sign of the corresponding 12-month percentage change in the
+index. In other words, a given sub-aggregate can have a
+positive 12-month contribution to its aggregate while posting a negative 12-month price change and
+vice-versa.</p>
+
+<h2 id="a5">Rebasing an Index</h2>
+
+
+
+<p><strong>8.25&nbsp;</strong>As discussed in Chapter 2, the index reference period or index
+base period is the period in which the index is set to equal 100. For the <abbr title="Consumer Price Index">CPI</abbr>, the index base
+period is usually a calendar year expressed as “index year=100”. Currently the index base period for the <abbr title="Consumer Price Index">CPI</abbr>
+is 2002=100. However, the index reference period of the <abbr title="Consumer Price Index">CPI</abbr> is changed periodically to coincide with the
+index base period of other major economic indicators produced
+by Statistics Canada. The
+process of changing the index base period is known as <a href="glos-eng.htm#r1">rebasing</a>. </p>
+
+
+
+<p><strong>8.26&nbsp;</strong>There are many reasons why users may need <abbr title="Consumer Price Index">CPI</abbr> series with index
+base periods other than those used in the published <abbr title="Consumer Price Index">CPI</abbr>. For example, they might
+need a series whose index reference period corresponds to the starting period of a particular wage or
+payment contract, so they can easily calculate the adjustments to be made. Those interested in comparing consumer
+price changes between countries might need a <abbr title="Consumer Price Index">CPI</abbr> series on an index reference period that corresponds
+with the index base period of another country. The need to change the index base period of <abbr title="Consumer Price Index">CPI</abbr> series may also
+result from the technical requirements of an index computation procedure, such as chain-linking
+across baskets.  </p>
+
+
+
+<p><strong>8.27&nbsp;</strong>The
+rebasing of an index (that is, its conversion from one index reference period
+to another) is an arithmetic operation that does not affect the rate of price
+change measured by the series between any two periods. To rebase an index <math>
+ <semantics>
+  <mrow>
+   <msup>
+    <mi>I</mi>
+    <mrow>
+     <mi>g</mi><mo>:</mo><mi>t</mi></mrow>
+   </msup>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamysamaaCa
+  aaleqabaGaam4zaiaacQdacaWG0baaaaaa@3995@
+  </annotation>
+ </semantics>
+</math>
+  and express it in terms of a new index
+reference period <math>
+ <semantics>
+  <mi>h</mi>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamiAaaaa@36E4@
+  </annotation>
+ </semantics>
+</math>
+, all values in the
+index time series are divided by a constant. This constant <math>
+ <semantics>
+  <mrow>
+   <msup>
+    <mi>I</mi>
+    <mrow>
+     <mi>g</mi><mo>:</mo><mi>h</mi></mrow>
+   </msup>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamysamaaCa
+  aaleqabaGaam4zaiaacQdacaWGObaaaaaa@3989@
+  </annotation>
+ </semantics>
+</math>
+ is an index for price observation period <math>
+ <semantics>
+  <mi>h</mi>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamiAaaaa@36E4@
+  </annotation>
+ </semantics>
+</math>
+  (which will be the new index reference period)
+with the initial index reference period <math>
+ <semantics>
+  <mi>g</mi>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaam4zaaaa@36E3@
+  </annotation>
+ </semantics>
+</math>
+. The calculated results are then multiplied by 100 in order to obtain the new rebased index,
+with the index for the reference period <math>
+ <semantics>
+  <mi>h</mi>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamiAaaaa@36E4@
+  </annotation>
+ </semantics>
+</math>
+ equal to 100.</p>
+
+
+
+<p><math display='block'>
+ <semantics>
+  <mrow>
+   <msup>
+    <mi>I</mi>
+    <mrow>
+     <mi>h</mi><mo>:</mo><mi>t</mi></mrow>
+   </msup>
+   <mo>=</mo><mfrac>
+    <mrow>
+     <msup>
+      <mi>I</mi>
+      <mrow>
+       <mi>g</mi><mo>:</mo><mi>t</mi></mrow>
+     </msup>
+     </mrow>
+    <mrow>
+     <msup>
+      <mi>I</mi>
+      <mrow>
+       <mi>g</mi><mo>:</mo><mi>h</mi></mrow>
+     </msup>
+     </mrow>
+   </mfrac>
+   <mo>&#x00D7;</mo><mn>100</mn><mtext>&#x2003;&#x2003;&#x2003;(8.3)</mtext></mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamysamaaCa
+  aaleqabaGaamiAaiaacQdacaWG0baaaOGaeyypa0ZaaSaaaeaacaWG
+  jbWaaWbaaSqabeaacaWGNbGaaiOoaiaadshaaaaakeaacaWGjbWaaW
+  baaSqabeaacaWGNbGaaiOoaiaadIgaaaaaaOGaey41aqRaaGymaiaa
+  icdacaaIWaaaaa@463F@
+  </annotation>
+ </semantics>
+</math></p>
+
+<p>where:</p>
+
+<p><math>
+ <semantics>
+  <mrow>
+   <msup>
+    <mi>I</mi>
+    <mrow>
+     <mi>h</mi><mo>:</mo><mi>t</mi></mrow>
+   </msup>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamysamaaCa
+  aaleqabaGaamiAaiaacQdacaWG0baaaaaa@3996@
+  </annotation>
+ </semantics>
+</math>
+ is the index for a price
+observation period <math>
+ <semantics>
+  <mi>t</mi>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamiDaaaa@36F0@
+  </annotation>
+ </semantics>
+</math>
+  with the new index reference period <math>
+ <semantics>
+  <mi>h</mi>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamiAaaaa@36E4@
+  </annotation>
+ </semantics>
+</math>
+;</p>
+
+<p><math>
+ <semantics>
+  <mrow>
+   <msup>
+    <mi>I</mi>
+    <mrow>
+     <mi>g</mi><mo>:</mo><mi>t</mi></mrow>
+   </msup>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamysamaaCa
+  aaleqabaGaam4zaiaacQdacaWG0baaaaaa@3995@
+  </annotation>
+ </semantics>
+</math>
+ is the index for a price
+observation period <math>
+ <semantics>
+  <mi>t</mi>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamiDaaaa@36F0@
+  </annotation>
+ </semantics>
+</math>
+  with the initial index reference period <math>
+ <semantics>
+  <mi>g</mi>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaam4zaaaa@36E3@
+  </annotation>
+ </semantics>
+</math>
+; and</p>
+
+<p><math>
+ <semantics>
+  <mrow>
+   <msup>
+    <mi>I</mi>
+    <mrow>
+     <mi>g</mi><mo>:</mo><mi>h</mi></mrow>
+   </msup>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamysamaaCa
+  aaleqabaGaam4zaiaacQdacaWGObaaaaaa@3989@
+  </annotation>
+ </semantics>
+</math>
+ is the index for price
+observation period <math>
+ <semantics>
+  <mi>h</mi>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamiAaaaa@36E4@
+  </annotation>
+ </semantics>
+</math>
+ with the initial index
+reference period <math>
+ <semantics>
+  <mi>g</mi>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaam4zaaaa@36E3@
+  </annotation>
+ </semantics>
+</math>
+. </p>
+
+
+
+<p><strong>8.28&nbsp;</strong>As an example take the <a href="glos-eng.htm#a3">all-items <abbr title="Consumer Price Index">CPI</abbr></a> for Canada published with an
+index reference period 2002=100. An extract of this series is shown in Table 8.1
+in the column headed 
+  <math>
+ <semantics>
+  <mrow>
+   <msup>
+    <mi>I</mi>
+    <mrow>
+     <mn>2002</mn><mo>:</mo><mi>t</mi></mrow>
+   </msup>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamysamaaCa
+  aaleqabaGaaGOmaiaaicdacaaIWaGaaGOmaiaacQdacaWG0baaaaaa
+  @3B95@
+  </annotation>
+ </semantics>
+</math>
+. This index
+series has been converted into two new index series with
+index reference periods January 2012=100 and 2012=100 respectively. They are presented in Table 8.1 in the columns headed <math>
+ <semantics>
+  <mrow>
+   <msup>
+    <mi>I</mi>
+    <mrow>
+     <mi>J</mi><mi>a</mi><mi>n</mi><mn>2012</mn><mo>:</mo><mi>t</mi></mrow>
+   </msup>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamysamaaCa
+  aaleqabaGaamOsaiaadggacaWGUbGaaGOmaiaaicdacaaIXaGaaGOm
+  aiaacQdacaWG0baaaaaa@3E3E@
+  </annotation>
+ </semantics>
+</math>
+ and <math>
+ <semantics>
+  <mrow>
+   <msup>
+    <mi>I</mi>
+    <mrow>
+     <mn>2012</mn><mo>:</mo><mi>t</mi></mrow>
+   </msup>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamysamaaCa
+  aaleqabaGaaGOmaiaaicdacaaIXaGaaGOmaiaacQdacaWG0baaaaaa
+  @3B95@
+  </annotation>
+ </semantics>
+</math>
+.</p>
+
+
+
+<p><strong>8.29&nbsp;</strong>To calculate <math>
+ <semantics>
+  <mrow>
+   <msup>
+    <mi>I</mi>
+    <mrow>
+     <mi>J</mi><mi>a</mi><mi>n</mi><mn>2012</mn><mo>:</mo><mi>t</mi></mrow>
+   </msup>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamysamaaCa
+  aaleqabaGaamOsaiaadggacaWGUbGaaGOmaiaaicdacaaIXaGaaGOm
+  aiaacQdacaWG0baaaaaa@3E3E@
+  </annotation>
+ </semantics>
+</math>
+ using the original index <math>
+ <semantics>
+  <mrow>
+   <msup>
+    <mi>I</mi>
+    <mrow>
+     <mn>2002</mn><mo>:</mo><mi>t</mi></mrow>
+   </msup>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamysamaaCa
+  aaleqabaGaaGOmaiaaicdacaaIWaGaaGOmaiaacQdacaWG0baaaaaa
+  @3B95@
+  </annotation>
+ </semantics>
+</math>
+ the series
+is divided by the constant <math>
+ <semantics>
+  <mrow>
+   <msup>
+    <mi>I</mi>
+    <mrow>
+     <mn>2002</mn><mo>:</mo><mi>J</mi><mi>a</mi><mi>n</mi><mn>2012</mn></mrow>
+   </msup>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamysamaaCa
+  aaleqabaGaaGOmaiaaicdacaaIWaGaaGOmaiaacQdacaGGkbGaaiyy
+  aiaac6gacaaIYaGaaGimaiaaigdacaaIYaaaaaaa@402E@
+  </annotation>
+ </semantics>
+</math>
+. To calculate <math>
+ <semantics>
+  <mrow>
+   <msup>
+    <mi>I</mi>
+    <mrow>
+     <mn>2012</mn><mo>:</mo><mi>t</mi></mrow>
+   </msup>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamysamaaCa
+  aaleqabaGaaGOmaiaaicdacaaIXaGaaGOmaiaacQdacaWG0baaaaaa
+  @3B96@
+  </annotation>
+ </semantics>
+</math>
+ using the
+original index <math>
+ <semantics>
+  <mrow>
+   <msup>
+    <mi>I</mi>
+    <mrow>
+     <mn>2002</mn><mo>:</mo><mi>t</mi></mrow>
+   </msup>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamysamaaCa
+  aaleqabaGaaGOmaiaaicdacaaIWaGaaGOmaiaacQdacaWG0baaaaaa
+  @3B95@
+  </annotation>
+ </semantics>
+</math>
+ the series is divided by the constant <math>
+ <semantics>
+  <mrow>
+   <msup>
+    <mi>I</mi>
+    <mrow>
+     <mn>2002</mn><mo>:</mo><mn>2012</mn></mrow>
+   </msup>
+   </mrow>
+  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+  feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamysamaaCa
+  aaleqabaGaaGOmaiaaicdacaaIWaGaaGOmaiaacQdacaaIYaGaaGim
+  aiaaigdacaaIYaaaaaaa@3D89@
+  </annotation>
+ </semantics>
+</math>
+.</p>
+
+<div class="table-responsive"> 
+	<table class="pub-table"> 
+	<caption> 
+	Table 8.1<br /> 
+	Example of index rebasing<br /> 
+	<span class="wb-inv">Table summary<br /> 
+	This table displays the results of Example of index rebasing. The information is grouped by Index price observation period t (appearing as row headers), a, b and c (appearing as column headers).</span> 
+	</caption> 
+	<tr> 
+	<th id="h_384_1-1" class="col-left"><strong>Index price observation period <em>t</em></strong></th> 
+	<th id="h_384_1-2"><math xmlns='http://www.w3.org/1998/Math/MathML'> 
+	<semantics> 
+	<mrow> 
+	<msup> 
+	<mi>I</mi> 
+	<mrow> 
+	<mn>2002</mn><mo>:</mo><mi>t</mi></mrow> 
+	</msup> 
+	</mrow> 
+	<annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+= 
+	feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn 
+	hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr 
+	4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9 
+	vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x 
+	fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamysamaaCa 
+	aaleqabaGaaGOmaiaaicdacaaIWaGaaGOmaiaacQdacaWG0baaaaaa 
+	@3B95@ 
+	</annotation> 
+	</semantics> 
+	</math> 
+	</th> 
+	<th id="h_384_1-3"><math xmlns='http://www.w3.org/1998/Math/MathML'> 
+	<semantics> 
+	<mrow> 
+	<msup> 
+	<mi>I</mi> 
+	<mrow> 
+	<mi>J</mi><mi>a</mi><mi>n</mi><mn>2012</mn><mo>:</mo><mi>t</mi></mrow> 
+	</msup> 
+	</mrow> 
+	<annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+= 
+	feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn 
+	hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr 
+	4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9 
+	vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x 
+	fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamysamaaCa 
+	aaleqabaGaamOsaiaadggacaWGUbGaaGOmaiaaicdacaaIXaGaaGOm 
+	aiaacQdacaWG0baaaaaa@3E3E@ 
+	</annotation> 
+	</semantics> 
+	</math> 
+	</th> 
+	<th id="h_384_1-4"><math xmlns='http://www.w3.org/1998/Math/MathML'> 
+	<semantics> 
+	<mrow> 
+	<msup> 
+	<mi>I</mi> 
+	<mrow> 
+	<mn>2012</mn><mo>:</mo><mi>t</mi></mrow> 
+	</msup> 
+	</mrow> 
+	<annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+= 
+	feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn 
+	hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr 
+	4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9 
+	vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x 
+	fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamysamaaCa 
+	aaleqabaGaaGOmaiaaicdacaaIXaGaaGOmaiaacQdacaWG0baaaaaa 
+	@3B96@ 
+	</annotation> 
+	</semantics> 
+	</math> 
+	</th> 
+	</tr> 
+	<tr class="highlight-row"> 
+	<th id="s_384_2-1" headers="h_384_1-1" class="row-stub">Jan-12</th> 
+	<td headers="s_384_2-1 h_384_1-2">120.7</td> 
+	<td headers="s_384_2-1 h_384_1-3" style="text-align:left">100.0=<br/><math xmlns='http://www.w3.org/1998/Math/MathML'> 
+	<semantics> 
+	<mrow> 
+	<mfrac> 
+	<mrow> 
+	<msup> 
+	<mi>I</mi> 
+	<mrow> 
+	<mn>2002</mn><mo>:</mo><mi>J</mi><mi>a</mi><mi>n</mi><mn>2012</mn></mrow> 
+	</msup> 
+	</mrow> 
+	<mrow> 
+	<msup> 
+	<mi>I</mi> 
+	<mrow> 
+	<mn>2002</mn><mo>:</mo><mi>J</mi><mi>a</mi><mi>n</mi><mn>2012</mn></mrow> 
+	</msup> 
+	</mrow> 
+	</mfrac> 
+	<mo>&#x00D7;</mo><mn>100</mn><mo>=</mo><mfrac> 
+	<mrow> 
+	<mn>120.7</mn></mrow> 
+	<mrow> 
+	<mn>120.7</mn></mrow> 
+	</mfrac> 
+	<mo>&#x00D7;</mo><mn>100</mn></mrow> 
+	<annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+= 
+	feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn 
+	hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr 
+	4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9 
+	vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x 
+	fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaWaaSaaaeaaca 
+	WGjbWaaWbaaSqabeaacaaIYaGaaGimaiaaicdacaaIYaGaaiOoaiaa 
+	dQeacaWGHbGaamOBaiaaikdacaaIWaGaaGymaiaaikdaaaaakeaaca 
+	WGjbWaaWbaaSqabeaacaaIYaGaaGimaiaaicdacaaIYaGaaiOoaiaa 
+	dQeacaWGHbGaamOBaiaaikdacaaIWaGaaGymaiaaikdaaaaaaOGaey 
+	41aqRaaGymaiaaicdacaaIWaGaeyypa0ZaaSaaaeaacaaIXaGaaGOm 
+	aiaaicdacaGGUaGaaG4naaqaaiaaigdacaaIYaGaaGimaiaac6caca 
+	aI3aaaaiabgEna0kaaigdacaaIWaGaaGimaaaa@5B79@ 
+	</annotation> 
+	</semantics> 
+	</math> 
+	</td> 
+	<td headers="s_384_2-1 h_384_1-4" style="text-align:left">99.2=<br/><math xmlns='http://www.w3.org/1998/Math/MathML'> 
+	<semantics> 
+	<mrow> 
+	<mfrac> 
+	<mrow> 
+	<msup> 
+	<mi>I</mi> 
+	<mrow> 
+	<mn>2002</mn><mo>:</mo><mi>J</mi><mi>a</mi><mi>n</mi><mn>2012</mn></mrow> 
+	</msup> 
+	</mrow> 
+	<mrow> 
+	<msup> 
+	<mi>I</mi> 
+	<mrow> 
+	<mn>2012</mn><mo>:</mo><mi>J</mi><mi>a</mi><mi>n</mi><mn>2012</mn></mrow> 
+	</msup> 
+	</mrow> 
+	</mfrac> 
+	<mo>&#x00D7;</mo><mn>100</mn><mo>=</mo><mfrac> 
+	<mrow> 
+	<mn>120.7</mn></mrow> 
+	<mrow> 
+	<mn>121.7</mn></mrow> 
+	</mfrac> 
+	<mo>&#x00D7;</mo><mn>100</mn></mrow> 
+	<annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+= 
+	feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn 
+	hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr 
+	4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9 
+	vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x 
+	fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaWaaSaaaeaaca 
+	WGjbWaaWbaaSqabeaacaaIYaGaaGimaiaaicdacaaIYaGaaiOoaiaa 
+	dQeacaWGHbGaamOBaiaaikdacaaIWaGaaGymaiaaikdaaaaakeaaca 
+	WGjbWaaWbaaSqabeaacaaIYaGaaGimaiaaigdacaaIYaGaaiOoaiaa 
+	dQeacaWGHbGaamOBaiaaikdacaaIWaGaaGymaiaaikdaaaaaaOGaey 
+	41aqRaaGymaiaaicdacaaIWaGaeyypa0ZaaSaaaeaacaaIXaGaaGOm 
+	aiaaicdacaGGUaGaaG4naaqaaiaaigdacaaIYaGaaGymaiaac6caca 
+	aI3aaaaiabgEna0kaaigdacaaIWaGaaGimaaaa@5B7B@ 
+	</annotation> 
+	</semantics> 
+	</math> 
+	</td> 
+	</tr> 
+	<tr class="highlight-row"> 
+	<th id="s_384_3-1" headers="h_384_1-1" class="row-stub">Feb-12</th> 
+	<td headers="s_384_3-1 h_384_1-2">121.2</td> 
+	<td headers="s_384_3-1 h_384_1-3">100.4</td> 
+	<td headers="s_384_3-1 h_384_1-4">99.6</td> 
+	</tr> 
+	<tr class="highlight-row"> 
+	<th id="s_384_4-1" headers="h_384_1-1" class="row-stub">Mar-12</th> 
+	<td headers="s_384_4-1 h_384_1-2">121.7</td> 
+	<td headers="s_384_4-1 h_384_1-3">100.8</td> 
+	<td headers="s_384_4-1 h_384_1-4">100.0</td> 
+	</tr> 
+	<tr class="highlight-row"> 
+	<th id="s_384_5-1" headers="h_384_1-1" class="row-stub">Apr-12</th> 
+	<td headers="s_384_5-1 h_384_1-2">122.2</td> 
+	<td headers="s_384_5-1 h_384_1-3">101.2</td> 
+	<td headers="s_384_5-1 h_384_1-4">100.4</td> 
+	</tr> 
+	<tr class="highlight-row"> 
+	<th id="s_384_6-1" headers="h_384_1-1" class="row-stub">May-12</th> 
+	<td headers="s_384_6-1 h_384_1-2">122.1</td> 
+	<td headers="s_384_6-1 h_384_1-3">101.2</td> 
+	<td headers="s_384_6-1 h_384_1-4">100.3</td> 
+	</tr> 
+	<tr class="highlight-row"> 
+	<th id="s_384_7-1" headers="h_384_1-1" class="row-stub">Jun-12</th> 
+	<td headers="s_384_7-1 h_384_1-2">121.6</td> 
+	<td headers="s_384_7-1 h_384_1-3">100.7</td> 
+	<td headers="s_384_7-1 h_384_1-4">99.9</td> 
+	</tr> 
+	<tr class="highlight-row"> 
+	<th id="s_384_8-1" headers="h_384_1-1" class="row-stub">Jul-12</th> 
+	<td headers="s_384_8-1 h_384_1-2">121.5</td> 
+	<td headers="s_384_8-1 h_384_1-3">100.7</td> 
+	<td headers="s_384_8-1 h_384_1-4">99.9</td> 
+	</tr> 
+	<tr class="highlight-row"> 
+	<th id="s_384_9-1" headers="h_384_1-1" class="row-stub">Aug-12</th> 
+	<td headers="s_384_9-1 h_384_1-2">121.8</td> 
+	<td headers="s_384_9-1 h_384_1-3">100.9</td> 
+	<td headers="s_384_9-1 h_384_1-4">100.1</td> 
+	</tr> 
+	<tr class="highlight-row"> 
+	<th id="s_384_10-1" headers="h_384_1-1" class="row-stub">Sep-12</th> 
+	<td headers="s_384_10-1 h_384_1-2">122.0</td> 
+	<td headers="s_384_10-1 h_384_1-3">101.1</td> 
+	<td headers="s_384_10-1 h_384_1-4">100.3</td> 
+	</tr> 
+	<tr class="highlight-row"> 
+	<th id="s_384_11-1" headers="h_384_1-1" class="row-stub">Oct-12</th> 
+	<td headers="s_384_11-1 h_384_1-2">122.2</td> 
+	<td headers="s_384_11-1 h_384_1-3">101.2</td> 
+	<td headers="s_384_11-1 h_384_1-4">100.4</td> 
+	</tr> 
+	<tr class="highlight-row"> 
+	<th id="s_384_12-1" headers="h_384_1-1" class="row-stub">Nov-12</th> 
+	<td headers="s_384_12-1 h_384_1-2">121.9</td> 
+	<td headers="s_384_12-1 h_384_1-3">101.0</td> 
+	<td headers="s_384_12-1 h_384_1-4">100.2</td> 
+	</tr> 
+	<tr class="highlight-row"> 
+	<th id="s_384_13-1" headers="h_384_1-1" class="row-stub">Dec-12</th> 
+	<td headers="s_384_13-1 h_384_1-2">121.2</td> 
+	<td headers="s_384_13-1 h_384_1-3">100.4</td> 
+	<td headers="s_384_13-1 h_384_1-4">99.6</td> 
+	</tr> 
+	<tr class="highlight-row"> 
+	<th id="s_384_14-1" headers="h_384_1-1" class="row-stub">2012 average</th> 
+	<td headers="s_384_14-1 h_384_1-2">121.7</td> 
+	<td headers="s_384_14-1 h_384_1-3">100.9</td> 
+	<td headers="s_384_14-1 h_384_1-4">100.0</td> 
+	</tr> 
+	<tr class="highlight-row"> 
+	<th id="s_384_15-1" headers="h_384_1-1" class="row-stub">Jan-13</th> 
+	<td headers="s_384_15-1 h_384_1-2">121.3</td> 
+	<td headers="s_384_15-1 h_384_1-3">100.5</td> 
+	<td headers="s_384_15-1 h_384_1-4">99.7</td> 
+	</tr> 
+	<tr class="highlight-row"> 
+	<th id="s_384_16-1" headers="h_384_1-1" class="row-stub">Feb-13</th> 
+	<td headers="s_384_16-1 h_384_1-2">122.7</td> 
+	<td headers="s_384_16-1 h_384_1-3">101.7</td> 
+	<td headers="s_384_16-1 h_384_1-4">100.8</td> 
+	</tr> 
+	<tr class="highlight-row"> 
+	<th id="s_384_17-1" headers="h_384_1-1" class="row-stub">Mar-13</th> 
+	<td headers="s_384_17-1 h_384_1-2">122.9</td> 
+	<td headers="s_384_17-1 h_384_1-3">101.8</td> 
+	<td headers="s_384_17-1 h_384_1-4">101.0</td> 
+	</tr> 
+	<tr class="highlight-row"> 
+	<th id="s_384_18-1" headers="h_384_1-1" class="row-stub">Apr-13</th> 
+	<td headers="s_384_18-1 h_384_1-2">122.7</td> 
+	<td headers="s_384_18-1 h_384_1-3">101.7</td> 
+	<td headers="s_384_18-1 h_384_1-4">100.8</td> 
+	</tr> 
+	<tr class="highlight-row"> 
+	<th id="s_384_19-1" headers="h_384_1-1" class="row-stub">May-13</th> 
+	<td headers="s_384_19-1 h_384_1-2">123.0</td> 
+	<td headers="s_384_19-1 h_384_1-3">101.9</td> 
+	<td headers="s_384_19-1 h_384_1-4">101.1</td> 
+	</tr> 
+	<tr class="highlight-row"> 
+	<th id="s_384_20-1" headers="h_384_1-1" class="row-stub">Jun-13</th> 
+	<td headers="s_384_20-1 h_384_1-2">123.0</td> 
+	<td headers="s_384_20-1 h_384_1-3" style="text-align:left">101.9 =<br/><math xmlns='http://www.w3.org/1998/Math/MathML'> 
+	<semantics> 
+	<mrow> 
+	<mfrac> 
+	<mrow> 
+	<msup> 
+	<mi>I</mi> 
+	<mrow> 
+	<mn>2002</mn><mo>:</mo><mi>J</mi><mi>u</mi><mi>n</mi><mn>2013</mn></mrow> 
+	</msup> 
+	</mrow> 
+	<mrow> 
+	<msup> 
+	<mi>I</mi> 
+	<mrow> 
+	<mn>2002</mn><mo>:</mo><mi>J</mi><mi>a</mi><mi>n</mi><mn>2012</mn></mrow> 
+	</msup> 
+	</mrow> 
+	</mfrac> 
+	<mo>&#x00D7;</mo><mn>100</mn><mo>=</mo><mfrac> 
+	<mrow> 
+	<mn>123</mn></mrow> 
+	<mrow> 
+	<mn>120.7</mn></mrow> 
+	</mfrac> 
+	<mo>&#x00D7;</mo><mn>100</mn></mrow> 
+	<annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+= 
+	feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn 
+	hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr 
+	4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9 
+	vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x 
+	fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaWaaSaaaeaaca 
+	WGjbWaaWbaaSqabeaacaaIYaGaaGimaiaaicdacaaIYaGaaiOoaiaa 
+	dQeacaWG1bGaamOBaiaaikdacaaIWaGaaGymaiaaiodaaaaakeaaca 
+	WGjbWaaWbaaSqabeaacaaIYaGaaGimaiaaicdacaaIYaGaaiOoaiaa 
+	dQeacaWGHbGaamOBaiaaikdacaaIWaGaaGymaiaaikdaaaaaaOGaey 
+	41aqRaaGymaiaaicdacaaIWaGaeyypa0ZaaSaaaeaacaaIXaGaaGOm 
+	aiaaiodaaeaacaaIXaGaaGOmaiaaicdacaGGUaGaaG4naaaacqGHxd 
+	aTcaaIXaGaaGimaiaaicdaaaa@5A1E@ 
+	</annotation> 
+	</semantics> 
+	</math> 
+	</td> 
+	<td headers="s_384_20-1 h_384_1-4" style="text-align:left">101.1=<br/><math xmlns='http://www.w3.org/1998/Math/MathML'> 
+	<semantics> 
+	<mrow> 
+	<mfrac> 
+	<mrow> 
+	<msup> 
+	<mi>I</mi> 
+	<mrow> 
+	<mn>2002</mn><mo>:</mo><mi>J</mi><mi>u</mi><mi>n</mi><mn>2013</mn></mrow> 
+	</msup> 
+	</mrow> 
+	<mrow> 
+	<msup> 
+	<mi>I</mi> 
+	<mrow> 
+	<mn>2012</mn><mo>:</mo><mi>J</mi><mi>a</mi><mi>n</mi><mn>2012</mn></mrow> 
+	</msup> 
+	</mrow> 
+	</mfrac> 
+	<mo>&#x00D7;</mo><mn>100</mn><mo>=</mo><mfrac> 
+	<mrow> 
+	<mn>123</mn></mrow> 
+	<mrow> 
+	<mn>121.7</mn></mrow> 
+	</mfrac> 
+	<mo>&#x00D7;</mo><mn>100</mn></mrow> 
+	<annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+= 
+	feaagKart1ev2aqatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn 
+	hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr 
+	4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9 
+	vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x 
+	fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaWaaSaaaeaaca 
+	WGjbWaaWbaaSqabeaacaaIYaGaaGimaiaaicdacaaIYaGaaiOoaiaa 
+	dQeacaWG1bGaamOBaiaaikdacaaIWaGaaGymaiaaiodaaaaakeaaca 
+	WGjbWaaWbaaSqabeaacaaIYaGaaGimaiaaigdacaaIYaGaaiOoaiaa 
+	dQeacaWGHbGaamOBaiaaikdacaaIWaGaaGymaiaaikdaaaaaaOGaey 
+	41aqRaaGymaiaaicdacaaIWaGaeyypa0ZaaSaaaeaacaaIXaGaaGOm 
+	aiaaiodaaeaacaaIXaGaaGOmaiaaigdacaGGUaGaaG4naaaacqGHxd 
+	aTcaaIXaGaaGimaiaaicdaaaa@5A20@ 
+	</annotation> 
+	</semantics> 
+	</math> 
+	</td> 
+	</tr> 
+	<tr> 
+	<td class="table-footer" colspan="4"><strong>Source: </strong>Statistics Canada, CANSIM Table <a href="/n1/en/cansim/326-0020" title="CANSIM table 326-0020">326-0020</a>. </td> 
+
+	</tr> 
+	</table> 
+</div> 
+
+
+<p><strong>8.30&nbsp;</strong>Since all indices in any given
+  column of Table 8.1 are derived from original indices with an index reference period 2002=100, divided by a constant, the
+  rate of price change in all the rebased series is the same as in the original series. Small differences in
+  percentage change may result due to rounding when average index values are calculated. It should be noted,
+  however, that differences between index levels, sometimes referred to as differences in index points, vary with
+  the change of the index reference period. Therefore, users who would like to use the <abbr title="Consumer Price Index">CPI</abbr> for purposes of
+  indexation are advised to use the rate of price change
+  (the percentage change between
+  index values) rather than using the difference in index points. </p>
+
+
+<aside class="wb-fnote" role="note">
+  <h2 id="fn">Notes</h2>
+<dl>
+<dt>Note </dt>
+<dd id="n1">
+<p>Generally speaking, the <abbr title="Survey of Household Spending">SHS</abbr> is designed to provide  information on spending by private households that is detailed enough for, and  consistent with, the CPI <a href="glos-eng.htm">scope</a> and definitions; see Statistics  Canada, Survey number 3508.</p>
+<p class="fn-rtn"><a href="#n1-refa"><span class="wb-inv">Return to note&nbsp;</span><span></span><span class="wb-inv"> referrer</span></a></p>
+</dd>
+
+<dt>Note </dt>
+<dd id="n2">
+<p><abbr title="Household Final Consumption Expenditure">HFCE</abbr> represents the  spending of resident households on goods and services they purchase for their own  consumption. For further details, refer to the <a href="https://www150.statcan.gc.ca/n1/pub/13-607-x/2016001/164-eng.htm">Statistics  Canada website</a>. <abbr title="Household Final Consumption Expenditure">HFCE</abbr>  spending by  resident households outside of Canada is not included in the <abbr title="Consumer Price Index">CPI</abbr> basket weights  and spending by non-residents temporarily in Canada is removed from the <abbr title="Consumer Price Index">CPI</abbr> basket  weights as needed.</p>
+<p class="fn-rtn"><a href="#n2-refa"><span class="wb-inv">Return to note&nbsp;</span><span></span><span class="wb-inv"> referrer</span></a></p>
+</dd>
+
+<dt>Note </dt>
+<dd id="n3">
+<p>The <abbr title="Survey of Household Spending">SHS</abbr> was the main data source for the <abbr title="Consumer Price Index">CPI</abbr> basket  weight estimation until the 2017 basket. <abbr title="Household Final Consumption Expenditure">HFCE</abbr> data were first used in a <abbr title="Consumer Price Index">CPI</abbr>  basket update with the 2020 basket. </p>
+<p class="fn-rtn"><a href="#n3-refa"><span class="wb-inv">Return to note&nbsp;</span><span></span><span class="wb-inv"> referrer</span></a></p>
+</dd>
+
+<dt>Note </dt>
+<dd id="n4">
+<p>The calculation of a
+fixed-quantity-weighted price index is discussed in Chapter 6. The quantities
+themselves are not directly observed, but are rather implicitly contained in
+the expenditures. </p>
+<p class="fn-rtn"><a href="#n4-refa"><span class="wb-inv">Return to note&nbsp;</span><span></span><span class="wb-inv"> referrer</span></a></p>
+</dd>
+
+<dt>Note </dt>
+<dd id="n5">
+<p>ILO <em>et
+al.</em> (2004), paragraph 18.2.</p>
+<p class="fn-rtn"><a href="#n5-refa"><span class="wb-inv">Return to note&nbsp;</span><span></span><span class="wb-inv"> referrer</span></a></p>
+</dd>
+
+<dt>Note </dt>
+<dd id="n6">
+<p>The treatment of owned accommodation in
+the <abbr title="Consumer Price Index">CPI</abbr> is discussed in Chapter 10.</p>
+<p class="fn-rtn"><a href="#n6-refa"><span class="wb-inv">Return to note&nbsp;</span><span></span><span class="wb-inv"> referrer</span></a></p>
+</dd>
+
+<dt>Note </dt>
+<dd id="n7">
+<p>In order to  accurately reflect pandemic-related expenditure shifts at more detailed levels  of geography and commodity, the 2021 basket update used national and  provincial <abbr title="Household Final Consumption Expenditure">HFCE</abbr> data as well as data from the <abbr title="Survey of Household Spending">SHS</abbr> and  other alternative sources.</p>
+<p class="fn-rtn"><a href="#n7-refa"><span class="wb-inv">Return to note&nbsp;</span><span></span><span class="wb-inv"> referrer</span></a></p>
+</dd>
+
+<dt>Note </dt>
+<dd id="n8">
+<p>The quality of expenditure data are
+evaluated using outlier detection across basket reference years, microdata
+analysis, as well as coefficient of variation (CV) analysis. </p>
+<p class="fn-rtn"><a href="#n8-refa"><span class="wb-inv">Return to note&nbsp;</span><span></span><span class="wb-inv"> referrer</span></a></p>
+</dd>
+
+<dt>Note </dt>
+<dd id="n9">
+<p>Chaffe <em>et al</em>. (2007).</p>
+<p class="fn-rtn"><a href="#n9-refa"><span class="wb-inv">Return to note&nbsp;</span><span></span><span class="wb-inv"> referrer</span></a></p>
+</dd>
+
+<dt>Note </dt>
+<dd id="n10">
+<p>The meaning and use of basic classes in the
+<abbr title="Consumer Price Index">CPI</abbr> is discussed in Chapter 4. </p>
+<p class="fn-rtn"><a href="#n10-refa"><span class="wb-inv">Return to note&nbsp;</span><span></span><span class="wb-inv"> referrer</span></a></p>
+</dd>
+
+<dt>Note </dt>
+<dd id="n11">
+<p>A  chronology of basket updates of the <abbr title="Consumer Price Index">CPI</abbr> up to the 2021 basket is  provided in Chapter 11.</p>
+<p class="fn-rtn"><a href="#n11-refa"><span class="wb-inv">Return to note&nbsp;</span><span></span><span class="wb-inv"> referrer</span></a></p>
+</dd>
+
+<dt>Note </dt>
+<dd id="n12">
+<p>Boskin <em>et al</em>. (1996) find that more current
+expenditure weights can reduce the substitution bias in
+a <abbr title="Consumer Price Index">CPI</abbr>.</p>
+<p class="fn-rtn"><a href="#n12-refa"><span class="wb-inv">Return to note&nbsp;</span><span></span><span class="wb-inv"> referrer</span></a></p>
+</dd>
+
+<dt>Note </dt>
+<dd id="n13">
+<p>The
+monthly chained form of the Lowe index is discussed in Chapter 6.</p>
+<p class="fn-rtn"><a href="#n13-refa"><span class="wb-inv">Return to note&nbsp;</span><span></span><span class="wb-inv"> referrer</span></a></p>
+</dd>
+
+<dt>Note </dt>
+<dd id="n14">
+<p>Statistics Canada
+publishes two sets of <abbr title="Consumer Price Index">CPI</abbr> basket
+weights.
+One expresses the values of the fixed-quantity basket at basket reference
+prices and the other at basket link month prices.
+Statistics Canada, Survey number <a
+href="http://www23.statcan.gc.ca/imdb-bmdi/document/2301_D48_T9_V2-eng.htm">2301</a>.</p>
+<p class="fn-rtn"><a href="#n14-refa"><span class="wb-inv">Return to note&nbsp;</span><span></span><span class="wb-inv"> referrer</span></a></p>
+</dd>
+
+<dt>Note </dt>
+<dd id="n15">
+<p>It should be noted that the method
+of chain-linking indices across baskets is such that aggregate indices are not
+the direct average of their respective sub-indices. In exceptional cases, this
+may cause the level of an aggregate index to fall slightly outside the range of
+its sub-indices. ILO et al. (2004), paragraph 9.113.</p>
+<p class="fn-rtn"><a href="#n15-refa"><span class="wb-inv">Return to note&nbsp;</span><span></span><span class="wb-inv"> referrer</span></a></p>
+</dd>
+
+<dt>Note </dt>
+<dd id="n16">
+<p>The basket weights with 2001 reference year were  revised in June 2004 following some quality assurance conducted after their  introduction in December 2002. This represents the only time CPI basket weights  have been revised before the end of the lifespan of the basket. </p>
+<p class="fn-rtn"><a href="#n16-refa"><span class="wb-inv">Return to note&nbsp;</span><span></span><span class="wb-inv"> referrer</span></a></p>
+</dd>
+
+<dt>Note </dt>
+<dd id="n17">
+<p>Contributions to price index change are discussed in Chapter 6.</p>
+<p class="fn-rtn"><a href="#n17-refa"><span class="wb-inv">Return to note&nbsp;</span><span></span><span class="wb-inv"> referrer</span></a></p>
+</dd>
+
+
+
+
+
+</dl>
+</aside>
+</section>
+<div class="clearfix"></div>
+
+<!-- More info button text --> 
+﻿    <!-- Table of contents page -->
+    <section id="toc-tdm" class="mfp-hide modal-dialog modal-content overlay-def">
+      <header class="modal-header">
+        <h2 class="modal-title">Table of contents</h2>
+      </header>
+      <div class="modal-body">
+      
+     
+       <p><a href="/pub/62-553-x/62-553-x2023001-eng.htm">Main page</a><br>
+         <a href="/pub/62-553-x/2023001/chap-1-eng.htm">Chapter 1 – Introduction to the Canadian Consumer Price Index</a><br />
+         <a href="/pub/62-553-x/2023001/chap-2-eng.htm">Chapter 2 – Availability and Uses</a><br />
+         <a href="/pub/62-553-x/2023001/chap-3-eng.htm">Chapter 3 – Scope of the Index</a><br />
+         <a href="/pub/62-553-x/2023001/chap-4-eng.htm">Chapter 4 – Classifications</a><br />
+         <a href="/pub/62-553-x/2023001/chap-5-eng.htm">Chapter 5 – Sample Strategy and Price Collection</a><br />
+         <a href="/pub/62-553-x/2023001/chap-6-eng.htm">Chapter 6 – Calculation of the Consumer Price Index</a><br />
+         <a href="/pub/62-553-x/2023001/chap-7-eng.htm">Chapter 7 – Quality Change and Adjustment</a><br />
+         <a href="/pub/62-553-x/2023001/chap-8-eng.htm">Chapter 8 – Weights and Basket Updates</a><br />
+         <a href="/pub/62-553-x/2023001/chap-9-eng.htm">Chapter 9 – Reliability and Uncertainty</a><br>
+         <a href="/pub/62-553-x/2023001/chap-10-eng.htm">Chapter 10 – Treatment of Owned Accommodation and Seasonal Products</a><br />
+         <a href="/pub/62-553-x/2023001/chap-11-eng.htm">Chapter 11 – History</a><br />
+         <a href="/pub/62-553-x/2023001/glos-eng.htm">Glossary</a><br />
+         <a href="/pub/62-553-x/2023001/app-ann-a-eng.htm">Appendix – Common Price Index Formulae</a><br />
+         <a href="/pub/62-553-x/2023001/ref-bib-eng.htm">References</a>
+
+</p>
+		
+       
+        
+        </div>
+    </section>
+    <!-- END More info page --> 
+
+
+<div class="pagedetails">
+	<dl id="wb-dtmd">
+		<dt>Date modified:&#32;</dt>
+		<dd><time property="dateModified"> 
+2023-02-20 
+</time></dd>
+	</dl>
+</div>
+</main> 
+
+<footer id="wb-info">
+	<h2 class="wb-inv">About this site</h2>
+	<div class="gc-contextual">
+		<div class="container">
+			<nav>
+				<h3>Statistics Canada</h3>
+				<ul class="list-unstyled colcount-sm-2 colcount-md-3">
+					<li><a href="https://www.statcan.gc.ca/en/reference/refcentre/index">Contact StatCan</a></li>
+					<li><a href="https://www.statcan.gc.ca/en/trust">Trust Centre</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+	<div class="gc-main-footer">
+		<div class="container">
+			<nav>
+				<h3>Government of Canada</h3>
+				<ul class="list-unstyled colcount-sm-2 colcount-md-3">
+					<li><a href="https://www.canada.ca/en/contact.html">All contacts</a></li>
+					<li><a href="https://www.canada.ca/en/government/dept.html">Departments and agencies</a></li>
+					<li><a href="https://www.canada.ca/en/government/system.html">About government</a></li>
+				</ul>
+				<h4><span class="wb-inv">Themes and topics</span></h4>
+				<ul class="list-unstyled colcount-sm-2 colcount-md-3">
+					<li><a href="https://www.canada.ca/en/services/jobs.html">Jobs</a></li>
+					<li><a href="https://www.canada.ca/en/services/immigration-citizenship.html">Immigration and citizenship</a></li>
+					<li><a href="https://travel.gc.ca/">Travel and tourism</a></li>
+					<li><a href="https://www.canada.ca/en/services/business.html">Business</a></li>
+					<li><a href="https://www.canada.ca/en/services/benefits.html">Benefits</a></li>
+					<li><a href="https://www.canada.ca/en/services/health.html">Health</a></li>
+					<li><a href="https://www.canada.ca/en/services/taxes.html">Taxes</a></li>
+					<li><a href="https://www.canada.ca/en/services/environment.html">Environment and natural resources</a></li>
+					<li><a href="https://www.canada.ca/en/services/defence.html">National security and defence</a></li>
+					<li><a href="https://www.canada.ca/en/services/culture.html">Culture, history and sport</a></li>
+					<li><a href="https://www.canada.ca/en/services/policing.html">Policing, justice and emergencies</a></li>
+					<li><a href="https://www.canada.ca/en/services/transport.html">Transport and infrastructure</a></li>
+					<li><a href="https://international.gc.ca/world-monde/index.aspx?lang=eng">Canada and the world</a></li>
+					<li><a href="https://www.canada.ca/en/services/finance.html">Money and finance</a></li>
+					<li><a href="https://www.canada.ca/en/services/science.html">Science and innovation</a></li>
+					<li><a href="https://www.canada.ca/en/services/indigenous-peoples.html">Indigenous peoples</a></li>
+					<li><a href="https://www.canada.ca/en/services/veterans.html">Veterans and military</a></li>
+					<li><a href="https://www.canada.ca/en/services/youth.html">Youth</a></li>
+					<li><a href="https://www.canada.ca/en/services/life-events.html">Manage life events</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+	<div class="gc-sub-footer">
+		<div class="container d-flex align-items-center">
+			<nav>
+				<h3 class="wb-inv">Government of Canada Corporate</h3>
+				<ul>
+					<li><a href="https://www.canada.ca/en/social.html">Social media</a></li>
+					<li><a href="https://www.canada.ca/en/mobile.html">Mobile applications</a></li>
+					<li><a href="https://www.canada.ca/en/government/about-canada-ca.html">About Canada.ca</a></li>
+					<li><a href="https://www.statcan.gc.ca/en/terms-conditions">Terms and conditions</a></li>
+					<li><a href="https://www.statcan.gc.ca/en/about/transparency/privacy">Privacy</a></li>
+				</ul>
+			</nav>
+			<div class="wtrmrk align-self-end">
+				<img src="/wet-boew4b/assets/wmms-blk.svg" alt="Symbol of the Government of Canada">
+			</div>
+		</div>
+	</div>
+</footer>
+
+<script>
+
+    modifyBreadCrum();
+    
+
+    function modifyBreadCrum(){
+        
+    let dailyEn = "n1/dai-quo/index-eng.htm";
+    let dailyFr = "n1/dai-quo/index-fra.htm";
+ 
+    let breadcrumb = document.querySelector("#wb-bc ol.breadcrumb");
+        
+    if(breadcrumb === undefined || breadcrumb === null || breadcrumb.children.length == 0){
+        return;
+    } 
+        
+    let lastListNode = breadcrumb.children[breadcrumb.children.length -1];
+    
+    if(window.location.href.indexOf("daily-quotidien") != -1 || window.location.href.indexOf("dai-quo") != -1){
+        let href = window.location.href;
+        let env = href.split("n1")[0];
+        href = href.indexOf("eng") != -1 ? env + dailyEn : env + dailyFr;
+
+        createBreadcrumAnchor(href);
+    }
+    else{
+        removeBreadcrumNotAnchor();
+    }
+
+    return;
+
+    function createBreadcrumAnchor(href){
+
+        let anchor = document.createElement("a");
+    
+        if(lastListNode.lastChild !== undefined && lastListNode.lastChild !== null){
+            if(lastListNode.lastChild.nodeName === anchor.nodeName){
+                return;
+            } 
+
+            anchor.innerHTML = lastListNode.innerHTML;
+            anchor.href = href;
+            lastListNode.innerHTML = anchor.outerHTML; 
+        }
+    }
+
+    function removeBreadcrumNotAnchor(){
+
+        let anchor = document.createElement("a");
+
+        if(lastListNode.lastChild !== undefined && lastListNode.lastChild !== null){
+            if(lastListNode.lastChild.nodeName === anchor.nodeName){
+                return;
+            } 
+        
+            breadcrumb.removeChild(lastListNode);
+        }
+
+    }
+
+    }
+
+</script>
+
+<!--[if gte IE 9 | !IE ]><!-->
+<script src="/wet-boew4b/js/wet-boew.min.js"></script>
+<script src="/wet-boew4b/js/theme.min.js"></script>
+<!--<![endif]-->
+<!--[if lt IE 9]>
+<script src="/wet-boew4b/js/ie8-wet-boew2.min.js"></script>
+<![endif]-->
+<!-- InvitationManager -->
+<script src="/wet-boew4b/invitation-manager/Overlay.js"></script>
+<script src="/wet-boew4b/invitation-manager/InvitationManager.js"></script>
+<!-- End InvitationManager -->
+<script type="text/javascript">_satellite.pageBottom();</script> 
+
+<!-- CustomScriptsJSStart --> 
+<script>
+$(document).ready(function() {
+var refs = $('sup'); 
+
+for(i = 0; i < refs.length; i++){	
+var ftnId = $(refs[i]).attr('id');
+
+if(typeof ftnId !== "undefined"){
+var hyphen = ftnId.lastIndexOf("-");
+var ntId = ftnId.substring(ftnId,hyphen);
+var ntDisplay = '#'+ntId;
+var ftDisplay = '#'+ftnId;
+$(ftDisplay).tooltipster({
+maxWidth:500, 
+touchDevices:false, 
+interactive: true, 
+content: $(' <p>'+$(ntDisplay).find('p').html()+'</p> ')
+});	
+}else{
+//nothing
+}
+}
+});
+
+</script> 
+<!-- CustomScriptsJSEnd -->
+
+</body>
+</html>

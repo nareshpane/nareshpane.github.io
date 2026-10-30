@@ -1,0 +1,1 @@
+{"period":"2026-09","values":{"CPI-trim":1.8,"CPI-median":1.9,"CPI-common":2.4},"source":"https://www.bankofcanada.ca/rates/price-indexes/cpi/","method":"Extract the 2026-09 HTML row by semantic column headers; compare with release PDF Table 4."}

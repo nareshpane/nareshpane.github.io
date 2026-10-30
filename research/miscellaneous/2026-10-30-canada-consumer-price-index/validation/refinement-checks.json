@@ -1,0 +1,710 @@
+{
+  "source": "references/geographical-release-2026-09.html",
+  "source_comparisons": 70,
+  "failures": [],
+  "illustrations_hash_verified": 9,
+  "baseline_data_and_replication_unchanged": true,
+  "regional_share_sum_before_normalization": 100.0,
+  "geographical_rows": [
+    {
+      "geography": "Canada",
+      "metric": "Sep 2025 index",
+      "official": 164.9,
+      "calculated": 164.9,
+      "difference": 0.0,
+      "tolerance": 1e-08,
+      "vector": "v41690973",
+      "passed": true
+    },
+    {
+      "geography": "Canada",
+      "metric": "Aug 2026 index",
+      "official": 169.8,
+      "calculated": 169.8,
+      "difference": 0.0,
+      "tolerance": 1e-08,
+      "vector": "v41690973",
+      "passed": true
+    },
+    {
+      "geography": "Canada",
+      "metric": "Sep 2026 index",
+      "official": 170.0,
+      "calculated": 170.0,
+      "difference": 0.0,
+      "tolerance": 1e-08,
+      "vector": "v41690973",
+      "passed": true
+    },
+    {
+      "geography": "Canada",
+      "metric": "MoM",
+      "official": 0.1,
+      "calculated": 0.11778563015312216,
+      "difference": 0.01778563015312215,
+      "tolerance": 0.050000000001,
+      "vector": "v41690973",
+      "passed": true
+    },
+    {
+      "geography": "Canada",
+      "metric": "YoY",
+      "official": 3.1,
+      "calculated": 3.092783505154628,
+      "difference": -0.007216494845371901,
+      "tolerance": 0.050000000001,
+      "vector": "v41690973",
+      "passed": true
+    },
+    {
+      "geography": "Newfoundland and Labrador",
+      "metric": "Sep 2025 index",
+      "official": 165.2,
+      "calculated": 165.2,
+      "difference": 0.0,
+      "tolerance": 1e-08,
+      "vector": "v41691244",
+      "passed": true
+    },
+    {
+      "geography": "Newfoundland and Labrador",
+      "metric": "Aug 2026 index",
+      "official": 172.4,
+      "calculated": 172.4,
+      "difference": 0.0,
+      "tolerance": 1e-08,
+      "vector": "v41691244",
+      "passed": true
+    },
+    {
+      "geography": "Newfoundland and Labrador",
+      "metric": "Sep 2026 index",
+      "official": 173.0,
+      "calculated": 173.0,
+      "difference": 0.0,
+      "tolerance": 1e-08,
+      "vector": "v41691244",
+      "passed": true
+    },
+    {
+      "geography": "Newfoundland and Labrador",
+      "metric": "MoM",
+      "official": 0.3,
+      "calculated": 0.34802784222738303,
+      "difference": 0.048027842227383044,
+      "tolerance": 0.050000000001,
+      "vector": "v41691244",
+      "passed": true
+    },
+    {
+      "geography": "Newfoundland and Labrador",
+      "metric": "YoY",
+      "official": 4.7,
+      "calculated": 4.72154963680389,
+      "difference": 0.021549636803889882,
+      "tolerance": 0.050000000001,
+      "vector": "v41691244",
+      "passed": true
+    },
+    {
+      "geography": "Prince Edward Island",
+      "metric": "Sep 2025 index",
+      "official": 168.1,
+      "calculated": 168.1,
+      "difference": 0.0,
+      "tolerance": 1e-08,
+      "vector": "v41691379",
+      "passed": true
+    },
+    {
+      "geography": "Prince Edward Island",
+      "metric": "Aug 2026 index",
+      "official": 176.1,
+      "calculated": 176.1,
+      "difference": 0.0,
+      "tolerance": 1e-08,
+      "vector": "v41691379",
+      "passed": true
+    },
+    {
+      "geography": "Prince Edward Island",
+      "metric": "Sep 2026 index",
+      "official": 177.6,
+      "calculated": 177.6,
+      "difference": 0.0,
+      "tolerance": 1e-08,
+      "vector": "v41691379",
+      "passed": true
+    },
+    {
+      "geography": "Prince Edward Island",
+      "metric": "MoM",
+      "official": 0.9,
+      "calculated": 0.8517887563884052,
+      "difference": -0.04821124361159479,
+      "tolerance": 0.050000000001,
+      "vector": "v41691379",
+      "passed": true
+    },
+    {
+      "geography": "Prince Edward Island",
+      "metric": "YoY",
+      "official": 5.7,
+      "calculated": 5.651397977394401,
+      "difference": -0.04860202260559898,
+      "tolerance": 0.050000000001,
+      "vector": "v41691379",
+      "passed": true
+    },
+    {
+      "geography": "Nova Scotia",
+      "metric": "Sep 2025 index",
+      "official": 168.6,
+      "calculated": 168.6,
+      "difference": 0.0,
+      "tolerance": 1e-08,
+      "vector": "v41691513",
+      "passed": true
+    },
+    {
+      "geography": "Nova Scotia",
+      "metric": "Aug 2026 index",
+      "official": 177.2,
+      "calculated": 177.2,
+      "difference": 0.0,
+      "tolerance": 1e-08,
+      "vector": "v41691513",
+      "passed": true
+    },
+    {
+      "geography": "Nova Scotia",
+      "metric": "Sep 2026 index",
+      "official": 178.1,
+      "calculated": 178.1,
+      "difference": 0.0,
+      "tolerance": 1e-08,
+      "vector": "v41691513",
+      "passed": true
+    },
+    {
+      "geography": "Nova Scotia",
+      "metric": "MoM",
+      "official": 0.5,
+      "calculated": 0.5079006772009009,
+      "difference": 0.00790067720090093,
+      "tolerance": 0.050000000001,
+      "vector": "v41691513",
+      "passed": true
+    },
+    {
+      "geography": "Nova Scotia",
+      "metric": "YoY",
+      "official": 5.6,
+      "calculated": 5.634638196915787,
+      "difference": 0.034638196915786956,
+      "tolerance": 0.050000000001,
+      "vector": "v41691513",
+      "passed": true
+    },
+    {
+      "geography": "New Brunswick",
+      "metric": "Sep 2025 index",
+      "official": 164.4,
+      "calculated": 164.4,
+      "difference": 0.0,
+      "tolerance": 1e-08,
+      "vector": "v41691648",
+      "passed": true
+    },
+    {
+      "geography": "New Brunswick",
+      "metric": "Aug 2026 index",
+      "official": 171.9,
+      "calculated": 171.9,
+      "difference": 0.0,
+      "tolerance": 1e-08,
+      "vector": "v41691648",
+      "passed": true
+    },
+    {
+      "geography": "New Brunswick",
+      "metric": "Sep 2026 index",
+      "official": 172.6,
+      "calculated": 172.6,
+      "difference": 0.0,
+      "tolerance": 1e-08,
+      "vector": "v41691648",
+      "passed": true
+    },
+    {
+      "geography": "New Brunswick",
+      "metric": "MoM",
+      "official": 0.4,
+      "calculated": 0.40721349621872793,
+      "difference": 0.007213496218727911,
+      "tolerance": 0.050000000001,
+      "vector": "v41691648",
+      "passed": true
+    },
+    {
+      "geography": "New Brunswick",
+      "metric": "YoY",
+      "official": 5.0,
+      "calculated": 4.987834549878345,
+      "difference": -0.012165450121655041,
+      "tolerance": 0.050000000001,
+      "vector": "v41691648",
+      "passed": true
+    },
+    {
+      "geography": "Quebec",
+      "metric": "Sep 2025 index",
+      "official": 162.6,
+      "calculated": 162.6,
+      "difference": 0.0,
+      "tolerance": 1e-08,
+      "vector": "v41691783",
+      "passed": true
+    },
+    {
+      "geography": "Quebec",
+      "metric": "Aug 2026 index",
+      "official": 166.9,
+      "calculated": 166.9,
+      "difference": 0.0,
+      "tolerance": 1e-08,
+      "vector": "v41691783",
+      "passed": true
+    },
+    {
+      "geography": "Quebec",
+      "metric": "Sep 2026 index",
+      "official": 167.7,
+      "calculated": 167.7,
+      "difference": 0.0,
+      "tolerance": 1e-08,
+      "vector": "v41691783",
+      "passed": true
+    },
+    {
+      "geography": "Quebec",
+      "metric": "MoM",
+      "official": 0.5,
+      "calculated": 0.47932893948470223,
+      "difference": -0.020671060515297768,
+      "tolerance": 0.050000000001,
+      "vector": "v41691783",
+      "passed": true
+    },
+    {
+      "geography": "Quebec",
+      "metric": "YoY",
+      "official": 3.1,
+      "calculated": 3.136531365313644,
+      "difference": 0.03653136531364387,
+      "tolerance": 0.050000000001,
+      "vector": "v41691783",
+      "passed": true
+    },
+    {
+      "geography": "Ontario",
+      "metric": "Sep 2025 index",
+      "official": 166.1,
+      "calculated": 166.1,
+      "difference": 0.0,
+      "tolerance": 1e-08,
+      "vector": "v41691919",
+      "passed": true
+    },
+    {
+      "geography": "Ontario",
+      "metric": "Aug 2026 index",
+      "official": 170.0,
+      "calculated": 170.0,
+      "difference": 0.0,
+      "tolerance": 1e-08,
+      "vector": "v41691919",
+      "passed": true
+    },
+    {
+      "geography": "Ontario",
+      "metric": "Sep 2026 index",
+      "official": 170.3,
+      "calculated": 170.3,
+      "difference": 0.0,
+      "tolerance": 1e-08,
+      "vector": "v41691919",
+      "passed": true
+    },
+    {
+      "geography": "Ontario",
+      "metric": "MoM",
+      "official": 0.2,
+      "calculated": 0.17647058823531125,
+      "difference": -0.023529411764688757,
+      "tolerance": 0.050000000001,
+      "vector": "v41691919",
+      "passed": true
+    },
+    {
+      "geography": "Ontario",
+      "metric": "YoY",
+      "official": 2.5,
+      "calculated": 2.5285972305840065,
+      "difference": 0.02859723058400654,
+      "tolerance": 0.050000000001,
+      "vector": "v41691919",
+      "passed": true
+    },
+    {
+      "geography": "Manitoba",
+      "metric": "Sep 2025 index",
+      "official": 165.0,
+      "calculated": 165.0,
+      "difference": 0.0,
+      "tolerance": 1e-08,
+      "vector": "v41692055",
+      "passed": true
+    },
+    {
+      "geography": "Manitoba",
+      "metric": "Aug 2026 index",
+      "official": 172.1,
+      "calculated": 172.1,
+      "difference": 0.0,
+      "tolerance": 1e-08,
+      "vector": "v41692055",
+      "passed": true
+    },
+    {
+      "geography": "Manitoba",
+      "metric": "Sep 2026 index",
+      "official": 172.2,
+      "calculated": 172.2,
+      "difference": 0.0,
+      "tolerance": 1e-08,
+      "vector": "v41692055",
+      "passed": true
+    },
+    {
+      "geography": "Manitoba",
+      "metric": "MoM",
+      "official": 0.1,
+      "calculated": 0.05810575246949501,
+      "difference": -0.041894247530505,
+      "tolerance": 0.050000000001,
+      "vector": "v41692055",
+      "passed": true
+    },
+    {
+      "geography": "Manitoba",
+      "metric": "YoY",
+      "official": 4.4,
+      "calculated": 4.363636363636347,
+      "difference": -0.03636363636365303,
+      "tolerance": 0.050000000001,
+      "vector": "v41692055",
+      "passed": true
+    },
+    {
+      "geography": "Saskatchewan",
+      "metric": "Sep 2025 index",
+      "official": 166.5,
+      "calculated": 166.5,
+      "difference": 0.0,
+      "tolerance": 1e-08,
+      "vector": "v41692191",
+      "passed": true
+    },
+    {
+      "geography": "Saskatchewan",
+      "metric": "Aug 2026 index",
+      "official": 172.0,
+      "calculated": 172.0,
+      "difference": 0.0,
+      "tolerance": 1e-08,
+      "vector": "v41692191",
+      "passed": true
+    },
+    {
+      "geography": "Saskatchewan",
+      "metric": "Sep 2026 index",
+      "official": 172.0,
+      "calculated": 172.0,
+      "difference": 0.0,
+      "tolerance": 1e-08,
+      "vector": "v41692191",
+      "passed": true
+    },
+    {
+      "geography": "Saskatchewan",
+      "metric": "MoM",
+      "official": 0.0,
+      "calculated": 0.0,
+      "difference": 0.0,
+      "tolerance": 0.050000000001,
+      "vector": "v41692191",
+      "passed": true
+    },
+    {
+      "geography": "Saskatchewan",
+      "metric": "YoY",
+      "official": 3.3,
+      "calculated": 3.3033033033033066,
+      "difference": 0.0033033033033067483,
+      "tolerance": 0.050000000001,
+      "vector": "v41692191",
+      "passed": true
+    },
+    {
+      "geography": "Alberta",
+      "metric": "Sep 2025 index",
+      "official": 172.4,
+      "calculated": 172.4,
+      "difference": 0.0,
+      "tolerance": 1e-08,
+      "vector": "v41692327",
+      "passed": true
+    },
+    {
+      "geography": "Alberta",
+      "metric": "Aug 2026 index",
+      "official": 179.2,
+      "calculated": 179.2,
+      "difference": 0.0,
+      "tolerance": 1e-08,
+      "vector": "v41692327",
+      "passed": true
+    },
+    {
+      "geography": "Alberta",
+      "metric": "Sep 2026 index",
+      "official": 178.6,
+      "calculated": 178.6,
+      "difference": 0.0,
+      "tolerance": 1e-08,
+      "vector": "v41692327",
+      "passed": true
+    },
+    {
+      "geography": "Alberta",
+      "metric": "MoM",
+      "official": -0.3,
+      "calculated": -0.33482142857143016,
+      "difference": -0.03482142857143017,
+      "tolerance": 0.050000000001,
+      "vector": "v41692327",
+      "passed": true
+    },
+    {
+      "geography": "Alberta",
+      "metric": "YoY",
+      "official": 3.6,
+      "calculated": 3.596287703016232,
+      "difference": -0.00371229698376796,
+      "tolerance": 0.050000000001,
+      "vector": "v41692327",
+      "passed": true
+    },
+    {
+      "geography": "British Columbia",
+      "metric": "Sep 2025 index",
+      "official": 158.8,
+      "calculated": 158.8,
+      "difference": 0.0,
+      "tolerance": 1e-08,
+      "vector": "v41692462",
+      "passed": true
+    },
+    {
+      "geography": "British Columbia",
+      "metric": "Aug 2026 index",
+      "official": 163.8,
+      "calculated": 163.8,
+      "difference": 0.0,
+      "tolerance": 1e-08,
+      "vector": "v41692462",
+      "passed": true
+    },
+    {
+      "geography": "British Columbia",
+      "metric": "Sep 2026 index",
+      "official": 163.5,
+      "calculated": 163.5,
+      "difference": 0.0,
+      "tolerance": 1e-08,
+      "vector": "v41692462",
+      "passed": true
+    },
+    {
+      "geography": "British Columbia",
+      "metric": "MoM",
+      "official": -0.2,
+      "calculated": -0.1831501831501936,
+      "difference": 0.01684981684980641,
+      "tolerance": 0.050000000001,
+      "vector": "v41692462",
+      "passed": true
+    },
+    {
+      "geography": "British Columbia",
+      "metric": "YoY",
+      "official": 3.0,
+      "calculated": 2.9596977329974683,
+      "difference": -0.0403022670025317,
+      "tolerance": 0.050000000001,
+      "vector": "v41692462",
+      "passed": true
+    },
+    {
+      "geography": "Whitehorse, Yukon",
+      "metric": "Sep 2025 index",
+      "official": 164.4,
+      "calculated": 164.4,
+      "difference": 0.0,
+      "tolerance": 1e-08,
+      "vector": "v41692598",
+      "passed": true
+    },
+    {
+      "geography": "Whitehorse, Yukon",
+      "metric": "Aug 2026 index",
+      "official": 175.0,
+      "calculated": 175.0,
+      "difference": 0.0,
+      "tolerance": 1e-08,
+      "vector": "v41692598",
+      "passed": true
+    },
+    {
+      "geography": "Whitehorse, Yukon",
+      "metric": "Sep 2026 index",
+      "official": 174.4,
+      "calculated": 174.4,
+      "difference": 0.0,
+      "tolerance": 1e-08,
+      "vector": "v41692598",
+      "passed": true
+    },
+    {
+      "geography": "Whitehorse, Yukon",
+      "metric": "MoM",
+      "official": -0.3,
+      "calculated": -0.34285714285714475,
+      "difference": -0.04285714285714476,
+      "tolerance": 0.050000000001,
+      "vector": "v41692598",
+      "passed": true
+    },
+    {
+      "geography": "Whitehorse, Yukon",
+      "metric": "YoY",
+      "official": 6.1,
+      "calculated": 6.082725060827254,
+      "difference": -0.017274939172745363,
+      "tolerance": 0.050000000001,
+      "vector": "v41692598",
+      "passed": true
+    },
+    {
+      "geography": "Yellowknife, Northwest Territories",
+      "metric": "Sep 2025 index",
+      "official": 162.4,
+      "calculated": 162.4,
+      "difference": 0.0,
+      "tolerance": 1e-08,
+      "vector": "v41692722",
+      "passed": true
+    },
+    {
+      "geography": "Yellowknife, Northwest Territories",
+      "metric": "Aug 2026 index",
+      "official": 170.8,
+      "calculated": 170.8,
+      "difference": 0.0,
+      "tolerance": 1e-08,
+      "vector": "v41692722",
+      "passed": true
+    },
+    {
+      "geography": "Yellowknife, Northwest Territories",
+      "metric": "Sep 2026 index",
+      "official": 170.0,
+      "calculated": 170.0,
+      "difference": 0.0,
+      "tolerance": 1e-08,
+      "vector": "v41692722",
+      "passed": true
+    },
+    {
+      "geography": "Yellowknife, Northwest Territories",
+      "metric": "MoM",
+      "official": -0.5,
+      "calculated": -0.4683840749414636,
+      "difference": 0.03161592505853639,
+      "tolerance": 0.050000000001,
+      "vector": "v41692722",
+      "passed": true
+    },
+    {
+      "geography": "Yellowknife, Northwest Territories",
+      "metric": "YoY",
+      "official": 4.7,
+      "calculated": 4.679802955665013,
+      "difference": -0.020197044334986813,
+      "tolerance": 0.050000000001,
+      "vector": "v41692722",
+      "passed": true
+    },
+    {
+      "geography": "Iqaluit, Nunavut",
+      "metric": "Sep 2025 index",
+      "official": 145.2,
+      "calculated": 145.2,
+      "difference": 0.0,
+      "tolerance": 1e-08,
+      "vector": "v41713432",
+      "passed": true
+    },
+    {
+      "geography": "Iqaluit, Nunavut",
+      "metric": "Aug 2026 index",
+      "official": 150.6,
+      "calculated": 150.6,
+      "difference": 0.0,
+      "tolerance": 1e-08,
+      "vector": "v41713432",
+      "passed": true
+    },
+    {
+      "geography": "Iqaluit, Nunavut",
+      "metric": "Sep 2026 index",
+      "official": 149.6,
+      "calculated": 149.6,
+      "difference": 0.0,
+      "tolerance": 1e-08,
+      "vector": "v41713432",
+      "passed": true
+    },
+    {
+      "geography": "Iqaluit, Nunavut",
+      "metric": "MoM",
+      "official": -0.7,
+      "calculated": -0.6640106241699861,
+      "difference": 0.035989375830013826,
+      "tolerance": 0.050000000001,
+      "vector": "v41713432",
+      "passed": true
+    },
+    {
+      "geography": "Iqaluit, Nunavut",
+      "metric": "YoY",
+      "official": 3.0,
+      "calculated": 3.0303030303030276,
+      "difference": 0.03030303030302761,
+      "tolerance": 0.050000000001,
+      "vector": "v41713432",
+      "passed": true
+    }
+  ]
+}

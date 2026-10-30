@@ -1,0 +1,385 @@
+
+--- PDF PAGE 1 ---
+Consumer Price Index, September 2026
+Released at 8:30 a.m. Eastern time in The Daily, Monday, October 19, 2026
+The Consumer Price Index (CPI) rose 3.1% year over year in September, following a 3.0% increase in August. The
+acceleration was led by higher prices for gasoline in September (+27.8%) compared with August (+22.8%).
+Excluding gasoline, the CPI rose 2.2%, after increasing 2.4% in August.
+Moderating the acceleration in the all-items CPI in September were smaller year-over-year price increases for travel
+tours and groceries compared with the previous month.
+The CPI increased 0.1% month over month in September. On a seasonally adjusted monthly basis, the CPI
+rose 0.4%.
+Chart 1
+The 12-month change in the Consumer Price Index (CPI) and CPI excluding gasoline
+ 
+12-month % change
+1
+2
+3
+4
+5
+6
+7
+8
+9
+Sept.
+2021 2022 2023 2024 2025
+Sept.
+2026
+CPI CPI excluding gasoline
+Source(s): T able18-10-0004-01.
+
+--- PDF PAGE 2 ---
+The Daily, Monday, October 19, 2026
+Component of Statistics Canada catalogue no. 11-001-X2
+Chart 2
+Prices accelerate in three major components in September
+ 
+All-items Consumer Price Index
+Food
+Shelter
+Household operations, furnishings and equipment
+Clothing and footwear
+Transportation
+Health and personal care
+Recreation, education and reading
+Alcoholic beverages, tobacco products and recreational cannabis
+0 2 4 6 8 10
+12-month % change
+August 2026
+September 2026
+Source(s): T able18-10-0004-01.
+Energy prices increase at a faster pace
+Prices for energy accelerated in September, rising 19.0% year over year following a 15.4% gain in August. Crude oil
+prices increased in September, reaching their highest level since May amid ongoing uncertainty about the wars in
+the Middle East, resulting in higher prices for gasoline and fuel oil.
+Year over year, prices for gasoline rose at a faster pace in September (+27.8%) compared with August (+22.8%).
+Moderating the increase in gasoline prices in September was the switch to the less expensive winter blend.
+Similarly, prices for fuel oil and other fuels rose 57.8% year over year in September, following a 43.7% increase in
+August. The price increase in September had a greater impact on consumers in Atlantic Canada, where fuel oil is
+more widely used.
+
+--- PDF PAGE 3 ---
+The Daily, Monday, October 19, 2026
+Component of Statistics Canada catalogue no. 11-001-X 3
+Chart 3
+Prices for gasoline accelerate year over year
+ 
+12-month % change
+-20
+-15
+-10
+-5
+0
+5
+10
+15
+20
+25
+30
+35
+Sept.
+2025
+Sept.
+2026
+Source(s): T able18-10-0004-01.
+Grocery price growth continues to slow
+Prices for food purchased from stores rose 1.7% year over year in September, after increasing 2.8% in August.
+Although price levels remain high, this was the smallest yearly increase since May 2024 (+1.5%), and the second
+consecutive month where grocery price growth increased at a slower pace than the all-items CPI.
+Driving the year-over-year slowdown in grocery prices in September 2026 were declines in prices for fresh
+vegetables (-2.9%) and sugar and confectionery (-2.7%). Prices for other food preparations (+1.8%) and fresh or
+frozen beef (+8.7%) rose at a slower pace in September than in August (+2.8% and +11.0%, respectively), also
+contributing to the slowdown.
+Despite the year-over-year slowdown in prices for groceries, prices have increased 33.0% since September 2020.
+
+--- PDF PAGE 4 ---
+The Daily, Monday, October 19, 2026
+Component of Statistics Canada catalogue no. 11-001-X4
+Chart 4
+Price growth in food purchased from stores slows, but prices remain elevated
+ 
+12-month % change 
+0
+2
+4
+6
+8
+10
+12
+Sept.
+2020 2021 2022 2023 2024 2025
+Sept.
+2026
+All-items Consumer Price Index Food purchased from stores
+Source(s): T able18-10-0004-01.
+Shelter prices increase year over year
+In September, shelter prices rose 1.8% year over year, up from a 1.5% increase in August. In addition to higher
+prices for fuel oil and other fuels (+57.8%), driving the acceleration was faster price growth for homeowners' home
+and mortgage insurance (+4.9%) and homeowners' maintenance and repairs (+1.2%).
+The homeowners' replacement cost (-1.9%) and mortgage interest cost (-0.2%) indexes fell at the same rate in
+September as they did in August. Meanwhile, prices for rent rose 2.8% year over year, matching the increase in
+August.
+Regional highlights
+Year over year, prices rose at a faster pace in five provinces in September compared with August, mainly due to
+higher prices for gasoline and fuel oil.
+Excluding energy, inflation was higher in Nova Scotia (+3.3%), Prince Edward Island (+2.6%), New Brunswick
+(+2.6%) and Newfoundland and Labrador (+2.4%) in September, compared with the movement at the national level
+(+2.1%). At the provincial level and on a year-over-year basis, rent prices rose at the fastest pace in Atlantic
+Canada.
+
+--- PDF PAGE 5 ---
+The Daily, Monday, October 19, 2026
+Component of Statistics Canada catalogue no. 11-001-X 5
+Chart 5
+The Consumer Price Index increases at a faster pace in five provinces
+ 
+Canada
+Newfoundland and Labrador
+Prince Edward Island
+Nova Scotia
+New Brunswick
+Quebec
+Ontario
+Manitoba
+Saskatchewan
+Alberta
+British Columbia
+0 2 4 6 8
+12-month % change
+August 2026 September 2026
+Source(s): T able18-10-0004-01.
+Students pay more for tuition in 2026 
+Tuition fees, priced annually in September, increased 2.4% in 2026 compared with a 1.7% increase in 2025.
+In 2026, students from Prince Edward Island (+4.9%) experienced the largest price increase. At the same time,
+students from Newfoundland and Labrador (+0.6%) had the smallest increase, coinciding with a freeze on tuition
+fees.
+Tuition fees in Ontario rose 2.1% year over year in 2026, the largest increase since 2018, as the province ended its
+freeze on tuition fees.
+
+--- PDF PAGE 6 ---
+The Daily, Monday, October 19, 2026
+Component of Statistics Canada catalogue no. 11-001-X6
+Note to readers
+Explore the Consumer Price Index tools
+Visit the Consumer Price Index portal to find all Consumer Price Index (CPI) data, publications, interactive tools and announcements
+highlighting new products and upcoming changes to the CPI in one convenient location.
+Check out the Personal Inflation Calculator . This interactive calculator allows you to enter dollar amounts in the common expense
+categories to produce a personalized inflation rate, which you can compare with the official measure of inflation for the average Canadian
+household—the CPI.
+Browse the Consumer Price Index Data Visualization Tool to access current ( Latest Snapshot of the CPI ) and historical ( Price
+trends: 1914 to today) CPI data in a customizable visual format.
+Next release
+The CPI for October will be released on Monday, November 16.
+
+--- PDF PAGE 7 ---
+The Daily, Monday, October 19, 2026
+Component of Statistics Canada catalogue no. 11-001-X 7
+Table 1
+Consumer Price Index, major components and special aggregates, Canada – Not seasonally
+adjusted
+  September
+2025
+August
+2026
+September
+2026
+August to
+September 2026
+September 2025
+to September
+2026
+   (2002=100)  % change
+All-items 164.9 169.8 170.0 0.1 3.1
+Food 197.5 202.4 201.8 -0.3 2.2
+Shelter 188.2 190.9 191.5 0.3 1.8
+Household operations, furnishings and equipment 134.1 134.4 134.7 0.2 0.4
+Clothing and footwear 93.5 94.7 95.1 0.4 1.7
+Transportation 171.8 185.7 186.3 0.3 8.4
+Gasoline 209.4 252.2 267.6 6.1 27.8
+Health and personal care 155.8 158.8 158.5 -0.2 1.7
+Recreation, education and reading 129.6 135.9 135.6 -0.2 4.6
+Alcoholic beverages, tobacco products and recreational
+cannabis 200.8 203.9 204.1 0.1 1.6
+ 
+Special aggregates          
+All-items excluding food 159.1 163.9 164.2 0.2 3.2
+All-items excluding food and energy 155.4 158.8 158.6 -0.1 2.1
+All-items excluding alcoholic beverages, tobacco products
+and smokers' supplies and recreational cannabis 163.8 168.7 168.9 0.1 3.1
+All-items excluding energy 162.4 166.0 165.8 -0.1 2.1
+All-items excluding gasoline 163.2 167.0 166.8 -0.1 2.2
+Energy1 193.1 220.5 229.7 4.2 19.0
+Goods 146.0 150.5 151.4 0.6 3.7
+Durable goods 105.5 107.4 107.6 0.2 2.0
+Semi-durable goods 103.2 103.1 103.6 0.5 0.4
+Non-durable goods 184.6 193.2 194.9 0.9 5.6
+Services 183.5 188.7 188.2 -0.3 2.6
+1. The special aggregate "energy" comprises electricity; natural gas; fuel oil and other fuels; gasoline; and fuel, parts and accessories for recreational vehicles.
+Source(s): T ables18-10-0004-01.
+
+--- PDF PAGE 8 ---
+The Daily, Monday, October 19, 2026
+Component of Statistics Canada catalogue no. 11-001-X8
+Table 2
+Consumer Price Index for the provinces and for Whitehorse, Yellowknife and Iqaluit – Not
+seasonally adjusted
+  September
+2025
+August
+2026
+September
+2026
+August to
+September 2026
+September 2025
+to September
+2026
+   (2002=100)  % change
+Canada 164.9 169.8 170.0 0.1 3.1
+Newfoundland and Labrador 165.2 172.4 173.0 0.3 4.7
+Prince Edward Island 168.1 176.1 177.6 0.9 5.7
+Nova Scotia 168.6 177.2 178.1 0.5 5.6
+New Brunswick 164.4 171.9 172.6 0.4 5.0
+Quebec 162.6 166.9 167.7 0.5 3.1
+Ontario 166.1 170.0 170.3 0.2 2.5
+Manitoba 165.0 172.1 172.2 0.1 4.4
+Saskatchewan 166.5 172.0 172.0 0.0 3.3
+Alberta 172.4 179.2 178.6 -0.3 3.6
+British Columbia 158.8 163.8 163.5 -0.2 3.0
+Whitehorse 164.4 175.0 174.4 -0.3 6.1
+Y ellowknife 162.4 170.8 170.0 -0.5 4.7
+Iqaluit (Dec. 2002=100) 145.2 150.6 149.6 -0.7 3.0
+Source(s): T ables18-10-0004-01.
+Table 3
+Consumer Price Index, major components and special aggregates – Seasonally adjusted 1
+  July
+2026
+August
+2026
+September
+2026
+July to August
+2026
+August to
+September
+2026
+   (2002=100)  % change
+All-items 168.9 169.4 170.0 0.3 0.4
+Food 202.4 202.6 202.4 0.1 -0.1
+Shelter 190.3 190.9 191.5 0.3 0.3
+Household operations, furnishings and equipment 133.4 133.8 134.1 0.3 0.2
+Clothing and footwear 95.7 95.3 95.4 -0.4 0.1
+Transportation 183.8 184.7 186.9 0.5 1.2
+Health and personal care 158.3 158.4 158.1 0.1 -0.2
+Recreation, education and reading 133.8 134.7 134.7 0.7 0.0
+Alcoholic beverages, tobacco products and
+recreational cannabis 203.9 203.7 204.1 -0.1 0.2
+ 
+Special aggregates          
+All-items excluding food 163.0 163.4 164.1 0.2 0.4
+All-items excluding food and energy2 158.1 158.5 158.7 0.3 0.1
+1. A seasonally adjusted series is one from which seasonal movements have been eliminated. Each month, the previous month's seasonally adjusted index is
+subject to revision. On an annual basis, the seasonally adjusted values for the last three years are revised with the release of January data. Users employing
+Consumer Price Index (CPI) data for indexation purposes are advised to use the unadjusted indexes. For more information on the availability and uses of
+seasonally adjusted CPI data, please see the "Definitions, data sources and methods" section of survey ( 2301).
+2. The special aggregate "energy" comprises electricity; natural gas; fuel oil and other fuels; gasoline; and fuel, parts and accessories for recreational vehicles.
+Source(s): T able18-10-0006-01.
+
+--- PDF PAGE 9 ---
+The Daily, Monday, October 19, 2026
+Component of Statistics Canada catalogue no. 11-001-X 9
+Table 4
+Consumer Price Index (CPI) statistics, measures of core inflation – Bank of Canada definitions,
+Canada1,2
+  April
+2026
+May
+2026
+June
+2026
+July
+2026
+August
+2026
+September
+2026
+   year-over-year % change
+CPI-common3,5 2.6 2.7 2.6 2.7 2.6 2.4
+CPI-median4,6 2.1 2.1 1.9 2.0 2.0 1.9
+CPI-trim4,7 2.0 2.0 1.9 1.9 1.9 1.8
+   index (January 1989=100)
+CPI-median4,6 223.0 223.3 223.5 224.0 224.6 225.0
+CPI-trim4,7 218.8 219.3 219.5 220.0 220.5 220.9
+1. For more information on these measures of core inflation, please consult the methodology and general information documents found in the "Definitions, data
+sources and methods" section of survey ( 2301).
+2. The Bank of Canada's measures of core inflation, CPI-common, CPI-median and CPI-trim are subject to revision. In the case of CPI-median and CPI-trim, this
+results from the fact that these measures are based on seasonally adjusted price index series. In the case of CPI-common, revisions are due to the statistical
+technique used, as the factor model is estimated over all available historical data. T able 18-10-0259-01 contains the historical release data for these three
+measures and will be updated every month.
+3. This measure is based on the CPI series adjusted to remove the effect of changes in indirect taxes.
+4. This measure is based on CPI series that have been treated to remove the effect of changes in indirect taxes and that have been seasonally adjusted.
+5. CPI-common is a measure of core inflation that tracks common price changes across categories in the CPI basket.
+6. CPI-median is a measure of core inflation corresponding to the price change located at the 50th percentile (in terms of CPI basket weights) of the distribution of
+price changes in a given month.
+7. CPI-trim is a measure of core inflation that excludes CPI components whose rates of change in a given month are located in the tails of the distribution of price
+changes.
+Source(s): T able18-10-0256-01.
+
+--- PDF PAGE 10 ---
+The Daily, Monday, October 19, 2026
+Component of Statistics Canada catalogue no. 11-001-X10
+Table 5
+Main contributors to the 12-month and 1-month change in the Consumer Price Index
+  September 2025 to September 2026
+   % change
+Main contributors to the 12-month change  
+Main upward contributors  
+Gasoline 27.8
+Rent 2.8
+Air transportation 19.4
+Food purchased from restaurants 3.1
+Property taxes and other special charges 5.6
+ 
+Main downward contributors  
+Homeowners' replacement cost -1.9
+Natural gas -6.8
+Other owned accommodation expenses -1.5
+Fresh vegetables -2.9
+Financial services -0.8
+  August to September 2026
+   % change
+Main contributors to the 1-month change, not seasonally adjusted  
+Main upward contributors  
+Gasoline 6.1
+Tuition fees 2.4
+Rent 0.5
+Fuel oil and other fuels 10.5
+Purchase of digital media 23.0
+ 
+Main downward contributors  
+Air transportation -10.0
+Travel tours -6.3
+Traveller accommodation -7.4
+Fresh vegetables -3.1
+Sugar and confectionery -3.8
+Source(s): T able18-10-0004-01.
+
+--- PDF PAGE 11 ---
+The Daily, Monday, October 19, 2026
+Component of Statistics Canada catalogue no. 11-001-X 11
+Available tables: 18-10-0001-01, 18-10-0004-01, 18-10-0006-01 and 18-10-0256-01.
+Definitions, data sources and methods: survey number 2301.
+The "Consumer Price Index Data Visualization T ool" is available on the Statistics Canada website.
+More information on the concepts and use of the Consumer Price Index (CPI) is available in The Canadian
+Consumer Price Index Reference Paper (62-553-X).
+For information on the history of the CPI in Canada, consult the publication Exploring the first century of
+Canada's Consumer Price Index (62-604-X).
+Two videos, " An Overview of Canada's Consumer Price Index (CPI) " and " The Consumer Price Index and
+Your Experience of Price Change ," are available on Statistics Canada's YouTube channel.
+The podcast '' Eh Sayers Episode 18 - Why Food Inflation Is Such A Hard Nut To Crack '' is also available.
+Find out answers to the most common questions posed about the CPI in the context of the
+COVID-19 pandemic and beyond.
+For more information, or to enquire about the concepts, methods or data quality of this release, contact us
+(toll-free 1-800-263-1136; 514-283-8300; infostats@statcan.gc.ca) or Media Relations
+(statcan.mediahotline-ligneinfomedias.statcan@statcan.gc.ca).

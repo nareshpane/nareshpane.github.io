@@ -1,0 +1,456 @@
+{
+  "scope": "D:\\GitHub\\nareshpane.github.io\\research\\miscellaneous\\2026-10-30-canada-consumer-price-index",
+  "source_and_script_files_searched": 36,
+  "original_inputs_protected": 30,
+  "original_supplied_images_protected": 9,
+  "retained_roles": [
+    "All PDFs, SDMX/XML, downloaded ZIPs, data wrappers, processed source datasets, scripts, manifests and numerical validation reports.",
+    "release-table1.png is retained as source-table inspection evidence.",
+    "refined-hero-1440.jpg and refined-hero-390.jpg are retained and refreshed; desktop-weights.jpg and detail-sample-frame.jpg likewise."
+  ],
+  "candidates": [],
+  "retained_due_to_references": [],
+  "removed_files": [
+    {
+      "file": "scripts/__pycache__/refinement_content.cpython-312.pyc",
+      "bytes": 29973,
+      "sha256": "6f7fe07dd5f37264124ba5b54065b32149c99bff059b65008117573eea3a2ed4",
+      "references": [],
+      "reason": "Regenerable Python import cache; corresponding .py source retained."
+    },
+    {
+      "file": "validation/chapter-review-1.jpg",
+      "bytes": 369171,
+      "sha256": "ec81617cad5e4324b4a808d2ecb10dc1b417aeb0e3b7ee065fcc259f1832ab1c",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/chapter-review-2.jpg",
+      "bytes": 314770,
+      "sha256": "7267a2917396c19c643745f04769a503bf6526f63e8d5f09b50c7fcb250064f3",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/chapter-review-3.jpg",
+      "bytes": 355790,
+      "sha256": "6d43dd6c73f83af19ab7eafc92739a7c79e601224ee065498655f09592906491",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/chapter-s01-1440.jpg",
+      "bytes": 124854,
+      "sha256": "4db401a25931070517f66b944fe48c0face0d81911e4fb3a778573a85381623f",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/chapter-s01-390.jpg",
+      "bytes": 55380,
+      "sha256": "3b6d0bf7cb5ae5500ae292c4004159f9213aa45310e04ba9781e0fa0d09c2f69",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/chapter-s02-1440.jpg",
+      "bytes": 119115,
+      "sha256": "081ea05bce50a6a8ab611e8fc81a0ca398f88a259a7f74198d4e1028bb53825c",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/chapter-s02-390.jpg",
+      "bytes": 52592,
+      "sha256": "83f3bcc8120f19b6944e881124f2e77b7f68ab083275a14f983740c7d4ceddfb",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/chapter-s03-1440.jpg",
+      "bytes": 140117,
+      "sha256": "5c8ddd4cd3583b7a9d098d47e84a846d9b10d47bc574ab48c0fc04e7de778de2",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/chapter-s03-390.jpg",
+      "bytes": 51601,
+      "sha256": "624367f8039a8e255355773c3b2e816daaddc2658f3cba4eb865a8557b4a67b7",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/chapter-s04-1440.jpg",
+      "bytes": 109420,
+      "sha256": "d641ee929dc1e45e6e70fab06db368a9224dae27679a006cd524b156762a492f",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/chapter-s04-390.jpg",
+      "bytes": 53426,
+      "sha256": "8d0c10a01563b8b847d672156cdb1d4f9841188be272bdb4972043dcad3699f5",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/chapter-s05-1440.jpg",
+      "bytes": 149576,
+      "sha256": "becff602090ea1a67999e8967efb9cea7ab6014e05ed0a77167dc1307aa037f7",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/chapter-s05-390.jpg",
+      "bytes": 63610,
+      "sha256": "fd0f095a6e78d7fcbd87a85abe9267c9bc46b892599af79ca816abb704cac493",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/chapter-s06-1440.jpg",
+      "bytes": 111822,
+      "sha256": "6e8f03d1140cc17e253f0043706647a20444d2185626a322bcf1196aa24c3003",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/chapter-s06-390.jpg",
+      "bytes": 55257,
+      "sha256": "e1fd8e2daf34bd236f365ae059fff445661673fd2d123746aecf76e0a13c0501",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/chapter-s07-1440.jpg",
+      "bytes": 118936,
+      "sha256": "c36ddb07b1e0664eeb880ff979da667d6caa5107c71ad17d97091c56cd16bd1d",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/chapter-s07-390.jpg",
+      "bytes": 55420,
+      "sha256": "e4f71d5f3ce0f0e2a58e6fc8ab3fcae7974466803f9b9a1dd6a7b078f93a3902",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/chapter-s08-1440.jpg",
+      "bytes": 122577,
+      "sha256": "ba734a5ea6d676ed5085797eb70eb24b831ca6fd1d7df916a31a443a24bc2ac5",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/chapter-s08-390.jpg",
+      "bytes": 53395,
+      "sha256": "f54a3ae8a0cb90840a2e09391924245b066da603c805f7d9477579765d7e8fa4",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/chapter-s09-1440.jpg",
+      "bytes": 97907,
+      "sha256": "64e738ea9f19faac44659e09f09ce6f3caa94994b335e78a58d9fed48108dc49",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/chapter-s09-390.jpg",
+      "bytes": 49818,
+      "sha256": "bdd4bc7e2fec3e9fe5ed34690c898fba82d787e95ee4e83a9a0575e8990aaaa3",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/chapter-s10-1440.jpg",
+      "bytes": 84235,
+      "sha256": "ba6ddc1fcea45100c5c0f25b029b6a922d8dacf9dc2e14c2050e15556dc070ec",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/chapter-s10-390.jpg",
+      "bytes": 39644,
+      "sha256": "86e57ae3a18e1db101ee21c8d32720003c7387ba38ca082191eb5ffd55aedcf8",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/chapter-s11-1440.jpg",
+      "bytes": 114582,
+      "sha256": "8f5f25bed9895706d825acba50ac7194e6d58615641856d686e76ba6256a28f6",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/chapter-s11-390.jpg",
+      "bytes": 56458,
+      "sha256": "76503260b73d3450a99f488cce2385b1fe659c6369aa42b6c60a9ebd6644015b",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/chapter-s12-1440.jpg",
+      "bytes": 90844,
+      "sha256": "dcda629fea8e91129d2a8ad9a6a64bfea85eb27bb1d6c2eda1cd34063c00434b",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/chapter-s12-390.jpg",
+      "bytes": 44194,
+      "sha256": "8a1f5bb3d7c509dde4d54f6829ee0b505098e8b729aeb80ed91719913437d18b",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/chapter-s13-1440.jpg",
+      "bytes": 119021,
+      "sha256": "628994071a850be634de758fdc04fa18b5c0e4976bdcb99c9dbdacafd4151b84",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/chapter-s13-390.jpg",
+      "bytes": 56949,
+      "sha256": "ada6599ec77ba7aab77b59443b9887356ffbc9f33cfde3831d6866508eaf3c10",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/chapter-s14-1440.jpg",
+      "bytes": 97341,
+      "sha256": "ee52c20d76fb23867b04a944b524112dc369b330e60472818cb39e8cb730f685",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/chapter-s14-390.jpg",
+      "bytes": 48570,
+      "sha256": "f1709bf7ed4f581b3e3256691f73547e409c3866c6c37f45d7ccdb01f45da1d8",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/chapter-s15-1440.jpg",
+      "bytes": 117379,
+      "sha256": "bb5aac290ec2e6259d0100070a462ca5abe4c28349da82c7bf8679455561df20",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/chapter-s15-390.jpg",
+      "bytes": 46456,
+      "sha256": "177b5eb82e8dddbe29be75883224c88694bb3b299ca77d93b5e99fcb1d01e2c1",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/chapter-s16-1440.jpg",
+      "bytes": 132124,
+      "sha256": "e767fe9eedb4164c0ab9a9922b41924c768f34588b2b365120720d1af196c060",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/chapter-s16-390.jpg",
+      "bytes": 46249,
+      "sha256": "929f9c8229a520fb115eda3c12bea116435d96440a93eac010d03025488a892e",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/chapter-s17-1440.jpg",
+      "bytes": 128266,
+      "sha256": "f0c9e317a7a8c7a1bbdaed83429569226f35917fd49800e33cd339aaac7fd329",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/chapter-s17-390.jpg",
+      "bytes": 65122,
+      "sha256": "2e83c9743fda72e0ef39ffe8c93f954d550422d4b23d21fd86ba3cd3ed7c2332",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/chapter-s18-1440.jpg",
+      "bytes": 140131,
+      "sha256": "4be882e192005c1a0abdf3b6d7a7e857e16e8dbbfffc7ad77c69002b1138e2af",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/chapter-s18-390.jpg",
+      "bytes": 31292,
+      "sha256": "042893c37b74487be2c1bb1a1b947a5f5f0fb90bccb09c7fa39498bf9b89421f",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/detail-classification.jpg",
+      "bytes": 142934,
+      "sha256": "ea40e043954c3489e69fd26abc5a448d2757a9dcdec4bf5db39cfc2061c19641",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/detail-continuous-branch.jpg",
+      "bytes": 133744,
+      "sha256": "9d84f3163da6fb17b4126ef7ee0dfc0467c01b35b66e47414943b5d221a45852",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/detail-geo-multi.jpg",
+      "bytes": 90199,
+      "sha256": "c24964f493e9d20613082b316d705eba69891ee0170c4042e7f5ee79fe29a290",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/detail-mini-price-progress.jpg",
+      "bytes": 164659,
+      "sha256": "776a1f03d07476950e47831a92b0040ecaf0c89a47334aa24e7a6ee48d6e0f51",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/detail-official-walkthrough.jpg",
+      "bytes": 136617,
+      "sha256": "81b093b326806f026636bb407b5cc5aa7663e8fa859d6c249181ddad465aea4e",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/detail-province-ranking.jpg",
+      "bytes": 72680,
+      "sha256": "937a53d1cfcb21cbbb38d4940d189f16f0fbf669aa67f0f20132320de77c4f0c",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/detail-quality-value.jpg",
+      "bytes": 135691,
+      "sha256": "829d15407b78242aecbe1f7767b4d83ddc47ffb87fff853ad25fe6f0874353e4",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/detail-region-model-select.jpg",
+      "bytes": 185475,
+      "sha256": "60cbf8cef615d1315f79c47bb5ea88d1ff7390e1a5e3ff0941d8e067273f1aaa",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/detail-regional-components-chart.jpg",
+      "bytes": 109412,
+      "sha256": "24d7b3363b50998e4f92611ade0cea0147efb986ea1eb7331adeefde1edac643",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/detail-review-1.jpg",
+      "bytes": 306932,
+      "sha256": "e135042bbd35b4e2fd15e5553885dfb10c5b21866200f262e4184e5ccc916d7e",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/detail-review-2.jpg",
+      "bytes": 251369,
+      "sha256": "1fcc11668246d04d9d7d9d6b0d1db48374b9372560826aaf4a3330d6ee794b07",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/detail-review-3.jpg",
+      "bytes": 283186,
+      "sha256": "50058d1e66ce189173d3e746c6bf1fac36589931dbf20c47dc95302550d07efd",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/detail-set-view.jpg",
+      "bytes": 113077,
+      "sha256": "99b8c343a8cab0b5f8a2336c4fb0aba82b1fc2280afe2bf0a85fa0d7e0d46cd0",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/detail-weighted-milk-price.jpg",
+      "bytes": 123893,
+      "sha256": "3416bc4d10f76167059ffa319506c14285368eebb86ce275a0f078f15d2fbe19",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/mobile-review-1.jpg",
+      "bytes": 502719,
+      "sha256": "248dc14ebdaac81b6bd0151871ef0cd767cfd8da095514d56c5338d79033c4be",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/mobile-review-2.jpg",
+      "bytes": 458646,
+      "sha256": "95091325169fa68d447a916d3753c29dc0ea896cfeb775c51e311f38977b9bf5",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/mobile-review-3.jpg",
+      "bytes": 452132,
+      "sha256": "93b69734af242c34b49b8beede66f6f0590d8a9426a4d6a021e5c2b3d11509dd",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/mobile-study.jpg",
+      "bytes": 40602,
+      "sha256": "a4cde1049bd9f25cd79f43f6cede3daa35843ca512f9ad6c4c35bf6a9b6d0b0e",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/refined-hero-1024.jpg",
+      "bytes": 117608,
+      "sha256": "86c0160d86132c8e4bb3b2527367d049ed0adb40725ce1d7367fd7186ef30d43",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/refined-hero-1280.jpg",
+      "bytes": 130562,
+      "sha256": "8dcd578e0308576086a31e0900d4cf37eab6cc67ff1c9f31171a3b034b6707e4",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/refined-hero-1600.jpg",
+      "bytes": 132119,
+      "sha256": "f7f4421938a76012c658c6fe6aa78a1115cb571c7fe87ec18ccf46dec0ae2239",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/refined-hero-1920.jpg",
+      "bytes": 136777,
+      "sha256": "bff4be3c7440ad2de26a2f4d43c1531856f9efa01d7f3e34f4dbe197b27c870d",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    },
+    {
+      "file": "validation/refined-hero-768.jpg",
+      "bytes": 54850,
+      "sha256": "cb04079d85654a5233a8eefa0a5cd754662115707cefd162fa821cd1c4e9e700",
+      "references": [],
+      "reason": "Superseded browser QA screenshot or contact sheet; final representative views and numerical reports retained."
+    }
+  ]
+}

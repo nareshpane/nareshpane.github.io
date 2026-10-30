@@ -1,0 +1,102 @@
+{
+  "console": [],
+  "rendered": {
+    "chapters": 18,
+    "chartAreas": 21,
+    "equationBoxes": 27,
+    "illustrations": [
+      {
+        "declaredHeight": "270",
+        "declaredWidth": "273",
+        "loaded": true,
+        "naturalHeight": 270,
+        "naturalWidth": 273,
+        "renderedHeight": 153.28750610351562,
+        "renderedWidth": 155,
+        "source": "2026-10-30-canada-consumer-price-index/images/shopper-trolley.png"
+      },
+      {
+        "declaredHeight": "307",
+        "declaredWidth": "326",
+        "loaded": true,
+        "naturalHeight": 307,
+        "naturalWidth": 326,
+        "renderedHeight": 169.5,
+        "renderedWidth": 180,
+        "source": "2026-10-30-canada-consumer-price-index/images/digital-wallet.png"
+      },
+      {
+        "declaredHeight": "258",
+        "declaredWidth": "300",
+        "loaded": true,
+        "naturalHeight": 258,
+        "naturalWidth": 300,
+        "renderedHeight": 133.3000030517578,
+        "renderedWidth": 155,
+        "source": "2026-10-30-canada-consumer-price-index/images/shopper-market.png"
+      },
+      {
+        "declaredHeight": "313",
+        "declaredWidth": "354",
+        "loaded": true,
+        "naturalHeight": 313,
+        "naturalWidth": 354,
+        "renderedHeight": 137.03750610351562,
+        "renderedWidth": 155,
+        "source": "2026-10-30-canada-consumer-price-index/images/online-selection.png"
+      },
+      {
+        "declaredHeight": "238",
+        "declaredWidth": "284",
+        "loaded": true,
+        "naturalHeight": 238,
+        "naturalWidth": 284,
+        "renderedHeight": 150.83750915527344,
+        "renderedWidth": 180,
+        "source": "2026-10-30-canada-consumer-price-index/images/mobile-clothing.png"
+      },
+      {
+        "declaredHeight": "303",
+        "declaredWidth": "318",
+        "loaded": true,
+        "naturalHeight": 303,
+        "naturalWidth": 318,
+        "renderedHeight": 171.5,
+        "renderedWidth": 180,
+        "source": "2026-10-30-canada-consumer-price-index/images/food-service.png"
+      },
+      {
+        "declaredHeight": "280",
+        "declaredWidth": "395",
+        "loaded": true,
+        "naturalHeight": 280,
+        "naturalWidth": 395,
+        "renderedHeight": 109.8625030517578,
+        "renderedWidth": 155,
+        "source": "2026-10-30-canada-consumer-price-index/images/city-skyline.png"
+      },
+      {
+        "declaredHeight": "292",
+        "declaredWidth": "347",
+        "loaded": true,
+        "naturalHeight": 292,
+        "naturalWidth": 347,
+        "renderedHeight": 151.46250915527344,
+        "renderedWidth": 180,
+        "source": "2026-10-30-canada-consumer-price-index/images/residential-neighbourhood.png"
+      },
+      {
+        "declaredHeight": "274",
+        "declaredWidth": "323",
+        "loaded": true,
+        "naturalHeight": 274,
+        "naturalWidth": 323,
+        "renderedHeight": 152.6875,
+        "renderedWidth": 180,
+        "source": "2026-10-30-canada-consumer-price-index/images/residential-towers.png"
+      }
+    ],
+    "mathErrors": 0,
+    "players": 6
+  }
+}

@@ -1,0 +1,200 @@
+[
+  {
+    "open": [
+      "3",
+      "79"
+    ],
+    "test": "Independent classification expansion"
+  },
+  {
+    "formula": "G\\cup S=U,\\quad G\\cap S=\\varnothing",
+    "test": "Goods/services partition"
+  },
+  {
+    "excluded": 7,
+    "formula": "(U\\setminus E)\\subseteq(U\\setminus G)",
+    "included": 3,
+    "test": "Overlapping energy membership"
+  },
+  {
+    "excluded": 5,
+    "included": 5,
+    "test": "Food and energy exclusion"
+  },
+  {
+    "elementary": "Inputs: Offer A $4.00 → $4.40; Offer B $5.00 → $8.00. Relatives 1.1000 and 1.6000.\n\nSubstitution: \n𝐺\n𝑤\n=\nexp\n⁡\n(\n0.60\nlog\n⁡\n1.1000\n+\n0.40\nlog\n⁡\n1.6000\n)\nG\nw\n\t​\n\n=exp(0.60log1.1000+0.40log1.6000) = 1.2779.\n\nEqual-weight Jevons = 1.3266; Carli = 1.3500; Dutot = 1.3778. Explicit weights: 60% / 40%. The continuous upper-level walkthrough uses the equal-weight elementary Jevons factor 1.3266; the weighted result is a separate exceptional-formula illustration.",
+    "test": "Shared milk price propagates",
+    "trace": "1 · Inputs: Milk has relatives 1.1000 and 1.6000.\n\n2 · Elementary calculation: \n𝐽\n=\nexp\n⁡\n ⁣\n(\n1\n2\n(\nlog\n⁡\n1.1000\n+\nlog\n⁡\n1.6000\n)\n)\nJ=exp(\n2\n1\n\t​\n\n(log1.1000+log1.6000)) = 1.3266.\n\n3 · Upper-level aggregation: P = 0.20 × 1.3266 + 0.50 × 1.0200 + 0.30 × 1.1489 = 1.1200. Shares add to 1.\n\n4 · Link to a hypothetical level: 120.0000 × 1.1200 = 134.4004.\n\n5 · Interpretation: 100 × (134.4004 / 120 − 1) = +12.0004%. The selected branch contributes +6.5330 percentage points in this fixed synthetic basket. No official microdata reconstruction is claimed."
+  },
+  {
+    "result": "Fixed quantities → repriced expenditure: 20.0000 + 50.0000 + 30.0000 = $100.0000. Original cost = $100.0000. Lowe factor = 1.0000; price change = 0.0000%. The quantity vector stays [5.0000, 0.0500, 18.7500] while dollar shares change.",
+    "test": "Reference-price endpoint"
+  },
+  {
+    "result": "Inputs: Offer A $4.00 → $4.40; Offer B $5.00 → $8.00. Relatives 1.1000 and 1.6000.\n\nSubstitution: \n𝐺\n𝑤\n=\nexp\n⁡\n(\n0.00\nlog\n⁡\n1.1000\n+\n1.00\nlog\n⁡\n1.6000\n)\nG\nw\n\t​\n\n=exp(0.00log1.1000+1.00log1.6000) = 1.6000.\n\nEqual-weight Jevons = 1.3266; Carli = 1.3500; Dutot = 1.3778. Explicit weights: 0% / 100%. The continuous upper-level walkthrough uses the equal-weight elementary Jevons factor 1.3266; the weighted result is a separate exceptional-formula illustration.",
+    "test": "Weighted geometric endpoint"
+  },
+  {
+    "result": "Inputs: 5 selected matched offers from 5 in the current area/outlet frame; full population = 60 offers.\n\nSubstitution: sum of log relatives = 0.4106; mean log = 0.0821; exp(mean log) = 1.0856.\n\nSelected-offer growth = +8.5582%; full-population growth = +8.5540%; difference = +0.0042 pp. This is selection-sensitive teaching arithmetic, not official CPI sampling error.",
+    "selected": 5,
+    "test": "Sampling filters"
+  },
+  {
+    "result": "No offers selected. The geometric mean is unavailable; it is not zero.",
+    "test": "Empty sample remains unavailable"
+  },
+  {
+    "result": "Inputs: 60 selected matched offers from 60 in the current area/outlet frame; full population = 60 offers.\n\nSubstitution: sum of log relatives = 4.9246; mean log = 0.0821; exp(mean log) = 1.0855.\n\nSelected-offer growth = +8.5540%; full-population growth = +8.5540%; difference = 0.0000 pp. This is selection-sensitive teaching arithmetic, not official CPI sampling error.",
+    "selected": 60,
+    "test": "Sampling reset"
+  },
+  {
+    "result": "Observed: $1,000.00 − $900.00 = $100; unadjusted increase = 11.1111%.\n\nAssumed quality adjustment: replacement price $1,000.00 − assumed improvement $0.00 = $1,000.00.\n\nComparable-price calculation: 100 × (1,000.00 / 900 − 1) = +11.1111%. This hypothetical adjustment separates an assumed feature-value difference from the observed price gap.",
+    "test": "Zero assumed quality adjustment"
+  },
+  {
+    "checked": [
+      "2",
+      "14",
+      "23",
+      "26"
+    ],
+    "status": "Choose between two and four series; the previous selection is retained.",
+    "test": "At most four historical geographies"
+  },
+  {
+    "table": "The first geography uses lighter bars; the second uses fuller colour. Food is orange, shelter violet and transportation blue. Unavailable component series are not replaced.\nComponent\tGeography\tSep 2025 index\tSep 2026 index\tCalculated YoY\tVector\nFood\tIqaluit, Nunavut\tUnavailable\tUnavailable\tUnavailable\tUnavailable\nFood\tAlberta\t196.5\t201.1\t2.3410%\tv41692328\nShelter\tIqaluit, Nunavut\tUnavailable\tUnavailable\tUnavailable\tUnavailable\nShelter\tAlberta\t224.4\t226.2\t0.8021%\tv41692360\nTransportation\tIqaluit, Nunavut\tUnavailable\tUnavailable\tUnavailable\tUnavailable\nTransportation\tAlberta\t180.9\t201.3\t11.2769%\tv41692395",
+    "test": "Northern component availability"
+  },
+  {
+    "result": "Within selected region: P = 0.20 × 1.0200 + 0.50 × 1.0300 + 0.30 × 1.0800 = 1.0430.\n\nAcross regions: 0.0500 × 1.0430 + 0.5542 × 1.0280 + 0.3958 × 1.0130 = 1.0228. National change = +2.2813%.\n\nThe unweighted mean of these three regional rates would be 2.8000%. It coincides only under special weights or movements. All regions and inputs here are synthetic.",
+    "table": "Region\tNational weight, %\tFood change, %\tShelter change, %\tTransport change, %\tRegional factor\tRegional inflation, %\tNational weighted term\nRegion A\t5.0000\t2.00\t3.00\t8.00\t1.0430\t4.3000\t0.0522\nRegion B\t55.4167\t1.00\t4.00\t2.00\t1.0280\t2.8000\t0.5697\nRegion C\t39.5833\t3.00\t2.00\t-1.00\t1.0130\t1.3000\t0.4010",
+    "test": "Regional weight renormalization"
+  },
+  {
+    "steps": [
+      "1 · Earlier observation\n164.9\n\nSeptember 2025",
+      "2 · Later observation\n170.0\n\nSeptember 2026",
+      "3 · Substitute\n100\n(\n170.0\n164.9\n−\n1\n)\n100\n(\n164.9\n170.0\n\t​\n\n−\n1\n)\n\nRate from publicly rounded index values",
+      "4 · Calculate\n3.09278351%\n\n3.0928% to four decimals",
+      "5 · Interpret\n3.1%\n\nPublished rate; within rounding tolerance"
+    ],
+    "test": "Official walkthrough yoy"
+  },
+  {
+    "steps": [
+      "1 · Earlier observation\n169.8\n\nAugust 2026",
+      "2 · Later observation\n170.0\n\nSeptember 2026",
+      "3 · Substitute\n100\n(\n170.0\n169.8\n−\n1\n)\n100\n(\n169.8\n170.0\n\t​\n\n−\n1\n)\n\nRate from publicly rounded index values",
+      "4 · Calculate\n0.11778563%\n\n0.1178% to four decimals",
+      "5 · Interpret\n0.1%\n\nPublished rate; within rounding tolerance"
+    ],
+    "test": "Official walkthrough mom"
+  },
+  {
+    "steps": [
+      "1 · Earlier observation\n169.4\n\nAugust 2026 · SA",
+      "2 · Later observation\n170.0\n\nSeptember 2026 · SA",
+      "3 · Substitute\n100\n(\n170.0\n169.4\n−\n1\n)\n100\n(\n169.4\n170.0\n\t​\n\n−\n1\n)\n\nRate from publicly rounded index values",
+      "4 · Calculate\n0.35419126%\n\n0.3542% to four decimals",
+      "5 · Interpret\n0.4%\n\nPublished rate; within rounding tolerance"
+    ],
+    "test": "Official walkthrough sa"
+  },
+  {
+    "steps": [
+      "1 · Earlier observation\n166.1\n\nOntario · September 2025",
+      "2 · Later observation\n170.3\n\nOntario · September 2026",
+      "3 · Substitute\n100\n(\n170.3\n166.1\n−\n1\n)\n100\n(\n166.1\n170.3\n\t​\n\n−\n1\n)\n\nRate from publicly rounded index values",
+      "4 · Calculate\n2.52859723%\n\n2.5286% to four decimals",
+      "5 · Interpret\n2.5%\n\nPublished rate; within rounding tolerance"
+    ],
+    "test": "Official walkthrough ontario"
+  },
+  {
+    "current": "6 / 10",
+    "detail": "Synthetic milk offers: $4 → $4.40 and $5 → $8.00. J = √(1.10 × 1.6000) = 1.3266. This is the equal-offer elementary factor, not an expenditure-weighted upper aggregate.",
+    "test": "Direct synthesis stage selection"
+  },
+  {
+    "current": "10 / 10",
+    "detail": "170.0 / 164.9 − 1 → 3.0928%, reported 3.1%. Adjacent-month unadjusted rate → 0.1178%, reported 0.1%. These are Level A arithmetic checks, not microdata reconstruction.",
+    "test": "Single timeline endpoint"
+  },
+  {
+    "pressed": "true",
+    "test": "Play state",
+    "text": "Pause"
+  },
+  {
+    "stage": "4 / 10",
+    "test": "Animation advances",
+    "timeline": "3.71"
+  },
+  {
+    "pressed": "false",
+    "test": "Pause",
+    "text": "Play"
+  },
+  {
+    "stage": "1 / 10",
+    "test": "Restart",
+    "timeline": "0"
+  },
+  {
+    "test": "Regional boundary and price-only changes",
+    "endpoint": "Within selected region: P = 0.20 × 1.0200 + 0.50 × 1.0300 + 0.30 × 1.0800 = 1.0430.\n\nAcross regions: 1.0000 × 1.0430 + 0.0000 × 1.0280 + 0.0000 × 1.0130 = 1.0430. National change = +4.3000%.\n\nThe unweighted mean of these three regional rates would be 2.8000%. It coincides only under special weights or movements. All regions and inputs here are synthetic.",
+    "priceOnly": "Region\tNational weight, %\tFood change, %\tShelter change, %\tTransport change, %\tRegional factor\tRegional inflation, %\tNational weighted term\nRegion A\t100.0000\t2.00\t3.00\t30.00\t1.1090\t10.9000\t1.1090\nRegion B\t0.0000\t1.00\t4.00\t2.00\t1.0280\t2.8000\t0.0000\nRegion C\t0.0000\t3.00\t2.00\t-1.00\t1.0130\t1.3000\t0.0000",
+    "reopened": "Within selected region: P = 0.20 × 1.0200 + 0.50 × 1.0300 + 0.30 × 1.3000 = 1.1090.\n\nAcross regions: 0.9999 × 1.1090 + 0.0001 × 1.0280 + 0.0001 × 1.0130 = 1.1090. National change = +10.8991%.\n\nThe unweighted mean of these three regional rates would be 5.0000%. It coincides only under special weights or movements. All regions and inputs here are synthetic."
+  },
+  {
+    "animation": "0.20 × 1.3266 + 0.50 × 1.0200 + 0.30 × 1.1489 = 1.1200. 120 × this factor = 134.4004; inflation = 12.0004%. Synthetic result only.",
+    "diagram": "Same miniature universe: Milk J = 1.3266; Rental service J = 1.0200; Gasoline J = 1.1489.\n\nUpper factor = 0.20 × 1.3266 + 0.50 × 1.0200 + 0.30 × 1.1489 = 1.1200. A hypothetical 120.0000 index becomes 134.4004; growth = +12.0004%.\n\nSelected Milk reference share = 20.00%; contribution = 20.00% × 32.6650% / 100 = 6.5330 pp. Change the milk price in Chapter 6 to update this diagram and the detailed trace below.",
+    "test": "Shared universe also updates original aggregation diagram"
+  },
+  {
+    "test": "Rental branch contribution in shared universe",
+    "result": "Same miniature universe: Milk J = 1.3266; Rental service J = 1.0200; Gasoline J = 1.1489.\n\nUpper factor = 0.20 × 1.3266 + 0.50 × 1.0200 + 0.30 × 1.1489 = 1.1200. A hypothetical 120.0000 index becomes 134.4004; growth = +12.0004%.\n\nSelected Rental service reference share = 50.00%; contribution = 50.00% × 2.0000% / 100 = 1.0000 pp. Change the milk price in Chapter 6 to update this diagram and the detailed trace below."
+  },
+  {
+    "test": "All six player endpoints, restart and play/pause",
+    "results": [
+      {
+        "player": "collection-player",
+        "endpoint": "5 / 5",
+        "play": "Pause",
+        "pause": "Play"
+      },
+      {
+        "player": "sampling-player",
+        "endpoint": "3 / 3",
+        "play": "Pause",
+        "pause": "Play"
+      },
+      {
+        "player": "aggregation-player",
+        "endpoint": "5 / 5",
+        "play": "Pause",
+        "pause": "Play"
+      },
+      {
+        "player": "chain-player",
+        "endpoint": "4 / 4",
+        "play": "Pause",
+        "pause": "Play"
+      },
+      {
+        "player": "disinflation-player",
+        "endpoint": "4 / 4",
+        "play": "Pause",
+        "pause": "Play"
+      },
+      {
+        "player": "synthesis-player",
+        "endpoint": "10 / 10",
+        "play": "Pause",
+        "pause": "Play"
+      }
+    ]
+  }
+]
