@@ -465,9 +465,9 @@
     return value</code></pre>
 
       <div class="downloads">
-        <a href="reed_solomon_experiments/01_polynomial_walkthrough.py">Python: polynomial walkthrough</a>
-        <a href="reed_solomon_experiments/outputs/01_polynomial_evaluation_q7.csv">CSV: all six evaluations</a>
-        <a href="reed_solomon_experiments/outputs/01_polynomial_walkthrough.txt">TXT: line-by-line arithmetic</a>
+        <a href="2026-07-11-reed-solomon-proximity-experiments/01_polynomial_walkthrough.py">Python: polynomial walkthrough</a>
+        <a href="2026-07-11-reed-solomon-proximity-experiments/outputs/01_polynomial_evaluation_q7.csv">CSV: all six evaluations</a>
+        <a href="2026-07-11-reed-solomon-proximity-experiments/outputs/01_polynomial_walkthrough.txt">TXT: line-by-line arithmetic</a>
       </div>
 
       <h2 id="interpolation">5. Experiment 2: reconstruct the polynomial by interpolation</h2>
@@ -507,9 +507,9 @@
       </div>
 
       <div class="downloads">
-        <a href="reed_solomon_experiments/02_lagrange_interpolation.py">Python: Lagrange reconstruction</a>
-        <a href="reed_solomon_experiments/outputs/02_lagrange_basis_terms.csv">CSV: basis terms and inverses</a>
-        <a href="reed_solomon_experiments/outputs/02_lagrange_interpolation.txt">TXT: reconstruction report</a>
+        <a href="2026-07-11-reed-solomon-proximity-experiments/02_lagrange_interpolation.py">Python: Lagrange reconstruction</a>
+        <a href="2026-07-11-reed-solomon-proximity-experiments/outputs/02_lagrange_basis_terms.csv">CSV: basis terms and inverses</a>
+        <a href="2026-07-11-reed-solomon-proximity-experiments/outputs/02_lagrange_interpolation.txt">TXT: reconstruction report</a>
       </div>
 
       <h2 id="codebook">6. Experiment 3: build all $343$ codewords</h2>
@@ -539,9 +539,9 @@ received = [3, 3, 2, 3, 1, 1]  # coordinates 1 and 4 changed</code></pre>
       </div>
 
       <div class="downloads">
-        <a href="reed_solomon_experiments/03_codebook_and_distance.py">Python: codebook and corruption</a>
-        <a href="reed_solomon_experiments/outputs/03_codebook_q7_n6_k3.csv">CSV: all 343 codewords</a>
-        <a href="reed_solomon_experiments/outputs/03_received_word_report.txt">TXT: nearest-codeword report</a>
+        <a href="2026-07-11-reed-solomon-proximity-experiments/03_codebook_and_distance.py">Python: codebook and corruption</a>
+        <a href="2026-07-11-reed-solomon-proximity-experiments/outputs/03_codebook_q7_n6_k3.csv">CSV: all 343 codewords</a>
+        <a href="2026-07-11-reed-solomon-proximity-experiments/outputs/03_received_word_report.txt">TXT: nearest-codeword report</a>
       </div>
 
       <h2 id="radii">7. Three decoding radii that must not be confused</h2>
@@ -608,7 +608,7 @@ received = [3, 3, 2, 3, 1, 1]  # coordinates 1 and 4 changed</code></pre>
       </table>
 
       <figure>
-        <img src="reed_solomon_experiments/outputs/04_worst_list_size_by_radius.png" alt="Exact worst-case list sizes by Hamming radius">
+        <img src="2026-07-11-reed-solomon-proximity-experiments/outputs/04_worst_list_size_by_radius.png" alt="Exact worst-case list sizes by Hamming radius">
         <figcaption>
           Exact exhaustive values. The vertical scale is logarithmic because the list can expand quickly once
           the allowed radius reaches the interpolation-crowding regime.
@@ -621,10 +621,10 @@ received = [3, 3, 2, 3, 1, 1]  # coordinates 1 and 4 changed</code></pre>
       </div>
 
       <div class="downloads">
-        <a href="reed_solomon_experiments/04_exhaustive_list_sizes.py">Python: exhaustive list-size census</a>
-        <a href="reed_solomon_experiments/outputs/04_list_size_summary.csv">CSV: exact $L_t$ values</a>
-        <a href="reed_solomon_experiments/outputs/04_worst_received_words.csv">CSV: maximizing received words</a>
-        <a href="reed_solomon_experiments/outputs/04_list_size_histograms.csv">CSV: full list-size histograms</a>
+        <a href="2026-07-11-reed-solomon-proximity-experiments/04_exhaustive_list_sizes.py">Python: exhaustive list-size census</a>
+        <a href="2026-07-11-reed-solomon-proximity-experiments/outputs/04_list_size_summary.csv">CSV: exact $L_t$ values</a>
+        <a href="2026-07-11-reed-solomon-proximity-experiments/outputs/04_worst_received_words.csv">CSV: maximizing received words</a>
+        <a href="2026-07-11-reed-solomon-proximity-experiments/outputs/04_list_size_histograms.csv">CSV: full list-size histograms</a>
       </div>
 
       <h2 id="crowding">9. Experiment 5: a clean interpolation-crowding construction</h2>
@@ -656,7 +656,7 @@ received = [3, 3, 2, 3, 1, 1]  # coordinates 1 and 4 changed</code></pre>
       </table>
 
       <figure>
-        <img src="reed_solomon_experiments/outputs/05_interpolation_crowding.png" alt="Predicted and observed interpolation crowding counts">
+        <img src="2026-07-11-reed-solomon-proximity-experiments/outputs/05_interpolation_crowding.png" alt="Predicted and observed interpolation crowding counts">
         <figcaption>
           The exact computation matches $\binom nk$ in every case because the construction has a short
           algebraic proof. This is a good example of computation confirming a mechanism rather than merely
@@ -665,9 +665,9 @@ received = [3, 3, 2, 3, 1, 1]  # coordinates 1 and 4 changed</code></pre>
       </figure>
 
       <div class="downloads">
-        <a href="reed_solomon_experiments/05_interpolation_crowding.py">Python: interpolation crowding</a>
-        <a href="reed_solomon_experiments/outputs/05_interpolation_crowding_summary.csv">CSV: summary for four cases</a>
-        <a href="reed_solomon_experiments/outputs/05_interpolation_crowding_details.csv">CSV: every subset and interpolant</a>
+        <a href="2026-07-11-reed-solomon-proximity-experiments/05_interpolation_crowding.py">Python: interpolation crowding</a>
+        <a href="2026-07-11-reed-solomon-proximity-experiments/outputs/05_interpolation_crowding_summary.csv">CSV: summary for four cases</a>
+        <a href="2026-07-11-reed-solomon-proximity-experiments/outputs/05_interpolation_crowding_details.csv">CSV: every subset and interpolant</a>
       </div>
 
       <h2 id="lines">10. From list decoding to affine-line proximity</h2>
@@ -741,7 +741,7 @@ received = [3, 3, 2, 3, 1, 1]  # coordinates 1 and 4 changed</code></pre>
       </table>
 
       <figure>
-        <img src="reed_solomon_experiments/outputs/06_affine_line_distances.png" alt="Distances of all seven affine line points to RS(7,6,3)">
+        <img src="2026-07-11-reed-solomon-proximity-experiments/outputs/06_affine_line_distances.png" alt="Distances of all seven affine line points to RS(7,6,3)">
         <figcaption>Every point on this line has distance exactly $2$ from the code.</figcaption>
       </figure>
 
@@ -759,9 +759,9 @@ received = [3, 3, 2, 3, 1, 1]  # coordinates 1 and 4 changed</code></pre>
       </div>
 
       <div class="downloads">
-        <a href="reed_solomon_experiments/06_constructed_affine_line.py">Python: explicit affine line</a>
-        <a href="reed_solomon_experiments/outputs/06_affine_line_profile.csv">CSV: all seven line points</a>
-        <a href="reed_solomon_experiments/outputs/06_affine_line_report.txt">TXT: correlated-agreement report</a>
+        <a href="2026-07-11-reed-solomon-proximity-experiments/06_constructed_affine_line.py">Python: explicit affine line</a>
+        <a href="2026-07-11-reed-solomon-proximity-experiments/outputs/06_affine_line_profile.csv">CSV: all seven line points</a>
+        <a href="2026-07-11-reed-solomon-proximity-experiments/outputs/06_affine_line_report.txt">TXT: correlated-agreement report</a>
       </div>
 
       <h2 id="census">12. Experiment 7: exact census of all affine lines in $\mathbb F_5^4$</h2>
@@ -801,7 +801,7 @@ received = [3, 3, 2, 3, 1, 1]  # coordinates 1 and 4 changed</code></pre>
       </p>
 
       <figure>
-        <img src="reed_solomon_experiments/outputs/07_exact_line_census_t1.png" alt="Exact affine-line census at radius one">
+        <img src="2026-07-11-reed-solomon-proximity-experiments/outputs/07_exact_line_census_t1.png" alt="Exact affine-line census at radius one">
         <figcaption>
           Each circle represents a pair consisting of correlated pair distance and number of close line points.
           Circle area indicates how many of the 19,500 unique lines have that pair of values.
@@ -809,10 +809,10 @@ received = [3, 3, 2, 3, 1, 1]  # coordinates 1 and 4 changed</code></pre>
       </figure>
 
       <div class="downloads">
-        <a href="reed_solomon_experiments/07_exact_small_line_census.py">Python: exact unique-line census</a>
-        <a href="reed_solomon_experiments/outputs/07_exact_unique_lines_q5_n4_k2.csv">CSV: all 19,500 lines</a>
-        <a href="reed_solomon_experiments/outputs/07_exact_line_census_summary.csv">CSV: census summary</a>
-        <a href="reed_solomon_experiments/outputs/07_exact_line_census_aggregate.csv">CSV: aggregated frequencies</a>
+        <a href="2026-07-11-reed-solomon-proximity-experiments/07_exact_small_line_census.py">Python: exact unique-line census</a>
+        <a href="2026-07-11-reed-solomon-proximity-experiments/outputs/07_exact_unique_lines_q5_n4_k2.csv">CSV: all 19,500 lines</a>
+        <a href="2026-07-11-reed-solomon-proximity-experiments/outputs/07_exact_line_census_summary.csv">CSV: census summary</a>
+        <a href="2026-07-11-reed-solomon-proximity-experiments/outputs/07_exact_line_census_aggregate.csv">CSV: aggregated frequencies</a>
       </div>
 
       <h2 id="random-search">13. Experiment 8: sampled lines at larger parameters</h2>
@@ -833,7 +833,7 @@ received = [3, 3, 2, 3, 1, 1]  # coordinates 1 and 4 changed</code></pre>
       </table>
 
       <figure>
-        <img src="reed_solomon_experiments/outputs/08_random_line_search_q11_n10_k3.png" alt="Random affine-line search over F_11">
+        <img src="2026-07-11-reed-solomon-proximity-experiments/outputs/08_random_line_search_q11_n10_k3.png" alt="Random affine-line search over F_11">
         <figcaption>
           Sampled behavior for $q=11,n=10,k=3,t=6$. The dashed line marks pair distance $t$; points to its
           right have no zero-loss correlated explanation at the tested radius.
@@ -848,10 +848,10 @@ received = [3, 3, 2, 3, 1, 1]  # coordinates 1 and 4 changed</code></pre>
       </div>
 
       <div class="downloads">
-        <a href="reed_solomon_experiments/08_random_line_search.py">Python: larger random-line search</a>
-        <a href="reed_solomon_experiments/outputs/08_random_line_search_summary.csv">CSV: parameter summary</a>
-        <a href="reed_solomon_experiments/outputs/08_random_line_search_top_candidates.csv">CSV: strongest sampled candidates</a>
-        <a href="reed_solomon_experiments/outputs/08_random_line_search_all_samples.csv">CSV: every sampled line</a>
+        <a href="2026-07-11-reed-solomon-proximity-experiments/08_random_line_search.py">Python: larger random-line search</a>
+        <a href="2026-07-11-reed-solomon-proximity-experiments/outputs/08_random_line_search_summary.csv">CSV: parameter summary</a>
+        <a href="2026-07-11-reed-solomon-proximity-experiments/outputs/08_random_line_search_top_candidates.csv">CSV: strongest sampled candidates</a>
+        <a href="2026-07-11-reed-solomon-proximity-experiments/outputs/08_random_line_search_all_samples.csv">CSV: every sampled line</a>
       </div>
 
       <h2 id="gf8">14. Experiment 10: why $GF(8)$ is not arithmetic modulo $8$</h2>
@@ -890,10 +890,10 @@ received = [3, 3, 2, 3, 1, 1]  # coordinates 1 and 4 changed</code></pre>
       </div>
 
       <div class="downloads">
-        <a href="reed_solomon_experiments/10_gf8_extension_field.py">Python: complete $GF(8)$ implementation</a>
-        <a href="reed_solomon_experiments/outputs/10_gf8_multiplication_table.csv">CSV: multiplication table</a>
-        <a href="reed_solomon_experiments/outputs/10_gf8_polynomial_evaluation.csv">CSV: polynomial values</a>
-        <a href="reed_solomon_experiments/outputs/10_gf8_codebook_k3.csv">CSV: all 512 codewords</a>
+        <a href="2026-07-11-reed-solomon-proximity-experiments/10_gf8_extension_field.py">Python: complete $GF(8)$ implementation</a>
+        <a href="2026-07-11-reed-solomon-proximity-experiments/outputs/10_gf8_multiplication_table.csv">CSV: multiplication table</a>
+        <a href="2026-07-11-reed-solomon-proximity-experiments/outputs/10_gf8_polynomial_evaluation.csv">CSV: polynomial values</a>
+        <a href="2026-07-11-reed-solomon-proximity-experiments/outputs/10_gf8_codebook_k3.csv">CSV: all 512 codewords</a>
       </div>
 
       <h2 id="scaling">15. Experiment 9: where exhaustive computation becomes impossible</h2>
@@ -917,7 +917,7 @@ received = [3, 3, 2, 3, 1, 1]  # coordinates 1 and 4 changed</code></pre>
       </table>
 
       <figure>
-        <img src="reed_solomon_experiments/outputs/09_scaling_growth.png" alt="Growth of exhaustive Reed-Solomon search spaces">
+        <img src="2026-07-11-reed-solomon-proximity-experiments/outputs/09_scaling_growth.png" alt="Growth of exhaustive Reed-Solomon search spaces">
         <figcaption>
           Base-10 logarithms make the different growth rates visible. Exact line enumeration becomes impossible
           far earlier than the notation $f+zg$ suggests.
@@ -936,14 +936,14 @@ received = [3, 3, 2, 3, 1, 1]  # coordinates 1 and 4 changed</code></pre>
       </p>
 
       <div class="downloads">
-        <a href="reed_solomon_experiments/09_scaling_estimates.py">Python: scaling calculations</a>
-        <a href="reed_solomon_experiments/outputs/09_scaling_estimates.csv">CSV: exact search-space counts</a>
+        <a href="2026-07-11-reed-solomon-proximity-experiments/09_scaling_estimates.py">Python: scaling calculations</a>
+        <a href="2026-07-11-reed-solomon-proximity-experiments/outputs/09_scaling_estimates.csv">CSV: exact search-space counts</a>
       </div>
 
       <h2 id="run">16. Run the entire laboratory</h2>
 
       <div class="code-label">Ubuntu terminal</div>
-      <pre><code>cd reed_solomon_proximity_project/reed_solomon_experiments
+      <pre><code>cd reed_solomon_proximity_project/2026-07-11-reed-solomon-proximity-experiments
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
@@ -972,9 +972,9 @@ python 10_gf8_extension_field.py</code></pre>
       </table>
 
       <div class="downloads">
-        <a href="reed_solomon_experiments/run_all.py">Python: run every experiment</a>
-        <a href="reed_solomon_experiments/rs_core.py">Python: shared Reed–Solomon utilities</a>
-        <a href="reed_solomon_experiments/requirements.txt">Requirements file</a>
+        <a href="2026-07-11-reed-solomon-proximity-experiments/run_all.py">Python: run every experiment</a>
+        <a href="2026-07-11-reed-solomon-proximity-experiments/rs_core.py">Python: shared Reed–Solomon utilities</a>
+        <a href="2026-07-11-reed-solomon-proximity-experiments/requirements.txt">Requirements file</a>
       </div>
 
       <h2 id="limits">17. What these computations prove—and what they do not</h2>
