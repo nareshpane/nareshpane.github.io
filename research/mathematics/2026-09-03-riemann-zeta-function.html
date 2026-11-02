@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&amp;family=Inter:wght@400;500;600;700&amp;family=Source+Code+Pro:wght@400;500;600&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="riemann-zeta-function/styles.css">
+  <link rel="stylesheet" href="2026-09-03-riemann-zeta-function/styles.css">
   <script>
     window.MathJax = {
       tex: {
@@ -18,7 +18,7 @@
     };
   </script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-  <script defer src="riemann-zeta-function/scripts/page.js"></script>
+  <script defer src="2026-09-03-riemann-zeta-function/scripts/page.js"></script>
 </head>
 <body>
 <div class="page">
@@ -152,7 +152,7 @@
     <div class="equation">$$\xi(s)=\frac12s(s-1)\pi^{-s/2}\Gamma\!\left(\frac{s}{2}\right)\zeta(s),\qquad \boxed{\xi(s)=\xi(1-s)}.$$</div>
     <p>The reflection $s\mapsto1-s$ mirrors points across the vertical line $\operatorname{Re}(s)=1/2$. Since zeta also respects complex conjugation, nontrivial zeros occur in reflected and conjugate configurations.</p>
     <div class="grid two"><div class="box"><h3>Trivial zeros</h3><p>$\zeta(-2)=\zeta(-4)=\zeta(-6)=\cdots=0$. They arise in the functional equation and are simple. They are zeros of zeta, not zeros inserted by the completion.</p></div><div class="box"><h3>Completion bookkeeping</h3><p>$\pi^{-s/2}\Gamma(s/2)\zeta(s)$ is meromorphic. Multiplying by $\tfrac12s(s-1)$ produces the entire $\xi$ function with $\xi(0)=\xi(1)=1/2$.</p></div></div>
-    <figure class="figure"><img src="riemann-zeta-function/images/zero-landscape-overview.png" loading="lazy" alt="Complex plane with trivial zeta zeros on the negative real axis, the critical strip, critical line, and the first computed nontrivial zeros"><figcaption class="caption">A static overview generated from the first 500 computed zero ordinates. The interactive explorer below focuses on the critical strip.</figcaption></figure>
+    <figure class="figure"><img src="2026-09-03-riemann-zeta-function/images/zero-landscape-overview.png" loading="lazy" alt="Complex plane with trivial zeta zeros on the negative real axis, the critical strip, critical line, and the first computed nontrivial zeros"><figcaption class="caption">A static overview generated from the first 500 computed zero ordinates. The interactive explorer below focuses on the critical strip.</figcaption></figure>
     <details><summary>Advanced bridge: another common functional equation</summary><div class="details-body"><div class="equation">$$\zeta(s)=2^s\pi^{s-1}\sin\!\left(\frac{\pi s}{2}\right)\Gamma(1-s)\zeta(1-s).$$</div><p>At negative even integers, the sine factor vanishes while the remaining factors are handled by continuation, producing the trivial zeros. One must not infer extra zeta zeros merely from zeros or poles of individual factors before checking cancellations.</p></div></details>
   </section>
 
@@ -177,7 +177,7 @@
     <div class="chapter-label">Visual interlude 8</div>
     <h2>Magnitude and phase across the complex plane</h2>
     <p>At each point $s$, zeta has a magnitude $|\zeta(s)|$ and an angle, or phase, $\arg\zeta(s)$. Domain coloring assigns hue to phase and brightness to magnitude. Dark meeting points indicate zeros; the pole near $s=1$ becomes very bright. Repeated dark contours show logarithmic magnitude levels.</p>
-    <figure class="figure domain-figure"><img src="riemann-zeta-function/images/zeta-domain-coloring.png" loading="lazy" alt="Domain coloring of the analytically continued Riemann zeta function from real part negative 4.5 to 2 and imaginary part negative 32 to 32, with critical-strip boundaries, critical line, pole, and trivial zeros marked"><div class="phase-legend" aria-label="Phase hue legend"><span>-pi / red</span><span>-2pi/3</span><span>-pi/3</span><span>0 / cyan</span><span>pi/3</span><span>2pi/3</span></div><figcaption class="caption">Hue encodes phase around the color wheel; brightness increases with $|\zeta(s)|$ after nonlinear compression; dark contour bands mark logarithmic magnitude levels. White vertical lines bound the critical strip, and the dashed line is $\operatorname{Re}(s)=1/2$. Color is supplemented by labels, contours, and the zero explorer rather than used alone.</figcaption></figure>
+    <figure class="figure domain-figure"><img src="2026-09-03-riemann-zeta-function/images/zeta-domain-coloring.png" loading="lazy" alt="Domain coloring of the analytically continued Riemann zeta function from real part negative 4.5 to 2 and imaginary part negative 32 to 32, with critical-strip boundaries, critical line, pole, and trivial zeros marked"><div class="phase-legend" aria-label="Phase hue legend"><span>-pi / red</span><span>-2pi/3</span><span>-pi/3</span><span>0 / cyan</span><span>pi/3</span><span>2pi/3</span></div><figcaption class="caption">Hue encodes phase around the color wheel; brightness increases with $|\zeta(s)|$ after nonlinear compression; dark contour bands mark logarithmic magnitude levels. White vertical lines bound the critical strip, and the dashed line is $\operatorname{Re}(s)=1/2$. Color is supplemented by labels, contours, and the zero explorer rather than used alone.</figcaption></figure>
   </section>
 
   <section class="chapter" id="explicit-formula">
@@ -318,7 +318,7 @@
       <article class="box result-card statistics"><h3>Unconditional pair-correlation framework</h3><p class="meta">Baluyot, Goldston, Suriajaya, and Turnage-Butterbaugh, Acta Arithmetica, 2024</p><p>The authors establish an unconditional Montgomery-type pair-correlation framework. A 61.7 percent simple-zero application in the paper requires an additional near-critical-line or strong zero-density hypothesis and is therefore conditional.</p><p class="not-rh">Pair correlation concerns aggregate statistics and neither requires nor establishes RH.</p><p><a href="https://doi.org/10.4064/aa230612-20-3">Primary journal source</a></p></article>
     </div>
     <aside class="panel caution"><strong>Deliberate omission.</strong> A very recent August 2026 preprint claiming a much larger critical-line proportion is not presented here as an advance because it lacked peer review and independent authoritative validation at the cutoff. The local audit records the title and reason for exclusion rather than silently treating the claim as established.</aside>
-    <p>See the complete local <a href="riemann-zeta-function/references/recent-results-audit.md">recent-results audit</a> for authors, status, exact classifications, benchmark notes, sources, implications, and non-implications.</p>
+    <p>See the complete local <a href="2026-09-03-riemann-zeta-function/references/recent-results-audit.md">recent-results audit</a> for authors, status, exact classifications, benchmark notes, sources, implications, and non-implications.</p>
   </section>
 
   <section class="chapter" id="reproducibility">
@@ -326,9 +326,9 @@
     <h2>What is exact, computed, truncated, simulated, or schematic?</h2>
     <div class="provenance" aria-label="Visualization provenance categories"><div><strong>Exact</strong>finite sums, sieve prime counts, algebraic identities</div><div><strong>Computed</strong>zeros, Z samples, domain coloring</div><div><strong>Truncated</strong>finite explicit-formula zero sums</div><div><strong>Simulated</strong>seeded Haar-unitary matrices</div><div><strong>Schematic</strong>domain and symmetry teaching diagrams</div></div>
     <p>The Python generator uses mpmath, NumPy, and Matplotlib. It verifies $\zeta(2)$, $\zeta(4)$, initial zero ordinates, conjugation behavior, Z values at listed roots, zero-count consistency, the random seed, and dataset metadata.</p>
-    <pre><code>python3 -m pip install -r riemann-zeta-function/requirements.txt
-python3 riemann-zeta-function/scripts/generate_numerical_assets.py</code></pre>
-    <div class="grid two"><div class="box"><h3>Local project records</h3><p><a href="riemann-zeta-function/README.md">README and regeneration instructions</a></p><p><a href="riemann-zeta-function/references/bibliography.md">Complete local bibliography</a></p><p><a href="riemann-zeta-function/references/recent-results-audit.md">Recent-results source audit</a></p><p><a href="riemann-zeta-function/data/source-manifest.json">Generated-data manifest</a></p></div><div class="box"><h3>Authoritative references</h3><p><a href="https://dlmf.nist.gov/25">NIST DLMF, Chapter 25</a></p><p><a href="https://www.maths.tcd.ie/pub/HistMath/People/Riemann/Zeta/">Riemann's 1859 memoir and translation</a></p><p><a href="https://www.claymath.org/millennium/riemann-hypothesis/">Clay Mathematics Institute: RH status</a></p></div></div>
+    <pre><code>python3 -m pip install -r 2026-09-03-riemann-zeta-function/requirements.txt
+python3 2026-09-03-riemann-zeta-function/scripts/generate_numerical_assets.py</code></pre>
+    <div class="grid two"><div class="box"><h3>Local project records</h3><p><a href="2026-09-03-riemann-zeta-function/README.md">README and regeneration instructions</a></p><p><a href="2026-09-03-riemann-zeta-function/references/bibliography.md">Complete local bibliography</a></p><p><a href="2026-09-03-riemann-zeta-function/references/recent-results-audit.md">Recent-results source audit</a></p><p><a href="2026-09-03-riemann-zeta-function/data/source-manifest.json">Generated-data manifest</a></p></div><div class="box"><h3>Authoritative references</h3><p><a href="https://dlmf.nist.gov/25">NIST DLMF, Chapter 25</a></p><p><a href="https://www.maths.tcd.ie/pub/HistMath/People/Riemann/Zeta/">Riemann's 1859 memoir and translation</a></p><p><a href="https://www.claymath.org/millennium/riemann-hypothesis/">Clay Mathematics Institute: RH status</a></p></div></div>
     <h3>Selected primary references</h3>
     <ol class="references">
       <li>Euler (1744), <em>Variae observationes circa series infinitas</em>, <a href="https://scholarlycommons.pacific.edu/euler-works/72/">Euler Archive E72</a>.</li>
@@ -342,9 +342,9 @@ python3 riemann-zeta-function/scripts/generate_numerical_assets.py</code></pre>
     <aside class="panel success"><strong>Current conclusion.</strong> The computations, statistics, zero-free regions, density estimates, and proportion theorems on this page are substantial but distinct achievements. As of the stated source cutoff, no accepted proof or disproof of the Riemann Hypothesis is known.</aside>
   </section>
 
-  <noscript><div class="noscript"><strong>JavaScript is disabled.</strong> All definitions, equations, caveats, source links, and generated fallback figures remain available, but interactive controls will not update.</div><figure class="figure"><img src="riemann-zeta-function/images/explicit-formula-fallback.png" alt="Static comparison of Chebyshev psi with explicit-formula truncations"><figcaption class="caption">Static explicit-formula fallback.</figcaption></figure><figure class="figure"><img src="riemann-zeta-function/images/zero-spacing-fallback.png" alt="Static histogram comparison of normalized zeta-zero and random-matrix gaps"><figcaption class="caption">Static spacing fallback.</figcaption></figure></noscript>
+  <noscript><div class="noscript"><strong>JavaScript is disabled.</strong> All definitions, equations, caveats, source links, and generated fallback figures remain available, but interactive controls will not update.</div><figure class="figure"><img src="2026-09-03-riemann-zeta-function/images/explicit-formula-fallback.png" alt="Static comparison of Chebyshev psi with explicit-formula truncations"><figcaption class="caption">Static explicit-formula fallback.</figcaption></figure><figure class="figure"><img src="2026-09-03-riemann-zeta-function/images/zero-spacing-fallback.png" alt="Static histogram comparison of normalized zeta-zero and random-matrix gaps"><figcaption class="caption">Static spacing fallback.</figcaption></figure></noscript>
 </main>
-<footer class="footer-nav"><a href="../index.html">Home</a><span class="sep">|</span><a href="../research.html">Research</a></footer>
+<footer class="footer-nav"><a href="../../index.html">Home</a><span class="sep">|</span><a href="../../research.html">Research</a></footer>
 </div>
 </body>
 </html>

@@ -1,6 +1,6 @@
 # Riemann Zeta Function Guide
 
-Supporting files for `../riemann-zeta-function.html`, a progressively layered
+Supporting files for `../2026-09-03-riemann-zeta-function.html`, a progressively layered
 visual guide to the Riemann zeta function, its zeros, prime distribution, and
 carefully classified recent research.
 
@@ -47,7 +47,7 @@ python3 -m http.server 8000
 ```
 
 Then open
-`http://localhost:8000/research/riemann-zeta-function.html`. Check a narrow
+`http://localhost:8000/research/mathematics/2026-09-03-riemann-zeta-function.html`. Check a narrow
 mobile viewport, keyboard focus, browser console output, and the no-JavaScript
 fallback if practical.
 
