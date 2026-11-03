@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <!-- Original vector cast informed by the five university references.
+       Shared coordinates let the story articulate heads, arms and legs. -->
+  <symbol id="head-professor" viewBox="0 0 140 240">
+    <path d="M58 65V85H80V64" fill="#d6a486"/>
+    <ellipse cx="69" cy="43" rx="28" ry="33" fill="#e3b695" stroke="#304d56" stroke-width="1.5"/>
+    <path d="M42 46Q29 30 43 19Q46 2 62 10Q80-1 91 14Q109 21 96 46L91 27Q69 36 48 25Z" fill="#e7e9df" stroke="#789088" stroke-width="1.7"/>
+    <path d="M43 48Q34 39 38 52Q40 60 47 58M95 47Q105 40 101 53Q99 59 93 59" fill="#e3b695"/>
+    <g fill="#fffcf459" stroke="#304d56" stroke-width="1.7"><rect x="45" y="39" width="21" height="15" rx="5"/><rect x="73" y="39" width="21" height="15" rx="5"/><path d="M66 44H73"/></g>
+    <path d="M68 47L65 57H71" fill="none" stroke="#b27d65" stroke-width="1.6"/>
+  </symbol>
+  <symbol id="head-ochre" viewBox="0 0 140 240">
+    <path d="M58 64V85H80V64" fill="#e2b390"/>
+    <ellipse cx="69" cy="44" rx="27" ry="32" fill="#efc5a5" stroke="#304d56" stroke-width="1.5"/>
+    <path d="M43 48Q28 26 45 17Q62-1 84 12Q106 19 97 48L89 29Q70 40 49 28Z" fill="#6d5148"/>
+    <path d="M42 47Q32 40 37 53Q39 59 45 58M95 47Q105 40 101 53Q99 60 93 58" fill="#efc5a5"/>
+    <path d="M68 47L65 57H70" fill="none" stroke="#c59173" stroke-width="1.5"/>
+  </symbol>
+  <symbol id="head-lavender" viewBox="0 0 140 240">
+    <path d="M58 65V85H80V64" fill="#a96f50"/>
+    <ellipse cx="69" cy="44" rx="27" ry="32" fill="#b9805e" stroke="#304d56" stroke-width="1.5"/>
+    <path d="M42 47Q29 35 38 23Q35 10 49 11Q58-1 70 8Q86 1 92 16Q108 19 101 36L97 50L89 30Q68 39 47 29Z" fill="#30454a"/>
+    <path d="M42 47Q32 40 37 53Q39 59 45 58M95 47Q105 40 101 53Q99 60 93 58" fill="#b9805e"/>
+    <path d="M68 47L65 57H70" fill="none" stroke="#855840" stroke-width="1.5"/>
+    <circle cx="42" cy="60" r="3" fill="#d0b576"/><circle cx="97" cy="60" r="3" fill="#d0b576"/>
+  </symbol>
+  <symbol id="torso-professor" viewBox="0 0 140 240">
+    <path d="M44 80Q69 72 94 80L103 153H35Z" fill="#8db8a0" stroke="#304d56" stroke-width="1.7"/>
+    <path d="M57 78L69 116L82 78" fill="#fffaf0"/><path d="M68 90L64 111L70 125L75 111L71 90" fill="#c28d72"/>
+    <path d="M58 79L52 99L64 112M82 79L88 99L76 112M69 124V150M42 132H55M84 132H96" fill="none" stroke="#527d6d" stroke-width="1.5"/>
+  </symbol>
+  <symbol id="torso-ochre" viewBox="0 0 140 240">
+    <path d="M44 80Q69 73 94 80L103 153H35Z" fill="#dfb681" stroke="#304d56" stroke-width="1.7"/>
+    <path d="M57 78Q69 94 82 78M43 143H96" fill="none" stroke="#9f7c57" stroke-width="1.6"/>
+    <path d="M84 103H96V121H84Z" fill="#eccda5" stroke="#b58e64"/>
+  </symbol>
+  <symbol id="torso-lavender" viewBox="0 0 140 240">
+    <path d="M44 80Q69 73 94 80L103 153H35Z" fill="#b7abc9" stroke="#304d56" stroke-width="1.7"/>
+    <path d="M57 78Q69 95 82 78M42 143H97" fill="none" stroke="#857696" stroke-width="1.6"/>
+    <path d="M57 82L48 125M82 82L90 125" stroke="#ddd4e6" stroke-width="2"/>
+  </symbol>
+</svg>

@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700&family=Source+Code+Pro:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="2026-08-21-quantization/quantization.css">
+  <link rel="stylesheet" href="2026-08-21-quantization/quantization.css?v=20261103-compact-intro">
 
   <script>
     window.MathJax = {
@@ -22,9 +22,25 @@
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
 <body>
+  <a class="skip-link" href="#research-content">Skip to research content</a>
+  <div class="mobile-nav"><button class="btn" id="nav-toggle" aria-expanded="false" aria-controls="page-nav">☰ Contents</button><span>Quantization · a visual guide</span></div>
+  <div class="research-layout">
+  <aside id="page-nav" class="page-nav" aria-label="Research contents">
+    <a class="nav-brand" href="#top">Quantization<span>FROM ROUNDING TO LOW-BIT MODELS</span></a>
+    <div class="nav-tools"><button id="nav-expand">Expand all</button><button id="nav-collapse">Collapse all</button></div>
+    <nav id="toc" aria-label="Sections and subsections"></nav>
+  </aside>
   <div class="page">
-    <section class="card">
-      <h1>A Visual Guide to Quantization</h1>
+    <main class="card" id="research-content">
+      <header id="top" class="research-header">
+      <div><div class="eyebrow">MATHEMATICS / NUMERICAL REPRESENTATION</div><h1>A Visual Guide to Quantization</h1><p class="header-deck">Continuous values. Finite choices. Measurable consequences.</p></div>
+      <dl class="metadata" aria-label="Page metadata">
+        <div><dt>🗓️ Created</dt><dd>August 21, 2026</dd></div>
+        <div><dt>🛠️ Modified</dt><dd>November 03, 2026</dd></div>
+        <div><dt>💻 Harness</dt><dd>Codex on Windows</dd></div>
+        <div><dt>🤖 Model</dt><dd>GPT-6.1 Sol</dd></div>
+        <div><dt>🧠 Reasoning</dt><dd>Medium</dd></div>
+      </dl></header>
 
       <p class="lead">
         Quantization replaces many possible values with a smaller set of allowed values.
@@ -34,14 +50,37 @@
         neural-network inference.
       </p>
 
-      <div class="panel note">
-        <strong>How to read this page.</strong> No machine-learning background is needed
-        until very late. The early sections are pure arithmetic and visualization. Each
-        interactive widget works on its own; you can read the prose and skip the controls,
-        or play with the controls to build intuition.
-      </div>
 
-      <h2>1. What Is Quantization?</h2>
+      <div class="opening-questions">
+        <div><b>What?</b><span>A thermometer reads 21.37 °C; a whole-degree display reports 21 °C.</span></div>
+        <div><b>Why?</b><span>A finite alphabet makes measurement, storage and computation possible with limited bits.</span></div>
+        <div><b>What is lost?</b><span>All values in one decision cell share a reconstruction. The original cannot be uniquely recovered.</span></div>
+      </div>
+      <ol class="signal-pipeline" aria-label="Digital measurement pipeline">
+        <li><b>Continuous signal</b><span>amplitude x(t)</span></li><li><b>Sampling</b><span>x[n] = x(nT)</span></li><li><b>Quantization</b><span>ĉ[n] = Q(x[n])</span></li><li><b>Binary encoding</b><span>index → bit word</span></li><li><b>Reconstruction</b><span>decode + interpolate</span></li>
+      </ol>
+      <p class="small">Sampling discretizes the independent variable (time or space); quantization discretizes values. Encoding labels the resulting levels. Interpolation reconstructs a signal from decoded samples; it does not undo amplitude error or aliasing.</p>
+      <section class="viz animation-panel" id="intro-animation" aria-labelledby="intro-title">
+        <div class="figure-heading"><div><span class="eyebrow">ONE MINUTE AT THE QUANTIZATION LAB</span><h2 id="intro-title">From the classroom to an LLM</h2></div><span class="duration-pill">60 seconds</span></div>
+        <svg id="intro-svg" class="qz" viewBox="0 0 960 540" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="story-svg-title story-svg-description"><title id="story-svg-title">A university lesson in quantization</title><desc id="story-svg-description">Seven scenes follow a professor and two students from a university campus through rounding, approximation error, a study-group experiment, neural-network weight codes and their raw storage cost.</desc></svg>
+        <div class="animation-explanation"><b id="intro-chapter">A question on campus</b><p id="intro-text">Can many possible numbers be represented using only a few choices? Two students take their measurements to a university class.</p></div>
+        <div class="playback"><button class="btn" id="intro-play" aria-pressed="false">Play</button><button class="btn" id="intro-restart">Restart</button><label class="timeline-label" for="intro-timeline">Timeline<input id="intro-timeline" type="range" min="0" max="60" step="0.05" value="0"></label><output id="intro-time" for="intro-timeline">0:00 / 1:00</output><label for="intro-speed">Speed <select id="intro-speed"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option></select></label></div>
+        <div class="chapter-links" aria-label="Animation chapters">
+          <button type="button" data-time="0">Campus</button><button type="button" data-time="6">Rounding</button><button type="button" data-time="15">Error</button><button type="button" data-time="24">Study group</button><button type="button" data-time="33">Neural network</button><button type="button" data-time="42">Memory</button><button type="button" data-time="52">Together</button>
+        </div>
+        <details>
+          <summary>Read the animation without motion</summary>
+          <p><b>0–6 seconds · Campus.</b> Two students ask whether many possible numerical values can be represented with only a few choices.</p>
+          <p><b>6–15 seconds · Classroom.</b> Rounding to the nearest integer maps (0.7, 1.2, 1.8, 2.4, 2.9, 3.3) to (1, 1, 2, 2, 3, 3). Six distinct inputs share three representatives. Exact half-integer ties go toward the larger integer.</p>
+          <p><b>15–24 seconds · Presentation board.</b> The input 2.4 maps to 2. With signed error e = x − Q(x), the error is 0.4. Adjacent integer reconstructions have spacing Δ = 1.</p>
+          <p><b>24–33 seconds · Study group.</b> Compare nearest-level rounding on two grids using the same input, 2.4. A step of 1 gives 2 and error 0.4; a step of 0.25 gives 2.5 and error −0.1. The absolute error is smaller for this example.</p>
+          <p><b>33–42 seconds · Computer lab.</b> A schematic neural network labels four illustrative learned weights: 0.73, −1.24, 0.18 and 2.61. It is not an LLM architecture. With an unsigned 4-bit affine grid calibrated to [−1.24, 2.61], scale = 3.85 / 15 = 0.256666… and zero-point = 5. Weight 0.73 maps to index 8, binary code 1000, and reconstructs to scale × (8 − 5) = 0.77. Its error is −0.04; four bits identify 16 codes.</p>
+          <p><b>42–52 seconds · Memory.</b> For the same N weights, 16-bit codes need 16N raw bits and 4-bit codes need 4N: one quarter of the raw weight-code storage. Each tile represents N bits. Scales, codebooks, activations and caches add storage or runtime memory; this does not imply four times faster inference or a quarter of total runtime memory.</p>
+          <p><b>52–60 seconds · Together.</b> Measurements map to discrete levels; model weights map to compact codes and reconstructed approximations. Fewer bits trade representational detail for lower representation cost. Effects on model quality depend on the method, model and task. Continue with the six-number example in the article below.</p>
+        </details>
+      </section>
+
+      <h2 id="1-what-is-quantization">1. What Is Quantization?</h2>
 
       <p>
         Suppose you measure six objects and record these values:
@@ -62,7 +101,7 @@
       </div>
 
       <p>
-        You started with six distinct measurements and ended with only four distinct reported
+        You started with six distinct measurements and ended with only three distinct reported
         values (1, 2, and 3). That is quantization. The stored numbers are <em>close</em> to
         the originals, but they are not exact. The gap between an original value and its
         stored stand-in is called the <strong>quantization error</strong>.
@@ -80,7 +119,7 @@
         </ol>
       </div>
 
-      <h2>2. Start With Rounding</h2>
+      <h2 id="2-start-with-rounding">2. Start With Rounding</h2>
 
       <p>
         Rounding is the simplest possible quantizer. You pick a fixed spacing between allowed
@@ -91,10 +130,9 @@
       </p>
 
       <div class="viz" id="viz-numline">
-        <h3>Interactive number-line quantizer</h3>
+        <h3 id="interactive-number-line-quantizer">Interactive number-line quantizer</h3>
         <p>
-          Drag the value and the step size. The highlighted dot is your original value; the
-          square is the nearest allowed level. Watch how a smaller step shrinks the error.
+          Drag the blue point directly, or use the input slider. Choose the number of midpoint levels across [0,10]. The square is the nearest allowed reconstruction; the bridge marks the signed error.
         </p>
         <div class="controls">
           <div class="control">
@@ -102,15 +140,15 @@
             <input type="range" id="num-val" min="0" max="10" step="0.01" value="7.37" aria-label="Original value">
           </div>
           <div class="control">
-            <label for="num-step">Step size</label>
-            <input type="range" id="num-step" min="0.1" max="2" step="0.05" value="1" aria-label="Quantization step size">
+            <label for="num-levels">Levels across [0,10]</label>
+            <select id="num-levels"><option>2</option><option>4</option><option>8</option><option selected>10</option><option>16</option><option>32</option></select>
           </div>
           <div class="control">
             <label for="num-val-out">Show value</label>
             <input type="number" id="num-val-out" value="7.37" step="0.01" aria-label="Current value numeric">
           </div>
         </div>
-        <div class="svg-wrap"><svg class="qz" id="numline-svg" viewBox="0 0 760 170" role="img" aria-label="Number line showing original value and nearest quantized level"></svg></div>
+        <div class="svg-wrap readable-plot" tabindex="0" role="region" aria-label="Scrollable mathematical figure"><svg class="qz" id="numline-svg" viewBox="0 0 760 170" role="img" aria-label="Number line showing original value and nearest quantized level"></svg></div>
         <div class="readout">
           <div class="box"><div class="k">Original</div><div class="v" id="num-orig">7.37</div></div>
           <div class="box"><div class="k">Quantized</div><div class="v" id="num-quant">7.00</div></div>
@@ -122,7 +160,7 @@
         </div>
       </div>
 
-      <h2>3. Think in Buckets</h2>
+      <h2 id="3-think-in-buckets">3. Think in Buckets</h2>
 
       <p>
         Rounding to whole numbers hides a useful picture. Imagine laying a ruler down and
@@ -138,20 +176,39 @@
       </p>
 
       <div class="viz" id="viz-buckets">
-        <h3>Divide a range into buckets</h3>
+        <h3 id="divide-a-range-into-buckets">Divide a range into buckets</h3>
         <div class="seg" id="bucket-seg" role="group" aria-label="Number of levels">
           <button data-levels="2" aria-pressed="false">2 levels</button>
           <button data-levels="4" aria-pressed="false">4 levels</button>
           <button data-levels="8" aria-pressed="true">8 levels</button>
           <button data-levels="16" aria-pressed="false">16 levels</button>
         </div>
-        <div class="svg-wrap"><svg class="qz" id="buckets-svg" viewBox="0 0 760 220" role="img" aria-label="Range divided into buckets with representative levels"></svg></div>
+        <div class="svg-wrap readable-plot" tabindex="0" role="region" aria-label="Scrollable mathematical figure"><svg class="qz" id="buckets-svg" viewBox="0 0 760 220" role="img" aria-label="Range divided into buckets with representative levels"></svg></div>
         <div class="viz-caption" id="bucket-caption">
           8 levels across the range 0&ndash;10: each level represents a slice of width 1.25.
         </div>
       </div>
 
-      <h2>4. From Buckets to Levels</h2>
+
+      <h3 id="3-1-decision-cells-and-reconstruction-values">3.1 Decision cells and reconstruction values</h3>
+      <p>Think of a postal address: many physical positions share one address. A scalar quantizer similarly assigns every input in a region to one representative. The <em>index</em> identifies that region; the <em>reconstruction</em> is the numerical value used after decoding.</p>
+      <div class="equation">$$Q:\mathbb R\to\mathcal C,\qquad \mathcal C=\{c_0,\ldots,c_{L-1}\},\qquad Q(x)=c_k\ \text{if }x\in R_k.$$</div>
+      <p>The decision regions $R_k$ form a disjoint partition of the input domain. A finite codebook has $L$ reconstruction values; a countably infinite lattice such as $\Delta\mathbb Z$ cannot encode every index with a fixed finite number of bits when inputs are unbounded. For ordered nearest-neighbour levels, thresholds lie at $t_k=(c_{k-1}+c_k)/2$. Assign a threshold tie to the upper cell: $R_k=[t_k,t_{k+1})$, with infinite outer endpoints.</p>
+      <h3 id="3-2-a-finite-uniform-quantizer-completely-specified">3.2 A finite uniform quantizer, completely specified</h3>
+      <p>Throughout the bit-depth comparison and numerical audit, $[a,b]=[-1,1]$ is the design interval, $L$ is the number of equal-width cells, and each cell reconstructs to its midpoint. Inputs outside the interval saturate to the first or last center. Every input and output in these experiments is dimensionless unless a physical unit is explicitly given.</p>
+      <div class="equation">$$\Delta=\frac{b-a}{L},\quad k(x)=\operatorname{clip}_{[0,L-1]}\left(\left\lfloor\frac{x-a}{\Delta}\right\rfloor\right),\quad Q(x)=a+\left(k(x)+\frac12\right)\Delta.$$</div>
+      <p>At $x=b$ the clipped index is $L-1$; at an interior threshold the upper cell wins. With $L=8$, $x=0.37$ gives $k=5$, $Q(x)=0.3750$ and $e=-0.0050$. With $x=1.4$ the reconstruction remains $0.8750$, so the granular bound $|e|\le\Delta/2$ no longer applies.</p>
+      <div class="panel note"><strong>Two valid spacings.</strong> Midpoint cells covering a design interval use $\Delta=(b-a)/L$. Endpoint-inclusive levels spanning two extreme reconstructions use $\Delta=(c_{\max}-c_{\min})/(L-1)$. The sine-wave figure below uses the latter. Confusing the two changes the level count and endpoint behavior.</div>
+      <h3 id="3-3-staircases-thresholds-and-signed-error">3.3 Staircases, thresholds and signed error</h3>
+      <p>A mid-tread quantizer has a level at zero; a mid-rise quantizer has a threshold at zero. Before saturation their rules are $Q_t(x)=\Delta\lfloor x/\Delta+1/2\rfloor$ and $Q_r(x)=\Delta(\lfloor x/\Delta\rfloor+1/2)$. Exact ties go toward the larger reconstruction. Here the permitted lattice levels are restricted to [−1,1], while the plotted input extends beyond it.</p>
+      <div class="viz" id="viz-staircase">
+        <h3 id="one-input-two-coordinated-views">One input, two coordinated views</h3><p>Move the blue input. The green square lies on the staircase; the red segment is exactly $x-Q(x)$. Dashed vertical lines are decision thresholds.</p>
+        <div class="controls"><label class="control" for="stair-x">Input x (dimensionless)<input id="stair-x" type="range" min="-1.4" max="1.4" step="0.001" value="0.37"></label><label class="control" for="stair-delta">Step Δ<select id="stair-delta"><option>0.125</option><option selected>0.25</option><option>0.5</option><option>1</option></select></label><label class="control" for="stair-mode">Convention<select id="stair-mode"><option value="rise">Mid-rise</option><option value="tread">Mid-tread</option></select></label><button class="btn" id="stair-reset">Reset</button></div>
+        <div class="readable-plot" tabindex="0" role="region" aria-label="Scrollable mathematical figure"><svg class="qz" id="stair-svg" viewBox="0 0 900 330" role="img" aria-label="Quantizer staircase beside its signed error function, with a shared selected input"></svg></div>
+        <p class="numeric-summary" id="stair-readout"></p><p class="viz-caption">The gray diagonal is the identity. The shaded red band in the error view marks ±Δ/2. Saturation can put an error outside that band. All axes use dimensionless values. On narrow screens, scroll the figure horizontally to inspect its labels.</p>
+      </div>
+
+      <h2 id="4-from-buckets-to-levels">4. From Buckets to Levels</h2>
 
 <p>
         A key realization: once you fix the range and the number of levels, the exact values
@@ -164,7 +221,7 @@
         do we write them down efficiently? That is where bits enter.
       </p>
 
-      <h2>5. How Bits Enter the Story</h2>
+      <h2 id="5-how-bits-enter-the-story">5. How Bits Enter the Story</h2>
 
       <p>
         Computers store information in bits, each of which can be $0$ or $1$. With $b$ bits you
@@ -186,7 +243,7 @@
       </div>
 
       <div class="viz" id="viz-bits">
-        <h3>Bit-depth selector</h3>
+        <h3 id="bit-depth-selector">Bit-depth selector</h3>
         <div class="bits-row" id="bits-selector" role="group" aria-label="Choose bit depth">
           <button data-bits="1">1</button>
           <button data-bits="2">2</button>
@@ -208,7 +265,12 @@
         </div>
       </div>
 
-      <h2>6. A Quantized Signal</h2>
+
+      <h3 id="5-1-same-range-different-budgets">5.1 Same range, different budgets</h3>
+      <p>For fixed-length labels, $b=\lceil\log_2 L\rceil$ bits suffice; $L=2^b$ only when all bit patterns are used for distinct levels. Resolution describes the grid spacing. It does not by itself guarantee measurement accuracy.</p>
+      <div class="viz" id="viz-bit-compare"><h3 id="a-common-input-across-six-bit-depths">A common input across six bit depths</h3><label class="control" for="compare-x">Input x in [−1,1]<input id="compare-x" type="range" min="-1" max="1" step="0.001" value="0.37"></label><button class="btn" id="compare-reset">Reset</button><div class="readable-plot" tabindex="0" role="region" aria-label="Scrollable mathematical figure"><svg class="qz" id="compare-svg" viewBox="0 0 900 310" role="img" aria-label="Common-scale comparison of 2, 3, 4, 6 and 8 bit reconstructions plus a 1 bit baseline"></svg></div><p class="viz-caption">Every row uses midpoint cells on [−1,1]: blue circles are x, green squares are Q(x), and red connectors show their gap. Numeric errors remain readable even when fine levels visually coincide.</p></div>
+
+      <h2 id="6-a-quantized-signal">6. A Quantized Signal</h2>
 
       <p>
         Quantization is not only about isolated numbers &mdash; it applies to signals too. A
@@ -218,7 +280,7 @@
       </p>
 
       <div class="viz" id="viz-signal">
-        <h3>Quantized sine wave</h3>
+        <h3 id="quantized-sine-wave">Quantized sine wave</h3>
         <div class="controls">
           <div class="control">
             <label for="sig-levels">Levels (2&ndash;32)</label>
@@ -229,10 +291,10 @@
             <input type="range" id="sig-range" min="1" max="5" step="0.1" value="2" aria-label="Vertical range of the sine wave">
           </div>
         </div>
-        <div class="svg-wrap"><svg class="qz" id="signal-svg" viewBox="0 0 760 260" role="img" aria-label="Original sine wave and its quantized staircase approximation"></svg></div>
+        <div class="svg-wrap readable-plot" tabindex="0" role="region" aria-label="Scrollable mathematical figure"><svg class="qz" id="signal-svg" viewBox="0 0 760 260" role="img" aria-label="Original sine wave and its quantized staircase approximation"></svg></div>
         <div class="legend">
           <span><span class="swatch" style="background:#1d4f91"></span>Original signal</span>
-          <span><span class="swatch" style="background:#b4632a"></span>Quantized staircase</span>
+          <span><span class="swatch" style="background:#467950"></span>Quantized staircase</span>
         </div>
         <div class="readout">
           <div class="box"><div class="k">Levels</div><div class="v" id="sig-levels-out">8</div></div>
@@ -240,7 +302,7 @@
         </div>
       </div>
 
-      <h2>7. Precision and Numerical Representation</h2>
+      <h2 id="7-precision-and-numerical-representation">7. Precision and Numerical Representation</h2>
 
       <p>
         When people say a model is &ldquo;32-bit&rdquo; or &ldquo;4-bit&rdquo;, they are talking
@@ -250,7 +312,7 @@
       </p>
 
       <div class="viz" id="viz-ladder">
-        <h3>Precision ladder</h3>
+        <h3 id="precision-ladder">Precision ladder</h3>
         <p>
           The bars below are proportional to bit width. A 4-bit format does <em>not</em> mean
           the values themselves become smaller; it means there are far fewer distinct states.
@@ -271,14 +333,14 @@
         </div>
       </div>
 
-      <h2>8. The Quantization Equation</h2>
+      <h2 id="8-the-quantization-equation">8. The Quantization Equation</h2>
 
       <p>
         Now we make the bucket idea precise. The standard <strong>affine</strong> quantization
         rule maps a real value $x$ to an integer code $q$:
       </p>
       <div class="equation">
-        $$q = \operatorname{round}\!\left(\frac{x}{s}\right) + z$$
+        $$q = \operatorname{clip}_{[q_{\min},q_{\max}]}\!\left(\left\lfloor\frac{x}{s}+\frac12\right\rfloor + z\right)$$
       </div>
       <p>and recovers an approximation $\hat{x}$ from the code:</p>
       <div class="equation">
@@ -305,17 +367,28 @@
         original.</p>
       </div>
 
-      <p>The quantization error is defined as</p>
+      <p>For this example the code range is $0,\ldots,15$, so the reconstruction range is $[0,3.75]$ and no clipping occurs. The quantization error is defined as</p>
       <div class="equation">
         $$e = x - \hat{x}.$$
       </div>
 
-      <h2>9. Scale</h2>
+
+      <h3 id="8-1-code-ranges-ties-and-zero">8.1 Code ranges, ties and zero</h3>
+      <p>The displayed implementation uses $\lfloor u+1/2\rfloor$ for nearest rounding: a tie at −1.5 becomes −1. Hardware may instead use ties-to-even, so a deployed format must specify this choice. Clipping happens <em>after</em> rounding and the integer zero-point shift.</p>
+      <div class="algorithm"><pre><code><span class="code-comment"># unsigned affine calibration, including zero</span>
+L ← 2^b; a ← min(0, xmin); bmax ← max(0, xmax)
+s ← (bmax − a) / (L − 1)            <span class="code-comment"># use s=1 for an all-zero range</span>
+z ← clip(floor(−a/s + 1/2), 0, L−1)
+q ← clip(floor(x/s + 1/2) + z, 0, L−1)
+xhat ← s * (q − z); e ← x − xhat</code></pre><p>Each scalar costs O(1) once calibration is known. Finding extrema costs O(N). The narrow signed symmetric convention here uses $q\in[-(2^{b-1}-1),2^{b-1}-1]$, $z=0$: one bit pattern is unused. Its one-bit zero-inclusive limit has only the level zero, rather than dividing by zero. A binary ±A quantizer is a different, zero-excluding design.</p></div>
+      <h3 id="8-2-numerical-audit-trail">8.2 Numerical audit trail</h3><p>These rows are generated by the same midpoint quantizer as the bit-depth comparison: $a=-1$, $b=1$, $L=8$, $\Delta=0.25$. Interior ties choose the upper cell; exterior values saturate.</p><div class="table-wrap"><table class="comparison-table worked-table"><thead><tr><th>Input x</th><th>Index k</th><th>3-bit label</th><th>Q(x)</th><th>e=x−Q(x)</th></tr></thead><tbody id="worked-rows"></tbody></table></div>
+
+      <h2 id="9-scale">9. Scale</h2>
 
       <p>
         The scale $s$ decides how much real-world distance each code step covers. If your data
         ranges from $x_{\min}$ to $x_{\max}$ and you have integer codes from $q_{\min}$ to
-        $q_{\max}$, the most common choice spreads the codes evenly across the data range:
+        $q_{\max}$, an endpoint-inclusive spacing is (use the zero-expanded calibration range for the affine widgets):
       </p>
       <div class="equation">
         $$s = \frac{x_{\max} - x_{\min}}{\,q_{\max} - q_{\min}\,}.$$
@@ -323,12 +396,11 @@
 
       <p>
         Geometrically this is a straight-line map between two number lines: the top line is the
-        real-value range, the bottom line is the integer-code range, and the scale is the slope
-        of the map.
+        real-value range, the bottom line is the integer-code range, and reconstruction has slope $s$ in real units per code; the unrounded encoding map has reciprocal slope $1/s$.
       </p>
 
       <div class="viz" id="viz-scale">
-        <h3>Scale and zero-point map</h3>
+        <h3 id="scale-and-zero-point-map">Scale and zero-point map</h3>
         <div class="controls">
           <div class="control">
             <label for="scale-xmin">Real min</label>
@@ -343,7 +415,7 @@
             <input type="number" id="scale-bits" value="4" min="1" max="8" step="1" aria-label="Bits for scale demo">
           </div>
         </div>
-        <div class="svg-wrap"><svg class="qz" id="scale-svg" viewBox="0 0 760 240" role="img" aria-label="Two number lines showing mapping from real range to integer code range"></svg></div>
+        <div class="svg-wrap readable-plot" tabindex="0" role="region" aria-label="Scrollable mathematical figure"><svg class="qz" id="scale-svg" viewBox="0 0 760 240" role="img" aria-label="Two number lines showing mapping from real range to integer code range"></svg></div>
         <div class="readout">
           <div class="box"><div class="k">Scale s</div><div class="v" id="scale-s">0.27</div></div>
           <div class="box"><div class="k">Zero-point z</div><div class="v" id="scale-z">8</div></div>
@@ -351,13 +423,11 @@
         </div>
       </div>
 
-      <h2>10. Zero-Point</h2>
+      <h2 id="10-zero-point">10. Zero-Point</h2>
 
       <p>
         The zero-point $z$ is the integer code that represents the real value $0$. It matters
-        when your data does <em>not</em> straddle zero symmetrically. If all your values are
-        positive (say $0.1$ to $9.2$), you would waste codes on negative numbers unless you shift
-        the map so that code $0$ lines up with real $0$.
+        when your data does <em>not</em> straddle zero symmetrically. In the unsigned affine convention used here, calibration first includes zero: $a=\min(0,x_{\min})$, $b=\max(0,x_{\max})$. For positive-only data, $z=0$ and codes cover nonnegative values. An endpoint-fitted quantizer with an arbitrary real offset is a different convention.
       </p>
 
       <div class="analysis-box">
@@ -368,16 +438,16 @@
         making better use of the available levels for non-centered data.</p>
       </div>
 
-      <h2>11. Symmetric vs Asymmetric Quantization</h2>
+      <h2 id="11-symmetric-vs-asymmetric-quantization">11. Symmetric vs Asymmetric Quantization</h2>
 
       <p>
         The two strategies behave differently on the same data. Below, the same set of values is
         shown under both schemes. Symmetric keeps zero fixed at the center; asymmetric shifts the
-        zero-point so the codes cover the data snugly.
+        zero-point to use more codes on the occupied side, subject to including zero and integer zero-point rounding.
       </p>
 
       <div class="viz" id="viz-sym">
-        <h3>Symmetric versus asymmetric</h3>
+        <h3 id="symmetric-versus-asymmetric">Symmetric versus asymmetric</h3>
         <div class="seg" id="sym-seg" role="group" aria-label="Quantization mode">
           <button data-mode="symmetric" aria-pressed="true">Symmetric</button>
           <button data-mode="asymmetric" aria-pressed="false">Asymmetric</button>
@@ -396,22 +466,21 @@
             <input type="number" id="sym-bits" value="3" min="1" max="8" step="1" aria-label="Bits for symmetric demo">
           </div>
         </div>
-        <div class="svg-wrap"><svg class="qz" id="sym-svg" viewBox="0 0 760 200" role="img" aria-label="Comparison of symmetric and asymmetric level placement"></svg></div>
+        <div class="svg-wrap readable-plot" tabindex="0" role="region" aria-label="Scrollable mathematical figure"><svg class="qz" id="sym-svg" viewBox="0 0 760 200" role="img" aria-label="Comparison of symmetric and asymmetric level placement"></svg></div>
         <div class="viz-caption" id="sym-caption"></div>
       </div>
 
-      <h2>12. Quantization Error</h2>
+      <h2 id="12-quantization-error">12. Quantization Error</h2>
 
       <p>There are really two different kinds of error, and it helps to keep them separate.</p>
 
-      <h3>Rounding (discretization) error</h3>
+      <h3 id="rounding-discretization-error">Rounding (discretization) error</h3>
       <p>
         This is the normal, unavoidable gap between a real value and the nearest allowed level.
-        With a good range and $L$ levels, the typical rounding error is about half the step size
-        $s$. More levels shrink it; fewer levels grow it.
+        With a good range and $L$ levels, the maximum absolute granular error is $s/2$ when each input lies within half a step of a reconstruction level. More levels shrink it; fewer levels grow it.
       </p>
 
-      <h3>Clipping (saturation) error</h3>
+      <h3 id="clipping-saturation-error">Clipping (saturation) error</h3>
       <p>
         This happens when a value lies <em>outside</em> the representable range entirely. It is
         clamped to the nearest endpoint, and no amount of extra levels inside the range fixes
@@ -419,7 +488,7 @@
       </p>
 
       <div class="viz" id="viz-clip">
-        <h3>Clipping demonstration</h3>
+        <h3 id="clipping-demonstration">Clipping demonstration</h3>
         <div class="controls">
           <div class="control">
             <label for="clip-range">Representable max</label>
@@ -430,7 +499,7 @@
             <input type="range" id="clip-val" min="0" max="9" step="0.1" value="6.2" aria-label="Original value that may be clipped">
           </div>
         </div>
-        <div class="svg-wrap"><svg class="qz" id="clip-svg" viewBox="0 0 760 170" role="img" aria-label="Number line showing a value clipped to the representable maximum"></svg></div>
+        <div class="svg-wrap readable-plot" tabindex="0" role="region" aria-label="Scrollable mathematical figure"><svg class="qz" id="clip-svg" viewBox="0 0 760 170" role="img" aria-label="Number line showing a value clipped to the representable maximum"></svg></div>
         <div class="readout">
           <div class="box"><div class="k">Original</div><div class="v" id="clip-orig">6.2</div></div>
           <div class="box"><div class="k">Stored</div><div class="v" id="clip-stored">4.00</div></div>
@@ -442,15 +511,47 @@
         </div>
       </div>
 
-      <h2>13. Quantization Laboratory</h2>
+
+      <h3 id="12-1-from-one-error-to-expected-distortion">12.1 From one error to expected distortion</h3>
+      <p>A quantizer can be accurate for common values and poor for rare ones. Mean squared distortion weights squared error by how often each input occurs. If amplitudes have units of volts, distortion has units of volts squared.</p>
+      <div class="equation">$$D=\mathbb E[(X-Q(X))^2]=\sum_{k=0}^{L-1}\int_{R_k}(x-c_k)^2 f_X(x)\,dx,\qquad \widehat D=\frac1N\sum_{n=1}^{N}(x_n-Q(x_n))^2.$$</div>
+      <p>Here $f_X$ is the input density, $R_k$ is a decision region and $c_k$ its reconstruction. The integral includes overload tails when the source has support outside the design range. The sample average $\widehat D$ is an empirical estimate, not a population identity.</p>
+      <h3 id="12-2-deriving-12-and-the-ideal-sine-wave-sqnr">12.2 Deriving Δ²/12 and the ideal sine-wave SQNR</h3>
+      <p>If a cell's density is approximately constant and its center reconstructs the input, its conditional error is approximately uniform on $[-\Delta/2,\Delta/2]$. Integrating the squared gap gives</p>
+      <div class="equation">$$\mathbb E[e^2\mid R_k]\approx\frac1\Delta\int_{-\Delta/2}^{\Delta/2}u^2\,du=\frac1\Delta\left[\frac{u^3}{3}\right]_{-\Delta/2}^{\Delta/2}=\frac{\Delta^2}{12}.$$</div>
+      <p>This is exact for a uniform source tiled by equal midpoint cells without overload. It is a high-resolution approximation for a smooth density that changes little across each cell. Coarse cells, concentrated inputs, clipping and deterministic signal–error correlation can invalidate the noise model. Rounding error is not automatically independent of the signal.</p>
+      <details class="derivation"><summary>Derive the familiar 6.02b + 1.76 dB rule</summary><p>A full-scale sine $X=A\sin\theta$ has mean power $A^2/2$ when phase is uniformly distributed. For $2^b$ midpoint cells on $[-A,A]$, $\Delta=2A/2^b$. Under the ideal high-resolution error model,</p><div class="equation">$$\mathrm{SQNR}\approx\frac{A^2/2}{\Delta^2/12}=\frac32\,2^{2b},\quad 10\log_{10}\mathrm{SQNR}\approx6.0206b+1.7609\ \mathrm{dB}.$$</div><p>Each extra bit ideally quarters distortion over a fixed range. Lower signal amplitude, overload, a different source distribution or correlated error changes this result.</p></details>
+      <h3 id="12-3-nonuniform-cells-and-lloyd-max-optimization">12.3 Nonuniform cells and Lloyd–Max optimization</h3>
+      <p>Spend reconstruction levels where squared error is costly. For fixed decision regions, differentiating their distortion with respect to $c_k$ yields $2\int_{R_k}(c_k-x)f_X(x)dx=0$, so the best level is the conditional mean. For fixed levels, choose the nearest one point by point.</p>
+      <div class="equation">$$t_k=\frac{c_{k-1}+c_k}{2},\qquad c_k=\frac{\int_{t_k}^{t_{k+1}}x f_X(x)\,dx}{\int_{t_k}^{t_{k+1}} f_X(x)\,dx}.$$</div>
+      <p>Alternate these two updates. Each exact subproblem cannot increase distortion, but the joint problem is nonconvex: convergence need not produce a global optimum. An empty cell retains its old level here. For a uniform source on [−1,1] with initial levels −0.8 and 0.4, the threshold is −0.2; their centroids become −0.6 and 0.4, and the new threshold becomes −0.1. Repetition approaches −0.5 and 0.5.</p>
+      <div class="viz" id="viz-lloyd"><h3 id="density-cells-and-distortion">Density, cells and distortion</h3><p>Change the source or initialization, then advance the actual centroid algorithm. A selected cell is shaded: its contribution is the integral of the red squared-error density below it.</p>
+        <div class="controls"><label class="control" for="density-kind">Input distribution<select id="density-kind"><option value="uniform">Uniform on [−1,1]</option><option value="gaussian" selected>Truncated Gaussian (μ=0.12, σ=0.27)</option><option value="skew">Skewed: f(x)=3(x+1)²/8</option></select></label><label class="control" for="density-levels">Codebook size<select id="density-levels"><option>2</option><option selected>4</option><option>8</option></select></label><label class="control" for="density-init">Initialization<select id="density-init"><option value="even">Uniform midpoint levels</option><option value="biased">Levels biased toward the left</option></select></label><label class="control" for="density-cell">Inspect cell<select id="density-cell"></select></label></div>
+        <div class="controls"><button class="btn" id="lloyd-step">One Lloyd–Max iteration</button><button class="btn" id="lloyd-run" aria-pressed="false">Run iterations</button><button class="btn" id="lloyd-reset">Reset</button></div>
+        <div class="readable-plot" tabindex="0" role="region" aria-label="Scrollable mathematical figure"><svg class="qz" id="density-svg" viewBox="0 0 900 390" role="img" aria-label="Input density, current nonuniform decision cells, reconstruction levels, and squared-error density"></svg></div>
+        <p class="numeric-summary" id="density-readout"></p><div class="readable-plot" tabindex="0" role="region" aria-label="Scrollable mathematical figure"><svg class="qz" id="distortion-svg" viewBox="0 0 900 170" role="img" aria-label="Distortion history over Lloyd–Max iterations"></svg></div>
+        <p class="viz-caption">All results use deterministic midpoint quadrature with 2,400 points on [−1,1]; they approximate the stated continuous source. The Gaussian is normalized after truncation. Dashed levels show the fixed uniform baseline; green levels show the current codebook. Distortion is dimensionless squared. Reset restores iteration zero for the selected configuration.</p>
+      </div>
+      <div class="algorithm"><h3 id="implementation-assignments-distortion-centroids">Implementation: assignments, distortion, centroids</h3><pre><code><span class="code-key">repeat</span> until the improvement is small:
+  k[n] ← nearest_index(x[n], c)       <span class="code-comment"># threshold ties go up</span>
+  D ← sum(w[n] * (x[n] − c[k[n]])²)
+  <span class="code-key">for</span> each occupied cell k:
+    c[k] ← sum(w[n]*x[n] in k) / sum(w[n] in k)
+  t[k] ← (c[k−1] + c[k]) / 2</code></pre><p>For $N$ quadrature points and $L$ levels, the direct search used here costs $O(NL)$ per iteration and $O(N+L)$ memory. Sorted scalar levels permit $O(N\log L)$ assignments by binary search. Use an improvement tolerance and an iteration limit in production.</p></div>
+      <h3 id="12-4-representation-cost-and-the-rate-distortion-boundary">12.4 Representation cost and the rate–distortion boundary</h3>
+      <p>Our fixed-length code costs $b=\lceil\log_2 L\rceil$ bits per sample, plus codebook or scale metadata. A nonuniform occupancy can support a smaller <em>average</em> label length through entropy coding: $H(K)=-\sum_k p_k\log_2 p_k$, with prefix-code average length between $H(K)$ and $H(K)+1$ for an optimal binary code under the usual conditions. This changes encoding, not the already reconstructed values.</p>
+      <p>For a memoryless source and additive per-sample distortion, Shannon's $R(D)=\inf_{p(\hat x\mid x):\,\mathbb E[d(X,\hat X)]\le D}I(X;\hat X)$ is a theoretical asymptotic limit for a specified source and distortion measure, permitting long block codes. Here $I$ is mutual information, $p(\hat x\mid x)$ is a conditional reconstruction law, and $d(x,\hat x)=(x-\hat x)^2$ for the squared-error case. A finite scalar quantizer and its plotted distortion do not generally attain that boundary.</p>
+      <details class="derivation"><summary>Dither: when the uniform-noise interpretation can be justified</summary><p>For an infinite uniform lattice with spacing Δ, subtractive dither reconstructs $\hat x=Q(x+U)-U$, where $U$ is independently uniform over one quantization interval and is known to the decoder. With no overload, the resulting signed error is uniform on an interval of width Δ and independent of x. Nonsubtractive dither reconstructs $Q(x+U)$ and leaves the added noise in the output; it does not inherit the same error variance or independence guarantee. Finite-range clipping breaks the simple subtractive result.</p></details>
+
+      <h2 id="13-quantization-laboratory">13. Quantization Laboratory</h2>
 
       <p>
         This combines everything so far. Pick a real range, a bit depth, and a symmetric/asymmetric
-        mode; then type any value to see its code, reconstructed value, and error.
+        mode; then type a finite value to see its code, reconstructed value, and error.
       </p>
 
       <div class="viz" id="viz-lab">
-        <h3>Quantization laboratory</h3>
+        <h3 id="quantization-laboratory">Quantization laboratory</h3>
         <div class="controls">
           <div class="control">
             <label for="lab-xmin">Real min</label>
@@ -473,19 +574,19 @@
           <button data-mode="asymmetric" aria-pressed="true">Asymmetric</button>
           <button data-mode="symmetric" aria-pressed="false">Symmetric</button>
         </div>
-        <div class="svg-wrap"><svg class="qz" id="lab-svg" viewBox="0 0 760 150" role="img" aria-label="Laboratory number line with levels and the test value"></svg></div>
+        <div class="svg-wrap readable-plot" tabindex="0" role="region" aria-label="Scrollable mathematical figure"><svg class="qz" id="lab-svg" viewBox="0 0 760 150" role="img" aria-label="Laboratory number line with levels and the test value"></svg></div>
         <div class="readout">
           <div class="box"><div class="k">Levels</div><div class="v" id="lab-L">16</div></div>
           <div class="box"><div class="k">Scale s</div><div class="v" id="lab-s">0.40</div></div>
           <div class="box"><div class="k">Zero-point z</div><div class="v" id="lab-z">8</div></div>
           <div class="box"><div class="k">Code q</div><div class="v" id="lab-q">12</div></div>
           <div class="box"><div class="k">Reconstructed</div><div class="v" id="lab-xhat">1.40</div></div>
-          <div class="box"><div class="k">Abs error</div><div class="v" id="lab-err">0.03</div></div>
+          <div class="box"><div class="k">Signed error e</div><div class="v" id="lab-err">0.03</div></div>
           <div class="box"><div class="k">Rel error</div><div class="v" id="lab-rel">2.2%</div></div>
         </div>
       </div>
 
-      <h2>14. Quantizing a Vector</h2>
+      <h2 id="14-quantizing-a-vector">14. Quantizing a Vector</h2>
 
       <p>
         A vector is just a list of numbers, so the same operation applies to each entry. The
@@ -494,8 +595,8 @@
         error.
       </p>
 
-      <div class="viz" id="viz-vector">
-        <h3>Vector quantization</h3>
+      <div class="viz viz-compact" id="viz-vector">
+        <h3 id="componentwise-scalar-quantization-of-a-vector">Componentwise scalar quantization of a vector</h3>
         <div class="controls">
           <div class="control">
             <label for="vec-bits">Bits</label>
@@ -506,16 +607,21 @@
             <button data-mode="symmetric" aria-pressed="false">Symmetric</button>
           </div>
         </div>
-        <div id="vector-tables"></div>
+        <div class="table-wrap" id="vector-tables"></div>
         <div class="legend">
-          <span><span class="swatch" style="background:#b8442e"></span>Error &lt; 0 (under)</span>
-          <span><span class="swatch" style="background:#2f7d4f"></span>Error &gt; 0 (over)</span>
+          <span><span class="swatch" style="background:#b8442e"></span>Error &lt; 0 (reconstruction above input)</span>
+          <span><span class="swatch" style="background:#2f7d4f"></span>Error &gt; 0 (reconstruction below input)</span>
           <span><span class="swatch" style="background:#ddd5c7"></span>Near zero</span>
         </div>
         <div class="viz-caption" id="vec-caption"></div>
       </div>
 
-      <h2>15. Quantizing a Matrix</h2>
+
+      <h3 id="14-1-quantizing-a-vector-jointly">14.1 Quantizing a vector jointly</h3>
+      <p>The preceding widget rounds each coordinate separately. True vector quantization selects one <em>whole vector</em> from a codebook $\mathcal C\subset\mathbb R^d$: $Q(\mathbf x)=\arg\min_{\mathbf c\in\mathcal C}\|\mathbf x-\mathbf c\|_2^2$. In two dimensions its decision cells are Voronoi regions. Four vector codewords need two bits per vector; independently quantizing each of two coordinates to four levels needs four bits per vector and allows sixteen reconstructions.</p>
+      <div class="viz" id="viz-voronoi"><h3 id="codebook-geometry-in-two-dimensions">Codebook geometry in two dimensions</h3><p>Drag a numbered codeword, or select one and use the arrow keys (0.02 per press). Colored points share a nearest codeword. Step updates each codeword to its assigned points' mean; empty clusters retain their location. Ties choose the lower codeword index.</p><div class="controls"><button class="btn" id="vq-step">Assign + update centroids</button><button class="btn" id="vq-reset">Reset</button></div><div class="readable-plot" tabindex="0" role="region" aria-label="Scrollable mathematical figure"><svg class="qz" id="vq-svg" viewBox="0 0 900 430" role="group" aria-label="Interactive two dimensional vector quantizer with four keyboard movable codewords"></svg></div><p class="numeric-summary" id="vq-readout"></p><p class="viz-caption">This is empirical squared Euclidean distortion over 180 seeded points in [−1,1]². The lightly colored polygons are exact clipped Voronoi cells; the input cloud stays fixed when codewords move. Axes are dimensionless. Direct assignment costs O(NLd) per iteration; local convergence is not a guarantee of a globally best codebook.</p></div>
+
+      <h2 id="15-quantizing-a-matrix">15. Quantizing a Matrix</h2>
 
       <p>
         A matrix is a grid of numbers. Neural-network weight matrices are exactly this kind of
@@ -524,8 +630,8 @@
         real models.
       </p>
 
-      <div class="viz" id="viz-matrix">
-        <h3>Matrix quantization</h3>
+      <div class="viz viz-compact" id="viz-matrix">
+        <h3 id="matrix-quantization">Matrix quantization</h3>
         <div class="seg" id="mat-seg" role="group" aria-label="Matrix view">
           <button data-view="original" aria-pressed="true">Original</button>
           <button data-view="quantized" aria-pressed="false">Quantized (codes)</button>
@@ -546,7 +652,7 @@
         <div class="viz-caption" id="mat-caption"></div>
       </div>
 
-      <h2>16. One Scale or Many?</h2>
+      <h2 id="16-one-scale-or-many">16. One Scale or Many?</h2>
 
       <p>
         So far we used <em>one</em> scale for an entire array. That is called
@@ -564,23 +670,25 @@
         levels where they are needed.
       </p>
 
-      <h2>17. Per-Tensor Quantization</h2>
-      <div class="viz" id="viz-pertensor">
-        <h3>Per-tensor: one scale for everything</h3>
+      <h2 id="17-per-tensor-quantization">17. Per-Tensor Quantization</h2>
+      <p>What happens when one ruler serves two very different channels? A single calibration range is inexpensive to store, but its step can exceed every value in the smaller channel.</p>
+      <div class="viz viz-compact" id="viz-pertensor">
+        <h3 id="per-tensor-one-scale-for-everything">Per-tensor: one scale for everything</h3>
         <div id="pertensor-view"></div>
         <div class="viz-caption" id="pertensor-caption"></div>
       </div>
 
-      <h2>18. Per-Channel Quantization</h2>
-      <div class="viz" id="viz-perchannel">
-        <h3>Per-channel: one scale per channel</h3>
+      <h2 id="18-per-channel-quantization">18. Per-Channel Quantization</h2>
+      <p>Give each channel its own ruler. The small channel now uses its own fine reconstruction grid; the larger channel keeps its wider range. Store the scale and zero-point alongside each channel.</p>
+      <div class="viz viz-compact" id="viz-perchannel">
+        <h3 id="per-channel-one-scale-per-channel">Per-channel: one scale per channel</h3>
         <div id="perchannel-view"></div>
         <div class="viz-caption" id="perchannel-caption"></div>
       </div>
 
-      <h2>19. Per-Group Quantization</h2>
-      <div class="viz" id="viz-pergroup">
-        <h3>Per-group: one scale per small group</h3>
+      <h2 id="19-per-group-quantization">19. Per-Group Quantization</h2>
+      <div class="viz viz-compact" id="viz-pergroup">
+        <h3 id="per-group-one-scale-per-small-group">Per-group: one scale per small group</h3>
         <p>
           A middle ground used by modern methods (e.g. group-wise INT4): split each channel into
           small groups and give each group its own scale. This localizes the effect of outliers.
@@ -589,7 +697,7 @@
         <div class="viz-caption" id="pergroup-caption"></div>
       </div>
 
-      <h2>20. From Matrices to Neural Networks</h2>
+      <h2 id="20-from-matrices-to-neural-networks">20. From Matrices to Neural Networks</h2>
 
       <p>
         A trained neural network is, at its core, a large collection of numerical parameters
@@ -600,8 +708,8 @@
       </p>
 
       <div class="viz" id="viz-net">
-        <h3>A tiny network</h3>
-        <div class="svg-wrap"><svg class="net" id="net-svg" viewBox="0 0 760 200" role="img" aria-label="Small neural network diagram highlighting weights and activations"></svg></div>
+        <h3 id="a-tiny-network">A tiny network</h3>
+        <div class="svg-wrap readable-plot" tabindex="0" role="region" aria-label="Scrollable mathematical figure"><svg class="net" id="net-svg" viewBox="0 0 760 200" role="img" aria-label="Small neural network diagram highlighting weights and activations"></svg></div>
         <div class="legend">
           <span><span class="swatch" style="background:#b4632a"></span>Weights (parameters)</span>
           <span><span class="swatch" style="background:#1d4f91"></span>Activations (computed)</span>
@@ -612,7 +720,7 @@
         </div>
       </div>
 
-      <h2>21. Weights and Activations</h2>
+      <h2 id="21-weights-and-activations">21. Weights and Activations</h2>
 
       <p>
         <strong>Weights</strong> are fixed after training; they are known ahead of time and easy
@@ -621,7 +729,7 @@
         differently.
       </p>
 
-      <h2>22. Why Large Models Make Quantization Important</h2>
+      <h2 id="22-why-large-models-make-quantization-important">22. Why Large Models Make Quantization Important</h2>
 
       <p>
         A model with about 7 billion parameters stores roughly:
@@ -641,7 +749,7 @@
       </p>
 
       <div class="viz" id="viz-storage">
-        <h3>Raw storage by precision</h3>
+        <h3 id="raw-storage-by-precision">Raw storage by precision</h3>
         <div class="ladder">
           <div class="ladder-row"><div>FP32</div><div class="ladder-track"><div class="ladder-bar" style="width:100%"></div></div><div>28 GB</div></div>
           <div class="ladder-row"><div>FP16</div><div class="ladder-track"><div class="ladder-bar" style="width:50%"></div></div><div>14 GB</div></div>
@@ -650,14 +758,15 @@
         </div>
       </div>
 
-      <h2>23. Model Memory Calculator</h2>
+      <h2 id="23-model-memory-calculator">23. Model Memory Calculator</h2>
+      <p>How much space do the codes themselves need? Change the parameter count or bit budget to separate raw storage from the extra memory required by an actual inference system.</p>
 
       <div class="viz" id="viz-memcalc">
-        <h3>Interactive memory calculator</h3>
+        <h3 id="interactive-memory-calculator">Interactive memory calculator</h3>
         <div class="controls">
           <div class="control">
             <label for="mem-params">Parameters (billions)</label>
-            <input type="number" id="mem-params" value="7" min="0.0001" max="100000" step="0.5" aria-label="Parameter count in billions">
+            <input type="number" id="mem-params" value="7" min="0.0001" max="100000" step="any" aria-label="Parameter count in billions">
           </div>
           <div class="control">
             <label for="mem-bits">Bits per parameter</label>
@@ -675,7 +784,7 @@
         </div>
       </div>
 
-      <h2>24. Weight-Only Quantization</h2>
+      <h2 id="24-weight-only-quantization">24. Weight-Only Quantization</h2>
 
       <p>
         A model does not have to quantize every numerical object. The simplest practical choice
@@ -686,26 +795,24 @@
       </p>
 
       <div class="viz" id="viz-weightonly">
-        <h3>Weights quantized, activations high precision</h3>
-        <div class="svg-wrap"><svg class="qz" id="weightonly-svg" viewBox="0 0 760 120" role="img" aria-label="Diagram of weight-only quantization"></svg></div>
+        <h3 id="weights-quantized-activations-high-precision">Weights quantized, activations high precision</h3>
+        <div class="svg-wrap readable-plot" tabindex="0" role="region" aria-label="Scrollable mathematical figure"><svg class="qz" id="weightonly-svg" viewBox="0 0 760 120" role="img" aria-label="Diagram of weight-only quantization"></svg></div>
         <div class="legend">
           <span><span class="swatch" style="background:#b4632a"></span>Weights (low-bit)</span>
           <span><span class="swatch" style="background:#1d4f91"></span>Activations (high precision)</span>
         </div>
       </div>
 
-      <h2>25. Weight and Activation Quantization</h2>
+      <h2 id="25-weight-and-activation-quantization">25. Weight and Activation Quantization</h2>
 
       <p>
-        Going further, both weights <em>and</em> activations can be quantized. This is where the
-        big speedups in inference come from, because the dominant matrix multiplications can then
-        run in low-precision arithmetic. It is harder, because activations vary per input and are
+        Going further, both weights <em>and</em> activations can be quantized. This can accelerate inference when the hardware and kernels execute the dominant matrix multiplications efficiently in low precision. It is harder, because activations vary per input and are
         prone to outliers.
       </p>
 
       <div class="viz" id="viz-weightact">
-        <h3>Weights and activations both quantized</h3>
-        <div class="svg-wrap"><svg class="qz" id="weightact-svg" viewBox="0 0 760 120" role="img" aria-label="Diagram of weight and activation quantization"></svg></div>
+        <h3 id="weights-and-activations-both-quantized">Weights and activations both quantized</h3>
+        <div class="svg-wrap readable-plot" tabindex="0" role="region" aria-label="Scrollable mathematical figure"><svg class="qz" id="weightact-svg" viewBox="0 0 760 120" role="img" aria-label="Diagram of weight and activation quantization"></svg></div>
         <div class="legend">
           <span><span class="swatch" style="background:#b4632a"></span>Weights (low-bit)</span>
           <span><span class="swatch" style="background:#1d4f91"></span>Activations (low-bit)</span>
@@ -717,7 +824,7 @@
         </div>
       </div>
 
-      <h2>26. Post-Training Quantization (PTQ)</h2>
+      <h2 id="26-post-training-quantization-ptq">26. Post-Training Quantization (PTQ)</h2>
 
       <p>
         <strong>Post-Training Quantization</strong> is applied after a model has already been
@@ -732,7 +839,7 @@
         needed). No retraining required.
       </div>
 
-      <h2>27. Calibration</h2>
+      <h2 id="27-calibration">27. Calibration</h2>
 
       <p>
         Calibration answers a question we already met back in the clipping section: what range
@@ -750,7 +857,7 @@
         estimate each tensor's range &mdash; exactly the scale/zero-point reasoning from Section 9.</p>
       </div>
 
-      <h2>28. Quantization-Aware Training (QAT)</h2>
+      <h2 id="28-quantization-aware-training-qat">28. Quantization-Aware Training (QAT)</h2>
 
       <p>
         <strong>Quantization-Aware Training</strong> bakes quantization into the training (or
@@ -765,7 +872,7 @@
         network accounts for quantization during learning.
       </div>
 
-      <h2>29. Outliers</h2>
+      <h2 id="29-outliers">29. Outliers</h2>
 
       <p>
         A small number of unusually large values can wreck low-bit quantization. Suppose almost
@@ -775,7 +882,7 @@
       </p>
 
       <div class="viz" id="viz-outlier">
-        <h3>Outlier effect on scale</h3>
+        <h3 id="outlier-effect-on-scale">Outlier effect on scale</h3>
         <div class="controls">
           <div class="control">
             <label for="out-mag">Outlier magnitude</label>
@@ -786,10 +893,10 @@
             <input type="number" id="out-bits" value="4" min="1" max="8" step="1" aria-label="Outlier demo bits">
           </div>
         </div>
-        <div class="svg-wrap"><svg class="qz" id="outlier-svg" viewBox="0 0 760 220" role="img" aria-label="Distribution with one outlier and its effect on quantization scale"></svg></div>
+        <div class="svg-wrap readable-plot" tabindex="0" role="region" aria-label="Scrollable mathematical figure"><svg class="qz" id="outlier-svg" viewBox="0 0 760 220" role="img" aria-label="Distribution with one outlier and its effect on quantization scale"></svg></div>
         <div class="readout">
           <div class="box"><div class="k">Global scale</div><div class="v" id="out-scale">1.20</div></div>
-          <div class="box"><div class="k">Tiny-value steps</div><div class="v" id="out-step">0.05</div></div>
+          <div class="box"><div class="k">Codes used by 40 small values</div><div class="v" id="out-step">0.05</div></div>
         </div>
         <div class="viz-caption">
           Increase the outlier and watch the scale balloon: the many small values are crushed into
@@ -798,7 +905,7 @@
         </div>
       </div>
 
-      <h2>30. 8-Bit and 4-Bit Models</h2>
+      <h2 id="30-8-bit-and-4-bit-models">30. 8-Bit and 4-Bit Models</h2>
 
       <p>
         Two bit widths dominate practical discussion. <strong>INT8</strong> is the classic
@@ -808,7 +915,7 @@
         outliers, and sometimes extra metadata.
       </p>
 
-      <h2>31. INT8, INT4, FP8, FP4 and NF4</h2>
+      <h2 id="31-int8-int4-fp8-fp4-and-nf4">31. INT8, INT4, FP8, FP4 and NF4</h2>
 
       <p>
         The alphabet soup of low-bit formats each solves a slightly different problem:
@@ -816,25 +923,25 @@
 
       <div class="analysis-box">
         <ul class="sub-bullets">
-          <li><strong>INT8</strong> &mdash; uniform signed/unsigned 8-bit integers; simple, fast, accurate.</li>
+          <li><strong>INT8</strong> &mdash; uniform signed/unsigned 8-bit integers; simple encoding; accuracy and speed depend on calibration and kernels.</li>
           <li><strong>INT4</strong> &mdash; uniform 4-bit integers; very compact, needs careful scaling.</li>
           <li><strong>FP8</strong> &mdash; an 8-bit <em>floating-point</em> format (e.g. E4M3/E5M2); keeps an exponent so it covers a wide range with modest precision.</li>
-          <li><strong>FP4</strong> &mdash; a 4-bit floating-point format; extreme compression, research/early-support territory.</li>
+          <li><strong>FP4</strong> &mdash; a 4-bit floating-point format; very few representable states; exact layout and hardware support depend on the format.</li>
           <li><strong>NF4</strong> &mdash; <em>NormalFloat 4-bit</em>: not uniform integers, but levels spaced to match the bell-shaped distribution of trained weights (see below).</li>
         </ul>
       </div>
 
       <div class="viz" id="viz-nf4">
-        <h3>Uniform INT4 vs NF4</h3>
+        <h3 id="uniform-int4-vs-nf4">Uniform INT4 vs NF4</h3>
         <div class="seg" id="nf4-seg" role="group" aria-label="Level layout">
           <button data-layout="uniform" aria-pressed="true">Uniform (INT4)</button>
           <button data-layout="nf4" aria-pressed="false">Non-uniform (NF4)</button>
         </div>
-        <div class="svg-wrap"><svg class="qz" id="nf4-svg" viewBox="0 0 760 200" role="img" aria-label="Comparison of uniform and non-uniform quantization levels"></svg></div>
+        <div class="svg-wrap readable-plot" tabindex="0" role="region" aria-label="Scrollable mathematical figure"><svg class="qz" id="nf4-svg" viewBox="0 0 760 200" role="img" aria-label="Comparison of uniform and non-uniform quantization levels"></svg></div>
         <div class="viz-caption" id="nf4-caption"></div>
       </div>
 
-      <h2>32. Modern LLM Quantization Methods</h2>
+      <h2 id="32-modern-llm-quantization-methods">32. Modern LLM Quantization Methods</h2>
 
       <p>
         The techniques below are all attempts to make the fundamental trade-off (precision vs size)
@@ -887,12 +994,12 @@
         consult the primary papers and the framework documentation in the references.
       </p>
 
-      <h2>33. What Quantization Does NOT Mean</h2>
+      <h2 id="33-what-quantization-does-not-mean">33. What Quantization Does NOT Mean</h2>
 
       <div class="card-grid">
         <div class="fcallout">
           <div class="myth">Misconception: &ldquo;INT4 means every original weight must literally be an integer between &minus;8 and 7.&rdquo;</div>
-          <div class="truth">The stored <em>code</em> is an integer in that range, but it participates in a mapping $\hat{x}=s(q-z)$. The original weight was a float; the code is just its address.</div>
+          <div class="truth">The stored <em>code</em> is an integer in that range, but it participates in a mapping $\hat{x}=s(q-z)$. The original weight was a float; the code identifies a reconstruction level. Unsigned formats instead use codes 0 through 15, and the narrow signed convention on this page uses −7 through 7.</div>
         </div>
         <div class="fcallout">
           <div class="myth">Misconception: &ldquo;Going from FP16 to 4-bit makes every program four times faster.&rdquo;</div>
@@ -912,7 +1019,7 @@
         </div>
       </div>
 
-      <h2>34. The Fundamental Trade-Off</h2>
+      <h2 id="34-the-fundamental-trade-off">34. The Fundamental Trade-Off</h2>
 
       <p>
         Reducing bits trades several things against each other. None of them moves in isolation,
@@ -922,11 +1029,11 @@
       <div class="analysis-box">
         <ul class="sub-bullets">
           <li><strong>Numerical precision</strong> &darr; as bits &darr;</li>
-          <li><strong>Quantization error</strong> &uarr; as levels &darr;</li>
+          <li><strong>Distortion</strong> &mdash; more optimally placed levels can improve the best achievable error; arbitrary grids need not improve every input.</li>
           <li><strong>Model size / memory</strong> &darr; roughly with bits</li>
           <li><strong>Memory bandwidth</strong> &darr; (less data to move)</li>
           <li><strong>Computational efficiency</strong> &mdash; only if hardware/kernel supports the format</li>
-          <li><strong>Hardware support</strong> &mdash; INT8 is universal; FP4/NF4 is not</li>
+          <li><strong>Hardware support</strong> &mdash; support varies by device, format and kernel</li>
           <li><strong>Implementation complexity</strong> &uarr; for per-group/outlier methods</li>
           <li><strong>Accuracy / model quality</strong> &mdash; may drop at very low bits</li>
         </ul>
@@ -935,7 +1042,7 @@
         &ldquo;4-bit = four times faster than 16-bit&rdquo; is not generally true.</p>
       </div>
 
-      <h2>35. Summary / Mental Model</h2>
+      <h2 id="35-summary-mental-model">35. Summary / Mental Model</h2>
 
       <p>
         We started by rounding a few everyday numbers. Every later idea was the same operation
@@ -954,7 +1061,13 @@
         </ol>
       </div>
 
-      <h2>36. References / Further Reading</h2>
+      <h2 id="36-references-further-reading">36. References / Further Reading</h2>
+      <p>Classical scalar and vector theory connects the early measurement examples to the later neural-network applications.</p>
+      <ul class="sub-bullets">
+        <li>Gray, R. M. and Neuhoff, D. L. (1998). <a href="https://www.math.ucdavis.edu/~saito/data/quantization/44it06-gray.pdf"><em>Quantization</em></a>, IEEE Transactions on Information Theory 44(6), 2325–2383. Scalar/vector quantization, high-resolution theory and optimization.</li>
+        <li><a href="https://web.stanford.edu/class/ee269/Lecture_nonuniform_quantization.pdf">Stanford EE269: Non-uniform Quantizers, Lloyd–Max Optimality and High-Rate Theory</a>. Conditional means, nearest-neighbour cells and assumptions.</li>
+        <li><a href="https://github.com/bitsandbytes-foundation/bitsandbytes/blob/main/bitsandbytes/functional.py">bitsandbytes, get_4bit_type</a>. Source of the normalized 16-level NF4 lookup table in Section 31.</li>
+      </ul>
 
       <ul class="sub-bullets">
         <li>Jacob, B. et al. (2017). <em>Quantization and Training of Neural Networks for Efficient Integer-Arithmetic-Only Inference</em>. arXiv:1712.05877 &mdash; the affine INT8 formulation with scale and zero-point.</li>
@@ -971,12 +1084,13 @@
         <span class="sep">|</span>
         <a href="../../research.html">Research</a>
       </div>
-    </section>
+    </main>
+  </div>
   </div>
 
+  <script defer src="2026-08-21-quantization/quantization-math.js"></script>
   <script defer src="2026-08-21-quantization/quantization.js"></script>
-</body>
-</html>
-  </div>
+  <script defer src="2026-08-21-quantization/research.js"></script>
+  <script defer src="2026-08-21-quantization/intro-story.js"></script>
 </body>
 </html>

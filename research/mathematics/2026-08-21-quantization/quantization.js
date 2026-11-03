@@ -11,40 +11,23 @@
     if (d === undefined) d = 2;
     return n.toFixed(d);
   }
-  function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
+  function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, Number.isFinite(v) ? v : lo)); }
 
   /* Core affine quantization.
      mode: "asymmetric" | "symmetric" */
-  function affine(x, xmin, xmax, bits, mode) {
-    var L = Math.pow(2, bits);
-    var qmin, qmax, scale, z;
-    if (mode === "symmetric") {
-      qmax = Math.pow(2, bits - 1) - 1;
-      qmin = -qmax;
-      scale = Math.max(Math.abs(xmin), Math.abs(xmax)) / qmax;
-      if (scale === 0 || !isFinite(scale)) scale = 1;
-      var q = clamp(Math.round(x / scale), qmin, qmax);
-      return { qmin: qmin, qmax: qmax, scale: scale, zeropoint: 0, q: q, xhat: q * scale, err: x - q * scale, L: L };
-    } else {
-      qmin = 0; qmax = L - 1;
-      scale = (xmax - xmin) / (qmax - qmin);
-      if (scale === 0 || !isFinite(scale)) scale = 1;
-      z = clamp(Math.round(qmin - xmin / scale), qmin, qmax);
-      var qq = clamp(Math.round(x / scale) + z, qmin, qmax);
-      return { qmin: qmin, qmax: qmax, scale: scale, zeropoint: z, q: qq, xhat: (qq - z) * scale, err: x - (qq - z) * scale, L: L };
-    }
-  }
+  var affine = window.QuantizationMath.affine;
 
   /* ---------------- 2. Number-line quantizer ---------------- */
   function drawNumline() {
     var x = parseFloat($("num-val").value);
-    var step = parseFloat($("num-step").value);
-    var quant = Math.round(x / step) * step;
+    var levels = Number($("num-levels").value);
+    var step = 10 / levels;
+    var quant = window.QuantizationMath.uniform(x, levels, 0, 10).value;
     var err = x - quant;
     $("num-val-out").value = fmt(x, 2);
-    $("num-orig").textContent = fmt(x, 2);
-    $("num-quant").textContent = fmt(quant, 2);
-    $("num-err").textContent = fmt(err, 2);
+    $("num-orig").textContent = fmt(x, 4);
+    $("num-quant").textContent = fmt(quant, 4);
+    $("num-err").textContent = fmt(err, 4);
 
     var W = 760, H = 170, x0 = 40, x1 = 720, y = 110, lo = 0, hi = 10;
     var X = function (v) { return x0 + (v - lo) / (hi - lo) * (x1 - x0); };
@@ -52,7 +35,7 @@
     // baseline
     s += '<line x1="' + x0 + '" y1="' + y + '" x2="' + x1 + '" y2="' + y + '" stroke="#bbb" stroke-width="2"/>';
     // allowed levels
-    for (var v = Math.ceil(lo / step) * step; v <= hi + 1e-9; v += step) {
+    for (var v = lo + step / 2; v < hi; v += step) {
       var px = X(v);
       s += '<line x1="' + px + '" y1="' + (y - 6) + '" x2="' + px + '" y2="' + (y + 6) + '" stroke="#c9bfa9"/>';
     }
@@ -63,13 +46,13 @@
       s += '<text x="' + t + '" y="' + (y + 30) + '" font-size="11" fill="#666" text-anchor="middle">' + i + '</text>';
     }
     // error bridge
-    s += '<line x1="' + X(x) + '" y1="' + (y - 26) + '" x2="' + X(quant) + '" y2="' + (y - 26) + '" stroke="#b4632a" stroke-width="2"/>';
+    s += '<line x1="' + X(x) + '" y1="' + (y - 26) + '" x2="' + X(quant) + '" y2="' + (y - 26) + '" stroke="#b84545" stroke-width="2"/>';
     // original dot
     s += '<circle cx="' + X(x) + '" cy="' + y + '" r="7" fill="#1d4f91"/>';
     // quantized square
-    s += '<rect x="' + (X(quant) - 7) + '" y="' + (y - 7) + '" width="14" height="14" fill="#b4632a"/>';
+    s += '<rect x="' + (X(quant) - 7) + '" y="' + (y - 7) + '" width="14" height="14" fill="#467950"/>';
     s += '<text x="' + X(x) + '" y="' + (y - 34) + '" font-size="12" fill="#1d4f91" text-anchor="middle">orig ' + fmt(x, 2) + '</text>';
-    s += '<text x="' + X(quant) + '" y="' + (y + 46) + '" font-size="12" fill="#b4632a" text-anchor="middle">quant ' + fmt(quant, 2) + '</text>';
+    s += '<text x="' + X(quant) + '" y="' + (y + 46) + '" font-size="12" fill="#467950" text-anchor="middle">quant ' + fmt(quant, 2) + '</text>';
     $("numline-svg").innerHTML = s;
   }
 
@@ -129,23 +112,27 @@
       var t = i / N;
       var ph = t * Math.PI * 2 * 2; // two periods
       var yv = Math.sin(ph) * range;
-      var qy = Math.round(yv / step) * step;
+      var qy = -range + clamp(Math.round((yv + range) / step), 0, L - 1) * step;
       var px = x0 + t * (x1 - x0);
       var py = mid - (yv / range) * amp;
       var qpy = mid - (qy / range) * amp;
       orig += (i === 0 ? "" : " ") + px + "," + py;
       if (i > 0) {
-        stairs += '<line x1="' + prevX + '" y1="' + prevY + '" x2="' + px + '" y2="' + prevY + '" stroke="#b4632a" stroke-width="2"/>';
-        stairs += '<line x1="' + px + '" y1="' + prevY + '" x2="' + px + '" y2="' + qpy + '" stroke="#b4632a" stroke-width="1"/>';
+        stairs += '<line x1="' + prevX + '" y1="' + prevY + '" x2="' + px + '" y2="' + prevY + '" stroke="#467950" stroke-width="2"/>';
+        stairs += '<line x1="' + px + '" y1="' + prevY + '" x2="' + px + '" y2="' + qpy + '" stroke="#467950" stroke-width="1"/>';
       }
       prevX = px; prevY = qpy;
       maxErr = Math.max(maxErr, Math.abs(yv - qy));
     }
     s += stairs;
     s += '<polyline points="' + orig + '" fill="none" stroke="#1d4f91" stroke-width="2.5"/>';
+    s += '<text x="40" y="24" font-size="13" fill="#43565d">Amplitude x(t), Q(x(t))</text><text x="720" y="250" font-size="12" text-anchor="end">Time t (s), 0 to 1</text><text x="28" y="54" font-size="11" text-anchor="end">' + fmt(range,1) + '</text><text x="28" y="234" font-size="11" text-anchor="end">' + fmt(-range,1) + '</text>';
     $("signal-svg").innerHTML = s;
     $("sig-levels-out").textContent = L;
-    $("sig-err").textContent = fmt(maxErr, 3);
+    $("sig-err").textContent = fmt(maxErr, 4);
+    var caption=document.querySelector('#viz-signal .viz-caption');
+    if(!caption){caption=document.createElement('p');caption.className='viz-caption';$('viz-signal').appendChild(caption);}
+    caption.textContent='Endpoint-inclusive levels from −'+fmt(range,1)+' to '+fmt(range,1)+', spacing Δ='+fmt(step,4)+'. Granular bound Δ/2='+fmt(step/2,4)+'. The reported maximum is evaluated at 261 plotting points; this figure applies Q to the signal amplitude without introducing a sampling model.';
   }
 
   /* ---------------- 9. Scale map ---------------- */
@@ -164,9 +151,9 @@
     s += '<text x="' + X(xmax, xmin, xmax) + '" y="' + (yTop - 12) + '" font-size="12" fill="#1d4f91" text-anchor="middle">real ' + fmt(xmax, 2) + '</text>';
     // code line
     var qmax = r.qmax;
-    s += '<line x1="' + X(0, 0, qmax) + '" y1="' + yBot + '" x2="' + X(qmax, 0, qmax) + '" y2="' + yBot + '" stroke="#b4632a" stroke-width="3"/>';
-    s += '<text x="' + X(0, 0, qmax) + '" y="' + (yBot + 22) + '" font-size="12" fill="#b4632a" text-anchor="middle">code 0</text>';
-    s += '<text x="' + X(qmax, 0, qmax) + '" y="' + (yBot + 22) + '" font-size="12" fill="#b4632a" text-anchor="middle">code ' + qmax + '</text>';
+    s += '<line x1="' + X(0, 0, qmax) + '" y1="' + yBot + '" x2="' + X(qmax, 0, qmax) + '" y2="' + yBot + '" stroke="#467950" stroke-width="3"/>';
+    s += '<text x="' + X(0, 0, qmax) + '" y="' + (yBot + 22) + '" font-size="12" fill="#467950" text-anchor="middle">code 0</text>';
+    s += '<text x="' + X(qmax, 0, qmax) + '" y="' + (yBot + 22) + '" font-size="12" fill="#467950" text-anchor="middle">code ' + qmax + '</text>';
     // mapping arrows for sample points
     var samples = [];
     for (var i = 0; i <= 4; i++) samples.push(xmin + (xmax - xmin) * i / 4);
@@ -177,7 +164,7 @@
       var xt = X(v, xmin, xmax), xb = X(qv, 0, qmax);
       s += '<line x1="' + xt + '" y1="' + yTop + '" x2="' + xb + '" y2="' + yBot + '" stroke="#c9bfa9" stroke-width="1"/>';
       s += '<circle cx="' + xt + '" cy="' + yTop + '" r="3" fill="#1d4f91"/>';
-      s += '<circle cx="' + xb + '" cy="' + yBot + '" r="3" fill="#b4632a"/>';
+      s += '<circle cx="' + xb + '" cy="' + yBot + '" r="3" fill="#467950"/>';
     }
     $("scale-svg").innerHTML = s;
     $("scale-s").textContent = fmt(r.scale, 3);
@@ -192,9 +179,9 @@
     var xmax = parseFloat($("sym-xmax").value);
     var bits = clamp(parseInt($("sym-bits").value, 10), 1, 8);
     var r = affine((xmin + xmax) / 2, xmin, xmax, bits, mode);
-    var W = 760, x0 = 60, x1 = 720, y = 120, lo = Math.min(xmin, -0.001), hi = Math.max(xmax, 0.001);
+    var W = 760, x0 = 60, x1 = 720, y = 120, lo = Math.min(xmin, (r.qmin-r.zeropoint)*r.scale, -0.001), hi = Math.max(xmax, (r.qmax-r.zeropoint)*r.scale, 0.001);
     // map zero-centered for symmetric
-    if (mode === "symmetric") { hi = Math.max(Math.abs(xmin), Math.abs(xmax)); lo = -hi; }
+    if (mode === "symmetric") { hi = Math.max(Math.abs(xmin), Math.abs(xmax), 0.001); lo = -hi; }
     var X = function (v) { return x0 + (v - lo) / (hi - lo) * (x1 - x0); };
     var s = '<line x1="' + X(lo) + '" y1="' + y + '" x2="' + X(hi) + '" y2="' + y + '" stroke="#999" stroke-width="2"/>';
     // draw levels
@@ -208,11 +195,11 @@
       $("sym-caption").innerHTML = "Symmetric: zero maps to the center code; codes spread evenly by scale " + fmt(r.scale, 3) + ". One-sided data wastes codes near the empty side.";
     } else {
       for (var qq = 0; qq <= r.qmax; qq++) {
-        var b = xmin + qq * r.scale;
-        s += '<circle cx="' + X(b) + '" cy="' + y + '" r="5" fill="#b4632a"/>';
+        var b = (qq - r.zeropoint) * r.scale;
+        s += '<circle cx="' + X(b) + '" cy="' + y + '" r="5" fill="#467950"/>';
       }
-      s += '<text x="' + X(0) + '" y="' + (y + 28) + '" font-size="12" fill="#b4632a" text-anchor="middle">0 at code ' + r.zeropoint + '</text>';
-      $("sym-caption").innerHTML = "Asymmetric: the zero-point slides so code " + r.zeropoint + " is exactly zero; the " + r.L + " levels cover the data snugly from " + fmt(xmin, 2) + " to " + fmt(xmax, 2) + ".";
+      s += '<text x="' + X(0) + '" y="' + (y + 28) + '" font-size="12" fill="#467950" text-anchor="middle">0 at code ' + r.zeropoint + '</text>';
+      $("sym-caption").innerHTML = "Asymmetric: the zero-point slides so code " + r.zeropoint + " is exactly zero; the " + r.L + " levels reconstruct from " + fmt(-r.zeropoint*r.scale, 2) + " to " + fmt((r.qmax-r.zeropoint)*r.scale, 2) + ".";
     }
     // endpoints
     s += '<text x="' + X(lo) + '" y="' + (y - 14) + '" font-size="12" fill="#555" text-anchor="middle">' + fmt(lo, 2) + '</text>';
@@ -229,7 +216,7 @@
     $("clip-orig").textContent = fmt(x, 2);
     $("clip-stored").textContent = fmt(stored, 2);
     $("clip-err").textContent = fmt(err, 2);
-    var lo = -2, hi = 9, x0 = 40, x1 = 720, y = 110;
+    var lo = -9, hi = 9, x0 = 40, x1 = 720, y = 110;
     var X = function (v) { return x0 + (v - lo) / (hi - lo) * (x1 - x0); };
     var s = '<line x1="' + X(lo) + '" y1="' + y + '" x2="' + X(hi) + '" y2="' + y + '" stroke="#999" stroke-width="2"/>';
     // representable band
@@ -241,12 +228,13 @@
     s += '<circle cx="' + X(x) + '" cy="' + y + '" r="7" fill="#1d4f91"/>';
     s += '<text x="' + X(x) + '" y="' + (y - 30) + '" font-size="12" fill="#1d4f91" text-anchor="middle">orig ' + fmt(x, 2) + '</text>';
     // stored
-    s += '<rect x="' + (X(stored) - 7) + '" y="' + (y - 7) + '" width="14" height="14" fill="#b4632a"/>';
-    s += '<text x="' + X(stored) + '" y="' + (y + 34) + '" font-size="12" fill="#b4632a" text-anchor="middle">stored ' + fmt(stored, 2) + '</text>';
+    s += '<rect x="' + (X(stored) - 7) + '" y="' + (y - 7) + '" width="14" height="14" fill="#467950"/>';
+    s += '<text x="' + X(stored) + '" y="' + (y + 34) + '" font-size="12" fill="#467950" text-anchor="middle">stored ' + fmt(stored, 2) + '</text>';
     if (Math.abs(err) > 1e-9) {
-      s += '<line x1="' + X(x) + '" y1="' + (y - 22) + '" x2="' + X(stored) + '" y2="' + (y - 22) + '" stroke="#b4632a" stroke-width="2"/>';
+      s += '<line x1="' + X(x) + '" y1="' + (y - 22) + '" x2="' + X(stored) + '" y2="' + (y - 22) + '" stroke="#467950" stroke-width="2"/>';
     }
     $("clip-svg").innerHTML = s;
+    document.querySelector("#viz-clip .viz-caption").textContent="Clipping alone: x="+fmt(x,2)+", range [−"+fmt(r,2)+", "+fmt(r,2)+"], clipped value="+fmt(stored,2)+", e="+fmt(err,4)+". This isolates overload; no amplitude rounding is applied in this figure.";
   }
 
   /* ---------------- 13. Laboratory ---------------- */
@@ -261,12 +249,12 @@
     $("lab-s").textContent = fmt(r.scale, 3);
     $("lab-z").textContent = r.zeropoint;
     $("lab-q").textContent = r.q;
-    $("lab-xhat").textContent = fmt(r.xhat, 3);
-    $("lab-err").textContent = fmt(r.err, 3);
-    $("lab-rel").textContent = (x !== 0 ? fmt(Math.abs(r.err / x) * 100, 1) : "∞") + "%";
+    $("lab-xhat").textContent = fmt(r.xhat, 4);
+    $("lab-err").textContent = fmt(r.err, 4);
+    $("lab-rel").textContent = (x !== 0 ? fmt(Math.abs(r.err / x) * 100, 1) + "%" : "undefined at x=0");
 
-    var lo = Math.min(xmin, -0.001), hi = Math.max(xmax, 0.001);
-    if (mode === "symmetric") { hi = Math.max(Math.abs(xmin), Math.abs(xmax)); lo = -hi; }
+    var lo = Math.min(xmin, x, -r.zeropoint*r.scale, -0.001), hi = Math.max(xmax, x, (r.qmax-r.zeropoint)*r.scale, 0.001);
+    if (mode === "symmetric") { hi = Math.max(Math.abs(xmin), Math.abs(xmax), Math.abs(x), 0.001); lo = -hi; }
     var x0 = 40, x1 = 720, y = 95;
     var X = function (v) { return x0 + (v - lo) / (hi - lo) * (x1 - x0); };
     var s = '<line x1="' + X(lo) + '" y1="' + y + '" x2="' + X(hi) + '" y2="' + y + '" stroke="#999" stroke-width="2"/>';
@@ -274,12 +262,12 @@
     if (mode === "symmetric") {
       for (var q = r.qmin; q <= r.qmax; q++) { var a = q * r.scale; if (a < lo || a > hi) continue; s += '<line x1="' + X(a) + '" y1="' + (y - 6) + '" x2="' + X(a) + '" y2="' + (y + 6) + '" stroke="#c9bfa9"/>'; }
     } else {
-      for (var qq = 0; qq <= r.qmax; qq++) { var b = xmin + qq * r.scale; s += '<line x1="' + X(b) + '" y1="' + (y - 6) + '" x2="' + X(b) + '" y2="' + (y + 6) + '" stroke="#c9bfa9"/>'; }
+      for (var qq = 0; qq <= r.qmax; qq++) { var b = (qq - r.zeropoint) * r.scale; s += '<line x1="' + X(b) + '" y1="' + (y - 6) + '" x2="' + X(b) + '" y2="' + (y + 6) + '" stroke="#c9bfa9"/>'; }
     }
     s += '<circle cx="' + X(x) + '" cy="' + y + '" r="7" fill="#1d4f91"/>';
-    s += '<rect x="' + (X(r.xhat) - 7) + '" y="' + (y - 7) + '" width="14" height="14" fill="#b4632a"/>';
+    s += '<rect x="' + (X(r.xhat) - 7) + '" y="' + (y - 7) + '" width="14" height="14" fill="#467950"/>';
     s += '<text x="' + X(x) + '" y="' + (y - 18) + '" font-size="12" fill="#1d4f91" text-anchor="middle">x=' + fmt(x, 2) + '</text>';
-    s += '<text x="' + X(r.xhat) + '" y="' + (y + 30) + '" font-size="12" fill="#b4632a" text-anchor="middle">q=' + r.q + ' → ' + fmt(r.xhat, 2) + '</text>';
+    s += '<text x="' + X(r.xhat) + '" y="' + (y + 30) + '" font-size="12" fill="#467950" text-anchor="middle">q=' + r.q + ' → ' + fmt(r.xhat, 2) + '</text>';
     $("lab-svg").innerHTML = s;
   }
 
@@ -295,25 +283,17 @@
       var r = affine(VEC[i], mn, mx, bits, mode);
       codes.push(r.q); xhat.push(r.xhat); errs.push(r.err);
     }
-    function row(label, vals, isCode) {
-      var h = '<div style="display:flex;gap:6px;align-items:center;margin:6px 0"><div style="width:130px;font-weight:700">' + label + '</div>';
+    function row(label, vals, isCode, isError) {
+      var h = '<tr><th scope="row">' + label + '</th>';
       for (var i = 0; i < vals.length; i++) {
-        var bg = "#fffdf9";
-        if (!isCode) bg = "#fcfaf6";
-        h += '<div class="cell" style="width:64px;height:46px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:8px;font-family:Source Code Pro,monospace;background:' + bg + '">' + (isCode ? vals[i] : fmt(vals[i], 2)) + '</div>';
+        var bg = isError ? (Math.abs(vals[i]) < 1e-9 ? '#ddd5c7' : vals[i] < 0 ? '#f6d9d1' : '#dcebd5') : '#fffdf9';
+        h += '<td style="background:' + bg + '">' + (isCode ? vals[i] : fmt(vals[i], 2)) + '</td>';
       }
-      return h + '</div>';
+      return h + '</tr>';
     }
-    var html = row("Original", VEC, false) + row("Code q", codes, true) + row("Reconstructed", xhat, false);
-    // error row with color
-    var er = '<div style="display:flex;gap:6px;align-items:center;margin:6px 0"><div style="width:130px;font-weight:700">Error</div>';
-    for (var j = 0; j < errs.length; j++) {
-      var e = errs[j];
-      var col = Math.abs(e) < 1e-9 ? "#ddd5c7" : (e < 0 ? "#b8442e" : "#2f7d4f");
-      er += '<div class="cell" style="width:64px;height:46px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:8px;font-family:Source Code Pro,monospace;background:' + col + ';color:#1b1b1b">' + fmt(e, 2) + '</div>';
-    }
-    er += '</div>';
-    html += er;
+    var html = '<table class="vector-table"><thead><tr><th scope="col">Entry</th>';
+    for(var col=1;col<=VEC.length;col++) html+='<th scope="col">'+col+'</th>';
+    html+='</tr></thead><tbody>'+row('Original', VEC, false, false)+row('Code q', codes, true, false)+row('Reconstructed', xhat, false, false)+row('Error', errs, false, true)+'</tbody></table>';
     $("vector-tables").innerHTML = html;
     $("vec-caption").innerHTML = "Scale s=" + fmt(r0.scale, 3) + ", zero-point z=" + r0.zeropoint + ", " + r0.L + " levels (" + mode + ", " + bits + " bits). The same mapping is applied to every entry.";
   }
@@ -327,12 +307,12 @@
   function errColor(e, maxE) {
     if (Math.abs(e) < 1e-9) return "#ddd5c7";
     var t = clamp(Math.abs(e) / (maxE || 1), 0, 1);
-    return e < 0 ? "rgba(184,68,46," + (0.25 + 0.6 * t) + ")" : "rgba(47,125,79," + (0.25 + 0.6 * t) + ")";
+    return e < 0 ? "rgba(220,158,143," + (0.25 + 0.6 * t) + ")" : "rgba(155,191,154," + (0.25 + 0.6 * t) + ")";
   }
   function divColor(v, maxV) {
     if (Math.abs(v) < 1e-9) return "#f3efe7";
     var t = clamp(Math.abs(v) / (maxV || 1), 0, 1);
-    return v < 0 ? "rgba(184,68,46," + (0.2 + 0.7 * t) + ")" : "rgba(29,79,145," + (0.2 + 0.7 * t) + ")";
+    return v < 0 ? "rgba(220,158,143," + (0.2 + 0.7 * t) + ")" : "rgba(151,180,209," + (0.2 + 0.7 * t) + ")";
   }
   function drawMatrix() {
     var bits = clamp(parseInt($("mat-bits").value, 10), 1, 8);
@@ -366,7 +346,7 @@
       original: "The raw float weights. Range " + fmt(mn, 2) + " to " + fmt(mx, 2) + ".",
       quantized: "The integer codes q stored after quantization (" + mode + ", " + bits + " bits).",
       reconstructed: "Recovered values ĥx = s(q−z). Close to the originals, but approximate.",
-      error: "Per-cell quantization error e = x − ĥx. Color: red under, green over."
+      error: "Per-cell quantization error e = x − ĥx. Red: reconstruction above input (e<0); green: reconstruction below input (e>0)."
     };
     $("mat-caption").innerHTML = cap[view];
   }
@@ -387,18 +367,20 @@
     }
     return out;
   }
-  function renderAxis(containerId, captionId, title, A, B, mode, bits, groupSize, note) {
-    function table(name, arr, res) {
-      var h = '<div style="margin:10px 0"><strong>' + name + '</strong><div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:6px">';
-      for (var i = 0; i < arr.length; i++) {
-        h += '<div style="border:1px solid var(--line);border-radius:8px;padding:6px 8px;font-family:Source Code Pro,monospace;background:#fffdf9;min-width:120px">';
-        h += 'x=' + fmt(arr[i], 2) + '<br>q=' + res[i].q + '<br>ŷ=' + fmt(res[i].xhat, 2) + ' <span style="color:#888">(s=' + fmt(res[i].scale, 2) + ')</span></div>';
-      }
-      return h + '</div></div>';
+  function channelTable(name, arr, res, showScale, highlight) {
+    var h='<section class="channel-column"><h5 class="channel-title">'+name+'</h5><div class="channel-values">';
+    for(var i=0;i<arr.length;i++) {
+      var collapsed=highlight && i>0 && res[i].q===res[0].q;
+      h+='<div class="channel-value'+(collapsed?' is-collapsed':'')+'">x='+fmt(arr[i],2)+'<br>q='+res[i].q+'<br>ŷ='+fmt(res[i].xhat,2);
+      if(showScale) h+='<span class="channel-scale">s='+fmt(res[i].scale,4)+'</span>';
+      h+='</div>';
     }
+    return h+'</div></section>';
+  }
+  function renderAxis(containerId, captionId, title, A, B, mode, bits, groupSize, note) {
     var ra = quantizeArray(A, mode, bits, groupSize);
     var rb = quantizeArray(B, mode, bits, groupSize);
-    var html = '<div class="axis-card"><h4>' + title + '</h4>' + table("Channel A", A, ra) + table("Channel B", B, rb) + '</div>';
+    var html = '<div class="axis-card"><h4>' + title + '</h4>' + '<div class="channel-layout">'+channelTable("Channel A", A, ra, true, false)+channelTable("Channel B", B, rb, true, false)+'</div></div>';
     $(containerId).innerHTML = html;
     $(captionId).innerHTML = note;
   }
@@ -409,20 +391,11 @@
     var mn = Math.min.apply(null, all), mx = Math.max.apply(null, all);
     var ra = all.slice(0, 4).map(function (v) { var r = affine(v, mn, mx, bits, mode); return { q: r.q, xhat: r.xhat, err: r.err, scale: r.scale }; });
     var rb = all.slice(4).map(function (v) { var r = affine(v, mn, mx, bits, mode); return { q: r.q, xhat: r.xhat, err: r.err, scale: r.scale }; });
-    function table(name, arr, res) {
-      var h = '<div style="margin:10px 0"><strong>' + name + '</strong><div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:6px">';
-      for (var i = 0; i < arr.length; i++) {
-        var collapsed = (res[i].q === res[0].q && i > 0);
-        h += '<div style="border:1px solid var(--line);border-radius:8px;padding:6px 8px;font-family:Source Code Pro,monospace;background:' + (collapsed ? '#fbe9e4' : '#fffdf9') + ';min-width:120px">';
-        h += 'x=' + fmt(arr[i], 2) + '<br>q=' + res[i].q + '<br>ŷ=' + fmt(res[i].xhat, 2) + '</div>';
-      }
-      return h + '</div></div>';
-    }
-    $("pertensor-view").innerHTML = '<div class="axis-card"><h4>One global scale s=' + fmt((mx - mn) / 15, 3) + '</h4>' + table("Channel A", CH_A, ra) + table("Channel B", CH_B, rb) + '</div>';
+    $("pertensor-view").innerHTML = '<div class="axis-card"><h4>One global scale s=' + fmt(affine(0, mn, mx, bits, mode).scale, 4) + '</h4>' + '<div class="channel-layout">'+channelTable("Channel A", CH_A, ra, false, true)+channelTable("Channel B", CH_B, rb, false, true)+'</div></div>';
     $("pertensor-caption").innerHTML = "Channel A's tiny values all round to the same code (highlighted) &mdash; its detail is lost under a single global scale.";
 
     renderAxis("perchannel-view", "perchannel-caption", "Per-channel: separate scale per channel", CH_A, CH_B, mode, bits, 0,
-      "Each channel uses its own min/max, so Channel A gets a fine scale and keeps its detail. Cost: one scale per channel to store.");
+      "Each channel calibrates its own zero-inclusive range, so Channel A gets a fine scale and keeps its detail. Cost: one scale per channel to store.");
 
     renderAxis("pergroup-view", "pergroup-caption", "Per-group (size 2): one scale per pair", CH_A, CH_B, mode, bits, 2,
       "Each group of 2 values shares a scale. This localizes outlier effects: a big value in one group does not coarsen a distant group.");
@@ -484,7 +457,8 @@
     var mag = parseFloat($("out-mag").value);
     var bits = clamp(parseInt($("out-bits").value, 10), 1, 8);
     var vals = [];
-    for (var i = 0; i < 40; i++) vals.push((Math.random() - 0.5) * 0.6);
+    var random = window.QuantizationMath.seeded(20260821);
+    for (var i = 0; i < 40; i++) vals.push((random() - 0.5) * 0.6);
     vals.push(mag);
     var mn = Math.min.apply(null, vals), mx = Math.max.apply(null, vals);
     var r = affine(0, mn, mx, bits, "asymmetric");
@@ -492,15 +466,16 @@
     var s = "";
     for (var k = 0; k < vals.length; k++) {
       var v = vals[k];
-      var h = maxH * (Math.abs(v) / (Math.abs(mx) || 1));
+      var h = maxH * (Math.abs(v) / (Math.max(Math.abs(mn), Math.abs(mx)) || 1));
       var col = (k === vals.length - 1) ? "#b8442e" : "#1d4f91";
       s += '<rect x="' + (x0 + k * (x1 - x0) / vals.length) + '" y="' + (base - h) + '" width="' + ((x1 - x0) / vals.length - 1) + '" height="' + h + '" fill="' + col + '" opacity="0.8"/>';
     }
     s += '<line x1="' + x0 + '" y1="' + base + '" x2="' + x1 + '" y2="' + base + '" stroke="#999"/>';
     s += '<text x="' + x1 + '" y="' + (base + 18) + '" font-size="12" fill="#b8442e" text-anchor="end">outlier = ' + fmt(mag, 1) + '</text>';
+    s += '<text x="30" y="25" font-size="13">Bar height: absolute input |xᵢ| · horizontal axis: sample index i</text>';
     $("outlier-svg").innerHTML = s;
     $("out-scale").textContent = fmt(r.scale, 3);
-    $("out-step").textContent = fmt(r.scale, 3);
+    $("out-step").textContent = new Set(vals.slice(0,40).map(function(v){return affine(v,mn,mx,bits,"asymmetric").q;})).size;
   }
 
   /* ---------------- 31. NF4 ---------------- */
@@ -515,19 +490,33 @@
       for (var i = 0; i < 16; i++) levels.push(lo + i * (hi - lo) / 15);
       $("nf4-caption").innerHTML = "Uniform INT4: 16 evenly spaced levels. Good for data spread flatly across the range; wasteful where real weights cluster near zero.";
     } else {
-      // NF4-like quantile levels (symmetric, bell-shaped density)
-      levels = [-1.0, -0.696, -0.525, -0.395, -0.284, -0.184, -0.091, 0.0, 0.0796, 0.177, 0.275, 0.388, 0.527, 0.704, 0.947, 1.0];
-      $("nf4-caption").innerHTML = "NF4: levels packed densely where trained weights are most common (near zero) and sparse in the tails. Same 16 codes, but matched to a bell-shaped distribution.";
+      // Normalized bitsandbytes NF4 lookup table; asymmetric around its exact zero.
+      levels = [-1, -0.6961928, -0.52507305, -0.39491749, -0.28444138, -0.18477343, -0.09105004, 0, 0.0795803, 0.1609302, 0.2461123, 0.33791524, 0.44070983, 0.562617, 0.72295684, 1];
+      $("nf4-caption").innerHTML = "NF4: the normalized 16-value bitsandbytes lookup table, with an exact zero. A block absmax scale restores magnitudes. Designed around normal-distribution quantiles; this is not a Lloyd–Max optimum for every weight distribution.";
     }
     for (var k = 0; k < levels.length; k++) {
       s += '<circle cx="' + X(levels[k]) + '" cy="' + y + '" r="5" fill="#1d4f91"/>';
-      s += '<text x="' + X(levels[k]) + '" y="' + (y - 14) + '" font-size="10" fill="#555" text-anchor="middle">' + fmt(levels[k], 2) + '</text>';
+      s += '<text x="' + X(levels[k]) + '" y="' + (y - 18 - (k%2)*24) + '" font-size="10" fill="#555" text-anchor="middle">' + fmt(levels[k], 4) + '</text>';
     }
     $("nf4-svg").innerHTML = s;
   }
 
   /* ---------------- wire up controls ---------------- */
-  function bind(id, fn) { var e = $(id); if (e) e.addEventListener("input", fn); }
+  function validWidget(node) {
+    var box = node.closest('.viz');
+    if (!box) return true;
+    var fields = Array.from(box.querySelectorAll('input[type=number]'));
+    var valid = fields.every(function(e) { return e.value !== '' && Number.isFinite(Number(e.value)) && e.checkValidity(); });
+    ['scale','sym','lab'].forEach(function(prefix) {
+      var a=box.querySelector('#'+prefix+'-xmin'), b=box.querySelector('#'+prefix+'-xmax');
+      if(a && b && !(Number(a.value)<Number(b.value))) valid=false;
+    });
+    var msg=box.querySelector('.validation-message');
+    if(!msg) { msg=document.createElement('p'); msg.className='validation-message small'; msg.setAttribute('role','status'); box.appendChild(msg); }
+    msg.textContent=valid ? '' : 'Enter finite values within the labelled limits, with minimum strictly below maximum. The last valid figure is retained.';
+    return valid;
+  }
+  function bind(id, fn) { var e = $(id); if (e) e.addEventListener("input", function(){ if(validWidget(e)) fn(); }); }
   function bindSeg(segId, fn) {
     var seg = $(segId);
     if (!seg) return;
@@ -537,12 +526,12 @@
       var btns = seg.querySelectorAll("button");
       for (var i = 0; i < btns.length; i++) btns[i].setAttribute("aria-pressed", "false");
       btn.setAttribute("aria-pressed", "true");
-      fn();
+      if(validWidget(btn)) fn();
     });
   }
 
   function init() {
-    bind("num-val", drawNumline); bind("num-step", drawNumline); bind("num-val-out", function () { $("num-val").value = $("num-val-out").value; drawNumline(); });
+    bind("num-val", drawNumline); bind("num-levels", drawNumline); bind("num-val-out", function () { $("num-val").value = $("num-val-out").value; drawNumline(); });
     bindSeg("bucket-seg", drawBuckets);
     bindSeg("bits-selector", drawBits);
     bind("sig-levels", drawSignal); bind("sig-range", drawSignal);
@@ -557,10 +546,28 @@
     bind("out-mag", drawOutlier); bind("out-bits", drawOutlier);
     bindSeg("nf4-seg", drawNF4);
 
+    document.querySelectorAll('.viz').forEach(function(box) {
+      var inputs=Array.from(box.querySelectorAll('input,select'));
+      var segments=Array.from(box.querySelectorAll('.seg,.bits-row'));
+      if(!inputs.length && !segments.length) return;
+      if(!box.id || !box.id.startsWith('viz-') || ['viz-staircase','viz-bit-compare','viz-lloyd','viz-voronoi'].includes(box.id)) return;
+      var defaults=inputs.map(function(e){return e.value;});
+      var pressed=segments.map(function(seg){return Array.from(seg.querySelectorAll('button')).findIndex(function(b){return b.getAttribute('aria-pressed')==='true';});});
+      var reset=document.createElement('button'); reset.className='btn reset-widget'; reset.textContent='Reset'; reset.type='button';
+      reset.addEventListener('click',function(){
+        inputs.forEach(function(e,i){e.value=defaults[i];});
+        segments.forEach(function(seg,i){ var btns=seg.querySelectorAll('button'); if(pressed[i]>=0) btns[pressed[i]].click(); });
+        inputs.forEach(function(e){e.dispatchEvent(new Event('input',{bubbles:true}));});
+      }); box.appendChild(reset);
+    });
+    document.getElementById('bits-selector').addEventListener('click',function(){
+      var n=document.querySelector('#bits-selector [aria-pressed=true]').dataset.bits;
+      document.querySelector('#viz-bits .viz-caption').textContent='With '+n+' bits, codes run from '+ '0'.repeat(n)+' to '+'1'.repeat(n)+'. Each extra bit doubles the available fixed-length labels.';
+    });
     // initial paints
     drawNumline(); drawBuckets(); drawBits(); drawSignal(); drawScale();
     drawSym(); drawClip(); drawLab(); drawVector(); drawMatrix(); drawPerAxes();
-    drawNet(); drawFlow("weightonly-svg", "#1d4f91"); drawFlow("weightact-svg", "#1d4f91");
+    drawNet(); drawFlow("weightonly-svg", "#1d4f91"); drawFlow("weightact-svg", "#557b6c");
     drawMem(); drawOutlier(); drawNF4();
   }
 
