@@ -1,0 +1,2758 @@
+
+PAGE 1
+1  
+ 
+PROTOCOL 
+ 
+ 
+ 
+Placebo-Controlled, Randomized Trial of an Intervention 
+using Probiotics in the Prevention of Neonatal Infection in 
+Community-born Infants 
+ 
+ 
+ 
+Principal Investigator 
+Pinaki Panigrahi, MD, PhD 
+ 
+ 
+Senior Foreign Investigator 
+Sailajanandan Parida, MD 
+ 
+ 
+Co-Investigators 
+Lingaraj Pradhan, MD; Nimai Nanda, MD; Shubhranshu  S. Mohapatra, MD; Radhanath 
+Satpathy, MD; Pravas R. Misra, DVM; Judith A. Johnson, PhD; 
+J Glenn Morris Jr, MD, MPH&TM; Nigel Paneth, MD,; Ira Gewolb, MD; 
+ 
+ 
+ 
+ 
+July 15, 2008 (V-2) 
+ 
+ 
+ 
+ 
+ 
+Funded by 
+ 
+The National Institute of Child Health and Human Development U01 HD 40574 and 
+R01 HD 53719 from NICHD 
+ 
+ 
+Clinicaltrials.gov registration  #s NCT 00518596 and NCT 01214473 
+
+PAGE 2
+2 
+GN 07 Probiotic Trial 
+V1 Jan/26/07  V2 July/15/2008 
+ 
+ 
+ 
+TABLE OF CONTENTS 
+ 
+ABBREVIATIONS AND ACRONYMS…………………………………………………………3 
+PROTOCOL SUMMARY……………………………………………….……………………   ..5 
+1. KEY ROLES…………………………………………………………………………………   6 
+ 
+2. INTRODUCTION………………….…………………………………………………………10 
+3. BACKGROUND AND SIGNIFICANCE………...………………………………………….10 
+4. PRELIMINARY STUDIES…………………………………………………………………..16 
+5. OBJECTIVES…………………………………………………………………………………21 
+6. STUDY DESIGN……………………………… ......................................................................... 22 
+7. STUDY POPULATION……………………………………………………………………   23 
+ 
+8. STUDY INTERVENTION……………………………………………………………………24 
+ 
+9. STUDY PROCEDURES AND EVALUATION………………...……………………………26 
+10. ASSESSMENT AND SAFETY………………………………………………..……………29 
+11. CLINICAL MANAGEMENT……………………………………………………………….31 
+12. STATISTICAL CONSIDERATIONS………………………………………………………31 
+ 
+13. RANDOMIZATION, ENROLLMENT, AND BLINDING………………………………...33 
+ 
+14. DATA HANDLING AND RECORD KEEPING…………………………………………...33 
+15. CLINICAL SITE MONITORING…………………………………………………………..34 
+16. HUMAN SUBJECT PROTECTION………………………………………………………..34 
+17. PUBLICATION POLICY…………………………………………………………………...35 
+18. REFERENCES……...……………………………………………………………………….35 
+19. APPENDIX A (Antibiogram  of L. plntarum)……………………………………………….49 
+
+PAGE 3
+3 
+GN 07 Probiotic Trial 
+V1 Jan/26/07  V2 July/15/2008 
+ 
+ 
+ 
+ABBREVIATIONS AND ACRONYMS 
+ 
+AE Adverse event 
+ANOVA Analysis of variance 
+ATCC American Type Culture Collection 
+AWC Anganwadi center 
+AWW Anganwadi worker 
+BBS Bhubaneswar 
+BT Bacterial translocation 
+CFU Colony forming units 
+CONS Coagulase negative  staphylococci 
+CRF Case report form 
+CSF Cerebrospinal fluid 
+DCC Data coordinating center 
+DMC Data monitoring committee 
+DMS Data management system 
+EOS Early onset sepsis 
+FDA Food and Drug Administration 
+FOS Fructo-oligosaccaride 
+GCP Good clinical practices 
+GI Gastrointestinal 
+GLP Good laboratory practices 
+GM Gram 
+GMP Good manufacturing practices 
+GN Global Network for Women’s and Children’s Health Research 
+IBD Inflammatory bowel disease 
+IEL Intraepithelial  lymphocytes 
+IGH Ispat General Hospital 
+IMR Infant mortality rate 
+IRB Institutional Review Board 
+JAM Junctional adhesion molecule 
+LGG L. casei 
+LOS Late onset sepsis 
+NEC Necrotizing enterocolitis 
+
+PAGE 4
+4 
+GN 07 Probiotic Trial 
+V1 Jan/26/07  V2 July/15/2008 
+ 
+ 
+ 
+NICHD National Institute of Child Health and Human Development 
+NIH National Institutes of Health 
+NMR Neonatal mortality rate 
+OHRP Office of Human Research Protection 
+PFGE Pulse field gel electrophoresis 
+PI Principal Investigator 
+Probiotics Health-promoting friendly bacteria 
+RCT Randomized controlled trial 
+RKL Rourkela 
+RTI Research Triangle Institute 
+RU Research unit 
+RUDC Research unit data center 
+SAE Serious adverse event 
+SCB Sri Rama Chandra Bhanja 
+SFI Senior Foreign Investigator 
+TBA Traditional birth attendant 
+TJ Tight junctions 
+TLR Toll-like receptor 
+UMB University of Maryland at Baltimore 
+US United States 
+UTI Urinary tract infection 
+VBLW Very low birth weight 
+WHO World Health Organization 
+ZO-1 Zona Occludens-1 
+
+PAGE 5
+5 
+GN 07 Probiotic Trial 
+V1 Jan/26/07  V2 July/15/2008 
+ 
+ 
+ 
+PROTOCOL SUMMARY 
+ 
+Full Title: Placebo-controlled, double blind, randomized trial of an 
+intervention using probiotics and FOS in the prevention of 
+neonatal infection in community-born Indian Infants 
+ 
+Short Title: Prevention of infection in Indian neonates using synbiotics 
+ 
+Principal Investigator: Dr. Pinaki Panigrahi 
+ 
+Senior Foreign Investigator: Dr. Sailajanandan Parida 
+ 
+Sample Size: 8,842 including 400 in a community pilot for training and 
+establishing the logistics of implementation (8,442 will be 
+included in the analysis) 
+ 
+Study Population: This will be a population-based study. All infants born in 
+the selected villages will be eligible for enrollment. 
+Neonates will be selected from among 140-200 villages in 
+the four blocks in Khurda and Sundergarh districts. 
+Village/Anganwadi  center. Adoption of study villages will 
+be finalized during the community pilot phase. 
+ 
+Participating Sites: Capital Hospital, Bhubaneswar and Ispat General Hospital, 
+Rourkela 
+ 
+Study Design: A double-blind, randomized, placebo-controlled study to 
+test the effectiveness of a prophylactic oral administration 
+of a L. plantarum + FOS preparation to community-born 
+neonates in reducing the incidence of neonatal sepsis. 
+ 
+Study Intervention: A probiotic supplement, GastroPlan (Lactobacillus 
+plantarum, ATCC 202195 and Fructo-oligosaccharide), will 
+be administered to neonates within the first three days of 
+life and continued for seven days.  All infants will be 
+monitored daily during the first 60 days of life. 
+ 
+Primary Outcome: Death plus Clinical Sepsis (Possible Severe Bacterial 
+Infections-PSBI) 
+ 
+Secondary Outcomes: Other infections, diarrhea 
+
+PAGE 6
+6 
+GN 07 Probiotic Trial 
+V1 Jan/26/07  V2 July/15/2008 
+ 
+ 
+ 
+1. KEY ROLES 
+ 
+Duties of the Research Unit 
+The research unit is responsible for initial and ongoing training of all personnel and health 
+professionals involved in the study. The research unit is also responsible for implementing the 
+study protocol as approved by the U.S. and Indian Institutional Review Boards (IRBs). Other 
+duties involve data collection, data entry, and data transmission on a timely basis as well as 
+prompt reporting of protocol violations and adverse events to the PI. The research unit also 
+assumes responsibility for disseminating the study findings through publications, conference 
+presentations, and meetings and seminars with stakeholders. 
+Each site (Bhubaneswar and Rourkela) under the Research Unit, at a minimum, will train one 
+medical officer (pediatrician), several study supervisors, a microbiology officer (microbiologist), a 
+laboratory technician and data entry staff. One community health volunteer from each village, 
+mid level managers, and supervisors will be hired and trained in a  three  tier  structure.  In 
+addition, the Anganwadi workers (AWWs) in each participating community will be trained. Each 
+site has an appointed site director who will work in concert with the SFI and take charge of the 
+scientific and administrative activities at their respective sites. They will be assisted by a 
+Program Officer. The senior foreign investigator (SFI) will be responsible for the overall 
+execution of study aims and will supervise the Indian sites. The director of field operations will 
+be in charge of the overall activities in the community (both Rourkela and Bhubaneswar). 
+Key personnel from the Research Unit include: 
+ Pinaki  Panigrahi,  MD,  PhD,  Principal  Investigator   –  Pediatric   Infectious  Disease, 
+Microbial pathogenesis, gut microbiota, clinical research 
+ Ira H Gewolb, MD, Co-Investigator – Clinical Research, Neonatology 
+ Nigel Paneth, MD, Co-Investigator – Pediatric Epidemiology 
+ J Glenn Morris, MD, MPH&TM – Infectious Disease, Epidemiology 
+ Judith A Johnson, PhD – Clinical and Molecular Microbiology 
+ Hegang Chen, PhD - Biostatistics 
+ Rama Chaudhry, MD – Clinical and Laboratory Microbiology 
+ Sailajanandan  Parida,  MD,  Senior  Foreign  Investigator,  Clinical  Pediatrics,  Pediatric 
+Nutrition 
+ Nimai Nanda, MD, Department of Pediatrics and Site Investigator  – Clinical Pediatrics 
+ Radhanath Satpathy, MD, Medical Officer/Site Investigator of the Rourkela site, Clinical 
+Pediatrics, Community medicine 
+ Pravas R. Misra, DVM, Site Diretor, Bhubaneswar site – Laboratory Microbiology 
+ Lingaraj Pradhan, MD, Medical Officer (Capital Hospital), Bhubaneswar site – Clinical 
+Pediatrics 
+ S.  S.  Mohapatra,  MD,  Director,  Field  Operations  for  both  community  sites,  Clinical 
+Pediatrics, Community Medicine 
+The specific duties of the research personnel are: 
+
+PAGE 7
+7 
+GN 07 Probiotic Trial 
+V1 Jan/26/07  V2 July/15/2008 
+ 
+ 
+ 
+Principal Investigator: The U.S.-based Principal Investigator (PI) is responsible for ensuring 
+the proper conduct of the trial at the research sites, accurate collection of data and transmission 
+of information to RTI (Research Triangle Institute managing the contracts with NICHD, Indian 
+sites, and developing publications of study data. Other duties include presenting pre-study 
+education to the staff, applying for and obtaining IRB approval, and informing the IRB of the 
+study progress. The PI also provides other necessary training (GCP, microbiology etc.) to study 
+staff and ensures that personnel are available to carry out the study in an appropriate manner. 
+Senior Foreign Investigator: The senior foreign investigator (SFI) will be responsible for the 
+overall execution of study aims and will supervise the Indian sites. He will also be responsible 
+for all communication with the Government of Orissa and other central government offices in 
+India and closely work with the principal investigator (PI) in the United States. 
+Site Directors: The site directors at each of the two research sites will work in concert with the 
+SFI and take charge of the scientific and administrative activities at their respective sites. They 
+will be responsible for managing subcontracts with the parent U.S. institution (UMB). Other 
+faculty and permanent staff members in the departments of pediatrics and microbiology at 
+participating hospitals/medical schools will act as co-investigators and provide service based on 
+their training and expertise. 
+In addition to the above research team, each site in India will hire the following project staff 
+Study physician: The study physician is responsible for evaluating and caring for all study 
+infants who are referred to the hospital. The medical officer will be responsible for reporting any 
+adverse events to the site directors. 
+Study supervisor: The study supervisor is responsible for obtaining consent and enrolling 
+infants in the study. He/she will also be responsible for preparing the study supplement and 
+maintaining the randomization scheme. 
+Anganwadi worker: This person will be trained by the research unit to administer the study 
+supplement to infants in the home as per the randomization scheme. The AWW will conduct 
+daily home visits to monitor the infant from the time of enrollment until 60 days of life and will be 
+trained to refer the infant to the hospital if there are signs of sepsis or other morbidities. 
+Microbiology officer: The microbiology officer at each site is a person with postgraduate 
+training in microbiology who is primarily responsible for the processing of all clinical 
+microbiological specimens, interpreting the results, and completing the microbiology data forms. 
+Faculty members and other senior staff will provide assistance to the microbiology officer as 
+needed. This will be a part-time position, as microbiological samples will only be taken from 
+infants with signs of sepsis. 
+Laboratory technician: The laboratory technician assists the microbiology officer in the 
+handling and processing of clinical samples and other related bench work. He/she will also help 
+the microbiology officer in placing orders (microbiological media, reagents, plastic ware, and 
+glassware with final approval of the site director. This is a part-time position. 
+Data entry operator/office coordinator: The data entry operator will be responsible for 
+transferring handwritten data from the data forms to the computerized database. He/she will 
+also assist the site director and other investigators in communications, administrative, and 
+organizational aspects of the program, such as ensuring that all forms are accounted for and 
+are appropriately filled out, patient samples are delivered expeditiously, and results are reported 
+accurately. 
+Study nurse: The study  nurse will be responsible for labeling and preparing the boxes of 
+probiotic and placebo according to the randomization scheme. 
+
+PAGE 8
+8 
+GN 07 Probiotic Trial 
+V1 Jan/26/07  V2 July/15/2008 
+ 
+ 
+ 
+*The microbiology staff hired for this protocol will not supplant the hospital staff/microbiology  labs. 
+ 
+Duties of the NICHD 
+ 
+The NICHD Staff Science Coordinator will serve as the principal representative of the Institute 
+and NIH and, in consultation with relevant NICHD program staff and representatives of the other 
+NIH co-sponsors, will provide overall programmatic oversight, coordination, and assistance to 
+the Global Network.  Specifically, the NICHD Staff Science Coordinator will: 
+ Facilitate communication, cooperation, and the exchange of information among network 
+members and between the network components and other existing programs to support 
+collaborative efforts 
+ Oversee site participation and performance with the support of the Data Center 
+Apart from funding the project, the NICHD will facilitate the functioning of the RU by providing 
+scientific input through assistance in the protocol and MOO development, monitoring the 
+implementation of the project though mutually agreed upon site visits along with the DCC, and 
+participating in preparations of publications. NICHD will also provide assistance as needed 
+toward the conduct of the study. NICHD will convene an annual Steering Committee meeting to 
+review site-specific progress and facilitate inter-site collaboration. 
+ 
+Duties of the Data Coordinating Center (RTI International) 
+ 
+Responsibilities of the Data Coordinating Center (at RTI), which is a collaborating center for all 
+Global Network projects, include: 
+ 
+ Provide advice on study design, data collection, data analysis, and publication 
+development. 
+ Provide technical assistance in the preparation, design, and dissemination of operations 
+manuals, data collection forms, databases, and results reporting summaries. 
+ 
+ Compile for the Network Advisory Group and Steering Committee, the  DSMB,  the 
+NICHD site visit reports, monthly and quarterly subject enrollment reports, meeting 
+summaries, quarterly research unit performance and progress reports, and other reports 
+as needed. 
+ 
+ Assure maintenance of high-quality databases, supervise all data collection procedures, 
+and arrange for the most efficient transfer of study data where indicated. 
+ 
+ Ensure full compliance with NIH regulatory requirements, including informed consent, 
+reporting of adverse events, human subject safety and welfare provisions, and the 
+requirements of international collaboration. 
+ 
+ Provide training to all research unit site personnel as needed on data management and 
+analysis and quality control and quality assurance. 
+ 
+ In coordination with the NIH co-sponsors, provide periodic onsite monitoring to the 
+research units for those studies being performed at that site. 
+
+PAGE 9
+9 
+GN 07 Probiotic Trial 
+V1 Jan/26/07  V2 July/15/2008 
+ 
+ 
+ 
+ 
+RTI staff includes: 
+ 
+ 
+ Vijaya Rao, PhD, Senior Statistician 
+ Jay Hemingway-Foday, MPH, MSW, Protocol Manager 
+ Sarah Taylor, B.S., Assistant Protocol Manager and Biostatistical Programmer 
+ Suchita Parepalli, M.S., Data Management Specialist 
+
+PAGE 10
+10 
+GN 07 Probiotic Trial 
+V1 Jan/26/07  V2 July/15/2008 
+ 
+ 
+ 
+2. INTRODUCTION 
+ 
+As the twenty first century dawns, 10.8 million children younger than age five years die annually. 
+Most of these deaths occur in developing countries. Of the children who die, 4 million die in the 
+neonatal period, defined as the first 28 days of life. [1] India alone accounts for at least 1.3 
+million neonatal deaths. [2] Neonatal deaths account for about 33% of the total deaths under 
+five years of age around the world; [3] however, in India neonatal deaths make up 64% of all 
+infant deaths. [4] Furthermore, it is estimated that deaths during the second month of life are 
+responsible for the majority (> 60%) of post-neonatal deaths during the first year of life. [5] Thus, 
+more than 85% of all infant deaths in India occur in the first 2 months. With improved maternal 
+and child health services, the infant mortality rate (IMR, defined as death under 1 yr of age per 
+1000 live births) in India has declined from 78.5/1000 live births in 1991  to  67.6  in  2000. 
+However, during that period there was no significant corresponding decline in the neonatal 
+mortality rate (NMR; death within the first 28 days of life). [6] 
+ 
+Over 60% of births in India take place at home with the assistance of traditional birth attendants 
+and family members; [6] the majority of neonatal deaths occur in the community (rural) setting. 
+Neonatal sepsis accounts for over half of the newborn deaths at the district and sub-district level 
+and continues to be the most common primary diagnosis for admission to Indian hospitals. [7-9] 
+Reduction in sepsis will have a major impact in reducing the NMR and post-NMR in this setting 
+and in other developing countries with similar health problems. 
+ 
+3. BACKGROUND AND SIGNIFICANCE 
+ 
+Pathogenesis of sepsis, current treatment modalities and prevention strategies 
+Sepsis is a complex disease with multifactorial etiology and pathogenesis [10-13], and no 
+preventive method has been unequivocally established at this time. Various interventions 
+designed to reduce early sepsis, including intravenous immunoglobulin administration [14-16], 
+empiric antibiotic treatment [17, 18], selenium supplementation [19], and breast feeding [20, 21] 
+have been tried with limited success. New experimental therapies such as the use of anti- 
+inflammatory medications [22], anti-endotoxin, and anti-cytokine therapy [23-25], with few 
+exceptions, have failed to demonstrate an improvement in clinical outcome, and some have 
+even increased mortality. [26-28] The 40-year history of therapeutic interventions in clinical trials 
+for sepsis has been referred to as the “graveyard for pharmaceutical companies” [23], since 
+almost none of these strategies have resulted in significantly improved survival of the patients. 
+[24] 
+ 
+Bacterial colonization and gut development 
+ 
+The mammalian gut is sterile in utero and is exposed to bacteria at the time of passage through 
+the birth canal of the mother followed by acquisition from the environment and the care giver(s). 
+Then additional significant changes occur in the intestinal ecology when the infant is weaned 
+from mother’s milk (or introduced to solid food). [29, 30] The resident flora ultimately stabilizes 
+into a mix of obligate anaerobes. [29-31]. These changes in intestinal flora are accompanied by 
+functional and morphological maturation of the gut. Coinciding with the withdrawal of passive 
+maternal immunoglobulins, increased numbers of T and B cells are found in the lamina propria 
+and intra-epithelial spaces [32] and polymeric IgA receptor is expressed. [33] Available data 
+from germ-free mouse models (where these processes are arrested) strongly support the 
+concept that these developmental changes are induced by bacterial flora and NOT just by post- 
+natal age. [33, 35] 
+
+PAGE 11
+11 
+GN 07 Probiotic Trial 
+V1 Jan/26/07  V2 July/15/2008 
+ 
+ 
+ 
+Role of gut flora and probiotics in colonic barrier function and bacterial translocation: 
+ 
+Although clinical observations in humans (IBD, celiac disease) have increased interest in this 
+area [48, 49], the majority of the scientific information in this field has come from animal studies. 
+Studies conducted in neonatal rats have shown that the colonic barrier is modulated by 
+commensal flora: E. coli and Klebsiella increase gut permeability whereas Lactobacillus brevis 
+decreases gut permeability. [50] Other studies in suckling rats have shown that Lactobacillus 
+reverses cow milk-induced increased intestinal permeability [51] and rotavirus enteritis. [52] 
+Studies from our laboratory have demonstrated the protective role of normal flora (Enterococcus 
+strains) in maintaining the trans-epithelial barrier and blockage of transcytosis of E. coli in a 
+Caco-2 cell transwell cluster system. [53] We also have shown that L.  plantarum  blocks 
+bacterial translocation and E. coli sepsis in a weanling rabbit ileal loop model. [54] Additional 
+reports in the literature have described similar interactions including the ability of breast milk 
+components to block bacterial translocation in the immature intestine. [55] 
+ 
+Multiple studies have been initiated to clarify the mechanisms by which some but not all bacteria 
+confer increased barrier function in the intestine. These include expression of integral proteins 
+such as TJ proteins; peptides involved in tissue repair (e.g. trefoil factor), mucins, and 
+modulation of other epithelial inflammatory responses in the intestine. [56] Recent data indicate 
+that toll-like receptors (TLR)-2 are involved in responses to cell wall components of the gram - 
+positive bacteria (such as Lactobacilli), while TLR-4 has a role in recognition of gram-negative 
+bacterial compounds. [57] It is intriguing to note in a recent report that TLR-2 enhances ZO-1- 
+associated intestinal epithelial barrier integrity, [58] which supports our earlier observations [59] 
+that L. plantarum mediates protection of ZO-1 proteins during infection with  specific  Gram 
+negative enteric flora. [59] 
+ 
+Bacterial Translocation (BT) and sepsis 
+ 
+Bacterial translocation (BT) is defined as the passage of viable bacteria from the gastrointestinal 
+tract through the enlarged spaces between the epithelial cells [60] as well as directly through 
+enterocytes [61] to extraintestinal sites including bloodstream. [62] There is increasing evidence 
+in the literature in support the “gut origin of sepsis” where  BT plays a  critical  role. This 
+phenomenon has been shown in a variety of clinical settings in multiple hosts including 
+neonates. 
+ 
+The concept of bacterial translocation from the intestine and sepsis also is strongly supported 
+by evidence from animal studies. In the early 1990s, Runkel et al. showed the significant role 
+played by bacterial translocation, and alterations of intestinal microflora in a rat model of acute 
+pancreatitis and sepsis. [63] A disruption of the intestinal microflora was found in the cecum with 
+significantly higher Gram negative counts in this study. [63] Similar results were later reported 
+by Clements et al. focusing on gut barrier function and Gram negative  sepsis  [64].  More 
+recently, gut-derived sepsis with other Gram (-) bacteria such as Pseudomonas aeruginosa has 
+been described. [10] Rates of translocation for the various constituents of the indigenous flora 
+vary considerably: Pseudomonas aeruginossa, Klebsiella pneumoniae, E. coli, and proteus 
+mirabilis have higher translocation rates than Gram positive strains. [65] These results confirm 
+our community data in which Gram negative bacterial translocation from the intestine has been 
+demonstrated to be more prevalent than that with Gram positive organisms such as CONS. 
+(described in detail in preliminary studies section). 
+
+PAGE 12
+12 
+GN 07 Probiotic Trial 
+V1 Jan/26/07  V2 July/15/2008 
+ 
+ 
+ 
+BT and sepsis in “adult” human subjects 
+Reports relating bacterial translocation to adult sepsis have appeared in the literature since the 
+early 1990s and the gastrointestinal tract has been described as the “motor” in driving sepsis. 
+[63, 64, 66-68] In a prospective study of 279 surgical patients, MacFie et al. demonstrated 
+bacterial translocation as a key mechanism and E. coli to be the commonest organism of sepsis 
+[69], in a prospective study of the association between bacterial translocation, gastric microflora 
+and septic morbidity. MacFie published a 13- year experience in 927 patients in 2006, again 
+demonstrating an association between BT and sepsis. [70] In a postoperative case series of 51 
+patients with schistosomiasis, sepsis was linked with BT; aerobic bacteria were most prevalent 
+in the mesenteric lymph nodes of these patients with E. coli dominating – 26%. [71] Epithelial 
+barrier dysfunction is considered a unifying theme to explain the pathogenesis of multiple organ 
+dysfunction syndrome. [60] New randomized controlled trials (RCTs) to prevent sepsis with 
+probiotic prophylaxis in patients with predicted severe pancreatitis are underway (the Dutch 
+PROPATRIA trial). [72] 
+ 
+BT in neonatal sepsis: Bacterial translocation has also been described as an important 
+mechanism in the development of sepsis in multiple reports involving neonates. [73] There is 
+increasing evidence that translocation of gut flora may be important in preterm infants who have 
+immature intestinal defenses and increased gut permeability. [44, 45, 74, 75] While skin flora 
+are considered the source of Gram positive sepsis (especially coagulase negative 
+Staphylococcus - CONS) in western NICUs, Gram-positive “intestinal bacteria” are also an 
+important source of sepsis in premature neonates. [76] In a prospective study conducted at the 
+University of Maryland Baltimore (UMB), we have shown using molecular techniques that the 
+organisms recovered from blood in our premature population were always identical to the ones 
+cultured from the stool. [77] 
+ 
+In a recent five-year long prospective study of 208 neonatal surgical patients, gut overgrowth 
+with aerobic Gram negative bacilli was shown to be the predominant cause of sepsis and was 
+described as the “missing link in sepsis”. These authors commented that “prevention is unlikely 
+to be successful” when the role of gut flora is ignored. [78] Byington et al reported 16% blood 
+culture positivity in 1298 febrile infants < 90 days old. Of the serious bacterial infections in this 
+population, 79% were caused due to Gram negative organisms. [79] While the setting is not 
+identical to that of ours, the age of infants, type of infection, culture positivity rate etc. appear 
+quite analogous to our study population in India (up to 60 days old). Results of our own neonatal 
+surveillance study in 850 neonates (conducted under the NICHD “Global Network”, and 
+summarized in Preliminary Studies, below) provide further data in support of the hypothesis that 
+bacterial translocation is the predominant underlying mechanism in late onset sepsis. [80, 81] 
+ 
+Acid blockers, bacterial overgrowth and sepsis - indirect evidence in favor of gut derived 
+sepsis in the neonatal population:  In a study of 371 VLBW infants participating in a NICHD 
+U.S. Neonatal Research Network placebo-controlled dexamethasone RCT, Stoll et al. found H2- 
+blocker therapy before study entry was associated with increased risk of sepsis: 46.8% were 
+attributable to Gram positive organisms, 26.6% to Gram negative, and 26.6% to fungi. [82] At 
+the 2006 PAS/SPR meeting, Bianconi and colleagues reported that ranitidine resulted in a 7.6- 
+fold increase in risk of sepsis among 574 neonates. [83] In this study 33.8% isolates were Gram 
+negative organisms. Also this year, Guillet et al. demonstrated an association of H2-blocker 
+therapy and increased risk of necrotizing enterocolitis in a cohort of 11,072 VLBW infants. [84] 
+While these studies fell short of providing a direct link between the organisms in the intestine 
+and blood (where other risk factors were adjusted in regression models), bacterial overgrowth 
+under reduced acid conditions appears to be the common underlying factor that could have led 
+
+PAGE 13
+13 
+GN 07 Probiotic Trial 
+V1 Jan/26/07  V2 July/15/2008 
+ 
+ 
+ 
+to translocation and sepsis. 
+ 
+Probiotics in gut development, immunomodulation and barrier function 
+Significant structural and functional development of the human gut starts upon exposure to the 
+bacterial world via regulatory signals that condition the development and function of the gut. [62] 
+In human volunteers, probiotics have been consumed to enhance natural immune function 
+(interferon production, phagocytic activity etc.). [85] Other reports point toward the immunologic 
+basis of probiotics [86-88] including their role in the development of innate immunity via NK-cell 
+stimulation. [89] Distinct regulatory effects of specific probiotic strains are associated with 
+induction of local immunoglobulins, cytokines (TH-1 vs. TH-2), and other mediators of 
+inflammation.[90] Multiple in vitro murine and human tissue culture and animal models have 
+been utilized to study the beneficial role of probiotics in increasing barrier function. [49, 91-93] 
+Swedish reports showed reduction of BT in Sprague-Dawley rats using Lactobacillus plantarum. 
+[94] In another study Mao et al described L. plantarum to be more effective than L. reuteri when 
+used with arginine in methotrexate-induced enterocolitis in rats. [95]  Kasravi  et al. showed 
+almost identical results where mucosal proliferation was induced by both L. reuteri and L. 
+plantarum; but bacterial translocation was reduced by only L. plantarum. [96] In early 2000, an 
+Italian study by Mangiante and colleagues showed reduction in intestinal permeability and 
+experimentally-induced pancreatic necrosis by L. plantarum. [97] Similar results of reduction in 
+intestinal permeability were reported in an Irish study this year utilizing L. plantarum in an 
+experimental biliary obstruction model. [98] 
+ 
+Lee et al have utilized rabbit pups to examine the effect of Lactobacillus on bacterial 
+translocation in a newborn model and they demonstrated a 46%, 61% and 23% reduction in 
+bacterial translocation to mesenteric lymph nodes, spleen, and liver. [99] In a weanling rabbit 
+ileal loop model, we have demonstrated significant reduction in the level of E. coli septicemia 
+with L. plantarum. [54] 
+ 
+Use of probiotics to improve “human” gut barrier function 
+The results from animal studies and virtual lack of toxicity has helped the probiotic field move 
+from simple GI disturbances such as diarrhea in healthy adults and children [92, 100-109], to 
+atopy/allergy in children [109-114], and to critically ill patients [72, 115-117] where gut barrier 
+function is compromised. These include sepsis, multiple organ dysfunction and necrotizing 
+enterocolitis. [60, 117-119] Use of live L. plantarum in the adult ICU setting reduced septic 
+morbidity in the ICU setting in a study of parents. [120] Probiotics have also been used in 
+experimental models and clinical trials of inflammatory bowel disease, irritable bowel syndrome, 
+and celiac disease where gut barrier is considered to be sub-optimal. [121-125] 
+ 
+Probiotics in “neonatal sepsis” and other “best practice” recommendations 
+Recent reviews have used the probiotic concept as “germ warfare” in the defense of the 
+premature gut. [126] With few options available to prevent nosocomial sepsis in the neonatal 
+units, experts are now suggesting approaches to strengthen gut barrier function using probiotics 
+[119]. In the adult intensive care setting, probiotics are recommended among “best practices” to 
+limit mortality from sepsis. [116, 120, 127] 
+ 
+Lessons learned from veterinary medicine 
+The experience with germ-free animals may be analogous to the newborn situation. If germ-free 
+animals are infected with a single strain of organism, that organism, even if not indigenous or 
+pathogenic to the animal, can populate the gut in very high concentrations. Germ -free pigs and 
+guinea-pigs  can  develop  severe  enteritis  when removed from  the germ -free environment or 
+
+PAGE 14
+14 
+GN 07 Probiotic Trial 
+V1 Jan/26/07  V2 July/15/2008 
+ 
+ 
+ 
+when contaminated with a single species; however, protection can be afforded by prior seeding 
+with their normal stool flora. [128] the potential importance of gut microbial ecology and the role 
+of normal gut flora is also emphasized by several other examples including “mucoid 
+enteropathy" in rabbits and ailments in rodents and chickens. [129, 130] "Schaedler's Cocktail," 
+a combination of harmless bacteria, is used routinely in raising specific pathogen-free rodents. 
+[129] These kinds of data suggest that similar therapeutic maneuvers may be applicable in the 
+human infants. 
+ 
+Dysbacteriosis and probiotics in Russia 
+In many parts of Russia, probiotic preparations are used for up to 30 days in all infants in an 
+attempt to create “benign” stool microfloral patterns to prevent/cure “dysbacteriosis”. [131] 
+Russian physicians describe gastrointestinal dysfunctions that are accompanied by an alteration 
+in the functional characteristics of the gut flora or “intestinal dysbacteriosis.” The entire neonatal 
+population in much of Tatarstan receives probiotics in an attempt to prevent/cure dysbacteriosis 
+in early infancy. Since no blinded, controlled studies of this therapy have been performed, the 
+level of colonization obtained and its efficacy in preventing such dysfunctions cannot be 
+ascertained. However, since thousands of infants have been treated, the risks involved in such 
+treatment appear minimal, and the observation of a relatively low incidence of infections during 
+infancy in Tatarstan (an Eastern European country with high infant mortality) would argue in 
+favor of its safety and some degree of efficacy.  (Personal communication, A. Kuznetsova, 
+Kazan Institute for Advanced Medical Studies, Tatarstan, Russia; via UMB-Kazan exchange 
+program 1991-2001) 
+ 
+Clinical trials of probiotics in neonates 
+Hoyos et al. reported a clinical trial of Colombian preterm infants using a probiotic preparation of 
+Lactobacillus acidophilus and Bifidobacterium infantis (n = 1,237); they showed a reduction of 
+neonatal necrotizing enterocolitis (NEC) and improved oral feeding tolerance. [132] Improved 
+feeding tolerance was reported with similar probiotic treatment (Bifidobacterium breve)  in 
+preterm Japanese infants. [133] However, a prospective double-blind Italian  study  of 
+Lactobacillus casei (n = 489 preterm infants) did not demonstrate a significant reduction in NEC 
+or urinary tract infection (UTI). [118] A Finnish trial randomized mothers with a family history of 
+atopic disease to prenatal administration of Lactobacillus rhamnosus vs. administration of the 
+same preparation to their infants for six months after birth. The incidence of atopic eczema was 
+reduced by approximately one-half compared to a placebo group. [113] In a randomized study, 
+Bifidobacterium lactis was administered to 128 preterm infants during the first 6 weeks of life. 
+There was no impact on nosocomial infections that were recorded after the first week of life. 
+[134] A small trial of Bifidobactrium breve in 40 VLBW infants demonstrated colonization and a 
+trend toward reduced sepsis, earlier achievement of full feeds, and better weight gain. [135] In 
+another study from Taiwan, Lin et al. showed reduction of sepsis and necrotizing enterocolitis in 
+infants treated with a combination of  Lactobacillus  acidophilus  and Bifidobacterium  infantis. 
+[118] However, a very recent study by Bin-Nun and colleagues demonstrated a reduction in the 
+incidence of necrotizing enterocolitis, but not sepsis, using a Bifidobacteria and Streptococcus 
+combination. [136] 
+Although promising, the variable results in the above studies suggest that probiotics may have 
+limited effectiveness in preventing neonatal sepsis. However, none of the above studies 
+analyzed stool cultures of the infants to examine the ability of the strain to colonize, nor was the 
+selection of the probiotic based on demonstrated ability of the probiotic preparation to normalize 
+gut colonization and block translocation. Several studies used combination of strains (an 
+approach taken by food supplement industry with no scientific basis), that makes it impossible to 
+evaluate  the  effect  of  individual  strains.    A  clear  justification  against  this  approach  is  the 
+
+PAGE 15
+15 
+GN 07 Probiotic Trial 
+V1 Jan/26/07  V2 July/15/2008 
+ 
+ 
+ 
+withdrawal of Lactinex [a combination product of L. acidophilus and L. bulgaricus (common 
+yogurt strains)] from the U.S. drug market many years ago. Highly variable results with Lactinex 
+were seen in clinical trials that were attributed, in part, to the inhibitory effect of bulgaricus 
+strains on acidophilus. Our current study was designed after careful evaluation of the 
+Lactobacillus strain in experimental in vitro and animal models, followed by preliminary safety 
+studies in hospitalized newborns. 
+ 
+Probiotic colonization studies by our group 
+In a study of low birth weight Indian infants using two commercially available probiotics, we 
+observed that Lactobacillus acidophilus had a stool colonization rate of 60% compared to 0% for 
+L. sporogenes, with twice daily administration over a 4-week period. (80) In a second study 
+using an L. casei (LGG) preparation in two groups of hospitalized Indian infants, colonization by 
+LGG was < 50% in infants of 1500-1999 gm birth weight (over a 1-week period) and < 25% in a 
+VLBW cohort after administration for 3 weeks. (81) In both studies, Lactobacilli/ Bifidobacteria 
+were isolated from only a handful of control infants (< 5 percent of the population) at an age of 3 
+to 4 weeks. 
+ 
+Recently, we have completed a series of in vitro and in vivo experiments to identify a suitable 
+probiotic preparation, using the same preparation in further clinical studies in newborn infants in 
+the hospital setting. The Lactobacillus plantarum strain used in our studies has shown excellent 
+protective effects in the experimental models and colonized in 80-90% of the infants up to 60 
+days after one-week administration. 
+ 
+Available data from our own studies suggest that administration of probiotics to community-born 
+newborn infants may reduce late- onset sepsis. 
+ 
+Recommendations of international agencies/expert working groups 
+The concept of “germ warfare” in the defense of the premature gut has been accepted and 
+expanded for the newborn population. [126] Similarly, strengthening of the gut barrier function 
+by probiotics to prevent nosocomial sepsis in the neonatal units is being suggested by experts 
+in the field. [119] There is a consensus to move away from single center small trials to large 
+scale interventions with adequate power that can address the true utility of probiotics in neonatal 
+sepsis (primarily Gram negative). [119] 
+ 
+Although not in direct relevance to neonatal sepsis, many international  bodies  have 
+recommended the use of probiotics in other infections. A clinical review entitled “Probiotics for 
+the developing world” published last year summarized the opinion of the meeting of the 
+International Scientific Association for Probiotics held in London. [137] This report reviewed the 
+evidence in favor of the use of probiotics, examined several models in sub-Saharan Africa and 
+recommended the use of probiotics for diarrheal diseases in the developing countries especially 
+for communities not reached by governmental agencies. [137] In an effort to reduce the use of 
+antibiotics in the face of increasing antibiotic resistance bacteria, the WHO  has advocated, 
+where possible, a policy of microbial interference. [138] The Food and Agricultural Organization 
+(FAO) of the United Nations published an expert panel report in 2001 stating that “adequate 
+scientific evidence exists to indicate that there is a potential for the derivation of health benefits 
+from foods containing probiotics”.[139] 
+
+PAGE 16
+16 
+GN 07 Probiotic Trial 
+V1 Jan/26/07  V2 July/15/2008 
+ 
+ 
+ 
+4. PRELIMINARY STUDIES 
+Population-based surveillance of neonatal sepsis: 
+In an effort to identify the most appropriate intervention against neonatal sepsis, we established 
+a sepsis surveillance program in the community setting and conducted detailed microbiology of 
+neonatal infection in India for the first time. All pregnant mothers in 223 participating villages 
+were registered at seventh month of their pregnancy and their pregnancy was followed by lady 
+government workers called Anganwadi workers - AWW. All live born babies were followed daily 
+for 60 days after birth by AWWs. These workers and study personnel were trained to identify 
+sign/symptoms of sepsis using a modified WHO model and records maintained by AWW and 
+study staff every baby with suspect sepsis was referred to study hospitals where they were 
+evaluated by study pediatricians. Complete septic workup was done when the study 
+pediatrician considered the baby as case of “clinical sepsis” deemed appropriate. 
+ 
+Our trained village-level personnel identify cases of suspected sepsis based on the UNICEF/ 
+WHO model of PSBI (sign/symptoms of clinical sepsis) and refer them to our study hospitals 
+where the babies are examined by study physicians. A screening form is completed by the 
+physician for each baby. Based on the clinical evaluation of the physician, the baby is either 
+enrolled in the study with clinical sepsis, referred to the general pediatric ward in the hospital 
+(for other illness not related to sepsis), or returned home with advice. Table 1 below gives a 
+quantitative measure of our triage (village level), screening (hospital) and final assignment of 
+diagnosis for the purpose of calculation of sepsis rates during a three year period. 
+ 
+Table 1.  Referral and determination of clinical sepsis cases 
+ 
+Total births # of babies referred to hospital Final clinical sepsis cases 
+12,622 1,973 842 
+ 
+Definition of clinical sepsis: Infants were recorded as having clinical sepsis when “ANY 
+ONE” of the following criterion was met: 
+ Clinically sick with signs of PSBI to warrant hospitalization and IV antibiotics for five or 
+more days, and recovery upon treatment (or death due to severity of disease) 
+ Culture positive (blood or cerebrospinal fluid) 
+ Positive chest x-ray (pneumonia) 
+ 
+We collected samples from the baby (axillary skin, umbilicus, stool, and any other specific 
+sepsis foci) and the mother (vaginal tract and nail bed). This population-based study provided 
+insight into the timing of infection (EOS vs. LOS). Results of the  microbiological  analysis 
+provided the critical information on the source of infection, which led us to believe that the 
+probiotic approach is the most appropriate intervention to prevent sepsis  in the majority of 
+infants. 
+ 
+Table 2. Disease burden of clinical sepsis in the surveillance study (April 2002-March 
+2005) 
+
+PAGE 17
+17 
+GN 07 Probiotic Trial 
+V1 Jan/26/07  V2 July/15/2008 
+ 
+ 
+ 
+Site Total # of births Clinical sepsis cases enrolled in the study hospitals 
+BBS 5,720 384 
+RKL 6,902 458 
+TOTAL 12,622 842 
+ 
+During the study period (April 2002 to March 2005), there were 12,622 births. 
+Timing of sepsis: We had originally speculated that EOS in the community would be quite 
+common because of lack of clean water, poor hygiene practices during delivery and cord care, 
+and practices by traditional birth attendants during delivery. However, of the infants born at 
+home and enrolled in the study with suspected sepsis, only 5% were admitted within 72 hours of 
+birth. Previous  Indian studies have also indicated higher incidence of neonatal sepsis during 
+the late neonatal (8-28 day) period. (69, 70) 
+Table 3. Timing of presentation of clinical sepsis in the community setting 
+ 
+Time of presentation Infants enrolled for clinical sepsis 
+Early Onset (%) 38 (5%) 
+Late Onset (%) 804(95%) 
+Total 842 (100%) 
+ 
+Infecting organisms: Predominant organisms were Klebsiella spp., E. coli, coagulase negative 
+staphylococci (CONS), and S. aureus. However, Gram-negative organisms were  the 
+predominant organisms associated with LOS infection, especially Klebsiella spp. CONS were 
+considered controversial and a decision was made by the research group to examine them on a 
+case-by-case basis for clinical outcome before discarding them as skin contaminants. 
+ 
+Concordance of blood culture with other body sites: Analysis of concordance between 
+blood isolates and isolates from other sites was done in an effort to identify possible 
+transmission routes. When a blood culture was positive, the same bacterial species was first 
+looked for in other cultures (i.e. other body sites of the baby and the mother). If the same 
+organism was found at any other site, a second line of match was performed by comparing the 
+antibiogram. Organisms showing the exact same antibiogram  (sensitivity and resistance to 
+same set of antibiotics) were subjected to a third level of confirmation by pulse field gel 
+electrophoresis (PFGE). The results revealed several important phenomena. Staphylococci 
+were found in all colonized sites, suggesting that transmission  could  occur  through 
+environmental exposure (breaks in the infant’s skin or maternal handling) or via intestinal 
+translocation. In contrast, Gram-negative LOS had a strong concordance with enteric bacterial 
+colonization, suggesting that bacterial translocation from the infant’s gut may be important in 
+Gram-negative LOS (72). 
+ 
+Hospital-based safety pilot of GastroPlan (L. plantarum and FOS blend) 
+This double-blind, placebo-controlled study was conducted at two of our participating hospitals. 
+To maintain blinding, trained OB study nurses not involved in the care of the newborn 
+administered the study supplements at our attached hospitals. Randomization schedule was 
+created by RTI and study sites were provided with sealed envelopes with treatment assignment 
+to  be  opened  sequentially  for  eligible  infants.  Training  was  conducted  by the  PI and  RTI 
+
+PAGE 18
+18 
+GN 07 Probiotic Trial 
+V1 Jan/26/07  V2 July/15/2008 
+ 
+ 
+Mean (SE) Log10 (CFU) 
+ 
+personnel. Thirty-three infants were randomized to control and probiotic groups in 1:2 
+proportion; 30 infants completed the study. Treatment groups  received  L.  plantarum 
+preparations (contents of one capsule containing 109 organisms – ATCC 202195 and 150 mg 
+FOS) or placebo preparations (5% dextrose saline) orally once a day starting on day one to 
+three of life and continuing for seven days thereafter. Stools were collected at baseline (before 
+administration) and on days 3 1, 7 2, 14 3, 213, 28 3, months 2 through 6 7 days. A 
+minimum of four doses were given in the hospital for the infant to stay eligible in the study and 
+rest of the doses were allowed to be administered at home. Daily clinical events were recorded 
+and a detailed microbiological culture of stool (for all organisms) was conducted. 
+No serious adverse reactions were recorded during the 28-day active follow-up. All babies were 
+followed for 180 days at home for general health. Monthly stool collection was done for 
+examination of L. plantarum and change in colonization pattern. Starting day 3, a high level of 
+colonization (80%) was observed in the treated group that continued up to four months after the 
+one-week administration (Table 4 below). 
+ 
+Table 4. Number of stool samples positive (%) for Lactobacillus plantarum 
+ 
+ 
+Group 
+Assignment 
+ 
+Baseline* 
+ 
+Day 
+3 
+ 
+Day 
+7 
+ 
+Day 
+14 
+ 
+Day 
+21 
+ 
+Day 
+28 
+ 
+Month 
+2 
+ 
+Month 
+3 
+ 
+Month 
+4 
+ 
+Month 
+5 
+ 
+Month 
+6 
+Placebo 
+0/8 
+(0%) 
+0/12 
+(0%) 
+0/12 
+(0%) 
+0/12 
+(0%) 
+0/11 
+(0%) 
+0/11 
+(0%) 
+0/11 
+(0%) 
+0/11 
+(0%) 
+0/11 
+(0%) 
+0/11 
+(0%) 
+0/12 
+(0%) 
+L. Plantarum 0/13 
+(0%) 
+16/19 
+(84%) 
+14/19 
+(74%) 
+17/19 
+(89%) 
+15/18 
+(83%) 
+18/19 
+(95%) 
+18/18 
+(100%) 
+17/18 
+(94%) 
+15/17 
+(88%) 
+10/18 
+(56%) 
+6/19 
+(32%) 
+*pre-treatment. The denimonator is not same for each day since all samples could not be collected w hen baby did not stool 
+ 
+As seen in the graphs below, mean log Gram negative colony counts were significantly lower in 
+the probiotic group on days 3, 14, 21, and 28, and also on months 2, 5, and 6 (p=0.02 at 3 
+months and p<0.01 at all other time points). The mean log Gram positive counts were 
+significantly higher in the probiotic group than in the placebo group on days 14 (p=0.001) and 28 
+(p=0.04) and at each of the follow-up months (p<0.001 at mo 2-6). 
+ 
+Bacterial Load - Log 10 Gram (-) Organism Counts (CFU) 
+14 
+Bacterial Load - Log 10 Gram (+) Organism Counts (CFU) 
+14 
+ 
+12 12 
+ 
+10 10 
+ 
+8 8 
+ 
+6 6 
+ 
+4 4 
+ 
+2 2 
+ 
+ 
+0 
+D 1       D 3       D 7       D 14     D 21     D 28     Mo 2     Mo 3     Mo 4     Mo 5     Mo 6 
+Control (-) Treatment (-) 
+ 
+0 
+D 1       D 3       D 7       D 14     D 21     D 28     Mo 2     Mo 3     Mo 4     Mo 5     Mo 6 
+Control (+) Treatment (+) 
+ 
+ 
+Apart from the changes in the bacterial load that are directly linked to translocation and sepsis, 
+there was also a change is species diversity upon treatment. The mean number of Gram 
+positive species including anaerobes and microaerophilics (that are considered normal flora and 
+typically do not translocate from the colon) was  higher in the L. plantarum group than in the 
+placebo group on days 21 (p=0.001) and 28 (p=0.04) and at each of the 2-6 month examination 
+(p<0.001 at each time point). While both groups acquired a mean of only one Gram negative 
+species during the first month, the mean number was lower in the L. plantarum group on months 
+Mean (SE) Log10 (CFU) 
+ 
+        
+             
+                     
+                     
+                                                
+ 
+ 
+  
+        
+                             
+                  
+                       
+
+PAGE 19
+19 
+GN 07 Probiotic Trial 
+V1 Jan/26/07  V2 July/15/2008 
+ 
+ 
+ 
+2-6. These results demonstrate that probiotic treatment created and maintained a microbial 
+milieu with a reduced load of Gram negative organisms. This, in turn, should reduce bacterial 
+translocation of Gram negative sepsis during at least during the first two months in the newborn 
+period that may extend up to 4-6 months in the infants with continued colonization. 
+ 
+Long term follow-up of pilot study: The first five months of the six month follow-up period 
+were uneventful for both groups. However, during the 6th month, 4 of the 11 controls  were 
+brought to the hospital for diarrhea; one stool was positive for rotavirus antigen. None of the 19 
+treated infants had any health problems. Because of the small sample size, analysis of the 
+groups was done by Fisher’s exact test revealing a significant difference between the groups 
+(p=0.012). 
+Main Hospital-based Clinical Trial: After completion of the pilot, a larger randomized 
+controlled, hospital-based study was performed in three of our participating hospitals using the 
+same study design in order to estimate the colonizing ability and safety of the probiotic 
+Lactobacillus plantarum in the healthy newborn gut. The hospital-based clinical trial completed 
+enrollment in August 2006 with a total of 284 patients. The final dataset is currently being 
+analyzed. 
+The hospital-based trial cannot test the effectiveness of probiotics, as that would require a much 
+larger sample size as planned in the current study. However, that will generate robust data on 
+the “colonizing ability” of the strain, the most critical aspect that has been historically ignored in 
+almost all prior clinical trials in this field. This also provides additional assurance on the safety 
+and tolerability of the probiotic preparation in the newborn population. 
+ 
+Potential Risks and Benefits of Probiotic 
+Apart from the long history  of health benefits, probiotics in general, also have an excellent 
+record of safety in human use [140-142]. However, with the use of such live organisms, there 
+exists a risk of blood stream infection and there are reports of opportunistic blood stream 
+infection with Lactobacilli [143-149]. 
+ 
+The highest frequency of probiotic-related sepsis has been reported with the use of the yeast 
+strain Saccharomyces boulardi [150-159], and Lactobacillus rhamnosus (also called 
+Lactobacillus GG). [160-166] Sporadic cases of lactobacillemia have also been reported with 
+Lactobacillus acidophilus. [167-169] Lactobacillemia with L. plantarum has not been reported in 
+the literature. 
+ 
+All cases of probiotic bacteriemia or fungemia (Saccharomyces) have been reported in patients 
+with underlying immune compromise, chronic disease, or debilitation, and no reports have 
+described sepsis related to probiotic use in otherwise healthy persons . [170] Analyzing the 
+current European guidelines for safety assessment of Lactobacilli in food and food supplement, 
+Bernardeau et al. concluded that the Lactobacillus genus essentially posed negligible biological 
+risk. [171] 
+ 
+We have done a comprehensive antibiogram of the strain (See Appendix) and will make 
+injectable antibiotics available at study sites to attend to any unforeseen events associated with 
+our therapy. 
+ 
+Safety of probiotics in the pediatric and neonatal population 
+Multiple studies in the literature have used probiotic preparations for various disease states in 
+the pediatric  and neonatal population (described in the background section earlier).   So far in 
+
+PAGE 20
+20 
+GN 07 Probiotic Trial 
+V1 Jan/26/07  V2 July/15/2008 
+ 
+ 
+ 
+children less than one year old, only a few reports have directly linked the cases of Lactobacillus 
+sepsis to the ingestion of the same probiotic supplement.  Kunz and colleagues [172] described 
+2 cases of LGG sepsis in premature infants (10 and 12 weeks old) with short-gut syndrome who 
+were being fed Lactobacillus rhamnosus GG supplement via gastrostomy or jejunostomy tube 
+feeding. In one of the two cases, the blood isolate was indistinguishable from the probiotic strain 
+by pulse field gel electrophoresis. De Groote et al. reported a similar case in an 11 month child. 
+[162] In another case report, a 6-weeks-old infant  with  antibiotic-associated  diarrhea after 
+cardiac surgery developed LGG endocarditis three weeks after treatment with 10x9 CFU of 
+Lactobacillus rhamnosus GG daily, and was successfully treated with penicillin G. [173] The 
+second case reported in the same paper, described a six year-old girl with cerebral palsy and 
+microcephaly, who developed sepsis after taking Lactobacillus rhamnosus for 44 days with her 
+feeding via gastrojejunostomy tube. She was also treated successfully with  ampicillin. The 
+authors concluded that this report should not discourage the appropriate use of Lactobacillus or 
+other probiotic agents but should serve as a reminder that these agents can cause invasive 
+disease in certain populations. [173] 
+ 
+Blood stream infection with other Lactobacillus-like species 
+Careful evaluation of the literature reveals three other cases of blood stream infection with 
+Lactobacillus-like organisms in the pediatric population. All three relate to septicemia with 
+Pediococus (a member of the lactic acid-producing family of bacteria), that were not linked to a 
+bacterial (probiotic) intake. These include a two-week-old infant with  congenital  jejunoileal 
+atresia [174], a two-month-old infant with gastroschisis [175] and a three-month-old, also with 
+gastroschisis, corrected by two surgical interventions at two hours and two days of age, that had 
+two episodes of staphylococcal sepsis and was treated with multiple antibiotics. [176] It is 
+evident in these case reports that these events occurred only when concomitant severe 
+anomalies of the GI tract was present and invasive procedures were being carried out in these 
+young infants. Justifiably, the authors of recent reports have urged caution, while using 
+commercially available probiotics in children and adults with gastrointestinal anomalies, pending 
+additional study. They have added that such warnings for this particular category of GI patients 
+should not be applicable to the overwhelming majority of children. [176] 
+ 
+Safety and tolerance of Lactobacillus plantarum in vulnerable patients 
+As noted above, there has not been any report of L. plantarum sepsis in the adult or pediatric 
+population. L. plantarum was first used in debilitated elderly persons in Swedish nursing homes 
+to reduce infections that are now used in acutely ill patients as a preventive therapy against 
+sepsis. In a study involving 45 patients with severe acute pancreatitis, Kecskes et al. [177] 
+observed significant reduction of infected necrosis and abscesses patients receiving live L. 
+plantarum (4.5% compared to 30% in the control group receiving heat killed  L. plantarum). 
+Further evaluations of the patients revealed that the length of stay was 13.7 days  in  the 
+treatment group vs. 21.4 days in controls. The only patient who developed sepsis in the 
+treatment group did so eight days after the treatment had been discontinued. The authors 
+concluded L. plantarum supplementation to be an effective tool to prevent pancreatic sepsis, to 
+reduce the number of operations and length of stay and recommended at least two or more 
+weeks of treatment or even more appropriately, as long as the patients are treated  with 
+antibiotics  or have signs  of GI colonization. [178]   In a prospective randomized trial involving 
+172 patients following major abdominal surgery, the incidence of bacterial infections was 
+compared in patients receiving either conventional parenteral or enteral nutrition, or enteral 
+nutrition with Lactobacillus. The incidence of bacterial infections after liver, gastric or pancreas 
+resection was 31% in the conventional group compared to 4 % in the L.  plantarum group. [67] 
+In  the  analysis  of  95  liver  transplant  recipients,  13%  of  patients  developed  infections  in 
+
+PAGE 21
+21 
+GN 07 Probiotic Trial 
+V1 Jan/26/07  V2 July/15/2008 
+ 
+ 
+ 
+Lactobacillus group compared to 48% in controls. In addition, the duration of antibiotic therapy 
+was significantly shorter in the lactobacillus-group. Cholangitis and pneumonia were the most 
+frequent infections and enterococci the most frequently isolated bacteria. It was recommended 
+that such eco-immunonutrition be already started while patients are on the waiting list for 
+transplantation [68,179]. These studies have prompted other multicenter trials of L. plantarum 
+prophylaxis in patients with predicted severe pancreatitis. [72] 
+ 
+Last but not the least, different Lactobacillus strains have been used to treat/prevent HIV- 
+associated diarrhea and boost immune function in HIV patients. [180-184] In a study using L. 
+plantarum, Rundles et al. showed positive colonization, improved nutrient status and growth in a 
+cohort of children exposed to HIV. The authors also demonstrated the ability of these children to 
+elicit specific systemic immune response after oral supplementation. [185] 
+ 
+5. OBJECTIVES 
+ 
+ 
+ 
+Primary outcome: Sepsis plus Death, the former composed of septicemia, meningitis, culture 
+negative sepsis/inflammation, and lower respiratory tract  infection  (LRTI).  Modified 
+WHO/UNICEF guidelines (http://www.unicef.org/sowc08/ docs/sowc08_ panel_2_4.pdf) for 
+neonatal sepsis will be used to diagnose PSBI. 
+ 
+Sepsis (PSBI) - Septicemia/meningitis: Positive for bacterial or fungal culture of blood or 
+cerebrospinal fluid, or culture positive sepsis. 
+ 
+Sepsis (PSBI) - Culture negative sepsis/inflammation: Presence of any of the following signs 
+when warranting hospitalization and use of antibiotics for five or more days  based  on the 
+decision of the pediatrician indicated sepsis. 
+ 
+• Refusal to feed 
+• Lethargy (absent movement, or movement with stimulation only) 
+• Respiratory rate > 60/min, nasal flaring 
+ 
+Feasibility testing in a community pilot: While we are not able to set any gold standard (due 
+to lack of knowledge in conducting RCTs in the community setting of a totally different culture 
+with rural and tribal population), we will evaluate several parameters before we move forward 
+with the large RCT enrolling 8,442 infants. We expect high rates in the following parameters to 
+be recorded and examined in the community pilot of 400 infants. These infants will undergo all 
+procedures starting with screening, consenting, intervention at home, 60-day followup, and 
+transport and clinical care in case of suspicion of sepsis. 
+ 
+ Percentage of infants consented - 90% 
+ Percentage of babies ineligible - 25-50% 
+ Randomization rate among eligible infants - 90% 
+ Adherence to intervention (all seven doses) – 80% 
+ Adherence to five or more doses – 90% 
+ 60-day followup – 90% 
+ Ability of CHV and AWWs to administer the intervention at home – 95% 
+ Collection of all data forms and transport to the data center at the study hospital within 
+collect clinical data. 
+
+PAGE 22
+22 
+GN 07 Probiotic Trial 
+V1 Jan/26/07  V2 July/15/2008 
+ 
+ 
+ 
+• Axillary temperature ≥ 37.5°C/99.5°F 
+• Axillary temperature  ≤  35.5°C/95.9°F 
+• Convulsion 
+• Severe lower chest wall in-drawing 
+ 
+Sepsis (PSBI) - LRTI (includes pneumonia): Presence of reduced breath sounds, uneven 
+breath sounds, expiratory grunting, or crackles on auscultation by the pediatrician in conjunction 
+with any of the sign/symptoms mentioned above. 
+ 
+Secondary outcomes: 
+ Other infections including omphalitis, impetigo, diarrhea 
+ Any other condition deemed infectious by the pediatrician 
+ Weight gain 
+ Allergic and atopic episodes 
+ 
+WHO definitions will be used for omphalitis, abscess, acute otitis media, pustules, and diarrhea. 
+ 
+These objectives will be measured using an established surveillance and referral system in the 
+study communities. We will utilize the services of trained Anganwadi (government) workers 
+(AWWs) in each village managed and supervised by study personnel and physicians. Infants 
+will be randomized to receive the supplement or placebo within the first three days of life and 
+continued for six more days, for a total of seven doses. All infants will be followed daily for 60 
+days of life by study staff, and will be referred to study hospitals immediately upon suspicion of 
+sepsis or any other major morbidity. Demographic and treatment-related data will be collected at 
+home and additional clinical and microbiology culture data obtained from hospital records if the 
+infant is referred to study hospital or becomes hospitalized. 
+ 
+ 
+6. STUDY DESIGN 
+ 
+This is a prospective, double-blind, randomized, placebo-controlled study that will test the 
+effectiveness of prophylactic oral administration of a L. plantarum probiotic preparation in 
+reducing the incidence of neonatal sepsis in community-born infants in India. 
+ 
+Newborn infants will receive once daily dosing of the probiotic supplement for seven days and 
+will be monitored daily for the first 60 days of life. Infants of consenting  parents will be 
+randomized 1:1 into treatment or placebo groups. The primary outcome of interest is the 
+feasibility of implementing the intervention. All infants exhibiting signs of sepsis or other health 
+problems requiring consultation with a physician will be referred to the study  hospitals for 
+evaluation, sepsis workup and treatment. 
+ 
+We will utilize our well-established village-level network of personnel trained to identify signs of 
+major morbidities including sepsis, as well as study hospitals and attached microbiology 
+laboratories to carry out this study. Based on our power analysis, we plan to enroll 4,221 infants 
+in each arm of the study. 
+ 
+This population-based study will be carried out in the selected Anganwadi centers (AWC) in the 
+districts of Khurda and Sundargad in the state of Orissa, India. One AWC is equivalent to about 
+one village of 1000 people – a big village may have two AWCs, and two small villages/hamlets 
+may form one AWC. Capital hospital, Bhubaneswar (BBS) and Ispat General Hospital, Rourkela 
+
+PAGE 23
+23 
+GN 07 Probiotic Trial 
+V1 Jan/26/07  V2 July/15/2008 
+ 
+ 
+ 
+(RKL) will serve as the study hospitals for patient referral and care. 
+ 
+7. STUDY POPULATION 
+Selection of Study Population 
+ 
+All community-born infants will be screened for eligibility. >2000g, and <72 hours of age will be 
+screened by the Anganwadi worker. Infants who meet eligibility criteria and whose parent(s) 
+provide consent prior to delivery will be enrolled into the trial and randomized to receive either 
+the placebo or probiotic supplement. 
+ 
+Our  surveillance  study  has  provided  valuable  data  on  annual  births  that has  been used to 
+design this study. Table 5 summarizes the annual births from 2002-2005 in our target areas. 
+ 
+Table 5. Annual number of births during surveillance study period 
+ 
+Site Births in our field Sites during 2002-2005 
+ Year 1 Year 2 Year 3 Total Years (1-3) 
+BBS (96 AW 
+centers) 
+1864 2148 1708 5,720 
+RKL (127 AW 
+centers) 
+2300 2381 2221 6,902 
+12,622 Total combined births in 3 years, Mean 4,207 births per year 12,622 
+ 
+A. Inclusion Criteria 
+ Neonates  between 24 hours and 72 hours of age in the community 
+ Weight > 2000 g at time of screening 
+ Breastfeeding begun by 24 hrs of life 
+ Able to tolerate oral feeds 
+ Willingness of parent or guardian to provide informed consent 
+ 
+B. Exclusion Criteria 
+ Informed consent not available 
+ Difficulty in carrying out study (e.g. maternal sickness) 
+ Mother unlikely to stay in the village for 60 days 
+ Evidence or suspicion of clinical sepsis before the baby is randomized 
+ Baby is on antibiotics 
+ Breast feeding not established by 24 hr 
+ Inability to establish oral feeds (in case of maternal death or ailment) 
+ Gestational age reported voluntarily by mother to be < 35 weeks 
+ Infant > 72 hr old 
+ Baby did not cry immediately after birth 
+ Mother had fever (> 38 0C) within 2 days of delivery 
+ Mother had foul smelling amniotic discharge within two days of delivery 
+ Mother had abdominal tenderness within 2 days of delivery 
+ Amniotic fluid was meconium stained 
+
+PAGE 24
+24 
+GN 07 Probiotic Trial 
+V1 Jan/26/07  V2 July/15/2008 
+ 
+ 
+ 
+ Presence of major congenital anomalies* 
+ 
+8. STUDY INTERVENTION 
+Regimens, Administration, and Duration 
+CHVs, Anganwadi workers (as well as supervisors in the field) will be trained to administer the 
+intervention material. The probiotics will be prepared at the Baby’s house. The  CHV  will 
+examine the baby, record vital signs, and confirm that breastfeeding has been initiated. She will 
+then prepare the intervention material. The CHV will not touch the study agent by hand at any 
+time. She will apply alcohol based handwashing solution to her hands and let is dry completely 
+before opening the capsule bottle. She will take out one capsule (placebo or study supplement), 
+and open it into the wide mouth plastic re-suspension container by pulling the two sides, thereby 
+letting the powder drop into the container. She will then open a dextrose saline vial and pour the 
+contents into the re-suspension container without touching the mouth of the vial. After putting 
+the cap on, the container will then be shaken gently by swirling action (vigorous shaking causes 
+froth formation and loss of material) until the powder goes into solution. The mixture will then be 
+drawn into a disposable syringe without the needle. The CHV will slowly pushed/pour the 2 ml 
+contents into the baby’s mouth. The CHV will be required to monitor the baby for 30 minutes for 
+vomiting. If vomiting occurs, she will prepare and administer a second. In case of vomiting after 
+second dosing, no third dose will be given. The supervisor and study physician will examine the 
+baby before the next dose is administered. A total of seven doses will be given to infants 
+starting day 2 or 3 of life. 
+All units used (plastic containers for re-suspension, dextrose saline vials, and syringes) will be 
+used one time only and discarded. Below is the clinical trial material box from the Phase II 
+hospital trial. Identical packaging will be used. The container with probiotic capsules will be kept 
+at -20 0C at study hospitals and taken by the supervisor every week to the field office, where it 
+will be kept under refrigeration. 
+ 
+ 
+ 
+ 
+ 
+Product Formulation and Preparation 
+The study supplement used in this protocol is a L. plantarum probiotic preparation registered 
+with the U.S. FDA (Dietary Supplement Section). 
+ 
+GastroPlan is a preparation that contains L. plantarum 5 mg 1-2 X 109  colony forming units of 
+
+
+PAGE 25
+25 
+GN 07 Probiotic Trial 
+V1 Jan/26/07  V2 July/15/2008 
+ 
+ 
+ 
+ATCC 202195 in lyophilized form, fructooligosaccharides (FOS) (150 mg), maltodextrin 345 mg 
+as excipient). Placebo in this study will be comprised of only maltodextrin. 
+ 
+Product Supply and Accountability 
+Capsules containing the probiotic supplement and placebo will be packaged into bottles labeled 
+with a unique randomization code. Two mls of 5% dextrose saline in vials containing will be 
+used for reconstitution of the powder in separate small plastic mixing  containers.  Plastic 
+syringes (without needles) will be used to draw the probiotic mixture from the mixing containers 
+and to feed to babies. Although 7 doses are required, 10 units of each will be provided in a box 
+for each infant to allow room for repeat doses (in case of vomiting within 30 minutes of feeding) 
+and accidental loss during mixing etc. 
+ 
+Stability/viability of L. plantarum in the probiotic preparation: Stability can be a major factor 
+for all probiotic preparations, since there is loss of viability upon exposure to heat or moisture. 
+We had conducted viability studies at the PI lab in the U.S. and observed minimal loss of 
+viability during the first 3-4 months at room temperature. At both 40C and –200C there was only 
+a half log drop in viability over a one year period. This level of stability is considered excellent. 
+According to a U.S. Food FDA report; many preparations undergo 4-5 log drop under such 
+storage conditions (see appendix 6). Our clinical trial material will be stored under refrigeration 
+at 4-60C and stay in the field for a maximum period of two weeks, and hence, is expected to 
+have minimal/no loss in viability. 
+Test samples were kept in storage rooms (non air-conditioned) and tested monthly by colony 
+counts. To simulate the high temperature of Summer months, duplicate samples were tested 
+weekly at 370C (laboratory incubator). Viability testing was also done after reconstitution of the 
+lyophilized product in 5% dextrose saline. Please note that 980F is close to the high 
+temperatures in Orissa in May/June. Although the daytime high may cross 1000F, morning and 
+nights are much cooler (in the 60s and 70s) resulting in an overall average temperature lower 
+than 980F. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+There was no drop in viability in the first two months at room temp, followed by a gradual 
+minimal drop during the subsequent 3 months resulting in less than one log final drop. Under 
+accelerated temperature (980F), there was no drop in the first 3-4 weeks, followed by a linear 
+but much more drastic drop (about half a log every week) of about 6 logs in 10 weeks. 
+ 
+There was no drop in viability of the reconstituted supplement at 3, 6, or 12 hr at room temp or 
+at 370C. 
+ 
+We have made plans  to store our clinical trial material under refrigeration (with 24 hr power 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Log  CFU 
+Log  CFU 
+
+PAGE 26
+26 
+GN 07 Probiotic Trial 
+V1 Jan/26/07  V2 July/15/2008 
+ 
+ 
+ 
+backup) at study hospitals. They will be distributed via study supervisors to the field every week 
+(based on new births and screening in their area) and the 7-day course be used up within the 
+following week. Hence the maximum time it will be out of refrigeration is two weeks. Even in the 
+worst hot periods of the year the L. plantarum supplement will have no drop in viability assuring 
+us the quality of the clinical trial material. Extreme care will be taken with the inventory, and we 
+will make sure that the 7th dose for a given infant is not beyond 15 days of dispatch of the 
+supplement from study hospitals. 
+ 
+Re-constitution will be done right before administration (the AWW lives  in the same village 
+within minutes of walking distance from any house). 
+Our clinical trial material will be stored under refrigeration and stay in the field for a maximum 
+period of two weeks, and hence, is expected to have minimal/no loss in viability. 
+ 
+Assessment of Participant Adherence with intervention 
+Infants will be monitored for 30 minutes after the supplement is given to ensure that the doses 
+are swallowed. If a dose is spit up or vomited within 30 minutes, a second dose will be given. If 
+the dose is vomited or spit up again, no more doses will be given. The infant will resume dosing 
+the following day. The date and time of each dose will be recorded in the Daily Home Monitoring 
+and Dosing Log. 
+ 
+Concomitant Medications and Procedures 
+All medications will be given by a study physician and will be recorded on the appropriate study 
+forms (Daily Hospital Exam Form and Hospital Antibiotic and Antifungal Treatment Form). It is 
+expected that no medication will be administered during the study period unless clinically 
+indicated. In case of suspected infection, antibiotics will be given only after the collection of the 
+appropriate cultures. If an infant is taken to a non-study hospital, information on diagnosis and 
+treatment will be captured on the Hospital Referral Form. 
+ 
+Newborns and infants in this study will receive routine vaccination for HepB, DTaP, and IPV as 
+provided by the health department. Pneumococcal or Haemophilus influenzae (Hib) are not 
+routinely available. We will not change the practice in the study area. 
+ 
+9. STUDY PROCEDURES AND EVALUATIONS 
+ 
+Clinical Evaluations and Procedures 
+Clinical evaluation of the infant will occur at the following time points: 
+ Screening: The CHV will do a brief clinical assessment to determine if the baby has any 
+signs of sepsis, congenital anomalies or health conditions that  would  exclude 
+participation in the study 
+ Enrollment: The CHV will measure weight, assess feeding practices 
+ Daily Monitoring: The AWW will measure temperature, assess feeding patterns, and 
+assess whether there are symptoms of illness. 
+ Hospital Referral: The AWW will assess whether there are symptoms of illness that 
+necessitate hospital referral. If referred, the study physician will conduct a complete 
+physical exam and assessment for sepsis. The physician will also assess signs of 
+illness. 
+ Hospitalization: If the infant is hospitalized, the physician will conduct a complete clinical 
+evaluation on a daily basis and will record results and treatments given, if appropriate, 
+
+PAGE 27
+27 
+GN 07 Probiotic Trial 
+V1 Jan/26/07  V2 July/15/2008 
+ 
+ 
+ 
+on study forms. 
+ 
+Clinical sepsis/PSBI will be defined using criteria described earlier. 
+All sick infants  are expected to be referred to the study hospital, examined and treated with 
+antibiotics, as determined by a blood culture. 
+ 
+Laboratory Evaluations 
+ 
+Blood and stool samples  will be collected from  all infants  that are hospitalized with signs of 
+clinical sepsis during the study period. 
+ 
+Specimen Collection, Preparation, Handling and Shipping 
+ 
+Stool cultures: Stool cultures will be collected on infants who receive a septic workup as 
+clinically indicated during the study period (60 days) at the discretion of the treating physician. A 
+commercial culturette containing a gel medium will be used to scoop a swab full of stool to put 
+into the medium. The swab and diaper (with remaining amount of stool) will be immediately 
+transported to the laboratory and stored under refrigeration temperature. In case of collection at 
+night, samples will be stored at 4o C. 
+Blood/CSF  cultures: Blood/CSF  culture data will be collected on all infants  who receive a 
+septic workup when clinically indicated during the study period (60 days). 
+All samples will be sent to the attached microbiology laboratory in the hospital for processing. 
+The microbiology officer will be responsible for: 
+ Detailed aerobic and anaerobic processing of stool and blood specimens. 
+ 
+ Identification of bacterial isolates  by conventional microbiology and API rapid diagnostic 
+system. 
+ All clinical isolates will be stored frozen at -70 o C in the study laboratory. 
+
+PAGE 28
+28 
+GN 07 Probiotic Trial 
+V1 Jan/26/07  V2 July/15/2008 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Sequence of Procedures 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ FOLLOW UP PROCEDURES  
+ 
+ Monitor side ef f ects/AE  daily 
+ Ref er inf ant to study hospital at any sign of sepsis 
+ Complete  Final Status Form on day 60 of lif e 
+ 
+  
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+BASELINE PROCEDURES  
+ Contact  Inf ormation and demographic data f orm 
+ Clinical data f orm 
+DOSING  PROCEDURES  
+ 
+ Administer  dose of probiotic or placebo 1x per day f or 6 
+day s af ter the f irst dose (total of 7 day s) 
+o Administer  1st dose of probiotic or 
+placebo (within 72 hrs of birth) 
+o Monitor inf ant f or 30 minutes  
+ Conduct daily home assessments  
+ Collect  clinical data on baby daily 
+ Ref er inf ant to study hospital at any sign of sepsis 
+IF REFERRED  TO HOSPITAL 
+ Blood culture 
+ Administer  antibiotics when 
+indicated 
+ Monitor AE and report accordingly  
+ADVERSE EVENTS 
+ Report any AE to study phy sician 
+ Complete  AE Data Form 
+ Transmit AE to DCC 
+
+PAGE 29
+29 
+GN 07 Probiotic Trial 
+V1 Jan/26/07  V2 July/15/2008 
+ 
+ 
+ 
+Definitions 
+ 
+Identify Potential Participants 
+Infants who are >24 hours and <72 hours of age are eligible to be screened for participation. In 
+addition, infants must be >2000g at the time of screening (inclusion criteria). 
+ 
+Screening for Eligible Participants 
+Infants will be screened for eligibility by screening for  inclusion and exclusion criteria listed 
+earlier in this document. 
+ 
+Consent 
+Infants will need the consent of at least one parent or guardian in order to participate. 
+ 
+Baseline Procedures 
+The CHV will conduct a home visit to all newborn infants of consenting women. Infants will be 
+screened by the CHV. If eligible, the infant will be enrolled in the study and randomized to 
+receive placebo or probiotic supplement. 
+ 
+The CHV will conduct a clinical assessment of the infant, including temperature, feeding 
+practices and the presence of health concerns. The CHV will then administer the supplement to 
+the infant. 
+ 
+Dosing Procedures 
+CHV will administer a dose of probiotic or placebo to the infant everyday for six days after the 
+first dose is given, for a total of seven days. Before dosing, the CHV will evaluate the infant to 
+make sure there are no signs of sepsis or symptoms of other illnesses. 
+ 
+Follow Up Procedures 
+The CHV will conduct daily visits to all enrolled infants for the first sixty days of life in order to 
+monitor the infant’s health and development. CHVs have been trained to recognize signs of 
+sepsis and will refer infants with suspected sepsis to the study hospital sites. Infants will also be 
+referred to the study hospital if they have signs of any other major morbidity. Apart from birth 
+weight, the CHV will also record weight on day 7 (+1), 28 (+2), and 60 (+3) in a hanging scale. 
+ 
+Mothers and other ladies (grand mothers etc.) have been educated via focus group meetings 
+and video movies on neonatal sepsis and how to recognize sign symptoms of sepsis and what 
+to do when sepsis is suspected in a baby (how to go to the hospital and what happens in the 
+hospital when a baby arrives there). We have seen that many parents now bring their babies on 
+their own without the CHV. 
+ 
+While we have full confidence that mothers will bring their babies with the smallest possibility of 
+ailment, because this is a research study and an interventional study, we consider it is our duty 
+to tightly  monitor the population and not leave any baby unattended in case of an adverse 
+event. 
+ 
+10. ASSESSMENT OF SAFETY 
+ 
+Definition of an Adverse Event (AE) 
+An adverse event (AE) is any untoward medical occurrence that may arise during the study 
+period. 
+
+PAGE 30
+30 
+GN 07 Probiotic Trial 
+V1 Jan/26/07  V2 July/15/2008 
+ 
+ 
+ 
+ 
+A serious adverse event (SAE) is an adverse event that results in any of the following: 
+ Death 
+ Life-threatening illness including sepsis 
+ Hospitalization 
+ Medical/surgical care to prevent permanent impairment or damage 
+ Persistent or significant disability or incapacity 
+ Other events the investigator considers serious 
+ 
+Specific events to be monitored in the study include: 
+ Fever: Sustained axillary >37.50C measured for 3 minutes 
+ Hypothermia: Sustained axillary < 35 0C measured for 3 minutes 
+ Convulsion: Visible convulsion (reported by parents) but confirmed by study personnel 
+ Lethargy:  listlessness,  inactivity,  apathy,  or  decreased  level  of  consciousness  or 
+alertness compared to the previous day 
+ Feeding poorly: lack of interest in feeding, or an inability to take in adequate nutrition 
+observed for more than 6 hours 
+ Vomiting: three or more episodes a day, any projectile, bloody or bilious vomiting 
+ Diarrhea: Change in consistency of stool with more water content as reported by the 
+mother 
+ Bloody stools: If blood is macroscopically visible in stool, no test is needed. In suspected 
+cases, Guaiac testing should be done 
+ Abdominal  distention:  distension  of  abdomen above the thoracic  cage, glossiness  of 
+abdominal wall, loss of superficial creases over the abdominal skin or visible loops. 
+ 
+There is a small possibility of adverse events arising from the supplement itself. It is expected 
+that these adverse events will manifest as diarrhea, vomiting, sepsis and, in severe cases, 
+lactobacillemia. Our already established network in the communities now assures us that every 
+patient will be tracked and brought to the hospital within 12-18 hours. All cases of sepsis will be 
+confirmed by blood culture and treated with IV antibiotics. A list of antibiotics the ATCC strain of 
+L. plantarum (in the current GastroPlan preparation) is sensitive to is attached at the end of this 
+document. This includes a list of common antibiotics that will always be made available for the 
+patients. Any other supportive treatment required will also be provided. 
+ 
+Adverse Event Procedures and Reporting Requirements 
+The PI will be notified of the occurrence of SAEs and AEs within specific time frames: 
+ Fatal or life-threatening events (SAEs) must be reported within 48 hours. 
+ Other serious and unexpected events (AEs) must be reported within 7 days. 
+ 
+Written notification of the SAE or AE will be e-mailed as PDF attachment (or faxed) within the 
+stated time frames  to the PI, who will forward to NICHD program officer on a regular basis. 
+These events will be reported to the local IRB in Orissa and the U.S. IRB following local 
+guidelines. 
+ 
+Local Regulatory Requirements 
+Approval of the study has been obtained from the Indian Council of Medical Research, and the 
+Health Ministry Screening Committee apart from local institutional IRBs. Approval for import of 
+GastroPlan has also been obtained from the Drugs Controller General of India. 
+
+PAGE 31
+31 
+GN 07 Probiotic Trial 
+V1 Jan/26/07  V2 July/15/2008 
+ 
+ 
+ 
+ 
+ 
+11. CLINICAL MANAGEMENT 
+Toxicity Management 
+There is no known toxicity related to the probiotic supplement. L. Plantarum has been 
+administered to extremely sick patients, including post-operative patients, without any reported 
+adverse events. However there is always the possibility of lactobacillemia because the 
+supplement contains a live microbial product. If this or any other adverse event is experienced, 
+the infant will be referred to the study hospital for further examination and will be managed with 
+antibiotics as needed. 
+ 
+Other Disease Events 
+Any infant with signs or symptoms of a major morbidity will be referred to the study hospital for 
+further examination, whether or not it is related to the study. 
+ 
+Criteria for Permanent Treatment Discontinuation for an Individual  Participant 
+ 
+Discontinuation of study treatment will occur for the following reasons: 
+ 
+ Treating physician advises against further administration of the intervention. The study 
+physician may decide to discontinue study treatment for an individual participant in the 
+case of sepsis (any organism), or other major morbidity 
+ 
+ The mother of the infant relocates outside of the study area or withdraws from the study 
+ 
+Criteria for Premature Study Discontinuation 
+ 
+The study will be discontinued under the following circumstances: 
+ 
+ A large number of cases of lactobacillemia due to L. plantarum are recorded during the 
+study period 
+ 
+ The DSMB recommends discontinuation of the study. 
+ 
+ 
+12. STATISTICAL CONSIDERATIONS 
+ 
+Sample Size Calculation 
+Based on the surveillance data and a conservative approach, we are estimating that over the 
+coming five years the incidence of sepsis and death will be between 8-9%. Assuming a two- 
+tailed test with 5% type I error rate and 80% power, the attached table describes the number of 
+infants that will be required when we want to show a 20% and 25% relative difference. 
+
+PAGE 32
+32 
+GN 07 Probiotic Trial 
+V1 Jan/26/07  V2 July/15/2008 
+ 
+ 
+ 
+ 
+Based on these scenarios we propose to enroll 
+4,221 infants per group (8,442 total) that will assure 
+detection of a 20% drop even if the combined 
+sepsis/death goes down to 8% during the study. 
+ 
+Statistical Analyses 
+ 
+The primary outcome in this study is the incidence of sepsis and death of infants during the 
+first sixty days of life. The null hypothesis of the study is that treatment with the L. plantarum 
+preparation versus placebo for the first week of life will have no effect on the rate of clinical 
+sepsis and/or death. The proposed study sample is of adequate size to detect a  relative 
+reduction of 20% in the outcome measure. The proposed randomization procedure is expected 
+to allocate subjects into groups with comparable baseline measures. Moreover, the 
+randomization procedure is also expected to equally distribute potential confounders across 
+both study groups. 
+ 
+This will be an intent-to-treat analysis. 
+ 
+Primary methods of analyses will be chi-square and Fisher's exact tests for binary outcomes 
+and t-tests and analysis of variance (ANOVA) for continuous variables. All these univariate tests 
+will be done at a significant level 0.05. These analyses will also determine potential factors 
+which confound the clinical outcomes. If there is an observed tendency for any of these factors 
+to be unevenly distributed between the treatment  and  placebo groups, multiple logistic  and 
+linear regression will be used to adjust for these confounders. Stepwise regression techniques 
+will be used to select variables to include the most parsimonious model. 
+ 
+Interim Analyses 
+This study  is expected to be monitored very carefully. Apart from any evident trends 
+(clustered adverse events, epidemics etc.) that will be tracked during our monthly monitoring, it 
+is expected that the DSMB would like to examine data sets at least once a year. This can be 
+done blinded and the study continued at the decision of the DSMB. On the other hand, if any 
+large treatment change (improvement or deterioration) is visible between the two groups, the 
+DSMB may  opt to do an unblinded interim analysis. Typically, we will expect the DSMB to 
+recommend two interim analyses, one at the end of year 1, one at the end of year 2 and one at 
+the end of the study (year 3). This will be done using the O’Brien-Flemming boundary rules. 
+Based on Jennison and Turnbull, and assuming a two-tailed test with 5% type I error and 80% 
+power, the maximum sample size per group of the O’Brien-Flemming test is 1.017 times the 
+number of infants needed per group without interim analysis. For example, we will need 4293 (in 
+place of 4221) infants per group to have 80% power to detect  a  20%  relative  difference. 
+Although there is a slight increase in the sample size, our proposed sample size is large enough 
+to facilitate interim analyses and have adequate power (we also have the ability to increase our 
+enrollment number by additional 144 (72 per group x 2). The nominal significance levels to be 
+used in these analyses are 0.00052, 0.014 and 0.045. If any of the interim analyses 
+demonstrates significant changes in any group, consideration will be given to early termination 
+of the study. For example, if at year 1 a z-test of clinical sepsis and/or death rate between 
+treatment and placebo group gives a normal p-value of 0.00052 or less, a significant difference 
+at a 0.05 level can be declared. These scenarios are for discussion purpose only. The final 
+determination will be made by the U.S. DSMB. 
+Relative drop in 
+sepsis 
+incidence 
+9% 
+Base 
+Rate 
+8% 
+Base 
+Rate 
+20% 3716 4221 
+25% 2337 2653 
+ 
+
+PAGE 33
+33 
+GN 07 Probiotic Trial 
+V1 Jan/26/07  V2 July/15/2008 
+ 
+ 
+ 
+ 
+ 
+13. RANDOMIZATION, ENROLLMENT, and BLINDING 
+ 
+Eligible infants will be randomly assigned to receive the probiotic supplement or placebo 
+preparation. A sample allocation of 1:1 for controls  vs. treatments  will be used. To ensure 
+balanced randomization in each village/Anganwadi center, a computer generated randomization 
+list with a block size of 4 will be developed by the UMB BioCore. 
+Participant Identification/Study IDs 
+ 
+We will create unique 7 digit IDs to be assigned to each infants. The following scheme will be 
+used for this purpose: 
+ 
+1st  four digits:  ID number of the village starting with one letter for the site, B (for Bhubaneswar) 
+and R (for Rourkela), followed by three numbers for the village codes. 
+ 
+5th , 6th and 7th digits:  Serial number of the participating infant (Starting from 001) 
+ 
+Examples 
+ 
+B001001: is the first infant enrolled in the first Anganwadi center in Bhubaneswar 
+B096025: is the 25th infant enrolled in Anganwadi center # 96 in Bhubaneswar 
+R127038: is the 38th infant enrolled in Anganwadi center # 127 in Rourkela 
+ 
+Other than the BioCore and clinical trial supplier, no other study personnel will have access to 
+the assignment: P (placebo) or T (treatment) 
+ 
+ 
+14. DATA HANDLING AND RECORDKEEPING 
+ 
+Data Management Responsibilities 
+Data will be collected on paper forms at the home and entered into computers at participating 
+hospitals using the Data Management System (DMS) developed for this study. Electronic data 
+will be transferred from each hospital to a single Research Unit Data Center (RUDC) in Kalinga. 
+The Kalinga Hospital Data Center will transmit the data to the Data Coordinating Center (DCC) 
+on a weekly basis. 
+ 
+The research sites are responsible for keying the data in a timely fashion. It is the responsibility 
+of the DCC (RTI) to assure the quality of computerized data for each site. 
+ 
+Source Documents and Access to Source Data/Documents 
+In  addition  to  the  data  collection  instruments  designed  for  this  study,  the  following  source 
+documents may be used: 
+ 
+ Sixty day card 
+ Hospital records 
+
+PAGE 34
+34 
+GN 07 Probiotic Trial 
+V1 Jan/26/07  V2 July/15/2008 
+ 
+ 
+ 
+15. CLINICAL SITE MONITORING 
+ 
+Site visits 
+The PI, other U.S.-based faculty working on this trial and Program officials from the National 
+Institute of Child Health and Human Development (NICHD) and RTI staff will visit participating 
+clinical research sites to review the individual subject records, including consent forms, CRFs, 
+supporting data, laboratory specimen records, and medical records (physicians’ progress notes, 
+nurses’ notes, individuals’ hospital charts), to ensure protection of study subjects, compliance 
+with the protocol, and accuracy and completeness of records. 
+ 
+Microbiology 
+An overall system of quality control documentation and certification will be maintained at each 
+site, with central oversight from the reference laboratory at AIIMS to ensure that the 
+microbiology results meet high standards, including reproducibility  and uniformity across  all 
+sites. This mayl include molecular typing and detailed stool analysis (aerobic and anaerobic) of 
+control and treated babies. 
+ 
+16. HUMAN SUBJECTS PROTECTION 
+ 
+Institutional Review Board 
+This protocol and the informed consent document and any subsequent modifications will be 
+reviewed and approved by the IRBs or ethics committees responsible for oversight of the study. 
+A signed consent form will be obtained from the parent or legal guardian of the eligible infant. 
+The consent form will describe the purpose of the study, the procedures to be followed, and the 
+risks and benefits of participation. A copy of the consent form will be given to the subject’s 
+parent, or legal guardian. 
+ 
+Protocol Registration 
+The protocol is registered on clinicaltrials.gov. The identifier is NCT00518596. 
+ 
+Informed Consent Process 
+Infants will need the consent of at least one parent or guardian in order to participate. Mothers 
+will be asked for verbal consent at the time they receive the sixty day card, around the seventh 
+month of pregnancy. Infants born to all mothers who have provided verbal consent during 
+pregnancy will be screened for eligibility within 24 hours of birth. Full written consent will be 
+obtained at this time. 
+ 
+Participant Confidentiality 
+All laboratory specimens, evaluation forms, reports, and other records that leave the site will be 
+identified by  coded number only  to maintain subject confidentiality. All records  will  be kept 
+locked. All computer entry and networking programs will be done with coded numbers only. 
+Clinical information will not be released without written permission of the subject, except as 
+necessary for monitoring by  IRB, the FDA, the NICHD, the OHRP, or the pharmac eutical 
+supporter(s) or the supporter’s designee. 
+
+PAGE 35
+35 
+GN 07 Probiotic Trial 
+V1 Jan/26/07  V2 July/15/2008 
+ 
+ 
+ 
+ 
+17. PUBLICATION POLICY 
+ 
+The authorship of manuscripts, posters or oral presentations, or other reports of the results of 
+this study will be guided by the criteria for authorship formulated by the International Committee 
+of Medical Journal Editors and published in its Uniform Requirements for Manuscripts Submitted 
+to Biomedical Journals (updated October, 2001; available at http://www.icmje.org ). According 
+to these criteria, each author should have participated sufficiently in the work to take public 
+responsibility for the content. Authorship credit should be based only on substantial 
+contributions to (a) conception and design, or analysis and interpretation of data; and to (b) 
+drafting the article or revising it critically for important intellectual content; and on  (c)  final 
+approval of the version to be published.  Conditions (a), (b), and (c) must all be met. 
+ 
+18. REFERENCES 
+ 
+1. UNICEF.  State  of  world's  children.  Report  1997.  Oxford University Press. New York 
+1998. 
+ 
+2. Bang AT, Bang, R.A., Bitule,S.B., Reddy,M.H., Deshmukh, M.D. Effect of home-based 
+neonatal care and management of sepsis on neonatal mortality: field trial in rural India. 
+The Lancet.1999;354:1955-1961. 
+ 
+3. Registrar General of India. Sample Registration System.  Fertility and mortality indicators 
+1992. New Delhi 1994:30-47. 
+ 
+4. MHC  Division, Department of Family Welfare, Ministry of Health and Family Welfare. 
+National Child Survival and Safe Motherhood Programme.  New Delhi 1994. 
+ 
+5. Shah PM, Udani PM. Analysis of the vital statistics from the rural community, Palghar. 
+II. Perinatal, neonatal and infant mortalities. Indian Pediatrics 1969;6:651-68. 
+ 
+6. Damodar,  Mathur  HN, Sharma PN. Some observations  on perinatal mortality in rural 
+health centre.  Indian J Pediatrics 1983;50:629-33. 
+ 
+7. Narang A, Murki S. Research in neonatology: need for introspection. Indian Pediatrics 
+2004;41:170-4. 
+ 
+8. Family Welfare Program. India Year Book 2001;http//health.nic.in/ybol.pdf. 
+ 
+9. Bhargava SK. The challenge   of   neonatal   mortality   in   India.   Indian   Pediatrics 
+2004;41:657-62. 
+ 
+10. Alverdy J, Holbrook C, Rocha F, Seiden L, Wu RL, Musch M, Chang E, Ohman D, Suh 
+S. Gut- derived sepsis occurs when the right pathogen with the right virulence genes 
+meets the right host: evidence for in vivo virulence expression in Pseudomonas 
+aeruginosa. Ann Surg 2000;232:480-9. 
+
+PAGE 36
+36 
+GN 07 Probiotic Trial 
+V1 Jan/26/07  V2 July/15/2008 
+ 
+ 
+ 
+11. Alverdy JC, Laughlin RS, Wu L. Influence of the critically ill state on host-pathogen 
+interactions within the intestine: gut-derived sepsis redefined. Crit Care Med 
+2003;31:598-607. 
+ 
+12. Lott JW. Neonatal bacterial sepsis. Crit Care Nurs Clin North Am 2003;15:35-46. 
+ 
+13. Vergnano S, Sharland M, Kazembe P, Mwansambo C, Heath PT. Neonatal sepsis: an 
+international perspective. Arch Dis Child Fetal Neonatal Ed 2005;90:F220-4. 
+ 
+14. Hill HR. Additional confirmation of the lack of effect of intravenous immunoglobulin in the 
+prevention of neonatal infection. J Pediatr 2000;137:595-7. 
+ 
+15. Leititis JU. [Preventive and therapeutic use of intravenous administration of 
+immunoglobulins in intensive care patients in pediatrics]. Infusionsther Transfusionsmed 
+1993;20 Suppl 1:29-34. 
+ 
+16. Jenson HB, Pollock BH. The role of intravenous immunoglobulin for the prevention and 
+treatment of neonatal sepsis. Semin Perinatol 1998;22:50-63. 
+ 
+17. Craft AP, Finer NN, Barrington KJ. Vancomycin for prophylaxis against sepsis in preterm 
+neonates. Cochrane Database Syst Rev 2000:CD001971. 
+ 
+18. Yurdakok M. Antibiotic use in neonatal sepsis. Turk J Pediatr 1998;40:17-33. 
+ 
+19. Darlow BA, Austin NC. Selenium supplementation to prevent short-term morbidity in 
+preterm neonates. Cochrane Database Syst Rev 2003:CD003312. 
+ 
+20. Furman L. Yes, human milk does reduce infection rates in very low birthweight infants. 
+Arch Dis Child Fetal Neonatal Ed 2006;91:F78. 
+ 
+21. El-Mohandes AE, Picard MB, Simmens SJ, Keiser JF. Use of human milk in the 
+intensive care nursery decreases the incidence of nosocomial sepsis. J Perinatol 
+1997;17:130-4. 
+ 
+22. Bernard GR, Wheeler AP, Russell JA, Schein R, Summer WR, Steinberg KP, Fulkerson 
+WJ, Wright PE, Christman BW, Dupont WD, Higgins SB, Swindell BB. The effects of 
+ibuprofen on the physiology and survival of patients with sepsis. The Ibuprofen in Sepsis 
+Study Group. N Engl J Med 1997;336:912-8. 
+ 
+23. Riedemann NC, Guo RF, Ward PA. Novel strategies for the treatment of sepsis. Nat 
+Med 2003;9:517-24. 
+ 
+24. Riedemann NC, Guo RF, Ward PA. The enigma of sepsis. J Clin Invest 2003;112:460-7. 
+ 
+25. Kocherlakota P, La Gamma EF. Preliminary report: rhG-CSF may reduce the incidence 
+of neonatal sepsis in prolonged preeclampsia-associated neutropenia. Pediatrics 
+1998;102:1107-11. 
+
+PAGE 37
+37 
+GN 07 Probiotic Trial 
+V1 Jan/26/07  V2 July/15/2008 
+ 
+ 
+ 
+26. Riedemann NC, Neff TA, Guo RF, Bernacki KD, Laudes IJ, Sarma JV, Lambris JD, 
+Ward PA. Protective effects of IL-6 blockade in sepsis are linked to  reduced  C5a 
+receptor expression. J Immunol 2003;170:503-7. 
+ 
+27. Zeni F, Freeman B, Natanson C. Anti-inflammatory therapies to treat sepsis and septic 
+shock: a reassessment. Crit Care Med 1997;25:1095-100. 
+ 
+28. Abraham E, Anzueto A, Gutierrez G, Tessler S, San Pedro G, Wunderink R, Dal Nogare 
+A, Nasraway S, Berman S, Cooney R, Levy H, Baughman R, Rumbak M, Light RB, 
+Poole L, Allred R, Constant J, Pennington J, Porter S. Double-blind randomised 
+controlled trial of monoclonal antibody to human tumour necrosis factor in treatment of 
+septic shock. NORASEPT II Study Group. Lancet 1998;351:929-33. 
+ 
+29. Savage DC. Microbial ecology of the gastrointestinal tract. Annu Rev Microbiol 
+1977;31:107-33. 
+ 
+30. Mackie RI, Sghir A, Gaskins HR. Developmental microbial ecology  of the neonatal 
+gastrointestinal tract. Am J Clin Nutr 1999;69:1035S-1045S. 
+ 
+31. Moore WEC , Holdeman LV. Human fecal flora: the normal flora of 20 Japanese- 
+Hawaiians. Appl. Microbiol. 1974;27:961-979. 
+ 
+32. Steege JC, Buurman WA, Forget PP. The neonatal development of intraepithelial and 
+lamina propria lymphocytes in the murine small intestine. Dev Immunol 1997;5:121-8. 
+ 
+33. Jenkins SL, Wang J, Vazir M, Vela J, Sahagun O, Gabbay P, Hoang L, Diaz RL, Aranda 
+R, Martin MG. Role of passive and adaptive immunity in influencing  enterocyte- 
+specific gene expression. Am J Physiol Gastrointest Liver Physiol 2003;285:G714-25. 
+ 
+34. Wostmann BS. The germfree animal in nutritional studies. Annu Rev Nutr 1981;1:257- 
+79. 
+ 
+35. Savage DC, Siegel JE, Snellen JE, Whitt DD. Transit time of epithelial cells in the small 
+intestines of germfree mice and ex-germfree mice associated with indigenous 
+microorganisms. Appl Environ Microbiol 1981;42:996-1001. 
+ 
+36. Umesaki Y, Okada Y, Matsumoto S, Imaoka A, Setoyama H. Segmented filamentous 
+bacteria are indigenous intestinal bacteria that activate intraepithelial lymphocytes and 
+induce MHC class II molecules and fucosyl asialo GM1 glycolipids on the small intestinal 
+epithelial cells in the ex-germ-free mouse. Microbiol Immunol 1995;39:555-62. 
+ 
+37. Stappenbeck TS, Hooper LV, Gordon JI. Developmental regulation of intestinal 
+angiogenesis by indigenous microbes via Paneth cells. Proc Natl Acad Sci U S A 
+2002;99:15451-5. 
+ 
+38. Porter EM, Bevins CL, Ghosh D, Ganz T. The multifaceted Paneth cell. Cell Mol Life Sci 
+2002;59:156-70. 
+
+PAGE 38
+38 
+GN 07 Probiotic Trial 
+V1 Jan/26/07  V2 July/15/2008 
+ 
+ 
+ 
+39. Gordon JI, Hooper LV, McNevin MS, Wong M, Bry L. Epithelial cell growth and 
+differentiation. III. Promoting diversity in the intestine: conversations between the 
+microflora, epithelium, and diffuse GALT. Am J Physiol 1997;273:G565-70. 
+ 
+40. Hooper LV, Midtvedt T, Gordon JI. How host-microbial interactions shape the nutrient 
+environment of the mammalian intestine. Annu Rev Nutr 2002;22:283-307. 
+ 
+41. Shroff KE, Meslin K, Cebra JJ. Commensal enteric bacteria engender a self-limiting 
+humoral mucosal immune response while permanently colonizing the gut. Infect Immun 
+1995;63:3904-13. 
+ 
+42. Denker BM , Nigam SK. Molecular structure and assembly of the tight junction. Am J 
+Physiol 1998;274:F1-9. 
+ 
+43. Gumbiner B. Structure, biochemistry, and assembly of epithelial tight junctions. Am J 
+Physiol 1987;253:C749-58. 
+ 
+44. Udall JN, Jr. Gastrointestinal host defense and necrotizing enterocolitis. J Pediatr 
+1990;117:S33-43. 
+ 
+45. Israel E.J. Neonatal necrotizing enterocolitis, a disease of the immature intestinal 
+mucosal barrier. Acta Pediatr. (Suppl) 1994;396:27-32. 
+ 
+46. Fasano A, Not T, Wang W, Uzzau S, Berti I, Tommasini A, Goldblum SE. Zonulin, a 
+newly discovered modulator of intestinal permeability, and its expression in coeliac 
+disease. Lancet 2000;355:1518-9. 
+ 
+47. Watts T, Berti I, Sapone A, Gerarduzzi T, Not T, Zielke R, Fasano  A.  Role  of  the 
+intestinal tight junction modulator zonulin in the pathogenesis of type I diabetes in BB 
+diabetic-prone rats. Proc Natl Acad Sci U S A 2005;102:2916-21. 
+ 
+48. Kennedy RJ, Kirk SJ, Gardiner KR. Mucosal barrier function and the commensal flora. 
+Gut 2002;50:441-2. 
+ 
+49. Salminen S, Isolauri E, Salminen E. Clinical uses of probiotics for stabilizing the gut 
+mucosal barrier: successful strains and future challenges. Antonie Van Leeuwenhoek 
+1996;70:347-58. 
+ 
+50. Garcia-Lafuente A, Antolin M, Guarner F, Crespo E, Malagelada JR.  Modulation  of 
+colonic barrier function by the composition of the commensal flora in the rat. Gut 
+2001;48:503-7. 
+ 
+51. Isolauri E, Majamaa H, Arvola T, Rantala I, Virtanen E, Arvilommi H. Lactobacillus casei 
+strain GG reverses increased intestinal permeability induced by cow milk in suckling 
+rats. Gastroenterology 1993;105:1643-50. 
+ 
+52. Isolauri E, Kaila M, Arvola T, Majamaa H, Rantala I, Virtanen E, Arvilommi H. Diet during 
+rotavirus enteritis affects jejunal permeability to macromolecules in suckling rats. Pediatr 
+Res 1993;33:548-53. 
+
+PAGE 39
+39 
+GN 07 Probiotic Trial 
+V1 Jan/26/07  V2 July/15/2008 
+ 
+ 
+ 
+53. Panigrahi P, Bamford P. E.coli adherance, a critical determinant in the pathogenesis of 
+experimental NEC. Ped. Res. (Suppl) 1996;39:300A. 
+ 
+54. Panigrahi P, Srinivas,S., Gewolb,I.H., Morris,J.G., Bamford,P. Lactobacillus plantarum 
+blocks bacteria-induced tissue injury in a weanling rabbit ileal loop model of necrotizing 
+enterocolitis. Pediatr.Res. 2000;47:423A. 
+ 
+55. Duffy LC. Interactions mediating bacterial translocation in the immature intestine. J Nutr 
+2000;130:432S-436S. 
+ 
+56. Ismail AS, Hooper LV. Epithelial cells and their neighbors. IV. Bacterial contributions to 
+intestinal epithelial barrier integrity. Am J Physiol Gastrointest Liver Physiol 
+2005;289:G779-84. 
+ 
+57. Underhill DM, Ozinsky A, Hajjar AM, Stevens A, Wilson CB, Bassetti M, Aderem A. The 
+Toll-like receptor 2 is recruited to macrophage phagosomes and discriminates between 
+pathogens. Nature 1999;401:811-5. 
+ 
+58. Cario E, Gerken G, Podolsky DK. Toll-like receptor 2 enhances ZO-1-associated 
+intestinal epithelial barrier integrity via protein kinase C. Gastroenterology 2004;127:224- 
+38. 
+ 
+59. Adora Wonodi PP. Effects of Lactobacillus plantarum on Caco-2 tight junction proteins 
+after infection with enteric bacteria. Gastroenterology 2003;suppl.:T1073. 
+ 
+60. Fink MP, Delude RL. Epithelial barrier dysfunction: a unifying theme to explain the 
+pathogenesis of multiple organ dysfunction at the cellular level. Crit Care Clin 
+2005;21:177-96. 
+ 
+61. Neal MD, Leaphart C, Levy R, Prince J, Billiar TR, Watkins S, Li J, Cetin S, Ford H, 
+Schreiber A, Hackam DJ. Enterocyte TLR4 mediates phagocytosis and translocation of 
+bacteria across the intestinal barrier. J Immunol 2006;176:3070-9. 
+ 
+62. Quigley EM , Quera R. Small intestinal bacterial overgrowth: roles of antibiotics, 
+prebiotics, and probiotics. Gastroenterology 2006;130:S78-90. 
+ 
+63. Runkel NS, Moody FG, Smith GS, Rodriguez LF, LaRocco MT, Miller TA. The role of the 
+gut in the development of sepsis in acute pancreatitis. J Surg Res 1991;51:18-23. 
+ 
+64. Clements WD, Parks R, Erwin P, Halliday MI, Barr J, Rowlands BJ. Role of the gut in the 
+pathophysiology of extrahepatic biliary obstruction. Gut 1996;39:587-93. 
+ 
+65. Steffen EK, Berg RD, Deitch EA. Comparison of translocation rates of various 
+indigenous bacteria from the gastrointestinal tract to the mesenteric lymph node. J Infect 
+Dis 1988;157:1032-8. 
+ 
+66. Epstein MD, Banducci DR, Manders EK. The role of the gastrointestinal tract in the 
+development of burn sepsis. Plast Reconstr Surg 1992;90:524-31. 
+
+PAGE 40
+40 
+GN 07 Probiotic Trial 
+V1 Jan/26/07  V2 July/15/2008 
+ 
+ 
+ 
+67. Rayes N, Seehofer D, Muller AR, Hansen S, Bengmark S, Neuhaus P. [Influence of 
+probiotics and fibre on the incidence of bacterial infections following major abdominal 
+surgery - results of a prospective trial]. Z Gastroenterol 2002;40:869-76. 
+ 
+68. Rayes N, Seehofer D, Theruvath T, Schiller RA, Langrehr JM, Jonas S, Bengmark S, 
+Neuhaus P. Supply of pre- and probiotics reduces bacterial infection rates after liver 
+transplantation--a randomized, double-blind trial. Am J Transplant 2005;5:125-30. 
+ 
+69. MacFie J, O'Boyle C, Mitchell CJ, Buckley PM, Johnstone D, Sudworth P. Gut origin of 
+sepsis: a prospective study investigating associations between bacterial translocation, 
+gastric microflora, and septic morbidity. Gut 1999;45:223-8. 
+ 
+70. MacFie J, Reddy BS, Gatt M, Jain PK, Sowdi R, Mitchell CJ. Bacterial translocation 
+studied in 927 patients over 13 years. Br J Surg 2006;93:87-93. 
+ 
+71. Ferraz AA, Campos JM, Junior JG, De Albuquerque AC, Ferraz EM. Gut bacterial 
+translocation and postoperative infections: a prospective study in schistosomotic 
+patients. Surg Infect (Larchmt) 2005;6:197-201. 
+ 
+72. Besselink MG, Timmerman HM, Buskens E, Nieuwenhuijs VB, Akkermans LM, Gooszen 
+HG. Probiotic prophylaxis in patients with predicted severe acute pancreatitis 
+(PROPATRIA): design and rationale of a double-blind, placebo-controlled randomised 
+multicenter trial [ISRCTN38327949]. BMC Surg 2004;4:12. 
+ 
+73. Van Camp JM, Tomaselli V, Coran AG. Bacterial translocation in the neonate. Curr Opin 
+Pediatr 1994;6:327-33. 
+ 
+74. Husby S. Normal immune responses to ingested foods. J Pediatr Gastroenterol Nutr 
+2000;30 Suppl:S13-9. 
+ 
+75. Piecuch S, Ihe immunology of necrotizing enterocolitis, in Necrotizing enterocolitis, B.F. 
+Gilchrist, Editor. 2000, Eurekah.com/Landes Bioscience. p. 15-29. 
+ 
+76. El-Mohandes AE, Keiser JF, Johnson LA, Refat M, Jackson BJ. Aerobes  isolated in 
+fecal microflora of infants in the intensive care nursery: relationship to human milk use 
+and systemic sepsis. Am J Infect Control 1993;21:231-4. 
+ 
+77. Gupta S, Morris JG, Jr., Panigrahi P, Nataro JP, Glass RI, Gewolb IH. Endemic 
+necrotizing enterocolitis: lack of association with a  specific  infectious  agent. Pediatr 
+Infect Dis J 1994;13:728-34. 
+ 
+78. van Saene HK, Taylor N, Donnell SC, Glynn J, Magnall VL, Okada Y, Klein NJ, Pierro A, 
+Lloyd DA. Gut overgrowth with abnormal flora: the missing link in parenteral nutrition- 
+related sepsis in surgical neonates. Eur J Clin Nutr 2003;57:548-53. 
+ 
+79. Byington CL, Rittichier KK, Bassett KE, Castillo H, Glasgow TS, Daly J, Pavia  AT. 
+Serious bacterial infections  in febrile infants  younger than 90 days of age: the 
+importance of ampicillin-resistant pathogens. Pediatrics 2003;111:964-8. 
+
+PAGE 41
+41 
+GN 07 Probiotic Trial 
+V1 Jan/26/07  V2 July/15/2008 
+ 
+ 
+ 
+80. Panigrahi P, Parida S, Satpathy R, Pradhan L, Mohapatra S, Misra  PR,  Thatte  N, 
+Hansen N, Wright L, Gewolb IH. Long term colonization of a symbiotic Lactobacillus 
+preparation in the newborn gut. S.P.R. 2006. 
+ 
+81. Panigrahi P, Mohapatra S, Satpathy R, Pradhan L, Misra PR, Chaudhry R, Morris JG. 
+Causes and timing of sepsis and neonatal mortality in the Indian community seting. SPR 
+2006. 
+ 
+82. Stoll BJ, Temprosa M, Tyson JE, Papile LA, Wright LL, Bauer CR,  Donovan  EF, 
+Korones SB, Lemons JA, Fanaroff AA, Stevenson DK, Oh W, Ehrenkranz RA, 
+Shankaran S, Verter J. Dexamethasone therapy increases infection in very low birth 
+weight infants. Pediatrics 1999;104:e63. 
+ 
+83. Bianconi S, Gudavalli M, Sutija VG, Lopez AL, Barillas-Arias L, Ron N. Ranitidine use 
+and late-onset sepsis in the neonatal intensive care unit. P.A.S. 2006;2753.3. 
+ 
+84. Guillet R, Stoll BJ, Cotten CM, Gantz M, McDonald S, Poole WK, Phelps DL. 
+Association of H2-blocker therapy and higher incidence of necrotizing enterocolitis in 
+very low birth weight infants.  Pediatrics 2006;117:e137-42. 
+ 
+85. Arunachalam K, Gill HS, Chandra RK. Enhancement of natural immune function by 
+dietary consumption of Bifidobacterium lactis (HN019). Eur J Clin Nutr 2000;54:263-7. 
+ 
+86. Herias MV, Hessle C, Telemo E, Midtvedt T, Hanson LA, Wold AE. Immunomodulatory 
+effects of Lactobacillus plantarum colonizing the intestine of gnotobiotic rats. Clin Exp 
+Immunol 1999;116:283-90. 
+ 
+87. Matsuzaki T, Chin J. Modulating immune responses with probiotic  bacteria. Immunol 
+Cell Biol 2000;78:67-73. 
+ 
+88. Jenkins B, Holsten S, Bengmark S, Martindale R. Probiotics: a practical review of their 
+role in specific clinical scenarios. Nutr Clin Pract 2005;20:262-70. 
+ 
+89. Markowitz JE , Bengmark S. Probiotics in health and disease in the pediatric patient. 
+Pediatr Clin North Am 2002;49:127-41. 
+ 
+90. Isolauri E, Sutas Y, Kankaanpaa P, Arvilommi H, Salminen S. Probiotics: effects on 
+immunity. Am J Clin Nutr 2001;73:444S-450S. 
+ 
+91. Madsen K, Cornish A, Soper P, McKaigney C, Jijon H, Yachimec C, Doyle J, Jewell L, 
+De Simone C. Probiotic bacteria enhance murine and human intestinal epithelial barrier 
+function. Gastroenterology 2001;121:580-91. 
+ 
+92. Madsen KL. The use of probiotics in gastrointestinal disease. Can J Gastroenterol 
+2001;15:817-22. 
+ 
+93. Zareie M, Johnson-Henry KC, Jury J, Yang PC, Ngan BY, McKay DM, Soderholm JD, 
+Perdue MH, Sherman PM. Probiotics prevent bacterial translocation and improve 
+intestinal barrier function in rats following chronic psychological stress. Gut 2006. 
+
+PAGE 42
+42 
+GN 07 Probiotic Trial 
+V1 Jan/26/07  V2 July/15/2008 
+ 
+ 
+ 
+94. Adawi D, Molin G, Jeppsson B. Inhibition of nitric oxide production and the effects of 
+arginine and Lactobacillus administration in an acute liver injury model. Ann Surg 
+1998;228:748-55. 
+ 
+95. Mao Y, Nobaek S, Kasravi B, Adawi D, Stenram U, Molin G, Jeppsson B. The effects of 
+Lactobacillus strains and oat fiber on methotrexate-induced enterocolitis in rats. 
+Gastroenterology  1996;111:334-44. 
+ 
+96. Kasravi FB, Adawi D, Molin G, Bengmark S, Jeppsson B. Effect of oral supplementation 
+of lactobacilli on bacterial translocation in acute liver injury induced by D-galactosamine. 
+J Hepatol 1997;26:417-24. 
+ 
+97. Mangiante G, Colucci G, Canepari P, Bassi C, Nicoli N, Casaril A, Marinello P, 
+Signoretto C, Bengmark S. Lactobacillus plantarum reduces infection of pancreatic 
+necrosis in experimental acute pancreatitis. Dig Surg 2001;18:47-50. 
+ 
+98. White JS, Hoper M, Parks RW, Clements WD, Diamond T, Bengmark S. The probiotic 
+bacterium Lactobacillus plantarum species 299 reduces intestinal permeability in 
+experimental biliary obstruction. Lett Appl Microbiol 2006;42:19-23. 
+ 
+99. Lee DJ, Drongowski RA, Coran AG, Harmon CM. Evaluation of probiotic treatment in a 
+neonatal animal model. Pediatr Surg Int 2000;16:237-42. 
+ 
+100. Isolauri E. Probiotics for infectious diarrhoea. Gut 2003;52:436-7. 
+ 
+101. Chen CC, Walker WA. Probiotics and prebiotics: role in clinical disease states. Adv 
+Pediatr 2005;52:77-113. 
+ 
+102. Huang JS, Bousvaros A, Lee JW, Diaz A, Davidson EJ. Efficacy of probiotic use in acute 
+diarrhea in children: a meta-analysis. Dig Dis Sci 2002;47:2625-34. 
+ 
+103. Kurugol Z, Koturoglu G. Effects of Saccharomyces boulardii in children with acute 
+diarrhoea. Acta Paediatr 2005;94:44-7. 
+ 
+104. Saavedra J. Probiotics and infectious diarrhea. Am J Gastroenterol 2000;95:S16-8. 
+ 
+105. Vanderhoof JA, Young RJ. Use of probiotics in childhood gastrointestinal disorders. J 
+Pediatr Gastroenterol Nutr 1998;27:323-32. 
+ 
+106. Elmer GW, McFarland LV. Biotherapeutic agents in the treatment of infectious diarrhea. 
+Gastroenterol Clin North Am 2001;30:837-54. 
+ 
+107. Sullivan PB. Nutritional management of acute diarrhea. Nutrition 1998;14:758-62. 
+ 
+108. Teitelbaum JE. Probiotics and the treatment of infectious diarrhea. Pediatr Infect Dis J 
+2005;24:267-8. 
+ 
+109. Markwalder K. [Travelers' diarrhea]. Ther Umsch 2001;58:367-71. 
+
+PAGE 43
+43 
+GN 07 Probiotic Trial 
+V1 Jan/26/07  V2 July/15/2008 
+ 
+ 
+ 
+110. Fiocchi A, Martelli A, De Chiara A, Moro G, Warm A, Terracciano L. Primary dietary 
+prevention of food allergy. Ann Allergy Asthma Immunol 2003;91:3-12; quiz 12-5, 91. 
+ 
+111. Isolauri E, Arvola T, Sutas Y, Moilanen E, Salminen S. Probiotics in the management of 
+atopic eczema. Clin Exp Allergy 2000;30:1604-10. 
+ 
+112. Isolauri E. Dietary modification of atopic disease: Use of probiotics in the prevention of 
+atopic dermatitis. Curr Allergy Asthma Rep 2004;4:270-5. 
+ 
+113. Kalliomaki M, Salminen S, Arvilommi H, Kero P, Koskinen P, Isolauri E. Probiotics in 
+primary prevention of atopic disease: a randomised placebo-controlled trial. Lancet 
+2001;357:1076-9. 
+ 
+114. Miraglia del Giudice M , De Luca MG. The role of probiotics in the clinical management 
+of food allergy and atopic dermatitis. J Clin Gastroenterol 2004;38:S84-5. 
+ 
+115. Bengmark S. Use of some pre-, pro- and synbiotics in critically ill patients. Best Pract 
+Res Clin Gastroenterol 2003;17:833-48. 
+ 
+116. Bengmark S. Synbiotics to strengthen gut barrier function and reduce morbidity  in 
+critically ill patients. Clin Nutr 2004;23:441-5. 
+ 
+117. Dani C, Biadaioli R, Bertini G, Martelli E, Rubaltelli FF. Probiotics feeding in prevention 
+of urinary tract infection, bacterial sepsis and necrotizing enterocolitis in preterm infants. 
+A prospective double-blind study. Biol Neonate 2002;82:103-8. 
+ 
+118. Lin HC, Su BH, Chen AC, Lin TW, Tsai CH, Yeh TF, Oh W. Oral probiotics reduce the 
+incidence and severity of necrotizing enterocolitis in very low birth weight infants. 
+Pediatrics 2005;115:1-4. 
+ 
+119. Saiman L. Strategies for prevention of nosocomial sepsis in the neonatal intensive care 
+unit. Curr Opin Pediatr 2006;18:101-6. 
+ 
+120. Bengmark S. Bio-ecological control of perioperative and ICU morbidity. Langenbecks 
+Arch Surg 2004;389:145-54. 
+ 
+121. Shanahan F. Probiotics and inflammatory bowel disease: is there a scientific rationale? 
+Inflamm Bowel Dis 2000;6:107-15. 
+ 
+122. Shanahan F. Inflammatory bowel  disease:  immunodiagnostics,  immunotherapeutics, 
+and ecotherapeutics. Gastroenterology 2001;120:622-35. 
+ 
+123. Marteau PR. Probiotics in clinical conditions. Clin Rev Allergy Immunol 2002;22:255-73. 
+ 
+124. Bausserman M, Michail S. The use of Lactobacillus GG in irritable bowel syndrome in 
+children: a double-blind randomized control trial. J Pediatr 2005;147:197-201. 
+ 
+125. Thompson WG. Probiotics for irritable bowel syndrome: a light in the darkness? Eur J 
+Gastroenterol  Hepatol 2001;13:1135-6. 
+
+PAGE 44
+44 
+GN 07 Probiotic Trial 
+V1 Jan/26/07  V2 July/15/2008 
+ 
+ 
+ 
+126. Hammerman C, Bin-Nun A, Kaplan M. Germ warfare: probiotics in defense of the 
+premature gut. Clin Perinatol 2004;31:489-500. 
+ 
+127. Bengmark S. Bioecologic control of the gastrointestinal tract: the role of flora and 
+supplemented probiotics and synbiotics. Gastroenterol Clin North Am 2005;34:413-36, 
+viii. 
+ 
+128. Schaedler RW, Dubos R, Costello R. Association of germ free mice  with  bacteria 
+isolated from normal mice. J. Exp. Med. 1965;122:77-82. 
+ 
+129. Fox JG, Bennet A, Cohen J, Ew FM, Laboratory animal medicine. 1984, Acad. Press. p. 
+201-24. 
+ 
+130. Nurmi E , Rantala M. New aspects of Salmonella infection in broiler production. Nature 
+1973;241:210-1. 
+ 
+131. Bokovoy A.G. N, N.I. To the problems of dysbacteriosis in the children's intestine. 
+Discussion. 1990. 
+ 
+132. Hoyos AB. Reduced incidence of necrotizing enterocolitis associated with enteral 
+administration of Lactobacillus acidophilus and Bifidobacterium infantis to neonates in an 
+intensive care unit. Int J Infect Dis. 1999;3(4):197-202. 
+ 
+133. Kitajima H, Sumida Y, Tanaka R, Yuki N, Takayama H, Fujimura M. Early administration 
+of Bifidobacterium breve to preterm infants: randomised controlled trial. Arch Dis Child 
+Fetal Neonatal Ed 1997;76:F101-7. 
+ 
+134. Mihatsch W, Vossbeck,S., Franz,A., Kron,M., Pohland,F. Effect of enteral administration 
+of a probiotic strain of Bifidobacteria on the incidence of nosocomial infections in preterm 
+infants. Pediart.Res. 2004;55:448A. 
+ 
+135. Costeloe K, Jesudass,R., Al Nakib,L., Whiley,A., Hennessy,E., Wilks,M., Millar,M. the 
+early administration of Bifidobacterium breve strain BBG to very low birth weight   infants. 
+A pilot study. Pediatr.Res. 2004;55:494A. 
+ 
+136. Bin-Nun A, Bromiker R, Wilschanski M, Kaplan M, Rudensky B, Caplan M, Hammerman 
+C. Oral probiotics prevent necrotizing enterocolitis in very low birth weight neonates. J 
+Pediatr 2005;147:192-6. 
+ 
+137. Reid G, Anand S, Bingham MO, Mbugua G, Wadstrom T, Fuller R, Anukam K, Katsivo 
+M. Probiotics for the developing world. J Clin Gastroenterol 2005;39:485-8. 
+ 
+138. WHO&UNICEF, Global water supply and sanitation assessment. 2000: Geneva WHO. p. 
+http://www.who.int/water_sanitation_health/monitoring/jmp2000.pdf. 
+ 
+139. FAO/WHO, Evaluation of health and nutritional properties of powder milk and live lactic 
+acid bacteria. 2001, FAO of UN and WHO Expert Consultation Report. p. 
+htpp:/www.fao.org/es/ESN/Probio/probio. 
+
+PAGE 45
+45 
+GN 07 Probiotic Trial 
+V1 Jan/26/07  V2 July/15/2008 
+ 
+ 
+ 
+140. Sipsas NV, Zonios DI, Kordossis T. Safety of Lactobacillus strains used as probiotic 
+agents. Clin Infect Dis 2002;34:1283-4; author reply 1284-5. 
+ 
+141. Ishibashi N, Yamazaki S. Probiotics and safety. Am J Clin Nutr 2001;73(2 Suppl):465S- 
+470S. 
+ 
+142. Borriello SP, Hammes WP, Holzapfel W, Marteau P, Schrezenmeir J, Vaara M, et al. 
+Safety of probiotics that contain lactobacilli or bifidobacteria. Clin Infect Dis 
+2003;36(6):775-80. 
+ 
+143. Antony SJ. Lactobacillemia: an emerging cause of infection in both the 
+immunocompromised and the immunocompetent host. J Natl Med Assoc 2000;92:83-6. 
+ 
+144. Schlegel L, Lemerle S, Geslin P. Lactobacillus species as opportunistic pathogens in 
+immunocompromised patients. Eur J Clin Microbiol Infect Dis 1998;17:887-8. 
+ 
+145. Salminen MK, Tynkkynen S, Rautelin H, Saxelin M, Vaara M, Ruutu P, Sarna  S, 
+Valtonen V, Jarvinen A. Lactobacillus bacteremia during a rapid increase in probiotic use 
+of Lactobacillus rhamnosus GG in Finland. Clin Infect Dis 2002;35:1155-60. 
+ 
+146. Rautio M, Jousimies-Somer H, Kauma H, Pietarinen I, Saxelin M, Tynkkynen S, Koskela 
+M.  Liver  abscess  due  to  a  Lactobacillus  rhamnosus  strain  indistinguishable from  L. 
+rhamnosus strain GG. Clin Infect Dis 1999;28:1159-60. 
+ 
+147. Piarroux R, Millon L, Bardonnet K, Vagner O, Koenig H. Are live saccharomyces yeasts 
+harmful to patients? Lancet 1999;353:1851-2. 
+ 
+148. Thompson C, McCarter YS, Krause PJ, Herson VC. Lactobacillus ac idophilus sepsis in a 
+neonate. J Perinatol 2001;21:258-60. 
+ 
+149. Olano A, Chua J, Schroeder S, Minari A, La Salvia M, Hall G. Weissella confusa 
+(basonym: Lactobacillus confusus) bacteremia: a case report. J Clin Microbiol 
+2001;39:1604-7. 
+ 
+150. Burkhardt O, Kohnlein T, Pletz M, Welte T. Saccharomyces boulardii induced sepsis: 
+successful therapy with voriconazole after treatment failure with fluconazole. Sc and J 
+Infect Dis 2005;37(1):69-72. 
+ 
+151. Cesaro S, Chinello P, Rossi L, Zanesco L. Saccharomyces cerevisiae fungemia in a 
+neutropenic patient treated with Saccharomyces boulardii. Support Care Cancer 
+2000;8(6):504-5. 
+ 
+152. Fredenucci I, Chomarat M, Boucaud C, Flandrois JP. Saccharomyces  boulardii 
+fungemia in a patient receiving Ultra-levure therapy. Clin Infect Dis 1998;27(1):222-3. 
+ 
+153. Hennequin C, Kauffmann-Lacroix C, Jobert A, Viard JP, Ricour C, Jacquemin JL, et al. 
+Possible role of catheters in Saccharomyces boulardii fungemia. Eur J Clin Microbiol 
+Infect Dis 2000;19(1):16-20. 
+
+PAGE 46
+46 
+GN 07 Probiotic Trial 
+V1 Jan/26/07  V2 July/15/2008 
+ 
+ 
+ 
+154. Lestin F, Pertschy A, Rimek D. [Fungemia after oral treatment with Saccharomyces 
+boulardii in a patient with multiple comorbidities]. Dtsch Med Wochenschr 
+2003;128(48):2531-3. 
+ 
+155. Lherm T, Monet C, Nougiere B, Soulier M, Larbi D, Le Gall C, et al. Seven cases of 
+fungemia with Saccharomyces boulardii in critically ill patients. Intensive Care Med 
+2002;28(6):797-801. 
+ 
+156. Pletincx M, Legein J, Vandenplas Y. Fungemia with Saccharomyces boulardii in a 1- 
+year-old girl with protracted diarrhea. J Pediatr Gastroenterol Nutr 1995;21(1):113-5. 
+ 
+157. Rijnders BJ, Van Wijngaerden E, Verwaest C, Peetermans WE. Saccharomyces 
+fungemia complicating Saccharomyces boulardii treatment in a non- 
+immunocompromised host. Intensive C         are Med 2000;26(6):825. 
+ 
+158. Riquelme AJ, Calvo MA, Guzman AM, Depix MS, Garcia P, Perez C, et al. 
+Saccharomyces cerevisiae fungemia after Saccharomyces boulardii treatment in 
+immunocompromised patients. J Clin Gastroenterol 2003;36(1):41-3. 
+ 
+159. Zunic P, Lacotte J, Pegoix M, Buteux G, Leroy G, Mosquet B, et al. [Saccharomyces 
+boulardii fungemia. Apropos of a case]. Therapie 1991;46(6):498-9. 
+ 
+160. Arpi M, Vancanneyt M, Swings J, Leisner JJ. Six cases of Lactobacillus bacteraemia: 
+identification of organisms and antibiotic susceptibility and therapy. Scand J Infect Dis 
+2003;35(6-7):404-8. 
+ 
+161. Chomarat M, Espinouse D. Lactobacillus rhamnosus septicemia in patients with 
+prolonged aplasia receiving ceftazidime-vancomycin. Eur J Clin Microbiol Infect Dis 
+1991;10(1):44. 
+ 
+162. De Groote MA, Frank DN, Dowell E, Glode MP, Pace NR. Lactobacillus rhamnosus GG 
+bacteremia associated with probiotic use in a child with short gut syndrome. Pediatr 
+Infect Dis J 2005;24(3):278-80. 
+ 
+163. Farina C, Arosio M, Mangia M, Moioli F. Lactobacillus casei subsp. rhamnosus sepsis in 
+a patient with ulcerative colitis. J Clin Gastroenterol 2001;33(3):251-2. 
+ 
+164. Jureen R, Sondenaa K, Hoiby EA, Digranes A. Lactobacillus rham nosus septicaemia in 
+a patient with a graft in the inferior vena cava. Scand J Infect Dis 2002;34(2):135-6. 
+ 
+165. Majcher-Peszynska J, Heine W, Richter I, Eggers G, Mohr C. [Persistent Lactobacillus 
+casei subspecies rhamnosus bacteremia in a 14 year old girl with acute myeloid 
+leukemia. A case report]. Klin Padiatr 1999;211(2):53-6. 
+ 
+166. Salminen MK, Rautelin H, Tynkkynen S, Poussa T, Saxelin M, Valtonen V, et al. 
+Lactobacillus bacteremia, clinical significance, and patient outcome, with special focus 
+on probiotic L. rhamnosus GG. Clin Infect Dis 2004;38(1):62-9. 
+
+PAGE 47
+47 
+GN 07 Probiotic Trial 
+V1 Jan/26/07  V2 July/15/2008 
+ 
+ 
+ 
+167. Ledoux D, Labombardi VJ, Karter D. Lactobacillus acidophilus bacteraemia after use of 
+a probiotic in a patient with AIDS and Hodgkin's disease. Int J STD AIDS 2006;17(4):280-
+2. 
+ 
+168. Thompson C, McCarter YS, Krause PJ, Herson VC. Lactobacillus ac idophilus sepsis in a 
+neonate. J Perinatol 2001;21(4):258-60. 
+ 
+169. Cukovic-Cavka S, Likic R, Francetic I, Rustemovic N, Opacic M, Vucelic B. Lactobacillus 
+acidophilus as a cause of liver abscess in a NOD2/CARD15-positive patient with Crohn's 
+disease. Digestion 2006;73(2-3):107-10. 
+ 
+170. Boyle RJ, Robins-Browne RM, Tang ML. Probiotic use in clinical practice: what are the 
+risks? Am J Clin Nutr 2006;83(6):1256-64; quiz 1446-7. 
+ 
+171. Bernardeau M, Guguen M, Vernoux JP. Beneficial lactobacilli in food and feed: long- 
+term use, biodiversity and proposals for specific and realistic safety assessments. FEMS 
+Microbiol Rev. 2006 Jul;30(4):487-513. 
+ 
+172. Kunz AN, Noel JM, Fairchok MP. Two cases of Lactobacillus bacteremia during probiotic 
+treatment of short gut syndrome. J Pediatr Gastroenterol Nutr 2004;38(4):457-8. 
+ 
+173. Land MH, Rouster-Stevens K, Woods CR, Cannon ML, Cnota  J,  Shetty  AK. 
+Lactobacillus sepsis associated with probiotic therapy. Pediatrics 2005;115(1):178-81. 
+ 
+174. Mastro TD, Spika JS, Lozano P, Appel J, Facklam RR.  Vancomycin-resistant 
+Pediococcus acidilactici: nine cases of bacteremia. J Infect Dis 1990;161(5):956-60. 
+ 
+175. Atkins JT, Tillman J, Tan TQ, Demmler GJ. Pediococcus pentosaceus catheter- 
+associated infection in an infant with gastroschisis. Pediatr Infect Dis J 1994;13(1):75-6. 
+ 
+176. Barton LL, Rider ED, Coen RW. Bacteremic infection with Pediococcus: vancomycin- 
+resistant opportunist. Pediatrics 2001;107(4):775-6. 
+ 
+177. Kecskes G, Belagyi T, Olah A. Petz Aladar Megyei Korhaz, Gyor. Early jejunal nutrition 
+with combined pre- and probiotics in acute pancreatitis--prospective, randomized, 
+double-blind investigations. Magy Seb. 2003. Feb;56(1):3-8. 
+ 
+178. Olah A, Belagyi T, Issekutz A, Gamal ME, Bengmark S. Randomized clinical trial of 
+specific lactobacillus and fibre supplement to early enteral nutrition in patients with acute 
+pancreatitis. Br J Surg. 2002 Sep;89(9):1103-7. 
+ 
+179. Rayes N, Seehofer D, Hansen S, Boucsein K, Muller AR, Serke S, Bengmark S, 
+Neuhaus P. Early enteral supply of lactobacillus and fiber versus selective bowel 
+decontamination: a controlled trial in liver transplant recipients. Transplantation. 2002 Jul 
+15;74(1):123-7. 
+ 
+180. Wolf BW, Wheeler KB, Ataya DG, Garleb KA. Safety and tolerance of Lactobacillus 
+reuteri supplementation to a population infected with the human immunodeficiency virus. 
+Food Chem Toxicol. 1998 Dec;36(12):1085-94. 
+
+PAGE 48
+48 
+GN 07 Probiotic Trial 
+V1 Jan/26/07  V2 July/15/2008 
+ 
+ 
+ 
+181. Simpore J, Zongo F, Kabore F, Dansou D, Bere A, Nikiema JB, Pignatelli S, Biondi DM, 
+Ruberto G,Musumeci S Nutrition rehabilitation of HIV-infected and HIV-negative 
+undernourished children utilizing spirulina. Ann Nutr Metab. 2005 Nov-Dec;49(6):373-80. 
+ 
+182. Heiser CR, Ernst JA, Barrett JT, French N, Schutz M, Dube MP Probiotics, soluble fiber, 
+and L-Glutamine (GLN) reduce nelfinavir NFV)- or lopinavir/ritonavir (LPV/r)-related 
+diarrhea. J Int Assoc Physicians AIDS Care (Chic Ill). 2004. 
+ 
+183. Salminen MK, Tynkkynen S, Rautelin H, Poussa T, Saxelin M, Ristola M, Valtonen V, 
+Jarvinen A. The efficacy and safety of probiotic Lactobacillus rhamnosus GG on 
+prolonged, noninfectious diarrhea in HIV Patients on antiretroviral  therapy:  a 
+randomized, placebo-controlled, crossover study. HIV Clin Trials. 2004 Jul-Aug;5(4):183- 
+91. 
+ 
+184. Supplement fix for nelfinavir-related  diarrhea. Treatment Update. 2002 Nov;14(8):8. 
+ 
+185. Cunningham-Rundles S, Ahrne S, Bengmark S, Johann-Liang R, Marshall F, Metakis L, 
+Califano C, Dunn AM, Grassey C, Hinds G, Cervia, J. Probiotics and immune response. 
+Am J Gastroenterol. 2000 Jan;95(1 Suppl):S22-5. 
+
+PAGE 49
+49 
+GN 07 Probiotic Trial 
+V1 Jan/26/07  V2 July/15/2008 
+ 
+ 
+ 
+ 
+Appendix A. Antibiotics sensitivity pattern of L. plantarum to antibiotics 
+commonly used in neonates 
+ 
+Antibiotic Sensitivity 
+(zone size in 
+mm) 
+Penicillin (CIP 5) S (20) 
+Augmentin (SAM 20) S (30) 
+Amikacin (AN 30) S (23) 
+Cefotaxime (CTX 30) S (34) 
+Ceftadizime   (CAZ 30) S (25) 
+Ceftriaxone (CRO 30) S (35) 
+Cefpodoxime (CPD 10) S (30) 
+Cephalothin (CF 30) S (15) 
+Erythromycin  (E 15) S (34) 
+Gentamicin (GM 10) S (26) 
+Ciprofloxacin   (CIP 5) I (6) 
+Vancomycin   (VAN 30) R   (0) 
+S:   sensitive,  R:  resistant,  I:  intermediate 
+sensitive 
+ 
+All Lactobacilli possess an atypical peptidoglycan in their cell wall which makes them inherently 
+resistant to Vancomycin. However, they are highly sensitive to commonly used antibiotics. The 
+above table describes a list of antibiotics tested against L. plantarum; most of them are safe to 
+use in neonates. The proposed L. plantarum strain does not contain plasmids, a major concern 
+of transmissible of bacterial el 
+
+PAGE 50
+July 20, 2007 
+ 
+ 
+Amendment # 1 to 
+Placebo-Controlled, Randomized Trial of an Intervention using Probiotics in the 
+Prevention of Neonatal Infection in Community-born Infants 
+ 
+1. UMB has received the first NGA of the R0-1 grant (HD 053719-01A1). 
+ 
+2. RTI Intl will not be responsible for data management-related issues. GCRC will 
+handle data management needs for the current grant. 
+ 
+
+PAGE 51
+June 21, 2008 
+ 
+ 
+Amendment # 2 to 
+Placebo-Controlled, Randomized Trial of an Intervention using Probiotics in the 
+Prevention of Neonatal Infection in Community-born Infants 
+ 
+1. The field feasibility pilot phase with the proposed enrollment of 400 infants is 
+brought to an end after enrollment of 250 subjects at RKL and BBS site. 
+ 
+2. The main field RCT should begin. 
+ 
+ 
+3. Enrollment window is extended to day 4 (in place of 3). DSMB approval has been 
+obtained (BRAAN amendment letter attached) 
+
+PAGE 52
+BRAAN Amendment 
+ 
+In this amendment we are requesting two changes. Neither one changes the risk-benefit 
+ratio. 
+ 
+1. Change in enrollment period: In our current protocol, we are approved to enroll 
+newborn infants in the community >24 hours and <72 hours of age. During our pilot 
+phase, we have not been able to enroll a significant population (about 25%) of eligible 
+infants due to the fact that their mothers gave birth in local hospitals. In our previous 
+surveillance study conducted during 2002-2006, we had noted that bulk of deliveries in 
+our study villages were at home. However, there is a very recent change in the practice, 
+where instead of opting to deliver at home or in the village nursing center, many women 
+are going to the hospitals. This change is due to implementation of several new incentives 
+by the government where the mothers are given monetary help for attending a hospital for 
+delivery. These mothers are typically being discharged on the third day after delivery. 
+Keeping travel time etc. in the picture, we are missing many eligible infants that could be 
+enrolled if the enrollment time is extended to fourth day. This extension does not pose 
+any risk to the infant and does not change the scientific integrity of the study. The 
+recently convened DSMB has allowed this change (letter attached). 
+ 
+To reflect this change, we have modified the inclusion criteria (1-4 days) in the Braan 
+protocol and consent forms (BRAAN consent form and local language consent form). 
+ 
+2. Initiation of enrollment in the main trial: In our original protocol (total sample 8,842), 
+we had proposed to enroll a convenience sample of 400 infants in a pilot feasibility phase 
+before launching the main trial with enough power (8,442). The purpose was to primarily 
+examine logistics of operations in the villages. To examine safety, prior to launching this 
+field pilot trial, we had earlier completed hospital-based clinical and had noted reduced 
+infections and other adverse events without any adverse events related to study 
+intervention.  
+ 
+We have now enrolled 250 infants in this pilot phase and completed their 60-day 
+followup. Unblinded results have been reviewed and approved by the DSMB. Based on 
+our experience (smooth operation during the pilot phase), and discussions with NICHD 
+program staff, we would like to start the main RCT (8,442 infants) now, in an effort to 
+conserve time and expense and expose the optimal number of infants to this intervention.  
+ 
+Hence, we feel that it is quite appropriate to start enrollment in the main trial. 
+ 
+Attached please find the DSMB note to IRBs and modified local language consent form. 
+ 
+Pinaki Panigrahi,MD,PhD 
+PI 

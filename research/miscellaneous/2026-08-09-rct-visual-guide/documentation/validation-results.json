@@ -1,0 +1,23 @@
+{
+  "unique_ids": 179,
+  "local_links_and_anchors": 135,
+  "images_with_alt": 13,
+  "valid_svg_files": 13,
+  "source_md5_matches": 3,
+  "published_outcome_numerators_matched": 12,
+  "primary_independent_formula_check": true,
+  "published_flow_arithmetic": true,
+  "event_age_histogram_reconciled": true,
+  "table_headers_and_text_controls_valid": true,
+  "requested_metadata_and_prominent_citation": true,
+  "separate_implementation_outcomes_matched": 12,
+  "mortality_test_discrepancy_documented": true,
+  "javascript_power_vs_scipy": {
+    "scenarios": 6,
+    "max_absolute_error": 5.190292640122607e-15
+  },
+  "fisher_plus_one_correction": true,
+  "original_lettered_sections_retained": 30,
+  "buttons": 21,
+  "range_controls": 10
+}

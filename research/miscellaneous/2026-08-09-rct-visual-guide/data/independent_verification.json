@@ -1,0 +1,599 @@
+{
+  "checks": {
+    "rows": 4556,
+    "variables": 74,
+    "arm_counts": {
+      "0": 2278,
+      "1": 2278
+    },
+    "duplicate_id_excess": 2,
+    "exact_duplicate_rows": 0,
+    "primary_missing": 0,
+    "time_missing": 3852,
+    "primary_event_time_missing": 2,
+    "lostfu": {
+      "0": 82,
+      "1": 129
+    },
+    "outcome_pairs_verified": 12,
+    "baseline_mean_sd_checks": 6,
+    "block_complete_case_checks": 3,
+    "sha256": "7358326b071203978fb575e7bc4eb4fa8eb9985bdda1a2eb1dd5154afb52076a"
+  },
+  "outcomes": {
+    "SEPSISDEATH": {
+      "n1": 2278,
+      "n0": 2278,
+      "events1": 123,
+      "events0": 206,
+      "risk1": 0.053994732221246705,
+      "risk0": 0.09043020193151888,
+      "rr": 0.5970873786407767,
+      "rr_ci": [
+        0.48126095156552356,
+        0.740790077758002
+      ],
+      "rd": -0.03643546971027217,
+      "rd_ci": [
+        -0.05143018538384799,
+        -0.021440754036696354
+      ],
+      "pearson_p": 2.0273264961266556e-06,
+      "fisher_p": 2.4114823230566314e-06
+    },
+    "SEPSIS": {
+      "n1": 2278,
+      "n0": 2278,
+      "events1": 117,
+      "events0": 202,
+      "risk1": 0.051360842844600525,
+      "risk0": 0.08867427568042142,
+      "rr": 0.5792079207920792,
+      "rr_ci": [
+        0.46474346967666735,
+        0.7218645067604411
+      ],
+      "rd": -0.0373134328358209,
+      "rd_ci": [
+        -0.052093050929564656,
+        -0.022533814742077142
+      ],
+      "pearson_p": 8.015517963713025e-07,
+      "fisher_p": 9.452728993218657e-07
+    },
+    "CULTPOS": {
+      "n1": 2278,
+      "n0": 2278,
+      "events1": 6,
+      "events0": 27,
+      "risk1": 0.0026338893766461808,
+      "risk0": 0.011852502194907815,
+      "rr": 0.2222222222222222,
+      "rr_ci": [
+        0.09192610029960516,
+        0.5372001628311738
+      ],
+      "rd": -0.009218612818261633,
+      "rd_ci": [
+        -0.014135952904513508,
+        -0.0043012727320097584
+      ],
+      "pearson_p": 0.0002435559813336201,
+      "fisher_p": 0.0003090329274104643
+    },
+    "SEPSISB": {
+      "n1": 2278,
+      "n0": 2278,
+      "events1": 19,
+      "events0": 36,
+      "risk1": 0.008340649692712906,
+      "risk0": 0.015803336259877086,
+      "rr": 0.5277777777777778,
+      "rr_ci": [
+        0.3036694526571671,
+        0.9172782454036381
+      ],
+      "rd": -0.00746268656716418,
+      "rd_ci": [
+        -0.013801160596763059,
+        -0.0011242125375653016
+      ],
+      "pearson_p": 0.02109709888458098,
+      "fisher_p": 0.02904941798041008
+    },
+    "SEPSISC": {
+      "n1": 2278,
+      "n0": 2278,
+      "events1": 92,
+      "events0": 139,
+      "risk1": 0.04038630377524144,
+      "risk0": 0.061018437225636525,
+      "rr": 0.6618705035971223,
+      "rr_ci": [
+        0.5118997655809572,
+        0.8557780116088506
+      ],
+      "rd": -0.020632133450395086,
+      "rd_ci": [
+        -0.03335898286378284,
+        -0.007905284037007331
+      ],
+      "pearson_p": 0.0015041523094981959,
+      "fisher_p": 0.0018381198086285522
+    },
+    "DEATH": {
+      "n1": 2278,
+      "n0": 2278,
+      "events1": 6,
+      "events0": 4,
+      "risk1": 0.0026338893766461808,
+      "risk0": 0.001755926251097454,
+      "rr": 1.5,
+      "rr_ci": [
+        0.42385977684080983,
+        5.3083593276298044
+      ],
+      "rd": 0.0008779631255487268,
+      "rd_ci": [
+        -0.0018397156444492962,
+        0.0035956418955467497
+      ],
+      "pearson_p": 0.5266351923279462,
+      "fisher_p": 0.7536357577843554
+    },
+    "DIARRHEA": {
+      "n1": 2278,
+      "n0": 2278,
+      "events1": 12,
+      "events0": 59,
+      "risk1": 0.0052677787532923615,
+      "risk0": 0.025899912203687446,
+      "rr": 0.20338983050847456,
+      "rr_ci": [
+        0.10963729255369348,
+        0.3773116080370814
+      ],
+      "rd": -0.020632133450395086,
+      "rd_ci": [
+        -0.02780018798665186,
+        -0.013464078914138311
+      ],
+      "pearson_p": 1.8892236976220216e-08,
+      "fisher_p": 1.056598275621946e-08
+    },
+    "LOCINF": {
+      "n1": 2278,
+      "n0": 2278,
+      "events1": 16,
+      "events0": 33,
+      "risk1": 0.007023705004389816,
+      "risk0": 0.014486391571553995,
+      "rr": 0.48484848484848486,
+      "rr_ci": [
+        0.2676264270354624,
+        0.8783813163141843
+      ],
+      "rd": -0.007462686567164179,
+      "rd_ci": [
+        -0.013449007317745242,
+        -0.0014763658165831157
+      ],
+      "pearson_p": 0.014616773416746396,
+      "fisher_p": 0.020609050886158237
+    },
+    "ABSCESS": {
+      "n1": 2278,
+      "n0": 2278,
+      "events1": 5,
+      "events0": 11,
+      "risk1": 0.0021949078138718174,
+      "risk0": 0.004828797190517998,
+      "rr": 0.4545454545454546,
+      "rr_ci": [
+        0.15818549558846892,
+        1.306134734283407
+      ],
+      "rd": -0.0026338893766461808,
+      "rd_ci": [
+        -0.006068541747207043,
+        0.000800762993914681
+      ],
+      "pearson_p": 0.13293168410334757,
+      "fisher_p": 0.20930795025420956
+    },
+    "OMPHA": {
+      "n1": 2278,
+      "n0": 2278,
+      "events1": 3,
+      "events0": 13,
+      "risk1": 0.0013169446883230904,
+      "risk0": 0.005706760316066725,
+      "rr": 0.23076923076923078,
+      "rr_ci": [
+        0.06585007404032524,
+        0.8087225207554143
+      ],
+      "rd": -0.004389815627743635,
+      "rd_ci": [
+        -0.007822953851597064,
+        -0.000956677403890206
+      ],
+      "pearson_p": 0.01226587841548686,
+      "fisher_p": 0.021051725129591102
+    },
+    "GRAMNEG": {
+      "n1": 2278,
+      "n0": 2278,
+      "events1": 4,
+      "events0": 16,
+      "risk1": 0.001755926251097454,
+      "risk0": 0.007023705004389816,
+      "rr": 0.25,
+      "rr_ci": [
+        0.08370912012497853,
+        0.7466331017060853
+      ],
+      "rd": -0.0052677787532923615,
+      "rd_ci": [
+        -0.009104048017901874,
+        -0.0014315094886828495
+      ],
+      "pearson_p": 0.007162551209436546,
+      "fisher_p": 0.011640046786782971
+    },
+    "GRAMPOS": {
+      "n1": 2278,
+      "n0": 2278,
+      "events1": 2,
+      "events0": 11,
+      "risk1": 0.000877963125548727,
+      "risk0": 0.004828797190517998,
+      "rr": 0.18181818181818182,
+      "rr_ci": [
+        0.04034593196776923,
+        0.8193602087585445
+      ],
+      "rd": -0.003950834064969272,
+      "rd_ci": [
+        -0.007046453282864863,
+        -0.0008552148470736803
+      ],
+      "pearson_p": 0.012429158494226189,
+      "fisher_p": 0.02227729113690848
+    }
+  },
+  "comparison": [
+    {
+      "measure": "SEPSISDEATH",
+      "current_rr": 0.5970873786407767,
+      "published_rr": 0.6,
+      "recalculated_rr": 0.5970873786407767,
+      "status": "Current matches independent recalculation; published point estimate matches to shown precision",
+      "published_ci": [
+        0.48,
+        0.74
+      ],
+      "recalculated_ci": [
+        0.48126095156552356,
+        0.740790077758002
+      ],
+      "published_p": "<0.001",
+      "pearson_p": 2.0273264961266556e-06,
+      "fisher_p": 2.4114823230566314e-06
+    },
+    {
+      "measure": "SEPSIS",
+      "current_rr": 0.5792079207920792,
+      "published_rr": 0.58,
+      "recalculated_rr": 0.5792079207920792,
+      "status": "Current matches independent recalculation; published point estimate matches to shown precision",
+      "published_ci": [
+        0.46,
+        0.72
+      ],
+      "recalculated_ci": [
+        0.46474346967666735,
+        0.7218645067604411
+      ],
+      "published_p": "<0.001",
+      "pearson_p": 8.015517963713025e-07,
+      "fisher_p": 9.452728993218657e-07
+    },
+    {
+      "measure": "CULTPOS",
+      "current_rr": 0.2222222222222222,
+      "published_rr": 0.22,
+      "recalculated_rr": 0.2222222222222222,
+      "status": "Current matches independent recalculation; published point estimate matches to shown precision",
+      "published_ci": [
+        0.09,
+        0.53
+      ],
+      "recalculated_ci": [
+        0.09192610029960516,
+        0.5372001628311738
+      ],
+      "published_p": "<0.001",
+      "pearson_p": 0.0002435559813336201,
+      "fisher_p": 0.0003090329274104643
+    },
+    {
+      "measure": "SEPSISB",
+      "current_rr": 0.5277777777777778,
+      "published_rr": 0.53,
+      "recalculated_rr": 0.5277777777777778,
+      "status": "Current matches independent recalculation; published point estimate matches to shown precision",
+      "published_ci": [
+        0.3,
+        0.92
+      ],
+      "recalculated_ci": [
+        0.3036694526571671,
+        0.9172782454036381
+      ],
+      "published_p": "0.021",
+      "pearson_p": 0.02109709888458098,
+      "fisher_p": 0.02904941798041008
+    },
+    {
+      "measure": "SEPSISC",
+      "current_rr": 0.6618705035971223,
+      "published_rr": 0.66,
+      "recalculated_rr": 0.6618705035971223,
+      "status": "Current matches independent recalculation; published point estimate matches to shown precision",
+      "published_ci": [
+        0.51,
+        0.88
+      ],
+      "recalculated_ci": [
+        0.5118997655809572,
+        0.8557780116088506
+      ],
+      "published_p": "0.002",
+      "pearson_p": 0.0015041523094981959,
+      "fisher_p": 0.0018381198086285522
+    },
+    {
+      "measure": "DEATH",
+      "current_rr": 1.5,
+      "published_rr": 1.5,
+      "recalculated_rr": 1.5,
+      "status": "Current matches independent recalculation; published point estimate matches to shown precision",
+      "published_ci": [
+        0.42,
+        5.31
+      ],
+      "recalculated_ci": [
+        0.42385977684080983,
+        5.3083593276298044
+      ],
+      "published_p": "0.526",
+      "pearson_p": 0.5266351923279462,
+      "fisher_p": 0.7536357577843554
+    },
+    {
+      "measure": "DIARRHEA",
+      "current_rr": 0.20338983050847456,
+      "published_rr": 0.2,
+      "recalculated_rr": 0.20338983050847456,
+      "status": "Current matches independent recalculation; published point estimate matches to shown precision",
+      "published_ci": [
+        0.11,
+        0.38
+      ],
+      "recalculated_ci": [
+        0.10963729255369348,
+        0.3773116080370814
+      ],
+      "published_p": "<0.001",
+      "pearson_p": 1.8892236976220216e-08,
+      "fisher_p": 1.056598275621946e-08
+    },
+    {
+      "measure": "LOCINF",
+      "current_rr": 0.48484848484848486,
+      "published_rr": 0.48,
+      "recalculated_rr": 0.48484848484848486,
+      "status": "Current matches independent recalculation; published point estimate matches to shown precision",
+      "published_ci": [
+        0.27,
+        0.88
+      ],
+      "recalculated_ci": [
+        0.2676264270354624,
+        0.8783813163141843
+      ],
+      "published_p": "0.015",
+      "pearson_p": 0.014616773416746396,
+      "fisher_p": 0.020609050886158237
+    },
+    {
+      "measure": "ABSCESS",
+      "current_rr": 0.4545454545454546,
+      "published_rr": 0.45,
+      "recalculated_rr": 0.4545454545454546,
+      "status": "Current matches independent recalculation; published point estimate matches to shown precision",
+      "published_ci": [
+        0.16,
+        1.33
+      ],
+      "recalculated_ci": [
+        0.15818549558846892,
+        1.306134734283407
+      ],
+      "published_p": "0.133",
+      "pearson_p": 0.13293168410334757,
+      "fisher_p": 0.20930795025420956
+    },
+    {
+      "measure": "OMPHA",
+      "current_rr": 0.23076923076923078,
+      "published_rr": 0.23,
+      "recalculated_rr": 0.23076923076923078,
+      "status": "Current matches independent recalculation; published point estimate matches to shown precision",
+      "published_ci": [
+        0.07,
+        0.81
+      ],
+      "recalculated_ci": [
+        0.06585007404032524,
+        0.8087225207554143
+      ],
+      "published_p": "0.014",
+      "pearson_p": 0.01226587841548686,
+      "fisher_p": 0.021051725129591102
+    },
+    {
+      "measure": "GRAMNEG",
+      "current_rr": 0.25,
+      "published_rr": 0.25,
+      "recalculated_rr": 0.25,
+      "status": "Current matches independent recalculation; published point estimate matches to shown precision",
+      "published_ci": [
+        0.08,
+        0.75
+      ],
+      "recalculated_ci": [
+        0.08370912012497853,
+        0.7466331017060853
+      ],
+      "published_p": "0.007",
+      "pearson_p": 0.007162551209436546,
+      "fisher_p": 0.011640046786782971
+    },
+    {
+      "measure": "GRAMPOS",
+      "current_rr": 0.18181818181818182,
+      "published_rr": 0.18,
+      "recalculated_rr": 0.18181818181818182,
+      "status": "Current matches independent recalculation; published point estimate matches to shown precision",
+      "published_ci": [
+        0.04,
+        0.82
+      ],
+      "recalculated_ci": [
+        0.04034593196776923,
+        0.8193602087585445
+      ],
+      "published_p": "0.012",
+      "pearson_p": 0.012429158494226189,
+      "fisher_p": 0.02227729113690848
+    }
+  ],
+  "baseline": [
+    {
+      "variable": "BWT",
+      "arm": 0,
+      "n": 2278,
+      "mean": 2799.921422300263,
+      "sd": 355.59728430549376
+    },
+    {
+      "variable": "BWT",
+      "arm": 1,
+      "n": 2278,
+      "mean": 2803.706321334504,
+      "sd": 353.9972399700934
+    },
+    {
+      "variable": "MOMAGE",
+      "arm": 0,
+      "n": 2270,
+      "mean": 24.84273127753304,
+      "sd": 3.8131117917515316
+    },
+    {
+      "variable": "MOMAGE",
+      "arm": 1,
+      "n": 2272,
+      "mean": 24.804577464788732,
+      "sd": 3.8687876094290767
+    },
+    {
+      "variable": "MOMPAR",
+      "arm": 0,
+      "n": 2268,
+      "mean": 1.992063492063492,
+      "sd": 1.0454719182826362
+    },
+    {
+      "variable": "MOMPAR",
+      "arm": 1,
+      "n": 2273,
+      "mean": 2.0189177298724155,
+      "sd": 1.0808403701012554
+    }
+  ],
+  "sensitivity": [
+    {
+      "analysis": "exclude_lostfu",
+      "n1": 2149,
+      "n0": 2196,
+      "events1": 123,
+      "events0": 206,
+      "risk1": 0.057235923685435085,
+      "risk0": 0.09380692167577413,
+      "rr": 0.6101460602583274,
+      "rr_ci": [
+        0.491973855879021,
+        0.7567032483537168
+      ],
+      "rd": -0.03657099799033905,
+      "rd_ci": [
+        -0.052228565136117434,
+        -0.02091343084456066
+      ],
+      "pearson_p": 5.216931577762189e-06,
+      "fisher_p": 5.410914582441362e-06
+    },
+    {
+      "analysis": "block_positions_1_2_3",
+      "n1": 1864,
+      "n0": 1592,
+      "events1": 103,
+      "events0": 150,
+      "risk1": 0.05525751072961373,
+      "risk0": 0.0942211055276382,
+      "rr": 0.5864663805436338,
+      "rr_ci": [
+        0.4605350928899546,
+        0.7468330227554143
+      ],
+      "rd": -0.03896359479802446,
+      "rd_ci": [
+        -0.056670024885753734,
+        -0.021257164710295196
+      ],
+      "pearson_p": 1.1689255041368324e-05,
+      "fisher_p": 1.3989512775638099e-05
+    },
+    {
+      "analysis": "block_positions_1_2",
+      "n1": 1262,
+      "n0": 1067,
+      "events1": 74,
+      "events0": 97,
+      "risk1": 0.058637083993660855,
+      "risk0": 0.09090909090909091,
+      "rr": 0.6450079239302694,
+      "rr_ci": [
+        0.4819970013122385,
+        0.8631489839152089
+      ],
+      "rd": -0.03227200691543006,
+      "rd_ci": [
+        -0.053848910251865396,
+        -0.010695103578994718
+      ],
+      "pearson_p": 0.0029291096074191827,
+      "fisher_p": 0.0031453777687590607
+    }
+  ],
+  "discrepancies": [
+    "Mortality: published Table 2 gives p=0.526 and labels Fisher exact; independent two-sided Fisher is 0.7536358, while Pearson is 0.5266352. The label/value pair is not reproduced.",
+    "Omphalitis: published p=0.014 versus uncorrected Pearson 0.0122659. Cause not identified from released software documentation.",
+    "Published culture-positive, LRTI and abscess CI upper endpoints differ from Katz reconstruction at shown precision.",
+    "Published LRTI p=0.002 versus Pearson 0.0015042 is compatible with rounding; some borderline displayed rounding conventions differ.",
+    "LOSTFU versus published flow dispositions, repeated identifiers, missing maternal covariates and ID-prefix/village counts remain unresolved."
+  ]
+}

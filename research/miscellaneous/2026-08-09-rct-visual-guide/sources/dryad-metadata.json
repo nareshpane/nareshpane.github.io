@@ -1,0 +1,328 @@
+{
+  "_links": {
+    "self": {
+      "href": "/api/v2/versions/21098"
+    },
+    "stash:dataset": {
+      "href": "/api/v2/datasets/doi%3A10.5061%2Fdryad.275d4"
+    },
+    "stash:files": {
+      "href": "/api/v2/versions/21098/files"
+    },
+    "stash:download": {
+      "href": "/api/v2/versions/21098/download"
+    },
+    "curies": [
+      {
+        "name": "stash",
+        "href": "https://github.com/datadryad/dryad-app/blob/main/documentation/apis/link_relations.md#{rel}",
+        "templated": "true"
+      }
+    ]
+  },
+  "title": "Data from: A randomized synbiotic trial to prevent sepsis among infants in rural India",
+  "authors": [
+    {
+      "firstName": "Pinaki",
+      "lastName": "Panigrahi",
+      "email": null,
+      "affiliation": "Nebraska Medical Center",
+      "affiliationROR": "https://ror.org/03azxga02",
+      "affiliations": [
+        {
+          "organization": "Nebraska Medical Center",
+          "identifier": "https://ror.org/03azxga02"
+        }
+      ],
+      "orcid": null,
+      "order": null,
+      "roles": []
+    },
+    {
+      "firstName": "Sailajanandan",
+      "lastName": "Parida",
+      "email": null,
+      "affiliation": "Sriram Chandra Bhanja Medical College Hospital",
+      "affiliationROR": "https://ror.org/050b05p79",
+      "affiliations": [
+        {
+          "organization": "Sriram Chandra Bhanja Medical College Hospital",
+          "identifier": "https://ror.org/050b05p79"
+        }
+      ],
+      "orcid": null,
+      "order": null,
+      "roles": []
+    },
+    {
+      "firstName": "Nimai C.",
+      "lastName": "Nanda",
+      "email": null,
+      "affiliation": "Ispat General Hospital",
+      "affiliationROR": "https://ror.org/01ned1220",
+      "affiliations": [
+        {
+          "organization": "Ispat General Hospital",
+          "identifier": "https://ror.org/01ned1220"
+        }
+      ],
+      "orcid": null,
+      "order": null,
+      "roles": []
+    },
+    {
+      "firstName": "Radhanath",
+      "lastName": "Satpathy",
+      "email": null,
+      "affiliation": "Asian Institute of Public Health",
+      "affiliationROR": "https://ror.org/02akg1305",
+      "affiliations": [
+        {
+          "organization": "Asian Institute of Public Health",
+          "identifier": "https://ror.org/02akg1305"
+        }
+      ],
+      "orcid": null,
+      "order": null,
+      "roles": []
+    },
+    {
+      "firstName": "Lingaraj",
+      "lastName": "Pradhan",
+      "email": null,
+      "affiliation": "Department of Pediatrics, Capital Hospital, Bhubaneswar, India",
+      "affiliationROR": null,
+      "affiliations": [
+        {
+          "organization": "Department of Pediatrics, Capital Hospital, Bhubaneswar, India",
+          "identifier": null
+        }
+      ],
+      "orcid": null,
+      "order": null,
+      "roles": []
+    },
+    {
+      "firstName": "Dinesh S.",
+      "lastName": "Chandel",
+      "email": null,
+      "affiliation": "Nebraska Medical Center",
+      "affiliationROR": "https://ror.org/03azxga02",
+      "affiliations": [
+        {
+          "organization": "Nebraska Medical Center",
+          "identifier": "https://ror.org/03azxga02"
+        }
+      ],
+      "orcid": null,
+      "order": null,
+      "roles": []
+    },
+    {
+      "firstName": "Lorena",
+      "lastName": "Baccaglini",
+      "email": null,
+      "affiliation": "Nebraska Medical Center",
+      "affiliationROR": "https://ror.org/03azxga02",
+      "affiliations": [
+        {
+          "organization": "Nebraska Medical Center",
+          "identifier": "https://ror.org/03azxga02"
+        }
+      ],
+      "orcid": null,
+      "order": null,
+      "roles": []
+    },
+    {
+      "firstName": "Arijit",
+      "lastName": "Mohapatra",
+      "email": null,
+      "affiliation": "Asian Institute of Public Health",
+      "affiliationROR": "https://ror.org/02akg1305",
+      "affiliations": [
+        {
+          "organization": "Asian Institute of Public Health",
+          "identifier": "https://ror.org/02akg1305"
+        }
+      ],
+      "orcid": null,
+      "order": null,
+      "roles": []
+    },
+    {
+      "firstName": "Subhranshu S.",
+      "lastName": "Mohapatra",
+      "email": null,
+      "affiliation": "Asian Institute of Public Health",
+      "affiliationROR": "https://ror.org/02akg1305",
+      "affiliations": [
+        {
+          "organization": "Asian Institute of Public Health",
+          "identifier": "https://ror.org/02akg1305"
+        }
+      ],
+      "orcid": null,
+      "order": null,
+      "roles": []
+    },
+    {
+      "firstName": "Pravas R.",
+      "lastName": "Misra",
+      "email": null,
+      "affiliation": "Asian Institute of Public Health",
+      "affiliationROR": "https://ror.org/02akg1305",
+      "affiliations": [
+        {
+          "organization": "Asian Institute of Public Health",
+          "identifier": "https://ror.org/02akg1305"
+        }
+      ],
+      "orcid": null,
+      "order": null,
+      "roles": []
+    },
+    {
+      "firstName": "Rama",
+      "lastName": "Chaudhry",
+      "email": null,
+      "affiliation": "All India Institute of Medical Sciences",
+      "affiliationROR": "https://ror.org/02dwcqs71",
+      "affiliations": [
+        {
+          "organization": "All India Institute of Medical Sciences",
+          "identifier": "https://ror.org/02dwcqs71"
+        }
+      ],
+      "orcid": null,
+      "order": null,
+      "roles": []
+    },
+    {
+      "firstName": "Hegang H.",
+      "lastName": "Chen",
+      "email": null,
+      "affiliation": "University of Maryland, Baltimore County",
+      "affiliationROR": "https://ror.org/02qskvh78",
+      "affiliations": [
+        {
+          "organization": "University of Maryland, Baltimore County",
+          "identifier": "https://ror.org/02qskvh78"
+        }
+      ],
+      "orcid": null,
+      "order": null,
+      "roles": []
+    },
+    {
+      "firstName": "Judith A.",
+      "lastName": "Johnson",
+      "email": null,
+      "affiliation": "University of Florida",
+      "affiliationROR": "https://ror.org/02y3ad647",
+      "affiliations": [
+        {
+          "organization": "University of Florida",
+          "identifier": "https://ror.org/02y3ad647"
+        }
+      ],
+      "orcid": null,
+      "order": null,
+      "roles": []
+    },
+    {
+      "firstName": "J. Glenn",
+      "lastName": "Morris",
+      "email": null,
+      "affiliation": "University of Florida",
+      "affiliationROR": "https://ror.org/02y3ad647",
+      "affiliations": [
+        {
+          "organization": "University of Florida",
+          "identifier": "https://ror.org/02y3ad647"
+        }
+      ],
+      "orcid": null,
+      "order": null,
+      "roles": []
+    },
+    {
+      "firstName": "Nigel",
+      "lastName": "Paneth",
+      "email": null,
+      "affiliation": "Michigan State University",
+      "affiliationROR": "https://ror.org/05hs6h993",
+      "affiliations": [
+        {
+          "organization": "Michigan State University",
+          "identifier": "https://ror.org/05hs6h993"
+        }
+      ],
+      "orcid": null,
+      "order": null,
+      "roles": []
+    },
+    {
+      "firstName": "Ira H.",
+      "lastName": "Gewolb",
+      "email": null,
+      "affiliation": "Michigan State University",
+      "affiliationROR": "https://ror.org/05hs6h993",
+      "affiliations": [
+        {
+          "organization": "Michigan State University",
+          "identifier": "https://ror.org/05hs6h993"
+        }
+      ],
+      "orcid": null,
+      "order": null,
+      "roles": []
+    }
+  ],
+  "abstract": "Sepsis in early infancy results in one million annual deaths worldwide, most of them in developing countries. No efficient means of prevention is currently available. Here we report on a randomized, double-blind, placebo-controlled trial of an oral synbiotic preparation (Lactobacillus plantarum plus fructooligosaccharide) in rural Indian newborns. We enrolled 4,556 infants that were at least 2,000\u2009g at birth, at least 35 weeks of gestation, and with no signs of sepsis or other morbidity, and monitored them for 60 days. We show a significant reduction in the primary outcome (combination of sepsis and death) in the treatment arm (risk ratio 0.60, 95% confidence interval 0.48\u20130.74), with few deaths (4 placebo, 6 synbiotic). Significant reductions were also observed for culture-positive and culture-negative sepsis and lower respiratory tract infections. These findings suggest that a large proportion of neonatal sepsis in developing countries could be effectively prevented using a synbiotic containing L. plantarum ATCC-202195.",
+  "keywords": [
+    "Neonates",
+    "2007 through 2013",
+    "Proteobacteria",
+    "Randomized clinical trial",
+    "Lactobacillus plantarum",
+    "E.coli",
+    "Synbiotics",
+    "Prebiotics",
+    "Bacteroides",
+    "Firmicutes",
+    "Probiotics",
+    "Bifidobacterium infantis",
+    "Sepsis",
+    "Actinobacteria",
+    "Gutflora",
+    "Klebsiella pneumoniae"
+  ],
+  "usageNotes": "<div class=\"o-metadata__file-usage-entry\"><h4 class=\"o-heading__level3-file-title\">RCT Protocol for: A randomized synbiotic trial to prevent sepsis among infants in rural India</h4><div class=\"o-metadata__file-description\">Study protocol: A double-blind, randomized, placebo-controlled study to test the effectiveness of a prophylactic oral administration of a L. plantarum + FOS preparation to community-born neonates in reducing the incidence of neonatal sepsis.</div><div class=\"o-metadata__file-name\">Panigrahi_et_al._RCT_Protocol_Synbiotic_study.pdf</br></div></div><div class=\"o-metadata__file-usage-entry\"><h4 class=\"o-heading__level3-file-title\">Data from: A Randomized Synbiotic Trial to Prevent Sepsis Among Infants in Rural India</h4><div class=\"o-metadata__file-description\">Deidentified SEPSISF clean data set from randomized Synbiotic Trial with all variables used in SAS analysis.                       \r\nReference file: Data dictionary, please click on the appended \"Readme file\" below for study codes used in this analysis.</div><div class=\"o-metadata__file-name\">Panigrahi et al.SEPSSIF.CSV</br></div><div class=\"o-metadata__file-name\"></div></div>",
+  "locations": [
+    {
+      "place": "State of Odisha"
+    },
+    {
+      "place": "India"
+    }
+  ],
+  "relatedWorks": [
+    {
+      "relationship": "primary_article",
+      "identifierType": "DOI",
+      "identifier": "https://doi.org/10.1038/nature23480"
+    }
+  ],
+  "versionNumber": 1,
+  "versionStatus": "submitted",
+  "curationStatus": "Published",
+  "versionChanges": "none",
+  "publicationDate": "2018-07-12",
+  "lastModificationDate": "2020-06-24",
+  "visibility": "public",
+  "sharingLink": "http://datadryad.org/dataset/doi:10.5061/dryad.275d4",
+  "changedFields": [
+    "none"
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "date": "2026-11-04",
+  "route": "Temporary loopback HTTP preview, not deployed",
+  "width_checks": [
+    {
+      "viewport_px": 1366,
+      "chapter_and_paragraph_width_px": 998,
+      "title_px": 49.8736,
+      "page_horizontal_overflow": false,
+      "body_px": 16
+    },
+    {
+      "viewport_px": 1440,
+      "chapter_and_paragraph_width_px": 1057,
+      "title_px": 52.56,
+      "page_horizontal_overflow": false,
+      "body_px": 16
+    },
+    {
+      "viewport_px": 1920,
+      "chapter_and_paragraph_width_px": 1352,
+      "title_px": 56.32,
+      "page_horizontal_overflow": false,
+      "body_px": 16
+    },
+    {
+      "viewport_px": 1024,
+      "chapter_and_paragraph_width_px": 697,
+      "title_px": 37.376,
+      "page_horizontal_overflow": false,
+      "body_px": 16
+    },
+    {
+      "viewport_px": 768,
+      "chapter_and_paragraph_width_px": 697,
+      "title_px": 38.08,
+      "page_horizontal_overflow": false,
+      "body_px": 15
+    },
+    {
+      "viewport_px": 390,
+      "chapter_and_paragraph_width_px": 320,
+      "title_px": 38.08,
+      "page_horizontal_overflow": false,
+      "body_px": 15
+    },
+    {
+      "viewport_px": 360,
+      "chapter_and_paragraph_width_px": 289,
+      "title_px": 32.32,
+      "page_horizontal_overflow": false,
+      "body_px": 15
+    },
+    {
+      "viewport_px": 320,
+      "chapter_and_paragraph_width_px": 249,
+      "title_px": 32.32,
+      "page_horizontal_overflow": false,
+      "body_px": 15
+    }
+  ],
+  "equal_height_grid_failures": 0,
+  "mathjax_errors": 0,
+  "rendered_math_containers": 43,
+  "navigation_links_activated_and_target_position_focus_verified": 68,
+  "technical_disclosures_toggled_and_restored": 11,
+  "contents_groups_toggled": 6,
+  "buttons_tested": 21,
+  "range_controls_tested": 10,
+  "confidence_levels_tested": [
+    0.9,
+    0.95,
+    0.99
+  ],
+  "fresh_monograph_console_errors": 0,
+  "fresh_monograph_console_warnings": 0,
+  "controls": [
+    "assignment reroll/reset and finite 450 ms animation",
+    "potential-outcome reveal/hide and world toggle",
+    "four original effect-measure buttons",
+    "sample size, 200 repeated complete allocations, reroll and reset",
+    "two existing synthetic event sliders linked to 200 icons, table, bars and equations; equal-risk and extreme states; reset",
+    "60 repeated normal estimates, confidence 90/95/99%, per-arm n 50/270/1000, reroll and reset",
+    "400-reassignment sharp-null plus-one p; reset",
+    "planning baseline, sample size, effect and alpha at limits; no NaN/Infinity SVG coordinates; reset",
+    "both missing-outcome sliders at 100%, reset",
+    "desktop contents expand/collapse; mobile opening, link focus/closing and Escape dismissal"
+  ],
+  "illustration_review": "All five new original SVGs and the refined empirical forest visually reviewed; source illustrations were not embedded or traced.",
+  "preview_note": "Direct standalone SVG viewing produced preview-host promise errors; the SVGs contain no script. A fresh monograph tab, including animation and controls, had no console errors or warnings.",
+  "scope": "Only the named HTML and dedicated asset folder edited. No staging, commit or push."
+}

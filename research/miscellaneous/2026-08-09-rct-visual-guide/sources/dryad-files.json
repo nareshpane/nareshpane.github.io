@@ -1,0 +1,118 @@
+{
+  "_links": {
+    "self": {
+      "href": "/api/v2/versions/21098/files"
+    },
+    "first": {
+      "href": "/api/v2/versions/21098/files"
+    },
+    "last": {
+      "href": "/api/v2/versions/21098/files?page=1"
+    }
+  },
+  "count": 3,
+  "total": 3,
+  "_embedded": {
+    "stash:files": [
+      {
+        "_links": {
+          "self": {
+            "href": "/api/v2/files/72041"
+          },
+          "stash:dataset": {
+            "href": "/api/v2/datasets/doi%3A10.5061%2Fdryad.275d4"
+          },
+          "stash:version": {
+            "href": "/api/v2/versions/21098"
+          },
+          "stash:files": {
+            "href": "/api/v2/versions/21098/files"
+          },
+          "stash:download": {
+            "href": "/api/v2/files/72041/download"
+          },
+          "curies": [
+            {
+              "name": "stash",
+              "href": "https://github.com/datadryad/dryad-app/blob/main/documentation/apis/link_relations.md#{rel}",
+              "templated": "true"
+            }
+          ]
+        },
+        "path": "Panigrahi et al.SEPSSIF.CSV",
+        "size": 1335074,
+        "mimeType": "text/csv",
+        "status": "created",
+        "digest": "f57409eb20fb06db78ae14e99843623c",
+        "digestType": "md5",
+        "description": "Deidentified SEPSISF clean data set from randomized Synbiotic Trial with all variables used in SAS analysis.                       \r\nReference file: Data dictionary, please click on the appended \"Readme file\" below for study codes used in this analysis."
+      },
+      {
+        "_links": {
+          "self": {
+            "href": "/api/v2/files/72040"
+          },
+          "stash:dataset": {
+            "href": "/api/v2/datasets/doi%3A10.5061%2Fdryad.275d4"
+          },
+          "stash:version": {
+            "href": "/api/v2/versions/21098"
+          },
+          "stash:files": {
+            "href": "/api/v2/versions/21098/files"
+          },
+          "stash:download": {
+            "href": "/api/v2/files/72040/download"
+          },
+          "curies": [
+            {
+              "name": "stash",
+              "href": "https://github.com/datadryad/dryad-app/blob/main/documentation/apis/link_relations.md#{rel}",
+              "templated": "true"
+            }
+          ]
+        },
+        "path": "Panigrahi_et_al._RCT_Protocol_Synbiotic_study.pdf",
+        "size": 1263484,
+        "mimeType": "application/pdf",
+        "status": "created",
+        "digest": "97593060dd9130f45f80c9922753804a",
+        "digestType": "md5",
+        "description": "Study protocol: A double-blind, randomized, placebo-controlled study to test the effectiveness of a prophylactic oral administration of a L. plantarum + FOS preparation to community-born neonates in reducing the incidence of neonatal sepsis."
+      },
+      {
+        "_links": {
+          "self": {
+            "href": "/api/v2/files/72042"
+          },
+          "stash:dataset": {
+            "href": "/api/v2/datasets/doi%3A10.5061%2Fdryad.275d4"
+          },
+          "stash:version": {
+            "href": "/api/v2/versions/21098"
+          },
+          "stash:files": {
+            "href": "/api/v2/versions/21098/files"
+          },
+          "stash:download": {
+            "href": "/api/v2/files/72042/download"
+          },
+          "curies": [
+            {
+              "name": "stash",
+              "href": "https://github.com/datadryad/dryad-app/blob/main/documentation/apis/link_relations.md#{rel}",
+              "templated": "true"
+            }
+          ]
+        },
+        "path": "README_for_Panigrahi et al.SEPSSIF.DOCX",
+        "size": 24814,
+        "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        "status": "created",
+        "digest": "36e6d4eafb23e3c6679888744c7c6ec0",
+        "digestType": "md5",
+        "description": "Deidentified SEPSISF clean data set from randomized Synbiotic Trial with all variables used in SAS analysis.                       \r\nReference file: Data dictionary, please click on the appended \"Readme file\" below for study codes used in this analysis."
+      }
+    ]
+  }
+}
