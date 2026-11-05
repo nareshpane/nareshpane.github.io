@@ -1,0 +1,153 @@
+{
+  "browser": "Codex in-app browser",
+  "laboratories_initialized": 20,
+  "responsive_widths": [
+    320,
+    390,
+    768,
+    1440
+  ],
+  "horizontal_document_overflow": false,
+  "navigation_groups": 12,
+  "selectors_exercised": 29,
+  "selector_options_exercised": 138,
+  "reading_progress_ui_removed": true,
+  "visible_reduce_motion_control_removed": true,
+  "system_media_query_static_review_only": true,
+  "os_preference_not_changed": true,
+  "clipboard_write_success_signal": true,
+  "os_clipboard_contents_verified": false,
+  "oracle_executed": false,
+  "sequence_players": [
+    {
+      "id": "patient-journey",
+      "count": 6,
+      "last": "Step 6 of 6",
+      "previous": "Step 5 of 6",
+      "keyResult": "Step 2 of 6",
+      "focused": "1",
+      "started": "Pause",
+      "paused": "Play",
+      "active": 1
+    },
+    {
+      "id": "architecture-flow",
+      "count": 6,
+      "last": "Step 6 of 6",
+      "previous": "Step 5 of 6",
+      "keyResult": "Step 2 of 6",
+      "focused": "1",
+      "started": "Pause",
+      "paused": "Play",
+      "active": 1
+    },
+    {
+      "id": "query-execution",
+      "count": 5,
+      "last": "Step 5 of 5",
+      "previous": "Step 4 of 5",
+      "keyResult": "Step 2 of 5",
+      "focused": "1",
+      "started": "Pause",
+      "paused": "Play",
+      "active": 1
+    },
+    {
+      "id": "transaction-execution",
+      "count": 5,
+      "last": "Step 5 of 5",
+      "previous": "Step 4 of 5",
+      "keyResult": "Step 2 of 5",
+      "focused": "1",
+      "started": "Pause",
+      "paused": "Play",
+      "active": 1
+    },
+    {
+      "id": "etl-lab",
+      "count": 6,
+      "last": "Step 6 of 6",
+      "previous": "Step 5 of 6",
+      "keyResult": "Step 2 of 6",
+      "focused": "1",
+      "started": "Pause",
+      "paused": "Play",
+      "active": 1
+    }
+  ],
+  "etl_replay_scenarios": [
+    {
+      "scenario": "valid",
+      "first": "1 received = 1 accepted new + 0 duplicate + 0 rejected",
+      "replay": "2 received = 1 accepted new + 1 duplicate + 0 rejected",
+      "latest": "Latest receipt: duplicate · new fact rows: 0 · facts represented: 1."
+    },
+    {
+      "scenario": "duplicate",
+      "first": "1 received = 0 accepted new + 1 duplicate + 0 rejected",
+      "replay": "2 received = 0 accepted new + 2 duplicate + 0 rejected",
+      "latest": "Latest receipt: duplicate · new fact rows: 0 · facts represented: 1."
+    },
+    {
+      "scenario": "invalid",
+      "first": "1 received = 0 accepted new + 0 duplicate + 1 rejected",
+      "replay": "2 received = 0 accepted new + 0 duplicate + 2 rejected",
+      "latest": "Latest receipt: rejected · new fact rows: 0 · facts represented: 0."
+    }
+  ],
+  "patient_color_states": [
+    {
+      "active": "true",
+      "border": "rgb(124, 157, 189)",
+      "fill": "rgb(220, 233, 246)",
+      "ownBase": "#eaf2fa"
+    },
+    {
+      "active": "true",
+      "border": "rgb(185, 139, 107)",
+      "fill": "rgb(243, 222, 204)",
+      "ownBase": "#faede3"
+    },
+    {
+      "active": "true",
+      "border": "rgb(186, 137, 149)",
+      "fill": "rgb(239, 216, 221)",
+      "ownBase": "#f8ebed"
+    },
+    {
+      "active": "true",
+      "border": "rgb(161, 139, 185)",
+      "fill": "rgb(229, 220, 242)",
+      "ownBase": "#f1ecf8"
+    },
+    {
+      "active": "true",
+      "border": "rgb(177, 160, 109)",
+      "fill": "rgb(240, 229, 199)",
+      "ownBase": "#f8f1df"
+    },
+    {
+      "active": "true",
+      "border": "rgb(147, 155, 177)",
+      "fill": "rgb(224, 227, 236)",
+      "ownBase": "#eff0f4"
+    }
+  ],
+  "new_illustrations_this_pass": 26,
+  "total_illustrations": 50,
+  "total_svg_assets": 52,
+  "first_title_size_change_px": 0,
+  "italic_reduction_px": 8,
+  "chapter_reduction_px": 6.666666666666667,
+  "metadata_increase_pt": 2,
+  "desktop_sql_margin_px": 26,
+  "source_branches": 4,
+  "final_source_arrowheads": 1,
+  "research_index_order": [
+    "Oracle",
+    "Canada CPI",
+    "TAOCP"
+  ],
+  "console_warnings_or_errors": 0,
+  "staged_committed_pushed_or_deployed": false
+}

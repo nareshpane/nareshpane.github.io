@@ -1,0 +1,372 @@
+window.HDN_EXERCISES = [
+  {
+    "id": 1,
+    "title": "Count dispensing lines by province and month",
+    "inputs": [
+      "cb_dtl_ft_pharmacy_dispense",
+      "cb_dtl_dm_date",
+      "cb_dtl_dm_geography"
+    ],
+    "grain": "One province-month",
+    "join_keys": "dispense_date_key = date_key; geography_key = geography_key",
+    "filters": "January through March 2026; dispensing date in Nepal local calendar",
+    "sql": "SELECT g.province, d.month_label, COUNT(*) AS dispensing_lines\nFROM cb_dtl_ft_pharmacy_dispense f\nJOIN cb_dtl_dm_date d ON d.date_key = f.dispense_date_key\nJOIN cb_dtl_dm_geography g ON g.geography_key = f.geography_key\nWHERE d.calendar_date >= DATE '2026-01-01' AND d.calendar_date < DATE '2026-04-01'\nGROUP BY g.province, d.month_label ORDER BY g.province, d.month_label;",
+    "output": [
+      {
+        "province": "Bagmati",
+        "month_label": "2026-01",
+        "dispensing_lines": 3
+      },
+      {
+        "province": "Bagmati",
+        "month_label": "2026-02",
+        "dispensing_lines": 3
+      },
+      {
+        "province": "Bagmati",
+        "month_label": "2026-03",
+        "dispensing_lines": 2
+      },
+      {
+        "province": "Gandaki",
+        "month_label": "2026-01",
+        "dispensing_lines": 3
+      },
+      {
+        "province": "Gandaki",
+        "month_label": "2026-02",
+        "dispensing_lines": 3
+      },
+      {
+        "province": "Gandaki",
+        "month_label": "2026-03",
+        "dispensing_lines": 2
+      }
+    ],
+    "pitfall": "A dispensing line count is not a prescription count, patient count, or population rate.",
+    "interpretation": "Facility geography is recorded at dispensing; it is not necessarily patient residence."
+  },
+  {
+    "id": 2,
+    "title": "Count distinct recipients of product A",
+    "inputs": [
+      "cb_dtl_ft_pharmacy_dispense",
+      "cb_dtl_dm_health_product"
+    ],
+    "grain": "One selected product",
+    "join_keys": "product_key",
+    "filters": "Product code SYN-A; all fixture dates",
+    "sql": "SELECT p.product_code, COUNT(*) AS dispensing_lines,\n       COUNT(DISTINCT f.client_key) AS distinct_clients\nFROM cb_dtl_ft_pharmacy_dispense f\nJOIN cb_dtl_dm_health_product p ON p.product_key = f.product_key\nWHERE p.product_code = 'SYN-A'\nGROUP BY p.product_code;",
+    "output": [
+      {
+        "product_code": "SYN-A",
+        "dispensing_lines": 8,
+        "distinct_clients": 2
+      }
+    ],
+    "pitfall": "Summing monthly distinct counts double counts patients observed in several months.",
+    "interpretation": "Two synthetic clients received product A; dispensing does not establish adherence."
+  },
+  {
+    "id": 3,
+    "title": "Average exact hospitalization duration by facility",
+    "inputs": [
+      "hdn_v_hospital_duration",
+      "cb_dtl_dm_facility"
+    ],
+    "grain": "One facility",
+    "join_keys": "facility_key",
+    "filters": "Completed stays; all fixture dates",
+    "sql": "SELECT f.facility_name, COUNT(*) AS stays,\n       ROUND(AVG(h.computed_los_hours), 6) AS mean_los_hours\nFROM hdn_v_hospital_duration h\nJOIN cb_dtl_dm_facility f ON f.facility_key = h.facility_key\nGROUP BY f.facility_name ORDER BY f.facility_name;",
+    "output": [
+      {
+        "facility_name": "Synthetic Lakeside Hospital",
+        "stays": 2,
+        "mean_los_hours": 51.254167
+      },
+      {
+        "facility_name": "Synthetic Riverside Hospital",
+        "stays": 2,
+        "mean_los_hours": 36.0
+      }
+    ],
+    "pitfall": "A diagnosis bridge join repeats stays; averaging the repeated rows weights multi-diagnosis stays more heavily.",
+    "interpretation": "Duration in hours differs from calendar bed-days; open stays need an explicit censoring rule."
+  },
+  {
+    "id": 4,
+    "title": "Find the next admission within 30 days of prior discharge",
+    "inputs": [
+      "cb_dtl_ft_hospital_stay"
+    ],
+    "grain": "One qualifying subsequent admission",
+    "join_keys": "Partition client_key; order admitted_at, hospital_stay_key",
+    "filters": "Nonnegative gap no greater than 30 elapsed days; sequential prior admission",
+    "sql": "WITH sequenced AS (\n SELECT h.*, LAG(discharged_at) OVER\n  (PARTITION BY client_key ORDER BY admitted_at, hospital_stay_key) AS prior_discharge\n FROM cb_dtl_ft_hospital_stay h\n)\nSELECT client_key, hospital_stay_key,\n ROUND((CAST(SYS_EXTRACT_UTC(admitted_at) AS DATE)\n      - CAST(SYS_EXTRACT_UTC(prior_discharge) AS DATE)), 6) AS gap_days\nFROM sequenced\nWHERE admitted_at >= prior_discharge\n  AND admitted_at <= prior_discharge + NUMTODSINTERVAL(30, 'DAY')\nORDER BY client_key, admitted_at, hospital_stay_key;",
+    "output": [
+      {
+        "client_key": 1,
+        "hospital_stay_key": 3,
+        "gap_days": 17.235764
+      }
+    ],
+    "pitfall": "This simple sequence is insufficient for overlapping stays, transfers, or exclusions for planned readmissions.",
+    "interpretation": "A descriptive subsequent admission flag; not a validated readmission quality indicator."
+  },
+  {
+    "id": 5,
+    "title": "Find clients with repeated emergency attendances",
+    "inputs": [
+      "cb_dtl_ft_emergency_visit"
+    ],
+    "grain": "One client",
+    "join_keys": "client_key",
+    "filters": "At least two attendances during January\u2013March",
+    "sql": "SELECT client_key, COUNT(*) AS emergency_attendances\nFROM cb_dtl_ft_emergency_visit\nWHERE arrival_date_key >= 20260101 AND arrival_date_key < 20260401\nGROUP BY client_key HAVING COUNT(*) >= 2 ORDER BY client_key;",
+    "output": [
+      {
+        "client_key": 2,
+        "emergency_attendances": 2
+      }
+    ],
+    "pitfall": "An emergency attendance followed by admission is still one ED attendance and one separate inpatient stay.",
+    "interpretation": "The fixture identifies one frequent user under this illustrative threshold."
+  },
+  {
+    "id": 6,
+    "title": "Compare recorded pharmacy utilization by geography",
+    "inputs": [
+      "cb_dtl_ft_pharmacy_dispense",
+      "cb_dtl_dm_geography"
+    ],
+    "grain": "One dispensing province",
+    "join_keys": "geography_key",
+    "filters": "All fixture dates; retain unknown cost",
+    "sql": "SELECT g.province, COUNT(*) AS dispensing_lines, SUM(f.quantity) AS units,\n COUNT(f.total_cost) AS recorded_cost_lines, SUM(f.total_cost) AS known_cost_npr\nFROM cb_dtl_ft_pharmacy_dispense f\nJOIN cb_dtl_dm_geography g ON g.geography_key = f.geography_key\nGROUP BY g.province ORDER BY g.province;",
+    "output": [
+      {
+        "province": "Bagmati",
+        "dispensing_lines": 8,
+        "units": 170,
+        "recorded_cost_lines": 8,
+        "known_cost_npr": 800
+      },
+      {
+        "province": "Gandaki",
+        "dispensing_lines": 8,
+        "units": 200,
+        "recorded_cost_lines": 7,
+        "known_cost_npr": 810
+      }
+    ],
+    "pitfall": "Units across different products are not equipotent doses. Missing costs do not mean zero cost.",
+    "interpretation": "Counts describe these samples; no resident population denominator or sampling weights exist."
+  },
+  {
+    "id": 7,
+    "title": "Construct age bands at a fixed reporting date",
+    "inputs": [
+      "cb_dtl_dm_client",
+      "cb_dtl_ft_pharmacy_dispense"
+    ],
+    "grain": "One age band",
+    "join_keys": "client_key",
+    "filters": "Age at 2026-03-31; completed years using Oracle MONTHS_BETWEEN convention",
+    "sql": "WITH ages AS (\n SELECT client_key, FLOOR(MONTHS_BETWEEN(DATE '2026-03-31', birth_date)/12) AS age_years\n FROM cb_dtl_dm_client\n), banded AS (\n SELECT client_key, CASE WHEN age_years < 18 THEN '00-17'\n WHEN age_years < 45 THEN '18-44' WHEN age_years < 65 THEN '45-64'\n ELSE '65+' END AS age_band FROM ages\n)\nSELECT b.age_band, COUNT(*) AS dispensing_lines,\n COUNT(DISTINCT f.client_key) AS distinct_clients\nFROM cb_dtl_ft_pharmacy_dispense f JOIN banded b ON b.client_key = f.client_key\nGROUP BY b.age_band ORDER BY b.age_band;",
+    "output": [
+      {
+        "age_band": "18-44",
+        "dispensing_lines": 8,
+        "distinct_clients": 2
+      },
+      {
+        "age_band": "45-64",
+        "dispensing_lines": 4,
+        "distinct_clients": 1
+      },
+      {
+        "age_band": "65+",
+        "dispensing_lines": 4,
+        "distinct_clients": 1
+      }
+    ],
+    "pitfall": "Age at reporting date differs from age at service; leap-day and source birth-date rules require governance.",
+    "interpretation": "A person-level fixed-age classification is reused consistently across the reporting period."
+  },
+  {
+    "id": 8,
+    "title": "Rank facilities by admission count",
+    "inputs": [
+      "cb_dtl_ft_hospital_stay",
+      "cb_dtl_dm_facility"
+    ],
+    "grain": "One facility",
+    "join_keys": "facility_key",
+    "filters": "All four admissions; count admissions, not discharge or diagnosis rows",
+    "sql": "WITH utilization AS (\n SELECT facility_key, COUNT(*) AS admissions\n FROM cb_dtl_ft_hospital_stay GROUP BY facility_key\n)\nSELECT f.facility_name, u.admissions,\n RANK() OVER (ORDER BY u.admissions DESC) AS utilization_rank\nFROM utilization u JOIN cb_dtl_dm_facility f ON f.facility_key = u.facility_key\nORDER BY utilization_rank, f.facility_name;",
+    "output": [
+      {
+        "facility_name": "Synthetic Lakeside Hospital",
+        "admissions": 2,
+        "utilization_rank": 1
+      },
+      {
+        "facility_name": "Synthetic Riverside Hospital",
+        "admissions": 2,
+        "utilization_rank": 1
+      }
+    ],
+    "pitfall": "Tie breaking inside RANK would remove the intentional tie; use a separate outer sort for display.",
+    "interpretation": "Equal fixture counts reveal nothing about quality, need, capacity, or risk-adjusted performance."
+  },
+  {
+    "id": 9,
+    "title": "Create a client-level longitudinal utilization dataset",
+    "inputs": [
+      "cb_dtl_dm_client",
+      "cb_dtl_ft_pharmacy_dispense",
+      "cb_dtl_ft_hospital_stay",
+      "cb_dtl_ft_emergency_visit",
+      "cb_dtl_ft_physician_visit"
+    ],
+    "grain": "One client",
+    "join_keys": "client_key after separate fact aggregation",
+    "filters": "All fixture dates; include clients with zero encounters in a setting",
+    "sql": "WITH p AS (SELECT client_key, COUNT(*) AS pharmacy_lines\n FROM cb_dtl_ft_pharmacy_dispense GROUP BY client_key),\nh AS (SELECT client_key, COUNT(*) AS admissions\n FROM cb_dtl_ft_hospital_stay GROUP BY client_key),\ne AS (SELECT client_key, COUNT(*) AS ed_visits\n FROM cb_dtl_ft_emergency_visit GROUP BY client_key),\nv AS (SELECT client_key, COUNT(*) AS physician_visits\n FROM cb_dtl_ft_physician_visit GROUP BY client_key)\nSELECT c.client_id, NVL(p.pharmacy_lines,0) AS pharmacy_lines,\n NVL(h.admissions,0) AS admissions, NVL(e.ed_visits,0) AS ed_visits,\n NVL(v.physician_visits,0) AS physician_visits\nFROM cb_dtl_dm_client c LEFT JOIN p ON p.client_key=c.client_key\nLEFT JOIN h ON h.client_key=c.client_key LEFT JOIN e ON e.client_key=c.client_key\nLEFT JOIN v ON v.client_key=c.client_key ORDER BY c.client_id;",
+    "output": [
+      {
+        "client_id": "CLIENT_SYN_001",
+        "pharmacy_lines": 4,
+        "admissions": 2,
+        "ed_visits": 1,
+        "physician_visits": 1
+      },
+      {
+        "client_id": "CLIENT_SYN_002",
+        "pharmacy_lines": 4,
+        "admissions": 1,
+        "ed_visits": 2,
+        "physician_visits": 1
+      },
+      {
+        "client_id": "CLIENT_SYN_003",
+        "pharmacy_lines": 4,
+        "admissions": 1,
+        "ed_visits": 1,
+        "physician_visits": 1
+      },
+      {
+        "client_id": "CLIENT_SYN_004",
+        "pharmacy_lines": 4,
+        "admissions": 0,
+        "ed_visits": 0,
+        "physician_visits": 1
+      }
+    ],
+    "pitfall": "Joining raw facts on client_key multiplies the counts across settings.",
+    "interpretation": "Zero means no row in this complete synthetic extract; in real data it may instead mean missing coverage."
+  },
+  {
+    "id": 10,
+    "title": "Build a balanced province-month panel",
+    "inputs": [
+      "cb_dtl_dm_geography",
+      "cb_dtl_dm_date",
+      "cb_dtl_ft_pharmacy_dispense"
+    ],
+    "grain": "One province-month including zero-use cells",
+    "join_keys": "Cross join geography and distinct months; left join fact summary",
+    "filters": "January\u2013March 2026; panel geography dimension contains one row per illustrated province",
+    "sql": "WITH months AS (SELECT DISTINCT month_label FROM cb_dtl_dm_date\n WHERE calendar_date >= DATE '2026-01-01' AND calendar_date < DATE '2026-04-01'),\ncounts AS (SELECT f.geography_key, d.month_label, COUNT(*) AS dispensing_lines\n FROM cb_dtl_ft_pharmacy_dispense f JOIN cb_dtl_dm_date d ON d.date_key=f.dispense_date_key\n GROUP BY f.geography_key, d.month_label)\nSELECT g.province, m.month_label, NVL(c.dispensing_lines,0) AS dispensing_lines\nFROM cb_dtl_dm_geography g CROSS JOIN months m\nLEFT JOIN counts c ON c.geography_key=g.geography_key AND c.month_label=m.month_label\nORDER BY g.province, m.month_label;",
+    "output": [
+      {
+        "province": "Bagmati",
+        "month_label": "2026-01",
+        "dispensing_lines": 3
+      },
+      {
+        "province": "Bagmati",
+        "month_label": "2026-02",
+        "dispensing_lines": 3
+      },
+      {
+        "province": "Bagmati",
+        "month_label": "2026-03",
+        "dispensing_lines": 2
+      },
+      {
+        "province": "Gandaki",
+        "month_label": "2026-01",
+        "dispensing_lines": 3
+      },
+      {
+        "province": "Gandaki",
+        "month_label": "2026-02",
+        "dispensing_lines": 3
+      },
+      {
+        "province": "Gandaki",
+        "month_label": "2026-03",
+        "dispensing_lines": 2
+      }
+    ],
+    "pitfall": "Do not infer zero utilization for an unreported facility or inactive coverage month; add coverage flags in a real panel.",
+    "interpretation": "The six balanced sample cells illustrate a panel structure, not a causal econometric design."
+  },
+  {
+    "id": 11,
+    "title": "Calculate a rolling three-calendar-month utilization count",
+    "inputs": [
+      "cb_dtl_dm_date",
+      "cb_dtl_ft_pharmacy_dispense"
+    ],
+    "grain": "One calendar month for selected client 1",
+    "join_keys": "month_label after month spine and fact summary",
+    "filters": "Client 1; January\u2013March 2026, no earlier history",
+    "sql": "WITH months AS (SELECT DISTINCT month_label FROM cb_dtl_dm_date),\ncounts AS (SELECT d.month_label, COUNT(*) AS lines\n FROM cb_dtl_ft_pharmacy_dispense f JOIN cb_dtl_dm_date d ON d.date_key=f.dispense_date_key\n WHERE f.client_key=1 GROUP BY d.month_label),\ncomplete_months AS (SELECT m.month_label, NVL(c.lines,0) AS lines\n FROM months m LEFT JOIN counts c ON c.month_label=m.month_label)\nSELECT month_label, lines,\n SUM(lines) OVER (ORDER BY month_label ROWS BETWEEN 2 PRECEDING AND CURRENT ROW)\n AS trailing_three_month_lines\nFROM complete_months ORDER BY month_label;",
+    "output": [
+      {
+        "month_label": "2026-01",
+        "lines": 2,
+        "trailing_three_month_lines": 2
+      },
+      {
+        "month_label": "2026-02",
+        "lines": 1,
+        "trailing_three_month_lines": 3
+      },
+      {
+        "month_label": "2026-03",
+        "lines": 1,
+        "trailing_three_month_lines": 4
+      }
+    ],
+    "pitfall": "ROWS counts months here only because the spine guarantees exactly one row for every consecutive month.",
+    "interpretation": "January and February have incomplete preceding windows; the fixture has no pre-January observation history."
+  },
+  {
+    "id": 12,
+    "title": "Form an illustrative chronic-condition cohort candidate",
+    "inputs": [
+      "cb_dtl_ft_physician_visit",
+      "cb_dtl_ft_hospital_stay",
+      "cb_dtl_br_stay_diagnosis",
+      "cb_dtl_dm_diagnosis",
+      "cb_dtl_ft_pharmacy_dispense",
+      "cb_dtl_dm_health_product"
+    ],
+    "grain": "One candidate client",
+    "join_keys": "diagnosis_key, hospital_stay_key, client_key, product_key",
+    "filters": "At least two distinct local dates with illustrative ICD-10 E11.9 plus SYN-A exposure during fixture dates",
+    "sql": "WITH diagnosis_dates AS (\n SELECT v.client_key, v.visit_date_key AS diagnosis_date_key\n FROM cb_dtl_ft_physician_visit v JOIN cb_dtl_dm_diagnosis d ON d.diagnosis_key=v.diagnosis_key\n WHERE d.code_system='ICD-10' AND d.diagnosis_code='E11.9'\n UNION\n SELECT h.client_key, h.admit_date_key\n FROM cb_dtl_ft_hospital_stay h\n JOIN cb_dtl_br_stay_diagnosis b ON b.hospital_stay_key=h.hospital_stay_key\n JOIN cb_dtl_dm_diagnosis d ON d.diagnosis_key=b.diagnosis_key\n WHERE d.code_system='ICD-10' AND d.diagnosis_code='E11.9'\n), evidence AS (SELECT client_key, COUNT(*) AS diagnosis_dates\n FROM diagnosis_dates GROUP BY client_key HAVING COUNT(*)>=2),\nexposure AS (SELECT f.client_key, COUNT(*) AS exposure_lines\n FROM cb_dtl_ft_pharmacy_dispense f JOIN cb_dtl_dm_health_product p ON p.product_key=f.product_key\n WHERE p.product_code='SYN-A' GROUP BY f.client_key)\nSELECT e.client_key, e.diagnosis_dates, x.exposure_lines\nFROM evidence e JOIN exposure x ON x.client_key=e.client_key ORDER BY e.client_key;",
+    "output": [
+      {
+        "client_key": 1,
+        "diagnosis_dates": 3,
+        "exposure_lines": 4
+      }
+    ],
+    "pitfall": "Codes and medication proxies alone are not a clinically validated disease definition; incidental use and coding errors matter.",
+    "interpretation": "A synthetic case-finding exercise requiring clinical validation, code-version governance, sensitivity analyses, and a defined lookback period."
+  }
+];

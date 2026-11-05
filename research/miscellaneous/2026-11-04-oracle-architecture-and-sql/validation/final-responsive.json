@@ -1,0 +1,50 @@
+[
+  {
+    "client": 305,
+    "metadataFont": "14.1867px",
+    "metadataRows": 4,
+    "metadataTextOverflow": false,
+    "scroll": 305,
+    "sourceArrowheads": 1,
+    "sourceBranches": 4,
+    "subtitleHeight": 116.5,
+    "subtitleLineHeight": "23.296px",
+    "viewport": 320
+  },
+  {
+    "client": 375,
+    "metadataFont": "14.1867px",
+    "metadataRows": 4,
+    "metadataTextOverflow": false,
+    "scroll": 375,
+    "sourceArrowheads": 1,
+    "sourceBranches": 4,
+    "subtitleHeight": 93.20000457763672,
+    "subtitleLineHeight": "23.296px",
+    "viewport": 390
+  },
+  {
+    "client": 753,
+    "metadataFont": "14.1867px",
+    "metadataRows": 4,
+    "metadataTextOverflow": false,
+    "scroll": 753,
+    "sourceArrowheads": 1,
+    "sourceBranches": 4,
+    "subtitleHeight": 48.10000228881836,
+    "subtitleLineHeight": "24.064px",
+    "viewport": 768
+  },
+  {
+    "client": 1425,
+    "metadataFont": "14.1867px",
+    "metadataRows": 4,
+    "metadataTextOverflow": false,
+    "scroll": 1425,
+    "sourceArrowheads": 1,
+    "sourceBranches": 4,
+    "subtitleHeight": 24.05000114440918,
+    "subtitleLineHeight": "24.064px",
+    "viewport": 1440
+  }
+]

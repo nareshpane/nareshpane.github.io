@@ -1,0 +1,28 @@
+{
+  "clients": [
+    "CLIENT_SYN_001",
+    "CLIENT_SYN_002",
+    "CLIENT_SYN_003",
+    "CLIENT_SYN_004"
+  ],
+  "dispensing_source_ids": [
+    "DISPENSE_SYN_001",
+    "DISPENSE_SYN_002",
+    "DISPENSE_SYN_003",
+    "DISPENSE_SYN_004",
+    "DISPENSE_SYN_005",
+    "DISPENSE_SYN_006",
+    "DISPENSE_SYN_007",
+    "DISPENSE_SYN_008",
+    "DISPENSE_SYN_009",
+    "DISPENSE_SYN_010",
+    "DISPENSE_SYN_011",
+    "DISPENSE_SYN_012",
+    "DISPENSE_SYN_013",
+    "DISPENSE_SYN_014",
+    "DISPENSE_SYN_015",
+    "DISPENSE_SYN_016"
+  ],
+  "numeric_keys_and_all_other_fixture_values_unchanged": true,
+  "changed_text_files": 9
+}

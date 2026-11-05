@@ -1,0 +1,35 @@
+{
+  "validation": "Static checks and independent Python calculations passed; Oracle not executed.",
+  "checked_exercises": 12,
+  "checked_tables": 14,
+  "checks": {
+    "pharmacy_rows": 16,
+    "hospital_rows": 4,
+    "diagnosis_bridge_rows": 6,
+    "physician_rows": 4,
+    "emergency_rows": 4,
+    "known_cost_rows": 15,
+    "known_cost_total": 1610,
+    "quantity_total": 370
+  },
+  "costs": {
+    "count": 15,
+    "sum": 1610,
+    "mean": 107.33333333333333,
+    "median": 120,
+    "min": 80,
+    "max": 150,
+    "sample_sd": 24.63060426921489,
+    "sample_variance": 606.6666666666666,
+    "population_variance": 566.2222222222222,
+    "correlation": 0.888382942675124,
+    "slope_cost_on_quantity": 2.7547169811320757,
+    "intercept_cost_on_quantity": 43.0566037735849
+  },
+  "fanout": {
+    "admission_rows": 4,
+    "diagnosis_join_rows": 6,
+    "correct_los_sum": 174.50833333333333,
+    "inflated_los_sum": 277.01666666666665
+  }
+}

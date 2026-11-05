@@ -1,0 +1,19 @@
+{
+  "files": {
+    "sql\\00_run_all.sql": "295f1101f30452a87d544e5bad08d60bed66ff3d37ed890c86438ed85da32945",
+    "sql\\01_schema.sql": "0656ea5ff0e7735a40b0da45a5534dd3140c0dbcb31570f44454504e0bad4180",
+    "sql\\02_seed.sql": "2954886b56fa6babbd424468b9d7c2c0548cf5b6bedb4351666edff68885f25c",
+    "sql\\03_views.sql": "fd83fd90410a3c3fdca094d24b5085682a45bb32e8879a732694279fcfb1a8f7",
+    "sql\\04_transformations.sql": "863263d3324bb3826a303771ec77b9788726adbb1ac320b7835d0b78ce16cde6",
+    "sql\\05_aggregates.sql": "f271796031ed96d2b516a035b951b2a8f208fb0b30e9257c79e9b4a8a673769d",
+    "sql\\06_analytics.sql": "a05c539402434cca586b9dd42b3c14915ba771dad630b05b03ecb5290273b89f",
+    "sql\\07_analyst_exercises.sql": "f714251b311232d018852f83dd8d409588afe710f9373bca03ee290ec4078de4",
+    "data\\exercises.json": "b86be686627f4acddd46ca713584c68f895a25ac4eb855f7bfd5acc27977d159",
+    "data\\sample.json": "a3987ddc9df12adc6f79c54752a09e0c5bdefea1fa602ef04e83e80e381cc8bd",
+    "data\\validation.json": "71510f0f453a3ada4f1d071f0e39f2b4c8f7efe5c951296f7d68c44d9bf9606c",
+    "data\\exercises.js": "0638e57487cf9a416164a4b30f27fb44e2b40442f5f90bf5143451d4e97f96b8",
+    "data\\sample.js": "d2f551b04b26cb7f35fe9671194d15aa56ada7131fcb5e62f61ee6957e292986",
+    "css\\monograph.css": "7bb2109ff45c361e4ebad6f7817ef96e1030cb389c2a5c8b0c18e0294084bb05"
+  },
+  "static_sql": "3261b21efe909d4ceda4abf237475b0be9f58f4470914b6bf232f412111296b8"
+}

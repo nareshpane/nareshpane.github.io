@@ -1,0 +1,75 @@
+{
+  "chapters": [
+    {
+      "id": "journey",
+      "px": "37.32px"
+    },
+    {
+      "id": "relational",
+      "px": "40.32px"
+    },
+    {
+      "id": "keys",
+      "px": "35.32px"
+    },
+    {
+      "id": "architecture",
+      "px": "37.32px"
+    },
+    {
+      "id": "dimensional",
+      "px": "37.32px"
+    },
+    {
+      "id": "normalization-design",
+      "px": "36px"
+    },
+    {
+      "id": "oracle",
+      "px": "40.32px"
+    },
+    {
+      "id": "engineering",
+      "px": "40.32px"
+    },
+    {
+      "id": "sql-foundations",
+      "px": "40.32px"
+    },
+    {
+      "id": "aggregates",
+      "px": "40.32px"
+    },
+    {
+      "id": "analytics",
+      "px": "40.32px"
+    },
+    {
+      "id": "workflows",
+      "px": "40.32px"
+    },
+    {
+      "id": "temporal",
+      "px": "40.32px"
+    },
+    {
+      "id": "canada",
+      "px": "40.32px"
+    },
+    {
+      "id": "governance",
+      "px": "40.32px"
+    },
+    {
+      "id": "reproducibility",
+      "px": "40.32px"
+    },
+    {
+      "id": "references",
+      "px": "40.32px"
+    }
+  ],
+  "codeMargin": "16px",
+  "h1": "42.96px",
+  "italic": "42.96px"
+}

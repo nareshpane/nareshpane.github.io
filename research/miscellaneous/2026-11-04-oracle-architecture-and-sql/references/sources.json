@@ -1,0 +1,429 @@
+{
+  "retrievedAtUtc": "2026-11-05T00:22:25Z",
+  "retrievalNote": "Public authoritative documentation checked on 5 November 2026 UTC (4 November in America/Los_Angeles). No confidential schemas were accessed. Oracle 19c is the executable target; the requested 18c and 21c references are retained as supplemental reading.",
+  "sources": [
+    {
+      "id": "oracle19-sql",
+      "organization": "Oracle",
+      "title": "Oracle Database 19c SQL Language Reference",
+      "url": "https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/",
+      "version": "19c",
+      "category": "technical reference",
+      "supports": "Primary SQL documentation collection; individual chapters below were inspected."
+    },
+    {
+      "id": "oracle19-concepts",
+      "organization": "Oracle",
+      "title": "Oracle Database 19c Database Concepts",
+      "url": "https://docs.oracle.com/en/database/oracle/oracle-database/19/cncpt/",
+      "version": "19c",
+      "category": "technical reference",
+      "supports": "Primary concepts collection; individual architecture chapters below were inspected."
+    },
+    {
+      "id": "oracle19-warehouse",
+      "organization": "Oracle",
+      "title": "Oracle Database 19c Data Warehousing Guide",
+      "url": "https://docs.oracle.com/en/database/oracle/oracle-database/19/dwhsg/",
+      "version": "19c",
+      "category": "technical reference",
+      "supports": "Primary warehouse documentation collection; logical-design chapter below was inspected."
+    },
+    {
+      "id": "oracle19-constraints",
+      "organization": "Oracle",
+      "title": "Integrity constraints",
+      "url": "https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/constraint.html",
+      "version": "19c",
+      "category": "technical reference",
+      "supports": "Primary, foreign, unique, NOT NULL and CHECK behavior, including composite uniqueness and NULL handling."
+    },
+    {
+      "id": "oracle19-aggregate",
+      "organization": "Oracle",
+      "title": "Aggregate Functions",
+      "url": "https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/Aggregate-Functions.html",
+      "version": "19c",
+      "category": "technical reference",
+      "supports": "Grouped output, HAVING and aggregate NULL behavior."
+    },
+    {
+      "id": "oracle19-analytic",
+      "organization": "Oracle",
+      "title": "Analytic Functions",
+      "url": "https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/Analytic-Functions.html",
+      "version": "19c",
+      "category": "technical reference",
+      "supports": "Window semantics, processing order, deterministic ordering and default RANGE frame."
+    },
+    {
+      "id": "oracle18-aggregate-requested",
+      "organization": "Oracle",
+      "title": "Aggregate Functions — requested supplementary 18c page",
+      "url": "https://docs.oracle.com/en/database/oracle/oracle-database/18/sqlrf/Aggregate-Functions.html",
+      "version": "18c",
+      "category": "requested supplemental reference",
+      "supports": "Preserved user-requested older aggregate reference; executable examples use 19c semantics."
+    },
+    {
+      "id": "oracle21-analytic-requested",
+      "organization": "Oracle",
+      "title": "Analytic Functions — requested supplementary 21c page",
+      "url": "https://docs.oracle.com/en/database/oracle/oracle-database/21/sqlrf/Analytic-Functions.html",
+      "version": "21c",
+      "category": "requested supplemental reference",
+      "supports": "Preserved user-requested supplementary analytic reference; 21c postdates the 19c target."
+    },
+    {
+      "id": "oracle19-count",
+      "organization": "Oracle",
+      "title": "COUNT",
+      "url": "https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/COUNT.html",
+      "version": "19c",
+      "category": "technical reference",
+      "supports": "COUNT(*), COUNT(expression), DISTINCT and analytic restrictions."
+    },
+    {
+      "id": "oracle19-variance",
+      "organization": "Oracle",
+      "title": "VARIANCE",
+      "url": "https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/VARIANCE.html",
+      "version": "19c",
+      "category": "technical reference",
+      "supports": "Singleton result and relationship to sample variance."
+    },
+    {
+      "id": "oracle19-stddev",
+      "organization": "Oracle",
+      "title": "STDDEV",
+      "url": "https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/STDDEV.html",
+      "version": "19c",
+      "category": "technical reference",
+      "supports": "Sample standard deviation and singleton difference from STDDEV_SAMP."
+    },
+    {
+      "id": "oracle19-instance",
+      "organization": "Oracle",
+      "title": "Oracle Database Instance",
+      "url": "https://docs.oracle.com/en/database/oracle/oracle-database/19/cncpt/oracle-database-instance.html",
+      "version": "19c",
+      "category": "technical reference",
+      "supports": "Instance, database files, single-instance and RAC relationship."
+    },
+    {
+      "id": "oracle19-memory",
+      "organization": "Oracle",
+      "title": "Memory Architecture",
+      "url": "https://docs.oracle.com/en/database/oracle/oracle-database/19/cncpt/memory-architecture.html",
+      "version": "19c",
+      "category": "technical reference",
+      "supports": "Shared SGA, process-private PGA and session UGA."
+    },
+    {
+      "id": "oracle19-processes",
+      "organization": "Oracle",
+      "title": "Process Architecture",
+      "url": "https://docs.oracle.com/en/database/oracle/oracle-database/19/cncpt/process-architecture.html",
+      "version": "19c",
+      "category": "technical reference",
+      "supports": "Server/background processes; DBW, LGWR, CKPT, SMON, PMON group and LREG."
+    },
+    {
+      "id": "oracle19-introduction",
+      "organization": "Oracle",
+      "title": "Introduction to Oracle Database",
+      "url": "https://docs.oracle.com/en/database/oracle/oracle-database/19/cncpt/introduction-to-oracle-database.html",
+      "version": "19c",
+      "category": "technical reference",
+      "supports": "Relational model, schemas, CDB/PDB and non-CDB architecture."
+    },
+    {
+      "id": "oracle19-storage",
+      "organization": "Oracle",
+      "title": "Physical Storage Structures",
+      "url": "https://docs.oracle.com/en/database/oracle/oracle-database/19/cncpt/physical-storage-structures.html",
+      "version": "19c",
+      "category": "technical reference",
+      "supports": "Data files, control files, redo logs and independence from logical objects."
+    },
+    {
+      "id": "oracle19-sql-processing",
+      "organization": "Oracle",
+      "title": "SQL",
+      "url": "https://docs.oracle.com/en/database/oracle/oracle-database/19/cncpt/sql.html",
+      "version": "19c",
+      "category": "technical reference",
+      "supports": "Declarative SQL, optimization and SQL processing phases."
+    },
+    {
+      "id": "oracle19-logical-design",
+      "organization": "Oracle",
+      "title": "Data Warehousing Logical Design",
+      "url": "https://docs.oracle.com/en/database/oracle/oracle-database/19/dwhsg/data-warehouse-logical-design.html",
+      "version": "19c",
+      "category": "technical reference",
+      "supports": "3NF, star/snowflake models and slowly changing dimension Types 1, 2 and 3."
+    },
+    {
+      "id": "oracle19-merge",
+      "organization": "Oracle",
+      "title": "MERGE",
+      "url": "https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/MERGE.html",
+      "version": "19c",
+      "category": "technical reference",
+      "supports": "Conditional insert/update and deterministic target-row restrictions."
+    },
+    {
+      "id": "oracle19-datetime",
+      "organization": "Oracle",
+      "title": "Datetime Data Types and Time Zone Support",
+      "url": "https://docs.oracle.com/en/database/oracle/oracle-database/19/nlspg/datetime-data-types-and-time-zone-support.html",
+      "version": "19c",
+      "category": "technical reference",
+      "supports": "DATE, TIMESTAMP, zoned timestamps, intervals and time-zone handling."
+    },
+    {
+      "id": "oracle19-data-types",
+      "organization": "Oracle",
+      "title": "Data Types",
+      "url": "https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/Data-Types.html",
+      "version": "19c",
+      "category": "technical reference",
+      "supports": "DATE time components, timestamp precision, arithmetic and session rendering of local-time-zone timestamps."
+    },
+    {
+      "id": "oracle19-pruning",
+      "organization": "Oracle",
+      "title": "Partition Pruning",
+      "url": "https://docs.oracle.com/en/database/oracle/oracle-database/19/vldbg/partition-pruning.html",
+      "version": "19c",
+      "category": "technical reference",
+      "supports": "Static/dynamic partition pruning and PSTART/PSTOP execution-plan evidence."
+    },
+    {
+      "id": "oracle19-grant",
+      "organization": "Oracle",
+      "title": "GRANT",
+      "url": "https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/GRANT.html",
+      "version": "19c",
+      "category": "technical reference",
+      "supports": "Object privileges, system privileges, roles and authority to grant."
+    },
+    {
+      "id": "bc-healthideas",
+      "organization": "British Columbia Ministry of Health",
+      "title": "Direct Access to Ministry of Health Data Warehouse",
+      "url": "https://www2.gov.bc.ca/gov/content/health/conducting-health-research-evaluation/data-access-health-data-central/health-sector-partner-access-to-data/third-party-access",
+      "category": "documented Canadian practice",
+      "supports": "Controlled direct access to Healthideas; separate academic-research disclosure route through Population Data B.C.",
+      "retrievalNote": "Direct fetch initially returned 502; official indexed page was retrieved through search. Page states updated 26 August 2025."
+    },
+    {
+      "id": "bc-healthideas-standards",
+      "organization": "British Columbia Ministry of Health",
+      "title": "Healthideas Data Warehouse Standards for Third Party Users",
+      "url": "https://www2.gov.bc.ca/assets/gov/health/conducting-health-research/data-access/data-warehouse-standards-third-parties.pdf",
+      "category": "documented Canadian practice",
+      "supports": "Standards for third-party protection of sensitive and personal information; information-sharing agreements."
+    },
+    {
+      "id": "ices-data",
+      "organization": "ICES",
+      "title": "About ICES Data",
+      "url": "https://www.ices.on.ca/about-ices-data/",
+      "category": "documented Canadian practice",
+      "supports": "Record-level coded linkable datasets and longitudinal Ontario administrative health records; integration of registries, surveys and research-specific data."
+    },
+    {
+      "id": "alberta-health-data",
+      "organization": "Government of Alberta",
+      "title": "Health data access",
+      "url": "https://www.alberta.ca/health-research",
+      "category": "documented Canadian practice",
+      "supports": "Administrative data access process; dispensing PIN, ambulatory/ED, inpatient, registry and practitioner-claim assets. PIN community dispenses exclude financial information."
+    },
+    {
+      "id": "cihi-dad",
+      "organization": "Canadian Institute for Health Information",
+      "title": "Discharge Abstract Database (DAD) metadata",
+      "url": "https://www.cihi.ca/en/discharge-abstract-database-dad-metadata",
+      "category": "documented Canadian practice",
+      "supports": "Hospital discharge/separation data, administrative/clinical/demographic elements, coverage and ICD-10-CA/CCI classifications."
+    },
+    {
+      "id": "cihi-nacrs",
+      "organization": "Canadian Institute for Health Information",
+      "title": "National Ambulatory Care Reporting System (NACRS) metadata",
+      "url": "https://www.cihi.ca/en/national-ambulatory-care-reporting-system-nacrs-metadata",
+      "requestedUrl": "https://www.cihi.ca/en/national-ambulatory-care-reporting-system-metadata-nacrs",
+      "category": "documented Canadian practice",
+      "supports": "ED, day surgery and outpatient/community-based clinic visits, with jurisdiction-dependent coverage and submission levels."
+    },
+    {
+      "id": "iana-nepal-time",
+      "organization": "Internet Assigned Numbers Authority",
+      "title": "Time Zone Database — Asia source data",
+      "url": "https://data.iana.org/time-zones/tzdb/asia",
+      "category": "time-zone reference",
+      "supports": "Asia/Kathmandu has offset +05:45 from 1986; historical offsets differ."
+    },
+    {
+      "id": "oracle19-normalization-1",
+      "organization": "Oracle",
+      "title": "Data Integrity",
+      "url": "https://docs.oracle.com/en/database/oracle/oracle-database/19/cncpt/data-integrity.html",
+      "version": "19c",
+      "category": "normalization refinement reference",
+      "supports": "Normalization, physical-design trade-offs, or materialized-view prerequisites and refresh; see normalization-notes.md.",
+      "checkedOnLocalDate": "2026-11-04"
+    },
+    {
+      "id": "oracle19-normalization-2",
+      "organization": "Oracle",
+      "title": "Dimensions",
+      "url": "https://docs.oracle.com/en/database/oracle/oracle-database/19/dwhsg/dimensions.html",
+      "version": "19c",
+      "category": "normalization refinement reference",
+      "supports": "Normalization, physical-design trade-offs, or materialized-view prerequisites and refresh; see normalization-notes.md.",
+      "checkedOnLocalDate": "2026-11-04"
+    },
+    {
+      "id": "oracle19-normalization-3",
+      "organization": "Oracle",
+      "title": "Joins",
+      "url": "https://docs.oracle.com/en/database/oracle/oracle-database/19/tgsql/joins.html",
+      "version": "19c",
+      "category": "normalization refinement reference",
+      "supports": "Normalization, physical-design trade-offs, or materialized-view prerequisites and refresh; see normalization-notes.md.",
+      "checkedOnLocalDate": "2026-11-04"
+    },
+    {
+      "id": "oracle19-normalization-4",
+      "organization": "Oracle",
+      "title": "Optimizer Access Paths",
+      "url": "https://docs.oracle.com/en/database/oracle/oracle-database/19/tgsql/optimizer-access-paths.html",
+      "version": "19c",
+      "category": "normalization refinement reference",
+      "supports": "Normalization, physical-design trade-offs, or materialized-view prerequisites and refresh; see normalization-notes.md.",
+      "checkedOnLocalDate": "2026-11-04"
+    },
+    {
+      "id": "oracle19-normalization-5",
+      "organization": "Oracle",
+      "title": "Optimizer Statistics Concepts",
+      "url": "https://docs.oracle.com/en/database/oracle/oracle-database/19/tgsql/optimizer-statistics-concepts.html",
+      "version": "19c",
+      "category": "normalization refinement reference",
+      "supports": "Normalization, physical-design trade-offs, or materialized-view prerequisites and refresh; see normalization-notes.md.",
+      "checkedOnLocalDate": "2026-11-04"
+    },
+    {
+      "id": "oracle19-normalization-6",
+      "organization": "Oracle",
+      "title": "Partitions, Views, and Other Schema Objects",
+      "url": "https://docs.oracle.com/en/database/oracle/oracle-database/19/cncpt/partitions-views-and-other-schema-objects.html",
+      "version": "19c",
+      "category": "normalization refinement reference",
+      "supports": "Normalization, physical-design trade-offs, or materialized-view prerequisites and refresh; see normalization-notes.md.",
+      "checkedOnLocalDate": "2026-11-04"
+    },
+    {
+      "id": "oracle19-normalization-7",
+      "organization": "Oracle",
+      "title": "CREATE MATERIALIZED VIEW",
+      "url": "https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/CREATE-MATERIALIZED-VIEW.html",
+      "version": "19c",
+      "category": "normalization refinement reference",
+      "supports": "Normalization, physical-design trade-offs, or materialized-view prerequisites and refresh; see normalization-notes.md.",
+      "checkedOnLocalDate": "2026-11-04"
+    },
+    {
+      "id": "oracle19-normalization-8",
+      "organization": "Oracle",
+      "title": "Basic Materialized Views",
+      "url": "https://docs.oracle.com/en/database/oracle/oracle-database/19/dwhsg/basic-materialized-views.html",
+      "version": "19c",
+      "category": "normalization refinement reference",
+      "supports": "Normalization, physical-design trade-offs, or materialized-view prerequisites and refresh; see normalization-notes.md.",
+      "checkedOnLocalDate": "2026-11-04"
+    },
+    {
+      "id": "oracle19-normalization-9",
+      "organization": "Oracle",
+      "title": "DBMS_MVIEW",
+      "url": "https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/DBMS_MVIEW.html",
+      "version": "19c",
+      "category": "normalization refinement reference",
+      "supports": "Normalization, physical-design trade-offs, or materialized-view prerequisites and refresh; see normalization-notes.md.",
+      "checkedOnLocalDate": "2026-11-04"
+    },
+    {
+      "id": "oracle19-refinement-40",
+      "organization": "Oracle",
+      "title": "Database Reference — Background Processes",
+      "url": "https://docs.oracle.com/en/database/oracle/oracle-database/19/refrn/background-processes.html",
+      "version": "19c",
+      "category": "technical reference",
+      "supports": "Instance/process responsibilities, SQL processing, commit acknowledgment or ETL; see oracle-refinement-notes.md.",
+      "checkedOnLocalDate": "2026-11-04"
+    },
+    {
+      "id": "oracle19-refinement-41",
+      "organization": "Oracle",
+      "title": "SQL Language Reference — COMMIT",
+      "url": "https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/COMMIT.html",
+      "version": "19c",
+      "category": "technical reference",
+      "supports": "Instance/process responsibilities, SQL processing, commit acknowledgment or ETL; see oracle-refinement-notes.md.",
+      "checkedOnLocalDate": "2026-11-04"
+    },
+    {
+      "id": "oracle19-refinement-42",
+      "organization": "Oracle",
+      "title": "SQL Tuning Guide — SQL Processing",
+      "url": "https://docs.oracle.com/en/database/oracle/oracle-database/19/tgsql/sql-processing.html",
+      "version": "19c",
+      "category": "technical reference",
+      "supports": "Instance/process responsibilities, SQL processing, commit acknowledgment or ETL; see oracle-refinement-notes.md.",
+      "checkedOnLocalDate": "2026-11-04"
+    },
+    {
+      "id": "oracle19-refinement-43",
+      "organization": "Oracle",
+      "title": "Data Warehousing Guide — ETL Overview",
+      "url": "https://docs.oracle.com/en/database/oracle/oracle-database/19/dwhsg/etl-overview.html",
+      "version": "19c",
+      "category": "technical reference",
+      "supports": "Instance/process responsibilities, SQL processing, commit acknowledgment or ETL; see oracle-refinement-notes.md.",
+      "checkedOnLocalDate": "2026-11-04"
+    },
+    {
+      "id": "oracle19-refinement-44",
+      "organization": "Oracle",
+      "title": "VLDB Guide — Parallel Execution Tips",
+      "url": "https://docs.oracle.com/en/database/oracle/oracle-database/19/vldbg/parallel-exec-tips.html",
+      "version": "19c",
+      "category": "technical reference",
+      "supports": "Instance/process responsibilities, SQL processing, commit acknowledgment or ETL; see oracle-refinement-notes.md.",
+      "checkedOnLocalDate": "2026-11-04"
+    },
+    {
+      "id": "oracle19-refinement-45",
+      "organization": "Oracle",
+      "title": "Database Concepts — Transactions",
+      "url": "https://docs.oracle.com/en/database/oracle/oracle-database/19/cncpt/transactions.html",
+      "version": "19c",
+      "category": "technical reference",
+      "supports": "Instance/process responsibilities, SQL processing, commit acknowledgment or ETL; see oracle-refinement-notes.md.",
+      "checkedOnLocalDate": "2026-11-04"
+    }
+  ],
+  "boundaries": [
+    "HealthDataNepal and Pharma-Nepal are fictional educational proposals, not documented Nepal infrastructure.",
+    "Canadian sources establish public institutional practices; they do not establish a common Oracle platform, identical schemas or confidential technical architecture.",
+    "All patient, facility, provider and transaction records in the teaching dataset are synthetic.",
+    "No legal-compliance certification is asserted. Nepal-specific production policy requires qualified legal and institutional review.",
+    "Documentation review and browser simulations do not establish execution against an Oracle instance."
+  ],
+  "refinementNote": "Additional Oracle 19c primary references were checked for the normalization/denormalization refinement; original source URLs are preserved."
+}

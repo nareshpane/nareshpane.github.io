@@ -1,0 +1,22 @@
+{
+  "unchanged_fixture_and_sql_files": {
+    "sql\\00_run_all.sql": true,
+    "sql\\01_schema.sql": true,
+    "sql\\02_seed.sql": true,
+    "sql\\03_views.sql": true,
+    "sql\\04_transformations.sql": true,
+    "sql\\05_aggregates.sql": true,
+    "sql\\06_analytics.sql": true,
+    "sql\\07_analyst_exercises.sql": true,
+    "data\\exercises.json": true,
+    "data\\sample.json": true,
+    "data\\validation.json": true,
+    "data\\exercises.js": true,
+    "data\\sample.js": true
+  },
+  "static_sql_blocks_unchanged": true,
+  "base_css_change": "Removed only unused progress and checkbox presentation rules. System reduced-motion CSS retained.",
+  "svg_xml_valid": 52,
+  "illustration_count": 50,
+  "oracle_executed": false
+}
