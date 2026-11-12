@@ -26,8 +26,8 @@ Start-Process '..\2026-10-17-black-scholes-model-empirical-validation.html'
 No raw inputs are required to view the computed article. The revision includes exactly 20 limited explanatory source rows; see REVISION.md for licensing scope and the supplement-only reproduction command. For an optional local HTTP server:
 
 ```powershell
-python -m http.server 8001 --bind 127.0.0.1 --directory ../..
-# Then open http://127.0.0.1:8001/research/2026-10-17-black-scholes-model-empirical-validation.html
+python -m http.server 8001 --bind 127.0.0.1 --directory ../../..
+# Then open http://127.0.0.1:8001/research/finance/2026-10-17-black-scholes-model-empirical-validation.html
 ```
 
 ## Reproduce
