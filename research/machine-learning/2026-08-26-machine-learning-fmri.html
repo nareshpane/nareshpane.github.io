@@ -29,7 +29,7 @@
   </style>
   <script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']]}};</script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-  <script defer src="machine-learning-fmri/page.js"></script>
+  <script defer src="2026-08-26-machine-learning-fmri/page.js"></script>
 </head>
 <body>
 <div class="page"><main class="card">
@@ -48,7 +48,7 @@
   <p class="lead">A machine-learning model never sees a brain as a person does. It receives numbers. This page follows one resting-state scan as three-dimensional measurements become regional time series, correlations, a graph, a model score, and finally an evaluated prediction.</p>
 
   <figure class="hero-figure">
-    <img src="machine-learning-fmri/mni152_brain_views.png" alt="MNI152 population-average anatomical brain template shown in sagittal side, coronal front, and axial top views">
+    <img src="2026-08-26-machine-learning-fmri/mni152_brain_views.png" alt="MNI152 population-average anatomical brain template shown in sagittal side, coronal front, and axial top views">
     <figcaption class="caption">A real MNI152 population-average anatomical reference distributed with Nilearn, rendered by this project's Python script. These are three views through one 3D reference, not three different brains and not an ABIDE participant.</figcaption>
   </figure>
 
@@ -128,7 +128,7 @@
       <svg class="parcel-brain" viewBox="0 0 820 330" role="img" aria-labelledby="parcelTitle parcelDesc"><title id="parcelTitle">Pedagogical parcellation of a brain outline</title><desc id="parcelDesc">A stylized side view divided into twelve distinctly colored and numbered regions.</desc><defs><clipPath id="brainClip"><path d="M102 190C80 90 198 35 343 47c132-43 321 18 357 121 29 84-46 130-151 121-81 19-168 8-226-27-88 24-198-4-221-72Z"/></clipPath></defs><path d="M102 190C80 90 198 35 343 47c132-43 321 18 357 121 29 84-46 130-151 121-81 19-168 8-226-27-88 24-198-4-221-72Z" fill="#d6d2c9" stroke="#343434" stroke-width="5"/><g clip-path="url(#brainClip)" id="parcelRegions"></g><g id="parcelLabels"></g></svg>
       <p class="caption">The drawing establishes the operation: each spatial location receives a region label. A real atlas uses reproducible boundaries and metadata.</p>
     </div>
-    <figure class="figure"><img src="machine-learning-fmri/schaefer_atlas_views.png" alt="Schaefer 2018 atlas with 100 cortical parcels overlaid on sagittal, coronal, and axial MNI152 anatomical views"><figcaption class="caption"><strong>Real atlas-based view.</strong> The Schaefer 2018 cortical parcellation at 100 parcels and seven-network ordering, fetched through Nilearn and rendered over the MNI152 reference. The color overlay marks labels, not activation. Real atlases may contain tens to thousands of regions and do not all partition the same structures.</figcaption></figure>
+    <figure class="figure"><img src="2026-08-26-machine-learning-fmri/schaefer_atlas_views.png" alt="Schaefer 2018 atlas with 100 cortical parcels overlaid on sagittal, coronal, and axial MNI152 anatomical views"><figcaption class="caption"><strong>Real atlas-based view.</strong> The Schaefer 2018 cortical parcellation at 100 parcels and seven-network ordering, fetched through Nilearn and rendered over the MNI152 reference. The color overlay marks labels, not activation. Real atlases may contain tens to thousands of regions and do not all partition the same structures.</figcaption></figure>
   </section>
 
   <section class="chapter" id="regional-signals">
@@ -152,7 +152,7 @@
     <div class="stage-label">Building connectivity · 8</div><h2>All region pairs form a connectivity matrix</h2>
     <p>With $R$ regions, compute one correlation for every pair and place it at row $i$, column $j$. The diagonal is $1$ because each signal perfectly correlates with itself. Pearson correlation is symmetric, so $C_{ij}=C_{ji}$. A matrix stores statistical functional connectivity; it is not a map of physical axons.</p>
     <div class="visual"><header><div><h3>A six-region matrix you can inspect cell by cell</h3><p class="small">Hover, focus, or tap a cell. Color and printed value both carry the sign.</p></div><span class="tag">Synthetic values</span></header><div class="matrix-wrap"><div id="matrixGrid" class="matrix-grid" role="grid" aria-label="Six by six interactive functional-connectivity matrix"></div><div id="matrixDetail" class="matrix-detail" aria-live="polite"><strong>Select a cell.</strong><br>The two region names and correlation will appear here.</div></div><div class="legend"><span><i class="swatch" style="background:#b2182b"></i>positive</span><span><i class="swatch" style="background:#f7f4ee;border:1px solid #999"></i>near zero</span><span><i class="swatch" style="background:#2166ac"></i>negative</span></div></div>
-    <figure class="figure"><img src="machine-learning-fmri/larger_connectivity_matrix.png" alt="Synthetic 48-region symmetric connectivity matrix with six blocks and values from negative one in blue to positive one in red"><figcaption class="caption">Transition to scale: 48 structured synthetic regional signals produce this larger matrix. Repeated blocks can appear when groups of regions share signal structure. Atlas ordering affects which visual blocks sit next to one another.</figcaption></figure>
+    <figure class="figure"><img src="2026-08-26-machine-learning-fmri/larger_connectivity_matrix.png" alt="Synthetic 48-region symmetric connectivity matrix with six blocks and values from negative one in blue to positive one in red"><figcaption class="caption">Transition to scale: 48 structured synthetic regional signals produce this larger matrix. Repeated blocks can appear when groups of regions share signal structure. Atlas ordering affects which visual blocks sit next to one another.</figcaption></figure>
   </section>
 
   <section class="chapter" id="graph">
@@ -225,7 +225,7 @@
     <div class="table-wrap"><table class="metrics-table"><thead><tr><th>Metric</th><th>Question</th><th>Arithmetic</th><th>Value</th></tr></thead><tbody><tr><td>Accuracy</td><td>What fraction of all labels were correct?</td><td>$(36+45)/100$</td><td>0.81</td></tr><tr><td>Sensitivity / recall</td><td>Of 40 Group A labels, how many were found?</td><td>$36/(36+4)$</td><td>0.90</td></tr><tr><td>Specificity</td><td>Of 60 controls, how many were found?</td><td>$45/(45+15)$</td><td>0.75</td></tr><tr><td>Precision</td><td>Of 51 Group A predictions, how many were correct?</td><td>$36/(36+15)$</td><td>0.706</td></tr><tr><td>False-positive rate</td><td>Of controls, how many were labeled Group A?</td><td>$15/(45+15)$</td><td>0.25</td></tr></tbody></table></div>
     <div class="visual"><header><div><h3>Confusion-matrix calculator</h3><p class="small">Change integer counts; metrics update from the same four cells.</p></div><span class="tag">Interactive</span></header><div class="calculator"><label>True positive<input id="tpInput" type="number" min="0" value="36"></label><label>False negative<input id="fnInput" type="number" min="0" value="4"></label><label>True negative<input id="tnInput" type="number" min="0" value="45"></label><label>False positive<input id="fpInput" type="number" min="0" value="15"></label></div><p id="metricReadout" class="panel" aria-live="polite"></p></div>
     <p>A ROC curve varies the decision threshold and plots sensitivity against false-positive rate. AUC is the probability that a randomly selected positive example receives a higher score than a randomly selected negative example, under the evaluated sample. It does not specify calibration, clinical utility, or performance at a chosen threshold.</p>
-    <figure class="figure"><img src="machine-learning-fmri/synthetic_evaluation_summary.png" alt="Three synthetic evaluation panels: confusion matrix with 45 true negatives, 15 false positives, 4 false negatives, and 36 true positives; ROC curve; and calibration comparison"><figcaption class="caption">Three views of synthetic teaching predictions. The ROC scores and calibration points are generated solely to illustrate the plots; they are not results from ABIDE or a trained GNN.</figcaption></figure>
+    <figure class="figure"><img src="2026-08-26-machine-learning-fmri/synthetic_evaluation_summary.png" alt="Three synthetic evaluation panels: confusion matrix with 45 true negatives, 15 false positives, 4 false negatives, and 36 true positives; ROC curve; and calibration comparison"><figcaption class="caption">Three views of synthetic teaching predictions. The ROC scores and calibration points are generated solely to illustrate the plots; they are not results from ABIDE or a trained GNN.</figcaption></figure>
   </section>
 
   <section class="chapter" id="calibration">
@@ -244,7 +244,7 @@
 
   <section class="chapter" id="recap">
     <div class="stage-label">Full pipeline · 21</div><h2>The complete transformation at a glance</h2>
-    <figure class="figure"><img src="machine-learning-fmri/pipeline_recap.png" alt="Ten-step horizontal pipeline from 4D fMRI through cleaning, atlas, regional signals, correlation, matrix, graph, model, probability, and evaluation"><figcaption class="caption">Every arrow hides choices that must be learned from training data, justified scientifically, or checked by quality control.</figcaption></figure>
+    <figure class="figure"><img src="2026-08-26-machine-learning-fmri/pipeline_recap.png" alt="Ten-step horizontal pipeline from 4D fMRI through cleaning, atlas, regional signals, correlation, matrix, graph, model, probability, and evaluation"><figcaption class="caption">Every arrow hides choices that must be learned from training data, justified scientifically, or checked by quality control.</figcaption></figure>
     <div class="pipeline-list" aria-label="Detailed pipeline recap"><div>4D voxel measurements</div><div>motion and confounds</div><div>atlas labels</div><div>regional signals</div><div>pairwise correlation</div><div>connectivity matrix</div><div>weighted graph</div><div>baseline or GNN</div><div>score and sigmoid</div><div>held-out evaluation</div></div>
   </section>
 
@@ -263,9 +263,9 @@
     <div class="stage-label">Reproducibility · 23</div><h2>A complete, inspectable example</h2>
     <p>The project folder contains the exact script that generated every PNG on this page, the synthetic six-region matrix as JSON, and a separate ABIDE baseline. No raw fMRI or participant-level ABIDE data are stored in this repository.</p>
     <div class="grid two"><div class="box"><h3>Published figures</h3><p><code>generate_figures.py</code> renders the MNI152 views, Schaefer atlas overlay, 48-region matrix, evaluation summary, and recap. It writes caches to <code>/tmp</code>.</p></div><div class="box"><h3>Optional real-data baseline</h3><p><code>abide_connectivity_baseline.py</code> fetches 200 quality-checked PCP CC200 derivatives, builds correlation vectors, and runs leave-one-site-out logistic regression. Its outputs are not reported here.</p></div></div>
-    <pre><code>python -m pip install -r machine-learning-fmri/requirements.txt
-python machine-learning-fmri/generate_figures.py
-python machine-learning-fmri/abide_connectivity_baseline.py  # optional download</code></pre>
+    <pre><code>python -m pip install -r 2026-08-26-machine-learning-fmri/requirements.txt
+python 2026-08-26-machine-learning-fmri/generate_figures.py
+python 2026-08-26-machine-learning-fmri/abide_connectivity_baseline.py  # optional download</code></pre>
     <p>For a serious experiment, add prespecified inclusion criteria, scan and registration QC, a confound strategy, nested model selection, uncertainty intervals, site-level reporting, preprocessing sensitivity analyses, and a locked external test plan. A single short script is an educational starting point, not a publication-ready protocol.</p>
   </section>
 
@@ -292,6 +292,6 @@ python machine-learning-fmri/abide_connectivity_baseline.py  # optional download
   </section>
 
   <noscript><p class="noscript">JavaScript is disabled. All concepts, equations, figure captions, and numerical examples remain available, but sliders and hover details will not update.</p></noscript>
-</main><div class="footer-nav"><a href="../index.html">Home</a><span class="sep">|</span><a href="../research.html">Research</a></div></div>
+</main><div class="footer-nav"><a href="../../index.html">Home</a><span class="sep">|</span><a href="../../research.html">Research</a></div></div>
 </body>
 </html>
