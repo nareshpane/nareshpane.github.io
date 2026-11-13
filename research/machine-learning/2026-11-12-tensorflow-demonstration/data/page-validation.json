@@ -1,0 +1,18 @@
+{
+  "page": "2026-11-12-tensorflow-demonstration.html",
+  "prose_words_approximate": 23076,
+  "headings": 111,
+  "anchors": 198,
+  "canonical_code_panels": 26,
+  "images": 20,
+  "errors": [],
+  "checked": [
+    "relative assets and anchors",
+    "unique ids and heading hierarchy",
+    "image alternatives and SVG view boxes",
+    "finite JSON syntax",
+    "full-program and fragment byte-for-text parity",
+    "embedded Python syntax"
+  ],
+  "browser_qa": "See qa-report.md; static checks do not establish visual or interactive behavior."
+}

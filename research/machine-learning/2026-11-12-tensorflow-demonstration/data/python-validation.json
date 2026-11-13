@@ -1,0 +1,13 @@
+{
+  "python": "3.13.1",
+  "numpy": "2.4.0",
+  "passed": [
+    "all Python sources parse and compile without writing bytecode",
+    "vision: deterministic aligned geometry, 64x64 tensor dimensions, independent scenes, binary masks, metric hand calculation",
+    "language: disjoint template families and normalized texts, train-only vocabulary, NB probability normalization, confusion accounting",
+    "forecast: additive process, positive demand, train-only scaling, chronological target boundaries, future sentinel isolation, weekday baseline, exact conformal rank",
+    "heat: exact boundary/initial conditions and derivatives, independent difference derivatives, stable FTCS, grid convergence, hand update, rejected unstable setting and guarded instability demonstration",
+    "browser assets: finite JSON, pixel confusion counts, exported NB inference parity, coherent demand components, FTCS absolute-error consistency"
+  ],
+  "tensorflow": "not run (use --tensorflow after installing requirements.txt)"
+}

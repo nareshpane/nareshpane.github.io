@@ -1,0 +1,5 @@
+# Reproduction target (not a claim that TensorFlow training ran in this checkout).
+# Use Python 3.12 or 3.13, 64-bit; CPU is sufficient.
+tensorflow==2.20.0
+keras==3.10.0
+numpy==2.2.6
