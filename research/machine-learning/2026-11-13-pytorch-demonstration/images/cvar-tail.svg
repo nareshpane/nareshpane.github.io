@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="cvt-title cvt-desc" font-family="Segoe UI,Arial,sans-serif" font-size="18" fill="#26323B">
+<title id="cvt-title">Empirical CVaR averages exactly the requested upper-tail mass</title>
+<desc id="cvt-desc">Four equally weighted losses are 1,2,3,4. At alpha=0.625 the tail contains 1.5 observations. It assigns weight one to loss four and weight one half to loss three, so CVaR is (4+0.5 times 3)/1.5=11/3. The auxiliary-threshold objective at eta=3 is 3+1/1.5, the same value. Half the width of bar three denotes fractional observation weight, not half the severity of its loss.</desc>
+<text x="24" y="34" font-family="Georgia,serif" font-size="26">CVaR averages tail mass, including part of an observation</text>
+<text x="24" y="64" font-size="17" fill="#576774">Analytical example · four equally weighted losses · no fitted risk distribution</text>
+<rect x="24" y="91" width="550" height="342" rx="9" fill="#FFFFFF" stroke="#CCD9E2"/>
+<path d="M87 129V352H546" fill="none" stroke="#8FA8BA" stroke-width="1.4"/>
+<path d="M87 302H546M87 252H546M87 202H546M87 152H546" stroke="#E1E9EE"/>
+<text x="73" y="358" text-anchor="end" font-size="17">0</text><text x="73" y="308" text-anchor="end" font-size="17">1</text><text x="73" y="258" text-anchor="end" font-size="17">2</text><text x="73" y="208" text-anchor="end" font-size="17">3</text><text x="73" y="158" text-anchor="end" font-size="17">4</text>
+<text x="45" y="246" text-anchor="middle" transform="rotate(-90 45 246)" font-size="18">Scenario loss</text>
+<rect x="119" y="302" width="61" height="50" fill="#D9E8F3" stroke="#9CBBD0"/>
+<rect x="224" y="252" width="61" height="100" fill="#D9E8F3" stroke="#9CBBD0"/>
+<rect x="329" y="202" width="61" height="150" fill="#D9E8F3" stroke="#9CBBD0"/>
+<rect x="359.5" y="202" width="30.5" height="150" fill="#D9A493"/>
+<rect x="434" y="152" width="61" height="200" fill="#D9A493" stroke="#B67C66"/>
+<path d="M87 202H546" stroke="#947CAB" stroke-width="1.7" stroke-dasharray="6 4"/>
+<text x="542" y="193" text-anchor="end" fill="#75618B" font-size="17">η = 3</text>
+<text x="149" y="377" text-anchor="middle" font-size="18">L₁=1</text><text x="254" y="377" text-anchor="middle" font-size="18">L₂=2</text><text x="359" y="377" text-anchor="middle" font-size="18">L₃=3</text><text x="464" y="377" text-anchor="middle" font-size="18">L₄=4</text>
+<text x="149" y="405" text-anchor="middle" font-size="16" fill="#576774">tail weight 0</text><text x="254" y="405" text-anchor="middle" font-size="16" fill="#576774">weight 0</text><text x="359" y="405" text-anchor="middle" font-size="16" fill="#976344">weight ½</text><text x="464" y="405" text-anchor="middle" font-size="16" fill="#976344">weight 1</text>
+<rect x="600" y="91" width="336" height="158" rx="9" fill="#FFF3EB" stroke="#DDBAA8"/>
+<text x="622" y="121" font-weight="600">Exact upper-tail average</text>
+<text x="622" y="154" font-family="Cambria,Georgia,serif" font-size="21">α = 0.625; S = 4</text>
+<text x="622" y="184" font-family="Cambria,Georgia,serif" font-size="21">Tail mass = (1−α)S = 1.5</text>
+<text x="622" y="215" font-family="Cambria,Georgia,serif" font-size="21">CVaR = (4 + ½ × 3) / 1.5</text>
+<text x="622" y="241" font-family="Cambria,Georgia,serif" font-size="21">= 11/3 ≈ 3.666667</text>
+<rect x="600" y="269" width="336" height="164" rx="9" fill="#F6F2FA" stroke="#D8CAE7"/>
+<text x="622" y="300" font-weight="600">Auxiliary-threshold check</text>
+<text x="622" y="334" font-family="Cambria,Georgia,serif" font-size="20">Σ(Ls−3)₊ = 0 + 0 + 0 + 1</text>
+<text x="622" y="367" font-family="Cambria,Georgia,serif" font-size="21">η + Σ(Ls−η)₊ / [(1−α)S]</text>
+<text x="622" y="399" font-family="Cambria,Georgia,serif" font-size="21">= 3 + 1/1.5 = 11/3</text>
+<rect x="24" y="458" width="20" height="15" fill="#D9A493"/>
+<text x="55" y="472" font-size="17">Coral denotes the observation mass retained in the upper tail.</text>
+<text x="24" y="506" font-size="17" fill="#576774">Half the width of L₃ denotes half its observation weight; its loss value remains 3.</text>
+<text x="24" y="532" font-size="17" fill="#576774">Changing α changes the fraction of probability mass being averaged, rather than an arbitrary score cutoff.</text>
+</svg>

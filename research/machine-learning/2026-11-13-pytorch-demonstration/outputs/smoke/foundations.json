@@ -1,0 +1,119 @@
+{
+  "status": "executed PyTorch and analytical validation",
+  "seed": 42,
+  "environment": {
+    "python": "3.13.1",
+    "numpy": "2.4.0",
+    "scipy": "1.18.1",
+    "pytorch": "2.15.0+cpu",
+    "platform": "Windows-11-10.0.22621-SP0",
+    "processor": "Intel64 Family 6 Model 140 Stepping 1, GenuineIntel",
+    "logical_cpus": 8,
+    "device": "cpu",
+    "dtype": "float64",
+    "torch_threads": 1,
+    "cuda_available": false,
+    "threadpools": [
+      {
+        "user_api": "blas",
+        "internal_api": "openblas",
+        "num_threads": 1,
+        "prefix": "libscipy_openblas",
+        "filepath": "C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\numpy.libs\\libscipy_openblas64_-9e3e5a4229c1ca39f10dc82bba9e2b2b.dll",
+        "version": "0.3.30",
+        "threading_layer": "pthreads",
+        "architecture": "SkylakeX"
+      },
+      {
+        "user_api": "openmp",
+        "internal_api": "openmp",
+        "num_threads": 1,
+        "prefix": "libiomp",
+        "filepath": "C:\\Users\\user\\AppData\\Local\\Temp\\codex-pytorch-20261113\\Lib\\site-packages\\torch\\lib\\libiomp5md.dll",
+        "version": null
+      },
+      {
+        "user_api": "openmp",
+        "internal_api": "openmp",
+        "num_threads": 1,
+        "prefix": "libiomp",
+        "filepath": "C:\\Users\\user\\AppData\\Local\\Temp\\codex-pytorch-20261113\\Lib\\site-packages\\torch\\lib\\libiompstubs5md.dll",
+        "version": null
+      }
+    ]
+  },
+  "exact": {
+    "prediction": 2.0,
+    "residual": -3.0,
+    "loss": 4.5,
+    "gradient": [
+      -6.0,
+      -3.0
+    ],
+    "updated": [
+      1.3,
+      0.15000000000000002
+    ],
+    "updated_prediction": 2.75,
+    "updated_loss": 2.53125
+  },
+  "transforms": {
+    "jacobian": [
+      [
+        0.3,
+        2.0
+      ],
+      [
+        4.0,
+        0.955336489125606
+      ]
+    ],
+    "jvp": [
+      -1.7,
+      3.0446635108743942
+    ],
+    "vjp": [
+      -3.7,
+      1.044663510874394
+    ],
+    "vmap_max_error": 0.0
+  },
+  "finite_difference": {
+    "steps": [
+      0.1,
+      0.01,
+      0.001,
+      0.0001,
+      1e-05,
+      1e-06,
+      1e-07,
+      1e-08,
+      1e-09,
+      1e-10,
+      1e-11,
+      1e-12
+    ],
+    "absolute_errors": [
+      0.00127409976205195,
+      1.2747306051275054e-05,
+      1.2747367772458773e-07,
+      1.274904071202343e-09,
+      1.702149532434305e-11,
+      2.183642155983989e-11,
+      7.734757279109772e-11,
+      2.297793622041411e-09,
+      2.297793622041411e-09,
+      4.4638700347210403e-07,
+      1.5566100280972606e-06,
+      9.545620218154305e-06
+    ]
+  },
+  "checks": [
+    "exact scalar update",
+    "autograd parity",
+    "shapes and broadcasting",
+    "reshape versus permutation",
+    "torch.func identities",
+    "weights_only round-trip"
+  ]
+}

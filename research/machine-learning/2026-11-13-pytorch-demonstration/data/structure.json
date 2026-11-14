@@ -1,0 +1,312 @@
+[
+  {
+    "chapter": "foundations",
+    "title": "Understanding PyTorch: Tensors, Derivatives, and Computational Graphs",
+    "subsections": [
+      {
+        "id": "what-is-pytorch",
+        "title": "What is PyTorch?"
+      },
+      {
+        "id": "numpy-to-autograd",
+        "title": "Why use PyTorch when NumPy already exists?"
+      },
+      {
+        "id": "tensor-shapes",
+        "title": "Tensors, dimensions, broadcasting, and storage"
+      },
+      {
+        "id": "first-gradient",
+        "title": "A complete numerical derivative and update"
+      },
+      {
+        "id": "derivative-methods",
+        "title": "Six ways to obtain derivatives"
+      },
+      {
+        "id": "computational-graph",
+        "title": "Walk through the computational graph"
+      },
+      {
+        "id": "exploring-api",
+        "title": "Exploring the Python API and its documentation"
+      },
+      {
+        "id": "neural-compositions",
+        "title": "Neural networks as composed differentiable models"
+      },
+      {
+        "id": "training-architecture",
+        "title": "Modules, parameters, gradients, and optimizer state"
+      },
+      {
+        "id": "data-reproducibility",
+        "title": "Data pipelines, randomization, and reproducibility"
+      },
+      {
+        "id": "function-transformations",
+        "title": "Advanced differentiation with torch.func"
+      },
+      {
+        "id": "eager-and-compile",
+        "title": "Eager execution, compilation, and honest timing"
+      },
+      {
+        "id": "choosing-tools",
+        "title": "When is PyTorch the appropriate tool?"
+      }
+    ]
+  },
+  {
+    "chapter": "survival",
+    "title": "Biostatistics: Survival Analysis and Competing Risks",
+    "subsections": [
+      {
+        "id": "survival-question",
+        "title": "The scientific question: which event, and when?"
+      },
+      {
+        "id": "censoring-and-risks",
+        "title": "Observation, censoring, hazard, and cumulative incidence"
+      },
+      {
+        "id": "discrete-hazards",
+        "title": "Construct coherent competing-risk probabilities"
+      },
+      {
+        "id": "survival-likelihood",
+        "title": "Derive the likelihood from the observation convention"
+      },
+      {
+        "id": "survival-conventional",
+        "title": "A strong NumPy and SciPy baseline"
+      },
+      {
+        "id": "survival-pytorch",
+        "title": "What changes when we use PyTorch?"
+      },
+      {
+        "id": "survival-laboratory",
+        "title": "Explore survival, incidence, timelines, and calibration"
+      },
+      {
+        "id": "survival-evaluation",
+        "title": "Evaluate under incomplete observation"
+      },
+      {
+        "id": "survival-source",
+        "title": "Reproduce the complete survival experiment"
+      },
+      {
+        "id": "survival-contribution",
+        "title": "What PyTorch helped\u2014and what remained statistical work"
+      }
+    ]
+  },
+  {
+    "chapter": "financial",
+    "title": "Financial Networks: Learning From Transaction Graphs",
+    "subsections": [
+      {
+        "id": "financial-question",
+        "title": "Unusual relationships rather than unusual amounts"
+      },
+      {
+        "id": "graph-foundations",
+        "title": "Directed graphs, edge lists, features, and time"
+      },
+      {
+        "id": "transaction-generator",
+        "title": "A transparent generator with ambiguous labels"
+      },
+      {
+        "id": "financial-baseline",
+        "title": "Conventional graph features and logistic regression"
+      },
+      {
+        "id": "message-passing",
+        "title": "Derive a message-passing layer and edge head"
+      },
+      {
+        "id": "financial-parity",
+        "title": "What changes when we use PyTorch?"
+      },
+      {
+        "id": "financial-laboratory",
+        "title": "Animate historical messages and transaction scores"
+      },
+      {
+        "id": "rare-event-evaluation",
+        "title": "Evaluation under class imbalance and temporal change"
+      },
+      {
+        "id": "financial-source",
+        "title": "Complete source and reproducible graph boundaries"
+      },
+      {
+        "id": "financial-contribution",
+        "title": "Practical architecture, limitations, and contribution"
+      }
+    ]
+  },
+  {
+    "chapter": "river",
+    "title": "Environmental Science: Differentiable River-Contamination Inference",
+    "subsections": [
+      {
+        "id": "river-question",
+        "title": "Infer a hidden source from sparse monitoring"
+      },
+      {
+        "id": "transport-equation",
+        "title": "Conservation and the advection\u2013diffusion equation"
+      },
+      {
+        "id": "river-discretization",
+        "title": "Derive a stable conventional simulator"
+      },
+      {
+        "id": "inverse-objective",
+        "title": "Observation loss, constraints, and identifiability"
+      },
+      {
+        "id": "river-finite-differences",
+        "title": "Without PyTorch: differentiate by repeated solves"
+      },
+      {
+        "id": "differentiate-simulator",
+        "title": "What changes when we use PyTorch? Differentiate the simulator"
+      },
+      {
+        "id": "river-laboratory",
+        "title": "Explore the plume and a recorded inference trajectory"
+      },
+      {
+        "id": "river-recovery",
+        "title": "Parameter recovery, sensor noise, and uncertainty"
+      },
+      {
+        "id": "river-source",
+        "title": "Reproduce the physical and inverse calculations"
+      },
+      {
+        "id": "river-contribution",
+        "title": "Scientific interpretation and the demonstrated contribution"
+      }
+    ]
+  },
+  {
+    "chapter": "allocation",
+    "title": "Operations Research: Risk-Aware Emergency Resource Allocation",
+    "subsections": [
+      {
+        "id": "allocation-question",
+        "title": "A synthetic city and uncertain emergency demand"
+      },
+      {
+        "id": "allocation-formulation",
+        "title": "Expected cost, policy variables, and capacities"
+      },
+      {
+        "id": "demand-and-cvar",
+        "title": "Generate demand scenarios and derive tail-risk optimization"
+      },
+      {
+        "id": "classical-allocation",
+        "title": "Conventional baselines and an exact cost comparator"
+      },
+      {
+        "id": "differentiable-allocation",
+        "title": "What changes when we use PyTorch? A differentiable policy"
+      },
+      {
+        "id": "feasible-realization",
+        "title": "Convert preferences into a feasible integer decision"
+      },
+      {
+        "id": "allocation-laboratory",
+        "title": "Explore a city, its capacity, and its policy history"
+      },
+      {
+        "id": "allocation-evaluation",
+        "title": "Evaluate held-out realized policies"
+      },
+      {
+        "id": "allocation-source",
+        "title": "Complete program and practical contribution"
+      }
+    ]
+  },
+  {
+    "chapter": "synthesis",
+    "title": "Comparative Evaluation, Reproducibility, and Synthesis",
+    "subsections": [
+      {
+        "id": "four-domain-comparison",
+        "title": "Compare the four mathematical investigations"
+      },
+      {
+        "id": "four-kinds-of-benefit",
+        "title": "Separate development, runtime, correctness, and quality"
+      },
+      {
+        "id": "benchmark-protocol",
+        "title": "A fair and reusable benchmarking protocol"
+      },
+      {
+        "id": "benchmark-dashboard",
+        "title": "Inspect timing and three-seed quality evidence"
+      },
+      {
+        "id": "when-not-pytorch",
+        "title": "Where conventional methods remain preferable"
+      },
+      {
+        "id": "reproduction-guide",
+        "title": "Reproduce the complete study on Windows"
+      },
+      {
+        "id": "provenance-and-verification",
+        "title": "An evidence chain from equations to browser values"
+      },
+      {
+        "id": "technical-extensions",
+        "title": "Further technical extensions"
+      },
+      {
+        "id": "original-contributions",
+        "title": "Original contributions and source provenance"
+      }
+    ]
+  },
+  {
+    "chapter": "framework-comparison",
+    "title": "PyTorch versus TensorFlow",
+    "subsections": [
+      {
+        "id": "frameworks-shared-mathematics",
+        "title": "Two frameworks, one mathematical foundation"
+      },
+      {
+        "id": "frameworks-at-a-glance",
+        "title": "PyTorch and TensorFlow at a glance"
+      },
+      {
+        "id": "frameworks-same-derivative",
+        "title": "The same derivative in two implementations"
+      },
+      {
+        "id": "frameworks-neural-models",
+        "title": "Neural-network construction and training"
+      },
+      {
+        "id": "frameworks-keras-ecosystem",
+        "title": "Keras 3 and the modern ecosystem"
+      },
+      {
+        "id": "frameworks-practical-choice",
+        "title": "Choosing a framework in practice"
+      }
+    ]
+  }
+]

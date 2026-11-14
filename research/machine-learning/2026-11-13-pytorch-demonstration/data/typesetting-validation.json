@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "groups": [
+    "All 39 original numbered displays retain lineage; 51 sequential linked equations have genuine mathematical fallbacks and external explanations",
+    "Every mathematical fragment matches the compiled TeX/MathML source; no MathML parser errors; 88 protected files unchanged",
+    "Collected stencil matrix, source forcing, zero endpoints, and stricter implemented stability margin agree with the unchanged solver",
+    "Displayed joint logit/threshold objective and tail-count derivative match the canonical analytical implementation",
+    "Executed comparison artifacts confirm the polynomial derivative and 10\u201332\u20131 parameter/shape calculation in both frameworks"
+  ],
+  "existing_equations_audited": 39,
+  "existing_fallbacks_corrected": 39,
+  "tex_formulas_revised": 38,
+  "notation_clarifications": 6,
+  "final_equations": 51,
+  "mathematical_fragments": 220,
+  "unique_expressions": 187,
+  "protected_files": 88,
+  "math_figures": 6
+}

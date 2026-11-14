@@ -1,0 +1,940 @@
+{
+  "engine": "MathJax 3.2.2",
+  "expressions": [
+    {
+      "key": "008ee59c160942fd6bcc",
+      "tex": "\\begin{aligned}\\boldsymbol\\theta_{m+1}&=\\boldsymbol\\theta_m-\\eta\\nabla_{\\boldsymbol\\theta}\\mathcal L(\\boldsymbol\\theta_m),\\\\\\Delta\\boldsymbol\\theta_m&:=\\boldsymbol\\theta_{m+1}-\\boldsymbol\\theta_m=-\\eta\\nabla_{\\boldsymbol\\theta}\\mathcal L(\\boldsymbol\\theta_m).\\end{aligned}",
+      "display": true
+    },
+    {
+      "key": "0434800bf11c432f1ae3",
+      "tex": "R=\\frac{\\operatorname{median}(T_{\\mathrm{classical}})}{\\operatorname{median}(T_{\\mathrm{torch}})},\\qquad e_\\infty=\\max_r|a_r-b_r|.",
+      "display": true
+    },
+    {
+      "key": "0438751add2353e0287e",
+      "tex": "h_D=\\tanh(0.6)=0.537050",
+      "display": true
+    },
+    {
+      "key": "08344050462a0fe45d9a",
+      "tex": "\\boldsymbol x",
+      "display": false
+    },
+    {
+      "key": "0a1f5fc0e2610534f162",
+      "tex": "L_3=3",
+      "display": true
+    },
+    {
+      "key": "0b3e48ab68aeefb1648c",
+      "tex": "\\begin{aligned}\\boldsymbol v&=\\begin{bmatrix}1\\\\-1\\end{bmatrix},\\qquad J_f\\in\\mathbb R^{2\\times2},\\quad\\boldsymbol v\\in\\mathbb R^2,\\\\J_f\\boldsymbol v&=\\begin{bmatrix}0.3(1)+2(-1)\\\\4(1)+\\cos(0.3)(-1)\\end{bmatrix}=\\begin{bmatrix}-1.7\\\\3.04466351\\end{bmatrix}\\in\\mathbb R^2.\\end{aligned}",
+      "display": true
+    },
+    {
+      "key": "0b72546f84c2d1b1792c",
+      "tex": "F_2(2)",
+      "display": false
+    },
+    {
+      "key": "0c5da252039a65d9f54a",
+      "tex": "\\begin{aligned}\\widehat y_i&=f_\\theta(\\boldsymbol x_i),\\\\\\mathcal L(\\theta)&=\\frac1n\\sum_{i=1}^{n}\\bigl(y_i-f_\\theta(\\boldsymbol x_i)\\bigr)^2,\\\\\\boldsymbol g_t&=\\nabla_\\theta\\mathcal L(\\theta_t),\\\\\\theta_{t+1}&=\\theta_t-\\eta\\boldsymbol g_t.\\end{aligned}",
+      "display": true
+    },
+    {
+      "key": "0cd49d0f87a8d5a78485",
+      "tex": "\\boldsymbol g_t=\\nabla_\\theta\\mathcal L(\\theta_t)",
+      "display": true
+    },
+    {
+      "key": "0e2bed78fb52c7c65aa3",
+      "tex": "\\operatorname{sigmoid}(z)=1/(1+\\exp(-z))",
+      "display": false
+    },
+    {
+      "key": "0f364a0ea00a52f0e080",
+      "tex": "C_i",
+      "display": false
+    },
+    {
+      "key": "0fedf4586e5c2714ed6a",
+      "tex": "\\operatorname{CVaR}_{0.625}(1,2,3,4)=\\frac{4+\\tfrac12(3)}{\\tfrac32}=\\frac{11}{3}.",
+      "display": true
+    },
+    {
+      "key": "12af5a89166bf074e161",
+      "tex": "h^2",
+      "display": false
+    },
+    {
+      "key": "17c7040382686ca2333f",
+      "tex": "\\frac{\\partial\\mathcal L}{\\partial\\phi_a}\\approx\\frac{\\mathcal L(\\boldsymbol\\phi+h\\boldsymbol e_a)-\\mathcal L(\\boldsymbol\\phi-h\\boldsymbol e_a)}{2h}.",
+      "display": true
+    },
+    {
+      "key": "18807ad56437a675e588",
+      "tex": "J_f^\\top\\boldsymbol u=(-3.7,\\,2-\\cos(0.3))^\\top",
+      "display": false
+    },
+    {
+      "key": "188ecc011acc3a4d76ea",
+      "tex": "\\xi",
+      "display": false
+    },
+    {
+      "key": "1afe0272bf2540bda6c4",
+      "tex": "z_D=0.5(1)+0.3(1)-0.2=0.6",
+      "display": true
+    },
+    {
+      "key": "1e99337a3e7bc861dfca",
+      "tex": "\\sum_i f_{ij}=K_j,\\qquad\\sum_jf_{ij}=d_i",
+      "display": true
+    },
+    {
+      "key": "1eb142ed6af964e97165",
+      "tex": "\\operatorname{CVaR}_{\\alpha}(L)=\\min_{\\eta\\in\\mathbb R}\\left\\{\\eta+\\frac{1}{(1-\\alpha)S}\\sum_{s=1}^{S}(L_s-\\eta)_+\\right\\},\\qquad\\alpha=0.9.",
+      "display": true
+    },
+    {
+      "key": "2001982110355135ffdf",
+      "tex": "\\boldsymbol x_i=(1,\\operatorname{age}_i,\\operatorname{marker}_i)^\\top",
+      "display": false
+    },
+    {
+      "key": "22c21844bfc7ba7248c3",
+      "tex": "\\begin{aligned}\\boldsymbol m_v&=\\frac{\\sum_u A_{uv}\\boldsymbol x_u}{\\max(1,\\sum_u A_{uv})}\\in\\mathbb R^5,\\\\\\boldsymbol h_v&=\\tanh(W_s\\boldsymbol x_v+W_n\\boldsymbol m_v+\\boldsymbol b)\\in\\mathbb R^{12}.\\end{aligned}",
+      "display": true
+    },
+    {
+      "key": "232655328de6be824f52",
+      "tex": "\\mathscr L_{\\mathrm{event}}=p_{0,1}p_{1,2}=0.08",
+      "display": true
+    },
+    {
+      "key": "24d8be9661fc56b54672",
+      "tex": "u_{jk}",
+      "display": false
+    },
+    {
+      "key": "27f6356d89463793366d",
+      "tex": "\\widehat z_{jk}=c(x_j,t_k;\\boldsymbol{\\phi})",
+      "display": true
+    },
+    {
+      "key": "282099994fd39ee4fc43",
+      "tex": "K_i",
+      "display": false
+    },
+    {
+      "key": "297c097bbd969dfeeb59",
+      "tex": "f(\\boldsymbol{x})=\\begin{bmatrix}x_1x_2\\\\x_1^2+\\sin x_2\\end{bmatrix},\\qquad\\boldsymbol{x}=\\begin{bmatrix}2\\\\0.3\\end{bmatrix}",
+      "display": true
+    },
+    {
+      "key": "2b15d470e87ad9d75f25",
+      "tex": "r^\\prime=(1-5\\eta)r",
+      "display": false
+    },
+    {
+      "key": "2d0a6e2ffa441db18a74",
+      "tex": "(x_1,x_2,x_3)=(0.45,0.65,0.85)",
+      "display": true
+    },
+    {
+      "key": "2ddb8deb99b6838b6544",
+      "tex": "\\sum_{s=1}^{4}(L_s-3)_+=0+0+0+1=1",
+      "display": true
+    },
+    {
+      "key": "2f15627739efef90175e",
+      "tex": "\\mathscr L_{\\mathrm{censor}}=p_{0,1}p_{0,2}=0.60",
+      "display": true
+    },
+    {
+      "key": "2f9129b375ad3469a9c6",
+      "tex": "J\\boldsymbol v",
+      "display": false
+    },
+    {
+      "key": "3078b04401d92c97a522",
+      "tex": "m_B=\\frac83,\\qquad m_D=1,\\qquad h_v=\\tanh(0.5x_v+0.3m_v-0.2).",
+      "display": true
+    },
+    {
+      "key": "3210676fd82526212fe2",
+      "tex": "A+2B\\le0.75",
+      "display": false
+    },
+    {
+      "key": "3290966142cc9beff1ac",
+      "tex": "\\begin{aligned}\\frac{\\partial c}{\\partial t}+\\frac{\\partial}{\\partial x}\\left(vc-D\\frac{\\partial c}{\\partial x}\\right)&=s(x;\\boldsymbol\\phi),\\\\\\frac{\\partial c}{\\partial t}+v\\frac{\\partial c}{\\partial x}&=D\\frac{\\partial^2 c}{\\partial x^2}+s(x;\\boldsymbol\\phi).\\end{aligned}",
+      "display": true
+    },
+    {
+      "key": "332c98bde076c07ecb44",
+      "tex": "\\begin{aligned}\\frac{\\partial\\mathcal L}{\\partial w}&=(wx+b-y)x=rx=-6,\\\\\\frac{\\partial\\mathcal L}{\\partial b}&=wx+b-y=r=-3.\\end{aligned}",
+      "display": true
+    },
+    {
+      "key": "33f38ec3b179f9534a29",
+      "tex": "F_1(2)",
+      "display": false
+    },
+    {
+      "key": "342c34c2979390cd7928",
+      "tex": "p_0",
+      "display": false
+    },
+    {
+      "key": "345a0ba73170051fb415",
+      "tex": "\\partial c/\\partial q",
+      "display": false
+    },
+    {
+      "key": "35644145eb85c491dc06",
+      "tex": "x_{C}=4",
+      "display": true
+    },
+    {
+      "key": "362189c975e094fff6c1",
+      "tex": "W_s",
+      "display": false
+    },
+    {
+      "key": "3723766d5cf4a3f27200",
+      "tex": "B_{ij}=X_{ij}+b_j,\\qquad\\boldsymbol b\\in\\mathbb R^p,\\quad B\\in\\mathbb R^{n\\times p}.",
+      "display": true
+    },
+    {
+      "key": "3a29da8655850e58f683",
+      "tex": "\\frac{\\partial}{\\partial\\eta}\\left[\\eta+\\frac{\\sum_s(L_s-\\eta)_+}{(1-\\alpha)S}\\right]=1-\\frac{\\#\\{s:L_s>\\eta\\}}{(1-\\alpha)S}.",
+      "display": true
+    },
+    {
+      "key": "3a6cd8b1242330d3e44a",
+      "tex": "L_2=2",
+      "display": true
+    },
+    {
+      "key": "3b085878a27c659db053",
+      "tex": "\\operatorname{ReLU}(z)=\\max(0,z)",
+      "display": false
+    },
+    {
+      "key": "3babf4a0e1a30622a55c",
+      "tex": "\\mathcal C=\\frac{(3.6-3)^2}5=0.072",
+      "display": true
+    },
+    {
+      "key": "3fb63fecb98206290f7a",
+      "tex": "\\begin{aligned}\\mathbb R^{10}&\\longrightarrow\\mathbb R^{32}\\longrightarrow\\mathbb R,\\\\\\boldsymbol h&=\\operatorname{ReLU}(W_1\\boldsymbol x+\\boldsymbol b_1),\\\\\\widehat y&=W_2\\boldsymbol h+b_2.\\end{aligned}",
+      "display": true
+    },
+    {
+      "key": "40c4ef4c9fefb79f131a",
+      "tex": "\\boldsymbol u^\\top J",
+      "display": false
+    },
+    {
+      "key": "426d30a59c088b60a337",
+      "tex": "h_B=\\tanh(1.1)=0.800499",
+      "display": true
+    },
+    {
+      "key": "42d66c92c9e0e557ddbf",
+      "tex": "2\\times10",
+      "display": false
+    },
+    {
+      "key": "4365a82b7f7c8055ea37",
+      "tex": "\\sigma",
+      "display": false
+    },
+    {
+      "key": "44464650f605d5fd731d",
+      "tex": "\\begin{aligned}\\ell_{js}(a)&=\\sum_{i=1}^{8}d_{is}a_{ij},\\\\\\mathcal C(a)&=\\frac{\\sum_{s=1}^{S}\\sum_{j=1}^{3}(\\ell_{js}(a)-K_j)_+^2}{S\\sum_{j=1}^{3}K_j},\\\\\\mathcal F(a)&=\\frac18\\sum_{i=1}^{8}(q_i-\\overline q)^2,\\qquad\\overline q=\\frac18\\sum_{i=1}^{8}q_i.\\end{aligned}",
+      "display": true
+    },
+    {
+      "key": "45c14aa3afca2023ab71",
+      "tex": "\\begin{aligned}\\mathcal J(\\theta,\\eta)={}&\\frac1S\\sum_{s=1}^{S}L_s(a_\\theta)\\\\&+0.7\\left[\\eta+\\frac{1}{0.1S}\\sum_{s=1}^{S}(L_s(a_\\theta)-\\eta)_+\\right]\\\\&+0.25\\mathcal F(a_\\theta)+1.5\\mathcal C(a_\\theta).\\end{aligned}",
+      "display": true
+    },
+    {
+      "key": "49dec14866a2538a3cb9",
+      "tex": "\\boldsymbol u^\\top J_f=(J_f^\\top\\boldsymbol u)^\\top",
+      "display": false
+    },
+    {
+      "key": "4b628bd5365d9b3c94d4",
+      "tex": "32(10+1)+(32+1)=385",
+      "display": false
+    },
+    {
+      "key": "4c6341d891ab05d59854",
+      "tex": "\\Delta\\theta_t=-\\eta\\boldsymbol g_t",
+      "display": true
+    },
+    {
+      "key": "4cd16ca738d7689c5451",
+      "tex": "\\boldsymbol h_v",
+      "display": false
+    },
+    {
+      "key": "4cd8ffe0cb9f013f3f2b",
+      "tex": "\\eta",
+      "display": false
+    },
+    {
+      "key": "50047f434dc11ab88e5a",
+      "tex": "p_1",
+      "display": false
+    },
+    {
+      "key": "5324b5dadd829a19423c",
+      "tex": "\\begin{aligned}\\boldsymbol r_e&=\\begin{bmatrix}\\boldsymbol h_{s_e}\\\\\\boldsymbol h_{d_e}\\\\\\log(\\operatorname{amount}_e)/5\\\\\\mathbf1_{\\{\\operatorname{inst}_{s_e}=\\operatorname{inst}_{d_e}\\}}\\end{bmatrix}\\in\\mathbb R^{26},\\\\\\widehat p_e&=\\operatorname{sigmoid}(f_\\theta(\\boldsymbol r_e)).\\end{aligned}",
+      "display": true
+    },
+    {
+      "key": "538a5ddce4b2ab5eac6e",
+      "tex": "S_i(t-1)",
+      "display": false
+    },
+    {
+      "key": "5420013311c2ce6373db",
+      "tex": "w_4=1",
+      "display": true
+    },
+    {
+      "key": "55a54d94fa3deaf35ef4",
+      "tex": "\\boldsymbol{\\phi}=\\begin{bmatrix}\\xi\\\\q\\end{bmatrix}",
+      "display": true
+    },
+    {
+      "key": "589cd026153b71f63ec6",
+      "tex": "\\boldsymbol c^n",
+      "display": false
+    },
+    {
+      "key": "5a197d623a577447731c",
+      "tex": "x_{A}=2",
+      "display": true
+    },
+    {
+      "key": "5a8b8e43bfe79dae0163",
+      "tex": "f_{ij}",
+      "display": false
+    },
+    {
+      "key": "5d1c8dd89d74640781ba",
+      "tex": "\\nabla_{\\boldsymbol{\\phi}}\\mathcal L=\\begin{bmatrix}\\partial\\mathcal L/\\partial\\xi\\\\\\partial\\mathcal L/\\partial q\\end{bmatrix}",
+      "display": true
+    },
+    {
+      "key": "5d869a66c240fa98a263",
+      "tex": "J_f\\boldsymbol{v}=\\begin{bmatrix}0.3(1)+2(-1)\\\\4(1)+\\cos(0.3)(-1)\\end{bmatrix}",
+      "display": true
+    },
+    {
+      "key": "5e73c8871b0d55a65577",
+      "tex": "\\alpha=0.625,\\qquad S=4,\\qquad(1-\\alpha)S=1.5",
+      "display": true
+    },
+    {
+      "key": "613d937637dac477f49f",
+      "tex": "L_{\\rm integer}=\\frac{3(1)+2(1)}5=1.0",
+      "display": true
+    },
+    {
+      "key": "619429d0d2c4824e3916",
+      "tex": "a_{ij}(\\theta)=\\frac{\\exp(\\theta_{ij})}{\\sum_{r=1}^{3}\\exp(\\theta_{ir})},\\qquad\\theta\\in\\mathbb R^{8\\times3},\\quad\\eta\\in\\mathbb R.",
+      "display": true
+    },
+    {
+      "key": "64ad36a243315efe0b21",
+      "tex": "\\begin{aligned}\\begin{bmatrix}w^\\prime\\\\b^\\prime\\end{bmatrix}&=\\begin{bmatrix}1\\\\0\\end{bmatrix}-0.05\\begin{bmatrix}-6\\\\-3\\end{bmatrix}=\\begin{bmatrix}1.3\\\\0.15\\end{bmatrix},\\\\\\widehat y^\\prime&=2(1.3)+0.15=2.75,\\\\\\mathcal L^\\prime&=\\frac12(2.75-5)^2=2.53125.\\end{aligned}",
+      "display": true
+    },
+    {
+      "key": "6563d3908eb33509ea19",
+      "tex": "\\begin{aligned}F_{ik}(0)&=0,\\\\F_{ik}(t)&=F_{ik}(t-1)+S_i(t-1)p_{ikt}\\\\&=\\sum_{u=1}^{t}S_i(u-1)p_{iku},\\qquad k\\in\\{1,2\\}.\\end{aligned}",
+      "display": true
+    },
+    {
+      "key": "65ba1c07f83783c534b4",
+      "tex": "T_i",
+      "display": false
+    },
+    {
+      "key": "65be8c114c11c4d82e3b",
+      "tex": "\\nabla\\ell",
+      "display": false
+    },
+    {
+      "key": "67ac6439fc8359913fbc",
+      "tex": "\\operatorname{CVaR}_{0.625}=\\frac{4+\\frac12(3)}{1.5}=\\frac{11}{3}",
+      "display": true
+    },
+    {
+      "key": "6979a5bb752b77e40897",
+      "tex": "s(x;\\boldsymbol{\\phi})",
+      "display": true
+    },
+    {
+      "key": "6ba671af11437c730b66",
+      "tex": "h_v=\\tanh(0.5x_v+0.3m_v-0.2)",
+      "display": true
+    },
+    {
+      "key": "6cb111ede107ee774441",
+      "tex": "\\boldsymbol{v}\\in\\mathbb R^2",
+      "display": true
+    },
+    {
+      "key": "6dc3a515e8a275a78fc2",
+      "tex": "F_2(2)=0.05+0.80(0.15)=0.17",
+      "display": true
+    },
+    {
+      "key": "6defd891b46eb1d4c4db",
+      "tex": "\\eta=3",
+      "display": true
+    },
+    {
+      "key": "719cecdd22924cff0aea",
+      "tex": "\\begin{aligned}\\eta_{i0t}&=0,\\qquad\\eta_{ikt}=\\boldsymbol x_i^\\top\\boldsymbol\\beta_{tk},\\quad k\\in\\{1,2\\},\\\\p_{ikt}&=\\frac{\\exp(\\eta_{ikt})}{\\sum_{r=0}^{2}\\exp(\\eta_{irt})},\\qquad\\sum_{k=0}^{2}p_{ikt}=1.\\end{aligned}",
+      "display": true
+    },
+    {
+      "key": "73f4c29d6622f04f0216",
+      "tex": "\\boldsymbol d=\\begin{bmatrix}3\\\\2\\end{bmatrix},\\quad\\boldsymbol K=\\begin{bmatrix}3\\\\2\\end{bmatrix},\\quad C=\\begin{bmatrix}1&4\\\\2&1\\end{bmatrix}",
+      "display": true
+    },
+    {
+      "key": "75e51a37244b90e16312",
+      "tex": "\\theta",
+      "display": false
+    },
+    {
+      "key": "75e9b24198a63be1eee4",
+      "tex": "x_j",
+      "display": false
+    },
+    {
+      "key": "77222e65a9b6c9b2542e",
+      "tex": "\\boldsymbol v=(1,-1)^\\top",
+      "display": false
+    },
+    {
+      "key": "775108662df1fcfa7f2e",
+      "tex": "\\theta_{t+1}",
+      "display": false
+    },
+    {
+      "key": "793d60494b81fec1b1cc",
+      "tex": "w_3=\\tfrac12",
+      "display": true
+    },
+    {
+      "key": "7c81cfb1fac5ccc91abc",
+      "tex": "\\begin{aligned}f&:\\mathbb R^2\\to\\mathbb R^3,\\qquad g:\\mathbb R^3\\to\\mathbb R,\\\\J_{g\\circ f}(\\boldsymbol x)&=J_g(f(\\boldsymbol x))J_f(\\boldsymbol x),\\\\J_g&\\in\\mathbb R^{1\\times3},\\quad J_f\\in\\mathbb R^{3\\times2},\\quad J_{g\\circ f}\\in\\mathbb R^{1\\times2}.\\end{aligned}",
+      "display": true
+    },
+    {
+      "key": "7d4a0db0f732a8eee147",
+      "tex": "A+2B\\le0.75",
+      "display": true
+    },
+    {
+      "key": "7e92c44482c7a7fa6f8b",
+      "tex": "f=\\begin{bmatrix}3&0\\\\0&2\\end{bmatrix}",
+      "display": true
+    },
+    {
+      "key": "803e339367ff757deacf",
+      "tex": "\\boldsymbol{v}=\\begin{bmatrix}1\\\\-1\\end{bmatrix}",
+      "display": true
+    },
+    {
+      "key": "80d36a14cc9dccd4ab8d",
+      "tex": "\\mathcal L=\\frac{1}{2M\\sigma_\\varepsilon^2}\\sum_{(j,k)\\in\\mathcal O_{\\rm fit}}r_{jk}^2",
+      "display": true
+    },
+    {
+      "key": "86797bb9d31aaf294cef",
+      "tex": "\\boldsymbol{u}^\\top J_f=(J_f^\\top\\boldsymbol{u})^\\top",
+      "display": false
+    },
+    {
+      "key": "86f03b0405cd5c78bf01",
+      "tex": "\\frac{\\partial\\mathcal J}{\\partial\\beta_{tpk}}=\\frac1N\\sum_{i=1}^{N}R_{it}x_{ip}\\left(p_{ikt}-\\mathbf1_{\\{Y_{it}=k\\}}\\right)+\\lambda\\beta_{tpk},\\qquad k\\in\\{1,2\\}.",
+      "display": true
+    },
+    {
+      "key": "880f6384d1887aafaffa",
+      "tex": "\\begin{aligned}\\boldsymbol u&=\\begin{bmatrix}1\\\\-1\\end{bmatrix}\\in\\mathbb R^2,\\\\J_f^\\top\\boldsymbol u&=\\begin{bmatrix}0.3(1)+4(-1)\\\\2(1)+\\cos(0.3)(-1)\\end{bmatrix}=\\begin{bmatrix}-3.7\\\\1.04466351\\end{bmatrix}\\in\\mathbb R^2.\\end{aligned}",
+      "display": true
+    },
+    {
+      "key": "893cd041ba95eb617bb2",
+      "tex": "L^2",
+      "display": false
+    },
+    {
+      "key": "8e46aa7351e3f9f75fd4",
+      "tex": "c_{ij}",
+      "display": false
+    },
+    {
+      "key": "8e48694841afa98af3d1",
+      "tex": "\\lambda",
+      "display": false
+    },
+    {
+      "key": "8ec93cc07f4e6eb84064",
+      "tex": "s_j=s(x_j;\\boldsymbol\\phi)",
+      "display": false
+    },
+    {
+      "key": "9310eebb81b536391713",
+      "tex": "\\operatorname{Precision}=\\frac{\\mathrm{TP}}{\\mathrm{TP}+\\mathrm{FP}},\\quad\\operatorname{Recall}=\\frac{\\mathrm{TP}}{\\mathrm{TP}+\\mathrm{FN}},\\quad\\operatorname{FPR}=\\frac{\\mathrm{FP}}{\\mathrm{FP}+\\mathrm{TN}}.",
+      "display": true
+    },
+    {
+      "key": "9417061429cc12d5a892",
+      "tex": "J\\boldsymbol v=(-1.7,\\,4-\\cos(0.3))^\\top",
+      "display": false
+    },
+    {
+      "key": "941d367c1f76a4371c08",
+      "tex": "\\begin{aligned}S_i(t)+\\sum_{k=1}^{2}F_{ik}(t)&=S_i(t-1)\\left(p_{i0t}+\\sum_{k=1}^{2}p_{ikt}\\right)+\\sum_{k=1}^{2}F_{ik}(t-1)\\\\&=S_i(t-1)+\\sum_{k=1}^{2}F_{ik}(t-1)=1.\\end{aligned}",
+      "display": true
+    },
+    {
+      "key": "960934af6b78a05d7682",
+      "tex": "(X,\\boldsymbol y)",
+      "display": true
+    },
+    {
+      "key": "9a76baad1ccd5096dd3b",
+      "tex": "\\begin{aligned}\\boldsymbol h&=\\sigma(W_1\\boldsymbol x+\\boldsymbol b_1),&\\widehat y&=W_2\\boldsymbol h+b_2,\\\\\\boldsymbol x&\\in\\mathbb R^2,&W_1&\\in\\mathbb R^{3\\times2},\\\\\\boldsymbol b_1,\\boldsymbol h&\\in\\mathbb R^3,&W_2&\\in\\mathbb R^{1\\times3},\\quad b_2\\in\\mathbb R.\\end{aligned}",
+      "display": true
+    },
+    {
+      "key": "9b86c58fb350bd4da29a",
+      "tex": "\\boldsymbol x_v",
+      "display": false
+    },
+    {
+      "key": "9c465ce79524abab1870",
+      "tex": "L_1=1",
+      "display": true
+    },
+    {
+      "key": "9ce2ff00be4b59955ac6",
+      "tex": "A\\ge0,\\qquad B\\ge0,\\qquad A+2B\\le1,\\qquad A+2B\\le0.75\\ \\text{(implemented margin)}.",
+      "display": true
+    },
+    {
+      "key": "9ce8bc6a114f89b8ecfb",
+      "tex": "m_B=\\frac{2+2+4}{3}=\\frac83",
+      "display": true
+    },
+    {
+      "key": "9da2a9c3616dd478bf4a",
+      "tex": "\\begin{aligned}U_i(h)&=\\mathbf1_{\\{\\delta_i>0,\\,\\widetilde T_i\\le h\\}},\\quad V_i(h)=\\mathbf1_{\\{\\widetilde T_i\\ge h\\}}(1-U_i(h)),\\\\\\widehat{\\operatorname{BS}}_k(h)&=\\frac1n\\sum_{i=1}^{n}\\Bigg[\\frac{U_i(h)}{G(\\widetilde T_i)}\\left(\\mathbf1_{\\{\\delta_i=k\\}}-F_{ik}(h)\\right)^2\\\\&\\hspace{42mm}+\\frac{V_i(h)}{G(h)}F_{ik}(h)^2\\Bigg],\\qquad G(t)=\\Pr(C\\ge t).\\end{aligned}",
+      "display": true
+    },
+    {
+      "key": "a066134e1fb032079f49",
+      "tex": "\\widehat{\\boldsymbol y}=f_{\\theta_t}(X)",
+      "display": true
+    },
+    {
+      "key": "a1613d2ed205d587d597",
+      "tex": "\\eta+\\frac{\\sum_s(L_s-\\eta)_+}{(1-\\alpha)S}=3+\\frac{1}{1.5}=\\frac{11}{3}",
+      "display": true
+    },
+    {
+      "key": "a16b8aeade97aa8fc4c1",
+      "tex": "\\mathcal J(\\beta)=-\\frac1N\\sum_{i=1}^{N}\\sum_{t=1}^{12}R_{it}\\log p_{iY_{it}t}+\\frac\\lambda2\\lVert\\beta\\rVert_F^2,\\qquad\\lambda=0.001.",
+      "display": true
+    },
+    {
+      "key": "a1917020000e6d6722e4",
+      "tex": "\\begin{aligned}X&\\in\\mathbb R^{n\\times p},\\quad W\\in\\mathbb R^{p\\times h},\\quad H=XW\\in\\mathbb R^{n\\times h},\\\\H_{ij}&=\\sum_{k=1}^{p}X_{ik}W_{kj}.\\end{aligned}",
+      "display": true
+    },
+    {
+      "key": "a3ecf80b1e7364e35bfa",
+      "tex": "\\boldsymbol{u}\\in\\mathbb R^2",
+      "display": true
+    },
+    {
+      "key": "a4f9bab2777c250ede17",
+      "tex": "S(2)=0.80(0.75)=0.60",
+      "display": true
+    },
+    {
+      "key": "a671ab6661d5e92b8b06",
+      "tex": "J_f\\boldsymbol{v}=\\begin{bmatrix}-1.7\\\\3.04466351\\end{bmatrix}",
+      "display": true
+    },
+    {
+      "key": "a77f75ab802c5a41d047",
+      "tex": "\\begin{aligned}S(2)&=0.80(0.75)=0.60,\\\\F_1(2)&=0.15+0.80(0.10)=0.23,\\\\F_2(2)&=0.05+0.80(0.15)=0.17.\\end{aligned}",
+      "display": true
+    },
+    {
+      "key": "a834aa07361ea923db7e",
+      "tex": "\\operatorname{CVaR}_{0.9}",
+      "display": false
+    },
+    {
+      "key": "ac3b2531bd5d60fc8933",
+      "tex": "0.1\\le\\xi\\le0.55,\\qquad0.1\\le q\\le2",
+      "display": true
+    },
+    {
+      "key": "ad7d852eb30ccf52a246",
+      "tex": "z_B=0.5(1)+0.3\\left(\\frac83\\right)-0.2=1.1",
+      "display": true
+    },
+    {
+      "key": "ada49f27a7ca082a9901",
+      "tex": "s(x;\\boldsymbol\\phi)=\\frac{q}{\\sigma\\sqrt{2\\pi}}\\exp\\!\\left(-\\frac{(x-\\xi)^2}{2\\sigma^2}\\right),\\qquad\\boldsymbol\\phi=\\begin{bmatrix}\\xi\\\\q\\end{bmatrix},\\quad\\sigma=0.04.",
+      "display": true
+    },
+    {
+      "key": "aedee2c8a0d1610650b8",
+      "tex": "\\begin{aligned}\\widehat y&=wx+b,\\qquad r=\\widehat y-y,\\qquad\\mathcal L=\\frac12r^2,\\\\(x,y,w,b)&=(2,5,1,0).\\end{aligned}",
+      "display": true
+    },
+    {
+      "key": "aef18fe35058191de398",
+      "tex": "J_f^\\top\\boldsymbol{u}=\\begin{bmatrix}-3.7\\\\1.04466351\\end{bmatrix}",
+      "display": true
+    },
+    {
+      "key": "b0dbecee3c19a76d5eb3",
+      "tex": "(p_{0,1},p_{1,1},p_{2,1})=(0.80,0.15,0.05)",
+      "display": true
+    },
+    {
+      "key": "b12215bc126d25fa18da",
+      "tex": "\\mathbb R^n\\to\\mathbb R^m",
+      "display": false
+    },
+    {
+      "key": "b3fabcebde0509a80037",
+      "tex": "\\ell=f_1-f_2",
+      "display": false
+    },
+    {
+      "key": "b41543af928b68c5692d",
+      "tex": "w_1=0",
+      "display": true
+    },
+    {
+      "key": "b4de6de21ccef181548e",
+      "tex": "A",
+      "display": false
+    },
+    {
+      "key": "b918d1395c620a12ea24",
+      "tex": "\\mathcal L(\\theta_t)",
+      "display": true
+    },
+    {
+      "key": "b97f40ea31b5dbfc9db2",
+      "tex": "\\begin{aligned}G_t&=(V,E_t),\\qquad X_t\\in\\mathbb R^{|V|\\times5},\\\\A_{uv}(t)&=\\sum_{e\\in E_t}\\mathbf1_{\\{s_e=u,\\ d_e=v\\}}.\\end{aligned}",
+      "display": true
+    },
+    {
+      "key": "b9cf90fcd1bb7cb9bc3e",
+      "tex": "\\begin{aligned}f(\\boldsymbol x)&=\\begin{bmatrix}x_1x_2\\\\x_1^2+\\sin(x_2)\\end{bmatrix},\\qquad \\boldsymbol x=\\begin{bmatrix}2\\\\0.3\\end{bmatrix},\\\\J_f(\\boldsymbol x)&=\\begin{bmatrix}x_2&x_1\\\\2x_1&\\cos(x_2)\\end{bmatrix}=\\begin{bmatrix}0.3&2\\\\4&\\cos(0.3)\\end{bmatrix}.\\end{aligned}",
+      "display": true
+    },
+    {
+      "key": "b9edc21b8f79cbeeed64",
+      "tex": "\\begin{aligned}f(w)&=w^2+3w+2,\\\\\\frac{df}{dw}&=2w+3,\\\\\\left.\\frac{df}{dw}\\right|_{w=2}&=7.\\end{aligned}",
+      "display": true
+    },
+    {
+      "key": "bb448de9f34cbff3b442",
+      "tex": "n\\times p",
+      "display": false
+    },
+    {
+      "key": "bba0408124b9b57e2dbd",
+      "tex": "\\begin{aligned}f_{ij},u_i&\\in\\mathbb Z_{\\ge0},\\\\\\sum_{j=1}^{3}f_{ij}+u_i&=d_i,\\qquad\\sum_{i=1}^{8}f_{ij}\\le K_j,\\\\L_{\\mathrm{realized}}&=\\frac{\\sum_{i,j}c_{ij}f_{ij}+15\\sum_i u_i}{\\sum_i d_i}.\\end{aligned}",
+      "display": true
+    },
+    {
+      "key": "bc0ee5a056afa4d1cf38",
+      "tex": "\\partial s/\\partial\\xi=s(x-\\xi)/\\sigma^2",
+      "display": false
+    },
+    {
+      "key": "be8377b8063f42cf27bb",
+      "tex": "\\boldsymbol{u}=\\begin{bmatrix}1\\\\-1\\end{bmatrix}",
+      "display": true
+    },
+    {
+      "key": "bea0298569802fc5b11d",
+      "tex": "\\tanh(z)\\in(-1,1)",
+      "display": false
+    },
+    {
+      "key": "c0735839e933661c644e",
+      "tex": "\\begin{aligned}z_{jk}&=c(x_j,t_k;\\boldsymbol\\phi)+\\varepsilon_{jk},\\qquad\\varepsilon_{jk}\\overset{\\mathrm{iid}}\\sim\\mathcal N(0,\\sigma_\\varepsilon^2),\\\\\\mathcal L(\\boldsymbol\\phi)&=\\frac{1}{2M\\sigma_\\varepsilon^2}\\sum_{j=1}^{3}\\sum_{k\\in\\mathcal T_{\\mathrm{fit}}}\\bigl(c(x_j,t_k;\\boldsymbol\\phi)-z_{jk}\\bigr)^2,\\\\M&=3|\\mathcal T_{\\mathrm{fit}}|=36.\\end{aligned}",
+      "display": true
+    },
+    {
+      "key": "c302d7790e628ee19736",
+      "tex": "\\frac{f(x+h)-f(x-h)}{2h}",
+      "display": false
+    },
+    {
+      "key": "c41bca48a0b4360fe397",
+      "tex": "\\Pr(Y_e=1\\mid\\boldsymbol z_e)=\\operatorname{sigmoid}(\\boldsymbol\\gamma^\\top\\boldsymbol z_e+\\gamma_0),\\qquad\\boldsymbol z_e\\in\\mathbb R^{27}.",
+      "display": true
+    },
+    {
+      "key": "c8bf1bd7d22ea0069901",
+      "tex": "A\\xrightarrow{\\,2\\,}B,\\qquad C\\xrightarrow{\\,1\\,}B,\\qquad B\\xrightarrow{\\,1\\,}D",
+      "display": true
+    },
+    {
+      "key": "c9f596b5b02b90fa8008",
+      "tex": "0\\le x\\le1,\\quad0\\le t\\le1.2,\\qquad c(x,0)=0,\\qquad c(0,t)=c(1,t)=0.",
+      "display": true
+    },
+    {
+      "key": "cd41d4e2fdd58aeaba72",
+      "tex": "J_f\\in\\mathbb R^{2\\times2}",
+      "display": false
+    },
+    {
+      "key": "cd525d021ae23fc3044f",
+      "tex": "\\widetilde T_i=\\min(T_i,C_i),\\qquad\\delta_i=\\begin{cases}K_i,&T_i\\le C_i,\\\\0,&T_i>C_i.\\end{cases}",
+      "display": true
+    },
+    {
+      "key": "cf741e4ec86bbfbeebb5",
+      "tex": "L_4=4",
+      "display": true
+    },
+    {
+      "key": "d013aa302e6745706e6e",
+      "tex": "\\boldsymbol u=(1,-1)^\\top",
+      "display": false
+    },
+    {
+      "key": "d0b64abc19a5de8d72d3",
+      "tex": "\\beta",
+      "display": false
+    },
+    {
+      "key": "d17601a720dcf3d3851b",
+      "tex": "r_{jk}=\\widehat z_{jk}-z_{jk}",
+      "display": true
+    },
+    {
+      "key": "d2a9e77e450603462411",
+      "tex": "\\begin{aligned}a_{ij}&\\ge0,\\qquad\\sum_{j=1}^{3}a_{ij}=1,\\qquad a\\in\\mathbb R^{8\\times3},\\\\q_i&=\\sum_{j=1}^{3}a_{ij}c_{ij},\\qquad L_s(a)=\\frac{\\sum_{i=1}^{8}d_{is}q_i}{\\sum_{i=1}^{8}d_{is}}.\\end{aligned}",
+      "display": true
+    },
+    {
+      "key": "d2ffa20d53e2902901c6",
+      "tex": "L_{\\rm soft}=\\frac{3(1.6)+2(1.6)}5=1.6",
+      "display": true
+    },
+    {
+      "key": "d377dc3ffcb97c416f99",
+      "tex": "x_{B}=1",
+      "display": true
+    },
+    {
+      "key": "d3d50a23dd4ce958452f",
+      "tex": "\\Delta x=\\frac1{60},\\qquad A=\\frac{v\\Delta t}{\\Delta x},\\qquad B=\\frac{D\\Delta t}{(\\Delta x)^2}.",
+      "display": true
+    },
+    {
+      "key": "d53027134573525a4947",
+      "tex": "J_f^\\top\\boldsymbol{u}=\\begin{bmatrix}0.3(1)+4(-1)\\\\2(1)+\\cos(0.3)(-1)\\end{bmatrix}",
+      "display": true
+    },
+    {
+      "key": "d5394187dddc33d25a2e",
+      "tex": "x_{D}=1",
+      "display": true
+    },
+    {
+      "key": "d5552bfd44c5fbd8326c",
+      "tex": "\\begin{aligned}u&=c(x_j,t_k;\\xi,1),\\qquad\\mathcal L_{\\mathrm{one}}(q)=\\frac{(uq-z)^2}{2\\sigma_\\varepsilon^2},\\\\\\frac{d\\mathcal L_{\\mathrm{one}}}{dq}&=\\frac{u(uq-z)}{\\sigma_\\varepsilon^2}.\\end{aligned}",
+      "display": true
+    },
+    {
+      "key": "d723f9c16759fb22bdfc",
+      "tex": "S_i(t)+F_{i1}(t)+F_{i2}(t)=1",
+      "display": false
+    },
+    {
+      "key": "d8af18103a7710f61525",
+      "tex": "w_2=0",
+      "display": true
+    },
+    {
+      "key": "db4ff1ac53fb639fba83",
+      "tex": "\\theta_{t+1}=\\theta_t+\\Delta\\theta_t",
+      "display": true
+    },
+    {
+      "key": "db80e047d02ff2e1f215",
+      "tex": "u_{jk}^2",
+      "display": false
+    },
+    {
+      "key": "dedc0e4df925d2d36ab0",
+      "tex": "P\\in\\mathbb R^{59\\times59}",
+      "display": false
+    },
+    {
+      "key": "e23a5cccaa760d935264",
+      "tex": "\\begin{aligned}\\min_{f\\in\\mathbb Z_{\\ge0}^{8\\times3}}\\quad&\\sum_{i=1}^{8}\\sum_{j=1}^{3}c_{ij}f_{ij},\\\\\\sum_{j=1}^{3}f_{ij}&=d_i\\quad(i=1,\\ldots,8),\\\\\\sum_{i=1}^{8}f_{ij}&\\le K_j\\quad(j=1,2,3).\\end{aligned}",
+      "display": true
+    },
+    {
+      "key": "e32838b085f098e1a48e",
+      "tex": "\\frac{f(x+h)-f(x)}{h}",
+      "display": false
+    },
+    {
+      "key": "e3773e0fa4495c844af3",
+      "tex": "K_j",
+      "display": false
+    },
+    {
+      "key": "e4bd8005f58b3d950c38",
+      "tex": "p",
+      "display": false
+    },
+    {
+      "key": "e5675983d7532b75f6e9",
+      "tex": "a_{ij}",
+      "display": false
+    },
+    {
+      "key": "e7d66bc763e204812f00",
+      "tex": "S_i(0)=1,\\qquad S_i(t)=S_i(t-1)p_{i0t}=\\prod_{u=1}^{t}p_{i0u}.",
+      "display": true
+    },
+    {
+      "key": "ea6e6460e1d94db6be25",
+      "tex": "S(2)+F_1(2)+F_2(2)=0.60+0.23+0.17=1",
+      "display": true
+    },
+    {
+      "key": "eb10733669858da54aaa",
+      "tex": "J_f\\boldsymbol{v}\\in\\mathbb R^2",
+      "display": true
+    },
+    {
+      "key": "eb890e596d95835f696b",
+      "tex": "c_j^{n+1}=(A+B)c_{j-1}^n+(1-A-2B)c_j^n+Bc_{j+1}^n+\\Delta t\\,s_j.",
+      "display": true
+    },
+    {
+      "key": "ed91b1f91e96050e00de",
+      "tex": "a=\\begin{bmatrix}0.8&0.2\\\\0.6&0.4\\end{bmatrix}",
+      "display": true
+    },
+    {
+      "key": "f009345bc8dd1f411a0e",
+      "tex": "p_{ikt}",
+      "display": false
+    },
+    {
+      "key": "f07977d315b55b4a3970",
+      "tex": "\\mathscr L_i(\\beta)=\\begin{cases}S_i(t_i-1)p_{ik_it_i},&k_i\\in\\{1,2\\},\\\\S_i(t_i),&k_i=0.\\end{cases}",
+      "display": true
+    },
+    {
+      "key": "f0aea3e9208c965b7f44",
+      "tex": "\\begin{aligned}c_j^{n+1}={}&c_j^n-A(c_j^n-c_{j-1}^n)\\\\&+B(c_{j+1}^n-2c_j^n+c_{j-1}^n)+\\Delta t\\,s_j.\\end{aligned}",
+      "display": true
+    },
+    {
+      "key": "f10a4908153cc5103435",
+      "tex": "a^\\top\\boldsymbol d=\\begin{bmatrix}3.6\\\\1.4\\end{bmatrix},\\qquad q_1=q_2=1.6",
+      "display": true
+    },
+    {
+      "key": "f228526020433a5e6f4f",
+      "tex": "(p_{0,2},p_{1,2},p_{2,2})=(0.75,0.10,0.15)",
+      "display": true
+    },
+    {
+      "key": "f35ae4518d8db1f3367d",
+      "tex": "J_f^\\top\\boldsymbol{u}\\in\\mathbb R^2",
+      "display": true
+    },
+    {
+      "key": "f46989d6bf684c5d056e",
+      "tex": "F_1(2)=0.15+0.80(0.10)=0.23",
+      "display": true
+    },
+    {
+      "key": "f7bcda15102745c9b7b9",
+      "tex": "z_{jk}",
+      "display": false
+    },
+    {
+      "key": "f898307cdfa5e1630de7",
+      "tex": "R_{it}",
+      "display": false
+    },
+    {
+      "key": "fa0fe3f8837449866173",
+      "tex": "Y_{it}",
+      "display": false
+    },
+    {
+      "key": "fc3480bf23cc3f059f8a",
+      "tex": "d_{is}",
+      "display": false
+    },
+    {
+      "key": "fc358d72bea3066891fa",
+      "tex": "f_{ijs}",
+      "display": false
+    },
+    {
+      "key": "fdefefa4c3745fb359f8",
+      "tex": "\\begin{aligned}\\boldsymbol c^{n+1}&=P\\boldsymbol c^n+\\Delta t\\,\\boldsymbol s(\\boldsymbol\\phi),\\\\\\frac{\\partial\\boldsymbol c^{n+1}}{\\partial\\boldsymbol\\phi}&=P\\frac{\\partial\\boldsymbol c^n}{\\partial\\boldsymbol\\phi}+\\Delta t\\frac{\\partial\\boldsymbol s}{\\partial\\boldsymbol\\phi}.\\end{aligned}",
+      "display": true
+    },
+    {
+      "key": "fe2262dacbf70c793560",
+      "tex": "\\boldsymbol m_v",
+      "display": false
+    },
+    {
+      "key": "fe34aec1720b136f1172",
+      "tex": "J_f(\\boldsymbol{x})=\\begin{bmatrix}x_2&x_1\\\\2x_1&\\cos x_2\\end{bmatrix}=\\begin{bmatrix}0.3&2\\\\4&0.95533649\\end{bmatrix}",
+      "display": true
+    },
+    {
+      "key": "feee51877ee3d6cafd6d",
+      "tex": "2\\times1",
+      "display": false
+    },
+    {
+      "key": "ff604444692ef1c2ff10",
+      "tex": "m_D=\\frac11=1",
+      "display": true
+    }
+  ]
+}

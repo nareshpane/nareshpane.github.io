@@ -1,0 +1,71 @@
+{
+  "status": "passed",
+  "checks": [
+    "Python syntax, tensor shapes, exact scalar calculation, torch.func, weight serialization",
+    "Survival censor/event likelihood, independent finite gradients, probability conservation, known censor weights, reproducible generation",
+    "Graph future-data sentinel, strict chronology, duplicate-edge/isolated-node aggregation, native operator parity",
+    "River combined stability, boundary/positivity, forward parity, independent torch gradcheck, manufactured grid refinement",
+    "Allocation independent gradients, fractional-tail CVaR, demand/capacity integrality, exact-cost bound, infeasible-demand rejection",
+    "Finite JSON/NPZ outputs, retained substantive run statuses, independent replication records"
+  ],
+  "count": 6,
+  "environment": {
+    "python": "3.13.1",
+    "numpy": "2.4.0",
+    "scipy": "1.18.1",
+    "pytorch": "2.15.0+cpu",
+    "platform": "Windows-11-10.0.22621-SP0",
+    "processor": "Intel64 Family 6 Model 140 Stepping 1, GenuineIntel",
+    "logical_cpus": 8,
+    "device": "cpu",
+    "dtype": "float64",
+    "torch_threads": 1,
+    "cuda_available": false,
+    "threadpools": [
+      {
+        "user_api": "blas",
+        "internal_api": "openblas",
+        "num_threads": 1,
+        "prefix": "libscipy_openblas",
+        "filepath": "C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\numpy.libs\\libscipy_openblas64_-9e3e5a4229c1ca39f10dc82bba9e2b2b.dll",
+        "version": "0.3.30",
+        "threading_layer": "pthreads",
+        "architecture": "SkylakeX"
+      },
+      {
+        "user_api": "openmp",
+        "internal_api": "openmp",
+        "num_threads": 1,
+        "prefix": "libiomp",
+        "filepath": "C:\\Users\\user\\AppData\\Local\\Temp\\codex-pytorch-20261113\\Lib\\site-packages\\torch\\lib\\libiomp5md.dll",
+        "version": null
+      },
+      {
+        "user_api": "openmp",
+        "internal_api": "openmp",
+        "num_threads": 1,
+        "prefix": "libiomp",
+        "filepath": "C:\\Users\\user\\AppData\\Local\\Temp\\codex-pytorch-20261113\\Lib\\site-packages\\torch\\lib\\libiompstubs5md.dll",
+        "version": null
+      },
+      {
+        "user_api": "blas",
+        "internal_api": "openblas",
+        "num_threads": 8,
+        "prefix": "libscipy_openblas",
+        "filepath": "C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\scipy.libs\\libscipy_openblas-197ee2fc9b4d071f7e048078cac74115.dll",
+        "version": "0.3.31.dev",
+        "threading_layer": "pthreads",
+        "architecture": "SkylakeX"
+      },
+      {
+        "user_api": "openmp",
+        "internal_api": "openmp",
+        "num_threads": 8,
+        "prefix": "vcomp",
+        "filepath": "C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\sklearn\\.libs\\vcomp140.dll",
+        "version": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 570" role="img" aria-labelledby="svf-title svf-desc" font-family="Segoe UI,Arial,sans-serif" font-size="18" fill="#26323B">
+<title id="svf-title">A soft assignment can overload a station even when a feasible integer flow exists</title>
+<desc id="svf-desc">This analytical two-district two-station example has demand (3,2), capacities (3,2), and unit-cost matrix [[1,4],[2,1]]. Soft assignment rows (0.8,0.2) and (0.6,0.4) yield flows (2.4,0.6) and (1.2,0.8), station loads (3.6,1.4), mean expected cost 1.6, and scaled squared excess capacity penalty 0.072. Integer flow rows (3,0) and (0,2) yield loads (3,2), mean cost 1.0, and full feasible service. These are controlled calculations, not fitted city results.</desc>
+<defs><marker id="svf-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10" fill="#789DB8"/></marker></defs>
+<text x="24" y="34" font-family="Georgia,serif" font-size="26">A relaxed policy and a realized dispatch answer different questions</text>
+<text x="24" y="64" font-size="17" fill="#576774">Analytical toy · two districts and two stations · cost is a synthetic proxy</text>
+<rect x="24" y="85" width="912" height="65" rx="8" fill="#F6F2FA" stroke="#D8CAE7"/>
+<text x="45" y="112" font-family="Cambria,Georgia,serif" font-size="22">Demand d=(3,2) · capacity K=(3,2) · unit costs C=[ 1  4 ; 2  1 ]</text>
+<text x="45" y="138" font-size="17">Rows are districts; columns are stations. Every district can reach either station.</text>
+<rect x="24" y="172" width="440" height="341" rx="9" fill="#FFF3EB" stroke="#DDBAA8"/>
+<text x="45" y="203" font-weight="600" font-size="22">Continuous assignment weights</text>
+<text x="45" y="232" font-family="Cambria,Georgia,serif" font-size="20">a₁=(0.8,0.2); a₂=(0.6,0.4)</text>
+<path d="M106 273H358M106 285L358 352M106 352L358 285M106 366H358" fill="none" stroke="#9CB7CA" stroke-width="2" marker-end="url(#svf-arrow)"/>
+<rect x="214" y="248" width="42" height="23" rx="4" fill="#FFF3EB"/><text x="235" y="265" text-anchor="middle" font-size="17">2.4</text>
+<rect x="191" y="302" width="42" height="23" rx="4" fill="#FFF3EB"/><text x="212" y="320" text-anchor="middle" font-size="17">0.6</text>
+<rect x="272" y="304" width="42" height="23" rx="4" fill="#FFF3EB"/><text x="293" y="322" text-anchor="middle" font-size="17">1.2</text>
+<rect x="214" y="369" width="42" height="23" rx="4" fill="#FFF3EB"/><text x="235" y="387" text-anchor="middle" font-size="17">0.8</text>
+<circle cx="78" cy="273" r="27" fill="#FFFFFF" stroke="#9CB7CA"/><text x="78" y="270" text-anchor="middle" font-weight="600">D1</text><text x="78" y="291" text-anchor="middle" font-size="16">d=3</text>
+<circle cx="78" cy="366" r="27" fill="#FFFFFF" stroke="#9CB7CA"/><text x="78" y="363" text-anchor="middle" font-weight="600">D2</text><text x="78" y="384" text-anchor="middle" font-size="16">d=2</text>
+<rect x="361" y="246" width="54" height="54" rx="7" fill="#FFF1EF" stroke="#B8665B" stroke-width="1.7"/><text x="388" y="279" text-anchor="middle" font-weight="600">S1</text>
+<text x="388" y="323" text-anchor="middle" font-size="17" fill="#974D43">3.6 / 3 · excess</text>
+<rect x="361" y="339" width="54" height="54" rx="7" fill="#FFFFFF" stroke="#9CB7CA"/><text x="388" y="372" text-anchor="middle" font-weight="600">S2</text>
+<text x="388" y="417" text-anchor="middle" font-size="17">1.4 / 2</text>
+<text x="45" y="451" font-family="Cambria,Georgia,serif" font-size="21">Expected cost = (3×1.6+2×1.6)/5 = 1.6</text>
+<text x="45" y="479" font-family="Cambria,Georgia,serif" font-size="21">Capacity penalty = 0.6² / 5 = 0.072</text>
+<text x="45" y="504" font-size="17">Equal district costs do not enforce capacity.</text>
+<rect x="496" y="172" width="440" height="341" rx="9" fill="#F1F8EE" stroke="#BCD7B6"/>
+<text x="517" y="203" font-weight="600" font-size="22">One feasible integer realization</text>
+<text x="517" y="232" font-family="Cambria,Georgia,serif" font-size="20">f₁=(3,0); f₂=(0,2)</text>
+<path d="M578 273H830M578 366H830" fill="none" stroke="#7FA6BE" stroke-width="3" marker-end="url(#svf-arrow)"/>
+<text x="705" y="261" text-anchor="middle" font-size="18">3 units</text><text x="705" y="354" text-anchor="middle" font-size="18">2 units</text>
+<circle cx="550" cy="273" r="27" fill="#FFFFFF" stroke="#9CB7CA"/><text x="550" y="270" text-anchor="middle" font-weight="600">D1</text><text x="550" y="291" text-anchor="middle" font-size="16">d=3</text>
+<circle cx="550" cy="366" r="27" fill="#FFFFFF" stroke="#9CB7CA"/><text x="550" y="363" text-anchor="middle" font-weight="600">D2</text><text x="550" y="384" text-anchor="middle" font-size="16">d=2</text>
+<rect x="833" y="246" width="54" height="54" rx="7" fill="#EDF6FC" stroke="#7DA1BC"/><text x="860" y="279" text-anchor="middle" font-weight="600">S1</text>
+<rect x="824" y="308" width="72" height="7" rx="3" fill="#88B29A"/><text x="860" y="337" text-anchor="middle" font-size="17">3 / 3 · full</text>
+<rect x="833" y="339" width="54" height="54" rx="7" fill="#EDF6FC" stroke="#7DA1BC"/><text x="860" y="372" text-anchor="middle" font-weight="600">S2</text>
+<rect x="824" y="401" width="72" height="7" rx="3" fill="#88B29A"/><text x="860" y="430" text-anchor="middle" font-size="17">2 / 2 · full</text>
+<text x="517" y="461" font-family="Cambria,Georgia,serif" font-size="22">Realized cost = (3×1+2×1)/5 = 1.0</text>
+<text x="517" y="492" font-size="17">All demand served; every station stays feasible.</text>
+<text x="24" y="548" font-size="18" fill="#576774">The relaxed objective is smooth enough for gradients; integer flows require a separate feasibility calculation.</text>
+</svg>

@@ -1,0 +1,395 @@
+{
+  "status": "pre-typesetting audit",
+  "equations": [
+    {
+      "old_number": 1,
+      "section": "tensor-shapes",
+      "tex": "\\[X\\in\\mathbb R^{n\\times p},\\quad W\\in\\mathbb R^{p\\times h},\\quad H=XW\\in\\mathbb R^{n\\times h},\\quad H_{ij}=\\sum_{k=1}^{p}X_{ik}W_{kj}.\\]",
+      "explanation": "X: n × p; W: p × h; H = XW: n × h. Hᵢⱼ = Σₖ XᵢₖWₖⱼ."
+    },
+    {
+      "old_number": 2,
+      "section": "first-gradient",
+      "tex": "\\[\\widehat y=wx+b,\\quad r=\\widehat y-y,\\quad \\mathcal L=\\tfrac12r^2;\\qquad x=2,\\ y=5,\\ w=1,\\ b=0.\\]",
+      "explanation": "ŷ = wx+b; r = ŷ−y; L = ½r². With x=2, y=5, w=1, b=0: ŷ=2, r=−3, L=4.5."
+    },
+    {
+      "old_number": 3,
+      "section": "first-gradient",
+      "tex": "\\[\\frac{\\partial\\mathcal L}{\\partial w}=rx=-6,\\qquad \\frac{\\partial\\mathcal L}{\\partial b}=r=-3.\\]",
+      "explanation": "dL/dw = rx = −6; dL/db = r = −3."
+    },
+    {
+      "old_number": 4,
+      "section": "first-gradient",
+      "tex": "\\[\\begin{aligned}(w^\\prime,b^\\prime)&=(w,b)-0.05(-6,-3)=(1.3,0.15),\\\\\\widehat y^\\prime&=2(1.3)+0.15=2.75,\\qquad \\mathcal L^\\prime=\\tfrac12(2.75-5)^2=2.53125.\\end{aligned}\\]",
+      "explanation": "At η=0.05: w′=1.3, b′=0.15, prediction′=2.75, loss′=2.53125."
+    },
+    {
+      "old_number": 5,
+      "section": "derivative-methods",
+      "tex": "\\[J_{g\\circ f}(x)=J_g(f(x))J_f(x),\\qquad (1\\times3)(3\\times2)=(1\\times2).\\]",
+      "explanation": "For f: ℝ²→ℝ³ and g: ℝ³→ℝ, J(g∘f) = Jg(f(x)) Jf(x), with shapes (1×3)(3×2)=(1×2)."
+    },
+    {
+      "old_number": 6,
+      "section": "neural-compositions",
+      "tex": "\\[h=\\sigma(W_1x+b_1),\\quad \\widehat y=W_2h+b_2;\\qquad x\\in\\mathbb R^2,\\ W_1\\in\\mathbb R^{3\\times2},\\ W_2\\in\\mathbb R^{1\\times3}.\\]",
+      "explanation": "h = activation(W₁x+b₁), prediction = W₂h+b₂. Two inputs → three hidden units → one scalar output."
+    },
+    {
+      "old_number": 7,
+      "section": "training-architecture",
+      "tex": "\\[\\theta_{m+1}=\\theta_m-\\eta\\nabla_\\theta\\mathcal L(\\theta_m),\\qquad \\nabla_\\theta\\mathcal L\\ \\ne\\ \\theta_{m+1}-\\theta_m.\\]",
+      "explanation": "For plain gradient descent: θ(next)=θ−η∇L. The gradient and parameter displacement are different quantities."
+    },
+    {
+      "old_number": 8,
+      "section": "function-transformations",
+      "tex": "\\[f(x)=\\begin{pmatrix}x_1x_2\\\\x_1^2+\\sin x_2\\end{pmatrix},\\qquad J_f(2,0.3)=\\begin{pmatrix}0.3&2\\\\4&\\cos(0.3)\\end{pmatrix}.\\]",
+      "explanation": "f(x₁,x₂) = (x₁x₂, x₁²+sin x₂). At (2,0.3), J = [[0.3,2],[4,cos(0.3)]]."
+    },
+    {
+      "old_number": 9,
+      "section": "function-transformations",
+      "tex": "\\[J_f=\\begin{pmatrix}0.3&2\\\\4&\\cos(0.3)\\end{pmatrix},\\quad J_fv=\\binom{0.3(1)+2(-1)}{4(1)+\\cos(0.3)(-1)}=\\binom{-1.7}{3.04466351}.\\]",
+      "explanation": "J: 2 outputs × 2 inputs. Jv = (−1.7, 3.04466351), a vector in output space."
+    },
+    {
+      "old_number": 10,
+      "section": "function-transformations",
+      "tex": "\\[u^\\top J_f=\\bigl(1(0.3)-1(4),\\ 1(2)-1\\cos(0.3)\\bigr)=(-3.7,1.04466351).\\]",
+      "explanation": "uᵀJ = (−3.7,1.04466351), a sensitivity in input space."
+    },
+    {
+      "old_number": 11,
+      "section": "censoring-and-risks",
+      "tex": "\\[T=\\text{first-event bin},\\quad C=\\text{end-of-bin censoring time},\\quad \\widetilde T=\\min(T,C),\\quad \\delta\\in\\{0,1,2\\}.\\]",
+      "explanation": "T is the first-event bin, C is the bin whose end terminates observation, observed time is min(T,C), and δ is 0 for censoring or the observed cause."
+    },
+    {
+      "old_number": 12,
+      "section": "discrete-hazards",
+      "tex": "\\[\\ell_{i,0,t}=0,\\quad \\ell_{i,k,t}=x_i^\\top\\beta_{t,k},\\quad p_{i,k,t}=\\frac{e^{\\ell_{i,k,t}}}{\\sum_{r=0}^{2}e^{\\ell_{i,r,t}}},\\quad \\sum_{k=0}^{2}p_{i,k,t}=1.\\]",
+      "explanation": "No-event logit = 0; event logits = xᵢᵀβₜₖ. Softmax over all three categories gives probabilities summing to one."
+    },
+    {
+      "old_number": 13,
+      "section": "discrete-hazards",
+      "tex": "\\[S_i(0)=1,\\qquad S_i(t)=S_i(t-1)p_{i,0,t}=\\prod_{u=1}^{t}p_{i,0,u}.\\]",
+      "explanation": "Sᵢ(0)=1. Survival through t is the product of conditional no-event probabilities through t."
+    },
+    {
+      "old_number": 14,
+      "section": "discrete-hazards",
+      "tex": "\\[F_{i,k}(t)=F_{i,k}(t-1)+S_i(t-1)p_{i,k,t}=\\sum_{u=1}^{t}S_i(u-1)p_{i,k,u}.\\]",
+      "explanation": "Cause-k incidence through t adds previous event-free probability × current conditional cause probability."
+    },
+    {
+      "old_number": 15,
+      "section": "discrete-hazards",
+      "tex": "\\[\\begin{aligned}S(2)&=0.80(0.75)=0.60,\\\\F_1(2)&=0.15+0.80(0.10)=0.23,\\\\F_2(2)&=0.05+0.80(0.15)=0.17.\\end{aligned}\\]",
+      "explanation": "At bin 2: S=.60, F₁=.23, F₂=.17; total=1."
+    },
+    {
+      "old_number": 16,
+      "section": "survival-likelihood",
+      "tex": "\\[\\mathscr L_i=\\begin{cases}\\left[\\prod_{u<t_i}p_{i,0,u}\\right]p_{i,k_i,t_i},&k_i>0,\\\\\\prod_{u\\leq t_i}p_{i,0,u},&k_i=0.\\end{cases}\\]",
+      "explanation": "Event k at t: product of no-event probabilities before t, then pₖₜ. Censor at end t: product of no-event probabilities through t."
+    },
+    {
+      "old_number": 17,
+      "section": "survival-likelihood",
+      "tex": "\\[\\mathcal J(\\beta)=-\\frac1N\\sum_{i,t}R_{it}\\log p_{i,Y_{it},t}+\\frac\\lambda2\\sum_{t,p,k}\\beta_{tpk}^2,\\qquad\\lambda=0.001.\\]",
+      "explanation": "Objective = negative observed-bin log probabilities summed per subject, plus 0.001/2 times squared parameter norm."
+    },
+    {
+      "old_number": 18,
+      "section": "survival-likelihood",
+      "tex": "\\[\\frac{\\partial\\mathcal J}{\\partial\\beta_{tpk}}=\\frac1N\\sum_i R_{it}x_{ip}\\left[p_{i,k,t}-\\mathbf1\\{Y_{it}=k\\}\\right]+\\lambda\\beta_{tpk},\\quad k>0.\\]",
+      "explanation": "Derivative = average risk-masked covariate × (event probability − event indicator), plus ridge derivative."
+    },
+    {
+      "old_number": 19,
+      "section": "survival-evaluation",
+      "tex": "\\[\\widehat{\\mathrm{BS}}_k(h)=\\frac1n\\sum_i\\left[\\frac{\\mathbf1\\{\\delta_i>0,\\widetilde T_i\\le h\\}}{G(\\widetilde T_i)}\\left(\\mathbf1\\{\\delta_i=k\\}-F_{ik}(h)\\right)^2+\\frac{\\mathbf1\\{\\widetilde T_i\\ge h\\}\\mathbf1\\{\\neg(\\delta_i>0,\\widetilde T_i\\le h)\\}}{G(h)}F_{ik}(h)^2\\right].\\]",
+      "explanation": "IPCW Brier: observed events by h receive weight 1/G(event bin); subjects known event-free through h receive 1/G(h); earlier censored histories contribute zero."
+    },
+    {
+      "old_number": 20,
+      "section": "graph-foundations",
+      "tex": "\\[G_t=(V,E_t),\\quad A_{uv}(t)=\\sum_{e\\in E_t}\\mathbf1\\{s_e=u,d_e=v\\},\\quad X_t\\in\\mathbb R^{|V|\\times5}.\\]",
+      "explanation": "Gₜ has accounts V and time-indexed directed transactions Eₜ. Aᵤᵥ counts transfers from u to v; Xₜ has five node features."
+    },
+    {
+      "old_number": 21,
+      "section": "financial-baseline",
+      "tex": "\\[\\Pr(Y_e=1\\mid z_e)=\\operatorname{sigmoid}(\\gamma^\\top z_e+\\gamma_0),\\qquad z_e\\in\\mathbb R^{27}.\\]",
+      "explanation": "Logistic edge probability = sigmoid(γᵀzₑ+γ₀); the 27 engineered features contain endpoint, neighborhood, and transaction information."
+    },
+    {
+      "old_number": 22,
+      "section": "message-passing",
+      "tex": "\\[m_v=\\frac{\\sum_{(u,v)\\in E_{\\mathrm{hist}}}x_u}{\\max(1,\\deg_{\\mathrm{in}}v)},\\qquad h_v=\\tanh(W_sx_v+W_nm_v+b).\\]",
+      "explanation": "Mean incoming message mᵥ sums xᵤ over historical edges, dividing by max(1,in-degree). Updated embedding hᵥ = tanh(Wₛxᵥ+Wₙmᵥ+b)."
+    },
+    {
+      "old_number": 23,
+      "section": "message-passing",
+      "tex": "\\[z_e=[h_{s_e},h_{d_e},\\log(\\mathrm{amount}_e)/5,\\mathbf1\\{\\mathrm{institution}_{s_e}=\\mathrm{institution}_{d_e}\\}],\\quad \\widehat p_e=\\operatorname{sigmoid}(f_\\theta(z_e)).\\]",
+      "explanation": "Edge input joins source and destination embeddings with two observed edge features; an MLP produces a logit, then sigmoid gives the score."
+    },
+    {
+      "old_number": 24,
+      "section": "message-passing",
+      "tex": "\\[m_B=\\frac83,\\quad m_D=1,\\quad h_v=\\tanh(0.5x_v+0.3m_v-0.2).\\]",
+      "explanation": "Controlled one-unit layer: hᵥ = tanh(.5xᵥ+.3mᵥ−.2)."
+    },
+    {
+      "old_number": 25,
+      "section": "rare-event-evaluation",
+      "tex": "\\[\\mathrm{Precision}=\\frac{TP}{TP+FP},\\quad\\mathrm{Recall}=\\frac{TP}{TP+FN},\\quad\\mathrm{FPR}=\\frac{FP}{FP+TN}.\\]",
+      "explanation": "Precision = TP/(TP+FP); recall = TP/(TP+FN); false-positive rate = FP/(FP+TN)."
+    },
+    {
+      "old_number": 26,
+      "section": "transport-equation",
+      "tex": "\\[\\partial_t c+\\partial_x(vc-D\\partial_x c)=s(x;\\phi),\\qquad \\partial_t c+v\\partial_x c=D\\partial_{xx}c+s(x;\\phi).\\]",
+      "explanation": "Concentration change + divergence of (advective flux − dispersive gradient flux) = source. For constant v,D: cₜ+v cₓ=D cₓₓ+s."
+    },
+    {
+      "old_number": 27,
+      "section": "transport-equation",
+      "tex": "\\[s(x;\\phi)=\\frac{q}{\\sigma\\sqrt{2\\pi}}\\exp\\left[-\\frac{(x-\\xi)^2}{2\\sigma^2}\\right],\\quad\\phi=(\\xi,q),\\quad\\sigma=0.04.\\]",
+      "explanation": "A smooth Gaussian source has position ξ, positive intensity q, and fixed width σ=0.04. It is constant over the simulated time interval."
+    },
+    {
+      "old_number": 28,
+      "section": "river-discretization",
+      "tex": "\\[c_j^{n+1}=c_j^n-A(c_j^n-c_{j-1}^n)+B(c_{j+1}^n-2c_j^n+c_{j-1}^n)+\\Delta t\\,s_j.\\]",
+      "explanation": "Forward step = current c − A(upwind difference) + B(centered curvature difference) + Δt source."
+    },
+    {
+      "old_number": 29,
+      "section": "river-discretization",
+      "tex": "\\[c_j^{n+1}=(1-A-2B)c_j^n+(A+B)c_{j-1}^n+B c_{j+1}^n+\\Delta t\\,s_j,\\quad A+2B\\le1.\\]",
+      "explanation": "Coefficients are nonnegative when A≥0, B≥0, A+2B≤1. The implementation chooses A+2B≤0.75 for margin."
+    },
+    {
+      "old_number": 30,
+      "section": "inverse-objective",
+      "tex": "\\[z_{jk}=c(x_j,t_k;\\phi)+\\varepsilon_{jk},\\quad\\varepsilon_{jk}\\sim\\mathcal N(0,\\sigma_\\varepsilon^2),\\quad\\mathcal L(\\phi)=\\frac{1}{2M\\sigma_\\varepsilon^2}\\sum_{j,k\\in\\mathcal T_{\\rm fit}}(c(x_j,t_k;\\phi)-z_{jk})^2.\\]",
+      "explanation": "Measurements are simulator predictions plus independent Gaussian noise. The objective averages squared sensor residuals, scaled by twice the noise variance."
+    },
+    {
+      "old_number": 31,
+      "section": "inverse-objective",
+      "tex": "\\[\\mathcal L_{\\rm one}(q)=\\frac{(u q-z)^2}{2\\sigma_\\varepsilon^2},\\qquad\\frac{d\\mathcal L_{\\rm one}}{dq}=\\frac{u(uq-z)}{\\sigma_\\varepsilon^2},\\quad u=c(1).\\]",
+      "explanation": "For one observation: residual r=uq−z; loss=r²/(2σ²); gradient=u r/σ²."
+    },
+    {
+      "old_number": 32,
+      "section": "river-finite-differences",
+      "tex": "\\[[\\nabla_\\phi\\mathcal L]_a\\approx\\frac{\\mathcal L(\\phi+h e_a)-\\mathcal L(\\phi-h e_a)}{2h}.\\]",
+      "explanation": "Central derivative for parameter a = objective at +h minus objective at −h, divided by 2h."
+    },
+    {
+      "old_number": 33,
+      "section": "differentiate-simulator",
+      "tex": "\\[c^{n+1}=Ac^n+\\Delta t\\,s(\\phi),\\qquad\\frac{\\partial c^{n+1}}{\\partial\\phi}=A\\frac{\\partial c^n}{\\partial\\phi}+\\Delta t\\frac{\\partial s}{\\partial\\phi}.\\]",
+      "explanation": "A linear stencil propagates the state; its parameter sensitivities obey the corresponding recurrence, plus source sensitivity."
+    },
+    {
+      "old_number": 34,
+      "section": "allocation-formulation",
+      "tex": "\\[a_{ij}\\ge0,\\quad\\sum_{j=1}^{3}a_{ij}=1,\\quad q_i=\\sum_j a_{ij}c_{ij},\\quad L_s(a)=\\frac{\\sum_i d_{is}q_i}{\\sum_i d_{is}}.\\]",
+      "explanation": "Each district’s soft assignment weights sum to one. District expected cost qᵢ is its weighted station cost; scenario cost Lₛ averages qᵢ by demand."
+    },
+    {
+      "old_number": 35,
+      "section": "allocation-formulation",
+      "tex": "\\[\\mathrm{load}_{js}=\\sum_i d_{is}a_{ij},\\quad \\mathcal C(a)=\\frac{1}{S\\sum_jK_j}\\sum_{s,j}(\\mathrm{load}_{js}-K_j)_+^2,\\quad \\mathcal F(a)=\\frac18\\sum_i(q_i-\\overline q)^2.\\]",
+      "explanation": "Capacity penalty averages squared excess soft load, scaled by total capacity. Fairness penalty is variance of district expected cost."
+    },
+    {
+      "old_number": 36,
+      "section": "demand-and-cvar",
+      "tex": "\\[\\operatorname{CVaR}_{\\alpha}(L)=\\min_{\\eta}\\left\\{\\eta+\\frac{1}{(1-\\alpha)S}\\sum_{s=1}^{S}(L_s-\\eta)_+\\right\\},\\qquad\\alpha=0.9.\\]",
+      "explanation": "Empirical CVaR minimizes η + average positive excess above η divided by 1−α. At α=0.9 it describes the upper tenth of scenario loss."
+    },
+    {
+      "old_number": 37,
+      "section": "demand-and-cvar",
+      "tex": "\\[\\operatorname{CVaR}_{.625}=\\frac{4+0.5(3)}{1.5}=\\frac{11}{3}.\\]",
+      "explanation": "CVaR uses exactly 1.5 observations of tail mass, including fractional mass at the boundary."
+    },
+    {
+      "old_number": 38,
+      "section": "classical-allocation",
+      "tex": "\\[\\min_{f\\ge0}\\sum_{ij}c_{ij}f_{ij},\\qquad \\sum_jf_{ij}=d_i,\\quad\\sum_if_{ij}\\le K_j,\\quad f_{ij}\\in\\mathbb Z_{\\ge0}.\\]",
+      "explanation": "Exact per-scenario cost minimization serves all district demand subject to station capacities."
+    },
+    {
+      "old_number": 39,
+      "section": "differentiable-allocation",
+      "tex": "\\[\\mathcal J(\\theta,\\eta)=\\frac1S\\sum_sL_s(a_\\theta)+0.7\\operatorname{CVaR}_{0.9}(L(a_\\theta))+0.25\\mathcal F(a_\\theta)+1.5\\mathcal C(a_\\theta).\\]",
+      "explanation": "Objective = mean scenario cost + 0.7 CVaR₀.₉ + 0.25 district-cost variance + 1.5 scaled capacity penalty."
+    }
+  ],
+  "preserved_subsection_ids": [
+    "what-is-pytorch",
+    "numpy-to-autograd",
+    "tensor-shapes",
+    "first-gradient",
+    "derivative-methods",
+    "computational-graph",
+    "exploring-api",
+    "neural-compositions",
+    "training-architecture",
+    "data-reproducibility",
+    "function-transformations",
+    "eager-and-compile",
+    "choosing-tools",
+    "survival-question",
+    "censoring-and-risks",
+    "discrete-hazards",
+    "survival-likelihood",
+    "survival-conventional",
+    "survival-pytorch",
+    "survival-laboratory",
+    "survival-evaluation",
+    "survival-source",
+    "survival-contribution",
+    "financial-question",
+    "graph-foundations",
+    "transaction-generator",
+    "financial-baseline",
+    "message-passing",
+    "financial-parity",
+    "financial-laboratory",
+    "rare-event-evaluation",
+    "financial-source",
+    "financial-contribution",
+    "river-question",
+    "transport-equation",
+    "river-discretization",
+    "inverse-objective",
+    "river-finite-differences",
+    "differentiate-simulator",
+    "river-laboratory",
+    "river-recovery",
+    "river-source",
+    "river-contribution",
+    "allocation-question",
+    "allocation-formulation",
+    "demand-and-cvar",
+    "classical-allocation",
+    "differentiable-allocation",
+    "feasible-realization",
+    "allocation-laboratory",
+    "allocation-evaluation",
+    "allocation-source",
+    "four-domain-comparison",
+    "four-kinds-of-benefit",
+    "benchmark-protocol",
+    "benchmark-dashboard",
+    "when-not-pytorch",
+    "reproduction-guide",
+    "provenance-and-verification",
+    "technical-extensions",
+    "references"
+  ],
+  "protected_sha256": {
+    "2026-11-13-pytorch-demonstration/outputs/replications.json": "14bbc4af9e02af921235a8435cb963e72f1247a141134158029799397519ded6",
+    "2026-11-13-pytorch-demonstration/outputs/seed-42/allocation-data.npz": "26c91708ac235d80c7a2f31d9a23d6779301ba6ae11b450983de304e298ff2f2",
+    "2026-11-13-pytorch-demonstration/outputs/seed-42/allocation.json": "62a082d75330a80aafca466312216c9f989b7b2ee381f1eced64e2bb8594a26a",
+    "2026-11-13-pytorch-demonstration/outputs/seed-42/benchmark-results.json": "f810e7cb7d5bc739af6442cec07381d6fb2b3555377c6072d3da3d6d592c9069",
+    "2026-11-13-pytorch-demonstration/outputs/seed-42/compilation.json": "9c5d2901ac6f57744b274d954be1e017ce985b1a3068e3fba3baeebc0418ea2d",
+    "2026-11-13-pytorch-demonstration/outputs/seed-42/financial-data.npz": "9b95b38a85b71c4e6c8efa14a121548e59a6d457241bf4a7f686fad08017ee9d",
+    "2026-11-13-pytorch-demonstration/outputs/seed-42/financial-network.json": "81f0b5a5a8cefb01a561726ae9232651bb083cbdff2e3b969496fdda082c524f",
+    "2026-11-13-pytorch-demonstration/outputs/seed-42/foundations.json": "d5bb22e219b0751fdebccfef17eb2ebab23faa47f1d70e3036b9d1342f085e42",
+    "2026-11-13-pytorch-demonstration/outputs/seed-42/river-data.npz": "d25441e31e8b3384526826eccb7faf6609bde14b919a89cac9a8f03ad94b2620",
+    "2026-11-13-pytorch-demonstration/outputs/seed-42/river.json": "d09c020ecd2f49c706eccc096eddc54af9a38f07c84acd343a689577ebebbd0e",
+    "2026-11-13-pytorch-demonstration/outputs/seed-42/survival-data.npz": "7b73c20956375b9ac69c51b210f30fa0e6e53b55484755a7b82dcda554f41e4c",
+    "2026-11-13-pytorch-demonstration/outputs/seed-42/survival.json": "f1ae556a20b599c699bf32b7818c0611e710d10de33a1a2ef95d99b551892d81",
+    "2026-11-13-pytorch-demonstration/outputs/smoke/allocation-data.npz": "b91f22f31b027f12e151d2d69e96950f8691b51d9253bf4fa4e8fa6ffb4aba54",
+    "2026-11-13-pytorch-demonstration/outputs/smoke/allocation.json": "db0ec1cc57af45b91f2263959007993265df71c78efdbca29737d25eb7b06862",
+    "2026-11-13-pytorch-demonstration/outputs/smoke/financial-data.npz": "de283520fc7427a1fa07b9f0800486677ade1172aa3c1f6fa75e4491e07ede2a",
+    "2026-11-13-pytorch-demonstration/outputs/smoke/financial-network.json": "865dc1f48ac6cb5d895ef1d5e6126bb6a407874effe3599475e17c2ade12198a",
+    "2026-11-13-pytorch-demonstration/outputs/smoke/foundations.json": "d5bb22e219b0751fdebccfef17eb2ebab23faa47f1d70e3036b9d1342f085e42",
+    "2026-11-13-pytorch-demonstration/outputs/smoke/river-data.npz": "d25441e31e8b3384526826eccb7faf6609bde14b919a89cac9a8f03ad94b2620",
+    "2026-11-13-pytorch-demonstration/outputs/smoke/river.json": "b8afc685289acd89a49bd3388b7bb9cfbf5300013606a81639c9b7b1d46aed63",
+    "2026-11-13-pytorch-demonstration/outputs/smoke/survival-data.npz": "0ebd11160f08c8a6e08f01df37eb4d235b5806430a827294a420c9564ac5efa7",
+    "2026-11-13-pytorch-demonstration/outputs/smoke/survival.json": "5de9e049a1ce138c040b636c6edbb78409b8872e64029d7808ef71ed510ba9ea",
+    "2026-11-13-pytorch-demonstration/python/00_pytorch_foundations.py": "2121c4a666fc4776e7e3a584e7d4e2a086514b18dca74769f72d3534f7f15e74",
+    "2026-11-13-pytorch-demonstration/python/01_survival_analysis.py": "94f1f9c33d7a5d89ea8f1c5d86968014c9c52d56864ee1c43806537f4ea81cd1",
+    "2026-11-13-pytorch-demonstration/python/02_financial_graph_learning.py": "dbda21e9b7bb2828b5097e15700fffaa59ed416b8959f4e1faeb9e7639bde2bc",
+    "2026-11-13-pytorch-demonstration/python/03_river_inverse_problem.py": "e91a5dc965eb5a71e10c782b9e0da96212e2cc0a5b252a3cac838e5ec3750736",
+    "2026-11-13-pytorch-demonstration/python/04_resource_allocation.py": "8a7fecb02d6ae583777157b15a485dddf0b8211f0f067823c3fec10910098b91",
+    "2026-11-13-pytorch-demonstration/python/05_framework_comparisons.py": "e5b1b9e67191ada52f663cf571925ec601ee4473b6524f49b9c5afa21fccc802",
+    "2026-11-13-pytorch-demonstration/python/benchmark_experiments.py": "b20f95001d133b44a19fb7d117084537e8b07a6a45c142dd0f785a8ffd65f039",
+    "2026-11-13-pytorch-demonstration/python/common.py": "daab653696630944eda7c5b159333746a4c5437c8e8fa3f5b74b9bd8490f0893",
+    "2026-11-13-pytorch-demonstration/python/replicate_experiments.py": "9717eb8ee0cce8c52971f31b0b5d410f2fc87e7a1d396e7721e13605aab23e0b",
+    "2026-11-13-pytorch-demonstration/python/run_all.py": "f30019e05c11fc0aca0c0c5dce3a8a94b132588b0cf2ada920e626ae7e06dd00",
+    "2026-11-13-pytorch-demonstration/python/validate_experiments.py": "7ec2ceab0114f4b92a59edc8ab54828772e6572b6f238593b55a1e6de9f155bf"
+  },
+  "outside_scope_sha256": {
+    "D:\\GitHub\\nareshpane.github.io\\research.html": "f6e871534127899c31f6140d772eed1954a42844785ed0a7446f55448a9aed06",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration.html": "b2486b2951edf8ecfb76dcd2c218cb5c400904a0b808a5217e263b7c584ce401",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\qa-report.md": "c1609dc294661bd2b09e213acbf79be3eb5edbbb8276202f5066393d0e0fa38a",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\README.md": "f3a5c7c345916b71431950389689a0420f89f76a443759f535dfeee5ea9c9518",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\references.md": "25ab228bea30518c409658e3acdabe5eca48f37d26f227f6718d7caaf082fc56",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\css\\styles.css": "8435edfbc95a977665ee2cdda77533e7a26317770f2719c738fe6491b688468e",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\data\\comparison-validation.json": "8e9d5cb841489cf245be62ac702382d534b5b6003edc7d82d1ec674434faa95c",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\data\\forecasting-demo.json": "37114b0d68275cec57ca1c2863d540d23b6568d77fdb3cb15b41713200e0187a",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\data\\generation-manifest.json": "47d16087b14bbe739b6161d26a644b995d0bb34b3a1d347d3d17814f92a3eb7e",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\data\\nlp-demo.json": "40156bb9d1a6cc6f757146f708fa8b06a6a2a229ed734edaf92352b0bf4beee3",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\data\\page-validation.json": "c4f20b2c35df4c336d65eab4bcbfe7fc308fc71d42b17796cbbb8f31ff28daf1",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\data\\python-validation.json": "fb1fa30e377effe044da50dae1d535b959b98fc1b3b8600bd3a0b26087f8930b",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\data\\scientific-demo.json": "45e44570ee211bc2304c958830a739600e3ae0c9a307f4fb501e0c2de15ff572",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\data\\vision-demo.json": "5562587cb11f72699ca944a4bdef6dc6ed3982769a298bf585ce1f46705c683f",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\images\\application-card-forecast.svg": "01b61d7ece60fb5c7ba0dea0d7402489d76cc407e5128e2a2bc000835f62f726",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\images\\application-card-language.svg": "3fc60310a02fc96eb8b131ae602f5e486fe4740843795e1f9d1b1258d7b03d1c",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\images\\application-card-physics.svg": "7ab3c8e1bc0f4b57e4fa56ae44744030b26e165679ad162cb237f3dd67201a0d",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\images\\application-card-vision.svg": "2f12003b4aa3b937ca7eb9617e304fdfa4cdd9d5f5b9db490a0649de3c5d09c6",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\images\\backpropagation.svg": "4f3c2c4cc6a140e279974180c38bd29c2e1fb0c4d5fb9f5c4e36c9c1d2707158",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\images\\computational-graph.svg": "de1b48f5508cbcab70eb58b22d7aa21e5b5ecbee4067d408f425d98490281f36",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\images\\computer-vision-scene.svg": "eae63e704f560b716cac55f4535066656613e9258a1bf0c7114adcc2d8768b3d",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\images\\convolution.svg": "b9da553d6f9285382258528ae4a39d4e104439f3546f3ff83fa73da565ea0d33",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\images\\forecasting-window.svg": "ce20b9d6a796cea1aed343c64bb878a501e24bb5fb5fa93346b726eec12adc64",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\images\\heat-exact.png": "1d21910b86701c3b393dd0bfda16d05c21417b783269800348f3967186151ea8",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\images\\heat-ftcs-error.png": "b739ae25551463f3468964e636d87a70c881b6e779cbd32edcf21729394996bc",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\images\\heat-stencil.svg": "7365ed92ff659fe3d3f5c10c3b1c68b1bf2e5c6696734f1478faf740d642fb3f",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\images\\manual-vs-tensorflow-pipeline.svg": "626960f842cc3e2cc56bbc0022ae0d6f433884d42df738a802601d7625eff31c",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\images\\network-composition.svg": "ae94ed989b934f10fa8a27a59ccffe60180dd41bc177fd468078e1580c316fa5",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\images\\nlp-baseline-confusion.svg": "719422ed566ac74cea5264e3316cda16b2659b9522596239ff4e37f6186fb251",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\images\\nlp-university.svg": "f3d0fe531bb14bb90a0f7d14bab528f9c994aebd0b72d38ecbb01ef8f17806a5",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\images\\overview.svg": "116e88170bff5e9938fdd9977d74e996862244875ccab497affd5b4a3e11991e",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\images\\qa-desktop.jpg": "79380a42033d61ce50d7dde85d744c0920183d58caf2b2792e939e7fa569ea1a",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\images\\qa-mobile.jpg": "a49b8ee5f8805a08efbbceda7dbd578ecc96877d8ce1b81168b341b49a08f40e",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\images\\scientific-laboratory.svg": "9afd0c35dcaa99d106f1b1835b113d2ce02a9efff3f5d2e480d5920e3b14a323",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\images\\seasonal-city.svg": "314d58a5df5319f8760df970dcf1bdfd3b9bbd14e633a7b9082508af8da2e2f6",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\images\\tensor-concepts.svg": "c5321bdae8d95614174a6fd3ee3083f61f29fc0e49f7a61eae1c303ef4db3aa4",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\images\\unet-architecture.svg": "eea72a495f4876d4094f4951e406c3a116d81a11ead89d864cde677562b79e70",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\images\\vision-baseline-diagnostics.png": "86329140fd98664d01a538800b2270a36123579140533e65e6fd4d68e9e901fe",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\js\\code-controls.js": "a354f7588ecdaf7bde20521e4595da258f0a229aee5064163f1d25ec0ed9963c",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\js\\demonstrations.js": "0b591d9d54b19077378199a89dafa0c23c52651ee2746db0edb75501a46aad65",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\js\\foundations.js": "358b7eb8cfb8ce6ac09bc1ae7185ff3ccdb48fbb25e932e277031cb7c009493c",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\js\\main.js": "9053dd1c81b646d43ee91048d96bafff84ac58a70e9150b37378f5a935a584c8",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\js\\mathjax-LICENSE.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\js\\mathjax-tex-svg.js": "d4295dc33744836935c1399feece5159577b34c5c8ffb9f1c6324cd82e03a882",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\js\\navigation.js": "854fb6feb6a35d51d23dd4b70b1df0068ca64536f29b59ba285ba602698567c6",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\python\\00_tensorflow_foundations.py": "cbb196ddae3b70d59ccd652517a44d7f4ef4a75eaf75d9c179bd551b8833ac49",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\python\\01_computer_vision.py": "346967fa6d12de52f1fc80d5dfb586dc15ebfa07841baa5826dae3e5c2cae891",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\python\\02_natural_language_processing.py": "0ac2303c5ae1f1371747526968d20eb78b7ddd2516cbdb897c6f2c2e0fa3d879",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\python\\03_time_series_forecasting.py": "99d294ca5da1a5a61ee1db6783d185c64dd826eea2f6ca4ff92d65bb2d64bd76",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\python\\04_scientific_computing.py": "b54a7ebf7e2af9b78609103fd16cfebe33d41f6315bfb65fbc0e8f488a27839f",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\python\\05_tensorflow_comparison.py": "9e2f2541bcd7bde0d551f752cd180b465a01a77fac5f2f97fb4bf37fbb429a6b",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\python\\build_monograph.py": "64b9a1a02889cad63457fed33344f1491aa47170a4f998dd0d154e2455d5e7dc",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\python\\generate_demo_assets.py": "13d24df21b038e31ec3c301d568c6da7e635228a91ceeec6e8fc8c8f20aad5c1",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\python\\requirements.txt": "53f57ed773813d2899ee7c04b9b290284c45a715acc650d80e68e6057aeda07d",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\python\\validate_experiments.py": "7c59cea5699d36c788bb3861d02d03c07ec030188fe8202cf02c75179f51f4fd",
+    "D:\\GitHub\\nareshpane.github.io\\research\\machine-learning\\2026-11-12-tensorflow-demonstration\\python\\validate_page.py": "e50e4f827353f59634a79ca5f7ebfbab7caa2c9e5b9cf918a86ba50b6d483730"
+  },
+  "prior_page_sha256": "3f1d1f16d4afa7e8f11b6205b042fd8f286387f74b4813a780da08902633f8d2"
+}

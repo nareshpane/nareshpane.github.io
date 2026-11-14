@@ -1,0 +1,139 @@
+{
+  "status": "passed",
+  "date": "2026-11-13",
+  "browser": "Codex in-app Chromium",
+  "viewports": [
+    {
+      "body": "rgb(255, 255, 255)",
+      "cityHeight": 1865,
+      "client": 375,
+      "errors": 0,
+      "riverColumns": "311.6px",
+      "riverHeight": 1641,
+      "scroll": 375,
+      "sourceHeaderOverflow": 0,
+      "width": 390
+    },
+    {
+      "body": "rgb(255, 255, 255)",
+      "cityHeight": 1158,
+      "client": 753,
+      "errors": 0,
+      "riverColumns": "673.2px",
+      "riverHeight": 1438,
+      "scroll": 753,
+      "sourceHeaderOverflow": 0,
+      "width": 768
+    },
+    {
+      "body": "rgb(255, 255, 255)",
+      "cityHeight": 1140,
+      "client": 1009,
+      "errors": 0,
+      "riverColumns": "705.2px",
+      "riverHeight": 1410,
+      "scroll": 1009,
+      "sourceHeaderOverflow": 0,
+      "width": 1024
+    },
+    {
+      "body": "rgb(255, 255, 255)",
+      "cityHeight": 845,
+      "client": 1425,
+      "errors": 0,
+      "riverColumns": "537.6px 537.6px",
+      "riverHeight": 827,
+      "scroll": 1425,
+      "sourceHeaderOverflow": 0,
+      "width": 1440
+    },
+    {
+      "body": "rgb(255, 255, 255)",
+      "cityHeight": 828,
+      "client": 1905,
+      "errors": 0,
+      "riverColumns": "674.2px 674.2px",
+      "riverHeight": 827,
+      "scroll": 1905,
+      "sourceHeaderOverflow": 0,
+      "width": 1920
+    }
+  ],
+  "math_expressions": 39,
+  "math_errors": 0,
+  "console_errors": 0,
+  "console_warnings": 0,
+  "toc_groups_after_collapse": 0,
+  "toc_groups_after_expand": 6,
+  "source_copy": {
+    "tested": "00_pytorch_foundations.py complete program",
+    "exact": true,
+    "characters": 3987,
+    "full_height_expansion": true,
+    "keyboard_disclosure": true
+  },
+  "river": {
+    "fit_iterates": 11,
+    "final_loss": 0.33414256116024144,
+    "final_source": [
+      0.2589787265303483,
+      0.8045371286461034
+    ],
+    "extreme_combined": 0.7499999999999999,
+    "transport_play_pause_restart": true,
+    "sensor_selector": true,
+    "fixed_profile_notice": true
+  },
+  "city": {
+    "strategies_tested": [
+      "pytorch_relaxed",
+      "scipy_relaxed",
+      "nearest",
+      "greedy",
+      "browser"
+    ],
+    "browser_steps": 100,
+    "stress_demand": 46,
+    "stress_capacity": 11,
+    "stress_served": 11,
+    "stress_unserved": 35,
+    "stress_penalty": 525,
+    "stress_capacity_violations": 0,
+    "playback_next_previous_restart": true,
+    "offscreen_pause": true,
+    "station_label_fit": true,
+    "mobile_diagram_client": 302,
+    "mobile_diagram_scroll": 540
+  },
+  "mobile": {
+    "drawer_escape_focus": true,
+    "tab_wrap": true,
+    "shift_tab_wrap": true,
+    "main_inert_when_open": true,
+    "drawer_closes_after_navigation": true
+  },
+  "tables": {
+    "sensitivity_width_px": 560.8500366210938,
+    "numeric_alignment": "center",
+    "dynamic_replication_alignment": true
+  },
+  "figures": {
+    "six_new_svgs_visually_reviewed": true
+  },
+  "screenshots": [
+    "images/qa-refinement-opening.jpg",
+    "images/qa-refinement-probabilities.jpg",
+    "images/qa-refinement-derivatives.jpg",
+    "images/qa-refinement-mathematics.jpg",
+    "images/qa-refinement-table.jpg",
+    "images/qa-refinement-comparison.jpg",
+    "images/qa-refinement-river.jpg",
+    "images/qa-refinement-city.jpg",
+    "images/qa-refinement-mobile.jpg"
+  ],
+  "limits": [
+    "No Firefox/Safari or physical-device audit",
+    "OS reduced-motion preference not toggled; implementation source-reviewed",
+    "Clipboard denial fallback not force-triggered"
+  ]
+}

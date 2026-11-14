@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "groups": [
+    "32 scientific artifacts and 56 outside-scope files byte-identical; 61 subsection anchors and 26 canonical source panels retained",
+    "Analytical Jacobian, JVP, and VJP agree with executed torch.func products",
+    "Competing-risk budgets and event versus end-of-bin censor probabilities",
+    "Native index_add reproduces synchronous duplicate-edge message example",
+    "River intensity linearity, actual-observation loss, and derivatives checked by unchanged solver/autograd",
+    "Soft overload versus integer feasibility; fractional CVaR and analytical risk ranking"
+  ],
+  "preservation": {
+    "protected_sha256": 32,
+    "outside_scope_sha256": 56
+  },
+  "canonical_dispatch_cases": 640
+}

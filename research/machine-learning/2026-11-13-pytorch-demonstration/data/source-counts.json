@@ -1,0 +1,65 @@
+{
+  "convention": "Physical lines; nonempty excludes blank and # comment-only lines, includes docstrings. Functions/classes count declaration through final source line.",
+  "files": [
+    {
+      "file": "01_survival_analysis.py",
+      "physical_lines": 208,
+      "nonempty_noncomment_lines": 182,
+      "functions": {
+        "generate": 23,
+        "targets": 6,
+        "numpy_objective": 12,
+        "torch_objective": 9,
+        "probabilities": 3,
+        "incidence": 6,
+        "censor_survival": 4,
+        "evaluate": 15,
+        "NeuralHazard": 7,
+        "run": 86
+      }
+    },
+    {
+      "file": "02_financial_graph_learning.py",
+      "physical_lines": 210,
+      "nonempty_noncomment_lines": 188,
+      "functions": {
+        "generate": 20,
+        "numpy_aggregate": 5,
+        "snapshots": 22,
+        "GraphScorer": 17,
+        "metrics": 17,
+        "validation_threshold": 4,
+        "run": 95
+      }
+    },
+    {
+      "file": "03_river_inverse_problem.py",
+      "physical_lines": 160,
+      "nonempty_noncomment_lines": 142,
+      "functions": {
+        "grid": 9,
+        "numpy_simulator": 11,
+        "torch_simulator": 13,
+        "finite_gradient": 3,
+        "manufactured_refinement": 15,
+        "run": 84
+      }
+    },
+    {
+      "file": "04_resource_allocation.py",
+      "physical_lines": 194,
+      "nonempty_noncomment_lines": 168,
+      "functions": {
+        "scenarios": 11,
+        "numpy_objective": 18,
+        "torch_objective": 10,
+        "empirical_cvar": 7,
+        "feasible_dispatch": 18,
+        "exact_dispatch": 14,
+        "evaluate": 14,
+        "run": 53,
+        "render_diagnostics": 12
+      }
+    }
+  ]
+}

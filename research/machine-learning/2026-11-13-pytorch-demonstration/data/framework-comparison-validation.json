@@ -1,0 +1,122 @@
+{
+  "status": "passed",
+  "checked_at_utc": "2026-11-14T00:38:08.712818+00:00",
+  "purpose": "Canonical Chapter 7 examples: correctness only, not a performance benchmark",
+  "canonical_sources_sha256": {
+    "comparison_keras_backend.py": "a2c0b9abeb00873417b0f08c1e7c49c6c914faa82d86364af6877b202c6aa777",
+    "comparison_pytorch_gradient.py": "bbaf10814801ba86d46d034f59cd83e3403019a8da7fb5924fdb7eb1f016f5de",
+    "comparison_pytorch_model.py": "66ab549043e0dc6c20f6c19171007107a44d88a44bde00116a5074bf37e56928",
+    "comparison_tensorflow_gradient.py": "32a79234163bb5b23f240c5c8c539efefa9a1a05033656a5fe0789304460dd30",
+    "comparison_tensorflow_model.py": "3571e82e4de398c36be8460f910b9dc8958c0745aff937c3304e0ba43f9e4ea9"
+  },
+  "frameworks": {
+    "pytorch": {
+      "status": "passed",
+      "framework": "pytorch",
+      "version": "2.15.0+cpu",
+      "python": "3.13.1",
+      "numpy": "2.4.0",
+      "interpreter": "C:\\Users\\user\\AppData\\Local\\Temp\\codex-pytorch-20261113\\Scripts\\python.exe",
+      "device": "cpu",
+      "gradient_dtype": "float64",
+      "gradient": 7.0,
+      "printed_gradient": "7.0",
+      "forward_shape": [
+        2,
+        1
+      ],
+      "parameter_count": 385,
+      "default_forward_finite": true,
+      "matched_forward_dtype": "float32",
+      "matched_forward": [
+        [
+          -13.709431648254395
+        ],
+        [
+          14.510330200195312
+        ]
+      ],
+      "numpy_reference": [
+        [
+          -13.709430694580078
+        ],
+        [
+          14.510330200195312
+        ]
+      ],
+      "matched_numpy_max_abs_error": 9.5367431640625e-07,
+      "checks": [
+        "actual canonical derivative snippet prints 7.0",
+        "actual canonical model snippet returns shape (2, 1)",
+        "model has 385 parameters and finite initial outputs",
+        "controlled weights and inputs agree with independent NumPy forward"
+      ],
+      "stderr": ""
+    },
+    "tensorflow": {
+      "status": "passed",
+      "framework": "tensorflow",
+      "version": "2.21.0",
+      "python": "3.13.1",
+      "numpy": "2.4.0",
+      "interpreter": "C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+      "device": "cpu",
+      "gradient_dtype": "float64",
+      "gradient": 7.0,
+      "printed_gradient": "7.0",
+      "forward_shape": [
+        2,
+        1
+      ],
+      "parameter_count": 385,
+      "default_forward_finite": true,
+      "matched_forward_dtype": "float32",
+      "matched_forward": [
+        [
+          -13.709431648254395
+        ],
+        [
+          14.510330200195312
+        ]
+      ],
+      "numpy_reference": [
+        [
+          -13.709430694580078
+        ],
+        [
+          14.510330200195312
+        ]
+      ],
+      "matched_numpy_max_abs_error": 9.5367431640625e-07,
+      "checks": [
+        "actual canonical derivative snippet prints 7.0",
+        "actual canonical model snippet returns shape (2, 1)",
+        "model has 385 parameters and finite initial outputs",
+        "controlled weights and inputs agree with independent NumPy forward"
+      ],
+      "stderr": "WARNING: All log messages before absl::InitializeLog() is called are written to STDERR\nI0000 00:00:1794616664.345565   40368 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.\nWARNING: All log messages before absl::InitializeLog() is called are written to STDERR\nI0000 00:00:1794616668.798186   40368 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`."
+    }
+  },
+  "matched_weight_parity": {
+    "status": "passed",
+    "dtype": "float32",
+    "rtol": 1e-05,
+    "atol": 1e-06,
+    "max_abs_difference": 0.0,
+    "protocol": "Same fixed input and replacement weights; Keras kernels transpose torch Linear weights"
+  },
+  "keras_torch_backend": {
+    "status": "passed",
+    "version": "3.15.1",
+    "backend": "torch",
+    "checks": [
+      "actual canonical snippet selects torch before importing standalone keras"
+    ],
+    "stderr": ""
+  },
+  "limitations": [
+    "No model training or performance timing is performed",
+    "Identical architecture alone does not imply identical random initialization",
+    "Matched weights are applied only inside this verification, after executing original snippets"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "errors": [],
+  "chapters": 7,
+  "subsections": 67,
+  "chapter_subsection_counts": [
+    13,
+    10,
+    10,
+    10,
+    9,
+    9,
+    6
+  ],
+  "ids": 251,
+  "code_panels": 31,
+  "canonical_open_by_default": [
+    "explore_api.py",
+    "comparison_tensorflow_gradient.py",
+    "comparison_pytorch_gradient.py",
+    "comparison_tensorflow_model.py",
+    "comparison_pytorch_model.py",
+    "comparison_keras_backend.py"
+  ],
+  "images": 15,
+  "equations": 51,
+  "prose_words_including_navigation": 26312,
+  "html_bytes": 618415
+}

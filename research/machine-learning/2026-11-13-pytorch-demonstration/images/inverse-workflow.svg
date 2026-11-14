@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 480" role="img" aria-labelledby="ivw-title ivw-desc" font-family="Segoe UI,Arial,sans-serif" font-size="18" fill="#26323B">
+<title id="ivw-title">A source-estimation loop differentiates a fixed numerical transport model</title>
+<desc id="ivw-desc">Source parameters ξ and q enter a stable upwind advection and centered diffusion solver. Predictions at three monitoring stations are compared with recorded simulated observations. Reverse sensitivities of the sensor loss propagate through the discrete solver, then a bound-aware L-BFGS-B update changes the parameters. The physical model remains unchanged. A small fitting loss does not establish source identifiability or calibrated uncertainty.</desc>
+<defs><marker id="ivw-forward" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10" fill="#477DA5"/></marker><marker id="ivw-back" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10" fill="#B57A60"/></marker></defs>
+<text x="24" y="34" font-family="Georgia,serif" font-size="26">Forward simulation predicts; inverse inference adjusts the source</text>
+<text x="24" y="64" font-size="17" fill="#576774">Conceptual algorithm · differentiate the implemented discretization · preserve the physical assumptions</text>
+<rect x="24" y="115" width="170" height="150" rx="9" fill="#FFF3EB" stroke="#DDBAA8"/>
+<text x="109" y="146" text-anchor="middle" font-weight="600">Source parameters</text>
+<text x="109" y="183" text-anchor="middle" font-family="Cambria,Georgia,serif" font-size="27">φ = (ξ, q)</text>
+<text x="109" y="217" text-anchor="middle" font-size="17">Position + intensity</text>
+<text x="109" y="244" text-anchor="middle" font-size="17">Smooth source s(x;φ)</text>
+<path d="M199 187H228" stroke="#477DA5" stroke-width="2" marker-end="url(#ivw-forward)"/>
+<rect x="235" y="115" width="240" height="150" rx="9" fill="#EDF6FC" stroke="#B7D3E7"/>
+<text x="355" y="146" text-anchor="middle" font-weight="600">Stable time-step solver</text>
+<text x="355" y="181" text-anchor="middle" font-size="18">Upwind advection</text>
+<text x="355" y="209" text-anchor="middle" font-size="18">+ centered diffusion</text>
+<text x="355" y="243" text-anchor="middle" font-family="Cambria,Georgia,serif" font-size="22">A + 2B ≤ 0.75</text>
+<path d="M480 187H509" stroke="#477DA5" stroke-width="2" marker-end="url(#ivw-forward)"/>
+<rect x="516" y="115" width="170" height="150" rx="9" fill="#F1F8EE" stroke="#BCD7B6"/>
+<text x="601" y="146" text-anchor="middle" font-weight="600">Sample sensors</text>
+<text x="601" y="181" text-anchor="middle" font-size="18">Three stations</text>
+<text x="601" y="211" text-anchor="middle" font-family="Cambria,Georgia,serif" font-size="23">c(xj, tk; φ)</text>
+<text x="601" y="243" text-anchor="middle" font-size="17">Fixed locations / times</text>
+<path d="M691 187H720" stroke="#477DA5" stroke-width="2" marker-end="url(#ivw-forward)"/>
+<rect x="727" y="115" width="209" height="150" rx="9" fill="#F6F2FA" stroke="#D8CAE7"/>
+<text x="831" y="146" text-anchor="middle" font-weight="600">Fit observed sensors</text>
+<text x="831" y="183" text-anchor="middle" font-family="Cambria,Georgia,serif" font-size="23">r = c(φ) − z</text>
+<text x="831" y="217" text-anchor="middle" font-family="Cambria,Georgia,serif" font-size="21">L = mean(r²) / (2σε²)</text>
+<text x="831" y="246" text-anchor="middle" font-size="16">Fitting-time observations only</text>
+<text x="831" y="91" text-anchor="middle" font-size="17" fill="#6B5681">Recorded observations z</text>
+<path d="M831 98V111" stroke="#8D78A5" stroke-width="1.7" marker-end="url(#ivw-forward)"/>
+<path d="M831 270V346H688" fill="none" stroke="#B57A60" stroke-width="2.2" stroke-dasharray="6 4" marker-end="url(#ivw-back)"/>
+<rect x="402" y="297" width="280" height="102" rx="9" fill="#FFF1EF" stroke="#E5C4BE"/>
+<text x="542" y="326" text-anchor="middle" font-weight="600">Reverse sensitivities</text>
+<text x="542" y="359" text-anchor="middle" font-family="Cambria,Georgia,serif" font-size="24">∂L/∂ξ, ∂L/∂q</text>
+<text x="542" y="386" text-anchor="middle" font-size="17">Through discrete time steps</text>
+<path d="M397 346H311" stroke="#B57A60" stroke-width="2.2" stroke-dasharray="6 4" marker-end="url(#ivw-back)"/>
+<rect x="24" y="297" width="280" height="102" rx="9" fill="#FFF3EB" stroke="#DDBAA8"/>
+<text x="164" y="326" text-anchor="middle" font-weight="600">Bound-aware update</text>
+<text x="164" y="358" text-anchor="middle" font-size="19">L-BFGS-B proposes a new (ξ,q)</text>
+<text x="164" y="386" text-anchor="middle" font-family="Cambria,Georgia,serif" font-size="20">0.1 ≤ ξ ≤ 0.55; 0.1 ≤ q ≤ 2</text>
+<path d="M109 292V271" stroke="#B57A60" stroke-width="2.2" stroke-dasharray="6 4" marker-end="url(#ivw-back)"/>
+<text x="24" y="440" font-size="18">Blue: predictions flow forward. Coral: loss sensitivities guide the next source proposal.</text>
+<text x="24" y="468" font-size="17" fill="#576774">A lower loss establishes agreement with this model; source identifiability and statistical validity need separate evidence.</text>
+</svg>

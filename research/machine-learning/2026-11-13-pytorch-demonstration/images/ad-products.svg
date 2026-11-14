@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" role="img" aria-labelledby="adp-title adp-desc" font-family="Segoe UI,Arial,sans-serif" font-size="18" fill="#26323B">
+<title id="adp-title">Push an input tangent forward; pull an output cotangent backward</title>
+<desc id="adp-desc">For f(x)=(x1 times x2, x1 squared plus sine x2) at x=(2,0.3), a two by two Jacobian produces Jv=(-1.7,3.04466351) from v=(1,-1). An output cotangent u=(1,-1) instead produces u transpose J=(-3.7,1.04466351). Two directional lanes display every local product and its dimensions. This is an analytical construction.</desc>
+<defs><marker id="adp-forward" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10" fill="#477DA5"/></marker><marker id="adp-reverse" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10" fill="#B57A60"/></marker></defs>
+<text x="24" y="34" font-family="Georgia,serif" font-size="26">The same Jacobian; two directions of sensitivity</text>
+<text x="24" y="63" font-size="17" fill="#576774">Analytical example · f: ℝ² → ℝ² · x=(2,0.3) · no model fitting</text>
+<rect x="24" y="82" width="912" height="68" rx="8" fill="#F6F2FA" stroke="#D8CAE7"/>
+<text x="45" y="110" font-family="Cambria,Georgia,serif" font-size="20">f(x) = (x₁x₂, x₁² + sin x₂)</text>
+<text x="45" y="135" font-size="17">Rows index outputs; columns index inputs.</text>
+<text x="535" y="111" font-family="Cambria,Georgia,serif" font-size="20">J = [ 0.3   2 ; 4   0.95533649 ]</text>
+<text x="535" y="135" font-size="17">J has shape 2 × 2; cos(0.3)=0.95533649.</text>
+<rect x="24" y="170" width="912" height="162" rx="9" fill="#EDF6FC" stroke="#B7D3E7"/>
+<text x="44" y="198" font-weight="600">Forward mode · propagate a tangent</text>
+<rect x="43" y="218" width="177" height="91" rx="7" fill="#FFFFFF" stroke="#B7D3E7"/>
+<text x="131" y="245" text-anchor="middle">Input direction v</text>
+<text x="131" y="272" text-anchor="middle" font-family="Cambria,Georgia,serif" font-size="23">(1, −1)</text>
+<text x="131" y="295" text-anchor="middle" font-size="16">shape 2 × 1</text>
+<path d="M225 263H254" stroke="#477DA5" stroke-width="2" marker-end="url(#adp-forward)"/>
+<text x="268" y="245" font-family="Cambria,Georgia,serif" font-size="19">δf₁ = 0.3(1) + 2(−1) = −1.7</text>
+<text x="268" y="276" font-family="Cambria,Georgia,serif" font-size="19">δf₂ = 4(1) + 0.95533649(−1)</text>
+<text x="268" y="302" font-family="Cambria,Georgia,serif" font-size="19">= 3.04466351</text>
+<path d="M691 263H720" stroke="#477DA5" stroke-width="2" marker-end="url(#adp-forward)"/>
+<rect x="733" y="218" width="182" height="91" rx="7" fill="#FFFFFF" stroke="#B7D3E7"/>
+<text x="824" y="244" text-anchor="middle">Output tangent Jv</text>
+<text x="824" y="269" text-anchor="middle" font-family="Cambria,Georgia,serif" font-size="19">(−1.7,</text>
+<text x="824" y="291" text-anchor="middle" font-family="Cambria,Georgia,serif" font-size="19">3.04466351)</text>
+<rect x="24" y="352" width="912" height="162" rx="9" fill="#FFF3EB" stroke="#DDBAA8"/>
+<text x="44" y="381" font-weight="600">Reverse mode · propagate a cotangent</text>
+<rect x="43" y="400" width="177" height="91" rx="7" fill="#FFFFFF" stroke="#DDBAA8"/>
+<text x="131" y="424" text-anchor="middle">Input VJP uᵀJ</text>
+<text x="131" y="449" text-anchor="middle" font-family="Cambria,Georgia,serif" font-size="19">(−3.7,</text>
+<text x="131" y="472" text-anchor="middle" font-family="Cambria,Georgia,serif" font-size="19">1.04466351)</text>
+<path d="M254 445H225" stroke="#B57A60" stroke-width="2" marker-end="url(#adp-reverse)"/>
+<text x="268" y="424" font-family="Cambria,Georgia,serif" font-size="19">x̄₁ = 1(0.3) + (−1)4 = −3.7</text>
+<text x="268" y="455" font-family="Cambria,Georgia,serif" font-size="19">x̄₂ = 1(2) + (−1)0.95533649</text>
+<text x="268" y="481" font-family="Cambria,Georgia,serif" font-size="19">= 1.04466351</text>
+<path d="M720 445H691" stroke="#B57A60" stroke-width="2" marker-end="url(#adp-reverse)"/>
+<rect x="733" y="400" width="182" height="91" rx="7" fill="#FFFFFF" stroke="#DDBAA8"/>
+<text x="824" y="426" text-anchor="middle">Output seed u</text>
+<text x="824" y="454" text-anchor="middle" font-family="Cambria,Georgia,serif" font-size="23">(1, −1)</text>
+<text x="824" y="478" text-anchor="middle" font-size="16">uᵀ has shape 1 × 2</text>
+<text x="24" y="545" font-size="17" fill="#576774">Jv has shape 2 × 1.  uᵀJ has shape 1 × 2.  A direction in input space differs from a seed in output space.</text>
+</svg>

@@ -1,0 +1,81 @@
+{
+  "status": "passed",
+  "browser": "Codex in-app Chromium browser",
+  "responsive": [
+    {
+      "client": 375,
+      "curveViewBox": "0 0 320 300",
+      "headerOverflows": 0,
+      "scroll": 375,
+      "width": 390
+    },
+    {
+      "client": 753,
+      "curveViewBox": "0 0 663 300",
+      "headerOverflows": 0,
+      "scroll": 753,
+      "width": 768
+    },
+    {
+      "client": 1009,
+      "curveViewBox": "0 0 695 300",
+      "headerOverflows": 0,
+      "scroll": 1009,
+      "width": 1024
+    },
+    {
+      "client": 1425,
+      "curveViewBox": "0 0 760 300",
+      "headerOverflows": 0,
+      "scroll": 1425,
+      "width": 1440
+    },
+    {
+      "client": 1905,
+      "curveViewBox": "0 0 760 300",
+      "headerOverflows": 0,
+      "scroll": 1905,
+      "width": 1920
+    }
+  ],
+  "rendered_equations": 33,
+  "math_errors": 0,
+  "loaded_scientific_images_verified": 15,
+  "application_and_benchmark_labs_loaded": 5,
+  "interactive_laboratories": 10,
+  "canonical_code_copy_panels_checked": 26,
+  "updated_allocation_and_powershell_sources_rechecked": true,
+  "keyboard_disclosure_and_mobile_copy": true,
+  "drawer_focus_wrap_escape_and_inert_states": true,
+  "application_card_destinations": [
+    "#survival",
+    "#financial",
+    "#river",
+    "#allocation"
+  ],
+  "offscreen_playback_pause_verified": true,
+  "reduced_motion": "implemented and source-reviewed; OS preference not toggled",
+  "no_javascript": "native source/math/navigation fallbacks source-reviewed; disabling JS not browser-tested",
+  "final_console_errors_or_warnings": [],
+  "known_cases": {
+    "scalar_updated_prediction": 2.75,
+    "scalar_updated_loss": 2.53125,
+    "tensor_matmul": [
+      [
+        22,
+        28
+      ],
+      [
+        49,
+        64
+      ]
+    ],
+    "float32_raw_A_bytes": 24,
+    "survival_probability_sum": "1.00000000",
+    "river_extreme_control_combined_cfl": 0.75,
+    "river_final_recorded_loss": 0.33414256116024177,
+    "financial_last_candidate_probability": 0.0034993216940720634,
+    "dispatch_stress_unserved": 32,
+    "dispatch_stress_capacity_violations": 0
+  }
+}

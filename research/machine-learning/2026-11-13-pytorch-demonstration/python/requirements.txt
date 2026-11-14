@@ -1,0 +1,8 @@
+# Install PyTorch for your OS/device using https://pytorch.org/get-started/locally/
+# Executed authoring environment: CPython 3.13.1, Windows AMD64, torch 2.15.0+cpu.
+numpy==2.4.0
+scipy==1.18.1
+scikit-learn==1.9.1
+matplotlib==3.10.8
+threadpoolctl==3.6.0
+# CPU selector command for the tested build is documented in README.md.

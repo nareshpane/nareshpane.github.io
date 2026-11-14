@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "canonical_python_flow_and_cost_parity": 640,
+  "integer_capacity_shortage_stress_cases": 7680,
+  "browser_history_length": 100,
+  "fractional_cvar": 3.6666666666666665
+}

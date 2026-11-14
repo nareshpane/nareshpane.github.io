@@ -1,0 +1,219 @@
+{
+  "status": "passed",
+  "date": "2026-11-13",
+  "browser": "Codex in-app Chromium",
+  "final": {
+    "errors": 0,
+    "fragments": 220,
+    "loaded": [
+      "survival-lab",
+      "financial-lab",
+      "river-lab",
+      "allocation-lab",
+      "benchmark-lab"
+    ],
+    "numbered": 51,
+    "renderedFragments": 220,
+    "renderedNumbered": 51
+  },
+  "viewports": [
+    {
+      "body": "rgb(255, 255, 255)",
+      "cityHeight": 1871,
+      "client": 375,
+      "equations": 51,
+      "fragments": 220,
+      "hiddenMathSvg": 0,
+      "mathErrors": 0,
+      "pairedColumns": "337px",
+      "renderedEquations": 51,
+      "renderedFragments": 220,
+      "riverHeight": 1645,
+      "scroll": 375,
+      "sourceHeaderOverflow": 0,
+      "width": 390
+    },
+    {
+      "body": "rgb(255, 255, 255)",
+      "cityHeight": 1162,
+      "client": 753,
+      "equations": 51,
+      "fragments": 220,
+      "hiddenMathSvg": 0,
+      "mathErrors": 0,
+      "pairedColumns": "705px",
+      "renderedEquations": 51,
+      "renderedFragments": 220,
+      "riverHeight": 1441,
+      "scroll": 753,
+      "sourceHeaderOverflow": 0,
+      "width": 768
+    },
+    {
+      "body": "rgb(255, 255, 255)",
+      "cityHeight": 1144,
+      "client": 1009,
+      "equations": 51,
+      "fragments": 220,
+      "hiddenMathSvg": 0,
+      "mathErrors": 0,
+      "pairedColumns": "363.5px 363.5px",
+      "renderedEquations": 51,
+      "renderedFragments": 220,
+      "riverHeight": 1441,
+      "scroll": 1009,
+      "sourceHeaderOverflow": 0,
+      "width": 1024
+    },
+    {
+      "body": "rgb(255, 255, 255)",
+      "cityHeight": 849,
+      "client": 1425,
+      "equations": 51,
+      "fragments": 220,
+      "hiddenMathSvg": 0,
+      "mathErrors": 0,
+      "pairedColumns": "551.5px 551.5px",
+      "renderedEquations": 51,
+      "renderedFragments": 220,
+      "riverHeight": 829,
+      "scroll": 1425,
+      "sourceHeaderOverflow": 0,
+      "width": 1440
+    },
+    {
+      "body": "rgb(255, 255, 255)",
+      "cityHeight": 832,
+      "client": 1905,
+      "equations": 51,
+      "fragments": 220,
+      "hiddenMathSvg": 0,
+      "mathErrors": 0,
+      "pairedColumns": "688px 688px",
+      "renderedEquations": 51,
+      "renderedFragments": 220,
+      "riverHeight": 829,
+      "scroll": 1905,
+      "sourceHeaderOverflow": 0,
+      "width": 1920
+    }
+  ],
+  "sourceCopies": [
+    {
+      "source": "comparison_tensorflow_gradient.py",
+      "exact": true
+    },
+    {
+      "source": "comparison_pytorch_gradient.py",
+      "exact": true
+    },
+    {
+      "source": "comparison_tensorflow_model.py",
+      "exact": true
+    },
+    {
+      "source": "comparison_pytorch_model.py",
+      "exact": true
+    },
+    {
+      "source": "comparison_keras_backend.py",
+      "exact": true
+    }
+  ],
+  "mobileKeyboardCopy": true,
+  "mathematicalKeyboardPan": {
+    "client": 283,
+    "left": 40,
+    "scroll": 350,
+    "tabIndex": 0
+  },
+  "nativeFallback": [
+    {
+      "blackboardR": true,
+      "client": 1425,
+      "mathml": 51,
+      "nativeEquations": 51,
+      "scripts": 0,
+      "scroll": 1425,
+      "width": 1440
+    },
+    {
+      "client": 375,
+      "mathml": 51,
+      "nativeEquations": 51,
+      "scripts": 0,
+      "scroll": 375,
+      "width": 390
+    }
+  ],
+  "navigation": {
+    "collapsed": 0,
+    "expanded": 7,
+    "bottom": {
+      "active": "#frameworks-practical-choice",
+      "progress": "100%"
+    },
+    "mobileMainInert": true,
+    "mobileTabWrap": "drawer-close",
+    "mobileEscapeFocus": "menu-toggle"
+  },
+  "liveNeuron": {
+    "mathjax": true,
+    "selectedReLUPreactivation": 1.05,
+    "selectedReLUActivation": 1.05,
+    "output": 0.33
+  },
+  "river": {
+    "combined": "0.7434782608695651",
+    "loaded": "true",
+    "loss": "0.33414256116024144",
+    "mode": "recorded-inference",
+    "source": "[0.2589787265303483,0.8045371286461034]"
+  },
+  "cityStress": {
+    "capacity": "11",
+    "cost": "12.35025181561404",
+    "demand": "46",
+    "loaded": "true",
+    "penalty": "525",
+    "served": "11",
+    "step": "1199",
+    "strategy": "pytorch_relaxed",
+    "unserved": "35",
+    "violations": "0"
+  },
+  "disclosurePolicy": {
+    "comparisonOpen": 5,
+    "equations": 51,
+    "errors": 0,
+    "fragments": 220,
+    "legacyDefaultOpen": [
+      "explore_api.py"
+    ],
+    "renderedEquations": 51,
+    "renderedFragments": 220,
+    "visibleRawDelimiters": 0
+  },
+  "consoleErrors": 0,
+  "consoleWarnings": 0,
+  "screenshots": [
+    "images/qa-typesetting-equation.jpg",
+    "images/qa-typesetting-jacobian.jpg",
+    "images/qa-typesetting-probabilities.jpg",
+    "images/qa-typesetting-river.jpg",
+    "images/qa-typesetting-allocation.jpg",
+    "images/qa-typesetting-comparison-table.jpg",
+    "images/qa-typesetting-gradients.jpg",
+    "images/qa-typesetting-models.jpg",
+    "images/qa-typesetting-conclusion.jpg",
+    "images/qa-typesetting-native.jpg",
+    "images/qa-typesetting-training.jpg",
+    "images/qa-typesetting-mobile.jpg"
+  ],
+  "limits": [
+    "No Firefox/Safari, physical-phone or screen-reader audit",
+    "Native MathML tested with a script-free copy, not a browser-wide JavaScript-disable preference",
+    "No GPU or cross-framework performance benchmark",
+    "Clipboard denial fallback not force-triggered"
+  ]
+}
