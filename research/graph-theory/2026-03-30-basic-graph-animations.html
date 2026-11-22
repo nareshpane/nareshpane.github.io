@@ -1,469 +1,162 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Basic Graph Animations</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700&family=Source+Code+Pro:wght@400;500;600&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --bg: #f7f4ee;
-      --card: #fffdf9;
-      --ink: #1b1b1b;
-      --muted: #666;
-      --line: #ddd5c7;
-      --accent: #1d4f91;
-      --note: #f5efe3;
-      --codebg: #f3efe8;
-      --codeborder: #d8cfc1;
-      --shadow: 0 14px 32px rgba(0,0,0,0.06);
-      --radius: 22px;
-    }
-
-    * { box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--ink);
-      font-family: "Inter", sans-serif;
-      line-height: 1.72;
-    }
-
-    .page {
-      max-width: 1140px;
-      margin: 0 auto;
-      padding: 34px 20px 56px;
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 34px 34px 30px;
-    }
-
-    h1, h2, h3 {
-      font-family: "Cormorant Garamond", serif;
-      line-height: 1.08;
-      margin: 0 0 12px;
-      color: #151515;
-    }
-
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 14px;
-    }
-
-    h2 {
-      font-size: 2rem;
-      margin-top: 34px;
-      padding-bottom: 8px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    h3 {
-      font-size: 1.45rem;
-      margin-top: 0;
-      margin-bottom: 10px;
-    }
-
-    p {
-      margin: 0 0 14px;
-      font-size: 1.02rem;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .lead {
-      font-size: 1.1rem;
-    }
-
-    .panel {
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 16px 18px;
-      margin: 18px 0;
-      background: #fcfaf6;
-    }
-
-    .note {
-      background: var(--note);
-      border-left: 4px solid var(--accent);
-    }
-
-    .mini-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-      margin: 18px 0 24px;
-    }
-
-    .mini-box {
-      background: #fcfaf6;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 14px 16px;
-    }
-
-    .mini-box .k {
-      font-size: 0.88rem;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-bottom: 6px;
-      font-weight: 700;
-    }
-
-    .mini-box .v {
-      font-size: 1rem;
-      font-weight: 600;
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 18px;
-    }
-
-    .graph-card {
-      background: #fcfaf6;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 16px;
-    }
-
-    .graph-card img,
-    .graph-card video {
-      width: 100%;
-      display: block;
-      border-radius: 12px;
-      background: #efe9de;
-      margin-bottom: 12px;
-    }
-
-    .graph-card p {
-      color: var(--muted);
-      font-size: 0.97rem;
-      margin-bottom: 0;
-    }
-
-    .code-card {
-      margin-top: 22px;
-      border: 1px solid var(--codeborder);
-      border-radius: 18px;
-      overflow: hidden;
-      background: var(--codebg);
-    }
-
-    .code-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 14px;
-      background: #ece5d8;
-      border-bottom: 1px solid var(--codeborder);
-    }
-
-    .code-title {
-      font-weight: 700;
-      font-size: 0.98rem;
-    }
-
-    .code-subtitle {
-      color: var(--muted);
-      font-size: 0.9rem;
-      margin-top: 2px;
-    }
-
-    .copy-btn {
-      border: 1px solid #b9ac95;
-      background: #fffaf0;
-      color: #222;
-      border-radius: 10px;
-      padding: 8px 12px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      cursor: pointer;
-      flex-shrink: 0;
-    }
-
-    .copy-btn:hover {
-      background: #fff;
-    }
-
-    pre {
-      margin: 0;
-      padding: 16px 18px;
-      overflow-x: auto;
-      white-space: pre;
-      tab-size: 4;
-    }
-
-    code, pre {
-      font-family: "Source Code Pro", monospace;
-      font-size: 0.92rem;
-      line-height: 1.63;
-    }
-
-    .footer-nav {
-      margin-top: 22px;
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.98rem;
-    }
-
-    .footer-nav a {
-      font-weight: 600;
-    }
-
-    .sep {
-      margin: 0 8px;
-      color: #8a8a8a;
-    }
-
-    @media (max-width: 920px) {
-      .card {
-        padding: 24px 18px;
-      }
-
-      h1 {
-        font-size: 2.35rem;
-      }
-
-      h2 {
-        font-size: 1.65rem;
-      }
-
-      .gallery,
-      .mini-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .code-head {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="page">
-    <section class="card">
-      <h1>Basic Graph Animations</h1>
-
-      <p class="lead">
-        This page collects a small set of basic graph concepts in a minimalist visual format.
-        The aim is not to overload the page with theory, but to make the basic objects easy to see:
-        what a path looks like, what makes a graph bipartite, what a bridge is, how a triangle appears,
-        and so on.
-      </p>
-
-      <div class="panel note">
-        <strong>What I wanted here.</strong>
-        A clean page, a small number of nodes, minimalist geometry, and graphs that are easy to inspect at a glance.
-        Some concepts work better as a static picture. Others make more sense as a short animation.
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Explore graph theory through labelled diagrams, family comparisons and reproducible experiments in edge growth, isomorphism and shortest paths.">
+    <title>Basic Graph Animations · Graph Theory</title>
+    <link rel="stylesheet" href="2026-03-30-basic-graph-animations/atlas.css">
+    <script defer src="2026-03-30-basic-graph-animations/graph.js"></script>
+    <script defer src="2026-03-30-basic-graph-animations/families.js"></script>
+    <script defer src="2026-03-30-basic-graph-animations/experiments.js"></script>
+    <script defer src="2026-03-30-basic-graph-animations/guide.js"></script>
+    <script defer src="2026-03-30-basic-graph-animations/archive.js"></script>
+  </head>
+  <body id="top">
+    <a class="skip" href="#empty-graph">Skip to guide</a>
+    <svg class="sprites" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <symbol id="i-anatomy" viewBox="0 0 24 24"><path d="m4 15 6-10 10 4-6 11-10-5 16-6"/><circle cx="4" cy="15" r="2"/><circle cx="10" cy="5" r="2"/><circle cx="20" cy="9" r="2"/><circle cx="14" cy="20" r="2"/></symbol>
+      <symbol id="i-family" viewBox="0 0 24 24"><path d="M12 6v5H4v6m8-6h8v6"/><circle cx="12" cy="4" r="2"/><circle cx="4" cy="19" r="2"/><circle cx="20" cy="19" r="2"/></symbol>
+      <symbol id="i-compare" viewBox="0 0 24 24"><path d="m3 8 4-5 4 5-4 6ZM14 13l4-5 4 5-4 6Z"/></symbol>
+      <symbol id="i-lab" viewBox="0 0 24 24"><path d="M9 3h6m-5 0v6l-6 10q-.5 2 2 2h12q2.5 0 2-2L14 9V3m-7 12h10"/></symbol>
+      <symbol id="i-archive" viewBox="0 0 24 24"><path d="M3 5h18v4H3zM5 9v11h14V9m-10 4h6"/></symbol>
+      <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 6Q9 3 3 4v14q6-1 9 2 3-3 9-2V4q-6-1-9 2v14"/></symbol>
+    </defs>
+    </svg>
+    <header class="masthead">
+      <div class="bound mast-row">
+        <a class="brand" href="../../research.html"><svg class="icon" aria-hidden="true"><use href="#i-anatomy"/></svg><span>Research notebook</span></a><a class="index-link" href="../../research.html">Research index <span aria-hidden="true">↗</span></a>
       </div>
-
-      <div class="mini-grid">
-        <div class="mini-box">
-          <div class="k">Visual style</div>
-          <div class="v">Minimal, small-node, concept-first</div>
+    </header>
+    <div class="bound">
+      <header class="hero">
+        <div>
+          <nav aria-label="Breadcrumb" class="crumb">
+            <a href="../../research.html">Research</a><span aria-hidden="true">/</span>Graph theory</nav>
+          <h1>Basic Graph Animations</h1>
+          <p>Twenty original drawings trace the structures that eight labelled vertices can form. Trace a path, cut a bridge, or redraw a cube to see which properties belong to the graph itself.</p>
         </div>
-        <div class="mini-box">
-          <div class="k">Node count</div>
-          <div class="v">Mostly 8 vertices per graph</div>
-        </div>
-        <div class="mini-box">
-          <div class="k">Output mode</div>
-          <div class="v">PNG for static, GIF or MP4 for dynamic</div>
-        </div>
-      </div>
-
-      <h2>Static Graph Concepts</h2>
-
-<div class="gallery">
-  <article class="graph-card">
-    <img src="2026-03-30-basic-graph-animations/01_empty_graph.png" alt="Empty Graph">
-    <h3>Empty Graph</h3>
-    <p>No edges are present.</p>
-  </article>
-
-  <article class="graph-card">
-    <img src="2026-03-30-basic-graph-animations/02_single_edge.png" alt="Single Edge">
-    <h3>Single Edge</h3>
-    <p>The smallest nontrivial connection between two vertices.</p>
-  </article>
-
-  <article class="graph-card">
-    <img src="2026-03-30-basic-graph-animations/03_path_graph.png" alt="Path Graph">
-    <h3>Path Graph</h3>
-    <p>Vertices arranged in a single chain.</p>
-  </article>
-
-  <article class="graph-card">
-    <img src="2026-03-30-basic-graph-animations/04_cycle_graph.png" alt="Cycle Graph">
-    <h3>Cycle Graph</h3>
-    <p>A closed loop in which every vertex has degree 2.</p>
-  </article>
-
-  <article class="graph-card">
-    <img src="2026-03-30-basic-graph-animations/05_complete_graph.png" alt="Complete Graph">
-    <h3>Complete Graph</h3>
-    <p>Every pair of distinct vertices is connected by an edge.</p>
-  </article>
-
-  <article class="graph-card">
-    <img src="2026-03-30-basic-graph-animations/06_star_graph.png" alt="Star Graph">
-    <h3>Star Graph</h3>
-    <p>One central vertex is connected to every outer vertex.</p>
-  </article>
-
-  <article class="graph-card">
-    <img src="2026-03-30-basic-graph-animations/07_tree_graph.png" alt="Tree">
-    <h3>Tree</h3>
-    <p>A connected graph with no cycles.</p>
-  </article>
-
-  <article class="graph-card">
-    <img src="2026-03-30-basic-graph-animations/08_connected_graph.png" alt="Connected Graph">
-    <h3>Connected Graph</h3>
-    <p>Every vertex can be reached from every other vertex.</p>
-  </article>
-
-  <article class="graph-card">
-    <img src="2026-03-30-basic-graph-animations/09_disconnected_graph.png" alt="Disconnected Graph">
-    <h3>Disconnected Graph</h3>
-    <p>At least two components are present.</p>
-  </article>
-
-  <article class="graph-card">
-    <img src="2026-03-30-basic-graph-animations/10_complete_bipartite_graph.png" alt="Complete Bipartite Graph">
-    <h3>Complete Bipartite Graph</h3>
-    <p>Vertices split into two parts, with all cross edges present.</p>
-  </article>
-
-  <article class="graph-card">
-    <img src="2026-03-30-basic-graph-animations/11_bipartite_graph.png" alt="Bipartite Graph">
-    <h3>Bipartite Graph</h3>
-    <p>Vertices split into two parts, with no edges inside either part.</p>
-  </article>
-
-  <article class="graph-card">
-    <img src="2026-03-30-basic-graph-animations/12_triangle_free_graph.png" alt="Triangle-Free Graph">
-    <h3>Triangle-Free Graph</h3>
-    <p>No 3-cycle appears anywhere in the graph.</p>
-  </article>
-
-  <article class="graph-card">
-    <img src="2026-03-30-basic-graph-animations/13_graph_with_triangle.png" alt="Graph with a Triangle">
-    <h3>Graph with a Triangle</h3>
-    <p>Vertices 0, 1, and 2 form a 3-cycle.</p>
-  </article>
-
-  <article class="graph-card">
-    <img src="2026-03-30-basic-graph-animations/14_bridge_edge.png" alt="Bridge">
-    <h3>Bridge</h3>
-    <p>Removing the highlighted edge increases the number of components.</p>
-  </article>
-
-  <article class="graph-card">
-    <img src="2026-03-30-basic-graph-animations/15_articulation_vertex.png" alt="Articulation Point">
-    <h3>Articulation Point</h3>
-    <p>Removing the highlighted vertex disconnects the graph.</p>
-  </article>
-
-  <article class="graph-card">
-    <img src="2026-03-30-basic-graph-animations/16_matching.png" alt="Matching">
-    <h3>Matching</h3>
-    <p>A set of edges with no shared endpoints.</p>
-  </article>
-
-  <article class="graph-card">
-    <img src="2026-03-30-basic-graph-animations/17_regular_graph.png" alt="Regular Graph">
-    <h3>Regular Graph</h3>
-    <p>Each vertex has the same degree. This one is 2-regular.</p>
-  </article>
-
-  <article class="graph-card">
-    <img src="2026-03-30-basic-graph-animations/18_wheel_graph.png" alt="Wheel Graph">
-    <h3>Wheel Graph</h3>
-    <p>A cycle together with one hub connected to the cycle.</p>
-  </article>
-
-  <article class="graph-card">
-    <img src="2026-03-30-basic-graph-animations/19_planar_graph.png" alt="Planar Graph">
-    <h3>Planar Graph</h3>
-    <p>This graph can be drawn without edge crossings.</p>
-  </article>
-
-  <article class="graph-card">
-    <img src="2026-03-30-basic-graph-animations/20_nonplanar_graph.png" alt="Non-Planar Graph">
-    <h3>Non-Planar Graph</h3>
-    <p>K3,3 is a standard example of a graph that cannot be drawn planar.</p>
-  </article>
-</div>
-
-<h2>Animated Graph Concepts</h2>
-
-<div class="gallery">
-  <article class="graph-card">
-    <img src="2026-03-30-basic-graph-animations/21_connected_growth.gif" alt="Building Connectivity">
-    <h3>Building Connectivity</h3>
-    <p>Edges are added until the graph becomes connected.</p>
-  </article>
-
-  <article class="graph-card">
-    <img src="2026-03-30-basic-graph-animations/22_complete_growth.gif" alt="Building a Complete Graph">
-    <h3>Building a Complete Graph</h3>
-    <p>Edges are added until every pair is connected.</p>
-  </article>
-
-  <article class="graph-card">
-    <img src="2026-03-30-basic-graph-animations/23_bipartite_growth.gif" alt="Building a Bipartite Graph">
-    <h3>Building a Bipartite Graph</h3>
-    <p>Edges are added only across the two parts.</p>
-  </article>
-
-  <article class="graph-card">
-    <img src="2026-03-30-basic-graph-animations/24_triangle_appears.gif" alt="When a Triangle Appears">
-    <h3>When a Triangle Appears</h3>
-    <p>A graph can be triangle-free for a while, then suddenly acquire one.</p>
-  </article>
-</div>
-
-      <h2>Python Code Used to Generate the Graphs</h2>
-
-      <p>
-        Below is the full Python script for generating the static figures and animations.
-        It is written so someone can copy it directly, run it locally, and populate the page assets.
-      </p>
-
-      <div class="code-card">
-        <div class="code-head">
+        <dl class="metadata">
           <div>
-            <div class="code-title">basic_graph_animations.py</div>
-            <div class="code-subtitle">Full generator script</div>
+            <dt><span aria-hidden="true">📅</span> Created Date:</dt>
+            <dd>March 30, 2026</dd>
           </div>
-          <button class="copy-btn" onclick="copyCode('code-full', this)">Copy code</button>
-        </div>
-        <pre><code id="code-full">#!/usr/bin/env python3
+          <div>
+            <dt><span aria-hidden="true">📝</span> Revised Date:</dt>
+            <dd>November 22, 2026</dd>
+          </div>
+          <div>
+            <dt><span aria-hidden="true">💼</span> Harness:</dt>
+            <dd>Codex on Windows</dd>
+          </div>
+          <div>
+            <dt><span aria-hidden="true">🖥️</span> Model:</dt>
+            <dd>GPT-6.2 Sol</dd>
+          </div>
+          <div>
+            <dt><span aria-hidden="true">🧠</span> Reasoning:</dt>
+            <dd>Not reported</dd>
+          </div>
+        </dl>
+      </header>
+<div class="layout">
+<aside class="sidebar"><button type="button" class="mobile-nav" aria-expanded="false" aria-controls="guide-nav"><span>Contents</span><span id="mobile-location"></span><span aria-hidden="true">⌄</span></button>
+<nav id="guide-nav" aria-label="Guide contents"><div class="nav-title">Contents</div>
+<div class="nav-group"><div class="nav-row"><a href="#empty-graph"><span class="nav-number">01</span>Empty Graph</a><button type="button" aria-label="Toggle Empty Graph subsections" aria-controls="links-empty-graph" aria-expanded="false">⌄</button></div>
+<ul id="links-empty-graph" hidden><li><a href="#generator">Python generator</a></li></ul></div>
+<div class="nav-group"><div class="nav-row"><a href="#single-edge"><span class="nav-number">02</span>Single Edge</a><button type="button" aria-label="Toggle Single Edge subsections" aria-controls="links-single-edge" aria-expanded="false">⌄</button></div>
+<ul id="links-single-edge" hidden><li><a href="#inspect-neighbours">Degrees and neighbours</a></li><li><a href="#degree-matrix">Adjacency matrix</a></li></ul></div>
+<div class="nav-group"><div class="nav-row"><a href="#path-graph"><span class="nav-number">03</span>Path Graph</a><button type="button" aria-label="Toggle Path Graph subsections" aria-controls="links-path-graph" aria-expanded="false">⌄</button></div>
+<ul id="links-path-graph" hidden><li><a href="#weights">Lengths and weighted distances</a></li></ul></div>
+<div class="nav-group"><div class="nav-row"><a href="#cycles"><span class="nav-number">04</span>Cycle Graph</a><button type="button" aria-label="Toggle Cycle Graph subsections" aria-controls="links-cycles" aria-expanded="false">⌄</button></div>
+<ul id="links-cycles" hidden><li><a href="#cycle-parity">Odd cycles, even cycles and colour</a></li></ul></div>
+<div class="nav-group"><div class="nav-row"><a href="#complete-graphs"><span class="nav-number">05</span>Complete Graph</a><button type="button" aria-label="Toggle Complete Graph subsections" aria-controls="links-complete-graphs" aria-expanded="false">⌄</button></div>
+<ul id="links-complete-graphs" hidden><li><a href="#complete-orders">How a clique grows</a></li><li><a href="#complete-growth">Building a Complete Graph</a></li></ul></div>
+<div class="nav-group"><div class="nav-row"><a href="#star-graph"><span class="nav-number">06</span>Star Graph</a><button type="button" aria-label="Toggle Star Graph subsections" aria-controls="links-star-graph" aria-expanded="false">⌄</button></div>
+<ul id="links-star-graph" hidden><li><a href="#star-hubs">Removing the hub or a leaf</a></li></ul></div>
+<div class="nav-group"><div class="nav-row"><a href="#trees"><span class="nav-number">07</span>Tree</a><button type="button" aria-label="Toggle Tree subsections" aria-controls="links-trees" aria-expanded="false">⌄</button></div>
+<ul id="links-trees" hidden><li><a href="#tree-shapes">Path, star and rooted binary tree</a></li><li><a href="#tree-cycle">Add a chord to the original tree</a></li></ul></div>
+<div class="nav-group"><div class="nav-row"><a href="#connected-graph"><span class="nav-number">08</span>Connected Graph</a><button type="button" aria-label="Toggle Connected Graph subsections" aria-controls="links-connected-graph" aria-expanded="false">⌄</button></div>
+<ul id="links-connected-graph" hidden><li><a href="#growth">Building Connectivity</a></li></ul></div>
+<div class="nav-group"><div class="nav-row"><a href="#disconnected-graph"><span class="nav-number">09</span>Disconnected Graph</a><button type="button" aria-label="Toggle Disconnected Graph subsections" aria-controls="links-disconnected-graph" aria-expanded="false">⌄</button></div>
+<ul id="links-disconnected-graph" hidden><li><a href="#random">When do the components join?</a></li></ul></div>
+<div class="nav-group"><div class="nav-row"><a href="#complete-bipartite-graph"><span class="nav-number">10</span>Complete Bipartite Graph</a><button type="button" aria-label="Toggle Complete Bipartite Graph subsections" aria-controls="links-complete-bipartite-graph" aria-expanded="false">⌄</button></div>
+<ul id="links-complete-bipartite-graph" hidden><li><a href="#part-sizes">Equal and unequal part sizes</a></li></ul></div>
+<div class="nav-group"><div class="nav-row"><a href="#bipartite-graph"><span class="nav-number">11</span>Bipartite Graph</a><button type="button" aria-label="Toggle Bipartite Graph subsections" aria-controls="links-bipartite-graph" aria-expanded="false">⌄</button></div>
+<ul id="links-bipartite-graph" hidden><li><a href="#bipartite-growth">Building a Bipartite Graph</a></li></ul></div>
+<div class="nav-group"><div class="nav-row"><a href="#triangle-free-graph"><span class="nav-number">12</span>Triangle-Free Graph</a><button type="button" aria-label="Toggle Triangle-Free Graph subsections" aria-controls="links-triangle-free-graph" aria-expanded="false">⌄</button></div>
+<ul id="links-triangle-free-graph" hidden><li><a href="#odd-obstruction">Triangle-free cycles with different colourings</a></li></ul></div>
+<div class="nav-group"><div class="nav-row"><a href="#graph-with-a-triangle"><span class="nav-number">13</span>Graph with a Triangle</a><button type="button" aria-label="Toggle Graph with a Triangle subsections" aria-controls="links-graph-with-a-triangle" aria-expanded="false">⌄</button></div>
+<ul id="links-graph-with-a-triangle" hidden><li><a href="#first-triangle">When a Triangle Appears</a></li></ul></div>
+<div class="nav-group"><div class="nav-row"><a href="#bridge"><span class="nav-number">14</span>Bridge</a><button type="button" aria-label="Toggle Bridge subsections" aria-controls="links-bridge" aria-expanded="false">⌄</button></div>
+<ul id="links-bridge" hidden><li><a href="#bridge-deletion">Test every edge of the original graph</a></li></ul></div>
+<div class="nav-group"><div class="nav-row"><a href="#articulation-point"><span class="nav-number">15</span>Articulation Point</a><button type="button" aria-label="Toggle Articulation Point subsections" aria-controls="links-articulation-point" aria-expanded="false">⌄</button></div>
+<ul id="links-articulation-point" hidden><li><a href="#vertex-deletion">Test all eight vertices</a></li></ul></div>
+<div class="nav-group"><div class="nav-row"><a href="#matching"><span class="nav-number">16</span>Matching</a><button type="button" aria-label="Toggle Matching subsections" aria-controls="links-matching" aria-expanded="false">⌄</button></div>
+<ul id="links-matching" hidden><li><a href="#matching-size">Can a maximal matching be improved?</a></li></ul></div>
+<div class="nav-group"><div class="nav-row"><a href="#regular-graph"><span class="nav-number">17</span>Regular Graph</a><button type="button" aria-label="Toggle Regular Graph subsections" aria-controls="links-regular-graph" aria-expanded="false">⌄</button></div>
+<ul id="links-regular-graph" hidden><li><a href="#regular-degrees">Degrees two, three and four</a></li><li><a href="#isomorphism">Can degree sequences identify a graph?</a></li></ul></div>
+<div class="nav-group"><div class="nav-row"><a href="#wheel-graph"><span class="nav-number">18</span>Wheel Graph</a><button type="button" aria-label="Toggle Wheel Graph subsections" aria-controls="links-wheel-graph" aria-expanded="false">⌄</button></div>
+<ul id="links-wheel-graph" hidden><li><a href="#wheel-rims">Colouring even and odd rims</a></li></ul></div>
+<div class="nav-group"><div class="nav-row"><a href="#planarity"><span class="nav-number">19</span>Planar Graph</a><button type="button" aria-label="Toggle Planar Graph subsections" aria-controls="links-planarity" aria-expanded="false">⌄</button></div>
+<ul id="links-planarity" hidden><li><a href="#plane-drawings">Redraw the edges and count the faces</a></li></ul></div>
+<div class="nav-group"><div class="nav-row"><a href="#non-planar-graph"><span class="nav-number">20</span>Non-Planar Graph</a><button type="button" aria-label="Toggle Non-Planar Graph subsections" aria-controls="links-non-planar-graph" aria-expanded="false">⌄</button></div>
+<ul id="links-non-planar-graph" hidden><li><a href="#edge-bounds">Two edge-count obstructions</a></li></ul></div>
+<div class="nav-group"><div class="nav-row"><a href="#sources">References</a></div></div></nav></aside>
+<main>
+<!-- The original plots use cropped PNG geometry and aligned vector numerals. -->
+<noscript><p class="connection">The original drawings, explanations and Python source are available below. Enable JavaScript for the interactive comparisons.</p></noscript>
+<section class="graph-chapter" id="empty-graph">
+      <h2><span class="chapter-number" aria-hidden="true">01</span>Empty Graph</h2>
+      <p class="intro">A simple undirected graph <i>G</i> = (<i>V</i>, <i>E</i>) has <i>n</i> = |<i>V</i>| vertices and <i>m</i> = |<i>E</i>| edges. Each edge is an unordered pair of distinct vertices. The empty graph has no edges, so each vertex is isolated and forms its own connected component. Write <i>c</i> for the number of components.</p>
+      <div class="chapter-pair tone-teal">
+        <figure class="original-figure">
+      <header><h3>Eight isolated vertices</h3><a href="2026-03-30-basic-graph-animations/01_empty_graph.png">Full-size figure</a></header>
+      <svg class="historic-drawing" role="img" aria-label="Eight labeled vertices stand in a circle with no edges." viewBox="4 83 1377 1350">
+<defs>
+<clipPath id="original-crop-01">
+<rect x="32" y="111" width="1322" height="1294"/>
+</clipPath>
+</defs>
+<rect x="4" y="83" width="1377" height="1350" fill="#fbfaf7"/>
+<image href="2026-03-30-basic-graph-animations/01_empty_graph.png" width="1386" height="1570" clip-path="url(#original-crop-01)"/>
+<g aria-hidden="true">
+<circle cx="1302.5" cy="757.5" r="66.14" fill="#4c78a8" stroke="#fff" stroke-width="6.42"/>
+<circle cx="1124" cy="336" r="66.14" fill="#4c78a8" stroke="#fff" stroke-width="6.42"/>
+<circle cx="692.5" cy="161.5" r="66.14" fill="#4c78a8" stroke="#fff" stroke-width="6.42"/>
+<circle cx="261" cy="336" r="66.14" fill="#4c78a8" stroke="#fff" stroke-width="6.42"/>
+<circle cx="82.5" cy="757.5" r="66.14" fill="#4c78a8" stroke="#fff" stroke-width="6.42"/>
+<circle cx="261" cy="1179.5" r="66.14" fill="#4c78a8" stroke="#fff" stroke-width="6.42"/>
+<circle cx="692.5" cy="1354" r="66.14" fill="#4c78a8" stroke="#fff" stroke-width="6.42"/>
+<circle cx="1124" cy="1179.5" r="66.14" fill="#4c78a8" stroke="#fff" stroke-width="6.42"/>
+<g font-family="Arial,sans-serif" font-size="99.54" font-weight="600" text-anchor="middle">
+<text x="1302.5" y="757.5" dy=".35em" fill="#ffffff">0</text>
+<text x="1124" y="336.0" dy=".35em" fill="#ffffff">1</text>
+<text x="692.5" y="161.5" dy=".35em" fill="#ffffff">2</text>
+<text x="261" y="336.0" dy=".35em" fill="#ffffff">3</text>
+<text x="82.5" y="757.5" dy=".35em" fill="#ffffff">4</text>
+<text x="261" y="1179.5" dy=".35em" fill="#ffffff">5</text>
+<text x="692.5" y="1354.0" dy=".35em" fill="#ffffff">6</text>
+<text x="1124" y="1179.5" dy=".35em" fill="#ffffff">7</text>
+</g>
+</g>
+</svg>
+      <figcaption><p class="metrics">n = 8 · m = 0 · 8 components</p><p>Every vertex has degree zero because no edge meets it. The circular arrangement gives the vertices an order on the page, but no adjacency.</p></figcaption>
+    </figure>
+        <figure class="companion-figure" data-companion="complement">
+          <h3>Which pairs are missing?</h3><svg></svg><figcaption><p class="metrics"></p><p>The complement on the same eight vertices joins all 28 pairs. Taking the complement a second time restores the eight isolates.</p></figcaption>
+        </figure>
+      </div>
+<details id="generator">
+              <summary>Reproduce the figures in Python</summary>
+              <p>The March 30 generator uses Python, NetworkX, Matplotlib and Pillow. Run it from the directory where you want its output folder. It writes 20 PNGs, four GIFs and a manifest of the files. Optional MP4 export uses FFmpeg.</p>
+              <div class="controls">
+                <a href="2026-03-30-basic-graph-animations/basic_graph_animations.py" download>Download Python script</a>
+                <button type="button" id="archive-copy">Copy code</button>
+                <span id="archive-copy-status" role="status"></span>
+              </div>
+              <pre tabindex="0" aria-label="Python generator source"><code id="archive-code">#!/usr/bin/env python3
 
 import json
 import os
@@ -510,7 +203,7 @@ def circular_pos(nodes):
     return nx.circular_layout(G)
 
 
-def bipartite_pos(left: List[int], right: List[int]) -> Dict[int, Tuple[float, float]]:
+def bipartite_pos(left: List[int], right: List[int]) -&gt; Dict[int, Tuple[float, float]]:
     pos = {}
     left_y = list(reversed(range(len(left))))
     right_y = list(reversed(range(len(right))))
@@ -521,7 +214,7 @@ def bipartite_pos(left: List[int], right: List[int]) -> Dict[int, Tuple[float, f
     return pos
 
 
-def shell_pos(shells: List[List[int]]) -> Dict[int, Tuple[float, float]]:
+def shell_pos(shells: List[List[int]]) -&gt; Dict[int, Tuple[float, float]]:
     G = nx.Graph()
     for shell in shells:
         G.add_nodes_from(shell)
@@ -902,7 +595,7 @@ def d_triangle_free_vs_triangle():
     ]
     frames = []
     for i, edges in enumerate(seq):
-        caption = "Triangle-free so far." if i < 3 else "Now a triangle appears on vertices 0, 1, 2."
+        caption = "Triangle-free so far." if i &lt; 3 else "Now a triangle appears on vertices 0, 1, 2."
         edge_colors = []
         for e in edges:
             if set(e).issubset({0,1,2}) and len(edges) == 5:
@@ -977,30 +670,1076 @@ def main():
 
 
 if __name__ == "__main__":
-    main()</code></pre>
+    main()
+</code></pre>
+            </details>
+</section>
+<section class="graph-chapter" id="single-edge">
+      <h2><span class="chapter-number" aria-hidden="true">02</span>Single Edge</h2>
+      <p class="intro">Join vertices 0 and 1. They are now adjacent, and their shared edge is incident to each of them. The degree deg(v) counts the edges incident to v. Its open neighbourhood <i>N</i>(<i>v</i>) is the set of its neighbours. Each edge contributes to the degrees at both ends, so the total degree is 2<i>m</i>.</p>
+      <div class="chapter-pair tone-peach">
+        <figure class="original-figure">
+      <header><h3>One edge and six isolates</h3><a href="2026-03-30-basic-graph-animations/02_single_edge.png">Full-size figure</a></header>
+      <svg class="historic-drawing" role="img" aria-label="Vertices 0 and 1 are joined. Six other vertices are isolated." viewBox="4 83 1368 1350">
+<defs>
+<clipPath id="original-crop-02">
+<rect x="32" y="111" width="1313" height="1294"/>
+</clipPath>
+</defs>
+<rect x="4" y="83" width="1368" height="1350" fill="#fbfaf7"/>
+<image href="2026-03-30-basic-graph-animations/02_single_edge.png" width="1386" height="1570" clip-path="url(#original-crop-02)"/>
+<g aria-hidden="true">
+<circle cx="1293.5" cy="757.5" r="66.14" fill="#4c78a8" stroke="#fff" stroke-width="6.42"/>
+<circle cx="1116.5" cy="336" r="66.14" fill="#4c78a8" stroke="#fff" stroke-width="6.42"/>
+<circle cx="688" cy="161.5" r="66.14" fill="#4c78a8" stroke="#fff" stroke-width="6.42"/>
+<circle cx="260" cy="336" r="66.14" fill="#4c78a8" stroke="#fff" stroke-width="6.42"/>
+<circle cx="82.5" cy="757.5" r="66.14" fill="#4c78a8" stroke="#fff" stroke-width="6.42"/>
+<circle cx="260" cy="1179.5" r="66.14" fill="#4c78a8" stroke="#fff" stroke-width="6.42"/>
+<circle cx="688" cy="1354" r="66.14" fill="#4c78a8" stroke="#fff" stroke-width="6.42"/>
+<circle cx="1116.5" cy="1179.5" r="66.14" fill="#4c78a8" stroke="#fff" stroke-width="6.42"/>
+<g font-family="Arial,sans-serif" font-size="99.54" font-weight="600" text-anchor="middle">
+<text x="1293.5" y="757.5" dy=".35em" fill="#ffffff">0</text>
+<text x="1116.5" y="336.0" dy=".35em" fill="#ffffff">1</text>
+<text x="688" y="161.5" dy=".35em" fill="#ffffff">2</text>
+<text x="260" y="336.0" dy=".35em" fill="#ffffff">3</text>
+<text x="82.5" y="757.5" dy=".35em" fill="#ffffff">4</text>
+<text x="260" y="1179.5" dy=".35em" fill="#ffffff">5</text>
+<text x="688" y="1354.0" dy=".35em" fill="#ffffff">6</text>
+<text x="1116.5" y="1179.5" dy=".35em" fill="#ffffff">7</text>
+</g>
+</g>
+</svg>
+      <figcaption><p class="metrics">n = 8 · m = 1 · 7 components</p><p>Two vertices now belong to one component. Each of the other six still forms its own.</p></figcaption>
+    </figure>
+        <figure class="companion-figure" data-companion="wedge">
+          <h3>Two edges with a shared endpoint</h3><svg></svg><figcaption><p class="metrics"></p><p>Adding 1–2 extends the first component. Vertex 1 now has degree two, and the degree sum rises from two to four.</p></figcaption>
+        </figure>
       </div>
-    </section>
-
-    <div class="footer-nav">
-      <a href="../../index.html">Home</a>
-      <span class="sep">|</span>
-      <a href="../../research.html">Research</a>
-    </div>
+<div class="substudy" id="inspect-neighbours">
+<h3>Degrees and neighbours</h3>
+<p>Select a vertex in this larger example. Its highlighted edges connect it to its neighbours. Change the view to follow a shortest path, reverse the adjacency rule in a complement, or inspect an induced subgraph.</p>
+<div id="vertex-explorer" class="explorer">
+              <header class="explorer-head">
+                <h4>Inspect a vertex</h4>
+                <label>View <select id="lens">
+                <option value="neighbors">Neighbourhood</option>
+                <option value="path">Shortest path</option>
+                <option value="induced">Induced subgraph</option>
+                <option value="directed">Directed edges</option>
+                <option value="components">Remove a vertex</option>
+                <option value="complement">Complement</option>
+                </select></label>
+              </header>
+              <div class="explorer-body">
+                <figure class="specimen">
+                  <div class="figure-info" id="figure-info">Simple undirected graph</div>
+                  <svg id="specimen-svg" aria-label="Interactive six-vertex graph"></svg>
+                  <figcaption id="specimen-caption">Select a vertex to inspect its connections.</figcaption>
+                </figure>
+                <div class="inspection">
+                  <label for="vertex">Inspect vertex</label><select id="vertex">
+                  <option>A</option>
+                  <option>B</option>
+                  <option selected>C</option>
+                  <option>D</option>
+                  <option>E</option>
+                  <option>F</option>
+                  </select>
+                  <div id="inspection-result" aria-live="polite">
+                  </div>
+                </div>
+              </div>
+              <div class="specimen-strip" id="specimen-strip">
+              </div>
+            </div>
+</div>
+<details class="math-detail" id="degree-matrix">
+              <summary>From degree to the adjacency matrix</summary>
+              <div class="matrix-wrap">
+                <div>
+                  <p>The <strong>adjacency matrix</strong> <i>A</i>(<i>G</i>) records which vertices meet. Entry <i>Aᵢⱼ</i> is 1 when an edge joins <i>i</i> to <i>j</i> and 0 otherwise. For the six-vertex explorer graph, the matrix is symmetric and each row sum is a degree.</p>
+                  <p>Every edge contributes at both endpoints, giving the <strong>handshaking lemma</strong></p>
+                  <p class="formula">∑<sub>v ∈ V</sub> deg(v) = 2m.</p>
+                  <p id="degree-sequence"></p>
+                </div>
+                <div id="matrix">
+                </div>
+              </div>
+            </details>
+</section>
+<section class="graph-chapter" id="path-graph">
+      <h2><span class="chapter-number" aria-hidden="true">03</span>Path Graph</h2>
+      <p class="intro">A path follows successive edges through distinct vertices. The path graph Pₙ is one chain of n vertices joined by n − 1 edges. A walk may revisit a vertex. For example, 0–1–0–1 is a walk of length three, while the path 0–1 has length one.</p>
+      <div class="chapter-pair tone-blue">
+        <figure class="original-figure">
+      <header><h3>The open chain P₈</h3><a href="2026-03-30-basic-graph-animations/03_path_graph.png">Full-size figure</a></header>
+      <svg class="historic-drawing" role="img" aria-label="An open chain runs from vertex 0 through 7 along the rim of an octagon." viewBox="67 144 1251 1227">
+<defs>
+<clipPath id="original-crop-03">
+<rect x="87" y="165" width="1212" height="1186"/>
+</clipPath>
+</defs>
+<rect x="67" y="144" width="1251" height="1227" fill="#fbfaf7"/>
+<image href="2026-03-30-basic-graph-animations/03_path_graph.png" width="1386" height="1570" clip-path="url(#original-crop-03)"/>
+<g aria-hidden="true">
+<circle cx="1247" cy="758" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="1084.5" cy="374.5" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="692.5" cy="215.5" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="300.5" cy="374.5" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="138" cy="758" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="300.5" cy="1141" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="692.5" cy="1299.5" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="1084.5" cy="1141" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<g font-family="Arial,sans-serif" font-size="90.48" font-weight="600" text-anchor="middle">
+<text x="1247" y="758.0" dy=".35em" fill="#ffffff">0</text>
+<text x="1084.5" y="374.5" dy=".35em" fill="#ffffff">1</text>
+<text x="692.5" y="215.5" dy=".35em" fill="#ffffff">2</text>
+<text x="300.5" y="374.5" dy=".35em" fill="#ffffff">3</text>
+<text x="138" y="758.0" dy=".35em" fill="#ffffff">4</text>
+<text x="300.5" y="1141.0" dy=".35em" fill="#ffffff">5</text>
+<text x="692.5" y="1299.5" dy=".35em" fill="#ffffff">6</text>
+<text x="1084.5" y="1141.0" dy=".35em" fill="#ffffff">7</text>
+</g>
+</g>
+</svg>
+      <figcaption><p class="metrics">n = 8 · m = 7 · diameter 7</p><p>Vertices 0 and 7 have degree one. The other six have degree two. The gap between 0 and 7 keeps the chain open.</p></figcaption>
+    </figure>
+        <figure class="companion-figure" data-companion="chain">
+          <h3>Straighten the same path</h3><svg></svg><figcaption><p class="metrics"></p><p>The labels and seven pairs agree in both drawings. Distance counts edges on a shortest path, so the distance from 0 to 7 remains seven.</p></figcaption>
+        </figure>
+      </div>
+<div class="substudy" id="weights">
+<h3>Lengths and weighted distances</h3>
+<p>Path length counts edges. When edges carry nonnegative costs, a least-cost path minimizes their sum and can use more edges than a path of minimum length.</p>
+<div id="weighted-lab"></div><details class="math-detail">
+                <summary>How is the least-cost route found?</summary>
+                <p>The experiment enumerates every simple A–D path and compares their total costs. With nonnegative weights, removing a cycle from a walk can only lower or preserve its cost. On larger graphs, Dijkstra’s algorithm avoids enumerating paths by repeatedly settling the unsettled vertex with the smallest tentative distance and updating its neighbours.</p>
+              </details>
+</div>
+</section>
+<section class="graph-chapter" id="cycles">
+      <h2><span class="chapter-number" aria-hidden="true">04</span>Cycle Graph</h2>
+      <p class="intro">Add 7–0 to P₈ to form a cycle. A simple cycle returns to its start with no other repeated vertex. Along Cₙ every vertex has degree two, so the degree sum 2n = 2m gives m = n.</p>
+      <div class="chapter-pair tone-lavender">
+        <figure class="original-figure">
+      <header><h3>Closing the chain into C₈</h3><a href="2026-03-30-basic-graph-animations/04_cycle_graph.png">Full-size figure</a></header>
+      <svg class="historic-drawing" role="img" aria-label="Eight vertices form the rim of an octagon, including the edge from 7 back to 0." viewBox="67 144 1251 1227">
+<defs>
+<clipPath id="original-crop-04">
+<rect x="87" y="165" width="1212" height="1186"/>
+</clipPath>
+</defs>
+<rect x="67" y="144" width="1251" height="1227" fill="#fbfaf7"/>
+<image href="2026-03-30-basic-graph-animations/04_cycle_graph.png" width="1386" height="1570" clip-path="url(#original-crop-04)"/>
+<g aria-hidden="true">
+<circle cx="1247" cy="758" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="1084.5" cy="374.5" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="692.5" cy="215.5" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="300.5" cy="374.5" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="138" cy="758" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="300.5" cy="1141" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="692.5" cy="1299.5" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="1084.5" cy="1141" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<g font-family="Arial,sans-serif" font-size="90.48" font-weight="600" text-anchor="middle">
+<text x="1247" y="758.0" dy=".35em" fill="#ffffff">0</text>
+<text x="1084.5" y="374.5" dy=".35em" fill="#ffffff">1</text>
+<text x="692.5" y="215.5" dy=".35em" fill="#ffffff">2</text>
+<text x="300.5" y="374.5" dy=".35em" fill="#ffffff">3</text>
+<text x="138" y="758.0" dy=".35em" fill="#ffffff">4</text>
+<text x="300.5" y="1141.0" dy=".35em" fill="#ffffff">5</text>
+<text x="692.5" y="1299.5" dy=".35em" fill="#ffffff">6</text>
+<text x="1084.5" y="1141.0" dy=".35em" fill="#ffffff">7</text>
+</g>
+</g>
+</svg>
+      <figcaption><p class="metrics">n = 8 · m = 8 · degree 2 throughout</p><p>The tour 0–1–2–3–4–5–6–7–0 uses every edge and visits every vertex. Here the same tour is Eulerian and Hamiltonian.</p></figcaption>
+    </figure>
+        <figure class="companion-figure" data-companion="bowtie">
+          <h3>Two triangles sharing a vertex</h3><svg></svg><figcaption><p class="metrics"></p><p>An Eulerian circuit uses every edge exactly once. The two triangles admit such a circuit. A Hamiltonian cycle visits every vertex exactly once before returning, which would require passing through their shared vertex twice.</p></figcaption>
+        </figure>
+      </div>
+<div class="substudy" id="cycle-parity">
+<h3>Odd cycles, even cycles and colour</h3>
+<p>A proper colouring gives adjacent vertices different colours. The chromatic number χ(G) is the fewest colours that suffice. Alternate two colours along a cycle to see where parity matters.</p>
+<div class="plates three" id="cycle-plates"></div>
+</div>
+</section>
+<section class="graph-chapter" id="complete-graphs">
+      <h2><span class="chapter-number" aria-hidden="true">05</span>Complete Graph</h2>
+      <p class="intro">A complete graph Kₙ contains one edge for every pair of distinct vertices. Once all pairs are joined, no more edges can be added while the graph stays simple.</p>
+      <div class="chapter-pair tone-teal">
+        <figure class="original-figure">
+      <header><h3>All pairs in K₈</h3><a href="2026-03-30-basic-graph-animations/05_complete_graph.png">Full-size figure</a></header>
+      <svg class="historic-drawing" role="img" aria-label="All pairs of the eight vertices on a circle are joined." viewBox="67 144 1251 1227">
+<defs>
+<clipPath id="original-crop-05">
+<rect x="91" y="168" width="1204" height="1180"/>
+</clipPath>
+</defs>
+<rect x="67" y="144" width="1251" height="1227" fill="#fbfaf7"/>
+<image href="2026-03-30-basic-graph-animations/05_complete_graph.png" width="1386" height="1570" clip-path="url(#original-crop-05)"/>
+<g aria-hidden="true">
+<circle cx="1247" cy="757.5" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="1084.5" cy="374.5" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="692.5" cy="215.5" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="300.5" cy="374.5" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="138" cy="757.5" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="300.5" cy="1141" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="692.5" cy="1299.5" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="1084.5" cy="1141" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<g font-family="Arial,sans-serif" font-size="90.48" font-weight="600" text-anchor="middle">
+<text x="1247" y="757.5" dy=".35em" fill="#ffffff">0</text>
+<text x="1084.5" y="374.5" dy=".35em" fill="#ffffff">1</text>
+<text x="692.5" y="215.5" dy=".35em" fill="#ffffff">2</text>
+<text x="300.5" y="374.5" dy=".35em" fill="#ffffff">3</text>
+<text x="138" y="757.5" dy=".35em" fill="#ffffff">4</text>
+<text x="300.5" y="1141.0" dy=".35em" fill="#ffffff">5</text>
+<text x="692.5" y="1299.5" dy=".35em" fill="#ffffff">6</text>
+<text x="1084.5" y="1141.0" dy=".35em" fill="#ffffff">7</text>
+</g>
+</g>
+</svg>
+      <figcaption><p class="metrics">n = 8 · m = 28 · degree 7 throughout</p><p>Each vertex has seven neighbours. All 28 edges of the complement shown in the Empty Graph section appear here.</p></figcaption>
+    </figure>
+        <div class="worked-example">
+          <h3>Count pairs by their endpoints</h3><p class="display-formula">m = n(n − 1)/2</p>
+          <p>There are n choices for the first endpoint and n − 1 for the second. Each unordered pair appears in both orders, so divide by two. In K₈ this gives 8 × 7 / 2 = 28.</p>
+        </div>
+      </div>
+<div class="substudy" id="complete-orders">
+<h3>How a clique grows</h3>
+<p>A clique is a set of pairwise adjacent vertices. The numbered vertex joins every earlier vertex. Each step adds one more edge than the preceding step.</p>
+<div class="plates four" id="complete-plates"></div>
+</div>
+<div class="substudy" id="complete-growth">
+<h3>Building a Complete Graph</h3>
+<p>Here the eight vertices stay fixed. The original film fills their 28 possible pairs in four batches; the adjacent controls let you inspect every edge insertion.</p>
+<div class="animation-pair">
+<div class="historic-player"><h4>Original animation</h4>
+<figure class="historic-animation" data-original-gif>
+  <div class="historic-animation-frame">
+    <canvas width="640" height="720" role="img" aria-label="First frame. Chords accumulate in four stages until every pair of vertices is joined."></canvas>
+    <img width="640" height="720" alt="Chords accumulate in four stages until every pair of vertices is joined." hidden>
   </div>
+  <figcaption>
+    <p class="metrics">n = 8 · 4 frames · m = 6, 12, 18, 28</p>
+    <p>The final jump adds ten edges. At the last frame all eight vertices have degree seven.</p>
+    <div class="controls"><button type="button" aria-label="Play Filling K₈" hidden>Play GIF</button>
+    <a href="2026-03-30-basic-graph-animations/22_complete_growth.gif">Open original GIF</a></div>
+  </figcaption>
+</figure></div>
+<div class="step-player"><h4>Step through the construction</h4>
+<div id="growth-complete"></div></div>
+</div>
+</div>
+</section>
+<section class="graph-chapter" id="star-graph">
+      <h2><span class="chapter-number" aria-hidden="true">06</span>Star Graph</h2>
+      <p class="intro">In a star K₁,ᵣ, one hub meets all r leaves. A leaf has degree one. Like P₈, the eight-vertex star has seven edges, yet concentrating those edges at a hub changes every long-distance route.</p>
+      <div class="chapter-pair tone-peach">
+        <figure class="original-figure">
+      <header><h3>A seven-leaf star</h3><a href="2026-03-30-basic-graph-animations/06_star_graph.png">Full-size figure</a></header>
+      <svg class="historic-drawing" role="img" aria-label="Seven outer leaves each connect to the red hub, labeled 0." viewBox="67 144 1251 1227">
+<defs>
+<clipPath id="original-crop-06">
+<rect x="87" y="165" width="1212" height="1186"/>
+</clipPath>
+</defs>
+<rect x="67" y="144" width="1251" height="1227" fill="#fbfaf7"/>
+<image href="2026-03-30-basic-graph-animations/06_star_graph.png" width="1386" height="1570" clip-path="url(#original-crop-06)"/>
+<g aria-hidden="true">
+<circle cx="721.5" cy="757.5" r="60.15" fill="#e45756" stroke="#fff" stroke-width="5.84"/>
+<circle cx="138" cy="758" r="60.15" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="357.5" cy="1192.5" r="60.15" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="851" cy="1300" r="60.15" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="1247" cy="999" r="60.15" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="1247" cy="516.5" r="60.15" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="851" cy="215.5" r="60.15" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="357.5" cy="323" r="60.15" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<g font-family="Arial,sans-serif" font-size="90.52" font-weight="600" text-anchor="middle">
+<text x="721.5" y="757.5" dy=".35em" fill="#14212b">0</text>
+<text x="138" y="758.0" dy=".35em" fill="#ffffff">1</text>
+<text x="357.5" y="1192.5" dy=".35em" fill="#ffffff">2</text>
+<text x="851" y="1300.0" dy=".35em" fill="#ffffff">3</text>
+<text x="1247" y="999.0" dy=".35em" fill="#ffffff">4</text>
+<text x="1247" y="516.5" dy=".35em" fill="#ffffff">5</text>
+<text x="851" y="215.5" dy=".35em" fill="#ffffff">6</text>
+<text x="357.5" y="323.0" dy=".35em" fill="#ffffff">7</text>
+</g>
+</g>
+</svg>
+      <figcaption><p class="metrics">n = 8 · m = 7 · 7 leaves</p><p>All paths between different leaves pass through vertex 0. Removing the hub creates seven components.</p></figcaption>
+    </figure>
+        <figure class="companion-figure" data-companion="double-star">
+          <h3>Spread the leaves over two hubs</h3><svg></svg><figcaption><p class="metrics"></p><p>The double star also has eight vertices and seven edges. Leaves at opposite hubs are three edges apart, one more than in the original star.</p></figcaption>
+        </figure>
+      </div>
+<div class="substudy" id="star-hubs">
+<h3>Removing the hub or a leaf</h3>
+<p>In every star with at least two leaves, each pair of leaves is two steps apart. The number of components after deleting the hub reveals how many leaves depend on it.</p>
+<div class="plates two" id="star-plates"></div>
+</div>
+</section>
+<section class="graph-chapter" id="trees">
+      <h2><span class="chapter-number" aria-hidden="true">07</span>Tree</h2>
+      <p class="intro">A tree is a connected graph with no cycle. Connectivity supplies a path between each pair of vertices. Two different simple paths between the same endpoints would contain a cycle, so the path is unique.</p>
+      <div class="chapter-pair tone-blue">
+        <figure class="original-figure">
+      <header><h3>The original branching tree</h3><a href="2026-03-30-basic-graph-animations/07_tree_graph.png">Full-size figure</a></header>
+      <svg class="historic-drawing" role="img" aria-label="A branching tree has leaves 3, 4, 6 and 7, and branching vertices 1 and 5." viewBox="67 144 1251 1227">
+<defs>
+<clipPath id="original-crop-07">
+<rect x="87" y="165" width="1212" height="1186"/>
+</clipPath>
+</defs>
+<rect x="67" y="144" width="1251" height="1227" fill="#fbfaf7"/>
+<image href="2026-03-30-basic-graph-animations/07_tree_graph.png" width="1386" height="1570" clip-path="url(#original-crop-07)"/>
+<g aria-hidden="true">
+<circle cx="692.5" cy="215.5" r="60.15" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="323" cy="577" r="60.15" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="1062" cy="577" r="60.15" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="138" cy="938.5" r="60.15" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="507.5" cy="938.5" r="60.15" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="1062" cy="938.5" r="60.15" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="877.5" cy="1300" r="60.15" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="1247" cy="1300" r="60.15" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<g font-family="Arial,sans-serif" font-size="90.52" font-weight="600" text-anchor="middle">
+<text x="692.5" y="215.5" dy=".35em" fill="#ffffff">0</text>
+<text x="323" y="577.0" dy=".35em" fill="#ffffff">1</text>
+<text x="1062" y="577.0" dy=".35em" fill="#ffffff">2</text>
+<text x="138" y="938.5" dy=".35em" fill="#ffffff">3</text>
+<text x="507.5" y="938.5" dy=".35em" fill="#ffffff">4</text>
+<text x="1062" y="938.5" dy=".35em" fill="#ffffff">5</text>
+<text x="877.5" y="1300.0" dy=".35em" fill="#ffffff">6</text>
+<text x="1247" y="1300.0" dy=".35em" fill="#ffffff">7</text>
+</g>
+</g>
+</svg>
+      <figcaption><p class="metrics">n = 8 · m = 7 · 4 leaves</p><p>With 0 as root, vertices 3, 4, 6 and 7 are leaves. Choosing a root assigns parents and children while preserving the edge set.</p></figcaption>
+    </figure>
+        <div class="worked-example">
+          <h3>Why does a tree have n − 1 edges?</h3><p class="display-formula">m = n − 1</p>
+          <p>An endpoint of a longest simple path is a leaf. A second neighbour would extend the path or create a cycle. Removing the leaf and its edge leaves a tree. Repeat until one vertex and zero edges remain.</p>
+        </div>
+      </div>
+<div class="substudy" id="tree-shapes">
+<h3>Path, star and rooted binary tree</h3>
+<p>Each example has seven vertices and six edges. In a rooted binary tree each vertex has at most two children. The branching example has all leaves at the same depth; the path rooted at an endpoint grows one level at a time.</p>
+<div class="plates three" id="tree-plates"></div>
+</div>
+<div class="substudy" id="tree-cycle">
+<h3>Add a chord to the original tree</h3>
+<p>The existing path between two nonadjacent vertices is unique. Joining its endpoints closes exactly one cycle. Deleting any edge of the intact tree instead separates its endpoints.</p>
+<div id="tree-test"></div>
+</div>
+</section>
+<section class="graph-chapter" id="connected-graph">
+      <h2><span class="chapter-number" aria-hidden="true">08</span>Connected Graph</h2>
+      <p class="intro">A graph is connected when a path joins each pair of vertices. Extra edges can shorten paths while preserving connectivity. Here the chord 0–4 offers a one-edge route between vertices that are four steps apart along the rim.</p>
+      <div class="chapter-pair tone-lavender">
+        <figure class="original-figure">
+      <header><h3>An eight-cycle with a chord</h3><a href="2026-03-30-basic-graph-animations/08_connected_graph.png">Full-size figure</a></header>
+      <svg class="historic-drawing" role="img" aria-label="An eight-cycle has one chord joining opposite vertices 0 and 4." viewBox="67 144 1251 1227">
+<defs>
+<clipPath id="original-crop-08">
+<rect x="87" y="165" width="1212" height="1186"/>
+</clipPath>
+</defs>
+<rect x="67" y="144" width="1251" height="1227" fill="#fbfaf7"/>
+<image href="2026-03-30-basic-graph-animations/08_connected_graph.png" width="1386" height="1570" clip-path="url(#original-crop-08)"/>
+<g aria-hidden="true">
+<circle cx="1247" cy="758" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="1084.5" cy="374.5" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="692.5" cy="215.5" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="300.5" cy="374.5" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="138" cy="758" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="300.5" cy="1141" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="692.5" cy="1299.5" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="1084.5" cy="1141" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<g font-family="Arial,sans-serif" font-size="90.48" font-weight="600" text-anchor="middle">
+<text x="1247" y="758.0" dy=".35em" fill="#ffffff">0</text>
+<text x="1084.5" y="374.5" dy=".35em" fill="#ffffff">1</text>
+<text x="692.5" y="215.5" dy=".35em" fill="#ffffff">2</text>
+<text x="300.5" y="374.5" dy=".35em" fill="#ffffff">3</text>
+<text x="138" y="758.0" dy=".35em" fill="#ffffff">4</text>
+<text x="300.5" y="1141.0" dy=".35em" fill="#ffffff">5</text>
+<text x="692.5" y="1299.5" dy=".35em" fill="#ffffff">6</text>
+<text x="1084.5" y="1141.0" dy=".35em" fill="#ffffff">7</text>
+</g>
+</g>
+</svg>
+      <figcaption><p class="metrics">n = 8 · m = 9 · 1 component</p><p>The chord and either half of the rim form a five-cycle. Deleting the chord leaves a connected eight-cycle.</p></figcaption>
+    </figure>
+        <figure class="companion-figure" data-companion="spanning">
+          <h3>A spanning tree of the drawing</h3><svg></svg><figcaption><p class="metrics"></p><p>Keep every vertex and just the seven edges 0–1–2–3–4–5–6–7. This spanning tree witnesses connectivity with the fewest possible edges.</p></figcaption>
+        </figure>
+      </div>
+<div class="substudy" id="growth">
+<h3>Building Connectivity</h3>
+<p>Start with all eight vertices isolated. Join one more of them to the path at each step. The number of components falls by one at each step until the path spans all eight vertices.</p>
+<div class="animation-pair">
+<div class="historic-player"><h4>Original animation</h4>
+<figure class="historic-animation" data-original-gif>
+  <div class="historic-animation-frame">
+    <canvas width="640" height="720" role="img" aria-label="First frame. One path grows around an octagon as successive edges attach isolated vertices."></canvas>
+    <img width="640" height="720" alt="One path grows around an octagon as successive edges attach isolated vertices." hidden>
+  </div>
+  <figcaption>
+    <p class="metrics">n = 8 · 7 frames · m rises from 1 to 7</p>
+    <p>Each new edge merges two components. The seventh edge finishes the spanning path.</p>
+    <div class="controls"><button type="button" aria-label="Play Building connectivity" hidden>Play GIF</button>
+    <a href="2026-03-30-basic-graph-animations/21_connected_growth.gif">Open original GIF</a></div>
+  </figcaption>
+</figure></div>
+<div class="step-player"><h4>Step through the construction</h4>
+<div id="growth-path"></div></div>
+</div>
+</div>
+</section>
+<section class="graph-chapter" id="disconnected-graph">
+      <h2><span class="chapter-number" aria-hidden="true">09</span>Disconnected Graph</h2>
+      <p class="intro">A disconnected graph has at least two components. Each component is a maximal set of vertices joined by paths. No path can cross between components. A forest is an acyclic graph. Each component is a tree, including a single isolated vertex.</p>
+      <div class="chapter-pair tone-teal">
+        <figure class="original-figure">
+      <header><h3>A forest with three components</h3><a href="2026-03-30-basic-graph-animations/09_disconnected_graph.png">Full-size figure</a></header>
+      <svg class="historic-drawing" role="img" aria-label="A four-vertex path and two separate pairs occupy the rim." viewBox="67 144 1251 1227">
+<defs>
+<clipPath id="original-crop-09">
+<rect x="87" y="165" width="1212" height="1186"/>
+</clipPath>
+</defs>
+<rect x="67" y="144" width="1251" height="1227" fill="#fbfaf7"/>
+<image href="2026-03-30-basic-graph-animations/09_disconnected_graph.png" width="1386" height="1570" clip-path="url(#original-crop-09)"/>
+<g aria-hidden="true">
+<circle cx="1247" cy="758" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="1084.5" cy="374.5" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="692.5" cy="215.5" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="300.5" cy="374.5" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="138" cy="758" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="300.5" cy="1141" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="692.5" cy="1299.5" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="1084.5" cy="1141" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<g font-family="Arial,sans-serif" font-size="90.48" font-weight="600" text-anchor="middle">
+<text x="1247" y="758.0" dy=".35em" fill="#ffffff">0</text>
+<text x="1084.5" y="374.5" dy=".35em" fill="#ffffff">1</text>
+<text x="692.5" y="215.5" dy=".35em" fill="#ffffff">2</text>
+<text x="300.5" y="374.5" dy=".35em" fill="#ffffff">3</text>
+<text x="138" y="758.0" dy=".35em" fill="#ffffff">4</text>
+<text x="300.5" y="1141.0" dy=".35em" fill="#ffffff">5</text>
+<text x="692.5" y="1299.5" dy=".35em" fill="#ffffff">6</text>
+<text x="1084.5" y="1141.0" dy=".35em" fill="#ffffff">7</text>
+</g>
+</g>
+</svg>
+      <figcaption><p class="metrics">n = 8 · m = 5 · 3 components</p><p>The component sizes are 4, 2 and 2. Two new edges, chosen to join different components successively, suffice to connect the forest.</p></figcaption>
+    </figure>
+        <div class="worked-example">
+          <h3>Count components in a forest</h3><p class="display-formula">m = n − c</p>
+          <p>For component i with nᵢ vertices, its tree has nᵢ − 1 edges. Summing over all c components gives m = n − c. Any additional edge within a component contributes to the excess of m over n − c.</p>
+        </div>
+      </div>
+<div class="substudy" id="random">
+<h3>When do the components join?</h3>
+<p>A sampled graph can contain isolated vertices, trees and components with cycles. Hold the seed fixed and increase the probability to see when components merge. A new edge inside one component leaves c unchanged.</p>
+<div id="random-lab"></div>
+</div>
+</section>
+<section class="graph-chapter" id="complete-bipartite-graph">
+      <h2><span class="chapter-number" aria-hidden="true">10</span>Complete Bipartite Graph</h2>
+      <p class="intro">In a complete bipartite graph Kᵣ,ₛ the vertices split into parts of sizes r and s. Every vertex in one part meets every vertex in the other. There are no edges within a part.</p>
+      <div class="chapter-pair tone-peach">
+        <figure class="original-figure">
+      <header><h3>Four vertices on each side</h3><a href="2026-03-30-basic-graph-animations/10_complete_bipartite_graph.png">Full-size figure</a></header>
+      <svg class="historic-drawing" role="img" aria-label="Each of four blue vertices joins every one of four teal vertices." viewBox="67 144 1251 1227">
+<defs>
+<clipPath id="original-crop-10">
+<rect x="89" y="167" width="1208" height="1183"/>
+</clipPath>
+</defs>
+<rect x="67" y="144" width="1251" height="1227" fill="#fbfaf7"/>
+<image href="2026-03-30-basic-graph-animations/10_complete_bipartite_graph.png" width="1386" height="1570" clip-path="url(#original-crop-10)"/>
+<g aria-hidden="true">
+<circle cx="138" cy="215.5" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="138" cy="577" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="138" cy="938.5" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="138" cy="1299.5" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="1247" cy="215.5" r="60.12" fill="#72b7b2" stroke="#fff" stroke-width="5.84"/>
+<circle cx="1247" cy="577" r="60.12" fill="#72b7b2" stroke="#fff" stroke-width="5.84"/>
+<circle cx="1247" cy="938.5" r="60.12" fill="#72b7b2" stroke="#fff" stroke-width="5.84"/>
+<circle cx="1247" cy="1299.5" r="60.12" fill="#72b7b2" stroke="#fff" stroke-width="5.84"/>
+<g font-family="Arial,sans-serif" font-size="90.48" font-weight="600" text-anchor="middle">
+<text x="138" y="215.5" dy=".35em" fill="#ffffff">0</text>
+<text x="138" y="577.0" dy=".35em" fill="#ffffff">1</text>
+<text x="138" y="938.5" dy=".35em" fill="#ffffff">2</text>
+<text x="138" y="1299.5" dy=".35em" fill="#ffffff">3</text>
+<text x="1247" y="215.5" dy=".35em" fill="#14212b">4</text>
+<text x="1247" y="577.0" dy=".35em" fill="#14212b">5</text>
+<text x="1247" y="938.5" dy=".35em" fill="#14212b">6</text>
+<text x="1247" y="1299.5" dy=".35em" fill="#14212b">7</text>
+</g>
+</g>
+</svg>
+      <figcaption><p class="metrics">n = 8 · m = 16 · degree 4 throughout</p><p>Each left vertex has degree four, as does each right vertex. Removing one cross-edge preserves the bipartition but loses completeness.</p></figcaption>
+    </figure>
+        <div class="worked-example">
+          <h3>Count each cross-part pair once</h3><p class="display-formula">m = rs</p>
+          <p>Choose one endpoint from the r vertices on the left and the other from the s on the right. This already counts each edge once. K₄,₄ has 16 edges, while K₈ on the same number of vertices has 28.</p>
+        </div>
+      </div>
+<div class="substudy" id="part-sizes">
+<h3>Equal and unequal part sizes</h3>
+<p>Count the neighbours of one vertex in each part. With both parts nonempty, Kᵣ,ₛ is regular precisely when the two parts have the same size.</p>
+<div class="plates two" id="bicomplete-plates"></div>
+</div>
+</section>
+<section class="graph-chapter" id="bipartite-graph">
+      <h2><span class="chapter-number" aria-hidden="true">11</span>Bipartite Graph</h2>
+      <p class="intro">A bipartite graph admits a division into two sets with every edge crossing the split. Some cross-edges may be absent. Following the edges in the original two-column drawing recovers a path on all eight vertices.</p>
+      <div class="chapter-pair tone-blue">
+        <figure class="original-figure">
+      <header><h3>A path drawn in two parts</h3><a href="2026-03-30-basic-graph-animations/11_bipartite_graph.png">Full-size figure</a></header>
+      <svg class="historic-drawing" role="img" aria-label="Seven edges zigzag between two columns of four vertices." viewBox="67 144 1251 1227">
+<defs>
+<clipPath id="original-crop-11">
+<rect x="89" y="167" width="1208" height="1183"/>
+</clipPath>
+</defs>
+<rect x="67" y="144" width="1251" height="1227" fill="#fbfaf7"/>
+<image href="2026-03-30-basic-graph-animations/11_bipartite_graph.png" width="1386" height="1570" clip-path="url(#original-crop-11)"/>
+<g aria-hidden="true">
+<circle cx="138" cy="215.5" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="138" cy="577" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="138" cy="938.5" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="138" cy="1299.5" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="1247" cy="215.5" r="60.12" fill="#72b7b2" stroke="#fff" stroke-width="5.84"/>
+<circle cx="1247" cy="577" r="60.12" fill="#72b7b2" stroke="#fff" stroke-width="5.84"/>
+<circle cx="1247" cy="938.5" r="60.12" fill="#72b7b2" stroke="#fff" stroke-width="5.84"/>
+<circle cx="1247" cy="1299.5" r="60.12" fill="#72b7b2" stroke="#fff" stroke-width="5.84"/>
+<g font-family="Arial,sans-serif" font-size="90.48" font-weight="600" text-anchor="middle">
+<text x="138" y="215.5" dy=".35em" fill="#ffffff">0</text>
+<text x="138" y="577.0" dy=".35em" fill="#ffffff">1</text>
+<text x="138" y="938.5" dy=".35em" fill="#ffffff">2</text>
+<text x="138" y="1299.5" dy=".35em" fill="#ffffff">3</text>
+<text x="1247" y="215.5" dy=".35em" fill="#14212b">4</text>
+<text x="1247" y="577.0" dy=".35em" fill="#14212b">5</text>
+<text x="1247" y="938.5" dy=".35em" fill="#14212b">6</text>
+<text x="1247" y="1299.5" dy=".35em" fill="#14212b">7</text>
+</g>
+</g>
+</svg>
+      <figcaption><p class="metrics">n = 8 · m = 7 · 2 colour classes</p><p>Colour the left part blue and the right part teal. Each edge joins unlike colours. This assignment is a proper two-colouring.</p></figcaption>
+    </figure>
+        <figure class="companion-figure" data-companion="bipath">
+          <h3>Read the path in chain order</h3><svg></svg><figcaption><p class="metrics"></p><p>Begin at 3 and follow the labels 3–4–0–5–1–6–2–7. The alternating colours recover exactly the two parts in the original drawing.</p></figcaption>
+        </figure>
+      </div>
+<div class="substudy" id="bipartite-growth">
+<h3>Building a Bipartite Graph</h3>
+<p>The original construction uses eight of the sixteen possible cross-edges. Each step preserves the two parts. The last insertion closes a cycle of even length.</p>
+<div class="animation-pair">
+<div class="historic-player"><h4>Original animation</h4>
+<figure class="historic-animation" data-original-gif>
+  <div class="historic-animation-frame">
+    <canvas width="640" height="720" role="img" aria-label="First frame. Eight cross-edges appear one at a time between two columns."></canvas>
+    <img width="640" height="720" alt="Eight cross-edges appear one at a time between two columns." hidden>
+  </div>
+  <figcaption>
+    <p class="metrics">n = 8 · 8 frames · m rises from 1 to 8</p>
+    <p>After seven edges the graph is a path. Edge 3–7 closes an even cycle spanning both colour classes.</p>
+    <div class="controls"><button type="button" aria-label="Play Growing a bipartite graph" hidden>Play GIF</button>
+    <a href="2026-03-30-basic-graph-animations/23_bipartite_growth.gif">Open original GIF</a></div>
+  </figcaption>
+</figure></div>
+<div class="step-player"><h4>Step through the construction</h4>
+<div id="growth-bipartite"></div></div>
+</div>
+</div>
+</section>
+<section class="graph-chapter" id="triangle-free-graph">
+      <h2><span class="chapter-number" aria-hidden="true">12</span>Triangle-Free Graph</h2>
+      <p class="intro">A triangle-free graph contains no cycle of length three. In C₈, the two neighbours of any vertex are never adjacent to each other. That local observation certifies triangle-freeness at every vertex.</p>
+      <div class="chapter-pair tone-lavender">
+        <figure class="original-figure">
+      <header><h3>A chordless eight-cycle</h3><a href="2026-03-30-basic-graph-animations/12_triangle_free_graph.png">Full-size figure</a></header>
+      <svg class="historic-drawing" role="img" aria-label="The eight vertices lie on one cycle without chords." viewBox="67 144 1251 1227">
+<defs>
+<clipPath id="original-crop-12">
+<rect x="87" y="165" width="1212" height="1186"/>
+</clipPath>
+</defs>
+<rect x="67" y="144" width="1251" height="1227" fill="#fbfaf7"/>
+<image href="2026-03-30-basic-graph-animations/12_triangle_free_graph.png" width="1386" height="1570" clip-path="url(#original-crop-12)"/>
+<g aria-hidden="true">
+<circle cx="1247" cy="758" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="1084.5" cy="374.5" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="692.5" cy="215.5" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="300.5" cy="374.5" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="138" cy="758" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="300.5" cy="1141" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="692.5" cy="1299.5" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="1084.5" cy="1141" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<g font-family="Arial,sans-serif" font-size="90.48" font-weight="600" text-anchor="middle">
+<text x="1247" y="758.0" dy=".35em" fill="#ffffff">0</text>
+<text x="1084.5" y="374.5" dy=".35em" fill="#ffffff">1</text>
+<text x="692.5" y="215.5" dy=".35em" fill="#ffffff">2</text>
+<text x="300.5" y="374.5" dy=".35em" fill="#ffffff">3</text>
+<text x="138" y="758.0" dy=".35em" fill="#ffffff">4</text>
+<text x="300.5" y="1141.0" dy=".35em" fill="#ffffff">5</text>
+<text x="692.5" y="1299.5" dy=".35em" fill="#ffffff">6</text>
+<text x="1084.5" y="1141.0" dy=".35em" fill="#ffffff">7</text>
+</g>
+</g>
+</svg>
+      <figcaption><p class="metrics">n = 8 · m = 8 · shortest cycle length 8</p><p>C₈ is both bipartite and triangle-free. A pentagon separates these properties: it has no triangle, but alternating two colours fails at the closing edge.</p></figcaption>
+    </figure>
+        <div class="worked-example">
+          <h3>Test a candidate closing edge</h3><p class="display-formula">Triangles added = |N(u) ∩ N(v)|</p>
+          <p>For a missing edge uv, each common neighbour w gives exactly one new triangle u–w–v–u. In C₈, vertices 0 and 2 share only vertex 1. Adding 0–2 therefore creates one triangle.</p>
+        </div>
+      </div>
+<div class="substudy" id="odd-obstruction">
+<h3>Triangle-free cycles with different colourings</h3>
+<p>A bipartition would force the two parts to alternate on every cycle, so every bipartite graph is triangle-free. The letter inside each vertex below identifies its colour class.</p>
+<div class="plates two" id="trianglefree-plates"></div>
+</div>
+</section>
+<section class="graph-chapter" id="graph-with-a-triangle">
+      <h2><span class="chapter-number" aria-hidden="true">13</span>Graph with a Triangle</h2>
+      <p class="intro">The three mutually adjacent vertices 0, 1 and 2 form a triangle. The remaining five edges extend a path from vertex 2. Which kind of edge you remove determines whether the graph stays connected.</p>
+      <div class="chapter-pair tone-teal">
+        <figure class="original-figure">
+      <header><h3>A triangle with a five-edge tail</h3><a href="2026-03-30-basic-graph-animations/13_graph_with_triangle.png">Full-size figure</a></header>
+      <svg class="historic-drawing" role="img" aria-label="A red triangle on 0, 1 and 2 joins a path ending at 7." viewBox="67 144 1251 1227">
+<defs>
+<clipPath id="original-crop-13">
+<rect x="87" y="165" width="1212" height="1186"/>
+</clipPath>
+</defs>
+<rect x="67" y="144" width="1251" height="1227" fill="#fbfaf7"/>
+<image href="2026-03-30-basic-graph-animations/13_graph_with_triangle.png" width="1386" height="1570" clip-path="url(#original-crop-13)"/>
+<g aria-hidden="true">
+<circle cx="1247" cy="758" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="1084.5" cy="374.5" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="692.5" cy="215.5" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="300.5" cy="374.5" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="138" cy="758" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="300.5" cy="1141" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="692.5" cy="1299.5" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="1084.5" cy="1141" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<g font-family="Arial,sans-serif" font-size="90.48" font-weight="600" text-anchor="middle">
+<text x="1247" y="758.0" dy=".35em" fill="#ffffff">0</text>
+<text x="1084.5" y="374.5" dy=".35em" fill="#ffffff">1</text>
+<text x="692.5" y="215.5" dy=".35em" fill="#ffffff">2</text>
+<text x="300.5" y="374.5" dy=".35em" fill="#ffffff">3</text>
+<text x="138" y="758.0" dy=".35em" fill="#ffffff">4</text>
+<text x="300.5" y="1141.0" dy=".35em" fill="#ffffff">5</text>
+<text x="692.5" y="1299.5" dy=".35em" fill="#ffffff">6</text>
+<text x="1084.5" y="1141.0" dy=".35em" fill="#ffffff">7</text>
+</g>
+</g>
+</svg>
+      <figcaption><p class="metrics">n = 8 · m = 8 · 1 triangle</p><p>The tail edges have no alternative route. Cutting any one separates the graph; cutting a triangle edge leaves its endpoints connected via the third vertex.</p></figcaption>
+    </figure>
+        <figure class="companion-figure" data-companion="broken-triangle">
+          <h3>Break the triangle, keep the tail</h3><svg></svg><figcaption><p class="metrics"></p><p>Deleting 0–2 opens the triangle into a path on all eight vertices. The graph stays connected and its unique cycle disappears.</p></figcaption>
+        </figure>
+      </div>
+<div class="substudy" id="first-triangle">
+<h3>When a Triangle Appears</h3>
+<p>The original final frame exchanges 2–3 for 0–2. The stepper keeps all earlier edges and adds its closing edge. Compare how the same triangle can appear with different effects on connectivity.</p>
+<div class="animation-pair">
+<div class="historic-player"><h4>Original animation</h4>
+<figure class="historic-animation" data-original-gif>
+  <div class="historic-animation-frame">
+    <canvas width="640" height="720" role="img" aria-label="First frame. First a path extends. In the last frame edge 2–3 disappears and 0–2 closes a triangle."></canvas>
+    <img width="640" height="720" alt="First a path extends. In the last frame edge 2–3 disappears and 0–2 closes a triangle." hidden>
+  </div>
+  <figcaption>
+    <p class="metrics">n = 8 · 4 frames · m = 2, 4, 5, 5</p>
+    <p>The final edge swap makes a triangle and increases the component count from three to four, with five edges throughout the swap.</p>
+    <div class="controls"><button type="button" aria-label="Play The first triangle" hidden>Play GIF</button>
+    <a href="2026-03-30-basic-graph-animations/24_triangle_appears.gif">Open original GIF</a></div>
+  </figcaption>
+</figure></div>
+<div class="step-player"><h4>Step through the construction</h4>
+<div id="growth-triangle"></div></div>
+</div>
+</div>
+</section>
+<section class="graph-chapter" id="bridge">
+      <h2><span class="chapter-number" aria-hidden="true">14</span>Bridge</h2>
+      <p class="intro">A bridge is an edge whose deletion increases the component count. Edge 3–4 is the only connection between two four-cycles. The same deletion test on a rim edge gives a different outcome.</p>
+      <div class="chapter-pair tone-peach">
+        <figure class="original-figure">
+      <header><h3>Two squares joined by one edge</h3><a href="2026-03-30-basic-graph-animations/14_bridge_edge.png">Full-size figure</a></header>
+      <svg class="historic-drawing" role="img" aria-label="Two four-cycles are joined by the single red edge between 3 and 4." viewBox="66 144 1248 1227">
+<defs>
+<clipPath id="original-crop-14">
+<rect x="87" y="165" width="1208" height="1186"/>
+</clipPath>
+</defs>
+<rect x="66" y="144" width="1248" height="1227" fill="#fbfaf7"/>
+<image href="2026-03-30-basic-graph-animations/14_bridge_edge.png" width="1381" height="1570" clip-path="url(#original-crop-14)"/>
+<g aria-hidden="true">
+<circle cx="1243" cy="758" r="60.15" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="1081" cy="374.5" r="60.15" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="690.5" cy="215.5" r="60.15" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="299.5" cy="374.5" r="60.15" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="137.5" cy="757.5" r="60.15" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="299.5" cy="1141" r="60.15" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="690.5" cy="1300" r="60.15" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="1081" cy="1141" r="60.15" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<g font-family="Arial,sans-serif" font-size="90.52" font-weight="600" text-anchor="middle">
+<text x="1243" y="758.0" dy=".35em" fill="#ffffff">0</text>
+<text x="1081" y="374.5" dy=".35em" fill="#ffffff">1</text>
+<text x="690.5" y="215.5" dy=".35em" fill="#ffffff">2</text>
+<text x="299.5" y="374.5" dy=".35em" fill="#ffffff">3</text>
+<text x="137.5" y="757.5" dy=".35em" fill="#ffffff">4</text>
+<text x="299.5" y="1141.0" dy=".35em" fill="#ffffff">5</text>
+<text x="690.5" y="1300.0" dy=".35em" fill="#ffffff">6</text>
+<text x="1081" y="1141.0" dy=".35em" fill="#ffffff">7</text>
+</g>
+</g>
+</svg>
+      <figcaption><p class="metrics">n = 8 · m = 9 · 1 bridge</p><p>Removing 3–4 gives two components of four vertices each. On a square, three remaining edges detour around a deleted fourth edge.</p></figcaption>
+    </figure>
+        <div class="worked-example">
+          <h3>A cycle supplies a detour</h3><p class="display-formula">e is a bridge ⇔ e lies on no cycle</p>
+          <p>If e lies on a cycle, the rest of that cycle connects its endpoints after deletion. Conversely, any surviving path between its endpoints combines with e to form a cycle.</p>
+        </div>
+      </div>
+<div class="substudy" id="bridge-deletion">
+<h3>Test every edge of the original graph</h3>
+<p>Delete a candidate edge and compare c with the intact graph. An edge that was the only path between its endpoints is a bridge.</p>
+<div id="bridge-test"></div>
+</div>
+</section>
+<section class="graph-chapter" id="articulation-point">
+      <h2><span class="chapter-number" aria-hidden="true">15</span>Articulation Point</h2>
+      <p class="intro">An articulation point is a vertex whose deletion, together with its incident edges, increases the component count. The original drawing highlights vertex 3, which links a triangle on the left, two neighbours on another triangle, and the tail to 7.</p>
+      <div class="chapter-pair tone-blue">
+        <figure class="original-figure">
+      <header><h3>Three branches through vertex 3</h3><a href="2026-03-30-basic-graph-animations/15_articulation_vertex.png">Full-size figure</a></header>
+      <svg class="historic-drawing" role="img" aria-label="The red vertex 3 lies in one triangle and connects to a second triangle and a two-vertex tail." viewBox="67 144 1251 1227">
+<defs>
+<clipPath id="original-crop-15">
+<rect x="87" y="165" width="1212" height="1186"/>
+</clipPath>
+</defs>
+<rect x="67" y="144" width="1251" height="1227" fill="#fbfaf7"/>
+<image href="2026-03-30-basic-graph-animations/15_articulation_vertex.png" width="1386" height="1570" clip-path="url(#original-crop-15)"/>
+<g aria-hidden="true">
+<circle cx="1247" cy="758" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="1084.5" cy="374.5" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="692.5" cy="215.5" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="300.5" cy="374.5" r="60.12" fill="#e45756" stroke="#fff" stroke-width="5.84"/>
+<circle cx="138" cy="758" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="300.5" cy="1141" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="692.5" cy="1299.5" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="1084.5" cy="1141" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<g font-family="Arial,sans-serif" font-size="90.48" font-weight="600" text-anchor="middle">
+<text x="1247" y="758.0" dy=".35em" fill="#ffffff">0</text>
+<text x="1084.5" y="374.5" dy=".35em" fill="#ffffff">1</text>
+<text x="692.5" y="215.5" dy=".35em" fill="#ffffff">2</text>
+<text x="300.5" y="374.5" dy=".35em" fill="#14212b">3</text>
+<text x="138" y="758.0" dy=".35em" fill="#ffffff">4</text>
+<text x="300.5" y="1141.0" dy=".35em" fill="#ffffff">5</text>
+<text x="692.5" y="1299.5" dy=".35em" fill="#ffffff">6</text>
+<text x="1084.5" y="1141.0" dy=".35em" fill="#ffffff">7</text>
+</g>
+</g>
+</svg>
+      <figcaption><p class="metrics">n = 8 · m = 9 · degree of vertex 3 = 4</p><p>Deleting 3 leaves {0, 1, 2}, {4, 5} and {6, 7}. Vertices 2 and 6 are also articulation points in the intact graph.</p></figcaption>
+    </figure>
+        <figure class="companion-figure" data-companion="bowtie-cut">
+          <h3>An articulation without a bridge</h3><svg></svg><figcaption><p class="metrics"></p><p>In the two-triangle graph, every edge lies on a cycle. Removing their shared vertex still splits it into two components. Vertex cuts and edge cuts describe different kinds of failure.</p></figcaption>
+        </figure>
+      </div>
+<div class="substudy" id="vertex-deletion">
+<h3>Test all eight vertices</h3>
+<p>A vertex deletion also removes every edge incident to it. Use the labels to identify the surviving components.</p>
+<div id="cut-test"></div>
+</div>
+</section>
+<section class="graph-chapter" id="matching">
+      <h2><span class="chapter-number" aria-hidden="true">16</span>Matching</h2>
+      <p class="intro">A matching is a set of edges with no shared endpoint. It is perfect if every vertex is an endpoint of a selected edge. Here the gold edges cover all eight vertices exactly once.</p>
+      <div class="chapter-pair tone-lavender">
+        <figure class="original-figure">
+      <header><h3>Four disjoint edges</h3><a href="2026-03-30-basic-graph-animations/16_matching.png">Full-size figure</a></header>
+      <svg class="historic-drawing" role="img" aria-label="Four disjoint gold edges cover the eight vertices in pairs." viewBox="67 144 1251 1227">
+<defs>
+<clipPath id="original-crop-16">
+<rect x="87" y="165" width="1212" height="1186"/>
+</clipPath>
+</defs>
+<rect x="67" y="144" width="1251" height="1227" fill="#fbfaf7"/>
+<image href="2026-03-30-basic-graph-animations/16_matching.png" width="1386" height="1570" clip-path="url(#original-crop-16)"/>
+<g aria-hidden="true">
+<circle cx="1247" cy="758" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="1084.5" cy="374.5" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="692.5" cy="215.5" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="300.5" cy="374.5" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="138" cy="758" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="300.5" cy="1141" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="692.5" cy="1299.5" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="1084.5" cy="1141" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<g font-family="Arial,sans-serif" font-size="90.48" font-weight="600" text-anchor="middle">
+<text x="1247" y="758.0" dy=".35em" fill="#ffffff">0</text>
+<text x="1084.5" y="374.5" dy=".35em" fill="#ffffff">1</text>
+<text x="692.5" y="215.5" dy=".35em" fill="#ffffff">2</text>
+<text x="300.5" y="374.5" dy=".35em" fill="#ffffff">3</text>
+<text x="138" y="758.0" dy=".35em" fill="#ffffff">4</text>
+<text x="300.5" y="1141.0" dy=".35em" fill="#ffffff">5</text>
+<text x="692.5" y="1299.5" dy=".35em" fill="#ffffff">6</text>
+<text x="1084.5" y="1141.0" dy=".35em" fill="#ffffff">7</text>
+</g>
+</g>
+</svg>
+      <figcaption><p class="metrics">n = 8 · m = 4 · 4 components</p><p>Four edges cover eight vertices. This is a perfect matching, and no matching on eight vertices can have five edges.</p></figcaption>
+    </figure>
+        <div class="worked-example">
+          <h3>Maximal, maximum and perfect</h3><p class="display-formula">|M| ≤ ⌊n / 2⌋</p>
+          <p>A maximal matching cannot be extended by a single edge. A maximum matching has largest possible cardinality. Every perfect matching reaches the counting bound and is maximum. On the four-vertex path below, the middle edge alone is already maximal.</p>
+        </div>
+      </div>
+<div class="substudy" id="matching-size">
+<h3>Can a maximal matching be improved?</h3>
+<p>Select edges on P₄. Compare the single middle edge with the two end edges. To reach the larger matching from the smaller one, an earlier choice has to be replaced.</p>
+<div id="matching-test"></div>
+</div>
+</section>
+<section class="graph-chapter" id="regular-graph">
+      <h2><span class="chapter-number" aria-hidden="true">17</span>Regular Graph</h2>
+      <p class="intro">A k-regular graph has degree k at every vertex. Write δ(G) and Δ(G) for the minimum and maximum vertex degrees. Regularity is exactly the condition δ(G) = Δ(G) = k.</p>
+      <div class="chapter-pair tone-teal">
+        <figure class="original-figure">
+      <header><h3>The 2-regular cycle C₈</h3><a href="2026-03-30-basic-graph-animations/17_regular_graph.png">Full-size figure</a></header>
+      <svg class="historic-drawing" role="img" aria-label="Every vertex on the eight-cycle has one neighbour on either side." viewBox="67 144 1251 1227">
+<defs>
+<clipPath id="original-crop-17">
+<rect x="87" y="165" width="1212" height="1186"/>
+</clipPath>
+</defs>
+<rect x="67" y="144" width="1251" height="1227" fill="#fbfaf7"/>
+<image href="2026-03-30-basic-graph-animations/17_regular_graph.png" width="1386" height="1570" clip-path="url(#original-crop-17)"/>
+<g aria-hidden="true">
+<circle cx="1247" cy="758" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="1084.5" cy="374.5" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="692.5" cy="215.5" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="300.5" cy="374.5" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="138" cy="758" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="300.5" cy="1141" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="692.5" cy="1299.5" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="1084.5" cy="1141" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<g font-family="Arial,sans-serif" font-size="90.48" font-weight="600" text-anchor="middle">
+<text x="1247" y="758.0" dy=".35em" fill="#ffffff">0</text>
+<text x="1084.5" y="374.5" dy=".35em" fill="#ffffff">1</text>
+<text x="692.5" y="215.5" dy=".35em" fill="#ffffff">2</text>
+<text x="300.5" y="374.5" dy=".35em" fill="#ffffff">3</text>
+<text x="138" y="758.0" dy=".35em" fill="#ffffff">4</text>
+<text x="300.5" y="1141.0" dy=".35em" fill="#ffffff">5</text>
+<text x="692.5" y="1299.5" dy=".35em" fill="#ffffff">6</text>
+<text x="1084.5" y="1141.0" dy=".35em" fill="#ffffff">7</text>
+</g>
+</g>
+</svg>
+      <figcaption><p class="metrics">n = 8 · m = 8 · degree 2 throughout</p><p>Following C₈ in either direction exhausts its single component. In general a finite simple 2-regular graph is a disjoint union of cycles.</p></figcaption>
+    </figure>
+        <div class="worked-example">
+          <h3>Local degrees constrain the edge count</h3><p class="display-formula">2m = nk</p>
+          <p>Summing n equal degrees gives nk. In particular, a cubic graph (k = 3) has an even number of vertices. Degree counts alone do not determine which pairs are adjacent.</p>
+        </div>
+      </div>
+<div class="substudy" id="regular-degrees">
+<h3>Degrees two, three and four</h3>
+<p>Each row of the adjacency matrix of a k-regular graph sums to k. The three drawings show different ways to satisfy this local constraint.</p>
+<div class="plates three" id="regular-plates"></div>
+</div>
+<div class="substudy" id="isomorphism">
+<h3>Can degree sequences identify a graph?</h3>
+<p>An isomorphism is a bijection preserving adjacency in both directions. Vertex degrees, component counts and triangle counts are invariants under isomorphism. Compare the triangular prism with two other drawings.</p>
+<div class="exercise-head">
+                <h4>Compare the two drawings</h4>
+                <label>Example <select id="iso-example">
+                <option value="0">Pair 1</option>
+                <option value="1">Pair 2</option>
+                </select></label>
+              </div>
+              <p>Both drawings have six vertices, each of degree three. Trace a triangle in the first drawing. Can you find its image in the second?</p>
+              <div class="plates two" id="iso-pair">
+              </div>
+              <div class="answer-box">
+                <strong>Are the graphs isomorphic?</strong>
+                <div class="controls">
+                  <button id="iso-yes">Yes</button>
+                  <button id="iso-no">No</button>
+                </div>
+                <p id="iso-answer" role="status"></p>
+              </div>
 
-  <script>
-    async function copyCode(id, button) {
-      const text = document.getElementById(id).innerText;
-      const old = button.textContent;
-      try {
-        await navigator.clipboard.writeText(text);
-        button.textContent = "Copied";
-        setTimeout(() => button.textContent = old, 1400);
-      } catch (err) {
-        button.textContent = "Copy failed";
-        setTimeout(() => button.textContent = old, 1600);
-      }
-    }
-  </script>
-</body>
+</div>
+</section>
+<section class="graph-chapter" id="wheel-graph">
+      <h2><span class="chapter-number" aria-hidden="true">18</span>Wheel Graph</h2>
+      <p class="intro">Form Wₙ by joining a new hub to all vertices on a cycle of length n − 1, where n ≥ 4 counts the hub. This drawing combines the rim of a cycle with the spokes of a star.</p>
+      <div class="chapter-pair tone-peach">
+        <figure class="original-figure">
+      <header><h3>Seven rim vertices and a hub</h3><a href="2026-03-30-basic-graph-animations/18_wheel_graph.png">Full-size figure</a></header>
+      <svg class="historic-drawing" role="img" aria-label="A red hub joins all seven vertices on a cyclic rim." viewBox="67 144 1251 1227">
+<defs>
+<clipPath id="original-crop-18">
+<rect x="87" y="165" width="1212" height="1186"/>
+</clipPath>
+</defs>
+<rect x="67" y="144" width="1251" height="1227" fill="#fbfaf7"/>
+<image href="2026-03-30-basic-graph-animations/18_wheel_graph.png" width="1386" height="1570" clip-path="url(#original-crop-18)"/>
+<g aria-hidden="true">
+<circle cx="721.5" cy="757.5" r="60.15" fill="#e45756" stroke="#fff" stroke-width="5.84"/>
+<circle cx="138" cy="758" r="60.15" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="357.5" cy="1192.5" r="60.15" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="851" cy="1300" r="60.15" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="1247" cy="999" r="60.15" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="1247" cy="516.5" r="60.15" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="851" cy="215.5" r="60.15" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="357.5" cy="323" r="60.15" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<g font-family="Arial,sans-serif" font-size="90.52" font-weight="600" text-anchor="middle">
+<text x="721.5" y="757.5" dy=".35em" fill="#14212b">0</text>
+<text x="138" y="758.0" dy=".35em" fill="#ffffff">1</text>
+<text x="357.5" y="1192.5" dy=".35em" fill="#ffffff">2</text>
+<text x="851" y="1300.0" dy=".35em" fill="#ffffff">3</text>
+<text x="1247" y="999.0" dy=".35em" fill="#ffffff">4</text>
+<text x="1247" y="516.5" dy=".35em" fill="#ffffff">5</text>
+<text x="851" y="215.5" dy=".35em" fill="#ffffff">6</text>
+<text x="357.5" y="323.0" dy=".35em" fill="#ffffff">7</text>
+</g>
+</g>
+</svg>
+      <figcaption><p class="metrics">n = 8 · m = 14 · hub degree 7</p><p>The seven rim edges give seven triangles through vertex 0. The odd rim requires three colours, and the hub needs a fourth.</p></figcaption>
+    </figure>
+        <div class="worked-example">
+          <h3>Count the rim and the spokes</h3><p class="display-formula">m = 2(n − 1)</p>
+          <p>The rim contributes n − 1 edges and the hub contributes n − 1 more. Every rim vertex has degree three. At n = 4 the wheel is K₄, and the hub also has degree three.</p>
+        </div>
+      </div>
+<div class="substudy" id="wheel-rims">
+<h3>Colouring even and odd rims</h3>
+<p>The hub sees every colour used on the rim. A new colour suffices for the hub, so χ(Wₙ) = χ(Cₙ₋₁) + 1. The vertex letters show a colouring attaining this bound.</p>
+<div class="plates two" id="wheel-plates"></div>
+</div>
+</section>
+<section class="graph-chapter" id="planarity">
+      <h2><span class="chapter-number" aria-hidden="true">19</span>Planar Graph</h2>
+      <p class="intro">A planar graph admits a plane drawing with edges meeting only at common endpoints. The original cube drawing has crossings. Rearranging the same eight vertices as two nested squares gives a crossing-free drawing.</p>
+      <div class="chapter-pair tone-blue">
+        <figure class="original-figure">
+      <header><h3>The original drawing of the cube</h3><a href="2026-03-30-basic-graph-animations/19_planar_graph.png">Full-size figure</a></header>
+      <svg class="historic-drawing" role="img" aria-label="Eight vertices of the cube graph appear in a drawing with crossing edges." viewBox="67 145 1251 1226">
+<defs>
+<clipPath id="original-crop-19">
+<rect x="87" y="165" width="1212" height="1186"/>
+</clipPath>
+</defs>
+<rect x="67" y="145" width="1251" height="1226" fill="#fbfaf7"/>
+<image href="2026-03-30-basic-graph-animations/19_planar_graph.png" width="1386" height="1570" clip-path="url(#original-crop-19)"/>
+<g aria-hidden="true">
+<circle cx="550.5" cy="793.5" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="827" cy="216" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="1247" cy="608.5" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="1012" cy="1176.5" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="138" cy="902" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="561.5" cy="1300" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="827" cy="720" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<circle cx="375.5" cy="332" r="60.12" fill="#4c78a8" stroke="#fff" stroke-width="5.84"/>
+<g font-family="Arial,sans-serif" font-size="90.48" font-weight="600" text-anchor="middle">
+<text x="550.5" y="793.5" dy=".35em" fill="#ffffff">0</text>
+<text x="827" y="216.0" dy=".35em" fill="#ffffff">1</text>
+<text x="1247" y="608.5" dy=".35em" fill="#ffffff">2</text>
+<text x="1012" y="1176.5" dy=".35em" fill="#ffffff">3</text>
+<text x="138" y="902.0" dy=".35em" fill="#ffffff">4</text>
+<text x="561.5" y="1300.0" dy=".35em" fill="#ffffff">5</text>
+<text x="827" y="720.0" dy=".35em" fill="#ffffff">6</text>
+<text x="375.5" y="332.0" dy=".35em" fill="#ffffff">7</text>
+</g>
+</g>
+</svg>
+      <figcaption><p class="metrics">n = 8 · m = 12 · degree 3 throughout</p><p>The cube has eight vertices and twelve edges. Its crossing-free drawing has six faces. The crossings of this original drawing are not vertices.</p></figcaption>
+    </figure>
+        <div class="worked-example">
+          <h3>Count regions after a plane embedding</h3><p class="display-formula">n − m + f = 2</p>
+          <p>For a connected plane graph, f counts all faces, including the unbounded outer region. A plane tree has one face. Each edge added within a face to complete the graph splits that face in two, increasing m and f together.</p>
+        </div>
+      </div>
+<div class="substudy" id="plane-drawings">
+<h3>Redraw the edges and count the faces</h3>
+<p>In the two drawings of K₄ the vertex labels preserve every adjacency. Compare their crossings, then count the five bounded regions and the outer face of the plane cube.</p>
+<div class="plates three" id="plane-plates"></div>
+</div>
+</section>
+<section class="graph-chapter" id="non-planar-graph">
+      <h2><span class="chapter-number" aria-hidden="true">20</span>Non-Planar Graph</h2>
+      <p class="intro">A nonplanar graph has no crossing-free drawing in the plane. The six non-isolated vertices in the original figure induce K₃,₃. If all eight vertices admitted a plane drawing, removing the two isolates would give a plane drawing of K₃,₃.</p>
+      <div class="chapter-pair tone-lavender">
+        <figure class="original-figure">
+      <header><h3>K₃,₃ and two isolated vertices</h3><a href="2026-03-30-basic-graph-animations/20_nonplanar_graph.png">Full-size figure</a></header>
+      <svg class="historic-drawing" role="img" aria-label="K₃,₃ occupies the upper six vertices. Two separate vertices appear below." viewBox="6 123 1373 1307">
+<defs>
+<clipPath id="original-crop-20">
+<rect x="32" y="148" width="1322" height="1258"/>
+</clipPath>
+</defs>
+<rect x="6" y="123" width="1373" height="1307" fill="#fbfaf7"/>
+<image href="2026-03-30-basic-graph-animations/20_nonplanar_graph.png" width="1386" height="1570" clip-path="url(#original-crop-20)"/>
+<g aria-hidden="true">
+<circle cx="387.5" cy="199" r="64.06" fill="#4c78a8" stroke="#fff" stroke-width="6.22"/>
+<circle cx="387.5" cy="571.5" r="64.06" fill="#4c78a8" stroke="#fff" stroke-width="6.22"/>
+<circle cx="387.5" cy="944" r="64.06" fill="#4c78a8" stroke="#fff" stroke-width="6.22"/>
+<circle cx="997.5" cy="199" r="64.06" fill="#72b7b2" stroke="#fff" stroke-width="6.22"/>
+<circle cx="997.5" cy="571.5" r="64.06" fill="#72b7b2" stroke="#fff" stroke-width="6.22"/>
+<circle cx="997.5" cy="944" r="64.06" fill="#72b7b2" stroke="#fff" stroke-width="6.22"/>
+<circle cx="82.5" cy="1354" r="64.06" fill="#f2cf5b" stroke="#fff" stroke-width="6.22"/>
+<circle cx="1302.5" cy="1354" r="64.06" fill="#f2cf5b" stroke="#fff" stroke-width="6.22"/>
+<g font-family="Arial,sans-serif" font-size="96.41" font-weight="600" text-anchor="middle">
+<text x="387.5" y="199.0" dy=".35em" fill="#ffffff">0</text>
+<text x="387.5" y="571.5" dy=".35em" fill="#ffffff">1</text>
+<text x="387.5" y="944.0" dy=".35em" fill="#ffffff">2</text>
+<text x="997.5" y="199.0" dy=".35em" fill="#14212b">3</text>
+<text x="997.5" y="571.5" dy=".35em" fill="#14212b">4</text>
+<text x="997.5" y="944.0" dy=".35em" fill="#14212b">5</text>
+<text x="82.5" y="1354.0" dy=".35em" fill="#14212b">6</text>
+<text x="1302.5" y="1354.0" dy=".35em" fill="#14212b">7</text>
+</g>
+</g>
+</svg>
+      <figcaption><p class="metrics">n = 8 · m = 9 · 3 components</p><p>Apply the edge bound to the six-vertex subgraph. Counting the two isolates as well would weaken the bound and hide the obstruction.</p></figcaption>
+    </figure>
+        <div class="worked-example">
+          <h3>Test the obstruction on its own vertices</h3><p class="display-formula">9 > 2 × 6 − 4</p>
+          <p>Suppose K₃,₃ had a plane drawing. Its face boundaries have length at least four because it is simple, bipartite and bridgeless. Counting the sides of each edge yields 4f ≤ 2m. Euler’s identity then gives m ≤ 2n − 4, which the nine edges violate.</p>
+        </div>
+      </div>
+<div class="substudy" id="edge-bounds">
+<h3>Two edge-count obstructions</h3>
+<p>For a simple connected plane graph with n ≥ 3, counting face boundaries gives m ≤ 3n − 6. Bipartiteness sharpens the bound to 2n − 4. Violating the applicable bound proves nonplanarity; satisfying it alone cannot prove planarity.</p>
+<div class="plates two" id="obstruction-plates"></div>
+</div>
+</section>
+<div id="sources" class="endnotes" role="region" aria-label="References">
+            <h2><span class="section-icon"><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg></span>References</h2>
+            <p>The interactive drawings, comparisons and experiments were designed for this guide. The following sources give the underlying definitions, models and algorithms.</p>
+            <ul class="references">
+              <li><a href="https://diestel-graph-theory.com/">Reinhard Diestel, <i>Graph Theory</i></a>. Sixth edition, Springer, 2025. Structural definitions, trees, colouring and plane graphs.</li>
+              <li><a href="https://networkx.org/documentation/stable/reference/generated/networkx.generators.random_graphs.gnp_random_graph.html">NetworkX, <i>Gₙ,ₚ random graphs</i></a>. Independent-edge sampling and the binomial graph model.</li>
+              <li><a href="https://doi.org/10.1007/BF01386390">E. W. Dijkstra, “A note on two problems in connexion with graphs”</a>. <i>Numerische Mathematik</i> 1 (1959), 269–271. Shortest paths with nonnegative edge costs.</li>
+            </ul>
+          </div>
+</main></div>
+      <footer>
+        <span>Basic graph animations</span>
+        <nav aria-label="Footer">
+          <a href="../../index.html">Home</a><a href="../../research.html">Research</a><a href="#top">Back to top</a>
+        </nav>
+      </footer>
+    </div>
+  </body>
 </html>
