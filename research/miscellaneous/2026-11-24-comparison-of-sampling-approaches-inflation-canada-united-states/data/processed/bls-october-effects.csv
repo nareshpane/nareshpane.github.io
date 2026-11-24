@@ -1,0 +1,12 @@
+month,label,relative_importance_pct,adjusted_monthly_change_pct,official_effect_pp,median_se_pp
+2026-10,All items,100.0,0.4,,0.04
+2026-10,Food,13.447,0.5,0.064,0.08
+2026-10,Food at home,8.162,0.4,0.036,0.13
+2026-10,Energy,7.649,0.7,0.053,0.14
+2026-10,Gasoline (all types),4.08,1.0,0.042,0.17
+2026-10,All items less food and energy,78.905,0.3,0.234,0.05
+2026-10,Apparel,2.489,0.1,0.002,0.37
+2026-10,Shelter,35.238,0.3,0.108,0.08
+2026-10,Rent of primary residence,7.707,0.2,0.016,0.05
+2026-10,Owners' equivalent rent of residences,25.853,0.3,0.083,0.05
+2026-10,Transportation,17.283,0.3,0.058,0.07

@@ -1,0 +1,337 @@
+[
+  {
+    "path": "data/metadata/ne_admin1.geojson",
+    "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/v5.1.2/geojson/ne_50m_admin_1_states_provinces_lakes.geojson",
+    "status": "retrieved",
+    "retrieved": "2026-11-24T00:58:45-08:00",
+    "last_modified": null,
+    "bytes": 2357849,
+    "sha256": "b92c3f709b691240f6320e5cd7fade78cedfa3b91ecff14cecd3de0616c764b9"
+  },
+  {
+    "path": "data/raw/canada/18100004-eng.zip",
+    "url": "https://www150.statcan.gc.ca/n1/tbl/csv/18100004-eng.zip",
+    "status": "retrieved",
+    "retrieved": "2026-11-24T00:58:47-08:00",
+    "last_modified": "Mon, 16 Nov 2026 13:31:31 GMT",
+    "bytes": 15365135,
+    "sha256": "b54a2f1575a0e9f8f69b990453f22ebae6231444fcfd5f7f390103afdb41b144"
+  },
+  {
+    "path": "data/raw/canada/18100006-eng.zip",
+    "url": "https://www150.statcan.gc.ca/n1/tbl/csv/18100006-eng.zip",
+    "status": "retrieved",
+    "retrieved": "2026-11-24T00:58:44-08:00",
+    "last_modified": "Mon, 16 Nov 2026 13:31:31 GMT",
+    "bytes": 30079,
+    "sha256": "83426dff414a690ed65c0dd01a3d68457aef0bd997cbf0cb9627ede61c3f65fd"
+  },
+  {
+    "path": "data/raw/canada/18100007-eng.zip",
+    "url": "https://www150.statcan.gc.ca/n1/tbl/csv/18100007-eng.zip",
+    "status": "retrieved",
+    "retrieved": "2026-11-24T00:58:45-08:00",
+    "last_modified": "Mon, 15 Jun 2026 12:30:58 GMT",
+    "bytes": 1239506,
+    "sha256": "b2c791bd46cd5ede1f224c420db438b2cc7550953527558f66532333bfc66bb2"
+  },
+  {
+    "path": "data/raw/canada/geo-strata.html",
+    "url": "https://www150.statcan.gc.ca/n1/pub/62-553-x/2023001/chap-5-eng.htm",
+    "status": "unavailable",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "path": "data/raw/canada/october-2026.html",
+    "url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261116/dq261116a-eng.htm",
+    "status": "retrieved",
+    "retrieved": "2026-11-24T00:58:44-08:00",
+    "last_modified": null,
+    "bytes": 38205,
+    "sha256": "4d32ce2de4b32b062a954d154b6f469255866d5d0b23681f72f4eef3c8411631"
+  },
+  {
+    "path": "data/raw/canada/october-2026.pdf",
+    "url": "https://www150.statcan.gc.ca/n1/daily-quotidien/261116/dq261116a-eng.pdf",
+    "status": "retrieved",
+    "retrieved": "2026-11-24T01:20:06-08:00",
+    "last_modified": "Mon, 16 Nov 2026 13:30:03 GMT",
+    "bytes": 305627,
+    "sha256": "363c576228514f01e0d6cc6f363c36de5d7f4402b16ec445ceb6a75e37400000"
+  },
+  {
+    "path": "data/raw/united-states/api-2000-2009.json",
+    "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/",
+    "status": "retrieved",
+    "retrieved": "2026-11-24T00:58:45-08:00",
+    "last_modified": null,
+    "bytes": 125509,
+    "sha256": "6ddefd3c5c37160bc8e49c2fbb3f02aab5d4d42631a41312c40cca0027061efe"
+  },
+  {
+    "path": "data/raw/united-states/api-2010-2019.json",
+    "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/",
+    "status": "retrieved",
+    "retrieved": "2026-11-24T00:58:46-08:00",
+    "last_modified": null,
+    "bytes": 127504,
+    "sha256": "d2c7791e9fecb464c11b2c4b35b86c59a57b81b8724bf02639e530024d50c84c"
+  },
+  {
+    "path": "data/raw/united-states/api-2020-2026.json",
+    "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/",
+    "status": "retrieved",
+    "retrieved": "2026-11-24T00:58:46-08:00",
+    "last_modified": null,
+    "bytes": 88217,
+    "sha256": "912980b8bea69abbf0734543e3531579c6709f3b21246d08be4c7950644dc19d"
+  },
+  {
+    "path": "data/raw/united-states/geo-aggregation.html",
+    "url": "https://www.bls.gov/cpi/additional-resources/cpi-area-aggregation.htm",
+    "status": "retrieved",
+    "retrieved": "2026-11-24T03:29:49-08:00",
+    "last_modified": null,
+    "bytes": 73934,
+    "sha256": "a748a3da6bd26e4032daf99e0c0212e8d4cfcf1645b2944723124447f81b53ef"
+  },
+  {
+    "path": "data/raw/united-states/geo-api-2017-2026-1.json",
+    "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/",
+    "status": "retrieved",
+    "retrieved": "2026-11-24T03:49:33-08:00",
+    "last_modified": null,
+    "bytes": 198658,
+    "sha256": "b2697d41f28b8d89d4ca16f127142c4958575ef0c4162d749504569562b035ab"
+  },
+  {
+    "path": "data/raw/united-states/geo-api-2017-2026-2.json",
+    "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/",
+    "status": "retrieved",
+    "retrieved": "2026-11-24T03:49:33-08:00",
+    "last_modified": null,
+    "bytes": 198656,
+    "sha256": "701bf6c7e774991d635c4378b5cae7e28439ac8a210d5b4e8a74c3fd80e99eea"
+  },
+  {
+    "path": "data/raw/united-states/geo-api-2017-2026-3.json",
+    "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/",
+    "status": "retrieved",
+    "retrieved": "2026-11-24T03:49:33-08:00",
+    "last_modified": null,
+    "bytes": 192739,
+    "sha256": "40c2ebe1adafa18f681366f9d53d084e9d195b3b480d9ac86c0f0e9e206f16ff"
+  },
+  {
+    "path": "data/raw/united-states/geo-api-2017-2026-4.json",
+    "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/",
+    "status": "retrieved",
+    "retrieved": "2026-11-24T03:49:33-08:00",
+    "last_modified": null,
+    "bytes": 193417,
+    "sha256": "0649bddf859ac7795ce0a76728fa7f3b6744a1743bbc7b68f216be7f54de1171"
+  },
+  {
+    "path": "data/raw/united-states/geo-api-2017-2026-5.json",
+    "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/",
+    "status": "retrieved",
+    "retrieved": "2026-11-24T03:49:34-08:00",
+    "last_modified": null,
+    "bytes": 189237,
+    "sha256": "d021a0fc9c1251163f4912a6b62cf04232de4c97ef7943f7a5f646d8c4762c36"
+  },
+  {
+    "path": "data/raw/united-states/geo-api-2017-2026-6.json",
+    "url": "https://api.bls.gov/publicAPI/v2/timeseries/data/",
+    "status": "unavailable",
+    "error": "BLS API did not report success"
+  },
+  {
+    "path": "data/raw/united-states/geo-appendix.html",
+    "url": "https://www.bls.gov/cpi/additional-resources/geographic-sample.htm",
+    "status": "retrieved",
+    "retrieved": "2026-11-24T03:29:49-08:00",
+    "last_modified": null,
+    "bytes": 105074,
+    "sha256": "bdf0f034d1800d2295e7263d51ac45040ae9dfbde9a424b0613ca34d6231f5b3"
+  },
+  {
+    "path": "data/raw/united-states/geo-counties-2020.zip",
+    "url": "https://www2.census.gov/geo/tiger/GENZ2020/shp/cb_2020_us_county_20m.zip",
+    "status": "retrieved",
+    "retrieved": "2026-11-24T03:29:49-08:00",
+    "last_modified": "Fri, 19 May 2023 00:20:26 GMT",
+    "bytes": 893148,
+    "sha256": "9394913edbd6f72791b06b84509e59ea2d275d10b73ae27ef87df3bdb061890c"
+  },
+  {
+    "path": "data/raw/united-states/geo-county-2023.zip",
+    "url": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2023_Gazetteer/2023_Gaz_counties_national.zip",
+    "status": "retrieved",
+    "retrieved": "2026-11-24T03:29:49-08:00",
+    "last_modified": "Tue, 26 Sep 2023 13:32:24 GMT",
+    "bytes": 141650,
+    "sha256": "919df59ba90759cce85468c0337e898e4b39c08eaffce86ddd88fa41f1f7f0c8"
+  },
+  {
+    "path": "data/raw/united-states/geo-cu.data.10.OtherWest.gz",
+    "url": "https://download.bls.gov/pub/time.series/cu/cu.data.10.OtherWest",
+    "status": "retrieved",
+    "retrieved": "2026-11-24T03:50:51-08:00",
+    "last_modified": "Tue, 10 Nov 2026 13:30:00 GMT",
+    "bytes": 1712741,
+    "sha256": "6e466d5330f0e4a9f45beee1dd6f4e82006c1b87706ab01b4379c459bd60ca6e",
+    "source_sha256": "d620b5f50ddaa50f6832722336536bc9bdc74672756acf27f8252b13e2a563b7",
+    "source_bytes": 12530906
+  },
+  {
+    "path": "data/raw/united-states/geo-cu.data.9.OtherSouth.gz",
+    "url": "https://download.bls.gov/pub/time.series/cu/cu.data.9.OtherSouth",
+    "status": "retrieved",
+    "retrieved": "2026-11-24T03:51:58-08:00",
+    "last_modified": "Tue, 10 Nov 2026 13:30:00 GMT",
+    "bytes": 1807194,
+    "sha256": "520403e4f7ae02349831921b7a3c3c4f0c9b89070ee806b77f836d93ab44d86f",
+    "source_sha256": "0c5b6866c2b27f96ec56d14c70578781eaa03af970220925ca9fed93360ff5d6",
+    "source_bytes": 13245655
+  },
+  {
+    "path": "data/raw/united-states/geo-cu.series",
+    "url": "https://download.bls.gov/pub/time.series/cu/cu.series",
+    "status": "retrieved",
+    "retrieved": "2026-11-24T03:29:49-08:00",
+    "last_modified": "Tue, 10 Nov 2026 13:30:00 GMT",
+    "bytes": 1339447,
+    "sha256": "7085e772dc0b773e4521eb258b42d6237d427385cbb6058285b32ed202c084a6"
+  },
+  {
+    "path": "data/raw/united-states/geo-operations-2026.html",
+    "url": "https://www.bls.gov/cpi/notices/2026/data-collection-update.htm",
+    "status": "retrieved",
+    "retrieved": "2026-11-24T03:29:49-08:00",
+    "last_modified": null,
+    "bytes": 58345,
+    "sha256": "a70077baa6e84208333414075fa69e6bc9d0310f95f12b9cca458a8a01af7219"
+  },
+  {
+    "path": "data/raw/united-states/geo-revision-2028.html",
+    "url": "https://www.bls.gov/cpi/additional-resources/geographic-revision-2028.htm",
+    "status": "retrieved",
+    "retrieved": "2026-11-24T03:29:49-08:00",
+    "last_modified": null,
+    "bytes": 95021,
+    "sha256": "0690a44fbcf92827690eab8e7dfe76c5f763f2ddd3a5f47fd14515aaaba73343"
+  },
+  {
+    "path": "data/raw/united-states/geo-weights-2025.xlsx",
+    "url": "https://www.bls.gov/cpi/tables/relative-importance/2025.xlsx",
+    "status": "retrieved",
+    "retrieved": "2026-11-24T03:29:49-08:00",
+    "last_modified": "Tue, 14 Jul 2026 17:39:29 GMT",
+    "bytes": 59502,
+    "sha256": "6e7baa9b416c060ac8ff7eaffb424a087fcc5e35cef9862f2fcfa996955e9b55"
+  },
+  {
+    "path": "data/raw/united-states/monthly-response-rates.xlsx",
+    "url": "https://www.bls.gov/cpi/tables/response-rates/monthly-response-rates-201901-present.xlsx",
+    "status": "retrieved",
+    "retrieved": "2026-11-24T01:20:05-08:00",
+    "last_modified": "Thu, 12 Nov 2026 15:01:08 GMT",
+    "bytes": 41297,
+    "sha256": "23b64dcb4c846489357a9df7f4f9804215e142c695029826a6be40e1c01d8301"
+  },
+  {
+    "path": "data/raw/united-states/october-2026.html",
+    "url": "https://www.bls.gov/news.release/archives/cpi_11102026.htm",
+    "status": "retrieved",
+    "retrieved": "2026-11-24T00:58:44-08:00",
+    "last_modified": null,
+    "bytes": 1366786,
+    "sha256": "f7eb0a8d92b7eb1cb094d8d9fabf863b4f5d566129d3a786264a92411edefdda"
+  },
+  {
+    "path": "data/raw/united-states/response-rates.html",
+    "url": "https://www.bls.gov/cpi/tables/response-rates/",
+    "status": "retrieved",
+    "retrieved": "2026-11-24T00:58:45-08:00",
+    "last_modified": null,
+    "bytes": 136999,
+    "sha256": "2462807c3bc1bc1c13bb464c7a1e774ed89b0182065c9a82f18e4c9131c7dd09"
+  },
+  {
+    "path": "data/raw/united-states/variance-2023.xlsx",
+    "url": "https://www.bls.gov/cpi/tables/variance-estimates/2023.xlsx",
+    "status": "retrieved",
+    "retrieved": "2026-11-24T00:58:44-08:00",
+    "last_modified": "Tue, 14 Jul 2026 17:39:33 GMT",
+    "bytes": 55076,
+    "sha256": "f30e1ff3fac6c0691c295c0d158b4a7726a1977fbbad802c9bc2f465fa240822"
+  },
+  {
+    "path": "data/raw/united-states/variance-2024.xlsx",
+    "url": "https://www.bls.gov/cpi/tables/variance-estimates/2024.xlsx",
+    "status": "retrieved",
+    "retrieved": "2026-11-24T00:58:44-08:00",
+    "last_modified": "Tue, 14 Jul 2026 17:39:31 GMT",
+    "bytes": 55034,
+    "sha256": "893c730ee1219579a5d804580e449032ef2c489f7eb4db300f44843ed770be1e"
+  },
+  {
+    "path": "data/raw/united-states/variance-2025.xlsx",
+    "url": "https://www.bls.gov/cpi/tables/variance-estimates/2025.xlsx",
+    "status": "retrieved",
+    "retrieved": "2026-11-24T00:58:44-08:00",
+    "last_modified": "Tue, 14 Jul 2026 17:39:29 GMT",
+    "bytes": 54825,
+    "sha256": "c02e0ac7d08d351c4762177ec3d96ef968524cf660c124dc6ba827bfa98c2483"
+  },
+  {
+    "path": "data/raw/united-states/weights-2023.html",
+    "url": "https://www.bls.gov/cpi/tables/relative-importance/2023.htm",
+    "status": "retrieved",
+    "retrieved": "2026-11-24T00:58:44-08:00",
+    "last_modified": null,
+    "bytes": 89284,
+    "sha256": "0049972f4bc5f4b533f1f69d665ca97e3ba45d74a9f17cf87fbf9bdf15449682"
+  },
+  {
+    "path": "data/raw/united-states/weights-2024.html",
+    "url": "https://www.bls.gov/cpi/tables/relative-importance/2024.htm",
+    "status": "retrieved",
+    "retrieved": "2026-11-24T00:58:44-08:00",
+    "last_modified": null,
+    "bytes": 89266,
+    "sha256": "6cf74b4857f8b359d2daca9f5abec07ea4999a37583d616975529a3a71314ef1"
+  },
+  {
+    "path": "data/raw/united-states/weights-2025.html",
+    "url": "https://www.bls.gov/cpi/tables/relative-importance/2025.htm",
+    "status": "retrieved",
+    "retrieved": "2026-11-24T00:58:44-08:00",
+    "last_modified": null,
+    "bytes": 98653,
+    "sha256": "b4af5dfc834f6634f5c599605f459bb4c683a1e3f1c66d36f80d34d12a8106e6"
+  },
+  {
+    "path": "references/canada-basket-2026.html",
+    "url": "https://www150.statcan.gc.ca/n1/pub/62f0014m/62f0014m2026005-eng.htm",
+    "status": "unavailable",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "path": "references/canada-basket-2026.pdf",
+    "url": "https://www150.statcan.gc.ca/n1/pub/62f0014m/62f0014m2026005-eng.pdf",
+    "status": "unavailable",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "path": "references/canada-reference.pdf",
+    "url": "https://www150.statcan.gc.ca/n1/en/pub/62-553-x/62-553-x2023001-eng.pdf",
+    "status": "unavailable",
+    "error": "HTTP Error 403: Forbidden",
+    "archived_copy": "2026-10-30-canada-consumer-price-index/cpi-reference-paper.pdf",
+    "local_status": "existing official-source PDF reused",
+    "bytes": 1646174,
+    "sha256": "baa18260f164d2271123f7e794e8b5a25f3135d3921ed4c34ec24de39a9d96a6"
+  }
+]

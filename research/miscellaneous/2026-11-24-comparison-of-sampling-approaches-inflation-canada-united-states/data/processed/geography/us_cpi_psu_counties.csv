@@ -1,0 +1,427 @@
+psu_code,state,official_county_text,county_geoid,matched,boundary_vintage,source
+S11A,MA,Essex,25009,True,2020,data/raw/united-states/geo-appendix.html
+S11A,MA,Middlesex,25017,True,2020,data/raw/united-states/geo-appendix.html
+S11A,MA,Norfolk,25021,True,2020,data/raw/united-states/geo-appendix.html
+S11A,MA,Plymouth,25023,True,2020,data/raw/united-states/geo-appendix.html
+S11A,MA,Suffolk,25025,True,2020,data/raw/united-states/geo-appendix.html
+S11A,NH,Rockingham,33015,True,2020,data/raw/united-states/geo-appendix.html
+S11A,NH,Strafford,33017,True,2020,data/raw/united-states/geo-appendix.html
+N11B,CT,Hartford,09003,True,2020,data/raw/united-states/geo-appendix.html
+N11B,CT,Middlesex,09007,True,2020,data/raw/united-states/geo-appendix.html
+N11B,CT,Tolland,09013,True,2020,data/raw/united-states/geo-appendix.html
+N11C,MA,Hampden,25013,True,2020,data/raw/united-states/geo-appendix.html
+N11C,MA,Hampshire,25015,True,2020,data/raw/united-states/geo-appendix.html
+S12A,NJ,Bergen,34003,True,2020,data/raw/united-states/geo-appendix.html
+S12A,NJ,Essex,34013,True,2020,data/raw/united-states/geo-appendix.html
+S12A,NJ,Hudson,34017,True,2020,data/raw/united-states/geo-appendix.html
+S12A,NJ,Hunterdon,34019,True,2020,data/raw/united-states/geo-appendix.html
+S12A,NJ,Middlesex,34023,True,2020,data/raw/united-states/geo-appendix.html
+S12A,NJ,Monmouth,34025,True,2020,data/raw/united-states/geo-appendix.html
+S12A,NJ,Morris,34027,True,2020,data/raw/united-states/geo-appendix.html
+S12A,NJ,Ocean,34029,True,2020,data/raw/united-states/geo-appendix.html
+S12A,NJ,Passaic,34031,True,2020,data/raw/united-states/geo-appendix.html
+S12A,NJ,Somerset,34035,True,2020,data/raw/united-states/geo-appendix.html
+S12A,NJ,Sussex,34037,True,2020,data/raw/united-states/geo-appendix.html
+S12A,NJ,Union,34039,True,2020,data/raw/united-states/geo-appendix.html
+S12A,NY,Bronx,36005,True,2020,data/raw/united-states/geo-appendix.html
+S12A,NY,Dutchess,36027,True,2020,data/raw/united-states/geo-appendix.html
+S12A,NY,Kings,36047,True,2020,data/raw/united-states/geo-appendix.html
+S12A,NY,Nassau,36059,True,2020,data/raw/united-states/geo-appendix.html
+S12A,NY,New York,36061,True,2020,data/raw/united-states/geo-appendix.html
+S12A,NY,Orange,36071,True,2020,data/raw/united-states/geo-appendix.html
+S12A,NY,Putnam,36079,True,2020,data/raw/united-states/geo-appendix.html
+S12A,NY,Queens,36081,True,2020,data/raw/united-states/geo-appendix.html
+S12A,NY,Richmond,36085,True,2020,data/raw/united-states/geo-appendix.html
+S12A,NY,Rockland,36087,True,2020,data/raw/united-states/geo-appendix.html
+S12A,NY,Suffolk,36103,True,2020,data/raw/united-states/geo-appendix.html
+S12A,NY,Westchester,36119,True,2020,data/raw/united-states/geo-appendix.html
+S12A,PA,Pike,42103,True,2020,data/raw/united-states/geo-appendix.html
+S12B,DE,New Castle,10003,True,2020,data/raw/united-states/geo-appendix.html
+S12B,MD,Cecil,24015,True,2020,data/raw/united-states/geo-appendix.html
+S12B,NJ,Burlington,34005,True,2020,data/raw/united-states/geo-appendix.html
+S12B,NJ,Camden,34007,True,2020,data/raw/united-states/geo-appendix.html
+S12B,NJ,Gloucester,34015,True,2020,data/raw/united-states/geo-appendix.html
+S12B,NJ,Salem,34033,True,2020,data/raw/united-states/geo-appendix.html
+S12B,PA,Bucks,42017,True,2020,data/raw/united-states/geo-appendix.html
+S12B,PA,Chester,42029,True,2020,data/raw/united-states/geo-appendix.html
+S12B,PA,Delaware,42045,True,2020,data/raw/united-states/geo-appendix.html
+S12B,PA,Montgomery,42091,True,2020,data/raw/united-states/geo-appendix.html
+S12B,PA,Philadelphia,42101,True,2020,data/raw/united-states/geo-appendix.html
+N12C,PA,Allegheny,42003,True,2020,data/raw/united-states/geo-appendix.html
+N12C,PA,Armstrong,42005,True,2020,data/raw/united-states/geo-appendix.html
+N12C,PA,Beaver,42007,True,2020,data/raw/united-states/geo-appendix.html
+N12C,PA,Butler,42019,True,2020,data/raw/united-states/geo-appendix.html
+N12C,PA,Fayette,42051,True,2020,data/raw/united-states/geo-appendix.html
+N12C,PA,Washington,42125,True,2020,data/raw/united-states/geo-appendix.html
+N12C,PA,Westmoreland,42129,True,2020,data/raw/united-states/geo-appendix.html
+N12D,NY,Erie,36029,True,2020,data/raw/united-states/geo-appendix.html
+N12D,NY,Niagara,36063,True,2020,data/raw/united-states/geo-appendix.html
+N12E,NY,Livingston,36051,True,2020,data/raw/united-states/geo-appendix.html
+N12E,NY,Monroe,36055,True,2020,data/raw/united-states/geo-appendix.html
+N12E,NY,Ontario,36069,True,2020,data/raw/united-states/geo-appendix.html
+N12E,NY,Orleans,36073,True,2020,data/raw/united-states/geo-appendix.html
+N12E,NY,Wayne,36117,True,2020,data/raw/united-states/geo-appendix.html
+N12E,NY,Yates,36123,True,2020,data/raw/united-states/geo-appendix.html
+N12F,PA,Berks,42011,True,2020,data/raw/united-states/geo-appendix.html
+S23A,IL,Cook,17031,True,2020,data/raw/united-states/geo-appendix.html
+S23A,IL,De Kalb,17037,True,2020,data/raw/united-states/geo-appendix.html
+S23A,IL,Du Page,17043,True,2020,data/raw/united-states/geo-appendix.html
+S23A,IL,Grundy,17063,True,2020,data/raw/united-states/geo-appendix.html
+S23A,IL,Kane,17089,True,2020,data/raw/united-states/geo-appendix.html
+S23A,IL,Kendall,17093,True,2020,data/raw/united-states/geo-appendix.html
+S23A,IL,Lake,17097,True,2020,data/raw/united-states/geo-appendix.html
+S23A,IL,McHenry,17111,True,2020,data/raw/united-states/geo-appendix.html
+S23A,IL,Will,17197,True,2020,data/raw/united-states/geo-appendix.html
+S23A,IN,Jasper,18073,True,2020,data/raw/united-states/geo-appendix.html
+S23A,IN,Lake,18089,True,2020,data/raw/united-states/geo-appendix.html
+S23A,IN,Newton,18111,True,2020,data/raw/united-states/geo-appendix.html
+S23A,IN,Porter,18127,True,2020,data/raw/united-states/geo-appendix.html
+S23A,WI,Kenosha,55059,True,2020,data/raw/united-states/geo-appendix.html
+S23B,MI,Lapeer,26087,True,2020,data/raw/united-states/geo-appendix.html
+S23B,MI,Livingston,26093,True,2020,data/raw/united-states/geo-appendix.html
+S23B,MI,Macomb,26099,True,2020,data/raw/united-states/geo-appendix.html
+S23B,MI,Oakland,26125,True,2020,data/raw/united-states/geo-appendix.html
+S23B,MI,St. Clair,26147,True,2020,data/raw/united-states/geo-appendix.html
+S23B,MI,Wayne,26163,True,2020,data/raw/united-states/geo-appendix.html
+N23C,IN,Dearborn,18029,True,2020,data/raw/united-states/geo-appendix.html
+N23C,IN,Ohio,18115,True,2020,data/raw/united-states/geo-appendix.html
+N23C,IN,Union,18161,True,2020,data/raw/united-states/geo-appendix.html
+N23C,KY,Boone,21015,True,2020,data/raw/united-states/geo-appendix.html
+N23C,KY,Bracken,21023,True,2020,data/raw/united-states/geo-appendix.html
+N23C,KY,Campbell,21037,True,2020,data/raw/united-states/geo-appendix.html
+N23C,KY,Gallatin,21077,True,2020,data/raw/united-states/geo-appendix.html
+N23C,KY,Grant,21081,True,2020,data/raw/united-states/geo-appendix.html
+N23C,KY,Kenton,21117,True,2020,data/raw/united-states/geo-appendix.html
+N23C,KY,Pendleton,21191,True,2020,data/raw/united-states/geo-appendix.html
+N23C,OH,Brown,39015,True,2020,data/raw/united-states/geo-appendix.html
+N23C,OH,Butler,39017,True,2020,data/raw/united-states/geo-appendix.html
+N23C,OH,Clermont,39025,True,2020,data/raw/united-states/geo-appendix.html
+N23C,OH,Hamilton,39061,True,2020,data/raw/united-states/geo-appendix.html
+N23C,OH,Warren,39165,True,2020,data/raw/united-states/geo-appendix.html
+N23D,OH,Cuyahoga,39035,True,2020,data/raw/united-states/geo-appendix.html
+N23D,OH,Geauga,39055,True,2020,data/raw/united-states/geo-appendix.html
+N23D,OH,Lake,39085,True,2020,data/raw/united-states/geo-appendix.html
+N23D,OH,Lorain,39093,True,2020,data/raw/united-states/geo-appendix.html
+N23D,OH,Medina,39103,True,2020,data/raw/united-states/geo-appendix.html
+N23E,OH,Delaware,39041,True,2020,data/raw/united-states/geo-appendix.html
+N23E,OH,Fairfield,39045,True,2020,data/raw/united-states/geo-appendix.html
+N23E,OH,Franklin,39049,True,2020,data/raw/united-states/geo-appendix.html
+N23E,OH,Hocking,39073,True,2020,data/raw/united-states/geo-appendix.html
+N23E,OH,Licking,39089,True,2020,data/raw/united-states/geo-appendix.html
+N23E,OH,Madison,39097,True,2020,data/raw/united-states/geo-appendix.html
+N23E,OH,Morrow,39117,True,2020,data/raw/united-states/geo-appendix.html
+N23E,OH,Perry,39127,True,2020,data/raw/united-states/geo-appendix.html
+N23E,OH,Pickaway,39129,True,2020,data/raw/united-states/geo-appendix.html
+N23E,OH,Union,39159,True,2020,data/raw/united-states/geo-appendix.html
+N23F,WI,Milwaukee,55079,True,2020,data/raw/united-states/geo-appendix.html
+N23F,WI,Ozaukee,55089,True,2020,data/raw/united-states/geo-appendix.html
+N23F,WI,Washington,55131,True,2020,data/raw/united-states/geo-appendix.html
+N23F,WI,Waukesha,55133,True,2020,data/raw/united-states/geo-appendix.html
+N23G,OH,Greene,39057,True,2020,data/raw/united-states/geo-appendix.html
+N23G,OH,Miami,39109,True,2020,data/raw/united-states/geo-appendix.html
+N23G,OH,Montgomery,39113,True,2020,data/raw/united-states/geo-appendix.html
+N23H,MI,Genesee,26049,True,2020,data/raw/united-states/geo-appendix.html
+N23I,WI,Rock,55105,True,2020,data/raw/united-states/geo-appendix.html
+N23J,IN,Clinton,18023,True,2020,data/raw/united-states/geo-appendix.html
+S24A,MN,Anoka,27003,True,2020,data/raw/united-states/geo-appendix.html
+S24A,MN,Carver,27019,True,2020,data/raw/united-states/geo-appendix.html
+S24A,MN,Chisago,27025,True,2020,data/raw/united-states/geo-appendix.html
+S24A,MN,Dakota,27037,True,2020,data/raw/united-states/geo-appendix.html
+S24A,MN,Hennepin,27053,True,2020,data/raw/united-states/geo-appendix.html
+S24A,MN,Isanti,27059,True,2020,data/raw/united-states/geo-appendix.html
+S24A,MN,Le Sueur,27079,True,2020,data/raw/united-states/geo-appendix.html
+S24A,MN,Mille Lacs,27095,True,2020,data/raw/united-states/geo-appendix.html
+S24A,MN,Ramsey,27123,True,2020,data/raw/united-states/geo-appendix.html
+S24A,MN,Scott,27139,True,2020,data/raw/united-states/geo-appendix.html
+S24A,MN,Sherburne,27141,True,2020,data/raw/united-states/geo-appendix.html
+S24A,MN,Sibley,27143,True,2020,data/raw/united-states/geo-appendix.html
+S24A,MN,Washington,27163,True,2020,data/raw/united-states/geo-appendix.html
+S24A,MN,Wright,27171,True,2020,data/raw/united-states/geo-appendix.html
+S24A,WI,Pierce,55093,True,2020,data/raw/united-states/geo-appendix.html
+S24A,WI,St. Croix,55109,True,2020,data/raw/united-states/geo-appendix.html
+S24B,IL,Bond,17005,True,2020,data/raw/united-states/geo-appendix.html
+S24B,IL,Calhoun,17013,True,2020,data/raw/united-states/geo-appendix.html
+S24B,IL,Clinton,17027,True,2020,data/raw/united-states/geo-appendix.html
+S24B,IL,Jersey,17083,True,2020,data/raw/united-states/geo-appendix.html
+S24B,IL,Macoupin,17117,True,2020,data/raw/united-states/geo-appendix.html
+S24B,IL,Madison,17119,True,2020,data/raw/united-states/geo-appendix.html
+S24B,IL,Monroe,17133,True,2020,data/raw/united-states/geo-appendix.html
+S24B,IL,St. Clair,17163,True,2020,data/raw/united-states/geo-appendix.html
+S24B,MO,Franklin,29071,True,2020,data/raw/united-states/geo-appendix.html
+S24B,MO,Jefferson,29099,True,2020,data/raw/united-states/geo-appendix.html
+S24B,MO,Lincoln,29113,True,2020,data/raw/united-states/geo-appendix.html
+S24B,MO,St. Charles,29183,True,2020,data/raw/united-states/geo-appendix.html
+S24B,MO,St. Louis,29189,True,2020,data/raw/united-states/geo-appendix.html
+S24B,MO,St. Louis City,29510,True,2020,data/raw/united-states/geo-appendix.html
+S24B,MO,Warren,29219,True,2020,data/raw/united-states/geo-appendix.html
+N24C,IA,Harrison,19085,True,2020,data/raw/united-states/geo-appendix.html
+N24C,IA,Mills,19129,True,2020,data/raw/united-states/geo-appendix.html
+N24C,IA,Pottawattamie,19155,True,2020,data/raw/united-states/geo-appendix.html
+N24C,NE,Cass,31025,True,2020,data/raw/united-states/geo-appendix.html
+N24C,NE,Douglas,31055,True,2020,data/raw/united-states/geo-appendix.html
+N24C,NE,Sarpy,31153,True,2020,data/raw/united-states/geo-appendix.html
+N24C,NE,Saunders,31155,True,2020,data/raw/united-states/geo-appendix.html
+N24C,NE,Washington,31177,True,2020,data/raw/united-states/geo-appendix.html
+N24D,KS,Butler,20015,True,2020,data/raw/united-states/geo-appendix.html
+N24D,KS,Harvey,20079,True,2020,data/raw/united-states/geo-appendix.html
+N24D,KS,Kingman,20095,True,2020,data/raw/united-states/geo-appendix.html
+N24D,KS,Sedgwick,20173,True,2020,data/raw/united-states/geo-appendix.html
+N24D,KS,Sumner,20191,True,2020,data/raw/united-states/geo-appendix.html
+N24E,NE,Lancaster,31109,True,2020,data/raw/united-states/geo-appendix.html
+N24E,NE,Seward,31159,True,2020,data/raw/united-states/geo-appendix.html
+N24F,SD,Brookings,46011,True,2020,data/raw/united-states/geo-appendix.html
+S35A,DC,District of Columbia,11001,True,2020,data/raw/united-states/geo-appendix.html
+S35A,MD,Calvert,24009,True,2020,data/raw/united-states/geo-appendix.html
+S35A,MD,Charles,24017,True,2020,data/raw/united-states/geo-appendix.html
+S35A,MD,Frederick,24021,True,2020,data/raw/united-states/geo-appendix.html
+S35A,MD,Montgomery,24031,True,2020,data/raw/united-states/geo-appendix.html
+S35A,MD,Prince George’s,24033,True,2020,data/raw/united-states/geo-appendix.html
+S35A,VA,Alexandria City,51510,True,2020,data/raw/united-states/geo-appendix.html
+S35A,VA,Arlington,51013,True,2020,data/raw/united-states/geo-appendix.html
+S35A,VA,Clarke,51043,True,2020,data/raw/united-states/geo-appendix.html
+S35A,VA,Culpeper,51047,True,2020,data/raw/united-states/geo-appendix.html
+S35A,VA,Fairfax,51059,True,2020,data/raw/united-states/geo-appendix.html
+S35A,VA,Fairfax City,51600,True,2020,data/raw/united-states/geo-appendix.html
+S35A,VA,Falls Church City,51610,True,2020,data/raw/united-states/geo-appendix.html
+S35A,VA,Fauquier,51061,True,2020,data/raw/united-states/geo-appendix.html
+S35A,VA,Fredericksburg City,51630,True,2020,data/raw/united-states/geo-appendix.html
+S35A,VA,Loudoun,51107,True,2020,data/raw/united-states/geo-appendix.html
+S35A,VA,Manassas City,51683,True,2020,data/raw/united-states/geo-appendix.html
+S35A,VA,Manassas Park City,51685,True,2020,data/raw/united-states/geo-appendix.html
+S35A,VA,Prince William,51153,True,2020,data/raw/united-states/geo-appendix.html
+S35A,VA,Rappahannock,51157,True,2020,data/raw/united-states/geo-appendix.html
+S35A,VA,Spotsylvania,51177,True,2020,data/raw/united-states/geo-appendix.html
+S35A,VA,Stafford,51179,True,2020,data/raw/united-states/geo-appendix.html
+S35A,VA,Warren,51187,True,2020,data/raw/united-states/geo-appendix.html
+S35A,WV,Jefferson,54037,True,2020,data/raw/united-states/geo-appendix.html
+S35B,FL,Broward,12011,True,2020,data/raw/united-states/geo-appendix.html
+S35B,FL,Miami–Dade,12086,True,2020,data/raw/united-states/geo-appendix.html
+S35B,FL,Palm Beach,12099,True,2020,data/raw/united-states/geo-appendix.html
+S35C,GA,Barrow,13013,True,2020,data/raw/united-states/geo-appendix.html
+S35C,GA,Bartow,13015,True,2020,data/raw/united-states/geo-appendix.html
+S35C,GA,Butts,13035,True,2020,data/raw/united-states/geo-appendix.html
+S35C,GA,Carroll,13045,True,2020,data/raw/united-states/geo-appendix.html
+S35C,GA,Cherokee,13057,True,2020,data/raw/united-states/geo-appendix.html
+S35C,GA,Clayton,13063,True,2020,data/raw/united-states/geo-appendix.html
+S35C,GA,Cobb,13067,True,2020,data/raw/united-states/geo-appendix.html
+S35C,GA,Coweta,13077,True,2020,data/raw/united-states/geo-appendix.html
+S35C,GA,Dawson,13085,True,2020,data/raw/united-states/geo-appendix.html
+S35C,GA,DeKalb,13089,True,2020,data/raw/united-states/geo-appendix.html
+S35C,GA,Douglas,13097,True,2020,data/raw/united-states/geo-appendix.html
+S35C,GA,Fayette,13113,True,2020,data/raw/united-states/geo-appendix.html
+S35C,GA,Forsyth,13117,True,2020,data/raw/united-states/geo-appendix.html
+S35C,GA,Fulton,13121,True,2020,data/raw/united-states/geo-appendix.html
+S35C,GA,Gwinnett,13135,True,2020,data/raw/united-states/geo-appendix.html
+S35C,GA,Haralson,13143,True,2020,data/raw/united-states/geo-appendix.html
+S35C,GA,Heard,13149,True,2020,data/raw/united-states/geo-appendix.html
+S35C,GA,Henry,13151,True,2020,data/raw/united-states/geo-appendix.html
+S35C,GA,Jasper,13159,True,2020,data/raw/united-states/geo-appendix.html
+S35C,GA,Lamar,13171,True,2020,data/raw/united-states/geo-appendix.html
+S35C,GA,Meriwether,13199,True,2020,data/raw/united-states/geo-appendix.html
+S35C,GA,Morgan,13211,True,2020,data/raw/united-states/geo-appendix.html
+S35C,GA,Newton,13217,True,2020,data/raw/united-states/geo-appendix.html
+S35C,GA,Paulding,13223,True,2020,data/raw/united-states/geo-appendix.html
+S35C,GA,Pickens,13227,True,2020,data/raw/united-states/geo-appendix.html
+S35C,GA,Pike,13231,True,2020,data/raw/united-states/geo-appendix.html
+S35C,GA,Rockdale,13247,True,2020,data/raw/united-states/geo-appendix.html
+S35C,GA,Spalding,13255,True,2020,data/raw/united-states/geo-appendix.html
+S35C,GA,Walton,13297,True,2020,data/raw/united-states/geo-appendix.html
+S35D,FL,Hernando,12053,True,2020,data/raw/united-states/geo-appendix.html
+S35D,FL,Hillsborough,12057,True,2020,data/raw/united-states/geo-appendix.html
+S35D,FL,Pasco,12101,True,2020,data/raw/united-states/geo-appendix.html
+S35D,FL,Pinellas,12103,True,2020,data/raw/united-states/geo-appendix.html
+S35E,MD,Anne Arundel,24003,True,2020,data/raw/united-states/geo-appendix.html
+S35E,MD,Baltimore,24005,True,2020,data/raw/united-states/geo-appendix.html
+S35E,MD,Baltimore City,24510,True,2020,data/raw/united-states/geo-appendix.html
+S35E,MD,Carroll,24013,True,2020,data/raw/united-states/geo-appendix.html
+S35E,MD,Harford,24025,True,2020,data/raw/united-states/geo-appendix.html
+S35E,MD,Howard,24027,True,2020,data/raw/united-states/geo-appendix.html
+S35E,MD,Queen Anne’s,24035,True,2020,data/raw/united-states/geo-appendix.html
+N35F,NC,Cabarrus,37025,True,2020,data/raw/united-states/geo-appendix.html
+N35F,NC,Gaston,37071,True,2020,data/raw/united-states/geo-appendix.html
+N35F,NC,Iredell,37097,True,2020,data/raw/united-states/geo-appendix.html
+N35F,NC,Lincoln,37109,True,2020,data/raw/united-states/geo-appendix.html
+N35F,NC,Mecklenburg,37119,True,2020,data/raw/united-states/geo-appendix.html
+N35F,NC,Rowan,37159,True,2020,data/raw/united-states/geo-appendix.html
+N35F,NC,Union,37179,True,2020,data/raw/united-states/geo-appendix.html
+N35F,SC,Chester,45023,True,2020,data/raw/united-states/geo-appendix.html
+N35F,SC,Lancaster,45057,True,2020,data/raw/united-states/geo-appendix.html
+N35F,SC,York,45091,True,2020,data/raw/united-states/geo-appendix.html
+N35G,FL,Lake,12069,True,2020,data/raw/united-states/geo-appendix.html
+N35G,FL,Orange,12095,True,2020,data/raw/united-states/geo-appendix.html
+N35G,FL,Osceola,12097,True,2020,data/raw/united-states/geo-appendix.html
+N35G,FL,Seminole,12117,True,2020,data/raw/united-states/geo-appendix.html
+N35H,VA,Amelia,51007,True,2020,data/raw/united-states/geo-appendix.html
+N35H,VA,Caroline,51033,True,2020,data/raw/united-states/geo-appendix.html
+N35H,VA,Charles City,51036,True,2020,data/raw/united-states/geo-appendix.html
+N35H,VA,Chesterfield,51041,True,2020,data/raw/united-states/geo-appendix.html
+N35H,VA,Colonial Heights City,51570,True,2020,data/raw/united-states/geo-appendix.html
+N35H,VA,Dinwiddie,51053,True,2020,data/raw/united-states/geo-appendix.html
+N35H,VA,Goochland,51075,True,2020,data/raw/united-states/geo-appendix.html
+N35H,VA,Hanover,51085,True,2020,data/raw/united-states/geo-appendix.html
+N35H,VA,Henrico,51087,True,2020,data/raw/united-states/geo-appendix.html
+N35H,VA,Hopewell City,51670,True,2020,data/raw/united-states/geo-appendix.html
+N35H,VA,King William,51101,True,2020,data/raw/united-states/geo-appendix.html
+N35H,VA,New Kent,51127,True,2020,data/raw/united-states/geo-appendix.html
+N35H,VA,Petersburg City,51730,True,2020,data/raw/united-states/geo-appendix.html
+N35H,VA,Powhatan,51145,True,2020,data/raw/united-states/geo-appendix.html
+N35H,VA,Prince George,51149,True,2020,data/raw/united-states/geo-appendix.html
+N35H,VA,Richmond City,51760,True,2020,data/raw/united-states/geo-appendix.html
+N35H,VA,Sussex,51183,True,2020,data/raw/united-states/geo-appendix.html
+N35I,NC,Franklin,37069,True,2020,data/raw/united-states/geo-appendix.html
+N35I,NC,Johnston,37101,True,2020,data/raw/united-states/geo-appendix.html
+N35I,NC,Wake,37183,True,2020,data/raw/united-states/geo-appendix.html
+N35J,SC,Anderson,45007,True,2020,data/raw/united-states/geo-appendix.html
+N35J,SC,Greenville,45045,True,2020,data/raw/united-states/geo-appendix.html
+N35J,SC,Laurens,45059,True,2020,data/raw/united-states/geo-appendix.html
+N35J,SC,Pickens,45077,True,2020,data/raw/united-states/geo-appendix.html
+N35K,NC,Davidson,37057,True,2020,data/raw/united-states/geo-appendix.html
+N35K,NC,Davie,37059,True,2020,data/raw/united-states/geo-appendix.html
+N35K,NC,Forsyth,37067,True,2020,data/raw/united-states/geo-appendix.html
+N35K,NC,Stokes,37169,True,2020,data/raw/united-states/geo-appendix.html
+N35K,NC,Yadkin,37197,True,2020,data/raw/united-states/geo-appendix.html
+N35L,FL,Lee,12071,True,2020,data/raw/united-states/geo-appendix.html
+N35M,FL,Marion,12083,True,2020,data/raw/united-states/geo-appendix.html
+N35N,FL,Alachua,12001,True,2020,data/raw/united-states/geo-appendix.html
+N35N,FL,Gilchrist,12041,True,2020,data/raw/united-states/geo-appendix.html
+N35O,NC,New Hanover,37129,True,2020,data/raw/united-states/geo-appendix.html
+N35O,NC,Pender,37141,True,2020,data/raw/united-states/geo-appendix.html
+N35P,NC,Onslow,37133,True,2020,data/raw/united-states/geo-appendix.html
+N35Q,WV,Doddridge,54017,True,2020,data/raw/united-states/geo-appendix.html
+N35Q,WV,Harrison,54033,True,2020,data/raw/united-states/geo-appendix.html
+N35Q,WV,Taylor,54091,True,2020,data/raw/united-states/geo-appendix.html
+N36A,IN,Clark,18019,True,2020,data/raw/united-states/geo-appendix.html
+N36A,IN,Floyd,18043,True,2020,data/raw/united-states/geo-appendix.html
+N36A,IN,Harrison,18061,True,2020,data/raw/united-states/geo-appendix.html
+N36A,IN,Scott,18143,True,2020,data/raw/united-states/geo-appendix.html
+N36A,IN,Washington,18175,True,2020,data/raw/united-states/geo-appendix.html
+N36A,KY,Bullitt,21029,True,2020,data/raw/united-states/geo-appendix.html
+N36A,KY,Henry,21103,True,2020,data/raw/united-states/geo-appendix.html
+N36A,KY,Jefferson,21111,True,2020,data/raw/united-states/geo-appendix.html
+N36A,KY,Oldham,21185,True,2020,data/raw/united-states/geo-appendix.html
+N36A,KY,Shelby,21211,True,2020,data/raw/united-states/geo-appendix.html
+N36A,KY,Spencer,21215,True,2020,data/raw/united-states/geo-appendix.html
+N36A,KY,Trimble,21223,True,2020,data/raw/united-states/geo-appendix.html
+N36B,AL,Bibb,01007,True,2020,data/raw/united-states/geo-appendix.html
+N36B,AL,Blount,01009,True,2020,data/raw/united-states/geo-appendix.html
+N36B,AL,Chilton,01021,True,2020,data/raw/united-states/geo-appendix.html
+N36B,AL,Jefferson,01073,True,2020,data/raw/united-states/geo-appendix.html
+N36B,AL,Shelby,01117,True,2020,data/raw/united-states/geo-appendix.html
+N36B,AL,St. Clair,01115,True,2020,data/raw/united-states/geo-appendix.html
+N36B,AL,Walker,01127,True,2020,data/raw/united-states/geo-appendix.html
+N36C,GA,Catoosa,13047,True,2020,data/raw/united-states/geo-appendix.html
+N36C,GA,Dade,13083,True,2020,data/raw/united-states/geo-appendix.html
+N36C,GA,Walker,13295,True,2020,data/raw/united-states/geo-appendix.html
+N36C,TN,Hamilton,47065,True,2020,data/raw/united-states/geo-appendix.html
+N36C,TN,Marion,47115,True,2020,data/raw/united-states/geo-appendix.html
+N36C,TN,Sequatchie,47153,True,2020,data/raw/united-states/geo-appendix.html
+N36D,AL,Limestone,01083,True,2020,data/raw/united-states/geo-appendix.html
+N36D,AL,Madison,01089,True,2020,data/raw/united-states/geo-appendix.html
+N36E,AL,Colbert,01033,True,2020,data/raw/united-states/geo-appendix.html
+N36E,AL,Lauderdale,01077,True,2020,data/raw/united-states/geo-appendix.html
+N36F,MS,Clarke,28023,True,2020,data/raw/united-states/geo-appendix.html
+N36F,MS,Kemper,28069,True,2020,data/raw/united-states/geo-appendix.html
+N36F,MS,Lauderdale,28075,True,2020,data/raw/united-states/geo-appendix.html
+S37A,TX,Collin,48085,True,2020,data/raw/united-states/geo-appendix.html
+S37A,TX,Dallas,48113,True,2020,data/raw/united-states/geo-appendix.html
+S37A,TX,Denton,48121,True,2020,data/raw/united-states/geo-appendix.html
+S37A,TX,Ellis,48139,True,2020,data/raw/united-states/geo-appendix.html
+S37A,TX,Hood,48221,True,2020,data/raw/united-states/geo-appendix.html
+S37A,TX,Hunt,48231,True,2020,data/raw/united-states/geo-appendix.html
+S37A,TX,Johnson,48251,True,2020,data/raw/united-states/geo-appendix.html
+S37A,TX,Kaufman,48257,True,2020,data/raw/united-states/geo-appendix.html
+S37A,TX,Parker,48367,True,2020,data/raw/united-states/geo-appendix.html
+S37A,TX,Rockwall,48397,True,2020,data/raw/united-states/geo-appendix.html
+S37A,TX,Somervell,48425,True,2020,data/raw/united-states/geo-appendix.html
+S37A,TX,Tarrant,48439,True,2020,data/raw/united-states/geo-appendix.html
+S37A,TX,Wise,48497,True,2020,data/raw/united-states/geo-appendix.html
+S37B,TX,Austin,48015,True,2020,data/raw/united-states/geo-appendix.html
+S37B,TX,Brazoria,48039,True,2020,data/raw/united-states/geo-appendix.html
+S37B,TX,Chambers,48071,True,2020,data/raw/united-states/geo-appendix.html
+S37B,TX,Fort Bend,48157,True,2020,data/raw/united-states/geo-appendix.html
+S37B,TX,Galveston,48167,True,2020,data/raw/united-states/geo-appendix.html
+S37B,TX,Harris,48201,True,2020,data/raw/united-states/geo-appendix.html
+S37B,TX,Liberty,48291,True,2020,data/raw/united-states/geo-appendix.html
+S37B,TX,Montgomery,48339,True,2020,data/raw/united-states/geo-appendix.html
+S37B,TX,Waller,48473,True,2020,data/raw/united-states/geo-appendix.html
+N37C,TX,Atascosa,48013,True,2020,data/raw/united-states/geo-appendix.html
+N37C,TX,Bandera,48019,True,2020,data/raw/united-states/geo-appendix.html
+N37C,TX,Bexar,48029,True,2020,data/raw/united-states/geo-appendix.html
+N37C,TX,Comal,48091,True,2020,data/raw/united-states/geo-appendix.html
+N37C,TX,Guadalupe,48187,True,2020,data/raw/united-states/geo-appendix.html
+N37C,TX,Kendall,48259,True,2020,data/raw/united-states/geo-appendix.html
+N37C,TX,Medina,48325,True,2020,data/raw/united-states/geo-appendix.html
+N37C,TX,Wilson,48493,True,2020,data/raw/united-states/geo-appendix.html
+N37D,OK,Canadian,40017,True,2020,data/raw/united-states/geo-appendix.html
+N37D,OK,Cleveland,40027,True,2020,data/raw/united-states/geo-appendix.html
+N37D,OK,Grady,40051,True,2020,data/raw/united-states/geo-appendix.html
+N37D,OK,Lincoln,40081,True,2020,data/raw/united-states/geo-appendix.html
+N37D,OK,Logan,40083,True,2020,data/raw/united-states/geo-appendix.html
+N37D,OK,McClain,40087,True,2020,data/raw/united-states/geo-appendix.html
+N37D,OK,Oklahoma,40109,True,2020,data/raw/united-states/geo-appendix.html
+N37E,LA,Ascension,22005,True,2020,data/raw/united-states/geo-appendix.html
+N37E,LA,East Baton Rouge,22033,True,2020,data/raw/united-states/geo-appendix.html
+N37E,LA,East Feliciana,22037,True,2020,data/raw/united-states/geo-appendix.html
+N37E,LA,Iberville,22047,True,2020,data/raw/united-states/geo-appendix.html
+N37E,LA,Livingston,22063,True,2020,data/raw/united-states/geo-appendix.html
+N37E,LA,Pointe Coupee,22077,True,2020,data/raw/united-states/geo-appendix.html
+N37E,LA,St. Helena,22091,True,2020,data/raw/united-states/geo-appendix.html
+N37E,LA,West Baton Rouge,22121,True,2020,data/raw/united-states/geo-appendix.html
+N37E,LA,West Feliciana,22125,True,2020,data/raw/united-states/geo-appendix.html
+N37F,LA,Acadia,22001,True,2020,data/raw/united-states/geo-appendix.html
+N37F,LA,Iberia,22045,True,2020,data/raw/united-states/geo-appendix.html
+N37F,LA,Lafayette,22055,True,2020,data/raw/united-states/geo-appendix.html
+N37F,LA,St. Martin,22099,True,2020,data/raw/united-states/geo-appendix.html
+N37F,LA,Vermilion,22113,True,2020,data/raw/united-states/geo-appendix.html
+N37G,TX,Cameron,48061,True,2020,data/raw/united-states/geo-appendix.html
+N37H,TX,Armstrong,48011,True,2020,data/raw/united-states/geo-appendix.html
+N37H,TX,Carson,48065,True,2020,data/raw/united-states/geo-appendix.html
+N37H,TX,Oldham,48359,True,2020,data/raw/united-states/geo-appendix.html
+N37H,TX,Potter,48375,True,2020,data/raw/united-states/geo-appendix.html
+N37H,TX,Randall,48381,True,2020,data/raw/united-states/geo-appendix.html
+N37I,AR,Pope,05115,True,2020,data/raw/united-states/geo-appendix.html
+N37I,AR,Yell,05149,True,2020,data/raw/united-states/geo-appendix.html
+N37J,TX,Lamar,48277,True,2020,data/raw/united-states/geo-appendix.html
+S48A,AZ,Maricopa,04013,True,2020,data/raw/united-states/geo-appendix.html
+S48A,AZ,Pinal,04021,True,2020,data/raw/united-states/geo-appendix.html
+S48B,CO,Adams,08001,True,2020,data/raw/united-states/geo-appendix.html
+S48B,CO,Arapahoe,08005,True,2020,data/raw/united-states/geo-appendix.html
+S48B,CO,Broomfield,08014,True,2020,data/raw/united-states/geo-appendix.html
+S48B,CO,Clear Creek,08019,True,2020,data/raw/united-states/geo-appendix.html
+S48B,CO,Denver,08031,True,2020,data/raw/united-states/geo-appendix.html
+S48B,CO,Douglas,08035,True,2020,data/raw/united-states/geo-appendix.html
+S48B,CO,Elbert,08039,True,2020,data/raw/united-states/geo-appendix.html
+S48B,CO,Gilpin,08047,True,2020,data/raw/united-states/geo-appendix.html
+S48B,CO,Jefferson,08059,True,2020,data/raw/united-states/geo-appendix.html
+S48B,CO,Park,08093,True,2020,data/raw/united-states/geo-appendix.html
+N48C,NV,Clark,32003,True,2020,data/raw/united-states/geo-appendix.html
+N48D,UT,Juab,49023,True,2020,data/raw/united-states/geo-appendix.html
+N48D,UT,Utah,49049,True,2020,data/raw/united-states/geo-appendix.html
+N48E,AZ,Yuma,04027,True,2020,data/raw/united-states/geo-appendix.html
+N48F,UT,Washington,49053,True,2020,data/raw/united-states/geo-appendix.html
+S49A,CA,Los Angeles,06037,True,2020,data/raw/united-states/geo-appendix.html
+S49A,CA,Orange,06059,True,2020,data/raw/united-states/geo-appendix.html
+S49B,CA,Alameda,06001,True,2020,data/raw/united-states/geo-appendix.html
+S49B,CA,Contra Costa,06013,True,2020,data/raw/united-states/geo-appendix.html
+S49B,CA,Marin,06041,True,2020,data/raw/united-states/geo-appendix.html
+S49B,CA,San Francisco,06075,True,2020,data/raw/united-states/geo-appendix.html
+S49B,CA,San Mateo,06081,True,2020,data/raw/united-states/geo-appendix.html
+S49C,CA,Riverside,06065,True,2020,data/raw/united-states/geo-appendix.html
+S49C,CA,San Bernardino,06071,True,2020,data/raw/united-states/geo-appendix.html
+S49D,WA,King,53033,True,2020,data/raw/united-states/geo-appendix.html
+S49D,WA,Pierce,53053,True,2020,data/raw/united-states/geo-appendix.html
+S49D,WA,Snohomish,53061,True,2020,data/raw/united-states/geo-appendix.html
+S49E,CA,San Diego,06073,True,2020,data/raw/united-states/geo-appendix.html
+S49F,HI,Honolulu,15003,True,2020,data/raw/united-states/geo-appendix.html
+S49G,AK,Anchorage,02020,True,2020,data/raw/united-states/geo-appendix.html
+S49G,AK,Matanuska–Susitna,02170,True,2020,data/raw/united-states/geo-appendix.html
+N49H,OR,Clackamas,41005,True,2020,data/raw/united-states/geo-appendix.html
+N49H,OR,Columbia,41009,True,2020,data/raw/united-states/geo-appendix.html
+N49H,OR,Multnomah,41051,True,2020,data/raw/united-states/geo-appendix.html
+N49H,OR,Washington,41067,True,2020,data/raw/united-states/geo-appendix.html
+N49H,OR,Yamhill,41071,True,2020,data/raw/united-states/geo-appendix.html
+N49H,WA,Clark,53011,True,2020,data/raw/united-states/geo-appendix.html
+N49H,WA,Skamania,53059,True,2020,data/raw/united-states/geo-appendix.html
+N49I,CA,Sonoma,06097,True,2020,data/raw/united-states/geo-appendix.html
+N49J,CA,Butte,06007,True,2020,data/raw/united-states/geo-appendix.html
+N49K,WA,Grant,53025,True,2020,data/raw/united-states/geo-appendix.html

@@ -1,0 +1,25 @@
+area_code,name,area_type,basic_areas,source
+0000,U.S. city average,US,"N110, N120, N230, N240, N350, N360, N370, N480, N499, S11A, S12A, S12B, S23A, S23B, S24A, S24B, S35A, S35B, S35C, S35D, S35E, S37A, S37B, S48A, S48B, S49A, S49B, S49C, S49D, S49E, S49F, S49G",data/raw/united-states/geo-aggregation.html
+0100,Northeast,Census region,"N110, N120, S11A, S12A, S12B",data/raw/united-states/geo-aggregation.html
+0110,New England,Cenus division,"N110, S11A",data/raw/united-states/geo-aggregation.html
+0120,Middle Atlantic,Cenus division,"N120, S12A, S12B",data/raw/united-states/geo-aggregation.html
+0200,Midwest,Census region,"N230, N240, S23A, S23B, S24A, S24B",data/raw/united-states/geo-aggregation.html
+0230,East North Central,Cenus division,"N230, S23A, S23B",data/raw/united-states/geo-aggregation.html
+0240,West North Central,Cenus division,"N240, S24A, S24B",data/raw/united-states/geo-aggregation.html
+0300,South,Census region,"N350, N360, N370, S35A, S35B, S35C, S35D, S35E, S37A, S37B",data/raw/united-states/geo-aggregation.html
+0350,South Atlantic,Cenus division,"N350, S35A, S35B, S35C, S35D, S35E",data/raw/united-states/geo-aggregation.html
+0360,East South Central,Cenus division,N360,data/raw/united-states/geo-aggregation.html
+0370,West South Central,Cenus division,"N370, S37A, S37B",data/raw/united-states/geo-aggregation.html
+0400,West,Census region,"N480, N499, S48A, S48B, S49A, S49B, S49C, S49D, S49E, S49F, S49G",data/raw/united-states/geo-aggregation.html
+0480,Mountain,Cenus division,"N480, S48A, S48B",data/raw/united-states/geo-aggregation.html
+0490,Pacific,Cenus division,"N499, S49A, S49B, S49C, S49D, S49E, S49F, S49G",data/raw/united-states/geo-aggregation.html
+N000,Size Class B/C,Size class,"N110, N120, N230, N240, N350, N360, N370, N480, N499, S49F, S49G",data/raw/united-states/geo-aggregation.html
+N100,Northeast - Size Class B/C,Regional size class,"N110, N120",data/raw/united-states/geo-aggregation.html
+N200,Midwest - Size Class B/C,Regional size class,"N230, N240",data/raw/united-states/geo-aggregation.html
+N300,South - Size Class B/C,Regional size class,"N350, N360, N370",data/raw/united-states/geo-aggregation.html
+N400,West - Size Class B/C,Regional size class,"N480, N499, S49F, S49G",data/raw/united-states/geo-aggregation.html
+S000,Size Class A,Size class,"S11A, S12A, S12B, S23A, S23B, S24A, S24B, S35A, S35B, S35C, S35D, S35E, S37A, S37B, S48A, S48B, S49A, S49B, S49C, S49D, S49E",data/raw/united-states/geo-aggregation.html
+S100,Northeast - Size Class A,Regional size class,"S11A, S12A, S12B",data/raw/united-states/geo-aggregation.html
+S200,Midwest - Size Class A,Regional size class,"S23A, S23B, S24A, S24B",data/raw/united-states/geo-aggregation.html
+S300,South - Size Class A,Regional size class,"S35A, S35B, S35C, S35D, S35E, S37A, S37B",data/raw/united-states/geo-aggregation.html
+S400,West - Size Class A,Regional size class,"S48A, S48B, S49A, S49B, S49C, S49D, S49E",data/raw/united-states/geo-aggregation.html

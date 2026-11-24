@@ -1,0 +1,899 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Consumer Price Index (CPI) geographic revision for 2028 : U.S. Bureau of Labor Statistics</title>
+              
+	<!-- START include/global/head.stm -->
+	<script id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=DOL&subagency=BLS&yt=true"></script>
+
+	<script src="/javascripts/jquery-latest.js"></script>
+	<script src="/javascripts/bls-latest.js"></script>
+	<script src="/javascripts/jquery-tools.js"></script>
+	<script src="/javascripts/jquery-migrate-1.2.1.min.js"></script>
+	
+	<link rel="stylesheet" href="/assets/bootstrap/latest/bootstrap.min.css">
+	<script src="/assets/bootstrap/latest/popper.min.js"></script>
+	<script src="/assets/bootstrap/latest/bootstrap.min.js"></script>
+
+
+	<link rel="stylesheet" type="text/css" href="/stylesheets/bls_combined.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/bls_content.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/bls_tables.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/jquery-tools.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/bls_nr.css">
+    <!--[if lt IE 9]>
+		<link href="/stylesheets/ie8-styles.css" media="all" rel="Stylesheet" type="text/css"> 
+	<![endif]-->
+	<!--[if lt IE 8]>
+		<link href="/stylesheets/ie7-styles.css" media="all" rel="Stylesheet" type="text/css"> 
+	<![endif]-->
+	<!--[if lt IE 7]>
+		<link href="/stylesheets/ie6-styles.css" media="all" rel="Stylesheet" type="text/css"> 
+		<style>
+		body {
+			behavior:url(/stylesheets/csshover2.htc);
+		}
+		</style>			
+	<![endif]-->
+	<!--[if IE]>
+		<style>
+		body {
+			font-size: expression(1 / (screen.deviceXDPI / 96) * 84 + '%');
+		}
+		</style>	
+	<![endif]-->
+	<noscript>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/bls_noscript.css">
+	</noscript>
+	<!--  This means that the browser will (probably) render the width of the page at the width of its own screen. -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta http-equiv="x-ua-compatible" content="IE=Edge" />
+    <meta property="og:image" content="https://www.bls.gov/images/bls_emblem_2016.png" />
+	<meta property="og:image:alt" content="BLS Logo">
+	<meta name="robots" content="index, follow">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:site_name" content="Bureau of Labor Statistics">
+		<style>
+			td.gsc-table-cell-thumbnail{
+			display:none !important;
+			}
+		</style>
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+	<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
+	<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
+	<link rel="manifest" href="/manifest.json" />
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+	<meta name="theme-color" content="#ffffff" />
+    <!-- END include/global/head.stm -->
+<meta charset="UTF-8">
+
+  <link rel="stylesheet" type="text/css" href="/stylesheets/bls_programs.css">
+<style>
+img.image-style-large {
+    max-width: 100%;
+}
+	img.zoomable{
+		cursor:zoom-in;
+	}
+	.bootstrap .modal-dialog:has(img) img.zoomable{
+		cursor:default;
+	}
+	.zoomable-image-modal .modal-header {
+		padding: 0rem 1rem;
+		background-color: #ccc;
+	}
+	.zoomable-image-modal .modal-dialog{
+		max-width: 95vw;
+	}
+	.zoomable-image-modal .modal-content {
+		max-height: 95vh;
+		overflow: auto;
+	}
+</style>
+<noscript>
+	<style>
+
+		#programs-banner.generic #program-browse{
+			display: block;
+			top: 3px;
+			width:100%;
+		}
+		#programs-banner.generic #program-browse > div{
+			display: block;
+			position: static;
+			border: none;
+			border-top: 1px solid #fff;
+			margin: 10px 0 0;
+		}
+	</style>
+</noscript>
+
+<script>
+$(document).ready(function(){
+	/* Nav, tabbable*/
+	$(".main-content #programs-banner-nav > li a").focus(function(){
+		var parentUL = $(this).parent().parent();
+		$(".focus").removeClass("focus");
+		$(this).parent().addClass("focus");
+		if(parentUL.find("span").size() == 1){
+			parentUL.parent().find("ul").parent().addClass("focus");
+		};
+	});
+	$(".main-content #programs-banner-nav a").blur(function(){
+		setTimeout(function(){if( !$(document.activeElement).parents("#programs-banner-nav").size()){$(".focus").removeClass("focus");};},100);
+	});
+	
+	$(".main-content #programs-banner-nav li").click(function(e){
+		e.stopPropagation();
+		if($(this).find("a").attr("target") == "_blank"){
+			window.open($(this).find("a").attr("href"));
+		}else{
+			window.location = $(this).find("a").attr("href");
+		}
+	});
+	$(".main-content #programs-banner-nav li a").click(function(e){
+		$(this).blur();
+		e.stopPropagation();
+		e.stopImmediatePropagation();
+	});
+	
+
+	$("#programs-banner.generic #program-browse > a").focus(function(){
+		$(this).parent().addClass("focused");
+		$("#programs-banner.generic #program-browse").hover(function(){
+			$(this).removeClass("focused");
+			$("#programs-banner.generic #program-browse *").blur();
+		});
+	});			
+	$("#programs-banner.generic #program-browse a").each(function(){
+		$(this).blur(function(){
+			setTimeout(function(){
+				if($(document.activeElement).parents("#program-browse").length < 1 ){
+					$("#programs-banner.generic #program-browse").removeClass("focused")
+				};
+			});
+		});
+	});
+
+	/*Notices Archive Page, load*/
+	$(".main-content #archive-left-side .notice-items").hide();
+	var archiveLeftShow = $(".main-content #archive-left-side .notice-items")[0];
+	$(archiveLeftShow).show();
+	var archiveRightCurrent = $(".main-content #archive-right-side a")[0];
+	$(archiveRightCurrent).addClass("current");
+	/*Notices Archive Page, fcns*/
+	$(".main-content #archive-right-side a").click(function(e){
+		e.preventDefault();
+		$(".main-content #archive-right-side a.current").removeClass("current");
+		$(this).addClass("current");
+		$(".main-content #archive-left-side .notice-items").hide();
+		$(".main-content #archive-left-side #notices-"+$(this).text()).show();
+	});	
+
+	$('img.zoomable').wrap('<a href="#" data-toggle="modal" data-target=".zoomable-image-modal"></a>')
+	if($('img.zoomable').length){
+		$("body").append(`<div class="bootstrap"><div class="modal zoomable-image-modal" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+				<span class="modal-title"></span>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				</div>
+				<div class="modal-body">
+				<p>Modal body text goes here.</p>
+				</div>
+			</div>
+			</div>
+		</div></div>`)
+		$(".zoomable-image-modal").on('shown.bs.modal', function (event) {
+			let targetEl = $(event.relatedTarget)
+			$(this).find(".modal-body").html(targetEl.html());
+			$(this).find(".modal-body").focus();
+		})
+	}
+
+});
+</script>  
+
+
+ 
+      </head>
+  <body class="toolbar-icon-10 toolbar-loading">
+            <div class="page-wrapper dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+          
+
+<!-- OneColHeadBasic Begin: Name -->
+
+<!-- Header Filename: "/include/cpi/cpi_header_cms.txt" -->
+
+<!--no_index_start-->
+
+<!-- DOL BANNER BEGIN -->
+<!-- DOL BANNER START -->
+<header > <!-- Header is closed at the end of BLS banner -->
+		<a class="skiplink" href="#startcontent">Skip to Content</a>
+
+		<div id="usa-banner-wrapper">
+<div id="usa-banner" class="bootstrap standard-width">
+	<div class="content">
+	<div class="USA-flag-link">
+	<img src="https://www.dol.gov/themes/opa_theme/img/flag-favicon-57.png" alt="U.S. flag">
+	<p>An official website of the United States government 
+	  
+	<button type="button" data-toggle="collapse" data-target="#usaBanner" aria-expanded="false" aria-controls="usaBanner">Here is how you know <span class="oi" data-glyph="chevron-bottom"></span></button>
+	</p>
+	</div>
+		<a href="https://www.dol.gov/" id="dolHolder" class="dolHolder" target="_blank"><img src="https://www.dol.gov/themes/opa_theme/img/logo-primary.svg" alt="Department of Labor Logo"/>  United States Department of Labor</a>
+	</div>
+	
+	<div class="collapse " id="usaBanner">	
+	<div class="row">
+	<div class="col-md-6">
+		<img src="https://www.dol.gov/themes/opa_theme/img/icon-dot-gov.svg" alt="Dot gov">
+
+		<p>
+			<strong>The .gov means it's official.</strong>
+			<br> Federal government websites often end in .gov or .mil. Before sharing sensitive information,
+			make sure you're on a federal government site.
+		</p>
+	</div>
+
+	<div class="col-md-6">
+	<img class="usa-banner-icon usa-media_block-img" src="https://www.dol.gov/themes/opa_theme/img/icon-https.svg" alt="Https">
+	
+		<p>
+			<strong>The site is secure.</strong>
+			<br> The
+			<strong>https://</strong> ensures that you are connecting to the official website and that any
+			information you provide is encrypted and transmitted securely.
+		</p>
+	</div>
+	</div>
+	</div>		
+</div>
+</div>
+
+
+
+<!-- DOL BANNER END -->
+
+
+<!-- DOL BANNER END -->
+<!-- BLS BANNER BEGIN -->
+
+<div id="bls-banner-wrapper">
+<div id="top"></div>
+		<div class="bootstrap standard-width">
+<div>
+  <div id="bls-banner" class="row">
+    <div id="bls-banner-emblem" class="col-sm-12 col-md-7">
+      <a href="https://www.bls.gov/">U.S. Bureau of Labor Statistics</a>
+    </div>
+    <div id="bls-banner-right" class="col-sm-12 col-md-5 d-none d-md-block">
+<div id="bls-banner-links"><a href="/schedule/news_release/">Release Calendar</a> | <a href="javascript:window.open('https://public.govdelivery.com/accounts/USDOLBLS/subscriber/new ','Popup','width=800,height=500,toolbar=no,scrollbars=yes,resizable=yes'); void('');" onclick="window.status='Subscribe'; return true" onmouseover="window.status='Subscribe'; return true" onmouseout="window.status=''; return true" id="social-email-1" title="Subscribe to BLS E-mail Updates" aria-label="Subscribe to BLS E-mail Updates">Subscribe</a></div> 
+      <div id="bls-banner-search1" class="bls-banner-search">
+        <form method="get" action="/search/query">
+		  <label for="bls-banner-search-submit1" class="invisible">Search button</label>
+          <input type="image" src="/images/buttons/search_button_blue_16.png" name="term" id="bls-banner-search-submit1" alt="BLS Search Submit" title="Submit" >
+		  <label for="bls-banner-search-input1" class="invisible">Search:</label>
+          <input name="query" type="text" id="bls-banner-search-input1" value="Search BLS.gov" title="Search Input" onclick="this.value=''; this.onclick = null;">
+
+        </form>
+      </div>
+    </div>
+    <div class="clearfloat"></div>
+  </div>
+</div>
+</div>
+</div>
+</header> <!-- Header is opened at the begining of DOL banner -->
+
+<!-- BLS BANNER END -->
+<!-- MAIN NAV BEGIN -->
+
+<div id="main-nav-wrapper">
+	<div id="main-nav-container">
+		<div>
+			<div class="bootstrap standard-width">
+<nav aria-label="top-level navigation menu" class="navbar navbar-expand-md">
+  
+  
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation menu">
+    <span class="navbar-toggler-icon">Menu</span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  
+
+
+<ul class="nojs navbar-nav mr-auto">
+     <li class="dropdownSearch"><div id="bls-banner-search" class="dropdown-search">
+        <form method="get" action="/search/query">
+		  <label for="bls-banner-search-submit" class="invisible">Search button</label>
+          <input type="image" src="/images/buttons/search_button_blue_20.png" name="term" id="bls-banner-search-submit" alt="BLS Search Submit" title="Submit">
+		  <label for="bls-banner-search-input" class="invisible">Search:</label>
+          <input name="query" type="text" id="bls-banner-search-input" value="Search BLS.gov" title="Search Input" onclick="this.value=''; this.onclick = null;">
+
+        </form>
+      </div>
+	
+	  <div class="bls-banner-links-mob"><a href="/schedule/news_release/">Release Calendar</a> | <a href="javascript:window.open('https://public.govdelivery.com/accounts/USDOLBLS/subscriber/new ','Popup','width=800,height=500,toolbar=no,scrollbars=yes,resizable=yes'); void('');" onclick="window.status='Subscribe'; return true" onmouseover="window.status='Subscribe'; return true" onmouseout="window.status=''; return true" id="social-email-2" title="Subscribe to BLS E-mail Updates" aria-label="Subscribe to BLS E-mail Updates">Subscribe</a></div>
+	</li>
+    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="https://www.bls.gov/" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home <span class="circle-arrow"></span></a>
+        <div class="dropdown-menu"><!-- ********************************************** Begin Home Tab LIST ****************************************** -->
+<!-- 1st column -->
+<div class="main-nav-submenu" id="submenu-home">
+	<ul class="main-nav-submenu-inn">
+	
+		<li class="heading"><a href="/about-bls/home.htm" aria-label="About BLS">About BLS</a></li>
+		<li><a href="/bls/history/home.htm" aria-label="BLS History">History</a></li>	
+		<li><a href="/bls/senior_staff/home.htm" aria-label="Our Leadership">Our Leadership</a></li>
+		<li><a href="/bls/bls_budget_and_performance.htm" aria-label="Budget and Performance">Budget and Performance</a></li>		
+		<li><a href="/bls/faqs.htm" aria-label="Questions and Answers">Questions and Answers</a></li>	
+		<li><a href="/bls/topicsaz.htm" aria-label="A-Z Index">A-Z Index</a></li>	
+		<li><a href="/bls/glossary.htm" aria-label="Glossary">Glossary</a></li>	
+		<li><a href="/bls/bls-speakers/" aria-label="BLS Speakers Available">BLS Speakers Available</a></li>
+		<li><a href="/errata/" aria-label="Errata">Errata</a></li>  				
+		<li><a href="/bls/contact.htm" aria-label="Contact BLS">Contact BLS</a></li>	
+
+	</ul>	
+	<!-- 2nd column -->	
+<ul class="main-nav-submenu-inn">	
+		<li class="heading"><a href="/bls/overview.htm" aria-label="Overview of BLS Statistics">Overview of BLS Statistics</a></li>
+		<li><a href="/information-guide/home.htm" aria-label="Guide to Programs & Services">Guide to Programs &amp; Services</a></li>
+		<li><a href="/bls/demographics.htm" aria-label="Demographics Data">Demographics</a></li>
+		<li><a href="/bls/industry.htm" aria-label="Statistics by Industries">Industries</a></li>
+		<li><a href="/bls/business.htm" aria-label="Statistics on Business Costs">Business Costs</a></li>
+		<li><a href="/bls/occupation.htm" aria-label="Statistics by Occupations">Occupations</a></li>
+		<li><a href="/bls/geography.htm" aria-label="Statistics by Geography">Geography</a></li>	
+	
+	</ul>
+	<!-- 3rd column -->
+	<ul class="main-nav-submenu-inn">
+		<li class="heading"><a href="/audience/" aria-label="Resources For">Resources For</a></li>
+		<li><a href="/audience/business.htm" aria-label="Resources for Business Leaders">Business Leaders</a></li>
+		<li><a href="/audience/consumers.htm" aria-label="Resources for Consumers">Consumers</a></li>
+		<li><a href="/audience/developers.htm" aria-label="Developers site">Developers</a></li>
+		<li><a href="/audience/economists.htm" aria-label="Economists or Economic Analyst">Economists</a></li>
+		<li><a href="/audience/investors.htm" aria-label="Resources for Financial Investors">Investors</a></li>
+		<li><a href="/audience/jobseekers.htm" aria-label="Resources for Jobseekers">Jobseekers</a></li>
+		<li><a href="/audience/media.htm" aria-label="Media">Media</a></li>
+		<li><a href="/audience/policy.htm" aria-label="Resources for Public Policymakers">Public Policymakers</a></li>
+		<li><a href="/audience/researcher.htm" aria-label="Researcher">Researcher</a></li>		
+		<li><a href="/audience/students.htm" aria-label="Resources for Students & Teachers">Students &amp; Teachers</a></li>
+		<li><a href="/respondents/" aria-label="Survey Respondents">Survey Respondents</a></li>
+	</ul>
+</div>
+
+<!-- ***********************************************End Home Tab LIST ******************************************** --> 
+
+</div>
+    </li>
+    <li class="nav-item dropdown active"><a class="nav-link dropdown-toggle" href="/bls/proghome.htm" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Subjects <span class="circle-arrow"></span></a>
+        <div class="dropdown-menu"><!-- ************************************* Begin SUBJECTS TAB list ****************************************** -->
+<!-- 1st column -->
+<div class="main-nav-submenu" id="submenu-programs">
+	<ul class="main-nav-submenu-inn">
+		<li class="heading"><a href="/bls/inflation.htm" aria-label="Statistics on Inflation & Prices">Inflation &amp; Prices</a></li>
+		<li><a href="/cpi/" aria-label="Consumer Price Index ">Consumer Price Index</a></li>
+		<li><a href="/ppi/" aria-label="Producer Price Indexes">Producer Price Indexes</a></li>
+		<li><a href="/mxp/" aria-label="Import/Export Price Indexes">Import/Export Price Indexes</a></li>
+		<li><a href="/bls/escalation.htm" aria-label="Contract Escalation">Contract Escalation</a></li>
+		<li><a href="/pir/" aria-label="Price Index Research">Price Index Research</a></li>
+		<li class="heading"><a href="/bls/wages.htm" aria-label="Statistics on Pay & Benefits">Pay &amp; Benefits</a></li>
+		<li><a href="/eci/" aria-label="Employment Cost Index">Employment Cost Index</a></li>
+		<li><a href="/ecec/home.htm" aria-label="Employer Costs for Employee Compensation">Employer Costs for Employee Compensation</a></li>
+						<li><a href="https://www.bls.gov/oes/" aria-label="Wage Data by Occupation">Wage Data by Occupation</a></li>
+		<li><a href="/cps/earnings.htm#demographics" aria-label="Earnings by Demographics">Earnings by Demographics</a></li>
+		<li><a href="/ces/" aria-label="Earnings by Industry">Earnings by Industry</a></li>
+		<li><a href="https://www.bls.gov/cew/" aria-label="County Wages">County Wages</a></li>  <!--full path is needed since they have a folder on the data server-->
+		<li><a href="/ebs/" aria-label="Employee Benefits Survey">Benefits</a></li>
+		<li><a href="/mwe/" aria-label="Modeled Wage Estimates">Modeled Wage Estimates</a></li>		
+		<li><a href="/crp/" aria-label="Compensation Research & Program Development">Compensation Research</a></li>
+		<li><a href="/wsp/" aria-label="Strikes & Lockouts">Strikes &amp; Lockouts </a></li>
+		<li><a href="/wrp/" aria-label="Wage Records from Unemployment Insurance">Wage Records from Unemployment Insurance</a></li>
+		<li class="heading"><a href="/ors/" aria-label="Occupational Requirements Survey">Occupational Requirements</a></li>		
+	</ul>
+	<!-- 2nd column -->
+	<ul class="main-nav-submenu-inn">
+		<li class="heading"><a href="/bls/unemployment.htm" aria-label="Statistics on Unemployment">Unemployment</a></li>
+		<li><a href="/cps/" aria-label="National Unemployment Rate">National Unemployment Rate </a></li>
+		<li><a href="/lau/" aria-label="State & Local Unemployment Rates">State &amp; Local Unemployment Rates </a></li>
+		<li><a href="/ers/" aria-label="Unemployment Research">Unemployment Research</a></li>
+		<li class="heading"><a href="/bls/employment.htm" aria-label="Statistics on Employment">Employment</a></li>
+		<li><a href="/ces/" aria-label="National Employment Statistics">National Employment </a></li>
+		<li><a href="/sae/" aria-label="State & Local Employment, Hours, and Earnings">State &amp; Local Employment </a></li>
+		<li><a href="https://www.bls.gov/cew/" aria-label="County Employment">County Employment </a></li> <!--full path is needed since they have a folder on the data server-->
+		<li><a href="/cps/" aria-label="Worker Characteristics">Worker Characteristics </a></li>
+		<li><a href="/air/" aria-label="American Indian Report">American Indian Report</a></li>
+		<li><a href="/emp/" aria-label="Employment Projections">Employment Projections </a></li>
+		<li><a href="/jlt/" aria-label="Job Openings & Labor Turnover Survey">Job Openings &amp; Labor Turnover Survey </a></li>
+		<li><a href="/brs/" aria-label="Business Response Survey">Business Response Survey</a></li>
+		<li><a href="https://www.bls.gov/oes/" aria-label="Employment by Occupation">Employment by Occupation </a></li>
+		<li><a href="/nls/" aria-label="Work Experience Over Time">Work Experience Over Time </a></li>
+		<li><a href="/bdm/" aria-label="Business Employment Dynamics">Business Employment Dynamics </a></li>
+		<li><a href="/fdi/" aria-label="Foreign Direct Investment">Foreign Direct Investment </a></li>
+		<li><a href="/ers/" aria-label="Employment Research and Program Development">Employment Research</a></li>
+		<li class="heading"><a href="/iif/" aria-label="Workplace Injuries, Illnesses, and Fatalities">Workplace Injuries</a></li>
+	</ul>
+	<!-- 3rd column -->
+	<ul class="main-nav-submenu-inn">
+		<li class="heading"><a href="/bls/productivity.htm" aria-label="Productivity Statistics">Productivity</a></li>
+		<li><a href="/productivity/" aria-label="Labor and Total Factor Productivity">Labor and Total Factor Productivity</a></li>
+		<li><a href="/dpr/" aria-label="Productivity Research and Program Development">Productivity Research</a></li>
+		<li class="heading"><a href="/bls/spending.htm" aria-label="Statistics on Spending & Time Use">Spending &amp; Time Use</a></li>
+		<li><a href="/cex/" aria-label="Consumer Expenditures Surveys">Consumer Expenditures </a></li>
+		<li><a href="/tus/" aria-label="How Americans Spend Time Survey">How Americans Spend Time</a></li>			
+		<li class="heading"><a href="/bls/international.htm" aria-label="International Data and Technical Cooperation">International</a></li>
+		<li><a href="/itc/" aria-label="International Technical Cooperation">International Technical Cooperation</a></li>
+		<li><a href="/mxp/" aria-label="Import/Export Price Indexes">Import/Export Price Indexes</a></li>
+		<li class="heading"><a href="/regions/" aria-label="Geographic Information">Geographic Information</a></li>
+		<li><a href="/regions/northeast/" aria-label="Northeast (Boston-New York) Information Office">Northeast (Boston-New York)</a></li>
+		<li><a href="/regions/mid-atlantic/" aria-label="Mid-Atlantic (Philadelphia) Information Office">Mid-Atlantic (Philadelphia)</a></li>
+		<li><a href="/regions/southeast/" aria-label="Southeast (Atlanta) Information Office">Southeast (Atlanta)</a></li>
+		<li><a href="/regions/midwest/" aria-label="Midwest (Chicago) Information Office">Midwest (Chicago)</a></li>
+		<li><a href="/regions/southwest/" aria-label="Southwest (Dallas) Information Office">Southwest (Dallas)</a></li>
+		<li><a href="/regions/mountain-plains/" aria-label="Mountain-Plains (Kansas City) Information Office">Mountain-Plains (Kansas City)</a></li>
+		<li><a href="/regions/west/" aria-label="West (San Francisco) Information Office">West (San Francisco)</a></li>
+	</ul>
+</div>
+<!-- **************************************End SUBJECT AREAS ******************************************** --> 
+	</div>	
+    </li>
+    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="/data/" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Data Tools <span class="circle-arrow"></span></a>
+        <div class="dropdown-menu"><!-- ******************************************** Begin DATA TOOLS LIST ****************************************** -->
+<div class="main-nav-submenu"  id="submenu-data">
+    <ul class="main-nav-submenu-inn">
+        <li class="heading"><a href="/data/tools.htm" aria-label="Data Retrieval Tools Databases, Tables & Calculators by Subject">Data Retrieval Tools</a></li>
+		<li><a href="https://data.bls.gov/toppicks?code=&survey=bls" aria-label="BLS Popular Series Top Picks">BLS Popular Series</a></li>
+		<li><a href="https://data.bls.gov/series-report" aria-label="Series Report">Series Report</a></li>
+		<li><a href="/data/home.htm" aria-label="Top Picks, One Screen, Multi-Screen, and Maps" >Top Picks, One Screen, Multi-Screen, and Maps</a></li>
+		<li><a href="https://data.bls.gov/dataQuery/search" aria-label="Data Finder">Data Finder</a></li>
+		<li><a href="/developers/home.htm" aria-label="Public Data API Programming Interface">Public Data API</a></li>
+
+    </ul>
+    <!-- 2nd column -->
+    <ul class="main-nav-submenu-inn">
+        <li class="heading"><a href="/data/apps.htm" aria-label="Charts and Applications">Charts and Applications</a></li>
+		<li><a href="/charts/home.htm" aria-label="Charts for Economic News Releases">Charts for Economic News Releases</a></li>	
+		<li><a href="/data/inflation_calculator.htm" aria-label="CPI Inflation Calculator">CPI Inflation Calculator</a></li>	
+		<li><a href="https://data.bls.gov/iirc/" aria-label="Injury and Illness Calculator">Injury and Illness Calculator</a></li>		
+		<li><a href="https://data.bls.gov/apps/compensation-comparison-matrix/home.htm" aria-label="Pay Measure Comparison">Pay Measure Comparison</a></li>
+		<li><a href="https://data.bls.gov/apps/demographic-comparison-matrix/home.htm" aria-label="Demographic Data Sources">Demographic Data Sources</a></li>
+		<li><a href="https://data.bls.gov/apps/covid-dashboard/home.htm" aria-label="COVID-19 Economic Trends">COVID-19 Economic Trends</a></li>
+		<li><a href="https://data.bls.gov/apps/industry-productivity-viewer/home.htm" aria-label="Industry Productivity Viewer" >Industry Productivity Viewer</a></li>
+		<li><a href="https://data.bls.gov/cew/apps/data_views/data_views.htm#tab=Tables" aria-label="Employment and Wages Data Viewer">Employment and Wages Data Viewer</a></li>
+		<li><a href="https://data.bls.gov/cew/apps/bls_naics/bls_naics_app.htm" aria-label="Industry Finder from the Quarterly Census of Employment and Wages">Industry Finder from the Quarterly Census of Employment and Wages</a></li>
+	
+    </ul>
+	<!-- 3rd column -->
+	<ul class="main-nav-submenu-inn">
+	    <li class="heading"><a href="/data/tables.htm" aria-label="Customized Tables">Customized Tables</a></li>
+		<li><a href="/eag/eag.us.htm" aria-label="U.S. Economy at a Glance">U.S. Economy at a Glance</a></li>
+		<li><a href="/eag/home.htm" aria-label="Regions, States & Areas at a Glance">Regions, States &amp; Areas at a Glance</a></li>
+		<li><a href="/iag/home.htm" aria-label="Industry at a Glance">Industry at a Glance</a></li>			
+		<li><a href="https://download.bls.gov/pub/time.series/" aria-label="Text Files">Text Files</a></li>
+		<li><a href="/data/#historical-tables" aria-label="Historical News Release Tables">News Release Tables</a></li>
+		
+		<li class="heading"><a href="/bls/moredata.htm" aria-label="More Sources of Data">More Sources of Data</a></li>
+		<li><a href="/rda/home.htm" aria-label="Bureau of Labor Statistics Restricted Data Access">Restricted Data Access</a></li>
+		<li><a href="/data/archived.htm" aria-label="Discontinued Databases">Discontinued Databases </a></li>
+		<li><a href="/help/hlpform1.htm" aria-label="Questions & Answers regarding Bureau of Labor Statistics website data retrieval tools">Questions &amp; Answers</a></li>
+		<li><a href="/help/notice.htm" aria-label="Special Notices">Special Notices </a></li>	
+	</ul>
+</div>
+<!-- *********************************************End DATABASES and TOOLS LIST ******************************************** --></div>
+    </li>
+    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="/opub/" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Publications <span class="circle-arrow"></span></a>
+        <div class="dropdown-menu"><!-- ********************************************** Begin PUBLICATIONS LIST ****************************************** -->
+<div class="main-nav-submenu"  id="submenu-pubs">    
+    <ul class="main-nav-submenu-inn"> 
+		<li class="heading"><a href="/opub/" aria-label="Latest Publications">Latest Publications</a></li>
+		<li><a href="/opub/ted/" aria-label="The Economics Daily">The Economics Daily</a></li>
+		<li><a href="/opub/mlr/" aria-label="Monthly Labor Review">Monthly Labor Review</a></li>
+		<li><a href="/opub/btn/" aria-label="Beyond the Numbers">Beyond the Numbers</a></li>
+		<li><a href="/spotlight/" aria-label="Spotlight on Statistics">Spotlight on Statistics</a></li>
+		<li><a href="/opub/reports" aria-label="Bureau of Labor Statistics Reports">Reports</a></li>
+		<li><a href="/video/" aria-label="Videos">Videos</a></li>
+		<li><a href="/careeroutlook/" aria-label="Career Outlook">Career Outlook</a></li>		
+    </ul>
+    <!-- 2nd column -->
+    <ul class="main-nav-submenu-inn">
+		<li><a href="/ooh/" aria-label="Occupational Outlook Handbook">Occupational Outlook Handbook</a></li>
+		<li><a href="/opub/geographic-profile/" aria-label="Geographic Profile">Geographic Profile</a></li>
+		<li><a href="/opub/hom/" aria-label="Handbook of Methods">Handbook of Methods</a></li>
+		<li><a href="/osmr/research-papers/" aria-label="Research Papers - Office of Survey Methods Research">Research Papers</a></li>
+		<li><a href="/opub/copyright-information.htm" aria-label="Copyright Information">Copyright Information</a></li>
+		<li><a href="/opub/opbinfo.htm" aria-label="Contact & Help">Contact &amp; Help </a></li>
+		<li><a href="/opub/update.htm" aria-label="Weekly Update">Weekly Update</a></li>		
+    </ul>
+</div>
+<!-- ***********************************************End PUBLICATIONS LIST ******************************************** --> </div>
+    </li>
+    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="/bls/newsrels.htm" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Economic Releases <span class="circle-arrow"></span></a>
+        <div class="dropdown-menu"><!-- ********************************************** Begin ECONOMIC RELEASES LIST ****************************************** -->
+<!-- 1st column -->
+
+<div class="main-nav-submenu" id="submenu-news">
+    <ul class="main-nav-submenu-inn">
+        <li class="heading"><a href="/bls/newsrels.htm#latest-releases" aria-label="Latest Releases">Latest Releases</a></li>
+		<li class="heading"><a href="/bls/newsrels.htm#major" aria-label="Major Economic Indicators">Major Economic Indicators</a></li>
+		<li class="heading"><a href="/schedule/news_release/" aria-label="Schedules for news Releases">Schedules for news Releases</a></li>
+		<li><a href="/schedule/" aria-label="Release Calendar By Month">By Month</a></li>
+		<li><a href="/schedule/schedule/by_prog/all_sched.htm" aria-label="Release Calendar By News Release">By News Release</a></li>
+		<li><a href="/schedule/news_release/current_year.asp" aria-label="Release Calendar Current Year">Current Year</a></li>
+		<li><a href="/bls/archived_sched.htm" aria-label="Schedules for Selected Bureau of Labor Statistics Economic News Releases for Prior Years">Prior Years</a></li>
+		<li class="heading"><a href="/bls/news-release/" aria-label="Archived News Releases">Archived News Releases</a></li>
+    </ul>
+    <!-- 2nd column -->
+    <ul class="main-nav-submenu-inn">
+        <li class="heading"><a href="/bls/newsrels.htm#OEUS" aria-label="Employment & Unemployment">Employment &amp; Unemployment</a></li>
+		<li><a href="/bls/newsrels.htm#OEUS" aria-label="Monthly">Monthly</a></li>
+		<li><a href="/bls/newsrels.htm#OEUS" aria-label="Quarterly, annual, and other">Quarterly, annual, and other</a></li>
+		<li class="heading"><a href="/bls/newsrels.htm#OPLC" aria-label="Inflation & Prices"> Inflation &amp; Prices</a></li>
+		<li class="heading"><a href="/bls/newsrels.htm#OCWC" aria-label="Pay & Benefits & Workplace Injuries">Pay &amp; Benefits &amp; Workplace Injuries</a></li>
+		<li class="heading"><a href="/bls/newsrels.htm#OPT" aria-label="Productivity & Technology">Productivity &amp; Technology</a></li>
+		<li class="heading"><a href="/bls/newsrels.htm#OEP" aria-label="Employment Projections">Employment Projections</a></li>
+		<li class="heading"><a href="/bls/newsrels.htm#NEWS" aria-label="Regional News Releases">Regional News Releases</a></li>
+    </ul>
+</div></div>
+    </li>
+    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="/k12/" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Classroom <span class="circle-arrow"></span></a>
+        <div class="dropdown-menu"><!-- ********************************************** Begin Students Tab LIST ****************************************** -->
+<div class="main-nav-submenu" id="submenu-students">
+	<ul class="main-nav-submenu-inn">
+		<li class="heading"><a href="/k12/" aria-label="K-12 Student & Teacher Resources">K-12 Student &amp; Teacher Resources</a></li>		
+        <li><a href="/k12/games/" aria-label="Games & Quizzes">Games &amp; Quizzes</a></li>
+		<li><a href="/k12/students/" aria-label="Student's Desk">Student&apos;s Desk</a></li>
+		<li><a href="/k12/teachers/" aria-label="Teacher's Desk">Teacher&apos;s Desk</a></li>
+		<li><a href="/k12/faq.htm" aria-label="Questions & Answers">Questions &amp; Answers</a></li>
+    </ul>
+</div>
+<!-- ***********************************************End Students Tab LIST ******************************************** --></div>
+    </li>
+    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="/beta/" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Beta <span class="circle-arrow"></span></a>
+        <div class="dropdown-menu"><!-- ***********************************************Start BETA LIST ******************************************** -->
+
+<div class="main-nav-submenu" id="submenu-beta">
+  <ul class="main-nav-submenu-inn">
+    <li class="heading"><a href="/beta/redesigned-news-releases.htm" aria-label="Redesigned News Releases">Redesigned News Releases</a></li>
+  </ul>
+</div>
+<!-- ***********************************************End BETA LIST ******************************************** --></div>
+    </li>
+</ul>
+
+
+  </div>
+</nav>
+</div>
+
+		</div>
+		<div class="clearfloat"></div>
+	</div>
+</div>
+
+
+<!-- MAIN NAV END -->
+
+<!-- WRAPPER TOP BEGIN -->
+	<div id="wrapper-outer" role="main"><div id="startcontent" class="hidden"></div>
+		<div id="wrapper">
+			<div id="container">
+<!-- WRAPPER TOP END -->
+<!-- SUBDOMAIN TITLE TOP BEGIN -->
+
+<!-- 1COL CMS LAYOUT COL1 BEGIN -->	
+
+<div class="main-content">
+
+<!-- 1COL CMS LAYOUT COL1 END -->
+
+
+
+<!--no_index_end-->
+
+<!-- OneColHeadBasic End -->
+
+
+        
+    
+        
+      
+         <div id="programs-banner">
+<div id="program-title" aria-level="1" role="heading">Consumer Price Index</div><div id="social-search-box"><div class="article-tools-box social-media"><span class="social-media"><span>SHARE ON:</span><a href="javascript:void(0);" class="share_facebook"><img alt="share on facebook" src="/images/icons/facebook.png" title="Facebook"></a><a href="javascript:void(0);" class="share_twitter"><img alt="share on twitter" src="/images/icons/twitter.png" title="Twitter"></a><a href="javascript:void(0);" class="share_linkedin"><img alt="share on linkedin" src="/images/icons/linkedin.png" title="LinkedIn"></a></span></div><form method="get" id="search-secondary-nav-form" action="/search/query"><input type="hidden" value="https://www.bls.gov/cpi" id="search-secondary-nav-category" name="prefix"><label for="search-secondary-nav-query" class="invisible">Search Consumer Price Index</label><input type="text" onclick="this.value=''; this.onclick = null;" value="Search Consumer Price Index" id="search-secondary-nav-query" name="query"><input type="submit" value="Go" id="search-secondary-nav-submit" name="submit"></form></div><div class="clearfloat"></div><style>.layout-wide #dol-bar-content, .layout-wide #bls-banner, .layout-wide #main-nav-container{margin:0 !important;}.layout-wide #wrapper, .layout-wide #footer-links-wrapper{max-width:100% !important;}.layout-wide #programs-banner{width:923px !important;}div.p{font-family: Tahoma, Arial, Helvetica, sans-serif;margin: 0 0 1em 0 !important;padding: 0;font-size: 100%;color: #333;line-height: 160%;}</style>
+
+<div class="bootstrap standard-width">
+<nav class="navbar navbar-expand-md programsNavBar " aria-label="secondary-nav">
+  <ul class="navbar-nav" role="menu">
+			        					<li class="nav-item" role="none">
+        																						<a role="menuitem" class="nav-link home progNav" href="/cpi/" aria-label="CPI Home Consumer Price Index homepage">CPI Home</a>
+				</li>        							        					<li class="nav-item dropdown" role="none">
+        																						<a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle nav-link publications progNav" href="javascript:">CPI Publications</a>
+				        			        	        		<div class="dropdown-menu" role="menu">                                								<a class="dropdown-item heading" role="menuitem" href="/cpi/publications-overview.htm">Publications Overview</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" href="/cpi/news.htm">News Releases</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" href="/cpi/factsheets/">Factsheets</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" href="/cpi/videos.htm">Videos</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" href="/cpi/additional-publications/">Additional Publications</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" target="_blank" href="https://public.govdelivery.com/accounts/USDOLBLS/subscribers/new?topic_id=USDOLBLS_003">Subscriptions</a>
+								</div></li>        													        					<li class="nav-item dropdown" role="none">
+        																						<a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle nav-link data progNav" href="javascript:">CPI Data</a>
+				        			        	        		<div class="dropdown-menu" role="menu">                                								<a class="dropdown-item heading" role="menuitem" href="/cpi/data-overview.htm">Data Overview</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" href="/cpi/data.htm">Databases</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" target="_blank" href="https://www.bls.gov/charts/consumer-price-index/consumer-price-index-by-category.htm">Interactive Charts</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" href="/cpi/tables/">Tables</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" href="/cpi/research-series/">Research</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" href="/cpi/regional-resources.htm">Regional Resources</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" href="/cpi/latest-numbers.htm">Latest Numbers</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" href="https://www.bls.gov/bls/erratabysubject.htm">Data Corrections</a>
+								</div></li>        															        					<li class="nav-item dropdown" role="none">
+        																						<a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle nav-link methods progNav" href="javascript:">CPI Methods</a>
+				        			        	        		<div class="dropdown-menu" role="menu">                                								<a class="dropdown-item heading" role="menuitem" href="/cpi/methods-overview.htm">Methods Overview</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" target="_blank" href="https://www.bls.gov/opub/hom/cpi/">Handbook of Methods</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" href="/cpi/additional-resources/chained-cpi.htm">Chained CPI</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" href="/cpi/quality-adjustment/">Quality Adjustment</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" href="/cpi/seasonal-adjustment/">Seasonal Adjustment</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" href="/cpi/white-papers/">White Papers</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" href="/cpi/technical-notes/">Technical Notes</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" href="/cpi/additional-resources/">Additional Resources</a>
+								</div></li>        															        					<li class="nav-item dropdown" role="none">
+        																						<a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle nav-link about progNav" href="javascript:">About CPI</a>
+				        			        	        		<div class="dropdown-menu" role="menu">                                								<a class="dropdown-item heading" role="menuitem" href="/cpi/about-overview.htm">About CPI Overview</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" href="/cpi/overview.htm">Overview</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" href="/respondents/cpi/">Info for Survey Participants</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" href="/cpi/questions-and-answers.htm">Questions &amp; Answers</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" href="/cpi/notices/">Notices</a>
+								</div></li>        												        					<li class="nav-item" role="none">
+        																						<a role="menuitem" class="nav-link contact progNav" href="/cpi/contact.htm">Contact CPI</a>
+				</li>        				  </ul>
+</nav>
+</div>
+</div>
+
+  <h1>Consumer Price Index (CPI) geographic revision for 2028 </h1> 
+               <div class="cpi--additional-resources">
+         
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>To accurately reflect changing U.S. population patterns, the Bureau of Labor Statistics (BLS) continuously updates the geographic sample underlying the Consumer Price Index (CPI). Reflecting population data derived from the decennial census, BLS redraws a geographic sample roughly once every 10 years shortly after the completion of the decennial census. During the inter-decennial period, BLS then transitions CPI survey operations from the older geographic sample to the newly drawn geographic sample in a phased approach.</p><p>With the release of January 2028 indexes in February 2028, BLS will introduce the geographic sample reflecting U.S. populations as reported by the 2020 Decennial Census. This sample design will replace the design based on the 2010 Decennial Census, introduced in 2018.</p><h2>Population</h2><p>The target population of the CPI remains <strong>all urban consumers</strong> excluding those living in rural nonmetropolitan areas, on military installations, farm households, religious communities, and in institutions such as prisons and mental hospitals. For more information, see the <a href="https://www.bls.gov/opub/hom/cpi/concepts.htm#structure-and-classification">CPI Handbook of Methods</a>.</p><h2>Geographic sampling unit</h2><p>As with the 2010 decennial CPI sample, BLS chose the core-based statistical area (CBSA) concept as the geographical primary sampling unit (PSU) of the 2020 decennial design. The CBSA is a geographic region made up of one or more counties or county equivalents containing a core urban area with a population of at least 10,000, plus adjacent counties that have strong social and economic ties through commuting. Use of the CBSA creates a national standard for collecting and publishing federal statistics. BLS used the CBSAs as delineated under the Office of Management and Budget (OMB) July 2023 <a href="https://www.congress.gov/crs-product/IF12704" target="_blank">Bulletin No. 23-01</a>. There were 925 CBSAs in the U.S., 387 metropolitan areas (with an urban core of at least a population of 50,000), and 538 micropolitan areas (with an urban core of at least a population of 10,000).</p><h2>Number of PSUs</h2><p>The total number of PSUs remains unchanged at 75. This represents the required number of PSUs needed to adequately represent the target population with available resources.</p><h2>Sample design</h2><p>Each of the 925 CBSAs are grouped into homogeneous geographic strata, and one CBSA is selected to represent each group. To keep sample transition costs low, CBSAs previously selected based on the 2010 decennial sample were retained where possible. Each selected CBSA is weighted to represent the population of its geographic stratum. Strata are divided into self-representing (only one CBSA in the group) and non-self-representing (more than one CBSA in the group).</p><ul><li><strong>Self-representing</strong> strata represent the largest metropolitan areas in the country, which are distinct as retail markets based on size. The population cut-off for self-representing strata under the 2020 design is 2.8 million, compared to 2.5 million under the 2010 design. This results in 21 self-representing strata for the 2020 design; the same list of 21 PSUs selected for the 2010 design (see Appendix 1).<ul><li><strong>Urban Alaska and Urban Hawaii </strong>are special cases. The four CBSAs in Alaska (Anchorage, Fairbanks, Juneau, and Ketchikan) and the four CBSAs in Hawaii (Honolulu, Hilo-Kailua, Kahului-Wailuku, and Kapaa) are each grouped into urban state strata, based on isolation of their economic markets from the 48 contiguous states. For survey operational reasons, Anchorage and Honolulu are selected with certainty to represent their respective urban state stratum and are weighted accordingly. These selections remain unchanged from the 2018 CPI revision.</li></ul></li><li><strong>Non-self-representing </strong>strata are groupings of the remaining 902 CBSAs. These CBSAs are stratified into 52 homogenous groupings, with groupings constrained by the nine U.S. Census Divisions geographical boundaries. To determine the homogenous groupings within each Census Division, regression models were analyzed to identify socioeconomic and demographic variables explanatory of consumer spending and correlated with price change for select CPI components. The final stratification model for the 2020 design had four explanatory variables:<ul><li>Percent of population age 15+ with income &gt;$75,000 in 2017 dollars</li><li>Percent of households with a computer</li><li>Percent of population age 25+ with at least a bachelor’s degree</li><li><a href="https://www.census.gov/programs-surveys/geography/guidance/geo-areas/urban-rural.html" target="_blank">Percent of population classified as urban</a></li></ul></li></ul><p>For the 2020 design, BLS used a novel sample selection feature for non-self-representing CBSAs aimed at yielding survey efficiencies. Sample selection for non-self-representing strata occurred in two stages. In the first stage, 38 larger CBSAs (population greater than 200,000) were selected. In the second stage, 14 smaller CBSAs (population less than 200,000) were selected, with eligibility conditioned on being conterminous (geographically adjacent) to selected stage 1 CBSAs. This two-stage process helped prevent the selection of small cities located in remote areas and isolated from other cities in the sample. By clustering the sample this way, BLS expects to more efficiently manage in-person survey data collection.</p><h2>Sample transition</h2><p>Effective with January 2028 indexes published in February 2028, BLS will calculate and publish CPI data aggregated from basic indexes (the first stage of CPI estimation, for more information see the <a href="https://www.bls.gov/opub/hom/cpi/calculation.htm">CPI Handbook of Methods, calculation section</a>) with areas as defined by the 2020 geographic sample. The set of basic areas remains unchanged from the 2010 sample design at 32 areas: 21 self-representing PSUs, Urban Alaska, Urban Hawaii, and 9 non-self-representing Census Division areas. The sample of 52 CBSAs defining each of the 9 non-self-representing Census Division areas, however, will transition over a period of 3 waves: 38 CBSAs continue, 14 existing CBSAs will drop, and 14 new CBSAs will be added. See <a href="#A1">Appendix 1</a> for a list of continuing and new CBSAs, and <a href="#A2">Appendix 2</a> for a list of dropping CBSAs.</p><ul><li><strong>Timeline for wave 1</strong>. Wave 1 contains 6 new CBSAs and 11 dropping CBSAs. The new CBSAs are:<ul><li>Chambersburg, PA</li><li>Green Bay, WI</li><li>Indianapolis, IN</li><li>Pittsfield, MA</li><li>Punta Gorda, FL</li><li>Sacramento, CA</li></ul></li></ul><p>Survey operations for the wave 1 new CBSAs commences with initiation into the Housing Survey starting October 2026 and initiation into the Commodities and Services (C&amp;S) Pricing Survey in February 2027. Repricing activities for these samples will occur later in 2027. Data from new wave 1 CBSAs will be used in CPI estimation beginning with the January 2028 index. Data collection will stop in the dropping CBSAs after December 2027.</p><ul><li><strong>Timelines for wave 2 and wave 3</strong>. It is expected the wave 2 and wave 3 PSUs will transition in 2029 and 2030, respectively, subject to resource availability. Starting in January 2028, prices for the new wave 2 and wave 3 CBSAs will be represented in index calculations by data collected in wave 2 and wave 3 dropping CBSAs, or by alternative imputation methods, as indicated in Appendix 2.</li></ul><p><a class="ck-anchor" id="A1"></a></p><table class="regular" style="width:95%;" id="BLStable_2026_10_15_14_22"><caption><span class="tableTitle">Appendix 1. List of continuing and new CBSAs</span></caption><thead><tr><th style="min-width:80px;vertical-align:middle;" scope="col" rowspan="1">Region</th><th scope="col">Division</th><th scope="col">Area Code</th><th scope="col">PSU Code</th><th scope="col">Self Representing or Non-Self Representing</th><th scope="col">PSU Name</th><th scope="col">PSU Definition (State and County)</th><th scope="col">Continuing PSU or New PSU</th><th scope="col">Added Counties</th><th scope="col">Dropping Counties</th><th scope="col">Stratum Population (2020 Census)</th><th scope="col">Pricing Cycle</th><th scope="col">Planned Wave</th><th scope="col">Planned First Index Use</th></tr></thead><tbody><tr><th scope="row"><p>1-Northeast</p></th><td>1-New England</td><td>S110</td><td>S11A</td><td>Self Representing</td><td>Boston-Cambridge-Newton, MA-NH</td><td>MA: Essex, Middlesex, Norfolk, Plymouth, Suffolk. NH: Rockingham, Strafford</td><td>Continuing</td><td>&nbsp;</td><td>&nbsp;</td><td>4,941,632</td><td>Odd</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr class="greenbar"><th scope="row"><p>1-Northeast</p></th><td>2-Middle Atlantic</td><td>N120</td><td>N12D</td><td>Non-Self Representing</td><td>Buffalo-Cheektowaga-Niagara Falls, NY</td><td>NY: Erie, Niagara</td><td>Continuing</td><td>&nbsp;</td><td>&nbsp;</td><td>3,010,523</td><td>Even</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><th scope="row"><p>1-Northeast</p></th><td>1-New England</td><td>N110</td><td>N11D</td><td>Non-Self Representing</td><td>Burlington-South Burlington, VT</td><td>VT: Chittenden, Franklin, Grand Isle</td><td>New</td><td>&nbsp;</td><td>&nbsp;</td><td>1,701,880</td><td>Odd</td><td>3</td><td>Nov-30</td></tr><tr class="greenbar"><th scope="row"><p>1-Northeast</p></th><td>1-New England</td><td>N110</td><td>N11E</td><td>Non-Self Representing</td><td>Pittsfield, MA</td><td>MA: Berkshire</td><td>New</td><td>&nbsp;</td><td>&nbsp;</td><td>1,132,074</td><td>Even</td><td>1</td><td>Jan-28</td></tr><tr><th scope="row"><p>1-Northeast</p></th><td>1-New England</td><td>N110</td><td>N11B</td><td>Non-Self Representing</td><td>Hartford-West Hartford-East Hartford, CT</td><td>CT: Capitol Region, Lower River Valley Region, Lyme Township, Old Lyme Township</td><td>Continuing</td><td>CT: Lyme, Old Lyme</td><td>CT: Hartland, Burlington, Bristol, &amp; Union</td><td>3,346,659</td><td>Even</td><td>2</td><td>Nov-29</td></tr><tr class="greenbar"><th scope="row"><p>1-Northeast</p></th><td>2-Middle Atlantic</td><td>S120</td><td>S12A</td><td>Self Representing</td><td>New York-Newark-Jersey City, NY-NJ-PA</td><td>NJ: Bergen, Essex, Hudson, Hunterdon, Middlesex, Monmouth, Morris, Ocean, Passaic, Somerset, Sussex, Union. NY: Bronx, Kings, Nassau, New York, Putnam, Queens, Richmond, Rockland, Suffolk, Westchester. PA: Pike</td><td>Continuing</td><td>&nbsp;</td><td>NY: Dutchess, Orange</td><td>20,140,470</td><td>Monthly</td><td>1</td><td>Jan-28</td></tr><tr><th scope="row"><p>1-Northeast</p></th><td>2-Middle Atlantic</td><td>S120</td><td>S12B</td><td>Self Representing</td><td>Philadelphia-Camden-Wilmington, PA-NJ-DE-MD</td><td>DE: New Castle. MD: Cecil. NJ: Burlington, Camden, Gloucester, Salem. PA: Bucks, Chester, Delaware, Montgomery, Philadelphia</td><td>Continuing</td><td>&nbsp;</td><td>&nbsp;</td><td>6,245,051</td><td>Even</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr class="greenbar"><th scope="row"><p>1-Northeast</p></th><td>2-Middle Atlantic</td><td>N120</td><td>N12C</td><td>Non-Self Representing</td><td>Pittsburgh, PA</td><td>PA: Allegheny, Armstrong, Beaver, Butler, Fayette, Washington, Westmoreland</td><td>Continuing</td><td>&nbsp;</td><td>&nbsp;</td><td>4,392,090</td><td>Even</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><th scope="row"><p>1-Northeast</p></th><td>2-Middle Atlantic</td><td>N120</td><td>N12G</td><td>Non-Self Representing</td><td>Kingston, NY</td><td>NY: Ulster</td><td>New</td><td>&nbsp;</td><td>&nbsp;</td><td>1,587,894</td><td>Odd</td><td>2</td><td>Nov-29</td></tr><tr class="greenbar"><th scope="row"><p>1-Northeast</p></th><td>2-Middle Atlantic</td><td>N120</td><td>N12H</td><td>Non-Self Representing</td><td>Chambersburg-Waynesboro, PA</td><td>PA: Franklin</td><td>New</td><td>&nbsp;</td><td>&nbsp;</td><td>2,505,473</td><td>Even</td><td>1</td><td>Jan-28</td></tr><tr><th scope="row"><p>2-Midwest</p></th><td>3-East North Central</td><td>N230</td><td>N23C</td><td>Non-Self Representing</td><td>Cincinnati, OH-KY-IN</td><td>IN: Dearborn, Ohio, Union. KY: Boone, Bracken, Campbell, Franklin, Gallatin, Grant, Kenton, Pendleton. OH: Brown, Butler, Clermont, Hamilton, Warren</td><td>Continuing</td><td>IN: Franklin</td><td>&nbsp;</td><td>4,395,810</td><td>Even</td><td>2</td><td>Nov-29</td></tr><tr class="greenbar"><th scope="row"><p>2-Midwest</p></th><td>3-East North Central</td><td>N230</td><td>N23D</td><td>Non-Self Representing</td><td>Cleveland-Elyria, OH</td><td>OH: Cuyahoga, Geauga, Lake, Lorain, Medina</td><td>Continuing</td><td>&nbsp;</td><td>&nbsp;</td><td>4,581,867</td><td>Odd</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><th scope="row"><p>2-Midwest</p></th><td>3-East North Central</td><td>N230</td><td>N23F</td><td>Non-Self Representing</td><td>Milwaukee-Waukesha-West Allis, WI</td><td>WI: Milwaukee, Ozaukee, Washington, Waukesha</td><td>Continuing</td><td>&nbsp;</td><td>&nbsp;</td><td>3,374,770</td><td>Odd</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr class="greenbar"><th scope="row"><p>2-Midwest</p></th><td>3-East North Central</td><td>N230</td><td>N23I</td><td>Non-Self Representing</td><td>Janesville-Beloit, WI</td><td>WI: Rock</td><td>Continuing</td><td>&nbsp;</td><td>&nbsp;</td><td>6,656,008</td><td>Even</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><th scope="row"><p>2-Midwest</p></th><td>3-East North Central</td><td>N230</td><td>N23K</td><td>Non-Self Representing</td><td>Green Bay, WI</td><td>WI: Brown, Kewaunee, Oconto</td><td>New</td><td>&nbsp;</td><td>&nbsp;</td><td>4,621,876</td><td>Even</td><td>1</td><td>Jan-28</td></tr><tr class="greenbar"><th scope="row"><p>2-Midwest</p></th><td>3-East North Central</td><td>N230</td><td>N23L</td><td>Non-Self Representing</td><td>Indianapolis-Carmel-Anderson, IN</td><td>IN: Boone, Brown, Hamilton, Hancock, Hendricks, Johnson, Madison, Marion, Morgan, Putnam, Shelby</td><td>New</td><td>&nbsp;</td><td>&nbsp;</td><td>2,883,718</td><td>Odd</td><td>1</td><td>Jan-28</td></tr><tr><th scope="row"><p>2-Midwest</p></th><td>3-East North Central</td><td>N230</td><td>N23M</td><td>Non-Self Representing</td><td>Terre Haute, IN</td><td>TN: Clay, Parke, Sullivan, Vermillion, Vigo</td><td>New</td><td>&nbsp;</td><td>&nbsp;</td><td>2,878,687</td><td>Even</td><td>3</td><td>Nov-30</td></tr><tr class="greenbar"><th scope="row"><p>2-Midwest</p></th><td>4-West North Central</td><td>N240</td><td>N24D</td><td>Non-Self Representing</td><td>Wichita, KS</td><td>KS: Butler, Harvey, Sedgwick, Sumner</td><td>Continuing</td><td>&nbsp;</td><td>KS: Kingman</td><td>4,992,147</td><td>Odd</td><td>3</td><td>Nov-30</td></tr><tr><th scope="row"><p>2-Midwest</p></th><td>4-West North Central</td><td>N240</td><td>N24E</td><td>Non-Self Representing</td><td>Lincoln, NE</td><td>NE: Lancaster, Seward</td><td>Continuing</td><td>&nbsp;</td><td>&nbsp;</td><td>2,489,617</td><td>Odd</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr class="greenbar"><th scope="row"><p>2-Midwest</p></th><td>4-West North Central</td><td>N240</td><td>N24H</td><td>Non-Self Representing</td><td>St. Cloud, MN</td><td>MN: Benton, Stearns</td><td>New</td><td>&nbsp;</td><td>&nbsp;</td><td>5,466,283</td><td>Even</td><td>2</td><td>Nov-29</td></tr><tr><th scope="row"><p>3-South</p></th><td>5-South Atlantic</td><td>N350</td><td>N35F</td><td>Non-Self Representing</td><td>Charlotte-Concord-Gastonia, NC-SC</td><td>NC: Anson, Cabarrus, Gaston, Iredell, Lincoln, Mecklenburg, Rowan, Union SC: Chester, Lancaster, York</td><td>Continuing</td><td>NC: Anson</td><td>&nbsp;</td><td>5,242,048</td><td>Odd</td><td>3</td><td>Nov-30</td></tr><tr class="greenbar"><th scope="row"><p>3-South</p></th><td>5-South Atlantic</td><td>N350</td><td>N35G</td><td>Non-Self Representing</td><td>Orlando-Kissimmee-Sanford, FL</td><td>FL: Lake, Orange, Osceola, Seminole</td><td>Continuing</td><td>&nbsp;</td><td>&nbsp;</td><td>4,279,224</td><td>Even</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><th scope="row"><p>3-South</p></th><td>5-South Atlantic</td><td>N350</td><td>N35H</td><td>Non-Self Representing</td><td>Richmond, VA</td><td>VA: Amelia, Charles City, Chesterfield, Colonial Heights City, Dinwiddie, Goochland, Hanover, Henrico, Hopewell City, King and Queen, King William, New Kent, Petersburg City, Powhatan, Prince George, Richmond City, Sussex</td><td>Continuing</td><td>VA: King and Queen</td><td>VA: Caroline</td><td>3,114,108</td><td>Odd</td><td>2</td><td>Nov-29</td></tr><tr class="greenbar"><th scope="row"><p>3-South</p></th><td>5-South Atlantic</td><td>N350</td><td>N35I</td><td>Non-Self Representing</td><td>Raleigh, NC</td><td>NC: Franklin, Johnston, Wake</td><td>Continuing</td><td>&nbsp;</td><td>&nbsp;</td><td>4,963,233</td><td>Even</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><th scope="row"><p>3-South</p></th><td>5-South Atlantic</td><td>N350</td><td>N35L</td><td>Non-Self Representing</td><td>Cape Coral-Fort Myers, FL</td><td>FL: Lee</td><td>Continuing</td><td>&nbsp;</td><td>&nbsp;</td><td>3,934,031</td><td>Odd</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr class="greenbar"><th scope="row"><p>3-South</p></th><td>5-South Atlantic</td><td>N350</td><td>N35N</td><td>Non-Self Representing</td><td>Gainesville, FL</td><td>FL: Alachua, Gilchrist, Levy</td><td>Continuing</td><td>FL: Levy</td><td>&nbsp;</td><td>2,420,826</td><td>Even</td><td>3</td><td>Nov-30</td></tr><tr><th scope="row"><p>3-South</p></th><td>5-South Atlantic</td><td>N350</td><td>N35P</td><td>Non-Self Representing</td><td>Jacksonville, NC</td><td>NC: Onslow</td><td>Continuing</td><td>&nbsp;</td><td>&nbsp;</td><td>2,651,818</td><td>Odd</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr class="greenbar"><th scope="row"><p>3-South</p></th><td>5-South Atlantic</td><td>N350</td><td>N35R</td><td>Non-Self Representing</td><td>Gainesville, GA</td><td>GA: Hall</td><td>New</td><td>&nbsp;</td><td>&nbsp;</td><td>2,879,738</td><td>Odd</td><td>2</td><td>Nov-29</td></tr><tr><th scope="row"><p>3-South</p></th><td>5-South Atlantic</td><td>N350</td><td>N35S</td><td>Non-Self Representing</td><td>Punta Gorda, FL</td><td>FL: Charlotte</td><td>New</td><td>&nbsp;</td><td>&nbsp;</td><td>1,271,140</td><td>Even</td><td>1</td><td>Jan-28</td></tr><tr class="greenbar"><th scope="row"><p>3-South</p></th><td>5-South Atlantic</td><td>N350</td><td>N35T</td><td>Non-Self Representing</td><td>Winchester, VA-WV</td><td>VA: Frederick, Winchester city. WV: Hampshire</td><td>New</td><td>&nbsp;</td><td>&nbsp;</td><td>7,058,712</td><td>Even</td><td>2</td><td>Nov-29</td></tr><tr><th scope="row"><p>3-South</p></th><td>6-East South Central</td><td>N360</td><td>N36A</td><td>Non-Self Representing</td><td>Louisville/Jefferson County, KY-IN</td><td>IN: Clark, Floyd, Harrison, Washington. KY: Bullitt, Henry, Jefferson, Oldham, Shelby, Spencer</td><td>Continuing</td><td>&nbsp;</td><td>IN: Scott, KY: Trimble</td><td>3,879,172</td><td>Odd</td><td>3</td><td>Nov-30</td></tr><tr class="greenbar"><th scope="row"><p>3-South</p></th><td>6-East South Central</td><td>N360</td><td>N36B</td><td>Non-Self Representing</td><td>Birmingham-Hoover, AL</td><td>AL: Bibb, Blount, Chilton, Jefferson, Shelby, St. Clair</td><td>Continuing</td><td>&nbsp;</td><td>AL: Walker</td><td>4,442,587</td><td>Odd</td><td>3</td><td>Nov-30</td></tr><tr><th scope="row"><p>3-South</p></th><td>6-East South Central</td><td>N360</td><td>N36C</td><td>Non-Self Representing</td><td>Chattanooga, TN-GA</td><td>GA: Catoosa, Dade, Walker. TN: Hamilton, Marion, Sequatchie</td><td>Continuing</td><td>&nbsp;</td><td>&nbsp;</td><td>3,017,577</td><td>Even</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr class="greenbar"><th scope="row"><p>3-South</p></th><td>6-East South Central</td><td>N360</td><td>N36E</td><td>Non-Self Representing</td><td>Florence-Muscle Shoals, AL</td><td>AL: Colbert, Lauderdale</td><td>Continuing</td><td>&nbsp;</td><td>&nbsp;</td><td>5,480,843</td><td>Even</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><th scope="row"><p>3-South</p></th><td>7-West South Central</td><td>N370</td><td>N37C</td><td>Non-Self Representing</td><td>San Antonio-New Braunfels, TX</td><td>TX: Atascosa, Bandera, Bexar, Comal, Guadalupe, Kendall, Medina, Wilson</td><td>Continuing</td><td>&nbsp;</td><td>&nbsp;</td><td>4,297,783</td><td>Odd</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr class="greenbar"><th scope="row"><p>3-South</p></th><td>7-West South Central</td><td>N370</td><td>N37D</td><td>Non-Self Representing</td><td>Oklahoma City, OK</td><td>OK: Canadian, Cleveland, Grady, Lincoln, Logan, McClain, Oklahoma</td><td>Continuing</td><td>&nbsp;</td><td>&nbsp;</td><td>5,331,471</td><td>Even</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><th scope="row"><p>3-South</p></th><td>7-West South Central</td><td>N370</td><td>N37F</td><td>Non-Self Representing</td><td>Lafayette, LA</td><td>LA: Acadia, Iberia, Lafayette, St. Martin, Vermilion</td><td>Continuing</td><td>&nbsp;</td><td>&nbsp;</td><td>2,299,468</td><td>Odd</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr class="greenbar"><th scope="row"><p>3-South</p></th><td>7-West South Central</td><td>N370</td><td>N37G</td><td>Non-Self Representing</td><td>Brownsville-Harlingen, TX</td><td>TX: Cameron</td><td>Continuing</td><td>&nbsp;</td><td>&nbsp;</td><td>2,304,839</td><td>Odd</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><th scope="row"><p>3-South</p></th><td>7-West South Central</td><td>N370</td><td>N37H</td><td>Non-Self Representing</td><td>Amarillo, TX</td><td>TX: Armstrong, Carson, Oldham, Potter, Randall</td><td>Continuing</td><td>&nbsp;</td><td>&nbsp;</td><td>3,617,045</td><td>Even</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr class="greenbar"><th scope="row"><p>3-South</p></th><td>7-West South Central</td><td>N370</td><td>N37I</td><td>Non-Self Representing</td><td>Russellville, AR</td><td>AR: Pope, Yell</td><td>Continuing</td><td>&nbsp;</td><td>&nbsp;</td><td>2,559,064</td><td>Odd</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><th scope="row"><p>3-South</p></th><td>7-West South Central</td><td>N370</td><td>N37J</td><td>Non-Self Representing</td><td>Paris, TX</td><td>TX: Lamar</td><td>Continuing</td><td>&nbsp;</td><td>&nbsp;</td><td>2,876,907</td><td>Even</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr class="greenbar"><th scope="row"><p>4-West</p></th><td>8-Mountain</td><td>N480</td><td>N48C</td><td>Non-Self Representing</td><td>Las Vegas-Henderson-Paradise, NV</td><td>NV: Clark</td><td>Continuing</td><td>&nbsp;</td><td>&nbsp;</td><td>4,566,830</td><td>Even</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><th scope="row"><p>4-West</p></th><td>8-Mountain</td><td>N480</td><td>N48D</td><td>Non-Self Representing</td><td>Provo-Orem, UT</td><td>UT: Juab, Utah</td><td>Continuing</td><td>&nbsp;</td><td>&nbsp;</td><td>2,635,101</td><td>Even</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr class="greenbar"><th scope="row"><p>4-West</p></th><td>8-Mountain</td><td>N480</td><td>N48E</td><td>Non-Self Representing</td><td>Yuma, AZ</td><td>AZ: Yuma</td><td>Continuing</td><td>&nbsp;</td><td>&nbsp;</td><td>3,549,617</td><td>Odd</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><th scope="row"><p>4-West</p></th><td>8-Mountain</td><td>N480</td><td>N48F</td><td>Non-Self Representing</td><td>St. George, UT</td><td>UT: Washington</td><td>Continuing</td><td>&nbsp;</td><td>&nbsp;</td><td>5,074,188</td><td>Odd</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr class="greenbar"><th scope="row"><p>4-West</p></th><td>9-Pacific</td><td>N490</td><td>N49H</td><td>Non-Self Representing</td><td>Portland-Vancouver-Hillsboro, OR-WA</td><td>OR: Clackamas, Columbia, Multnomah, Washington, Yamhill. WA: Clark, Skamania</td><td>Continuing</td><td>&nbsp;</td><td>&nbsp;</td><td>3,826,789</td><td>Odd</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><th scope="row"><p>4-West</p></th><td>9-Pacific</td><td>N490</td><td>N49I</td><td>Non-Self Representing</td><td>Santa Rosa, CA</td><td>CA: Sonoma</td><td>Continuing</td><td>&nbsp;</td><td>&nbsp;</td><td>3,456,846</td><td>Even</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr class="greenbar"><th scope="row"><p>4-West</p></th><td>9-Pacific</td><td>N490</td><td>N49J</td><td>Non-Self Representing</td><td>Chico, CA</td><td>CA: Butte</td><td>Continuing</td><td>&nbsp;</td><td>&nbsp;</td><td>3,142,008</td><td>Even</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><th scope="row"><p>4-West</p></th><td>9-Pacific</td><td>N490</td><td>N49K</td><td>Non-Self Representing</td><td>Moses Lake, WA</td><td>WA: Grant</td><td>Continuing</td><td>&nbsp;</td><td>&nbsp;</td><td>2,145,810</td><td>Odd</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr class="greenbar"><th scope="row"><p>4-West</p></th><td>9-Pacific</td><td>N490</td><td>N49L</td><td>Non-Self Representing</td><td>Sacramento-Roseville-Folsom, CA</td><td>CA: El Dorado, county, Placer county, Sacramento, Yolo</td><td>New</td><td>&nbsp;</td><td>&nbsp;</td><td>5,241,693</td><td>Odd</td><td>1</td><td>Jan-28</td></tr><tr><th scope="row"><p>4-West</p></th><td>9-Pacific</td><td>N490</td><td>N49M</td><td>Non-Self Representing</td><td>Eugene-Springfield, OR</td><td>OR: Lane</td><td>New</td><td>&nbsp;</td><td>&nbsp;</td><td>1,669,038</td><td>Even</td><td>2</td><td>Nov-29</td></tr><tr class="greenbar"><th scope="row"><p>4-West</p></th><td>9-Pacific</td><td>N490</td><td>N49N</td><td>Non-Self Representing</td><td>Yuba City, CA</td><td>CA: Sutter, Yuba</td><td>New</td><td>&nbsp;</td><td>&nbsp;</td><td>1,570,215</td><td>Even</td><td>2</td><td>Nov-29</td></tr><tr><th scope="row"><p>1-Northeast</p></th><td>2-Middle Atlantic</td><td>N120</td><td>N12F</td><td>Non-Self Representing</td><td>Reading, PA</td><td>PA: Berks</td><td>Continuing</td><td>&nbsp;</td><td>&nbsp;</td><td>2,371,021</td><td>Odd</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr class="greenbar"><th scope="row"><p>1-Northeast</p></th><td>2-Middle Atlantic</td><td>N120</td><td>N12E</td><td>Non-Self Representing</td><td>Rochester, NY</td><td>NY: Livingston, Monroe, Ontario, Orleans, Wayne, Yates</td><td>Continuing</td><td>&nbsp;</td><td>&nbsp;</td><td>2,044,456</td><td>Odd</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><th scope="row"><p>1-Northeast</p></th><td>1-New England</td><td>N110</td><td>N11C</td><td>Non-Self Representing</td><td>Springfield, MA</td><td>MA: Franklin, Hampden, Hampshire</td><td>Continuing</td><td>MA: Franklin</td><td>&nbsp;</td><td>3,333,200</td><td>Odd</td><td>3</td><td>Nov-30</td></tr><tr class="greenbar"><th scope="row"><p>2-Midwest</p></th><td>3-East North Central</td><td>S230</td><td>S23A</td><td>Self Representing</td><td>Chicago-Naperville-Elgin, IL-IN-WI</td><td>IL: Cook, De Kalb, Du Page, Grundy, Kane, Kendall, Lake, McHenry, Will. IN: Jasper, Lake, Newton, Porter. WI: Kenosha</td><td>Continuing</td><td>&nbsp;</td><td>&nbsp;</td><td>9,618,502</td><td>Monthly</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><th scope="row"><p>2-Midwest</p></th><td>3-East North Central</td><td>S230</td><td>S23B</td><td>Self Representing</td><td>Detroit-Warren-Dearborn, MI</td><td>MI: Lapeer, Livingston, Macomb, Oakland, St. Clair, Wayne</td><td>Continuing</td><td>&nbsp;</td><td>&nbsp;</td><td>4,392,041</td><td>Even</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr class="greenbar"><th scope="row"><p>2-Midwest</p></th><td>4-West North Central</td><td>S240</td><td>S24A</td><td>Self Representing</td><td>Minneapolis-St. Paul-Bloomington, MN-WI</td><td>MN: Anoka, Carver, Chisago, Dakota, Hennepin, Isanti, Le Sueur, Mille Lacs, Ramsey, Scott, Sherburne, Washington, Wright. WI: Pierce, St. Croix</td><td>Continuing</td><td>&nbsp;</td><td>MN: Sibley</td><td>3,690,261</td><td>Odd</td><td>3</td><td>Nov-30</td></tr><tr><th scope="row"><p>2-Midwest</p></th><td>4-West North Central</td><td>S240</td><td>S24B</td><td>Self Representing</td><td>St. Louis, MO-IL</td><td>IL: Bond, Calhoun, Clinton, Jersey, Macoupin, Madison, Monroe, St. Clair. MO: Franklin, Jefferson, Lincoln, St. Charles, St. Louis, St. Louis City, Warren</td><td>Continuing</td><td>&nbsp;</td><td>&nbsp;</td><td>2,820,253</td><td>Even</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr class="greenbar"><th scope="row"><p>3-South</p></th><td>5-South Atlantic</td><td>S350</td><td>S35A</td><td>Self Representing</td><td>Washington-Arlington-Alexandria, DC-VA-MD-WV</td><td>DC: District of Columbia. MD: Calvert, Charles, Frederick, Montgomery, Prince George’s. VA: Alexandria City, Arlington, Clarke, Culpeper, Fairfax, Fairfax City, Falls Church City, Fauquier, Fredericksburg City, Loudoun, Madison, Manassas City, Manassas Park City, Prince William, Rappahannock, Spotsylvania, Stafford, Warren. WV: Jefferson</td><td>Continuing</td><td>VA: Madison</td><td>&nbsp;</td><td>6,385,162</td><td>Odd</td><td>3</td><td>Nov-30</td></tr><tr><th scope="row"><p>3-South</p></th><td>5-South Atlantic</td><td>S350</td><td>S35B</td><td>Self Representing</td><td>Miami-Fort Lauderdale-West Palm Beach, FL</td><td>FL: Broward, Miami-Dade, Palm Beach</td><td>Continuing</td><td>&nbsp;</td><td>&nbsp;</td><td>6,138,333</td><td>Even</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr class="greenbar"><th scope="row"><p>3-South</p></th><td>5-South Atlantic</td><td>S350</td><td>S35C</td><td>Self Representing</td><td>Atlanta-Sandy Springs-Roswell, GA</td><td>GA: Barrow, Bartow, Butts, Carroll, Cherokee, Clayton, Cobb, Coweta, Dawson, DeKalb, Douglas, Fayette, Forsyth, Fulton, Gwinnett, Haralson, Heard, Henry, Jasper, Lamar, Meriwether, Morgan, Newton, Paulding, Pickens, Pike, Rockdale, Spalding, Walton</td><td>Continuing</td><td>&nbsp;</td><td>&nbsp;</td><td>6,089,815</td><td>Even</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><th scope="row"><p>3-South</p></th><td>5-South Atlantic</td><td>S350</td><td>S35D</td><td>Self Representing</td><td>Tampa-St. Petersburg-Clearwater, FL</td><td>FL: Hernando, Hillsborough, Pasco, Pinellas</td><td>Continuing</td><td>&nbsp;</td><td>&nbsp;</td><td>3,175,275</td><td>Odd</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr class="greenbar"><th scope="row"><p>3-South</p></th><td>5-South Atlantic</td><td>S350</td><td>S35E</td><td>Self Representing</td><td>Baltimore-Columbia-Towson, MD</td><td>MD: Anne Arundel, Baltimore, Baltimore City, Carroll, Harford, Howard, Queen Anne’s</td><td>Continuing</td><td>&nbsp;</td><td>&nbsp;</td><td>2,844,510</td><td>Even</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><th scope="row"><p>3-South</p></th><td>7-West South Central</td><td>S370</td><td>S37A</td><td>Self Representing</td><td>Dallas-Fort Worth-Arlington, TX</td><td>TX: Collin, Dallas, Denton, Ellis, Hunt, Johnson, Kaufman, Parker, Rockwall, Tarrant, Wise</td><td>Continuing</td><td>&nbsp;</td><td>TX: Hood, Somervell</td><td>7,637,387</td><td>Odd</td><td>3</td><td>Nov-30</td></tr><tr class="greenbar"><th scope="row"><p>3-South</p></th><td>7-West South Central</td><td>S370</td><td>S37B</td><td>Self Representing</td><td>Houston-The Woodlands-Sugar Land, TX</td><td>TX: Austin, Brazoria, Chambers, Fort Bend, Galveston, Harris, Liberty, Montgomery, Waller</td><td>Continuing</td><td>&nbsp;</td><td>&nbsp;</td><td>7,122,240</td><td>Even</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><th scope="row"><p>4-West</p></th><td>8-Mountain</td><td>S480</td><td>S48A</td><td>Self Representing</td><td>Phoenix-Mesa-Scottsdale, AZ</td><td>AZ: Maricopa, Pinal</td><td>Continuing</td><td>&nbsp;</td><td>&nbsp;</td><td>4,845,832</td><td>Even</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr class="greenbar"><th scope="row"><p>4-West</p></th><td>8-Mountain</td><td>S480</td><td>S48B</td><td>Self Representing</td><td>Denver-Aurora-Lakewood, CO</td><td>CO: Adams, Arapahoe, Broomfield, Clear Creek, Denver, Douglas, Elbert, Gilpin, Jefferson, Park</td><td>Continuing</td><td>&nbsp;</td><td>&nbsp;</td><td>2,963,821</td><td>Odd</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><th scope="row"><p>4-West</p></th><td>9-Pacific</td><td>S490</td><td>S49A</td><td>Self Representing</td><td>Los Angeles-Long Beach-Anaheim, CA</td><td>CA: Los Angeles, Orange</td><td>Continuing</td><td>&nbsp;</td><td>&nbsp;</td><td>13,200,998</td><td>Monthly</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr class="greenbar"><th scope="row"><p>4-West</p></th><td>9-Pacific</td><td>S490</td><td>S49B</td><td>Self Representing</td><td>San Francisco-Oakland-Hayward, CA</td><td>CA: Alameda, Contra Costa, Marin, San Francisco, San Mateo</td><td>Continuing</td><td>&nbsp;</td><td>&nbsp;</td><td>4,749,008</td><td>Even</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><th scope="row"><p>4-West</p></th><td>9-Pacific</td><td>S490</td><td>S49C</td><td>Self Representing</td><td>Riverside-San Bernardino-Ontario, CA</td><td>CA: Riverside, San Bernardino</td><td>Continuing</td><td>&nbsp;</td><td>&nbsp;</td><td>4,599,839</td><td>Odd</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr class="greenbar"><th scope="row"><p>4-West</p></th><td>9-Pacific</td><td>S490</td><td>S49D</td><td>Self Representing</td><td>Seattle-Tacoma-Bellevue, WA</td><td>WA: King, Pierce, Snohomish</td><td>Continuing</td><td>&nbsp;</td><td>&nbsp;</td><td>4,018,762</td><td>Even</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><th scope="row"><p>4-West</p></th><td>9-Pacific</td><td>S490</td><td>S49E</td><td>Self Representing</td><td>San Diego-Carlsbad, CA</td><td>CA: San Diego</td><td>Continuing</td><td>&nbsp;</td><td>&nbsp;</td><td>3,298,634</td><td>Odd</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr class="greenbar"><th scope="row"><p>4-West</p></th><td>9-Pacific</td><td>S490</td><td>S49F</td><td>Self Representing</td><td>Honolulu, HI</td><td>HI: Honolulu</td><td>Continuing</td><td>&nbsp;</td><td>&nbsp;</td><td>1,455,189</td><td>Odd</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><th scope="row"><p>4-West</p></th><td>9-Pacific</td><td>S490</td><td>S49G</td><td>Self Representing</td><td>Anchorage, AK</td><td>AK: Anchorage, Matanuska-Susitna</td><td>Continuing</td><td>&nbsp;</td><td>&nbsp;</td><td>540,186</td><td>Even</td></tr></tbody><tfoot class="" style="display:none;" id="BLStable_2026_10_15_14_22_footnotes"><tr class="footnotes"><td class="footnotes">&nbsp;</td></tr></tfoot></table><p><a class="ck-anchor" id="A2"></a></p><table class="regular" style="width:95%;" id="BLStable_2026_10_15_14_51"><caption><span class="tableTitle">Appendix 2. List of dropping CBSAs</span></caption><thead><tr><th style="min-width:80px;vertical-align:middle;" scope="col" rowspan="1">Region</th><th scope="col">Division</th><th scope="col">PSU Code</th><th scope="col">Self Representative or Non-Self Representative</th><th scope="col">PSU Name</th><th scope="col">PSU Definition (State and County)</th><th scope="col">Planned Wave</th><th scope="col">Planned Last Index Use</th><th scope="col">Proxy PSU*</th></tr></thead><tbody><tr><th scope="row"><p>2-Midwest</p></th><td>3-East North Central</td><td>N23E</td><td>Non-Self Representing</td><td>Columbus, OH</td><td>OH: Delaware, Fairfield, Franklin, Hocking, Licking, Madison, Morrow, Perry, Pickaway, Union</td><td>1</td><td>Dec-27</td><td>&nbsp;</td></tr><tr class="greenbar"><th scope="row"><p>2-Midwest</p></th><td>3-East North Central</td><td>N23G</td><td>Non-Self Representing</td><td>Dayton, OH</td><td>OH: Greene, Miami, Montgomery</td><td>1</td><td>Dec-27</td><td>&nbsp;</td></tr><tr><th scope="row"><p>2-Midwest</p></th><td>3-East North Central</td><td>N23H</td><td>Non-Self Representing</td><td>Flint, MI</td><td>MI: Genesee</td><td>1</td><td>Dec-27</td><td>&nbsp;</td></tr><tr class="greenbar"><th scope="row"><p>2-Midwest</p></th><td>3-East North Central</td><td>N23J</td><td>Non-Self Representing</td><td>Frankfort, IN</td><td>IN: Clinton</td><td>3</td><td>Oct-30</td><td>N23M Terre Haute, IN</td></tr><tr><th scope="row"><p>2-Midwest</p></th><td>4-West North Central</td><td>N24C</td><td>Non-Self Representing</td><td>Omaha-Council Bluffs, NE-IA</td><td>IA: Harrison, Mills, Pottawattamie. NE: Cass, Douglas, Sarpy, Saunders, Washington</td><td>1</td><td>Dec-27</td><td>&nbsp;</td></tr><tr class="greenbar"><th scope="row"><p>2-Midwest</p></th><td>4-West North Central</td><td>N24F</td><td>Non-Self Representing</td><td>Brookings, SD</td><td>SD: Brookings</td><td>2</td><td>Oct-29</td><td>N24H St. Cloud, MN</td></tr><tr><th scope="row"><p>3-South</p></th><td>5-South Atlantic</td><td>N35J</td><td>Non-Self Representing</td><td>Greenville-Anderson-Mauldin, SC</td><td>SC: Anderson, Greenville, Laurens, Pickens</td><td>1</td><td>Dec-27</td><td>&nbsp;</td></tr><tr class="greenbar"><th scope="row"><p>3-South</p></th><td>5-South Atlantic</td><td>N35K</td><td>Non-Self Representing</td><td>Winston-Salem, NC</td><td>NC: Davidson, Davie, Forsyth, Stokes, Yadkin</td><td>1</td><td>Dec-27</td><td>&nbsp;</td></tr><tr><th scope="row"><p>3-South</p></th><td>5-South Atlantic</td><td>N35M</td><td>Non-Self Representing</td><td>Ocala, FL</td><td>FL: Marion</td><td>1</td><td>Dec-27</td><td>&nbsp;</td></tr><tr class="greenbar"><th scope="row"><p>3-South</p></th><td>5-South Atlantic</td><td>N35O</td><td>Non-Self Representing</td><td>Wilmington, NC</td><td>NC: New Hanover, Pender</td><td>1</td><td>Dec-27</td><td>&nbsp;</td></tr><tr><th scope="row"><p>3-South</p></th><td>5-South Atlantic</td><td>N35Q</td><td>Non-Self Representing</td><td>Clarksburg, WV</td><td>WV: Doddridge, Harrison, Taylor</td><td>2</td><td>Oct-29</td><td>N35T Winchester, VA</td></tr><tr class="greenbar"><th scope="row"><p>3-South</p></th><td>6-East South Central</td><td>N36D</td><td>Non-Self Representing</td><td>Huntsville, AL</td><td>AL: Limestone, Madison</td><td>1</td><td>Dec-27</td><td>&nbsp;</td></tr><tr><th scope="row"><p>3-South</p></th><td>6-East South Central</td><td>N36F</td><td>Non-Self Representing</td><td>Meridian, MS</td><td>MS: Clarke, Kemper, Lauderdale</td><td>1</td><td>Dec-27</td><td>&nbsp;</td></tr><tr class="greenbar"><th scope="row"><p>3-South</p></th><td>7-West South Central</td><td>N37E</td><td>Non-Self Representing</td><td>Baton Rouge, LA</td><td>LA: Ascension, East Baton Rouge, East Feliciana, Iberville, Livingston, Pointe Coupee, St. Helena, West Baton Rouge, West Feliciana</td><td>1</td><td>Dec-27</td><td>&nbsp;</td></tr></tbody><tfoot class="" style="display:table-footer-group;" id="BLStable_2026_10_15_14_51_footnotes"><tr class="footnotes"><td class="footnotes" colspan="9"><p>Note: The proxy PSUs were selected to reduce the number of geographic holes, i.e., geographic strata where there is no selected PSU in the stratum to contribute to estimation. The proxy PSU drops as soon as the corresponding adding PSU is rotated in.</p></td></tr></tfoot></table><p><strong>Last modified date:</strong> November 2, 2026</p></div>
+      
+         </div>
+        
+      <ul class="gb-info" aria-hidden="true" style="display:none;"><li><a href="/cpi/">Consumer Price Index</a></li><li>Methods</li></ul><style>.programsNavBar .navbar-nav li:nth-child(4){background: url(/images/regions/triangle.png) no-repeat center bottom;}</style>
+          
+
+  
+
+      <!-- OneColFootBasic Begin -->
+
+<!-- Footer Filename: -->
+
+<!--no_index_start-->
+
+<!-- 1COL CMS BASIC LAYOUT COL1 END -->
+
+
+
+<div class="clearfloat"></div>
+<div class="social-media">
+</div>
+</div> 
+
+
+
+<!-- 1COL CMS LAYOUT COL1 END -->
+
+
+
+
+
+
+<!-- WRAPPER BOTTOM BEGIN -->
+
+
+		
+		
+		</div><!-- close id="wrapper-outer" -->
+	</div><!-- close id="wrapper" -->
+</div><!-- close id="container" -->
+
+	
+
+
+<!-- WRAPPER BOTTOM END -->
+
+
+
+<!-- FOOTER LEFT BEGIN -->
+
+<footer >
+	
+<!-- Footer Nav Menu-->
+<div class="footerNav">
+<ul class="footerNavInner">
+   <li class="footerNavItem"><a href="https://www.bls.gov/">Home</a></li>
+   <li class="footerNavItem"><a href="/bls/proghome.htm">Subjects</a></li>
+   <li class="footerNavItem"><a href="/data/">Data Tools</a></li>
+   <li class="footerNavItem"><a href="/opub/">Publications</a></li>
+   <li class="footerNavItem"><a href="/bls/newsrels.htm">Economic Releases</a></li>
+   <li class="footerNavItem"><a href="/k12/" >Classroom</a></li>
+   <li class="footerNavItem"><a href="/beta/">Beta</a></li>
+</ul>
+</div>
+<!-- Footer Nav Menu-->
+<script>/*<![CDATA[*/(function(){var sz = document.createElement('script'); sz.type = 'text/javascript'; sz.async = true;sz.src = '//siteimproveanalytics.com/js/siteanalyze_6032860.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sz, s);})();/*]]>*/</script> 
+
+<script src="/javascripts/touchpointsForms.js"></script>
+<link rel="stylesheet" type="text/css" href="/stylesheets/touchpointsForms.css">
+
+<div id="footer-primary-wrapper">
+<div class="bootstrap standard-width">
+<div id="footer-container" class="row">
+	<div id="footer-links-container" class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+	
+	
+<div class="bls-lftside-holder">	
+<div class="bls-logo-footer">
+<img src="/images/bls_emblem_trans.png" class="responsiveImg" alt="U.S. Bureau of Labor Statistics Logo "/><div class="d-none d-md-block clearfloat"><br><br></div>
+
+ </div>
+ <div class="address-contact-footer">
+
+<!-- FOOTER LEFT END -->
+
+
+
+
+<address class="footer-address"  >   
+<strong>U.S. Bureau of Labor Statistics</strong>
+<span>Consumer Price Index</span> 
+<span>Office of Prices and Living Conditions</span> 
+<span>Suitland Federal Center</span>
+<span>Floor 7</span>
+<span>4600 Silver Hill Road</span>  
+<span>Washington, DC 20212-0002</span>
+</address>
+
+
+
+<!-- FOOTER CENTER BEGIN -->
+
+
+
+
+
+<!-- FOOTER CENTER END -->
+
+
+
+
+<span class="footer-contact">  
+
+<a href="tel:12026917000" class="number" aria-label="Telephone: 202-691-7000">
+<span>Telephone:</span><span> 202-691-7000 </span>
+
+</a>
+
+
+<a href="/cpi/home.htm" aria-label="www.bls.gov/CPI" >www.bls.gov/CPI</a>
+<a href="https://data.bls.gov/forms/cpi.htm?/cpi/additional-resources/geographic-revision-2028.htm" aria-label="Contact CPI">Contact CPI</a>
+
+</span>
+		
+
+
+
+
+
+<!-- FOOTER RIGHT BEGIN -->
+
+</div> 
+</div>
+</div>
+
+				<div id="quicklinks" class="row col-xs-12 col-sm-12 col-md-8 col-lg-8">
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-5">
+					<strong>resources</strong>
+					<a class="d-sm-none" data-toggle="collapse" href="#quicklinksli5" role="button" aria-expanded="false" aria-controls="quicklinksli5" aria-label="resources Sub Menu"></a>
+						<div class="collapse" id="quicklinksli5">
+							<ul class="d-sm-block">						
+								<li><a href="https://www.oig.dol.gov/" aria-label="Office of Inspector General (OIG) website">Inspector General (OIG)</a></li>
+								<li><a href="/bls/bls_budget_and_performance.htm" aria-label="Budget and Performance">Budget and Performance</a></li>	
+								<li><a href="https://www.dol.gov/grants" aria-label="Department of Labor Grants">Department of Labor Grants</a></li>									
+								<li><a href="/bls/no_fear_act.htm" aria-label="No Fear Act">No Fear Act</a></li>
+								<li><a href="https://www.usa.gov/" aria-label="USA.gov website">USA.gov</a></li>
+							</ul>
+						</div>
+					</div>		
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-5">
+					<strong>about the site</strong>
+					<a class="d-sm-none" data-toggle="collapse" href="#quicklinksli6" role="button" aria-expanded="false" aria-controls="quicklinksli6" aria-label="about this site Sub Menu"></a>
+						<div class="collapse" id="quicklinksli6">
+							<ul class="d-sm-block">	
+								<li><a href="/bls/sitemap.htm" aria-label="Sitemap">Sitemap</a></li>						
+								<li><a href="/bls/blsfoia.htm" aria-label="Freedom of Information Act">Freedom of Information Act</a></li>
+								<li><a href="/bls/pss.htm" aria-label="Privacy and Security Statement">Privacy and Security Statement</a></li>
+								<li><a href="/bls/disclaimer.htm" aria-label="Disclaimers">Disclaimers</a></li>
+								<li><a href="/bls/linksite.htm" aria-label="Linking and Copyright Information">Linking and Copyright Info</a></li>	
+								<li><a href="/bls/website-policies.htm" aria-label="Important Website Notices">Important Website Notices</a></li>
+								<li><a href="/help/" aria-label="Help and Tutorials">Help and Tutorials</a></li>
+								<li><a href="/bls/ada.htm" aria-label="Accessibility Statement">Accessibility Statement</a></li>
+							</ul>
+						</div>
+					</div>				
+                </div>
+				 
+</div>
+</div>
+</div>
+<div id="footer-secondary-wrapper">
+
+<div class="bootstrap standard-width">
+
+<div>
+<span>Connect With BLS</span>
+  <div class="social-media-icons"> 
+    
+			<a class="social-media-icon" href="https://bsky.app/profile/usbls.bsky.social" title="Connect with BLS on Bluesky" target="_blank" rel="noopener noreferrer" >
+              <!--?xml version="1.0" encoding="utf-8"?-->
+				<svg aria-hidden="true" data-prefix="fas" data-icon="bluesky" class="svg-inline--fa fa-w-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 530"><path fill="currentColor" xmlns="http://www.w3.org/2000/svg" d="m135.72 44.03c66.496 49.921 138.02 151.14 164.28 205.46 26.262-54.316 97.782-155.54 164.28-205.46 47.98-36.021 125.72-63.892 125.72 24.795 0 17.712-10.155 148.79-16.111 170.07-20.703 73.984-96.144 92.854-163.25 81.433 117.3 19.964 147.14 86.092 82.697 152.22-122.39 125.59-175.91-31.511-189.63-71.766-2.514-7.3797-3.6904-10.832-3.7077-7.8964-0.0174-2.9357-1.1937 0.51669-3.7077 7.8964-13.714 40.255-67.233 197.36-189.63 71.766-64.444-66.128-34.605-132.26 82.697-152.22-67.108 11.421-142.55-7.4491-163.25-81.433-5.9562-21.282-16.111-152.36-16.111-170.07 0-88.687 77.742-60.816 125.72-24.795z"/></svg>
+              <span class="sr-only">Bluesky</span>
+          </a>
+
+           <a class="social-media-icon" href="https://www.instagram.com/usbls_gov/" title="Connect with BLS on Instagram" target="_blank" rel="noopener noreferrer" >
+              <!--?xml version="1.0" encoding="utf-8"?-->
+				<svg aria-hidden="true" data-prefix="fas" data-icon="instagram" class="svg-inline--fa fa-w-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+              <span class="sr-only">Instagram</span>
+          </a>
+
+           <a class="social-media-icon" href="https://www.linkedin.com/company/bureau-of-labor-statistics/" title="Connect with BLS on LinkedIn" target="_blank" rel="noopener noreferrer" >
+              <!--?xml version="1.0" encoding="utf-8"?-->
+			  <svg aria-hidden="true" data-prefix="fas" data-icon="linkedin" class="svg-inline--fa fa-w-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+              <span class="sr-only">LinkedIn</span>
+          </a>
+
+           <a class="social-media-icon" href="https://www.threads.net/@usbls_gov" title="Connect with BLS on Threads" target="_blank" rel="noopener noreferrer" >
+              <!--?xml version="1.0" encoding="utf-8"?-->
+				<svg aria-hidden="true" data-prefix="fas" data-icon="threads" class="svg-inline--fa fa-w-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M331.5 235.7c2.2 .9 4.2 1.9 6.3 2.8c29.2 14.1 50.6 35.2 61.8 61.4c15.7 36.5 17.2 95.8-30.3 143.2c-36.2 36.2-80.3 52.5-142.6 53h-.3c-70.2-.5-124.1-24.1-160.4-70.2c-32.3-41-48.9-98.1-49.5-169.6V256v-.2C17 184.3 33.6 127.2 65.9 86.2C102.2 40.1 156.2 16.5 226.4 16h.3c70.3 .5 124.9 24 162.3 69.9c18.4 22.7 32 50 40.6 81.7l-40.4 10.8c-7.1-25.8-17.8-47.8-32.2-65.4c-29.2-35.8-73-54.2-130.5-54.6c-57 .5-100.1 18.8-128.2 54.4C72.1 146.1 58.5 194.3 58 256c.5 61.7 14.1 109.9 40.3 143.3c28 35.6 71.2 53.9 128.2 54.4c51.4-.4 85.4-12.6 113.7-40.9c32.3-32.2 31.7-71.8 21.4-95.9c-6.1-14.2-17.1-26-31.9-34.9c-3.7 26.9-11.8 48.3-24.7 64.8c-17.1 21.8-41.4 33.6-72.7 35.3c-23.6 1.3-46.3-4.4-63.9-16c-20.8-13.8-33-34.8-34.3-59.3c-2.5-48.3 35.7-83 95.2-86.4c21.1-1.2 40.9-.3 59.2 2.8c-2.4-14.8-7.3-26.6-14.6-35.2c-10-11.7-25.6-17.7-46.2-17.8H227c-16.6 0-39 4.6-53.3 26.3l-34.4-23.6c19.2-29.1 50.3-45.1 87.8-45.1h.8c62.6 .4 99.9 39.5 103.7 107.7l-.2 .2zm-156 68.8c1.3 25.1 28.4 36.8 54.6 35.3c25.6-1.4 54.6-11.4 59.5-73.2c-13.2-2.9-27.8-4.4-43.4-4.4c-4.8 0-9.6 .1-14.4 .4c-42.9 2.4-57.2 23.2-56.2 41.8l-.1 .1z"/></svg>
+              <span class="sr-only">Threads</span>
+          </a>  
+    
+           <a class="social-media-icon" href="https://x.com/BLS_gov" title="Connect with BLS on X, formerly referred to as Twitter" target="_blank" rel="noopener noreferrer" >
+              <!--?xml version="1.0" encoding="utf-8"?-->
+              <svg aria-hidden="true" data-prefix="fab" data-icon="x.com" class="svg-inline--fa fa-twitter fa-w-16"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"></path></svg>
+              <span class="sr-only">Visit BLS on X</span>
+          </a>
+                  
+           <a class="social-media-icon" href="https://www.youtube.com/channel/UCijn3WBpHtx4AvSya7NER9Q" title="BLS Youtube" target="_blank" rel="noopener noreferrer" >
+              <!--?xml version="1.0" encoding="utf-8"?-->
+              <svg aria-hidden="true" data-prefix="fab" data-icon="youtube" class="svg-inline--fa fa-youtube fa-w-18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg>
+              <span class="sr-only">Youtube</span>
+          </a>
+          <a class="social-media-icon" href="javascript:window.open('https://public.govdelivery.com/accounts/USDOLBLS/subscriber/new ','Popup','width=800,height=500,toolbar=no,scrollbars=yes,resizable=yes'); void('');" onclick="window.status='Subscribe'; return true" onmouseover="window.status='Subscribe'; return true" onmouseout="window.status=''; return true" id="social-email-3" title="Subscribe to BLS E-mail Updates">
+              <!--?xml version="1.0" encoding="utf-8"?-->
+              <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="envelope" class="svg-inline--fa fa-envelope fa-w-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"></path></svg>
+              <span class="sr-only">Email</span>
+          </a>
+        </div>
+</div>
+</div>
+</div>
+</footer>
+
+<!-- FOOTER RIGHT END -->
+
+
+
+<!--no_index_end-->
+
+<!-- OneColFootBasic End -->
+
+
+
+
+
+
+  </div>
+
+      </body>
+</html>

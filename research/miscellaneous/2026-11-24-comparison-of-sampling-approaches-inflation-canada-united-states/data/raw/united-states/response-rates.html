@@ -1,0 +1,1222 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Response Rates for the Consumer Price Indexes : U.S. Bureau of Labor Statistics</title>
+              
+	<!-- START include/global/head.stm -->
+	<script id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=DOL&subagency=BLS&yt=true"></script>
+
+	<script src="/javascripts/jquery-latest.js"></script>
+	<script src="/javascripts/bls-latest.js"></script>
+	<script src="/javascripts/jquery-tools.js"></script>
+	<script src="/javascripts/jquery-migrate-1.2.1.min.js"></script>
+	
+	<link rel="stylesheet" href="/assets/bootstrap/latest/bootstrap.min.css">
+	<script src="/assets/bootstrap/latest/popper.min.js"></script>
+	<script src="/assets/bootstrap/latest/bootstrap.min.js"></script>
+
+
+	<link rel="stylesheet" type="text/css" href="/stylesheets/bls_combined.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/bls_content.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/bls_tables.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/jquery-tools.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/bls_nr.css">
+    <!--[if lt IE 9]>
+		<link href="/stylesheets/ie8-styles.css" media="all" rel="Stylesheet" type="text/css"> 
+	<![endif]-->
+	<!--[if lt IE 8]>
+		<link href="/stylesheets/ie7-styles.css" media="all" rel="Stylesheet" type="text/css"> 
+	<![endif]-->
+	<!--[if lt IE 7]>
+		<link href="/stylesheets/ie6-styles.css" media="all" rel="Stylesheet" type="text/css"> 
+		<style>
+		body {
+			behavior:url(/stylesheets/csshover2.htc);
+		}
+		</style>			
+	<![endif]-->
+	<!--[if IE]>
+		<style>
+		body {
+			font-size: expression(1 / (screen.deviceXDPI / 96) * 84 + '%');
+		}
+		</style>	
+	<![endif]-->
+	<noscript>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/bls_noscript.css">
+	</noscript>
+	<!--  This means that the browser will (probably) render the width of the page at the width of its own screen. -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta http-equiv="x-ua-compatible" content="IE=Edge" />
+    <meta property="og:image" content="https://www.bls.gov/images/bls_emblem_2016.png" />
+	<meta property="og:image:alt" content="BLS Logo">
+	<meta name="robots" content="index, follow">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:site_name" content="Bureau of Labor Statistics">
+		<style>
+			td.gsc-table-cell-thumbnail{
+			display:none !important;
+			}
+		</style>
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+	<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
+	<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
+	<link rel="manifest" href="/manifest.json" />
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+	<meta name="theme-color" content="#ffffff" />
+    <!-- END include/global/head.stm -->
+<meta charset="UTF-8">
+
+  <link rel="stylesheet" type="text/css" href="/stylesheets/bls_programs.css">
+<style>
+img.image-style-large {
+    max-width: 100%;
+}
+	img.zoomable{
+		cursor:zoom-in;
+	}
+	.bootstrap .modal-dialog:has(img) img.zoomable{
+		cursor:default;
+	}
+	.zoomable-image-modal .modal-header {
+		padding: 0rem 1rem;
+		background-color: #ccc;
+	}
+	.zoomable-image-modal .modal-dialog{
+		max-width: 95vw;
+	}
+	.zoomable-image-modal .modal-content {
+		max-height: 95vh;
+		overflow: auto;
+	}
+</style>
+<noscript>
+	<style>
+
+		#programs-banner.generic #program-browse{
+			display: block;
+			top: 3px;
+			width:100%;
+		}
+		#programs-banner.generic #program-browse > div{
+			display: block;
+			position: static;
+			border: none;
+			border-top: 1px solid #fff;
+			margin: 10px 0 0;
+		}
+	</style>
+</noscript>
+
+<script>
+$(document).ready(function(){
+	/* Nav, tabbable*/
+	$(".main-content #programs-banner-nav > li a").focus(function(){
+		var parentUL = $(this).parent().parent();
+		$(".focus").removeClass("focus");
+		$(this).parent().addClass("focus");
+		if(parentUL.find("span").size() == 1){
+			parentUL.parent().find("ul").parent().addClass("focus");
+		};
+	});
+	$(".main-content #programs-banner-nav a").blur(function(){
+		setTimeout(function(){if( !$(document.activeElement).parents("#programs-banner-nav").size()){$(".focus").removeClass("focus");};},100);
+	});
+	
+	$(".main-content #programs-banner-nav li").click(function(e){
+		e.stopPropagation();
+		if($(this).find("a").attr("target") == "_blank"){
+			window.open($(this).find("a").attr("href"));
+		}else{
+			window.location = $(this).find("a").attr("href");
+		}
+	});
+	$(".main-content #programs-banner-nav li a").click(function(e){
+		$(this).blur();
+		e.stopPropagation();
+		e.stopImmediatePropagation();
+	});
+	
+
+	$("#programs-banner.generic #program-browse > a").focus(function(){
+		$(this).parent().addClass("focused");
+		$("#programs-banner.generic #program-browse").hover(function(){
+			$(this).removeClass("focused");
+			$("#programs-banner.generic #program-browse *").blur();
+		});
+	});			
+	$("#programs-banner.generic #program-browse a").each(function(){
+		$(this).blur(function(){
+			setTimeout(function(){
+				if($(document.activeElement).parents("#program-browse").length < 1 ){
+					$("#programs-banner.generic #program-browse").removeClass("focused")
+				};
+			});
+		});
+	});
+
+	/*Notices Archive Page, load*/
+	$(".main-content #archive-left-side .notice-items").hide();
+	var archiveLeftShow = $(".main-content #archive-left-side .notice-items")[0];
+	$(archiveLeftShow).show();
+	var archiveRightCurrent = $(".main-content #archive-right-side a")[0];
+	$(archiveRightCurrent).addClass("current");
+	/*Notices Archive Page, fcns*/
+	$(".main-content #archive-right-side a").click(function(e){
+		e.preventDefault();
+		$(".main-content #archive-right-side a.current").removeClass("current");
+		$(this).addClass("current");
+		$(".main-content #archive-left-side .notice-items").hide();
+		$(".main-content #archive-left-side #notices-"+$(this).text()).show();
+	});	
+
+	$('img.zoomable').wrap('<a href="#" data-toggle="modal" data-target=".zoomable-image-modal"></a>')
+	if($('img.zoomable').length){
+		$("body").append(`<div class="bootstrap"><div class="modal zoomable-image-modal" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+				<span class="modal-title"></span>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				</div>
+				<div class="modal-body">
+				<p>Modal body text goes here.</p>
+				</div>
+			</div>
+			</div>
+		</div></div>`)
+		$(".zoomable-image-modal").on('shown.bs.modal', function (event) {
+			let targetEl = $(event.relatedTarget)
+			$(this).find(".modal-body").html(targetEl.html());
+			$(this).find(".modal-body").focus();
+		})
+	}
+
+});
+</script>  
+
+      <script src="/assets/highcharts/latest/highcharts.js"></script>
+    <script src="/assets/highcharts/latest/highcharts-more.js"></script>
+    <script src="/assets/highcharts/latest/modules/exporting.js"></script>
+    <script src="/assets/highcharts/latest/modules/offline-exporting.js"></script>
+    <script src="/assets/highcharts/latest/modules/accessibility.js"></script>
+    <script src="/javascripts/filesaver.js"></script>
+  <script>
+  <!-- Begin chart code for chart 1 -->
+
+$(function(){
+               var all_chart_options = {"chart":{"renderTo":"chart1","margin":[100,40,80,80],"borderWidth":0,"plotBorderColor":"#000","plotBorderWidth":0,"backgroundColor":"#fff","type":"stacked_column","events":{"redraw":function redraw() { if (chart) { $.each(chart.series, function (i, serie) { $.each(serie.data, function (j, point) { if (point.options.cursor === "pointer") { point.graphic.attr({ cursor: 'pointer' }); } }); }); } }},"zoomType":null,"alignTicks":false,"ignoreHiddenSeries":true,"inverted":false,"showTable":function () { var self = this; var table_popup_div = $("<div>".concat(all_chart_options.input_table, "</div>")).css({ display: "block", width: "100%", height: "100%", overflow: "scroll", position: "fixed", zIndex: "5000", backgroundColor: "rgb(255,255,255)", top: "0px", left: "0px", padding: "20px" }).attr({ id: "table_popup_div", "class": "table_popup_div" }).appendTo("body"); var table_popup_div_close_button = $("<a href='#' class='close_popup'></a>").text("Close").css({ textAlign: "left", fontSize: "1.4em", color: "#e31c3d", margin: "auto", marginBottom: "9px" }).click(function (ev) { ev.preventDefault(); $("#table_popup_div").remove(); $("#".concat(self.renderTo, " .highcharts-a11y-proxy-button")).focus(); $(".focus-disabled").attr("tabindex", "0").removeClass("focus-disabled"); }).prependTo($("#table_popup_div")).focus(); $('a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, *[tabindex], *[contenteditable]').not(".close_popup").attr("tabindex", "-1").addClass("focus-disabled"); },"downloadCSV":function () { var csv = []; $("tr", all_chart_options.input_table).each(function (i, tr) { var tr_arr = []; $("th, td", tr).each(function (j, td) { tr_arr.push('"' + $(td).text() + '"'); }); csv.push(tr_arr); }); csv = csv.map(function (val, i) { return val.join(","); }); csv = csv.join("\n"); var filename = $.trim($("caption .tableTitle", all_chart_options.input_table).text()) + ".csv"; var file = new File([csv], filename, { type: "text/plain;charset=utf-8" }); saveAs(file); $(".highcharts-focus-border").remove(); }},"colors":["rgb(15, 5, 165)","rgb(120, 139, 255)","rgb(210, 35, 42)","rgb(189, 140, 15)","rgb(80, 68, 68)","rgb(225, 115, 115)","rgb(164, 90, 255)","rgb(125, 103, 96)","rgb(12, 166, 99)","rgb(15, 5, 165)","rgb(120, 139, 255)","rgb(210, 35, 42)","rgb(189, 140, 15)","rgb(158, 139, 139)","rgb(153, 0, 0)"],"legend":{"align":"left","alignColumns":false,"backgroundColor":"none","borderColor":"none","borderWidth":0,"enabled":true,"floating":true,"layout":"horizontal","reversed":false,"shadow":false,"symbolRadius":0,"title":{},"useHTML":false,"verticalAlign":"top","width":520,"x":60,"y":40,"itemStyle":{"fontFamily":"Calibri, Arial, Helvetica, sans-serif","color":"#000","cursor":"pointer","textOverflow":"wrap"},"itemHiddenStyle":{"color":"gray"},"itemHoverStyle":{"cursor":"pointer"}},"plotOptions":{"series":{"events":{"legendItemClick":function legendItemClick(event) {}},"dataLabels":{"enabled":false,"allowOverlap":false,"padding":0,"verticalAlign":"bottom","style":{"textShadow":"none","color":"#000"}},"pointPlacement":null,"stacking":null,"pointPadding":0.1,"groupPadding":0.2,"minPointLength":2,"minSize":4,"sizeBy":"width","lineWidth":1.5,"states":{"hover":{"lineWidth":4}},"marker":{"enabled":false,"states":{"hover":{"enabled":true,"radius":5}}}},"bubble":{"tooltip":{"followPointer":true}},"line":{},"bar":{"borderWidth":0},"boxplot":{"fillColor":"#F0F0E0"},"pie":{"showInLegend":true,"size":"130%"}},"series":[{"name":"Percent non-responding","data":[null,35,36.1,34.8,33.9,32.6,32.9,33.2,35,34.7,34.1,33.7,35.6],"type":"column","color":"rgb(15, 5, 165)","_symbolIndex":0,"stacking":"stacked","visible":true},{"name":"Percent collected","data":[null,65,63.9,65.2,66.1,67.4,67.1,66.8,65,65.3,65.9,66.3,64.4],"type":"column","color":"rgb(120, 139, 255)","_symbolIndex":0,"stacking":"stacked","visible":true}],"subtitle":{"text":"","align":"left","style":{"color":"#000000","fontFamily":"arial","fontWeight":"normal","fontSize":"12px"}},"title":{"text":" CPI Commodites and Services Survey response rates: quotes, percent  ","align":"left","style":{"color":"#000000","fontFamily":"arial","fontWeight":"bold","fontSize":"14px"}},"tooltip":{"backgroundColor":"#FEFFEF","crosshairs":[false,false],"formatter":function () { var options = this.series.chart.tooltip.options; var dollar = this.series.options.dollar || options.y_signs_arr[0]; var percent = this.series.options.percent || options.y_signs_arr[1]; var decimals = this.series.options.decimals || options.y_decimals; var multiple = options.multiplier; if (all_chart_options.series[this.series.index].yAxis == 1) { dollar = options.y_signs_arr_2[0]; percent = options.y_signs_arr_2[1]; decimals = options.y_decimals_2; multiple = options.multiplier_2; } var y_val = this.point.high ? "High: " + dollar + $(this.point.high * multiple).addCommas(decimals) + percent + " | Low: " + dollar + $(this.point.low * multiple).addCommas(decimals) + percent : dollar + $(this.y * multiple).addCommas(decimals) + percent; var s = "<b>" + this.series.name + "</b><br>" + this.x + ": " + y_val; all_chart_options.series[this.series.index] ? s = all_chart_options.tooltip.addExtraData(all_chart_options.series[this.series.index].extra_data, this.point, s) : s = s; return s.replace(/\$-/g, "-$"); },"style":{"color":"#000000","fontFamily":"Calibri, Arial, Helvetica, sans-serif"},"useHTML":false,"shared":false,"addExtraData":function (extra_data, point, s) { if (extra_data && extra_data[0].name) { $.each(extra_data, function (i) { if (extra_data[i].values[point.index]) { s = s + "<br>" + extra_data[i].name + ": " + extra_data[i].values[point.index]; } }); } return s; },"x_signs_arr":["",""],"z_signs_arr":["",""],"y_decimals":0,"y_decimals_2":0,"x_decimals":0,"z_decimals":0,"z_title":"Z","multiplier":1,"multiplier_2":1,"y_signs_arr":["",""],"y_signs_arr_2":["",""]},"xAxis":{"categories":["October 2025","November 2025","December 2025","January 2026","February 2026","March 2026","April 2026","May 2026","June 2026","July 2026","August 2026","September 2026","October 2026"],"gridLineColor":"#c0c0c0","gridLineWidth":0,"gridLineDashStyle":"Dot","labels":{"rotation":0,"useHTML":false,"style":{"color":"#000000","fontFamily":"Calibri, Arial, Helvetica, sans-serif","fontWeight":"normal","backgroundColor":"#fff","fontSize":"12px","textOverflow":"wrap"}},"lineWidth":1.2,"lineColor":"gray","max":null,"min":null,"plotBands":[],"plotLines":[{"value":0,"color":"#c0c0c0","dashStyle":"solid","width":0}],"startOnTick":false,"tickInterval":2,"tickmarkPlacement":"on","tickPosition":"outside","tickColor":"#C0D0E0","title":{"align":"middle","useHTML":true,"text":"","margin":6,"rotation":0,"style":{"color":"#000000","fontFamily":"Calibri, Arial, Helvetica, sans-serif","fontWeight":"normal","backgroundColor":"#fff","fontSize":"13px"},"x":0},"type":"linear"},"yAxis":{"gridLineColor":"#c0c0c0","gridLineWidth":1,"gridLineDashStyle":"Dot","labels":{"formatter":function yAxisFormat() { var decimals = this.axis.options.labels.decimals; var signs_arr = this.axis.options.labels.signs_arr; var dividend = this.axis.options.labels.dividend; var s = this.value / dividend == parseInt(this.value / dividend) ? Highcharts.numberFormat(this.value / dividend, 0, ".", ",") : Highcharts.numberFormat(this.value / dividend, 1, ".", ","); s = signs_arr[0] + s + signs_arr[1]; return s.replace(/\$-/g, "-$"); },"rotation":0,"style":{"color":"#000000","fontFamily":"Calibri, Arial, Helvetica, sans-serif","fontWeight":"normal","backgroundColor":"#fff","fontSize":"12px"},"signs_arr":["","%"],"decimals":null,"dividend":1},"lineColor":"gray","lineWidth":1,"max":100,"min":null,"opposite":false,"plotBands":[],"plotLines":[{"value":0,"color":"#000","dashStyle":"solid","width":1}],"tickInterval":null,"tickmarkPlacement":"on","tickPosition":"outside","tickColor":"#C0D0E0","tickWidth":1,"title":{"useHTML":false,"text":"","margin":6,"align":"high","offset":20,"rotation":0,"x":35,"y":-20,"style":{"color":"#000000","fontFamily":"Calibri, Arial, Helvetica, sans-serif","fontWeight":"normal","fontSize":"13px"}},"type":"linear","allowDecimals":true},"credits":{"href":"/","position":{"align":"left","x":10,"y":-22},"style":{"cursor":"default","color":"#2C2C2C","font-size":"11px"},"target":"_blank","text":"Click legend items to change data display. Hover over chart to view data.<br>Source: U.S. Bureau of Labor Statistics.","useHTML":true},"exporting":{"sourceWidth":640,"scale":1,"chartOptions":{"chart":{"backgroundColor":"#fff"},"credits":{"text":"<br>Source: U.S. Bureau of Labor Statistics."}},"buttons":{"contextButton":{"text":"<span style='color: #112e51'>Options</span>","symbolY":14,"symbolStroke":"#112e51","enabled":true,"verticalAlign":"bottom","x":-10,"menuItems":[{"textKey":"printChart","onclick":function onclick() { $(".highcharts-focus-border").remove(); this.print(); }},{"separator":true},{"textKey":"downloadPNG","onclick":function onclick() { this.exportChartLocal(); }},{"textKey":"downloadJPEG","onclick":function onclick() { this.exportChartLocal({ type: 'image/jpeg' }); }},{"textKey":"downloadSVG","onclick":function onclick() { this.exportChartLocal({ type: 'image/svg+xml' }); }},{"separator":true},{"text":"Show table","onclick":function onclick() { this.options.chart.showTable(); }},{"text":"Download CSV","onclick":function onclick() { this.options.chart.downloadCSV(); }}]}}},"input_table":"<table class=\"regular\" id=\"BLStable_2026_11_10_15_1\" style=\"width: 95%;\"> <caption> <span class=\"tableTitle\">CPI Commodites and Services Survey response rates: quotes, percent</span>  </caption> <thead><tr><th scope=\"col\" rowspan=\"1\" style=\"vertical-align: middle; min-width: 80px;\">Month<\/th><th scope=\"col\">Percent non-responding<\/th><th scope=\"col\">Percent collected<\/th><\/tr><\/thead> <tbody><tr><th scope=\"row\"><p>October 2025<\/p><\/th><td>-<\/td><td>-<\/td><\/tr><tr class=\"greenbar\"><th scope=\"row\"><p>November 2025<\/p><\/th><td>35.0%<\/td><td>65.0%<\/td><\/tr><tr><th scope=\"row\"><p>December 2025<\/p><\/th><td>36.1%<\/td><td>63.9%<\/td><\/tr><tr class=\"greenbar\"><th scope=\"row\"><p>January 2026<\/p><\/th><td>34.8%<\/td><td>65.2%<\/td><\/tr><tr><th scope=\"row\"><p>February 2026<\/p><\/th><td>33.9%<\/td><td>66.1%<\/td><\/tr><tr class=\"greenbar\"><th scope=\"row\"><p>March 2026<\/p><\/th><td>32.6%<\/td><td>67.4%<\/td><\/tr><tr><th scope=\"row\"><p>April 2026<\/p><\/th><td>32.9%<\/td><td>67.1%<\/td><\/tr><tr class=\"greenbar\"><th scope=\"row\"><p>May 2026<\/p><\/th><td>33.2%<\/td><td>66.8%<\/td><\/tr><tr><th scope=\"row\"><p>June 2026<\/p><\/th><td>35.0%<\/td><td>65.0%<\/td><\/tr><tr class=\"greenbar\"><th scope=\"row\"><p>July 2026<\/p><\/th><td>34.7%<\/td><td>65.3%<\/td><\/tr><tr><th scope=\"row\"><p>August 2026<\/p><\/th><td>34.1%<\/td><td>65.9%<\/td><\/tr><tr class=\"greenbar\"><th scope=\"row\"><p>September 2026<\/p><\/th><td>33.7%<\/td><td>66.3%<\/td><\/tr><tr><th scope=\"row\"><p>October 2026<\/p><\/th><td>35.6%<\/td><td>64.4%<\/td><\/tr><\/tbody><tfoot style=\"display: table-footer-group;\" id=\"BLStable_2026_11_10_15_1_footnotes\"><tr class=\"footnotes\"><td class=\"footnotes\" colspan=\"3\"><p>NOTE: The Oct 2025 data values are not available due to the 2025 lapse in appropriations.<\/p><\/td><\/tr><\/tfoot><\/table>","saved_values":[{"id":"chart_type_icons","val":"stacked_column"},{"id":"chart_id_textinput","val":"chart1"},{"id":"map_type_select","val":"state"},{"id":"map_animated_checkbox","val":false},{"id":"map_color_by_names_checkbox","val":false},{"id":"bubble_animated_checkbox","val":false},{"id":"drilldown_type_select","val":"bar"},{"id":"chart_width_textinput","val":"580"},{"id":"chart_height_textinput","val":"430"},{"id":"top_margin_textinput","val":"100"},{"id":"right_margin_textinput","val":"40"},{"id":"bottom_margin_textinput","val":"80"},{"id":"left_margin_textinput","val":"80"},{"id":"map_spotlight_size_checkbox","val":false},{"id":"map_circle_size_range","val":"10"},{"id":"map_circle_size_by_select","val":"main_values"},{"id":"table_input_load_series_from_icons","val":"column_heads"},{"id":"example_table_select","val":"recession_dates_table2"},{"id":"table_input_textarea","val":"<table class=\"regular\" id=\"BLStable_2026_11_10_15_1\" style=\"width: 95%;\"> <caption> <span class=\"tableTitle\">CPI Commodites and Services Survey response rates: quotes, percent</span>  </caption> <thead><tr><th scope=\"col\" rowspan=\"1\" style=\"vertical-align: middle; min-width: 80px;\">Month<\/th><th scope=\"col\">Percent non-responding<\/th><th scope=\"col\">Percent collected<\/th><\/tr><\/thead> <tbody><tr><th scope=\"row\"><p>October 2025<\/p><\/th><td>-<\/td><td>-<\/td><\/tr><tr class=\"greenbar\"><th scope=\"row\"><p>November 2025<\/p><\/th><td>35.0%<\/td><td>65.0%<\/td><\/tr><tr><th scope=\"row\"><p>December 2025<\/p><\/th><td>36.1%<\/td><td>63.9%<\/td><\/tr><tr class=\"greenbar\"><th scope=\"row\"><p>January 2026<\/p><\/th><td>34.8%<\/td><td>65.2%<\/td><\/tr><tr><th scope=\"row\"><p>February 2026<\/p><\/th><td>33.9%<\/td><td>66.1%<\/td><\/tr><tr class=\"greenbar\"><th scope=\"row\"><p>March 2026<\/p><\/th><td>32.6%<\/td><td>67.4%<\/td><\/tr><tr><th scope=\"row\"><p>April 2026<\/p><\/th><td>32.9%<\/td><td>67.1%<\/td><\/tr><tr class=\"greenbar\"><th scope=\"row\"><p>May 2026<\/p><\/th><td>33.2%<\/td><td>66.8%<\/td><\/tr><tr><th scope=\"row\"><p>June 2026<\/p><\/th><td>35.0%<\/td><td>65.0%<\/td><\/tr><tr class=\"greenbar\"><th scope=\"row\"><p>July 2026<\/p><\/th><td>34.7%<\/td><td>65.3%<\/td><\/tr><tr><th scope=\"row\"><p>August 2026<\/p><\/th><td>34.1%<\/td><td>65.9%<\/td><\/tr><tr class=\"greenbar\"><th scope=\"row\"><p>September 2026<\/p><\/th><td>33.7%<\/td><td>66.3%<\/td><\/tr><tr><th scope=\"row\"><p>October 2026<\/p><\/th><td>35.6%<\/td><td>64.4%<\/td><\/tr><\/tbody><tfoot style=\"display: table-footer-group;\" id=\"BLStable_2026_11_10_15_1_footnotes\"><tr class=\"footnotes\"><td class=\"footnotes\" colspan=\"3\"><p>NOTE: The Oct 2025 data values are not available due to the 2025 lapse in appropriations.<\/p><\/td><\/tr><\/tfoot><\/table>"},{"id":"color_palettes","val":"color_palette_0"},{"id":"use_custom_colors_checkbox","val":false},{"id":"custom_colors_textarea","val":"Aqua green CornflowerBlue #FF1493 #A52A2A #FF7F50 rgb(184,134,11) rgb(139,0,139) rgb(255,215,0)\n "},{"id":"legend_layout_select","val":"horizontal"},{"id":"map_legend_enabled_checkbox","val":true},{"id":"map_legend_hover_enabled_checkbox","val":true},{"id":"map_legend_decimals_select","val":null},{"id":"legend_placement_x","val":"60"},{"id":"legend_placement_y","val":"40"},{"id":"legend_reverse_layout_checkbox","val":false},{"id":"legend_width_input","val":""},{"id":"legend_item_width_input","val":""},{"id":"legend_alphabetical_layout_checkbox","val":false},{"id":"legend_make_toggle_checkbox","val":false},{"id":"chart_x_axis_title_textarea","val":""},{"id":"chart_x_axis_x_position_input","val":"40"},{"id":"chart_x_axis_tickmark_interval_input","val":""},{"id":"chart_x_axis_min_input","val":""},{"id":"chart_x_axis_max_input","val":""},{"id":"chart_x_axis_show_only_years","val":false},{"id":"chart_x_axis_add_commas","val":false},{"id":"chart_x_axis_signs_select","val":"no_signs"},{"id":"chart_x_axis_decimals_select","val":null},{"id":"chart_y_axis_title_textarea","val":""},{"id":"chart_y_axis_x_position_input","val":"35"},{"id":"chart_y_axis_tickmark_interval_input","val":""},{"id":"chart_y_axis_min_input","val":""},{"id":"chart_y_axis_max_input","val":"100"},{"id":"chart_y_axis_opposite_checkbox","val":false},{"id":"chart_y_axis_log_checkbox","val":false},{"id":"chart_y_axis_signs_select","val":"%"},{"id":"chart_y_axis_decimals_select","val":null},{"id":"chart_y_axis_divide_select","val":"1"},{"id":"chart_y_axis_2_enabled_checkbox","val":false},{"id":"chart_y_axis_title_textarea_2","val":""},{"id":"chart_y_axis_x_position_input_2","val":"-75"},{"id":"chart_y_axis_tickmark_interval_input_2","val":"5"},{"id":"chart_y_axis_min_input_2","val":"0"},{"id":"chart_y_axis_max_input_2","val":"100"},{"id":"chart_y_axis_signs_select_2","val":"no_signs"},{"id":"chart_y_axis_decimals_select_2","val":null},{"id":"chart_tooltip_shared_checkbox","val":false},{"id":"chart_tooltip_force_decimals_select","val":"0"},{"id":"chart_tooltip_signs_select","val":"no_signs"},{"id":"chart_tooltip_force_decimals_x_select","val":"0"},{"id":"chart_tooltip_signs_x_select","val":"no_signs"},{"id":"chart_tooltip_force_decimals_z_select","val":"0"},{"id":"chart_tooltip_signs_z_select","val":"no_signs"},{"id":"map_tooltip_main_value_font_size_input","val":"30"},{"id":"map_tooltip_na_text_input","val":"N/A"},{"id":"map_tooltip_prepend_to_value_text_input","val":""},{"id":"chart_z_title_text_input","val":""},{"id":"chart_tooltip_y_multiple_select","val":"1"},{"id":"chart_tooltip_force_decimals_select_2","val":"0"},{"id":"chart_tooltip_signs_select_2","val":"no_signs"},{"id":"chart_tooltip_y_multiple_select_2","val":"1"},{"id":"chart_credits_text_textarea","val":"Click legend items to change data display. Hover over chart to view data.\nSource: U.S. Bureau of Labor Statistics."},{"id":"point_padding_input","val":".1"},{"id":"group_padding_input","val":".2"},{"id":"chart_subtitle_textarea","val":""},{"id":"map_animation_speed_range","val":"500"},{"id":"map_animated_start_at_last_date_checkbox","val":false},{"id":"map_include_puerto_rico_checkbox","val":false},{"id":"map_include_virgin_islands_checkbox","val":false},{"id":"map_add_ranked_columns_checkbox","val":false},{"id":"map_ranked_column_size_range","val":"100"},{"id":"map_add_state_labels_checkbox","val":false},{"id":"chart_zoom_select","val":"false,false,null"},{"id":"chart_show_data_labels_checkbox","val":false},{"id":"chart_scatter_add_45_line_checkbox","val":false},{"id":"chart_scatter_add_regression_line_checkbox","val":false},{"id":"chart_scatter_highlight_points_select","val":"no_highlight"},{"id":"chart_add_recession_shading_select","val":"no_recession"}]};
+
+var chartCallback = function chartCallback(all_chart_options) {
+      if (all_chart_options.timeline) {
+        //call animation if applicable
+        all_chart_options.timeline.animation();
+      }
+  
+      $(".highcharts-legend-item").css("min-height", "0px").css("z-index", 100); //fix so CMS CSS doesn't make legend taller than it should
+  
+      $(".highcharts-tooltip").css("z-index", 200);
+      /**
+       * Highcharts plugin for setting a lower opacity for other series than the one that is hovered
+       * in the legend
+       */
+  
+      (function (Highcharts) {
+        var each = Highcharts.each;
+        Highcharts.wrap(Highcharts.Legend.prototype, 'renderItem', function (proceed, item) {
+          proceed.call(this, item);
+          var isPoint = !!item.series,
+              collection = isPoint ? item.series.points : this.chart.series,
+              groups = isPoint ? ['graphic'] : ['group', 'markerGroup'],
+              element = (this.options.useHTML ? item.legendItem : item.legendGroup).element;
+  
+          element.onmouseover = function () {
+            each(collection, function (seriesItem) {
+              if (seriesItem !== item) {
+                each(groups, function (group) {
+                  seriesItem[group].animate({
+                    opacity: 0.25
+                  }, {
+                    duration: 150
+                  });
+                });
+              }
+            });
+          };
+  
+          element.onmouseout = function () {
+            each(collection, function (seriesItem) {
+              if (seriesItem !== item) {
+                each(groups, function (group) {
+                  seriesItem[group].animate({
+                    opacity: 1
+                  }, {
+                    duration: 50
+                  });
+                });
+              }
+            });
+          };
+        });
+        Highcharts.wrap(Highcharts.Chart.prototype, 'showCredits', function (proceed, credits) {
+          proceed.call(this, credits);
+  
+          if (this.credits && credits.target) {
+            this.credits.on('click', function () {
+              $('<a>').attr({
+                href: credits.href,
+                target: credits.target
+              })[0].click();
+            });
+          }
+        });
+      })(Highcharts); //end gray other series plugin
+  
+    };
+Highcharts.setOptions({lang: {thousandsSep: ",",
+drillUpText: "\u25C0 Back ",
+contextButtonTitle: "Download chart image"
+   }});
+
+    var chart = new Highcharts.Chart(all_chart_options, chartCallback(all_chart_options));
+});
+  jQuery.fn.extend({addCommas:function addCommas(decimals) {
+        var val = this[0] || 0;
+  
+        if (isNaN(val) || val < 999 && val > -999 && decimals < 1) {
+          //small numbers auto decimals
+          return val;
+        } else if (val < 999 && val > -999 && decimals > 0) {
+          //small numbers fixed decimals
+          return val.toFixed(decimals);
+        } else if ((val > 999 || val < -999) && decimals > 0) {
+          //big numbers fixed decimals
+          val = val.toFixed(decimals);
+  
+          while (/(\d+)(\d{3})/.test(val.toString())) {
+            val = val.replace(/(\d+)(\d{3})/, '$1' + ',' + '$2');
+          }
+        } else if (val > 999 || val < -999) {
+          //big number auto decimals
+          while (/(\d+)(\d{3})/.test(val.toString())) {
+            val = val.toString().replace(/(\d+)(\d{3})/, '$1' + ',' + '$2');
+          }
+        }
+  
+        return val;
+      } });
+
+  <!-- End chart code for chart 1 -->
+  <!-- Begin chart code for chart 2 -->
+
+$(function(){
+               var all_chart_options = {"chart":{"renderTo":"chart2","margin":[100,40,80,80],"borderWidth":0,"plotBorderColor":"#000","plotBorderWidth":0,"backgroundColor":"#fff","type":"stacked_column","events":{"redraw":function redraw() { if (chart) { $.each(chart.series, function (i, serie) { $.each(serie.data, function (j, point) { if (point.options.cursor === "pointer") { point.graphic.attr({ cursor: 'pointer' }); } }); }); } }},"zoomType":null,"alignTicks":false,"ignoreHiddenSeries":true,"inverted":false,"showTable":function () { var self = this; var table_popup_div = $("<div>".concat(all_chart_options.input_table, "</div>")).css({ display: "block", width: "100%", height: "100%", overflow: "scroll", position: "fixed", zIndex: "5000", backgroundColor: "rgb(255,255,255)", top: "0px", left: "0px", padding: "20px" }).attr({ id: "table_popup_div", "class": "table_popup_div" }).appendTo("body"); var table_popup_div_close_button = $("<a href='#' class='close_popup'></a>").text("Close").css({ textAlign: "left", fontSize: "1.4em", color: "#e31c3d", margin: "auto", marginBottom: "9px" }).click(function (ev) { ev.preventDefault(); $("#table_popup_div").remove(); $("#".concat(self.renderTo, " .highcharts-a11y-proxy-button")).focus(); $(".focus-disabled").attr("tabindex", "0").removeClass("focus-disabled"); }).prependTo($("#table_popup_div")).focus(); $('a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, *[tabindex], *[contenteditable]').not(".close_popup").attr("tabindex", "-1").addClass("focus-disabled"); },"downloadCSV":function () { var csv = []; $("tr", all_chart_options.input_table).each(function (i, tr) { var tr_arr = []; $("th, td", tr).each(function (j, td) { tr_arr.push('"' + $(td).text() + '"'); }); csv.push(tr_arr); }); csv = csv.map(function (val, i) { return val.join(","); }); csv = csv.join("\n"); var filename = $.trim($("caption .tableTitle", all_chart_options.input_table).text()) + ".csv"; var file = new File([csv], filename, { type: "text/plain;charset=utf-8" }); saveAs(file); $(".highcharts-focus-border").remove(); }},"colors":["rgb(15, 5, 165)","rgb(120, 139, 255)","rgb(210, 35, 42)","rgb(189, 140, 15)","rgb(80, 68, 68)","rgb(225, 115, 115)","rgb(164, 90, 255)","rgb(125, 103, 96)","rgb(12, 166, 99)","rgb(15, 5, 165)","rgb(120, 139, 255)","rgb(210, 35, 42)","rgb(189, 140, 15)","rgb(158, 139, 139)","rgb(153, 0, 0)"],"legend":{"align":"left","alignColumns":false,"backgroundColor":"none","borderColor":"none","borderWidth":0,"enabled":true,"floating":true,"layout":"horizontal","reversed":false,"shadow":false,"symbolRadius":0,"title":{},"useHTML":false,"verticalAlign":"top","width":520,"x":60,"y":40,"itemStyle":{"fontFamily":"Calibri, Arial, Helvetica, sans-serif","color":"#000","cursor":"pointer","textOverflow":"wrap"},"itemHiddenStyle":{"color":"gray"},"itemHoverStyle":{"cursor":"pointer"}},"plotOptions":{"series":{"events":{"legendItemClick":function legendItemClick(event) {}},"dataLabels":{"enabled":false,"allowOverlap":false,"padding":0,"verticalAlign":"bottom","style":{"textShadow":"none","color":"#000"}},"pointPlacement":null,"stacking":null,"pointPadding":0.1,"groupPadding":0.2,"minPointLength":2,"minSize":4,"sizeBy":"width","lineWidth":1.5,"states":{"hover":{"lineWidth":4}},"marker":{"enabled":false,"states":{"hover":{"enabled":true,"radius":5}}}},"bubble":{"tooltip":{"followPointer":true}},"line":{},"bar":{"borderWidth":0},"boxplot":{"fillColor":"#F0F0E0"},"pie":{"showInLegend":true,"size":"130%"}},"series":[{"name":"Percent non-responding","data":[null,25.6,28,25.2,27.2,24.9,26.4,25.5,28.6,26.5,28.1,26.7,29.1],"type":"column","color":"rgb(15, 5, 165)","_symbolIndex":0,"stacking":"stacked","visible":true},{"name":"Percent Collected","data":[null,74.4,72,74.8,72.8,75.1,73.6,74.5,71.4,73.5,71.9,73.3,70.9],"type":"column","color":"rgb(120, 139, 255)","_symbolIndex":0,"stacking":"stacked","visible":true}],"subtitle":{"text":"","align":"left","style":{"color":"#000000","fontFamily":"arial","fontWeight":"normal","fontSize":"12px"}},"title":{"text":" CPI Commodites and Services Survey response rates: Outlets, percent  ","align":"left","style":{"color":"#000000","fontFamily":"arial","fontWeight":"bold","fontSize":"14px"}},"tooltip":{"backgroundColor":"#FEFFEF","crosshairs":[false,false],"formatter":function () { var options = this.series.chart.tooltip.options; var dollar = this.series.options.dollar || options.y_signs_arr[0]; var percent = this.series.options.percent || options.y_signs_arr[1]; var decimals = this.series.options.decimals || options.y_decimals; var multiple = options.multiplier; if (all_chart_options.series[this.series.index].yAxis == 1) { dollar = options.y_signs_arr_2[0]; percent = options.y_signs_arr_2[1]; decimals = options.y_decimals_2; multiple = options.multiplier_2; } var y_val = this.point.high ? "High: " + dollar + $(this.point.high * multiple).addCommas(decimals) + percent + " | Low: " + dollar + $(this.point.low * multiple).addCommas(decimals) + percent : dollar + $(this.y * multiple).addCommas(decimals) + percent; var s = "<b>" + this.series.name + "</b><br>" + this.x + ": " + y_val; all_chart_options.series[this.series.index] ? s = all_chart_options.tooltip.addExtraData(all_chart_options.series[this.series.index].extra_data, this.point, s) : s = s; return s.replace(/\$-/g, "-$"); },"style":{"color":"#000000","fontFamily":"Calibri, Arial, Helvetica, sans-serif"},"useHTML":false,"shared":false,"addExtraData":function (extra_data, point, s) { if (extra_data && extra_data[0].name) { $.each(extra_data, function (i) { if (extra_data[i].values[point.index]) { s = s + "<br>" + extra_data[i].name + ": " + extra_data[i].values[point.index]; } }); } return s; },"x_signs_arr":["",""],"z_signs_arr":["",""],"y_decimals":0,"y_decimals_2":0,"x_decimals":0,"z_decimals":0,"z_title":"Z","multiplier":1,"multiplier_2":1,"y_signs_arr":["",""],"y_signs_arr_2":["",""]},"xAxis":{"categories":["October 2025","November 2025","December 2025","January 2026","February 2026","March 2026","April 2026","May 2026","June 2026","July 2026","August 2026","September 2026","October 2026"],"gridLineColor":"#c0c0c0","gridLineWidth":0,"gridLineDashStyle":"Dot","labels":{"rotation":0,"useHTML":false,"style":{"color":"#000000","fontFamily":"Calibri, Arial, Helvetica, sans-serif","fontWeight":"normal","backgroundColor":"#fff","fontSize":"12px","textOverflow":"wrap"}},"lineWidth":1.2,"lineColor":"gray","max":null,"min":null,"plotBands":[],"plotLines":[{"value":0,"color":"#c0c0c0","dashStyle":"solid","width":0}],"startOnTick":false,"tickInterval":2,"tickmarkPlacement":"on","tickPosition":"outside","tickColor":"#C0D0E0","title":{"align":"middle","useHTML":true,"text":"","margin":6,"rotation":0,"style":{"color":"#000000","fontFamily":"Calibri, Arial, Helvetica, sans-serif","fontWeight":"normal","backgroundColor":"#fff","fontSize":"13px"},"x":0},"type":"linear"},"yAxis":{"gridLineColor":"#c0c0c0","gridLineWidth":1,"gridLineDashStyle":"Dot","labels":{"formatter":function yAxisFormat() { var decimals = this.axis.options.labels.decimals; var signs_arr = this.axis.options.labels.signs_arr; var dividend = this.axis.options.labels.dividend; var s = this.value / dividend == parseInt(this.value / dividend) ? Highcharts.numberFormat(this.value / dividend, 0, ".", ",") : Highcharts.numberFormat(this.value / dividend, 1, ".", ","); s = signs_arr[0] + s + signs_arr[1]; return s.replace(/\$-/g, "-$"); },"rotation":0,"style":{"color":"#000000","fontFamily":"Calibri, Arial, Helvetica, sans-serif","fontWeight":"normal","backgroundColor":"#fff","fontSize":"12px"},"signs_arr":["","%"],"decimals":null,"dividend":1},"lineColor":"gray","lineWidth":1,"max":100,"min":null,"opposite":false,"plotBands":[],"plotLines":[{"value":0,"color":"#000","dashStyle":"solid","width":1}],"tickInterval":null,"tickmarkPlacement":"on","tickPosition":"outside","tickColor":"#C0D0E0","tickWidth":1,"title":{"useHTML":false,"text":"","margin":6,"align":"high","offset":20,"rotation":0,"x":35,"y":-20,"style":{"color":"#000000","fontFamily":"Calibri, Arial, Helvetica, sans-serif","fontWeight":"normal","fontSize":"13px"}},"type":"linear","allowDecimals":true},"credits":{"href":"/","position":{"align":"left","x":10,"y":-22},"style":{"cursor":"default","color":"#2C2C2C","font-size":"11px"},"target":"_blank","text":"Click legend items to change data display. Hover over chart to view data.<br>Source: U.S. Bureau of Labor Statistics.","useHTML":true},"exporting":{"sourceWidth":640,"scale":1,"chartOptions":{"chart":{"backgroundColor":"#fff"},"credits":{"text":"<br>Source: U.S. Bureau of Labor Statistics."}},"buttons":{"contextButton":{"text":"<span style='color: #112e51'>Options</span>","symbolY":14,"symbolStroke":"#112e51","enabled":true,"verticalAlign":"bottom","x":-10,"menuItems":[{"textKey":"printChart","onclick":function onclick() { $(".highcharts-focus-border").remove(); this.print(); }},{"separator":true},{"textKey":"downloadPNG","onclick":function onclick() { this.exportChartLocal(); }},{"textKey":"downloadJPEG","onclick":function onclick() { this.exportChartLocal({ type: 'image/jpeg' }); }},{"textKey":"downloadSVG","onclick":function onclick() { this.exportChartLocal({ type: 'image/svg+xml' }); }},{"separator":true},{"text":"Show table","onclick":function onclick() { this.options.chart.showTable(); }},{"text":"Download CSV","onclick":function onclick() { this.options.chart.downloadCSV(); }}]}}},"input_table":"<table class=\"regular\" id=\"BLStable_2026_11_10_14_58\" style=\"width: 95%;\"> <caption> <span class=\"tableTitle\">CPI Commodites and Services Survey response rates: Outlets, percent</span>  </caption> <thead><tr><th scope=\"col\" rowspan=\"1\" style=\"vertical-align: middle; min-width: 80px;\">Month<\/th><th scope=\"col\">Percent non-responding<\/th><th scope=\"col\">Percent Collected<\/th><\/tr><\/thead> <tbody><tr><th scope=\"row\"><p>October 2025<\/p><\/th><td>-<\/td><td>-<\/td><\/tr><tr class=\"greenbar\"><th scope=\"row\"><p>November 2025<\/p><\/th><td>25.6%<\/td><td>74.4%<\/td><\/tr><tr><th scope=\"row\"><p>December 2025<\/p><\/th><td>28.0%<\/td><td>72.0%<\/td><\/tr><tr class=\"greenbar\"><th scope=\"row\"><p>January 2026<\/p><\/th><td>25.2%<\/td><td>74.8%<\/td><\/tr><tr><th scope=\"row\"><p>February 2026<\/p><\/th><td>27.2%<\/td><td>72.8%<\/td><\/tr><tr class=\"greenbar\"><th scope=\"row\"><p>March 2026<\/p><\/th><td>24.9%<\/td><td>75.1%<\/td><\/tr><tr><th scope=\"row\"><p>April 2026<\/p><\/th><td>26.4%<\/td><td>73.6%<\/td><\/tr><tr class=\"greenbar\"><th scope=\"row\"><p>May 2026<\/p><\/th><td>25.5%<\/td><td>74.5%<\/td><\/tr><tr><th scope=\"row\"><p>June 2026<\/p><\/th><td>28.6%<\/td><td>71.4%<\/td><\/tr><tr class=\"greenbar\"><th scope=\"row\"><p>July 2026<\/p><\/th><td>26.5%<\/td><td>73.5%<\/td><\/tr><tr><th scope=\"row\"><p>August 2026<\/p><\/th><td>28.1%<\/td><td>71.9%<\/td><\/tr><tr class=\"greenbar\"><th scope=\"row\"><p>September 2026<\/p><\/th><td>26.7%<\/td><td>73.3%<\/td><\/tr><tr><th scope=\"row\"><p>October 2026<\/p><\/th><td>29.1%<\/td><td>70.9%<\/td><\/tr><\/tbody><tfoot style=\"display: table-footer-group;\" id=\"BLStable_2026_11_10_14_58_footnotes\"><tr class=\"footnotes\"><td class=\"footnotes\" colspan=\"3\"><p>NOTE: The Oct 2025 data values are not available due to the 2025 lapse in appropriations.<\/p><\/td><\/tr><\/tfoot><\/table>","saved_values":[{"id":"chart_type_icons","val":"stacked_column"},{"id":"chart_id_textinput","val":"chart2"},{"id":"map_type_select","val":"state"},{"id":"map_animated_checkbox","val":false},{"id":"map_color_by_names_checkbox","val":false},{"id":"bubble_animated_checkbox","val":false},{"id":"drilldown_type_select","val":"bar"},{"id":"chart_width_textinput","val":"580"},{"id":"chart_height_textinput","val":"430"},{"id":"top_margin_textinput","val":"100"},{"id":"right_margin_textinput","val":"40"},{"id":"bottom_margin_textinput","val":"80"},{"id":"left_margin_textinput","val":"80"},{"id":"map_spotlight_size_checkbox","val":false},{"id":"map_circle_size_range","val":"10"},{"id":"map_circle_size_by_select","val":"main_values"},{"id":"table_input_load_series_from_icons","val":"column_heads"},{"id":"example_table_select","val":"recession_dates_table2"},{"id":"table_input_textarea","val":"<table class=\"regular\" id=\"BLStable_2026_11_10_14_58\" style=\"width: 95%;\"> <caption> <span class=\"tableTitle\">CPI Commodites and Services Survey response rates: Outlets, percent</span>  </caption> <thead><tr><th scope=\"col\" rowspan=\"1\" style=\"vertical-align: middle; min-width: 80px;\">Month<\/th><th scope=\"col\">Percent non-responding<\/th><th scope=\"col\">Percent Collected<\/th><\/tr><\/thead> <tbody><tr><th scope=\"row\"><p>October 2025<\/p><\/th><td>-<\/td><td>-<\/td><\/tr><tr class=\"greenbar\"><th scope=\"row\"><p>November 2025<\/p><\/th><td>25.6%<\/td><td>74.4%<\/td><\/tr><tr><th scope=\"row\"><p>December 2025<\/p><\/th><td>28.0%<\/td><td>72.0%<\/td><\/tr><tr class=\"greenbar\"><th scope=\"row\"><p>January 2026<\/p><\/th><td>25.2%<\/td><td>74.8%<\/td><\/tr><tr><th scope=\"row\"><p>February 2026<\/p><\/th><td>27.2%<\/td><td>72.8%<\/td><\/tr><tr class=\"greenbar\"><th scope=\"row\"><p>March 2026<\/p><\/th><td>24.9%<\/td><td>75.1%<\/td><\/tr><tr><th scope=\"row\"><p>April 2026<\/p><\/th><td>26.4%<\/td><td>73.6%<\/td><\/tr><tr class=\"greenbar\"><th scope=\"row\"><p>May 2026<\/p><\/th><td>25.5%<\/td><td>74.5%<\/td><\/tr><tr><th scope=\"row\"><p>June 2026<\/p><\/th><td>28.6%<\/td><td>71.4%<\/td><\/tr><tr class=\"greenbar\"><th scope=\"row\"><p>July 2026<\/p><\/th><td>26.5%<\/td><td>73.5%<\/td><\/tr><tr><th scope=\"row\"><p>August 2026<\/p><\/th><td>28.1%<\/td><td>71.9%<\/td><\/tr><tr class=\"greenbar\"><th scope=\"row\"><p>September 2026<\/p><\/th><td>26.7%<\/td><td>73.3%<\/td><\/tr><tr><th scope=\"row\"><p>October 2026<\/p><\/th><td>29.1%<\/td><td>70.9%<\/td><\/tr><\/tbody><tfoot style=\"display: table-footer-group;\" id=\"BLStable_2026_11_10_14_58_footnotes\"><tr class=\"footnotes\"><td class=\"footnotes\" colspan=\"3\"><p>NOTE: The Oct 2025 data values are not available due to the 2025 lapse in appropriations.<\/p><\/td><\/tr><\/tfoot><\/table>"},{"id":"color_palettes","val":"color_palette_0"},{"id":"use_custom_colors_checkbox","val":false},{"id":"custom_colors_textarea","val":"Aqua green CornflowerBlue #FF1493 #A52A2A #FF7F50 rgb(184,134,11) rgb(139,0,139) rgb(255,215,0)\n "},{"id":"legend_layout_select","val":"horizontal"},{"id":"map_legend_enabled_checkbox","val":true},{"id":"map_legend_hover_enabled_checkbox","val":true},{"id":"map_legend_decimals_select","val":null},{"id":"legend_placement_x","val":"60"},{"id":"legend_placement_y","val":"40"},{"id":"legend_reverse_layout_checkbox","val":false},{"id":"legend_width_input","val":""},{"id":"legend_item_width_input","val":""},{"id":"legend_alphabetical_layout_checkbox","val":false},{"id":"legend_make_toggle_checkbox","val":false},{"id":"chart_x_axis_title_textarea","val":""},{"id":"chart_x_axis_x_position_input","val":"40"},{"id":"chart_x_axis_tickmark_interval_input","val":""},{"id":"chart_x_axis_min_input","val":""},{"id":"chart_x_axis_max_input","val":""},{"id":"chart_x_axis_show_only_years","val":false},{"id":"chart_x_axis_add_commas","val":false},{"id":"chart_x_axis_signs_select","val":"no_signs"},{"id":"chart_x_axis_decimals_select","val":null},{"id":"chart_y_axis_title_textarea","val":""},{"id":"chart_y_axis_x_position_input","val":"35"},{"id":"chart_y_axis_tickmark_interval_input","val":""},{"id":"chart_y_axis_min_input","val":""},{"id":"chart_y_axis_max_input","val":"100"},{"id":"chart_y_axis_opposite_checkbox","val":false},{"id":"chart_y_axis_log_checkbox","val":false},{"id":"chart_y_axis_signs_select","val":"%"},{"id":"chart_y_axis_decimals_select","val":null},{"id":"chart_y_axis_divide_select","val":"1"},{"id":"chart_y_axis_2_enabled_checkbox","val":false},{"id":"chart_y_axis_title_textarea_2","val":""},{"id":"chart_y_axis_x_position_input_2","val":"-75"},{"id":"chart_y_axis_tickmark_interval_input_2","val":"5"},{"id":"chart_y_axis_min_input_2","val":"0"},{"id":"chart_y_axis_max_input_2","val":"100"},{"id":"chart_y_axis_signs_select_2","val":"no_signs"},{"id":"chart_y_axis_decimals_select_2","val":null},{"id":"chart_tooltip_shared_checkbox","val":false},{"id":"chart_tooltip_force_decimals_select","val":"0"},{"id":"chart_tooltip_signs_select","val":"no_signs"},{"id":"chart_tooltip_force_decimals_x_select","val":"0"},{"id":"chart_tooltip_signs_x_select","val":"no_signs"},{"id":"chart_tooltip_force_decimals_z_select","val":"0"},{"id":"chart_tooltip_signs_z_select","val":"no_signs"},{"id":"map_tooltip_main_value_font_size_input","val":"30"},{"id":"map_tooltip_na_text_input","val":"N/A"},{"id":"map_tooltip_prepend_to_value_text_input","val":""},{"id":"chart_z_title_text_input","val":""},{"id":"chart_tooltip_y_multiple_select","val":"1"},{"id":"chart_tooltip_force_decimals_select_2","val":"0"},{"id":"chart_tooltip_signs_select_2","val":"no_signs"},{"id":"chart_tooltip_y_multiple_select_2","val":"1"},{"id":"chart_credits_text_textarea","val":"Click legend items to change data display. Hover over chart to view data.\nSource: U.S. Bureau of Labor Statistics."},{"id":"point_padding_input","val":".1"},{"id":"group_padding_input","val":".2"},{"id":"chart_subtitle_textarea","val":""},{"id":"map_animation_speed_range","val":"500"},{"id":"map_animated_start_at_last_date_checkbox","val":false},{"id":"map_include_puerto_rico_checkbox","val":false},{"id":"map_include_virgin_islands_checkbox","val":false},{"id":"map_add_ranked_columns_checkbox","val":false},{"id":"map_ranked_column_size_range","val":"100"},{"id":"map_add_state_labels_checkbox","val":false},{"id":"chart_zoom_select","val":"false,false,null"},{"id":"chart_show_data_labels_checkbox","val":false},{"id":"chart_scatter_add_45_line_checkbox","val":false},{"id":"chart_scatter_add_regression_line_checkbox","val":false},{"id":"chart_scatter_highlight_points_select","val":"no_highlight"},{"id":"chart_add_recession_shading_select","val":"no_recession"}]};
+
+var chartCallback = function chartCallback(all_chart_options) {
+      if (all_chart_options.timeline) {
+        //call animation if applicable
+        all_chart_options.timeline.animation();
+      }
+  
+      $(".highcharts-legend-item").css("min-height", "0px").css("z-index", 100); //fix so CMS CSS doesn't make legend taller than it should
+  
+      $(".highcharts-tooltip").css("z-index", 200);
+      /**
+       * Highcharts plugin for setting a lower opacity for other series than the one that is hovered
+       * in the legend
+       */
+  
+      (function (Highcharts) {
+        var each = Highcharts.each;
+        Highcharts.wrap(Highcharts.Legend.prototype, 'renderItem', function (proceed, item) {
+          proceed.call(this, item);
+          var isPoint = !!item.series,
+              collection = isPoint ? item.series.points : this.chart.series,
+              groups = isPoint ? ['graphic'] : ['group', 'markerGroup'],
+              element = (this.options.useHTML ? item.legendItem : item.legendGroup).element;
+  
+          element.onmouseover = function () {
+            each(collection, function (seriesItem) {
+              if (seriesItem !== item) {
+                each(groups, function (group) {
+                  seriesItem[group].animate({
+                    opacity: 0.25
+                  }, {
+                    duration: 150
+                  });
+                });
+              }
+            });
+          };
+  
+          element.onmouseout = function () {
+            each(collection, function (seriesItem) {
+              if (seriesItem !== item) {
+                each(groups, function (group) {
+                  seriesItem[group].animate({
+                    opacity: 1
+                  }, {
+                    duration: 50
+                  });
+                });
+              }
+            });
+          };
+        });
+        Highcharts.wrap(Highcharts.Chart.prototype, 'showCredits', function (proceed, credits) {
+          proceed.call(this, credits);
+  
+          if (this.credits && credits.target) {
+            this.credits.on('click', function () {
+              $('<a>').attr({
+                href: credits.href,
+                target: credits.target
+              })[0].click();
+            });
+          }
+        });
+      })(Highcharts); //end gray other series plugin
+  
+    };
+Highcharts.setOptions({lang: {thousandsSep: ",",
+drillUpText: "\u25C0 Back ",
+contextButtonTitle: "Download chart image"
+   }});
+
+    var chart = new Highcharts.Chart(all_chart_options, chartCallback(all_chart_options));
+});
+  jQuery.fn.extend({addCommas:function addCommas(decimals) {
+        var val = this[0] || 0;
+  
+        if (isNaN(val) || val < 999 && val > -999 && decimals < 1) {
+          //small numbers auto decimals
+          return val;
+        } else if (val < 999 && val > -999 && decimals > 0) {
+          //small numbers fixed decimals
+          return val.toFixed(decimals);
+        } else if ((val > 999 || val < -999) && decimals > 0) {
+          //big numbers fixed decimals
+          val = val.toFixed(decimals);
+  
+          while (/(\d+)(\d{3})/.test(val.toString())) {
+            val = val.replace(/(\d+)(\d{3})/, '$1' + ',' + '$2');
+          }
+        } else if (val > 999 || val < -999) {
+          //big number auto decimals
+          while (/(\d+)(\d{3})/.test(val.toString())) {
+            val = val.toString().replace(/(\d+)(\d{3})/, '$1' + ',' + '$2');
+          }
+        }
+  
+        return val;
+      } });
+
+  <!-- End chart code for chart 2 -->
+  <!-- Begin chart code for chart 3 -->
+
+$(function(){
+               var all_chart_options = {"chart":{"renderTo":"chart3","margin":[100,40,80,80],"borderWidth":0,"plotBorderColor":"#000","plotBorderWidth":0,"backgroundColor":"#fff","type":"stacked_column","events":{"redraw":function redraw() { if (chart) { $.each(chart.series, function (i, serie) { $.each(serie.data, function (j, point) { if (point.options.cursor === "pointer") { point.graphic.attr({ cursor: 'pointer' }); } }); }); } }},"zoomType":null,"alignTicks":false,"ignoreHiddenSeries":true,"inverted":false,"showTable":function () { var self = this; var table_popup_div = $("<div>".concat(all_chart_options.input_table, "</div>")).css({ display: "block", width: "100%", height: "100%", overflow: "scroll", position: "fixed", zIndex: "5000", backgroundColor: "rgb(255,255,255)", top: "0px", left: "0px", padding: "20px" }).attr({ id: "table_popup_div", "class": "table_popup_div" }).appendTo("body"); var table_popup_div_close_button = $("<a href='#' class='close_popup'></a>").text("Close").css({ textAlign: "left", fontSize: "1.4em", color: "#e31c3d", margin: "auto", marginBottom: "9px" }).click(function (ev) { ev.preventDefault(); $("#table_popup_div").remove(); $("#".concat(self.renderTo, " .highcharts-a11y-proxy-button")).focus(); $(".focus-disabled").attr("tabindex", "0").removeClass("focus-disabled"); }).prependTo($("#table_popup_div")).focus(); $('a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, *[tabindex], *[contenteditable]').not(".close_popup").attr("tabindex", "-1").addClass("focus-disabled"); },"downloadCSV":function () { var csv = []; $("tr", all_chart_options.input_table).each(function (i, tr) { var tr_arr = []; $("th, td", tr).each(function (j, td) { tr_arr.push('"' + $(td).text() + '"'); }); csv.push(tr_arr); }); csv = csv.map(function (val, i) { return val.join(","); }); csv = csv.join("\n"); var filename = $.trim($("caption .tableTitle", all_chart_options.input_table).text()) + ".csv"; var file = new File([csv], filename, { type: "text/plain;charset=utf-8" }); saveAs(file); $(".highcharts-focus-border").remove(); }},"colors":["rgb(15, 5, 165)","rgb(120, 139, 255)","rgb(210, 35, 42)","rgb(189, 140, 15)","rgb(80, 68, 68)","rgb(225, 115, 115)","rgb(164, 90, 255)","rgb(125, 103, 96)","rgb(12, 166, 99)","rgb(15, 5, 165)","rgb(120, 139, 255)","rgb(210, 35, 42)","rgb(189, 140, 15)","rgb(158, 139, 139)","rgb(153, 0, 0)"],"legend":{"align":"left","alignColumns":false,"backgroundColor":"none","borderColor":"none","borderWidth":0,"enabled":true,"floating":true,"layout":"horizontal","reversed":false,"shadow":false,"symbolRadius":0,"title":{},"useHTML":false,"verticalAlign":"top","width":520,"x":60,"y":40,"itemStyle":{"fontFamily":"Calibri, Arial, Helvetica, sans-serif","color":"#000","cursor":"pointer","textOverflow":"wrap"},"itemHiddenStyle":{"color":"gray"},"itemHoverStyle":{"cursor":"pointer"}},"plotOptions":{"series":{"events":{"legendItemClick":function legendItemClick(event) {}},"dataLabels":{"enabled":false,"allowOverlap":false,"padding":0,"verticalAlign":"bottom","style":{"textShadow":"none","color":"#000"}},"pointPlacement":null,"stacking":null,"pointPadding":0.1,"groupPadding":0.2,"minPointLength":2,"minSize":4,"sizeBy":"width","lineWidth":1.5,"states":{"hover":{"lineWidth":4}},"marker":{"enabled":false,"states":{"hover":{"enabled":true,"radius":5}}}},"bubble":{"tooltip":{"followPointer":true}},"line":{},"bar":{"borderWidth":0},"boxplot":{"fillColor":"#F0F0E0"},"pie":{"showInLegend":true,"size":"130%"}},"series":[{"name":"Percent other (not interviewed, not vacant)","data":[null,47,44.2,41.4,42.6,38.6,41.2,40.3,40,40.8,43.3,43,38.5],"type":"column","color":"rgb(15, 5, 165)","_symbolIndex":0,"stacking":"stacked","visible":true},{"name":"Percent vacant","data":[null,4.1,3.9,3.6,4,3.7,3.9,3.9,4,3.7,4.2,3.8,4],"type":"column","color":"rgb(120, 139, 255)","_symbolIndex":0,"stacking":"stacked","visible":true},{"name":"Percent data reported","data":[null,42.6,45.4,49.3,46,51.2,47,48.4,48.8,49.5,45.5,47,49.8],"type":"column","color":"rgb(210, 35, 42)","_symbolIndex":0,"stacking":"stacked","visible":true}],"subtitle":{"text":"","align":"left","style":{"color":"#000000","fontFamily":"arial","fontWeight":"normal","fontSize":"12px"}},"title":{"text":" CPI Housing Survey response rates: Quotes, percent  ","align":"left","style":{"color":"#000000","fontFamily":"arial","fontWeight":"bold","fontSize":"14px"}},"tooltip":{"backgroundColor":"#FEFFEF","crosshairs":[false,false],"formatter":function () { var options = this.series.chart.tooltip.options; var dollar = this.series.options.dollar || options.y_signs_arr[0]; var percent = this.series.options.percent || options.y_signs_arr[1]; var decimals = this.series.options.decimals || options.y_decimals; var multiple = options.multiplier; if (all_chart_options.series[this.series.index].yAxis == 1) { dollar = options.y_signs_arr_2[0]; percent = options.y_signs_arr_2[1]; decimals = options.y_decimals_2; multiple = options.multiplier_2; } var y_val = this.point.high ? "High: " + dollar + $(this.point.high * multiple).addCommas(decimals) + percent + " | Low: " + dollar + $(this.point.low * multiple).addCommas(decimals) + percent : dollar + $(this.y * multiple).addCommas(decimals) + percent; var s = "<b>" + this.series.name + "</b><br>" + this.x + ": " + y_val; all_chart_options.series[this.series.index] ? s = all_chart_options.tooltip.addExtraData(all_chart_options.series[this.series.index].extra_data, this.point, s) : s = s; return s.replace(/\$-/g, "-$"); },"style":{"color":"#000000","fontFamily":"Calibri, Arial, Helvetica, sans-serif"},"useHTML":false,"shared":false,"addExtraData":function (extra_data, point, s) { if (extra_data && extra_data[0].name) { $.each(extra_data, function (i) { if (extra_data[i].values[point.index]) { s = s + "<br>" + extra_data[i].name + ": " + extra_data[i].values[point.index]; } }); } return s; },"x_signs_arr":["",""],"z_signs_arr":["",""],"y_decimals":0,"y_decimals_2":0,"x_decimals":0,"z_decimals":0,"z_title":"Z","multiplier":1,"multiplier_2":1,"y_signs_arr":["",""],"y_signs_arr_2":["",""]},"xAxis":{"categories":["October 2025","November 2025","December 2025","January 2026","February 2026","March 2026","April 2026","May 2026","June 2026","July 2026","August 2026","September 2026","October 2026"],"gridLineColor":"#c0c0c0","gridLineWidth":0,"gridLineDashStyle":"Dot","labels":{"rotation":0,"useHTML":false,"style":{"color":"#000000","fontFamily":"Calibri, Arial, Helvetica, sans-serif","fontWeight":"normal","backgroundColor":"#fff","fontSize":"12px","textOverflow":"wrap"}},"lineWidth":1.2,"lineColor":"gray","max":null,"min":null,"plotBands":[],"plotLines":[{"value":0,"color":"#c0c0c0","dashStyle":"solid","width":0}],"startOnTick":false,"tickInterval":2,"tickmarkPlacement":"on","tickPosition":"outside","tickColor":"#C0D0E0","title":{"align":"middle","useHTML":true,"text":"","margin":6,"rotation":0,"style":{"color":"#000000","fontFamily":"Calibri, Arial, Helvetica, sans-serif","fontWeight":"normal","backgroundColor":"#fff","fontSize":"13px"},"x":0},"type":"linear"},"yAxis":{"gridLineColor":"#c0c0c0","gridLineWidth":1,"gridLineDashStyle":"Dot","labels":{"formatter":function yAxisFormat() { var decimals = this.axis.options.labels.decimals; var signs_arr = this.axis.options.labels.signs_arr; var dividend = this.axis.options.labels.dividend; var s = this.value / dividend == parseInt(this.value / dividend) ? Highcharts.numberFormat(this.value / dividend, 0, ".", ",") : Highcharts.numberFormat(this.value / dividend, 1, ".", ","); s = signs_arr[0] + s + signs_arr[1]; return s.replace(/\$-/g, "-$"); },"rotation":0,"style":{"color":"#000000","fontFamily":"Calibri, Arial, Helvetica, sans-serif","fontWeight":"normal","backgroundColor":"#fff","fontSize":"12px"},"signs_arr":["","%"],"decimals":null,"dividend":1},"lineColor":"gray","lineWidth":1,"max":100,"min":null,"opposite":false,"plotBands":[],"plotLines":[{"value":0,"color":"#000","dashStyle":"solid","width":1}],"tickInterval":null,"tickmarkPlacement":"on","tickPosition":"outside","tickColor":"#C0D0E0","tickWidth":1,"title":{"useHTML":false,"text":"","margin":6,"align":"high","offset":20,"rotation":0,"x":35,"y":-20,"style":{"color":"#000000","fontFamily":"Calibri, Arial, Helvetica, sans-serif","fontWeight":"normal","fontSize":"13px"}},"type":"linear","allowDecimals":true},"credits":{"href":"/","position":{"align":"left","x":10,"y":-22},"style":{"cursor":"default","color":"#2C2C2C","font-size":"11px"},"target":"_blank","text":"Click legend items to change data display. Hover over chart to view data.<br>Source: U.S. Bureau of Labor Statistics.","useHTML":true},"exporting":{"sourceWidth":640,"scale":1,"chartOptions":{"chart":{"backgroundColor":"#fff"},"credits":{"text":"<br>Source: U.S. Bureau of Labor Statistics."}},"buttons":{"contextButton":{"text":"<span style='color: #112e51'>Options</span>","symbolY":14,"symbolStroke":"#112e51","enabled":true,"verticalAlign":"bottom","x":-10,"menuItems":[{"textKey":"printChart","onclick":function onclick() { $(".highcharts-focus-border").remove(); this.print(); }},{"separator":true},{"textKey":"downloadPNG","onclick":function onclick() { this.exportChartLocal(); }},{"textKey":"downloadJPEG","onclick":function onclick() { this.exportChartLocal({ type: 'image/jpeg' }); }},{"textKey":"downloadSVG","onclick":function onclick() { this.exportChartLocal({ type: 'image/svg+xml' }); }},{"separator":true},{"text":"Show table","onclick":function onclick() { this.options.chart.showTable(); }},{"text":"Download CSV","onclick":function onclick() { this.options.chart.downloadCSV(); }}]}}},"input_table":"<table class=\"regular\" id=\"BLStable_2026_11_10_14_56\" style=\"width: 95%;\"> <caption> <span class=\"tableTitle\">CPI Housing Survey response rates: Quotes, percent</span>  </caption> <thead><tr><th scope=\"col\" rowspan=\"1\" style=\"vertical-align: middle; min-width: 80px;\">Month<\/th><th scope=\"col\">Percent other (not interviewed, not vacant)<\/th><th scope=\"col\">Percent vacant<\/th><th scope=\"col\">Percent data reported<\/th><\/tr><\/thead> <tbody><tr><th scope=\"row\"><p>October 2025<\/p><\/th><td>-<\/td><td>-<\/td><td>-<\/td><\/tr><tr class=\"greenbar\"><th scope=\"row\"><p>November 2025<\/p><\/th><td>47.0%<\/td><td>4.1%<\/td><td>42.6%<\/td><\/tr><tr><th scope=\"row\"><p>December 2025<\/p><\/th><td>44.2%<\/td><td>3.9%<\/td><td>45.4%<\/td><\/tr><tr class=\"greenbar\"><th scope=\"row\"><p>January 2026<\/p><\/th><td>41.4%<\/td><td>3.6%<\/td><td>49.3%<\/td><\/tr><tr><th scope=\"row\"><p>February 2026<\/p><\/th><td>42.6%<\/td><td>4.0%<\/td><td>46.0%<\/td><\/tr><tr class=\"greenbar\"><th scope=\"row\"><p>March 2026<\/p><\/th><td>38.6%<\/td><td>3.7%<\/td><td>51.2%<\/td><\/tr><tr><th scope=\"row\"><p>April 2026<\/p><\/th><td>41.2%<\/td><td>3.9%<\/td><td>47.0%<\/td><\/tr><tr class=\"greenbar\"><th scope=\"row\"><p>May 2026<\/p><\/th><td>40.3%<\/td><td>3.9%<\/td><td>48.4%<\/td><\/tr><tr><th scope=\"row\"><p>June 2026<\/p><\/th><td>40.0%<\/td><td>4.0%<\/td><td>48.8%<\/td><\/tr><tr class=\"greenbar\"><th scope=\"row\"><p>July 2026<\/p><\/th><td>40.8%<\/td><td>3.7%<\/td><td>49.5%<\/td><\/tr><tr><th scope=\"row\"><p>August 2026<\/p><\/th><td>43.3%<\/td><td>4.2%<\/td><td>45.5%<\/td><\/tr><tr class=\"greenbar\"><th scope=\"row\"><p>September 2026<\/p><\/th><td>43.0%<\/td><td>3.8%<\/td><td>47.0%<\/td><\/tr><tr><th scope=\"row\"><p>October 2026<\/p><\/th><td>38.5%<\/td><td>4.0%<\/td><td>49.8%<\/td><\/tr><\/tbody><tfoot style=\"display: table-footer-group;\" id=\"BLStable_2026_11_10_14_56_footnotes\"><tr class=\"footnotes\"><td class=\"footnotes\" colspan=\"4\"><p>NOTE: The Oct 2025 data values are not available due to the 2025 lapse in appropriations.<\/p><\/td><\/tr><\/tfoot><\/table>","saved_values":[{"id":"chart_type_icons","val":"stacked_column"},{"id":"chart_id_textinput","val":"chart3"},{"id":"map_type_select","val":"state"},{"id":"map_animated_checkbox","val":false},{"id":"map_color_by_names_checkbox","val":false},{"id":"bubble_animated_checkbox","val":false},{"id":"drilldown_type_select","val":"bar"},{"id":"chart_width_textinput","val":"580"},{"id":"chart_height_textinput","val":"430"},{"id":"top_margin_textinput","val":"100"},{"id":"right_margin_textinput","val":"40"},{"id":"bottom_margin_textinput","val":"80"},{"id":"left_margin_textinput","val":"80"},{"id":"map_spotlight_size_checkbox","val":false},{"id":"map_circle_size_range","val":"10"},{"id":"map_circle_size_by_select","val":"main_values"},{"id":"table_input_load_series_from_icons","val":"column_heads"},{"id":"example_table_select","val":"recession_dates_table2"},{"id":"table_input_textarea","val":"<table class=\"regular\" id=\"BLStable_2026_11_10_14_56\" style=\"width: 95%;\"> <caption> <span class=\"tableTitle\">CPI Housing Survey response rates: Quotes, percent</span>  </caption> <thead><tr><th scope=\"col\" rowspan=\"1\" style=\"vertical-align: middle; min-width: 80px;\">Month<\/th><th scope=\"col\">Percent other (not interviewed, not vacant)<\/th><th scope=\"col\">Percent vacant<\/th><th scope=\"col\">Percent data reported<\/th><\/tr><\/thead> <tbody><tr><th scope=\"row\"><p>October 2025<\/p><\/th><td>-<\/td><td>-<\/td><td>-<\/td><\/tr><tr class=\"greenbar\"><th scope=\"row\"><p>November 2025<\/p><\/th><td>47.0%<\/td><td>4.1%<\/td><td>42.6%<\/td><\/tr><tr><th scope=\"row\"><p>December 2025<\/p><\/th><td>44.2%<\/td><td>3.9%<\/td><td>45.4%<\/td><\/tr><tr class=\"greenbar\"><th scope=\"row\"><p>January 2026<\/p><\/th><td>41.4%<\/td><td>3.6%<\/td><td>49.3%<\/td><\/tr><tr><th scope=\"row\"><p>February 2026<\/p><\/th><td>42.6%<\/td><td>4.0%<\/td><td>46.0%<\/td><\/tr><tr class=\"greenbar\"><th scope=\"row\"><p>March 2026<\/p><\/th><td>38.6%<\/td><td>3.7%<\/td><td>51.2%<\/td><\/tr><tr><th scope=\"row\"><p>April 2026<\/p><\/th><td>41.2%<\/td><td>3.9%<\/td><td>47.0%<\/td><\/tr><tr class=\"greenbar\"><th scope=\"row\"><p>May 2026<\/p><\/th><td>40.3%<\/td><td>3.9%<\/td><td>48.4%<\/td><\/tr><tr><th scope=\"row\"><p>June 2026<\/p><\/th><td>40.0%<\/td><td>4.0%<\/td><td>48.8%<\/td><\/tr><tr class=\"greenbar\"><th scope=\"row\"><p>July 2026<\/p><\/th><td>40.8%<\/td><td>3.7%<\/td><td>49.5%<\/td><\/tr><tr><th scope=\"row\"><p>August 2026<\/p><\/th><td>43.3%<\/td><td>4.2%<\/td><td>45.5%<\/td><\/tr><tr class=\"greenbar\"><th scope=\"row\"><p>September 2026<\/p><\/th><td>43.0%<\/td><td>3.8%<\/td><td>47.0%<\/td><\/tr><tr><th scope=\"row\"><p>October 2026<\/p><\/th><td>38.5%<\/td><td>4.0%<\/td><td>49.8%<\/td><\/tr><\/tbody><tfoot style=\"display: table-footer-group;\" id=\"BLStable_2026_11_10_14_56_footnotes\"><tr class=\"footnotes\"><td class=\"footnotes\" colspan=\"4\"><p>NOTE: The Oct 2025 data values are not available due to the 2025 lapse in appropriations.<\/p><\/td><\/tr><\/tfoot><\/table>"},{"id":"color_palettes","val":"color_palette_0"},{"id":"use_custom_colors_checkbox","val":false},{"id":"custom_colors_textarea","val":"Aqua green CornflowerBlue #FF1493 #A52A2A #FF7F50 rgb(184,134,11) rgb(139,0,139) rgb(255,215,0)\n "},{"id":"legend_layout_select","val":"horizontal"},{"id":"map_legend_enabled_checkbox","val":true},{"id":"map_legend_hover_enabled_checkbox","val":true},{"id":"map_legend_decimals_select","val":null},{"id":"legend_placement_x","val":"60"},{"id":"legend_placement_y","val":"40"},{"id":"legend_reverse_layout_checkbox","val":false},{"id":"legend_width_input","val":""},{"id":"legend_item_width_input","val":""},{"id":"legend_alphabetical_layout_checkbox","val":false},{"id":"legend_make_toggle_checkbox","val":false},{"id":"chart_x_axis_title_textarea","val":""},{"id":"chart_x_axis_x_position_input","val":"40"},{"id":"chart_x_axis_tickmark_interval_input","val":""},{"id":"chart_x_axis_min_input","val":""},{"id":"chart_x_axis_max_input","val":""},{"id":"chart_x_axis_show_only_years","val":false},{"id":"chart_x_axis_add_commas","val":false},{"id":"chart_x_axis_signs_select","val":"no_signs"},{"id":"chart_x_axis_decimals_select","val":null},{"id":"chart_y_axis_title_textarea","val":""},{"id":"chart_y_axis_x_position_input","val":"35"},{"id":"chart_y_axis_tickmark_interval_input","val":""},{"id":"chart_y_axis_min_input","val":""},{"id":"chart_y_axis_max_input","val":"100"},{"id":"chart_y_axis_opposite_checkbox","val":false},{"id":"chart_y_axis_log_checkbox","val":false},{"id":"chart_y_axis_signs_select","val":"%"},{"id":"chart_y_axis_decimals_select","val":null},{"id":"chart_y_axis_divide_select","val":"1"},{"id":"chart_y_axis_2_enabled_checkbox","val":false},{"id":"chart_y_axis_title_textarea_2","val":""},{"id":"chart_y_axis_x_position_input_2","val":"-75"},{"id":"chart_y_axis_tickmark_interval_input_2","val":"5"},{"id":"chart_y_axis_min_input_2","val":"0"},{"id":"chart_y_axis_max_input_2","val":"100"},{"id":"chart_y_axis_signs_select_2","val":"no_signs"},{"id":"chart_y_axis_decimals_select_2","val":null},{"id":"chart_tooltip_shared_checkbox","val":false},{"id":"chart_tooltip_force_decimals_select","val":"0"},{"id":"chart_tooltip_signs_select","val":"no_signs"},{"id":"chart_tooltip_force_decimals_x_select","val":"0"},{"id":"chart_tooltip_signs_x_select","val":"no_signs"},{"id":"chart_tooltip_force_decimals_z_select","val":"0"},{"id":"chart_tooltip_signs_z_select","val":"no_signs"},{"id":"map_tooltip_main_value_font_size_input","val":"30"},{"id":"map_tooltip_na_text_input","val":"N/A"},{"id":"map_tooltip_prepend_to_value_text_input","val":""},{"id":"chart_z_title_text_input","val":""},{"id":"chart_tooltip_y_multiple_select","val":"1"},{"id":"chart_tooltip_force_decimals_select_2","val":"0"},{"id":"chart_tooltip_signs_select_2","val":"no_signs"},{"id":"chart_tooltip_y_multiple_select_2","val":"1"},{"id":"chart_credits_text_textarea","val":"Click legend items to change data display. Hover over chart to view data.\nSource: U.S. Bureau of Labor Statistics."},{"id":"point_padding_input","val":".1"},{"id":"group_padding_input","val":".2"},{"id":"chart_subtitle_textarea","val":""},{"id":"map_animation_speed_range","val":"500"},{"id":"map_animated_start_at_last_date_checkbox","val":false},{"id":"map_include_puerto_rico_checkbox","val":false},{"id":"map_include_virgin_islands_checkbox","val":false},{"id":"map_add_ranked_columns_checkbox","val":false},{"id":"map_ranked_column_size_range","val":"100"},{"id":"map_add_state_labels_checkbox","val":false},{"id":"chart_zoom_select","val":"false,false,null"},{"id":"chart_show_data_labels_checkbox","val":false},{"id":"chart_scatter_add_45_line_checkbox","val":false},{"id":"chart_scatter_add_regression_line_checkbox","val":false},{"id":"chart_scatter_highlight_points_select","val":"no_highlight"},{"id":"chart_add_recession_shading_select","val":"no_recession"}]};
+
+var chartCallback = function chartCallback(all_chart_options) {
+      if (all_chart_options.timeline) {
+        //call animation if applicable
+        all_chart_options.timeline.animation();
+      }
+  
+      $(".highcharts-legend-item").css("min-height", "0px").css("z-index", 100); //fix so CMS CSS doesn't make legend taller than it should
+  
+      $(".highcharts-tooltip").css("z-index", 200);
+      /**
+       * Highcharts plugin for setting a lower opacity for other series than the one that is hovered
+       * in the legend
+       */
+  
+      (function (Highcharts) {
+        var each = Highcharts.each;
+        Highcharts.wrap(Highcharts.Legend.prototype, 'renderItem', function (proceed, item) {
+          proceed.call(this, item);
+          var isPoint = !!item.series,
+              collection = isPoint ? item.series.points : this.chart.series,
+              groups = isPoint ? ['graphic'] : ['group', 'markerGroup'],
+              element = (this.options.useHTML ? item.legendItem : item.legendGroup).element;
+  
+          element.onmouseover = function () {
+            each(collection, function (seriesItem) {
+              if (seriesItem !== item) {
+                each(groups, function (group) {
+                  seriesItem[group].animate({
+                    opacity: 0.25
+                  }, {
+                    duration: 150
+                  });
+                });
+              }
+            });
+          };
+  
+          element.onmouseout = function () {
+            each(collection, function (seriesItem) {
+              if (seriesItem !== item) {
+                each(groups, function (group) {
+                  seriesItem[group].animate({
+                    opacity: 1
+                  }, {
+                    duration: 50
+                  });
+                });
+              }
+            });
+          };
+        });
+        Highcharts.wrap(Highcharts.Chart.prototype, 'showCredits', function (proceed, credits) {
+          proceed.call(this, credits);
+  
+          if (this.credits && credits.target) {
+            this.credits.on('click', function () {
+              $('<a>').attr({
+                href: credits.href,
+                target: credits.target
+              })[0].click();
+            });
+          }
+        });
+      })(Highcharts); //end gray other series plugin
+  
+    };
+Highcharts.setOptions({lang: {thousandsSep: ",",
+drillUpText: "\u25C0 Back ",
+contextButtonTitle: "Download chart image"
+   }});
+
+    var chart = new Highcharts.Chart(all_chart_options, chartCallback(all_chart_options));
+});
+  jQuery.fn.extend({addCommas:function addCommas(decimals) {
+        var val = this[0] || 0;
+  
+        if (isNaN(val) || val < 999 && val > -999 && decimals < 1) {
+          //small numbers auto decimals
+          return val;
+        } else if (val < 999 && val > -999 && decimals > 0) {
+          //small numbers fixed decimals
+          return val.toFixed(decimals);
+        } else if ((val > 999 || val < -999) && decimals > 0) {
+          //big numbers fixed decimals
+          val = val.toFixed(decimals);
+  
+          while (/(\d+)(\d{3})/.test(val.toString())) {
+            val = val.replace(/(\d+)(\d{3})/, '$1' + ',' + '$2');
+          }
+        } else if (val > 999 || val < -999) {
+          //big number auto decimals
+          while (/(\d+)(\d{3})/.test(val.toString())) {
+            val = val.toString().replace(/(\d+)(\d{3})/, '$1' + ',' + '$2');
+          }
+        }
+  
+        return val;
+      } });
+
+  <!-- End chart code for chart 3 -->
+  </script>
+
+ 
+      </head>
+  <body class="toolbar-icon-10 toolbar-loading">
+            <div class="page-wrapper dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+          
+
+<!-- OneColHeadBasic Begin: Name -->
+
+<!-- Header Filename: "/include/cpi/cpi_header_cms.txt" -->
+
+<!--no_index_start-->
+
+<!-- DOL BANNER BEGIN -->
+<!-- DOL BANNER START -->
+<header > <!-- Header is closed at the end of BLS banner -->
+		<a class="skiplink" href="#startcontent">Skip to Content</a>
+
+		<div id="usa-banner-wrapper">
+<div id="usa-banner" class="bootstrap standard-width">
+	<div class="content">
+	<div class="USA-flag-link">
+	<img src="https://www.dol.gov/themes/opa_theme/img/flag-favicon-57.png" alt="U.S. flag">
+	<p>An official website of the United States government 
+	  
+	<button type="button" data-toggle="collapse" data-target="#usaBanner" aria-expanded="false" aria-controls="usaBanner">Here is how you know <span class="oi" data-glyph="chevron-bottom"></span></button>
+	</p>
+	</div>
+		<a href="https://www.dol.gov/" id="dolHolder" class="dolHolder" target="_blank"><img src="https://www.dol.gov/themes/opa_theme/img/logo-primary.svg" alt="Department of Labor Logo"/>  United States Department of Labor</a>
+	</div>
+	
+	<div class="collapse " id="usaBanner">	
+	<div class="row">
+	<div class="col-md-6">
+		<img src="https://www.dol.gov/themes/opa_theme/img/icon-dot-gov.svg" alt="Dot gov">
+
+		<p>
+			<strong>The .gov means it's official.</strong>
+			<br> Federal government websites often end in .gov or .mil. Before sharing sensitive information,
+			make sure you're on a federal government site.
+		</p>
+	</div>
+
+	<div class="col-md-6">
+	<img class="usa-banner-icon usa-media_block-img" src="https://www.dol.gov/themes/opa_theme/img/icon-https.svg" alt="Https">
+	
+		<p>
+			<strong>The site is secure.</strong>
+			<br> The
+			<strong>https://</strong> ensures that you are connecting to the official website and that any
+			information you provide is encrypted and transmitted securely.
+		</p>
+	</div>
+	</div>
+	</div>		
+</div>
+</div>
+
+
+
+<!-- DOL BANNER END -->
+
+
+<!-- DOL BANNER END -->
+<!-- BLS BANNER BEGIN -->
+
+<div id="bls-banner-wrapper">
+<div id="top"></div>
+		<div class="bootstrap standard-width">
+<div>
+  <div id="bls-banner" class="row">
+    <div id="bls-banner-emblem" class="col-sm-12 col-md-7">
+      <a href="https://www.bls.gov/">U.S. Bureau of Labor Statistics</a>
+    </div>
+    <div id="bls-banner-right" class="col-sm-12 col-md-5 d-none d-md-block">
+<div id="bls-banner-links"><a href="/schedule/news_release/">Release Calendar</a> | <a href="javascript:window.open('https://public.govdelivery.com/accounts/USDOLBLS/subscriber/new ','Popup','width=800,height=500,toolbar=no,scrollbars=yes,resizable=yes'); void('');" onclick="window.status='Subscribe'; return true" onmouseover="window.status='Subscribe'; return true" onmouseout="window.status=''; return true" id="social-email-1" title="Subscribe to BLS E-mail Updates" aria-label="Subscribe to BLS E-mail Updates">Subscribe</a></div> 
+      <div id="bls-banner-search1" class="bls-banner-search">
+        <form method="get" action="/search/query">
+		  <label for="bls-banner-search-submit1" class="invisible">Search button</label>
+          <input type="image" src="/images/buttons/search_button_blue_16.png" name="term" id="bls-banner-search-submit1" alt="BLS Search Submit" title="Submit" >
+		  <label for="bls-banner-search-input1" class="invisible">Search:</label>
+          <input name="query" type="text" id="bls-banner-search-input1" value="Search BLS.gov" title="Search Input" onclick="this.value=''; this.onclick = null;">
+
+        </form>
+      </div>
+    </div>
+    <div class="clearfloat"></div>
+  </div>
+</div>
+</div>
+</div>
+</header> <!-- Header is opened at the begining of DOL banner -->
+
+<!-- BLS BANNER END -->
+<!-- MAIN NAV BEGIN -->
+
+<div id="main-nav-wrapper">
+	<div id="main-nav-container">
+		<div>
+			<div class="bootstrap standard-width">
+<nav aria-label="top-level navigation menu" class="navbar navbar-expand-md">
+  
+  
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation menu">
+    <span class="navbar-toggler-icon">Menu</span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  
+
+
+<ul class="nojs navbar-nav mr-auto">
+     <li class="dropdownSearch"><div id="bls-banner-search" class="dropdown-search">
+        <form method="get" action="/search/query">
+		  <label for="bls-banner-search-submit" class="invisible">Search button</label>
+          <input type="image" src="/images/buttons/search_button_blue_20.png" name="term" id="bls-banner-search-submit" alt="BLS Search Submit" title="Submit">
+		  <label for="bls-banner-search-input" class="invisible">Search:</label>
+          <input name="query" type="text" id="bls-banner-search-input" value="Search BLS.gov" title="Search Input" onclick="this.value=''; this.onclick = null;">
+
+        </form>
+      </div>
+	
+	  <div class="bls-banner-links-mob"><a href="/schedule/news_release/">Release Calendar</a> | <a href="javascript:window.open('https://public.govdelivery.com/accounts/USDOLBLS/subscriber/new ','Popup','width=800,height=500,toolbar=no,scrollbars=yes,resizable=yes'); void('');" onclick="window.status='Subscribe'; return true" onmouseover="window.status='Subscribe'; return true" onmouseout="window.status=''; return true" id="social-email-2" title="Subscribe to BLS E-mail Updates" aria-label="Subscribe to BLS E-mail Updates">Subscribe</a></div>
+	</li>
+    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="https://www.bls.gov/" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home <span class="circle-arrow"></span></a>
+        <div class="dropdown-menu"><!-- ********************************************** Begin Home Tab LIST ****************************************** -->
+<!-- 1st column -->
+<div class="main-nav-submenu" id="submenu-home">
+	<ul class="main-nav-submenu-inn">
+	
+		<li class="heading"><a href="/about-bls/home.htm" aria-label="About BLS">About BLS</a></li>
+		<li><a href="/bls/history/home.htm" aria-label="BLS History">History</a></li>	
+		<li><a href="/bls/senior_staff/home.htm" aria-label="Our Leadership">Our Leadership</a></li>
+		<li><a href="/bls/bls_budget_and_performance.htm" aria-label="Budget and Performance">Budget and Performance</a></li>		
+		<li><a href="/bls/faqs.htm" aria-label="Questions and Answers">Questions and Answers</a></li>	
+		<li><a href="/bls/topicsaz.htm" aria-label="A-Z Index">A-Z Index</a></li>	
+		<li><a href="/bls/glossary.htm" aria-label="Glossary">Glossary</a></li>	
+		<li><a href="/bls/bls-speakers/" aria-label="BLS Speakers Available">BLS Speakers Available</a></li>
+		<li><a href="/errata/" aria-label="Errata">Errata</a></li>  				
+		<li><a href="/bls/contact.htm" aria-label="Contact BLS">Contact BLS</a></li>	
+
+	</ul>	
+	<!-- 2nd column -->	
+<ul class="main-nav-submenu-inn">	
+		<li class="heading"><a href="/bls/overview.htm" aria-label="Overview of BLS Statistics">Overview of BLS Statistics</a></li>
+		<li><a href="/information-guide/home.htm" aria-label="Guide to Programs & Services">Guide to Programs &amp; Services</a></li>
+		<li><a href="/bls/demographics.htm" aria-label="Demographics Data">Demographics</a></li>
+		<li><a href="/bls/industry.htm" aria-label="Statistics by Industries">Industries</a></li>
+		<li><a href="/bls/business.htm" aria-label="Statistics on Business Costs">Business Costs</a></li>
+		<li><a href="/bls/occupation.htm" aria-label="Statistics by Occupations">Occupations</a></li>
+		<li><a href="/bls/geography.htm" aria-label="Statistics by Geography">Geography</a></li>	
+	
+	</ul>
+	<!-- 3rd column -->
+	<ul class="main-nav-submenu-inn">
+		<li class="heading"><a href="/audience/" aria-label="Resources For">Resources For</a></li>
+		<li><a href="/audience/business.htm" aria-label="Resources for Business Leaders">Business Leaders</a></li>
+		<li><a href="/audience/consumers.htm" aria-label="Resources for Consumers">Consumers</a></li>
+		<li><a href="/audience/developers.htm" aria-label="Developers site">Developers</a></li>
+		<li><a href="/audience/economists.htm" aria-label="Economists or Economic Analyst">Economists</a></li>
+		<li><a href="/audience/investors.htm" aria-label="Resources for Financial Investors">Investors</a></li>
+		<li><a href="/audience/jobseekers.htm" aria-label="Resources for Jobseekers">Jobseekers</a></li>
+		<li><a href="/audience/media.htm" aria-label="Media">Media</a></li>
+		<li><a href="/audience/policy.htm" aria-label="Resources for Public Policymakers">Public Policymakers</a></li>
+		<li><a href="/audience/researcher.htm" aria-label="Researcher">Researcher</a></li>		
+		<li><a href="/audience/students.htm" aria-label="Resources for Students & Teachers">Students &amp; Teachers</a></li>
+		<li><a href="/respondents/" aria-label="Survey Respondents">Survey Respondents</a></li>
+	</ul>
+</div>
+
+<!-- ***********************************************End Home Tab LIST ******************************************** --> 
+
+</div>
+    </li>
+    <li class="nav-item dropdown active"><a class="nav-link dropdown-toggle" href="/bls/proghome.htm" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Subjects <span class="circle-arrow"></span></a>
+        <div class="dropdown-menu"><!-- ************************************* Begin SUBJECTS TAB list ****************************************** -->
+<!-- 1st column -->
+<div class="main-nav-submenu" id="submenu-programs">
+	<ul class="main-nav-submenu-inn">
+		<li class="heading"><a href="/bls/inflation.htm" aria-label="Statistics on Inflation & Prices">Inflation &amp; Prices</a></li>
+		<li><a href="/cpi/" aria-label="Consumer Price Index ">Consumer Price Index</a></li>
+		<li><a href="/ppi/" aria-label="Producer Price Indexes">Producer Price Indexes</a></li>
+		<li><a href="/mxp/" aria-label="Import/Export Price Indexes">Import/Export Price Indexes</a></li>
+		<li><a href="/bls/escalation.htm" aria-label="Contract Escalation">Contract Escalation</a></li>
+		<li><a href="/pir/" aria-label="Price Index Research">Price Index Research</a></li>
+		<li class="heading"><a href="/bls/wages.htm" aria-label="Statistics on Pay & Benefits">Pay &amp; Benefits</a></li>
+		<li><a href="/eci/" aria-label="Employment Cost Index">Employment Cost Index</a></li>
+		<li><a href="/ecec/home.htm" aria-label="Employer Costs for Employee Compensation">Employer Costs for Employee Compensation</a></li>
+						<li><a href="https://www.bls.gov/oes/" aria-label="Wage Data by Occupation">Wage Data by Occupation</a></li>
+		<li><a href="/cps/earnings.htm#demographics" aria-label="Earnings by Demographics">Earnings by Demographics</a></li>
+		<li><a href="/ces/" aria-label="Earnings by Industry">Earnings by Industry</a></li>
+		<li><a href="https://www.bls.gov/cew/" aria-label="County Wages">County Wages</a></li>  <!--full path is needed since they have a folder on the data server-->
+		<li><a href="/ebs/" aria-label="Employee Benefits Survey">Benefits</a></li>
+		<li><a href="/mwe/" aria-label="Modeled Wage Estimates">Modeled Wage Estimates</a></li>		
+		<li><a href="/crp/" aria-label="Compensation Research & Program Development">Compensation Research</a></li>
+		<li><a href="/wsp/" aria-label="Strikes & Lockouts">Strikes &amp; Lockouts </a></li>
+		<li><a href="/wrp/" aria-label="Wage Records from Unemployment Insurance">Wage Records from Unemployment Insurance</a></li>
+		<li class="heading"><a href="/ors/" aria-label="Occupational Requirements Survey">Occupational Requirements</a></li>		
+	</ul>
+	<!-- 2nd column -->
+	<ul class="main-nav-submenu-inn">
+		<li class="heading"><a href="/bls/unemployment.htm" aria-label="Statistics on Unemployment">Unemployment</a></li>
+		<li><a href="/cps/" aria-label="National Unemployment Rate">National Unemployment Rate </a></li>
+		<li><a href="/lau/" aria-label="State & Local Unemployment Rates">State &amp; Local Unemployment Rates </a></li>
+		<li><a href="/ers/" aria-label="Unemployment Research">Unemployment Research</a></li>
+		<li class="heading"><a href="/bls/employment.htm" aria-label="Statistics on Employment">Employment</a></li>
+		<li><a href="/ces/" aria-label="National Employment Statistics">National Employment </a></li>
+		<li><a href="/sae/" aria-label="State & Local Employment, Hours, and Earnings">State &amp; Local Employment </a></li>
+		<li><a href="https://www.bls.gov/cew/" aria-label="County Employment">County Employment </a></li> <!--full path is needed since they have a folder on the data server-->
+		<li><a href="/cps/" aria-label="Worker Characteristics">Worker Characteristics </a></li>
+		<li><a href="/air/" aria-label="American Indian Report">American Indian Report</a></li>
+		<li><a href="/emp/" aria-label="Employment Projections">Employment Projections </a></li>
+		<li><a href="/jlt/" aria-label="Job Openings & Labor Turnover Survey">Job Openings &amp; Labor Turnover Survey </a></li>
+		<li><a href="/brs/" aria-label="Business Response Survey">Business Response Survey</a></li>
+		<li><a href="https://www.bls.gov/oes/" aria-label="Employment by Occupation">Employment by Occupation </a></li>
+		<li><a href="/nls/" aria-label="Work Experience Over Time">Work Experience Over Time </a></li>
+		<li><a href="/bdm/" aria-label="Business Employment Dynamics">Business Employment Dynamics </a></li>
+		<li><a href="/fdi/" aria-label="Foreign Direct Investment">Foreign Direct Investment </a></li>
+		<li><a href="/ers/" aria-label="Employment Research and Program Development">Employment Research</a></li>
+		<li class="heading"><a href="/iif/" aria-label="Workplace Injuries, Illnesses, and Fatalities">Workplace Injuries</a></li>
+	</ul>
+	<!-- 3rd column -->
+	<ul class="main-nav-submenu-inn">
+		<li class="heading"><a href="/bls/productivity.htm" aria-label="Productivity Statistics">Productivity</a></li>
+		<li><a href="/productivity/" aria-label="Labor and Total Factor Productivity">Labor and Total Factor Productivity</a></li>
+		<li><a href="/dpr/" aria-label="Productivity Research and Program Development">Productivity Research</a></li>
+		<li class="heading"><a href="/bls/spending.htm" aria-label="Statistics on Spending & Time Use">Spending &amp; Time Use</a></li>
+		<li><a href="/cex/" aria-label="Consumer Expenditures Surveys">Consumer Expenditures </a></li>
+		<li><a href="/tus/" aria-label="How Americans Spend Time Survey">How Americans Spend Time</a></li>			
+		<li class="heading"><a href="/bls/international.htm" aria-label="International Data and Technical Cooperation">International</a></li>
+		<li><a href="/itc/" aria-label="International Technical Cooperation">International Technical Cooperation</a></li>
+		<li><a href="/mxp/" aria-label="Import/Export Price Indexes">Import/Export Price Indexes</a></li>
+		<li class="heading"><a href="/regions/" aria-label="Geographic Information">Geographic Information</a></li>
+		<li><a href="/regions/northeast/" aria-label="Northeast (Boston-New York) Information Office">Northeast (Boston-New York)</a></li>
+		<li><a href="/regions/mid-atlantic/" aria-label="Mid-Atlantic (Philadelphia) Information Office">Mid-Atlantic (Philadelphia)</a></li>
+		<li><a href="/regions/southeast/" aria-label="Southeast (Atlanta) Information Office">Southeast (Atlanta)</a></li>
+		<li><a href="/regions/midwest/" aria-label="Midwest (Chicago) Information Office">Midwest (Chicago)</a></li>
+		<li><a href="/regions/southwest/" aria-label="Southwest (Dallas) Information Office">Southwest (Dallas)</a></li>
+		<li><a href="/regions/mountain-plains/" aria-label="Mountain-Plains (Kansas City) Information Office">Mountain-Plains (Kansas City)</a></li>
+		<li><a href="/regions/west/" aria-label="West (San Francisco) Information Office">West (San Francisco)</a></li>
+	</ul>
+</div>
+<!-- **************************************End SUBJECT AREAS ******************************************** --> 
+	</div>	
+    </li>
+    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="/data/" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Data Tools <span class="circle-arrow"></span></a>
+        <div class="dropdown-menu"><!-- ******************************************** Begin DATA TOOLS LIST ****************************************** -->
+<div class="main-nav-submenu"  id="submenu-data">
+    <ul class="main-nav-submenu-inn">
+        <li class="heading"><a href="/data/tools.htm" aria-label="Data Retrieval Tools Databases, Tables & Calculators by Subject">Data Retrieval Tools</a></li>
+		<li><a href="https://data.bls.gov/toppicks?code=&survey=bls" aria-label="BLS Popular Series Top Picks">BLS Popular Series</a></li>
+		<li><a href="https://data.bls.gov/series-report" aria-label="Series Report">Series Report</a></li>
+		<li><a href="/data/home.htm" aria-label="Top Picks, One Screen, Multi-Screen, and Maps" >Top Picks, One Screen, Multi-Screen, and Maps</a></li>
+		<li><a href="https://data.bls.gov/dataQuery/search" aria-label="Data Finder">Data Finder</a></li>
+		<li><a href="/developers/home.htm" aria-label="Public Data API Programming Interface">Public Data API</a></li>
+
+    </ul>
+    <!-- 2nd column -->
+    <ul class="main-nav-submenu-inn">
+        <li class="heading"><a href="/data/apps.htm" aria-label="Charts and Applications">Charts and Applications</a></li>
+		<li><a href="/charts/home.htm" aria-label="Charts for Economic News Releases">Charts for Economic News Releases</a></li>	
+		<li><a href="/data/inflation_calculator.htm" aria-label="CPI Inflation Calculator">CPI Inflation Calculator</a></li>	
+		<li><a href="https://data.bls.gov/iirc/" aria-label="Injury and Illness Calculator">Injury and Illness Calculator</a></li>		
+		<li><a href="https://data.bls.gov/apps/compensation-comparison-matrix/home.htm" aria-label="Pay Measure Comparison">Pay Measure Comparison</a></li>
+		<li><a href="https://data.bls.gov/apps/demographic-comparison-matrix/home.htm" aria-label="Demographic Data Sources">Demographic Data Sources</a></li>
+		<li><a href="https://data.bls.gov/apps/covid-dashboard/home.htm" aria-label="COVID-19 Economic Trends">COVID-19 Economic Trends</a></li>
+		<li><a href="https://data.bls.gov/apps/industry-productivity-viewer/home.htm" aria-label="Industry Productivity Viewer" >Industry Productivity Viewer</a></li>
+		<li><a href="https://data.bls.gov/cew/apps/data_views/data_views.htm#tab=Tables" aria-label="Employment and Wages Data Viewer">Employment and Wages Data Viewer</a></li>
+		<li><a href="https://data.bls.gov/cew/apps/bls_naics/bls_naics_app.htm" aria-label="Industry Finder from the Quarterly Census of Employment and Wages">Industry Finder from the Quarterly Census of Employment and Wages</a></li>
+	
+    </ul>
+	<!-- 3rd column -->
+	<ul class="main-nav-submenu-inn">
+	    <li class="heading"><a href="/data/tables.htm" aria-label="Customized Tables">Customized Tables</a></li>
+		<li><a href="/eag/eag.us.htm" aria-label="U.S. Economy at a Glance">U.S. Economy at a Glance</a></li>
+		<li><a href="/eag/home.htm" aria-label="Regions, States & Areas at a Glance">Regions, States &amp; Areas at a Glance</a></li>
+		<li><a href="/iag/home.htm" aria-label="Industry at a Glance">Industry at a Glance</a></li>			
+		<li><a href="https://download.bls.gov/pub/time.series/" aria-label="Text Files">Text Files</a></li>
+		<li><a href="/data/#historical-tables" aria-label="Historical News Release Tables">News Release Tables</a></li>
+		
+		<li class="heading"><a href="/bls/moredata.htm" aria-label="More Sources of Data">More Sources of Data</a></li>
+		<li><a href="/rda/home.htm" aria-label="Bureau of Labor Statistics Restricted Data Access">Restricted Data Access</a></li>
+		<li><a href="/data/archived.htm" aria-label="Discontinued Databases">Discontinued Databases </a></li>
+		<li><a href="/help/hlpform1.htm" aria-label="Questions & Answers regarding Bureau of Labor Statistics website data retrieval tools">Questions &amp; Answers</a></li>
+		<li><a href="/help/notice.htm" aria-label="Special Notices">Special Notices </a></li>	
+	</ul>
+</div>
+<!-- *********************************************End DATABASES and TOOLS LIST ******************************************** --></div>
+    </li>
+    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="/opub/" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Publications <span class="circle-arrow"></span></a>
+        <div class="dropdown-menu"><!-- ********************************************** Begin PUBLICATIONS LIST ****************************************** -->
+<div class="main-nav-submenu"  id="submenu-pubs">    
+    <ul class="main-nav-submenu-inn"> 
+		<li class="heading"><a href="/opub/" aria-label="Latest Publications">Latest Publications</a></li>
+		<li><a href="/opub/ted/" aria-label="The Economics Daily">The Economics Daily</a></li>
+		<li><a href="/opub/mlr/" aria-label="Monthly Labor Review">Monthly Labor Review</a></li>
+		<li><a href="/opub/btn/" aria-label="Beyond the Numbers">Beyond the Numbers</a></li>
+		<li><a href="/spotlight/" aria-label="Spotlight on Statistics">Spotlight on Statistics</a></li>
+		<li><a href="/opub/reports" aria-label="Bureau of Labor Statistics Reports">Reports</a></li>
+		<li><a href="/video/" aria-label="Videos">Videos</a></li>
+		<li><a href="/careeroutlook/" aria-label="Career Outlook">Career Outlook</a></li>		
+    </ul>
+    <!-- 2nd column -->
+    <ul class="main-nav-submenu-inn">
+		<li><a href="/ooh/" aria-label="Occupational Outlook Handbook">Occupational Outlook Handbook</a></li>
+		<li><a href="/opub/geographic-profile/" aria-label="Geographic Profile">Geographic Profile</a></li>
+		<li><a href="/opub/hom/" aria-label="Handbook of Methods">Handbook of Methods</a></li>
+		<li><a href="/osmr/research-papers/" aria-label="Research Papers - Office of Survey Methods Research">Research Papers</a></li>
+		<li><a href="/opub/copyright-information.htm" aria-label="Copyright Information">Copyright Information</a></li>
+		<li><a href="/opub/opbinfo.htm" aria-label="Contact & Help">Contact &amp; Help </a></li>
+		<li><a href="/opub/update.htm" aria-label="Weekly Update">Weekly Update</a></li>		
+    </ul>
+</div>
+<!-- ***********************************************End PUBLICATIONS LIST ******************************************** --> </div>
+    </li>
+    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="/bls/newsrels.htm" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Economic Releases <span class="circle-arrow"></span></a>
+        <div class="dropdown-menu"><!-- ********************************************** Begin ECONOMIC RELEASES LIST ****************************************** -->
+<!-- 1st column -->
+
+<div class="main-nav-submenu" id="submenu-news">
+    <ul class="main-nav-submenu-inn">
+        <li class="heading"><a href="/bls/newsrels.htm#latest-releases" aria-label="Latest Releases">Latest Releases</a></li>
+		<li class="heading"><a href="/bls/newsrels.htm#major" aria-label="Major Economic Indicators">Major Economic Indicators</a></li>
+		<li class="heading"><a href="/schedule/news_release/" aria-label="Schedules for news Releases">Schedules for news Releases</a></li>
+		<li><a href="/schedule/" aria-label="Release Calendar By Month">By Month</a></li>
+		<li><a href="/schedule/schedule/by_prog/all_sched.htm" aria-label="Release Calendar By News Release">By News Release</a></li>
+		<li><a href="/schedule/news_release/current_year.asp" aria-label="Release Calendar Current Year">Current Year</a></li>
+		<li><a href="/bls/archived_sched.htm" aria-label="Schedules for Selected Bureau of Labor Statistics Economic News Releases for Prior Years">Prior Years</a></li>
+		<li class="heading"><a href="/bls/news-release/" aria-label="Archived News Releases">Archived News Releases</a></li>
+    </ul>
+    <!-- 2nd column -->
+    <ul class="main-nav-submenu-inn">
+        <li class="heading"><a href="/bls/newsrels.htm#OEUS" aria-label="Employment & Unemployment">Employment &amp; Unemployment</a></li>
+		<li><a href="/bls/newsrels.htm#OEUS" aria-label="Monthly">Monthly</a></li>
+		<li><a href="/bls/newsrels.htm#OEUS" aria-label="Quarterly, annual, and other">Quarterly, annual, and other</a></li>
+		<li class="heading"><a href="/bls/newsrels.htm#OPLC" aria-label="Inflation & Prices"> Inflation &amp; Prices</a></li>
+		<li class="heading"><a href="/bls/newsrels.htm#OCWC" aria-label="Pay & Benefits & Workplace Injuries">Pay &amp; Benefits &amp; Workplace Injuries</a></li>
+		<li class="heading"><a href="/bls/newsrels.htm#OPT" aria-label="Productivity & Technology">Productivity &amp; Technology</a></li>
+		<li class="heading"><a href="/bls/newsrels.htm#OEP" aria-label="Employment Projections">Employment Projections</a></li>
+		<li class="heading"><a href="/bls/newsrels.htm#NEWS" aria-label="Regional News Releases">Regional News Releases</a></li>
+    </ul>
+</div></div>
+    </li>
+    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="/k12/" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Classroom <span class="circle-arrow"></span></a>
+        <div class="dropdown-menu"><!-- ********************************************** Begin Students Tab LIST ****************************************** -->
+<div class="main-nav-submenu" id="submenu-students">
+	<ul class="main-nav-submenu-inn">
+		<li class="heading"><a href="/k12/" aria-label="K-12 Student & Teacher Resources">K-12 Student &amp; Teacher Resources</a></li>		
+        <li><a href="/k12/games/" aria-label="Games & Quizzes">Games &amp; Quizzes</a></li>
+		<li><a href="/k12/students/" aria-label="Student's Desk">Student&apos;s Desk</a></li>
+		<li><a href="/k12/teachers/" aria-label="Teacher's Desk">Teacher&apos;s Desk</a></li>
+		<li><a href="/k12/faq.htm" aria-label="Questions & Answers">Questions &amp; Answers</a></li>
+    </ul>
+</div>
+<!-- ***********************************************End Students Tab LIST ******************************************** --></div>
+    </li>
+    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="/beta/" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Beta <span class="circle-arrow"></span></a>
+        <div class="dropdown-menu"><!-- ***********************************************Start BETA LIST ******************************************** -->
+
+<div class="main-nav-submenu" id="submenu-beta">
+  <ul class="main-nav-submenu-inn">
+    <li class="heading"><a href="/beta/redesigned-news-releases.htm" aria-label="Redesigned News Releases">Redesigned News Releases</a></li>
+  </ul>
+</div>
+<!-- ***********************************************End BETA LIST ******************************************** --></div>
+    </li>
+</ul>
+
+
+  </div>
+</nav>
+</div>
+
+		</div>
+		<div class="clearfloat"></div>
+	</div>
+</div>
+
+
+<!-- MAIN NAV END -->
+
+<!-- WRAPPER TOP BEGIN -->
+	<div id="wrapper-outer" role="main"><div id="startcontent" class="hidden"></div>
+		<div id="wrapper">
+			<div id="container">
+<!-- WRAPPER TOP END -->
+<!-- SUBDOMAIN TITLE TOP BEGIN -->
+
+<!-- 1COL CMS LAYOUT COL1 BEGIN -->	
+
+<div class="main-content">
+
+<!-- 1COL CMS LAYOUT COL1 END -->
+
+
+
+<!--no_index_end-->
+
+<!-- OneColHeadBasic End -->
+
+
+        
+    
+        
+      
+         <div id="programs-banner">
+<div id="program-title" aria-level="1" role="heading">Consumer Price Index</div><div id="social-search-box"><div class="article-tools-box social-media"><span class="social-media"><span>SHARE ON:</span><a href="javascript:void(0);" class="share_facebook"><img alt="share on facebook" src="/images/icons/facebook.png" title="Facebook"></a><a href="javascript:void(0);" class="share_twitter"><img alt="share on twitter" src="/images/icons/twitter.png" title="Twitter"></a><a href="javascript:void(0);" class="share_linkedin"><img alt="share on linkedin" src="/images/icons/linkedin.png" title="LinkedIn"></a></span></div><form method="get" id="search-secondary-nav-form" action="/search/query"><input type="hidden" value="https://www.bls.gov/cpi" id="search-secondary-nav-category" name="prefix"><label for="search-secondary-nav-query" class="invisible">Search Consumer Price Index</label><input type="text" onclick="this.value=''; this.onclick = null;" value="Search Consumer Price Index" id="search-secondary-nav-query" name="query"><input type="submit" value="Go" id="search-secondary-nav-submit" name="submit"></form></div><div class="clearfloat"></div><style>.layout-wide #dol-bar-content, .layout-wide #bls-banner, .layout-wide #main-nav-container{margin:0 !important;}.layout-wide #wrapper, .layout-wide #footer-links-wrapper{max-width:100% !important;}.layout-wide #programs-banner{width:923px !important;}div.p{font-family: Tahoma, Arial, Helvetica, sans-serif;margin: 0 0 1em 0 !important;padding: 0;font-size: 100%;color: #333;line-height: 160%;}</style>
+
+<div class="bootstrap standard-width">
+<nav class="navbar navbar-expand-md programsNavBar " aria-label="secondary-nav">
+  <ul class="navbar-nav" role="menu">
+			        					<li class="nav-item" role="none">
+        																						<a role="menuitem" class="nav-link home progNav" href="/cpi/" aria-label="CPI Home Consumer Price Index homepage">CPI Home</a>
+				</li>        							        					<li class="nav-item dropdown" role="none">
+        																						<a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle nav-link publications progNav" href="javascript:">CPI Publications</a>
+				        			        	        		<div class="dropdown-menu" role="menu">                                								<a class="dropdown-item heading" role="menuitem" href="/cpi/publications-overview.htm">Publications Overview</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" href="/cpi/news.htm">News Releases</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" href="/cpi/factsheets/">Factsheets</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" href="/cpi/videos.htm">Videos</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" href="/cpi/additional-publications/">Additional Publications</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" target="_blank" href="https://public.govdelivery.com/accounts/USDOLBLS/subscribers/new?topic_id=USDOLBLS_003">Subscriptions</a>
+								</div></li>        													        					<li class="nav-item dropdown" role="none">
+        																						<a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle nav-link data progNav" href="javascript:">CPI Data</a>
+				        			        	        		<div class="dropdown-menu" role="menu">                                								<a class="dropdown-item heading" role="menuitem" href="/cpi/data-overview.htm">Data Overview</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" href="/cpi/data.htm">Databases</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" target="_blank" href="https://www.bls.gov/charts/consumer-price-index/consumer-price-index-by-category.htm">Interactive Charts</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" href="/cpi/tables/">Tables</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" href="/cpi/research-series/">Research</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" href="/cpi/regional-resources.htm">Regional Resources</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" href="/cpi/latest-numbers.htm">Latest Numbers</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" href="https://www.bls.gov/bls/erratabysubject.htm">Data Corrections</a>
+								</div></li>        															        					<li class="nav-item dropdown" role="none">
+        																						<a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle nav-link methods progNav" href="javascript:">CPI Methods</a>
+				        			        	        		<div class="dropdown-menu" role="menu">                                								<a class="dropdown-item heading" role="menuitem" href="/cpi/methods-overview.htm">Methods Overview</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" target="_blank" href="https://www.bls.gov/opub/hom/cpi/">Handbook of Methods</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" href="/cpi/additional-resources/chained-cpi.htm">Chained CPI</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" href="/cpi/quality-adjustment/">Quality Adjustment</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" href="/cpi/seasonal-adjustment/">Seasonal Adjustment</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" href="/cpi/white-papers/">White Papers</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" href="/cpi/technical-notes/">Technical Notes</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" href="/cpi/additional-resources/">Additional Resources</a>
+								</div></li>        															        					<li class="nav-item dropdown" role="none">
+        																						<a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle nav-link about progNav" href="javascript:">About CPI</a>
+				        			        	        		<div class="dropdown-menu" role="menu">                                								<a class="dropdown-item heading" role="menuitem" href="/cpi/about-overview.htm">About CPI Overview</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" href="/cpi/overview.htm">Overview</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" href="/respondents/cpi/">Info for Survey Participants</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" href="/cpi/questions-and-answers.htm">Questions &amp; Answers</a>
+								        			        	        		                                								<a class="dropdown-item" role="menuitem" href="/cpi/notices/">Notices</a>
+								</div></li>        												        					<li class="nav-item" role="none">
+        																						<a role="menuitem" class="nav-link contact progNav" href="/cpi/contact.htm">Contact CPI</a>
+				</li>        				  </ul>
+</nav>
+</div>
+</div>
+
+  <h1>Response Rates for the Consumer Price Indexes </h1> 
+               <div class="cpi--tables--response-rates">
+         
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p><a href="#Archived%20Response%20Rates">Go to data tables &gt;&gt;</a></p><h2>CPI response rates: overview and methodology</h2><p>Response rates are the percentage of the sample that responds to or participates in a survey. Any missing responses result in a loss of statistical information, which may increase the risk of nonresponse bias.</p><p>For the CPI, BLS calculates response rates for two surveys: the <strong>Commodities and Services (C&amp;S) Survey </strong>and the <strong>Housing Survey.</strong> The response rates are unweighted and treat all data points or categories as equally important, regardless of their sample size or frequency. Additional information is available in the <a href="https://www.bls.gov/opub/hom/cpi/calculation.htm#response-rates">Calculation section of the CPI Handbook of Methods</a> chapter.</p><h3>Key definitions</h3><ul><li><strong>Targeted unit: </strong>A unit belonging to the target population, selected and initiated into the sample, and targeted for regular price collection.</li><li><strong>Collected unit:</strong> A unit from which an observable price was collected.</li><li><strong>Collection rate: </strong>The number of collected units divided by the number of targeted units.</li><li><strong>Unit used in estimation:</strong> A unit whose observable or imputed price is used in the calculation of the CPI.</li><li><strong>Estimation rate: </strong>The number of units used in estimation divided by the number of targeted units. This includes some <strong>units with imputed prices.</strong></li></ul><h2>Commodities and Services (C&amp;S) Survey</h2><p>Response rates are calculated at the data collection (or repricing) and data estimation phases. Rates are only calculated for probability samples. Some CPI data are obtained from alternative sources, such as records from purchase transactions, rather than from probability samples. Data collected from nonsurvey sources are excluded from response rate calculations.</p><p>The C&amp;S Survey provides response rates for two primary units:</p><ul><li><strong>Outlets </strong>are the establishments, such as websites or physical locations, from which prices are collected.</li><li><strong>Quotes</strong> are observations of the price and other characteristics of specific consumer goods or services being priced.</li></ul><div style="background-color:#fff;height:480px;margin:auto;padding:0px;position:relative;" id="chart1" width="100%">&nbsp;</div><div class="alignCenter showNRchartTable"><a href="https://www.bls.gov/cpi/tables/response-rates/response-rates-cs-quote-data.htm" title="CPI Commodities and Services Survey response rates: quotes, percent">View data</a></div><p>&nbsp;</p><div style="background-color:#ffffff;height:480px;margin:auto;padding:0px;position:relative;" id="chart2" width="100%">&nbsp;</div><div class="alignCenter showNRchartTable"><a href="https://www.bls.gov/cpi/tables/response-rates/response-rates-cs-outlet-data.htm" title="CPI Commodities and Services Survey response rates: outlets, percent">View data</a></div><table class="regular" style="width:95%;" id="BLStable_2026_6_10_10_2"><caption>&nbsp;<span class="tableTitle"><strong>Table 1: C&amp;S Survey response rate definitions</strong></span></caption><thead><tr><th style="min-width:80px;vertical-align:middle;" rowspan="1" scope="col"><p>Data collection stage</p></th><th scope="col"><p>Definition</p></th><th scope="col"><p>Treatment in estimation</p></th></tr></thead><tbody><tr><th scope="row"><p>Initiation</p></th><td><p>The attempt to gain an establishment’s initial agreement to participate.</p></td><td><p>Focuses on initial contact with the respondent; data are only collected and proceed to estimation if respondent agrees to participate and establishment meets entry-level item eligibility criteria.</p></td></tr><tr class="greenbar"><th scope="row"><p>Collection (repricing)</p></th><td><p>The collection of the same price quote in the same outlet each month to estimate price changes over time.</p></td><td><p>Data collectors contact the respondent to collect an observable price; data proceeds to estimation after review.</p></td></tr><tr><th scope="row"><p>Estimation rate vs. collection rate</p></th><td><p>The denominator for both rates is the same. However, the estimation numerator is typically smaller because it only includes a subset of collected data.</p></td><td><p>Quotes that are rejected (such as for being non-comparable) are included in collection rates but excluded from estimation rates. Quotes that are estimated using carry forward imputation and substitution are included in estimation rates but excluded from collection rates.</p></td></tr></tbody></table><p>A distinction between the <strong>collection rate </strong>and the <strong>estimation rate</strong> in the C&amp;S Survey is how BLS handles missing data. While the collection rate tracks successful contact and response, the estimation rate includes <strong>carry forward imputed data </strong>and quotes undergoing substitution to ensure the index remains representative. Carry-forward imputation sets the current month’s price of a missing product or service to its previous month’s price. Home cell imputations and different cell imputations are not included in the estimation rate calculations. The <strong>denominator </strong>for both rates is the same: the total number of targeted outlets or quotes sent out for pricing in that period.</p><h2>Housing Survey (Shelter)</h2><p>The Housing Survey measures price changes for rental units. Currently, no alternative data are used in these calculations; all figures are derived from probability samples.</p><p>Units are categorized below as the three outcomes used in the CPI Housing Survey estimation.</p><div style="background-color:#ffffff;height:480px;margin:auto;padding:0px;position:relative;" id="chart3" width="100%">&nbsp;</div><div class="alignCenter showNRchartTable"><a href="https://www.bls.gov/cpi/tables/response-rates/response-rates-housing-quote-data.htm" title="CPI Housing Survey response rates: quotes, percent">View data</a></div><table class="regular" style="width:95%;" id="BLStable_2026_6_10_10_17"><caption>&nbsp;<span class="tableTitle"><strong>Table 2: Housing Survey outcomes in estimation</strong></span></caption><thead><tr><th style="min-width:80px;vertical-align:middle;" rowspan="1" scope="col"><p>Data collection outcome</p></th><th scope="col"><p>Definition</p></th><th scope="col"><p>Treatment in estimation</p></th></tr></thead><tbody><tr><th scope="row"><p>Data reported</p></th><td><p>Rent price information was successfully obtained from the respondent.</p></td><td><p>The actual rent payments reported are used directly in calculations.</p></td></tr><tr class="greenbar"><th scope="row"><p>Vacant</p></th><td><p>The unit was located but found to be unoccupied at the time of the survey.</p></td><td><p>BLS applies a <strong>special imputation process</strong> to estimate current market rent. More information on this special imputation process is available in the <a href="https://www.bls.gov/cpi/factsheets/owners-equivalent-rent-and-rent.htm" title="Rent and Owner’s Equivalent Rent factsheet">Rent and Owner’s Equivalent Rent factsheet</a>.</p></td></tr><tr><th scope="row"><p>Other</p></th><td><p>The unit is targeted and occupied, but no data could be obtained (for example, no contact made or refusal).</p></td><td><p>Rent is <strong>imputed</strong> and used in estimation to ensure the weight of the unit still contributes to the overall housing index even if no price information is collected.</p></td></tr></tbody></table><p>In total, the sum of the data reported, vacant, and other outcomes equals the total targeted sample used in estimation. This minimizes the loss of statistical representation when direct contact is not possible.</p><p>A distinction between the <strong>collection rate </strong>and the <strong>estimation rate in the Housing Survey </strong>is how BLS handles missing data. While the collection rate tracks successful contact, the estimation rate includes <strong>imputed data </strong>to ensure the index remains representative. The <strong>denominator </strong>for both rates is the same: the total number of targeted housing units sent out for pricing in that period.</p><p>The number of responding quotes plus the number of imputed quotes will not exactly equal 100 percent of quotes. The most common reason for this discrepancy is quotes that have been initiated but not yet priced.</p><h2>Available data</h2><p>Detailed annual XLSX files are released every year with the January news release published in February. Monthly XLSX files will be available on this page within a few business days of release. Monthly and annual average rates are also provided quarterly on the BLS <a href="https://www.bls.gov/osmr/response-rates/">household and establishment survey response rates page</a>.</p><h2>Methods BLS uses to maximize response rates</h2><p>BLS uses several techniques to maintain sample sizes for estimating the CPI. Initial outlet sample sizes are larger than necessary to cover initial nonresponses for the following reasons: out-of-business, out-of-scope, refusal, sample items not available, and unable to locate. Different modes of collection are also used, such as telephone, email, video, and web collection at the request of survey participants.</p><h2>Recent methodology changes to calculate response rates</h2><p>In June 2025, BLS adopted a revised methodology to calculate response rates. This new methodology better accounts for the way BLS has steadily increased its use of alternatives to traditionally collected survey data over the last 15 years. BLS meticulously studied how alternative data sources would affect its indexes and variance estimates before incorporating alternative data into production.</p><div class="announcement yellow"><p><strong class="announcement-heading">Response rates using revised method</strong></p><ul><li>Note: A time series dating back to January 2019 is available using this revised method. These figures may differ slightly from the legacy data published prior to June 2025, both in the CPI annual response rates files and on the <a href="https://www.bls.gov/osmr/response-rates/" title="BLS household and establishment survey response rates page">BLS household and establishment survey response rates page</a>.</li></ul></div><h2>Response rates data</h2><ul><li><a href="https://www.bls.gov/web/cpi/cpi-response-rate.xlsx" title="CPI-U Response Rates">Response Rates for the Consumer Price Indexes, current year (XLSX)</a></li><li><a href="/cpi/tables/response-rates/monthly-response-rates-201901-present.xlsx" title="Monthly CPI Response Rates">Monthly response rates for the Consumer Price Indexes, January 2019 - present (XLSX)</a></li></ul><h2><a class="ck-anchor" id="Archived Response Rates"></a>Archived response rates data</h2><ul class="noindent"><li><a href="/cpi/tables/response-rates/2025.xlsx">Response Rates for the Consumer Price Indexes, 2025 (XLSX)</a></li><li><a href="/cpi/tables/response-rates/2024.xlsx">Response Rates for the Consumer Price Indexes, 2024 (XLSX)</a></li><li><a href="/cpi/tables/response-rates/2023.xlsx">Response Rates for the Consumer Price Indexes, 2023 (XLSX)</a></li><li><a href="/cpi/tables/response-rates/2022.xlsx">Response Rates for the Consumer Price Indexes, 2022 (XLSX)</a></li><li><a href="/cpi/tables/response-rates/2021.xlsx">Response Rates for the Consumer Price Indexes, 2021 (XLSX)</a></li><li><a href="/cpi/tables/response-rates/2020.xlsx">Response Rates for the Consumer Price Indexes, 2020 (XLSX)</a></li><li><a href="/cpi/tables/response-rates/2019.xlsx">Response Rates for the Consumer Price Indexes, 2019 (XLSX)</a></li><li><a href="/cpi/tables/response-rates/2018.xlsx">Response Rates for the Consumer Price Indexes, 2018 (XLSX)</a></li><li><a href="/cpi/tables/response-rates/2017.xlsx">Response Rates for the Consumer Price Indexes, 2017 (XLSX)</a><a href="/cpi/tables/response-rates/2017-revised.xlsx">Revised*, 2017 (XLSX)</a></li><li><a href="/cpi/tables/response-rates/2016.pdf">Response Rates for the Consumer Price Indexes, 2016 (PDF)</a></li><li><a href="/cpi/tables/response-rates/2015.pdf">Response Rates for the Consumer Price Indexes, 2015 (PDF)</a></li><li><a href="/cpi/tables/response-rates/2014.pdf">Response Rates for the Consumer Price Indexes, 2014 (PDF)</a></li><li><a href="/cpi/tables/response-rates/2013.pdf">Response Rates for the Consumer Price Indexes, 2013 (PDF)</a></li><li><a href="/cpi/tables/response-rates/2012.pdf">Response Rates for the Consumer Price Indexes, 2012 (PDF)</a></li><li><a href="/cpi/tables/response-rates/2011.pdf">Response Rates for the Consumer Price Indexes, 2011 (PDF)</a></li><li><a href="/cpi/tables/response-rates/2010.pdf">Response Rates for the Consumer Price Indexes, 2010 (PDF)</a></li><li><a href="/cpi/tables/response-rates/2009.pdf">Response Rates for the Consumer Price Indexes, 2009 (PDF)</a></li><li><a href="/cpi/tables/response-rates/2008.pdf">Response Rates for the Consumer Price Indexes, 2008 (PDF)</a></li><li><a href="/cpi/tables/response-rates/2007.pdf">Response Rates for the Consumer Price Indexes, 2007 (PDF)</a></li><li><a href="/cpi/tables/response-rates/2006.pdf">Response Rates for the Consumer Price Indexes, 2006 (PDF)</a></li><li><a href="/cpi/tables/response-rates/2005.pdf">Response Rates for the Consumer Price Indexes, 2005 (PDF)</a></li><li><a href="/cpi/tables/response-rates/2004.pdf">Response Rates for the Consumer Price Indexes, 2004 (PDF)</a></li><li><a href="/cpi/tables/response-rates/2003.pdf">Response Rates for the Consumer Price Indexes, 2003 (PDF)</a></li></ul><p class="update"><strong>Last modified date:</strong> November 12, 2026</p><!-- ********************************************TRAILER FILES******************************************** --><!-- ***************************************************************************************************** --></div>
+      
+         </div>
+        
+      <ul class="gb-info" aria-hidden="true" style="display:none;"><li><a href="/cpi/">Consumer Price Index</a></li><li>Data</li></ul><style>.programsNavBar .navbar-nav li:nth-child(3){background: url(/images/regions/triangle.png) no-repeat center bottom;}</style>
+          
+
+  
+
+      <!-- OneColFootBasic Begin -->
+
+<!-- Footer Filename: -->
+
+<!--no_index_start-->
+
+<!-- 1COL CMS BASIC LAYOUT COL1 END -->
+
+
+
+<div class="clearfloat"></div>
+<div class="social-media">
+</div>
+</div> 
+
+
+
+<!-- 1COL CMS LAYOUT COL1 END -->
+
+
+
+
+
+
+<!-- WRAPPER BOTTOM BEGIN -->
+
+
+		
+		
+		</div><!-- close id="wrapper-outer" -->
+	</div><!-- close id="wrapper" -->
+</div><!-- close id="container" -->
+
+	
+
+
+<!-- WRAPPER BOTTOM END -->
+
+
+
+<!-- FOOTER LEFT BEGIN -->
+
+<footer >
+	
+<!-- Footer Nav Menu-->
+<div class="footerNav">
+<ul class="footerNavInner">
+   <li class="footerNavItem"><a href="https://www.bls.gov/">Home</a></li>
+   <li class="footerNavItem"><a href="/bls/proghome.htm">Subjects</a></li>
+   <li class="footerNavItem"><a href="/data/">Data Tools</a></li>
+   <li class="footerNavItem"><a href="/opub/">Publications</a></li>
+   <li class="footerNavItem"><a href="/bls/newsrels.htm">Economic Releases</a></li>
+   <li class="footerNavItem"><a href="/k12/" >Classroom</a></li>
+   <li class="footerNavItem"><a href="/beta/">Beta</a></li>
+</ul>
+</div>
+<!-- Footer Nav Menu-->
+<script>/*<![CDATA[*/(function(){var sz = document.createElement('script'); sz.type = 'text/javascript'; sz.async = true;sz.src = '//siteimproveanalytics.com/js/siteanalyze_6032860.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sz, s);})();/*]]>*/</script> 
+
+<script src="/javascripts/touchpointsForms.js"></script>
+<link rel="stylesheet" type="text/css" href="/stylesheets/touchpointsForms.css">
+
+<div id="footer-primary-wrapper">
+<div class="bootstrap standard-width">
+<div id="footer-container" class="row">
+	<div id="footer-links-container" class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+	
+	
+<div class="bls-lftside-holder">	
+<div class="bls-logo-footer">
+<img src="/images/bls_emblem_trans.png" class="responsiveImg" alt="U.S. Bureau of Labor Statistics Logo "/><div class="d-none d-md-block clearfloat"><br><br></div>
+
+ </div>
+ <div class="address-contact-footer">
+
+<!-- FOOTER LEFT END -->
+
+
+
+
+<address class="footer-address"  >   
+<strong>U.S. Bureau of Labor Statistics</strong>
+<span>Consumer Price Index</span> 
+<span>Office of Prices and Living Conditions</span> 
+<span>Suitland Federal Center</span>
+<span>Floor 7</span>
+<span>4600 Silver Hill Road</span>  
+<span>Washington, DC 20212-0002</span>
+</address>
+
+
+
+<!-- FOOTER CENTER BEGIN -->
+
+
+
+
+
+<!-- FOOTER CENTER END -->
+
+
+
+
+<span class="footer-contact">  
+
+<a href="tel:12026917000" class="number" aria-label="Telephone: 202-691-7000">
+<span>Telephone:</span><span> 202-691-7000 </span>
+
+</a>
+
+
+<a href="/cpi/home.htm" aria-label="www.bls.gov/CPI" >www.bls.gov/CPI</a>
+<a href="https://data.bls.gov/forms/cpi.htm?/cpi/tables/response-rates/home.htm" aria-label="Contact CPI">Contact CPI</a>
+
+</span>
+		
+
+
+
+
+
+<!-- FOOTER RIGHT BEGIN -->
+
+</div> 
+</div>
+</div>
+
+				<div id="quicklinks" class="row col-xs-12 col-sm-12 col-md-8 col-lg-8">
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-5">
+					<strong>resources</strong>
+					<a class="d-sm-none" data-toggle="collapse" href="#quicklinksli5" role="button" aria-expanded="false" aria-controls="quicklinksli5" aria-label="resources Sub Menu"></a>
+						<div class="collapse" id="quicklinksli5">
+							<ul class="d-sm-block">						
+								<li><a href="https://www.oig.dol.gov/" aria-label="Office of Inspector General (OIG) website">Inspector General (OIG)</a></li>
+								<li><a href="/bls/bls_budget_and_performance.htm" aria-label="Budget and Performance">Budget and Performance</a></li>	
+								<li><a href="https://www.dol.gov/grants" aria-label="Department of Labor Grants">Department of Labor Grants</a></li>									
+								<li><a href="/bls/no_fear_act.htm" aria-label="No Fear Act">No Fear Act</a></li>
+								<li><a href="https://www.usa.gov/" aria-label="USA.gov website">USA.gov</a></li>
+							</ul>
+						</div>
+					</div>		
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-5">
+					<strong>about the site</strong>
+					<a class="d-sm-none" data-toggle="collapse" href="#quicklinksli6" role="button" aria-expanded="false" aria-controls="quicklinksli6" aria-label="about this site Sub Menu"></a>
+						<div class="collapse" id="quicklinksli6">
+							<ul class="d-sm-block">	
+								<li><a href="/bls/sitemap.htm" aria-label="Sitemap">Sitemap</a></li>						
+								<li><a href="/bls/blsfoia.htm" aria-label="Freedom of Information Act">Freedom of Information Act</a></li>
+								<li><a href="/bls/pss.htm" aria-label="Privacy and Security Statement">Privacy and Security Statement</a></li>
+								<li><a href="/bls/disclaimer.htm" aria-label="Disclaimers">Disclaimers</a></li>
+								<li><a href="/bls/linksite.htm" aria-label="Linking and Copyright Information">Linking and Copyright Info</a></li>	
+								<li><a href="/bls/website-policies.htm" aria-label="Important Website Notices">Important Website Notices</a></li>
+								<li><a href="/help/" aria-label="Help and Tutorials">Help and Tutorials</a></li>
+								<li><a href="/bls/ada.htm" aria-label="Accessibility Statement">Accessibility Statement</a></li>
+							</ul>
+						</div>
+					</div>				
+                </div>
+				 
+</div>
+</div>
+</div>
+<div id="footer-secondary-wrapper">
+
+<div class="bootstrap standard-width">
+
+<div>
+<span>Connect With BLS</span>
+  <div class="social-media-icons"> 
+    
+			<a class="social-media-icon" href="https://bsky.app/profile/usbls.bsky.social" title="Connect with BLS on Bluesky" target="_blank" rel="noopener noreferrer" >
+              <!--?xml version="1.0" encoding="utf-8"?-->
+				<svg aria-hidden="true" data-prefix="fas" data-icon="bluesky" class="svg-inline--fa fa-w-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 530"><path fill="currentColor" xmlns="http://www.w3.org/2000/svg" d="m135.72 44.03c66.496 49.921 138.02 151.14 164.28 205.46 26.262-54.316 97.782-155.54 164.28-205.46 47.98-36.021 125.72-63.892 125.72 24.795 0 17.712-10.155 148.79-16.111 170.07-20.703 73.984-96.144 92.854-163.25 81.433 117.3 19.964 147.14 86.092 82.697 152.22-122.39 125.59-175.91-31.511-189.63-71.766-2.514-7.3797-3.6904-10.832-3.7077-7.8964-0.0174-2.9357-1.1937 0.51669-3.7077 7.8964-13.714 40.255-67.233 197.36-189.63 71.766-64.444-66.128-34.605-132.26 82.697-152.22-67.108 11.421-142.55-7.4491-163.25-81.433-5.9562-21.282-16.111-152.36-16.111-170.07 0-88.687 77.742-60.816 125.72-24.795z"/></svg>
+              <span class="sr-only">Bluesky</span>
+          </a>
+
+           <a class="social-media-icon" href="https://www.instagram.com/usbls_gov/" title="Connect with BLS on Instagram" target="_blank" rel="noopener noreferrer" >
+              <!--?xml version="1.0" encoding="utf-8"?-->
+				<svg aria-hidden="true" data-prefix="fas" data-icon="instagram" class="svg-inline--fa fa-w-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+              <span class="sr-only">Instagram</span>
+          </a>
+
+           <a class="social-media-icon" href="https://www.linkedin.com/company/bureau-of-labor-statistics/" title="Connect with BLS on LinkedIn" target="_blank" rel="noopener noreferrer" >
+              <!--?xml version="1.0" encoding="utf-8"?-->
+			  <svg aria-hidden="true" data-prefix="fas" data-icon="linkedin" class="svg-inline--fa fa-w-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+              <span class="sr-only">LinkedIn</span>
+          </a>
+
+           <a class="social-media-icon" href="https://www.threads.net/@usbls_gov" title="Connect with BLS on Threads" target="_blank" rel="noopener noreferrer" >
+              <!--?xml version="1.0" encoding="utf-8"?-->
+				<svg aria-hidden="true" data-prefix="fas" data-icon="threads" class="svg-inline--fa fa-w-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M331.5 235.7c2.2 .9 4.2 1.9 6.3 2.8c29.2 14.1 50.6 35.2 61.8 61.4c15.7 36.5 17.2 95.8-30.3 143.2c-36.2 36.2-80.3 52.5-142.6 53h-.3c-70.2-.5-124.1-24.1-160.4-70.2c-32.3-41-48.9-98.1-49.5-169.6V256v-.2C17 184.3 33.6 127.2 65.9 86.2C102.2 40.1 156.2 16.5 226.4 16h.3c70.3 .5 124.9 24 162.3 69.9c18.4 22.7 32 50 40.6 81.7l-40.4 10.8c-7.1-25.8-17.8-47.8-32.2-65.4c-29.2-35.8-73-54.2-130.5-54.6c-57 .5-100.1 18.8-128.2 54.4C72.1 146.1 58.5 194.3 58 256c.5 61.7 14.1 109.9 40.3 143.3c28 35.6 71.2 53.9 128.2 54.4c51.4-.4 85.4-12.6 113.7-40.9c32.3-32.2 31.7-71.8 21.4-95.9c-6.1-14.2-17.1-26-31.9-34.9c-3.7 26.9-11.8 48.3-24.7 64.8c-17.1 21.8-41.4 33.6-72.7 35.3c-23.6 1.3-46.3-4.4-63.9-16c-20.8-13.8-33-34.8-34.3-59.3c-2.5-48.3 35.7-83 95.2-86.4c21.1-1.2 40.9-.3 59.2 2.8c-2.4-14.8-7.3-26.6-14.6-35.2c-10-11.7-25.6-17.7-46.2-17.8H227c-16.6 0-39 4.6-53.3 26.3l-34.4-23.6c19.2-29.1 50.3-45.1 87.8-45.1h.8c62.6 .4 99.9 39.5 103.7 107.7l-.2 .2zm-156 68.8c1.3 25.1 28.4 36.8 54.6 35.3c25.6-1.4 54.6-11.4 59.5-73.2c-13.2-2.9-27.8-4.4-43.4-4.4c-4.8 0-9.6 .1-14.4 .4c-42.9 2.4-57.2 23.2-56.2 41.8l-.1 .1z"/></svg>
+              <span class="sr-only">Threads</span>
+          </a>  
+    
+           <a class="social-media-icon" href="https://x.com/BLS_gov" title="Connect with BLS on X, formerly referred to as Twitter" target="_blank" rel="noopener noreferrer" >
+              <!--?xml version="1.0" encoding="utf-8"?-->
+              <svg aria-hidden="true" data-prefix="fab" data-icon="x.com" class="svg-inline--fa fa-twitter fa-w-16"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"></path></svg>
+              <span class="sr-only">Visit BLS on X</span>
+          </a>
+                  
+           <a class="social-media-icon" href="https://www.youtube.com/channel/UCijn3WBpHtx4AvSya7NER9Q" title="BLS Youtube" target="_blank" rel="noopener noreferrer" >
+              <!--?xml version="1.0" encoding="utf-8"?-->
+              <svg aria-hidden="true" data-prefix="fab" data-icon="youtube" class="svg-inline--fa fa-youtube fa-w-18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg>
+              <span class="sr-only">Youtube</span>
+          </a>
+          <a class="social-media-icon" href="javascript:window.open('https://public.govdelivery.com/accounts/USDOLBLS/subscriber/new ','Popup','width=800,height=500,toolbar=no,scrollbars=yes,resizable=yes'); void('');" onclick="window.status='Subscribe'; return true" onmouseover="window.status='Subscribe'; return true" onmouseout="window.status=''; return true" id="social-email-3" title="Subscribe to BLS E-mail Updates">
+              <!--?xml version="1.0" encoding="utf-8"?-->
+              <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="envelope" class="svg-inline--fa fa-envelope fa-w-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"></path></svg>
+              <span class="sr-only">Email</span>
+          </a>
+        </div>
+</div>
+</div>
+</div>
+</footer>
+
+<!-- FOOTER RIGHT END -->
+
+
+
+<!--no_index_end-->
+
+<!-- OneColFootBasic End -->
+
+
+
+
+
+
+  </div>
+
+      </body>
+</html>

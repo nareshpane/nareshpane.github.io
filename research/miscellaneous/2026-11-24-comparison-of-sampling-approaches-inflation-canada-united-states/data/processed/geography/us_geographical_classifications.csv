@@ -1,0 +1,52 @@
+state,name,census_region,region_code,census_division,division_code,geometry,source
+AL,Alabama,South,0300,East South Central,0360,Natural Earth 5.1.2,U.S. Census Bureau region/division classification
+AR,Arkansas,South,0300,West South Central,0370,Natural Earth 5.1.2,U.S. Census Bureau region/division classification
+AZ,Arizona,West,0400,Mountain,0480,Natural Earth 5.1.2,U.S. Census Bureau region/division classification
+CA,California,West,0400,Pacific,0490,Natural Earth 5.1.2,U.S. Census Bureau region/division classification
+CO,Colorado,West,0400,Mountain,0480,Natural Earth 5.1.2,U.S. Census Bureau region/division classification
+CT,Connecticut,Northeast,0100,New England,0110,Natural Earth 5.1.2,U.S. Census Bureau region/division classification
+DC,District of Columbia,South,0300,South Atlantic,0350,Natural Earth 5.1.2,U.S. Census Bureau region/division classification
+DE,Delaware,South,0300,South Atlantic,0350,Natural Earth 5.1.2,U.S. Census Bureau region/division classification
+FL,Florida,South,0300,South Atlantic,0350,Natural Earth 5.1.2,U.S. Census Bureau region/division classification
+GA,Georgia,South,0300,South Atlantic,0350,Natural Earth 5.1.2,U.S. Census Bureau region/division classification
+IA,Iowa,Midwest,0200,West North Central,0240,Natural Earth 5.1.2,U.S. Census Bureau region/division classification
+ID,Idaho,West,0400,Mountain,0480,Natural Earth 5.1.2,U.S. Census Bureau region/division classification
+IL,Illinois,Midwest,0200,East North Central,0230,Natural Earth 5.1.2,U.S. Census Bureau region/division classification
+IN,Indiana,Midwest,0200,East North Central,0230,Natural Earth 5.1.2,U.S. Census Bureau region/division classification
+KS,Kansas,Midwest,0200,West North Central,0240,Natural Earth 5.1.2,U.S. Census Bureau region/division classification
+KY,Kentucky,South,0300,East South Central,0360,Natural Earth 5.1.2,U.S. Census Bureau region/division classification
+LA,Louisiana,South,0300,West South Central,0370,Natural Earth 5.1.2,U.S. Census Bureau region/division classification
+MA,Massachusetts,Northeast,0100,New England,0110,Natural Earth 5.1.2,U.S. Census Bureau region/division classification
+MD,Maryland,South,0300,South Atlantic,0350,Natural Earth 5.1.2,U.S. Census Bureau region/division classification
+ME,Maine,Northeast,0100,New England,0110,Natural Earth 5.1.2,U.S. Census Bureau region/division classification
+MI,Michigan,Midwest,0200,East North Central,0230,Natural Earth 5.1.2,U.S. Census Bureau region/division classification
+MN,Minnesota,Midwest,0200,West North Central,0240,Natural Earth 5.1.2,U.S. Census Bureau region/division classification
+MO,Missouri,Midwest,0200,West North Central,0240,Natural Earth 5.1.2,U.S. Census Bureau region/division classification
+MS,Mississippi,South,0300,East South Central,0360,Natural Earth 5.1.2,U.S. Census Bureau region/division classification
+MT,Montana,West,0400,Mountain,0480,Natural Earth 5.1.2,U.S. Census Bureau region/division classification
+NC,North Carolina,South,0300,South Atlantic,0350,Natural Earth 5.1.2,U.S. Census Bureau region/division classification
+ND,North Dakota,Midwest,0200,West North Central,0240,Natural Earth 5.1.2,U.S. Census Bureau region/division classification
+NE,Nebraska,Midwest,0200,West North Central,0240,Natural Earth 5.1.2,U.S. Census Bureau region/division classification
+NH,New Hampshire,Northeast,0100,New England,0110,Natural Earth 5.1.2,U.S. Census Bureau region/division classification
+NJ,New Jersey,Northeast,0100,Middle Atlantic,0120,Natural Earth 5.1.2,U.S. Census Bureau region/division classification
+NM,New Mexico,West,0400,Mountain,0480,Natural Earth 5.1.2,U.S. Census Bureau region/division classification
+NV,Nevada,West,0400,Mountain,0480,Natural Earth 5.1.2,U.S. Census Bureau region/division classification
+NY,New York,Northeast,0100,Middle Atlantic,0120,Natural Earth 5.1.2,U.S. Census Bureau region/division classification
+OH,Ohio,Midwest,0200,East North Central,0230,Natural Earth 5.1.2,U.S. Census Bureau region/division classification
+OK,Oklahoma,South,0300,West South Central,0370,Natural Earth 5.1.2,U.S. Census Bureau region/division classification
+OR,Oregon,West,0400,Pacific,0490,Natural Earth 5.1.2,U.S. Census Bureau region/division classification
+PA,Pennsylvania,Northeast,0100,Middle Atlantic,0120,Natural Earth 5.1.2,U.S. Census Bureau region/division classification
+RI,Rhode Island,Northeast,0100,New England,0110,Natural Earth 5.1.2,U.S. Census Bureau region/division classification
+SC,South Carolina,South,0300,South Atlantic,0350,Natural Earth 5.1.2,U.S. Census Bureau region/division classification
+SD,South Dakota,Midwest,0200,West North Central,0240,Natural Earth 5.1.2,U.S. Census Bureau region/division classification
+TN,Tennessee,South,0300,East South Central,0360,Natural Earth 5.1.2,U.S. Census Bureau region/division classification
+TX,Texas,South,0300,West South Central,0370,Natural Earth 5.1.2,U.S. Census Bureau region/division classification
+UT,Utah,West,0400,Mountain,0480,Natural Earth 5.1.2,U.S. Census Bureau region/division classification
+VA,Virginia,South,0300,South Atlantic,0350,Natural Earth 5.1.2,U.S. Census Bureau region/division classification
+VT,Vermont,Northeast,0100,New England,0110,Natural Earth 5.1.2,U.S. Census Bureau region/division classification
+WA,Washington,West,0400,Pacific,0490,Natural Earth 5.1.2,U.S. Census Bureau region/division classification
+WI,Wisconsin,Midwest,0200,East North Central,0230,Natural Earth 5.1.2,U.S. Census Bureau region/division classification
+WV,West Virginia,South,0300,South Atlantic,0350,Natural Earth 5.1.2,U.S. Census Bureau region/division classification
+WY,Wyoming,West,0400,Mountain,0480,Natural Earth 5.1.2,U.S. Census Bureau region/division classification
+AK,Alaska,West,0400,Pacific,0490,Natural Earth 5.1.2,U.S. Census Bureau region/division classification
+HI,Hawaii,West,0400,Pacific,0490,Natural Earth 5.1.2,U.S. Census Bureau region/division classification

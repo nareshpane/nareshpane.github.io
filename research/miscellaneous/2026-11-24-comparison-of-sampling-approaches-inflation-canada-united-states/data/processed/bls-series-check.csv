@@ -1,0 +1,12 @@
+key,series_id,label,month,october_2026,october_2025
+all,CUUR0000SA0,All items,2026-10,337.511,
+core,CUUR0000SA0L1E,All items less food and energy,2026-10,339.921,
+food,CUUR0000SAF1,Food,2026-10,352.359,
+shelter,CUUR0000SAH1,Shelter,2026-10,432.745,
+energy,CUUR0000SA0E,Energy,2026-10,340.061,
+gasoline,CUUR0000SETB01,Gasoline (all types),2026-10,380.51,277.021
+apparel,CUUR0000SAA,Apparel,2026-10,138.437,
+transport,CUUR0000SAT,Transportation,2026-10,296.187,
+rent,CUUR0000SEHA,Rent of primary residence,2026-10,451.486,
+oer,CUUR0000SEHC,Owners’ equivalent rent of residences,2026-10,446.813,
+food_home,CUUR0000SAF11,Food at home,2026-10,322.876,

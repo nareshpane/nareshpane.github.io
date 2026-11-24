@@ -1,0 +1,21 @@
+{
+  "expected": {
+    "CA_yoy": 3.1,
+    "CA_monthly": 0.2,
+    "CA_sa_monthly": 0.2,
+    "US_sa_monthly": 0.4,
+    "US_yoy": null
+  },
+  "reproduced": {
+    "month": "2026-10",
+    "ca_index": 170.4,
+    "us_index": 337.511,
+    "ca_monthly": 0.23529411764706687,
+    "us_monthly": 0.1694663738351032,
+    "ca_monthly_sa": 0.17647058823531125,
+    "us_monthly_sa": 0.3502845690429357,
+    "ca_annual": 3.085299455535395,
+    "us_annual": null,
+    "annual_gap_pp": null
+  }
+}

@@ -1,0 +1,159 @@
+area_code,geography,category,label,percent,weight_reference_period,price_period,release_date,distribution,vector,status,source,retrieved
+CA,Canada,all,All-items,100.0,2025,2026-04,2026-06-15,Distribution to selected geographies,v91858736,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+CA,Canada,all,All-items,100.0,2025,2025,2026-06-15,Distribution to selected geographies,v91858738,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+CA,Canada,food,Food,16.93,2025,2026-04,2026-06-15,Distribution to selected geographies,v91858740,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+CA,Canada,food,Food,16.83,2025,2025,2026-06-15,Distribution to selected geographies,v91858741,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+CA,Canada,shelter,Shelter,28.3,2025,2026-04,2026-06-15,Distribution to selected geographies,v91858892,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+CA,Canada,shelter,Shelter,28.51,2025,2025,2026-06-15,Distribution to selected geographies,v91858893,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+CA,Canada,transport,Transportation,18.54,2025,2026-04,2026-06-15,Distribution to selected geographies,v91859056,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+CA,Canada,transport,Transportation,17.87,2025,2025,2026-06-15,Distribution to selected geographies,v91859057,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+CA,Canada,gasoline,Gasoline,4.01,2025,2026-04,2026-06-15,Distribution to selected geographies,v91859072,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+CA,Canada,gasoline,Gasoline,3.3,2025,2025,2026-06-15,Distribution to selected geographies,v91859073,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+CA,Canada,energy,Energy,6.68,2025,2026-04,2026-06-15,Distribution to selected geographies,v91859272,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+CA,Canada,energy,Energy,5.9,2025,2025,2026-06-15,Distribution to selected geographies,v91859273,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+NL,Newfoundland and Labrador,all,All-items,100.0,2025,2026-04,2026-06-15,Distribution to selected geographies,v91868202,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+NL,Newfoundland and Labrador,all,All-items,100.0,2025,2025,2026-06-15,Distribution to selected geographies,v91868204,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+NL,Newfoundland and Labrador,food,Food,16.45,2025,2026-04,2026-06-15,Distribution to selected geographies,v91868206,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+NL,Newfoundland and Labrador,food,Food,16.49,2025,2025,2026-06-15,Distribution to selected geographies,v91868207,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+NL,Newfoundland and Labrador,shelter,Shelter,23.23,2025,2026-04,2026-06-15,Distribution to selected geographies,v91868286,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+NL,Newfoundland and Labrador,shelter,Shelter,23.15,2025,2025,2026-06-15,Distribution to selected geographies,v91868287,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+NL,Newfoundland and Labrador,transport,Transportation,22.96,2025,2026-04,2026-06-15,Distribution to selected geographies,v91868390,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+NL,Newfoundland and Labrador,transport,Transportation,22.28,2025,2025,2026-06-15,Distribution to selected geographies,v91868391,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+NL,Newfoundland and Labrador,gasoline,Gasoline,5.67,2025,2026-04,2026-06-15,Distribution to selected geographies,v91868402,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+NL,Newfoundland and Labrador,gasoline,Gasoline,4.68,2025,2025,2026-06-15,Distribution to selected geographies,v91868403,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+NL,Newfoundland and Labrador,energy,Energy,10.9,2025,2026-04,2026-06-15,Distribution to selected geographies,v92044738,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+NL,Newfoundland and Labrador,energy,Energy,9.56,2025,2025,2026-06-15,Distribution to selected geographies,v92044739,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+PE,Prince Edward Island,all,All-items,100.0,2025,2026-04,2026-06-15,Distribution to selected geographies,v91868556,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+PE,Prince Edward Island,all,All-items,100.0,2025,2025,2026-06-15,Distribution to selected geographies,v91868558,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+PE,Prince Edward Island,food,Food,18.22,2025,2026-04,2026-06-15,Distribution to selected geographies,v91868560,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+PE,Prince Edward Island,food,Food,18.25,2025,2025,2026-06-15,Distribution to selected geographies,v91868561,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+PE,Prince Edward Island,shelter,Shelter,23.2,2025,2026-04,2026-06-15,Distribution to selected geographies,v91868640,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+PE,Prince Edward Island,shelter,Shelter,23.1,2025,2025,2026-06-15,Distribution to selected geographies,v91868641,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+PE,Prince Edward Island,transport,Transportation,21.96,2025,2026-04,2026-06-15,Distribution to selected geographies,v91868744,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+PE,Prince Edward Island,transport,Transportation,20.99,2025,2025,2026-06-15,Distribution to selected geographies,v91868745,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+PE,Prince Edward Island,gasoline,Gasoline,6.48,2025,2026-04,2026-06-15,Distribution to selected geographies,v91868756,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+PE,Prince Edward Island,gasoline,Gasoline,5.4,2025,2025,2026-06-15,Distribution to selected geographies,v91868757,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+PE,Prince Edward Island,energy,Energy,10.38,2025,2026-04,2026-06-15,Distribution to selected geographies,v92044740,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+PE,Prince Edward Island,energy,Energy,8.74,2025,2025,2026-06-15,Distribution to selected geographies,v92044741,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+NS,Nova Scotia,all,All-items,100.0,2025,2026-04,2026-06-15,Distribution to selected geographies,v91868910,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+NS,Nova Scotia,all,All-items,100.0,2025,2025,2026-06-15,Distribution to selected geographies,v91868912,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+NS,Nova Scotia,food,Food,16.38,2025,2026-04,2026-06-15,Distribution to selected geographies,v91868914,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+NS,Nova Scotia,food,Food,16.46,2025,2025,2026-06-15,Distribution to selected geographies,v91868915,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+NS,Nova Scotia,shelter,Shelter,27.09,2025,2026-04,2026-06-15,Distribution to selected geographies,v91868994,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+NS,Nova Scotia,shelter,Shelter,26.48,2025,2025,2026-06-15,Distribution to selected geographies,v91868995,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+NS,Nova Scotia,transport,Transportation,20.01,2025,2026-04,2026-06-15,Distribution to selected geographies,v91869098,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+NS,Nova Scotia,transport,Transportation,19.55,2025,2025,2026-06-15,Distribution to selected geographies,v91869099,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+NS,Nova Scotia,gasoline,Gasoline,5.38,2025,2026-04,2026-06-15,Distribution to selected geographies,v91869110,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+NS,Nova Scotia,gasoline,Gasoline,4.54,2025,2025,2026-06-15,Distribution to selected geographies,v91869111,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+NS,Nova Scotia,energy,Energy,10.24,2025,2026-04,2026-06-15,Distribution to selected geographies,v92044742,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+NS,Nova Scotia,energy,Energy,9.0,2025,2025,2026-06-15,Distribution to selected geographies,v92044743,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+NB,New Brunswick,all,All-items,100.0,2025,2026-04,2026-06-15,Distribution to selected geographies,v91869264,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+NB,New Brunswick,all,All-items,100.0,2025,2025,2026-06-15,Distribution to selected geographies,v91869266,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+NB,New Brunswick,food,Food,16.49,2025,2026-04,2026-06-15,Distribution to selected geographies,v91869268,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+NB,New Brunswick,food,Food,16.58,2025,2025,2026-06-15,Distribution to selected geographies,v91869269,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+NB,New Brunswick,shelter,Shelter,24.39,2025,2026-04,2026-06-15,Distribution to selected geographies,v91869348,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+NB,New Brunswick,shelter,Shelter,24.15,2025,2025,2026-06-15,Distribution to selected geographies,v91869349,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+NB,New Brunswick,transport,Transportation,20.68,2025,2026-04,2026-06-15,Distribution to selected geographies,v91869452,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+NB,New Brunswick,transport,Transportation,19.97,2025,2025,2026-06-15,Distribution to selected geographies,v91869453,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+NB,New Brunswick,gasoline,Gasoline,6.15,2025,2026-04,2026-06-15,Distribution to selected geographies,v91869464,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+NB,New Brunswick,gasoline,Gasoline,5.21,2025,2025,2026-06-15,Distribution to selected geographies,v91869465,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+NB,New Brunswick,energy,Energy,11.71,2025,2026-04,2026-06-15,Distribution to selected geographies,v92044744,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+NB,New Brunswick,energy,Energy,10.36,2025,2025,2026-06-15,Distribution to selected geographies,v92044745,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+QC,Quebec,all,All-items,100.0,2025,2026-04,2026-06-15,Distribution to selected geographies,v91869618,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+QC,Quebec,all,All-items,100.0,2025,2025,2026-06-15,Distribution to selected geographies,v91869620,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+QC,Quebec,food,Food,17.85,2025,2026-04,2026-06-15,Distribution to selected geographies,v91869622,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+QC,Quebec,food,Food,17.83,2025,2025,2026-06-15,Distribution to selected geographies,v91869623,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+QC,Quebec,shelter,Shelter,26.7,2025,2026-04,2026-06-15,Distribution to selected geographies,v91869702,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+QC,Quebec,shelter,Shelter,26.56,2025,2025,2026-06-15,Distribution to selected geographies,v91869703,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+QC,Quebec,transport,Transportation,18.28,2025,2026-04,2026-06-15,Distribution to selected geographies,v91869806,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+QC,Quebec,transport,Transportation,17.77,2025,2025,2026-06-15,Distribution to selected geographies,v91869807,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+QC,Quebec,gasoline,Gasoline,3.74,2025,2026-04,2026-06-15,Distribution to selected geographies,v91869818,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+QC,Quebec,gasoline,Gasoline,3.14,2025,2025,2026-06-15,Distribution to selected geographies,v91869819,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+QC,Quebec,energy,Energy,6.75,2025,2026-04,2026-06-15,Distribution to selected geographies,v92044746,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+QC,Quebec,energy,Energy,6.01,2025,2025,2026-06-15,Distribution to selected geographies,v92044747,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+ON,Ontario,all,All-items,100.0,2025,2026-04,2026-06-15,Distribution to selected geographies,v91869972,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+ON,Ontario,all,All-items,100.0,2025,2025,2026-06-15,Distribution to selected geographies,v91869974,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+ON,Ontario,food,Food,16.54,2025,2026-04,2026-06-15,Distribution to selected geographies,v91869976,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+ON,Ontario,food,Food,16.35,2025,2025,2026-06-15,Distribution to selected geographies,v91869977,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+ON,Ontario,shelter,Shelter,29.52,2025,2026-04,2026-06-15,Distribution to selected geographies,v91870056,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+ON,Ontario,shelter,Shelter,30.0,2025,2025,2026-06-15,Distribution to selected geographies,v91870057,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+ON,Ontario,transport,Transportation,18.43,2025,2026-04,2026-06-15,Distribution to selected geographies,v91870160,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+ON,Ontario,transport,Transportation,17.67,2025,2025,2026-06-15,Distribution to selected geographies,v91870161,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+ON,Ontario,gasoline,Gasoline,4.05,2025,2026-04,2026-06-15,Distribution to selected geographies,v91870172,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+ON,Ontario,gasoline,Gasoline,3.27,2025,2025,2026-06-15,Distribution to selected geographies,v91870173,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+ON,Ontario,energy,Energy,6.49,2025,2026-04,2026-06-15,Distribution to selected geographies,v92044748,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+ON,Ontario,energy,Energy,5.69,2025,2025,2026-06-15,Distribution to selected geographies,v92044749,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+MB,Manitoba,all,All-items,100.0,2025,2026-04,2026-06-15,Distribution to selected geographies,v91870326,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+MB,Manitoba,all,All-items,100.0,2025,2025,2026-06-15,Distribution to selected geographies,v91870328,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+MB,Manitoba,food,Food,16.74,2025,2026-04,2026-06-15,Distribution to selected geographies,v91870330,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+MB,Manitoba,food,Food,16.64,2025,2025,2026-06-15,Distribution to selected geographies,v91870331,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+MB,Manitoba,shelter,Shelter,24.42,2025,2026-04,2026-06-15,Distribution to selected geographies,v91870410,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+MB,Manitoba,shelter,Shelter,24.43,2025,2025,2026-06-15,Distribution to selected geographies,v91870411,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+MB,Manitoba,transport,Transportation,19.75,2025,2026-04,2026-06-15,Distribution to selected geographies,v91870514,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+MB,Manitoba,transport,Transportation,19.04,2025,2025,2026-06-15,Distribution to selected geographies,v91870515,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+MB,Manitoba,gasoline,Gasoline,4.8,2025,2026-04,2026-06-15,Distribution to selected geographies,v91870526,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+MB,Manitoba,gasoline,Gasoline,3.96,2025,2025,2026-06-15,Distribution to selected geographies,v91870527,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+MB,Manitoba,energy,Energy,7.75,2025,2026-04,2026-06-15,Distribution to selected geographies,v92044750,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+MB,Manitoba,energy,Energy,6.86,2025,2025,2026-06-15,Distribution to selected geographies,v92044751,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+SK,Saskatchewan,all,All-items,100.0,2025,2026-04,2026-06-15,Distribution to selected geographies,v91870680,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+SK,Saskatchewan,all,All-items,100.0,2025,2025,2026-06-15,Distribution to selected geographies,v91870682,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+SK,Saskatchewan,food,Food,17.54,2025,2026-04,2026-06-15,Distribution to selected geographies,v91870684,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+SK,Saskatchewan,food,Food,17.49,2025,2025,2026-06-15,Distribution to selected geographies,v91870685,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+SK,Saskatchewan,shelter,Shelter,25.43,2025,2026-04,2026-06-15,Distribution to selected geographies,v91870764,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+SK,Saskatchewan,shelter,Shelter,25.55,2025,2025,2026-06-15,Distribution to selected geographies,v91870765,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+SK,Saskatchewan,transport,Transportation,20.33,2025,2026-04,2026-06-15,Distribution to selected geographies,v91870868,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+SK,Saskatchewan,transport,Transportation,19.74,2025,2025,2026-06-15,Distribution to selected geographies,v91870869,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+SK,Saskatchewan,gasoline,Gasoline,5.17,2025,2026-04,2026-06-15,Distribution to selected geographies,v91870880,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+SK,Saskatchewan,gasoline,Gasoline,4.35,2025,2025,2026-06-15,Distribution to selected geographies,v91870881,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+SK,Saskatchewan,energy,Energy,8.25,2025,2026-04,2026-06-15,Distribution to selected geographies,v92044752,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+SK,Saskatchewan,energy,Energy,7.39,2025,2025,2026-06-15,Distribution to selected geographies,v92044753,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+AB,Alberta,all,All-items,100.0,2025,2026-04,2026-06-15,Distribution to selected geographies,v91871034,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+AB,Alberta,all,All-items,100.0,2025,2025,2026-06-15,Distribution to selected geographies,v91871036,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+AB,Alberta,food,Food,16.66,2025,2026-04,2026-06-15,Distribution to selected geographies,v91871038,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+AB,Alberta,food,Food,16.63,2025,2025,2026-06-15,Distribution to selected geographies,v91871039,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+AB,Alberta,shelter,Shelter,27.28,2025,2026-04,2026-06-15,Distribution to selected geographies,v91871118,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+AB,Alberta,shelter,Shelter,27.55,2025,2025,2026-06-15,Distribution to selected geographies,v91871119,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+AB,Alberta,transport,Transportation,20.1,2025,2026-04,2026-06-15,Distribution to selected geographies,v91871222,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+AB,Alberta,transport,Transportation,19.22,2025,2025,2026-06-15,Distribution to selected geographies,v91871223,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+AB,Alberta,gasoline,Gasoline,3.93,2025,2026-04,2026-06-15,Distribution to selected geographies,v91871234,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+AB,Alberta,gasoline,Gasoline,3.28,2025,2025,2026-06-15,Distribution to selected geographies,v91871235,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+AB,Alberta,energy,Energy,6.11,2025,2026-04,2026-06-15,Distribution to selected geographies,v92044754,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+AB,Alberta,energy,Energy,5.51,2025,2025,2026-06-15,Distribution to selected geographies,v92044755,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+BC,British Columbia,all,All-items,100.0,2025,2026-04,2026-06-15,Distribution to selected geographies,v91871388,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+BC,British Columbia,all,All-items,100.0,2025,2025,2026-06-15,Distribution to selected geographies,v91871390,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+BC,British Columbia,food,Food,16.96,2025,2026-04,2026-06-15,Distribution to selected geographies,v91871392,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+BC,British Columbia,food,Food,16.89,2025,2025,2026-06-15,Distribution to selected geographies,v91871393,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+BC,British Columbia,shelter,Shelter,30.84,2025,2026-04,2026-06-15,Distribution to selected geographies,v91871472,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+BC,British Columbia,shelter,Shelter,31.01,2025,2025,2026-06-15,Distribution to selected geographies,v91871473,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+BC,British Columbia,transport,Transportation,16.27,2025,2026-04,2026-06-15,Distribution to selected geographies,v91871576,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+BC,British Columbia,transport,Transportation,15.79,2025,2025,2026-06-15,Distribution to selected geographies,v91871577,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+BC,British Columbia,gasoline,Gasoline,3.23,2025,2026-04,2026-06-15,Distribution to selected geographies,v91871588,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+BC,British Columbia,gasoline,Gasoline,2.67,2025,2025,2026-06-15,Distribution to selected geographies,v91871589,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+BC,British Columbia,energy,Energy,5.28,2025,2026-04,2026-06-15,Distribution to selected geographies,v92044756,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+BC,British Columbia,energy,Energy,4.62,2025,2025,2026-06-15,Distribution to selected geographies,v92044757,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+YT,"Whitehorse, Yukon",all,All-items,100.0,2025,2026-04,2026-06-15,Distribution to selected geographies,v91871742,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+YT,"Whitehorse, Yukon",all,All-items,100.0,2025,2025,2026-06-15,Distribution to selected geographies,v91871744,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+YT,"Whitehorse, Yukon",food,Food,17.38,2025,2026-04,2026-06-15,Distribution to selected geographies,v91871746,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+YT,"Whitehorse, Yukon",food,Food,17.51,2025,2025,2026-06-15,Distribution to selected geographies,v91871747,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+YT,"Whitehorse, Yukon",shelter,Shelter,31.19,2025,2026-04,2026-06-15,Distribution to selected geographies,v91871826,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+YT,"Whitehorse, Yukon",shelter,Shelter,30.25,2025,2025,2026-06-15,Distribution to selected geographies,v91871827,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+YT,"Whitehorse, Yukon",transport,Transportation,15.27,2025,2026-04,2026-06-15,Distribution to selected geographies,v91871930,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+YT,"Whitehorse, Yukon",transport,Transportation,15.24,2025,2025,2026-06-15,Distribution to selected geographies,v91871931,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+YT,"Whitehorse, Yukon",gasoline,Gasoline,1.98,2025,2026-04,2026-06-15,Distribution to selected geographies,v91871942,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+YT,"Whitehorse, Yukon",gasoline,Gasoline,1.74,2025,2025,2026-06-15,Distribution to selected geographies,v91871943,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+YT,"Whitehorse, Yukon",energy,Energy,6.28,2025,2026-04,2026-06-15,Distribution to selected geographies,v92044758,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+YT,"Whitehorse, Yukon",energy,Energy,5.22,2025,2025,2026-06-15,Distribution to selected geographies,v92044759,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+NT,"Yellowknife, Northwest Territories",all,All-items,100.0,2025,2026-04,2026-06-15,Distribution to selected geographies,v91872096,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+NT,"Yellowknife, Northwest Territories",all,All-items,100.0,2025,2025,2026-06-15,Distribution to selected geographies,v91872098,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+NT,"Yellowknife, Northwest Territories",food,Food,18.44,2025,2026-04,2026-06-15,Distribution to selected geographies,v91872100,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+NT,"Yellowknife, Northwest Territories",food,Food,18.53,2025,2025,2026-06-15,Distribution to selected geographies,v91872101,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+NT,"Yellowknife, Northwest Territories",shelter,Shelter,29.74,2025,2026-04,2026-06-15,Distribution to selected geographies,v91872180,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+NT,"Yellowknife, Northwest Territories",shelter,Shelter,29.33,2025,2025,2026-06-15,Distribution to selected geographies,v91872181,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+NT,"Yellowknife, Northwest Territories",transport,Transportation,14.82,2025,2026-04,2026-06-15,Distribution to selected geographies,v91872284,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+NT,"Yellowknife, Northwest Territories",transport,Transportation,14.66,2025,2025,2026-06-15,Distribution to selected geographies,v91872285,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+NT,"Yellowknife, Northwest Territories",gasoline,Gasoline,2.27,2025,2026-04,2026-06-15,Distribution to selected geographies,v91872296,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+NT,"Yellowknife, Northwest Territories",gasoline,Gasoline,1.94,2025,2025,2026-06-15,Distribution to selected geographies,v91872297,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+NT,"Yellowknife, Northwest Territories",energy,Energy,9.6,2025,2026-04,2026-06-15,Distribution to selected geographies,v92044760,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+NT,"Yellowknife, Northwest Territories",energy,Energy,8.85,2025,2025,2026-06-15,Distribution to selected geographies,v92044761,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+NU,"Iqaluit, Nunavut",all,All-items,100.0,2025,2026-04,2026-06-15,Distribution to selected geographies,v1592974298,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
+NU,"Iqaluit, Nunavut",all,All-items,100.0,2025,2025,2026-06-15,Distribution to selected geographies,v1592974299,,data/raw/canada/18100007-eng.zip,2026-11-24T00:58:45-08:00
