@@ -1,0 +1,73 @@
+{
+  "viewports": [
+    {
+      "document": 1920,
+      "viewport": 1920,
+      "card_columns": 4,
+      "title_lines": 1
+    },
+    {
+      "document": 1440,
+      "viewport": 1440,
+      "card_columns": 4,
+      "title_lines": 1
+    },
+    {
+      "document": 1280,
+      "viewport": 1280,
+      "card_columns": 4,
+      "title_lines": 1
+    },
+    {
+      "document": 1024,
+      "viewport": 1024,
+      "card_columns": 4,
+      "title_lines": 1
+    },
+    {
+      "document": 768,
+      "viewport": 768,
+      "card_columns": 2,
+      "title_lines": 1
+    },
+    {
+      "document": 390,
+      "viewport": 390,
+      "card_columns": 1,
+      "title_lines": 2
+    }
+  ],
+  "map_framing": {
+    "opening": {
+      "width": 699.078125,
+      "height": 680,
+      "outlineWidth": 320,
+      "outlineHeight": 612
+    },
+    "healthcare": {
+      "width": 658,
+      "height": 822.5,
+      "outlineWidth": 392,
+      "outlineHeight": 752
+    }
+  },
+  "tested": [
+    "Card navigation, all six atlas stages, layer toggles, zoom, pan and reset",
+    "Geometry predicates, bounding-box diagram, exceedance calculator and graph",
+    "Healthcare threshold, age weights, catchments and candidate scenario",
+    "Wildfire chronology playback, grid and bandwidth controls",
+    "Flood coverage, asset visibility, threshold and disruption view",
+    "Census indicators, weights, cluster inference, DA selection, scatterplot and composite",
+    "Code expansion, highlighting, clipboard, local resource links and CSV download",
+    "Six responsive widths, desktop title wrapping, mobile contents and active-section highlighting"
+  ],
+  "local_asset_failures": [],
+  "page_errors": [],
+  "opening_comparison": {
+    "before_outer_width": 1078.59375,
+    "after_outer_width": 701.078125,
+    "before_canvas_height": 850,
+    "after_canvas_height": 680
+  },
+  "chromium_version": "158.0.8127.37"
+}

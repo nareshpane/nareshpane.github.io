@@ -1,0 +1,248 @@
+{
+  "crs": {
+    "distance": "NAD83 / Alberta 10-TM (Forest)",
+    "area": "+proj=aea +lat_1=49 +lat_2=60 +lat_0=54.5 +lon_0=-115 +datum=NAD83 +units=m +type=crs",
+    "web_vectors": "EPSG:4326"
+  },
+  "corrections": [
+    {
+      "scope": "Healthcare candidate coverage in the browser",
+      "changed_exports": [
+        "maps/healthcare/candidate_16.json",
+        "maps/healthcare/candidate_36.json"
+      ],
+      "cause": "Rounding to three decimal places moved two distances above a cutoff onto it.",
+      "cases": [
+        {
+          "candidate": "Calgary",
+          "DA": "48060294",
+          "cutoff_km": 10,
+          "residents": 352
+        },
+        {
+          "candidate": "Drumheller",
+          "DA": "48060070",
+          "cutoff_km": 100,
+          "residents": 384
+        }
+      ]
+    },
+    {
+      "scope": "Healthcare candidate markers in the browser",
+      "changed_export": "maps/healthcare/candidates.geojson",
+      "cause": "Both Lloydminster candidates share the population-centre code 0478.",
+      "fix": "Use one marker per candidate index and distinguish mapped parts by label."
+    }
+  ],
+  "limits": [
+    "Existing cached public sources were used. Source vintage, completeness and field meaning follow their published documentation.",
+    "Wildfire proportions were reconciled with detailed annual footprints and two independent grid resolutions. Raw perimeter geometries were not unioned again from scratch.",
+    "Local Monte Carlo inference was fully replayed for queen unemployment. Other local models were checked for their computed statistics, p-value support and BH adjustment."
+  ],
+  "healthcare": {
+    "demand_points": 6182,
+    "missing_population_in_demand_input": 21,
+    "demand_without_age_65_weight": 134,
+    "population_denominator": 4262635,
+    "exact_distance_ties_by_category": {
+      "ambulatory": 0,
+      "clinic": 0,
+      "hospital": 0,
+      "hospital_v11": 0
+    },
+    "facility_categories": {
+      "hospital_v11": 127,
+      "clinic": 34,
+      "ambulatory": 27,
+      "hospital": 21
+    },
+    "candidates": 120,
+    "candidate_groups_with_multiple_parts": [
+      "Lloydminster"
+    ],
+    "distances_checked": 741840,
+    "hospital_coverage": {
+      "10": 2849189,
+      "25": 3274150,
+      "50": 3540237,
+      "100": 3782318
+    },
+    "additional_residents_10_to_25km": 424961,
+    "coverage_change_percentage_points": 9.969443783012151
+  },
+  "flood": {
+    "scenarios_checked": [
+      20,
+      50,
+      100,
+      200,
+      500
+    ],
+    "distinct_roads": 6356,
+    "distinct_roofs": 52870,
+    "road_denominator_km": 696.1226654766974,
+    "roof_denominator_m2": 10370098.40844972,
+    "common_study_20_and_50": [
+      "Bow and Elbow River Flood Study"
+    ],
+    "studies_100": [
+      "Bow and Elbow River Flood Study",
+      "Nose and West Nose Creek Flood Hazard Study"
+    ],
+    "area_ratio_50_to_20": 1.3440843006494618,
+    "road_length_ratio_50_to_20": 2.8558831584295747,
+    "20_year_outside_50_year_m2": 18.180700157070163
+  },
+  "socioeconomic": {
+    "census_areas": 6203,
+    "indicator_weight_models": {
+      "density/queen": {
+        "I": 0.818151173926614,
+        "p": 0.002,
+        "islands": 1
+      },
+      "density/rook": {
+        "I": 0.821401268620028,
+        "p": 0.002,
+        "islands": 3
+      },
+      "density/knn": {
+        "I": 0.5822463679839528,
+        "p": 0.002,
+        "islands": 0
+      },
+      "age_share/queen": {
+        "I": 0.20420863330830222,
+        "p": 0.002,
+        "islands": 0
+      },
+      "age_share/rook": {
+        "I": 0.2085740019720556,
+        "p": 0.002,
+        "islands": 0
+      },
+      "age_share/knn": {
+        "I": 0.2088911897150944,
+        "p": 0.002,
+        "islands": 0
+      },
+      "income/queen": {
+        "I": 0.6224405854079754,
+        "p": 0.002,
+        "islands": 1
+      },
+      "income/rook": {
+        "I": 0.6401416111937225,
+        "p": 0.002,
+        "islands": 1
+      },
+      "income/knn": {
+        "I": 0.567130447273534,
+        "p": 0.002,
+        "islands": 0
+      },
+      "low_income/queen": {
+        "I": 0.4358136924096001,
+        "p": 0.002,
+        "islands": 2
+      },
+      "low_income/rook": {
+        "I": 0.45055138644569864,
+        "p": 0.002,
+        "islands": 2
+      },
+      "low_income/knn": {
+        "I": 0.41378081544537343,
+        "p": 0.002,
+        "islands": 0
+      },
+      "unemployment/queen": {
+        "I": 0.23508350115212553,
+        "p": 0.002,
+        "islands": 0
+      },
+      "unemployment/rook": {
+        "I": 0.23856949379617678,
+        "p": 0.002,
+        "islands": 0
+      },
+      "unemployment/knn": {
+        "I": 0.2103327158157787,
+        "p": 0.002,
+        "islands": 0
+      }
+    },
+    "permutations": 499,
+    "local_inference_replayed": "unemployment/queen",
+    "unemployment_reported": 6030,
+    "unemployment_at_least_15_pct": 1551,
+    "adjusted_high_high_among_these": 0,
+    "composite_complete_cases": 5680,
+    "composite_rank_correlation": 0.8481614100029569
+  },
+  "wildfire": {
+    "incident_years": [
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "verified_source_perimeter_years": [
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "most_records_with_perimeters": 2016,
+    "incidents_2016": 1376,
+    "incidents_2023": 1132,
+    "area_2016": 4582.18334580199,
+    "area_2023": 34281.09947840864,
+    "area_ratio_2023_to_2016": 7.481389741817204,
+    "unique_km2": 64408.680686383246,
+    "cumulative_km2": 65149.366301488764,
+    "grids": {
+      "25": {
+        "cells": 1313,
+        "clipped_cells": 171,
+        "union_km2_in_retained_cells": 64408.68068638326,
+        "omitted_km2": 0.3815898137207031
+      },
+      "50": {
+        "cells": 355,
+        "clipped_cells": 95,
+        "union_km2_in_retained_cells": 64408.680686383195,
+        "omitted_km2": 0.1618005460205078
+      }
+    },
+    "annual_and_period_intersection_samples": [
+      460,
+      490
+    ],
+    "ignitions": 27824,
+    "checked_intensity_cells": 6827,
+    "intensity_units": "incidents/km²"
+  }
+}

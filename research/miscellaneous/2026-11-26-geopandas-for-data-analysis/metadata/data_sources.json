@@ -1,0 +1,91 @@
+{
+  "attribution": "Contains information licensed under the Open Government Licence – Alberta, the Statistics Canada Open Licence and Open Government Licence – Canada, and the City of Calgary Open Data Terms of Use. Refer to each dataset's source and attribution.",
+  "sources": [
+    {
+      "dataset": "Alberta Census Boundaries – Current",
+      "publisher": "Government of Alberta",
+      "period": "2021 Census",
+      "url": "https://open.canada.ca/data/en/dataset/1e35d18f-cfa1-4bfe-b3ef-6ac8e18960e1",
+      "licence": "https://open.alberta.ca/licence"
+    },
+    {
+      "dataset": "Population and dwelling counts, census subdivisions and dissemination areas",
+      "publisher": "Statistics Canada",
+      "period": "2021 Census",
+      "url": "https://www150.statcan.gc.ca/n1/en/catalogue/9810001501",
+      "licence": "https://www.statcan.gc.ca/en/reference/licence"
+    },
+    {
+      "dataset": "Geographic Attribute File",
+      "publisher": "Statistics Canada",
+      "period": "2021 Census",
+      "url": "https://www150.statcan.gc.ca/n1/en/catalogue/92-151-X2021001",
+      "mirror": "https://data.mountainmath.ca/census/geo_attributes/geo_attributes_2021.parquet",
+      "licence": "https://www.statcan.gc.ca/en/reference/licence"
+    },
+    {
+      "dataset": "2021 Census cartographic boundary files",
+      "publisher": "Statistics Canada",
+      "period": "2021 Census",
+      "url": "https://geo.statcan.gc.ca/geo_wa/rest/services/2021/Cartographic_boundary_files/MapServer",
+      "licence": "https://open.canada.ca/en/open-government-licence-canada"
+    },
+    {
+      "dataset": "Open Database of Healthcare Facilities",
+      "publisher": "Statistics Canada",
+      "period": "v2.0 September 24, 2026 release",
+      "url": "https://www150.statcan.gc.ca/n1/pub/13-26-0001/132600012020001-eng.htm",
+      "licence": "https://open.canada.ca/en/open-government-licence-canada"
+    },
+    {
+      "dataset": "Historical wildfire incidents",
+      "publisher": "Government of Alberta",
+      "period": "2006–2025",
+      "url": "https://open.canada.ca/data/en/dataset/a221e7a0-4f46-4be7-9c5a-e29de9a3447e",
+      "licence": "https://open.alberta.ca/licence"
+    },
+    {
+      "dataset": "Historical wildfire perimeters",
+      "publisher": "Government of Alberta",
+      "period": "2016–2025 in this build",
+      "url": "https://geospatial.alberta.ca/mimas/rest/services/wildfire/historical_wildfires_data/FeatureServer",
+      "licence": "https://open.alberta.ca/licence"
+    },
+    {
+      "dataset": "Flood Hazard Identification Program mapping",
+      "publisher": "Government of Alberta",
+      "period": "Published study vintages vary by corridor; retrieved November 2026",
+      "url": "https://open.canada.ca/data/dataset/d192b9b1-caac-405e-8d2a-ba6b21929c3f",
+      "licence": "https://open.alberta.ca/licence"
+    },
+    {
+      "dataset": "2021 Road Network File",
+      "publisher": "Statistics Canada",
+      "period": "2021 Census",
+      "url": "https://geo.statcan.gc.ca/geo_wa/rest/services/2021/Road_Network_File/MapServer",
+      "licence": "https://open.canada.ca/en/open-government-licence-canada"
+    },
+    {
+      "dataset": "DAS Building Roof Outline",
+      "publisher": "City of Calgary",
+      "period": "Live municipal inventory snapshot; observation dates vary or are unspecified",
+      "url": "https://data.calgary.ca/Base-Maps/Buildings/uc4c-6kbd",
+      "licence": "https://data.calgary.ca/d/Open-Data-Terms/u45n-7awa"
+    },
+    {
+      "dataset": "Census Profile, catalogue 98-401-X2021006",
+      "publisher": "Statistics Canada",
+      "period": "2021 Census and 2020 income",
+      "url": "https://www150.statcan.gc.ca/n1/en/catalogue/98-401-X2021006",
+      "mirror": "https://www.dataforcanada.org/docs/d4c-pkgs/d4c-datapkg-statistical/statistics_canada/census_data/",
+      "licence": "https://www.statcan.gc.ca/en/reference/licence"
+    },
+    {
+      "dataset": "Open Database of Healthcare Facilities v1.1 hospital inventory",
+      "publisher": "Statistics Canada",
+      "period": "2020 release",
+      "url": "https://maps-cartes.services.geo.ca/server2_serveur2/rest/services/StatCan/OpenDatabaseHealthFacilities/MapServer",
+      "licence": "https://open.canada.ca/en/open-government-licence-canada"
+    }
+  ]
+}

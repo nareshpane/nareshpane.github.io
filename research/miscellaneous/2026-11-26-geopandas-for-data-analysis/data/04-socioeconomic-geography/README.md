@@ -1,0 +1,6 @@
+# Socioeconomic geography
+
+One row represents a 2021 Alberta DA. uid is the eight-digit DA code and division is the four-digit census division code. Density is reported persons/km², age65 is the published rounded age count, age_share is the percentage of its Census Profile age universe, income is median 2020 total household income in Canadian dollars, low_income is LIM-AT prevalence and unemployment is the published labour-force rate. labour and unemployed store rounded numerators and denominators for geographic rate aggregation. housing and degree store selected published counts, not rates. Null represents unavailable or suppressed data.
+
+The original Statistics Canada Census Profile characteristic IDs used in the mirror are 8 (age universe), 24 (65+), 243 (household income), 345 (LIM-AT prevalence), 1467 (30% shelter cost), 2008 (bachelor’s or higher), 2224 (labour force), 2226 (unemployed) and 2230 (unemployment rate). The detailed labels and universes are from the product’s 98-401-X2021006_English_meta.txt. Density comes from table 98-10-0015-01. Each model uses the indicator’s available rows and a fixed seed of 907. The spatial lag and local results are exported per neighbourhood choice in maps/socioeconomic. False-discovery adjustment includes the selected indicator’s entire test family, with islands receiving p=1.
+
